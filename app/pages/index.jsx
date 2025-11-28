@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import { NavArrowLeft } from "./icons";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
+import { NavArrowLeft } from "../icons";
 import React from "react";
 export default function Home() {
 
