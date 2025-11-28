@@ -85,7 +85,7 @@ export default function Header() {
                             <div className="container">
                                 {/* Logo Start */}
                                 <a className="navbar-brand" href="index.php">
-                                    <img src="images/rlogo.png" alt="Logo" />
+                                    <img src="/images/rlogo.png" alt="Logo" />
                                 </a>
                                 {/* Logo End */}
                                 {/* Main Menu Start */}
@@ -1389,7 +1389,7 @@ export default function Header() {
                 <header className="mobile-header">
                     <div className="container">
                         <a className="mobile-logo" href="index.php">
-                            <img src="images/rlogo.png" alt="Logo" />
+                            <img src="/images/rlogo.png" alt="Logo" />
                         </a>
                         <div>
                             <div className="search-box" id="mobileSearchBox">
@@ -1481,7 +1481,7 @@ export default function Header() {
                 <nav id="mobileNavPanel" className="mobile-nav-panel">
                     <div className="tag-logo">
                         <a className="" href="index.php">
-                            <img src="images/rlogo.png" alt="Logo" />
+                            <img src="/images/rlogo.png" alt="Logo" />
                         </a>
                     </div>
                     <button id="close-btn" className="close-btn" aria-label="Close Menu">
@@ -1602,7 +1602,7 @@ export default function Header() {
                                 {/*                                </a>*/}
                                 {/*                            </div>*/}
                                 {/*                        </div>*/}
-                                {/*                        <img src="images/pr1.jpg" alt="">*/}
+                                {/*                        <img src="/images/pr1.jpg" alt="">*/}
                                 {/*                    </div>*/}
                                 {/*                </div>*/}
                                 {/*            </div>*/}
@@ -1623,7 +1623,7 @@ export default function Header() {
                                 {/*                                </a>*/}
                                 {/*                            </div>*/}
                                 {/*                        </div>*/}
-                                {/*                        <img src="images/pr1.jpg" alt="">*/}
+                                {/*                        <img src="/images/pr1.jpg" alt="">*/}
                                 {/*                    </div>*/}
                                 {/*                </div>*/}
                                 {/*            </div>*/}
@@ -1815,7 +1815,7 @@ export default function Header() {
                                         {/*                                </a>*/}
                                         {/*                            </div>*/}
                                         {/*                        </div>*/}
-                                        {/*                        <img src="images/pr1.jpg" alt="">*/}
+                                        {/*                        <img src="/images/pr1.jpg" alt="">*/}
                                         {/*                    </div>*/}
                                         {/*                </div>*/}
                                         {/*            </div>*/}
@@ -1836,7 +1836,7 @@ export default function Header() {
                                         {/*                                </a>*/}
                                         {/*                            </div>*/}
                                         {/*                        </div>*/}
-                                        {/*                        <img src="images/pr1.jpg" alt="">*/}
+                                        {/*                        <img src="/images/pr1.jpg" alt="">*/}
                                         {/*                    </div>*/}
                                         {/*                </div>*/}
                                         {/*            </div>*/}
@@ -2049,7 +2049,7 @@ export default function Header() {
                                         {/*                                </a>*/}
                                         {/*                            </div>*/}
                                         {/*                        </div>*/}
-                                        {/*                        <img src="images/pr1.jpg" alt="">*/}
+                                        {/*                        <img src="/images/pr1.jpg" alt="">*/}
                                         {/*                    </div>*/}
                                         {/*                </div>*/}
                                         {/*            </div>*/}
@@ -2070,7 +2070,7 @@ export default function Header() {
                                         {/*                                </a>*/}
                                         {/*                            </div>*/}
                                         {/*                        </div>*/}
-                                        {/*                        <img src="images/pr1.jpg" alt="">*/}
+                                        {/*                        <img src="/images/pr1.jpg" alt="">*/}
                                         {/*                    </div>*/}
                                         {/*                </div>*/}
                                         {/*            </div>*/}
@@ -2376,7 +2376,7 @@ export default function Header() {
                                         {/*                                </a>*/}
                                         {/*                            </div>*/}
                                         {/*                        </div>*/}
-                                        {/*                        <img src="images/pr1.jpg" alt="">*/}
+                                        {/*                        <img src="/images/pr1.jpg" alt="">*/}
                                         {/*                    </div>*/}
                                         {/*                </div>*/}
                                         {/*            </div>*/}
@@ -2397,7 +2397,7 @@ export default function Header() {
                                         {/*                                </a>*/}
                                         {/*                            </div>*/}
                                         {/*                        </div>*/}
-                                        {/*                        <img src="images/pr1.jpg" alt="">*/}
+                                        {/*                        <img src="/images/pr1.jpg" alt="">*/}
                                         {/*                    </div>*/}
                                         {/*                </div>*/}
                                         {/*            </div>*/}
@@ -2542,7 +2542,7 @@ export default function Header() {
                                 {/*                                </a>*/}
                                 {/*                            </div>*/}
                                 {/*                        </div>*/}
-                                {/*                        <img src="images/pr1.jpg" alt="">*/}
+                                {/*                        <img src="/images/pr1.jpg" alt="">*/}
                                 {/*                    </div>*/}
                                 {/*                </div>*/}
                                 {/*            </div>*/}
@@ -2563,7 +2563,7 @@ export default function Header() {
                                 {/*                                </a>*/}
                                 {/*                            </div>*/}
                                 {/*                        </div>*/}
-                                {/*                        <img src="images/pr1.jpg" alt="">*/}
+                                {/*                        <img src="/images/pr1.jpg" alt="">*/}
                                 {/*                    </div>*/}
                                 {/*                </div>*/}
                                 {/*            </div>*/}
@@ -2690,7 +2690,7 @@ export default function Header() {
                                 {/*                                </a>*/}
                                 {/*                            </div>*/}
                                 {/*                        </div>*/}
-                                {/*                        <img src="images/pr1.jpg" alt="">*/}
+                                {/*                        <img src="/images/pr1.jpg" alt="">*/}
                                 {/*                    </div>*/}
                                 {/*                </div>*/}
                                 {/*            </div>*/}
@@ -2711,7 +2711,7 @@ export default function Header() {
                                 {/*                                </a>*/}
                                 {/*                            </div>*/}
                                 {/*                        </div>*/}
-                                {/*                        <img src="images/pr1.jpg" alt="">*/}
+                                {/*                        <img src="/images/pr1.jpg" alt="">*/}
                                 {/*                    </div>*/}
                                 {/*                </div>*/}
                                 {/*            </div>*/}

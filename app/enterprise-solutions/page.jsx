@@ -1,14 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
-import { NavArrowLeft } from "../icons";
 import React from "react";
+import CommomLayout from "../Components/CommomLayout";
 export default function EnterpriseSolutions() {
   return (
-    <>
-    <Header />
+    <CommomLayout>
       {/* Hero Section Start*/}
       <div className="hero brainsec bluebg enterban  pdb0">
         <div className="container">
@@ -693,7 +689,7 @@ export default function EnterpriseSolutions() {
             <div className="col-sm-6 order2">
               <div className="hero-bg-video buildsec">
                 <video autoPlay="" muted="" loop="" id="myVideo" height={800}>
-                  <source src="videos/build.mp4" type="video/mp4" />
+                  <source src="/videos/build.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>
@@ -742,7 +738,7 @@ export default function EnterpriseSolutions() {
         <div className="skew-carousel owl-carousel ">
           <div className="item">
             <div className="inner">
-              {/*<img src="images/g1.png" alt="" />*/}
+              {/*<img src="/images/g1.png" alt="" />*/}
               <svg
                 width={80}
                 height={80}
@@ -857,7 +853,7 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="item">
             <div className="inner">
-              {/*<img src="images/g2.png" alt="" />*/}
+              {/*<img src="/images/g2.png" alt="" />*/}
               <svg
                 width={80}
                 height={80}
@@ -977,7 +973,7 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="item">
             <div className="inner">
-              {/*<img src="images/g3.png" alt="" />*/}
+              {/*<img src="/images/g3.png" alt="" />*/}
               <svg
                 width={80}
                 height={80}
@@ -1058,7 +1054,7 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="item">
             <div className="inner">
-              {/*<img src="images/g4.png" alt="" />*/}
+              {/*<img src="/images/g4.png" alt="" />*/}
               <svg
                 width={80}
                 height={80}
@@ -1135,7 +1131,7 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="item">
             <div className="inner">
-              {/*<img src="images/g5.png" alt="" />*/}
+              {/*<img src="/images/g5.png" alt="" />*/}
               <svg
                 width={80}
                 height={80}
@@ -1277,7 +1273,7 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="item">
             <div className="inner">
-              {/*<img src="images/g4.png" alt="" />*/}
+              {/*<img src="/images/g4.png" alt="" />*/}
               <svg
                 width={79}
                 height={80}
@@ -1383,7 +1379,7 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="item">
             <div className="inner">
-              {/*<img src="images/g5.png" alt="" />*/}
+              {/*<img src="/images/g5.png" alt="" />*/}
               <svg
                 width={67}
                 height={79}
@@ -1430,7 +1426,7 @@ export default function EnterpriseSolutions() {
           {/* Duplicate for seamless marquee */}
           <div className="item">
             <div className="inner">
-              {/*<img src="images/g1.png" alt="" />*/}
+              {/*<img src="/images/g1.png" alt="" />*/}
               <svg
                 width={80}
                 height={80}
@@ -1545,7 +1541,7 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="item">
             <div className="inner">
-              {/*<img src="images/g2.png" alt="" />*/}
+              {/*<img src="/images/g2.png" alt="" />*/}
               <svg
                 width={80}
                 height={80}
@@ -1665,7 +1661,7 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="item">
             <div className="inner">
-              {/*<img src="images/g3.png" alt="" />*/}
+              {/*<img src="/images/g3.png" alt="" />*/}
               <svg
                 width={80}
                 height={80}
@@ -1746,7 +1742,7 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="item">
             <div className="inner">
-              {/*<img src="images/g4.png" alt="" />*/}
+              {/*<img src="/images/g4.png" alt="" />*/}
               <svg
                 width={80}
                 height={80}
@@ -1823,7 +1819,7 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="item">
             <div className="inner">
-              <img src="images/g5.png" alt="" />
+              <img src="/images/g5.png" alt="" />
               <svg
                 width={80}
                 height={80}
@@ -1965,7 +1961,7 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="item">
             <div className="inner">
-              {/*<img src="images/g4.png" alt="" />*/}
+              {/*<img src="/images/g4.png" alt="" />*/}
               <svg
                 width={79}
                 height={80}
@@ -2071,7 +2067,7 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="item">
             <div className="inner">
-              {/*<img src="images/g5.png" alt="" />*/}
+              {/*<img src="/images/g5.png" alt="" />*/}
               <svg
                 width={67}
                 height={79}
@@ -2159,7 +2155,7 @@ export default function EnterpriseSolutions() {
                 <div className="swiper-slide">
                   <div className="MeRLIN-service">
                     <div className="inner">
-                      {/*<img src="images/g1.png" alt="" />*/}
+                      {/*<img src="/images/g1.png" alt="" />*/}
                       <svg
                         width={80}
                         height={80}
@@ -2280,7 +2276,7 @@ export default function EnterpriseSolutions() {
                 <div className="swiper-slide">
                   <div className="MeRLIN-service">
                     <div className="inner">
-                      {/*<img src="images/g2.png" alt="" />*/}
+                      {/*<img src="/images/g2.png" alt="" />*/}
                       <svg
                         width={80}
                         height={80}
@@ -2489,7 +2485,7 @@ export default function EnterpriseSolutions() {
                 <div className="swiper-slide">
                   <div className="MeRLIN-service">
                     <div className="inner">
-                      {/*<img src="images/g4.png" alt="" />*/}
+                      {/*<img src="/images/g4.png" alt="" />*/}
                       <svg
                         width={80}
                         height={80}
@@ -2570,7 +2566,7 @@ export default function EnterpriseSolutions() {
                 <div className="swiper-slide">
                   <div className="MeRLIN-service">
                     <div className="inner">
-                      {/*<img src="images/g5.png" alt="" />*/}
+                      {/*<img src="/images/g5.png" alt="" />*/}
                       <svg
                         width={80}
                         height={80}
@@ -2719,7 +2715,7 @@ export default function EnterpriseSolutions() {
                 <div className="swiper-slide">
                   <div className="MeRLIN-service">
                     <div className="inner">
-                      {/*<img src="images/g4.png" alt="" />*/}
+                      {/*<img src="/images/g4.png" alt="" />*/}
                       <svg
                         width={79}
                         height={80}
@@ -2829,7 +2825,7 @@ export default function EnterpriseSolutions() {
                 <div className="swiper-slide">
                   <div className="MeRLIN-service">
                     <div className="inner">
-                      {/*<img src="images/g5.png" alt="" />*/}
+                      {/*<img src="/images/g5.png" alt="" />*/}
                       <svg
                         width={67}
                         height={79}
@@ -5144,11 +5140,11 @@ export default function EnterpriseSolutions() {
       <div className="hero brainsec approachmblsec  enter pd30 pdb0">
         <div className="parent2">
           <video
-            src="videos/bulb1.mp4"
-            autoPlay=""
-            muted=""
-            loop=""
-            playsInline=""
+            src="/videos/bulb1.mp4"
+            autoPlay={true}
+            muted={true}
+            loop={true}
+            playsInline={true}
             className="bg-image1"
           />
         </div>
@@ -5171,7 +5167,7 @@ export default function EnterpriseSolutions() {
                 <div className="col-lg-6 col-md-6 col-6">
                   <div className="benefits-steps-item wow fadeInUp">
                     <div className="icon-box">
-                      {/*<img src="images/ent1.png" alt="">*/}
+                      {/*<img src="/images/ent1.png" alt="">*/}
                       <svg
                         width={80}
                         height={80}
@@ -5202,7 +5198,7 @@ export default function EnterpriseSolutions() {
                     data-wow-delay="0.2s"
                   >
                     <div className="icon-box">
-                      {/*<img src="images/ent2.png" alt="">*/}
+                      {/*<img src="/images/ent2.png" alt="">*/}
                       <svg
                         width={80}
                         height={80}
@@ -5289,7 +5285,7 @@ export default function EnterpriseSolutions() {
                     data-wow-delay="0.4s"
                   >
                     <div className="icon-box">
-                      {/*<img src="images/ent3.png" alt="">*/}
+                      {/*<img src="/images/ent3.png" alt="">*/}
                       <svg
                         width={80}
                         height={80}
@@ -5520,7 +5516,7 @@ export default function EnterpriseSolutions() {
                     data-wow-delay="0.6s"
                   >
                     <div className="icon-box">
-                      {/*<img src="images/ent4.png" alt="">*/}
+                      {/*<img src="/images/ent4.png" alt="">*/}
                       <svg
                         width={80}
                         height={80}
@@ -5719,7 +5715,7 @@ export default function EnterpriseSolutions() {
                     data-wow-delay="0.4s"
                   >
                     <div className="icon-box">
-                      {/*<img src="images/ent5.png" alt="">*/}
+                      {/*<img src="/images/ent5.png" alt="">*/}
                       <svg
                         width={80}
                         height={80}
@@ -5790,7 +5786,7 @@ export default function EnterpriseSolutions() {
                     data-wow-delay="0.6s"
                   >
                     <div className="icon-box">
-                      {/*<img src="images/ent6.png" alt="">*/}
+                      {/*<img src="/images/ent6.png" alt="">*/}
                       <svg
                         width={80}
                         height={80}
@@ -5925,7 +5921,7 @@ export default function EnterpriseSolutions() {
                       Epicor Premium, Microsoft AI Cloud <br /> and Microsoft ISV
                       partner
                     </h3>
-                    {/*<img src="images/ad1.png" alt="">*/}
+                    {/*<img src="/images/ad1.png" alt="">*/}
                     <svg
                       width={523}
                       height={300}
@@ -6378,7 +6374,7 @@ export default function EnterpriseSolutions() {
                     <h3>
                       End-to-end platform services from <br /> strategy to support
                     </h3>
-                    <img src="images/ad2.png" alt="" />
+                    <img src="/images/ad2.png" alt="" />
                   </div>
                 </div>
                 <div className="col-lg-4 col-md-4 col-12">
@@ -6386,13 +6382,13 @@ export default function EnterpriseSolutions() {
                     <h3>
                       Proven global rollout and <br /> localisation capabilities
                     </h3>
-                    <img src="images/ad3.png" alt="" />
+                    <img src="/images/ad3.png" alt="" />
                   </div>
                 </div>
                 <div className="col-lg-4 col-md-4 col-12">
                   <div className="service-item-body1 imgpos2">
                     <h3>Accelerated cloud-native development and integrations</h3>
-                    <img src="images/ad4.png" alt="" />
+                    <img src="/images/ad4.png" alt="" />
                   </div>
                 </div>
                 <div className="col-lg-4 col-md-4 col-12">
@@ -6401,7 +6397,7 @@ export default function EnterpriseSolutions() {
                       Outcome-driven delivery with a focus on operational resilience
                       and sustained business value
                     </h3>
-                    <img src="images/advant5.svg" alt="" />
+                    <img src="/images/advant5.svg" alt="" />
                   </div>
                 </div>
               </div>
@@ -6682,7 +6678,7 @@ export default function EnterpriseSolutions() {
                 <div className="row ">
                   <div className="col-sm-4">
                     <div className="plat-in">
-                      <img src="images/plat1.png" alt="" />
+                      <img src="/images/plat1.png" alt="" />
                       <p>
                         Streamline operations and accelerate performance with a
                         modern, flexible ERP built for manufacturers. Unlock
@@ -6800,7 +6796,7 @@ export default function EnterpriseSolutions() {
                   </div>
                   <div className="col-sm-4">
                     <div className="plat-in">
-                      <img src="images/plat2.png" alt="" />
+                      <img src="/images/plat2.png" alt="" />
                       <p>
                         Unify finance, sales, operations, and service on one
                         intelligent cloud platform. Drive agility, efficiency, and
@@ -6918,7 +6914,7 @@ export default function EnterpriseSolutions() {
                   </div>
                   <div className="col-sm-4">
                     <div className="plat-in">
-                      <img src="images/plat3.png" alt="" />
+                      <img src="/images/plat3.png" alt="" />
                       <p>
                         Transform your enterprise with intelligent, integrated
                         systems powered by SAP’s digital core. Simplify processes
@@ -7176,7 +7172,7 @@ export default function EnterpriseSolutions() {
                         {/* Testimonial Slide Start */}
                         <div className="swiper-slide">
                           <div className="plat-in">
-                            <img src="images/plat1.png" alt="" />
+                            <img src="/images/plat1.png" alt="" />
                             <p>
                               Lorem ipsum dolor sit amet, consectetur adipiscing
                               elit, sed do eiusmod tempor
@@ -7290,7 +7286,7 @@ export default function EnterpriseSolutions() {
                         </div>
                         <div className="swiper-slide">
                           <div className="plat-in">
-                            <img src="images/plat2.png" alt="" />
+                            <img src="/images/plat2.png" alt="" />
                             <p>
                               Lorem ipsum dolor sit amet, consectetur adipiscing
                               elit, sed do eiusmod tempor
@@ -7404,7 +7400,7 @@ export default function EnterpriseSolutions() {
                         </div>
                         <div className="swiper-slide">
                           <div className="plat-in">
-                            <img src="images/plat3.png" alt="" />
+                            <img src="/images/plat3.png" alt="" />
                             <p>
                               Lorem ipsum dolor sit amet, consectetur adipiscing
                               elit, sed do eiusmod tempor
@@ -8129,7 +8125,7 @@ export default function EnterpriseSolutions() {
           <div className="row align-items-center">
             <div className="col-lg-12">
               {/* Testimonial Slider Start */}
-              <div className=" industries enterintsec">
+              <div className="industries enterslide">
                 <div className="swiper">
                   <div className="swiper-wrapper">
                     {/* Testimonial Slide Start */}
@@ -8188,7 +8184,7 @@ export default function EnterpriseSolutions() {
                     {/* Testimonial Slide End */}
                   </div>
                 </div>
-                <div className="testimonial-btn9 ">
+                <div className="testimonial-btn9">
                   <div
                     className="testimonial-button-prev"
                     tabIndex={0}
@@ -8547,7 +8543,6 @@ export default function EnterpriseSolutions() {
           </div>
         </div>
       </footer>
-      <Footer />
-    </>
-  );
+    </CommomLayout>
+  )
 }

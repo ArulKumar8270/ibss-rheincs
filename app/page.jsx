@@ -5,11 +5,11 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import { NavArrowLeft } from "./icons";
 import React from "react";
+import CommomLayout from "./Components/CommomLayout";
 export default function Home() {
-
   return (
     <>
-      <Header />
+      <CommomLayout>
       <main>
         {/* Hero Section Start*/}
         <div className="hero banner">
@@ -60,7 +60,7 @@ export default function Home() {
                       <div className="video-popup" id="videoPopup">
                         <iframe
                           id="youtubeVideo"
-                          src=""
+                          src="about:blank"
                           allow="autoplay; encrypted-media"
                           allowFullScreen={true}
                         />
@@ -6556,7 +6556,8 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <Footer />
+      </CommomLayout>
+     
     </>
   );
 }
