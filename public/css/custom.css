@@ -711,8 +711,8 @@ body {
 }
 
 .section-title p {
-	margin-top: 32px;
-	margin-bottom: 32px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	font-size: 16px;
 	font-weight: 400;
 }
@@ -3305,7 +3305,7 @@ body:has(.offcanvas) {
 	.testimonial-btn {
 		position: absolute;
 		bottom: 0px;
-		left: -10px !important;
+		left: 0px !important;
 	}
 
 }
@@ -4471,7 +4471,7 @@ body:has(.offcanvas) {
 	}
 
 	.benefits-steps-item .icon-box img {
-		max-width: 50px;
+		max-width: 75px;
 	}
 
 	.benefits-steps-content h3 {
@@ -6467,7 +6467,22 @@ body:has(.offcanvas) {
 	cursor: pointer;
 }
 
+/* Our dotted arrow */
+.custom-select::after {
+	/*content: '';*/
+	position: absolute;
+	right: -15px;
+	top: 12%;
+	width: 30px;
+	height: 30px;
 
+	background-image: url("data:image/svg+xml;utf8,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16.8' cy='10.8' r='1.2' transform='rotate(90 16.8 10.8)' fill='white'/%3E%3Ccircle cx='19.2004' cy='8.4' r='1.2' transform='rotate(90 19.2004 8.4)' fill='white'/%3E%3Ccircle cx='12.0002' cy='15.6' r='1.2' transform='rotate(90 12.0002 15.6)' fill='white'/%3E%3Ccircle cx='9.5998' cy='13.2' r='1.2' transform='rotate(90 9.5998 13.2)' fill='white'/%3E%3Ccircle cx='7.20039' cy='10.8' r='1.2' transform='rotate(90 7.20039 10.8)' fill='white'/%3E%3Ccircle cx='4.8' cy='8.4' r='1.2' transform='rotate(90 4.8 8.4)' fill='white'/%3E%3Ccircle cx='14.3996' cy='13.2' r='1.2' transform='rotate(90 14.3996 13.2)' fill='white'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	/* border-left: 3px dotted #ffffff;
+	border-bottom: 3px dotted #ffffff;
+	transform: translateY(-50%) rotate(-45deg); */
+	pointer-events: none;
+}
 
 
 /* .custom-select::after {
@@ -10016,7 +10031,7 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 
 	.buildsection .hero-bg-video {
 		position: relative;
-		height: 350px;
+		/*height: 350px;*/
 	}
 
 	.buildsection::before {
@@ -10071,7 +10086,7 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 	}
 
 	.grid-section1 .testspace {
-		padding: 2px 40px;
+		padding: 2px 10px;
 	}
 
 	.grid-section1 .testimonial-btn {
@@ -10211,8 +10226,8 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
         top: -19px !important;
     }
     .indexprojectsmobile .testimonial-btn .testimonial-button-prev {
-        left: 4px;
-        top: 8px !important;
+        left: 0px;
+        top: 7px !important;
     }
     .thepathindex  .service-item-body p {
         font-size: 14px;
@@ -10254,7 +10269,10 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 }.swiper-slide-active .MeRLIN-service {
     box-shadow: 0 16px 40px rgba(0, 77, 92, 0.12);
     background: linear-gradient(180deg, #0c6a6ade 0%, #082326de 100%);
-}.digitalmobilesec .swiper-slide-active .icns {
+}.swiper-slide-active .MeRLIN-service .icns {
+        stroke: #fff !important;
+    }
+.digitalmobilesec .swiper-slide-active .icns {
         stroke: #ffffff !important;
     }.swiper-slide-active .MeRLIN-service h3, .swiper-slide-active .MeRLIN-service li {
    color: #fff !important;
@@ -10485,9 +10503,11 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
         right: 0px;
         bottom: -12px !important;
         height: 300px !important;
-    }.additional1 .mobileimgadd{
+    }
+    .mobileaddit .mobileimgadd{
         height:570px !important;
-    }    .testimonial-slider1 .service-item-body .desc {
+    }  
+    .testimonial-slider1 .service-item-body .desc {
         height: 350px !important;
     }    .parentban img {
         height: 300px !important;
@@ -10496,8 +10516,14 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
     padding-right: 10px;
     height: 40px;
             width: 40%;
-}.self1 .self-service{
-    height:70px;
+}.self1 .mblself .self-service{
+    height: auto !important; 
+        display: block !important;
+        gap: 10px;
+        width: 100% !important;
+}.self1 .mblself .challenge-point-waber img {
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 .aboutvaluemobile .valueslide{
     height:auto !important;
@@ -10542,7 +10568,7 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
         margin-top: 0px;
         width: max-content;
     }.mobileanimation  .testspace {
-    padding: 2px 40px;
+    padding: 2px 10px;
 }   .mobileanimation   .testimonial-btn .testimonial-button-next {
         right: 4px;
         top: -6px !important;
@@ -10553,7 +10579,7 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 }    .mobileanimation  .service-item {
         padding: 15px 10px !important;
     }.mobileanimation .service-item-body p {
-    height: 170px !important;
+    height: 120px !important;
 }
 .mobileanimation .btn-style-3{
 	padding: 0px 0px !important;
@@ -10562,9 +10588,11 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 	padding: 50px 0px !important;
 }.epicadv2 .w80 h3 {
     width: 100% !important;
-}.additional1 .service-item-body1 {
-    min-height: 100% !important;
-}.additional1 .col-lg-6 {
+}
+/*.additional1 .service-item-body1 {*/
+/*    min-height: 100% !important;*/
+/*}*/
+.additional1 .col-lg-6 {
 	margin-bottom: 20px !important;
 }.additional1 .col-lg-4 {
 	margin-bottom: 20px !important;
@@ -10612,6 +10640,9 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
     align-items: center;
     margin-bottom: 15px;
 }
+.enterslide .service-item-header {
+    display: block !important;
+}
 .builtsec .section-title p {
     font-size: 16px !important;
     line-height: 24px;
@@ -10649,13 +10680,13 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 	-webkit-transition: r 0.3s ease;
 	-o-transition: r 0.3s ease;
 }.mobileapprochslide .service-item{
-	height: 420px !important;
+	height: 390px !important;
 }   .mobileapprochslide  .testimonial-slider .flip-card-inner h3 {
         font-size: 20px;
         margin-bottom: 15px;
         height: 80px !important;
     }.mobileapprochslide  .oa-para-waber {
-    gap: 60px !important;
+    gap: 30px !important;
 }.msadvmobile .imgpos3 img {
     position: absolute;
     bottom: 0px;
@@ -10689,10 +10720,10 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
         height: 70px !important;
     }     .whyrhienmobile .testimonial-btn .testimonial-button-prev {
         left: 0px;
-        top: 13px !important;
+        top: 0px !important;
     }    .whyrhienmobile .testimonial-btn .testimonial-button-next {
-        right: 4px;
-        top: -13px !important;
+        right: 0px;
+        top: 0px !important;
     }
     .whyrhienmobile  .swiper-wrapper {
     cursor: none;
@@ -10700,7 +10731,7 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 }.whyrhienmobile .valueslide {
     margin-bottom: 25px !important;
 }.capabilities  {
-    padding: 20px 0px !important;
+    padding: 20px 0px  !important;
 }   .saptest  .testimonial-btn .testimonial-button-prev {
         left: 3px;
         top: -19px !important;
@@ -10711,7 +10742,10 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 	transition: r 0.3s ease;
 	-webkit-transition: r 0.3s ease;
 	-o-transition: r 0.3s ease;
-}.whyrhienmobile .swiper-slide-active .valueslide {
+}.saptest .swiper-slide-active .service-item ellipse{
+    fill:#fff !important; 
+}
+.whyrhienmobile .swiper-slide-active .valueslide {
     border: 0 !important;
     background: linear-gradient(180deg, rgba(0, 128, 128, 0.534) 0%, #082326 100%) !important;
 } .whyrhienmobile .swiper-slide-active .valueslide p {
@@ -10724,7 +10758,10 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 	transition: r 0.3s ease;
 	-webkit-transition: r 0.3s ease;
 	-o-transition: r 0.3s ease;
-}    .enterslide .flip-card-inner h3 {
+} .enterslide .swiper-slide-active .service-item .icns2{
+    fill:#fff !important;
+}
+.enterslide .flip-card-inner h3 {
         font-size: 20px;
         margin-bottom: 15px;
         height: 70px !important;
@@ -10884,9 +10921,27 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 }.webhero .col-sm-7{
     padding:0px 0px;
 }.webhero::after {
-    background: linear-gradient(180deg, rgba(8, 35, 38, 1) 55%, rgba(8, 35, 38, 0) 88%) !important;
+    background: linear-gradient(180deg, rgba(8, 35, 38, 1) 40%, rgba(8, 35, 38, 0) 88%) !important;
     width: 100%;
     height: 100%;
+}.webhero1 .col-sm-7{
+    padding:0px 0px;
+}.webhero1::after {
+    background: linear-gradient(180deg, rgba(8, 35, 38, 1) 50%, rgba(8, 35, 38, 0) 88%) !important;
+    width: 100%;
+    height: 100%;
+}
+.webhero1 .baner-img1 {
+    position: relative !important;
+    right: 0px !important;
+    top: 0px !important;
+    width: 100% !important;
+    height: 100%;
+    content: "";
+    z-index: -1 !important;
+}
+.testimonial-sliders11 .col-sm-4 {
+    margin-bottom: 0px !important;
 }
 .cuccess-story-waber {
     padding: 20px 20px 20px 20px !important;
@@ -10982,9 +11037,7 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
     -ms-flex-align: center;
     align-items: start;
     margin-bottom: 0px !important;
-}    .bluebg {
-        padding: 0px 0px 0px !important;
-    }.mobilecusexp .micfabric {
+}    .mobilecusexp .micfabric {
     padding: 0px 0px !important;
 }.excelimg .micfabric .Customer-Speak-title img {
             width: 100% !important;
@@ -11039,7 +11092,7 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 }.additional1 img {
     height: 250px !important;
 }.advantage .service-item-body1 {
-    height: 350px !important;
+    height: 350px ;
     margin-bottom: 15px;
 }.biadv{
     padding:40px 0px !important;
@@ -11060,6 +11113,7 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
     margin-top:0px !important;
 }.self1 .buildsec video {
     width: 100% !important;
+    mix-blend-mode: normal !important;
 }
 .digi2 .buildsec video {
     width: 100% !important;
@@ -11165,16 +11219,444 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 }.mobilewcu .platdesc {
         padding: 0px 10px 0px 0px !important;
     }.mobilewcu .wcu-waber-1 {
-    padding: 10px !important;
-}
-    
-
-
-
-    .digi2{
-        display:flex;
-        padding: 40px 0px 0px !important;
+    padding: 0px !important;
+}.amsbanner{
+    padding-bottom:0px !important;
+}.amsbanner .retailparent2 .bg-image1 {
+        bottom: -8px !important;
+                height: 300px;
+}.amsbanner .retailparent2::before {
+    background: linear-gradient(180deg, rgba(8, 35, 38, 1) 5%, rgba(8, 35, 38, 1) 0%, rgb(8 35 38 / 0%) 50%, rgb(10 83 91 / 10%) 100%, rgba(255, 255, 255, 0) 100%) !important;
+    z-index: 2;
+}  .mobileamslide .amslide .testimonial-btn .testimonial-button-prev {
+        left: 4px;
+        top: -9px !important;
+    }   .mobileamslide .amslide  .testimonial-btn .testimonial-button-next {
+        right: 4px;
+        top: -10px !important;
+    }.mobilemethod::before{
+        background-image:none !important;
+        background-attachment: inherit !important;
+        position:relative !important;
+    }.mobilemethod{
+        padding:40px 0px 0px !important;
+    }.amsmethod1 .hero-video-content{
+        margin-top:0px !important;
+    }.amsmethod1{
+        padding:40px 0px !important;
+    }.amsmethod1 .mstechsolutions .height600 {
+    min-height: auto !important;
+}.mobileamslide .valueslide p {
+    font-size: 20px !important;
+    line-height: 28px !important;
+}.mobileuiux{
+    padding-bottom:0px !important;
+}.mobileuiux .retailparent2::before {
+    background: linear-gradient(180deg, rgba(8, 35, 38, 1) 5%, rgba(8, 35, 38, 1) 0%, rgb(8 35 38 / 0%) 50%, rgb(10 83 91 / 10%) 100%, rgba(255, 255, 255, 0) 100%) !important;
+    z-index: 2;
+}.mobileuiux video{
+    margin-bottom:-8px;
+    height:300px !important;
+}.mobileuiux .section-title{
+    text-align:left !important;
+}.mobileuiux .section-title p {
+    margin: 16px 0px !important;
+}.mobileuiux .section-title h2 {
+    margin-bottom: 16px !important;
+}.hero  video{
+    height:300px !important;
+    margin-bottom:-8px;
+}.mobilesself1 .buildsecont .mobileh2 h2 {
+    margin-bottom: 0px !important;
+}.mobilecommpd0{
+    padding:40px 0px 0px !important;
+}.mobilecommpd0 .retailparent2::before {
+    background: linear-gradient(180deg, rgba(8, 35, 38, 1) 0%, rgba(8, 35, 38, 1) 0%, rgb(8 35 38 / 0%) 50%, rgb(10 83 91 / 10%) 100%, rgba(255, 255, 255, 0) 100%) !important;
+}.mobilecommpd0 .section-title{
+    text-align:left !important;
+}.mobilecommpd0 .section-title p {
+    margin: 16px 0px !important;
+}.mobilecommpd0 .builtsec p {
+    margin-bottom: 16px !important;
+}.testbtnposition {
+    position: absolute;
+    bottom: -15px !important;
+    left: 19%;
+}.mobilefluent{
+        padding:40px 0px 0px !important;
+}.mobilefluent .section-title{
+    text-align:left !important;
+}.mobilefluent .section-title p {
+    margin: 16px 0px !important;
+}.mobilefluent .builtsec p {
+    margin-bottom: 16px !important;
+}.mobilefluent .retailparent2::before {
+    background: linear-gradient(180deg, rgba(8, 35, 38, 1) 0%, rgba(8, 35, 38, 1) 0%, rgb(8 35 38 / 0%) 50%, rgb(10 83 91 / 10%) 100%, rgba(255, 255, 255, 0) 100%) !important;
+}.mobilewhyfc .dynamics-advantage-waber{
+    display:flex;
+    gap:10px;        
+    align-items: center;
+}.mobilewhyfc .col-12{
+    padding:0px 0px;
+}.mobilewhyfc{
+    padding-bottom:40px !important;
+}.mobilewhyfc img{
+    height:60px;
+    width:120px;
+}   .mobilecommexpert .testimonial-btn .testimonial-button-prev {
+        left: 0px !important;
+        top: 0px !important;
     }
+    .mobilecommexpert  .swiper-slide-active .valueslide {
+    border: 0 !important;
+    background: linear-gradient(180deg, rgba(0, 128, 128, 0.534) 0%, #082326 100%) !important;
+} .mobilecommexpert  .swiper-slide-active .valueslide p {
+    color: #fff;
+}    .agency-supports-logo img {
+        max-height: 60px;
+    }.msmobilecap .mstechapproach .valueslide {
+    height: 270 !important;
+    /* width: 300px; */
+    padding: 16px !important;
+}.mstechapproach .valueslide p {
+    font-size: 20px;
+    line-height: 28px;
+}.mstechapproach  .swiper-slide-active .valueslide {
+    border: 0 !important;
+    background: linear-gradient(180deg, rgba(0, 128, 128, 0.534) 0%, #082326 100%) !important;
+} .mstechapproach  .swiper-slide-active .valueslide p {
+    color: #fff;
+} .msmobilecap .testimonial-btn .testimonial-button-prev {
+        left: 0px !important;
+        top: 0px !important;
+    }.mobilemssol .hero-content{
+        height:auto !important;
+    }.mobilemssol .hero-content .section-title h2{
+        text-align:left !important;
+    }.mobilemssol .hero-content .section-title p{
+        text-align:left !important;
+    }.mobilemssol .mstechsolutions .benifet-content-waber {
+    margin-top: 0px !important;
+}.mobilemssol .mstechsolutions .height600 {
+    min-height: auto !important;
+}.deliver::after{
+    background:#fff !important;
+}    .mobilexplore .service-item-body1 {
+        height: 250px !important;
+    }   .mobilexplore  .imgpos1 img {
+        height: 200px !important;
+    }.blog-waber-one {
+    margin: 20px 0px !important;
+}.blog-content-waber {
+    padding: 15px !important;
+    margin:0px 0px !important;
+    width: 100% !important;
+    gap: 16px !important;
+}.blog-baner-title {
+    font-size: 32px !important;
+    line-height: 40px !important;
+}.blog-baner {
+    margin: 0px 0px 25px !important;
+}.testimonial-btn77 {
+    left: 15% !important;
+     transform: translate(0%, 0%) !important;
+    }.bolg-filter-waber .filter-controls {
+    
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch; /* smooth scroll */
+
+        /* Hide scrollbar (Chrome, Safari) */
+        scrollbar-width: none;  /* Firefox */
+}  
+
+    .bolg-filter-waber .filter-controls::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Edge */
+    }
+
+    .bolg-filter-waber .filter-controls button {
+        flex: 0 0 auto;
+        margin:0px 10px 0px 0px;
+    }.page-nate-waber {
+    display: flex;
+    gap: 5px !important;
+    margin-top: 0px !important;
+    margin-bottom: 15px !important;
+}.page-nate-waber span {
+    font-size: 18px !important;
+}    .webinarhero::after {
+        background: linear-gradient(180deg, rgba(8, 35, 38, 1) 34%, rgba(8, 35, 38, 0) 88%) !important;
+    }.mobileimg img{
+        display:none;
+    }
+    .webinarhero::after {  position: absolute;
+    content: "";
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    background: #082326;
+        background: linear-gradient(180deg, rgba(8, 35, 38, 1) 35%, rgba(8, 35, 38, 0) 88%) !important;  
+    width: 100%;
+    height: 100%;
+    }.collatpage .filter-controls {
+    width: 100% !important;
+}.collattabsec .video-gallery-image {
+    height: auto !important;
+    margin-bottom: 0px !important;
+}.collattabsec .ser-btn a {
+    height: 100% !important;
+}.newcollat .mey-fucher-tab-waber-content1 h4 {
+    margin: 16px 0px 16px !important;
+}.newsmobile .retailparent2::before {
+    left: 0px !important;
+    width: 100% !important;
+    height: 100%;
+    background: linear-gradient(180deg, rgb(255 255 255) 0%, rgb(255 255 255) 0%, rgb(8 35 38 / 0%) 50%, rgb(10 83 91 / 10%) 100%, rgba(255, 255, 255, 0) 100%) !important;
+}.chat-main-waber {
+    display: block !important;
+    margin-top: 30px !important;
+    gap: 20px;
+}  .chat-btn-1 {
+    display: flex !important;
+    align-items: center;
+    width: 100% !important;
+    margin-bottom:10px !important;
+}.contect-waber {
+    padding: 40px 0px !important;
+}.capabilities  .section-title{
+    margin-bottom:15px;
+    margin-top:10px;
+}   .whyrhienmobile .testimonial-btn {
+        bottom: 20px !important;
+    }.mobilepd40{
+        padding:40px 0px 0px !important;
+    }
+.testslide1 .swiper-slide-active .service-item {
+	border: none !important;
+}   .mobileanimation .testimonial-btn .testimonial-button-prev {
+        left: 4px;
+        top: 5px !important;
+        position: relative;
+    }    .mobileanimation .testimonial-btn .testimonial-button-next {
+        right: 4px;
+        top: -6px !important;
+        position: relative;
+    }.testimonial-slider5 {
+    margin: 5px 0 !important;
+}   .epiccomp .testimonial-btn .testimonial-button-prev {
+        left: 4px;
+        top: -19px !important;
+    }    .epiccomp  .flip-card-inner p {
+        height: 100px !important;
+    }.epiccomp  .flip-card-inner h3 {
+        height: 40px !important;
+    }    .mobilecarwabe::after {
+        background: #082326;
+        background: linear-gradient(180deg, rgba(8, 35, 38, 1) 70%, rgba(255, 255, 255, 0) 85%)  !important;
+    }   .mobilemployee .testimonial-btn1 {
+        position: absolute;
+        bottom: -10px !important;
+        left: 15% !important;
+    }
+    .mobilefeatures .mds-waber {
+    min-height: 270px !important;
+}.MeRLIN-service .service-icon1 img {
+    margin-bottom: 15px;
+}
+.erpcustomer .swiper-slide.swiper-slide-active .mds-waber {
+    border: 0 !important;
+    background: linear-gradient(180deg, rgba(0, 128, 128, 0.534) 0%, #082326 100%) !important;
+}
+.erpcustomer .swiper-slide.swiper-slide-active .mds-waber h6 {
+    color: #fff !important;
+}
+.erpcustomer .swiper-slide.swiper-slide-active .mds-waber p {
+    color: #fff !important;
+    display:block !important;
+}.erpcustomer .mds-waber {
+    padding: 20px 20px;
+    min-height: 300px !important;
+}.mobilepdb40{
+    padding-bottom:40px !important;
+}.mobilepdb40 .hero-video-content{
+    margin-top:0px !important;
+}.epictechnology .enterslide .swiper-slide-active .ser-btn .animated-svg-link1 .dot{
+    fill:#fff !important;
+}.dew-schorrol .swiper-slide-active .mds-waber2 {
+    border: 0 !important;
+    background: linear-gradient(180deg, rgba(0, 128, 128, 0.534) 55%, #082326 100%) !important;
+}
+.dew-schorrol .swiper-slide-active .mds-waber2 p {
+    display: block !important;
+    color: white !important;
+}
+.dew-schorrol .swiper-slide-active .mds-waber2 h6 {
+    color: white !important;
+}
+
+
+
+
+
+.filtermbl button{
+	border: 1px solid #082326 !important;
+	border-radius: 60px;
+	position: relative;
+	height: 48px;
+	width: 48px;
+	line-height: 25px;
+	padding: 10px;
+	text-align: center;
+	background:#fff;
+	margin: auto;
+} 
+  .search-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #082326;
+    border-radius: 25px;
+}
+
+/*.mobile-blog-top .filter-btn {*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    border-radius: 50%;*/
+/*    border: 1px solid #ccc;*/
+/*    background: #fff;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+
+.mobile-filter {
+    width: 100%;
+    background: #fff;
+    padding: 15px 0px;
+    display: none;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    /*border-top: 1px solid #e5e5e5;*/
+}
+
+.mobile-filter label {
+    display: block;
+    margin-bottom: 12px;
+}
+.page-video-gallery{
+    padding-top:30px !important;
+}.webinarbtn  .video-gallery-image {
+    margin-bottom: 0px !important;
+        height: auto !important;
+}.webinarbtn .filtermbl{
+    padding-bottom:20px !important;
+}.scrollspy-nav-container .nav-pills {
+    
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch; /* smooth scroll */
+
+        /* Hide scrollbar (Chrome, Safari) */
+        scrollbar-width: none;  /* Firefox */
+}  
+
+    .scrollspy-nav-container .nav-pills::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Edge */
+    }
+
+    .scrollspy-nav-container .nav-pills li {
+        flex: 0 0 auto;
+        margin:0px 10px 0px 0px;
+    }.case-study-main-title {
+    font-size: 32px !important;
+    line-height: 40px !important;
+}.timeline-item:nth-child(odd) {
+    padding-right: 0px !important;
+}.timeline-item:nth-child(even) {
+    padding-left: 40px !important;
+    left: 50%;
+}.aboutbanner video{
+    height:100% !important;
+}.indexbanner .hero-bg-video video{
+    height:170% !important;
+}.trsutedtesti .testimonial-slider1 .testimonial-btn1 {
+        position: absolute;
+        bottom: -10px !important;
+        left: 15% !important;
+}.indexwhatdo .testimonial-btn {
+        bottom: 30px !important;
+        left: -15px !important;
+    }  .success-company img {
+    width: auto;
+    height: 70px !important;
+}
+.main-dark-title-waber {
+    gap: 32px;
+    height: auto !important;
+}.mobileresults{
+    padding-bottom:30px;
+}.corussecond .section-title{
+    margin-bottom:10px !important;
+}.mobilefeatures .testimonial-slider5 {
+    margin: 5px 0 !important;
+}
+.pd0{
+    padding-bottom:0px !important;
+}.mobiletesti5 .testspace {
+    display: block !important;
+}.mobileapprochslide .microinner-icon svg {
+    height: 55px !important;
+}.testslide1 .service-item-body h3 {
+    height: 70px;
+}   .mobileanimation  .service-item {
+        padding: 20px 10px;
+    }
+.swiper-slide-active .ser-btn .dot {
+    fill: #fff !important;
+    transition: fill 0.3s ease;
+}
+.testianimdot .swiper-slide-active .service-item .animated-svg-link1 .dot {
+    fill: #fff !important;
+    opacity: 1 !important;
+}.merlinbenefit .mobile-onley-show{
+    margin-bottom:-10px !important;
+}   .mobilecabsec .epicsecslide .valueslide {
+        height: 300px !important;
+    }.epiccompanion .epiccomp .flip-card {
+    height: 300px !important;
+}.epiccompanion .epiccomp .oa-para-waber {
+    gap: 5px !important;
+}.capabilities .whyrhienmobile  .valueslide {
+    min-height: 210px !important;
+}.mobileself1{
+    padding-bottom:0px !important;
+}.biservice {
+    padding: 40px 0px !important;
+}
+.enterslide .swiper-slide-active .icns1{
+	stroke: #fff !important;
+}.collatmodal .modal-dialog {
+    max-width: 100% !important;
+    top: 0% !important;
+}.blog-content-waber2 {
+    height: 100% !important;
+    max-width: 100% !important;
+}
+
+
+
+
     .order2{
         order:2;
         padding:0px 0px;
@@ -11635,7 +12117,7 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 	.testimonial-slider .swiper-slide-active .icns,
 	.testimonial-slider .service-item.active .icns,
 	.testimonial-slider .service-item:hover .icns {
-		stroke: #ffffff;
+		fill: #ffffff;
 	}
 
 	.projects .service-item-body p {
@@ -12193,6 +12675,7 @@ header.boxshadow {
 	font-family: 'helvetica-neue-lt-pro';
 	font-size: 16px;
 	font-weight: 400;
+	margin-top:16px;
 }
 
 .skew-carousel1:hover .owl-stage {
@@ -12615,7 +13098,7 @@ header.boxshadow {
 
 
 .enterslide .service-item .icns {
-	stroke: #008080;
+	fill: #008080;
 	-webkit-transition: fill 0.3s ease;
 	-o-transition: fill 0.3s ease;
 	transition: fill 0.3s ease;
@@ -12625,13 +13108,13 @@ header.boxshadow {
 .enterslide .service-item.active .icns,
 .enterslide .swiper-slide-active .icns,
 .enterslide .service-item:hover .icns {
-	stroke: #ffffff;
+	fill: #ffffff;
 }
 
 
 
 .enterslide .service-item .icns1 {
-	stroke: #008080 !important;
+	stroke: #008080;
 	-webkit-transition: fill 0.3s ease;
 	-o-transition: fill 0.3s ease;
 	transition: fill 0.3s ease;
@@ -13188,7 +13671,9 @@ header.boxshadow {
 		padding: 0px 0 0px;
 		/*z-index: 1;*/
 		min-height: 900px;
-	}
+	}.container {
+    max-width: 1400px;
+}
 
 	.top-in li a {
 		font-size: 16px;
@@ -13385,6 +13870,7 @@ header.boxshadow {
 		line-height: 24px;
 		font-weight: 400;
 		font-style: normal;
+		margin-top:16px;
 	}
 
 	.hero-video-content1 p {
@@ -13476,7 +13962,7 @@ header.boxshadow {
 	.corushrbanner::before {
 		background: -webkit-gradient(linear, left top, right top, color-stop(48%, rgba(8, 35, 38, 1)), color-stop(3%, rgba(8, 35, 38, 1)), color-stop(57%, rgba(8, 35, 38, 0.81)), color-stop(70%, rgb(10 83 91 / 10%)), color-stop(84%, rgba(255, 255, 255, 0))) !important;
 		background: -o-linear-gradient(left, rgba(8, 35, 38, 1) 48%, rgba(8, 35, 38, 1) 3%, rgba(8, 35, 38, 0.81) 57%, rgb(10 83 91 / 10%) 70%, rgba(255, 255, 255, 0) 84%) !important;
-		background: linear-gradient(90deg, rgba(8, 35, 38, 1) 48%, rgba(8, 35, 38, 1) 3%, rgba(8, 35, 38, 0.81) 57%, rgb(10 83 91 / 10%) 70%, rgba(255, 255, 255, 0) 84%) !important;
+		background: linear-gradient(90deg, rgba(8, 35, 38, 1) 40%, rgba(8, 35, 38, 1) 0%, rgba(8, 35, 38, 0.81) 45%, rgb(10 83 91 / 10%) 55%, rgba(255, 255, 255, 0) 84%) !important;
 		/* background: linear-gradient(270deg, #133FA4 25.85%, rgba(13, 44, 115, 0.21) 44.99%, rgba(7, 24, 62, 0) 54.91%); */
 		z-index: 2;
 		pointer-events: none;
@@ -14607,7 +15093,7 @@ header.boxshadow {
 	padding: 0px 0px;
 	/* background: #f9f9f9; */
 	/* border-left: 3px solid #499A9A; */
-	margin-top: 0px;
+	margin-top: 15px;
 	padding-left: 15px;
 }
 
@@ -16178,9 +16664,9 @@ header.boxshadow {
 	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.testslide1 .swiper-slide-active .service-item {
-	border: 1px solid transparent !important;
-}
+/*.testslide1 .swiper-slide-active .service-item {*/
+/*	border: none !important;*/
+/*}*/
 
 .testslide1 .service-item.active h3,
 .testslide1 .service-item.active p,
@@ -16963,7 +17449,7 @@ body.no-scroll {
 	content: "";
 	top: 0px;
 	left: -10%;
-	background-image: url('../images/ourmethod.webp') !important;
+	background-image: url('../images/AMS2.png') !important;
 	background-position: left;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -16972,7 +17458,9 @@ body.no-scroll {
 	height: 100%;
 	background-attachment: fixed;
 }
-
+.mobilemethod::before{
+	background-attachment: local !important;
+}
 .amsmethod::after {
 	position: absolute;
 	top: 0px;
@@ -17052,6 +17540,7 @@ body.no-scroll {
 
 .stackimg .excelimg li {
 	background: #fff;
+	    list-style: none;
 	min-height: -webkit-max-content !important;
 	min-height: -moz-max-content !important;
 	min-height: max-content !important;
@@ -17994,7 +18483,7 @@ body.popup-open .main-header {
 }
 
 .testimonial-btn-08 .testspace {
-	padding: 0px 25px;
+	padding: 0px 10px;
 }
 
 .merlinbenefit .why-6-waber h3 {
@@ -18144,7 +18633,7 @@ body.popup-open .main-header {
 }
 
 
-@media (min-width: 900px) and (max-width: 1700px) {
+@media (min-width:900px) and (max-width: 1700px) {
 
 	.main-menu .nav-menu-wrapper>ul {
 
@@ -18358,7 +18847,7 @@ body.popup-open .main-header {
 
 .epicsecslide .valueslide {
 	height: 344px;
-	width: 300px;
+	width: 100%;
 	padding: 24px !important;
 }
 
@@ -18406,7 +18895,7 @@ body.popup-open .main-header {
 
 .mstechapproach .valueslide {
 	height: 344px;
-	width: 300px;
+	/*width: 300px;*/
 	padding: 24px !important;
 }
 
@@ -18797,10 +19286,10 @@ body.popup-open .main-header {
 	padding: 50px 0px;
 }
 .epicoroffer .testslide1 .swiper-slide-active .service-item {
-    border: 1px solid #ffffff !important;
+    border: 1px solid #ffffff;
 }
 .epicoroffer .testslide1 .swiper-slide:hover .service-item {
-    border: 1px solid transparent !important;
+    border: 1px solid transparent;
 }
 
 @media (max-width: 410px) {
@@ -18830,7 +19319,7 @@ body.popup-open .main-header {
 }.industries .testimonial-btn1 {
         position: absolute;
         bottom: -10px !important;
-        left: 16% !important;
+        left: 20% !important;
     }.imgpos1 img {
     height: auto !important;
 }.imgpos2 img {
@@ -18841,7 +19330,7 @@ body.popup-open .main-header {
         height: 340px !important;
     }    .thepathindex .service-item-body p {
         font-size: 14px;
-        height: 300px !important;
+        height: 310px !important;
     }    .countingss .success-counter-box1 h2 {
         height: 100px;
     }.indexwhatdo  .testimonial-slider .service-item{
@@ -18897,7 +19386,7 @@ body.popup-open .main-header {
     }.aboutvaluemobile .valueslide {
     height: auto !important;
 }.webhero::after {
-    background: linear-gradient(180deg, rgba(8, 35, 38, 1) 50%, rgba(8, 35, 38, 0) 88%) !important;
+    background: linear-gradient(180deg, rgba(8, 35, 38, 1) 40%, rgba(8, 35, 38, 0) 88%) !important;
     width: 100%;
     height: 100%;
 }    .additional1 img {
@@ -18906,7 +19395,45 @@ body.popup-open .main-header {
     padding: 10px !important;
     }.corussecond .micfabric {
     padding: 15px 10px;
+}   .mobileindustriems .industries .testimonial-btn1 {
+        position: absolute;
+        bottom: -10px !important;
+        left: 20% !important;
+    }    .webhero1::after {
+        background: linear-gradient(180deg, rgba(8, 35, 38, 1) 65%, rgba(8, 35, 38, 0) 88%) !important;
+        width: 100%;
+        height: 100%;
+    }.success-company img {
+    width: auto;
+    height: 70px !important;
+}.marlin-baner::after {
+        content: "";
+        background: linear-gradient(180deg, rgba(8, 35, 38, 1) 68%, rgb(8 35 38) 65%, rgb(8 35 38 / 0%) 72%, rgba(255, 255, 255, 0) 100%) !important;
+    }.mobileanimation .service-item-body p {
+    height: 180px !important;
+}  .epiccomp  .flip-card-inner p {
+        height: 140px !important;
+    }.epiccomp  .flip-card-inner h3 {
+        height: 50px !important;
+    }.epiccomp .flip-card {
+    height: 385px !important;
+}  .testimonial-slider1 .service-item-body .desc {
+        height: 450px !important;
+    }     .trsutedtesti .testimonial-slider1 .testimonial-btn1 {
+        position: absolute;
+        bottom: -10px !important;
+        left: 20% !important;
+    } .mobilecarwabe::after {
+        background: #082326;
+        background: linear-gradient(180deg, rgba(8, 35, 38, 1) 79%, rgba(255, 255, 255, 0) 85%) !important;
+    }
+    .mobilefeatures .mds-waber {
+    min-height: 320px !important;
+}.erpcustomer .mds-waber {
+    padding: 20px 20px;
+    min-height: 300px !important;
 }
+
 
 }
 
@@ -19068,4 +19595,158 @@ body.popup-open .main-header {
 }.epictechnology .testimonial-slider .flip-card-inner .ser-btn {
     margin-top: 0px;
     margin-bottom: 0px;
+}
+
+
+
+
+.ser-btn .content-box a {
+    margin-top: 0px;
+	margin-bottom:16px
+}
+
+.mobileapprochslide .microinner-icon svg{
+	height: 50px;
+	width: auto;
+	padding:2px;
+}
+.testimonial-slider .service-item:hover .icns2 {
+    fill: #fff !important;
+    transition: fill 0.3s ease;
+}
+.epicicn svg{
+    height:100px;
+    width:auto;
+}
+.epicicn{
+    display:flex;
+    align-items:start;
+}
+.epicicn1 svg{
+    height:90px;
+    width:auto;
+}
+.epicicn1{
+    display:flex;
+    align-items:start;
+}
+
+.mobilegolf::before {
+    background-image: url(../images/Appmodernisation1.png) !important;
+}
+.mobileself1 .mobileux img{
+    position:relative;
+    z-index:-1;
+        width: 65%;
+    height: 100%;
+}
+.mobileself1 .mobileux::before {
+    background: linear-gradient(90deg, rgb(8 33 36 / 66%) 10%, rgb(8 35 38 / 46%) 44%, rgba(255, 255, 255, .99) 50%) !important;
+}
+.mobilecommimg::before {
+    background-image: url(../images/commerce-tool2.png) !important;
+    width: 60%;
+}
+.mobilecommimg::after {
+    background: linear-gradient(90deg, #ffffff, rgb(255 255 255 / 100%) 42%, rgb(0 0 0 / 0%) 65%);
+}
+.mobilemsimg::before {
+    background-image: url(../images/MSTechnology4.jpg) !important;
+}
+
+
+.collatmodal .contect-enq-waber {
+    padding: 0px 15px !important;
+}
+.collatmodal .modal-header h4{
+	color: #000;
+}
+.collatmodal .modal-dialog {
+    max-width: 600px;   /* Important */
+	top:20%
+}
+.dataengg .mds-waber2:hover .swiper-slide-active{
+    background:linear-gradient(180deg, rgba(0, 128, 128, 0.534) 35%, #082326 100%) !important;
+    border:inherit !important;
+}
+.contect-call li{
+    list-style-type:none;
+    padding-right:16px;
+}
+.contect-call li i{
+    font-size:35px;
+}
+.approachmblsec .icon-box svg{
+    margin-bottom:15px;
+}
+
+
+
+
+.digialserpage .service-item-body img{
+    height: 420px;
+    margin-bottom: -5px;
+}
+.digiupgradesec .MeRLIN-service{
+	height: 450px !important;
+}
+.digitalservice .MeRLIN-service{
+	height:350px !important;
+}
+.oursolutionsec .service-item-body ul li{
+	list-style-type: none;
+	padding: 8px 0px;
+	color: #000;
+}
+.oursolutionsec .service-item-body ul{
+	padding: 30px 0px;
+	margin-bottom: 0px !important;
+}
+.oursolutionsec .service-item-body{
+	padding: 24px;
+}.oursolutionsec .service-item h3{
+	padding: 0px 0px;
+}
+.oursolutionsec .service-item .ser-btn{
+	margin-bottom: 0px !important;
+}
+.oursolutionsec .service-item .ser-btn a{
+	height: auto !important;
+}
+.oursolutionsec .service-item img{
+	height: 20px;
+}
+.oursol .section-row{
+	margin-bottom: 0px;
+}
+.oursolself .challenge-point-waber img{
+	height: 60px;
+}
+.oursolutionsec .service-item h3{
+	width:80%
+}
+.ptd50{
+	padding:50px 0px !important
+}
+.bluebg1 {
+    background: #082326;
+}
+
+.webvideo .video-gallery-image img{
+	height: 100%;
+	width: 100%;
+}
+.equitywhy .matters-content-waber img{
+    height:80px !important;
+}
+
+
+@media (max-width: 768px) {
+    .digialserpage .digiexperience .firstmobile:first-child {
+        margin-bottom: 0px !important;
+    }.pdb0{
+        padding-bottom:0px !important;
+    }.advantage .service-item-body1 {
+    margin-bottom: 0px !important;
+}
 }
