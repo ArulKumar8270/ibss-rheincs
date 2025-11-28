@@ -35,7 +35,7 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/Components/Header.jsx", "app/Components/Footer.jsx", "app/pages/index.jsx"  ],
+, "app/Components/Header.jsx", "app/Components/Footer.jsx", "app/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

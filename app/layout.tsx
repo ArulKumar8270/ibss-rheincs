@@ -46,7 +46,6 @@ export default function RootLayout({
         {children}
         <SwiperInit />
       </body>
-      
       <script dangerouslySetInnerHTML={{
         __html: `
           (function() {
