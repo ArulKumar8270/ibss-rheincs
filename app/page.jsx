@@ -96,7 +96,7 @@ export default function Home() {
                               />
                             </svg>
                           </span>
-                          <img src="images/Contact us1.svg" alt="" />
+                          <img src="/images/Contact us1.svg" alt="" />
                         </a>
                       </div>
                     </div>
@@ -247,7 +247,7 @@ export default function Home() {
                   <div className="service-item ">
                     <div className="service-item-header">
                       <div className="icon-box">
-                        <img src="images/a1.svg" alt="" />
+                        <img src="/images/a1.svg" alt="" />
                       </div>
                     </div>
                     <div className="service-item-body">
@@ -374,10 +374,10 @@ export default function Home() {
                     {/* Your current service content */}
                     <div className="service-item-header">
                       <div className="icon-box">
-                        <img src="images/i1.svg" alt="" />
+                        <img src="/images/i1.svg" alt="" />
                       </div>
                       {/* <div class="service-arrow">
-                                  <a href="#!"><img src="images/arrow-accent.svg" alt=""></a>
+                                  <a href="#!"><img src="/images/arrow-accent.svg" alt=""></a>
                               </div> */}
                     </div>
                     <div className="service-item-body">
@@ -505,10 +505,10 @@ export default function Home() {
                     {/* Your current service content */}
                     <div className="service-item-header">
                       <div className="icon-box">
-                        <img src="images/t1.svg" alt="" />
+                        <img src="/images/t1.svg" alt="" />
                       </div>
                       {/* <div class="service-arrow">
-                                  <a href="#!"><img src="images/arrow-accent.svg" alt=""></a>
+                                  <a href="#!"><img src="/images/arrow-accent.svg" alt=""></a>
                               </div> */}
                     </div>
                     <div className="service-item-body">
@@ -645,7 +645,7 @@ export default function Home() {
                       <div className="service-item ">
                         <div className="service-item-header">
                           <div className="icon-box">
-                            <img src="images/a1.svg" alt="" />
+                            <img src="/images/a1.svg" alt="" />
                           </div>
                         </div>
                         <div className="service-item-body">
@@ -773,10 +773,10 @@ export default function Home() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="icon-box">
-                            <img src="images/i1.svg" alt="" />
+                            <img src="/images/i1.svg" alt="" />
                           </div>
                           {/* <div class="service-arrow">
-                                  <a href="#!"><img src="images/arrow-accent.svg" alt=""></a>
+                                  <a href="#!"><img src="/images/arrow-accent.svg" alt=""></a>
                               </div> */}
                         </div>
                         <div className="service-item-body">
@@ -904,10 +904,10 @@ export default function Home() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="icon-box">
-                            <img src="images/t1.svg" alt="" />
+                            <img src="/images/t1.svg" alt="" />
                           </div>
                           {/* <div class="service-arrow">
-                                  <a href="#!"><img src="images/arrow-accent.svg" alt=""></a>
+                                  <a href="#!"><img src="/images/arrow-accent.svg" alt=""></a>
                               </div> */}
                         </div>
                         <div className="service-item-body">
@@ -1751,7 +1751,7 @@ export default function Home() {
                     {/* Benefits Steps Item Start */}
                     <div className="benefits-steps-item wow fadeInUp">
                       <div className="icon-box">
-                        <img src="images/brr1.svg" alt="" />
+                        <img src="/images/brr1.svg" alt="" />
                       </div>
                       <div className="benefits-steps-content">
                         <h3>Digital by Design</h3>
@@ -1770,7 +1770,7 @@ export default function Home() {
                       data-wow-delay="0.2s"
                     >
                       <div className="icon-box">
-                        <img src="images/brr2.svg" alt="" />
+                        <img src="/images/brr2.svg" alt="" />
                       </div>
                       <div className="benefits-steps-content">
                         <h3>Outcomes-Driven</h3>
@@ -1789,7 +1789,7 @@ export default function Home() {
                       data-wow-delay="0.4s"
                     >
                       <div className="icon-box">
-                        <img src="images/brr3.svg" alt="" />
+                        <img src="/images/brr3.svg" alt="" />
                       </div>
                       <div className="benefits-steps-content">
                         <h3>Trusted Enterprise Platforms </h3>
@@ -1809,7 +1809,7 @@ export default function Home() {
                       data-wow-delay="0.6s"
                     >
                       <div className="icon-box">
-                        <img src="images/brr4.svg" alt="" />
+                        <img src="/images/brr4.svg" alt="" />
                       </div>
                       <div className="benefits-steps-content">
                         <h3>Deep Execution Capability</h3>
@@ -3710,7 +3710,7 @@ export default function Home() {
                     {/* Benefits Steps Item Start */}
                     <div className="benefits-steps-item wow fadeInUp">
                       <div className="icon-box">
-                        <img src="images/r1.svg" alt="" />
+                        <img src="/images/r1.svg" alt="" />
                       </div>
                       <div className="benefits-steps-content">
                         <h3>
@@ -3726,7 +3726,7 @@ export default function Home() {
                       data-wow-delay="0.4s"
                     >
                       <div className="icon-box">
-                        <img src="images/r2.svg" alt="" />
+                        <img src="/images/r2.svg" alt="" />
                       </div>
                       <div className="benefits-steps-content">
                         <h3>Industry Expertise Across Verticals </h3>
@@ -3745,7 +3745,7 @@ export default function Home() {
                       data-wow-delay="0.2s"
                     >
                       <div className="icon-box">
-                        <img src="images/r3.svg" alt="" />
+                        <img src="/images/r3.svg" alt="" />
                       </div>
                       <div className="benefits-steps-content">
                         <h3>Global Delivery. Local Execution.</h3>
@@ -3762,7 +3762,7 @@ export default function Home() {
                       data-wow-delay="0.6s"
                     >
                       <div className="icon-box">
-                        <img src="images/r4.svg" alt="" />
+                        <img src="/images/r4.svg" alt="" />
                       </div>
                       <div className="benefits-steps-content">
                         <h3>Clear ROI, Quantified Results</h3>
@@ -3792,7 +3792,7 @@ export default function Home() {
                     {/* Benefits Steps Item Start */}
                     <div className="benefits-steps-item wow fadeInUp">
                       <div className="icon-box">
-                        <img src="images/r1.svg" alt="" />
+                        <img src="/images/r1.svg" alt="" />
                       </div>
                       <div className="benefits-steps-content">
                         <h3>Proven Methodology (AIT)</h3>
@@ -3806,7 +3806,7 @@ export default function Home() {
                       data-wow-delay="0.4s"
                     >
                       <div className="icon-box">
-                        <img src="images/r2.svg" alt="" />
+                        <img src="/images/r2.svg" alt="" />
                       </div>
                       <div className="benefits-steps-content">
                         <h3>Industry Expertise Across Verticals </h3>
@@ -3825,7 +3825,7 @@ export default function Home() {
                       data-wow-delay="0.2s"
                     >
                       <div className="icon-box">
-                        <img src="images/r3.svg" alt="" />
+                        <img src="/images/r3.svg" alt="" />
                       </div>
                       <div className="benefits-steps-content">
                         <h3>Global Delivery. Local Execution.</h3>
@@ -3842,7 +3842,7 @@ export default function Home() {
                       data-wow-delay="0.6s"
                     >
                       <div className="icon-box">
-                        <img src="images/r4.svg" alt="" />
+                        <img src="/images/r4.svg" alt="" />
                       </div>
                       <div className="benefits-steps-content">
                         <h3>Clear ROI, Quantified Results</h3>
@@ -4003,42 +4003,42 @@ export default function Home() {
                 {/* Row 1 */}
                 <div className="logo-slider ltr">
                   <div className="logos">
-                    <img src="images/clients1/1-American-golf.png" alt="logo" />
-                    <img src="images/clients1/2-cold-chain-tech.png" alt="logo" />
-                    <img src="images/clients1/10-bond.png" alt="logo" />
-                    <img src="images/clients1/11-sembcorp.png" alt="logo" />
-                    <img src="images/clients1/12-cellcentric.png" alt="logo" />
+                    <img src="/images/clients1/1-American-golf.png" alt="logo" />
+                    <img src="/images/clients1/2-cold-chain-tech.png" alt="logo" />
+                    <img src="/images/clients1/10-bond.png" alt="logo" />
+                    <img src="/images/clients1/11-sembcorp.png" alt="logo" />
+                    <img src="/images/clients1/12-cellcentric.png" alt="logo" />
                     {/* repeat for smooth scrolling */}
-                    <img src="images/clients1/13-ecolean.png" alt="logo" />
-                    <img src="images/clients1/14-ceco.png" alt="logo" />
-                    <img src="images/clients1/15-TRW.png" alt="logo" />
-                    <img src="images/clients1/16-kraft.png" alt="logo" />
-                    <img src="images/clients1/17-eccbc.png" alt="logo" />
-                    <img src="images/clients1/18-oman-fiber.png" alt="logo" />
-                    <img src="images/clients1/19-kern.png" alt="logo" />
-                    <img src="images/clients1/20-flsmidth.png" alt="logo" />
-                    <img src="images/clients1/21-kone.png" alt="logo" />
-                    <img src="images/clients1/22-tadco.png" alt="logo" />
+                    <img src="/images/clients1/13-ecolean.png" alt="logo" />
+                    <img src="/images/clients1/14-ceco.png" alt="logo" />
+                    <img src="/images/clients1/15-TRW.png" alt="logo" />
+                    <img src="/images/clients1/16-kraft.png" alt="logo" />
+                    <img src="/images/clients1/17-eccbc.png" alt="logo" />
+                    <img src="/images/clients1/18-oman-fiber.png" alt="logo" />
+                    <img src="/images/clients1/19-kern.png" alt="logo" />
+                    <img src="/images/clients1/20-flsmidth.png" alt="logo" />
+                    <img src="/images/clients1/21-kone.png" alt="logo" />
+                    <img src="/images/clients1/22-tadco.png" alt="logo" />
                   </div>
                 </div>
                 {/* Row 2 */}
                 <div className="logo-slider rtl">
                   <div className="logos">
-                    <img src="images/clients1/23-rsp.png" alt="logo" />
-                    <img src="images/clients1/24-kempi.png" alt="logo" />
-                    <img src="images/clients1/25-nucor.png" alt="logo" />
-                    <img src="images/clients1/26-rfa.png" alt="logo" />
-                    <img src="images/clients1/27-schalke.png" alt="logo" />
-                    <img src="images/clients1/28-gemaco.png" alt="logo" />
-                    <img src="images/clients1/29-talents.png" alt="logo" />
-                    <img src="images/clients1/30-tialoc.png" alt="logo" />
-                    <img src="images/clients1/31-zamil.png" alt="logo" />
-                    <img src="images/clients1/32-eva.png" alt="logo" />
-                    <img src="images/clients1/33-nasco.png" alt="logo" />
-                    <img src="images/clients1/34-global-industries.png" alt="logo" />
-                    <img src="images/clients1/35-ghassan.png" alt="logo" />
-                    <img src="images/clients1/36-glaze.png" alt="logo" />
-                    <img src="images/clients1/37-greentech.png" alt="logo" />
+                    <img src="/images/clients1/23-rsp.png" alt="logo" />
+                    <img src="/images/clients1/24-kempi.png" alt="logo" />
+                    <img src="/images/clients1/25-nucor.png" alt="logo" />
+                    <img src="/images/clients1/26-rfa.png" alt="logo" />
+                    <img src="/images/clients1/27-schalke.png" alt="logo" />
+                    <img src="/images/clients1/28-gemaco.png" alt="logo" />
+                    <img src="/images/clients1/29-talents.png" alt="logo" />
+                    <img src="/images/clients1/30-tialoc.png" alt="logo" />
+                    <img src="/images/clients1/31-zamil.png" alt="logo" />
+                    <img src="/images/clients1/32-eva.png" alt="logo" />
+                    <img src="/images/clients1/33-nasco.png" alt="logo" />
+                    <img src="/images/clients1/34-global-industries.png" alt="logo" />
+                    <img src="/images/clients1/35-ghassan.png" alt="logo" />
+                    <img src="/images/clients1/36-glaze.png" alt="logo" />
+                    <img src="/images/clients1/37-greentech.png" alt="logo" />
                   </div>
                 </div>
               </div>
@@ -5572,11 +5572,11 @@ export default function Home() {
                               {/* Your current service content */}
                               <div className="service-item-header ">
                                 <div className="icon-box">
-                                  <img src="images/doublequote.svg" alt="" />
+                                  <img src="/images/doublequote.svg" alt="" />
                                 </div>
                                 <div className="icon-box1">
                                   <img
-                                    src="images/testimonials/Cold-Chain-Logo-full.png"
+                                    src="/images/testimonials/Cold-Chain-Logo-full.png"
                                     alt=""
                                   />
                                 </div>
@@ -5602,7 +5602,7 @@ export default function Home() {
                                   <div className="author-image">
                                     <figure className="image-anime">
                                       <img
-                                        src="images/testimonials/Cold-Chain-Logo.png"
+                                        src="/images/testimonials/Cold-Chain-Logo.png"
                                         alt=""
                                       />
                                     </figure>
@@ -5630,10 +5630,10 @@ export default function Home() {
                               {/* Your current service content */}
                               <div className="service-item-header">
                                 <div className="icon-box">
-                                  <img src="images/doublequote.svg" alt="" />
+                                  <img src="/images/doublequote.svg" alt="" />
                                 </div>
                                 <div className="icon-box1">
-                                  <img src="images/testimonials/a-map.png" alt="" />
+                                  <img src="/images/testimonials/a-map.png" alt="" />
                                 </div>
                               </div>
                               <div className="service-item-body">
@@ -5658,7 +5658,7 @@ export default function Home() {
                                   <div className="author-image">
                                     <figure className="image-anime">
                                       <img
-                                        src="images/testimonials/Ramamurthy Rao.png"
+                                        src="/images/testimonials/Ramamurthy Rao.png"
                                         alt=""
                                       />
                                     </figure>
@@ -5685,11 +5685,11 @@ export default function Home() {
                               {/* Your current service content */}
                               <div className="service-item-header  ">
                                 <div className="icon-box">
-                                  <img src="images/doublequote.svg" alt="" />
+                                  <img src="/images/doublequote.svg" alt="" />
                                 </div>
                                 <div className="icon-box1">
                                   <img
-                                    src="images/testimonials/Federal-Mogul.png"
+                                    src="/images/testimonials/Federal-Mogul.png"
                                     alt=""
                                   />
                                 </div>
@@ -5714,7 +5714,7 @@ export default function Home() {
                                   <div className="author-image">
                                     <figure className="image-anime">
                                       <img
-                                        src="images/testimonials/Massimiliano A. Milani.png"
+                                        src="/images/testimonials/Massimiliano A. Milani.png"
                                         alt=""
                                       />
                                     </figure>
@@ -5742,10 +5742,10 @@ export default function Home() {
                               {/* Your current service content */}
                               <div className="service-item-header ">
                                 <div className="icon-box">
-                                  <img src="images/doublequote.svg" alt="" />
+                                  <img src="/images/doublequote.svg" alt="" />
                                 </div>
                                 <div className="icon-box1">
-                                  <img src="images/testimonials/Epicor.png" alt="" />
+                                  <img src="/images/testimonials/Epicor.png" alt="" />
                                 </div>
                               </div>
                               <div className="service-item-body">
@@ -5762,7 +5762,7 @@ export default function Home() {
                                   <div className="author-image">
                                     <figure className="image-anime">
                                       <img
-                                        src="images/testimonials/Craig Stephens.png"
+                                        src="/images/testimonials/Craig Stephens.png"
                                         alt=""
                                       />
                                     </figure>
@@ -5790,11 +5790,11 @@ export default function Home() {
                               {/* Your current service content */}
                               <div className="service-item-header  ">
                                 <div className="icon-box">
-                                  <img src="images/doublequote.svg" alt="" />
+                                  <img src="/images/doublequote.svg" alt="" />
                                 </div>
                                 <div className="icon-box1">
                                   <img
-                                    src="images/testimonials/SAUDI AMERICAN GLASS.png"
+                                    src="/images/testimonials/SAUDI AMERICAN GLASS.png"
                                     alt=""
                                   />
                                 </div>
@@ -5819,7 +5819,7 @@ export default function Home() {
                                   <div className="author-image">
                                     <figure className="image-anime">
                                       <img
-                                        src="images/testimonials/Rizwanulla Khan.png"
+                                        src="/images/testimonials/Rizwanulla Khan.png"
                                         alt=""
                                       />
                                     </figure>
@@ -5847,10 +5847,10 @@ export default function Home() {
                               {/* Your current service content */}
                               <div className="service-item-header  ">
                                 <div className="icon-box">
-                                  <img src="images/doublequote.svg" alt="" />
+                                  <img src="/images/doublequote.svg" alt="" />
                                 </div>
                                 <div className="icon-box1">
-                                  <img src="images/testimonials/SAG.png" alt="" />
+                                  <img src="/images/testimonials/SAG.png" alt="" />
                                 </div>
                               </div>
                               <div className="service-item-body">
@@ -5868,7 +5868,7 @@ export default function Home() {
                                   <div className="author-image">
                                     <figure className="image-anime">
                                       <img
-                                        src="images/testimonials/Syed Waseem Wajid.png"
+                                        src="/images/testimonials/Syed Waseem Wajid.png"
                                         alt=""
                                       />
                                     </figure>
@@ -5896,10 +5896,10 @@ export default function Home() {
                               {/* Your current service content */}
                               <div className="service-item-header  ">
                                 <div className="icon-box">
-                                  <img src="images/doublequote.svg" alt="" />
+                                  <img src="/images/doublequote.svg" alt="" />
                                 </div>
                                 <div className="icon-box1">
-                                  <img src="images/testimonials/RAY.png" alt="" />
+                                  <img src="/images/testimonials/RAY.png" alt="" />
                                 </div>
                               </div>
                               <div className="service-item-body">
@@ -5924,7 +5924,7 @@ export default function Home() {
                                   <div className="author-image">
                                     <figure className="image-anime">
                                       <img
-                                        src="images/testimonials/Vinit Agarwal.png"
+                                        src="/images/testimonials/Vinit Agarwal.png"
                                         alt=""
                                       />
                                     </figure>
@@ -5949,10 +5949,10 @@ export default function Home() {
                               {/* Your current service content */}
                               <div className="service-item-header  ">
                                 <div className="icon-box">
-                                  <img src="images/doublequote.svg" alt="" />
+                                  <img src="/images/doublequote.svg" alt="" />
                                 </div>
                                 <div className="icon-box1">
-                                  <img src="images/testimonials/NGC.png" alt="" />
+                                  <img src="/images/testimonials/NGC.png" alt="" />
                                 </div>
                               </div>
                               <div className="service-item-body">
@@ -5975,7 +5975,7 @@ export default function Home() {
                                   <div className="author-image">
                                     <figure className="image-anime">
                                       <img
-                                        src="images/testimonials/Kiranjit Kaur.png"
+                                        src="/images/testimonials/Kiranjit Kaur.png"
                                         alt=""
                                       />
                                     </figure>
@@ -6235,7 +6235,7 @@ export default function Home() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="awards-waber">
-                      <img src="new/aw-1.svg" alt="" />
+                      <img src="/new/aw-1.svg" alt="" />
                       <div className="aw-text-waber">
                         <p>
                           Bestes Neues Produkt Oder Dienstleistung- Software - Alle
@@ -6248,7 +6248,7 @@ export default function Home() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="awards-waber">
-                      <img src="new/aw-2.jpg" alt="" />
+                      <img src="/new/aw-2.jpg" alt="" />
                       <div className="aw-text-waber">
                         <p>Stevie - Epicor EpicPay for the EMEA Market 2017</p>
                       </div>
@@ -6258,7 +6258,7 @@ export default function Home() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="awards-waber">
-                      <img src="new/aw-3.png" alt="" />
+                      <img src="/new/aw-3.png" alt="" />
                       <div className="aw-text-waber">
                         <p>Epicor Partner of the Year 2016 &amp; 2018</p>
                       </div>
@@ -6268,7 +6268,7 @@ export default function Home() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="awards-waber">
-                      <img src="new/aw-4.png" alt="" />
+                      <img src="/new/aw-4.png" alt="" />
                       <div className="aw-text-waber">
                         <p>Stevie - L1 Epicor Support Team of the Year 2016</p>
                       </div>
@@ -6278,7 +6278,7 @@ export default function Home() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="awards-waber">
-                      <img src="new/aw-5.png" alt="" />
+                      <img src="/new/aw-5.png" alt="" />
                       <div className="aw-text-waber">
                         <p>Stevie Company of the Year 2015 &amp; 2017</p>
                       </div>
@@ -6288,7 +6288,7 @@ export default function Home() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="awards-waber">
-                      <img src="new/aw-6.png" alt="" />
+                      <img src="/new/aw-6.png" alt="" />
                       <div className="aw-text-waber">
                         <p>Stevie People Choice Of the Year 2015 &amp; 2016</p>
                       </div>
@@ -6298,7 +6298,7 @@ export default function Home() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="awards-waber">
-                      <img src="new/aw-7.png" alt="" />
+                      <img src="/new/aw-7.png" alt="" />
                       <div className="aw-text-waber">
                         <p>Top IT Berater 2014-2015</p>
                       </div>
@@ -6308,7 +6308,7 @@ export default function Home() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="awards-waber">
-                      <img src="new/aw-8.png" alt="" />
+                      <img src="/new/aw-8.png" alt="" />
                       <div className="aw-text-waber">
                         <p>Beste Berater Brand enis 2018</p>
                       </div>
@@ -6318,7 +6318,7 @@ export default function Home() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="awards-waber">
-                      <img src="new/aw-9.png" alt="" />
+                      <img src="/new/aw-9.png" alt="" />
                       <div className="aw-text-waber">
                         <p>
                           Stevie - Fastest Growing Company in Europe 2015 &amp; 2016
@@ -6329,7 +6329,7 @@ export default function Home() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="awards-waber">
-                      <img src="new/aw-5.png" alt="" />
+                      <img src="/new/aw-5.png" alt="" />
                       <div className="aw-text-waber">
                         <p>Stevie Company of the Year 2015 &amp; 2017</p>
                       </div>
