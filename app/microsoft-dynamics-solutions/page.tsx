@@ -3319,7 +3319,7 @@ export default function EnterpriseSolutions() {
                                         </p>
                                         <div className="ser-btn">
                                             <a
-                                                href="digital-solutions-services.php"
+                                                href="/digital-solutions"
                                                 className="animated-svg-link"
                                             >
                                                 Know More

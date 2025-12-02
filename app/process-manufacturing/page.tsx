@@ -24,7 +24,7 @@ export default function EnterpriseSolutions() {
                                         market, regulatory, and sustainability pressures.
                                     </p>
                                     <div className="ser-btn m-0">
-                                        <a href="contact.php" className="animated-svg-link">
+                                        <a href="/contact" className="animated-svg-link">
                                             Contact Us
                                             <span className="svg-container ">
                                                 <span className=" right">
@@ -133,7 +133,7 @@ export default function EnterpriseSolutions() {
                         </div>
                     </div>
                     <div className="">
-                        <video src="/new/pm.mp4" autoPlay="" muted="" loop="" playsInline="" />
+                        <video src="/new/pm.mp4" autoPlay={true} muted={true} loop={true} playsInline={true} />
                     </div>
                 </div>
                 <div className="py-100 pe-chellange-waber ">
@@ -271,7 +271,7 @@ export default function EnterpriseSolutions() {
                         </div>
                     </div>
                     <div className="commen-help-bg-img">
-                        <video src="/new/pm-02.mp4" autoPlay="" loop="" muted="" playsInline="" />
+                        <video src="/new/pm-02.mp4" autoPlay={true} loop={true} muted={true} playsInline={true} />
                     </div>
                 </section>
                 <div className="benifites-waber">
@@ -414,7 +414,7 @@ export default function EnterpriseSolutions() {
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
-                                            <a href="#" className="animated-svg-link">
+                                            <a href="/contact" className="animated-svg-link">
                                                 Contact Us
                                                 <span className="svg-container ">
                                                     <span className=" right">

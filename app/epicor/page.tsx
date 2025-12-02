@@ -28,10 +28,10 @@ export default function EnterpriseSolutions() {
                                         and measurable impact across your enterprise.
                                     </p>
                                     <div className="ser-btn mt-5">
-                                        <a href="contact.php" className="animated-svg-link">
+                                        <a href="/contact" className="animated-svg-link">
                                             Contact Us
                                             <span className="svg-container ">
-                                                <span className=" right">
+                                                <span className=" right">       
                                                     <svg
                                                         width={24}
                                                         height={23}
@@ -5707,7 +5707,7 @@ export default function EnterpriseSolutions() {
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
-                                            <a href="contact.php" className="animated-svg-link">
+                                            <a href="/contact" className="animated-svg-link">
                                                 Contact Us
                                                 <span className="svg-container ">
                                                     <span className=" right">

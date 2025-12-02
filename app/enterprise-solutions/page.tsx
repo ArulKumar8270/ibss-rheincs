@@ -6686,7 +6686,7 @@ export default function EnterpriseSolutions() {
                       </p>
                       <div className="ser-btn1">
                         <a
-                          href="epicor.php"
+                          href="/epicor"
                           className="animated-svg-link1 btn-style-3"
                         >
                           Know More
@@ -6804,7 +6804,7 @@ export default function EnterpriseSolutions() {
                       </p>
                       <div className="ser-btn1">
                         <a
-                          href="microsoft-dynamics-solutions.php"
+                          href="/microsoft-dynamics-solutions"
                           className="animated-svg-link1 btn-style-3"
                         >
                           Know More
@@ -6922,7 +6922,7 @@ export default function EnterpriseSolutions() {
                       </p>
                       <div className="ser-btn1">
                         <a
-                          href="SAP.php"
+                          href="/SAP"
                           className="animated-svg-link1 btn-style-3"
                         >
                           Know More
@@ -7042,7 +7042,7 @@ export default function EnterpriseSolutions() {
                   </p>
                   <div className="ser-btn">
                     <a
-                      href="digital-solutions-services.php"
+                      href="/digital-solutions"
                       className="animated-svg-link"
                     >
                       Know More
