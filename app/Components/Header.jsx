@@ -84,7 +84,7 @@ export default function Header() {
                         <nav className="navbar navbar-expand-lg">
                             <div className="container">
                                 {/* Logo Start */}
-                                <a className="navbar-brand" href="index.php">
+                                <a className="navbar-brand" href="/">
                                     <img src="/images/rlogo.png" alt="Logo" />
                                 </a>
                                 {/* Logo End */}
@@ -181,7 +181,7 @@ export default function Header() {
                                                                                 <ul>
                                                                                     <li className="ser-btn">
                                                                                         <a
-                                                                                            href="overview.php"
+                                                                                            href="/overviewe"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Overview
@@ -189,7 +189,7 @@ export default function Header() {
                                                                                     </li>
                                                                                     <li className="ser-btn">
                                                                                         <a
-                                                                                            href="leadership.php"
+                                                                                            href="/leadership"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Leadership
@@ -197,7 +197,7 @@ export default function Header() {
                                                                                     </li>
                                                                                     <li className="ser-btn">
                                                                                         <a
-                                                                                            href="customer-speak.php"
+                                                                                            href="/customer-speak"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Customers Speak
@@ -205,7 +205,7 @@ export default function Header() {
                                                                                     </li>
                                                                                     <li className="ser-btn">
                                                                                         <a
-                                                                                            href="success-stories.php"
+                                                                                            href="/success-stories"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Success Stories
@@ -213,7 +213,7 @@ export default function Header() {
                                                                                     </li>
                                                                                     <li className="ser-btn">
                                                                                         <a
-                                                                                            href="careers.php"
+                                                                                            href="/careers"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Careers
@@ -403,7 +403,7 @@ export default function Header() {
                                                                                     <ul>
                                                                                         <li className="ser-btn">
                                                                                             <a
-                                                                                                href="corushr.php"
+                                                                                                href="/corushr"
                                                                                                 className="animated-svg-link"
                                                                                             >
                                                                                                 Corus HR
@@ -411,7 +411,7 @@ export default function Header() {
                                                                                         </li>
                                                                                         <li className="ser-btn">
                                                                                             <a
-                                                                                                href="MeRLIN.php"
+                                                                                                href="/MeRLIN"
                                                                                                 className="animated-svg-link"
                                                                                             >
                                                                                                 MeRLIN Sourcing
@@ -476,7 +476,7 @@ export default function Header() {
                                                                                     <h3 className="ser-btn">
                                                                                         <a
                                                                                             className="animated-svg-link"
-                                                                                            href="enterprise-solutions.php"
+                                                                                            href="/enterprise-solutions"
                                                                                         >
                                                                                             Enterprise Solutions and Services
                                                                                             <NavArrowLeft />
@@ -486,7 +486,7 @@ export default function Header() {
                                                                                         <li className="ser-btn">
                                                                                             <div className="menu-item">
                                                                                                 <a
-                                                                                                    href="epicor.php"
+                                                                                                    href="/epicor"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Epicor
@@ -503,19 +503,19 @@ export default function Header() {
                                                                                                 id="demo"
                                                                                                 className="collapse content-box"
                                                                                             >
-                                                                                                <a href="epicor-kinetic.php">
+                                                                                                <a href="/epicor-kinetic">
                                                                                                     {" "}
                                                                                                     Epicor Kinetic
                                                                                                 </a>
-                                                                                                <a href="epicor-iscala.php">
+                                                                                                <a href="/epicor-iscala">
                                                                                                     {" "}
                                                                                                     Epicor iScala
                                                                                                 </a>
-                                                                                                <a href="epicor-companion.php">
+                                                                                                <a href="/epicor-companion">
                                                                                                     {" "}
                                                                                                     Epicor Companion Products
                                                                                                 </a>
-                                                                                                <a href="epicor-epicpay.php">
+                                                                                                <a href="/epicor-epicpay">
                                                                                                     {" "}
                                                                                                     EpicPay
                                                                                                 </a>
@@ -523,25 +523,25 @@ export default function Header() {
                                                                                         </li>
                                                                                         <li className="ser-btn">
                                                                                             <a
-                                                                                                href="microsoft-dynamics-solutions.php"
+                                                                                                href="/microsoft-dynamics-solutions"
                                                                                                 className=""
                                                                                             >
                                                                                                 MS Dynamics
                                                                                             </a>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <a href="SAP.php" className="">
+                                                                                            <a href="/SAP" className="">
                                                                                                 SAP
                                                                                             </a>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <a href="sugar-CRM.php" className="">
+                                                                                            <a href="/sugar-CRM" className="">
                                                                                                 Sugar CRM
                                                                                             </a>
                                                                                         </li>
                                                                                         <li className="ser-btn">
                                                                                             <a
-                                                                                                href="ERP-customer-excellence.php"
+                                                                                                href="/ERP-customer-excellence"
                                                                                                 className=""
                                                                                             >
                                                                                                 ERP Customer Excellence
@@ -608,7 +608,7 @@ export default function Header() {
                                                                                     <h3 className="ser-btn">
                                                                                         <a
                                                                                             className="animated-svg-link"
-                                                                                            href="digital-solutions.php"
+                                                                                            href="/digital-solutions"
                                                                                         >
                                                                                             Solutions
                                                                                             <NavArrowRight />
@@ -616,15 +616,15 @@ export default function Header() {
                                                                                     </h3>
                                                                                     <ul>
                                                                                         <li className="ser-btn">
-                                                                                            <a href="business-intelligence.php">
+                                                                                            <a href="/business-intelligence">
                                                                                                 BI &amp; Analytics
                                                                                             </a>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <a href="AI-ML.php">AI/ML</a>
+                                                                                            <a href="/AI-ML">AI/ML</a>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <a href="ecommerce.php">eCommerce</a>
+                                                                                            <a href="/ecommerce">eCommerce</a>
                                                                                         </li>
                                                                                     </ul>
                                                                                 </div>
@@ -632,7 +632,7 @@ export default function Header() {
                                                                                     <h3 className="ser-btn">
                                                                                         <a
                                                                                             className="animated-svg-link"
-                                                                                            href="digital-solutions.php"
+                                                                                            href="/digital-solutions"
                                                                                         >
                                                                                             Services
                                                                                             <NavArrowRight />
@@ -640,40 +640,40 @@ export default function Header() {
                                                                                     </h3>
                                                                                     <ul>
                                                                                         <li className="ser-btn">
-                                                                                            <a href="Architecture.php">
+                                                                                            <a href="/Architecture">
                                                                                                 Architecture &amp; App Modernisation
                                                                                             </a>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <a href="data-engineering-warehousing.php">
+                                                                                            <a href="/data-engineering-warehousing">
                                                                                                 Data Engineering and Warehousing
                                                                                             </a>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <a href="enterprise-solutions.php">
+                                                                                            <a href="/enterprise-solutions">
                                                                                                 Enterprise Software
                                                                                             </a>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <a href="AM-S.php">A M &amp; S</a>
+                                                                                            <a href="/AM-S">A M &amp; S</a>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <a href="user-exprience.php">
+                                                                                            <a href="/user-exprience">
                                                                                                 User Experience
                                                                                             </a>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <a href="commercetools.php">
+                                                                                            <a href="/commercetools">
                                                                                                 Commercetools
                                                                                             </a>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <a href="fluent-commerce.php">
+                                                                                            <a href="/fluent-commerce">
                                                                                                 Fluent Commerce
                                                                                             </a>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <a href="ms-technology.php">
+                                                                                            <a href="/ms-technology">
                                                                                                 MS Technologies
                                                                                             </a>
                                                                                         </li>
@@ -828,7 +828,7 @@ export default function Header() {
                                                                                         <ul className="verline">
                                                                                             <li className="ser-btn">
                                                                                                 <a
-                                                                                                    href="vertical-retail.php"
+                                                                                                    href="/vertical-retail"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Brand Owners and Vertical Retailers
@@ -836,7 +836,7 @@ export default function Header() {
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <a
-                                                                                                    href="industries-retail.php"
+                                                                                                    href="/industries-retail"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Retail Industry
@@ -844,7 +844,7 @@ export default function Header() {
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <a
-                                                                                                    href="supply-chain.php"
+                                                                                                    href="/supply-chain"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Distribution and Supply Chain
@@ -852,7 +852,7 @@ export default function Header() {
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <a
-                                                                                                    href="discrete-manufacturing.php"
+                                                                                                    href="/discrete-manufacturing"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Discrete Manufacturing
@@ -860,7 +860,7 @@ export default function Header() {
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <a
-                                                                                                    href="automotive.php"
+                                                                                                    href="/automotive"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Automotive Industry
@@ -872,7 +872,7 @@ export default function Header() {
                                                                                         <ul>
                                                                                             <li className="ser-btn">
                                                                                                 <a
-                                                                                                    href="epc.php"
+                                                                                                    href="/epc"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Engineering Procurement and
@@ -881,7 +881,7 @@ export default function Header() {
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <a
-                                                                                                    href="process-manufacturing.php"
+                                                                                                    href="/process-manufacturing"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Process Manufacturing
@@ -889,7 +889,7 @@ export default function Header() {
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <a
-                                                                                                    href="private-quity.php"
+                                                                                                    href="/private-quity"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Private Equity &amp; Funding Backed
@@ -898,7 +898,7 @@ export default function Header() {
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <a
-                                                                                                    href="cable-manufacturing.php"
+                                                                                                    href="/cable-manufacturing"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Cable Manufacturing
@@ -906,7 +906,7 @@ export default function Header() {
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <a
-                                                                                                    href="interior-design.php"
+                                                                                                    href="/interior-design"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Interior Design
@@ -1060,7 +1060,7 @@ export default function Header() {
                                                                                 <ul>
                                                                                     <li className="ser-btn">
                                                                                         <a
-                                                                                            href="blog.php"
+                                                                                            href="/blog"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Blog
@@ -1068,7 +1068,7 @@ export default function Header() {
                                                                                     </li>
                                                                                     <li className="ser-btn">
                                                                                         <a
-                                                                                            href="case-study-details.php"
+                                                                                            href="/case-study-details"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Case Studies
@@ -1076,7 +1076,7 @@ export default function Header() {
                                                                                     </li>
                                                                                     <li className="ser-btn">
                                                                                         <a
-                                                                                            href="webinars.php"
+                                                                                            href="/webinars"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Webinars
@@ -1084,7 +1084,7 @@ export default function Header() {
                                                                                     </li>
                                                                                     <li className="ser-btn">
                                                                                         <a
-                                                                                            href="collaterals.php"
+                                                                                            href="/collaterals"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Collaterals
@@ -1092,7 +1092,7 @@ export default function Header() {
                                                                                     </li>
                                                                                     <li className="ser-btn">
                                                                                         <a
-                                                                                            href="corporate-videos.php"
+                                                                                            href="/corporate-videos"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Videos
@@ -1100,7 +1100,7 @@ export default function Header() {
                                                                                     </li>
                                                                                     <li className="ser-btn">
                                                                                         <a
-                                                                                            href="news-events.php"
+                                                                                            href="/news-events"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             News and Events
@@ -1190,7 +1190,7 @@ export default function Header() {
                                                 </div>
                                             </li>
                                             <li className="nav-item  <?php echo ($current_page == 'contact.php') ? 'active' : ''; ?> ">
-                                                <a className="nav-link" href="contact.php">
+                                                <a className="nav-link" href="/contact">
                                                     Contact Us
                                                 </a>
                                             </li>
@@ -1388,7 +1388,7 @@ export default function Header() {
                 {/* The visible header bar on mobile */}
                 <header className="mobile-header">
                     <div className="container">
-                        <a className="mobile-logo" href="index.php">
+                        <a className="mobile-logo" href="/">
                             <img src="/images/rlogo.png" alt="Logo" />
                         </a>
                         <div>
@@ -1480,7 +1480,7 @@ export default function Header() {
                 {/* The slide-in (off-canvas) navigation panel */}
                 <nav id="mobileNavPanel" className="mobile-nav-panel">
                     <div className="tag-logo">
-                        <a className="" href="index.php">
+                        <a className="" href="/">
                             <img src="/images/rlogo.png" alt="Logo" />
                         </a>
                     </div>
@@ -1567,19 +1567,19 @@ export default function Header() {
                             </div>
                             <ul className="submenu">
                                 <li>
-                                    <a href="overview.php">Overview</a>
+                                    <a href="/overviewe">Overview</a>
                                 </li>
                                 <li>
-                                    <a href="leadership.php">Leadership</a>
+                                    <a href="/leadership">Leadership</a>
                                 </li>
                                 <li>
-                                    <a href="customer-speak.php">Customers Speak</a>
+                                    <a href="/customer-speak">Customers Speak</a>
                                 </li>
                                 <li>
-                                    <a href="success-stories.php">Success Stories</a>
+                                    <a href="/success-stories">Success Stories</a>
                                 </li>
                                 <li>
-                                    <a href="careers.php">Careers</a>
+                                    <a href="/careers">Careers</a>
                                 </li>
                                 {/* Card Slider for About Us */}
                                 {/*<li class="submenu-card-item">*/}
@@ -1790,10 +1790,10 @@ export default function Header() {
                                     </div>
                                     <ul className="submenu">
                                         <li>
-                                            <a href="corushr.php">Corus HR</a>
+                                            <a href="/corushr">Corus HR</a>
                                         </li>
                                         <li>
-                                            <a href="MeRLIN.php">MeRLIN Sourcing</a>
+                                            <a href="/MeRLIN">MeRLIN Sourcing</a>
                                         </li>
                                         {/*<li class="submenu-card-item">*/}
                                         {/*    <div class="swiper submenu-swiper">*/}
@@ -1849,7 +1849,7 @@ export default function Header() {
                                 {/* Enterprise Solutions & Services (Tab 2) */}
                                 <li>
                                     <div className="menu-item">
-                                        <a href="enterprise-solutions.php">Enterprise Solutions</a>
+                                        <a href="/enterprise-solutions">Enterprise Solutions</a>
                                         <span className="submenu-toggle">
                                             <svg
                                                 className="submenu-arrow"
@@ -1926,7 +1926,7 @@ export default function Header() {
                                     <ul className="submenu">
                                         <li>
                                             <div className="menu-item">
-                                                <a href="epicor.php"> Epicor</a>
+                                                <a href="/epicor"> Epicor</a>
                                                 <span className="submenu-toggle">
                                                     <svg
                                                         className="submenu-arrow"
@@ -2002,30 +2002,30 @@ export default function Header() {
                                             </div>
                                             <ul className="submenu sup-li-pading">
                                                 <li>
-                                                    <a href="epicor-kinetic.php">Epicor Kinetic</a>
+                                                    <a href="/epicor-kinetic">Epicor Kinetic</a>
                                                 </li>
                                                 <li>
-                                                    <a href="epicor-iscala.php">Epicor iScala</a>
+                                                    <a href="/epicor-iscala">Epicor iScala</a>
                                                 </li>
                                                 <li>
-                                                    <a href="epicor-companion.php">Epicor Companion Products</a>
+                                                    <a href="/epicor-companion">Epicor Companion Products</a>
                                                 </li>
                                                 <li>
-                                                    <a href="epicor-epicpay.php">EpicPay</a>
+                                                    <a href="/epicor-epicpay">EpicPay</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="microsoft-dynamics-solutions.php">MS Dynamics</a>
+                                            <a href="/microsoft-dynamics-solutions">MS Dynamics</a>
                                         </li>
                                         <li>
-                                            <a href="SAP.php">SAP</a>
+                                            <a href="/SAP">SAP</a>
                                         </li>
                                         <li>
-                                            <a href="sugar-CRM.php">Sugar CRM</a>
+                                            <a href="/sugar-CRM">Sugar CRM</a>
                                         </li>
                                         <li>
-                                            <a href="ERP-customer-excellence.php">
+                                            <a href="/ERP-customer-excellence">
                                                 ERP Customer Excellence
                                             </a>
                                         </li>
@@ -2084,7 +2084,7 @@ export default function Header() {
                                 {/* Tab 3: Digital Solutions & Services */}
                                 <li>
                                     <div className="menu-item">
-                                        <a href="digital-solutions.php">
+                                        <a href="/digital-solutions">
                                             Digital Solutions &amp; Services
                                         </a>
                                         <span className="submenu-toggle">
@@ -2163,7 +2163,7 @@ export default function Header() {
                                     <ul className="submenu">
                                         <li>
                                             <div className="menu-item">
-                                                <a href="epicor.php"> Solutions</a>
+                                                <a href="/epicor"> Solutions</a>
                                                 <span className="submenu-toggle">
                                                     <svg
                                                         className="submenu-arrow"
@@ -2239,19 +2239,19 @@ export default function Header() {
                                             </div>
                                             <ul className="submenu sup-li-pading">
                                                 <li>
-                                                    <a href="business-intelligence.php">BI &amp; Analytics</a>
+                                                    <a href="/business-intelligence">BI &amp; Analytics</a>
                                                 </li>
                                                 <li>
-                                                    <a href="AI-ML.php">AI/ML</a>
+                                                    <a href="/AI-ML">AI/ML</a>
                                                 </li>
                                                 <li>
-                                                    <a href="ecommerce.php">eCommerce</a>
+                                                    <a href="/ecommerce">eCommerce</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li>
                                             <div className="menu-item">
-                                                <a href="epicor.php"> Services</a>
+                                                <a href="/epicor"> Services</a>
                                                 <span className="submenu-toggle">
                                                     <svg
                                                         className="submenu-arrow"
@@ -2327,32 +2327,32 @@ export default function Header() {
                                             </div>
                                             <ul className="submenu sup-li-pading">
                                                 <li>
-                                                    <a href="Architecture.php">
+                                                    <a href="/Architecture">
                                                         Architecture &amp; App Modernisation
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="data-engineering-warehousing.php">
+                                                    <a href="/data-engineering-warehousing">
                                                         Data Engineering and Warehousing
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="enterprise-solutions.php">Enterprise Software</a>
+                                                    <a href="/enterprise-solutions">Enterprise Software</a>
                                                 </li>
                                                 <li>
-                                                    <a href="AM-S.php">A M &amp; S</a>
+                                                    <a href="/AM-S">A M &amp; S</a>
                                                 </li>
                                                 <li>
-                                                    <a href="user-exprience.php">User Experience</a>
+                                                    <a href="/user-exprience">User Experience</a>
                                                 </li>
                                                 <li>
-                                                    <a href="commercetools.php">Commercetools</a>
+                                                    <a href="/commercetools">Commercetools</a>
                                                 </li>
                                                 <li>
-                                                    <a href="fluent-commerce.php">Fluent Commerce</a>
+                                                    <a href="/fluent-commerce">Fluent Commerce</a>
                                                 </li>
                                                 <li>
-                                                    <a href="ms-technology.php">MS Technologies</a>
+                                                    <a href="/ms-technology">MS Technologies</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -2488,38 +2488,38 @@ export default function Header() {
                             </div>
                             <ul className="submenu">
                                 <li>
-                                    <a href="vertical-retail.php">
+                                    <a href="/vertical-retail">
                                         Brand Owners and Vertical Retailers
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="industries-retail.php">Retail Industry</a>
+                                    <a href="/industries-retail">Retail Industry</a>
                                 </li>
                                 <li>
-                                    <a href="supply-chain.php">Distribution and Supply Chain</a>
+                                    <a href="/supply-chain">Distribution and Supply Chain</a>
                                 </li>
                                 <li>
-                                    <a href="discrete-manufacturing.php">Discrete Manufacturing</a>
+                                    <a href="/discrete-manufacturing">Discrete Manufacturing</a>
                                 </li>
                                 <li>
-                                    <a href="automotive.php">Automotive Industry</a>
+                                    <a href="/automotive">Automotive Industry</a>
                                 </li>
                                 <li>
-                                    <a href="epc.php">Engineering Procurement and Construction</a>
+                                    <a href="/epc">Engineering Procurement and Construction</a>
                                 </li>
                                 <li>
-                                    <a href="process-manufacturing.php">Process Manufacturing</a>
+                                    <a href="/process-manufacturing">Process Manufacturing</a>
                                 </li>
                                 <li>
-                                    <a href="private-quity.php">
+                                    <a href="/private-quity">
                                         Private Equity &amp; Funding Backed Ventures
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="cable-manufacturing.php">Cable Manufacturing</a>
+                                    <a href="/cable-manufacturing">Cable Manufacturing</a>
                                 </li>
                                 <li>
-                                    <a href="interior-design.php">Interior Design</a>
+                                    <a href="/interior-design">Interior Design</a>
                                 </li>
                                 {/* Card Slider for Industries */}
                                 {/*<li class="submenu-card-item">*/}
@@ -2652,22 +2652,22 @@ export default function Header() {
                             </div>
                             <ul className="submenu">
                                 <li>
-                                    <a href="blog.php">Blog</a>
+                                    <a href="/blog">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="case-study-details.php">Case Studies</a>
+                                    <a href="/case-study-details">Case Studies</a>
                                 </li>
                                 <li>
-                                    <a href="webinars.php">Webinars</a>
+                                    <a href="/webinars">Webinars</a>
                                 </li>
                                 <li>
-                                    <a href="collaterals.php">Collaterals</a>
+                                    <a href="/collaterals">Collaterals</a>
                                 </li>
                                 <li>
-                                    <a href="corporate-videos.php">Videos</a>
+                                    <a href="/corporate-videos">Videos</a>
                                 </li>
                                 <li>
-                                    <a href="news-events.php">News and Events</a>
+                                    <a href="/news-events">News and Events</a>
                                 </li>
                                 {/* Card Slider for Resources */}
                                 {/*<li class="submenu-card-item">*/}
@@ -2724,7 +2724,7 @@ export default function Header() {
                         {/* Contact Us */}
                         <li>
                             <div className="menu-item">
-                                <a href="contact.php">Contact Us</a>
+                                <a href="/contact">Contact Us</a>
                             </div>
                         </li>
                     </ul>

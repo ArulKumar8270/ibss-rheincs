@@ -30,6 +30,9 @@
         if (dep === 'owlCarousel' && (typeof window === 'undefined' || typeof window.$ === 'undefined' || typeof window.$.fn === 'undefined' || typeof window.$.fn.owlCarousel === 'undefined')) {
           return false;
         }
+        if (dep === 'bootstrap' && (typeof window === 'undefined' || typeof window.bootstrap === 'undefined')) {
+          return false;
+        }
       }
       return true;
     }
@@ -162,6 +165,50 @@
     setupSearch('mobileSearchBox', 'mobileSearchBtn', 'mobileSearchClose');
   });
 
+  // --- Bootstrap Popover Initialization ---
+  whenReady(function() {
+    function initPopover(popoverId) {
+      const popoverTriggerEl = document.getElementById(popoverId);
+      if (!popoverTriggerEl) return;
+
+      let hideTimeout;
+      const popover = new bootstrap.Popover(popoverTriggerEl, {
+        customClass: 'custom-popover-style',
+        html: true,
+        trigger: 'manual'
+      });
+
+      popoverTriggerEl.addEventListener('mouseenter', function () {
+        clearTimeout(hideTimeout);
+        popover.show();
+      });
+
+      popoverTriggerEl.addEventListener('mouseleave', function () {
+        hideTimeout = setTimeout(() => {
+          popover.hide();
+        }, 200);
+      });
+
+      popoverTriggerEl.addEventListener('shown.bs.popover', () => {
+        const popoverBody = document.querySelector('.popover');
+        if (popoverBody) {
+          popoverBody.addEventListener('mouseenter', function () {
+            clearTimeout(hideTimeout);
+          });
+          popoverBody.addEventListener('mouseleave', function () {
+            popover.hide();
+          });
+        }
+      });
+    }
+
+    initPopover('myPopover');
+    initPopover('myPopover2');
+    initPopover('myPopover3');
+    initPopover('myPopover4');
+    initPopover('myPopover5');
+  }, ['bootstrap']);
+
   // --- Swiper Initialization for Submenus ---
   whenReady(function() {
     const submenuSwiperEl = document.querySelector('.submenu-swiper');
@@ -271,8 +318,11 @@
         freeModeMomentum: false,
         allowTouchMove: false,
         breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
           768: {
-            slidesPerView: 5,
+            slidesPerView: 2,
           },
           991: {
             slidesPerView: 5,
@@ -306,8 +356,11 @@
         freeModeMomentum: false,
         allowTouchMove: false,
         breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
           768: {
-            slidesPerView: 5,
+            slidesPerView: 2,
           },
           991: {
             slidesPerView: 5,
@@ -355,47 +408,76 @@
   whenReady(function() {
     const swiperEl = document.querySelector('.testimonial-slider .swiper');
     const counterEl = document.querySelector('.testimonial-slider .testspace');
+    const rtyElement = document.querySelector('.testimonial-slider .rtyElement');
 
     if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const fluidWidth = fluid ? fluid.clientWidth : window.innerWidth;
+      const container = document.querySelector('.container');
+
+      if (!container) return 0;
+
+      const totalGap = fluidWidth - container.clientWidth;
+      const offset = totalGap / 2;
+
+      return offset > 0 ? offset : 0;
+    }
 
     const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
 
     const testimonial_slider = new Swiper(swiperEl, {
-      slidesPerView: 1,
       spaceBetween: 15,
-      loop: false,
+      loop: true,
       speed: 800,
-      autoplay: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
       navigation: {
         nextEl: '.testimonial-slider .testimonial-button-next',
         prevEl: '.testimonial-slider .testimonial-button-prev',
       },
       breakpoints: {
-        0: { slidesPerView: 1 },
+        0: { slidesPerView: 1.3 },
         768: { slidesPerView: 3 },
-        991: { slidesPerView: 5 },
-        1200: { slidesPerView: 5 },
+        991: { slidesPerView: 4 },
+        1300: { slidesPerView: 5 },
+        1700: { slidesPerView: 5.8 },
       },
       on: {
         init: function () {
+          applyOffset(this);
           counterEl.textContent = `1/${realTotalSlides}`;
-          calculateEndOffset(this);
         },
         resize: function () {
-          calculateEndOffset(this);
+          applyOffset(this);
         },
         slideChange: function () {
-          const currentSlide = this.activeIndex + 1;
+          const currentSlide = this.realIndex + 1;
           counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
         }
       }
     });
-    
-    function calculateEndOffset(swiper) {
-      const containerWidth = swiper.el.clientWidth;
-      const slideWidth = swiper.slides[0].offsetWidth;
-      swiper.params.slidesOffsetAfter = containerWidth - slideWidth;
-      swiper.update();
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 991) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = `${offset}px`;
+        }
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 15;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = '15px';
+        }
+      }
+
+      swiperInstance.update();
     }
   }, ['Swiper']);
 
@@ -445,7 +527,7 @@
     const testimonial_slider = new Swiper(swiperEl, {
       slidesPerView: 3,
       spaceBetween: 30,
-      loop: false,
+      loop: true,
       speed: 800,
       autoplay: false,
       navigation: {
@@ -453,7 +535,7 @@
         prevEl: '.testimonial-slider-08 .testimonial-button-prev',
       },
       breakpoints: {
-        0: { slidesPerView: 1.5 },
+        0: { slidesPerView: 1.1 },
         768: { slidesPerView: 3 },
         991: { slidesPerView: 3 },
       },
@@ -469,6 +551,7 @@
     });
   }, ['Swiper']);
 
+
   whenReady(function() {
     const swiperEl = document.querySelector('.testimonial-sliders1 .swiper');
     const counterEl = document.querySelector('.testimonial-sliders1 .testspace');
@@ -482,7 +565,7 @@
       spaceBetween: 15,
       loop: false,
       speed: 800,
-      autoplay: false,
+      autoplay: true,
       navigation: {
         nextEl: '.testimonial-sliders1 .testimonial-button-next',
         prevEl: '.testimonial-sliders1 .testimonial-button-prev',
@@ -611,12 +694,12 @@
     const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
 
     const testimonial_slider = new Swiper(swiperEl, {
-      slidesPerView: 5,
+      slidesPerView: 6,
       spaceBetween: 30,
-      loop: false,
+      loop: true,
       speed: 800,
       centeredSlides: true,
-      autoplay: false,
+      autoplay: true,
       navigation: {
         nextEl: '.testimonial-slider59 .testimonial-button-next',
         prevEl: '.testimonial-slider59 .testimonial-button-prev',
@@ -624,7 +707,8 @@
       breakpoints: {
         0: { slidesPerView: 1.5 },
         768: { slidesPerView: 3 },
-        991: { slidesPerView: 5.5 },
+        991: { slidesPerView: 5 },
+        1200: { slidesPerView: 6 },
       },
       on: {
         init: function () {
@@ -641,29 +725,52 @@
   whenReady(function() {
     const swiperEl = document.querySelector('.industries .swiper');
     const counterEl = document.querySelector('.industries .testspace');
+    const rtyElement = document.querySelector('.industries .rtyElement');
 
     if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
 
-    const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const fluidWidth = fluid ? fluid.clientWidth : window.innerWidth;
+      const container = document.querySelector('.container');
+
+      if (!container) return 0;
+
+      const totalGap = fluidWidth - container.clientWidth;
+      const offset = totalGap / 2;
+
+      return offset > 0 ? offset : 0;
+    }
+
+    const realTotalSlides = swiperEl.querySelectorAll('.industries .swiper-slide').length;
 
     const testimonial_slider = new Swiper(swiperEl, {
-      slidesPerView: 5,
       spaceBetween: 15,
-      loop: false,
+      loop: true,
       speed: 800,
-      autoplay: false,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
       navigation: {
         nextEl: '.industries .testimonial-button-next',
         prevEl: '.industries .testimonial-button-prev',
       },
       breakpoints: {
-        0: { slidesPerView: 1.5 },
+        0: { slidesPerView: 1.3 },
         768: { slidesPerView: 3 },
-        991: { slidesPerView: 5 },
+        991: { slidesPerView: 4 },
+        1300: { slidesPerView: 5 },
+        1700: { slidesPerView: 5.8 },
       },
       on: {
         init: function () {
+          applyOffset(this);
           counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        resize: function () {
+          applyOffset(this);
         },
         slideChange: function () {
           const currentSlide = this.realIndex + 1;
@@ -671,6 +778,24 @@
         }
       }
     });
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 991) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = `${offset}px`;
+        }
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 15;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = '15px';
+        }
+      }
+
+      swiperInstance.update();
+    }
   }, ['Swiper']);
 
   whenReady(function() {
@@ -679,55 +804,68 @@
 
     if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
 
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const container = document.querySelector('.container');
+
+      if (!fluid || !container) return 0;
+
+      const fluidWidth = fluid.clientWidth;
+      const containerWidth = container.clientWidth;
+
+      const totalGap = fluidWidth - containerWidth;
+      const leftOffset = totalGap / 2;
+
+      return leftOffset > 0 ? leftOffset : 0;
+    }
+
     const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
 
     const testimonial_slider = new Swiper(swiperEl, {
-      spaceBetween: 0,
-      slidesPerView: 1,
-      loop: false,
-      speed: 800,
-      autoplay: false,
+      spaceBetween: 20,
+      loop: true,
+      speed: 1000,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
       navigation: {
         nextEl: '.testimonial-slider1 .testimonial-button-next',
         prevEl: '.testimonial-slider1 .testimonial-button-prev',
       },
       breakpoints: {
         0: {
-          slidesOffsetBefore: 0,
           slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        500: {
+          slidesPerView: 1.3,
+          spaceBetween: 20,
         },
         768: {
-          slidesOffsetBefore: 0,
           slidesPerView: 1.3,
+          spaceBetween: 20,
         },
         900: {
-          slidesOffsetBefore: 0,
           slidesPerView: 2,
         },
         1200: {
-          slidesOffsetBefore: window.innerWidth * 0.09,
+          slidesPerView: 2.5,
+        },
+        1500: {
           slidesPerView: 2.8,
         },
         1600: {
-          slidesOffsetBefore: window.innerWidth * 0.11,
           slidesPerView: 2.8,
-        },
-        1710: {
-          slidesOffsetBefore: window.innerWidth * 0.13,
-          slidesPerView: 2.8,
-        },
-        1780: {
-          slidesOffsetBefore: window.innerWidth * 0.14,
-          slidesPerView: 2.8,
-        },
-        1920: {
-          slidesOffsetBefore: window.innerWidth * 0.16,
-          slidesPerView: 2.8,
-        },
+        }
       },
       on: {
         init: function () {
+          applyOffset(this);
           counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        resize: function () {
+          applyOffset(this);
         },
         slideChange: function () {
           const currentSlide = this.realIndex + 1;
@@ -735,6 +873,18 @@
         }
       }
     });
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 1200) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 0;
+      }
+
+      swiperInstance.update();
+    }
   }, ['Swiper']);
 
   whenReady(function() {
@@ -751,7 +901,7 @@
       loop: false,
       speed: 800,
       centeredSlides: true,
-      autoplay: false,
+      autoplay: true,
       navigation: {
         nextEl: '.testimonial-slide11 .testimonial-button-next',
         prevEl: '.testimonial-slider11 .testimonial-button-prev',
@@ -907,17 +1057,21 @@
     const testimonial_slider = new Swiper(swiperEl, {
       slidesPerView: 5,
       spaceBetween: 30,
-      loop: false,
+      loop: true,
       speed: 800,
-      autoplay: false,
+      autoplay: true,
       navigation: {
         nextEl: '.testimonial-slider-awards .testimonial-button-next',
         prevEl: '.testimonial-slider-awards .testimonial-button-prev',
       },
       breakpoints: {
-        0: { slidesPerView: 2, spaceBetween: 15 },
+        0: {
+          slidesPerView: 2,
+          centeredSlides: true,
+          spaceBetween: 15
+        },
         768: { slidesPerView: 3, spaceBetween: 15 },
-        991: { slidesPerView: 9, spaceBetween: 15 },
+        991: { slidesPerView: 9, spaceBetween: 15, },
       },
       on: {
         init: function () {
@@ -990,6 +1144,1086 @@
       });
     });
   });
+
+  // --- Overview Slider Initializations ---
+  whenReady(function() {
+    const swiperEl = document.querySelector('.overview-slider .swiper');
+    const counterEl = document.querySelector('.overview-slider .testspace');
+    const rtyElement = document.querySelector('.overview-slider .rtyElement');
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const fluidWidth = fluid ? fluid.clientWidth : window.innerWidth;
+      const container = document.querySelector('.container');
+
+      if (!container) return 0;
+
+      const totalGap = fluidWidth - container.clientWidth;
+      const offset = totalGap / 2;
+
+      return offset > 0 ? offset : 0;
+    }
+
+    const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
+
+    const testimonial_slider = new Swiper(swiperEl, {
+      spaceBetween: 15,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.overview-slider .testimonial-button-next',
+        prevEl: '.overview-slider .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.3 },
+        450: { slidesPerView: 2 },
+        600: { slidesPerView: 2.5 },
+        768: { slidesPerView: 3 },
+        991: { slidesPerView: 4 },
+        1300: { slidesPerView: 5 },
+        1700: { slidesPerView: 6 },
+      },
+      on: {
+        init: function () {
+          applyOffset(this);
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        resize: function () {
+          applyOffset(this);
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
+    });
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 991) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = `${offset}px`;
+        }
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 15;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = '15px';
+        }
+      }
+
+      swiperInstance.update();
+    }
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const swiperEl = document.querySelector('.overview-slider2 .swiper');
+    const counterEl = document.querySelector('.overview-slider2 .testspace');
+    const rtyElement = document.querySelector('.overview-slider2 .rtyElement');
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const fluidWidth = fluid ? fluid.clientWidth : window.innerWidth;
+      const container = document.querySelector('.container');
+
+      if (!container) return 0;
+
+      const totalGap = fluidWidth - container.clientWidth;
+      const offset = totalGap / 2;
+
+      return offset > 0 ? offset : 0;
+    }
+
+    const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
+
+    const testimonial_slider = new Swiper(swiperEl, {
+      spaceBetween: 15,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.overview-slider2 .testimonial-button-next',
+        prevEl: '.overview-slider2 .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.3 },
+        450: { slidesPerView: 2 },
+        600: { slidesPerView: 2.5 },
+        768: { slidesPerView: 3 },
+        991: { slidesPerView: 4 },
+        1300: { slidesPerView: 4.5 },
+        1700: { slidesPerView: 5 },
+      },
+      on: {
+        init: function () {
+          applyOffset(this);
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        resize: function () {
+          applyOffset(this);
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
+    });
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 991) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = `${offset}px`;
+        }
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 15;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = '15px';
+        }
+      }
+
+      swiperInstance.update();
+    }
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const swiperEl = document.querySelector('.overview-slider5 .swiper');
+    const counterEl = document.querySelector('.overview-slider5 .testspace');
+    const rtyElement = document.querySelector('.overview-slider5 .rtyElement');
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const fluidWidth = fluid ? fluid.clientWidth : window.innerWidth;
+      const container = document.querySelector('.container');
+
+      if (!container) return 0;
+
+      const totalGap = fluidWidth - container.clientWidth;
+      const offset = totalGap / 2;
+
+      return offset > 0 ? offset : 0;
+    }
+
+    const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
+
+    const testimonial_slider = new Swiper(swiperEl, {
+      spaceBetween: 15,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.overview-slider5 .testimonial-button-next',
+        prevEl: '.overview-slider5 .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.3 },
+        450: { slidesPerView: 2 },
+        600: { slidesPerView: 2.5 },
+        768: { slidesPerView: 3 },
+        991: { slidesPerView: 4 },
+        1300: { slidesPerView: 5 },
+        1700: { slidesPerView: 6 },
+      },
+      on: {
+        init: function () {
+          applyOffset(this);
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        resize: function () {
+          applyOffset(this);
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
+    });
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 991) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = `${offset}px`;
+        }
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 15;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = '15px';
+        }
+      }
+
+      swiperInstance.update();
+    }
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const swiperEl = document.querySelector('.testimonial-slideram .swiper');
+    const counterEl = document.querySelector('.testimonial-slideram .testspace');
+    const rtyElement = document.querySelector('.testimonial-slideram .rtyElement');
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const fluidWidth = fluid ? fluid.clientWidth : window.innerWidth;
+      const container = document.querySelector('.container');
+
+      if (!container) return 0;
+
+      const totalGap = fluidWidth - container.clientWidth;
+      const offset = totalGap / 2;
+
+      return offset > 0 ? offset : 0;
+    }
+
+    const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
+
+    const testimonial_slider = new Swiper(swiperEl, {
+      spaceBetween: 15,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.testimonial-slideram .testimonial-button-next',
+        prevEl: '.testimonial-slideram .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.3 },
+        768: { slidesPerView: 3 },
+        991: { slidesPerView: 4 },
+        1300: { slidesPerView: 4 },
+        1700: { slidesPerView: 5 },
+      },
+      on: {
+        init: function () {
+          applyOffset(this);
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        resize: function () {
+          applyOffset(this);
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
+    });
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 991) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = `${offset}px`;
+        }
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 15;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = '15px';
+        }
+      }
+
+      swiperInstance.update();
+    }
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const swiperEl = document.querySelector('.ecommers-8 .swiper');
+    const counterEl = document.querySelector('.ecommers-8 .testspace');
+    const rtyElement = document.querySelector('.ecommers-8 .rtyElement');
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const fluidWidth = fluid ? fluid.clientWidth : window.innerWidth;
+      const container = document.querySelector('.container');
+
+      if (!container) return 0;
+
+      const totalGap = fluidWidth - container.clientWidth;
+      const offset = totalGap / 2;
+
+      return offset > 0 ? offset : 0;
+    }
+
+    const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
+
+    const testimonial_slider = new Swiper(swiperEl, {
+      spaceBetween: 15,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.ecommers-8 .testimonial-button-next',
+        prevEl: '.ecommers-8 .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.3 },
+        768: { slidesPerView: 3 },
+        991: { slidesPerView: 4 },
+        1300: { slidesPerView: 5 },
+        1700: { slidesPerView: 5 },
+      },
+      on: {
+        init: function () {
+          applyOffset(this);
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        resize: function () {
+          applyOffset(this);
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
+    });
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 991) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = `${offset}px`;
+        }
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 15;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = '15px';
+        }
+      }
+
+      swiperInstance.update();
+    }
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const swiperEl = document.querySelector('.architecture .swiper');
+    const counterEl = document.querySelector('.architecture .testspace');
+    const rtyElement = document.querySelector('.architecture .rtyElement');
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const fluidWidth = fluid ? fluid.clientWidth : window.innerWidth;
+      const container = document.querySelector('.container');
+
+      if (!container) return 0;
+
+      const totalGap = fluidWidth - container.clientWidth;
+      const offset = totalGap / 2;
+
+      return offset > 0 ? offset : 0;
+    }
+
+    const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
+
+    const testimonial_slider = new Swiper(swiperEl, {
+      spaceBetween: 15,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.architecture .testimonial-button-next',
+        prevEl: '.architecture .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.3 },
+        768: { slidesPerView: 3 },
+        991: { slidesPerView: 4 },
+        1300: { slidesPerView: 5 },
+        1700: { slidesPerView: 5 },
+      },
+      on: {
+        init: function () {
+          applyOffset(this);
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        resize: function () {
+          applyOffset(this);
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
+    });
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 991) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = `${offset}px`;
+        }
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 15;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = '15px';
+        }
+      }
+
+      swiperInstance.update();
+    }
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const swiperEl = document.querySelector('.ai-slider .swiper');
+    const counterEl = document.querySelector('.ai-slider .testspace');
+    const rtyElement = document.querySelector('.ai-slider .rtyElement');
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const fluidWidth = fluid ? fluid.clientWidth : window.innerWidth;
+      const container = document.querySelector('.container');
+
+      if (!container) return 0;
+
+      const totalGap = fluidWidth - container.clientWidth;
+      const offset = totalGap / 2;
+
+      return offset > 0 ? offset : 0;
+    }
+
+    const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
+
+    const testimonial_slider = new Swiper(swiperEl, {
+      spaceBetween: 15,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.ai-slider .testimonial-button-next',
+        prevEl: '.ai-slider .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.3 },
+        768: { slidesPerView: 3 },
+        991: { slidesPerView: 4 },
+        1300: { slidesPerView: 5 },
+        1700: { slidesPerView: 5 },
+      },
+      on: {
+        init: function () {
+          applyOffset(this);
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        resize: function () {
+          applyOffset(this);
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
+    });
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 991) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = `${offset}px`;
+        }
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 15;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = '15px';
+        }
+      }
+
+      swiperInstance.update();
+    }
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const swiperEl = document.querySelector('.CorusHR-slider .swiper');
+    const counterEl = document.querySelector('.CorusHR-slider .testspace');
+    const rtyElement = document.querySelector('.CorusHR-slider .rtyElement');
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const fluidWidth = fluid ? fluid.clientWidth : window.innerWidth;
+      const container = document.querySelector('.container');
+
+      if (!container) return 0;
+
+      const totalGap = fluidWidth - container.clientWidth;
+      const offset = totalGap / 2;
+
+      return offset > 0 ? offset : 0;
+    }
+
+    const realTotalSlides = swiperEl.querySelectorAll('.CorusHR-slider .swiper-slide').length;
+
+    const testimonial_slider = new Swiper(swiperEl, {
+      spaceBetween: 15,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.CorusHR-slider .testimonial-button-next',
+        prevEl: '.CorusHR-slider .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.3 },
+        768: { slidesPerView: 3 },
+        991: { slidesPerView: 4 },
+        1300: { slidesPerView: 5 },
+        1700: { slidesPerView: 5.8 },
+      },
+      on: {
+        init: function () {
+          applyOffset(this);
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        resize: function () {
+          applyOffset(this);
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
+    });
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 991) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = `${offset}px`;
+        }
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 15;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = '15px';
+        }
+      }
+
+      swiperInstance.update();
+    }
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const swiperEl = document.querySelector('.industries2 .swiper');
+    const counterEl = document.querySelector('.industries2 .testspace');
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    const realTotalSlides = swiperEl.querySelectorAll('.swiper-slide').length;
+
+    const testimonial_slider = new Swiper(swiperEl, {
+      spaceBetween: 20,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.industries2 .testimonial-button-next',
+        prevEl: '.industries2 .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        450: { slidesPerView: 1.3 },
+        768: { slidesPerView: 3 },
+        991: { slidesPerView: 4 },
+        1300: { slidesPerView: 4 },
+        1700: { slidesPerView: 4 },
+      },
+      on: {
+        init: function () {
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
+    });
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const swiperEl = document.querySelector('.epicsecslide .swiper');
+    const counterEl = document.querySelector('.epicsecslide .testspace');
+    const rtyElement = document.querySelector('.epicsecslide .rtyElement');
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const fluidWidth = fluid ? fluid.clientWidth : window.innerWidth;
+      const container = document.querySelector('.container');
+
+      if (!container) return 0;
+
+      const totalGap = fluidWidth - container.clientWidth;
+      const offset = totalGap / 2;
+
+      return offset > 0 ? offset : 0;
+    }
+
+    const realTotalSlides = swiperEl.querySelectorAll('.epicsecslide .swiper-slide').length;
+
+    const testimonial_slider = new Swiper(swiperEl, {
+      spaceBetween: 15,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.epicsecslide .testimonial-button-next',
+        prevEl: '.epicsecslide .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.3 },
+        768: { slidesPerView: 3 },
+        991: { slidesPerView: 3 },
+        1300: { slidesPerView: 4 },
+        1700: { slidesPerView: 5.8 },
+      },
+      on: {
+        init: function () {
+          applyOffset(this);
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        resize: function () {
+          applyOffset(this);
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
+    });
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 991) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = `${offset}px`;
+        }
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 15;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = '15px';
+        }
+      }
+
+      swiperInstance.update();
+    }
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const swiperEl = document.querySelector('.mobiletesti5 .swiper');
+    const counterEl = document.querySelector('.mobiletesti5 .testspace');
+    const rtyElement = document.querySelector('.mobiletesti5 .rtyElement');
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const fluidWidth = fluid ? fluid.clientWidth : window.innerWidth;
+      const container = document.querySelector('.container');
+
+      if (!container) return 0;
+
+      const totalGap = fluidWidth - container.clientWidth;
+      const offset = totalGap / 2;
+
+      return offset > 0 ? offset : 0;
+    }
+
+    const realTotalSlides = swiperEl.querySelectorAll('.mobiletesti5 .swiper-slide').length;
+
+    const testimonial_slider = new Swiper(swiperEl, {
+      spaceBetween: 15,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.mobiletesti5 .testimonial-button-next',
+        prevEl: '.mobiletesti5 .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.3 },
+        768: { slidesPerView: 3 },
+        991: { slidesPerView: 3 },
+        1300: { slidesPerView: 4 },
+        1700: { slidesPerView: 5 },
+      },
+      on: {
+        init: function () {
+          applyOffset(this);
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        resize: function () {
+          applyOffset(this);
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
+    });
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 991) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = `${offset}px`;
+        }
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 15;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = '15px';
+        }
+      }
+
+      swiperInstance.update();
+    }
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const swiperEl = document.querySelector('.msds .swiper');
+    const counterEl = document.querySelector('.msds .testspace');
+    const rtyElement = document.querySelector('.msds .rtyElement');
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const fluidWidth = fluid ? fluid.clientWidth : window.innerWidth;
+      const container = document.querySelector('.container');
+
+      if (!container) return 15;
+
+      const totalGap = fluidWidth - container.clientWidth;
+      const offset = totalGap / 2;
+
+      return offset > 0 ? offset : 15;
+    }
+
+    const realTotalSlides = swiperEl.querySelectorAll('.swiper-slide').length;
+
+    const testimonial_slider = new Swiper(swiperEl, {
+      spaceBetween: 15,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.msds .testimonial-button-next',
+        prevEl: '.msds .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.3 },
+        768: { slidesPerView: 2 },
+        991: { slidesPerView: 3 },
+        1300: { slidesPerView: 4 },
+        1700: {
+          slidesPerView: 5,
+          autoplay: false
+        },
+      },
+      on: {
+        init: function () {
+          applyOffset(this);
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        resize: function () {
+          applyOffset(this);
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
+    });
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 991) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = `${offset}px`;
+        }
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 15;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = '15px';
+        }
+      }
+
+      swiperInstance.update();
+    }
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const swiperEl = document.querySelector('.dew .swiper');
+    const counterEl = document.querySelector('.dew .testspace');
+    const rtyElement = document.querySelector('.dew .rtyElement');
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const fluidWidth = fluid ? fluid.clientWidth : window.innerWidth;
+      const container = document.querySelector('.container');
+
+      if (!container) return 0;
+
+      const totalGap = fluidWidth - container.clientWidth;
+      const offset = totalGap / 2;
+
+      return offset > 0 ? offset : 0;
+    }
+
+    const realTotalSlides = swiperEl.querySelectorAll('.dew .swiper-slide').length;
+
+    const testimonial_slider = new Swiper(swiperEl, {
+      spaceBetween: 15,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.dew .testimonial-button-next',
+        prevEl: '.dew .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.3 },
+        768: { slidesPerView: 3 },
+        991: { slidesPerView: 3 },
+        1300: { slidesPerView: 4 },
+        1700: { slidesPerView: 5 },
+      },
+      on: {
+        init: function () {
+          applyOffset(this);
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        resize: function () {
+          applyOffset(this);
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
+    });
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 991) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = `${offset}px`;
+        }
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 15;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = '15px';
+        }
+      }
+
+      swiperInstance.update();
+    }
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const swiperEl = document.querySelector('.sap .swiper');
+    const counterEl = document.querySelector('.sap .testspace');
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    const realTotalSlides = swiperEl.querySelectorAll('.sap .swiper-slide').length;
+
+    const testimonial_slider = new Swiper(swiperEl, {
+      spaceBetween: 15,
+      loop: true,
+      speed: 3000,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.sap .testimonial-button-next',
+        prevEl: '.sap .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.3 },
+        768: { slidesPerView: 3 },
+        991: { slidesPerView: 3 },
+        1300: { slidesPerView: 4 },
+        1700: {
+          slidesPerView: 5,
+          autoplay: false
+        },
+      },
+      on: {
+        init: function () {
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
+    });
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const sliderContainer = document.querySelector('.testimonial-slider-009');
+    const swiperEl = sliderContainer ? sliderContainer.querySelector('.swiper') : null;
+    const counterEl = sliderContainer ? sliderContainer.querySelector('.testspace') : null;
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    const totalSlides = swiperEl.querySelectorAll('.swiper-slide').length;
+
+    const slider009 = new Swiper(swiperEl, {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      speed: 800,
+      navigation: {
+        nextEl: '.testimonial-slider-009 .testimonial-button-next',
+        prevEl: '.testimonial-slider-009 .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+        1300: { slidesPerView: 4 },
+        1700: { slidesPerView: 5 }
+      },
+      on: {
+        init: function () {
+          counterEl.textContent = `1/${totalSlides}`;
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${totalSlides}`;
+        }
+      }
+    });
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const sliderContainer = document.querySelector('.testimonial-slider-0009');
+    const swiperEl = sliderContainer ? sliderContainer.querySelector('.swiper') : null;
+    const counterEl = sliderContainer ? sliderContainer.querySelector('.testspace') : null;
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    const totalSlides = swiperEl.querySelectorAll('.swiper-slide').length;
+
+    const slider0009 = new Swiper(swiperEl, {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      speed: 800,
+      navigation: {
+        nextEl: '.testimonial-slider-0009 .testimonial-button-next',
+        prevEl: '.testimonial-slider-0009 .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 2.5 },
+        1300: { slidesPerView: 3 },
+        1700: { slidesPerView: 4 }
+      },
+      on: {
+        init: function () {
+          counterEl.textContent = `1/${totalSlides}`;
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${totalSlides}`;
+        }
+      }
+    });
+  }, ['Swiper']);
 
   // --- More jQuery-dependent code ---
   whenReady(function() {
@@ -1416,5 +2650,31 @@
       });
     }
   }, ['jQuery']);
+
+  // --- Additional Search Box Functionality ---
+  whenReady(function() {
+    const searchBox = document.querySelector('.search-box');
+    const searchBtn = document.querySelector('.btn-search');
+    const searchInput = document.querySelector('.input-search');
+
+    if (searchBtn && searchBox && searchInput) {
+      searchBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        searchBox.classList.toggle('active');
+        if (searchBox.classList.contains('active')) {
+          searchInput.focus();
+        }
+      });
+    }
+
+    document.querySelectorAll('.animated-svg-link12').forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        btn.classList.add('btn-style-3');
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.classList.remove('btn-style-3');
+      });
+    });
+  });
 
 })();
