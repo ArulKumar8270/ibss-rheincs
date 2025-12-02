@@ -1,0 +1,2557 @@
+"use client";
+
+import React from "react";
+import CommomLayout from "../Components/CommomLayout";
+export default function AlMl() {
+    return (
+        <CommomLayout>
+
+            <>
+                <div className="hero brainsec enter retailsection corushrbanner systemview pdb0">
+                    {/* <div class="parent2 retailparent2">
+  <video src="videos/equity.mp4" autoplay muted loop playsinline class="bg-image1"></video>
+    </div> */}
+                    <div className="container">
+                        <div className="row section-row1 align-items-center builtsec">
+                            <div className="col-sm-5">
+                                <div className="section-title">
+                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                        Revolutionizing HR Management with Smart, Scalable Solutions
+                                    </h2>
+                                    <p>
+                                        Ready to elevate your global workforce experience with an
+                                        intuitive HRMS?
+                                    </p>
+                                    <p>
+                                        CorusHR provides powerful self-service and end-to-end HR coverage,
+                                        keeping your teams supported from recruitment to retirement on any
+                                        device.
+                                    </p>
+                                    <div className="ser-btn ">
+                                        <a href="#" className="animated-svg-link">
+                                            Contact Us
+                                            <span className="svg-container ">
+                                                <span className=" right">
+                                                    <svg
+                                                        width={24}
+                                                        height={23}
+                                                        viewBox="0 0 24 23"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="4.79995"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="12.7992"
+                                                            cy="1.6"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="22.4008"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="1.6"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="6.40078"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="11.1996"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="19.1996"
+                                                            cy="14.4"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="17.6"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="12.7992"
+                                                            cy="20.8"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="19.1996"
+                                                            cy="8.00002"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-sm-7"></div>
+                        </div>
+                    </div>
+                </div>
+                <div className=" retailsection1 mobileturn mobileview dnone  corushrbanner1  pdb0">
+                    {/* <div class="parent2 retailparent2">
+  <video src="videos/equity.mp4" autoplay muted loop playsinline class="bg-image1"></video>
+    </div> */}
+                    <div className="container">
+                        <div className="row section-row1 align-items-center builtsec">
+                            <div className="col-sm-5">
+                                <div className="section-title">
+                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                        Revolutionizing HR Management with Smart, Scalable Solutions
+                                    </h2>
+                                    <p>
+                                        Are you looking for an intuitive and streamlined Human Resource
+                                        Management Solution (HRMS) designed to enhance global workforce
+                                        management? CorusHR offers you an intuitive, user-friendly
+                                        self-service portal for organisation-wide collaboration offering
+                                        HR services, Employee Self Service and Manager Self Service. From
+                                        recruitment to retirement, we have comprehensive functional
+                                        coverage that is available on mobile and desktop.
+                                    </p>
+                                    <div className="ser-btn mt-5">
+                                        <a href="#" className="animated-svg-link">
+                                            Contact Us
+                                            <span className="svg-container ">
+                                                <span className=" right">
+                                                    <svg
+                                                        width={24}
+                                                        height={23}
+                                                        viewBox="0 0 24 23"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="4.79995"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="12.7992"
+                                                            cy="1.6"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="22.4008"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="1.6"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="6.40078"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="11.1996"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="19.1996"
+                                                            cy="14.4"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="17.6"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="12.7992"
+                                                            cy="20.8"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="19.1996"
+                                                            cy="8.00002"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-sm-7 mobileapproach1">
+                                <img src="/images/chorus.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Our Testimonial Section Start */}
+                <div className="our-testimonial partner corussecond pd-50">
+                    <div className="container">
+                        <div className="row section-row1 align-items-center">
+                            <div className="col-lg-12">
+                                <div className="section-title text-center">
+                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                        What Makes CorusHR Stand Out
+                                    </h2>
+                                    <p className="mt-5">
+                                        We provide a holistic approach to streamlining and automating
+                                        various aspects of Human Resource Management, that is integrated
+                                        with your ERP. CorusHR addresses key challenges faced by
+                                        businesses, including time-consuming manual onboarding processes,
+                                        lengthy HR solution implementation timelines, complex and
+                                        difficult-to-use systems, limited region-specific functionality,
+                                        and poor integration with existing ERP platforms.
+                                    </p>
+                                    <div className="corimg mt-5">
+                                        <img src="/images/makescorus.svg" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Our Testimonial Section End */}
+                <section className="mds-section dynamics features1 mobilefeatures pd50">
+                    <div className="container">
+                        <div className="content text-left">
+                            <div className="section-title ">
+                                <div className="hero-video-content1 wow fadeInUp mt-4">
+                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                        Main Features
+                                    </h2>
+                                    <p>
+                                        CorusHR is a complete Human Capital Management (HCM) solution that
+                                        handles many aspects of talent management. Here are some of its
+                                        main features:
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="container-fluid">
+                        <div className="CorusHR-slider">
+                            <div className="swiper">
+                                <div className="swiper-wrapper">
+                                    {/* Testimonial Slide Start */}
+                                    <div className="swiper-slide">
+                                        <div className="mds-waber">
+                                            <img src="/images/fe1.svg" alt="" />
+                                            <h6> Recruitment and Onboarding</h6>
+                                            <p>
+                                                Make better hiring decisions through structured and
+                                                configurable workflows
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {/* Testimonial Slide End */}
+                                    {/* Testimonial Slide Start */}
+                                    <div className="swiper-slide">
+                                        <div className="mds-waber">
+                                            <img src="/images/fe2.svg" alt="" />
+                                            <h6> Probation</h6>
+                                            <p>Automated probation evaluations with workflows</p>
+                                        </div>
+                                    </div>
+                                    {/* Testimonial Slide End */}
+                                    {/* Testimonial Slide Start */}
+                                    <div className="swiper-slide">
+                                        <div className="mds-waber">
+                                            <img src="/images/fe3.svg" alt="" />
+                                            <h6> Time and Attendance </h6>
+                                            <p>
+                                                Capture daily attendance and work times and process them to
+                                                reflect in the Employee dashboard
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {/* Testimonial Slide End */}
+                                    {/* Testimonial Slide Start */}
+                                    <div className="swiper-slide">
+                                        <div className="mds-waber">
+                                            <img src="/images/fe4.svg" alt="" />
+                                            <h6> Performance Management</h6>
+                                            <p>
+                                                Inspire your team to reach their full potential, sync their
+                                                efforts with company goals, and foster a thriving, positive
+                                                workplace
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {/* Testimonial Slide End */}
+                                    {/* Testimonial Slide Start */}
+                                    <div className="swiper-slide">
+                                        <div className="mds-waber">
+                                            <img src="/images/fe5.svg" alt="" />
+                                            <h6> Training Management</h6>
+                                            <p>
+                                                Ensure employees have necessary skills and knowledge to
+                                                perform their jobs effectively and efficiently
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {/* Testimonial Slide End */}
+                                    {/* Testimonial Slide Start */}
+                                    <div className="swiper-slide">
+                                        <div className="mds-waber">
+                                            {/*<img src="/images/fe1.svg" alt="">*/}
+                                            <svg
+                                                width={79}
+                                                height={79}
+                                                viewBox="0 0 79 79"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M16.625 45.5317C16.625 46.8255 17.15 47.9974 17.9984 48.8458L6.95 59.8942C3.27344 56.2192 1 51.1411 1 45.5317C1 34.313 10.0937 25.2192 21.3125 25.2192V40.8442C18.7234 40.8442 16.625 42.9427 16.625 45.5317Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M41.625 45.5317C41.625 51.1411 39.3516 56.2192 35.675 59.8942L24.6266 48.8458C25.475 47.9974 26 46.8255 26 45.5317C26 42.9427 23.9016 40.8442 21.3125 40.8442V25.2192C32.5313 25.2192 41.625 34.313 41.625 45.5317Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M35.6742 59.8941C31.9992 63.5707 26.9211 65.8441 21.3117 65.8441C15.7023 65.8441 10.6242 63.5707 6.94922 59.8941L17.9977 48.8457C18.8461 49.6941 20.018 50.2191 21.3117 50.2191C22.6055 50.2191 23.7773 49.6941 24.6258 48.8457L35.6742 59.8941Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M21.3125 50.2188C23.9013 50.2188 26 48.1201 26 45.5312C26 42.9424 23.9013 40.8438 21.3125 40.8438C18.7237 40.8438 16.625 42.9424 16.625 45.5312C16.625 48.1201 18.7237 50.2188 21.3125 50.2188Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M21.3125 65.8438C23.0384 65.8438 24.4375 64.4446 24.4375 62.7188C24.4375 60.9929 23.0384 59.5938 21.3125 59.5938C19.5866 59.5938 18.1875 60.9929 18.1875 62.7188C18.1875 64.4446 19.5866 65.8438 21.3125 65.8438Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M77.875 77.875H49.75V76.3125C49.75 69.8405 54.9967 64.5938 61.4688 64.5938H66.1562C72.6283 64.5938 77.875 69.8405 77.875 76.3125V77.875Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M63.8125 64.5938C67.6958 64.5938 70.8438 61.4458 70.8438 57.5625C70.8438 53.6792 67.6958 50.5312 63.8125 50.5312C59.9292 50.5312 56.7812 53.6792 56.7812 57.5625C56.7812 61.4458 59.9292 64.5938 63.8125 64.5938Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M70.5312 28.3438H42.4062V26.7812C42.4062 20.3092 47.653 15.0625 54.125 15.0625H58.8125C65.2845 15.0625 70.5312 20.3092 70.5312 26.7812V28.3438Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M56.4688 15.0625C60.352 15.0625 63.5 11.9145 63.5 8.03125C63.5 4.148 60.352 1 56.4688 1C52.5855 1 49.4375 4.148 49.4375 8.03125C49.4375 11.9145 52.5855 15.0625 56.4688 15.0625Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M25.3848 43.208L32.3159 39.4055"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M44.7852 72.0938H50.5328"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M21.3125 65.8438V72.0938H30.638"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <circle cx="37.7734" cy="72.0938" r="1.5625" fill="#499A9A" />
+                                                <path
+                                                    d="M56.4687 28.3438V34.5938H38.4316"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                            </svg>
+                                            <h6> Shift Roster </h6>
+                                            <p>Operate 24/7 with round-the-clock business support</p>
+                                        </div>
+                                    </div>
+                                    {/* Testimonial Slide End */}
+                                    {/* Testimonial Slide Start */}
+                                    <div className="swiper-slide">
+                                        <div className="mds-waber">
+                                            {/*<img src="/images/fe2.svg" alt="">*/}
+                                            <svg
+                                                width={66}
+                                                height={79}
+                                                viewBox="0 0 66 79"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M11.4347 65.6882C7.91004 65.6882 5.05286 62.831 5.05286 59.3063V57.3399C5.05286 53.8154 7.91004 50.958 11.4347 50.958C14.9593 50.958 17.8166 53.8152 17.8166 57.3399V59.3063C17.8166 62.8308 14.9594 65.6882 11.4347 65.6882Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M19.9491 77.5625H1V76.1239C1 70.3604 5.67219 65.6882 11.4356 65.6882C15.3795 65.6882 18.8123 67.876 20.5869 71.1042"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M54.3294 65.6882C57.8541 65.6882 60.7113 62.831 60.7113 59.3063V57.3399C60.7113 53.8154 57.8541 50.958 54.3294 50.958C50.8049 50.958 47.9475 53.8152 47.9475 57.3399V59.3063C47.9475 62.8308 50.8047 65.6882 54.3294 65.6882Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M45.8177 77.5625H64.767V76.1239C64.767 70.3604 60.0948 65.6882 54.3313 65.6882C50.4046 65.6882 46.9845 67.857 45.2034 71.062"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M32.8824 62.8456C28.5142 62.8456 24.9729 59.3044 24.9729 54.9361V52.4989C24.9729 48.1306 28.5142 44.5894 32.8824 44.5894C37.2507 44.5894 40.792 48.1306 40.792 52.4989V54.9361C40.792 59.3044 37.2507 62.8456 32.8824 62.8456Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M19.9495 77.5624V75.7795C19.9495 68.6363 25.7401 62.8457 32.8832 62.8457C40.0263 62.8457 45.817 68.6363 45.817 75.7795V77.5624H19.9495Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M45.8852 19.4634L32.8822 1L19.8793 19.4634H26.506V34.4914H39.2585V19.4634H45.8852Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M20.2136 34.4914L11.4351 22.0264L2.65662 34.4914H7.13037V43.1818H15.7399V34.4914H20.2136Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M63.1082 34.4914L54.3297 22.0264L45.5511 34.4914H50.0249V43.1818H58.6344V34.4914H63.1082Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                            </svg>
+                                            <h6> Leadership Development</h6>
+                                            <p>
+                                                Identify and nurture employees for leadership roles in the
+                                                organisation
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {/* Testimonial Slide End */}
+                                    {/* Testimonial Slide Start */}
+                                    <div className="swiper-slide">
+                                        <div className="mds-waber">
+                                            {/*<img src="/images/fe3.svg" alt="">*/}
+                                            <svg
+                                                width={70}
+                                                height={70}
+                                                viewBox="0 0 70 70"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M69 1H1V69H69V1Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <circle
+                                                    cx="8.77067"
+                                                    cy="7.10612"
+                                                    r="1.52653"
+                                                    fill="#499A9A"
+                                                />
+                                                <circle
+                                                    cx="15.9875"
+                                                    cy="7.10612"
+                                                    r="1.52653"
+                                                    fill="#499A9A"
+                                                />
+                                                <circle cx="23.204" cy="7.10612" r="1.52653" fill="#499A9A" />
+                                                <path
+                                                    d="M61.2286 7.1062H35"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M15.7101 30.004C18.0094 30.004 19.8734 28.1401 19.8734 25.8408C19.8734 23.5414 18.0094 21.6775 15.7101 21.6775C13.4108 21.6775 11.5469 23.5414 11.5469 25.8408C11.5469 28.1401 13.4108 30.004 15.7101 30.004Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M15.7109 30.0039C20.0029 30.0039 23.4823 33.4833 23.4823 37.7753H7.93945C7.93945 33.4833 11.4188 30.0039 15.7109 30.0039Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M15.7101 52.7633C18.0094 52.7633 19.8734 50.8993 19.8734 48.6C19.8734 46.3007 18.0094 44.4368 15.7101 44.4368C13.4108 44.4368 11.5469 46.3007 11.5469 48.6C11.5469 50.8993 13.4108 52.7633 15.7101 52.7633Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M15.7109 52.7632C20.0029 52.7632 23.4823 56.2426 23.4823 60.5346H7.93945C7.93945 56.2426 11.4188 52.7632 15.7109 52.7632Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M37.1319 27.2605L32.1998 32.1926L29.5876 29.5805"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M37.1319 50.0195L32.1998 54.9516L29.5876 52.3396"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M69 13.2122H1"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M62.0602 21.6775H43.2378V37.7754H62.0602V21.6775Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M62.0602 44.4368H43.2378V60.5347H62.0602V44.4368Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                            </svg>
+                                            <h6> Employee Engagement Surveys </h6>
+                                            <p>
+                                                Manage organisational engagement effectively through surveys
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {/* Testimonial Slide End */}
+                                    {/* Testimonial Slide Start */}
+                                    <div className="swiper-slide">
+                                        <div className="mds-waber">
+                                            {/*<img src="/images/fe5.svg" alt="">*/}
+                                            <svg
+                                                width={72}
+                                                height={72}
+                                                viewBox="0 0 72 72"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M25.9662 31.9799C22.5699 31.9799 19.8166 29.2265 19.8166 25.8302C19.8166 22.4337 22.5699 19.6805 25.9662 19.6805C29.3626 19.6805 32.1159 22.4337 32.1159 25.8302C32.1159 29.2265 29.3626 31.9799 25.9662 31.9799ZM39.7317 28.866C38.0981 27.1712 38.0981 24.4875 39.7317 22.7942L40.5208 21.9769C41.0687 21.4077 41.1751 20.5461 40.7806 19.862L38.541 15.9847C38.1464 15.3005 37.3474 14.9614 36.5809 15.1516L35.4782 15.4254C33.1946 15.9945 30.8698 14.6519 30.2198 12.391L29.9061 11.2981C29.689 10.5403 28.995 10.0167 28.2044 10.0167H23.7281C22.9389 10.0167 22.2449 10.5403 22.0264 11.2981L21.7127 12.391C21.0627 14.6519 18.7379 15.9945 16.4543 15.4254L15.353 15.1516C14.5866 14.9614 13.7861 15.3005 13.3915 15.9847L11.1533 19.862C10.7588 20.5461 10.8638 21.4077 11.4116 21.9769L12.2008 22.7942C13.8343 24.4875 13.8343 27.1712 12.2008 28.866L11.4116 29.6833C10.8638 30.251 10.7588 31.114 11.1533 31.7982L13.3915 35.6741C13.7861 36.3583 14.5866 36.6989 15.353 36.5072L16.4543 36.2334C18.7379 35.6657 21.0627 37.0069 21.7127 39.2691L22.0264 40.3606C22.2449 41.1198 22.9389 41.6421 23.7281 41.6421H28.2044C28.995 41.6421 29.689 41.1198 29.9061 40.3606L30.2198 39.2691C30.8698 37.0069 33.1946 35.6657 35.4782 36.2334L36.5809 36.5072C37.3474 36.6989 38.1464 36.3583 38.541 35.6741L40.7806 31.7982C41.1751 31.114 41.0687 30.251 40.5208 29.6833L39.7317 28.866Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M27.4441 54.4521L30.8492 50.4054L26.7559 46.9613"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M61.5362 40.2984C66.9856 42.9132 70.828 48.6009 70.828 54.8247C70.828 63.655 63.6696 70.8135 54.8391 70.8135C46.0087 70.8135 38.8503 63.655 38.8503 54.8247C38.8503 50.2192 40.613 46.258 43.7289 43.3406C48.2295 38.8325 50.8355 32.7912 50.8355 25.9179C50.8355 12.1563 39.6795 1.00012 25.9178 1.00012C12.156 1.00012 1 12.1563 1 25.9179C1 39.6796 12.156 50.8356 25.9178 50.8356C28.4255 50.8356 30.8499 50.4055 30.8499 50.4055"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M63.6766 54.8765C63.6766 59.7885 59.6947 63.7705 54.7827 63.7705C49.8707 63.7705 45.8887 59.7885 45.8887 54.8765C45.8887 49.9644 49.8707 45.9825 54.7827 45.9825C59.6947 45.9825 63.6766 49.9644 63.6766 54.8765Z"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M51.0059 55.3023L53.448 57.7444L58.4955 52.697"
+                                                    stroke="#499A9A"
+                                                    strokeWidth={2}
+                                                    strokeMiterlimit={10}
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                            </svg>
+                                            <h6>Exit Initiation &amp; Approval Process</h6>
+                                            <p>
+                                                Gather feedback through exit interview and identify areas for
+                                                improvement and help with the final settlement
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {/* Testimonial Slide End */}
+                                </div>
+                                <div className="testimonial-btn rtyElement">
+                                    <div className="testimonial-button-prev">
+                                        <div className="animated-svg-link1 btn-style-3">
+                                            <span className="svg-container ">
+                                                <span className=" left">
+                                                    <svg
+                                                        width={24}
+                                                        height={23}
+                                                        viewBox="0 0 24 23"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="4.79995"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="12.7992"
+                                                            cy="1.6"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="22.4008"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="1.6"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="6.40078"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="11.1996"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="19.1996"
+                                                            cy="14.4"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="17.6"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="12.7992"
+                                                            cy="20.8"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="19.1996"
+                                                            cy="8.00002"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <span className="testspace">1/6</span>
+                                    <div className="testimonial-button-next">
+                                        <div className="animated-svg-link1 btn-style-3">
+                                            <span className="svg-container ">
+                                                <span className=" left">
+                                                    <svg
+                                                        width={24}
+                                                        height={23}
+                                                        viewBox="0 0 24 23"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="4.79995"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="12.7992"
+                                                            cy="1.6"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="22.4008"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="1.6"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="6.40078"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="11.1996"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="19.1996"
+                                                            cy="14.4"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="17.6"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="12.7992"
+                                                            cy="20.8"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="19.1996"
+                                                            cy="8.00002"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Testimonial Slider End */}
+                    </div>
+                </section>
+                {/* Hero Section Start*/}
+                <div className="hero digi2 self1 mobileself">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-sm-6 order2">
+                                <div className="hero-bg-video buildsec">
+                                    <video autoPlay="" muted="" loop="" id="myVideo" height={800}>
+                                        <source src="videos/selfservice.mp4" type="video/mp4" />
+                                    </video>
+                                </div>
+                            </div>
+                            <div className="col-lg-6">
+                                <div className="hero-content buildsecont mblself pd50">
+                                    <div className="section-title">
+                                        <div className="hero-video-content wow fadeInUp mt-4">
+                                            <h2
+                                                className="text-anime-style-2 text-dark"
+                                                data-cursor="-opaque"
+                                            >
+                                                Employee Self-Service
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div className="row ">
+                                        <div className="col-sm-6 col-6">
+                                            <div className="challenge-point-waber self-service">
+                                                <img src="/images/ss1.svg" alt="" />
+                                                <p>Employee Information Management</p>
+                                            </div>
+                                            <div className="challenge-point-waber self-service">
+                                                <img src="/images/ss2.svg" alt="" />
+                                                <p>Travel Requests</p>
+                                            </div>
+                                            <div className="challenge-point-waber self-service">
+                                                <img src="/images/ss3.svg" alt="" />
+                                                <p>Leave Management</p>
+                                            </div>
+                                            <div className="challenge-point-waber self-service">
+                                                <img src="/images/ss4.svg" alt="" />
+                                                <p>Timesheets &amp; Attendance</p>
+                                            </div>
+                                            <div className="challenge-point-waber self-service">
+                                                <img src="/images/ss5.svg" alt="" />
+                                                <p>Miscellaneous Reimbursement Request</p>
+                                            </div>
+                                            <div className="challenge-point-waber self-service">
+                                                <img src="/images/ss6.svg" alt="" />
+                                                <p>Grievances Management</p>
+                                            </div>
+                                        </div>
+                                        <div className="col-sm-6 col-6">
+                                            <div className="challenge-point-waber self-service">
+                                                <img src="/images/ss7.svg" alt="" />
+                                                <p>Training &amp; Development</p>
+                                            </div>
+                                            <div className="challenge-point-waber self-service">
+                                                <img src="/images/ss8.svg" alt="" />
+                                                <p>Performance Management</p>
+                                            </div>
+                                            <div className="challenge-point-waber self-service">
+                                                <img src="/images/ss9.svg" alt="" />
+                                                <p>Work Permit Process</p>
+                                            </div>
+                                            <div className="challenge-point-waber self-service">
+                                                <img src="/images/ss10.svg" alt="" />
+                                                <p>Loan Management</p>
+                                            </div>
+                                            <div className="challenge-point-waber self-service">
+                                                <img src="/images/ss11.svg" alt="" />
+                                                <p>User Dashboard</p>
+                                            </div>
+                                            <div className="challenge-point-waber self-service">
+                                                <img src="/images/ss12.svg" alt="" />
+                                                <p>Approval &amp; Delegation Process</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Hero Section End*/}
+                <div className="advantage additional1 mobileaddit pd-50">
+                    <div className="container">
+                        <div className="row section-row1 align-items-center">
+                            <div className="col-sm-12">
+                                <div className="section-title text-center text-black">
+                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                        Additional Features of CorusHR
+                                    </h2>
+                                </div>
+                                <div className="row mt-5">
+                                    <div className="col-lg-6 col-md-6 col-12">
+                                        <div className="service-item-body1 light-bg-1 imgadd w80">
+                                            <h3>Seamless Integration</h3>
+                                            <p>
+                                                The seamless integration of CorusHR with Epicor ERP ensures
+                                                that these two systems operate together in real-time, enabling
+                                                effective communication, and functioning as a unified platform
+                                                without any disruptions or complications.
+                                            </p>
+                                            <img src="/images/af1.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-6 col-md-6 col-12">
+                                        <div className="service-item-body1 light-bg-1 imgadd1 w80 systemview">
+                                            <h3>Configurable</h3>
+                                            <p>
+                                                The solution is adaptable, quick to respond, and highly
+                                                configurable, aimed at improving operational efficiencies. It
+                                                facilitates streamlined HR operations, improves efficiency by
+                                                eliminating paper and email trails with digital workflows and
+                                                enhances user satisfaction.
+                                            </p>
+                                            <p>
+                                                The solution is adaptable, quick to respond, and highly
+                                                customisable, aimed at improving operational efficiencies. It
+                                                facilitates streamlined HR operations, improves efficiency by
+                                                eliminating paper and email trails with digital workflows and
+                                                enhances user satisfaction.
+                                            </p>
+                                            <img src="/images/af2.svg" alt="" />
+                                        </div>
+                                        <div className="service-item-body1 light-bg-1 imgadd1 mobileimgadd mobileview w80">
+                                            <h3>Configurable</h3>
+                                            <p>
+                                                The solution is adaptable, quick to respond, and highly
+                                                configurable, aimed at improving operational efficiencies. It
+                                                facilitates streamlined HR operations, improves efficiency by
+                                                eliminating paper and email trails with digital workflows and
+                                                enhances user satisfaction.
+                                            </p>
+                                            <p>
+                                                The solution is adaptable, quick to respond, and highly
+                                                customisable, aimed at improving operational efficiencies. It
+                                                facilitates streamlined HR operations, improves efficiency by
+                                                eliminating paper and email trails with digital workflows and
+                                                enhances user satisfaction.
+                                            </p>
+                                            <img src="/images/corusim.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-4 col-md-4 col-12">
+                                        <div className="service-item-body1 light-bg-1 imgadd">
+                                            <h3>Reporting and Analytics</h3>
+                                            <p>
+                                                Get insights on regular and overtime hours, transaction,
+                                                performance assessment, requirements fulfilment, and exit
+                                                process enabling informed decision-making and planning.
+                                            </p>
+                                            <img src="/images/af3.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-4 col-md-4 col-12">
+                                        <div className="service-item-body1 light-bg-1 imgadd2">
+                                            <h3>Mobile Accessibility</h3>
+                                            <p>
+                                                With our solution, employees can stay connected around the
+                                                clock through a user-friendly mobile application, ensuring
+                                                seamless access to vital information and better collaboration.
+                                            </p>
+                                            <div className="text-center">
+                                                <img src="/images/af4.svg" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-4 col-md-4 col-12">
+                                        <div className="service-item-body1 light-bg-1 imgadd">
+                                            <h3>Effective Data Management</h3>
+                                            <p>
+                                                Updating and retrieval of employee data, including personal
+                                                information, employment history, performance evaluations, and
+                                                benefits enrolment, reducing data loss and errors and improved
+                                                data integrity.
+                                            </p>
+                                            <img src="/images/af5.svg" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Hero Section Start*/}
+                <div className="hero brainsec routes benefitssec corusolsec systemview">
+                    <div className="container">
+                        <div className="row section-row align-items-center">
+                            <div className="col-sm-6">
+                                <div className="hero-bg-video2">
+                                    <video
+                                        autoPlay=""
+                                        muted=""
+                                        loop=""
+                                        id="myVideo"
+                                        height={700}
+                                        width="100%"
+                                    >
+                                        <source src="videos/benefits.mp4" type="video/mp4" />
+                                    </video>
+                                </div>
+                            </div>
+                            <div className="col-sm-6">
+                                {/* Section Title Start */}
+                                <div className="section-title corusolution">
+                                    {/* <h3 class="wow fadeInUp">key benefits</h3> */}
+                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                        Benefits
+                                    </h2>
+                                    <p className="posrelative">
+                                        CorusHR provides a comprehensive solution for talent management
+                                        for employees, managers and HR department. With CorusHR, you can
+                                        enjoy:
+                                    </p>
+                                </div>
+                                <div className="row mt-5">
+                                    <div className="col-lg-6 col-md-6">
+                                        {/* Benefits Steps Item Start */}
+                                        <div className="benefits-steps-item wow fadeInUp">
+                                            <div className="icon-box">
+                                                <img src="/images/be1.svg" alt="" />
+                                            </div>
+                                            <div className="benefits-steps-content">
+                                                <h3>Easy Implementation</h3>
+                                                <p>Designed for seamless deployment</p>
+                                            </div>
+                                        </div>
+                                        {/* Benefits Steps Item End */}
+                                        {/* Benefits Steps Item Start */}
+                                        <div
+                                            className="benefits-steps-item wow fadeInUp"
+                                            data-wow-delay="0.4s"
+                                        >
+                                            <div className="icon-box">
+                                                <img src="/images/be2.svg" alt="" />
+                                            </div>
+                                            <div className="benefits-steps-content">
+                                                <h3>Easy Usage</h3>
+                                                <p>Intuitive, user-friendly interface</p>
+                                            </div>
+                                        </div>
+                                        {/* Benefits Steps Item End */}
+                                        {/* Benefits Steps Item Start */}
+                                        <div
+                                            className="benefits-steps-item wow fadeInUp"
+                                            data-wow-delay="0.4s"
+                                        >
+                                            <div className="icon-box">
+                                                <img src="/images/be3.svg" alt="" />
+                                            </div>
+                                            <div className="benefits-steps-content">
+                                                <h3>Seamless Integration</h3>
+                                                <p>Out-of-the-box Epicor integration</p>
+                                            </div>
+                                        </div>
+                                        {/* Benefits Steps Item End */}
+                                        {/* Benefits Steps Item Start */}
+                                        <div
+                                            className="benefits-steps-item wow fadeInUp"
+                                            data-wow-delay="0.4s"
+                                        >
+                                            <div className="icon-box">
+                                                <img src="/images/be4.svg" alt="" />
+                                            </div>
+                                            <div className="benefits-steps-content">
+                                                <h3>Mobile Interface</h3>
+                                                <p>Access anytime, anywhere</p>
+                                            </div>
+                                        </div>
+                                        {/* Benefits Steps Item End */}
+                                    </div>
+                                    <div className="col-lg-6 col-md-6 ">
+                                        {/* Benefits Steps Item Start */}
+                                        <div
+                                            className="benefits-steps-item wow fadeInUp"
+                                            data-wow-delay="0.2s"
+                                        >
+                                            <div className="icon-box">
+                                                <img src="/images/be5.svg" alt="" />
+                                            </div>
+                                            <div className="benefits-steps-content">
+                                                <h3>Rich Functionalities</h3>
+                                                <p>Complete Hire to Retire features</p>
+                                            </div>
+                                        </div>
+                                        {/* Benefits Steps Item End */}
+                                        {/* Benefits Steps Item Start */}
+                                        <div
+                                            className="benefits-steps-item wow fadeInUp"
+                                            data-wow-delay="0.6s"
+                                        >
+                                            <div className="icon-box">
+                                                <img src="/images/be6.svg" alt="" />
+                                            </div>
+                                            <div className="benefits-steps-content">
+                                                <h3>Comprehensive Reporting</h3>
+                                                <p>Robust reporting capabilities</p>
+                                            </div>
+                                        </div>
+                                        {/* Benefits Steps Item End */}
+                                        {/* Benefits Steps Item Start */}
+                                        <div
+                                            className="benefits-steps-item wow fadeInUp"
+                                            data-wow-delay="0.6s"
+                                        >
+                                            <div className="icon-box">
+                                                <img src="/images/be7.svg" alt="" />
+                                            </div>
+                                            <div className="benefits-steps-content">
+                                                <h3>Multisite Capabilities</h3>
+                                                <p>Manage multiple locations</p>
+                                            </div>
+                                        </div>
+                                        {/* Benefits Steps Item End */}
+                                        {/* Benefits Steps Item Start */}
+                                        <div
+                                            className="benefits-steps-item wow fadeInUp"
+                                            data-wow-delay="0.6s"
+                                        >
+                                            <div className="icon-box">
+                                                <img src="/images/be8.svg" alt="" />
+                                            </div>
+                                            <div className="benefits-steps-content">
+                                                <h3>Configurable Setup &amp; Fluid Workflows</h3>
+                                                <p>Flexible configurations and workflows</p>
+                                            </div>
+                                        </div>
+                                        {/* Benefits Steps Item End */}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Our Testimonial Section Start */}
+                <div className="our-testimonial partner pd-50">
+                    <div className="container">
+                        <div className="row section-row align-items-center">
+                            <div className="col-lg-12">
+                                <div className="section-title text-center">
+                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                        Customers
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Agency Support Start */}
+                        <div className="digital-features-item agency-supports mt-5">
+                            <div className="logo-marquee">
+                                {/* Row 1 */}
+                                <div className="logo-slider ltr">
+                                    <div className="logos">
+                                        <img src="/images/clients1/1-American-golf.png" alt="logo" />
+                                        <img src="/images/clients1/2-cold-chain-tech.png" alt="logo" />
+                                        <img src="/images/clients1/10-bond.png" alt="logo" />
+                                        <img src="/images/clients1/11-sembcorp.png" alt="logo" />
+                                        <img src="/images/clients1/12-cellcentric.png" alt="logo" />
+                                        {/* repeat for smooth scrolling */}
+                                        <img src="/images/clients1/13-ecolean.png" alt="logo" />
+                                        <img src="/images/clients1/14-ceco.png" alt="logo" />
+                                        <img src="/images/clients1/15-TRW.png" alt="logo" />
+                                        <img src="/images/clients1/16-kraft.png" alt="logo" />
+                                        <img src="/images/clients1/17-eccbc.png" alt="logo" />
+                                        <img src="/images/clients1/18-oman-fiber.png" alt="logo" />
+                                        <img src="/images/clients1/19-kern.png" alt="logo" />
+                                        <img src="/images/clients1/20-flsmidth.png" alt="logo" />
+                                        <img src="/images/clients1/21-kone.png" alt="logo" />
+                                        <img src="/images/clients1/22-tadco.png" alt="logo" />
+                                    </div>
+                                </div>
+                                {/* Row 2 */}
+                                <div className="logo-slider rtl">
+                                    <div className="logos">
+                                        <img src="/images/clients1/23-rsp.png" alt="logo" />
+                                        <img src="/images/clients1/24-kempi.png" alt="logo" />
+                                        <img src="/images/clients1/25-nucor.png" alt="logo" />
+                                        <img src="/images/clients1/26-rfa.png" alt="logo" />
+                                        <img src="/images/clients1/27-schalke.png" alt="logo" />
+                                        <img src="/images/clients1/28-gemaco.png" alt="logo" />
+                                        <img src="/images/clients1/29-talents.png" alt="logo" />
+                                        <img src="/images/clients1/30-tialoc.png" alt="logo" />
+                                        <img src="/images/clients1/31-zamil.png" alt="logo" />
+                                        <img src="/images/clients1/32-eva.png" alt="logo" />
+                                        <img src="/images/clients1/33-nasco.png" alt="logo" />
+                                        <img src="/images/clients1/34-global-industries.png" alt="logo" />
+                                        <img src="/images/clients1/35-ghassan.png" alt="logo" />
+                                        <img src="/images/clients1/36-glaze.png" alt="logo" />
+                                        <img src="/images/clients1/37-greentech.png" alt="logo" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Our Testimonial Section End */}
+                {/* Hero Section Start*/}
+                <div className=" bluebg brouchure">
+                    <div className="container">
+                        <div className="row section-row align-items-center builtsec">
+                            <div className="col-sm-6">
+                                <div className="section-title">
+                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                        Download Our Brochure
+                                    </h2>
+                                    <p>
+                                        Download Our Brochure now to know more about our CorusHR Solution!
+                                    </p>
+                                    <form action="">
+                                        <div className="w100">
+                                            <input type="text" placeholder="Enter Your Full Name" />
+                                        </div>
+                                        <div className="w100">
+                                            <div className="phone-input">
+                                                <div className="country-code">
+                                                    <select>
+                                                        <option value={+91}>+91</option>
+                                                        <option value={+1}>+1</option>
+                                                        <option value={+44}>+44</option>
+                                                        <option value={+61}>+611</option>
+                                                        <option value={+81}>+811</option>
+                                                    </select>
+                                                    <span className="arrow">
+                                                        <i className="fa fa-angle-down" />
+                                                    </span>{" "}
+                                                    {/* ▼ arrow */}
+                                                </div>
+                                                <input type="tel" placeholder="Enter Your Phone Number" />
+                                            </div>
+                                        </div>
+                                        <div className="w100">
+                                            <input type="text" placeholder="Enter Your Email Address" />
+                                        </div>
+                                        <div className="w100">
+                                            <input type="text" placeholder="Enter Your Company Name" />
+                                        </div>
+                                    </form>
+                                    <div className="ser-btn mt-3">
+                                        <a href="#" className="animated-svg-link">
+                                            Submit
+                                            <span className="svg-container ">
+                                                <span className=" right">
+                                                    <svg
+                                                        width={24}
+                                                        height={23}
+                                                        viewBox="0 0 24 23"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="4.79995"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="12.7992"
+                                                            cy="1.6"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="22.4008"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="1.6"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="6.40078"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="11.1996"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="19.1996"
+                                                            cy="14.4"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="17.6"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="12.7992"
+                                                            cy="20.8"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="19.1996"
+                                                            cy="8.00002"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-sm-6">
+                                <div className="parentban mtt50">
+                                    <svg
+                                        width="100%"
+                                        height="100%"
+                                        viewBox="0 0 886 754"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <circle
+                                            cx="442.75"
+                                            cy="444.75"
+                                            r={252}
+                                            fill="url(#paint0_linear_1699_17987)"
+                                        />
+                                        <ellipse
+                                            opacity="0.6"
+                                            cx="442.75"
+                                            cy="442.25"
+                                            rx={295}
+                                            ry="294.5"
+                                            stroke="url(#paint1_linear_1699_17987)"
+                                            strokeWidth="1.5"
+                                        />
+                                        <ellipse
+                                            opacity="0.3"
+                                            cx="442.75"
+                                            cy="442.25"
+                                            rx={345}
+                                            ry="344.5"
+                                            stroke="url(#paint2_linear_1699_17987)"
+                                            strokeWidth="1.5"
+                                        />
+                                        <ellipse
+                                            opacity="0.2"
+                                            cx="442.75"
+                                            cy="442.25"
+                                            rx={392}
+                                            ry="392.5"
+                                            stroke="url(#paint3_linear_1699_17987)"
+                                            strokeWidth="1.5"
+                                        />
+                                        <circle
+                                            opacity="0.1"
+                                            cx="442.75"
+                                            cy="442.75"
+                                            r={442}
+                                            stroke="url(#paint4_linear_1699_17987)"
+                                            strokeWidth="1.5"
+                                        />
+                                        <defs>
+                                            <linearGradient
+                                                id="paint0_linear_1699_17987"
+                                                x1="442.75"
+                                                y1="192.75"
+                                                x2="442.75"
+                                                y2="696.75"
+                                                gradientUnits="userSpaceOnUse"
+                                            >
+                                                <stop stopColor="#008080" />
+                                                <stop offset="0.67478" stopColor="#082326" stopOpacity={0} />
+                                            </linearGradient>
+                                            <linearGradient
+                                                id="paint1_linear_1699_17987"
+                                                x1="442.75"
+                                                y1="147.75"
+                                                x2="442.75"
+                                                y2="736.75"
+                                                gradientUnits="userSpaceOnUse"
+                                            >
+                                                <stop stopColor="#499A9A" />
+                                                <stop offset="0.74249" stopColor="#499A9A" stopOpacity={0} />
+                                            </linearGradient>
+                                            <linearGradient
+                                                id="paint2_linear_1699_17987"
+                                                x1="442.75"
+                                                y1="97.75"
+                                                x2="442.75"
+                                                y2="786.75"
+                                                gradientUnits="userSpaceOnUse"
+                                            >
+                                                <stop stopColor="#499A9A" />
+                                                <stop offset="0.74249" stopColor="#499A9A" stopOpacity={0} />
+                                            </linearGradient>
+                                            <linearGradient
+                                                id="paint3_linear_1699_17987"
+                                                x1="442.75"
+                                                y1="49.75"
+                                                x2="442.75"
+                                                y2="834.75"
+                                                gradientUnits="userSpaceOnUse"
+                                            >
+                                                <stop stopColor="#499A9A" />
+                                                <stop offset="0.74249" stopColor="#499A9A" stopOpacity={0} />
+                                            </linearGradient>
+                                            <linearGradient
+                                                id="paint4_linear_1699_17987"
+                                                x1="442.75"
+                                                y1="0.75"
+                                                x2="442.75"
+                                                y2="884.75"
+                                                gradientUnits="userSpaceOnUse"
+                                            >
+                                                <stop stopColor="#499A9A" />
+                                                <stop offset="0.74249" stopColor="#499A9A" stopOpacity={0} />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <img src="/images/broch.png" width={379} height={542} alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Hero Section End*/}
+                {/* Our Testimonial Section Start */}
+                <div className="our-testimonial trsutedtesti pd30">
+                    <div className="container-fluid">
+                        <div className="row section-row align-items-center">
+                            <div className="col-lg-12">
+                                <div className="section-title text-center headingss">
+                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                        Trusted by Enterprises Worldwide
+                                    </h2>
+                                    <div className="ser-btn2 mt-4">
+                                        <a href="#" className="animated-svg-link1 btn-style-3">
+                                            View All
+                                            <span className="svg-container ">
+                                                <span className=" left">
+                                                    <svg
+                                                        width={24}
+                                                        height={23}
+                                                        viewBox="0 0 24 23"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="4.79995"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="12.7992"
+                                                            cy="1.6"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="22.4008"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="1.6"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="6.40078"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="11.1996"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="19.1996"
+                                                            cy="14.4"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="17.6"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="12.7992"
+                                                            cy="20.8"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="19.1996"
+                                                            cy="8.00002"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row align-items-center">
+                            <div className="col-lg-12">
+                                {/* Testimonial Slider Start */}
+                                <div className="testimonial-slider1 ">
+                                    <div className="swiper">
+                                        <div className="swiper-wrapper">
+                                            {/* Testimonial Slide Start */}
+                                            <div className="swiper-slide">
+                                                <div className="service-item flip-card">
+                                                    <div className="flip-card-inner active">
+                                                        {/* Front Side */}
+                                                        <div className="flip-card-front">
+                                                            {/* Your current service content */}
+                                                            <div className="service-item-header ">
+                                                                <div className="icon-box">
+                                                                    <img src="/images/doublequote.svg" alt="" />
+                                                                </div>
+                                                                <div className="icon-box1">
+                                                                    <img
+                                                                        src="/images/ts/Cold-Chain-Logo-full.png"
+                                                                        alt=""
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                            <div className="service-item-body">
+                                                                {/* <h3>ERP Modernisation</h3> */}
+                                                                <p className="desc">
+                                                                    “RheinBrücke IT Consulting's technical expertise
+                                                                    makes me feel invincible.  CCT has a talented pool
+                                                                    of internal IT resources but sometimes that's not
+                                                                    enough. Working with RB has taken a lot of weight
+                                                                    off our shoulders; both the sheer volume of what we
+                                                                    can handle together as well as the high level of
+                                                                    technical expertise they bring to the table have
+                                                                    greatly advanced CCT's abilities to adapt and evolve
+                                                                    with our expanding global market. Nithish and
+                                                                    Rajagopol are easy to work with and always have
+                                                                    great ideas on how to solve our technical and
+                                                                    business process issues plus they're just nice
+                                                                    guys.”
+                                                                </p>
+                                                                <div className="testimonial-body">
+                                                                    <div className="author-image">
+                                                                        <figure className="image-anime">
+                                                                            <img
+                                                                                src="/images/testimonials/Cold-Chain-Logo.png"
+                                                                                alt=""
+                                                                            />
+                                                                        </figure>
+                                                                    </div>
+                                                                    <div className="author-content">
+                                                                        <h3>Darius Jonason </h3>
+                                                                        <p>
+                                                                            Business Process Analyst/Solutions Architect
+                                                                            Cold Chain Technologies{" "}
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/* Testimonial Slide End */}
+                                            {/* Testimonial Slide Start */}
+                                            <div className="swiper-slide">
+                                                <div className="service-item flip-card">
+                                                    <div className="flip-card-inner">
+                                                        {/* Front Side */}
+                                                        <div className="flip-card-front ">
+                                                            {/* Your current service content */}
+                                                            <div className="service-item-header">
+                                                                <div className="icon-box">
+                                                                    <img src="/images/doublequote.svg" alt="" />
+                                                                </div>
+                                                                <div className="icon-box1">
+                                                                    <img src="/images/ts/a-map.png" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="service-item-body">
+                                                                {/* <h3>Digital Supply Chain Enablement</h3> */}
+                                                                <p className="desc">
+                                                                    “Congratulations to your team for successfully
+                                                                    pulling off the “Automation of RMA” project using
+                                                                    the “A-MAP Smart” mobile based application ! The
+                                                                    legacy system was a laborious and time-consuming
+                                                                    activity of data entry of the hundreds of Inspection
+                                                                    entries, from the numerous Inspection sheets
+                                                                    generated on a daily basis from the field, matching
+                                                                    the claims against the supplied Sales orders and
+                                                                    line details, entering all the warranty test
+                                                                    information including customer purchasing &amp;
+                                                                    return data, creating disposition against the
+                                                                    relevant warehouses and summarizing all the data for
+                                                                    transfer to the sales teams for actual settlement of
+                                                                    claims vide relevant sales orders.”{" "}
+                                                                </p>
+                                                                <div className="testimonial-body">
+                                                                    <div className="author-image">
+                                                                        <figure className="image-anime">
+                                                                            <img
+                                                                                src="/images/testimonials/Ramamurthy Rao.png"
+                                                                                alt=""
+                                                                            />
+                                                                        </figure>
+                                                                    </div>
+                                                                    <div className="author-content">
+                                                                        <h3>Ramamurthy Rao</h3>
+                                                                        <p>
+                                                                            Head of R&amp;D and QC Al Muqarram Auto Parts{" "}
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/* Testimonial Slide End */}
+                                            {/* Testimonial Slide Start */}
+                                            <div className="swiper-slide">
+                                                <div className="service-item flip-card">
+                                                    <div className="flip-card-inner">
+                                                        {/* Front Side */}
+                                                        <div className="flip-card-front">
+                                                            {/* Your current service content */}
+                                                            <div className="service-item-header  ">
+                                                                <div className="icon-box">
+                                                                    <img src="/images/doublequote.svg" alt="" />
+                                                                </div>
+                                                                <div className="icon-box1">
+                                                                    <img src="/images/ts/Federal-Mogul.png" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="service-item-body">
+                                                                {/* <h3>Data & Analytics Strategy</h3> */}
+                                                                <p className="desc">
+                                                                    “Thank you for the continued good work on the ERP
+                                                                    and Supply Chain project. Your Consulting,
+                                                                    Technical, Functional and Project management
+                                                                    expertise was evident and was very well appreciated
+                                                                    by our staffs. I was also pleased with the flexible,
+                                                                    easily approachable, transparent dealing with your
+                                                                    team. Needless to mention I also appreciate how
+                                                                    effectively you leverage the teaming with cross
+                                                                    cultural teams with low cost geography for
+                                                                    developmental resources while not compromising on
+                                                                    the quality of deliverables to business. Keep up the
+                                                                    good work.”
+                                                                </p>
+                                                                <div className="testimonial-body">
+                                                                    <div className="author-image">
+                                                                        <figure className="image-anime">
+                                                                            <img
+                                                                                src="/images/testimonials/Massimiliano A. Milani.png"
+                                                                                alt=""
+                                                                            />
+                                                                        </figure>
+                                                                    </div>
+                                                                    <div className="author-content">
+                                                                        <h3>Massimiliano A. Milani</h3>
+                                                                        <p>
+                                                                            Director Europe &amp; Africas at Federal Mogul
+                                                                            Antwerp, Belgium
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/* Testimonial Slide End */}
+                                            {/* Testimonial Slide Start */}
+                                            <div className="swiper-slide">
+                                                <div className="service-item flip-card ">
+                                                    <div className="flip-card-inner">
+                                                        {/* Front Side */}
+                                                        <div className="flip-card-front">
+                                                            {/* Your current service content */}
+                                                            <div className="service-item-header ">
+                                                                <div className="icon-box">
+                                                                    <img src="/images/doublequote.svg" alt="" />
+                                                                </div>
+                                                                <div className="icon-box1">
+                                                                    <img src="/images/ts/Epicor.png" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="service-item-body">
+                                                                {/* <h3>Business Model Transformation</h3> */}
+                                                                <p className="desc">
+                                                                    “I had been using RheinBrücke team as my extended
+                                                                    arm for sometime now and I have really come to
+                                                                    appreciate their depth of technical and functional
+                                                                    knowledge of the product and their commitment to our
+                                                                    end customers needs. They react quickly to new
+                                                                    challenges and are always there for me to rely on.”{" "}
+                                                                </p>
+                                                                <div className="testimonial-body">
+                                                                    <div className="author-image">
+                                                                        <figure className="image-anime">
+                                                                            <img
+                                                                                src="/images/testimonials/Craig Stephens.png"
+                                                                                alt=""
+                                                                            />
+                                                                        </figure>
+                                                                    </div>
+                                                                    <div className="author-content">
+                                                                        <h3>Craig Stephens</h3>
+                                                                        <p>
+                                                                            Vice President-International Consulting at
+                                                                            Epicor Software United Kingdom{" "}
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/* Testimonial Slide End */}
+                                            {/* Testimonial Slide Start */}
+                                            <div className="swiper-slide">
+                                                <div className="service-item flip-card">
+                                                    <div className="flip-card-inner">
+                                                        {/* Front Side */}
+                                                        <div className="flip-card-front">
+                                                            {/* Your current service content */}
+                                                            <div className="service-item-header  ">
+                                                                <div className="icon-box">
+                                                                    <img src="/images/doublequote.svg" alt="" />
+                                                                </div>
+                                                                <div className="icon-box1">
+                                                                    <img
+                                                                        src="/images/ts/SAUDI AMERICAN GLASS.png"
+                                                                        alt=""
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                            <div className="service-item-body">
+                                                                {/* <h3>Data & Analytics Strategy</h3> */}
+                                                                <p className="desc">
+                                                                    “We implemented Epicor ERP for one of our large
+                                                                    Glass manufacturing facility in Middle East. Like
+                                                                    any ERP implementations, even though the product was
+                                                                    good, we faced initial hiccup and challenges during
+                                                                    the implementation . This is where we came across
+                                                                    the German based RheinBrücke IT consulting and took
+                                                                    their support. They did a fantastic turnaround of
+                                                                    the project. I enjoyed the transparent and efficient
+                                                                    dealing with the company and came to appreciate
+                                                                    their work. Now they have opened the Middle East
+                                                                    operations and am positive they will do well due to
+                                                                    their good service motto.”
+                                                                </p>
+                                                                <div className="testimonial-body">
+                                                                    <div className="author-image">
+                                                                        <figure className="image-anime">
+                                                                            <img
+                                                                                src="/images/testimonials/Rizwanulla Khan.png"
+                                                                                alt=""
+                                                                            />
+                                                                        </figure>
+                                                                    </div>
+                                                                    <div className="author-content">
+                                                                        <h3>Rizwanulla Khan </h3>
+                                                                        <p>
+                                                                            Executive President at Emirates Glass Saudi
+                                                                            American &amp; Lumi Glass{" "}
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/* Testimonial Slide End */}
+                                            {/* Testimonial Slide Start */}
+                                            <div className="swiper-slide">
+                                                <div className="service-item flip-card">
+                                                    <div className="flip-card-inner">
+                                                        {/* Front Side */}
+                                                        <div className="flip-card-front">
+                                                            {/* Your current service content */}
+                                                            <div className="service-item-header  ">
+                                                                <div className="icon-box">
+                                                                    <img src="/images/doublequote.svg" alt="" />
+                                                                </div>
+                                                                <div className="icon-box1">
+                                                                    <img src="/images/ts/SAG.png" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="service-item-body">
+                                                                {/* <h3>Data & Analytics Strategy</h3> */}
+                                                                <p className="desc">
+                                                                    "We were very impressed with the way RheinBrücke
+                                                                    carried out their work. From analysis to
+                                                                    implementation and post-production support, their
+                                                                    analysis was always detailed and complete. It was
+                                                                    easily understood by users, so different system
+                                                                    extension options could be evaluated with all
+                                                                    relevant information."{" "}
+                                                                </p>
+                                                                <div className="testimonial-body">
+                                                                    <div className="author-image">
+                                                                        <figure className="image-anime">
+                                                                            <img
+                                                                                src="/images/testimonials/Syed Waseem Wajid.png"
+                                                                                alt=""
+                                                                            />
+                                                                        </figure>
+                                                                    </div>
+                                                                    <div className="author-content">
+                                                                        <h3>Syed Waseem Wajid </h3>
+                                                                        <p>
+                                                                            IT HEAD at Global Glass Manufacturer KSA, Middle
+                                                                            East{" "}
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/* Testimonial Slide End */}
+                                            {/* Testimonial Slide Start */}
+                                            <div className="swiper-slide">
+                                                <div className="service-item flip-card">
+                                                    <div className="flip-card-inner">
+                                                        {/* Front Side */}
+                                                        <div className="flip-card-front">
+                                                            {/* Your current service content */}
+                                                            <div className="service-item-header  ">
+                                                                <div className="icon-box">
+                                                                    <img src="/images/doublequote.svg" alt="" />
+                                                                </div>
+                                                                <div className="icon-box1">
+                                                                    <img src="/images/ts/RAY.png" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="service-item-body">
+                                                                {/* <h3>Data & Analytics Strategy</h3> */}
+                                                                <p className="desc">
+                                                                    "Our challenges made us to embark on our ERP journey
+                                                                    and after lots of analysis, we choose Epicor ERP for
+                                                                    RAY Group. We also faced initial hiccup and
+                                                                    challenges during the implementations. This is where
+                                                                    we came across the German based Rheinbrücke IT
+                                                                    consulting and took their support. We leveraged
+                                                                    their services for past 12 months and from this
+                                                                    experience, I can definitely say that they did a
+                                                                    fantastic turnaround of the project. I enjoyed the
+                                                                    open, transparent and efficient dealing with them
+                                                                    and came to appreciate their work. I understand that
+                                                                    they recently started their Middle east and Africas
+                                                                    operations, I wish them good luck and every
+                                                                    success."{" "}
+                                                                </p>
+                                                                <div className="testimonial-body">
+                                                                    <div className="author-image">
+                                                                        <figure className="image-anime">
+                                                                            <img
+                                                                                src="/images/testimonials/Vinit Agarwal.png"
+                                                                                alt=""
+                                                                            />
+                                                                        </figure>
+                                                                    </div>
+                                                                    <div className="author-content">
+                                                                        <h3>Vinit Agarwal </h3>
+                                                                        <p>CEO at RAY </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/* Testimonial Slide End */}
+                                            {/* Testimonial Slide Start */}
+                                            <div className="swiper-slide">
+                                                <div className="service-item flip-card">
+                                                    <div className="flip-card-inner">
+                                                        {/* Front Side */}
+                                                        <div className="flip-card-front">
+                                                            {/* Your current service content */}
+                                                            <div className="service-item-header  ">
+                                                                <div className="icon-box">
+                                                                    <img src="/images/doublequote.svg" alt="" />
+                                                                </div>
+                                                                <div className="icon-box1">
+                                                                    <img src="/images/ts/NGC.png" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="service-item-body">
+                                                                {/* <h3>Data & Analytics Strategy</h3> */}
+                                                                <p className="desc">
+                                                                    “NGC Energy’s Epicor Implementation go-live happened
+                                                                    earlier this year and at the end of Jan, we had
+                                                                    successfully closed our Jan 2015 books in Epicor.
+                                                                    This is a big milestone for all of us. It has indeed
+                                                                    been a long journey, starting from inception, system
+                                                                    study, training, pilot &amp; finally the 1st
+                                                                    month-end closing. During each stage, we received
+                                                                    full co-operation from RheinBrücke teams. They had
+                                                                    given us their unwavering support, with full
+                                                                    dedication &amp; positive attitude to make this
+                                                                    project successful. During this entire journey, both
+                                                                    teams faced many challenges &amp; at times,…”{" "}
+                                                                </p>
+                                                                <div className="testimonial-body">
+                                                                    <div className="author-image">
+                                                                        <figure className="image-anime">
+                                                                            <img
+                                                                                src="/images/testimonials/Kiranjit Kaur.png"
+                                                                                alt=""
+                                                                            />
+                                                                        </figure>
+                                                                    </div>
+                                                                    <div className="author-content">
+                                                                        <h3>Kiranjit Kaur </h3>
+                                                                        <p>Finance Manager at NGC Companies Malaysia </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/* Testimonial Slide End */}
+                                        </div>
+                                        <div className="testimonial-btn1 mt-5">
+                                            <div className="testimonial-button-prev">
+                                                <div className="animated-svg-link">
+                                                    <span className="svg-container ">
+                                                        <span className=" right">
+                                                            <svg
+                                                                width={24}
+                                                                height={23}
+                                                                viewBox="0 0 24 23"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                            >
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="16.0004"
+                                                                    cy="4.79995"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="12.7992"
+                                                                    cy="1.6"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="22.4008"
+                                                                    cy="11.2"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="1.6"
+                                                                    cy="11.2"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="6.40078"
+                                                                    cy="11.2"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="11.1996"
+                                                                    cy="11.2"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="16.0004"
+                                                                    cy="11.2"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="19.1996"
+                                                                    cy="14.4"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="16.0004"
+                                                                    cy="17.6"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="12.7992"
+                                                                    cy="20.8"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="19.1996"
+                                                                    cy="8.00002"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <span className="testspace" style={{ color: "#000" }}>
+                                                1/6
+                                            </span>
+                                            <div className="testimonial-button-next">
+                                                <div className="animated-svg-link">
+                                                    <span className="svg-container ">
+                                                        <span className=" right">
+                                                            <svg
+                                                                width={24}
+                                                                height={23}
+                                                                viewBox="0 0 24 23"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                            >
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="16.0004"
+                                                                    cy="4.79995"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="12.7992"
+                                                                    cy="1.6"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="22.4008"
+                                                                    cy="11.2"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="1.6"
+                                                                    cy="11.2"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="6.40078"
+                                                                    cy="11.2"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="11.1996"
+                                                                    cy="11.2"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="16.0004"
+                                                                    cy="11.2"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="19.1996"
+                                                                    cy="14.4"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="16.0004"
+                                                                    cy="17.6"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="12.7992"
+                                                                    cy="20.8"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                                <circle
+                                                                    className="dot"
+                                                                    opacity="0.5"
+                                                                    cx="19.1996"
+                                                                    cy="8.00002"
+                                                                    r="1.6"
+                                                                    fill="#535353"
+                                                                />
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* Testimonial Slider End */}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Our Testimonial Section End */}
+                {/* Footer Start */}
+                <footer className="main-footer pd0">
+                    {/* Footer Main Start */}
+                    <div className="footer-main">
+                        <div className="container">
+                            <div className="firstrow">
+                                <div className="row">
+                                    <div className="col-sm-9">
+                                        <h2>
+                                            Ready to accelerate value creation <br /> across your portfolio?
+                                        </h2>
+                                        <p>
+                                            Contact us today to learn how we can help modernise operations,
+                                            de-risk integrations, and improve commercial outcomes.
+                                        </p>
+                                    </div>
+                                    <div className="col-sm-3">
+                                        <div className="ser-btn text-right">
+                                            <a href="#" className="animated-svg-link">
+                                                Contact Us
+                                                <span className="svg-container ">
+                                                    <span className=" right">
+                                                        <svg
+                                                            width={24}
+                                                            height={23}
+                                                            viewBox="0 0 24 23"
+                                                            fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        >
+                                                            <circle
+                                                                className="dot"
+                                                                opacity="0.5"
+                                                                cx="16.0004"
+                                                                cy="4.79995"
+                                                                r="1.6"
+                                                                fill="#535353"
+                                                            />
+                                                            <circle
+                                                                className="dot"
+                                                                opacity="0.5"
+                                                                cx="12.7992"
+                                                                cy="1.6"
+                                                                r="1.6"
+                                                                fill="#535353"
+                                                            />
+                                                            <circle
+                                                                className="dot"
+                                                                opacity="0.5"
+                                                                cx="22.4008"
+                                                                cy="11.2"
+                                                                r="1.6"
+                                                                fill="#535353"
+                                                            />
+                                                            <circle
+                                                                className="dot"
+                                                                opacity="0.5"
+                                                                cx="1.6"
+                                                                cy="11.2"
+                                                                r="1.6"
+                                                                fill="#535353"
+                                                            />
+                                                            <circle
+                                                                className="dot"
+                                                                opacity="0.5"
+                                                                cx="6.40078"
+                                                                cy="11.2"
+                                                                r="1.6"
+                                                                fill="#535353"
+                                                            />
+                                                            <circle
+                                                                className="dot"
+                                                                opacity="0.5"
+                                                                cx="11.1996"
+                                                                cy="11.2"
+                                                                r="1.6"
+                                                                fill="#535353"
+                                                            />
+                                                            <circle
+                                                                className="dot"
+                                                                opacity="0.5"
+                                                                cx="16.0004"
+                                                                cy="11.2"
+                                                                r="1.6"
+                                                                fill="#535353"
+                                                            />
+                                                            <circle
+                                                                className="dot"
+                                                                opacity="0.5"
+                                                                cx="19.1996"
+                                                                cy="14.4"
+                                                                r="1.6"
+                                                                fill="#535353"
+                                                            />
+                                                            <circle
+                                                                className="dot"
+                                                                opacity="0.5"
+                                                                cx="16.0004"
+                                                                cy="17.6"
+                                                                r="1.6"
+                                                                fill="#535353"
+                                                            />
+                                                            <circle
+                                                                className="dot"
+                                                                opacity="0.5"
+                                                                cx="12.7992"
+                                                                cy="20.8"
+                                                                r="1.6"
+                                                                fill="#535353"
+                                                            />
+                                                            <circle
+                                                                className="dot"
+                                                                opacity="0.5"
+                                                                cx="19.1996"
+                                                                cy="8.00002"
+                                                                r="1.6"
+                                                                fill="#535353"
+                                                            />
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </>
+
+
+
+
+
+
+
+
+        </CommomLayout>
+    )
+}
