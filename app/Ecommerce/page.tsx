@@ -9,11 +9,11 @@ export default function digitalsolution() {
                 <div className="hero brainsec enter retailsection1 erpexcel mobilecomm">
                     <div className="parent2 retailparent2 mobilevideo">
                         <video
-                            src="videos/ecomm.mp4"
-                            autoPlay=""
-                            muted=""
-                            loop=""
-                            playsInline=""
+                            src="/videos//ecomm.mp4"
+                            autoPlay={true}
+                            muted={true}
+                            loop={true}
+                            playsInline={true}
                             className="bg-image1"
                         />
                     </div>
@@ -39,7 +39,7 @@ export default function digitalsolution() {
                             <div className="col-sm-7 col-12">
                                 <div className="parent2 retailparent2 mobileview">
                                     <video
-                                        src="videos/ecomm.mp4"
+                                        src="/videos//ecomm.mp4"
                                         autoPlay=""
                                         muted=""
                                         loop=""

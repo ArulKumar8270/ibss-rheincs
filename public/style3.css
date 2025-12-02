@@ -61,27 +61,27 @@
 
 /* Story 1 */
 .advantage .row>div:nth-child(1) .service-item-body1:hover {
-    background-image: url('new/success-stories/ss1.jpg');
+    background-image: url('/new/success-stories/ss1.jpg');
 }
 
 /* Story 2 */
 .advantage .row>div:nth-child(2) .service-item-body1:hover {
-    background-image: url('new/success-stories/ss2.jpg');
+    background-image: url('/new/success-stories/ss2.jpg');
 }
 
 /* Story 3 */
 .advantage .row>div:nth-child(3) .service-item-body1:hover {
-    background-image: url('new/success-stories/ss3.jpg');
+    background-image: url('/new/success-stories/ss3.jpg');
 }
 
 /* Story 4 */
 .advantage .row>div:nth-child(4) .service-item-body1:hover {
-    background-image: url('new/success-stories/ss4.jpg');
+    background-image: url('/new/success-stories/ss4.jpg');
 }
 
 /* Story 5 */
 .advantage .row>div:nth-child(5) .service-item-body1:hover {
-    background-image: url('new/success-stories/ss5.jpg');
+    background-image: url('/new/success-stories/ss5.jpg');
 }
 
 
@@ -102,7 +102,7 @@
 
     background-color: #ffffff;
 
-    background-image: url('new/success-stories/success-stories-brd.jpeg');
+    background-image: url('/new/success-stories/success-stories-brd.jpeg');
     background-repeat: no-repeat;
 
     background-position: right top;
@@ -154,7 +154,7 @@
     content: "";
     top: 0px;
     left: -15%;
-    background-image: url('new/dm-07.jpeg') !important;
+    background-image: url('/new/dm-07.jpeg') !important;
     background-position: left;
 
     background-repeat: no-repeat;
@@ -172,7 +172,7 @@
     content: "";
     top: 0px;
     left: -15%;
-    background-image: url('new/challenges-automotive.jpg') !important;
+    background-image: url('/new/challenges-automotive.jpg') !important;
     background-position: left;
 
     background-repeat: no-repeat;
@@ -190,7 +190,7 @@
     content: "";
     top: 0px;
     left: -15%;
-    background-image: url('new/pm01.jpeg') !important;
+    background-image: url('/new/pm01.jpeg') !important;
     background-position: left;
 
     background-repeat: no-repeat;
@@ -208,7 +208,7 @@
     content: "";
     top: 0px;
     left: -15%;
-    background-image: url('new/int-0999.jpeg') !important;
+    background-image: url('/new/int-0999.jpeg') !important;
     background-position: left;
 
     background-repeat: no-repeat;

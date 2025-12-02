@@ -136,10 +136,10 @@ export default function AlMl() {
                     <div className="">
                         <video
                             src="//new/cable-hero.mp4"
-                            autoPlay=""
-                            muted=""
-                            loop=""
-                            playsInline=""
+                            autoPlay={true}
+                            muted={true}
+                            loop={true}
+                            playsInline={true}
                         />
                     </div>
                 </div>
@@ -321,10 +321,10 @@ export default function AlMl() {
                     <div className="commen-help-bg-img">
                         <video
                             src="/new/cable-vv.mp4"
-                            autoPlay=""
-                            loop=""
-                            muted=""
-                            playsInline=""
+                            autoPlay={true}
+                            loop={true}
+                            muted={true}
+                            playsInline={true}
                         />
                     </div>
                 </section>

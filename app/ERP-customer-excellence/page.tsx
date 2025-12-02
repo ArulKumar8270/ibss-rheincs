@@ -10,7 +10,7 @@ export default function EnterpriseSolutions() {
                 <div className="hero brainsec enter retailsection1 erpexcel systemview pdb0">
                     <div className="parent2 retailparent2">
                         <video
-                            src="videos/erpexc.mp4"
+                            src="/videos//erpexc.mp4"
                             autoPlay=""
                             muted=""
                             loop=""
@@ -267,7 +267,7 @@ export default function EnterpriseSolutions() {
                             <div className="col-sm-7">
                                 <div className="parent2 retailparent2">
                                     <video
-                                        src="videos/erpexc.mp4"
+                                        src="/videos//erpexc.mp4"
                                         autoPlay=""
                                         muted=""
                                         loop=""

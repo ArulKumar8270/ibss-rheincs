@@ -11,10 +11,10 @@ export default function EnterpriseSolutions() {
                     <div className="parent2 retailparent2 mobilevideo">
                         <video
                             src="/new/histery.mp4"
-                            autoPlay=""
-                            muted=""
-                            loop=""
-                            playsInline=""
+                            autoPlay={true}
+                            muted={true}
+                            loop={true}
+                            playsInline={true}
                             className="bg-image1"
                         />
                     </div>
@@ -40,10 +40,10 @@ export default function EnterpriseSolutions() {
                                 <div className="parent2 retailparent2 mobileview">
                                     <video
                                         src="/new/histery.mp4"
-                                        autoPlay=""
-                                        muted=""
-                                        loop=""
-                                        playsInline=""
+                                        autoPlay={true}
+                                        muted={true}
+                                        loop={true}
+                                        playsInline={true}
                                         className="bg-image1"
                                     />
                                 </div>

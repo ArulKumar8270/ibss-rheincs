@@ -461,8 +461,8 @@ export default function EnterpriseSolutions() {
                         <div className="row">
                             <div className="col-sm-6 videopd0 order2">
                                 <div className="hero-bg-video buildsec">
-                                    <video autoPlay="" muted="" loop="" id="myVideo" height={800}>
-                                        <source src="videos/epicor.mp4" type="video/mp4" />
+                                    <video autoPlay={true} muted={true} loop={true} id="myVideo" height={800} width="100%">
+                                        <source src="/videos//epicor.mp4" type="video/mp4" />
                                     </video>
                                 </div>
                             </div>

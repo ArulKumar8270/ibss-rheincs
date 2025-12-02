@@ -7,6 +7,9 @@ export default function EnterpriseSolutions() {
         <CommomLayout>
 
             <>
+                {/* Header Start */}
+                {/*?php include "navbar.php" ?*/}
+                {/* Header End */}
                 {/* Hero Section Start*/}
                 <div className="hero brainsec bluebg enterban pd30 pdb0">
                     <div className="container">
@@ -775,6 +778,8 @@ export default function EnterpriseSolutions() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="container-fluid">
                         {/* Testimonial Slider Start */}
                         <div className="msds">
                             <div className="swiper">
@@ -841,7 +846,7 @@ export default function EnterpriseSolutions() {
                                     </div>
                                     {/* Testimonial Slide End */}
                                 </div>
-                                <div className="testimonial-btn">
+                                <div className="testimonial-btn rtyElement">
                                     <div className="testimonial-button-prev">
                                         <div className="animated-svg-link1 btn-style-3">
                                             <span className="svg-container ">
@@ -1934,7 +1939,6 @@ export default function EnterpriseSolutions() {
                                                                     <div className="microinner-icon">
                                                                         <svg
                                                                             xmlns="http://www.w3.org/2000/svg"
-                                                                            xmlns:svg="http://www.w3.org/2000/svg"
                                                                             version="1.1"
                                                                             id="svg447"
                                                                             xmlSpace="preserve"
@@ -2428,7 +2432,7 @@ export default function EnterpriseSolutions() {
                                                 Outcome-focused delivery ensuring operational resilience and
                                                 business value
                                             </h3>
-                                            <img src="/new/adv5.svg" alt="" />
+                                            <img src="/images/advant5.svg" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -5277,20 +5281,11 @@ export default function EnterpriseSolutions() {
                                     </div>
                                 </div>
                             </div>
+                            {/*?php include "footer.php" ?*/}
                         </div>
                     </div>
                 </footer>
             </>
-
-
-
-
-
-
-
-
-
-
 
         </CommomLayout>
 

@@ -1036,7 +1036,7 @@ export default function AlMl() {
                             <div className="col-sm-6 order2">
                                 <div className="hero-bg-video buildsec">
                                     <video autoPlay="" muted="" loop="" id="myVideo" height={800}>
-                                        <source src="videos/biimplement.mp4" type="video/mp4" />
+                                        <source src="/videos//biimplement.mp4" type="video/mp4" />
                                     </video>
                                 </div>
                             </div>
@@ -1763,7 +1763,7 @@ export default function AlMl() {
                 <div className="hero brainsec enter retailsection mobilecasestudy  pdb0">
                     <div className="parent2 retailparent2 mobilevideo">
                         <video
-                            src="videos/casestudy.mp4"
+                            src="/videos//casestudy.mp4"
                             autoPlay=""
                             muted=""
                             loop=""
@@ -1818,7 +1818,7 @@ export default function AlMl() {
                             <div className="col-sm-5 col-12 pd0">
                                 <div className="parent2 retailparent2 mobileview">
                                     <video
-                                        src="videos/casestudy.mp4"
+                                        src="/videos//casestudy.mp4"
                                         autoPlay=""
                                         muted=""
                                         loop=""

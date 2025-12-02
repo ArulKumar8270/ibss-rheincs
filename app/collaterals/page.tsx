@@ -9,7 +9,7 @@ export default function AlMl() {
                 {/* Hero Section Start*/}
                 <div className="hero89 success-main1 systemview pdb0">
                     {/* <div class="parent2 retailparent2">
-  <video src="videos/equity.mp4" autoplay muted loop playsinline class="bg-image1"></video>
+  <video src="/videos//equity.mp4" autoplay muted loop playsinline class="bg-image1"></video>
     </div> */}
                     <div className="baner-img1 ssbimg">
                         <img src="//images/colletrals.jpg" alt="" />
@@ -31,7 +31,7 @@ export default function AlMl() {
                 {/* Hero Section Start*/}
                 <div className="hero89 success-main1 webhero mobileview pdb0">
                     {/* <div class="parent2 retailparent2">
-  <video src="videos/equity.mp4" autoplay muted loop playsinline class="bg-image1"></video>
+  <video src="/videos//equity.mp4" autoplay muted loop playsinline class="bg-image1"></video>
     </div> */}
                     <div className="container">
                         <div className="row section-row1 align-items-center builtsec">

@@ -76,22 +76,22 @@ export default function Footer() {
                                         <h3>About Us</h3>
                                         <ul>
                                             <li>
-                                                <a href="index.php">Overview </a>
+                                                <a href="/overview">Overview </a>
                                             </li>
                                             <li>
-                                                <a href="#!">Leadership</a>
+                                                <a href="/leadership">Leadership</a>
                                             </li>
                                             <li>
-                                                <a href="#!">Customer Speaks</a>
+                                                <a href="/customer-speak">Customer Speaks</a>
                                             </li>
                                             <li>
-                                                <a href="#!">Success Stories</a>
+                                                <a href="/success-stories">Success Stories</a>
                                             </li>
                                             <li>
-                                                <a href="#!">Careers</a>
+                                                <a href="/careers">Careers</a>
                                             </li>
                                             <li>
-                                                <a href="#!">Contact Us</a>
+                                                <a href="/contact">Contact Us</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -112,28 +112,28 @@ export default function Footer() {
                                                         <span>Our Solutions</span>
                                                     </li>
                                                     <li>
-                                                        <a href="index.php">CorusHR </a>
+                                                        <a href="/corushr">CorusHR </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">MeRLIN – Strategic Sourcing Software</a>
+                                                        <a href="/MeRLIN">MeRLIN – Strategic Sourcing Software</a>
                                                     </li>
                                                     <li>
                                                         <span>Enterprise Solutions &amp; Services</span>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Epicor</a>
+                                                        <a href="/epicor">Epicor</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">MS Dynamics</a>
+                                                        <a href="/microsoft-dynamics-solutions">MS Dynamics</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">SAP</a>
+                                                        <a href="/SAP">SAP</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Sugar CRM</a>
+                                                        <a href="/sugar-CRM">Sugar CRM</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">ERP Customer Excellence</a>
+                                                        <a href="/ERP-customer-excellence">ERP Customer Excellence</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -143,37 +143,37 @@ export default function Footer() {
                                                         <span>Digital Solutions</span>
                                                     </li>
                                                     <li>
-                                                        <a href="index.php">AI/ML </a>
+                                                        <a href="/AI-ML">AI/ML </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">eCommerce</a>
+                                                        <a href="/ecommerce">eCommerce</a>
                                                     </li>
                                                     <li>
                                                         <span>Digital Services</span>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Architecture &amp; App Modernisation</a>
+                                                        <a href="/Architecture">Architecture &amp; App Modernisation</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Data Engineering and Warehousing</a>
+                                                        <a href="/data-engineering-warehousing">Data Engineering and Warehousing</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Enterprise Software</a>
+                                                        <a href="/enterprise-solutions">Enterprise Software</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">A M &amp; S</a>
+                                                        <a href="/AM-S">A M &amp; S</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">User Experience</a>
+                                                        <a href="/user-exprience">User Experience</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Commercetools</a>
+                                                        <a href="/commercetools">Commercetools</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Fluent Commerce</a>
+                                                        <a href="/fluent-commerce">Fluent Commerce</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">MS Technologies </a>
+                                                        <a href="/ms-technology">MS Technologies </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -189,34 +189,34 @@ export default function Footer() {
                                     <h3>Industries</h3>
                                     <ul>
                                         <li>
-                                            <a href="index.php">Brand Owners and Vertical Retailers </a>
+                                            <a href="/vertical-retail">Brand Owners and Vertical Retailers </a>
                                         </li>
                                         <li>
-                                            <a href="#!">Retail Industry </a>
+                                            <a href="/industries-retail">Retail Industry </a>
                                         </li>
                                         <li>
-                                            <a href="#!">Distribution and Supply Chain</a>
+                                            <a href="/supply-chain">Distribution and Supply Chain</a>
                                         </li>
                                         <li>
-                                            <a href="#!">Discrete Manufacturing </a>
+                                            <a href="/discrete-manufacturing">Discrete Manufacturing </a>
                                         </li>
                                         <li>
-                                            <a href="#!">Automotive Industry</a>
+                                            <a href="/automotive">Automotive Industry</a>
                                         </li>
                                         <li>
-                                            <a href="#!">Engineering Procurement and Construction </a>
+                                            <a href="/epc">Engineering Procurement and Construction </a>
                                         </li>
                                         <li>
-                                            <a href="#!">Process Manufacturing </a>
+                                            <a href="/process-manufacturing">Process Manufacturing </a>
                                         </li>
                                         <li>
-                                            <a href="#!">Private Equity &amp; Funding Backed Ventures </a>
+                                            <a href="/private-quity">Private Equity &amp; Funding Backed Ventures </a>
                                         </li>
                                         <li>
-                                            <a href="#!">Cable Manufacturing </a>
+                                            <a href="/cable-manufacturing">Cable Manufacturing </a>
                                         </li>
                                         <li>
-                                            <a href="#!">Interior Design </a>
+                                            <a href="/interior-design">Interior Design </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -228,25 +228,25 @@ export default function Footer() {
                                     <h3>Resources</h3>
                                     <ul>
                                         <li>
-                                            <a href="#!">Blog </a>
+                                            <a href="/blog">Blog </a>
                                         </li>
                                         <li>
-                                            <a href="#">Case studies</a>
+                                            <a href="/case-study-details">Case studies</a>
                                         </li>
                                         <li>
-                                            <a href="#">Webinars</a>
+                                            <a href="/webinars">Webinars</a>
                                         </li>
                                         <li>
-                                            <a href="#">Collaterals</a>
+                                            <a href="/collaterals">Collaterals</a>
                                         </li>
                                         <li>
-                                            <a href="#">Videos</a>
+                                            <a href="/corporate-videos">Videos</a>
                                         </li>
                                         <li>
-                                            <a href="#">News and Events</a>
+                                            <a href="/news-events">News and Events</a>
                                         </li>
                                         <li>
-                                            <a href="#">FAQs</a>
+                                            <a href="/Faq">FAQs</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -264,22 +264,22 @@ export default function Footer() {
                                                 <h3>About Us</h3>
                                                 <ul>
                                                     <li>
-                                                        <a href="index.php">Overview </a>
+                                                        <a href="/overview">Overview </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Leadership</a>
+                                                        <a href="/leadership">Leadership</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Customer Speaks</a>
+                                                        <a href="/customer-speak">Customer Speaks</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Success Stories</a>
+                                                        <a href="/success-stories">Success Stories</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Careers</a>
+                                                        <a href="/careers">Careers</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Contact Us</a>
+                                                        <a href="/contact">Contact Us</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -293,25 +293,25 @@ export default function Footer() {
                                             <h3>Resources</h3>
                                             <ul>
                                                 <li>
-                                                    <a href="#!">Blog </a>
+                                                    <a href="/blog">Blog </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Case studies</a>
+                                                    <a href="/case-study-details">Case studies</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Webinars</a>
+                                                    <a href="/webinars">Webinars</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Collaterals</a>
+                                                    <a href="/collaterals">Collaterals</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Videos</a>
+                                                    <a href="/corporate-videos">Videos</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">News and Events</a>
+                                                    <a href="/news-events">News and Events</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">FAQs</a>
+                                                    <a href="/Faq">FAQs</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -332,28 +332,28 @@ export default function Footer() {
                                                         <b>Our Solutions</b>
                                                     </li>
                                                     <li>
-                                                        <a href="index.php">CorusHR </a>
+                                                        <a href="/corushr">CorusHR </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">MeRLIN – Strategic Sourcing Software</a>
+                                                        <a href="/MeRLIN">MeRLIN – Strategic Sourcing Software</a>
                                                     </li>
                                                     <li>
                                                         <b>Enterprise Solutions &amp; Services</b>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Epicor</a>
+                                                        <a href="/epicor">Epicor</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">MS Dynamics</a>
+                                                        <a href="/microsoft-dynamics-solutions">MS Dynamics</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">SAP</a>
+                                                        <a href="/SAP">SAP</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Sugar CRM</a>
+                                                        <a href="/sugar-CRM">Sugar CRM</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">ERP Customer Excellence</a>
+                                                        <a href="/ERP-customer-excellence">ERP Customer Excellence</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -363,37 +363,37 @@ export default function Footer() {
                                                         <b>Digital Solutions</b>
                                                     </li>
                                                     <li>
-                                                        <a href="index.php">AI/ML </a>
+                                                        <a href="/AI-ML">AI/ML </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">eCommerce</a>
+                                                        <a href="/ecommerce">eCommerce</a>
                                                     </li>
                                                     <li>
                                                         <b>Digital Services</b>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Architecture &amp; App Modernisation</a>
+                                                        <a href="/Architecture">Architecture &amp; App Modernisation</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Data Engineering and Warehousing</a>
+                                                        <a href="/data-engineering-warehousing">Data Engineering and Warehousing</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Enterprise Software</a>
+                                                        <a href="/enterprise-solutions">Enterprise Software</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">A M &amp; S</a>
+                                                        <a href="/AM-S">A M &amp; S</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">User Experience</a>
+                                                        <a href="/user-exprience">User Experience</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Commercetools</a>
+                                                        <a href="/commercetools">Commercetools</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">Fluent Commerce</a>
+                                                        <a href="/fluent-commerce">Fluent Commerce</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#!">MS Technologies </a>
+                                                        <a href="/ms-technology">MS Technologies </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -416,24 +416,24 @@ export default function Footer() {
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#!">Retail Industry </a>
+                                                    <a href="/industries-retail">Retail Industry </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#!">Distribution and Supply Chain</a>
+                                                    <a href="/supply-chain">Distribution and Supply Chain</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#!">Discrete Manufacturing </a>
+                                                    <a href="/discrete-manufacturing">Discrete Manufacturing </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#!">Automotive Industry</a>
+                                                    <a href="/automotive">Automotive Industry</a>
                                                 </li>
                                             </div>
                                             <div className=" col-6">
                                                 <li>
-                                                    <a href="#!">Engineering Procurement and Construction </a>
+                                                    <a href="/epc">Engineering Procurement and Construction </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#!">Process Manufacturing </a>
+                                                    <a href="/process-manufacturing">Process Manufacturing </a>
                                                 </li>
                                                 <li>
                                                     <a href="#!">
@@ -441,10 +441,10 @@ export default function Footer() {
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#!">Cable Manufacturing </a>
+                                                    <a href="/cable-manufacturing">Cable Manufacturing </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#!">Interior Design </a>
+                                                    <a href="/interior-design">Interior Design </a>
                                                 </li>
                                             </div>
                                         </div>

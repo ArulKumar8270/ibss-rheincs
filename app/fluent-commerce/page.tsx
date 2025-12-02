@@ -10,11 +10,11 @@ export default function EnterpriseSolutions() {
                 <div className="hero brainsec enter  retailsection1 mobilefluent">
                     <div className="parent2 retailparent2 mobilevideo">
                         <video
-                            src="videos/fluent1.mp4"
-                            autoPlay=""
-                            muted=""
-                            loop=""
-                            playsInline=""
+                            src="/videos//fluent1.mp4"
+                            autoPlay={true}
+                            muted={true}
+                            loop={true}
+                            playsInline={true}
                             className="bg-image1"
                         />
                     </div>
@@ -42,11 +42,11 @@ export default function EnterpriseSolutions() {
           </div> */}
                                 <div className="parent2 retailparent2 mobileview">
                                     <video
-                                        src="videos/fluent1.mp4"
-                                        autoPlay=""
-                                        muted=""
-                                        loop=""
-                                        playsInline=""
+                                        src="/videos//fluent1.mp4"
+                                        autoPlay={true}
+                                        muted={true}
+                                        loop={true}
+                                        playsInline={true}
                                         className="bg-image1"
                                     />
                                 </div>
@@ -416,7 +416,7 @@ export default function EnterpriseSolutions() {
                             <div className="col-sm-6 order2 pd0">
                                 <div className="hero-bg-video buildsec mobileux">
                                     {/*<video autoplay muted loop id="myVideo" height="800">*/}
-                                    {/*    <source src="videos/fluent1.mp4" type="video/mp4">*/}
+                                    {/*    <source src="/videos//fluent1.mp4" type="video/mp4">*/}
                                     {/*</video>*/}
                                     <img src="/iamges/FluentCommece2.png" />
                                 </div>
