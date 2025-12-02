@@ -106,7 +106,7 @@ export default function Home() {
               <div className="col-sm-6">
                 <div className="hero-bg-video">
                   <video autoPlay={true} muted={true} loop={true} id="myVideo" height={800}>
-                    <source src="videos/banner.mp4" type="video/mp4" />
+                    <source src="/videos//banner.mp4" type="video/mp4" />
                   </video>
                 </div>
               </div>
@@ -1246,7 +1246,7 @@ export default function Home() {
             </div>
             <div className="bgvideo">
               <video autoPlay={true} muted={true} loop={true} id="myVideo">
-                <source src="videos/globe1.mp4" type="video/mp4" />
+                <source src="/videos//globe1.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -1826,7 +1826,7 @@ export default function Home() {
               <div className="col-sm-5">
                 <div className="parent1">
                   <video
-                    src="videos/brain.mp4"
+                    src="/videos//brain.mp4"
                     autoPlay={true} muted={true} loop={true}
                     className="bg-image"
                   ></video>
@@ -3693,7 +3693,7 @@ export default function Home() {
                     height={700}
                     width="100%"
                   >
-                    <source src="videos/way.mp4" type="video/mp4" />
+                    <source src="/videos//way.mp4" type="video/mp4" />
                   </video>
                 </div>
               </div>
@@ -3861,7 +3861,7 @@ export default function Home() {
                     height={700}
                     width="100%"
                   >
-                    <source src="videos/way.mp4" type="video/mp4" />
+                    <source src="/videos//way.mp4" type="video/mp4" />
                   </video>
                 </div>
               </div>

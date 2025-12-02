@@ -245,10 +245,10 @@ export default function AlMl() {
                         <video
                             width="100%"
                             height="100%"
-                            autoPlay=""
-                            loop=""
-                            muted=""
-                            playsInline=""
+                            autoPlay={true}
+                            loop={true}
+                            muted={true}
+                            playsInline={true}
                         >
                             <source src="/new/cr-v2.mp4" type="video/mp4" />
                             <source src="movie.ogg" type="video/ogg" />
@@ -350,10 +350,10 @@ export default function AlMl() {
                         <video
                             width="100%"
                             height="100%"
-                            autoPlay=""
-                            loop=""
-                            muted=""
-                            playsInline=""
+                            autoPlay={true}
+                            loop={true}
+                            muted={true}
+                            playsInline={true}
                         >
                             <source src="/new/cr-v1.mp4" type="video/mp4" />
                             <source src="movie.ogg" type="video/ogg" />
@@ -811,7 +811,7 @@ export default function AlMl() {
                                 <div className="col-sm-4">
                                     <div className="job-serch-waber">
                                         <select id="cat">
-                                            <option value="" disabled="" selected="">
+                                            <option value="Category" disabled={true} selected={true}>
                                                 Category
                                             </option>
                                         </select>
@@ -1319,7 +1319,7 @@ export default function AlMl() {
                                 <div className="m-main-ch">
                                     <div className="job-serch-waber m-job-1">
                                         <select id="cat1">
-                                            <option value="" disabled="" selected="">
+                                            <option value="Category" disabled={true} selected={true}>
                                                 Category
                                             </option>
                                         </select>
@@ -1329,7 +1329,7 @@ export default function AlMl() {
                                     </div>
                                     <div className="job-serch-waber m-job-2">
                                         <select id="cat2">
-                                            <option value="" disabled="" selected="">
+                                            <option value="Location" disabled={true} selected={true}>
                                                 {" "}
                                                 Location{" "}
                                             </option>
@@ -1375,10 +1375,10 @@ export default function AlMl() {
                                             {" "}
                                             <img src="/new/nllo.svg" alt="" /> <span> 2-4 Years</span>{" "}
                                         </span>
-                                        <pan>
+                                        <span>
                                             {" "}
                                             <img src="/new/pranch-1.svg" alt="" /> <span>Epicor </span>
-                                        </pan>
+                                        </span>
                                     </p>
                                     <div className="ser-btn2">
                                         <a href="#" className="animated-svg-link1  ja-btn btn-style-3">
@@ -1496,10 +1496,10 @@ export default function AlMl() {
                                             {" "}
                                             <img src="/new/nllo.svg" alt="" /> <span> 2-4 Years</span>{" "}
                                         </span>
-                                        <pan>
+                                        <span>
                                             {" "}
                                             <img src="/new/pranch-1.svg" alt="" /> <span>Epicor </span>
-                                        </pan>
+                                        </span>
                                     </p>
                                     <div className="ser-btn2">
                                         <a href="#" className="animated-svg-link1  ja-btn btn-style-3">
@@ -1617,10 +1617,10 @@ export default function AlMl() {
                                             {" "}
                                             <img src="/new/nllo.svg" alt="" /> <span> 2-4 Years</span>{" "}
                                         </span>
-                                        <pan>
+                                            <span>
                                             {" "}
                                             <img src="/new/pranch-1.svg" alt="" /> <span>Epicor </span>
-                                        </pan>
+                                        </span>
                                     </p>
                                     <div className="ser-btn2">
                                         <a href="#" className="animated-svg-link1  ja-btn btn-style-3">
@@ -1738,10 +1738,10 @@ export default function AlMl() {
                                             {" "}
                                             <img src="/new/nllo.svg" alt="" /> <span> 2-4 Years</span>{" "}
                                         </span>
-                                        <pan>
+                                        <span>
                                             {" "}
                                             <img src="/new/pranch-1.svg" alt="" /> <span>Epicor </span>
-                                        </pan>
+                                        </span>
                                     </p>
                                     <div className="ser-btn2">
                                         <a href="#" className="animated-svg-link1  ja-btn btn-style-3">

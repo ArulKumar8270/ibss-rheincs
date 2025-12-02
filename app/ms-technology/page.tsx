@@ -968,7 +968,7 @@ export default function EnterpriseSolutions() {
                     </div>
                     <div className="marline-bg-video">
                         <video autoPlay="" muted="" loop="" id="myVideo" height="" width="auto">
-                            <source src="videos/benefits.mp4" type="video/mp4" />
+                            <source src="/videos//benefits.mp4" type="video/mp4" />
                         </video>
                     </div>
                 </div>

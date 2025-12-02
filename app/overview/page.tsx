@@ -1800,9 +1800,9 @@ export default function EnterpriseSolutions() {
                             <div className="col-sm-6">
                                 <div className="hero-bg-video2">
                                     <video
-                                        autoPlay=""
-                                        muted=""
-                                        loop=""
+                                        autoPlay={true}
+                                        muted={true}
+                                        loop={true}
                                         id="myVideo"
                                         height={700}
                                         width="100%"

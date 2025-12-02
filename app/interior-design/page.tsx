@@ -134,7 +134,7 @@ export default function EnterpriseSolutions() {
                     </div>
                     <div className="">
                         <video
-                            src="videos/Interior-Design.mp4"
+                            src="/videos//Interior-Design.mp4"
                             autoPlay=""
                             muted=""
                             loop=""

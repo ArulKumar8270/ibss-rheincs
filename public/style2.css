@@ -51,38 +51,38 @@
 
 
 .industries .service-item-body.in6 {
-	background: url(new/in6.png);
+	background: url(/new/in6.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 .industries .service-item-body.ein1 {
-	background: url(new/ein-1.png);
+	background: url(/new/ein-1.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 .industries .service-item-body.ein2 {
-	background: url(new/ein-2.png);
+	background: url(/new/ein-2.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
 .industries .service-item-body.ein3 {
-	background: url(new/ein-3.png);
+	background: url(/new/ein-3.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 .industries .service-item-body.ein4{
-	background: url(new/ein-4.png);
+	background: url(/new/ein-4.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 .industries .service-item-body.ein5{
-	background: url(new/ein-5.png);
+	background: url(/new/ein-5.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 .industries .service-item-body.ein6 {
-	background: url(new/ein-6.png);
+	background: url(/new/ein-6.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -323,7 +323,7 @@
     position: absolute;
     content: "";
     width: 100%;
-    background-image: url('new/retail-baner.jpg');
+    background-image: url('/new/retail-baner.jpg');
     background-position: right;
     background-size: contain;
     height: 100%;
@@ -405,7 +405,7 @@
     content: "";
     top: 0px;
     left: -10%;
-    background-image: url('new/retail-two.png');
+    background-image: url('/new/retail-two.png');
     background-position: left;
 
     background-repeat: no-repeat;
@@ -501,7 +501,7 @@
     position: absolute;
     content: "";
     width: 100%;
-    background-image: url('new/bann-33.svg');
+    background-image: url('/new/bann-33.svg');
     background-position: right;
     background-size: contain;
     height: 100%;
@@ -527,7 +527,7 @@
     content: "";
     top: 0px;
     left: -15%;
-    background-image: url('new/banner-44.svg');
+    background-image: url('/new/banner-44.svg');
     background-position: left;
 
     background-repeat: no-repeat;
@@ -555,7 +555,7 @@
     content: "";
     top: 0px;
     left: -15%;
-    background-image: url('new/epc-01.jpeg');
+    background-image: url('/new/epc-01.jpeg');
     background-position: left;
 
     background-repeat: no-repeat;
@@ -582,7 +582,7 @@
     content: "";
     top: 0px;
     left: -15%;
-    background-image: url('new/sp-08.jpeg');
+    background-image: url('/new/sp-08.jpeg');
     background-position: left;
 
     background-repeat: no-repeat;
@@ -609,7 +609,7 @@
     content: "";
     top: 0px;
     left: -15%;
-    background-image: url('new/cm-09.jpeg');
+    background-image: url('/new/cm-09.jpeg');
     background-position: left;
 
     background-repeat: no-repeat;
@@ -638,7 +638,7 @@
     content: "";
     top: 0px;
     left: -15%;
-    background-image: url('new/vr777.jpeg');
+    background-image: url('/new/vr777.jpeg');
     background-position: left;
 
     background-repeat: no-repeat;
@@ -1950,7 +1950,7 @@
 }
 
 .cs-baner {
-    /* background-image: url('new/csbaner.jpg'); */
+    /* background-image: url('/new/csbaner.jpg'); */
     background-position: right bottom;
     position: relative;
     z-index: 1;
@@ -1972,7 +1972,7 @@
 }
 
 .cs-baner::before {
-    background-image: url('new/csbaner.jpg');
+    background-image: url('/new/csbaner.jpg');
     background-position: right bottom;
     content: "";
     background-size: 100%;
@@ -3136,7 +3136,7 @@ h2.section-title {
 
     padding: 100px 0px !important;
     min-height: 100% !important;
-    background: url(new/fr.png) !important;
+    background: url(/new/fr.png) !important;
     /*background-size: contain !important;*/
     background-repeat: no-repeat !important;
     z-index: 0;
@@ -5700,7 +5700,7 @@ h2.section-title {
 
 .success-point-waber li::after {
     content: "";
-    background-image: url(new/qs-2.svg);
+    background-image: url(/new/qs-2.svg);
     position: absolute;
     left: -29px;
     top: 2px;

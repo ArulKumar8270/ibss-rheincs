@@ -181,7 +181,7 @@ export default function Header() {
                                                                                 <ul>
                                                                                     <li className="ser-btn">
                                                                                         <a
-                                                                                            href="/overviewe"
+                                                                                            href="/overview"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Overview
@@ -1567,7 +1567,7 @@ export default function Header() {
                             </div>
                             <ul className="submenu">
                                 <li>
-                                    <a href="/overviewe">Overview</a>
+                                    <a href="/overview">Overview</a>
                                 </li>
                                 <li>
                                     <a href="/leadership">Leadership</a>

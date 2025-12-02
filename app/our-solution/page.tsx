@@ -339,7 +339,7 @@ export default function EnterpriseSolutions() {
                             <div className="col-sm-6 order2 pd0">
                                 <div className="hero-bg-video buildsec mobileux">
                                     {/*<video autoplay muted loop id="myVideo" height="800">*/}
-                                    {/*    <source src="videos/fluent1.mp4" type="video/mp4">*/}
+                                    {/*    <source src="/videos//fluent1.mp4" type="video/mp4">*/}
                                     {/*</video>*/}
                                     <img src="/images/FluentCommece2.png" />
                                 </div>

@@ -9,7 +9,7 @@ export default function EnterpriseSolutions() {
             <>
                 <div className="hero brainsec enter  retailsection1 ">
                     {/* <div class="parent2 retailparent2">
-  <video src="videos/uiux.mp4" autoplay muted loop playsinline class="bg-image1"></video>
+  <video src="/videos//uiux.mp4" autoplay muted loop playsinline class="bg-image1"></video>
     </div> */}
                     <div className="container">
                         <div className="row section-row1 align-items-center builtsec collat">

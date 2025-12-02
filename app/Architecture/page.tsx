@@ -10,11 +10,11 @@ export default function AlMl() {
                 <div className="hero brainsec enter  retailsection1 erpexcel ">
                     <div className="parent2 retailparent2 mobilevideo">
                         <video
-                            src="videos/achitect.mp4"
-                            autoPlay=""
-                            muted=""
-                            loop=""
-                            playsInline=""
+                            src="/videos//achitect.mp4"
+                            autoPlay={true}
+                            muted={true}
+                            loop={true}
+                            playsInline={true}
                             className="bg-image1"
                         />
                     </div>
@@ -145,11 +145,11 @@ export default function AlMl() {
           </div> */}
                                 <div className="parent2 retailparent2 mobileview">
                                     <video
-                                        src="videos/achitect.mp4"
-                                        autoPlay=""
-                                        muted=""
-                                        loop=""
-                                        playsInline=""
+                                        src="/videos//achitect.mp4"
+                                        autoPlay={true}
+                                        muted={true}
+                                        loop={true}
+                                        playsInline={true}
                                         className="bg-image1"
                                     />
                                 </div>
@@ -518,7 +518,7 @@ export default function AlMl() {
                             </div>
                             <div className="col-sm-6 pd0">
                                 <div className="mobileapproach mobileview">
-                                    <img src="/images/aboutretail.jpg" alt="" />
+                                    <img src="/new/am-g.jpg" alt="" />
                                 </div>
                             </div>
                         </div>

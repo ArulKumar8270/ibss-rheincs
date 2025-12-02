@@ -135,7 +135,7 @@ export default function AlMl() {
                     </div>
                     <div className="">
                         <video
-                            src="videos/Automotive.mp4"
+                            src="/videos//Automotive.mp4"
                             autoPlay=""
                             muted=""
                             loop=""

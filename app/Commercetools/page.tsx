@@ -9,11 +9,11 @@ export default function AlMl() {
                 <div className="hero brainsec enter retailsection1 mobilecommpd0">
                     <div className="parent2 retailparent2 mobilevideo">
                         <video
-                            src="videos/commercetools.mp4"
-                            autoPlay=""
-                            muted=""
-                            loop=""
-                            playsInline=""
+                            src="/videos//commercetools.mp4"
+                            autoPlay={true}
+                            muted={true}
+                            loop={true}
+                            playsInline={true}
                             className="bg-image1"
                         />
                     </div>
@@ -42,11 +42,11 @@ export default function AlMl() {
           </div> */}
                                 <div className="parent2 retailparent2 mobileview">
                                     <video
-                                        src="videos/commercetools.mp4"
-                                        autoPlay=""
-                                        muted=""
-                                        loop=""
-                                        playsInline=""
+                                        src="/videos//commercetools.mp4"
+                                        autoPlay={true}
+                                        muted={true}
+                                        loop={true}
+                                        playsInline={true}
                                         className="bg-image1"
                                     />
                                 </div>

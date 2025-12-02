@@ -102,7 +102,7 @@ export default function EnterpriseSolutions() {
                             <div className="col-sm-6">
                                 <div className="hero-bg-video">
                                     <video autoPlay="" muted="" loop="" id="myVideo" height={800}>
-                                        <source src="videos/banner.mp4" type="video/mp4" />
+                                        <source src="/videos//banner.mp4" type="video/mp4" />
                                     </video>
                                 </div>
                             </div>
@@ -1317,7 +1317,7 @@ export default function EnterpriseSolutions() {
                         </div>
                         <div className="bgvideo">
                             <video autoPlay="" muted="" loop="" id="myVideo">
-                                <source src="videos/globe1.mp4" type="video/mp4" />
+                                <source src="/videos//globe1.mp4" type="video/mp4" />
                             </video>
                         </div>
                     </div>
@@ -2023,7 +2023,7 @@ export default function EnterpriseSolutions() {
                             <div className="col-sm-5">
                                 <div className="parent1">
                                     <video
-                                        src="videos/brain.mp4"
+                                        src="/videos//brain.mp4"
                                         autoPlay=""
                                         muted=""
                                         loop=""
@@ -3898,7 +3898,7 @@ export default function EnterpriseSolutions() {
                                         height={700}
                                         width="100%"
                                     >
-                                        <source src="videos/way.mp4" type="video/mp4" />
+                                        <source src="/videos//way.mp4" type="video/mp4" />
                                     </video>
                                 </div>
                             </div>
@@ -4162,7 +4162,7 @@ export default function EnterpriseSolutions() {
                                         height={700}
                                         width="100%"
                                     >
-                                        <source src="videos/way.mp4" type="video/mp4" />
+                                        <source src="/videos//way.mp4" type="video/mp4" />
                                     </video>
                                 </div>
                             </div>

@@ -134,7 +134,7 @@ export default function EnterpriseSolutions() {
                         </div>
                     </div>
                     <div className="">
-                        <video src="/new/pev-1.mp4" autoPlay="" muted="" loop="" playsInline="" />
+                        <video src="/new/pev-1.mp4" autoPlay={true} muted={true} loop={true} playsInline={true} />
                     </div>
                 </div>
                 <div className="py-100 pe-chellange-waber ">
@@ -312,10 +312,10 @@ export default function EnterpriseSolutions() {
                     <div className="commen-help-bg-img-ds">
                         <video
                             src="/new/darkvid.mp4"
-                            autoPlay=""
-                            loop=""
-                            muted=""
-                            playsInline=""
+                            autoPlay={true}
+                            loop={true}
+                            muted={true}
+                            playsInline={true}
                         />
                     </div>
                 </section>

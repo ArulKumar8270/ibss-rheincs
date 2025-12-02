@@ -9,7 +9,7 @@ export default function AlMl() {
             <>
                 <div className="hero brainsec enter retailsection corushrbanner systemview pdb0">
                     {/* <div class="parent2 retailparent2">
-  <video src="videos/equity.mp4" autoplay muted loop playsinline class="bg-image1"></video>
+  <video src="/videos//equity.mp4" autoplay muted loop playsinline class="bg-image1"></video>
     </div> */}
                     <div className="container">
                         <div className="row section-row1 align-items-center builtsec">
@@ -140,7 +140,7 @@ export default function AlMl() {
                 </div>
                 <div className=" retailsection1 mobileturn mobileview dnone  corushrbanner1  pdb0">
                     {/* <div class="parent2 retailparent2">
-  <video src="videos/equity.mp4" autoplay muted loop playsinline class="bg-image1"></video>
+  <video src="/videos//equity.mp4" autoplay muted loop playsinline class="bg-image1"></video>
     </div> */}
                     <div className="container">
                         <div className="row section-row1 align-items-center builtsec">
@@ -993,8 +993,8 @@ export default function AlMl() {
                         <div className="row">
                             <div className="col-sm-6 order2">
                                 <div className="hero-bg-video buildsec">
-                                    <video autoPlay="" muted="" loop="" id="myVideo" height={800}>
-                                        <source src="videos/selfservice.mp4" type="video/mp4" />
+                                    <video autoPlay={true} muted={true} loop={true} id="myVideo" height={800}>
+                                        <source src="/videos/selfservice.mp4" type="video/mp4" />
                                     </video>
                                 </div>
                             </div>
@@ -1178,14 +1178,14 @@ export default function AlMl() {
                             <div className="col-sm-6">
                                 <div className="hero-bg-video2">
                                     <video
-                                        autoPlay=""
-                                        muted=""
-                                        loop=""
+                                        autoPlay={true}
+                                        muted={true}
+                                        loop={true}
                                         id="myVideo"
                                         height={700}
                                         width="100%"
                                     >
-                                        <source src="videos/benefits.mp4" type="video/mp4" />
+                                        <source src="/videos//benefits.mp4" type="video/mp4" />
                                     </video>
                                 </div>
                             </div>
