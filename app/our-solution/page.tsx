@@ -81,7 +81,7 @@ export default function EnterpriseSolutions() {
                                                 </li>
                                             </ul>
                                             <div className="ser-btn m-0">
-                                                <a href="corushr.php" className="animated-svg-link p-0">
+                                                <a href="/corushr" className="animated-svg-link p-0">
                                                     Explore More
                                                     <span className="svg-container ">
                                                         <span className=" right">
@@ -220,7 +220,7 @@ export default function EnterpriseSolutions() {
                                                 </li>
                                             </ul>
                                             <div className="ser-btn m-0">
-                                                <a href="MeRLIN.php" className="animated-svg-link p-0">
+                                                <a href="/MeRLIN" className="animated-svg-link p-0">
                                                     Explore More
                                                     <span className="svg-container ">
                                                         <span className=" right">
@@ -411,7 +411,7 @@ export default function EnterpriseSolutions() {
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
-                                            <a href="contact.php" className="animated-svg-link">
+                                            <a href="/contact" className="animated-svg-link">
                                                 Contact Us
                                                 <span className="svg-container ">
                                                     <span className=" right">

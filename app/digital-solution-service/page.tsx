@@ -2393,7 +2393,7 @@ export default function digitalsolution() {
                                     </div>
                                     <div className="ser-btn2">
                                         <a
-                                            href="business-intelligence.php"
+                                            href="/business-intelligence"
                                             className="animated-svg-link1 btn-style-3"
                                         >
                                             Read More
@@ -2562,7 +2562,7 @@ export default function digitalsolution() {
                                     </div>
                                     <div className="ser-btn2">
                                         <a
-                                            href="business-intelligence.php"
+                                            href="/business-intelligence"
                                             className="animated-svg-link1 btn-style-3"
                                         >
                                             Read More

@@ -40,7 +40,7 @@ export default function AlMl() {
                                                             </h2>
                                                             <div className="ser-btn m-0">
                                                                 <a
-                                                                    href="blog-details.php"
+                                                                    href="/blog-details"
                                                                     className="animated-svg-link p-0"
                                                                 >
                                                                     Read More
@@ -169,7 +169,7 @@ export default function AlMl() {
                                                             </h2>
                                                             <div className="ser-btn m-0">
                                                                 <a
-                                                                    href="blog-details.php"
+                                                                    href="/blog-details"
                                                                     className="animated-svg-link p-0"
                                                                 >
                                                                     Read More
@@ -298,7 +298,7 @@ export default function AlMl() {
                                                             </h2>
                                                             <div className="ser-btn m-0">
                                                                 <a
-                                                                    href="blog-details.php"
+                                                                    href="/blog-details"
                                                                     className="animated-svg-link p-0"
                                                                 >
                                                                     Read More

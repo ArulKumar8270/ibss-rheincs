@@ -411,7 +411,7 @@ export default function Footer() {
                                         <div className="row">
                                             <div className=" col-6">
                                                 <li>
-                                                    <a href="index.php">
+                                                    <a href="/vertical-retail">
                                                         Brand Owners and Vertical Retailers{" "}
                                                     </a>
                                                 </li>
@@ -436,7 +436,7 @@ export default function Footer() {
                                                     <a href="/process-manufacturing">Process Manufacturing </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#!">
+                                                    <a href="/private-quity">
                                                         Private Equity &amp; Funding Backed Ventures{" "}
                                                     </a>
                                                 </li>

@@ -25,7 +25,7 @@ export default function EnterpriseSolutions() {
                                         de-risk execution to meet growth targets and return expectations.
                                     </p>
                                     <div className="ser-btn m-0">
-                                        <a href="contact.php" className="animated-svg-link">
+                                        <a href="/contact" className="animated-svg-link">
                                             Contact Us
                                             <span className="svg-container ">
                                                 <span className=" right">
@@ -324,7 +324,7 @@ export default function EnterpriseSolutions() {
                         <div className="pe-benifites-container">
                             <div className="">
                                 <div className="pe-benifet-content-waber">
-                                    <div className="pe-benifet-content benifet-content-2">
+                                    <div className="pe-benifet-content benifet-content-2">  
                                         <div>
                                             <h4 className="benifit-title"> Tangible Outcomes</h4>
                                             <div className="pe-bf-content-waber">
@@ -445,7 +445,7 @@ export default function EnterpriseSolutions() {
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
-                                            <a href="#" className="animated-svg-link">
+                                            <a href="/contact" className="animated-svg-link">
                                                 Contact Us
                                                 <span className="svg-container ">
                                                     <span className=" right">

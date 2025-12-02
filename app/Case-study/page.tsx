@@ -31,7 +31,7 @@ export default function AlMl() {
                                                             </h2>
                                                             <div className="ser-btn m-0">
                                                                 <a
-                                                                    href="case-study-details.php"
+                                                                    href="/case-study-details"
                                                                     className="animated-svg-link p-0"
                                                                 >
                                                                     Read More
