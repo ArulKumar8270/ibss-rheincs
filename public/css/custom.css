@@ -353,7 +353,9 @@ body {
 		right: -18%;
 		transform: translateY(-50%);
 		z-index: -2;
-	}
+	}.epictechnology .testimonial-slider .service-item {
+    height: 410px;
+}
 
 	.testimonial-slider1 .swiper-horizontal {
 		-ms-touch-action: pan-y;
@@ -13493,7 +13495,21 @@ header.boxshadow {
         height:50px  !important;
     }.testianimdot .flip-card-inner p {
     height: 140px;
-    }
+    }.mobilecomm{
+	    min-height:500px !important;
+	   height:500px !important;
+	} .epictechnology .testimonial-slider .service-item {
+    height: 400px;
+}
+}
+@media (min-width:1500px) and (max-width:2400px){
+    .mobilecomm{
+	    min-height:500px !important;
+	   height:500px !important;
+	}.retailparent2 .bg-image1 {
+    width: 50% !important;
+    height: 100%;
+}
 }
 @media (min-width:769px) and (max-width:1300px) {
 	.container {
@@ -13766,7 +13782,9 @@ header.boxshadow {
 	.service-item-body p {
 		height: 230px;
 	}
-
+.thepath .service-item-body p {
+		height: 200px; 
+	}
 	.our-services #myVideo {
 		position: absolute;
 		left: -28%;
@@ -17074,12 +17092,26 @@ body.no-scroll {
 
 .kineticsec::before {
 	background-attachment: fixed !important;
-	background: url(../images/approach.jpg);
+	background: url(../images/Kinetic.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.iscalasec::before {
+	background-attachment: fixed !important;
+	background: url(../images/iScala.jpg);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: right top;
 }
 
+.iscalasec::before {
+	background-attachment: fixed !important;
+	background: url(../images/iScala.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: right top;
+}
 .kineticsec1::before {
 	background-attachment: fixed !important;
 	background: url(../images/epicorscala.jpg);
@@ -19603,7 +19635,7 @@ body.popup-open .main-header {
 }
 
 .epictechnology .testimonial-slider .service-item {
-    height: 410px;
+    height: 380px;
 }.epictechnology .service-item-body p {
     height: 130px !important;
 }.epictechnology .oa-para-waber {
@@ -19655,6 +19687,7 @@ body.popup-open .main-header {
     z-index:-1;
         width: 65%;
     height: 100%;
+        object-fit: cover;
 }
 .mobileself1 .mobileux::before {
     background: linear-gradient(90deg, rgb(8 33 36 / 0%) 10%, rgb(8 35 38 / 0%) 44%, rgba(255, 255, 255, .99) 50%) !important;
@@ -19801,4 +19834,34 @@ body.popup-open .main-header {
 }
 .epiccompanion h2{
     margin-bottom:32px;
+}
+.ric-slider-img img{
+    height:400px;
+    width:100%;
+    object-fit:cover; 
+}
+
+.accordion-item:first-of-type>.accordion-header .accordion-button {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.epictechnology .testimonial-slider .flip-card-inner h3 {
+		height: auto;
+	}
+	
+	.epiccomp .service-card img{
+	    height:75px;
+	}
+	
+	.merlinicon .MeRLIN-service svg{
+	    height:75px;
+	}
+	.merlinicon .MeRLIN-service:hover path {
+    fill: #fff;
+}
+	.merlinicon .MeRLIN-service:hover .icns {
+    stroke: #fff !important;
+}
+.merlinicon .MeRLIN-service {
+    height: 450px;
 }
