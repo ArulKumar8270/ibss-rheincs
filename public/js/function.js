@@ -167,7 +167,7 @@
             }
           });
         }
-      }
+      } 
     }, 1000);
   }
   
@@ -176,86 +176,98 @@
 
   // --- Read More/Read Less Toggle ---
   function initReadMoreToggles() {
-    // Find all toggle buttons (handle multiple instances on same page)
-    // Use querySelectorAll to handle duplicate IDs (though not ideal HTML)
+    // Select all elements with the ID "toggleReadMore"
+    // Using querySelectorAll with attribute selector deals with duplicate IDs safely
     const toggleButtons = document.querySelectorAll('[id="toggleReadMore"]');
     const allMoreTexts = document.querySelectorAll('[id="more"]');
-    
+  
+    if (toggleButtons.length === 0 || allMoreTexts.length === 0) return;
+  
     toggleButtons.forEach(function(toggleBtn, index) {
-      // Skip if already initialized
-      if (toggleBtn.hasAttribute('data-readmore-initialized')) {
-        return;
-      }
-      
-      // Mark as initialized
-      toggleBtn.setAttribute('data-readmore-initialized', 'true');
-      
-      // Find the associated "more" text element
-      // Strategy: Find the "more" element that appears right before this toggle button
+      // 1. Skip if already initialized (prevents double-binding events)
+      if (toggleBtn.hasAttribute('data-readmore-initialized')) return;
+  
+      // 2. Find the matching content to show/hide
       let moreText = null;
-      
-      // Method 1: Find the closest "more" element that appears before this toggle in DOM order
-      // Get all elements in document order
-      const allElements = Array.from(document.querySelectorAll('*'));
-      const toggleIndex = allElements.indexOf(toggleBtn);
-      
-      // Find the last "more" element before this toggle
-      for (let i = toggleIndex - 1; i >= 0; i--) {
-        if (allElements[i].id === 'more') {
-          moreText = allElements[i];
-          break;
-        }
+  
+      // Strategy A: Previous Sibling (Most common)
+      let current = toggleBtn.previousElementSibling;
+      while (current && !moreText) {
+        if (current.id === 'more') moreText = current;
+        else if (current.querySelector('[id="more"]')) moreText = current.querySelector('[id="more"]');
+        if (moreText) break;
+        current = current.previousElementSibling;
       }
-      
-      // Method 2: If not found, try to find in the same parent container
-      if (!moreText) {
-        let parent = toggleBtn.parentElement;
-        while (parent && !moreText) {
-          const allMoreInContainer = Array.from(parent.querySelectorAll('[id="more"]'));
-          const allTogglesInContainer = Array.from(parent.querySelectorAll('[id="toggleReadMore"]'));
-          
-          // If counts match, pair by index
-          if (allMoreInContainer.length === allTogglesInContainer.length && allMoreInContainer.length > 0) {
-            const toggleIndexInContainer = allTogglesInContainer.indexOf(toggleBtn);
-            if (toggleIndexInContainer >= 0 && allMoreInContainer[toggleIndexInContainer]) {
-              moreText = allMoreInContainer[toggleIndexInContainer];
-              break;
-            }
-          }
-          
-          parent = parent.parentElement;
-        }
-      }
-      
-      // Method 3: Fallback to index-based pairing
+  
+      // Strategy B: Fallback to global index matching
       if (!moreText && allMoreTexts.length > index) {
         moreText = allMoreTexts[index];
       }
-      
-      if (toggleBtn && moreText) {
-        const btnLabel = toggleBtn.querySelector('.label');
-        const iconContainer = toggleBtn.querySelector('.svg-container');
-
-        if (btnLabel && iconContainer) {
-          toggleBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
+  
+      // 3. Initialize the Toggle
+      if (moreText) {
+        // Find inner elements (if they exist)
+        const labelEl = toggleBtn.querySelector('.label');
+        const iconEl = toggleBtn.querySelector('.svg-container');
+  
+        const handleToggle = function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+  
+          // Toggle visibility
+          moreText.classList.toggle('hidden');
+          const isHidden = moreText.classList.contains('hidden');
+  
+          // Text to display
+          const textOpen = "Read More";
+          const textClose = "Read Less";
+  
+          // UPDATE TEXT: Prefer .label, otherwise update the span's text directly
+          if (labelEl) {
+            labelEl.textContent = isHidden ? textOpen : textClose;
+          } else {
+            // Fallback: If no .label exists, check if we have text nodes to update
+            // This prevents wiping out an SVG if it sits next to the text
+            let textUpdated = false;
+            toggleBtn.childNodes.forEach(node => {
+              if (node.nodeType === 3 && node.nodeValue.trim() !== '') { // Text node
+                node.nodeValue = isHidden ? textOpen : textClose;
+                textUpdated = true;
+              }
+            });
             
-            // Toggle the text visibility
-            moreText.classList.toggle('hidden');
-
-            // Check if text is hidden or visible
-            if (moreText.classList.contains('hidden')) {
-              // State: Text is HIDDEN (Reset to default)
-              btnLabel.textContent = "Read More";
-              iconContainer.classList.remove('rotate-up'); // Rotate arrow back down
-            } else {
-              // State: Text is VISIBLE (Open)
-              btnLabel.textContent = "Read Less";
-              iconContainer.classList.add('rotate-up'); // Rotate arrow up
+            // If no text node found (empty span), just set textContent
+            if (!textUpdated && !iconEl) {
+              toggleBtn.textContent = isHidden ? textOpen : textClose;
             }
-          });
-        }
+          }
+  
+          // UPDATE ICON: Rotate if exists
+          if (iconEl) {
+             // Toggle a class for CSS rotation (e.g., transform: rotate(180deg))
+             if (isHidden) iconEl.classList.remove('rotate-up');
+             else iconEl.classList.add('rotate-up');
+          }
+        };
+  
+        // Add Listener
+        toggleBtn.addEventListener('click', handleToggle);
+        
+        // Accessibility & Styling for SPAN elements
+        toggleBtn.style.cursor = 'pointer';
+        toggleBtn.setAttribute('role', 'button');
+        toggleBtn.setAttribute('tabindex', '0');
+  
+        // Add Keyboard support (Enter/Space)
+        toggleBtn.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleToggle(e);
+          }
+        });
+  
+        // Mark initialized
+        toggleBtn.setAttribute('data-readmore-initialized', 'true');
       }
     });
   }
@@ -270,22 +282,66 @@
 
   // Re-initialize on route changes
   window.addEventListener('routeChange', function() {
-    // Remove initialization markers so elements can be re-initialized
+    // Remove ALL initialization markers so elements can be re-initialized
     document.querySelectorAll('[data-readmore-initialized]').forEach(function(el) {
       el.removeAttribute('data-readmore-initialized');
     });
-    // Re-initialize after a short delay to ensure DOM is ready
-    setTimeout(initReadMoreToggles, 200);
+    document.querySelectorAll('[data-has-listeners]').forEach(function(el) {
+      el.removeAttribute('data-has-listeners');
+    });
+    
+    // Use requestAnimationFrame to ensure DOM is ready
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        // Re-initialize after a short delay to ensure DOM is ready
+        setTimeout(initReadMoreToggles, 100);
+        // Also try after longer delay
+        setTimeout(initReadMoreToggles, 400);
+        setTimeout(initReadMoreToggles, 800);
+        setTimeout(initReadMoreToggles, 1500);
+      });
+    });
   });
   
   // Also re-initialize on DOMContentLoaded in case of dynamic content
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
+      // Remove markers first
+      document.querySelectorAll('[data-readmore-initialized]').forEach(function(el) {
+        el.removeAttribute('data-readmore-initialized');
+      });
+      document.querySelectorAll('[data-has-listeners]').forEach(function(el) {
+        el.removeAttribute('data-has-listeners');
+      });
       setTimeout(initReadMoreToggles, 100);
     });
   } else {
-    // DOM already loaded
+    // DOM already loaded - remove markers and initialize
+    document.querySelectorAll('[data-readmore-initialized]').forEach(function(el) {
+      el.removeAttribute('data-readmore-initialized');
+    });
+    document.querySelectorAll('[data-has-listeners]').forEach(function(el) {
+      el.removeAttribute('data-has-listeners');
+    });
     setTimeout(initReadMoreToggles, 100);
+  }
+  
+  // Also listen for Next.js route completion events
+  // Next.js fires a 'routeChangeComplete' event on the window
+  if (typeof window !== 'undefined') {
+    // Listen for Next.js navigation events
+    window.addEventListener('popstate', function() {
+      // Remove markers
+      document.querySelectorAll('[data-readmore-initialized]').forEach(function(el) {
+        el.removeAttribute('data-readmore-initialized');
+      });
+      document.querySelectorAll('[data-has-listeners]').forEach(function(el) {
+        el.removeAttribute('data-has-listeners');
+      });
+      // Re-initialize after navigation
+      setTimeout(initReadMoreToggles, 200);
+      setTimeout(initReadMoreToggles, 600);
+    });
   }
 
   // --- Main Mobile Menu (Hamburger) Logic ---
@@ -2629,91 +2685,136 @@
   }, ['Swiper']);
 
   // --- More jQuery-dependent code ---
-  whenReady(function() {
+  // Make initialization functions globally available for re-initialization on route changes
+  
+  // Function to initialize YouTube Background Video
+  window.initYTVideo = function() {
+    if (typeof window.$ === 'undefined' || !window.$.fn) return;
     var $ = window.$;
-    var $window = $(window);
-
-    /* Youtube Background Video JS */
     if ($('#herovideo').length && typeof $.fn.YTPlayer !== 'undefined') {
-      var myPlayer = $("#herovideo").YTPlayer();
+      try {
+        // Destroy existing instance if it exists
+        var existingPlayer = $('#herovideo').data('YTPlayer');
+        if (existingPlayer && existingPlayer.destroy) {
+          existingPlayer.destroy();
+        }
+        var myPlayer = $("#herovideo").YTPlayer();
+      } catch (e) {
+        console.error('Error initializing YouTube video:', e);
+      }
     }
-
-    /* Init Counter */
+  };
+  
+  // Function to initialize Counter
+  window.initCounter = function() {
+    if (typeof window.$ === 'undefined' || !window.$.fn) return;
+    var $ = window.$;
     if ($('.counter').length && typeof $.fn.counterUp !== 'undefined') {
-      $('.counter').counterUp({ delay: 6, time: 3000 });
+      try {
+        $('.counter').counterUp({ delay: 6, time: 3000 });
+      } catch (e) {
+        console.error('Error initializing counter:', e);
+      }
     }
-
-    /* Image Reveal Animation */
+  };
+  
+  // Function to initialize Image Reveal Animation
+  window.initImageReveal = function() {
     if ($('.reveal').length && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-      let revealContainers = document.querySelectorAll(".reveal");
-      revealContainers.forEach((container) => {
-        let image = container.querySelector("img");
-        let tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: container,
-            toggleActions: "play none none none"
+      try {
+        gsap.registerPlugin(ScrollTrigger);
+        // Kill existing ScrollTriggers for reveal containers
+        ScrollTrigger.getAll().forEach(function(trigger) {
+          if (trigger.vars && trigger.vars.trigger && trigger.vars.trigger.classList && trigger.vars.trigger.classList.contains('reveal')) {
+            trigger.kill();
           }
         });
-        tl.set(container, {
-          autoAlpha: 1
+        
+        let revealContainers = document.querySelectorAll(".reveal");
+        revealContainers.forEach((container) => {
+          let image = container.querySelector("img");
+          let tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: container,
+              toggleActions: "play none none none"
+            }
+          });
+          tl.set(container, {
+            autoAlpha: 1
+          });
+          tl.from(container, 1, {
+            xPercent: -100,
+            ease: Power2.out
+          });
+          tl.from(image, 1, {
+            xPercent: 100,
+            scale: 1,
+            delay: -1,
+            ease: Power2.out
+          });
         });
-        tl.from(container, 1, {
-          xPercent: -100,
-          ease: Power2.out
-        });
-        tl.from(image, 1, {
-          xPercent: 100,
-          scale: 1,
-          delay: -1,
-          ease: Power2.out
-        });
-      });
+      } catch (e) {
+        console.error('Error initializing image reveal:', e);
+      }
     }
-
+  };
+  
+  // Function to initialize header scroll behavior (only once)
+  if (!window._headerScrollInitialized) {
     window.addEventListener("scroll", function () {
       const header = document.querySelector(".main-header");
       if (header) {
         header.classList.toggle("is-sticky", window.scrollY > 50);
       }
     });
+    window._headerScrollInitialized = true;
+  }
 
-    function generateGrid() {
-      const overlay = document.querySelector('.grid-overlay');
-      const section = document.querySelector('.grid-section');
-      
-      if (!overlay || !section) return;
-      
-      overlay.innerHTML = '';
-      const cols = Math.ceil(section.offsetWidth / 120);
-      const rows = Math.ceil(section.offsetHeight / 150);
-      for (let i = 0; i < cols * rows; i++) {
-        const cell = document.createElement('div');
-        cell.classList.add('cell');
-        overlay.appendChild(cell);
-      }
-    }
-
-    if (document.querySelector('.grid-overlay') && document.querySelector('.grid-section')) {
-      generateGrid();
-      window.addEventListener('resize', generateGrid);
-    }
-
-    const gridOverlay = document.querySelector(".grid-overlay");
-    if (gridOverlay) {
-      const cols = Math.ceil(window.innerWidth / 120);
-      const section = document.querySelector(".grid-section");
-      if (section) {
-        const rows = Math.ceil(section.offsetHeight / 120);
-        const total = cols * rows;
-
-        for (let i = 0; i < total; i++) {
-          const cell = document.createElement("div");
-          cell.className = "cell";
-          gridOverlay.appendChild(cell);
+    // Function to generate grid overlay
+    window.initGridOverlay = function() {
+      function generateGrid() {
+        const overlay = document.querySelector('.grid-overlay');
+        const section = document.querySelector('.grid-section');
+        
+        if (!overlay || !section) return;
+        
+        overlay.innerHTML = '';
+        const cols = Math.ceil(section.offsetWidth / 120);
+        const rows = Math.ceil(section.offsetHeight / 150);
+        for (let i = 0; i < cols * rows; i++) {
+          const cell = document.createElement('div');
+          cell.classList.add('cell');
+          overlay.appendChild(cell);
         }
       }
-    }
+
+      if (document.querySelector('.grid-overlay') && document.querySelector('.grid-section')) {
+        generateGrid();
+        // Remove old resize listener if exists
+        if (window._gridResizeHandler) {
+          window.removeEventListener('resize', window._gridResizeHandler);
+        }
+        window._gridResizeHandler = generateGrid;
+        window.addEventListener('resize', window._gridResizeHandler);
+      }
+
+      const gridOverlay = document.querySelector(".grid-overlay");
+      if (gridOverlay && !document.querySelector('.grid-section')) {
+        const cols = Math.ceil(window.innerWidth / 120);
+        const section = document.querySelector(".grid-section");
+        if (section) {
+          const rows = Math.ceil(section.offsetHeight / 120);
+          const total = cols * rows;
+
+          gridOverlay.innerHTML = '';
+          for (let i = 0; i < total; i++) {
+            const cell = document.createElement("div");
+            cell.className = "cell";
+            gridOverlay.appendChild(cell);
+          }
+        }
+      }
+    };
 
     // Wait for owlCarousel plugin to be available
     function initSkewCarousel() {
@@ -2847,114 +2948,187 @@
       });
     }
 
-    /* Text Effect Animation */
-    if ($('.text-anime-style-1').length && typeof SplitText !== 'undefined' && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      let staggerAmount = 0.05,
-        translateXValue = 0,
-        delayValue = 0.5,
-        animatedTextElements = document.querySelectorAll('.text-anime-style-1');
+    // Function to initialize Text Effect Animations
+    window.initTextAnimations = function() {
+      if (typeof window.$ === 'undefined' || !window.$.fn) return;
+      var $ = window.$;
+      
+      // Text Animation Style 1
+      if ($('.text-anime-style-1').length && typeof SplitText !== 'undefined' && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        try {
+          gsap.registerPlugin(ScrollTrigger);
+          let staggerAmount = 0.05,
+            delayValue = 0.5,
+            animatedTextElements = document.querySelectorAll('.text-anime-style-1');
 
-      animatedTextElements.forEach((element) => {
-        let animationSplitText = new SplitText(element, { type: "chars, words" });
-        gsap.from(animationSplitText.words, {
-          duration: 1,
-          delay: delayValue,
-          x: 20,
-          autoAlpha: 0,
-          stagger: staggerAmount,
-          scrollTrigger: { trigger: element, start: "top 85%" },
-        });
-      });
-    }
-
-    if ($('.text-anime-style-2').length && typeof SplitText !== 'undefined' && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      let staggerAmount = 0.03,
-        translateXValue = 20,
-        delayValue = 0.1,
-        easeType = "power2.out",
-        animatedTextElements = document.querySelectorAll('.text-anime-style-2');
-
-      animatedTextElements.forEach((element) => {
-        let animationSplitText = new SplitText(element, { type: "chars, words" });
-        gsap.from(animationSplitText.chars, {
-          duration: 1,
-          delay: delayValue,
-          x: translateXValue,
-          autoAlpha: 0,
-          stagger: staggerAmount,
-          ease: easeType,
-          scrollTrigger: { trigger: element, start: "top 85%" },
-        });
-      });
-    }
-
-    if ($('.text-anime-style-3').length && typeof SplitText !== 'undefined' && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      let animatedTextElements = document.querySelectorAll('.text-anime-style-3');
-
-      animatedTextElements.forEach((element) => {
-        if (element.animation) {
-          element.animation.progress(1).kill();
-          element.split.revert();
+          animatedTextElements.forEach((element) => {
+            // Clean up existing animations
+            if (element._splitText) {
+              element._splitText.revert();
+            }
+            ScrollTrigger.getAll().forEach(function(trigger) {
+              if (trigger.vars && trigger.vars.trigger === element) {
+                trigger.kill();
+              }
+            });
+            
+            let animationSplitText = new SplitText(element, { type: "chars, words" });
+            element._splitText = animationSplitText;
+            gsap.from(animationSplitText.words, {
+              duration: 1,
+              delay: delayValue,
+              x: 20,
+              autoAlpha: 0,
+              stagger: staggerAmount,
+              scrollTrigger: { trigger: element, start: "top 85%" },
+            });
+          });
+        } catch (e) {
+          console.error('Error initializing text-anime-style-1:', e);
         }
-
-        element.split = new SplitText(element, {
-          type: "lines,words,chars",
-          linesClass: "split-line",
-        });
-        gsap.set(element, { perspective: 400 });
-
-        gsap.set(element.split.chars, {
-          opacity: 0,
-          x: "50",
-        });
-
-        element.animation = gsap.to(element.split.chars, {
-          scrollTrigger: { trigger: element, start: "top 90%" },
-          x: "0",
-          y: "0",
-          rotateX: "0",
-          opacity: 1,
-          duration: 1,
-          ease: Back.easeOut,
-          stagger: 0.02,
-        });
-      });
-    }
-
-    /* Parallaxie js */
-    var $parallaxie = $('.parallaxie');
-    if ($parallaxie.length && ($window.width() > 991)) {
-      if ($window.width() > 768 && typeof $.fn.parallaxie !== 'undefined') {
-        $parallaxie.parallaxie({
-          speed: 0.55,
-          offset: 0,
-        });
       }
-    }
 
-    /* Zoom Gallery screenshot */
-    if ($('.gallery-items').length && typeof $.fn.magnificPopup !== 'undefined') {
-      $('.gallery-items').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        closeOnContentClick: false,
-        closeBtnInside: false,
-        mainClass: 'mfp-with-zoom',
-        image: {
-          verticalFit: true,
-        },
-        gallery: {
-          enabled: true
-        },
-        zoom: {
-          enabled: true,
-          duration: 300,
-          opener: function (element) {
-            return element.find('img');
+      // Text Animation Style 2
+      if ($('.text-anime-style-2').length && typeof SplitText !== 'undefined' && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        try {
+          gsap.registerPlugin(ScrollTrigger);
+          let staggerAmount = 0.03,
+            translateXValue = 20,
+            delayValue = 0.1,
+            easeType = "power2.out",
+            animatedTextElements = document.querySelectorAll('.text-anime-style-2');
+
+          animatedTextElements.forEach((element) => {
+            // Clean up existing animations
+            if (element._splitText) {
+              element._splitText.revert();
+            }
+            ScrollTrigger.getAll().forEach(function(trigger) {
+              if (trigger.vars && trigger.vars.trigger === element) {
+                trigger.kill();
+              }
+            });
+            
+            let animationSplitText = new SplitText(element, { type: "chars, words" });
+            element._splitText = animationSplitText;
+            gsap.from(animationSplitText.chars, {
+              duration: 1,
+              delay: delayValue,
+              x: translateXValue,
+              autoAlpha: 0,
+              stagger: staggerAmount,
+              ease: easeType,
+              scrollTrigger: { trigger: element, start: "top 85%" },
+            });
+          });
+        } catch (e) {
+          console.error('Error initializing text-anime-style-2:', e);
+        }
+      }
+
+      // Text Animation Style 3
+      if ($('.text-anime-style-3').length && typeof SplitText !== 'undefined' && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        try {
+          gsap.registerPlugin(ScrollTrigger);
+          let animatedTextElements = document.querySelectorAll('.text-anime-style-3');
+
+          animatedTextElements.forEach((element) => {
+            // Clean up existing animations
+            if (element.animation) {
+              element.animation.progress(1).kill();
+            }
+            if (element.split) {
+              element.split.revert();
+            }
+            ScrollTrigger.getAll().forEach(function(trigger) {
+              if (trigger.vars && trigger.vars.trigger === element) {
+                trigger.kill();
+              }
+            });
+
+            element.split = new SplitText(element, {
+              type: "lines,words,chars",
+              linesClass: "split-line",
+            });
+            gsap.set(element, { perspective: 400 });
+
+            gsap.set(element.split.chars, {
+              opacity: 0,
+              x: "50",
+            });
+
+            element.animation = gsap.to(element.split.chars, {
+              scrollTrigger: { trigger: element, start: "top 90%" },
+              x: "0",
+              y: "0",
+              rotateX: "0",
+              opacity: 1,
+              duration: 1,
+              ease: Back.easeOut,
+              stagger: 0.02,
+            });
+          });
+        } catch (e) {
+          console.error('Error initializing text-anime-style-3:', e);
+        }
+      }
+    };
+
+    // Function to initialize Parallaxie
+    window.initParallaxie = function() {
+      if (typeof window.$ === 'undefined' || !window.$.fn) return;
+      var $ = window.$;
+      var $window = $(window);
+      var $parallaxie = $('.parallaxie');
+      if ($parallaxie.length && ($window.width() > 991)) {
+        if ($window.width() > 768 && typeof $.fn.parallaxie !== 'undefined') {
+          try {
+            $parallaxie.parallaxie({
+              speed: 0.55,
+              offset: 0,
+            });
+          } catch (e) {
+            console.error('Error initializing parallaxie:', e);
           }
         }
-      });
-    }
+      }
+    };
+    
+    // Function to initialize Magnific Popup for gallery
+    window.initMagnificGallery = function() {
+      if (typeof window.$ === 'undefined' || !window.$.fn) return;
+      var $ = window.$;
+      if ($('.gallery-items').length && typeof $.fn.magnificPopup !== 'undefined') {
+        try {
+          // Destroy existing instances
+          if ($.magnificPopup && $.magnificPopup.instance) {
+            $.magnificPopup.instance.close();
+          }
+          $('.gallery-items').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            closeOnContentClick: false,
+            closeBtnInside: false,
+            mainClass: 'mfp-with-zoom',
+            image: {
+              verticalFit: true,
+            },
+            gallery: {
+              enabled: true
+            },
+            zoom: {
+              enabled: true,
+              duration: 300,
+              opener: function (element) {
+                return element.find('img');
+              }
+            }
+          });
+        } catch (e) {
+          console.error('Error initializing magnific gallery:', e);
+        }
+      }
+    };
 
     /* Contact form validation */
     var $contactform = $("#contactForm");
@@ -2996,83 +3170,160 @@
       $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
     }
 
-    /* Our Project (filtering) Start */
-    $window.on("load", function () {
+    // Function to initialize Isotope filtering
+    window.initIsotope = function() {
+      if (typeof window.$ === 'undefined' || !window.$.fn) return;
+      var $ = window.$;
+      var $window = $(window);
       if ($(".project-item-boxes").length && typeof $.fn.isotope !== 'undefined') {
-        var $menuitem = $(".project-item-boxes").isotope({
-          itemSelector: ".project-item-box",
-          layoutMode: "masonry",
-          masonry: {
-            columnWidth: 1,
+        try {
+          // Destroy existing isotope instance
+          var $menuitem = $(".project-item-boxes");
+          if ($menuitem.data('isotope')) {
+            $menuitem.isotope('destroy');
           }
-        });
-
-        var $menudisesnav = $(".our-Project-nav li a");
-        $menudisesnav.on('click', function (e) {
-          var filterValue = $(this).attr('data-filter');
+          
           $menuitem.isotope({
-            filter: filterValue
+            itemSelector: ".project-item-box",
+            layoutMode: "masonry",
+            masonry: {
+              columnWidth: 1,
+            }
           });
 
-          $menudisesnav.removeClass("active-btn");
-          $(this).addClass("active-btn");
-          e.preventDefault();
-        });
-        $menuitem.isotope({ filter: "*" });
-      }
-    });
+          // Remove old event listeners and add new ones
+          var $menudisesnav = $(".our-Project-nav li a");
+          $menudisesnav.off('click.isotope').on('click.isotope', function (e) {
+            var filterValue = $(this).attr('data-filter');
+            $menuitem.isotope({
+              filter: filterValue
+            });
 
-    /* Animated Wow Js */
-    if (typeof WOW !== 'undefined') {
-      new WOW().init();
-    }
-
-    /* Popup Video */
-    if ($('.popup-video').length && typeof $.fn.magnificPopup !== 'undefined') {
-      $('.popup-video').magnificPopup({
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-        fixedContentPos: true
-      });
-    }
-
-    /* Why Choose us active Start */
-    if ($('.why-choose-content').length) {
-      var element = $('.why-choose-content');
-      var items = element.find('.why-choose-item');
-      if (items.length) {
-        items.on({
-          mouseenter: function () {
-            if ($(this).hasClass('active')) return;
-            items.removeClass('active');
-            $(this).addClass('active');
-          },
-          mouseleave: function () {
-            //stuff to do on mouse leave
-          }
-        });
-      }
-    }
-
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content) {
-          if (content.style.display === "block") {
-            content.style.display = "none";
-          } else {
-            content.style.display = "block";
-          }
+            $menudisesnav.removeClass("active-btn");
+            $(this).addClass("active-btn");
+            e.preventDefault();
+          });
+          $menuitem.isotope({ filter: "*" });
+        } catch (e) {
+          console.error('Error initializing isotope:', e);
         }
+      }
+    };
+    
+    // Function to initialize WOW.js
+    window.initWOW = function() {
+      if (typeof WOW !== 'undefined') {
+        try {
+          new WOW().init();
+        } catch (e) {
+          console.error('Error initializing WOW:', e);
+        }
+      }
+    };
+    
+    // Function to initialize Popup Video
+    window.initPopupVideo = function() {
+      if (typeof window.$ === 'undefined' || !window.$.fn) return;
+      var $ = window.$;
+      if ($('.popup-video').length && typeof $.fn.magnificPopup !== 'undefined') {
+        try {
+          // Destroy existing instances
+          if ($.magnificPopup && $.magnificPopup.instance) {
+            $.magnificPopup.instance.close();
+          }
+          $('.popup-video').magnificPopup({
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: true
+          });
+        } catch (e) {
+          console.error('Error initializing popup video:', e);
+        }
+      }
+    };
+    
+    // Function to initialize Why Choose us hover effects
+    window.initWhyChoose = function() {
+      if (typeof window.$ === 'undefined' || !window.$.fn) return;
+      var $ = window.$;
+      if ($('.why-choose-content').length) {
+        try {
+          var element = $('.why-choose-content');
+          var items = element.find('.why-choose-item');
+          if (items.length) {
+            // Remove old event listeners
+            items.off('mouseenter.whyChoose mouseleave.whyChoose');
+            items.on({
+              mouseenter: function () {
+                if ($(this).hasClass('active')) return;
+                items.removeClass('active');
+                $(this).addClass('active');
+              },
+              mouseleave: function () {
+                //stuff to do on mouse leave
+              }
+            });
+          }
+        } catch (e) {
+          console.error('Error initializing why choose:', e);
+        }
+      }
+    };
+    
+    // Function to initialize Collapsible elements
+    window.initCollapsible = function() {
+      // Remove old markers to allow re-initialization
+      document.querySelectorAll('[data-collapsible-initialized]').forEach(function(el) {
+        el.removeAttribute('data-collapsible-initialized');
       });
-    }
-  }, ['jQuery']);
+      
+      var coll = document.getElementsByClassName("collapsible");
+      for (var i = 0; i < coll.length; i++) {
+        // Skip if already initialized
+        if (coll[i].hasAttribute('data-collapsible-initialized')) continue;
+        
+        coll[i].setAttribute('data-collapsible-initialized', 'true');
+        
+        // Remove old event listeners by cloning
+        var newColl = coll[i].cloneNode(true);
+        coll[i].parentNode.replaceChild(newColl, coll[i]);
+        
+        newColl.addEventListener("click", function () {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content) {
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          }
+        });
+      }
+    };
+    
+    // Main initialization function that calls all sub-functions
+    window.reinitJQueryPlugins = function() {
+      window.initYTVideo();
+      window.initCounter();
+      window.initImageReveal();
+      window.initGridOverlay();
+      window.initTextAnimations();
+      window.initParallaxie();
+      window.initMagnificGallery();
+      window.initIsotope();
+      window.initWOW();
+      window.initPopupVideo();
+      window.initWhyChoose();
+      window.initCollapsible();
+    };
+    
+    // Initialize on first load
+    whenReady(function() {
+      window.reinitJQueryPlugins();
+    }, ['jQuery']);
 
   // --- Additional Search Box Functionality ---
   whenReady(function() {
@@ -3239,6 +3490,22 @@
     setTimeout(function() {
       // Re-initialize any code that depends on DOM elements
       // This will be called after Next.js Link navigation
+      
+      // Re-initialize all jQuery plugins and animations
+      if (typeof window.reinitJQueryPlugins === 'function') {
+        setTimeout(function() {
+          window.reinitJQueryPlugins();
+        }, 200);
+        
+        // Also try after longer delay for slow-loading content
+        setTimeout(function() {
+          window.reinitJQueryPlugins();
+        }, 800);
+        
+        setTimeout(function() {
+          window.reinitJQueryPlugins();
+        }, 1500);
+      }
       
       // Re-initialize all Swiper carousels
       // This will destroy existing instances and re-run all initializations

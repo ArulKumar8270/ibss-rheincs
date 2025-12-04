@@ -54,8 +54,32 @@
             // Search box functionality is handled in function.js
 
             // Looping animation functionality with IntersectionObserver
-            const animatedSvg = document.getElementById('looping-animation');
-            if (animatedSvg) {
+            // Make this function globally available for re-initialization
+            window.initLoopingAnimation = function() {
+                const animatedSvg = document.getElementById('looping-animation');
+                if (!animatedSvg) {
+                    // Element doesn't exist yet, try again after a delay
+                    setTimeout(function() {
+                        if (typeof window.initLoopingAnimation === 'function') {
+                            window.initLoopingAnimation();
+                        }
+                    }, 500);
+                    return;
+                }
+                
+                // Clean up any existing observer and interval
+                if (animatedSvg._loopingObserver) {
+                    animatedSvg._loopingObserver.disconnect();
+                    animatedSvg._loopingObserver = null;
+                }
+                if (animatedSvg._loopingInterval) {
+                    clearInterval(animatedSvg._loopingInterval);
+                    animatedSvg._loopingInterval = null;
+                }
+                
+                // Remove animate class to reset state
+                animatedSvg.classList.remove('animate');
+                
                 const animationDuration = 3000; // Total animation time in milliseconds
                 const pauseDuration = 5000;     // 5-second pause
                 let animationInterval;
@@ -63,7 +87,7 @@
                 const runAnimation = () => {
                     // This clever trick forces the browser to restart the CSS animations
                     animatedSvg.classList.remove('animate');
-                    void animatedSvg.offsetWidth;
+                    void animatedSvg.offsetWidth; // Force reflow
                     animatedSvg.classList.add('animate');
                 };
 
@@ -74,16 +98,28 @@
                             runAnimation();
                             // Then, set it to loop with a 5-second pause in between
                             animationInterval = setInterval(runAnimation, animationDuration + pauseDuration);
+                            animatedSvg._loopingInterval = animationInterval;
                         } else {
                             // If it scrolls off-screen, stop the loop to save resources
-                            clearInterval(animationInterval);
+                            if (animationInterval) {
+                                clearInterval(animationInterval);
+                                animatedSvg._loopingInterval = null;
+                            }
                             animatedSvg.classList.remove('animate');
                         }
                     });
                 }, { threshold: 0.1 }); // Starts when 10% of the SVG is visible
 
                 observer.observe(animatedSvg);
-            }
+                animatedSvg._loopingObserver = observer;
+            };
+            
+            // Initialize on first load with a small delay to ensure DOM is ready
+            setTimeout(function() {
+                if (typeof window.initLoopingAnimation === 'function') {
+                    window.initLoopingAnimation();
+                }
+            }, 200);
 
             // Animated SVG link functionality
             document.querySelectorAll('.animated-svg-link12').forEach(function(btn) {
@@ -198,5 +234,24 @@
     } else {
         // DOM is already ready
         init();
+    }
+    
+    // Listen for route changes to re-initialize looping animation
+    if (typeof window !== 'undefined') {
+        window.addEventListener('routeChange', function() {
+            // Re-initialize looping animation after route change
+            setTimeout(function() {
+                if (typeof window.initLoopingAnimation === 'function') {
+                    window.initLoopingAnimation();
+                }
+            }, 300);
+            
+            // Also try after longer delay
+            setTimeout(function() {
+                if (typeof window.initLoopingAnimation === 'function') {
+                    window.initLoopingAnimation();
+                }
+            }, 800);
+        });
     }
 })();

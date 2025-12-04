@@ -64,7 +64,7 @@ export default function EnterpriseSolutions() {
                 {/* The new, attractive timeline starts here */}
                 <div className="timeline">
                   {/* Nov 2024: Green Certificate */}
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-certificate" />
                     </div>
@@ -187,7 +187,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   {/* Nov 2024: IDC Opening */}
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-building" />
                     </div>
@@ -305,7 +305,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   {/* Jan 2023: Saudi Presence */}
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-handshake" />
                     </div>
@@ -423,7 +423,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   {/* May 2022: Top-Berater Award */}
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-trophy" />
                     </div>
@@ -545,7 +545,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   {/* May 2022: Protiviti Collaboration */}
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-users" />
                     </div>
@@ -663,7 +663,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   {/* Nov 2020: MeRLIN Sourcing Launch */}
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-rocket" />
                     </div>
@@ -786,7 +786,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   {/* Nov 2020: Academy Launch */}
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-graduation-cap" />
                     </div>
@@ -904,7 +904,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   {/* Mar 2020: Beste Berater Award */}
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-award" />
                     </div>
@@ -1021,7 +1021,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   {/* Jun 2019: Moro & Epicor Partnership */}
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-cloud" />
                     </div>
@@ -1139,7 +1139,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   {/* Apr 2019: RheinKontakt 2019 */}
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-calendar-alt" />
                     </div>
@@ -1254,7 +1254,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   {/* Apr 2019: Ajman Chamber MoU */}
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-file-signature" />
                     </div>
@@ -1371,7 +1371,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   {/* Apr 2019: Pinnacle Award */}
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-award" />
                     </div>
@@ -1488,7 +1488,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   {/* And so on for all other items... */}
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-cloud-upload-alt" />
                     </div>
@@ -1604,7 +1604,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-map-marker-alt" />
                     </div>
@@ -1721,7 +1721,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-briefcase" />
                     </div>
@@ -1837,7 +1837,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-star" />
                     </div>
@@ -1953,7 +1953,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-desktop" />
                     </div>
@@ -2069,7 +2069,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-handshake" />
                     </div>
@@ -2185,7 +2185,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-user-tie" />
                     </div>
@@ -2301,7 +2301,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-trophy" />
                     </div>
@@ -2417,7 +2417,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-star" />
                     </div>
@@ -2534,7 +2534,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-award" />
                     </div>
@@ -2651,7 +2651,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-trophy" />
                     </div>
@@ -2767,7 +2767,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-sync-alt" />
                     </div>
@@ -2883,7 +2883,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-award" />
                     </div>
@@ -3000,7 +3000,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-cogs" />
                     </div>
@@ -3117,7 +3117,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-dollar-sign" />
                     </div>
@@ -3234,7 +3234,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-trophy" />
                     </div>
@@ -3351,7 +3351,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-medal" />
                     </div>
@@ -3472,7 +3472,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fab fa-microsoft" />
                     </div>
@@ -3590,7 +3590,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-flag" />
                     </div>
@@ -3706,7 +3706,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-heartbeat" />
                     </div>
@@ -3823,7 +3823,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-gem" />
                     </div>
@@ -3939,7 +3939,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-sitemap" />
                     </div>
@@ -4056,7 +4056,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-car" />
                     </div>
@@ -4172,7 +4172,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                   </div>
-                  <div className="timeline-item">
+                  <div className="timeline-item is-visible">
                     <div className="timeline-marker">
                       <i className="fas fa-lightbulb" />
                     </div>
