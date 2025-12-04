@@ -185,9 +185,10 @@
     // Language change function - make it globally available
     window.language_changefunc = function(langvalue) {
         if (langvalue == "German") {
+            // Note: German page not available in Next.js app, keeping external URL
             window.location.href = "https://ibss.co.in/RB1/German.php";
         } else {
-            window.location.href = "https://ibss.co.in/RB1/index.php";
+            window.location.href = "/";
         }
     };
 
