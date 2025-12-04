@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import SwiperInit from './Components/SwiperInit'
+import OwlCarouselInit from './Components/OwlCarouselInit'
+import CounterInit from './Components/CounterInit'
+import ScriptReinit from './Components/ScriptReinit'
 import React from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,6 +22,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/images/fav.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Radio+Canada:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Parkinsans:wght@300..800&display=swap" rel="stylesheet" />
@@ -45,6 +50,9 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         <SwiperInit />
+        <OwlCarouselInit />
+        <CounterInit />
+        <ScriptReinit />
       </body>
       <script dangerouslySetInnerHTML={{
         __html: `

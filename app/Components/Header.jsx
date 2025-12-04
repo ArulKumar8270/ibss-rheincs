@@ -11,10 +11,11 @@ export default function Header() {
     const [epicorCollapsed, setEpicorCollapsed] = useState(false);
     const [digitalSolutionsCollapsed, setDigitalSolutionsCollapsed] = useState(false);
     const [digitalServicesCollapsed, setDigitalServicesCollapsed] = useState(false);
-    
+    const [isSticky, setIsSticky] = useState(false);
+
     // Get the current page name (e.g., 'leadership' from '/leadership')
     const currentPage = pathname.split('/').pop() || 'index';
-    
+
     // Define lists of pages for each Main Menu (without .php extension for Next.js)
     // Pages under "About Us"
     const aboutPages = [
@@ -24,7 +25,7 @@ export default function Header() {
         'success-stories',
         'careers'
     ];
-    
+
     // Pages under "Solutions & Services"
     const solutionsPages = [
         'corushr',
@@ -57,7 +58,7 @@ export default function Header() {
         'ms-technology',
         'digital-services'
     ];
-    
+
     // Pages under "Industries"
     const industryPages = [
         'vertical-retail',
@@ -71,7 +72,7 @@ export default function Header() {
         'cable-manufacturing',
         'interior-design'
     ];
-    
+
     // Pages under "Resources"
     const resourcePages = [
         'blog',
@@ -82,36 +83,51 @@ export default function Header() {
         'news-events',
         'faq'
     ];
-    
+
     // Helper function to check if current page is in a page array
     const isPageInArray = (pageArray) => {
         // Normalize current page (remove leading slash, handle empty)
         const normalizedPage = currentPage.toLowerCase();
         return pageArray.some(page => page.toLowerCase() === normalizedPage);
     };
-    
-    // Handle tab switching - backup initialization for any missed tabs
+
+    // Initialize mega menu on mount and route change
     useEffect(() => {
-        // Re-initialize tab functionality as fallback
-        const initTabs = () => {
+        console.log('🔄 [Header] Initializing mega-menu for pathname:', pathname);
+        
+        // Ensure first tab is active by default
+        const initializeTabs = () => {
             document.querySelectorAll(".mega-menu-content").forEach((menu) => {
                 const tabs = menu.querySelectorAll(".tab-link");
                 const contents = menu.querySelectorAll(".tab-content");
-                
+
                 if (tabs.length && contents.length) {
+                    // Set first tab as active if none are active
+                    const hasActive = Array.from(tabs).some(tab => tab.classList.contains('active'));
+                    if (!hasActive && tabs[0]) {
+                        tabs[0].classList.add('active');
+                        const firstTabId = tabs[0].getAttribute('data-tab');
+                        if (firstTabId) {
+                            const firstContent = menu.querySelector(`#${firstTabId}`);
+                            if (firstContent) {
+                                firstContent.classList.add('active');
+                            }
+                        }
+                    }
+                    
                     tabs.forEach((tab) => {
                         // Only add listener if it doesn't have React onClick
                         if (!tab.getAttribute('data-react-handled')) {
-                            tab.addEventListener("click", function(e) {
+                            tab.addEventListener("click", function (e) {
                                 e.preventDefault();
                                 e.stopPropagation();
-                                
+
                                 const allTabs = menu.querySelectorAll(".tab-link");
                                 const allContents = menu.querySelectorAll(".tab-content");
-                                
+
                                 allTabs.forEach((t) => t.classList.remove("active"));
                                 allContents.forEach((c) => c.classList.remove("active"));
-                                
+
                                 tab.classList.add("active");
                                 const targetId = tab.getAttribute("data-tab");
                                 if (targetId) {
@@ -127,14 +143,63 @@ export default function Header() {
                 }
             });
         };
-        
+
+        // Ensure mega-menu hover works properly
+        const ensureMegaMenuHover = () => {
+            const megaMenus = document.querySelectorAll('.mega-menu');
+            megaMenus.forEach(menu => {
+                // Add explicit hover class for better control
+                menu.addEventListener('mouseenter', function() {
+                    this.classList.add('is-hovered');
+                });
+                menu.addEventListener('mouseleave', function() {
+                    this.classList.remove('is-hovered');
+                });
+            });
+        };
+
         // Small delay to ensure DOM is ready
-        const timeoutId = setTimeout(initTabs, 100);
-        
+        const timeoutId = setTimeout(() => {
+            initializeTabs();
+            ensureMegaMenuHover();
+            console.log('✅ [Header] Mega-menu initialized successfully');
+        }, 100);
+
         return () => {
             clearTimeout(timeoutId);
         };
     }, [pathname]);
+
+    // Handle sticky header on scroll
+    useEffect(() => {
+        let lastScrollTop = 0;
+        const scrollThreshold = 100; // Pixels to scroll before adding sticky class
+
+        const handleScroll = () => {
+            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Add sticky class when scrolled down past threshold
+            if (currentScrollTop > scrollThreshold) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false);
+            }
+            
+            lastScrollTop = currentScrollTop;
+        };
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        
+        // Check initial scroll position
+        handleScroll();
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <>
             <div className="topheader text-right">
@@ -210,7 +275,7 @@ export default function Header() {
                 </div>
             </div>
             <div className="desktop-nav">
-                <header className="main-header boxshadow" id="mainHeader">
+                <header className={`main-header boxshadow ${isSticky ? 'is-sticky' : ''}`} id="mainHeader">
                     <div className="header-sticky">
                         <nav className="navbar navbar-expand-lg">
                             <div className="container">
@@ -311,35 +376,35 @@ export default function Header() {
                                                                                 <h1>About Us</h1>
                                                                                 <ul>
                                                                                     <li className="ser-btn">
-                                                                                       <Link              href="/overview"
+                                                                                        <Link href="/overview"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Overview
                                                                                         </Link>
                                                                                     </li>
                                                                                     <li className="ser-btn">
-                                                                                       <Link              href="/leadership"
+                                                                                        <Link href="/leadership"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Leadership
                                                                                         </Link>
                                                                                     </li>
                                                                                     <li className="ser-btn">
-                                                                                       <Link              href="/customer-speak"
+                                                                                        <Link href="/customer-speak"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Customers Speak
                                                                                         </Link>
                                                                                     </li>
                                                                                     <li className="ser-btn">
-                                                                                       <Link              href="/success-stories"
+                                                                                        <Link href="/success-stories"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Success Stories
                                                                                         </Link>
                                                                                     </li>
                                                                                     <li className="ser-btn">
-                                                                                       <Link              href="/careers"
+                                                                                        <Link href="/careers"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Careers
@@ -354,14 +419,13 @@ export default function Header() {
                                                                                     <div className="col-lg-4 col-md-4">
                                                                                         <div className="service-item-body">
                                                                                             <h3>
-                                                                                                <span>Case Study</span>
+                                                                                                <span>News and events</span>
                                                                                             </h3>
                                                                                             <p>
-                                                                                                10 Must-Have Features in a Modern ERP
-                                                                                                System
+                                                                                                RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                               <Link                      href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
+                                                                                                <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption "
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -380,7 +444,7 @@ export default function Header() {
                                                                                                 System
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                               <Link                      href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
+                                                                                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -399,7 +463,7 @@ export default function Header() {
                                                                                                 Management
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                               <Link                      href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
+                                                                                                <Link href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -502,8 +566,8 @@ export default function Header() {
                                                         <div className="row">
                                                             <div className="col-sm-3">
                                                                 <div className="tab-buttons">
-                                                                    <button 
-                                                                        className={`tab-link ${activeTab === 'tab1' ? 'active' : ''}`} 
+                                                                    <button
+                                                                        className={`tab-link`}
                                                                         data-tab="tab1"
                                                                         onClick={(e) => {
                                                                             e.preventDefault();
@@ -523,8 +587,8 @@ export default function Header() {
                                                                     >
                                                                         Our Solutions
                                                                     </button>
-                                                                    <button 
-                                                                        className={`tab-link ${activeTab === 'tab2' ? 'active' : ''}`} 
+                                                                    <button
+                                                                        className={`tab-link ${activeTab === 'tab2' ? 'active' : ''}`}
                                                                         data-tab="tab2"
                                                                         onClick={(e) => {
                                                                             e.preventDefault();
@@ -544,8 +608,8 @@ export default function Header() {
                                                                     >
                                                                         Enterprise Solutions &amp; Services
                                                                     </button>
-                                                                    <button 
-                                                                        className={`tab-link ${activeTab === 'tab3' ? 'active' : ''}`} 
+                                                                    <button
+                                                                        className={`tab-link ${activeTab === 'tab3' ? 'active' : ''}`}
                                                                         data-tab="tab3"
                                                                         onClick={(e) => {
                                                                             e.preventDefault();
@@ -576,17 +640,24 @@ export default function Header() {
                                                                         <div className="row">
                                                                             <div className="col-sm-5 pr0">
                                                                                 <div className="tabcont">
-                                                                                    <h3>Our Solutions</h3>
+                                                                                    <h3 className="ser-btn">
+                                                                                        <Link className="animated-svg-link"
+                                                                                            href="/our-solution"
+                                                                                        >
+                                                                                            Our Solutions
+                                                                                            <NavArrowLeft />
+                                                                                        </Link>
+                                                                                    </h3>
                                                                                     <ul>
                                                                                         <li className="ser-btn">
-                                                                                           <Link                  href="/corushr"
+                                                                                            <Link href="/corushr"
                                                                                                 className="animated-svg-link"
                                                                                             >
                                                                                                 Corus HR
                                                                                             </Link>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                           <Link                  href="/MeRLIN"
+                                                                                            <Link href="/MeRLIN"
                                                                                                 className="animated-svg-link"
                                                                                             >
                                                                                                 MeRLIN Sourcing
@@ -608,7 +679,7 @@ export default function Header() {
                                                                                                     ERP System
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                   <Link                          href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
+                                                                                                    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         Read More
@@ -627,7 +698,7 @@ export default function Header() {
                                                                                                     Management
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                   <Link                          href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
+                                                                                                    <Link href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         Read More
@@ -647,7 +718,7 @@ export default function Header() {
                                                                             <div className="col-sm-5 pr0">
                                                                                 <div className="tabcont">
                                                                                     <h3 className="ser-btn">
-                                                                                       <Link              className="animated-svg-link"
+                                                                                        <Link className="animated-svg-link"
                                                                                             href="/enterprise-solutions"
                                                                                         >
                                                                                             Enterprise Solutions and Services
@@ -657,12 +728,12 @@ export default function Header() {
                                                                                     <ul>
                                                                                         <li className="ser-btn">
                                                                                             <div className="menu-item">
-                                                                                               <Link                      href="/epicor"
+                                                                                                <Link href="/epicor"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Epicor
                                                                                                 </Link>
-                                                                                               <button
+                                                                                                <button
                                                                                                     type="button"
                                                                                                     onClick={(e) => {
                                                                                                         e.preventDefault();
@@ -698,7 +769,7 @@ export default function Header() {
                                                                                             </div>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                           <Link                  href="/microsoft-dynamics-solutions"
+                                                                                            <Link href="/microsoft-dynamics-solutions"
                                                                                                 className=""
                                                                                             >
                                                                                                 MS Dynamics
@@ -738,7 +809,7 @@ export default function Header() {
                                                                                                     ERP System 1
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                   <Link                          href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
+                                                                                                    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
                                                                                                         className="animated-svg-link1
                                                       btn-style-3"
                                                                                                     >
@@ -758,7 +829,7 @@ export default function Header() {
                                                                                                     Management 1
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                <Link href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
+                                                                                                    <Link href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         Read More
@@ -776,10 +847,10 @@ export default function Header() {
                                                                     <div id="tab3" className={`tab-content ${activeTab === 'tab3' ? 'active' : ''}`}>
                                                                         <div className="row">
                                                                             <div className="col-sm-5 pr0">
-                                                                                
+
                                                                                 <div className="tabcont">
                                                                                     <h3 className="ser-btn">
-                                                                                       <Link              className="animated-svg-link"
+                                                                                        <Link className="animated-svg-link"
                                                                                             href="/digital-solution-service"
                                                                                         >
                                                                                             Digital Solutions
@@ -805,20 +876,20 @@ export default function Header() {
                                                                                                     <NavArrowRight />
                                                                                                 </button>
                                                                                             </div>
-                                                                                        <div id="demo1"
-                                                                                            className={`${digitalSolutionsCollapsed ? 'show' : 'collapse'} content-box`}
-                                                                                            style={{ display: digitalSolutionsCollapsed ? 'block' : 'none' }}
-                                                                                        >
-                                                                                            <Link href="/business-intelligence">
-                                                                                                BI &amp; Analytics
-                                                                                            </Link>
-                                                                                            <Link href="/AI-ML">
-                                                                                                AI/ML
-                                                                                            </Link>
-                                                                                            <Link href="/ecommerce">
-                                                                                                eCommerce
-                                                                                            </Link>
-                                                                                        </div>
+                                                                                            <div id="demo1"
+                                                                                                className={`${digitalSolutionsCollapsed ? 'show' : 'collapse'} content-box`}
+                                                                                                style={{ display: digitalSolutionsCollapsed ? 'block' : 'none' }}
+                                                                                            >
+                                                                                                <Link href="/business-intelligence">
+                                                                                                    BI &amp; Analytics
+                                                                                                </Link>
+                                                                                                <Link href="/AI-ML">
+                                                                                                    AI/ML
+                                                                                                </Link>
+                                                                                                <Link href="/ecommerce">
+                                                                                                    eCommerce
+                                                                                                </Link>
+                                                                                            </div>
                                                                                         </li>
                                                                                         <li className="ser-btn ">
                                                                                             <div className="menu-item">
@@ -837,35 +908,35 @@ export default function Header() {
                                                                                                     <NavArrowRight />
                                                                                                 </button>
                                                                                             </div>
-                                                                                        <div id="demo2"
-                                                                                            className={`${digitalServicesCollapsed ? 'show' : 'collapse'} content-box`}
-                                                                                            style={{ display: digitalServicesCollapsed ? 'block' : 'none' }}
-                                                                                        >
-                                                                                            <Link href="/Architecture">
-                                                                                                Architecture &amp; App Modernisation
-                                                                                            </Link>
-                                                                                            <Link href="/data-engineering-warehousing">
-                                                                                                Data Engineering and Warehousing
-                                                                                            </Link>
-                                                                                            <Link href="/enterprise-solutions">
-                                                                                                Enterprise Software
-                                                                                            </Link>
-                                                                                            <Link href="/AM-S">
-                                                                                                A M &amp; S
-                                                                                            </Link>
-                                                                                            <Link href="/user-exprience">
-                                                                                                User Experience
-                                                                                            </Link>
-                                                                                            <Link href="/commercetools">
-                                                                                                Commercetools
-                                                                                            </Link>
-                                                                                            <Link href="/fluent-commerce">
-                                                                                                Fluent Commerce
-                                                                                            </Link>
-                                                                                            <Link href="/ms-technology">
-                                                                                                MS Technologies
-                                                                                            </Link>
-                                                                                        </div>
+                                                                                            <div id="demo2"
+                                                                                                className={`${digitalServicesCollapsed ? 'show' : 'collapse'} content-box`}
+                                                                                                style={{ display: digitalServicesCollapsed ? 'block' : 'none' }}
+                                                                                            >
+                                                                                                <Link href="/Architecture">
+                                                                                                    Architecture &amp; App Modernisation
+                                                                                                </Link>
+                                                                                                <Link href="/data-engineering-warehousing">
+                                                                                                    Data Engineering and Warehousing
+                                                                                                </Link>
+                                                                                                <Link href="/enterprise-solutions">
+                                                                                                    Enterprise Software
+                                                                                                </Link>
+                                                                                                <Link href="/AM-S">
+                                                                                                    A M &amp; S
+                                                                                                </Link>
+                                                                                                <Link href="/user-exprience">
+                                                                                                    User Experience
+                                                                                                </Link>
+                                                                                                <Link href="/commercetools">
+                                                                                                    Commercetools
+                                                                                                </Link>
+                                                                                                <Link href="/fluent-commerce">
+                                                                                                    Fluent Commerce
+                                                                                                </Link>
+                                                                                                <Link href="/ms-technology">
+                                                                                                    MS Technologies
+                                                                                                </Link>
+                                                                                            </div>
                                                                                         </li>
                                                                                     </ul>
                                                                                 </div>
@@ -883,7 +954,7 @@ export default function Header() {
                                                                                                     ERP System 2
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                   <Link                          href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
+                                                                                                    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
                                                                                                         className="animated-svg-link1
                                                       btn-style-3"
                                                                                                     >
@@ -903,7 +974,7 @@ export default function Header() {
                                                                                                     Management 2
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                   <Link                          href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
+                                                                                                    <Link href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
                                                                                                         className="animated-svg-link1
                                                       btn-style-3"
                                                                                                     >
@@ -1015,35 +1086,35 @@ export default function Header() {
                                                                                     <div className="col-sm-6">
                                                                                         <ul className="verline">
                                                                                             <li className="ser-btn">
-                                                                                               <Link                      href="/vertical-retail"
+                                                                                                <Link href="/vertical-retail"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Brand Owners and Vertical Retailers
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
-                                                                                               <Link                      href="/industries-retail"
+                                                                                                <Link href="/industries-retail"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Retail Industry
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
-                                                                                               <Link                      href="/supply-chain"
+                                                                                                <Link href="/supply-chain"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Distribution and Supply Chain
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
-                                                                                               <Link                      href="/discrete-manufacturing"
+                                                                                                <Link href="/discrete-manufacturing"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Discrete Manufacturing
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
-                                                                                               <Link                      href="/automotive"
+                                                                                                <Link href="/automotive"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Automotive Industry
@@ -1054,7 +1125,7 @@ export default function Header() {
                                                                                     <div className="col-sm-6 pdl0">
                                                                                         <ul>
                                                                                             <li className="ser-btn">
-                                                                                               <Link                      href="/epc"
+                                                                                                <Link href="/epc"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Engineering Procurement and
@@ -1062,14 +1133,14 @@ export default function Header() {
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
-                                                                                               <Link                      href="/process-manufacturing"
+                                                                                                <Link href="/process-manufacturing"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Process Manufacturing
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
-                                                                                               <Link                      href="/private-quity"
+                                                                                                <Link href="/private-quity"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Private Equity &amp; Funding Backed
@@ -1077,14 +1148,14 @@ export default function Header() {
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
-                                                                                               <Link                      href="/cable-manufacturing"
+                                                                                                <Link href="/cable-manufacturing"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Cable Manufacturing
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
-                                                                                               <Link                      href="/interior-design"
+                                                                                                <Link href="/interior-design"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Interior Design
@@ -1108,7 +1179,7 @@ export default function Header() {
                                                                                                 System
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                               <Link                      href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
+                                                                                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -1127,7 +1198,7 @@ export default function Header() {
                                                                                                 Management
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                               <Link                      href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
+                                                                                                <Link href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -1235,42 +1306,42 @@ export default function Header() {
                                                                                 <h1>Resources</h1>
                                                                                 <ul>
                                                                                     <li className="ser-btn">
-                                                                                       <Link              href="/blog"
+                                                                                        <Link href="/blog"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Blog
                                                                                         </Link>
                                                                                     </li>
                                                                                     <li className="ser-btn">
-                                                                                       <Link              href="/case-study-details"
+                                                                                        <Link href="/case-study-details"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Case Studies
                                                                                         </Link>
                                                                                     </li>
                                                                                     <li className="ser-btn">
-                                                                                       <Link              href="/webinars"
+                                                                                        <Link href="/webinars"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Webinars
                                                                                         </Link>
                                                                                     </li>
                                                                                     <li className="ser-btn">
-                                                                                       <Link              href="/collaterals"
+                                                                                        <Link href="/collaterals"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Collaterals
                                                                                         </Link>
                                                                                     </li>
                                                                                     <li className="ser-btn">
-                                                                                       <Link              href="/corporate-videos"
+                                                                                        <Link href="/corporate-videos"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Videos
                                                                                         </Link>
                                                                                     </li>
                                                                                     <li className="ser-btn">
-                                                                                       <Link              href="/news-events"
+                                                                                        <Link href="/news-events"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             News and Events
@@ -1297,7 +1368,7 @@ export default function Header() {
                                                                                                 System
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                               <Link                      href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
+                                                                                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
                                                                                                     className="animated-svg-link1
                                               btn-style-3"
                                                                                                 >
@@ -1317,7 +1388,7 @@ export default function Header() {
                                                                                                 System
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                               <Link                      href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
+                                                                                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -1336,7 +1407,7 @@ export default function Header() {
                                                                                                 Management
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                               <Link                      href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
+                                                                                                <Link href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -1517,7 +1588,7 @@ export default function Header() {
                                             </li>
                                         </ul>
                                     </div>
-                                    <Link                    href="#"
+                                    <Link href="#"
                                         aria-haspopup="true"
                                         role="button"
                                         tabIndex={0}

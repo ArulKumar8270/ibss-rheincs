@@ -3,8 +3,225 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
+// Standalone Read More Toggle Implementation
+// This is completely self-contained and doesn't depend on function.js
+const initReadMoreTogglesStandalone = () => {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
+  
+  console.log('🔄 [Standalone] Initializing Read More Toggles...');
+  
+  // Remove ALL initialization markers to allow complete re-initialization
+  document.querySelectorAll('[data-readmore-init]').forEach((el) => {
+    el.removeAttribute('data-readmore-init');
+    el.removeAttribute('data-index');
+  });
+  
+  const toggleButtons = document.querySelectorAll('[id="toggleReadMore"]');
+  const allMoreTexts = document.querySelectorAll('[id="more"]');
+  
+  if (toggleButtons.length === 0) {
+    console.log('⚠️ [Standalone] No toggle buttons found');
+    return;
+  }
+  
+  console.log(`✅ [Standalone] Found ${toggleButtons.length} toggle buttons and ${allMoreTexts.length} more texts`);
+  
+  toggleButtons.forEach((originalBtn: Element, index: number) => {
+    // Skip if already initialized (check after we remove markers above)
+    if ((originalBtn as HTMLElement).hasAttribute('data-readmore-init')) {
+      return;
+    }
+    
+    // Clone the button to remove ALL old event listeners
+    const toggleBtn = originalBtn.cloneNode(true) as HTMLElement;
+    if (originalBtn.parentNode) {
+      originalBtn.parentNode.replaceChild(toggleBtn, originalBtn);
+    }
+    
+    // Mark as initialized
+    toggleBtn.setAttribute('data-readmore-init', 'true');
+    toggleBtn.setAttribute('data-index', index.toString());
+    
+    // Find the associated #more element using multiple strategies
+    let moreText: HTMLElement | null = null;
+    const parent = toggleBtn.parentElement;
+    
+    // Strategy 1: Look for parent's previous sibling
+    if (parent && parent.previousElementSibling) {
+      const prevSibling = parent.previousElementSibling as HTMLElement;
+      if (prevSibling.id === 'more') {
+        moreText = prevSibling;
+      } else {
+        const moreInSibling = prevSibling.querySelector('[id="more"]') as HTMLElement;
+        if (moreInSibling) {
+          moreText = moreInSibling;
+        }
+      }
+    }
+    
+    // Strategy 2: Walk backwards through siblings
+    if (!moreText && parent) {
+      let currentSibling = parent.previousElementSibling;
+      while (currentSibling && !moreText) {
+        if ((currentSibling as HTMLElement).id === 'more') {
+          moreText = currentSibling as HTMLElement;
+          break;
+        }
+        const moreInSibling = currentSibling.querySelector('[id="more"]') as HTMLElement;
+        if (moreInSibling) {
+          moreText = moreInSibling;
+          break;
+        }
+        currentSibling = currentSibling.previousElementSibling;
+      }
+    }
+    
+    // Strategy 3: Search in parent container with index pairing
+    if (!moreText && parent) {
+      let container = parent.parentElement;
+      while (container && !moreText) {
+        const allMoreInContainer = Array.from(container.querySelectorAll('[id="more"]')) as HTMLElement[];
+        const allTogglesInContainer = Array.from(container.querySelectorAll('[id="toggleReadMore"]')) as HTMLElement[];
+        
+        if (allMoreInContainer.length > 0) {
+          if (allMoreInContainer.length === allTogglesInContainer.length) {
+            const toggleIndex = allTogglesInContainer.indexOf(toggleBtn);
+            if (toggleIndex >= 0 && allMoreInContainer[toggleIndex]) {
+              moreText = allMoreInContainer[toggleIndex];
+              break;
+            }
+          }
+          // Fallback: use index-based pairing
+          const toggleIndex = allTogglesInContainer.indexOf(toggleBtn);
+          if (toggleIndex >= 0 && toggleIndex < allMoreInContainer.length) {
+            moreText = allMoreInContainer[toggleIndex];
+          } else if (allMoreInContainer[0]) {
+            moreText = allMoreInContainer[0];
+          }
+        }
+        if (moreText) break;
+        container = container.parentElement;
+      }
+    }
+    
+    // Strategy 4: Global fallback - pair by document order
+    if (!moreText && allMoreTexts.length > 0) {
+      const allToggleElements = Array.from(document.querySelectorAll('[id="toggleReadMore"]')) as HTMLElement[];
+      const toggleIndex = allToggleElements.indexOf(toggleBtn);
+      if (toggleIndex >= 0 && toggleIndex < allMoreTexts.length) {
+        moreText = allMoreTexts[toggleIndex] as HTMLElement;
+      } else if (allMoreTexts[0]) {
+        moreText = allMoreTexts[0] as HTMLElement;
+      }
+    }
+    
+    if (!moreText) {
+      console.warn(`❌ [Standalone] No #more element found for button ${index}`);
+      return;
+    }
+    
+    // Get label and icon elements
+    const btnLabel = toggleBtn.querySelector('.label') as HTMLElement;
+    const iconContainer = toggleBtn.querySelector('.svg-container') as HTMLElement;
+    
+    if (!btnLabel || !iconContainer) {
+      console.warn(`❌ [Standalone] Button ${index} missing .label or .svg-container`);
+      return;
+    }
+    
+    // Create click handler
+    const handleClick = (e: Event) => {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Toggle the hidden class
+      const wasHidden = moreText!.classList.contains('hidden');
+      moreText!.classList.toggle('hidden');
+      const isNowHidden = moreText!.classList.contains('hidden');
+      
+      // Update label
+      if (btnLabel) {
+        btnLabel.textContent = isNowHidden ? "Read More" : "Read Less";
+      }
+      
+      // Update icon
+      if (iconContainer) {
+        if (isNowHidden) {
+          iconContainer.classList.remove('rotate-up');
+        } else {
+          iconContainer.classList.add('rotate-up');
+        }
+      }
+      
+      // Update ARIA
+      toggleBtn.setAttribute('aria-expanded', isNowHidden ? 'false' : 'true');
+      
+      console.log(`✅ [Standalone] Toggle ${index} clicked: ${wasHidden ? 'hidden → visible' : 'visible → hidden'}`);
+    };
+    
+    // Add multiple event listeners to ensure it works
+    toggleBtn.onclick = handleClick;
+    toggleBtn.addEventListener('click', handleClick, true); // Capture phase
+    toggleBtn.addEventListener('click', handleClick, false); // Bubble phase
+    
+    // Make clickable
+    toggleBtn.style.cssText = `
+      cursor: pointer !important;
+      pointer-events: auto !important;
+      user-select: none !important;
+      position: relative !important;
+      z-index: 1000 !important;
+      display: inline-block !important;
+    `;
+    
+    // Make all children non-interactive
+    const allChildren = toggleBtn.querySelectorAll('*');
+    allChildren.forEach((child: Element) => {
+      (child as HTMLElement).style.pointerEvents = 'none';
+      (child as HTMLElement).style.cursor = 'pointer';
+    });
+    
+    // Accessibility
+    toggleBtn.setAttribute('role', 'button');
+    toggleBtn.setAttribute('tabindex', '0');
+    toggleBtn.setAttribute('aria-expanded', moreText.classList.contains('hidden') ? 'false' : 'true');
+    toggleBtn.setAttribute('aria-controls', moreText.id || `more-${index}`);
+    
+    // Keyboard support
+    toggleBtn.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        handleClick(e);
+      }
+    });
+    
+    console.log(`✅ [Standalone] Button ${index} fully initialized`);
+  });
+  
+  console.log('✅ [Standalone] Toggle initialization complete');
+};
+
+// Make it globally available so it can be called from anywhere
+if (typeof window !== 'undefined') {
+  (window as any).initReadMoreTogglesStandalone = initReadMoreTogglesStandalone;
+  console.log('✅ [Standalone] Function registered globally as window.initReadMoreTogglesStandalone');
+}
+
 export default function ScriptReinit() {
   const pathname = usePathname();
+  
+  // Debug: Log available window functions on mount
+  useEffect(() => {
+    console.log('🔍 [ScriptReinit] Component mounted');
+    console.log('🔍 [ScriptReinit] Available functions:', {
+      functionJsLoaded: (window as any).functionJsLoaded,
+      reinitJQueryPlugins: typeof (window as any).reinitJQueryPlugins,
+      initReadMoreTogglesStandalone: typeof (window as any).initReadMoreTogglesStandalone,
+      initLoopingAnimation: typeof (window as any).initLoopingAnimation,
+    });
+    
+    // Note: Counter initialization is now handled by CounterInit.tsx component
+  }, []);
 
   useEffect(() => {
     // Re-initialize scripts and jQuery-dependent code on route change
@@ -112,16 +329,19 @@ export default function ScriptReinit() {
           window.dispatchEvent(new CustomEvent('routeChange', { detail: { pathname } }));
         }
         
-        // Re-initialize read more toggles
+        // Re-initialize read more toggles - use standalone implementation
         const reinitReadMoreToggles = () => {
-          // Remove initialization markers
-          document.querySelectorAll('[data-readmore-init]').forEach((el) => {
-            el.removeAttribute('data-readmore-init');
-          });
+          // Use the standalone implementation (always works, doesn't depend on function.js)
+          initReadMoreTogglesStandalone();
           
-          // Call the global initialization function
+          // Also try the function.js version if available (as backup)
           if (typeof (window as any).initReadMoreToggles === 'function') {
-            (window as any).initReadMoreToggles();
+            try {
+              console.log('🔄 Also calling function.js initReadMoreToggles...');
+              (window as any).initReadMoreToggles();
+            } catch (error) {
+              console.error('❌ Error calling function.js initReadMoreToggles:', error);
+            }
           }
         };
         
@@ -237,24 +457,32 @@ export default function ScriptReinit() {
           }, 1000);
         }
         
-        // Re-initialize OwlCarousel carousels
-        if (typeof (window as any).initSkewCarousel === 'function') {
-          setTimeout(() => {
-            (window as any).initSkewCarousel();
-          }, 600);
-        }
-        
-        if (typeof (window as any).initSkewCarousel1 === 'function') {
-          setTimeout(() => {
-            (window as any).initSkewCarousel1();
-          }, 650);
-        }
+        // Note: Counter initialization is now handled by CounterInit.tsx component
+        // Note: OwlCarousel initialization is now handled by OwlCarouselInit.tsx component
+        // No need to initialize them here anymore
         
         // Final re-initialization of read more toggles after all other scripts
         // This ensures read more toggles are initialized even if other scripts take time
         setTimeout(() => {
           reinitReadMoreToggles();
         }, 2000);
+        
+        // Additional fallback: Try one more time after a longer delay
+        setTimeout(() => {
+          reinitReadMoreToggles();
+        }, 3000);
+        
+        // Ultimate fallback: Dispatch custom event if function still not found
+        setTimeout(() => {
+          if (typeof (window as any).initReadMoreToggles !== 'function') {
+            console.warn('⚠️ initReadMoreToggles still not found after 3 seconds, dispatching custom event');
+            if (window.dispatchEvent) {
+              window.dispatchEvent(new CustomEvent('reinitReadMoreToggles', { 
+                detail: { fallback: true } 
+              }));
+            }
+          }
+        }, 3500);
       };
 
       // Small delay to ensure DOM is updated
@@ -263,6 +491,16 @@ export default function ScriptReinit() {
 
     // Re-initialize on pathname change
     reinitScripts();
+    
+    // Also initialize read more toggles immediately on mount
+    // This ensures they work even before route changes
+    if (typeof window !== 'undefined') {
+      // Try multiple times to catch dynamically loaded content
+      setTimeout(() => initReadMoreTogglesStandalone(), 100);
+      setTimeout(() => initReadMoreTogglesStandalone(), 500);
+      setTimeout(() => initReadMoreTogglesStandalone(), 1000);
+      setTimeout(() => initReadMoreTogglesStandalone(), 2000);
+    }
   }, [pathname]);
 
   return null;
