@@ -2,10 +2,13 @@
 
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
+import Link from "next/link";
 export default function AlMl() {
     return (
         <CommomLayout>
             <>
+                {/* Header Start */}
+                {/*?php include "navbar.php" ?*/}
                 {/* Header End */}
                 <div className="main-baner-hight auto-main-paner retail-baner ">
                     <div className="container bg-video-waber-content ">
@@ -25,7 +28,7 @@ export default function AlMl() {
                                         and remaining competitive.
                                     </p>
                                     <div className="ser-btn m-0">
-                                        <a href="/contact" className="animated-svg-link">
+                                        <Link href="/contact" className="animated-svg-link">
                                             Contact Us
                                             <span className="svg-container ">
                                                 <span className=" right">
@@ -127,7 +130,7 @@ export default function AlMl() {
                                                     </svg>
                                                 </span>
                                             </span>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +138,7 @@ export default function AlMl() {
                     </div>
                     <div className="">
                         <video
-                            src="/videos//Automotive.mp4"
+                            src="/videos/Automotive.mp4"
                             autoPlay={true}
                             muted={true}
                             loop={true}
@@ -544,7 +547,7 @@ export default function AlMl() {
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
-                                            <a href="/contact" className="animated-svg-link">
+                                            <Link href="#" className="animated-svg-link">
                                                 Contact Us
                                                 <span className="svg-container ">
                                                     <span className=" right">
@@ -646,16 +649,16 @@ export default function AlMl() {
                                                         </svg>
                                                     </span>
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {/*?php include "footer.php" ?*/}
                         </div>
                     </div>
                 </footer>
             </>
-
 
         </CommomLayout>
     )

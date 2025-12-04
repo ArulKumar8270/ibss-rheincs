@@ -2,11 +2,14 @@
 
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
+import Link from "next/link";
 export default function AlMl() {
     return (
         <CommomLayout>
-
             <>
+                {/* Header Start */}
+                {/*?php include "navbar.php" ?*/}
+                {/* Header End */}
                 <div className="main-baner-hight retail-baner ">
                     <div className="container bg-video-waber-content ">
                         <div className="row section-row1 align-items-center builtsec">
@@ -25,7 +28,7 @@ export default function AlMl() {
                                         controlling costs and lead times.
                                     </p>
                                     <div className="ser-btn m-0">
-                                        <a href="/contact" className="animated-svg-link">
+                                        <Link href="/contact" className="animated-svg-link">
                                             Contact Us
                                             <span className="svg-container ">
                                                 <span className=" right">
@@ -127,14 +130,14 @@ export default function AlMl() {
                                                     </svg>
                                                 </span>
                                             </span>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="">
-                        <video src="/new/dm-1.mp4" autoPlay="" muted="" loop="" playsInline="" />
+                        <video src="/new/dm-1.mp4" autoPlay={true} muted={true} loop={true} playsInline={true} />
                     </div>
                 </div>
                 <div className="py-100 pe-chellange-waber ">
@@ -315,7 +318,7 @@ export default function AlMl() {
                         </div>
                     </div>
                     <div className="commen-help-bg-img">
-                        <video src="/new/dm02.mp4" autoPlay="" loop="" muted="" playsInline="" />
+                        <video src="/new/dm02.mp4" autoPlay={true} loop={true} muted={true} playsInline={true} />
                     </div>
                 </section>
                 <div className="benifites-waber">
@@ -435,7 +438,7 @@ export default function AlMl() {
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
-                                            <a href="/contact" className="animated-svg-link">
+                                            <Link href="#" className="animated-svg-link">
                                                 Contact Us
                                                 <span className="svg-container ">
                                                     <span className=" right">
@@ -537,24 +540,16 @@ export default function AlMl() {
                                                         </svg>
                                                     </span>
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {/*?php include "footer.php" ?*/}
                         </div>
                     </div>
                 </footer>
             </>
-
-
-
-
-
-
-
-
-
 
 
         </CommomLayout>

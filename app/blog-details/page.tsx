@@ -2,10 +2,13 @@
 
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
+import Link from "next/link";
 export default function AlMl() {
     return (
         <CommomLayout>
             <>
+                {/* Header Start */}
+                {/*?php include "navbar.php" ?*/}
                 {/* Header End */}
                 <section className="case-study-waber ">
                     <div className="container">
@@ -23,13 +26,13 @@ export default function AlMl() {
                                         <img src="/new/dd-one.jpg" alt="" />
                                         <p>
                                             ERP fatigue is real. For years, the same features have rotated
-                                            through headlines; AI, blockchain, AR, rinse and repeat. But if
-                                            you are in manufacturing, automotive, or construction, you are
-                                            not buying buzzwords; you are buying control, clarity, and
-                                            tangible outcomes.
+                                            through headlines;&nbsp;AI, blockchain, AR, rinse and repeat.
+                                            But if you are in manufacturing, automotive, or construction,
+                                            you are not buying buzzwords; you are buying control, clarity,
+                                            and tangible outcomes.
                                         </p>
                                         <div className="ser-btn2">
-                                            <a href="#" className="animated-svg-link1 btn-style-3">
+                                            <Link href="#" className="animated-svg-link1 btn-style-3">
                                                 Contact Us
                                                 <span className="svg-container ">
                                                     <span className=" left">
@@ -131,7 +134,7 @@ export default function AlMl() {
                                                         </svg>
                                                     </span>
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <p>
                                             Let’s cut past the hype. Here is what really matters in a modern
@@ -249,16 +252,16 @@ export default function AlMl() {
                                 <h6 className="stu-sub-title"> Related Caste Study</h6>
                                 <div className="case-one-waber">
                                     <div>
-                                        <a href="" className="case-bage">
+                                        <Link href="" className="case-bage">
                                             Blog
-                                        </a>
+                                        </Link>
                                     </div>
                                     <h6 className="stu-sub-title p-0 m-0">
                                         {" "}
                                         How do you identify bottlenecks in the manufacturing process?
                                     </h6>
                                     <div className="ser-btn m-0">
-                                        <a href="#" className="animated-svg-link p-0">
+                                        <Link href="#" className="animated-svg-link p-0">
                                             Read More
                                             <span className="svg-container ">
                                                 <span className=" right">
@@ -360,20 +363,20 @@ export default function AlMl() {
                                                     </svg>
                                                 </span>
                                             </span>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="case-one-waber">
                                     <div>
-                                        <a href="" className="case-bage">
+                                        <Link href="" className="case-bage">
                                             Blog
-                                        </a>
+                                        </Link>
                                     </div>
                                     <h6 className="stu-sub-title p-0 m-0">
                                         The Top 8 ERP Systems for Financial Management
                                     </h6>
                                     <div className="ser-btn m-0">
-                                        <a href="#" className="animated-svg-link p-0">
+                                        <Link href="#" className="animated-svg-link p-0">
                                             Read More
                                             <span className="svg-container ">
                                                 <span className=" right">
@@ -475,20 +478,20 @@ export default function AlMl() {
                                                     </svg>
                                                 </span>
                                             </span>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="case-one-waber">
                                     <div>
-                                        <a href="" className="case-bage">
+                                        <Link href="" className="case-bage">
                                             Blog
-                                        </a>
+                                        </Link>
                                     </div>
                                     <h6 className="stu-sub-title p-0 m-0">
                                         How do you identify bottlenecks in the manufacturing process?
                                     </h6>
                                     <div className="ser-btn m-0">
-                                        <a href="#" className="animated-svg-link p-0">
+                                        <Link href="#" className="animated-svg-link p-0">
                                             Read More
                                             <span className="svg-container ">
                                                 <span className=" right">
@@ -590,20 +593,20 @@ export default function AlMl() {
                                                     </svg>
                                                 </span>
                                             </span>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="case-one-waber">
                                     <div>
-                                        <a href="" className="case-bage">
+                                        <Link href="" className="case-bage">
                                             Blog
-                                        </a>
+                                        </Link>
                                     </div>
                                     <h6 className="stu-sub-title p-0 m-0">
                                         The Top 8 ERP Systems for Financial Management
                                     </h6>
                                     <div className="ser-btn m-0">
-                                        <a href="#" className="animated-svg-link p-0">
+                                        <Link href="#" className="animated-svg-link p-0">
                                             Read More
                                             <span className="svg-container ">
                                                 <span className=" right">
@@ -705,7 +708,7 @@ export default function AlMl() {
                                                     </svg>
                                                 </span>
                                             </span>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -729,7 +732,7 @@ export default function AlMl() {
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
-                                            <a href="#" className="animated-svg-link">
+                                            <Link href="#" className="animated-svg-link">
                                                 Request a Consultation
                                                 <span className="svg-container ">
                                                     <span className=" right">
@@ -831,16 +834,16 @@ export default function AlMl() {
                                                         </svg>
                                                     </span>
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {/*?php include "footer.php" ?*/}
                         </div>
                     </div>
                 </footer>
             </>
-
 
 
         </CommomLayout>

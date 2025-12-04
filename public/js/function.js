@@ -1,9 +1,14 @@
 (function() {
   "use strict";
 
+  // Registry to store initialization functions for re-running on route changes
+  window.swiperInitRegistry = window.swiperInitRegistry || [];
+  window.generalInitRegistry = window.generalInitRegistry || [];
+
   // Helper function to run code when DOM and dependencies are ready
-  function whenReady(callback, dependencies) {
+  function whenReady(callback, dependencies, registerForReinit) {
     dependencies = dependencies || [];
+    registerForReinit = registerForReinit !== false; // Default to true for Swiper
     
     function checkDependencies() {
       // Check if all dependencies are available
@@ -42,6 +47,20 @@
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
           if (checkDependencies()) {
+            // Register for re-initialization BEFORE calling (for Swiper inits)
+            if (registerForReinit && dependencies.indexOf('Swiper') !== -1) {
+              // Only register if not already registered
+              var alreadyRegistered = false;
+              for (var i = 0; i < window.swiperInitRegistry.length; i++) {
+                if (window.swiperInitRegistry[i] === callback) {
+                  alreadyRegistered = true;
+                  break;
+                }
+              }
+              if (!alreadyRegistered) {
+                window.swiperInitRegistry.push(callback);
+              }
+            }
             callback();
           } else {
             setTimeout(tryExecute, 50);
@@ -50,6 +69,20 @@
       } else {
         // DOM is already ready
         if (checkDependencies()) {
+          // Register for re-initialization BEFORE calling (for Swiper inits)
+          if (registerForReinit && dependencies.indexOf('Swiper') !== -1) {
+            // Only register if not already registered
+            var alreadyRegistered = false;
+            for (var i = 0; i < window.swiperInitRegistry.length; i++) {
+              if (window.swiperInitRegistry[i] === callback) {
+                alreadyRegistered = true;
+                break;
+              }
+            }
+            if (!alreadyRegistered) {
+              window.swiperInitRegistry.push(callback);
+            }
+          }
           callback();
         } else {
           setTimeout(tryExecute, 50);
@@ -58,6 +91,201 @@
     }
 
     tryExecute();
+  }
+  
+  // Function to re-run all Swiper initializations
+  function rerunSwiperInits() {
+    if (typeof Swiper === 'undefined') {
+      // Wait for Swiper to load
+      setTimeout(rerunSwiperInits, 100);
+      return;
+    }
+    
+    // Ensure all existing Swiper instances are destroyed (safety check)
+    document.querySelectorAll('.swiper').forEach(function(el) {
+      try {
+        if (el.swiper && el.swiper.destroy) {
+          el.swiper.destroy(true, true);
+        }
+      } catch (e) {
+        // Ignore errors
+      }
+      el.classList.remove('swiper-initialized');
+      if (el.swiper) {
+        delete el.swiper;
+      }
+    });
+    
+    // Re-run all registered initialization functions
+    if (typeof window.swiperInitRegistry !== 'undefined' && Array.isArray(window.swiperInitRegistry)) {
+      // Get a copy of the registry to avoid modification during iteration
+      var inits = window.swiperInitRegistry.slice();
+      
+      // Re-run all initialization functions
+      // They will check if elements exist on current page and initialize accordingly
+      inits.forEach(function(initFn) {
+        try {
+          // Re-run the initialization function
+          // Each function checks if elements exist before initializing
+          initFn();
+        } catch (e) {
+          console.error('Error re-running swiper init:', e);
+        }
+      });
+    }
+    
+    // Fallback: Force re-trigger whenReady for Swiper dependencies
+    // This ensures all Swiper initializations run again
+    setTimeout(function() {
+      // Check if there are uninitialized Swipers
+      var uninitialized = document.querySelectorAll('.swiper:not(.swiper-initialized)');
+      if (uninitialized.length > 0 && typeof window.swiperInitRegistry !== 'undefined') {
+        // Re-run all registered initializations one more time
+        var inits = window.swiperInitRegistry.slice();
+        inits.forEach(function(initFn) {
+          try {
+            initFn();
+          } catch (e) {
+            // Ignore errors
+          }
+        });
+      }
+    }, 600);
+    
+    // Final safety check after longer delay
+    setTimeout(function() {
+      if (typeof Swiper !== 'undefined') {
+        var stillUninitialized = document.querySelectorAll('.swiper:not(.swiper-initialized)');
+        if (stillUninitialized.length > 0 && typeof window.swiperInitRegistry !== 'undefined') {
+          // One more attempt to initialize
+          var inits = window.swiperInitRegistry.slice();
+          inits.forEach(function(initFn) {
+            try {
+              initFn();
+            } catch (e) {
+              // Ignore errors
+            }
+          });
+        }
+      }
+    }, 1000);
+  }
+  
+  // Make globally available
+  window.rerunSwiperInits = rerunSwiperInits;
+
+  // --- Read More/Read Less Toggle ---
+  function initReadMoreToggles() {
+    // Find all toggle buttons (handle multiple instances on same page)
+    // Use querySelectorAll to handle duplicate IDs (though not ideal HTML)
+    const toggleButtons = document.querySelectorAll('[id="toggleReadMore"]');
+    const allMoreTexts = document.querySelectorAll('[id="more"]');
+    
+    toggleButtons.forEach(function(toggleBtn, index) {
+      // Skip if already initialized
+      if (toggleBtn.hasAttribute('data-readmore-initialized')) {
+        return;
+      }
+      
+      // Mark as initialized
+      toggleBtn.setAttribute('data-readmore-initialized', 'true');
+      
+      // Find the associated "more" text element
+      // Strategy: Find the "more" element that appears right before this toggle button
+      let moreText = null;
+      
+      // Method 1: Find the closest "more" element that appears before this toggle in DOM order
+      // Get all elements in document order
+      const allElements = Array.from(document.querySelectorAll('*'));
+      const toggleIndex = allElements.indexOf(toggleBtn);
+      
+      // Find the last "more" element before this toggle
+      for (let i = toggleIndex - 1; i >= 0; i--) {
+        if (allElements[i].id === 'more') {
+          moreText = allElements[i];
+          break;
+        }
+      }
+      
+      // Method 2: If not found, try to find in the same parent container
+      if (!moreText) {
+        let parent = toggleBtn.parentElement;
+        while (parent && !moreText) {
+          const allMoreInContainer = Array.from(parent.querySelectorAll('[id="more"]'));
+          const allTogglesInContainer = Array.from(parent.querySelectorAll('[id="toggleReadMore"]'));
+          
+          // If counts match, pair by index
+          if (allMoreInContainer.length === allTogglesInContainer.length && allMoreInContainer.length > 0) {
+            const toggleIndexInContainer = allTogglesInContainer.indexOf(toggleBtn);
+            if (toggleIndexInContainer >= 0 && allMoreInContainer[toggleIndexInContainer]) {
+              moreText = allMoreInContainer[toggleIndexInContainer];
+              break;
+            }
+          }
+          
+          parent = parent.parentElement;
+        }
+      }
+      
+      // Method 3: Fallback to index-based pairing
+      if (!moreText && allMoreTexts.length > index) {
+        moreText = allMoreTexts[index];
+      }
+      
+      if (toggleBtn && moreText) {
+        const btnLabel = toggleBtn.querySelector('.label');
+        const iconContainer = toggleBtn.querySelector('.svg-container');
+
+        if (btnLabel && iconContainer) {
+          toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle the text visibility
+            moreText.classList.toggle('hidden');
+
+            // Check if text is hidden or visible
+            if (moreText.classList.contains('hidden')) {
+              // State: Text is HIDDEN (Reset to default)
+              btnLabel.textContent = "Read More";
+              iconContainer.classList.remove('rotate-up'); // Rotate arrow back down
+            } else {
+              // State: Text is VISIBLE (Open)
+              btnLabel.textContent = "Read Less";
+              iconContainer.classList.add('rotate-up'); // Rotate arrow up
+            }
+          });
+        }
+      }
+    });
+  }
+  
+  // Make function globally available for ScriptReinit
+  window.initReadMoreToggles = initReadMoreToggles;
+
+  // Initialize on page load
+  whenReady(function() {
+    initReadMoreToggles();
+  });
+
+  // Re-initialize on route changes
+  window.addEventListener('routeChange', function() {
+    // Remove initialization markers so elements can be re-initialized
+    document.querySelectorAll('[data-readmore-initialized]').forEach(function(el) {
+      el.removeAttribute('data-readmore-initialized');
+    });
+    // Re-initialize after a short delay to ensure DOM is ready
+    setTimeout(initReadMoreToggles, 200);
+  });
+  
+  // Also re-initialize on DOMContentLoaded in case of dynamic content
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(initReadMoreToggles, 100);
+    });
+  } else {
+    // DOM already loaded
+    setTimeout(initReadMoreToggles, 100);
   }
 
   // --- Main Mobile Menu (Hamburger) Logic ---
@@ -286,6 +514,10 @@
     if (typeof Swiper !== 'undefined') {
       const heroSliderEl = document.querySelector('.hero-slider-layout .swiper');
       if (heroSliderEl) {
+        // Destroy existing instance if it exists
+        if (heroSliderEl.swiper && heroSliderEl.swiper.destroy) {
+          heroSliderEl.swiper.destroy(true, true);
+        }
         new Swiper(heroSliderEl, {
           effect: 'fade',
           slidesPerView: 1,
@@ -304,6 +536,10 @@
     }
 
     if ($('.agency-supports-slider').length && typeof Swiper !== 'undefined') {
+      const sliderEl = document.querySelector('.agency-supports-slider .swiper');
+      if (sliderEl && sliderEl.swiper && sliderEl.swiper.destroy) {
+        sliderEl.swiper.destroy(true, true);
+      }
       const agency_supports_slider = new Swiper('.agency-supports-slider .swiper', {
         slidesPerView: 5,
         spaceBetween: 10,
@@ -341,6 +577,10 @@
     }
 
     if ($('.agency-supports-slider2').length && typeof Swiper !== 'undefined') {
+      const sliderEl2 = document.querySelector('.agency-supports-slider2 .swiper');
+      if (sliderEl2 && sliderEl2.swiper && sliderEl2.swiper.destroy) {
+        sliderEl2.swiper.destroy(true, true);
+      }
       const agency_supports_slider2 = new Swiper('.agency-supports-slider2 .swiper', {
         slidesPerView: 5,
         spaceBetween: 10,
@@ -379,6 +619,10 @@
     }
     
     if ($('.agency-supports-slider1').length && typeof Swiper !== 'undefined') {
+      const sliderEl1 = document.querySelector('.agency-supports-slider1 .swiper');
+      if (sliderEl1 && sliderEl1.swiper && sliderEl1.swiper.destroy) {
+        sliderEl1.swiper.destroy(true, true);
+      }
       const agency_supports_slider = new Swiper('.agency-supports-slider1 .swiper', {
         slidesPerView: 5,
         spaceBetween: 10,
@@ -404,6 +648,36 @@
     }
   }, ['jQuery']);
 
+  // Registry to store Swiper initialization functions for re-running on route changes
+  window.swiperInitRegistry = window.swiperInitRegistry || [];
+  
+  // Helper function to safely initialize Swiper (destroys existing instance first)
+  function safeSwiperInit(selector, config, registerForReinit) {
+    const swiperEl = typeof selector === 'string' ? document.querySelector(selector) : selector;
+    if (!swiperEl || typeof Swiper === 'undefined') return null;
+    
+    // Destroy existing instance if it exists
+    if (swiperEl.swiper && swiperEl.swiper.destroy) {
+      try {
+        swiperEl.swiper.destroy(true, true);
+      } catch (e) {
+        // Ignore errors
+      }
+    }
+    
+    // Create new instance
+    const instance = new Swiper(swiperEl, config);
+    
+    // Register for re-initialization if requested
+    if (registerForReinit && typeof window.swiperInitRegistry !== 'undefined') {
+      window.swiperInitRegistry.push(function() {
+        return safeSwiperInit(selector, config, false);
+      });
+    }
+    
+    return instance;
+  }
+
   // --- Testimonial Slider Initializations ---
   whenReady(function() {
     const swiperEl = document.querySelector('.testimonial-slider .swiper');
@@ -411,6 +685,15 @@
     const rtyElement = document.querySelector('.testimonial-slider .rtyElement');
 
     if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+    
+    // Destroy existing instance if it exists
+    if (swiperEl.swiper && swiperEl.swiper.destroy) {
+      try {
+        swiperEl.swiper.destroy(true, true);
+      } catch (e) {
+        // Ignore errors
+      }
+    }
 
     function getDynamicOffset() {
       const fluid = document.querySelector('.container-fluid');
@@ -486,6 +769,15 @@
     const counterEl = document.querySelector('.testimonial-slider-marquee .testspace');
 
     if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+    
+    // Destroy existing instance if it exists
+    if (swiperEl.swiper && swiperEl.swiper.destroy) {
+      try {
+        swiperEl.swiper.destroy(true, true);
+      } catch (e) {
+        // Ignore errors
+      }
+    }
 
     const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
 
@@ -521,6 +813,15 @@
     const counterEl = document.querySelector('.testimonial-slider-08 .testspace');
 
     if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+    
+    // Destroy existing instance if it exists
+    if (swiperEl.swiper && swiperEl.swiper.destroy) {
+      try {
+        swiperEl.swiper.destroy(true, true);
+      } catch (e) {
+        // Ignore errors
+      }
+    }
 
     const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
 
@@ -557,6 +858,15 @@
     const counterEl = document.querySelector('.testimonial-sliders1 .testspace');
 
     if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+    
+    // Destroy existing instance if it exists
+    if (swiperEl.swiper && swiperEl.swiper.destroy) {
+      try {
+        swiperEl.swiper.destroy(true, true);
+      } catch (e) {
+        // Ignore errors
+      }
+    }
 
     const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
 
@@ -590,6 +900,14 @@
   whenReady(function() {
     const swiperEl = document.querySelector('.testslide1 .swiper');
     if (swiperEl && typeof Swiper !== 'undefined') {
+      // Destroy existing instance if it exists
+      if (swiperEl.swiper && swiperEl.swiper.destroy) {
+        try {
+          swiperEl.swiper.destroy(true, true);
+        } catch (e) {
+          // Ignore errors
+        }
+      }
       new Swiper(swiperEl, {
         loop: true,
         autoplay: {
@@ -690,6 +1008,15 @@
     const counterEl = document.querySelector('.testimonial-slider59 .testspace');
 
     if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+    
+    // Destroy existing instance if it exists
+    if (swiperEl.swiper && swiperEl.swiper.destroy) {
+      try {
+        swiperEl.swiper.destroy(true, true);
+      } catch (e) {
+        // Ignore errors
+      }
+    }
 
     const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
 
@@ -1345,6 +1672,82 @@
         991: { slidesPerView: 4 },
         1300: { slidesPerView: 5 },
         1700: { slidesPerView: 6 },
+      },
+      on: {
+        init: function () {
+          applyOffset(this);
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        resize: function () {
+          applyOffset(this);
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
+    });
+
+    function applyOffset(swiperInstance) {
+      const offset = getDynamicOffset();
+
+      if (window.innerWidth >= 991) {
+        swiperInstance.params.slidesOffsetBefore = offset;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = `${offset}px`;
+        }
+      } else {
+        swiperInstance.params.slidesOffsetBefore = 15;
+        if (rtyElement) {
+          rtyElement.style.marginLeft = '15px';
+        }
+      }
+
+      swiperInstance.update();
+    }
+  }, ['Swiper']);
+
+  whenReady(function() {
+    const swiperEl = document.querySelector('.sap-service .swiper');
+    const counterEl = document.querySelector('.sap-service .testspace');
+    const rtyElement = document.querySelector('.sap-service .rtyElement');
+
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+
+    function getDynamicOffset() {
+      const fluid = document.querySelector('.container-fluid');
+      const fluidWidth = fluid ? fluid.clientWidth : window.innerWidth;
+      const container = document.querySelector('.container');
+
+      if (!container) return 0;
+
+      const totalGap = fluidWidth - container.clientWidth;
+      const offset = totalGap / 2;
+
+      return offset > 0 ? offset : 0;
+    }
+
+    const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
+
+    const testimonial_slider = new Swiper(swiperEl, {
+      spaceBetween: 15,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.sap-service .testimonial-button-next',
+        prevEl: '.sap-service .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.3 },
+        768: { slidesPerView: 3 },
+        991: { slidesPerView: 3 },
+        1300: { slidesPerView: 3 },
+        1700: { slidesPerView: 3.8 },
       },
       on: {
         init: function () {
@@ -2328,6 +2731,13 @@
       
       if ($('.skew-carousel').length > 0) {
         try {
+          // Destroy existing instance if it exists
+          var existingCarousel = $('.skew-carousel').data('owl.carousel');
+          if (existingCarousel) {
+            $('.skew-carousel').trigger('destroy.owl.carousel').removeClass('owl-carousel owl-loaded');
+            $('.skew-carousel').find('.owl-stage-outer').children().unwrap();
+          }
+          
           $('.skew-carousel').owlCarousel({
             loop: false,
             margin: 10,
@@ -2345,6 +2755,9 @@
         }
       }
     }
+    
+    // Make globally available for route change re-initialization
+    window.initSkewCarousel = initSkewCarousel;
 
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function() {
@@ -2376,6 +2789,13 @@
       if ($('.skew-carousel1').length > 0) {
         try {
           let owl1 = $('.skew-carousel1');
+          
+          // Destroy existing instance if it exists
+          var existingCarousel = owl1.data('owl.carousel');
+          if (existingCarousel) {
+            owl1.trigger('destroy.owl.carousel').removeClass('owl-carousel owl-loaded');
+            owl1.find('.owl-stage-outer').children().unwrap();
+          }
 
           owl1.owlCarousel({
             loop: false,
@@ -2409,6 +2829,9 @@
         }
       }
     }
+    
+    // Make globally available for route change re-initialization
+    window.initSkewCarousel1 = initSkewCarousel1;
 
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function() {
@@ -2547,7 +2970,7 @@
     function submitForm() {
       $.ajax({
         type: "POST",
-        url: "form-process.php",
+        url: "/api/contact",
         data: $contactform.serialize(),
         success: function (text) {
           if (text == "success") {
@@ -2675,6 +3098,311 @@
         btn.classList.remove('btn-style-3');
       });
     });
+  });
+
+  // Function to re-initialize all Swiper carousels
+  function reinitAllSwipers() {
+    if (typeof Swiper === 'undefined') {
+      // Wait a bit for Swiper to load
+      setTimeout(reinitAllSwipers, 100);
+      return;
+    }
+    
+    // Destroy all existing Swiper instances
+    document.querySelectorAll('.swiper').forEach(function(el) {
+      try {
+        if (el.swiper && el.swiper.destroy) {
+          el.swiper.destroy(true, true);
+        }
+      } catch (e) {
+        // Ignore errors, element might already be destroyed
+      }
+      // Clean up
+      el.classList.remove('swiper-initialized');
+      if (el.swiper) {
+        delete el.swiper;
+      }
+    });
+  }
+  
+  // Comprehensive function to re-initialize all Swipers on route change
+  function reinitAllSwipersOnRouteChange() {
+    // Wait for Swiper to be available
+    if (typeof Swiper === 'undefined') {
+      setTimeout(reinitAllSwipersOnRouteChange, 100);
+      return;
+    }
+    
+    // Destroy all existing instances first (already done in ScriptReinit, but do it again to be sure)
+    document.querySelectorAll('.swiper').forEach(function(el) {
+      try {
+        if (el.swiper && el.swiper.destroy) {
+          el.swiper.destroy(true, true);
+        }
+      } catch (e) {
+        // Ignore
+      }
+      el.classList.remove('swiper-initialized');
+      if (el.swiper) {
+        delete el.swiper;
+      }
+    });
+    
+    // Re-run all registered initializations after a delay
+    setTimeout(function() {
+      if (typeof window.rerunSwiperInits === 'function') {
+        window.rerunSwiperInits();
+      }
+    }, 400);
+  }
+  
+  // Function to manually initialize all Swipers that exist on the page
+  function manuallyInitAllSwipers() {
+    if (typeof Swiper === 'undefined') {
+      setTimeout(manuallyInitAllSwipers, 100);
+      return;
+    }
+    
+    // Find all .swiper elements that aren't initialized
+    document.querySelectorAll('.swiper:not(.swiper-initialized)').forEach(function(swiperEl) {
+      // Check if this is a known Swiper type and initialize accordingly
+      // This is a fallback for Swipers that might not be in the registry
+      const parentClass = swiperEl.closest('[class*="slider"]')?.className || '';
+      
+      // Only initialize if it's clearly a slider (has slider-related classes)
+      if (parentClass.includes('slider') || parentClass.includes('testimonial') || 
+          parentClass.includes('overview') || parentClass.includes('hero')) {
+        // Don't auto-initialize - let the specific whenReady functions handle it
+        // This is just a safety check
+      }
+    });
+  }
+  
+  // MutationObserver to detect new Swiper elements added to DOM
+  function setupSwiperObserver() {
+    if (typeof MutationObserver === 'undefined') return;
+    
+    var observer = new MutationObserver(function(mutations) {
+      var shouldReinit = false;
+      
+      mutations.forEach(function(mutation) {
+        mutation.addedNodes.forEach(function(node) {
+          if (node.nodeType === 1) { // Element node
+            // Check if this node or its children contain Swiper elements
+            if (node.classList && node.classList.contains('swiper')) {
+              shouldReinit = true;
+            } else if (node.querySelector && node.querySelector('.swiper:not(.swiper-initialized)')) {
+              shouldReinit = true;
+            }
+          }
+        });
+      });
+      
+      if (shouldReinit) {
+        // Debounce: wait a bit then re-initialize
+        clearTimeout(window.swiperObserverTimeout);
+        window.swiperObserverTimeout = setTimeout(function() {
+          if (typeof window.rerunSwiperInits === 'function') {
+            window.rerunSwiperInits();
+          }
+        }, 500);
+      }
+    });
+    
+    // Observe the document body for changes
+    if (document.body) {
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    }
+  }
+  
+  // Setup observer when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupSwiperObserver);
+  } else {
+    setupSwiperObserver();
+  }
+  
+  // Make globally available
+  window.reinitAllSwipers = reinitAllSwipers;
+  window.reinitAllSwipersOnRouteChange = reinitAllSwipersOnRouteChange;
+  window.manuallyInitAllSwipers = manuallyInitAllSwipers;
+
+  // Listen for route changes (triggered by ScriptReinit component)
+  window.addEventListener('routeChange', function(event) {
+    // Re-initialize code that needs to run on route change
+    const pathname = event.detail?.pathname;
+    
+    // Small delay to ensure DOM is updated
+    setTimeout(function() {
+      // Re-initialize any code that depends on DOM elements
+      // This will be called after Next.js Link navigation
+      
+      // Re-initialize all Swiper carousels
+      // This will destroy existing instances and re-run all initializations
+      reinitAllSwipersOnRouteChange();
+      
+      // Also try manual initialization as fallback
+      setTimeout(function() {
+        if (typeof window.manuallyInitAllSwipers === 'function') {
+          window.manuallyInitAllSwipers();
+        }
+      }, 600);
+      
+      // Re-initialize OwlCarousel carousels
+      if (typeof window.initSkewCarousel === 'function') {
+        setTimeout(function() {
+          window.initSkewCarousel();
+        }, 300);
+      }
+      
+      if (typeof window.initSkewCarousel1 === 'function') {
+        setTimeout(function() {
+          window.initSkewCarousel1();
+        }, 350);
+      }
+      
+      // Re-initialize popovers if needed
+      if (typeof bootstrap !== 'undefined' && bootstrap.Popover) {
+        document.querySelectorAll('[data-bs-toggle="popover"]').forEach(function(el) {
+          try {
+            const existingPopover = bootstrap.Popover.getInstance(el);
+            if (existingPopover) {
+              existingPopover.dispose();
+            }
+            new bootstrap.Popover(el);
+          } catch (e) {
+            console.error('Error re-initializing popover:', e);
+          }
+        });
+      }
+      
+      // Re-initialize WOW animations
+      if (typeof WOW !== 'undefined') {
+        new WOW().init();
+      }
+      
+      // Re-initialize counters
+      if (typeof $ !== 'undefined' && $.fn.counterUp && $('.counter').length) {
+        $('.counter').counterUp({ delay: 6, time: 3000 });
+      }
+      
+      // Re-initialize magnific popup
+      if (typeof $ !== 'undefined' && $.fn.magnificPopup) {
+        // Destroy existing instances first
+        if ($.magnificPopup && $.magnificPopup.instance) {
+          $.magnificPopup.instance.close();
+        }
+        
+        if ($('.gallery-items').length) {
+          $('.gallery-items').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            closeOnContentClick: false,
+            closeBtnInside: false,
+            mainClass: 'mfp-with-zoom',
+            image: {
+              verticalFit: true,
+            },
+            gallery: {
+              enabled: true
+            },
+            zoom: {
+              enabled: true,
+              duration: 300,
+              opener: function (element) {
+                return element.find('img');
+              }
+            }
+          });
+        }
+        
+        if ($('.popup-video').length) {
+          $('.popup-video').magnificPopup({
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: true
+          });
+        }
+      }
+      
+      // Re-initialize Slicknav
+      if (typeof $ !== 'undefined' && $.fn.slicknav && $('#menu').length) {
+        // Destroy existing slicknav
+        var slicknavInstance = $('#menu').data('slicknav');
+        if (slicknavInstance) {
+          $('#menu').slicknav('destroy');
+        }
+        $('#menu').slicknav({
+          label: '',
+          prependTo: '.responsive-menu'
+        });
+      }
+      
+      // Re-initialize typed
+      if (typeof $ !== 'undefined' && $.fn.typed && $('.typed-title').length) {
+        $('.typed-title').each(function() {
+          var $this = $(this);
+          if ($this.data('typed')) {
+            $this.typed('destroy');
+          }
+        });
+        $('.typed-title').typed({
+          stringsElement: $('.typing-title'),
+          backDelay: 2000,
+          typeSpeed: 0,
+          loop: true
+        });
+      }
+      
+      // Re-initialize parallaxie
+      if (typeof $ !== 'undefined' && $.fn.parallaxie && $('.parallaxie').length && $(window).width() && $(window).width() > 991) {
+        $('.parallaxie').parallaxie({
+          speed: 0.55,
+          offset: 0,
+        });
+      }
+      
+      // Re-initialize isotope
+      if (typeof $ !== 'undefined' && $.fn.isotope && $(".project-item-boxes").length) {
+        var $menuitem = $(".project-item-boxes");
+        if ($menuitem.data('isotope')) {
+          $menuitem.isotope('destroy');
+        }
+        $menuitem.isotope({
+          itemSelector: ".project-item-box",
+          layoutMode: "masonry",
+          masonry: {
+            columnWidth: 1,
+          }
+        });
+      }
+      
+      // Re-initialize grid overlay
+      function generateGrid() {
+        const overlay = document.querySelector('.grid-overlay');
+        const section = document.querySelector('.grid-section');
+        
+        if (!overlay || !section) return;
+        
+        overlay.innerHTML = '';
+        const cols = Math.ceil(section.offsetWidth / 120);
+        const rows = Math.ceil(section.offsetHeight / 150);
+        for (let i = 0; i < cols * rows; i++) {
+          const cell = document.createElement('div');
+          cell.classList.add('cell');
+          overlay.appendChild(cell);
+        }
+      }
+      
+      if (document.querySelector('.grid-overlay') && document.querySelector('.grid-section')) {
+        generateGrid();
+      }
+    }, 200);
   });
 
 })();

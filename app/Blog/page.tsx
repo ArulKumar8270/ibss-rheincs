@@ -2,10 +2,13 @@
 
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
-export default function AlMl() {
+import Link from "next/link";
+export default function Blog() {
     return (
         <CommomLayout>
             <>
+                {/* Header Start */}
+                {/*?php include "navbar.php" ?*/}
                 {/* Header End */}
                 <style
                     dangerouslySetInnerHTML={{
@@ -39,8 +42,7 @@ export default function AlMl() {
                                                                 Business Intelligence
                                                             </h2>
                                                             <div className="ser-btn m-0">
-                                                                <a
-                                                                    href="/blog-details"
+                                                               <Link     href="/blog-details"
                                                                     className="animated-svg-link p-0"
                                                                 >
                                                                     Read More
@@ -144,7 +146,7 @@ export default function AlMl() {
                                                                             </svg>
                                                                         </span>
                                                                     </span>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -168,8 +170,7 @@ export default function AlMl() {
                                                                 Business Intelligence
                                                             </h2>
                                                             <div className="ser-btn m-0">
-                                                                <a
-                                                                    href="/blog-details"
+                                                               <Link     href="/blog-details"
                                                                     className="animated-svg-link p-0"
                                                                 >
                                                                     Read More
@@ -273,7 +274,7 @@ export default function AlMl() {
                                                                             </svg>
                                                                         </span>
                                                                     </span>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -297,8 +298,7 @@ export default function AlMl() {
                                                                 Business Intelligence
                                                             </h2>
                                                             <div className="ser-btn m-0">
-                                                                <a
-                                                                    href="/blog-details"
+                                                               <Link     href="/blog-details"
                                                                     className="animated-svg-link p-0"
                                                                 >
                                                                     Read More
@@ -402,7 +402,7 @@ export default function AlMl() {
                                                                             </svg>
                                                                         </span>
                                                                     </span>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -662,12 +662,11 @@ export default function AlMl() {
                                     </div>
                                     {/* Filter Content */}
                                     <div className="mobile-filter" id="mobileFilter">
-                                        <a
-                                            href="#demo3"
+                                        <Link                        href="#demo3"
                                             data-bs-toggle="collapse"
                                             className="arrow-toggle"
                                             aria-expanded="true"
-                                        ></a>
+                                        ></Link>
                                         <div id="demo3" className="collapse content-box collapse show">
                                             <div className="col-sm-12 width100">
                                                 <h6 className="fome-filter-title">Industries</h6>
@@ -857,7 +856,7 @@ export default function AlMl() {
                                                     </h5>
                                                     <p className="blog-date-time"> September 22, 2025</p>
                                                     <div className="ser-btn1">
-                                                        <a href="" className="animated-svg-link1 btn-style-3 p-0">
+                                                        <Link href="" className="animated-svg-link1 btn-style-3 p-0">
                                                             Read More
                                                             <span className="svg-container ">
                                                                 <span className=" left">
@@ -959,7 +958,7 @@ export default function AlMl() {
                                                                     </svg>
                                                                 </span>
                                                             </span>{" "}
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -984,7 +983,7 @@ export default function AlMl() {
                                                     </h5>
                                                     <p className="blog-date-time"> September 22, 2025</p>
                                                     <div className="ser-btn1">
-                                                        <a href="" className="animated-svg-link1 btn-style-3 p-0">
+                                                        <Link href="" className="animated-svg-link1 btn-style-3 p-0">
                                                             Read More
                                                             <span className="svg-container ">
                                                                 <span className=" left">
@@ -1086,7 +1085,7 @@ export default function AlMl() {
                                                                     </svg>
                                                                 </span>
                                                             </span>{" "}
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1112,7 +1111,7 @@ export default function AlMl() {
                                                     </h5>
                                                     <p className="blog-date-time"> September 22, 2025</p>
                                                     <div className="ser-btn1">
-                                                        <a href="" className="animated-svg-link1 btn-style-3 p-0">
+                                                        <Link href="" className="animated-svg-link1 btn-style-3 p-0">
                                                             Read More
                                                             <span className="svg-container ">
                                                                 <span className=" left">
@@ -1214,7 +1213,7 @@ export default function AlMl() {
                                                                     </svg>
                                                                 </span>
                                                             </span>{" "}
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1240,7 +1239,7 @@ export default function AlMl() {
                                                     </h5>
                                                     <p className="blog-date-time"> September 22, 2025</p>
                                                     <div className="ser-btn1">
-                                                        <a href="" className="animated-svg-link1 btn-style-3 p-0">
+                                                        <Link href="" className="animated-svg-link1 btn-style-3 p-0">
                                                             Read More
                                                             <span className="svg-container ">
                                                                 <span className=" left">
@@ -1342,7 +1341,7 @@ export default function AlMl() {
                                                                     </svg>
                                                                 </span>
                                                             </span>{" "}
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1367,7 +1366,7 @@ export default function AlMl() {
                                                     </h5>
                                                     <p className="blog-date-time"> September 22, 2025</p>
                                                     <div className="ser-btn1">
-                                                        <a href="" className="animated-svg-link1 btn-style-3 p-0">
+                                                        <Link href="" className="animated-svg-link1 btn-style-3 p-0">
                                                             Read More
                                                             <span className="svg-container ">
                                                                 <span className=" left">
@@ -1469,7 +1468,7 @@ export default function AlMl() {
                                                                     </svg>
                                                                 </span>
                                                             </span>{" "}
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1494,7 +1493,7 @@ export default function AlMl() {
                                                     </h5>
                                                     <p className="blog-date-time"> September 22, 2025</p>
                                                     <div className="ser-btn1">
-                                                        <a href="" className="animated-svg-link1 btn-style-3 p-0">
+                                                        <Link href="" className="animated-svg-link1 btn-style-3 p-0">
                                                             Read More
                                                             <span className="svg-container ">
                                                                 <span className=" left">
@@ -1596,14 +1595,14 @@ export default function AlMl() {
                                                                     </svg>
                                                                 </span>
                                                             </span>{" "}
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="page-nate-waber">
-                                        <a href="#" className="animated-svg-link left-arrow">
+                                        <Link href="#" className="animated-svg-link left-arrow">
                                             <span className="svg-container ">
                                                 <span className=" right">
                                                     <svg
@@ -1704,7 +1703,7 @@ export default function AlMl() {
                                                     </svg>
                                                 </span>
                                             </span>
-                                        </a>
+                                        </Link>
                                         <span className="active">1</span>
                                         <span>2</span>
                                         <span>3</span>
@@ -1714,7 +1713,7 @@ export default function AlMl() {
                                         <span>7</span>
                                         <span className="dark">...</span>
                                         <span>20</span>
-                                        <a href="#" className="animated-svg-link">
+                                        <Link href="#" className="animated-svg-link">
                                             <span className="svg-container ">
                                                 <span className=" right">
                                                     <svg
@@ -1815,7 +1814,7 @@ export default function AlMl() {
                                                     </svg>
                                                 </span>
                                             </span>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -1961,7 +1960,7 @@ export default function AlMl() {
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
-                                            <a href="#" className="animated-svg-link">
+                                            <Link href="#" className="animated-svg-link">
                                                 Contact Us
                                                 <span className="svg-container ">
                                                     <span className=" right">
@@ -2063,17 +2062,16 @@ export default function AlMl() {
                                                         </svg>
                                                     </span>
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {/*?php include "footer.php" ?*/}
                         </div>
                     </div>
                 </footer>
             </>
-
-
 
         </CommomLayout>
     )
