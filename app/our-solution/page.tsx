@@ -2,11 +2,12 @@
 
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
+import Link from "next/link";
 export default function EnterpriseSolutions() {
     return (
         <CommomLayout>
-
             <>
+                {/*?php include "navbar.php" ?*/}
                 {/* Hero Section Start*/}
                 <div className="hero brainsec bluebg digi1 digitalsolsec pdb0">
                     <div className="container">
@@ -81,7 +82,7 @@ export default function EnterpriseSolutions() {
                                                 </li>
                                             </ul>
                                             <div className="ser-btn m-0">
-                                                <a href="/corushr" className="animated-svg-link p-0">
+                                                <Link href="/corushr" className="animated-svg-link p-0">
                                                     Explore More
                                                     <span className="svg-container ">
                                                         <span className=" right">
@@ -183,7 +184,7 @@ export default function EnterpriseSolutions() {
                                                             </svg>
                                                         </span>
                                                     </span>
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
@@ -220,7 +221,7 @@ export default function EnterpriseSolutions() {
                                                 </li>
                                             </ul>
                                             <div className="ser-btn m-0">
-                                                <a href="/MeRLIN" className="animated-svg-link p-0">
+                                                <Link href="/MeRLIN" className="animated-svg-link p-0">
                                                     Explore More
                                                     <span className="svg-container ">
                                                         <span className=" right">
@@ -322,7 +323,7 @@ export default function EnterpriseSolutions() {
                                                             </svg>
                                                         </span>
                                                     </span>
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
@@ -339,7 +340,7 @@ export default function EnterpriseSolutions() {
                             <div className="col-sm-6 order2 pd0">
                                 <div className="hero-bg-video buildsec mobileux">
                                     {/*<video autoplay muted loop id="myVideo" height="800">*/}
-                                    {/*    <source src="/videos//fluent1.mp4" type="video/mp4">*/}
+                                    {/*    <source src="/videos/fluent1.mp4" type="video/mp4">*/}
                                     {/*</video>*/}
                                     <img src="/images/FluentCommece2.png" />
                                 </div>
@@ -411,7 +412,7 @@ export default function EnterpriseSolutions() {
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
-                                            <a href="/contact" className="animated-svg-link">
+                                            <Link href="/contact" className="animated-svg-link">
                                                 Contact Us
                                                 <span className="svg-container ">
                                                     <span className=" right">
@@ -513,22 +514,16 @@ export default function EnterpriseSolutions() {
                                                         </svg>
                                                     </span>
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {/*?php include "footer.php" ?*/}
                         </div>
                     </div>
                 </footer>
             </>
-
-
-
-
-
-
-
 
 
         </CommomLayout>

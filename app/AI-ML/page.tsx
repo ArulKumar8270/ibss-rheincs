@@ -2,10 +2,13 @@
 
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
+import Link from "next/link";
 export default function AlMl() {
     return (
         <CommomLayout>
             <>
+                {/*?php include "navbar.php" ?*/}
+                {/* Hero Section Start*/}
                 <div className="hero brainsec bluebg digi1 amlmobileindex ">
                     <div className="container">
                         <div className="row section-row align-items-center  digitalsec">
@@ -1696,7 +1699,7 @@ export default function AlMl() {
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
-                                            <a href="#" className="animated-svg-link">
+                                            <Link href="#" className="animated-svg-link">
                                                 Contact Us
                                                 <span className="svg-container ">
                                                     <span className=" right">
@@ -1798,11 +1801,12 @@ export default function AlMl() {
                                                         </svg>
                                                     </span>
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {/*?php include "footer.php" ?*/}
                         </div>
                     </div>
                 </footer>

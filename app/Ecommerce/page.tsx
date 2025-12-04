@@ -2,24 +2,22 @@
 
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
+import Link from "next/link";
 export default function digitalsolution() {
     return (
         <CommomLayout>
             <>
-                <div className="hero brainsec enter retailsection1 erpexcel mobilecomm">
-                    <div className="parent2 retailparent2 mobilevideo">
-                        <video
-                            src="/videos//ecomm.mp4"
-                            autoPlay={true}
-                            muted={true}
-                            loop={true}
-                            playsInline={true}
-                            className="bg-image1"
-                        />
+                {/* Header Start */}
+                {/*?php include "navbar.php" ?*/}
+                {/* Header End */}
+                <div className="hero brainsec enter  retailsection1 sm-img  erpexcel ">
+                    <div className="parent2 retailparent2 rechange-baner  mobilevideo">
+                        <img src="/new/ecom-99.jpeg" alt="" />
+                        {/* <video src="/videos/achitect.mp4" autoplay muted loop playsinline class="bg-image1"></video> */}
                     </div>
                     <div className="container">
                         <div className="row section-row1 align-items-center builtsec">
-                            <div className="col-sm-5 col-12">
+                            <div className="col-sm-5">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
                                         eCommerce Solutions
@@ -36,17 +34,13 @@ export default function digitalsolution() {
                                     </p>
                                 </div>
                             </div>
-                            <div className="col-sm-7 col-12">
-                                <div className="parent2 retailparent2 mobileview">
-                                    <video
-                                        src="/videos//ecomm.mp4"
-                                        autoPlay=""
-                                        muted=""
-                                        loop=""
-                                        playsInline=""
-                                        className="bg-image1"
-                                    />
+                            <div className="col-sm-7">
+                                <div className="corusimg mobileview">
+                                    <img src="/new/ecom-99.jpeg" alt="" />
                                 </div>
+                                {/* <div class="parent2 retailparent2 mobileview">
+              <video src="/videos/achitect.mp4" autoplay muted loop playsinline class="bg-image1"></video>
+          </div> */}
                             </div>
                         </div>
                     </div>
@@ -445,8 +439,7 @@ export default function digitalsolution() {
                                                                     optimises inventory, orders, and fulfilment at scale
                                                                 </p>
                                                                 <div className="ser-btn serbtn1">
-                                                                    <a
-                                                                        href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
+                                                                   <Link         href="/fluent-commerce"
                                                                         className="animated-svg-link1 animated-svg-link12"
                                                                     >
                                                                         Read More
@@ -550,7 +543,7 @@ export default function digitalsolution() {
                                                                                 </svg>
                                                                             </span>
                                                                         </span>
-                                                                    </a>
+                                                                    </Link>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -578,8 +571,7 @@ export default function digitalsolution() {
                                                                     personalisation.{" "}
                                                                 </p>
                                                                 <div className="ser-btn serbtn1">
-                                                                    <a
-                                                                        href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
+                                                                   <Link         href="/commercetools"
                                                                         className="animated-svg-link1 animated-svg-link12"
                                                                     >
                                                                         Read More
@@ -683,7 +675,7 @@ export default function digitalsolution() {
                                                                                 </svg>
                                                                             </span>
                                                                         </span>
-                                                                    </a>
+                                                                    </Link>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -710,114 +702,41 @@ export default function digitalsolution() {
                                                                     Advanced AI-powered search and discovery, delivering
                                                                     lightning-fast, personalised results.
                                                                 </p>
-                                                                <div className="ser-btn serbtn1">
-                                                                    <a
-                                                                        href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
-                                                                        className="animated-svg-link1 animated-svg-link12"
-                                                                    >
-                                                                        Read More
-                                                                        <span className="svg-container ">
-                                                                            <span className=" left">
-                                                                                <svg
-                                                                                    width={24}
-                                                                                    height={23}
-                                                                                    viewBox="0 0 24 23"
-                                                                                    fill="none"
-                                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                                >
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="16.0004"
-                                                                                        cy="4.79995"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="12.7992"
-                                                                                        cy="1.6"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="22.4008"
-                                                                                        cy="11.2"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="1.6"
-                                                                                        cy="11.2"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="6.40078"
-                                                                                        cy="11.2"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="11.1996"
-                                                                                        cy="11.2"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="16.0004"
-                                                                                        cy="11.2"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="19.1996"
-                                                                                        cy="14.4"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="16.0004"
-                                                                                        cy="17.6"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="12.7992"
-                                                                                        cy="20.8"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="19.1996"
-                                                                                        cy="8.00002"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                </svg>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                </div>
+                                                                {/*<div class="ser-btn serbtn1">*/}
+                                                                {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
+                                                                {/*        class="animated-svg-link1 animated-svg-link12">*/}
+                                                                {/*        Read More*/}
+                                                                {/*        <span class="svg-container ">*/}
+                                                                {/*            <span class=" left">*/}
+                                                                {/*                <svg width="24" height="23" viewBox="0 0 24 23"*/}
+                                                                {/*                    fill="none" xmlns="http://www.w3.org/2000/svg">*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
+                                                                {/*                        cy="4.79995" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
+                                                                {/*                        cy="1.6" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="22.4008"*/}
+                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="1.6"*/}
+                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="6.40078"*/}
+                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="11.1996"*/}
+                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
+                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
+                                                                {/*                        cy="14.4" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
+                                                                {/*                        cy="17.6" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
+                                                                {/*                        cy="20.8" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
+                                                                {/*                        cy="8.00002" r="1.6" fill="#535353" />*/}
+                                                                {/*                </svg>*/}
+                                                                {/*            </span>*/}
+                                                                {/*        </span>*/}
+                                                                {/*    </Link>*/}
+                                                                {/*</div>*/}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -842,114 +761,41 @@ export default function digitalsolution() {
                                                                     An enterprise-grade headless CMS for flexible,
                                                                     scalable, and omnichannel content delivery.{" "}
                                                                 </p>
-                                                                <div className="ser-btn serbtn1">
-                                                                    <a
-                                                                        href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
-                                                                        className="animated-svg-link1 animated-svg-link12"
-                                                                    >
-                                                                        Read More
-                                                                        <span className="svg-container ">
-                                                                            <span className=" left">
-                                                                                <svg
-                                                                                    width={24}
-                                                                                    height={23}
-                                                                                    viewBox="0 0 24 23"
-                                                                                    fill="none"
-                                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                                >
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="16.0004"
-                                                                                        cy="4.79995"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="12.7992"
-                                                                                        cy="1.6"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="22.4008"
-                                                                                        cy="11.2"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="1.6"
-                                                                                        cy="11.2"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="6.40078"
-                                                                                        cy="11.2"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="11.1996"
-                                                                                        cy="11.2"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="16.0004"
-                                                                                        cy="11.2"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="19.1996"
-                                                                                        cy="14.4"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="16.0004"
-                                                                                        cy="17.6"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="12.7992"
-                                                                                        cy="20.8"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="19.1996"
-                                                                                        cy="8.00002"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                </svg>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                </div>
+                                                                {/*<div class="ser-btn serbtn1">*/}
+                                                                {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
+                                                                {/*        class="animated-svg-link1 animated-svg-link12">*/}
+                                                                {/*        Read More*/}
+                                                                {/*        <span class="svg-container ">*/}
+                                                                {/*            <span class=" left">*/}
+                                                                {/*                <svg width="24" height="23" viewBox="0 0 24 23"*/}
+                                                                {/*                    fill="none" xmlns="http://www.w3.org/2000/svg">*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
+                                                                {/*                        cy="4.79995" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
+                                                                {/*                        cy="1.6" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="22.4008"*/}
+                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="1.6"*/}
+                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="6.40078"*/}
+                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="11.1996"*/}
+                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
+                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
+                                                                {/*                        cy="14.4" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
+                                                                {/*                        cy="17.6" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
+                                                                {/*                        cy="20.8" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
+                                                                {/*                        cy="8.00002" r="1.6" fill="#535353" />*/}
+                                                                {/*                </svg>*/}
+                                                                {/*            </span>*/}
+                                                                {/*        </span>*/}
+                                                                {/*    </Link>*/}
+                                                                {/*</div>*/}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -975,114 +821,41 @@ export default function digitalsolution() {
                                                                     platform for rich media, dynamic content, and
                                                                     personalised digital experiences.{" "}
                                                                 </p>
-                                                                <div className="ser-btn serbtn1">
-                                                                    <a
-                                                                        href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
-                                                                        className="animated-svg-link1 animated-svg-link12"
-                                                                    >
-                                                                        Read More
-                                                                        <span className="svg-container ">
-                                                                            <span className=" left">
-                                                                                <svg
-                                                                                    width={24}
-                                                                                    height={23}
-                                                                                    viewBox="0 0 24 23"
-                                                                                    fill="none"
-                                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                                >
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="16.0004"
-                                                                                        cy="4.79995"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="12.7992"
-                                                                                        cy="1.6"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="22.4008"
-                                                                                        cy="11.2"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="1.6"
-                                                                                        cy="11.2"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="6.40078"
-                                                                                        cy="11.2"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="11.1996"
-                                                                                        cy="11.2"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="16.0004"
-                                                                                        cy="11.2"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="19.1996"
-                                                                                        cy="14.4"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="16.0004"
-                                                                                        cy="17.6"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="12.7992"
-                                                                                        cy="20.8"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                    <circle
-                                                                                        className="dot"
-                                                                                        opacity="0.5"
-                                                                                        cx="19.1996"
-                                                                                        cy="8.00002"
-                                                                                        r="1.6"
-                                                                                        fill="#535353"
-                                                                                    />
-                                                                                </svg>
-                                                                            </span>
-                                                                        </span>
-                                                                    </a>
-                                                                </div>
+                                                                {/*<div class="ser-btn serbtn1">*/}
+                                                                {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
+                                                                {/*        class="animated-svg-link1 animated-svg-link12">*/}
+                                                                {/*        Read More*/}
+                                                                {/*        <span class="svg-container ">*/}
+                                                                {/*            <span class=" left">*/}
+                                                                {/*                <svg width="24" height="23" viewBox="0 0 24 23"*/}
+                                                                {/*                    fill="none" xmlns="http://www.w3.org/2000/svg">*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
+                                                                {/*                        cy="4.79995" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
+                                                                {/*                        cy="1.6" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="22.4008"*/}
+                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="1.6"*/}
+                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="6.40078"*/}
+                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="11.1996"*/}
+                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
+                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
+                                                                {/*                        cy="14.4" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
+                                                                {/*                        cy="17.6" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
+                                                                {/*                        cy="20.8" r="1.6" fill="#535353" />*/}
+                                                                {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
+                                                                {/*                        cy="8.00002" r="1.6" fill="#535353" />*/}
+                                                                {/*                </svg>*/}
+                                                                {/*            </span>*/}
+                                                                {/*        </span>*/}
+                                                                {/*    </Link>*/}
+                                                                {/*</div>*/}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1339,7 +1112,7 @@ export default function digitalsolution() {
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
-                                            <a href="#" className="animated-svg-link">
+                                            <Link href="#" className="animated-svg-link">
                                                 Contact Us
                                                 <span className="svg-container ">
                                                     <span className=" right">
@@ -1441,16 +1214,16 @@ export default function digitalsolution() {
                                                         </svg>
                                                     </span>
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {/*?php include "footer.php" ?*/}
                         </div>
                     </div>
                 </footer>
             </>
-
 
         </CommomLayout>
     )

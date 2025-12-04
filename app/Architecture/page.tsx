@@ -2,21 +2,18 @@
 
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
+import Link from "next/link";
 export default function AlMl() {
     return (
         <CommomLayout>
             <>
+                {/* Header Start */}
+                {/*?php include "navbar.php" ?*/}
                 {/* Header End */}
-                <div className="hero brainsec enter  retailsection1 erpexcel ">
-                    <div className="parent2 retailparent2 mobilevideo">
-                        <video
-                            src="/videos//achitect.mp4"
-                            autoPlay={true}
-                            muted={true}
-                            loop={true}
-                            playsInline={true}
-                            className="bg-image1"
-                        />
+                <div className="hero brainsec enter  retailsection1  erpexcel ">
+                    <div className="parent2 retailparent2 rechange-baner  mobilevideo">
+                        <img src="/images/Appmodernisation1.png" alt="" />
+                        {/* <video src="/videos/achitect.mp4" autoplay muted loop playsinline class="bg-image1"></video> */}
                     </div>
                     <div className="container">
                         <div className="row section-row1 align-items-center builtsec">
@@ -33,7 +30,7 @@ export default function AlMl() {
                                         unlock new business value.
                                     </p>
                                     <div className="ser-btn mt-5">
-                                        <a href="#" className="animated-svg-link">
+                                        <Link href="#" className="animated-svg-link">
                                             Contact Us
                                             <span className="svg-container ">
                                                 <span className=" right">
@@ -135,24 +132,17 @@ export default function AlMl() {
                                                     </svg>
                                                 </span>
                                             </span>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-sm-7">
-                                {/* <div class="corusimg">
-          <img src="/images/chorus.jpg" alt="">
-          </div> */}
-                                <div className="parent2 retailparent2 mobileview">
-                                    <video
-                                        src="/videos//achitect.mp4"
-                                        autoPlay={true}
-                                        muted={true}
-                                        loop={true}
-                                        playsInline={true}
-                                        className="bg-image1"
-                                    />
+                                <div className="corusimg mobileview">
+                                    <img src="/images/Appmodernisation1.png" alt="" />
                                 </div>
+                                {/* <div class="parent2 retailparent2 mobileview">
+              <video src="/videos/achitect.mp4" autoplay muted loop playsinline class="bg-image1"></video>
+          </div> */}
                             </div>
                         </div>
                     </div>
@@ -533,7 +523,7 @@ export default function AlMl() {
                             <div className="firstrow">
                                 <div className="row">
                                     <div className="col-sm-8">
-                                        <h2>Future-Proof Your Business</h2>
+                                        <h2>Future-Proof Your Business </h2>
                                         <p>
                                             Ready to modernise your applications and accelerate growth?{" "}
                                         </p>
@@ -541,7 +531,7 @@ export default function AlMl() {
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
-                                            <a href="#" className="animated-svg-link">
+                                            <Link href="#" className="animated-svg-link">
                                                 Contact Us
                                                 <span className="svg-container ">
                                                     <span className=" right">
@@ -643,17 +633,16 @@ export default function AlMl() {
                                                         </svg>
                                                     </span>
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {/*?php include "footer.php" ?*/}
                         </div>
                     </div>
                 </footer>
             </>
-
-
 
         </CommomLayout>
     )
