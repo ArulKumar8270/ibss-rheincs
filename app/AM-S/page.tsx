@@ -1050,11 +1050,6 @@ export default function AlMl() {
                     <p className="lines" />
                 </div>
                 <TestimonialandAward />
-
-                <div className="container"> <div className="container">
-                    <p className="lines" />
-                </div>
-                </div>
                 <Awards />
                 {/* Footer Start */}
                 <footer className="main-footer pd0">

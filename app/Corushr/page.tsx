@@ -1651,9 +1651,7 @@ export default function Corushr() {
                 </div>
                 {/* Hero Section End*/}
                 <TestimonialandAward />
-                <div className="container">
-                    <p className="lines" />
-                </div>
+               
                 <Awards />
                 {/* Footer Start */}
                 <footer className="main-footer pd0">

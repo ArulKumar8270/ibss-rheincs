@@ -175,101 +175,114 @@
   window.rerunSwiperInits = rerunSwiperInits;
 
   // --- Read More/Read Less Toggle ---
+  // Clean implementation based on your provided code
   function initReadMoreToggles() {
-    // Select all elements with the ID "toggleReadMore"
-    // Using querySelectorAll with attribute selector deals with duplicate IDs safely
+    console.log('Initializing Read More Toggles...');
+    
     const toggleButtons = document.querySelectorAll('[id="toggleReadMore"]');
-    const allMoreTexts = document.querySelectorAll('[id="more"]');
-  
-    if (toggleButtons.length === 0 || allMoreTexts.length === 0) return;
-  
+    
+    if (toggleButtons.length === 0) {
+      console.log('No toggle buttons found');
+      return;
+    }
+    
+    console.log('Found', toggleButtons.length, 'toggle buttons');
+    
     toggleButtons.forEach(function(toggleBtn, index) {
-      // 1. Skip if already initialized (prevents double-binding events)
-      if (toggleBtn.hasAttribute('data-readmore-initialized')) return;
-  
-      // 2. Find the matching content to show/hide
+      // Skip if already initialized
+      if (toggleBtn.hasAttribute('data-readmore-init')) {
+        console.log('Button', index, 'already initialized');
+        return;
+      }
+      
+      // Find the #more element (look for parent's previous sibling)
       let moreText = null;
-  
-      // Strategy A: Previous Sibling (Most common)
-      let current = toggleBtn.previousElementSibling;
-      while (current && !moreText) {
-        if (current.id === 'more') moreText = current;
-        else if (current.querySelector('[id="more"]')) moreText = current.querySelector('[id="more"]');
-        if (moreText) break;
-        current = current.previousElementSibling;
+      const parent = toggleBtn.parentElement;
+      
+      if (parent && parent.previousElementSibling) {
+        const prevSibling = parent.previousElementSibling;
+        if (prevSibling.id === 'more') {
+          moreText = prevSibling;
+        } else {
+          moreText = prevSibling.querySelector('[id="more"]');
+        }
       }
-  
-      // Strategy B: Fallback to global index matching
-      if (!moreText && allMoreTexts.length > index) {
-        moreText = allMoreTexts[index];
+      
+      if (!moreText) {
+        console.warn('No #more element found for button', index);
+        return;
       }
-  
-      // 3. Initialize the Toggle
-      if (moreText) {
-        // Find inner elements (if they exist)
-        const labelEl = toggleBtn.querySelector('.label');
-        const iconEl = toggleBtn.querySelector('.svg-container');
-  
-        const handleToggle = function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-  
-          // Toggle visibility
-          moreText.classList.toggle('hidden');
-          const isHidden = moreText.classList.contains('hidden');
-  
-          // Text to display
-          const textOpen = "Read More";
-          const textClose = "Read Less";
-  
-          // UPDATE TEXT: Prefer .label, otherwise update the span's text directly
-          if (labelEl) {
-            labelEl.textContent = isHidden ? textOpen : textClose;
-          } else {
-            // Fallback: If no .label exists, check if we have text nodes to update
-            // This prevents wiping out an SVG if it sits next to the text
-            let textUpdated = false;
-            toggleBtn.childNodes.forEach(node => {
-              if (node.nodeType === 3 && node.nodeValue.trim() !== '') { // Text node
-                node.nodeValue = isHidden ? textOpen : textClose;
-                textUpdated = true;
-              }
-            });
-            
-            // If no text node found (empty span), just set textContent
-            if (!textUpdated && !iconEl) {
-              toggleBtn.textContent = isHidden ? textOpen : textClose;
-            }
-          }
-  
-          // UPDATE ICON: Rotate if exists
-          if (iconEl) {
-             // Toggle a class for CSS rotation (e.g., transform: rotate(180deg))
-             if (isHidden) iconEl.classList.remove('rotate-up');
-             else iconEl.classList.add('rotate-up');
-          }
-        };
-  
-        // Add Listener
-        toggleBtn.addEventListener('click', handleToggle);
+      
+      console.log('Setting up button', index);
+      
+      // Get label and icon elements
+      const btnLabel = toggleBtn.querySelector('.label');
+      const iconContainer = toggleBtn.querySelector('.svg-container');
+      
+      // Click handler (based on your provided code)
+      const handleClick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         
-        // Accessibility & Styling for SPAN elements
-        toggleBtn.style.cursor = 'pointer';
-        toggleBtn.setAttribute('role', 'button');
-        toggleBtn.setAttribute('tabindex', '0');
-  
-        // Add Keyboard support (Enter/Space)
-        toggleBtn.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            handleToggle(e);
-          }
-        });
-  
-        // Mark initialized
-        toggleBtn.setAttribute('data-readmore-initialized', 'true');
-      }
+        console.log('Toggle clicked:', index);
+        
+        // Toggle the hidden class
+        moreText.classList.toggle('hidden');
+        
+        // Check if hidden or visible and update accordingly
+        if (moreText.classList.contains('hidden')) {
+          // State: Text is HIDDEN
+          if (btnLabel) btnLabel.textContent = "Read More";
+          if (iconContainer) iconContainer.classList.remove('rotate-up');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          // State: Text is VISIBLE
+          if (btnLabel) btnLabel.textContent = "Read Less";
+          if (iconContainer) iconContainer.classList.add('rotate-up');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+        }
+      };
+      
+      // Attach event listener
+      toggleBtn.addEventListener('click', handleClick);
+      
+      // Also use onclick for maximum compatibility
+      toggleBtn.onclick = handleClick;
+      
+      // Make sure button is clickable
+      toggleBtn.style.cursor = 'pointer';
+      toggleBtn.style.pointerEvents = 'auto';
+      toggleBtn.style.userSelect = 'none';
+      toggleBtn.style.position = 'relative';
+      toggleBtn.style.zIndex = '100';
+      
+      // Prevent child elements from blocking clicks
+      const children = toggleBtn.querySelectorAll('*');
+      children.forEach(function(child) {
+        child.style.pointerEvents = 'none';
+      });
+      
+      // Accessibility
+      toggleBtn.setAttribute('role', 'button');
+      toggleBtn.setAttribute('tabindex', '0');
+      toggleBtn.setAttribute('aria-expanded', moreText.classList.contains('hidden') ? 'false' : 'true');
+      toggleBtn.setAttribute('aria-controls', moreText.id || 'more-' + index);
+      
+      // Keyboard support
+      toggleBtn.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleClick(e);
+        }
+      });
+      
+      // Mark as initialized
+      toggleBtn.setAttribute('data-readmore-init', 'true');
+      
+      console.log('✓ Button', index, 'initialized');
     });
+    
+    console.log('Toggle initialization complete');
   }
   
   // Make function globally available for ScriptReinit
@@ -282,67 +295,17 @@
 
   // Re-initialize on route changes
   window.addEventListener('routeChange', function() {
-    // Remove ALL initialization markers so elements can be re-initialized
-    document.querySelectorAll('[data-readmore-initialized]').forEach(function(el) {
-      el.removeAttribute('data-readmore-initialized');
-    });
-    document.querySelectorAll('[data-has-listeners]').forEach(function(el) {
-      el.removeAttribute('data-has-listeners');
+    console.log('Route change detected, re-initializing toggles...');
+    // Remove initialization markers
+    document.querySelectorAll('[data-readmore-init]').forEach(function(el) {
+      el.removeAttribute('data-readmore-init');
     });
     
-    // Use requestAnimationFrame to ensure DOM is ready
-    requestAnimationFrame(function() {
-      requestAnimationFrame(function() {
-        // Re-initialize after a short delay to ensure DOM is ready
-        setTimeout(initReadMoreToggles, 100);
-        // Also try after longer delay
-        setTimeout(initReadMoreToggles, 400);
-        setTimeout(initReadMoreToggles, 800);
-        setTimeout(initReadMoreToggles, 1500);
-      });
-    });
-  });
-  
-  // Also re-initialize on DOMContentLoaded in case of dynamic content
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      // Remove markers first
-      document.querySelectorAll('[data-readmore-initialized]').forEach(function(el) {
-        el.removeAttribute('data-readmore-initialized');
-      });
-      document.querySelectorAll('[data-has-listeners]').forEach(function(el) {
-        el.removeAttribute('data-has-listeners');
-      });
-      setTimeout(initReadMoreToggles, 100);
-    });
-  } else {
-    // DOM already loaded - remove markers and initialize
-    document.querySelectorAll('[data-readmore-initialized]').forEach(function(el) {
-      el.removeAttribute('data-readmore-initialized');
-    });
-    document.querySelectorAll('[data-has-listeners]').forEach(function(el) {
-      el.removeAttribute('data-has-listeners');
-    });
+    // Re-initialize with delays to ensure DOM is ready
     setTimeout(initReadMoreToggles, 100);
-  }
-  
-  // Also listen for Next.js route completion events
-  // Next.js fires a 'routeChangeComplete' event on the window
-  if (typeof window !== 'undefined') {
-    // Listen for Next.js navigation events
-    window.addEventListener('popstate', function() {
-      // Remove markers
-      document.querySelectorAll('[data-readmore-initialized]').forEach(function(el) {
-        el.removeAttribute('data-readmore-initialized');
-      });
-      document.querySelectorAll('[data-has-listeners]').forEach(function(el) {
-        el.removeAttribute('data-has-listeners');
-      });
-      // Re-initialize after navigation
-      setTimeout(initReadMoreToggles, 200);
-      setTimeout(initReadMoreToggles, 600);
-    });
-  }
+    setTimeout(initReadMoreToggles, 300);
+    setTimeout(initReadMoreToggles, 600);
+  });
 
   // --- Main Mobile Menu (Hamburger) Logic ---
   whenReady(function() {

@@ -1750,7 +1750,7 @@ export default function Home() {
               <div className="row align-items-center">
                 <div className="col-lg-12">
                   {/* Testimonial Slider Start */}
-                  <div className="testimonial-slider unw testianimdot">
+                  <div className="testimonial-slider testianimdot">
                     <div className="swiper">
                       <div className="swiper-wrapper">
                         {/* Testimonial Slide Start */}
@@ -4812,9 +4812,7 @@ export default function Home() {
           </div>
           {/* Our Services Section End */}
           <TestimonialandAward />
-          <div className="container">
-            <p className="lines" />
-          </div>
+          
           <Awards />
           {/* Footer Start */}
           <footer className="main-footer pd0">

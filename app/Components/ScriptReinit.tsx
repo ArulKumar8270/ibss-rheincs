@@ -113,18 +113,13 @@ export default function ScriptReinit() {
         }
         
         // Re-initialize read more toggles
-        // This is a dedicated function to ensure read more toggles work on route changes
         const reinitReadMoreToggles = () => {
-          // Remove ALL initialization markers first to allow complete re-initialization
-          document.querySelectorAll('[data-readmore-initialized]').forEach((el) => {
-            el.removeAttribute('data-readmore-initialized');
-          });
-          document.querySelectorAll('[data-has-listeners]').forEach((el) => {
-            el.removeAttribute('data-has-listeners');
+          // Remove initialization markers
+          document.querySelectorAll('[data-readmore-init]').forEach((el) => {
+            el.removeAttribute('data-readmore-init');
           });
           
-          // Re-initialize read more toggles with multiple attempts
-          // This ensures it works even if DOM takes time to update
+          // Call the global initialization function
           if (typeof (window as any).initReadMoreToggles === 'function') {
             (window as any).initReadMoreToggles();
           }

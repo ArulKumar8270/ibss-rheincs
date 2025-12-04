@@ -39,14 +39,53 @@ export default function SwiperInit() {
       // Function to initialize specific Swipers
       const initializeSwipers = () => {
         // Initialize testimonial-slider1
+        const testimonialSliderEl = document.querySelector('.testimonial-slider .swiper');
+        if (testimonialSliderEl && !(testimonialSliderEl as any).swiper) {
+          try {
+            new Swiper(testimonialSliderEl, {
+              slidesPerView: 1.3,
+              spaceBetween: 30,
+              loop: true,
+              speed: 1000,
+              autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+              },
+              breakpoints: {
+                768: {
+                  slidesPerView: 1.5,
+                  spaceBetween: 15
+                },
+                900: {
+                  slidesPerView: 5,
+                },
+                1200: {
+                  slidesPerView: 5.3,
+                }
+              },
+              navigation: {
+                nextEl: '.testimonial-slider .testimonial-button-next',
+                prevEl: '.testimonial-slider .testimonial-button-prev',
+              },
+            });
+            console.log('testimonial-slider initialized');
+          } catch (e) {
+            console.error('Error initializing testimonial-slider:', e);
+          }
+        }
+
         const testimonialSlider1El = document.querySelector('.testimonial-slider1 .swiper');
         if (testimonialSlider1El && !(testimonialSlider1El as any).swiper) {
           try {
             new Swiper(testimonialSlider1El, {
               slidesPerView: 1.3,
               spaceBetween: 10,
-              loop: false,
-              speed: 800,
+              loop: true,
+              speed: 1000,
+              autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+              },
               breakpoints: {
                 768: {
                   slidesPerView: 1.5,
@@ -77,8 +116,12 @@ export default function SwiperInit() {
             new Swiper(awardsSliderEl, {
               slidesPerView: 2,
               spaceBetween: 15,
-              loop: false,
-              speed: 800,
+              loop: true,
+              speed: 1000,
+              autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+              },
               breakpoints: {
                 768: {
                   slidesPerView: 3,
@@ -109,8 +152,12 @@ export default function SwiperInit() {
             new Swiper(el as HTMLElement, {
               slidesPerView: 1,
               spaceBetween: 10,
-              loop: false,
-              speed: 800,
+              loop: true,
+              speed: 1000,
+              autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+              },
               breakpoints: {
                 768: {
                   slidesPerView: 2
