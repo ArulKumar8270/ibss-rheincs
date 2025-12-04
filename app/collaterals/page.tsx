@@ -1868,10 +1868,7 @@ export default function Collaterals() {
                     <p className="lines" />
                 </div>
                 <TestimonialandAward />
-                <div className="container">
-          <p className="lines" />
-        </div>
-        <Awards />
+                <Awards />
                 {/* Footer Start */}
                 <footer className="main-footer pd0">
                     {/* Footer Main Start */}

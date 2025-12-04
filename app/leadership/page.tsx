@@ -550,9 +550,7 @@ export default function EnterpriseSolutions() {
           <p className="lines" />
         </div>
         <TestimonialandAward />
-        <div className="container">
-          <p className="lines" />
-        </div>
+    
         <Awards />
         {/* Footer Start */}
         <footer className="main-footer pd0">

@@ -16417,6 +16417,24 @@ background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255
 	display: none;
 }
 
+/* Global hidden utility class for read more/less functionality */
+.hidden {
+	display: none !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+	height: 0 !important;
+	overflow: hidden !important;
+}
+
+/* Ensure more-text is visible when not hidden */
+#more:not(.hidden),
+.more-text:not(.hidden) {
+	display: block !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	height: auto !important;
+}
+
 .readmore span {
 	color: #fff;
 	cursor: pointer;
