@@ -56,7 +56,7 @@
             // Looping animation functionality with IntersectionObserver
             // Make this function globally available for re-initialization
             window.initLoopingAnimation = function() {
-                const animatedSvg = document.getElementById('looping-animation');
+            const animatedSvg = document.getElementById('looping-animation');
                 if (!animatedSvg) {
                     // Element doesn't exist yet, try again after a delay
                     setTimeout(function() {
@@ -102,7 +102,7 @@
                         } else {
                             // If it scrolls off-screen, stop the loop to save resources
                             if (animationInterval) {
-                                clearInterval(animationInterval);
+                            clearInterval(animationInterval);
                                 animatedSvg._loopingInterval = null;
                             }
                             animatedSvg.classList.remove('animate');

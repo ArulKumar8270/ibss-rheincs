@@ -1,5 +1,10 @@
+console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
+
+// Immediately register carousel functions BEFORE the IIFE
 (function() {
   "use strict";
+  
+  console.log('📜 function.js IIFE executing');
 
   // Registry to store initialization functions for re-running on route changes
   window.swiperInitRegistry = window.swiperInitRegistry || [];
@@ -175,30 +180,34 @@
   window.rerunSwiperInits = rerunSwiperInits;
 
   // --- Read More/Read Less Toggle ---
-  // Clean implementation based on your provided code
+  // Clean implementation with multiple strategies to ensure clicks work
   function initReadMoreToggles() {
-    console.log('Initializing Read More Toggles...');
+    console.log('🔄 Initializing Read More Toggles...');
+    console.log('Function called from:', new Error().stack);
     
     const toggleButtons = document.querySelectorAll('[id="toggleReadMore"]');
     
     if (toggleButtons.length === 0) {
-      console.log('No toggle buttons found');
+      console.log('⚠️ No toggle buttons found');
       return;
     }
     
-    console.log('Found', toggleButtons.length, 'toggle buttons');
+    console.log('✓ Found', toggleButtons.length, 'toggle buttons');
     
-    toggleButtons.forEach(function(toggleBtn, index) {
-      // Skip if already initialized
-      if (toggleBtn.hasAttribute('data-readmore-init')) {
-        console.log('Button', index, 'already initialized');
-        return;
+    toggleButtons.forEach(function(originalBtn, index) {
+      // Clone the button to remove ALL old event listeners
+      const toggleBtn = originalBtn.cloneNode(true);
+      if (originalBtn.parentNode) {
+        originalBtn.parentNode.replaceChild(toggleBtn, originalBtn);
       }
       
-      // Find the #more element (look for parent's previous sibling)
+      console.log('Setting up button', index);
+      
+      // Find the #more element using multiple strategies
       let moreText = null;
       const parent = toggleBtn.parentElement;
       
+      // Strategy 1: Look for parent's previous sibling
       if (parent && parent.previousElementSibling) {
         const prevSibling = parent.previousElementSibling;
         if (prevSibling.id === 'more') {
@@ -208,58 +217,154 @@
         }
       }
       
+      // Strategy 2: Walk backwards through siblings to find #more
+      if (!moreText && parent) {
+        let currentSibling = parent.previousElementSibling;
+        while (currentSibling && !moreText) {
+          if (currentSibling.id === 'more') {
+            moreText = currentSibling;
+            break;
+          }
+          const moreInSibling = currentSibling.querySelector('[id="more"]');
+          if (moreInSibling) {
+            moreText = moreInSibling;
+            break;
+          }
+          currentSibling = currentSibling.previousElementSibling;
+        }
+      }
+      
+      // Strategy 3: Search in parent container (all #more elements, use index)
+      if (!moreText && parent) {
+        let container = parent.parentElement;
+        while (container && !moreText) {
+          const allMoreInContainer = Array.from(container.querySelectorAll('[id="more"]'));
+          const allTogglesInContainer = Array.from(container.querySelectorAll('[id="toggleReadMore"]'));
+          
+          if (allMoreInContainer.length > 0) {
+            // If counts match, pair by index
+            if (allMoreInContainer.length === allTogglesInContainer.length) {
+              const toggleIndex = allTogglesInContainer.indexOf(toggleBtn);
+              if (toggleIndex >= 0 && allMoreInContainer[toggleIndex]) {
+                moreText = allMoreInContainer[toggleIndex];
+                break;
+              }
+            }
+            // Otherwise, use the first one or one before this toggle
+            const toggleIndex = allTogglesInContainer.indexOf(toggleBtn);
+            if (toggleIndex > 0 && allMoreInContainer[toggleIndex - 1]) {
+              moreText = allMoreInContainer[toggleIndex - 1];
+            } else if (allMoreInContainer[0]) {
+              moreText = allMoreInContainer[0];
+            }
+          }
+          
+          if (moreText) break;
+          container = container.parentElement;
+        }
+      }
+      
+      // Strategy 4: Global fallback - find all #more and pair by document order
       if (!moreText) {
-        console.warn('No #more element found for button', index);
+        const allMoreElements = Array.from(document.querySelectorAll('[id="more"]'));
+        const allToggleElements = Array.from(document.querySelectorAll('[id="toggleReadMore"]'));
+        
+        if (allMoreElements.length > 0 && allToggleElements.length > 0) {
+          const toggleIndex = allToggleElements.indexOf(toggleBtn);
+          if (toggleIndex >= 0 && toggleIndex < allMoreElements.length) {
+            moreText = allMoreElements[toggleIndex];
+          } else if (allMoreElements.length > 0) {
+            // Use the last #more element as fallback
+            moreText = allMoreElements[allMoreElements.length - 1];
+          }
+        }
+      }
+      
+      if (!moreText) {
+        console.warn('❌ No #more element found for button', index, toggleBtn);
+        console.warn('Parent:', parent);
+        console.warn('All #more elements on page:', document.querySelectorAll('[id="more"]').length);
         return;
       }
       
-      console.log('Setting up button', index);
+      console.log('✓ Found #more for button', index, moreText);
       
       // Get label and icon elements
       const btnLabel = toggleBtn.querySelector('.label');
       const iconContainer = toggleBtn.querySelector('.svg-container');
       
-      // Click handler (based on your provided code)
+      // Click handler - simple and direct
       const handleClick = function(e) {
-        e.preventDefault();
-        e.stopPropagation();
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
         
-        console.log('Toggle clicked:', index);
+        console.log('👆 TOGGLE CLICKED:', index);
         
         // Toggle the hidden class
+        const wasHidden = moreText.classList.contains('hidden');
         moreText.classList.toggle('hidden');
         
-        // Check if hidden or visible and update accordingly
-        if (moreText.classList.contains('hidden')) {
-          // State: Text is HIDDEN
-          if (btnLabel) btnLabel.textContent = "Read More";
-          if (iconContainer) iconContainer.classList.remove('rotate-up');
-          toggleBtn.setAttribute('aria-expanded', 'false');
-        } else {
-          // State: Text is VISIBLE
-          if (btnLabel) btnLabel.textContent = "Read Less";
-          if (iconContainer) iconContainer.classList.add('rotate-up');
-          toggleBtn.setAttribute('aria-expanded', 'true');
+        console.log('State changed:', wasHidden ? 'hidden → visible' : 'visible → hidden');
+        
+        // Update UI
+        const isNowHidden = moreText.classList.contains('hidden');
+        
+        if (btnLabel) {
+          btnLabel.textContent = isNowHidden ? "Read More" : "Read Less";
         }
+        
+        if (iconContainer) {
+          if (isNowHidden) {
+            iconContainer.classList.remove('rotate-up');
+          } else {
+            iconContainer.classList.add('rotate-up');
+          }
+        }
+        
+        toggleBtn.setAttribute('aria-expanded', isNowHidden ? 'false' : 'true');
       };
       
-      // Attach event listener
-      toggleBtn.addEventListener('click', handleClick);
+      // Method 1: Direct onclick (most reliable)
+      toggleBtn.onclick = function(e) {
+        console.log('Method 1: onclick fired');
+        handleClick(e);
+      };
       
-      // Also use onclick for maximum compatibility
-      toggleBtn.onclick = handleClick;
+      // Method 2: addEventListener with capture
+      toggleBtn.addEventListener('click', function(e) {
+        console.log('Method 2: addEventListener fired');
+        handleClick(e);
+      }, true);
       
-      // Make sure button is clickable
-      toggleBtn.style.cursor = 'pointer';
-      toggleBtn.style.pointerEvents = 'auto';
-      toggleBtn.style.userSelect = 'none';
-      toggleBtn.style.position = 'relative';
-      toggleBtn.style.zIndex = '100';
+      // Method 3: addEventListener without capture
+      toggleBtn.addEventListener('click', function(e) {
+        console.log('Method 3: addEventListener (bubble) fired');
+        handleClick(e);
+      }, false);
       
-      // Prevent child elements from blocking clicks
-      const children = toggleBtn.querySelectorAll('*');
-      children.forEach(function(child) {
+      // Method 4: mousedown as backup
+      toggleBtn.addEventListener('mousedown', function(e) {
+        console.log('Method 4: mousedown fired');
+        handleClick(e);
+      });
+      
+      // Force clickable styles with !important via cssText
+      toggleBtn.style.cssText = `
+        cursor: pointer !important;
+        pointer-events: auto !important;
+        user-select: none !important;
+        position: relative !important;
+        z-index: 1000 !important;
+        display: inline-block !important;
+      `;
+      
+      // Make ALL children non-interactive so they don't block clicks
+      const allChildren = toggleBtn.querySelectorAll('*');
+      allChildren.forEach(function(child) {
         child.style.pointerEvents = 'none';
+        child.style.cursor = 'pointer';
       });
       
       // Accessibility
@@ -272,40 +377,296 @@
       toggleBtn.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
+          console.log('Keyboard trigger');
           handleClick(e);
         }
       });
       
-      // Mark as initialized
+      // Store reference for debugging
       toggleBtn.setAttribute('data-readmore-init', 'true');
+      toggleBtn.setAttribute('data-index', index);
       
-      console.log('✓ Button', index, 'initialized');
+      console.log('✅ Button', index, 'fully initialized');
     });
     
-    console.log('Toggle initialization complete');
+    console.log('✅ Toggle initialization complete');
   }
   
-  // Make function globally available for ScriptReinit
-  window.initReadMoreToggles = initReadMoreToggles;
+  // Global click delegation as ultimate fallback
+  // This catches ANY click on toggleReadMore elements
+  document.addEventListener('click', function(e) {
+    let target = e.target;
+    let depth = 0;
+    
+    // Walk up the DOM tree to find toggleReadMore
+    while (target && depth < 10) {
+      if (target.id === 'toggleReadMore') {
+        console.log('🌐 Global delegation caught click on toggleReadMore');
+        
+        // Find the #more element
+        let moreText = null;
+        const parent = target.parentElement;
+        
+        if (parent && parent.previousElementSibling) {
+          const prevSibling = parent.previousElementSibling;
+          if (prevSibling.id === 'more') {
+            moreText = prevSibling;
+          } else {
+            moreText = prevSibling.querySelector('[id="more"]');
+          }
+        }
+        
+        if (moreText) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Toggle
+          moreText.classList.toggle('hidden');
+          const isHidden = moreText.classList.contains('hidden');
+          
+          // Update label
+          const btnLabel = target.querySelector('.label');
+          if (btnLabel) {
+            btnLabel.textContent = isHidden ? "Read More" : "Read Less";
+          }
+          
+          // Update icon
+          const iconContainer = target.querySelector('.svg-container');
+          if (iconContainer) {
+            if (isHidden) {
+              iconContainer.classList.remove('rotate-up');
+            } else {
+              iconContainer.classList.add('rotate-up');
+            }
+          }
+          
+          console.log('✓ Global delegation toggle complete');
+        }
+        
+        break;
+      }
+      
+      target = target.parentElement;
+      depth++;
+    }
+  }, true); // Use capture phase
+  
+  // Make function globally available for ScriptReinit IMMEDIATELY
+  // Register it as soon as the function is defined, not after initialization
+  // This must happen BEFORE any initialization code runs
+  (function() {
+    if (typeof window !== 'undefined') {
+      // Register immediately
+      window.initReadMoreToggles = initReadMoreToggles;
+      
+      // Also ensure it's available with a different name as backup
+      window.reinitReadMoreToggles = initReadMoreToggles;
+      
+      // Test function to manually trigger from console
+      window.testToggle = function() {
+        console.log('=== MANUAL TEST TRIGGERED ===');
+        console.log('Buttons found:', document.querySelectorAll('[id="toggleReadMore"]').length);
+        console.log('More texts found:', document.querySelectorAll('[id="more"]').length);
+        if (typeof window.initReadMoreToggles === 'function') {
+          window.initReadMoreToggles();
+        } else {
+          console.error('❌ initReadMoreToggles is not a function!');
+        }
+      };
+      
+      console.log('✅ initReadMoreToggles function registered on window (immediate)');
+      console.log('💡 To test manually, run: window.testToggle() or window.initReadMoreToggles()');
+      
+      // Verify it's accessible
+      if (typeof window.initReadMoreToggles === 'function') {
+        console.log('✅ Verification: window.initReadMoreToggles is accessible');
+        console.log('Function type:', typeof window.initReadMoreToggles);
+      } else {
+        console.error('❌ ERROR: window.initReadMoreToggles is NOT accessible!');
+      }
+      
+      // Also set up a polling mechanism to ensure it stays available
+      let pollCount = 0;
+      const maxPolls = 10;
+      const pollInterval = setInterval(function() {
+        pollCount++;
+        if (typeof window.initReadMoreToggles !== 'function') {
+          console.warn('⚠️ initReadMoreToggles was removed! Re-registering... (poll', pollCount, ')');
+          window.initReadMoreToggles = initReadMoreToggles;
+          window.reinitReadMoreToggles = initReadMoreToggles;
+        }
+        if (pollCount >= maxPolls) {
+          clearInterval(pollInterval);
+        }
+      }, 1000);
+    } else {
+      console.error('❌ window is not defined, cannot register initReadMoreToggles');
+    }
+  })();
 
-  // Initialize on page load
+  // Initialize IMMEDIATELY if DOM is already loaded
+  if (document.readyState === 'loading') {
+    console.log('⏳ DOM still loading, waiting...');
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('✅ DOMContentLoaded fired, initializing toggles');
+      initReadMoreToggles();
+      // Try again after delays (for Next.js client-side rendering)
+      setTimeout(initReadMoreToggles, 500);
+      setTimeout(initReadMoreToggles, 1000);
+      setTimeout(initReadMoreToggles, 2000);
+    });
+  } else {
+    console.log('✅ DOM already loaded, initializing toggles now');
+    initReadMoreToggles();
+    // Try again after delays (for Next.js client-side rendering)
+    setTimeout(function() {
+      console.log('Retry after 500ms');
+      initReadMoreToggles();
+    }, 500);
+    setTimeout(function() {
+      console.log('Retry after 1000ms');
+      initReadMoreToggles();
+    }, 1000);
+    setTimeout(function() {
+      console.log('Retry after 2000ms');
+      initReadMoreToggles();
+    }, 2000);
+  }
+
+  // Also use whenReady as backup
   whenReady(function() {
+    console.log('✅ whenReady fired, initializing toggles');
     initReadMoreToggles();
   });
 
-  // Re-initialize on route changes
-  window.addEventListener('routeChange', function() {
-    console.log('Route change detected, re-initializing toggles...');
-    // Remove initialization markers
+  // Listen for custom reinit event (from ScriptReinit fallback)
+  window.addEventListener('reinitReadMoreToggles', function() {
+    console.log('🔄 reinitReadMoreToggles custom event received');
+    // Remove markers
     document.querySelectorAll('[data-readmore-init]').forEach(function(el) {
       el.removeAttribute('data-readmore-init');
+      el.removeAttribute('data-index');
+    });
+    // Re-initialize
+    initReadMoreToggles();
+  });
+  
+  // Re-initialize on route changes
+  window.addEventListener('routeChange', function() {
+    console.log('🔄 Route change detected, re-initializing toggles...');
+    
+    // Remove ALL initialization markers to allow complete re-initialization
+    document.querySelectorAll('[data-readmore-init]').forEach(function(el) {
+      el.removeAttribute('data-readmore-init');
+      el.removeAttribute('data-index');
     });
     
-    // Re-initialize with delays to ensure DOM is ready
-    setTimeout(initReadMoreToggles, 100);
-    setTimeout(initReadMoreToggles, 300);
+    // Use requestAnimationFrame to ensure DOM updates are complete
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        // Re-initialize with multiple delays to ensure DOM is ready
+        setTimeout(function() {
+          console.log('🔄 Re-init attempt 1 (100ms)');
+          initReadMoreToggles();
+        }, 100);
+        
+        setTimeout(function() {
+          console.log('🔄 Re-init attempt 2 (400ms)');
+          initReadMoreToggles();
+        }, 400);
+        
+        setTimeout(function() {
+          console.log('🔄 Re-init attempt 3 (800ms)');
+          initReadMoreToggles();
+        }, 800);
+        
+        setTimeout(function() {
+          console.log('🔄 Re-init attempt 4 (1500ms)');
+          initReadMoreToggles();
+        }, 1500);
+        
+        setTimeout(function() {
+          console.log('🔄 Re-init attempt 5 (2500ms) - final attempt');
+          initReadMoreToggles();
+        }, 2500);
+      });
+    });
+  });
+  
+  // Also listen for Next.js router events if available
+  if (typeof window !== 'undefined' && window.next && window.next.router) {
+    window.next.router.events.on('routeChangeComplete', function() {
+      console.log('🔄 Next.js route change complete, re-initializing toggles...');
+      // Remove markers
+      document.querySelectorAll('[data-readmore-init]').forEach(function(el) {
+        el.removeAttribute('data-readmore-init');
+        el.removeAttribute('data-index');
+      });
+      // Re-initialize
+      setTimeout(initReadMoreToggles, 200);
+      setTimeout(initReadMoreToggles, 600);
+      setTimeout(initReadMoreToggles, 1200);
+    });
+  }
+  
+  // Listen for popstate (browser back/forward)
+  window.addEventListener('popstate', function() {
+    console.log('🔄 Popstate detected, re-initializing toggles...');
+    document.querySelectorAll('[data-readmore-init]').forEach(function(el) {
+      el.removeAttribute('data-readmore-init');
+      el.removeAttribute('data-index');
+    });
+    setTimeout(initReadMoreToggles, 200);
     setTimeout(initReadMoreToggles, 600);
   });
+  
+  // MutationObserver as fallback to catch dynamically added toggle buttons
+  if (typeof MutationObserver !== 'undefined') {
+    const observer = new MutationObserver(function(mutations) {
+      let shouldReinit = false;
+      mutations.forEach(function(mutation) {
+        mutation.addedNodes.forEach(function(node) {
+          if (node.nodeType === 1) { // Element node
+            // Check if the added node or its children contain toggleReadMore
+            if (node.id === 'toggleReadMore' || 
+                (node.querySelector && node.querySelector('[id="toggleReadMore"]'))) {
+              shouldReinit = true;
+            }
+          }
+        });
+      });
+      
+      if (shouldReinit) {
+        console.log('🔄 MutationObserver detected new toggle buttons, re-initializing...');
+        // Remove markers for new elements
+        document.querySelectorAll('[id="toggleReadMore"]:not([data-readmore-init])').forEach(function(el) {
+          // New elements don't have markers yet, so we can initialize them
+        });
+        // Small delay to ensure DOM is settled
+        setTimeout(initReadMoreToggles, 100);
+      }
+    });
+    
+    // Start observing when DOM is ready
+    if (document.body) {
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+      console.log('✅ MutationObserver started for toggle buttons');
+    } else {
+      // Wait for body to be available
+      document.addEventListener('DOMContentLoaded', function() {
+        if (document.body) {
+          observer.observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+          console.log('✅ MutationObserver started for toggle buttons (after DOMContentLoaded)');
+        }
+      });
+    }
+  }
 
   // --- Main Mobile Menu (Hamburger) Logic ---
   whenReady(function() {
@@ -2668,15 +3029,93 @@
     }
   };
   
-  // Function to initialize Counter
+  // Function to initialize Counter - Standalone Implementation
   window.initCounter = function() {
-    if (typeof window.$ === 'undefined' || !window.$.fn) return;
-    var $ = window.$;
-    if ($('.counter').length && typeof $.fn.counterUp !== 'undefined') {
+    console.log('🔢 [initCounter] Starting counter initialization...');
+    
+    var counters = document.querySelectorAll('.counter');
+    
+    console.log(`🔢 [initCounter] Found ${counters.length} counter elements`);
+    
+    if (counters.length === 0) {
+      console.log('ℹ️ [initCounter] No counter elements found on this page');
+      return;
+    }
+    
+    // Pure JavaScript counter animation (no jQuery/waypoints dependency)
+    function animateCounter(element) {
+      // Skip if already animated
+      if (element.hasAttribute('data-counted')) {
+        console.log('🔢 [initCounter] Counter already animated, skipping');
+        return;
+      }
+      
+      // Get target from data-target attribute or text content
+      var target = parseInt(element.getAttribute('data-target') || element.textContent);
+      if (isNaN(target)) {
+        console.warn('⚠️ [initCounter] Invalid counter value:', element.textContent);
+        return;
+      }
+      
+      console.log(`🔢 [initCounter] Animating counter to ${target}`);
+      
+      var current = 0;
+      var increment = target / 100; // 100 steps
+      var duration = 2000; // 2 seconds
+      var stepTime = duration / 100;
+      
+      element.setAttribute('data-counted', 'true');
+      element.textContent = '0';
+      
+      var timer = setInterval(function() {
+        current += increment;
+        if (current >= target) {
+          element.textContent = target;
+          clearInterval(timer);
+          console.log(`✅ [initCounter] Counter animated to ${target}`);
+        } else {
+          element.textContent = Math.floor(current);
+        }
+      }, stepTime);
+    }
+    
+    // Use Intersection Observer to trigger animation when in viewport
+    if ('IntersectionObserver' in window) {
+      var observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+      };
+      
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            console.log('🔢 [initCounter] Counter entered viewport');
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      counters.forEach(function(counter) {
+        observer.observe(counter);
+      });
+      
+      console.log('✅ [initCounter] Intersection Observer initialized');
+    } else {
+      // Fallback for browsers without Intersection Observer
+      console.log('🔢 [initCounter] Using fallback (no Intersection Observer)');
+      counters.forEach(function(counter) {
+        animateCounter(counter);
+      });
+    }
+    
+    // Try jQuery method as backup if available
+    if (typeof window.$ !== 'undefined' && window.$.fn && typeof window.$.fn.counterUp !== 'undefined') {
+      console.log('🔢 [initCounter] Also trying jQuery counterUp as backup...');
       try {
-        $('.counter').counterUp({ delay: 6, time: 3000 });
+        window.$('.counter').counterUp({ delay: 10, time: 2000 });
       } catch (e) {
-        console.error('Error initializing counter:', e);
+        console.log('ℹ️ [initCounter] jQuery counterUp failed, using pure JS version');
       }
     }
   };
@@ -2781,7 +3220,10 @@
 
     // Wait for owlCarousel plugin to be available
     function initSkewCarousel() {
+      console.log('🦉 [initSkewCarousel] Starting initialization...');
+      
       if (typeof window === 'undefined' || typeof window.$ === 'undefined' || !window.$.fn) {
+        console.warn('⚠️ [initSkewCarousel] jQuery not ready, retrying...');
         setTimeout(initSkewCarousel, 100);
         return;
       }
@@ -2789,20 +3231,26 @@
       var $ = window.$;
       
       if (typeof $.fn.owlCarousel === 'undefined') {
+        console.warn('⚠️ [initSkewCarousel] OwlCarousel plugin not loaded, retrying...');
         setTimeout(initSkewCarousel, 100);
         return;
       }
       
-      if ($('.skew-carousel').length > 0) {
+      var carouselElements = $('.skew-carousel');
+      console.log(`🦉 [initSkewCarousel] Found ${carouselElements.length} .skew-carousel elements`);
+      
+      if (carouselElements.length > 0) {
         try {
           // Destroy existing instance if it exists
-          var existingCarousel = $('.skew-carousel').data('owl.carousel');
+          var existingCarousel = carouselElements.data('owl.carousel');
           if (existingCarousel) {
-            $('.skew-carousel').trigger('destroy.owl.carousel').removeClass('owl-carousel owl-loaded');
-            $('.skew-carousel').find('.owl-stage-outer').children().unwrap();
+            console.log('🦉 [initSkewCarousel] Destroying existing carousel instance...');
+            carouselElements.trigger('destroy.owl.carousel').removeClass('owl-carousel owl-loaded');
+            carouselElements.find('.owl-stage-outer').children().unwrap();
           }
           
-          $('.skew-carousel').owlCarousel({
+          console.log('🦉 [initSkewCarousel] Initializing carousel...');
+          carouselElements.owlCarousel({
             loop: false,
             margin: 10,
             items: 5,
@@ -2814,14 +3262,18 @@
             touchDrag: false,
             pullDrag: false
           });
+          console.log('✅ [initSkewCarousel] Carousel initialized successfully!');
         } catch (e) {
-          console.error('Error initializing skew-carousel:', e);
+          console.error('❌ [initSkewCarousel] Error initializing skew-carousel:', e);
         }
+      } else {
+        console.log('ℹ️ [initSkewCarousel] No .skew-carousel elements found on page');
       }
     }
     
     // Make globally available for route change re-initialization
     window.initSkewCarousel = initSkewCarousel;
+    console.log('✅ window.initSkewCarousel registered:', typeof window.initSkewCarousel);
 
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function() {
@@ -2833,12 +3285,26 @@
     
     if (typeof window !== 'undefined') {
       window.addEventListener('owlCarouselLoaded', function() {
+        console.log('🦉 [initSkewCarousel] owlCarouselLoaded event received');
         setTimeout(initSkewCarousel, 100);
+      });
+      
+      // Also try when page becomes visible (for client-side navigation)
+      if (document.visibilityState === 'visible') {
+        setTimeout(initSkewCarousel, 800);
+      }
+      document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'visible') {
+          setTimeout(initSkewCarousel, 200);
+        }
       });
     }
 
     function initSkewCarousel1() {
+      console.log('🦉 [initSkewCarousel1] Starting initialization...');
+      
       if (typeof window === 'undefined' || typeof window.$ === 'undefined' || !window.$.fn) {
+        console.warn('⚠️ [initSkewCarousel1] jQuery not ready, retrying...');
         setTimeout(initSkewCarousel1, 100);
         return;
       }
@@ -2846,21 +3312,25 @@
       var $ = window.$;
       
       if (typeof $.fn.owlCarousel === 'undefined') {
+        console.warn('⚠️ [initSkewCarousel1] OwlCarousel plugin not loaded, retrying...');
         setTimeout(initSkewCarousel1, 100);
         return;
       }
       
-      if ($('.skew-carousel1').length > 0) {
+      let owl1 = $('.skew-carousel1');
+      console.log(`🦉 [initSkewCarousel1] Found ${owl1.length} .skew-carousel1 elements`);
+      
+      if (owl1.length > 0) {
         try {
-          let owl1 = $('.skew-carousel1');
-          
           // Destroy existing instance if it exists
           var existingCarousel = owl1.data('owl.carousel');
           if (existingCarousel) {
+            console.log('🦉 [initSkewCarousel1] Destroying existing carousel instance...');
             owl1.trigger('destroy.owl.carousel').removeClass('owl-carousel owl-loaded');
             owl1.find('.owl-stage-outer').children().unwrap();
           }
 
+          console.log('🦉 [initSkewCarousel1] Initializing carousel...');
           owl1.owlCarousel({
             loop: false,
             margin: 15,
@@ -2888,14 +3358,19 @@
 
           owl1.on("changed.owl.carousel", setActiveSlide);
           owl1.on("translated.owl.carousel", setActiveSlide);
+          
+          console.log('✅ [initSkewCarousel1] Carousel initialized successfully!');
         } catch (e) {
-          console.error('Error initializing skew-carousel1:', e);
+          console.error('❌ [initSkewCarousel1] Error initializing skew-carousel1:', e);
         }
+      } else {
+        console.log('ℹ️ [initSkewCarousel1] No .skew-carousel1 elements found on page');
       }
     }
     
     // Make globally available for route change re-initialization
     window.initSkewCarousel1 = initSkewCarousel1;
+    console.log('✅ window.initSkewCarousel1 registered:', typeof window.initSkewCarousel1);
 
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function() {
@@ -2907,7 +3382,18 @@
     
     if (typeof window !== 'undefined') {
       window.addEventListener('owlCarouselLoaded', function() {
+        console.log('🦉 [initSkewCarousel1] owlCarouselLoaded event received');
         setTimeout(initSkewCarousel1, 100);
+      });
+      
+      // Also try when page becomes visible (for client-side navigation)
+      if (document.visibilityState === 'visible') {
+        setTimeout(initSkewCarousel1, 850);
+      }
+      document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'visible') {
+          setTimeout(initSkewCarousel1, 250);
+        }
       });
     }
 
@@ -3281,6 +3767,14 @@
       window.initPopupVideo();
       window.initWhyChoose();
       window.initCollapsible();
+      
+      // OwlCarousel re-initializations
+      if (typeof window.initSkewCarousel === 'function') {
+        window.initSkewCarousel();
+      }
+      if (typeof window.initSkewCarousel1 === 'function') {
+        window.initSkewCarousel1();
+      }
     };
     
     // Initialize on first load
@@ -3634,5 +4128,107 @@
       }
     }, 200);
   });
+  
+  // Mark that function.js has fully loaded and all functions are available
+  window.functionJsLoaded = true;
+  console.log('✅✅✅ function.js IIFE COMPLETE!');
+  
+  // Dispatch event to notify other components
+  if (typeof window !== 'undefined' && window.dispatchEvent) {
+    window.dispatchEvent(new Event('functionJsReady'));
+  }
 
 })();
+
+// ABSOLUTE FALLBACK: Register carousel functions OUTSIDE IIFE to ensure they're available
+console.log('🔥 Registering OwlCarousel functions as FINAL fallback...');
+if (typeof window !== 'undefined') {
+  // If functions weren't registered inside IIFE, create simple versions
+  if (typeof window.initSkewCarousel !== 'function') {
+    console.warn('⚠️ initSkewCarousel was not registered in IIFE, creating fallback');
+    window.initSkewCarousel = function() {
+      console.log('🦉 [FALLBACK] initSkewCarousel called');
+      if (typeof $ !== 'undefined' && $.fn && $.fn.owlCarousel) {
+        var $carousel = $('.skew-carousel');
+        if ($carousel.length > 0) {
+          console.log('🦉 [FALLBACK] Found', $carousel.length, 'carousels');
+          $carousel.each(function() {
+            var $this = $(this);
+            if ($this.data('owl.carousel')) {
+              $this.trigger('destroy.owl.carousel').removeClass('owl-loaded');
+              $this.find('.owl-stage-outer').children().unwrap();
+            }
+            $this.owlCarousel({
+              loop: false,
+              margin: 10,
+              items: 5,
+              dots: false,
+              nav: false,
+              autoplay: true,
+              autoplayHoverPause: true,
+              mouseDrag: false,
+              touchDrag: false,
+              pullDrag: false
+            });
+          });
+        }
+      } else {
+        console.warn('⚠️ jQuery or OwlCarousel not available');
+      }
+    };
+  }
+  
+  if (typeof window.initSkewCarousel1 !== 'function') {
+    console.warn('⚠️ initSkewCarousel1 was not registered in IIFE, creating fallback');
+    window.initSkewCarousel1 = function() {
+      console.log('🦉 [FALLBACK] initSkewCarousel1 called');
+      if (typeof $ !== 'undefined' && $.fn && $.fn.owlCarousel) {
+        var $carousel = $('.skew-carousel1');
+        if ($carousel.length > 0) {
+          console.log('🦉 [FALLBACK] Found', $carousel.length, 'carousel1 elements');
+          $carousel.each(function() {
+            var $this = $(this);
+            if ($this.data('owl.carousel')) {
+              $this.trigger('destroy.owl.carousel').removeClass('owl-loaded');
+              $this.find('.owl-stage-outer').children().unwrap();
+            }
+            $this.owlCarousel({
+              loop: false,
+              margin: 15,
+              dots: false,
+              nav: false,
+              autoplay: true,
+              mouseDrag: true,
+              touchDrag: true,
+              responsive: {
+                0: { items: 1.5 },
+                480: { items: 2 },
+                768: { items: 3 },
+                1024: { items: 5 }
+              }
+            });
+            
+            $this.on('changed.owl.carousel translated.owl.carousel', function(event) {
+              var owl = event.relatedTarget;
+              var current = owl.current();
+              var $items = owl.$stage.children();
+              $items.removeClass('active');
+              $items.eq(current).addClass('active');
+            });
+          });
+        }
+      } else {
+        console.warn('⚠️ jQuery or OwlCarousel not available');
+      }
+    };
+  }
+  
+  console.log('✅ Final check - Functions registered:', {
+    initSkewCarousel: typeof window.initSkewCarousel,
+    initSkewCarousel1: typeof window.initSkewCarousel1
+  });
+  
+  window.functionJsLoaded = true;
+}
+
+console.log('🔥🔥🔥 END OF function.js FILE 🔥🔥🔥');

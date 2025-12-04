@@ -6854,14 +6854,8 @@ body:has(.offcanvas) {
 }
 
 
-
-
-
-
-
-
 .footer-main .firstrow {
-	padding: 20px 0px 40px;
+	padding: 20px 0px 0px;
 }
 
 .footer-main .firstrow p {
@@ -7520,6 +7514,17 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 .logo-carousel .owl-nav {
 	display: none !important;
 	/* hide nav */
+}
+
+/* Hide navigation arrows for skew carousels */
+.skew-carousel .owl-nav,
+.skew-carousel1 .owl-nav,
+.skew-carousel .owl-nav button,
+.skew-carousel1 .owl-nav button {
+	display: none !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
 }
 
 
@@ -12281,6 +12286,7 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 	position: sticky;
 	top: 0;
 	z-index: 9999;
+	transition: all 0.3s ease-in-out;
 	/* keeps it above other elements */
 }
 
@@ -12290,8 +12296,20 @@ background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%)
 	left: 0;
 	width: 100%;
 	background: #000;
-	/* optional background */
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+	animation: slideDown 0.3s ease-in-out;
 	z-index: 9999;
+}
+
+@keyframes slideDown {
+	from {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 header.boxshadow {
@@ -14572,6 +14590,7 @@ header.boxshadow {
 }
 
 .mega-menu:hover .mega-menu-content,
+.mega-menu.is-hovered .mega-menu-content,
 .mega-menu-content:hover {
 	visibility: visible;
 	opacity: 1;
@@ -16376,21 +16395,21 @@ background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255
 }
 
 .micfabric h2 {
-	color: #fff !important;
-	font-family: 'helvetica-neue-lt-pro';
-	font-size: 24px;
-	font-weight: 400;
-	line-height: 24px;
-	margin-bottom: 20px;
+    color: #000000 !important;
+    font-family: 'helvetica-neue-lt-pro';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 20px;
 }
 
 .micfabric p {
-	color: #fff !important;
-	font-family: 'helvetica-neue-lt-pro';
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 24px;
-	margin-bottom: 15px;
+    color: #000000 !important;
+    font-family: 'helvetica-neue-lt-pro';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 15px;
 }
 
 .card-content .row {
@@ -19882,4 +19901,23 @@ body.popup-open .main-header {
 }
 .merlinicon .MeRLIN-service {
     height: 450px;
+}
+
+/* FINAL OVERRIDE: Hide all OwlCarousel navigation arrows for skew carousels */
+.skew-carousel .owl-nav,
+.skew-carousel1 .owl-nav,
+.owl-carousel.skew-carousel .owl-nav,
+.owl-carousel.skew-carousel1 .owl-nav {
+	display: none !important;
+}
+
+.skew-carousel .owl-nav button,
+.skew-carousel1 .owl-nav button,
+.skew-carousel .owl-prev,
+.skew-carousel .owl-next,
+.skew-carousel1 .owl-prev,
+.skew-carousel1 .owl-next {
+	display: none !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
 }

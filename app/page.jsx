@@ -4,6 +4,7 @@ import CommomLayout from "./Components/CommomLayout";
 import Link from "next/link";
 import TestimonialandAward from "./Components/TestimonialandAward";
 import Awards from "./Components/Awards";
+
 export default function Home() {
   return (
     <>
@@ -1045,13 +1046,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="row countingss mt-5">
+            <div className="row countingss mt-5" id="counter-section">
               <div className="col-sm-2" />
               <div className="col-sm-2 col-6">
                 <div className="success-counter-box1 firstbox">
                   <div className="success-counter-item">
                     <h2>
-                      <span className="counter">10</span>+
+                      <span className="counter" data-target="10">10</span>+
                     </h2>
                     <p>Years of Experience</p>
                   </div>
@@ -1061,7 +1062,7 @@ export default function Home() {
                 <div className="success-counter-box1">
                   <div className="success-counter-item">
                     <h2>
-                      <span className="counter">45</span>+
+                      <span className="counter" data-target="45">45</span>+
                     </h2>
                     <p>Countries Served</p>
                   </div>
@@ -1071,7 +1072,7 @@ export default function Home() {
                 <div className="success-counter-box1">
                   <div className="success-counter-item">
                     <h2>
-                      <span className="counter">300</span>+
+                      <span className="counter" data-target="300">300</span>+
                     </h2>
                     <p>Projects Delivered</p>
                   </div>
@@ -1081,7 +1082,7 @@ export default function Home() {
                 <div className="success-counter-box1">
                   <div className="success-counter-item">
                     <h2>
-                      <span className="counter">8</span>+
+                      <span className="counter" data-target="8">8</span>+
                     </h2>
                     <p>Industries Covered</p>
                   </div>
@@ -2843,7 +2844,7 @@ export default function Home() {
                           </div>
                         </div>
                         <span className="testspace" style={{ color: "#000" }}>
-                          1/6
+                          1 / 6
                         </span>
                         <div className="testimonial-button-next">
                           <div className="animated-svg-link">
