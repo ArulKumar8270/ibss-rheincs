@@ -12,19 +12,37 @@ export default function SupabaseTest() {
     setMessage('Testing Supabase connection...')
 
     try {
-      const response = await fetch('/api/test-supabase')
-      const data = await response.json()
+      const supabase = createClient()
+      
+      // Test connection by trying to query a table
+      const { data, error } = await supabase
+        .from('contacts')
+        .select('count')
+        .limit(1)
 
-      if (data.success) {
-        setStatus('success')
-        setMessage(data.message)
-      } else {
+      if (error && error.code !== '42P01') {
+        // 42P01 is "table doesn't exist" which is fine for testing connection
         setStatus('error')
-        setMessage(data.message || 'Connection failed')
+        setMessage(`Connection failed: ${error.message}`)
+        return
       }
+
+      // Try to get count
+      const { count, error: countError } = await supabase
+        .from('contacts')
+        .select('*', { count: 'exact', head: true })
+
+      if (countError && countError.code !== '42P01') {
+        setStatus('error')
+        setMessage(`Error: ${countError.message}`)
+        return
+      }
+
+      setStatus('success')
+      setMessage(`Supabase is connected successfully! ✅\nTable exists: ${!error || error.code === '42P01' ? 'Yes' : 'No'}\nRecord count: ${count || 0}`)
     } catch (error: any) {
       setStatus('error')
-      setMessage('Error: ' + error.message)
+      setMessage('Error: ' + (error.message || 'Unknown error'))
     }
   }
 

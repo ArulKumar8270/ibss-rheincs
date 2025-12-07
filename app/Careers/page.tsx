@@ -24,7 +24,7 @@ export default function AlMl() {
                                         is valued, and your career has purpose.
                                     </p>
                                     <div className="ser-btn m-0">
-                                        <Link href="#" className="animated-svg-link">
+                                        <Link href="/openings" className="animated-svg-link">
                                             View Current Openings
                                             <span className="svg-container ">
                                                 <span className=" right">
@@ -188,7 +188,7 @@ export default function AlMl() {
                             </div>
                             <div className="heart-flex-item">
                                 <div className="family-img">
-                                    <img src="/new/family-img3.svg" alt="" />
+                                    <img src="/images/mentor.JPG" alt="" />
                                 </div>
                             </div>
                             <div className="heart-flex-item">
@@ -198,7 +198,7 @@ export default function AlMl() {
                             </div>
                             <div className="heart-flex-item">
                                 <div className="family-img">
-                                    <img src="/new/family-img4.svg" alt="" />
+                                    <img src="/images/workplace.jpg" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -435,14 +435,14 @@ export default function AlMl() {
                                         {/* Testimonial Slide Start */}
                                         <div className="swiper-slide">
                                             <div className="ric-slider-img">
-                                                <img src="/images/l1.JPG" alt="" />
+                                                <img src="/images/l1.jpg" alt="" />
                                             </div>
                                         </div>
                                         {/* Testimonial Slide End */}
                                         {/* Testimonial Slide Start */}
                                         <div className="swiper-slide">
                                             <div className="ric-slider-img">
-                                                <img src="/images/l2.JPG" alt="" />
+                                                <img src="/images/l2.jpg" alt="" />
                                             </div>
                                         </div>
                                         {/* Testimonial Slide End */}
@@ -496,85 +496,19 @@ export default function AlMl() {
                                         {/* Testimonial Slide End */}
                                         <div className="swiper-slide">
                                             <div className="ric-slider-img">
-                                                <img src="/images/l10.JPG" alt="" />
+                                                <img src="/images/l10.jpg" alt="" />
                                             </div>
                                         </div>
                                         {/* Testimonial Slide End */}
                                         <div className="swiper-slide">
                                             <div className="ric-slider-img">
-                                                <img src="/images/l11.jpg" alt="" />
+                                                <img src="/images/l11.jfif" alt="" />
                                             </div>
                                         </div>
                                         {/* Testimonial Slide End */}
                                         <div className="swiper-slide">
                                             <div className="ric-slider-img">
                                                 <img src="/images/l12.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        {/* Testimonial Slide End */}
-                                        <div className="swiper-slide">
-                                            <div className="ric-slider-img">
-                                                <img src="/images/l13.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        {/* Testimonial Slide End */}
-                                        <div className="swiper-slide">
-                                            <div className="ric-slider-img">
-                                                <img src="/images/l14.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        {/* Testimonial Slide End */}
-                                        <div className="swiper-slide">
-                                            <div className="ric-slider-img">
-                                                <img src="/images/l15.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        {/* Testimonial Slide End */}
-                                        <div className="swiper-slide">
-                                            <div className="ric-slider-img">
-                                                <img src="/images/l16.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        {/* Testimonial Slide End */}
-                                        <div className="swiper-slide">
-                                            <div className="ric-slider-img">
-                                                <img src="/images/l17.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        {/* Testimonial Slide End */}
-                                        <div className="swiper-slide">
-                                            <div className="ric-slider-img">
-                                                <img src="/images/l18.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        {/* Testimonial Slide End */}
-                                        <div className="swiper-slide">
-                                            <div className="ric-slider-img">
-                                                <img src="/images/l19.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        {/* Testimonial Slide End */}
-                                        <div className="swiper-slide">
-                                            <div className="ric-slider-img">
-                                                <img src="/images/l20.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        {/* Testimonial Slide End */}
-                                        <div className="swiper-slide">
-                                            <div className="ric-slider-img">
-                                                <img src="/images/l21.jfif" alt="" />
-                                            </div>
-                                        </div>
-                                        {/* Testimonial Slide End */}
-                                        <div className="swiper-slide">
-                                            <div className="ric-slider-img">
-                                                <img src="/images/l22.jfif" alt="" />
-                                            </div>
-                                        </div>
-                                        {/* Testimonial Slide End */}
-                                        <div className="swiper-slide">
-                                            <div className="ric-slider-img">
-                                                <img src="/images/l23.jpg" alt="" />
                                             </div>
                                         </div>
                                     </div>
@@ -950,7 +884,7 @@ export default function AlMl() {
                                         <td> Epicor</td>
                                         <td>
                                             <div className="ser-btn2">
-                                                <Link                                href="#"
+                                                <Link                                href="/openings"
                                                     className="animated-svg-link1  ja-btn btn-style-3"
                                                 >
                                                     Apply Now
@@ -1065,7 +999,7 @@ export default function AlMl() {
                                         <td> 20-24 LPA</td>
                                         <td>
                                             <div className="ser-btn2">
-                                                <Link href="#" className="animated-svg-link1 ja-btn btn-style-3">
+                                                <Link href="/openings" className="animated-svg-link1 ja-btn btn-style-3">
                                                     Apply Now
                                                     <span className="svg-container ">
                                                         <span className=" left">
@@ -1178,7 +1112,7 @@ export default function AlMl() {
                                         <td>20-24 LPA</td>
                                         <td>
                                             <div className="ser-btn2">
-                                                <Link href="#" className="animated-svg-link1 ja-btn btn-style-3">
+                                                <Link href="/openings" className="animated-svg-link1 ja-btn btn-style-3">
                                                     Apply Now
                                                     <span className="svg-container ">
                                                         <span className=" left">
@@ -1291,7 +1225,7 @@ export default function AlMl() {
                                         <td> 20-24 LPA</td>
                                         <td>
                                             <div className="ser-btn2">
-                                                <Link href="#" className="animated-svg-link1 ja-btn btn-style-3">
+                                                <Link href="/openings" className="animated-svg-link1 ja-btn btn-style-3">
                                                     Apply Now
                                                     <span className="svg-container ">
                                                         <span className=" left">
@@ -1461,13 +1395,13 @@ export default function AlMl() {
                                             {" "}
                                             <img src="/new/nllo.svg" alt="" /> <span> 2-4 Years</span>{" "}
                                         </span>
-                                        <pan>
+                                        <span>
                                             {" "}
                                             <img src="/new/pranch-1.svg" alt="" /> <span>Epicor </span>
-                                        </pan>
+                                        </span>
                                     </p>
                                     <div className="ser-btn2">
-                                        <Link href="#" className="animated-svg-link1  ja-btn btn-style-3">
+                                        <Link href="/openings" className="animated-svg-link1  ja-btn btn-style-3">
                                             Apply Now
                                             <span className="svg-container ">
                                                 <span className=" left">
@@ -1582,13 +1516,13 @@ export default function AlMl() {
                                             {" "}
                                             <img src="/new/nllo.svg" alt="" /> <span> 2-4 Years</span>{" "}
                                         </span>
-                                        <pan>
+                                        <span>
                                             {" "}
                                             <img src="/new/pranch-1.svg" alt="" /> <span>Epicor </span>
-                                        </pan>
+                                        </span>
                                     </p>
                                     <div className="ser-btn2">
-                                        <Link href="#" className="animated-svg-link1  ja-btn btn-style-3">
+                                        <Link href="/openings" className="animated-svg-link1  ja-btn btn-style-3">
                                             Apply Now
                                             <span className="svg-container ">
                                                 <span className=" left">
@@ -1703,13 +1637,13 @@ export default function AlMl() {
                                             {" "}
                                             <img src="/new/nllo.svg" alt="" /> <span> 2-4 Years</span>{" "}
                                         </span>
-                                        <pan>
+                                        <span>
                                             {" "}
                                             <img src="/new/pranch-1.svg" alt="" /> <span>Epicor </span>
-                                        </pan>
+                                        </span>
                                     </p>
                                     <div className="ser-btn2">
-                                        <Link href="#" className="animated-svg-link1  ja-btn btn-style-3">
+                                        <Link href="/openings" className="animated-svg-link1  ja-btn btn-style-3">
                                             Apply Now
                                             <span className="svg-container ">
                                                 <span className=" left">
@@ -1824,13 +1758,13 @@ export default function AlMl() {
                                             {" "}
                                             <img src="/new/nllo.svg" alt="" /> <span> 2-4 Years</span>{" "}
                                         </span>
-                                        <pan>
+                                        <span>
                                             {" "}
                                             <img src="/new/pranch-1.svg" alt="" /> <span>Epicor </span>
-                                        </pan>
+                                        </span>
                                     </p>
                                     <div className="ser-btn2">
-                                        <Link href="#" className="animated-svg-link1  ja-btn btn-style-3">
+                                        <Link href="/openings" className="animated-svg-link1  ja-btn btn-style-3">
                                             Apply Now
                                             <span className="svg-container ">
                                                 <span className=" left">
@@ -1938,7 +1872,7 @@ export default function AlMl() {
                             </div>
                         </div>
                         <div className="ser-btn mt-5 text-sm-center ">
-                            <Link href="#" className="animated-svg-link m-sm-auto">
+                            <Link href="/openings" className="animated-svg-link m-sm-auto">
                                 View More Current Opening
                                 <span className="svg-container ">
                                     <span className=" right">

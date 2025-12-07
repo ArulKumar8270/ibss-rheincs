@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Removed 'output: export' because API routes require server-side rendering
-  // If you need static export, you'll need to use Supabase Edge Functions or external API
-  // output: 'export',
+  // Static export enabled - using client-side Supabase calls instead of API routes
+  output: 'export',
   images: {
     unoptimized: true,
   },

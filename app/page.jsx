@@ -17,7 +17,7 @@ export default function Home() {
           <div className="hero banner indexbanner">
             <div className="container">
               <div className="row">
-                <div className="col-lg-6">
+                <div className="col-lg-5">
                   <div className="hero-content ">
                     <div className="section-title">
                       <h1 className=" mainbannerh1">
@@ -105,7 +105,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="col-sm-6">
+                <div className="col-sm-7">
                   <div className="hero-bg-video">
                     <video autoPlay={true} muted={true} loop={true} id="myVideo" height={800}>
                       <source src="/videos/banner.mov" type="video/mp4" />
