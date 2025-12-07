@@ -80,7 +80,7 @@ export default function EnterpriseSolutions() {
                           alt="Green Certificate"
                           className="timeline-image"
                         />
-                        <Link href="#" className="animated-svg-link hr-link">
+                        <Link href="/events" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -198,7 +198,7 @@ export default function EnterpriseSolutions() {
                           Grand Opening of India Development Centre (IDC) in
                           RheinBrücke
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        <Link href="/events" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -316,7 +316,7 @@ export default function EnterpriseSolutions() {
                           Establishing our Saudi presence and launch of AIMS
                           partnership
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        <Link href="/events" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">

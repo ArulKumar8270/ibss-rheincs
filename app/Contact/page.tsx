@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import { createClient } from "@/lib/supabase-browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -32,19 +33,55 @@ export default function Contact() {
     setStatusMessage('Submitting your inquiry...');
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      });
+      // Validate required fields
+      const { fullName, countryCode, phone, email, companyName, selection, message } = formData;
 
-      const result = await response.json();
+      if (!fullName || !phone || !email || !companyName) {
+        setStatus('error');
+        setStatusMessage('Please fill in all required fields.');
+        return;
+      }
 
-      if (result.success) {
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        setStatus('error');
+        setStatusMessage('Please enter a valid email address.');
+        return;
+      }
+
+      // Use client-side Supabase call
+      const supabase = createClient();
+      const { data, error } = await supabase
+        .from('contacts')
+        .insert([
+          {
+            full_name: fullName,
+            country_code: countryCode || '+91',
+            phone: phone,
+            email: email,
+            company_name: companyName,
+            selection: selection || null,
+            message: message || null,
+          }
+        ])
+        .select();
+
+      if (error) {
+        console.error('Supabase error:', error);
+        let errorMessage = 'Failed to submit form. Please try again.';
+        if (error.code === '42P01') {
+          errorMessage = 'Database table not found. Please contact support.';
+        } else if (error.code === '42501') {
+          errorMessage = 'Permission denied. Please contact support.';
+        } else if (error.message) {
+          errorMessage = `Error: ${error.message}`;
+        }
+        setStatus('error');
+        setStatusMessage(errorMessage);
+      } else {
         setStatus('success');
-        setStatusMessage(result.message);
+        setStatusMessage('Thank you! Your inquiry has been submitted successfully. We will contact you shortly.');
         // Reset form
         setFormData({
           fullName: '',
@@ -60,13 +97,11 @@ export default function Contact() {
           setStatus('idle');
           setStatusMessage('');
         }, 5000);
-      } else {
-        setStatus('error');
-        setStatusMessage(result.message || 'Failed to submit. Please try again.');
       }
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Contact form error:', error);
       setStatus('error');
-      setStatusMessage('Network error. Please check your connection and try again.');
+      setStatusMessage(error.message || 'An error occurred. Please try again.');
     }
   };
 
