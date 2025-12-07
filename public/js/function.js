@@ -3010,7 +3010,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
 
   // --- More jQuery-dependent code ---
   // Make initialization functions globally available for re-initialization on route changes
-  
+
   // Function to initialize YouTube Background Video
   window.initYTVideo = function() {
     if (typeof window.$ === 'undefined' || !window.$.fn) return;
@@ -3022,7 +3022,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         if (existingPlayer && existingPlayer.destroy) {
           existingPlayer.destroy();
         }
-        var myPlayer = $("#herovideo").YTPlayer();
+      var myPlayer = $("#herovideo").YTPlayer();
       } catch (e) {
         console.error('Error initializing YouTube video:', e);
       }
@@ -3119,12 +3119,12 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       }
     }
   };
-  
+
   // Function to initialize Image Reveal Animation
   window.initImageReveal = function() {
     if ($('.reveal').length && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       try {
-        gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollTrigger);
         // Kill existing ScrollTriggers for reveal containers
         ScrollTrigger.getAll().forEach(function(trigger) {
           if (trigger.vars && trigger.vars.trigger && trigger.vars.trigger.classList && trigger.vars.trigger.classList.contains('reveal')) {
@@ -3132,35 +3132,35 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
           }
         });
         
-        let revealContainers = document.querySelectorAll(".reveal");
-        revealContainers.forEach((container) => {
-          let image = container.querySelector("img");
-          let tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: container,
-              toggleActions: "play none none none"
-            }
-          });
-          tl.set(container, {
-            autoAlpha: 1
-          });
-          tl.from(container, 1, {
-            xPercent: -100,
-            ease: Power2.out
-          });
-          tl.from(image, 1, {
-            xPercent: 100,
-            scale: 1,
-            delay: -1,
-            ease: Power2.out
-          });
+      let revealContainers = document.querySelectorAll(".reveal");
+      revealContainers.forEach((container) => {
+        let image = container.querySelector("img");
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: container,
+            toggleActions: "play none none none"
+          }
         });
+        tl.set(container, {
+          autoAlpha: 1
+        });
+        tl.from(container, 1, {
+          xPercent: -100,
+          ease: Power2.out
+        });
+        tl.from(image, 1, {
+          xPercent: 100,
+          scale: 1,
+          delay: -1,
+          ease: Power2.out
+        });
+      });
       } catch (e) {
         console.error('Error initializing image reveal:', e);
-      }
+    }
     }
   };
-  
+
   // Function to initialize header scroll behavior (only once)
   if (!window._headerScrollInitialized) {
     window.addEventListener("scroll", function () {
@@ -3174,48 +3174,48 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
 
     // Function to generate grid overlay
     window.initGridOverlay = function() {
-      function generateGrid() {
-        const overlay = document.querySelector('.grid-overlay');
-        const section = document.querySelector('.grid-section');
-        
-        if (!overlay || !section) return;
-        
-        overlay.innerHTML = '';
-        const cols = Math.ceil(section.offsetWidth / 120);
-        const rows = Math.ceil(section.offsetHeight / 150);
-        for (let i = 0; i < cols * rows; i++) {
-          const cell = document.createElement('div');
-          cell.classList.add('cell');
-          overlay.appendChild(cell);
-        }
+    function generateGrid() {
+      const overlay = document.querySelector('.grid-overlay');
+      const section = document.querySelector('.grid-section');
+      
+      if (!overlay || !section) return;
+      
+      overlay.innerHTML = '';
+      const cols = Math.ceil(section.offsetWidth / 120);
+      const rows = Math.ceil(section.offsetHeight / 150);
+      for (let i = 0; i < cols * rows; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        overlay.appendChild(cell);
       }
+    }
 
-      if (document.querySelector('.grid-overlay') && document.querySelector('.grid-section')) {
-        generateGrid();
+    if (document.querySelector('.grid-overlay') && document.querySelector('.grid-section')) {
+      generateGrid();
         // Remove old resize listener if exists
         if (window._gridResizeHandler) {
           window.removeEventListener('resize', window._gridResizeHandler);
         }
         window._gridResizeHandler = generateGrid;
         window.addEventListener('resize', window._gridResizeHandler);
-      }
+    }
 
-      const gridOverlay = document.querySelector(".grid-overlay");
+    const gridOverlay = document.querySelector(".grid-overlay");
       if (gridOverlay && !document.querySelector('.grid-section')) {
-        const cols = Math.ceil(window.innerWidth / 120);
-        const section = document.querySelector(".grid-section");
-        if (section) {
-          const rows = Math.ceil(section.offsetHeight / 120);
-          const total = cols * rows;
+      const cols = Math.ceil(window.innerWidth / 120);
+      const section = document.querySelector(".grid-section");
+      if (section) {
+        const rows = Math.ceil(section.offsetHeight / 120);
+        const total = cols * rows;
 
           gridOverlay.innerHTML = '';
-          for (let i = 0; i < total; i++) {
-            const cell = document.createElement("div");
-            cell.className = "cell";
-            gridOverlay.appendChild(cell);
-          }
+        for (let i = 0; i < total; i++) {
+          const cell = document.createElement("div");
+          cell.className = "cell";
+          gridOverlay.appendChild(cell);
         }
       }
+    }
     };
 
     // Wait for owlCarousel plugin to be available
@@ -3317,7 +3317,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         return;
       }
       
-      let owl1 = $('.skew-carousel1');
+          let owl1 = $('.skew-carousel1');
       console.log(`🦉 [initSkewCarousel1] Found ${owl1.length} .skew-carousel1 elements`);
       
       if (owl1.length > 0) {
@@ -3403,14 +3403,14 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       var $ = window.$;
       
       // Text Animation Style 1
-      if ($('.text-anime-style-1').length && typeof SplitText !== 'undefined' && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    if ($('.text-anime-style-1').length && typeof SplitText !== 'undefined' && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         try {
           gsap.registerPlugin(ScrollTrigger);
-          let staggerAmount = 0.05,
-            delayValue = 0.5,
-            animatedTextElements = document.querySelectorAll('.text-anime-style-1');
+      let staggerAmount = 0.05,
+        delayValue = 0.5,
+        animatedTextElements = document.querySelectorAll('.text-anime-style-1');
 
-          animatedTextElements.forEach((element) => {
+      animatedTextElements.forEach((element) => {
             // Clean up existing animations
             if (element._splitText) {
               element._splitText.revert();
@@ -3421,33 +3421,33 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
               }
             });
             
-            let animationSplitText = new SplitText(element, { type: "chars, words" });
+        let animationSplitText = new SplitText(element, { type: "chars, words" });
             element._splitText = animationSplitText;
-            gsap.from(animationSplitText.words, {
-              duration: 1,
-              delay: delayValue,
-              x: 20,
-              autoAlpha: 0,
-              stagger: staggerAmount,
-              scrollTrigger: { trigger: element, start: "top 85%" },
-            });
-          });
+        gsap.from(animationSplitText.words, {
+          duration: 1,
+          delay: delayValue,
+          x: 20,
+          autoAlpha: 0,
+          stagger: staggerAmount,
+          scrollTrigger: { trigger: element, start: "top 85%" },
+        });
+      });
         } catch (e) {
           console.error('Error initializing text-anime-style-1:', e);
         }
-      }
+    }
 
       // Text Animation Style 2
-      if ($('.text-anime-style-2').length && typeof SplitText !== 'undefined' && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    if ($('.text-anime-style-2').length && typeof SplitText !== 'undefined' && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         try {
           gsap.registerPlugin(ScrollTrigger);
-          let staggerAmount = 0.03,
-            translateXValue = 20,
-            delayValue = 0.1,
-            easeType = "power2.out",
-            animatedTextElements = document.querySelectorAll('.text-anime-style-2');
+      let staggerAmount = 0.03,
+        translateXValue = 20,
+        delayValue = 0.1,
+        easeType = "power2.out",
+        animatedTextElements = document.querySelectorAll('.text-anime-style-2');
 
-          animatedTextElements.forEach((element) => {
+      animatedTextElements.forEach((element) => {
             // Clean up existing animations
             if (element._splitText) {
               element._splitText.revert();
@@ -3458,65 +3458,65 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
               }
             });
             
-            let animationSplitText = new SplitText(element, { type: "chars, words" });
+        let animationSplitText = new SplitText(element, { type: "chars, words" });
             element._splitText = animationSplitText;
-            gsap.from(animationSplitText.chars, {
-              duration: 1,
-              delay: delayValue,
-              x: translateXValue,
-              autoAlpha: 0,
-              stagger: staggerAmount,
-              ease: easeType,
-              scrollTrigger: { trigger: element, start: "top 85%" },
-            });
-          });
+        gsap.from(animationSplitText.chars, {
+          duration: 1,
+          delay: delayValue,
+          x: translateXValue,
+          autoAlpha: 0,
+          stagger: staggerAmount,
+          ease: easeType,
+          scrollTrigger: { trigger: element, start: "top 85%" },
+        });
+      });
         } catch (e) {
           console.error('Error initializing text-anime-style-2:', e);
         }
-      }
+    }
 
       // Text Animation Style 3
-      if ($('.text-anime-style-3').length && typeof SplitText !== 'undefined' && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    if ($('.text-anime-style-3').length && typeof SplitText !== 'undefined' && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         try {
           gsap.registerPlugin(ScrollTrigger);
-          let animatedTextElements = document.querySelectorAll('.text-anime-style-3');
+      let animatedTextElements = document.querySelectorAll('.text-anime-style-3');
 
-          animatedTextElements.forEach((element) => {
+      animatedTextElements.forEach((element) => {
             // Clean up existing animations
-            if (element.animation) {
-              element.animation.progress(1).kill();
+        if (element.animation) {
+          element.animation.progress(1).kill();
             }
             if (element.split) {
-              element.split.revert();
-            }
+          element.split.revert();
+        }
             ScrollTrigger.getAll().forEach(function(trigger) {
               if (trigger.vars && trigger.vars.trigger === element) {
                 trigger.kill();
               }
             });
 
-            element.split = new SplitText(element, {
-              type: "lines,words,chars",
-              linesClass: "split-line",
-            });
-            gsap.set(element, { perspective: 400 });
+        element.split = new SplitText(element, {
+          type: "lines,words,chars",
+          linesClass: "split-line",
+        });
+        gsap.set(element, { perspective: 400 });
 
-            gsap.set(element.split.chars, {
-              opacity: 0,
-              x: "50",
-            });
+        gsap.set(element.split.chars, {
+          opacity: 0,
+          x: "50",
+        });
 
-            element.animation = gsap.to(element.split.chars, {
-              scrollTrigger: { trigger: element, start: "top 90%" },
-              x: "0",
-              y: "0",
-              rotateX: "0",
-              opacity: 1,
-              duration: 1,
-              ease: Back.easeOut,
-              stagger: 0.02,
-            });
-          });
+        element.animation = gsap.to(element.split.chars, {
+          scrollTrigger: { trigger: element, start: "top 90%" },
+          x: "0",
+          y: "0",
+          rotateX: "0",
+          opacity: 1,
+          duration: 1,
+          ease: Back.easeOut,
+          stagger: 0.02,
+        });
+      });
         } catch (e) {
           console.error('Error initializing text-anime-style-3:', e);
         }
@@ -3528,54 +3528,54 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       if (typeof window.$ === 'undefined' || !window.$.fn) return;
       var $ = window.$;
       var $window = $(window);
-      var $parallaxie = $('.parallaxie');
-      if ($parallaxie.length && ($window.width() > 991)) {
-        if ($window.width() > 768 && typeof $.fn.parallaxie !== 'undefined') {
+    var $parallaxie = $('.parallaxie');
+    if ($parallaxie.length && ($window.width() > 991)) {
+      if ($window.width() > 768 && typeof $.fn.parallaxie !== 'undefined') {
           try {
-            $parallaxie.parallaxie({
-              speed: 0.55,
-              offset: 0,
-            });
+        $parallaxie.parallaxie({
+          speed: 0.55,
+          offset: 0,
+        });
           } catch (e) {
             console.error('Error initializing parallaxie:', e);
-          }
-        }
+      }
+    }
       }
     };
-    
+
     // Function to initialize Magnific Popup for gallery
     window.initMagnificGallery = function() {
       if (typeof window.$ === 'undefined' || !window.$.fn) return;
       var $ = window.$;
-      if ($('.gallery-items').length && typeof $.fn.magnificPopup !== 'undefined') {
+    if ($('.gallery-items').length && typeof $.fn.magnificPopup !== 'undefined') {
         try {
           // Destroy existing instances
           if ($.magnificPopup && $.magnificPopup.instance) {
             $.magnificPopup.instance.close();
           }
-          $('.gallery-items').magnificPopup({
-            delegate: 'a',
-            type: 'image',
-            closeOnContentClick: false,
-            closeBtnInside: false,
-            mainClass: 'mfp-with-zoom',
-            image: {
-              verticalFit: true,
-            },
-            gallery: {
-              enabled: true
-            },
-            zoom: {
-              enabled: true,
-              duration: 300,
-              opener: function (element) {
-                return element.find('img');
-              }
-            }
-          });
+      $('.gallery-items').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        closeOnContentClick: false,
+        closeBtnInside: false,
+        mainClass: 'mfp-with-zoom',
+        image: {
+          verticalFit: true,
+        },
+        gallery: {
+          enabled: true
+        },
+        zoom: {
+          enabled: true,
+          duration: 300,
+          opener: function (element) {
+            return element.find('img');
+          }
+        }
+      });
         } catch (e) {
           console.error('Error initializing magnific gallery:', e);
-        }
+    }
       }
     };
 
@@ -3633,88 +3633,88 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
           }
           
           $menuitem.isotope({
-            itemSelector: ".project-item-box",
-            layoutMode: "masonry",
-            masonry: {
-              columnWidth: 1,
-            }
-          });
+          itemSelector: ".project-item-box",
+          layoutMode: "masonry",
+          masonry: {
+            columnWidth: 1,
+          }
+        });
 
           // Remove old event listeners and add new ones
-          var $menudisesnav = $(".our-Project-nav li a");
+        var $menudisesnav = $(".our-Project-nav li a");
           $menudisesnav.off('click.isotope').on('click.isotope', function (e) {
-            var filterValue = $(this).attr('data-filter');
-            $menuitem.isotope({
-              filter: filterValue
-            });
-
-            $menudisesnav.removeClass("active-btn");
-            $(this).addClass("active-btn");
-            e.preventDefault();
+          var filterValue = $(this).attr('data-filter');
+          $menuitem.isotope({
+            filter: filterValue
           });
-          $menuitem.isotope({ filter: "*" });
+
+          $menudisesnav.removeClass("active-btn");
+          $(this).addClass("active-btn");
+          e.preventDefault();
+        });
+        $menuitem.isotope({ filter: "*" });
         } catch (e) {
           console.error('Error initializing isotope:', e);
-        }
+      }
       }
     };
-    
+
     // Function to initialize WOW.js
     window.initWOW = function() {
-      if (typeof WOW !== 'undefined') {
+    if (typeof WOW !== 'undefined') {
         try {
-          new WOW().init();
+      new WOW().init();
         } catch (e) {
           console.error('Error initializing WOW:', e);
-        }
+    }
       }
     };
-    
+
     // Function to initialize Popup Video
     window.initPopupVideo = function() {
       if (typeof window.$ === 'undefined' || !window.$.fn) return;
       var $ = window.$;
-      if ($('.popup-video').length && typeof $.fn.magnificPopup !== 'undefined') {
+    if ($('.popup-video').length && typeof $.fn.magnificPopup !== 'undefined') {
         try {
           // Destroy existing instances
           if ($.magnificPopup && $.magnificPopup.instance) {
             $.magnificPopup.instance.close();
           }
-          $('.popup-video').magnificPopup({
-            type: 'iframe',
-            mainClass: 'mfp-fade',
-            removalDelay: 160,
-            preloader: false,
-            fixedContentPos: true
-          });
+      $('.popup-video').magnificPopup({
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+        fixedContentPos: true
+      });
         } catch (e) {
           console.error('Error initializing popup video:', e);
-        }
+    }
       }
     };
-    
+
     // Function to initialize Why Choose us hover effects
     window.initWhyChoose = function() {
       if (typeof window.$ === 'undefined' || !window.$.fn) return;
       var $ = window.$;
-      if ($('.why-choose-content').length) {
+    if ($('.why-choose-content').length) {
         try {
-          var element = $('.why-choose-content');
-          var items = element.find('.why-choose-item');
-          if (items.length) {
+      var element = $('.why-choose-content');
+      var items = element.find('.why-choose-item');
+      if (items.length) {
             // Remove old event listeners
             items.off('mouseenter.whyChoose mouseleave.whyChoose');
-            items.on({
-              mouseenter: function () {
-                if ($(this).hasClass('active')) return;
-                items.removeClass('active');
-                $(this).addClass('active');
-              },
-              mouseleave: function () {
-                //stuff to do on mouse leave
-              }
-            });
+        items.on({
+          mouseenter: function () {
+            if ($(this).hasClass('active')) return;
+            items.removeClass('active');
+            $(this).addClass('active');
+          },
+          mouseleave: function () {
+            //stuff to do on mouse leave
           }
+        });
+      }
         } catch (e) {
           console.error('Error initializing why choose:', e);
         }
@@ -3727,8 +3727,8 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       document.querySelectorAll('[data-collapsible-initialized]').forEach(function(el) {
         el.removeAttribute('data-collapsible-initialized');
       });
-      
-      var coll = document.getElementsByClassName("collapsible");
+
+    var coll = document.getElementsByClassName("collapsible");
       for (var i = 0; i < coll.length; i++) {
         // Skip if already initialized
         if (coll[i].hasAttribute('data-collapsible-initialized')) continue;
@@ -3740,17 +3740,17 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         coll[i].parentNode.replaceChild(newColl, coll[i]);
         
         newColl.addEventListener("click", function () {
-          this.classList.toggle("active");
-          var content = this.nextElementSibling;
-          if (content) {
-            if (content.style.display === "block") {
-              content.style.display = "none";
-            } else {
-              content.style.display = "block";
-            }
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content) {
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
           }
-        });
-      }
+        }
+      });
+    }
     };
     
     // Main initialization function that calls all sub-functions
@@ -3780,7 +3780,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     // Initialize on first load
     whenReady(function() {
       window.reinitJQueryPlugins();
-    }, ['jQuery']);
+  }, ['jQuery']);
 
   // --- Additional Search Box Functionality ---
   whenReady(function() {

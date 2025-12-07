@@ -12,6 +12,9 @@ export default function Header() {
     const [digitalSolutionsCollapsed, setDigitalSolutionsCollapsed] = useState(false);
     const [digitalServicesCollapsed, setDigitalServicesCollapsed] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
 
     // Get the current page name (e.g., 'leadership' from '/leadership')
     const currentPage = pathname.split('/').pop() || 'index';
@@ -199,6 +202,181 @@ export default function Header() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    // All searchable pages with their titles and keywords
+    const allPages = [
+        // About Us
+        { url: '/overview', title: 'Overview', keywords: 'about company overview ibb information business solutions' },
+        { url: '/leadership', title: 'Leadership', keywords: 'leadership team management executives directors' },
+        { url: '/customer-speak', title: 'Customer Speak', keywords: 'customer testimonials reviews feedback clients' },
+        { url: '/success-stories', title: 'Success Stories', keywords: 'case studies success stories achievements results' },
+        { url: '/careers', title: 'Careers', keywords: 'careers jobs opportunities employment work' },
+        
+        // Solutions & Services
+        { url: '/corushr', title: 'CorusHR', keywords: 'corus hr human resources management' },
+        { url: '/MeRLIN', title: 'MeRLIN', keywords: 'merlin solution platform' },
+        { url: '/enterprise-solutions', title: 'Enterprise Solutions', keywords: 'enterprise solutions erp business' },
+        { url: '/epicor', title: 'Epicor', keywords: 'epicor erp enterprise resource planning' },
+        { url: '/epicor-kinetic', title: 'Epicor Kinetic', keywords: 'epicor kinetic erp cloud' },
+        { url: '/epicor-iscala', title: 'Epicor iScala', keywords: 'epicor iscala erp' },
+        { url: '/epicor-companion', title: 'Epicor Companion', keywords: 'epicor companion mobile' },
+        { url: '/epicor-epicpay', title: 'Epicor EpicPay', keywords: 'epicor epicpay payment' },
+        { url: '/SAP', title: 'SAP', keywords: 'sap erp enterprise' },
+        { url: '/microsoft-dynamics-solutions', title: 'Microsoft Dynamics Solutions', keywords: 'microsoft dynamics erp crm' },
+        { url: '/sugar-CRM', title: 'Sugar CRM', keywords: 'sugar crm customer relationship management' },
+        { url: '/ERP-customer-excellence', title: 'ERP Customer Excellence', keywords: 'erp customer excellence service' },
+        { url: '/digital-solutions', title: 'Digital Solutions', keywords: 'digital solutions technology innovation' },
+        { url: '/digital-solutions-services', title: 'Digital Solutions Services', keywords: 'digital services technology solutions' },
+        { url: '/business-intelligence', title: 'Business Intelligence', keywords: 'business intelligence analytics data bi' },
+        { url: '/AI-ML', title: 'AI & ML', keywords: 'artificial intelligence machine learning ai ml' },
+        { url: '/ecommerce', title: 'E-Commerce', keywords: 'ecommerce online store retail digital commerce' },
+        { url: '/Architecture', title: 'Architecture', keywords: 'architecture design system' },
+        { url: '/data-engineering-warehousing', title: 'Data Engineering & Warehousing', keywords: 'data engineering warehousing etl' },
+        { url: '/AM-S', title: 'AMS', keywords: 'application management support ams' },
+        { url: '/user-exprience', title: 'User Experience', keywords: 'user experience ux design interface' },
+        { url: '/commercetools', title: 'Commercetools', keywords: 'commercetools commerce platform' },
+        { url: '/fluent-commerce', title: 'Fluent Commerce', keywords: 'fluent commerce order management' },
+        { url: '/ms-technology', title: 'MS Technology', keywords: 'microsoft technology solutions' },
+        { url: '/digital-services', title: 'Digital Services', keywords: 'digital services technology consulting' },
+        
+        // Industries
+        { url: '/vertical-retail', title: 'Vertical Retail', keywords: 'retail vertical industry solutions' },
+        { url: '/industries-retail', title: 'Industries Retail', keywords: 'retail industry solutions' },
+        { url: '/supply-chain', title: 'Supply Chain', keywords: 'supply chain logistics management' },
+        { url: '/discrete-manufacturing', title: 'Discrete Manufacturing', keywords: 'discrete manufacturing production' },
+        { url: '/automotive', title: 'Automotive', keywords: 'automotive industry vehicles' },
+        { url: '/epc', title: 'EPC', keywords: 'epc engineering procurement construction' },
+        { url: '/process-manufacturing', title: 'Process Manufacturing', keywords: 'process manufacturing production' },
+        { url: '/private-quity', title: 'Private Equity', keywords: 'private equity investment finance' },
+        { url: '/cable-manufacturing', title: 'Cable Manufacturing', keywords: 'cable manufacturing production' },
+        { url: '/interior-design', title: 'Interior Design', keywords: 'interior design furniture' },
+        
+        // Resources
+        { url: '/blog', title: 'Blog', keywords: 'blog articles news updates' },
+        { url: '/case-study-details', title: 'Case Studies', keywords: 'case studies examples success' },
+        { url: '/webinars', title: 'Webinars', keywords: 'webinars online events training' },
+        { url: '/collaterals', title: 'Collaterals', keywords: 'collaterals documents resources' },
+        { url: '/corporate-videos', title: 'Corporate Videos', keywords: 'videos corporate media' },
+        { url: '/news-events', title: 'News & Events', keywords: 'news events announcements' },
+        { url: '/faq', title: 'FAQ', keywords: 'faq questions answers help' },
+        
+        // Contact
+        { url: '/contact', title: 'Contact Us', keywords: 'contact us reach support help' },
+    ];
+
+    // Search handler
+    const handleSearch = (query) => {
+        setSearchQuery(query);
+        
+        if (!query.trim()) {
+            setSearchResults([]);
+            return;
+        }
+
+        const searchTerm = query.toLowerCase();
+        const results = allPages.filter(page => 
+            page.title.toLowerCase().includes(searchTerm) || 
+            page.keywords.toLowerCase().includes(searchTerm)
+        );
+        
+        setSearchResults(results);
+    };
+
+    // Handle search box open/close
+    useEffect(() => {
+        const handleSearchEvents = () => {
+            // Desktop search
+            const searchBtn = document.getElementById('searchBtn');
+            const searchClose = document.getElementById('searchClose');
+            const searchFull = document.getElementById('searchFull');
+            
+            // Mobile search
+            const mobileSearchBtn = document.getElementById('mobileSearchBtn');
+            const mobileSearchClose = document.getElementById('mobileSearchClose');
+            const mobileSearchFull = document.getElementById('mobileSearchFull');
+
+            // Desktop search button
+            if (searchBtn) {
+                searchBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setIsSearchOpen(true);
+                    if (searchFull) {
+                        searchFull.classList.add('active');
+                    }
+                    // Focus on input after opening
+                    setTimeout(() => {
+                        const searchInput = searchFull?.querySelector('input');
+                        if (searchInput) searchInput.focus();
+                    }, 100);
+                });
+            }
+
+            // Desktop close button
+            if (searchClose) {
+                searchClose.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setIsSearchOpen(false);
+                    setSearchQuery('');
+                    setSearchResults([]);
+                    if (searchFull) {
+                        searchFull.classList.remove('active');
+                    }
+                });
+            }
+
+            // Mobile search button
+            if (mobileSearchBtn) {
+                mobileSearchBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setIsSearchOpen(true);
+                    if (mobileSearchFull) {
+                        mobileSearchFull.classList.add('active');
+                    }
+                    // Focus on input after opening
+                    setTimeout(() => {
+                        const mobileSearchInput = mobileSearchFull?.querySelector('input');
+                        if (mobileSearchInput) mobileSearchInput.focus();
+                    }, 100);
+                });
+            }
+
+            // Mobile close button
+            if (mobileSearchClose) {
+                mobileSearchClose.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setIsSearchOpen(false);
+                    setSearchQuery('');
+                    setSearchResults([]);
+                    if (mobileSearchFull) {
+                        mobileSearchFull.classList.remove('active');
+                    }
+                });
+            }
+
+            // Close search on Escape key
+            const handleEscape = (e) => {
+                if (e.key === 'Escape' && isSearchOpen) {
+                    setIsSearchOpen(false);
+                    setSearchQuery('');
+                    setSearchResults([]);
+                    if (searchFull) {
+                        searchFull.classList.remove('active');
+                    }
+                    if (mobileSearchFull) {
+                        mobileSearchFull.classList.remove('active');
+                    }
+                }
+            };
+
+            document.addEventListener('keydown', handleEscape);
+
+            return () => {
+                document.removeEventListener('keydown', handleEscape);
+            };
+        };
+
+        handleSearchEvents();
+    }, [isSearchOpen]);
 
     return (
         <>
@@ -1497,8 +1675,46 @@ export default function Header() {
                                                                 <input
                                                                     type="text"
                                                                     placeholder="What are you looking for ?"
+                                                                    value={searchQuery}
+                                                                    onChange={(e) => handleSearch(e.target.value)}
                                                                 />
                                                             </div>
+                                                            {searchQuery && (
+                                                                <div className="search-results">
+                                                                    {searchResults.length > 0 ? (
+                                                                        <>
+                                                                            <div className="search-results-header">
+                                                                                Found {searchResults.length} {searchResults.length === 1 ? 'result' : 'results'}
+                                                                            </div>
+                                                                            <ul className="search-results-list">
+                                                                                {searchResults.map((result, index) => (
+                                                                                    <li key={index}>
+                                                                                        <Link 
+                                                                                            href={result.url}
+                                                                                            onClick={() => {
+                                                                                                setIsSearchOpen(false);
+                                                                                                setSearchQuery('');
+                                                                                                setSearchResults([]);
+                                                                                                const searchFull = document.getElementById('searchFull');
+                                                                                                if (searchFull) {
+                                                                                                    searchFull.classList.remove('active');
+                                                                                                }
+                                                                                            }}
+                                                                                        >
+                                                                                            <div className="result-title">{result.title}</div>
+                                                                                            <div className="result-url">{result.url}</div>
+                                                                                        </Link>
+                                                                                    </li>
+                                                                                ))}
+                                                                            </ul>
+                                                                        </>
+                                                                    ) : (
+                                                                        <div className="no-results">
+                                                                            No results found for "{searchQuery}"
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                            )}
                                                         </div>
                                                     </div>
                                                 </li>
@@ -1686,8 +1902,49 @@ export default function Header() {
                                                 />
                                             </svg>
                                         </span>
-                                        <input type="text" placeholder="What are you looking for ?" />
+                                        <input 
+                                            type="text" 
+                                            placeholder="What are you looking for ?"
+                                            value={searchQuery}
+                                            onChange={(e) => handleSearch(e.target.value)}
+                                        />
                                     </div>
+                                    {searchQuery && (
+                                        <div className="search-results">
+                                            {searchResults.length > 0 ? (
+                                                <>
+                                                    <div className="search-results-header">
+                                                        Found {searchResults.length} {searchResults.length === 1 ? 'result' : 'results'}
+                                                    </div>
+                                                    <ul className="search-results-list">
+                                                        {searchResults.map((result, index) => (
+                                                            <li key={index}>
+                                                                <Link 
+                                                                    href={result.url}
+                                                                    onClick={() => {
+                                                                        setIsSearchOpen(false);
+                                                                        setSearchQuery('');
+                                                                        setSearchResults([]);
+                                                                        const mobileSearchFull = document.getElementById('mobileSearchFull');
+                                                                        if (mobileSearchFull) {
+                                                                            mobileSearchFull.classList.remove('active');
+                                                                        }
+                                                                    }}
+                                                                >
+                                                                    <div className="result-title">{result.title}</div>
+                                                                    <div className="result-url">{result.url}</div>
+                                                                </Link>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </>
+                                            ) : (
+                                                <div className="no-results">
+                                                    No results found for "{searchQuery}"
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                             <button
