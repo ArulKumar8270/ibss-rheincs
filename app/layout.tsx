@@ -5,6 +5,9 @@ import SwiperInit from './Components/SwiperInit'
 import OwlCarouselInit from './Components/OwlCarouselInit'
 import CounterInit from './Components/CounterInit'
 import ScriptReinit from './Components/ScriptReinit'
+import MobileMenuInit from './Components/MobileMenuInit'
+import MobileSearchInit from './Components/MobileSearchInit'
+import SearchBoxInit from './Components/SearchBoxInit'
 import React from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -52,6 +55,9 @@ export default function RootLayout({
         <SwiperInit />
         <OwlCarouselInit />
         <CounterInit />
+        <MobileMenuInit />
+        <MobileSearchInit />
+        <SearchBoxInit />
         <ScriptReinit />
       </body>
       <script dangerouslySetInnerHTML={{

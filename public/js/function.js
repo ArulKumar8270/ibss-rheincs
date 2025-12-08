@@ -669,34 +669,107 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
   }
 
   // --- Main Mobile Menu (Hamburger) Logic ---
-  whenReady(function() {
+  // Extract mobile menu initialization into a reusable function
+  function initMobileMenu() {
+    console.log('🔄 Initializing mobile menu...');
+    
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const closeBtn = document.getElementById('close-btn');
     const mobileNavPanel = document.getElementById('mobileNavPanel');
-    const menuOverlay = document.getElementById('menuOverlay');
+    const menuOverlay = document.getElementById('menuOverlay'); // Optional - may not exist
+
+    // Check for required elements
+    if (!hamburgerBtn) {
+      console.warn('⚠️ hamburger-btn not found');
+      return;
+    }
+    if (!closeBtn) {
+      console.warn('⚠️ close-btn not found');
+      return;
+    }
+    if (!mobileNavPanel) {
+      console.warn('⚠️ mobileNavPanel not found');
+      return;
+    }
+
+    console.log('✅ Found mobile menu elements:', {
+      hamburgerBtn: !!hamburgerBtn,
+      closeBtn: !!closeBtn,
+      mobileNavPanel: !!mobileNavPanel,
+      menuOverlay: !!menuOverlay
+    });
 
     // Function to open the main menu
-    const openMenu = () => {
-      if (mobileNavPanel) mobileNavPanel.classList.add('open');
-      if (menuOverlay) menuOverlay.classList.add('open');
+    const openMenu = (e) => {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      console.log('🍔 Opening mobile menu');
+      if (mobileNavPanel) {
+        mobileNavPanel.classList.add('open');
+        console.log('✅ Added "open" class to mobileNavPanel');
+      }
+      if (menuOverlay) {
+        menuOverlay.classList.add('open');
+      }
       document.body.style.overflow = 'hidden';
     };
 
     // Function to close the main menu
-    const closeMenu = () => {
-      if (mobileNavPanel) mobileNavPanel.classList.remove('open');
-      if (menuOverlay) menuOverlay.classList.remove('open');
+    const closeMenu = (e) => {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      console.log('❌ Closing mobile menu');
+      if (mobileNavPanel) {
+        mobileNavPanel.classList.remove('open');
+        console.log('✅ Removed "open" class from mobileNavPanel');
+      }
+      if (menuOverlay) {
+        menuOverlay.classList.remove('open');
+      }
       document.body.style.overflow = '';
     };
 
-    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMenu);
-    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-    if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+    // Remove old listeners by using onclick (which replaces previous onclick)
+    // But also addEventListener for better compatibility
+    // Use both methods to ensure it works
+    
+    // Remove any existing onclick handlers first
+    hamburgerBtn.onclick = null;
+    closeBtn.onclick = null;
+    
+    // Add new handlers using onclick (simple, always works)
+    hamburgerBtn.onclick = openMenu;
+    closeBtn.onclick = closeMenu;
+    
+    // Also addEventListener as backup
+    hamburgerBtn.addEventListener('click', openMenu, false);
+    closeBtn.addEventListener('click', closeMenu, false);
+    
+    // Add overlay click handler if it exists
+    if (menuOverlay) {
+      menuOverlay.onclick = closeMenu;
+      menuOverlay.addEventListener('click', closeMenu, false);
+    }
+    
+    // Mark as initialized
+    hamburgerBtn.setAttribute('data-mobile-menu-init', 'true');
+    closeBtn.setAttribute('data-mobile-menu-init', 'true');
+    
+    console.log('✅ Mobile menu event listeners attached');
 
     // --- Submenu Accordion Logic ---
+    // Remove old listeners by re-querying and re-initializing
     const allSubmenuToggles = document.querySelectorAll('.submenu-toggle');
     allSubmenuToggles.forEach(toggle => {
-      toggle.addEventListener('click', function(event) {
+      // Clone to remove old listeners
+      const newToggle = toggle.cloneNode(true);
+      if (toggle.parentNode) toggle.parentNode.replaceChild(newToggle, toggle);
+
+      newToggle.addEventListener('click', function(event) {
         event.preventDefault();
         event.stopPropagation();
 
@@ -734,14 +807,20 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     const mobileSearchBox = document.getElementById('mobileSearchBox');
 
     if (mobileSearchBtn && mobileSearchBox) {
-      mobileSearchBtn.addEventListener('click', () => {
-        mobileSearchBox.classList.add('active');
+      // Clone to remove old listeners
+      const newMobileSearchBtn = mobileSearchBtn.cloneNode(true);
+      if (mobileSearchBtn.parentNode) mobileSearchBtn.parentNode.replaceChild(newMobileSearchBtn, mobileSearchBtn);
+      newMobileSearchBtn.addEventListener('click', () => {
+        if (mobileSearchBox) mobileSearchBox.classList.add('active');
       });
     }
 
     if (mobileSearchClose && mobileSearchBox) {
-      mobileSearchClose.addEventListener('click', () => {
-        mobileSearchBox.classList.remove('active');
+      // Clone to remove old listeners
+      const newMobileSearchClose = mobileSearchClose.cloneNode(true);
+      if (mobileSearchClose.parentNode) mobileSearchClose.parentNode.replaceChild(newMobileSearchClose, mobileSearchClose);
+      newMobileSearchClose.addEventListener('click', () => {
+        if (mobileSearchBox) mobileSearchBox.classList.remove('active');
       });
     }
 
@@ -755,7 +834,13 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         return;
       }
 
-      searchBtn.addEventListener('click', (event) => {
+      // Clone buttons to remove old listeners
+      const newSearchBtn = searchBtn.cloneNode(true);
+      const newSearchClose = searchClose.cloneNode(true);
+      if (searchBtn.parentNode) searchBtn.parentNode.replaceChild(newSearchBtn, searchBtn);
+      if (searchClose.parentNode) searchClose.parentNode.replaceChild(newSearchClose, searchClose);
+
+      newSearchBtn.addEventListener('click', (event) => {
         event.stopPropagation();
         searchBox.classList.add('search-active');
         const inputField = searchBox.querySelector('.search-bar input');
@@ -764,13 +849,24 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         }
       });
 
-      searchClose.addEventListener('click', () => {
+      newSearchClose.addEventListener('click', () => {
         searchBox.classList.remove('search-active');
       });
     }
 
     setupSearch('searchBox', 'searchBtn', 'searchClose');
     setupSearch('mobileSearchBox', 'mobileSearchBtn', 'mobileSearchClose');
+
+    console.log('✅ Mobile menu initialized');
+  }
+
+  // Register function globally for re-initialization
+  window.initMobileMenu = initMobileMenu;
+  window.reinitMobileMenu = initMobileMenu;
+
+  // Initialize on page load
+  whenReady(function() {
+    initMobileMenu();
   });
 
   // --- Bootstrap Popover Initialization ---
@@ -3783,29 +3879,84 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
   }, ['jQuery']);
 
   // --- Additional Search Box Functionality ---
-  whenReady(function() {
-    const searchBox = document.querySelector('.search-box');
-    const searchBtn = document.querySelector('.btn-search');
-    const searchInput = document.querySelector('.input-search');
+  // Extract into reusable function
+  function initSearchBoxFunctionality() {
+    console.log('🔄 [function.js] Initializing search box functionality...');
+    
+    const searchBoxes = document.querySelectorAll('.search-box');
+    const searchBtns = document.querySelectorAll('.btn-search');
+    const searchInputs = document.querySelectorAll('.input-search');
 
-    if (searchBtn && searchBox && searchInput) {
-      searchBtn.addEventListener('click', (e) => {
+    console.log(`🔍 [function.js] Found ${searchBoxes.length} search boxes, ${searchBtns.length} search buttons`);
+
+    // Handle generic search box toggle
+    searchBtns.forEach((searchBtn, index) => {
+      // Find the closest search box parent
+      const searchBox = searchBtn.closest('.search-box') || searchBoxes[index];
+      const searchInput = searchBox ? searchBox.querySelector('.input-search') : searchInputs[index];
+
+      if (!searchBox) {
+        console.warn(`⚠️ [function.js] No search box found for button ${index}`);
+        return;
+      }
+
+      const handleSearchToggle = (e) => {
         e.preventDefault();
+        e.stopPropagation();
+        console.log(`🔍 [function.js] Toggling search box ${index}`);
+        
         searchBox.classList.toggle('active');
+        
         if (searchBox.classList.contains('active')) {
-          searchInput.focus();
+          console.log('✅ [function.js] Search box opened');
+          // Focus on input if it exists
+          if (searchInput) {
+            setTimeout(() => {
+              searchInput.focus();
+            }, 100);
+          } else {
+            // Try to find input in the search box
+            const inputInBox = searchBox.querySelector('input');
+            if (inputInBox) {
+              setTimeout(() => {
+                inputInBox.focus();
+              }, 100);
+            }
+          }
+        } else {
+          console.log('❌ [function.js] Search box closed');
         }
-      });
-    }
+      };
 
-    document.querySelectorAll('.animated-svg-link12').forEach(btn => {
-      btn.addEventListener('mouseenter', () => {
-        btn.classList.add('btn-style-3');
-      });
-      btn.addEventListener('mouseleave', () => {
-        btn.classList.remove('btn-style-3');
-      });
+      searchBtn.addEventListener('click', handleSearchToggle, false);
     });
+
+    // Handle animated SVG link hover effects
+    document.querySelectorAll('.animated-svg-link12').forEach((btn, index) => {
+      const handleMouseEnter = () => {
+        btn.classList.add('btn-style-3');
+        console.log(`🎨 [function.js] Added btn-style-3 to link ${index}`);
+      };
+      
+      const handleMouseLeave = () => {
+        btn.classList.remove('btn-style-3');
+        console.log(`🎨 [function.js] Removed btn-style-3 from link ${index}`);
+      };
+      
+      btn.addEventListener('mouseenter', handleMouseEnter);
+      btn.addEventListener('mouseleave', handleMouseLeave);
+    });
+
+    console.log('✅ [function.js] Search box functionality initialized');
+  }
+
+  // Register globally for re-initialization
+  window.initSearchBoxFunctionality = initSearchBoxFunctionality;
+  window.reinitSearchBoxFunctionality = initSearchBoxFunctionality;
+
+  // Initialize on page load
+  whenReady(function() {
+    initSearchBoxFunctionality();
   });
 
   // Function to re-initialize all Swiper carousels

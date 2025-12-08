@@ -10,9 +10,12 @@ export default function CounterInit() {
     console.log('🔢 [CounterInit] Component mounted, pathname:', pathname);
 
     const initCounters = () => {
+      // Try to find counter section first
+      const counterSection = document.getElementById('counter-section');
       const counters = document.querySelectorAll('.counter');
       
       console.log(`🔢 [CounterInit] Found ${counters.length} counter elements`);
+      console.log(`🔢 [CounterInit] Counter section found:`, !!counterSection);
       
       if (counters.length === 0) {
         console.log('ℹ️ [CounterInit] No counter elements found on this page');
@@ -20,8 +23,8 @@ export default function CounterInit() {
       }
 
       // Animation function for each counter
-      const animateCounter = (element: Element) => {
-        const htmlElement = element as HTMLElement;
+      const animateCounter = (element) => {
+        const htmlElement = element;
         
         // Skip if already animated
         if (htmlElement.hasAttribute('data-counted')) {
@@ -31,10 +34,11 @@ export default function CounterInit() {
 
         // Get target value from data-target or text content
         const targetStr = htmlElement.getAttribute('data-target') || htmlElement.textContent || '0';
-        const target = parseInt(targetStr.replace(/[^0-9]/g, ''));
+        // Remove all non-numeric characters except digits
+        const target = parseInt(targetStr.replace(/[^0-9]/g, ''), 10);
         
         if (isNaN(target) || target === 0) {
-          console.warn('⚠️ [CounterInit] Invalid counter value:', targetStr);
+          console.warn('⚠️ [CounterInit] Invalid counter value:', targetStr, 'parsed as:', target);
           return;
         }
 
@@ -43,6 +47,10 @@ export default function CounterInit() {
         // Mark as being animated
         htmlElement.setAttribute('data-counted', 'true');
         
+        // Store original text to preserve "+" or other suffixes
+        const originalText = htmlElement.textContent || '';
+        const suffix = originalText.replace(/[0-9]/g, '');
+        
         // Animation parameters
         const duration = 2000; // 2 seconds
         const steps = 60; // 60 frames
@@ -50,17 +58,17 @@ export default function CounterInit() {
         const stepTime = duration / steps;
         
         let currentValue = 0;
-        htmlElement.textContent = '0';
+        htmlElement.textContent = '0' + suffix;
 
         const timer = setInterval(() => {
           currentValue += stepValue;
           
           if (currentValue >= target) {
-            htmlElement.textContent = target.toString();
+            htmlElement.textContent = target.toString() + suffix;
             clearInterval(timer);
-            console.log(`✅ [CounterInit] Counter animated to ${target}`);
+            console.log(`✅ [CounterInit] Counter animated to ${target}${suffix}`);
           } else {
-            htmlElement.textContent = Math.floor(currentValue).toString();
+            htmlElement.textContent = Math.floor(currentValue).toString() + suffix;
           }
         }, stepTime);
       };
@@ -70,8 +78,8 @@ export default function CounterInit() {
         console.log('🔢 [CounterInit] Using Intersection Observer');
         
         const observerOptions = {
-          threshold: 0.3, // Trigger when 30% visible
-          rootMargin: '0px'
+          threshold: 0.1, // Trigger when 10% visible (more sensitive)
+          rootMargin: '100px' // Start animation 100px before element enters viewport
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -87,11 +95,33 @@ export default function CounterInit() {
         // Observe all counter elements
         counters.forEach((counter) => {
           // Reset counter if it was previously animated (for route changes)
-          const htmlCounter = counter as HTMLElement;
+          const htmlCounter = counter;
           htmlCounter.removeAttribute('data-counted');
           
           observer.observe(counter);
         });
+
+        // Also observe the counter section if it exists (as a backup trigger)
+        if (counterSection) {
+          const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                console.log('🔢 [CounterInit] Counter section entered viewport');
+                // Animate all counters that haven't been animated yet
+                counters.forEach((counter) => {
+                  const htmlCounter = counter;
+                  if (!htmlCounter.hasAttribute('data-counted')) {
+                    animateCounter(counter);
+                  }
+                });
+                sectionObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1, rootMargin: '100px' });
+          
+          sectionObserver.observe(counterSection);
+          console.log('✅ [CounterInit] Also observing counter section');
+        }
 
         console.log('✅ [CounterInit] Intersection Observer initialized for', counters.length, 'counters');
       } else {
@@ -108,9 +138,10 @@ export default function CounterInit() {
 
     // Also try after delays to catch dynamically loaded content
     const timeouts = [
-      setTimeout(initCounters, 100),
+      setTimeout(initCounters, 200),
       setTimeout(initCounters, 500),
-      setTimeout(initCounters, 1000)
+      setTimeout(initCounters, 1000),
+      setTimeout(initCounters, 2000)
     ];
 
     // Cleanup function
@@ -121,7 +152,7 @@ export default function CounterInit() {
       // Reset all counters
       const counters = document.querySelectorAll('.counter');
       counters.forEach((counter) => {
-        const htmlCounter = counter as HTMLElement;
+        const htmlCounter = counter;
         htmlCounter.removeAttribute('data-counted');
       });
     };
