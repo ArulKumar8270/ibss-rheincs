@@ -323,6 +323,99 @@ export default function ScriptReinit() {
           }
         }
 
+        // Re-initialize mobile menu using standalone function
+        // Mobile menu is now handled by MobileMenuInit component, but we can also call it here as backup
+        const reinitMobileMenu = () => {
+          if (typeof (window as any).initMobileMenuStandalone === 'function') {
+            try {
+              console.log('🔄 [ScriptReinit] Re-initializing mobile menu (standalone)...');
+              (window as any).initMobileMenuStandalone();
+              return true;
+            } catch (error) {
+              console.error('❌ Error re-initializing mobile menu:', error);
+              return false;
+            }
+          } else if (typeof (window as any).reinitMobileMenu === 'function') {
+            try {
+              console.log('🔄 [ScriptReinit] Re-initializing mobile menu (using reinitMobileMenu)...');
+              (window as any).reinitMobileMenu();
+              return true;
+            } catch (error) {
+              console.error('❌ Error re-initializing mobile menu:', error);
+              return false;
+            }
+          }
+          return false;
+        };
+
+        // Re-initialize mobile search using standalone function
+        // Mobile search is now handled by MobileSearchInit component, but we can also call it here as backup
+        const reinitMobileSearch = () => {
+          if (typeof (window as any).initMobileSearchStandalone === 'function') {
+            try {
+              console.log('🔄 [ScriptReinit] Re-initializing mobile search (standalone)...');
+              (window as any).initMobileSearchStandalone();
+              return true;
+            } catch (error) {
+              console.error('❌ Error re-initializing mobile search:', error);
+              return false;
+            }
+          } else if (typeof (window as any).reinitMobileSearch === 'function') {
+            try {
+              console.log('🔄 [ScriptReinit] Re-initializing mobile search (using reinitMobileSearch)...');
+              (window as any).reinitMobileSearch();
+              return true;
+            } catch (error) {
+              console.error('❌ Error re-initializing mobile search:', error);
+              return false;
+            }
+          }
+          return false;
+        };
+
+        // Re-initialize generic search box functionality
+        const reinitSearchBox = () => {
+          if (typeof (window as any).initSearchBoxStandalone === 'function') {
+            try {
+              console.log('🔄 [ScriptReinit] Re-initializing search box (standalone)...');
+              (window as any).initSearchBoxStandalone();
+              return true;
+            } catch (error) {
+              console.error('❌ Error re-initializing search box:', error);
+              return false;
+            }
+          } else if (typeof (window as any).reinitSearchBox === 'function') {
+            try {
+              console.log('🔄 [ScriptReinit] Re-initializing search box (using reinitSearchBox)...');
+              (window as any).reinitSearchBox();
+              return true;
+            } catch (error) {
+              console.error('❌ Error re-initializing search box:', error);
+              return false;
+            }
+          }
+          return false;
+        };
+
+        // Re-initialize mobile menu, search, and generic search box with multiple attempts (backup to components)
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            reinitMobileMenu();
+            reinitMobileSearch();
+            reinitSearchBox();
+            setTimeout(() => {
+              reinitMobileMenu();
+              reinitMobileSearch();
+              reinitSearchBox();
+            }, 300);
+            setTimeout(() => {
+              reinitMobileMenu();
+              reinitMobileSearch();
+              reinitSearchBox();
+            }, 800);
+          });
+        });
+
         // Re-initialize function.js code
         // Trigger a custom event that function.js can listen to
         if (window.dispatchEvent) {
