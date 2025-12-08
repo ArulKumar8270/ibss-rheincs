@@ -24,7 +24,7 @@ export default function EnterpriseSolutions() {
                     grow.
                   </p>
                   <div className="ser-btn ">
-                    <Link href="#" className="animated-svg-link">
+                      <Link href="/contact" className="animated-svg-link">
                       Contact Us
                       <span className="svg-container ">
                         <span className=" right">
