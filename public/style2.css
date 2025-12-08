@@ -3585,6 +3585,7 @@ h2.section-title {
 
 .family-img img {
     height: 100%;
+        object-fit: cover;
 }
 
 .tark-left-img-section .main-dark-title-waber {

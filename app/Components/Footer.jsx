@@ -5,7 +5,7 @@ export default function Footer() {
         <>
             <footer className="main-footer pd0">
                 {/* Footer Main Start */}
-                <div className="footer-main">
+                <div className="footer-main pd40">
                     <div className="container">
                         <hr className="firsthr" />
                         <div className="row pd60 align-items-center secondrow">
@@ -17,22 +17,22 @@ export default function Footer() {
                                     <div className="header-social-links">
                                         <ul>
                                             <li>
-                                                <Link href="#">
+                                                <Link href="https://www.linkedin.com/company/rheinbr%C3%BCcke-it-consulting">
                                                     <i className="fa-brands fa-linkedin" />
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link href="#">
+                                                <Link href="https://x.com/RheinBruckeIT">
                                                     <i className="fa-brands fa-x-twitter" />
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link href="#">
+                                                <Link href="https://www.instagram.com/rheinbrucke_itconsulting/">
                                                     <i className="fa-brands fa-instagram" />
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link href="#">
+                                                <Link href="https://www.facebook.com/RheinBrucke">
                                                     <i className="fa-brands fa-facebook" />
                                                 </Link>
                                             </li>

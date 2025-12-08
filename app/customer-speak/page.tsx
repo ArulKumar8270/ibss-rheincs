@@ -99,7 +99,7 @@ export default function AlMl() {
                                                             <div className="service-item-header ">
                                                                 <div className="icon-box">
                                                                     <img
-                                                                        src="images/testimonials/Federal-Mogul.png"
+                                                                        src="/images/testimonials/Federal-Mogul.png"
                                                                         alt=""
                                                                     />
                                                                 </div>
@@ -235,7 +235,7 @@ export default function AlMl() {
                                                             <div className="service-item-header ">
                                                                 <div className="icon-box">
                                                                     <img
-                                                                        src="images/testimonials/Cold-Chain-Logo-full.png"
+                                                                        src="/images/testimonials/Cold-Chain-Logo-full.png"
                                                                         alt=""
                                                                     />
                                                                 </div>
@@ -297,7 +297,7 @@ export default function AlMl() {
                                                             <div className="service-item-header ">
                                                                 <div className="icon-box">
                                                                     <img
-                                                                        src="images/testimonials/SAUDI AMERICAN GLASS.png"
+                                                                        src="/images/testimonials/SAUDI AMERICAN GLASS.png"
                                                                         alt=""
                                                                     />
                                                                 </div>
@@ -443,7 +443,7 @@ export default function AlMl() {
                                                                     <div className="author-image">
                                                                         <figure className="image-anime">
                                                                             <img
-                                                                                src="images/testimonials/Syed Waseem Wajid.png"
+                                                                                src="/images/testimonials/Syed Waseem Wajid.png"
                                                                                 alt=""
                                                                             />
                                                                         </figure>

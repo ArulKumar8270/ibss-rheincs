@@ -206,24 +206,24 @@ export default function Header() {
     // All searchable pages with their titles and keywords
     const allPages = [
         // About Us
-        { url: '/overview234234', title: 'Overview', keywords: 'about company overview ibb information business solutions' },
+        { url: '/overview', title: 'Overview', keywords: 'about company overview ibb information business solutions' },
         { url: '/leadership', title: 'Leadership', keywords: 'leadership team management executives directors' },
         { url: '/customer-speak', title: 'Customer Speak', keywords: 'customer testimonials reviews feedback clients' },
         { url: '/success-stories', title: 'Success Stories', keywords: 'case studies success stories achievements results' },
         { url: '/careers', title: 'Careers', keywords: 'careers jobs opportunities employment work' },
         
         // Solutions & Services
-        { url: '/corushr', title: 'CorusHR', keywords: 'corus hr human resources management' },
-        { url: '/MeRLIN', title: 'MeRLIN', keywords: 'merlin solution platform' },
+        { url: '/CorusHR', title: 'CorusHR', keywords: 'corus hr human resources management' },
+        { url: '/MeRLIN-strategic-sourcing-software', title: 'MeRLIN', keywords: 'merlin solution platform' },
         { url: '/enterprise-solutions', title: 'Enterprise Solutions', keywords: 'enterprise solutions erp business' },
         { url: '/epicor', title: 'Epicor', keywords: 'epicor erp enterprise resource planning' },
         { url: '/epicor-kinetic', title: 'Epicor Kinetic', keywords: 'epicor kinetic erp cloud' },
         { url: '/epicor-iscala', title: 'Epicor iScala', keywords: 'epicor iscala erp' },
         { url: '/epicor-companion', title: 'Epicor Companion', keywords: 'epicor companion mobile' },
         { url: '/epicor-epicpay', title: 'Epicor EpicPay', keywords: 'epicor epicpay payment' },
-        { url: '/SAP', title: 'SAP', keywords: 'sap erp enterprise' },
-        { url: '/microsoft-dynamics-solutions', title: 'Microsoft Dynamics Solutions', keywords: 'microsoft dynamics erp crm' },
-        { url: '/sugar-CRM', title: 'Sugar CRM', keywords: 'sugar crm customer relationship management' },
+        { url: '/sap', title: 'SAP', keywords: 'sap erp enterprise' },
+        { url: '/ms-dynamics', title: 'Microsoft Dynamics Solutions', keywords: 'microsoft dynamics erp crm' },
+        { url: '/sugar-crm', title: 'Sugar CRM', keywords: 'sugar crm customer relationship management' },
         { url: '/ERP-customer-excellence', title: 'ERP Customer Excellence', keywords: 'erp customer excellence service' },
         { url: '/digital-solutions', title: 'Digital Solutions', keywords: 'digital solutions technology innovation' },
         { url: '/digital-solutions-services', title: 'Digital Solutions Services', keywords: 'digital services technology solutions' },
@@ -943,15 +943,15 @@ How to Build a Future-Ready Digital Strategy
                                                                                             </div>
                                                                                         </li>
                                                                                         <li className="ser-btn">
+                                                                                            <Link href="/SAP" className="">
+                                                                                                SAP
+                                                                                            </Link>
+                                                                                        </li>
+                                                                                        <li className="ser-btn">
                                                                                             <Link href="/microsoft-dynamics-solutions"
                                                                                                 className=""
                                                                                             >
                                                                                                 MS Dynamics
-                                                                                            </Link>
-                                                                                        </li>
-                                                                                        <li className="ser-btn">
-                                                                                            <Link href="/SAP" className="">
-                                                                                                SAP
                                                                                             </Link>
                                                                                         </li>
                                                                                         <li className="ser-btn">
