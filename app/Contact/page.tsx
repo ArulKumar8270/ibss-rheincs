@@ -49,7 +49,7 @@ export default function Contact() {
         setStatusMessage('Please enter a valid email address.');
         return;
       }
-
+ 
       // Use client-side Supabase call
       const supabase = createClient();
       const { data, error } = await supabase
