@@ -603,7 +603,7 @@ export default function Header() {
                                                                                                 RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption "
+                                                                                                <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -615,14 +615,13 @@ export default function Header() {
                                                                                     <div className="col-lg-4 col-md-4">
                                                                                         <div className="service-item-body">
                                                                                             <h3>
-                                                                                                <span>Case Study</span>
+                                                                                                <span>News and events</span>
                                                                                             </h3>
                                                                                             <p>
-                                                                                                10 Must-Have Features in a Modern ERP
-                                                                                                System
+                                                                                                Grand Opening of India Development Centre (IDC) in RheinBrücke
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
+                                                                                                <Link href="https://www.rheincs.com/news-events/grand-opening-of-india-development-centre-in-rheinBr%C3%BCcke"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -634,14 +633,13 @@ export default function Header() {
                                                                                     <div className="col-lg-4 col-md-4">
                                                                                         <div className="service-item-body secondser">
                                                                                             <h3>
-                                                                                                <span>Case Study</span>
+                                                                                                <span>Blog</span>
                                                                                             </h3>
                                                                                             <p>
-                                                                                                The Top 8 ERP Systems for Financial
-                                                                                                Management
+How to Build a Future-Ready Digital Strategy
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
+                                                                                                <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -849,40 +847,38 @@ export default function Header() {
                                                                                     <div className="row">
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body">
-                                                                                                <h3>
-                                                                                                    <span>Case Study</span>
-                                                                                                </h3>
-                                                                                                <p>
-                                                                                                    10 Must-Have Features in a Modern
-                                                                                                    ERP System
-                                                                                                </p>
-                                                                                                <div className="ser-btn1">
-                                                                                                    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
-                                                                                                        className="animated-svg-link1 btn-style-3"
-                                                                                                    >
-                                                                                                        Read More
-                                                                                                        <NavArrowLeft />
-                                                                                                    </Link>
-                                                                                                </div>
+                                                                                            <h3>
+                                                                                                <span>News and events</span>
+                                                                                            </h3>
+                                                                                            <p>
+                                                                                                RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
+                                                                                            </p>
+                                                                                            <div className="ser-btn1">
+                                                                                                <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
+                                                                                                    className="animated-svg-link1 btn-style-3"
+                                                                                                >
+                                                                                                    Read More
+                                                                                                    <NavArrowLeft />
+                                                                                                </Link>
+                                                                                            </div>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body secondser">
-                                                                                                <h3>
-                                                                                                    <span>Case Study</span>
-                                                                                                </h3>
-                                                                                                <p>
-                                                                                                    The Top 8 ERP Systems for Financial
-                                                                                                    Management
-                                                                                                </p>
-                                                                                                <div className="ser-btn1">
-                                                                                                    <Link href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
-                                                                                                        className="animated-svg-link1 btn-style-3"
-                                                                                                    >
-                                                                                                        Read More
-                                                                                                        <NavArrowLeft />
-                                                                                                    </Link>
-                                                                                                </div>
+                                                                                            <h3>
+                                                                                                <span>Blog</span>
+                                                                                            </h3>
+                                                                                            <p>
+How to Build a Future-Ready Digital Strategy
+                                                                                            </p>
+                                                                                            <div className="ser-btn1">
+                                                                                                <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                    className="animated-svg-link1 btn-style-3"
+                                                                                                >
+                                                                                                    Read More
+                                                                                                    <NavArrowLeft />
+                                                                                                </Link>
+                                                                                            </div>
                                                                                             </div>
                                                                                             {/* Service Item End */}
                                                                                         </div>
@@ -979,41 +975,38 @@ export default function Header() {
                                                                                     <div className="row">
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body">
-                                                                                                <h3>
-                                                                                                    <span>Case Study</span>
-                                                                                                </h3>
-                                                                                                <p>
-                                                                                                    10 Must-Have Features in a Modern
-                                                                                                    ERP System 1
-                                                                                                </p>
-                                                                                                <div className="ser-btn1">
-                                                                                                    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
-                                                                                                        className="animated-svg-link1
-                                                      btn-style-3"
-                                                                                                    >
-                                                                                                        Read More
-                                                                                                        <NavArrowLeft />
-                                                                                                    </Link>
-                                                                                                </div>
+                                                                                            <h3>
+                                                                                                <span>News and events</span>
+                                                                                            </h3>
+                                                                                            <p>
+                                                                                                RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
+                                                                                            </p>
+                                                                                            <div className="ser-btn1">
+                                                                                                <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
+                                                                                                    className="animated-svg-link1 btn-style-3"
+                                                                                                >
+                                                                                                    Read More
+                                                                                                    <NavArrowLeft />
+                                                                                                </Link>
+                                                                                            </div>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body secondser">
-                                                                                                <h3>
-                                                                                                    <span>Case Study</span>
-                                                                                                </h3>
-                                                                                                <p>
-                                                                                                    The Top 8 ERP Systems for Financial
-                                                                                                    Management 1
-                                                                                                </p>
-                                                                                                <div className="ser-btn1">
-                                                                                                    <Link href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
-                                                                                                        className="animated-svg-link1 btn-style-3"
-                                                                                                    >
-                                                                                                        Read More
-                                                                                                        <NavArrowLeft />
-                                                                                                    </Link>
-                                                                                                </div>
+                                                                                            <h3>
+                                                                                                <span>Blog</span>
+                                                                                            </h3>
+                                                                                            <p>
+How to Build a Future-Ready Digital Strategy
+                                                                                            </p>
+                                                                                            <div className="ser-btn1">
+                                                                                                <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                    className="animated-svg-link1 btn-style-3"
+                                                                                                >
+                                                                                                    Read More
+                                                                                                    <NavArrowLeft />
+                                                                                                </Link>
+                                                                                            </div>
                                                                                             </div>
                                                                                             {/* Service Item End */}
                                                                                         </div>
@@ -1124,42 +1117,38 @@ export default function Header() {
                                                                                     <div className="row">
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body">
-                                                                                                <h3>
-                                                                                                    <span>Case Study</span>
-                                                                                                </h3>
-                                                                                                <p>
-                                                                                                    10 Must-Have Features in a Modern
-                                                                                                    ERP System 2
-                                                                                                </p>
-                                                                                                <div className="ser-btn1">
-                                                                                                    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
-                                                                                                        className="animated-svg-link1
-                                                      btn-style-3"
-                                                                                                    >
-                                                                                                        Read More
-                                                                                                        <NavArrowLeft />
-                                                                                                    </Link>
-                                                                                                </div>
+                                                                                            <h3>
+                                                                                                <span>News and events</span>
+                                                                                            </h3>
+                                                                                            <p>
+                                                                                                RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
+                                                                                            </p>
+                                                                                            <div className="ser-btn1">
+                                                                                                <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
+                                                                                                    className="animated-svg-link1 btn-style-3"
+                                                                                                >
+                                                                                                    Read More
+                                                                                                    <NavArrowLeft />
+                                                                                                </Link>
+                                                                                            </div>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body secondser">
-                                                                                                <h3>
-                                                                                                    <span>Case Study</span>
-                                                                                                </h3>
-                                                                                                <p>
-                                                                                                    The Top 8 ERP Systems for Financial
-                                                                                                    Management 2
-                                                                                                </p>
-                                                                                                <div className="ser-btn1">
-                                                                                                    <Link href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
-                                                                                                        className="animated-svg-link1
-                                                      btn-style-3"
-                                                                                                    >
-                                                                                                        Read More
-                                                                                                        <NavArrowLeft />
-                                                                                                    </Link>
-                                                                                                </div>
+                                                                                            <h3>
+                                                                                                <span>Blog</span>
+                                                                                            </h3>
+                                                                                            <p>
+How to Build a Future-Ready Digital Strategy
+                                                                                            </p>
+                                                                                            <div className="ser-btn1">
+                                                                                                <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                    className="animated-svg-link1 btn-style-3"
+                                                                                                >
+                                                                                                    Read More
+                                                                                                    <NavArrowLeft />
+                                                                                                </Link>
+                                                                                            </div>
                                                                                             </div>
                                                                                             {/* Service Item End */}
                                                                                         </div>
@@ -1350,14 +1339,13 @@ export default function Header() {
                                                                                     <div className="col-lg-6 col-md-6">
                                                                                         <div className="service-item-body">
                                                                                             <h3>
-                                                                                                <span>Case Study</span>
+                                                                                                <span>News and events</span>
                                                                                             </h3>
                                                                                             <p>
-                                                                                                10 Must-Have Features in a Modern ERP
-                                                                                                System
+                                                                                                RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
+                                                                                                <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -1369,14 +1357,13 @@ export default function Header() {
                                                                                     <div className="col-lg-6 col-md-6">
                                                                                         <div className="service-item-body secondser">
                                                                                             <h3>
-                                                                                                <span>Case Study</span>
+                                                                                                <span>Blog</span>
                                                                                             </h3>
                                                                                             <p>
-                                                                                                The Top 8 ERP Systems for Financial
-                                                                                                Management
+How to Build a Future-Ready Digital Strategy
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
+                                                                                                <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -1539,16 +1526,14 @@ export default function Header() {
                                                                                     <div className="col-lg-4 col-md-4">
                                                                                         <div className="service-item-body">
                                                                                             <h3>
-                                                                                                <span>Case Study</span>
+                                                                                                <span>News and events</span>
                                                                                             </h3>
                                                                                             <p>
-                                                                                                10 Must-Have Features in a Modern ERP
-                                                                                                System
+                                                                                                RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
-                                                                                                    className="animated-svg-link1
-                                              btn-style-3"
+                                                                                                <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
+                                                                                                    className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
                                                                                                     <NavArrowLeft />
@@ -1559,14 +1544,13 @@ export default function Header() {
                                                                                     <div className="col-lg-4 col-md-4">
                                                                                         <div className="service-item-body">
                                                                                             <h3>
-                                                                                                <span>Case Study</span>
+                                                                                                <span>News and events</span>
                                                                                             </h3>
                                                                                             <p>
-                                                                                                10 Must-Have Features in a Modern ERP
-                                                                                                System
+                                                                                                Grand Opening of India Development Centre (IDC) in RheinBrücke
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
+                                                                                                <Link href="https://www.rheincs.com/news-events/grand-opening-of-india-development-centre-in-rheinBr%C3%BCcke"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -1578,14 +1562,13 @@ export default function Header() {
                                                                                     <div className="col-lg-4 col-md-4">
                                                                                         <div className="service-item-body secondser">
                                                                                             <h3>
-                                                                                                <span>Case Study</span>
+                                                                                                <span>Blog</span>
                                                                                             </h3>
                                                                                             <p>
-                                                                                                The Top 8 ERP Systems for Financial
-                                                                                                Management
+How to Build a Future-Ready Digital Strategy
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
+                                                                                                <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
