@@ -43,7 +43,9 @@
 		"wdth" 100;
 }
 
-.nav-posisan-fist {}
+.nav-posisan-fist{
+    
+}
 
 /*@font-face {*/
 /*	font-family: 'helvetica-neue-lt-pro';*/
@@ -1347,11 +1349,16 @@ body:has(.offcanvas) {
 	height: 100%;
 }
 
+
 .hero .hero-bg-video video {
-	width: 100%;
+	    width: 70%;
 	height: 100%;
 	-o-object-fit: cover;
 	object-fit: cover;
+    position: absolute;
+    z-index: -1;
+    right: 0px;
+    top: 0px;
 }
 
 .hero.bg-image {
