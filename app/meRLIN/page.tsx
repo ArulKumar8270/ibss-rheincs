@@ -1640,7 +1640,7 @@ export default function EnterpriseSolutions() {
   <div className=" retail-baner1 sscr-4 retail-baner-11 merlinbenefit kineticsec1 approachh pd60">
     <div className="container">
       <div className="row section-row1 align-items-center builtsec">
-        <div className="col-sm-7">
+        <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
               What are the tangible benefits?
