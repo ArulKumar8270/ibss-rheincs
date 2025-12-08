@@ -8,6 +8,8 @@ import ScriptReinit from './Components/ScriptReinit'
 import MobileMenuInit from './Components/MobileMenuInit'
 import MobileSearchInit from './Components/MobileSearchInit'
 import SearchBoxInit from './Components/SearchBoxInit'
+import LottieInit from './Components/LottieInit'
+import VideoPopupInit from './Components/VideoPopupInit'
 import React from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -58,6 +60,8 @@ export default function RootLayout({
         <MobileMenuInit />
         <MobileSearchInit />
         <SearchBoxInit />
+        <LottieInit />
+        <VideoPopupInit />
         <ScriptReinit />
       </body>
       <script dangerouslySetInnerHTML={{
