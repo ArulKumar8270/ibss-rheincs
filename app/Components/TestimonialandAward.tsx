@@ -140,7 +140,7 @@ const TestimonialandAward = () => {
                                                             </div>
                                                             <div className="icon-box1">
                                                                 <img
-                                                                    src="images/ts/Cold-Chain-Logo-full.png"
+                                                                    src="/images/ts/Cold-Chain-Logo-full.png"
                                                                     alt=""
                                                                 />
                                                             </div>
@@ -166,7 +166,7 @@ const TestimonialandAward = () => {
                                                                 <div className="author-image">
                                                                     <figure className="image-anime">
                                                                         <img
-                                                                            src="images/testimonials/Cold-Chain-Logo.png"
+                                                                            src="/images/testimonials/Cold-Chain-Logo.png"
                                                                             alt=""
                                                                         />
                                                                     </figure>
@@ -222,7 +222,7 @@ const TestimonialandAward = () => {
                                                                 <div className="author-image">
                                                                     <figure className="image-anime">
                                                                         <img
-                                                                            src="images/testimonials/Ramamurthy Rao.png"
+                                                                            src="/images/testimonials/Ramamurthy Rao.png"
                                                                             alt=""
                                                                         />
                                                                     </figure>
@@ -275,7 +275,7 @@ const TestimonialandAward = () => {
                                                                 <div className="author-image">
                                                                     <figure className="image-anime">
                                                                         <img
-                                                                            src="images/testimonials/Massimiliano A. Milani.png"
+                                                                            src="/images/testimonials/Massimiliano A. Milani.png"
                                                                             alt=""
                                                                         />
                                                                     </figure>
@@ -323,7 +323,7 @@ const TestimonialandAward = () => {
                                                                 <div className="author-image">
                                                                     <figure className="image-anime">
                                                                         <img
-                                                                            src="images/testimonials/Craig Stephens.png"
+                                                                            src="/images/testimonials/Craig Stephens.png"
                                                                             alt=""
                                                                         />
                                                                     </figure>
@@ -355,7 +355,7 @@ const TestimonialandAward = () => {
                                                             </div>
                                                             <div className="icon-box1">
                                                                 <img
-                                                                    src="images/ts/SAUDI AMERICAN GLASS.png"
+                                                                    src="/images/ts/SAUDI AMERICAN GLASS.png"
                                                                     alt=""
                                                                 />
                                                             </div>
@@ -380,7 +380,7 @@ const TestimonialandAward = () => {
                                                                 <div className="author-image">
                                                                     <figure className="image-anime">
                                                                         <img
-                                                                            src="images/testimonials/Rizwanulla Khan.png"
+                                                                            src="/images/testimonials/Rizwanulla Khan.png"
                                                                             alt=""
                                                                         />
                                                                     </figure>
@@ -429,7 +429,7 @@ const TestimonialandAward = () => {
                                                                 <div className="author-image">
                                                                     <figure className="image-anime">
                                                                         <img
-                                                                            src="images/testimonials/Syed Waseem Wajid.png"
+                                                                            src="/images/testimonials/Syed Waseem Wajid.png"
                                                                             alt=""
                                                                         />
                                                                     </figure>
@@ -485,7 +485,7 @@ const TestimonialandAward = () => {
                                                                 <div className="author-image">
                                                                     <figure className="image-anime">
                                                                         <img
-                                                                            src="images/testimonials/Vinit Agarwal.png"
+                                                                            src="/images/testimonials/Vinit Agarwal.png"
                                                                             alt=""
                                                                         />
                                                                     </figure>
@@ -536,7 +536,7 @@ const TestimonialandAward = () => {
                                                                 <div className="author-image">
                                                                     <figure className="image-anime">
                                                                         <img
-                                                                            src="images/testimonials/Kiranjit Kaur.png"
+                                                                            src="/images/testimonials/Kiranjit Kaur.png"
                                                                             alt=""
                                                                         />
                                                                     </figure>
@@ -580,7 +580,7 @@ const TestimonialandAward = () => {
                                                                 <div className="author-image">
                                                                     <figure className="image-anime">
                                                                         <img
-                                                                            src="images/testimonials/Kiranjit Kaur.png"
+                                                                            src="/images/testimonials/Kiranjit Kaur.png"
                                                                             alt=""
                                                                         />
                                                                     </figure>

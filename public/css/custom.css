@@ -1562,7 +1562,7 @@ body:has(.offcanvas) {
 }
 
 .hero-video-content {
-	width: 70%;
+	width: 80%;
 }
 
 .hero-video-content p {
@@ -6304,9 +6304,9 @@ body:has(.offcanvas) {
 	left: 0px;
 	height: 100%;
 	width: 100%;
-	background: -webkit-gradient(linear, left top, right top, color-stop(46%, rgba(255, 255, 255, 1)), color-stop(85%, rgba(0, 0, 0, .1)), color-stop(70%, rgba(0, 0, 0, .1)));
-	background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 46%, rgba(0, 0, 0, .1) 85%, rgba(0, 0, 0, .1) 70%);
-	background: linear-gradient(90deg, rgba(255, 255, 255, 1) 46%, rgba(0, 0, 0, .1) 85%, rgba(0, 0, 0, .1) 70%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(40%, rgba(255, 255, 255, 1)), color-stop(85%, rgba(0, 0, 0, .1)), color-stop(70%, rgba(0, 0, 0, .1)));
+	background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 40%, rgba(0, 0, 0, .1) 85%, rgba(0, 0, 0, .1) 70%);
+	background: linear-gradient(90deg, rgba(255, 255, 255, 1) 40%, rgba(0, 0, 0, .1) 65%, rgba(0, 0, 0, .1) 70%);
 }
 
 
@@ -13894,7 +13894,7 @@ header.boxshadow {
 
 .industries .swiper-wrapper {
 	cursor: none;
-	padding: 20px 0px 70px;
+	padding: 20px 0px 40px;
 }
 
 .industries .testimonial-btn1 {
@@ -20469,7 +20469,9 @@ body.popup-open .main-header {
 		/* border-right: 1px solid #545454; */
 		padding-right: 25px;
 		width: 275px;
-	}
+	}.MeRLIN-service{
+        height:530px !important;
+    }
 }
 
 
@@ -21255,4 +21257,25 @@ body:has(.search-full.active) {
 	.result-url {
 		font-size: 13px;
 	}
+}
+
+
+.contactsub button{
+	color: #fff !important;
+}
+.job-advantage h4{
+	color: #000;
+}
+.job-advantage p{
+	color: #000;
+}
+.form-control[type=file] {
+    overflow: hidden;
+    padding: 16px 10px;
+}
+.pd40{
+	padding-top:40px !important;
+}
+.grid-section .inner svg{
+	margin-bottom: 15px;
 }

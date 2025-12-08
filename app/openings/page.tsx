@@ -38,7 +38,7 @@ const page = () => {
                                     >
                                         <li className="nav-item" role="presentation">
                                             <button
-                                                className="nav-link"
+                                                className="nav-link active"
                                                 id="home-tab"
                                                 data-bs-toggle="tab"
                                                 data-bs-target="#home"
@@ -68,7 +68,7 @@ const page = () => {
                                         </li>
                                         <li className="nav-item" role="presentation">
                                             <button
-                                                className="nav-link active"
+                                                className="nav-link "
                                                 id="budget-tab"
                                                 data-bs-toggle="tab"
                                                 data-bs-target="#budget"
@@ -86,7 +86,7 @@ const page = () => {
                                     <div className="tab-content" id="myTabContent">
                                         {/* Supplier Relationship Pane */}
                                         <div
-                                            className="tab-pane fade"
+                                            className="tab-pane fade active show"
                                             id="home"
                                             role="tabpanel"
                                             aria-labelledby="home-tab"
@@ -254,7 +254,7 @@ const page = () => {
                                         </div>
                                         {/* Budgeting & Planning Pane */}
                                         <div
-                                            className="tab-pane fade active show"
+                                            className="tab-pane fade"
                                             id="budget"
                                             role="tabpanel"
                                             aria-labelledby="budget-tab"
@@ -308,14 +308,41 @@ const page = () => {
                                 <div className="contect-enq-waber">
                                     <h2> Apply Now</h2>
                                     <form action="#" method="post" className="row g-3 pp-0">
+                                        {/* Select Any One */}
+                                        <div className="col-md-12">
+                                            <select
+                                                className="form-select custom-form-control"
+                                                name="selection"
+                                            >
+                                                <option value="">
+                                                    -- Select Job Title --
+                                                </option>
+                                                <option value="service1">Sr. Quality Assurance Engineer</option>
+                                                <option value="service2">IT Support Analyst (Cloud)</option>
+                                                <option value="other">Data Analyst</option>
+                                                <option value="other">Sr ERP Consultant / Presales Consultant / Solution Architect</option>
+                                                <option value="other">ERP Solution Architect</option>
+                                                <option value="other">ERP Technical Consultant</option>
+                                                <option value="other">EPICOR Consultant – Finance</option>
+                                                <option value="other">Senior .NET Developer/Lead</option>
+                                            </select>
+                                        </div>
                                         {/* Full Name */}
                                         <div className="col-12">
                                             <input
                                                 type="text"
                                                 className="form-control custom-form-control"
                                                 name="fullName"
-                                                placeholder="Enter Your Full Name*"
-                                                required=""
+                                                placeholder="Your Name*"
+                                            />
+                                        </div>
+                                        {/* Email Address */}
+                                        <div className="col-md-12">
+                                            <input
+                                                type="email"
+                                                className="form-control custom-form-control"
+                                                name="email"
+                                                placeholder="Your Email Address*"
                                             />
                                         </div>
                                         {/* Phone Number with Country Code */}
@@ -324,9 +351,8 @@ const page = () => {
                                                 <select
                                                     className="form-select"
                                                     name="countryCode"
-                                                    required=""
                                                 >
-                                                    <option value={+91} selected="">
+                                                    <option value={+91} >
                                                         +91
                                                     </option>
                                                     <option value={+1}>+1</option>
@@ -337,52 +363,24 @@ const page = () => {
                                                     type="tel"
                                                     className="form-control"
                                                     name="phone"
-                                                    placeholder="Enter Your Phone No*"
-                                                    required=""
+                                                    placeholder="Your Phone No*"
                                                 />
                                             </div>
                                         </div>
                                         {/* Email Address */}
                                         <div className="col-md-12">
                                             <input
-                                                type="email"
+                                                type="file"
                                                 className="form-control custom-form-control"
-                                                name="email"
-                                                placeholder="Enter Your Email Address*"
-                                                required=""
+                                                name="file"
                                             />
-                                        </div>
-                                        {/* Company Name */}
-                                        <div className="col-md-12">
-                                            <input
-                                                type="text"
-                                                className="form-control custom-form-control"
-                                                name="companyName"
-                                                placeholder="Enter Your Company Name*"
-                                                required=""
-                                            />
-                                        </div>
-                                        {/* Select Any One */}
-                                        <div className="col-md-12">
-                                            <select
-                                                className="form-select custom-form-control"
-                                                name="selection"
-                                                required=""
-                                            >
-                                                <option value="" disabled="" selected="">
-                                                    Select Any One
-                                                </option>
-                                                <option value="service1">Service 1</option>
-                                                <option value="service2">Service 2</option>
-                                                <option value="other">Other</option>
-                                            </select>
                                         </div>
                                         {/* Message */}
                                         <div className="col-12">
                                             <textarea
                                                 className="form-control custom-form-control"
                                                 name="message"
-                                                placeholder="Message"
+                                                placeholder="Covering lettter Message"
                                                 rows={5}
                                                 defaultValue={""}
                                             />

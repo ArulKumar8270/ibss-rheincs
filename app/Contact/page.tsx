@@ -308,8 +308,8 @@ export default function Contact() {
               </div>
                     {/* Submit Button */}
               <div className="col-12">
-                <div className="ser-btn2">
-                        <button 
+                <div className="ser-btn2 contactsub">
+                       <a><button 
                           type="submit"
                           className="animated-svg-link1 btn-style-3"
                           disabled={status === 'loading'}
@@ -422,7 +422,7 @@ export default function Contact() {
                         </svg>
                       </span>
                     </span>
-                        </button>
+                        </button></a>
                 </div>
               </div>
             </form>
