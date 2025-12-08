@@ -556,7 +556,7 @@ const page = () => {
                       y="139.191"
                       width={115}
                       height={55}
-                      href="new/crm-6.png"
+                      href="/new/crm-6.png"
                     />
                   </svg>
                 </div>
