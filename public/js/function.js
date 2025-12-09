@@ -1050,7 +1050,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
           agency_supports_slider.autoplay.start();
         });
       }
-    }
+    } 
 
     if ($('.agency-supports-slider2').length && typeof Swiper !== 'undefined') {
       const sliderEl2 = document.querySelector('.agency-supports-slider2 .swiper');

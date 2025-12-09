@@ -1,11 +1,116 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
 import TestimonialandAward from "../Components/TestimonialandAward";
 import Awards from "../Components/Awards";
+import { createClient } from "@/lib/supabase-browser";
+import { useRouter } from "next/navigation";
+
 export default function Collaterals() {
+    const router = useRouter();
+    const [formData, setFormData] = useState({
+        fullName: '',
+        countryCode: '+91',
+        phone: '',
+        email: '',
+        companyName: ''
+    });
+
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [statusMessage, setStatusMessage] = useState('');
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus('loading');
+        setStatusMessage('Submitting your request...');
+
+        try {
+            // Validate required fields
+            const { fullName, countryCode, phone, email, companyName } = formData;
+
+            if (!fullName || !phone || !email || !companyName) {
+                setStatus('error');
+                setStatusMessage('Please fill in all required fields.');
+                return;
+            }
+
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                setStatus('error');
+                setStatusMessage('Please enter a valid email address.');
+                return;
+            }
+
+            // Use client-side Supabase call
+            const supabase = createClient();
+            const { data, error } = await supabase
+                .from('contacts')
+                .insert([
+                    {
+                        full_name: fullName,
+                        country_code: countryCode || '+91',
+                        phone: phone,
+                        email: email,
+                        company_name: companyName,
+                        selection: 'Collaterals Request',
+                        message: null,
+                    }
+                ])
+                .select();
+
+            if (error) {
+                console.error('Supabase error:', error);
+                let errorMessage = 'Failed to submit form. Please try again.';
+                if (error.code === '42P01') {
+                    errorMessage = 'Database table not found. Please contact support.';
+                } else if (error.code === '42501') {
+                    errorMessage = 'Permission denied. Please contact support.';
+                } else if (error.message) {
+                    errorMessage = `Error: ${error.message}`;
+                }
+                setStatus('error');
+                setStatusMessage(errorMessage);
+            } else {
+                setStatus('success');
+                setStatusMessage('Thank you! Your request has been submitted successfully. We will contact you shortly.');
+                // Reset form
+                setFormData({
+                    fullName: '',
+                    countryCode: '+91',
+                    phone: '',
+                    email: '',
+                    companyName: ''
+                });
+                // Close modal and redirect after 2 seconds
+                setTimeout(() => {
+                    // Close Bootstrap modal
+                    const modalElement = document.getElementById('myModal');
+                    if (modalElement) {
+                        const modal = (window as any).bootstrap?.Modal?.getInstance(modalElement);
+                        if (modal) {
+                            modal.hide();
+                        }
+                    }
+                    router.push('/thanks');
+                }, 2000);
+            }
+        } catch (error: any) {
+            console.error('Form submission error:', error);
+            setStatus('error');
+            setStatusMessage(error.message || 'An error occurred. Please try again.');
+        }
+    };
     return (
         <CommomLayout>
             <>
@@ -2008,7 +2113,26 @@ export default function Collaterals() {
                                         <div className="modal-body">
                                             <div className="contect-enq-waber">
                                                 {/* <h2> Let’s Connect With Us</h2> */}
-                                                <form action="#" method="post" className="row g-3 pp-0">
+                                                {/* Status Message */}
+                                                {statusMessage && (
+                                                    <div
+                                                        className={`alert ${status === 'success' ? 'alert-success' : status === 'error' ? 'alert-danger' : 'alert-info'}`}
+                                                        style={{
+                                                            padding: '15px',
+                                                            marginBottom: '20px',
+                                                            borderRadius: '8px',
+                                                            fontSize: '14px',
+                                                            animation: 'slideIn 0.3s ease-in-out'
+                                                        }}
+                                                    >
+                                                        {status === 'success' && '✅ '}
+                                                        {status === 'error' && '❌ '}
+                                                        {status === 'loading' && '⏳ '}
+                                                        {statusMessage}
+                                                    </div>
+                                                )}
+
+                                                <form onSubmit={handleSubmit} className="row g-3 pp-0">
                                                     {/* Full Name */}
                                                     <div className="col-12">
                                                         <input
@@ -2016,7 +2140,10 @@ export default function Collaterals() {
                                                             className="form-control custom-form-control"
                                                             name="fullName"
                                                             placeholder="Enter Your Full Name*"
+                                                            value={formData.fullName}
+                                                            onChange={handleInputChange}
                                                             required={true}
+                                                            disabled={status === 'loading'}
                                                         />
                                                     </div>
                                                     {/* Phone Number with Country Code */}
@@ -2025,21 +2152,26 @@ export default function Collaterals() {
                                                             <select
                                                                 className="form-select"
                                                                 name="countryCode"
+                                                                value={formData.countryCode}
+                                                                onChange={handleInputChange}
                                                                 required={true}
+                                                                disabled={status === 'loading'}
                                                             >
-                                                                <option value={+91} selected="">
-                                                                    +91
-                                                                </option>
-                                                                <option value={+1}>+1</option>
-                                                                <option value={+44}>+44</option>
-                                                                <option value={+971}>+971</option>
+                                                                <option value="+91">+91</option>
+                                                                <option value="+1">+1</option>
+                                                                <option value="+44">+44</option>
+                                                                <option value="+49">+49</option>
+                                                                <option value="+971">+971</option>
                                                             </select>
                                                             <input
                                                                 type="tel"
                                                                 className="form-control"
                                                                 name="phone"
                                                                 placeholder="Enter Your Phone No*"
+                                                                value={formData.phone}
+                                                                onChange={handleInputChange}
                                                                 required={true}
+                                                                disabled={status === 'loading'}
                                                             />
                                                         </div>
                                                     </div>
@@ -2050,7 +2182,10 @@ export default function Collaterals() {
                                                             className="form-control custom-form-control"
                                                             name="email"
                                                             placeholder="Enter Your Email Address*"
+                                                            value={formData.email}
+                                                            onChange={handleInputChange}
                                                             required={true}
+                                                            disabled={status === 'loading'}
                                                         />
                                                     </div>
                                                     {/* Company Name */}
@@ -2060,14 +2195,31 @@ export default function Collaterals() {
                                                             className="form-control custom-form-control"
                                                             name="companyName"
                                                             placeholder="Enter Your Company Name*"
+                                                            value={formData.companyName}
+                                                            onChange={handleInputChange}
                                                             required={true}
+                                                            disabled={status === 'loading'}
                                                         />
                                                     </div>
-                                                    {/* Submit Button (Optional) */}
+                                                    {/* Submit Button */}
                                                     <div className="col-12">
                                                         <div className="ser-btn2">
-                                                            <Link href="#" className="animated-svg-link1 btn-style-3">
-                                                                Submit
+                                                            <a>
+                                                            <button
+                                                                type="submit"
+                                                                className="animated-svg-link1 btn-style-3 text-white"
+                                                                disabled={status === 'loading'}
+                                                                style={{
+                                                                    opacity: status === 'loading' ? 0.6 : 1,
+                                                                    cursor: status === 'loading' ? 'not-allowed' : 'pointer',
+                                                                    background: 'transparent',
+                                                                    border: 'none',
+                                                                    width: '100%',
+                                                                    textAlign: 'left',
+                                                                    padding: 0
+                                                                }}
+                                                            >
+                                                                {status === 'loading' ? 'Submitting...' : 'Submit'}
                                                                 <span className="svg-container ">
                                                                     <span className=" left">
                                                                         <svg
@@ -2168,7 +2320,8 @@ export default function Collaterals() {
                                                                         </svg>
                                                                     </span>
                                                                 </span>
-                                                            </Link>
+                                                            </button>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -2186,3 +2339,34 @@ export default function Collaterals() {
         </CommomLayout>
     )
 }
+
+<style jsx>{`
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+
+  .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+
+  .alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+  }
+`}</style>

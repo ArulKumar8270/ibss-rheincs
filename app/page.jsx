@@ -128,7 +128,7 @@ export default function Home() {
                       stage of the journey
                     </p>
                     <div className="ser-btn">
-                      <Link href="#" className="animated-svg-link">
+                      <Link href="/enterprise-solutions" className="animated-svg-link">
                         <span>
                           Know More
                           <span className="svg-container ">
@@ -1634,7 +1634,7 @@ export default function Home() {
                       future-ready enterprises.
                     </p>
                     <div className="ser-btn2">
-                      <Link href="#" className="animated-svg-link1 btn-style-3">
+                      <Link href="/enterprise-solutions" className="animated-svg-link1 btn-style-3">
                         Read More
                         <span className="svg-container ">
                           <span className=" left">
@@ -3262,7 +3262,7 @@ export default function Home() {
                       rethinking your model, we help you unlock growth.
                     </p>
                     <div className="ser-btn2 mt-4">
-                      <Link href="#" className="animated-svg-link1 btn-style-3">
+                      <Link href="/enterprise-solutions" className="animated-svg-link1 btn-style-3">
                         Know More
                         <span className="svg-container ">
                           <span className=" left">
