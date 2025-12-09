@@ -35,7 +35,7 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/Components/Header.jsx", "app/Components/Footer.jsx", "app/page.jsx"  ],
+, "app/Components/Header.jsx", "app/Components/Footer.jsx", "app/page.jsx", "app/blog-details/[slug]", "app/news-events/[slug]", "app/openings/[id]"  ],
   "exclude": [
     "node_modules"
   ]
