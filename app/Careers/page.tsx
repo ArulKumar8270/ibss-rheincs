@@ -506,11 +506,6 @@ export default function AlMl() {
                                             </div>
                                         </div>
                                         {/* Testimonial Slide End */}
-                                        <div className="swiper-slide">
-                                            <div className="ric-slider-img">
-                                                <img src="/images/l12.jpg" alt="" />
-                                            </div>
-                                        </div>
                                     </div>
                                     <div className="testimonial-btn">
                                         <div className="testimonial-button-prev">
