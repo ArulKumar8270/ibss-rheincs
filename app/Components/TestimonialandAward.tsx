@@ -580,7 +580,7 @@ const TestimonialandAward = () => {
                                                                 <div className="author-image">
                                                                     <figure className="image-anime">
                                                                         <img
-                                                                            src="/images/testimonials/Kiranjit Kaur.png"
+                                                                            src="/images/simon.png"
                                                                             alt=""
                                                                         />
                                                                     </figure>

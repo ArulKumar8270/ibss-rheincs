@@ -32,7 +32,7 @@ export default function Header() {
     // Pages under "Solutions & Services"
     const solutionsPages = [
         'corushr',
-        'MeRLIN',
+        'MeRLIN-strategic-sourcing-software',
         'enterprise-solutions',
         'epicor',
         'epicor-kinetic',
