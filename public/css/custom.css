@@ -13842,6 +13842,12 @@ header.boxshadow {
 	border-radius: 8px;
 }
 
+.industries .service-item-body.fin1 {
+	background: url(../new/finan.jpg);
+	background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
 .industries .service-item-body.in1 {
 	background: url(../images/int1.jpg);
 	background-size: cover;
@@ -13849,9 +13855,10 @@ header.boxshadow {
 }
 
 .industries .service-item-body.in2 {
-	background: url(../images/int2.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
+	background: url(../new/int2.jpg);
+	background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top center;
 }
 
 .industries .service-item-body.in3 {
