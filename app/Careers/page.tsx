@@ -435,21 +435,21 @@ export default function AlMl() {
                                         {/* Testimonial Slide Start */}
                                         <div className="swiper-slide">
                                             <div className="ric-slider-img">
-                                                <img src="/images/l1.jpg" alt="" />
+                                                <img src="/images/l1.JPG" alt="" />
                                             </div>
                                         </div>
                                         {/* Testimonial Slide End */}
                                         {/* Testimonial Slide Start */}
                                         <div className="swiper-slide">
                                             <div className="ric-slider-img">
-                                                <img src="/images/l2.jpg" alt="" />
+                                                <img src="/images/l2.JPG" alt="" />
                                             </div>
                                         </div>
                                         {/* Testimonial Slide End */}
                                         {/* Testimonial Slide Start */}
                                         <div className="swiper-slide">
                                             <div className="ric-slider-img">
-                                                <img src="/images/l3.JPG" alt="" />
+                                                <img src="/images/l3.jpg" alt="" />
                                             </div>
                                         </div>
                                         {/* Testimonial Slide End */}

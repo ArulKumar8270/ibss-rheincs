@@ -20471,9 +20471,24 @@ body.popup-open .main-header {
 		width: 275px;
 	}.MeRLIN-service{
         height:530px !important;
-    }
+    }.retail-help-bg-img {
+    position: absolute;
+    height: 100%;
+    left: 425px !important;
+    z-index: -2;
+    bottom: 0px;
+}
 }
 
+@media (min-width: 769px) and (max-width:1399px) {
+	.retail-help-bg-img {
+    position: absolute;
+    height: 100%;
+    left: 425px !important;
+    z-index: -2;
+    bottom: 0px;
+}
+}
 
 
 
@@ -21278,4 +21293,9 @@ body:has(.search-full.active) {
 }
 .grid-section .inner svg{
 	margin-bottom: 15px;
+}
+
+.rechange-baner img{
+	width: 60%;
+	object-fit: cover;
 }
