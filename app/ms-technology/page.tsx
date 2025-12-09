@@ -868,7 +868,7 @@ export default function EnterpriseSolutions() {
               <div className="swiper-wrapper industries">
                 {/* Testimonial Slide Start */}
                 <div className="swiper-slide ">
-                  <div className="service-item-body in1">
+                  <div className="service-item-body in4">
                     <h3>
                       <span>Manufacturing </span>
                     </h3>
@@ -886,7 +886,7 @@ export default function EnterpriseSolutions() {
                 {/* Testimonial Slide End */}
                 {/* Testimonial Slide Start */}
                 <div className="swiper-slide">
-                  <div className="service-item-body in3">
+                  <div className="service-item-body in5">
                     <h3>
                       <span>Automotive</span>
                     </h3>
@@ -895,7 +895,7 @@ export default function EnterpriseSolutions() {
                 {/* Testimonial Slide End */}
                 {/* Testimonial Slide Start */}
                 <div className="swiper-slide">
-                  <div className="service-item-body in4">
+                  <div className="service-item-body in1">
                     <h3>
                       <span>Financial Services </span>
                     </h3>
@@ -1225,7 +1225,7 @@ export default function EnterpriseSolutions() {
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
-                <Link href="#" className="animated-svg-link">
+                <Link href="/contact" className="animated-svg-link">
                   Contact Us
                   <span className="svg-container ">
                     <span className=" right">

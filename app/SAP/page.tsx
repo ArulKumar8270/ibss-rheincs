@@ -750,7 +750,7 @@ const page = () => {
                   {/* Testimonial Slide End */}
                   <div className="swiper-slide">
                     <div className="valueslide">
-                      <img src="/images/cap5.svg" alt="" />
+                      <img src="/new/ds2.svg" alt="" />
                       <p>Long-term AMS+ to keep your SAP evolving</p>
                     </div>
                   </div>
@@ -1290,7 +1290,7 @@ const page = () => {
                       {/* Testimonial Slide End */}
                       {/* Testimonial Slide Start */}
                       <div className="swiper-slide">
-                        <div className="service-item-body in3">
+                        <div className="service-item-body in2">
                           <h3>
                             <span>Distribution &amp; Retail </span>
                           </h3>
@@ -1308,7 +1308,7 @@ const page = () => {
                       {/* Testimonial Slide End */}
                       {/* Testimonial Slide Start */}
                       <div className="swiper-slide">
-                        <div className="service-item-body in2">
+                        <div className="service-item-body ein5">
                           <h3>
                             <span>Energy &amp; Utilities</span>
                           </h3>
@@ -1571,7 +1571,7 @@ const page = () => {
                   </div>
                   <div className="col-sm-4">
                     <div className="ser-btn text-right">
-                      <a href="#" className="animated-svg-link">
+                      <a href="/contact" className="animated-svg-link">
                         Contact Us
                         <span className="svg-container ">
                           <span className=" right">

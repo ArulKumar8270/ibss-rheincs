@@ -26,7 +26,7 @@ export default function digitalsolution() {
               for measurable, sustained impact.
             </p>
             <div className="ser-btn mt-5">
-              <Link href="#" className="animated-svg-link">
+              <Link href="/contact" className="animated-svg-link">
                 Contact Us
                 <span className="svg-container ">
                   <span className=" right">
@@ -10903,16 +10903,16 @@ export default function digitalsolution() {
         <div className="firstrow">
           <div className="row">
             <div className="col-sm-8">
-              <h2>Let us Transform your Enterprise?</h2>
+              <h2>Ready to operationalise your digital future?</h2>
               <p>
-                Discover how RheinBrücke can help you optimise operations,
-                automate workflows, and grow with Microsoft Dynamics.
+                {" "}
+                Connect with our team for a discovery session and explore how we
+                can deliver measurable value for your business.
               </p>
-              <p>Talk to our Microsoft Dynamics experts today.</p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
-                <Link href="#" className="animated-svg-link">
+                <Link href="/contact" className="animated-svg-link">
                   Contact Us
                   <span className="svg-container ">
                     <span className=" right">

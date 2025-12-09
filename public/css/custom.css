@@ -17213,7 +17213,7 @@ header.boxshadow {
 }
 
 .micfabric h2 {
-	color: #000000 !important;
+	color: #fff !important;
 	font-family: 'helvetica-neue-lt-pro';
 	font-size: 24px;
 	font-weight: 400;
@@ -17222,7 +17222,7 @@ header.boxshadow {
 }
 
 .micfabric p {
-	color: #000000 !important;
+	color: #fff !important;
 	font-family: 'helvetica-neue-lt-pro';
 	font-size: 16px;
 	font-weight: 400;
@@ -21323,4 +21323,8 @@ body:has(.search-full.active) {
 .rechange-baner img{
 	width: 60%;
 	object-fit: cover;
+}
+
+.Awards .swiper-horizontal {
+    padding: 0px 0px 50px !important;
 }

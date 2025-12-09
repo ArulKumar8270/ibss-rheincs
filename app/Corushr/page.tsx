@@ -164,7 +164,7 @@ export default function Corushr() {
                                         coverage that is available on mobile and desktop.
                                     </p>
                                     <div className="ser-btn mt-5">
-                                        <Link href="#" className="animated-svg-link">
+                                        <Link href="/contact" className="animated-svg-link">
                                             Contact Us
                                             <span className="svg-container ">
                                                 <span className=" right">

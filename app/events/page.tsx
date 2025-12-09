@@ -89,7 +89,7 @@ const page = () => {
                                 </div>
                                 <div className="col-sm-4">
                                     <div className="ser-btn text-right">
-                                        <a href="#" className="animated-svg-link">
+                                        <a href="/contact" className="animated-svg-link">
                                             Contact Us
                                             <span className="svg-container ">
                                                 <span className=" right">
