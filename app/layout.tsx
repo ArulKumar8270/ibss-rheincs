@@ -10,6 +10,7 @@ import MobileSearchInit from './Components/MobileSearchInit'
 import SearchBoxInit from './Components/SearchBoxInit'
 import LottieInit from './Components/LottieInit'
 import VideoPopupInit from './Components/VideoPopupInit'
+import PopoverInit from './Components/PopoverInit'
 import React from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -62,6 +63,7 @@ export default function RootLayout({
         <SearchBoxInit />
         <LottieInit />
         <VideoPopupInit />
+        <PopoverInit />
         <ScriptReinit />
       </body>
       <script dangerouslySetInnerHTML={{
@@ -69,6 +71,7 @@ export default function RootLayout({
           (function() {
             var scripts = [
               '/js/jquery-3.7.1.min.js',
+              'https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js',
               '/js/bootstrap.min.js',
               '/js/validator.min.js',
               '/js/jquery.slicknav.js',

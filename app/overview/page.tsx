@@ -34,7 +34,7 @@ export default function EnterpriseSolutions() {
                                                 digital and sustainable future.
                                             </p>
                                         </div>
-                                        <div className="ser-btn2 ">
+                                        <div className="ser-btn2 mt-4">
                                             <Link href="/contact" className="animated-svg-link1 btn-style-3">
                                                 Contact Us
                                                 <span className="svg-container ">

@@ -135,17 +135,23 @@ export default function EnterpriseSolutions() {
                         </div>
                         <div className="timeline-content card">
                           <div className="card-body p-4">
-                            <p className="text-primary mb-1">November, 2024</p>
+                            <p className="text-primary mb-1">
+                              {item.event_date ? formatDate(item.event_date) : formatDate(item.created_at)}
+                            </p>
                             <h5 className="card-title fw-bold">
-                              RheinBrücke’s Kinetic ERP MEA Cloud Receives Green
-                              Certificate from Moro Hub
+                              {item.title}
                             </h5>
-                            <img
-                              src="/new/h1.png"
-                              alt="Green Certificate"
-                              className="timeline-image"
-                            />
-                            <Link href="/events" className="animated-svg-link hr-link">
+                            {item.featured_image && (
+                              <img
+                                src={item.featured_image}
+                                alt={item.title}
+                                className="timeline-image"
+                              />
+                            )}
+                            {item.excerpt && (
+                              <p className="mt-3">{item.excerpt}</p>
+                            )}
+                            <Link href={`/news-events/${item.slug}`} className="animated-svg-link hr-link">
                               Read More
                               <span className="svg-container ">
                                 <span className=" right">
