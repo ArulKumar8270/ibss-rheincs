@@ -1406,6 +1406,8 @@ const page = () => {
                           effectively.
                         </p>
                         <h5 className="costem-hadding">Key features include</h5>
+                        <div className="row">
+                          <div className="col-sm-9">
                         <div className="d-sm-flex">
                           <ul className="import-and-point">
                             <li>
@@ -1454,6 +1456,13 @@ const page = () => {
                             </li>
                           </ul>
                         </div>
+                        </div>
+                          <div className="col-sm-3">
+                            <div className="sugarimg">
+                              <img src="/images/sc1.jpg" alt="" />
+                            </div>
+                          </div>
+                        </div>
                         <p className="text-white mb-2 mb-sm-0">
                           Sugar Sell aims to streamline the sales process, improve
                           team collaboration, and ultimately boost sales performance
@@ -1474,6 +1483,8 @@ const page = () => {
                         <h5 className="costem-hadding">
                           Key features of Sugar Market include
                         </h5>
+                        <div className="row">
+                          <div className="col-sm-9">
                         <div className="d-sm-flex">
                           <ul className="import-and-point">
                             <li>
@@ -1522,6 +1533,13 @@ const page = () => {
                             </li>
                           </ul>
                         </div>
+                        </div>
+                          <div className="col-sm-3">
+                            <div className="sugarimg">
+                              <img src="/images/sc2.jpg" alt="" />
+                            </div>
+                          </div>
+                        </div>
                         <p className="text-white mb-2 mb-sm-0">
                           Sugar Market helps businesses attract prospects, engage with
                           customers across multiple channels, and drive revenue growth
@@ -1543,6 +1561,8 @@ const page = () => {
                         <h5 className="costem-hadding">
                           Key features of Sugar Market include
                         </h5>
+                        <div className="row">
+                          <div className="col-sm-9">
                         <div className="d-sm-flex">
                           <ul className="import-and-point">
                             <li>
@@ -1590,6 +1610,13 @@ const page = () => {
                               Customer Service Analytics
                             </li>
                           </ul>
+                        </div>
+                        </div>
+                          <div className="col-sm-3">
+                            <div className="sugarimg">
+                              <img src="/images/sc3.jpg" alt="" />
+                            </div>
+                          </div>
                         </div>
                         <p className="text-white mb-2 mb-sm-0">
                           Sugar Serve aims to improve customer satisfaction by
@@ -1788,7 +1815,7 @@ const page = () => {
                   </div>
                   <div className="col-sm-4">
                     <div className="ser-btn text-right">
-                      <Link href="#" className="animated-svg-link">
+                      <Link href="/contact" className="animated-svg-link">
                         Contact Us
                         <span className="svg-container ">
                           <span className=" right">

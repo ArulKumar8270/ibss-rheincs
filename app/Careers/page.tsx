@@ -188,7 +188,7 @@ export default function AlMl() {
                             </div>
                             <div className="heart-flex-item">
                                 <div className="family-img">
-                                    <img src="/images/mentor.JPG" alt="" />
+                                    <img src="/new/family-img3.svg" alt="" />
                                 </div>
                             </div>
                             <div className="heart-flex-item">
@@ -198,7 +198,7 @@ export default function AlMl() {
                             </div>
                             <div className="heart-flex-item">
                                 <div className="family-img">
-                                    <img src="/images/workplace.jpg" alt="" />
+                                    <img src="/new/family-img4.svg" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -2334,7 +2334,7 @@ export default function AlMl() {
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
-                                            <Link href="#" className="animated-svg-link">
+                                            <Link href="/contact" className="animated-svg-link">
                                                 Contact Us
                                                 <span className="svg-container ">
                                                     <span className=" right">

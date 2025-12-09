@@ -435,7 +435,7 @@ export default function digitalsolution() {
                                                                 <h3>Fluent Commerce</h3>
                                                                 <p className="oa-para">
                                                                     {" "}
-                                                                    a distributed Order Management System (OMS) that
+                                                                    A distributed Order Management System (OMS) that
                                                                     optimises inventory, orders, and fulfilment at scale
                                                                 </p>
                                                                 <div className="ser-btn serbtn1">
@@ -1112,7 +1112,7 @@ export default function digitalsolution() {
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
-                                            <Link href="#" className="animated-svg-link">
+                                            <Link href="/contact" className="animated-svg-link">
                                                 Contact Us
                                                 <span className="svg-container ">
                                                     <span className=" right">
