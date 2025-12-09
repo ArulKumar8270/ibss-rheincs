@@ -40,7 +40,7 @@ export default function AlMl() {
                           Business Intelligence
                         </h2>
                         <div className="ser-btn m-0">
-                          <Link        href="/case-study-details"
+                          <Link        href="/Case-study-details"
                             className="animated-svg-link p-0"
                           >
                             Read More
@@ -166,7 +166,7 @@ export default function AlMl() {
                           Business Intelligence
                         </h2>
                         <div className="ser-btn m-0">
-                          <Link href="#" className="animated-svg-link p-0">
+                          <Link href="/Case-study-details" className="animated-svg-link p-0">
                             Read More
                             <span className="svg-container ">
                               <span className=" right">
@@ -290,7 +290,7 @@ export default function AlMl() {
                           Business Intelligence
                         </h2>
                         <div className="ser-btn m-0">
-                          <Link href="#" className="animated-svg-link p-0">
+                          <Link href="/Case-study-details" className="animated-svg-link p-0">
                             Read More
                             <span className="svg-container ">
                               <span className=" right">
@@ -660,7 +660,7 @@ export default function AlMl() {
                     </h5>
                     <p className="blog-date-time"> September 22, 2025</p>
                     <div className="ser-btn1">
-                      <Link href="" className="animated-svg-link1 btn-style-3">
+                      <Link href="/Case-study-details" className="animated-svg-link1 btn-style-3">
                         Read More
                         <span className="svg-container ">
                           <span className=" left">
@@ -911,7 +911,7 @@ export default function AlMl() {
                     </h5>
                     <p className="blog-date-time"> September 22, 2025</p>
                     <div className="ser-btn1">
-                      <Link href="" className="animated-svg-link1 btn-style-3">
+                      <Link href="/Case-study-details" className="animated-svg-link1 btn-style-3">
                         Read More
                         <span className="svg-container ">
                           <span className=" left">
@@ -1037,7 +1037,7 @@ export default function AlMl() {
                     </h5>
                     <p className="blog-date-time"> September 22, 2025</p>
                     <div className="ser-btn1">
-                      <Link href="" className="animated-svg-link1 btn-style-3">
+                      <Link href="/Case-study-details" className="animated-svg-link1 btn-style-3">
                         Read More
                         <span className="svg-container ">
                           <span className=" left">
@@ -1162,7 +1162,7 @@ export default function AlMl() {
                     </h5>
                     <p className="blog-date-time"> September 22, 2025</p>
                     <div className="ser-btn1">
-                      <Link href="" className="animated-svg-link1 btn-style-3">
+                      <Link href="/Case-study-details" className="animated-svg-link1 btn-style-3">
                         Read More
                         <span className="svg-container ">
                           <span className=" left">
@@ -1287,7 +1287,7 @@ export default function AlMl() {
                     </h5>
                     <p className="blog-date-time"> September 22, 2025</p>
                     <div className="ser-btn1">
-                      <Link href="" className="animated-svg-link1 btn-style-3">
+                      <Link href="/Case-study-details" className="animated-svg-link1 btn-style-3">
                         Read More
                         <span className="svg-container ">
                           <span className=" left">

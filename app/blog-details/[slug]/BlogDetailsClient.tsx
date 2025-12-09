@@ -151,7 +151,7 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
           gap: '20px'
         }}>
           <h2 style={{ color: '#333' }}>Blog not found</h2>
-          <Link href="/blog" style={{ color: '#667eea', textDecoration: 'none' }}>
+          <Link href="/Blog" style={{ color: '#667eea', textDecoration: 'none' }}>
             ← Back to Blogs
           </Link>
         </div>

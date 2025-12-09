@@ -439,7 +439,7 @@ export default function digitalsolution() {
                                                                     optimises inventory, orders, and fulfilment at scale
                                                                 </p>
                                                                 <div className="ser-btn serbtn1">
-                                                                   <Link         href="/fluent-commerce"
+                                                                    <Link href="/fluent-commerce"
                                                                         className="animated-svg-link1 animated-svg-link12"
                                                                     >
                                                                         Read More
@@ -571,7 +571,7 @@ export default function digitalsolution() {
                                                                     personalisation.{" "}
                                                                 </p>
                                                                 <div className="ser-btn serbtn1">
-                                                                   <Link         href="/commercetools"
+                                                                    <Link href="/Commercetools"
                                                                         className="animated-svg-link1 animated-svg-link12"
                                                                     >
                                                                         Read More
