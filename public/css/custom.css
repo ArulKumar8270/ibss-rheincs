@@ -17853,11 +17853,18 @@ body.no-scroll {
 }
 
 .search-box.active .icon-close {
-	display: inline-block;
+	display: inline-block !important;
+	opacity: 1 !important;
+	visibility: visible !important;
 }
 
-.search-box.active .icon-search {
-	display: none;
+.search-box.active .icon-search,
+.search-box.active .btn-search .icon-search {
+	display: none !important;
+}
+
+.search-box.active .btn-search svg.icon-search {
+	display: none !important;
 }
 
 .width100 h2 {
@@ -20131,18 +20138,29 @@ body.popup-open .main-header {
 	}
 
 	/* When the parent .search-box is active... */
+	.search-box.active .search-full,
+	.search-box.active .icon-close,
 	.search-box.search-active .search-full,
 	.search-box.search-active .icon-close {
-		opacity: 1;
-		visibility: visible;
-		display: block;
+		opacity: 1 !important;
+		visibility: visible !important;
+		display: block !important;
 		/* Show the elements */
 		pointer-events: auto;
 	}
 
 	/* Also, hide the search magnifying glass icon when the bar is open */
+	.search-box.active .btn-search,
 	.search-box.search-active .btn-search {
 		display: none;
+	}
+	
+	/* Hide icon-search SVG when search box is active */
+	.search-box.active .btn-search svg.icon-search,
+	.search-box.active svg.icon-search,
+	.search-box.search-active .btn-search svg.icon-search,
+	.search-box.search-active svg.icon-search {
+		display: none !important;
 	}
 
 
@@ -20469,7 +20487,8 @@ body.popup-open .main-header {
 		/* border-right: 1px solid #545454; */
 		padding-right: 25px;
 		width: 275px;
-	}.MeRLIN-service{
+	}
+	.MeRLIN-service{
         height:530px !important;
     }.retail-help-bg-img {
     position: absolute;
@@ -20950,19 +20969,9 @@ body.popup-open .main-header {
 	position: relative;
 }
 
-.btn-search {
-	background: none;
-	border: none;
-	cursor: pointer;
-	padding: 8px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.icon-close {
+/* .icon-close {
 	position: fixed;
-	top: 13%;
+	top: 19%;
 	right: 5%;
 	font-size: 32px;
 	color: #1a1a1a;
@@ -20978,17 +20987,33 @@ body.popup-open .main-header {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
+} */
 
-.icon-close:hover {
+/* .icon-close:hover {
 	opacity: 0.5 !important;
 	transform: rotate(90deg);
+} */
+
+.is-sticky .search-full {
+    top: 10%;
 }
 
 .search-box:has(.search-full.active) .icon-close,
-#searchBox:has(.search-full.active) .icon-close {
-	opacity: 1;
-	visibility: visible;
+#searchBox:has(.search-full.active) .icon-close,
+.search-box.active .icon-close,
+.search-box.search-active .icon-close {
+	opacity: 1 !important;
+	visibility: visible !important;
+	display: inline-block !important;
+}
+
+.search-box:has(.search-full.active) .icon-search,
+#searchBox:has(.search-full.active) .icon-search,
+.search-box.active .icon-search,
+.search-box.search-active .icon-search,
+.search-box.active .btn-search svg.icon-search,
+.search-box.search-active .btn-search svg.icon-search {
+	display: none !important;
 }
 
 .search-full {
@@ -21197,10 +21222,10 @@ body:has(.search-full.active) {
 }
 
 #mobileSearchBox .icon-close {
-	position: fixed;
-	top: 20px;
-	right: 5%;
-	color: #333;
+    position: fixed;
+    top: -25px;
+    color: #333;
+    left: 95%;
 }
 
 #mobileSearchBox:has(.search-full.active) .icon-close {
@@ -21227,7 +21252,7 @@ body:has(.search-full.active) {
 
 	.search-bar {
 		width: 100%;
-		padding: 70px 5% 30px;
+		padding: 14px 5% 18px;
 	}
 
 	.search-icon-left {

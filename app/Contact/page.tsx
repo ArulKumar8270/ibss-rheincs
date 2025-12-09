@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase-browser";
+import { useRouter } from "next/navigation";
 
 export default function Contact() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     fullName: '',
     countryCode: '+91',
@@ -92,6 +94,7 @@ export default function Contact() {
           selection: '',
           message: ''
         });
+       router.push('/thanks');
         // Clear success message after 5 seconds
         setTimeout(() => {
           setStatus('idle');

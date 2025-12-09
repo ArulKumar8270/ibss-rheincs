@@ -86,6 +86,7 @@ export default function AdminLayout({
     { href: '/admin/blogs', label: 'Blogs', icon: '📝' },
     { href: '/admin/news-events', label: 'News & Events', icon: '📰' },
     { href: '/admin/careers', label: 'Careers', icon: '💼' },
+    { href: '/admin/job-applications', label: 'Job Applications', icon: '💼' },
   ]
 
   return (

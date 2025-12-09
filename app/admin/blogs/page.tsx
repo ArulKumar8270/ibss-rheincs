@@ -299,7 +299,7 @@ export default function AdminBlogsPage() {
               marginBottom: '8px',
               color: '#fff'
             }}>
-              ?? Blogs Management
+               Blogs Management
             </h1>
             <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
               Create, edit, and manage all blog posts
@@ -352,7 +352,7 @@ export default function AdminBlogsPage() {
             transform: 'translateY(-50%)',
             fontSize: '18px',
             color: '#94a3b8'
-          }}>??</span>
+          }}></span>
         </div>
         <button
           onClick={exportToCSV}
@@ -379,7 +379,7 @@ export default function AdminBlogsPage() {
             if (filteredBlogs.length > 0) e.currentTarget.style.background = '#3b82f6'
           }}
         >
-          <span>??</span> Export CSV
+          <span></span> Export CSV
         </button>
         <button
           onClick={fetchBlogs}
@@ -400,7 +400,7 @@ export default function AdminBlogsPage() {
           onMouseEnter={(e) => e.currentTarget.style.background = '#059669'}
           onMouseLeave={(e) => e.currentTarget.style.background = '#10b981'}
         >
-          <span>??</span> Refresh
+          <span></span> Refresh
         </button>
         <button
           onClick={() => {
@@ -434,7 +434,7 @@ export default function AdminBlogsPage() {
           onMouseEnter={(e) => e.currentTarget.style.background = '#5568d3'}
           onMouseLeave={(e) => e.currentTarget.style.background = '#667eea'}
         >
-          <span>?</span> Create New Blog
+          Create New Blog
         </button>
       </div>
 
@@ -645,7 +645,7 @@ export default function AdminBlogsPage() {
       }}>
         {filteredBlogs.length === 0 ? (
           <div style={{ padding: '60px', textAlign: 'center', color: '#94a3b8' }}>
-            <div style={{ fontSize: '48px', marginBottom: '15px' }}>??</div>
+            <div style={{ fontSize: '48px', marginBottom: '15px' }}></div>
             <div style={{ fontSize: '18px', fontWeight: '500', marginBottom: '8px', color: '#64748b' }}>
               {searchTerm ? 'No blogs found matching your search' : 'No blogs yet'}
             </div>
@@ -756,7 +756,7 @@ export default function AdminBlogsPage() {
                             e.currentTarget.style.transform = 'translateY(0)'
                           }}
                         >
-                          ?? Edit
+                           Edit
                         </button>
                         <button
                           onClick={async () => {
@@ -796,7 +796,7 @@ export default function AdminBlogsPage() {
                             e.currentTarget.style.opacity = '1'
                           }}
                         >
-                          {blog.published ? '??? Unpublish' : '? Publish'}
+                          {blog.published ? '✅ Unpublish' : '❌ Publish'}
                         </button>
                         <button
                           onClick={() => handleDelete(blog.id)}
@@ -823,7 +823,7 @@ export default function AdminBlogsPage() {
                             e.currentTarget.style.transform = 'translateY(0)'
                           }}
                         >
-                          ??? Delete
+                           Delete
                         </button>
                       </div>
                     </td>
@@ -846,7 +846,7 @@ export default function AdminBlogsPage() {
         gap: '12px',
         marginTop: '20px'
       }}>
-        <span style={{ fontSize: '20px' }}>??</span>
+        <span style={{ fontSize: '20px' }}></span>
         <div style={{ flex: 1 }}>
           <div style={{ fontWeight: '600', color: '#92400e', fontSize: '14px', marginBottom: '2px' }}>
             Security Note

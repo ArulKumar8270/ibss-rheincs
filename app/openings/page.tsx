@@ -1,6 +1,145 @@
-import React from 'react'
+"use client";
+
+import React, { useState } from 'react'
 import CommomLayout from '../Components/CommomLayout'
+import { createClient } from '@/lib/supabase-browser'
+import { useRouter } from 'next/navigation'
+
 const page = () => {
+    const router = useRouter()
+    const [formData, setFormData] = useState({
+        selection: '',
+        fullName: '',
+        email: '',
+        countryCode: '+91',
+        phone: '',
+        message: ''
+    })
+    const [file, setFile] = useState<File | null>(null)
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+    const [statusMessage, setStatusMessage] = useState('')
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = e.target
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }))
+    }
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files[0]) {
+            setFile(e.target.files[0])
+        }
+    }
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
+        setStatus('loading')
+        setStatusMessage('Submitting your application...')
+
+        try {
+            // Validate required fields
+            const { fullName, email, phone, selection } = formData
+
+            if (!fullName || !email || !phone || !selection) {
+                setStatus('error')
+                setStatusMessage('Please fill in all required fields.')
+                return
+            }
+
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+            if (!emailRegex.test(email)) {
+                setStatus('error')
+                setStatusMessage('Please enter a valid email address.')
+                return
+            }
+
+            const supabase = createClient()
+            let resumeUrl = null
+
+            // Upload file if provided
+            if (file) {
+                const fileExt = file.name.split('.').pop()
+                const fileName = `${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`
+                const filePath = `job-applications/${fileName}`
+
+                const { data: uploadData, error: uploadError } = await supabase.storage
+                    .from('resumes')
+                    .upload(filePath, file, {
+                        cacheControl: '3600',
+                        upsert: false
+                    })
+
+                if (uploadError) {
+                    console.error('Upload error:', uploadError)
+                    setStatus('error')
+                    setStatusMessage('Failed to upload resume. Please try again.')
+                    return
+                }
+
+                // Get public URL
+                const { data: urlData } = supabase.storage
+                    .from('resumes')
+                    .getPublicUrl(filePath)
+
+                resumeUrl = urlData.publicUrl
+            }
+
+            // Insert application data
+            const { data, error } = await supabase
+                .from('job_applications')
+                .insert([
+                    {
+                        job_title: selection,
+                        full_name: fullName,
+                        email: email,
+                        country_code: formData.countryCode,
+                        phone: phone,
+                        resume_url: resumeUrl,
+                        covering_letter: formData.message || null,
+                    }
+                ])
+                .select()
+
+            if (error) {
+                console.error('Supabase error:', error)
+                let errorMessage = 'Failed to submit application. Please try again.'
+                if (error.message) {
+                    errorMessage = `Error: ${error.message}`
+                }
+                setStatus('error')
+                setStatusMessage(errorMessage)
+            } else {
+                setStatus('success')
+                setStatusMessage('Thank you! Your application has been submitted successfully.')
+                // Reset form
+                setFormData({
+                    selection: '',
+                    fullName: '',
+                    email: '',
+                    countryCode: '+91',
+                    phone: '',
+                    message: ''
+                })
+                setFile(null)
+                // Reset file input
+                const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement
+                if (fileInput) {
+                    fileInput.value = ''
+                }
+                // Redirect after 2 seconds
+                setTimeout(() => {
+                    router.push('/thanks')
+                }, 2000)
+            }
+        } catch (error) {
+            console.error('Unexpected error:', error)
+            setStatus('error')
+            setStatusMessage('An unexpected error occurred. Please try again.')
+        }
+    }
     return (
         <CommomLayout>
             <>
@@ -307,24 +446,42 @@ const page = () => {
                             <div className="col-sm-5">
                                 <div className="contect-enq-waber">
                                     <h2> Apply Now</h2>
-                                    <form action="#" method="post" className="row g-3 pp-0">
+                                    {status === 'success' && (
+                                        <div className="alert alert-success" role="alert">
+                                            {statusMessage}
+                                        </div>
+                                    )}
+                                    {status === 'error' && (
+                                        <div className="alert alert-danger" role="alert">
+                                            {statusMessage}
+                                        </div>
+                                    )}
+                                    {status === 'loading' && (
+                                        <div className="alert alert-info" role="alert">
+                                            {statusMessage}
+                                        </div>
+                                    )}
+                                    <form onSubmit={handleSubmit} className="row g-3 pp-0">
                                         {/* Select Any One */}
                                         <div className="col-md-12">
                                             <select
                                                 className="form-select custom-form-control"
                                                 name="selection"
+                                                value={formData.selection}
+                                                onChange={handleInputChange}
+                                                required
                                             >
                                                 <option value="">
                                                     -- Select Job Title --
                                                 </option>
-                                                <option value="service1">Sr. Quality Assurance Engineer</option>
-                                                <option value="service2">IT Support Analyst (Cloud)</option>
-                                                <option value="other">Data Analyst</option>
-                                                <option value="other">Sr ERP Consultant / Presales Consultant / Solution Architect</option>
-                                                <option value="other">ERP Solution Architect</option>
-                                                <option value="other">ERP Technical Consultant</option>
-                                                <option value="other">EPICOR Consultant – Finance</option>
-                                                <option value="other">Senior .NET Developer/Lead</option>
+                                                <option value="Sr. Quality Assurance Engineer">Sr. Quality Assurance Engineer</option>
+                                                <option value="IT Support Analyst (Cloud)">IT Support Analyst (Cloud)</option>
+                                                <option value="Data Analyst">Data Analyst</option>
+                                                <option value="Sr ERP Consultant / Presales Consultant / Solution Architect">Sr ERP Consultant / Presales Consultant / Solution Architect</option>
+                                                <option value="ERP Solution Architect">ERP Solution Architect</option>
+                                                <option value="ERP Technical Consultant">ERP Technical Consultant</option>
+                                                <option value="EPICOR Consultant – Finance">EPICOR Consultant – Finance</option>
+                                                <option value="Senior .NET Developer/Lead">Senior .NET Developer/Lead</option>
                                             </select>
                                         </div>
                                         {/* Full Name */}
@@ -334,6 +491,9 @@ const page = () => {
                                                 className="form-control custom-form-control"
                                                 name="fullName"
                                                 placeholder="Your Name*"
+                                                value={formData.fullName}
+                                                onChange={handleInputChange}
+                                                required
                                             />
                                         </div>
                                         {/* Email Address */}
@@ -343,6 +503,9 @@ const page = () => {
                                                 className="form-control custom-form-control"
                                                 name="email"
                                                 placeholder="Your Email Address*"
+                                                value={formData.email}
+                                                onChange={handleInputChange}
+                                                required
                                             />
                                         </div>
                                         {/* Phone Number with Country Code */}
@@ -351,45 +514,64 @@ const page = () => {
                                                 <select
                                                     className="form-select"
                                                     name="countryCode"
+                                                    value={formData.countryCode}
+                                                    onChange={handleInputChange}
                                                 >
-                                                    <option value={+91} >
-                                                        +91
-                                                    </option>
-                                                    <option value={+1}>+1</option>
-                                                    <option value={+44}>+44</option>
-                                                    <option value={+971}>+971</option>
+                                                    <option value="+91">+91</option>
+                                                    <option value="+1">+1</option>
+                                                    <option value="+44">+44</option>
+                                                    <option value="+971">+971</option>
                                                 </select>
                                                 <input
                                                     type="tel"
                                                     className="form-control"
                                                     name="phone"
                                                     placeholder="Your Phone No*"
+                                                    value={formData.phone}
+                                                    onChange={handleInputChange}
+                                                    required
                                                 />
                                             </div>
                                         </div>
-                                        {/* Email Address */}
+                                        {/* Resume Upload */}
                                         <div className="col-md-12">
                                             <input
                                                 type="file"
                                                 className="form-control custom-form-control"
                                                 name="file"
+                                                accept=".pdf,.doc,.docx"
+                                                onChange={handleFileChange}
                                             />
+                                            <small className="text-muted">Accepted formats: PDF, DOC, DOCX</small>
                                         </div>
                                         {/* Message */}
                                         <div className="col-12">
                                             <textarea
                                                 className="form-control custom-form-control"
                                                 name="message"
-                                                placeholder="Covering lettter Message"
+                                                placeholder="Covering letter Message"
                                                 rows={5}
-                                                defaultValue={""}
+                                                value={formData.message}
+                                                onChange={handleInputChange}
                                             />
                                         </div>
-                                        {/* Submit Button (Optional) */}
+                                        {/* Submit Button */}
                                         <div className="col-12">
                                             <div className="ser-btn2">
-                                                <a href="#" className="animated-svg-link1 btn-style-3">
-                                                    Submit
+                                                <button 
+                                                    type="submit" 
+                                                    className="animated-svg-link1 btn-style-3"
+                                                    disabled={status === 'loading'}
+                                                    style={{ 
+                                                        background: 'none', 
+                                                        border: 'none', 
+                                                        padding: 0, 
+                                                        cursor: status === 'loading' ? 'not-allowed' : 'pointer',
+                                                        width: '100%',
+                                                        textAlign: 'left'
+                                                    }}
+                                                >
+                                                    {status === 'loading' ? 'Submitting...' : 'Submit'}
                                                     <span className="svg-container ">
                                                         <span className=" left">
                                                             <svg
@@ -490,7 +672,7 @@ const page = () => {
                                                             </svg>
                                                         </span>
                                                     </span>
-                                                </a>
+                                                </button>
                                             </div>
                                         </div>
                                     </form>

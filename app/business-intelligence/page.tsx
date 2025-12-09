@@ -1,11 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
 import TestimonialandAward from "../Components/TestimonialandAward";
 import Awards from "../Components/Awards";
 export default function AlMl() {
+    const [activeTab, setActiveTab] = useState('London');
     return (
         <CommomLayout>
             <>
@@ -1089,32 +1090,47 @@ export default function AlMl() {
                                 <div className="biimp-tabs">
                                     <div className="tab">
                                         <button
-                                            className="tablinks active"
-                                            onclick="openCity(event, 'London')"
+                                            className={`tablinks ${activeTab === 'London' ? 'active' : ''}`}
+                                            onClick={() => setActiveTab('London')}
                                             id="defaultOpen"
                                         >
                                             Data Collection &amp; Preparation
                                         </button>
-                                        <button className="tablinks" onclick="openCity(event, 'Paris')">
+                                        <button 
+                                            className={`tablinks ${activeTab === 'Paris' ? 'active' : ''}`}
+                                            onClick={() => setActiveTab('Paris')}
+                                        >
                                             Integration with Existing Systems
                                         </button>
-                                        <button className="tablinks" onclick="openCity(event, 'Tokyo')">
+                                        <button 
+                                            className={`tablinks ${activeTab === 'Tokyo' ? 'active' : ''}`}
+                                            onClick={() => setActiveTab('Tokyo')}
+                                        >
                                             Data Warehousing
                                         </button>
-                                        <button className="tablinks" onclick="openCity(event, 'Tokyo1')">
+                                        <button 
+                                            className={`tablinks ${activeTab === 'Tokyo1' ? 'active' : ''}`}
+                                            onClick={() => setActiveTab('Tokyo1')}
+                                        >
                                             Data Governance and Security
                                         </button>
-                                        <button className="tablinks" onclick="openCity(event, 'Tokyo2')">
+                                        <button 
+                                            className={`tablinks ${activeTab === 'Tokyo2' ? 'active' : ''}`}
+                                            onClick={() => setActiveTab('Tokyo2')}
+                                        >
                                             Data Mining and Analytics
                                         </button>
-                                        <button className="tablinks" onclick="openCity(event, 'Tokyo3')">
+                                        <button 
+                                            className={`tablinks ${activeTab === 'Tokyo3' ? 'active' : ''}`}
+                                            onClick={() => setActiveTab('Tokyo3')}
+                                        >
                                             Reports and Dashboards
                                         </button>
                                     </div>
                                     <div
                                         id="London"
                                         className="tabcontent"
-                                        style={{ display: "block" }}
+                                        style={{ display: activeTab === 'London' ? 'block' : 'none' }}
                                     >
                                         <div className="tab-cards">
                                             <div className="card-left">
@@ -1150,13 +1166,17 @@ export default function AlMl() {
                                             </div>
                                             <div className="card-right">
                                                 <img
-                                                    src="images/Data Collection and Preparation.png"
+                                                    src="/images/Data Collection and Preparation.png"
                                                     alt=""
                                                 />
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="Paris" className="tabcontent">
+                                    <div 
+                                        id="Paris" 
+                                        className="tabcontent"
+                                        style={{ display: activeTab === 'Paris' ? 'block' : 'none' }}
+                                    >
                                         <div className="tab-cards">
                                             <div className="card-left">
                                                 <h5>Integration with Existing Systems</h5>
@@ -1194,13 +1214,17 @@ export default function AlMl() {
                                             </div>
                                             <div className="card-right">
                                                 <img
-                                                    src="images/Integration with Existing Systems.png"
+                                                    src="/images/Integration with Existing Systems.png"
                                                     alt=""
                                                 />
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="Tokyo" className="tabcontent">
+                                    <div 
+                                        id="Tokyo" 
+                                        className="tabcontent"
+                                        style={{ display: activeTab === 'Tokyo' ? 'block' : 'none' }}
+                                    >
                                         <div className="tab-cards">
                                             <div className="card-left">
                                                 <h5>Data Warehousing</h5>
@@ -1242,7 +1266,11 @@ export default function AlMl() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="Tokyo1" className="tabcontent">
+                                    <div 
+                                        id="Tokyo1" 
+                                        className="tabcontent"
+                                        style={{ display: activeTab === 'Tokyo1' ? 'block' : 'none' }}
+                                    >
                                         <div className="tab-cards">
                                             <div className="card-left">
                                                 <h5>Data Governance and Security</h5>
@@ -1286,7 +1314,11 @@ export default function AlMl() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="Tokyo2" className="tabcontent">
+                                    <div 
+                                        id="Tokyo2" 
+                                        className="tabcontent"
+                                        style={{ display: activeTab === 'Tokyo2' ? 'block' : 'none' }}
+                                    >
                                         <div className="tab-cards">
                                             <div className="card-left">
                                                 <h5>Data Mining and Analytics</h5>
@@ -1336,7 +1368,11 @@ export default function AlMl() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="Tokyo3" className="tabcontent">
+                                    <div 
+                                        id="Tokyo3" 
+                                        className="tabcontent"
+                                        style={{ display: activeTab === 'Tokyo3' ? 'block' : 'none' }}
+                                    >
                                         <div className="tab-cards">
                                             <div className="card-left">
                                                 <h5>Reports and Dashboards</h5>
