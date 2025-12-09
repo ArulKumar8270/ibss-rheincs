@@ -16,8 +16,7 @@ interface NewsEvent {
   updated_at: string;
 }
 
-// Generate static params for all published news/events
-export async function generateStaticParams() {
+export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
@@ -29,7 +28,6 @@ export async function generateStaticParams() {
   try {
     const supabase = createClient(supabaseUrl, supabaseAnonKey)
     
-    // Fetch all published news/event slugs
     const { data: items, error } = await supabase
       .from('news_events')
       .select('slug')
@@ -40,7 +38,6 @@ export async function generateStaticParams() {
       return []
     }
 
-    // Return array of params objects
     return (items || []).map((item) => ({
       slug: item.slug,
     }))
@@ -50,7 +47,6 @@ export async function generateStaticParams() {
   }
 }
 
-// Server component that fetches data and passes to client component
 export default async function NewsEventDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -62,7 +58,6 @@ export default async function NewsEventDetailsPage({ params }: { params: Promise
     try {
       const supabase = createClient(supabaseUrl, supabaseAnonKey)
       
-      // Fetch the current news/event
       const { data: itemData, error: itemError } = await supabase
         .from('news_events')
         .select('*')
