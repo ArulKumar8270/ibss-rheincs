@@ -727,10 +727,12 @@ export default function SwiperInit() {
                 spaceBetween: 15,
                 loop: true,
                 speed: 800,
+                rtl: true,
                 autoplay: {
                   delay: 3000,
                   disableOnInteraction: false,
                   pauseOnMouseEnter: true,
+                  reverseDirection: config.selector === '.agency-supports-slider2' ? true : false,
                 },
                 navigation: {
                   nextEl: `${config.selector} .testimonial-button-next`,
