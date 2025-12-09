@@ -6807,7 +6807,7 @@ export default function EnterpriseSolutions() {
                           connected decision-making.
                         </p>
                         <div className="ser-btn1">
-                          <Link        href="/microsoft-dynamics-solutions"
+                          <Link        href="/ms-dynamics/"
                             className="animated-svg-link1 btn-style-3"
                           >
                             Know More
@@ -6924,7 +6924,7 @@ export default function EnterpriseSolutions() {
                           and accelerate end-to-end digital transformation.
                         </p>
                         <div className="ser-btn1">
-                          <Link        href="/SAP"
+                          <Link        href="/sap"
                             className="animated-svg-link1 btn-style-3"
                           >
                             Know More
