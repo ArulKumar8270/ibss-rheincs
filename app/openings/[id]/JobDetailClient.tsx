@@ -1,14 +1,37 @@
 "use client";
 
-import React, { useState } from 'react'
-import CommomLayout from '../Components/CommomLayout'
+import React, { useState, useEffect } from 'react'
+import CommomLayout from '../../Components/CommomLayout'
 import { createClient } from '@/lib/supabase-browser'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
-const page = () => {
+interface Job {
+  id: string
+  title: string
+  department: string
+  location: string
+  type: string
+  description: string
+  requirements: string
+  responsibilities?: string[] | null
+  qualifications?: string[] | null
+  salary_range?: string | null
+  application_deadline?: string | null
+}
+
+interface JobDetailClientProps {
+  jobId: string
+  initialJob?: Job | null
+}
+
+export default function JobDetailClient({ jobId, initialJob }: JobDetailClientProps) {
     const router = useRouter()
+    
+    const [job, setJob] = useState<Job | null>(initialJob || null)
+    const [loading, setLoading] = useState(!initialJob)
     const [formData, setFormData] = useState({
-        selection: '',
+        selection: initialJob?.title || '',
         fullName: '',
         email: '',
         countryCode: '+91',
@@ -18,6 +41,48 @@ const page = () => {
     const [file, setFile] = useState<File | null>(null)
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
     const [statusMessage, setStatusMessage] = useState('')
+    const supabase = createClient()
+
+    useEffect(() => {
+        if (!initialJob && jobId) {
+            fetchJob()
+        }
+    }, [jobId, initialJob])
+
+    const fetchJob = async () => {
+        try {
+            const { data, error } = await supabase
+                .from('careers')
+                .select('*')
+                .eq('id', jobId)
+                .eq('published', true)
+                .single()
+
+            if (error) throw error
+            
+            if (data) {
+                // Parse responsibilities and qualifications if they're JSON strings
+                const parsedJob = {
+                    ...data,
+                    responsibilities: typeof data.responsibilities === 'string' 
+                        ? JSON.parse(data.responsibilities || '[]') 
+                        : data.responsibilities || [],
+                    qualifications: typeof data.qualifications === 'string'
+                        ? JSON.parse(data.qualifications || '[]')
+                        : data.qualifications || []
+                }
+                setJob(parsedJob)
+                setFormData(prev => ({ ...prev, selection: data.title }))
+            } else {
+                router.push('/careers')
+            }
+        } catch (err: any) {
+            console.error('Error fetching job:', err)
+            router.push('/careers')
+        } finally {
+            setLoading(false)
+        }
+    }
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target
@@ -39,7 +104,6 @@ const page = () => {
         setStatusMessage('Submitting your application...')
 
         try {
-            // Validate required fields
             const { fullName, email, phone, selection } = formData
 
             if (!fullName || !email || !phone || !selection) {
@@ -48,7 +112,6 @@ const page = () => {
                 return
             }
 
-            // Validate email format
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
             if (!emailRegex.test(email)) {
                 setStatus('error')
@@ -56,10 +119,8 @@ const page = () => {
                 return
             }
 
-            const supabase = createClient()
             let resumeUrl = null
 
-            // Upload file if provided
             if (file) {
                 const fileExt = file.name.split('.').pop()
                 const fileName = `${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`
@@ -79,7 +140,6 @@ const page = () => {
                     return
                 }
 
-                // Get public URL
                 const { data: urlData } = supabase.storage
                     .from('resumes')
                     .getPublicUrl(filePath)
@@ -87,7 +147,6 @@ const page = () => {
                 resumeUrl = urlData.publicUrl
             }
 
-            // Insert application data
             const { data, error } = await supabase
                 .from('job_applications')
                 .insert([
@@ -105,18 +164,13 @@ const page = () => {
 
             if (error) {
                 console.error('Supabase error:', error)
-                let errorMessage = 'Failed to submit application. Please try again.'
-                if (error.message) {
-                    errorMessage = `Error: ${error.message}`
-                }
                 setStatus('error')
-                setStatusMessage(errorMessage)
+                setStatusMessage('Failed to submit application. Please try again.')
             } else {
                 setStatus('success')
                 setStatusMessage('Thank you! Your application has been submitted successfully.')
-                // Reset form
                 setFormData({
-                    selection: '',
+                    selection: job?.title || '',
                     fullName: '',
                     email: '',
                     countryCode: '+91',
@@ -124,12 +178,10 @@ const page = () => {
                     message: ''
                 })
                 setFile(null)
-                // Reset file input
                 const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement
                 if (fileInput) {
                     fileInput.value = ''
                 }
-                // Redirect after 2 seconds
                 setTimeout(() => {
                     router.push('/thanks')
                 }, 2000)
@@ -140,24 +192,51 @@ const page = () => {
             setStatusMessage('An unexpected error occurred. Please try again.')
         }
     }
+
+    if (loading) {
+        return (
+            <CommomLayout>
+                <div style={{ 
+                    display: 'flex', 
+                    justifyContent: 'center', 
+                    alignItems: 'center', 
+                    minHeight: '400px' 
+                }}>
+                    <div>Loading job details...</div>
+                </div>
+            </CommomLayout>
+        )
+    }
+
+    if (!job) {
+        return (
+            <CommomLayout>
+                <div style={{ 
+                    display: 'flex', 
+                    justifyContent: 'center', 
+                    alignItems: 'center', 
+                    minHeight: '400px' 
+                }}>
+                    <div>Job not found</div>
+                </div>
+            </CommomLayout>
+        )
+    }
+
+    const responsibilities = job.responsibilities || []
+    const qualifications = job.qualifications || []
+
     return (
         <CommomLayout>
             <>
-                {/* Header Start */}
-                {/*?php include "navbar.php" ?*/}
-                {/* Header End */}
                 <div className="collateralssec">
-                    {/* <div class="parent2 retailparent2">
-  <video src="videos/uiux.mp4" autoplay muted loop playsinline class="bg-image1"></video>
-    </div> */}
                     <div className="container">
                         <div className="row section-row1 align-items-center builtsec collat">
                             <div className="col-sm-12">
                                 <div className="section-title text-center ">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        NEWS AND EVENTS
+                                        {job.title}
                                     </h2>
-                                    {/* <p>In today’s digital-first world, great design is more than looks—it’s about creating seamless, intuitive experiences that drive engagement, satisfaction, and loyalty. </p> */}
                                 </div>
                             </div>
                         </div>
@@ -165,11 +244,9 @@ const page = () => {
                 </div>
                 <section className="blog-main-waber newcollat">
                     <div className="container">
-                        {/* <h2 class="blog-main-title"> Collaterals </h2> */}
                         <div className="row">
                             <div className="col-sm-7">
                                 <div className="bolg-filter-waber collatpage">
-                                    {/* 1. Filter Buttons (Controls) */}
                                     <ul
                                         className="nav nav-tabs filter-controls"
                                         id="myTab"
@@ -184,8 +261,7 @@ const page = () => {
                                                 type="button"
                                                 role="tab"
                                                 aria-controls="home"
-                                                aria-selected="false"
-                                                tabIndex={-1}
+                                                aria-selected="true"
                                             >
                                                 Responsibilities
                                             </button>
@@ -200,21 +276,20 @@ const page = () => {
                                                 role="tab"
                                                 aria-controls="profile"
                                                 aria-selected="false"
-                                                tabIndex={-1}
                                             >
                                                 Qualifications
                                             </button>
                                         </li>
                                         <li className="nav-item" role="presentation">
                                             <button
-                                                className="nav-link "
+                                                className="nav-link"
                                                 id="budget-tab"
                                                 data-bs-toggle="tab"
                                                 data-bs-target="#budget"
                                                 type="button"
                                                 role="tab"
                                                 aria-controls="budget"
-                                                aria-selected="true"
+                                                aria-selected="false"
                                             >
                                                 Location
                                             </button>
@@ -223,7 +298,7 @@ const page = () => {
                                 </div>
                                 <div className="collattabsec mt-4">
                                     <div className="tab-content" id="myTabContent">
-                                        {/* Supplier Relationship Pane */}
+                                        {/* Responsibilities Tab */}
                                         <div
                                             className="tab-pane fade active show"
                                             id="home"
@@ -233,68 +308,26 @@ const page = () => {
                                             <div className="row">
                                                 <div className="col-sm-12">
                                                     <div className="mey-fucher-tab-waber-content1">
-                                                        {/* <h4>White Papers: Insightful Whitepapers from RheinBrücke </h4> */}
                                                         <div className="socialcont">
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    Design, develop and maintain test plans, test cases
-                                                                    and test data for both manual and automated testing.{" "}
-                                                                </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    Lead and execute end-to-end functional, regression,
-                                                                    integration, and exploratory testing.{" "}
-                                                                </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    Develop and maintain automation scripts using tools
-                                                                    like Selenium, Postman, or similar frameworks.{" "}
-                                                                </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    Collaborate with developers and cross functional
-                                                                    team to understand features, requirements, and
-                                                                    acceptance criteria, ensuring complete test
-                                                                    coverage.{" "}
-                                                                </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    {" "}
-                                                                    Manage the defect lifecycle, ensuring accurate
-                                                                    documentation, tracking, and timely resolution of
-                                                                    bugs.
-                                                                </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    Mentor and guide junior QA engineers in best
-                                                                    practices for both manual and automation testing.{" "}
-                                                                </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    {" "}
-                                                                    Ensure all QA deliverables meet standards and
-                                                                    support the team during critical release cycles.
-                                                                </p>
-                                                            </div>
+                                                            {responsibilities.length > 0 ? (
+                                                                responsibilities.map((resp, index) => (
+                                                                    <div key={index} className="challenge-point-waber">
+                                                                        <img src="/images/socilapoint.svg" alt="" />
+                                                                        <p>{resp}</p>
+                                                                    </div>
+                                                                ))
+                                                            ) : (
+                                                                <div className="challenge-point-waber">
+                                                                    <img src="/images/socilapoint.svg" alt="" />
+                                                                    <p>{job.description}</p>
+                                                                </div>
+                                                            )}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        {/* eProcurement Pane */}
+                                        {/* Qualifications Tab */}
                                         <div
                                             className="tab-pane fade"
                                             id="profile"
@@ -304,94 +337,26 @@ const page = () => {
                                             <div className="row">
                                                 <div className="col-sm-12">
                                                     <div className="mey-fucher-tab-waber-content1">
-                                                        {/* <h4>White Papers: Insightful Whitepapers from RheinBrücke </h4> */}
                                                         <div className="socialcont">
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    Bachelor’s degree in Computer Science, Information
-                                                                    Technology, or a related field.{" "}
-                                                                </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    {" "}
-                                                                    8+ years of experience in software testing, with
-                                                                    strong expertise in manual testing and solid
-                                                                    exposure to test automation.
-                                                                </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    Strong understanding of SDLC, STLC, and defect
-                                                                    management processes.{" "}
-                                                                </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    {" "}
-                                                                    Hands-on experience with automation frameworks such
-                                                                    as Selenium WebDriver or any automation frame for
-                                                                    web testing.
-                                                                </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    {" "}
-                                                                    Experience in API testing using tools like Postman.
-                                                                </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    {" "}
-                                                                    Working knowledge of SQL for database validation.
-                                                                </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    {" "}
-                                                                    Proficiency with bug tracking and test management
-                                                                    tools (HP-Quality Center, JIRA, TestRail, Zephyr).
-                                                                </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    {" "}
-                                                                    Excellent analytical, problem-solving, and
-                                                                    communication skills set.
-                                                                </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    Ability to work independently, lead testing
-                                                                    initiatives and collaborate with cross-functional
-                                                                    teams.{" "}
-                                                                </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>Preferred but not mandatory </p>
-                                                            </div>
-                                                            <div className="challenge-point-waber">
-                                                                <img src="/images/socilapoint.svg" alt="" />
-                                                                <p>
-                                                                    Exposure to performance testing tools (JMeter).{" "}
-                                                                </p>
-                                                            </div>
+                                                            {qualifications.length > 0 ? (
+                                                                qualifications.map((qual, index) => (
+                                                                    <div key={index} className="challenge-point-waber">
+                                                                        <img src="/images/socilapoint.svg" alt="" />
+                                                                        <p>{qual}</p>
+                                                                    </div>
+                                                                ))
+                                                            ) : (
+                                                                <div className="challenge-point-waber">
+                                                                    <img src="/images/socilapoint.svg" alt="" />
+                                                                    <p>{job.requirements}</p>
+                                                                </div>
+                                                            )}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        {/* Budgeting & Planning Pane */}
+                                        {/* Location Tab */}
                                         <div
                                             className="tab-pane fade"
                                             id="budget"
@@ -408,7 +373,7 @@ const page = () => {
                                                                     style={{ width: 10 }}
                                                                     alt=""
                                                                 />
-                                                                <p>Chennai </p>
+                                                                <p>{job.location}</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -420,7 +385,7 @@ const page = () => {
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <div className="mey-fucher-tab-waber-content1 job-advantage">
-                                            <h4>The RheinBrücke Advantage </h4>
+                                            <h4>The RheinBrücke Advantage</h4>
                                             <p>
                                                 We offer you great opportunities within a dynamically growing
                                                 company. You will elaborate and deliver best practice
@@ -436,8 +401,7 @@ const page = () => {
                                                 forward to your application. Click here to apply:
                                             </p>
                                             <p>
-                                                {" "}
-                                                <a href="mailto:"> careers@rheincs.com </a>
+                                                <a href="mailto:careers@rheincs.com">careers@rheincs.com</a>
                                             </p>
                                         </div>
                                     </div>
@@ -445,7 +409,7 @@ const page = () => {
                             </div>
                             <div className="col-sm-5">
                                 <div className="contect-enq-waber">
-                                    <h2> Apply Now</h2>
+                                    <h2>Apply Now</h2>
                                     {status === 'success' && (
                                         <div className="alert alert-success" role="alert">
                                             {statusMessage}
@@ -462,29 +426,16 @@ const page = () => {
                                         </div>
                                     )}
                                     <form onSubmit={handleSubmit} className="row g-3 pp-0">
-                                        {/* Select Any One */}
                                         <div className="col-md-12">
-                                            <select
-                                                className="form-select custom-form-control"
+                                            <input
+                                                type="text"
+                                                className="form-control custom-form-control"
                                                 name="selection"
                                                 value={formData.selection}
-                                                onChange={handleInputChange}
-                                                required
-                                            >
-                                                <option value="">
-                                                    -- Select Job Title --
-                                                </option>
-                                                <option value="Sr. Quality Assurance Engineer">Sr. Quality Assurance Engineer</option>
-                                                <option value="IT Support Analyst (Cloud)">IT Support Analyst (Cloud)</option>
-                                                <option value="Data Analyst">Data Analyst</option>
-                                                <option value="Sr ERP Consultant / Presales Consultant / Solution Architect">Sr ERP Consultant / Presales Consultant / Solution Architect</option>
-                                                <option value="ERP Solution Architect">ERP Solution Architect</option>
-                                                <option value="ERP Technical Consultant">ERP Technical Consultant</option>
-                                                <option value="EPICOR Consultant – Finance">EPICOR Consultant – Finance</option>
-                                                <option value="Senior .NET Developer/Lead">Senior .NET Developer/Lead</option>
-                                            </select>
+                                                readOnly
+                                                style={{ background: '#f5f5f5' }}
+                                            />
                                         </div>
-                                        {/* Full Name */}
                                         <div className="col-12">
                                             <input
                                                 type="text"
@@ -496,7 +447,6 @@ const page = () => {
                                                 required
                                             />
                                         </div>
-                                        {/* Email Address */}
                                         <div className="col-md-12">
                                             <input
                                                 type="email"
@@ -508,7 +458,6 @@ const page = () => {
                                                 required
                                             />
                                         </div>
-                                        {/* Phone Number with Country Code */}
                                         <div className="col-md-12">
                                             <div className="input-group custom-form-control">
                                                 <select
@@ -533,7 +482,6 @@ const page = () => {
                                                 />
                                             </div>
                                         </div>
-                                        {/* Resume Upload */}
                                         <div className="col-md-12">
                                             <input
                                                 type="file"
@@ -544,7 +492,6 @@ const page = () => {
                                             />
                                             <small className="text-muted">Accepted formats: PDF, DOC, DOCX</small>
                                         </div>
-                                        {/* Message */}
                                         <div className="col-12">
                                             <textarea
                                                 className="form-control custom-form-control"
@@ -555,12 +502,12 @@ const page = () => {
                                                 onChange={handleInputChange}
                                             />
                                         </div>
-                                        {/* Submit Button */}
                                         <div className="col-12">
                                             <div className="ser-btn2">
+                                                <a className=''>
                                                 <button 
                                                     type="submit" 
-                                                    className="animated-svg-link1 btn-style-3"
+                                                    className="animated-svg-link1 btn-style-3 text-white"
                                                     disabled={status === 'loading'}
                                                     style={{ 
                                                         background: 'none', 
@@ -673,6 +620,7 @@ const page = () => {
                                                         </span>
                                                     </span>
                                                 </button>
+                                                </a>
                                             </div>
                                         </div>
                                     </form>
@@ -681,137 +629,7 @@ const page = () => {
                         </div>
                     </div>
                 </section>
-                {/* Footer Start */}
-                <footer className="main-footer pd0">
-                    {/* Footer Main Start */}
-                    <div className="footer-main">
-                        <div className="container">
-                            <div className="firstrow">
-                                <div className="row">
-                                    <div className="col-sm-8">
-                                        <h2>Ready to accelerate value creation across your portfolio?</h2>
-                                        <p>
-                                            Contact us today to learn how we can help modernise operations,
-                                            de-risk integrations, and improve commercial outcomes.
-                                        </p>
-                                    </div>
-                                    <div className="col-sm-4">
-                                        <div className="ser-btn text-right">
-                                            <a href="/contact" className="animated-svg-link">
-                                                Contact Us
-                                                <span className="svg-container ">
-                                                    <span className=" right">
-                                                        <svg
-                                                            width={24}
-                                                            height={23}
-                                                            viewBox="0 0 24 23"
-                                                            fill="none"
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                        >
-                                                            <circle
-                                                                className="dot"
-                                                                opacity="0.5"
-                                                                cx="16.0004"
-                                                                cy="4.79995"
-                                                                r="1.6"
-                                                                fill="#535353"
-                                                            />
-                                                            <circle
-                                                                className="dot"
-                                                                opacity="0.5"
-                                                                cx="12.7992"
-                                                                cy="1.6"
-                                                                r="1.6"
-                                                                fill="#535353"
-                                                            />
-                                                            <circle
-                                                                className="dot"
-                                                                opacity="0.5"
-                                                                cx="22.4008"
-                                                                cy="11.2"
-                                                                r="1.6"
-                                                                fill="#535353"
-                                                            />
-                                                            <circle
-                                                                className="dot"
-                                                                opacity="0.5"
-                                                                cx="1.6"
-                                                                cy="11.2"
-                                                                r="1.6"
-                                                                fill="#535353"
-                                                            />
-                                                            <circle
-                                                                className="dot"
-                                                                opacity="0.5"
-                                                                cx="6.40078"
-                                                                cy="11.2"
-                                                                r="1.6"
-                                                                fill="#535353"
-                                                            />
-                                                            <circle
-                                                                className="dot"
-                                                                opacity="0.5"
-                                                                cx="11.1996"
-                                                                cy="11.2"
-                                                                r="1.6"
-                                                                fill="#535353"
-                                                            />
-                                                            <circle
-                                                                className="dot"
-                                                                opacity="0.5"
-                                                                cx="16.0004"
-                                                                cy="11.2"
-                                                                r="1.6"
-                                                                fill="#535353"
-                                                            />
-                                                            <circle
-                                                                className="dot"
-                                                                opacity="0.5"
-                                                                cx="19.1996"
-                                                                cy="14.4"
-                                                                r="1.6"
-                                                                fill="#535353"
-                                                            />
-                                                            <circle
-                                                                className="dot"
-                                                                opacity="0.5"
-                                                                cx="16.0004"
-                                                                cy="17.6"
-                                                                r="1.6"
-                                                                fill="#535353"
-                                                            />
-                                                            <circle
-                                                                className="dot"
-                                                                opacity="0.5"
-                                                                cx="12.7992"
-                                                                cy="20.8"
-                                                                r="1.6"
-                                                                fill="#535353"
-                                                            />
-                                                            <circle
-                                                                className="dot"
-                                                                opacity="0.5"
-                                                                cx="19.1996"
-                                                                cy="8.00002"
-                                                                r="1.6"
-                                                                fill="#535353"
-                                                            />
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {/*?php include "footer.php" ?*/}
-                        </div>
-                    </div>
-                </footer>
             </>
-
         </CommomLayout>
     )
 }
-
-export default page

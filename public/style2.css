@@ -58,6 +58,8 @@ transform: translateX(-50%);
 
 .rechange-baner img {
     height: 100%;
+    width: 60%;
+    object-fit: cover;
 }
 
 .text-left2 {

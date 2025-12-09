@@ -19763,7 +19763,8 @@ body.popup-open .main-header {
 }
 
 .epicsecslide .valueslide {
-	height: 344px;
+	min-height: 344px;
+	max-height: auto;
 	width: 100%;
 	padding: 24px !important;
 }

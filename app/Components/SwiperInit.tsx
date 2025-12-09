@@ -652,6 +652,45 @@ export default function SwiperInit() {
             console.error('Error initializing slider7:', e);
           }
         }
+
+
+        // 14. testimonial-slider7
+        const slideragency = document.querySelector('.agency-supports-slider .swiper');
+        const slider8agency = document.querySelector('.agency-supports-slider .testspace');
+        
+        if (slideragency && slider8agency && !(slideragency as any).swiper) {
+          try {
+            const realTotalSlides = slideragency.querySelectorAll('.swiper-wrapper .swiper-slide').length;
+            new Swiper(slideragency, {
+              slidesPerView: 5,
+              spaceBetween: 15,
+              loop: false,
+              speed: 800,
+              autoplay: false,
+              navigation: {
+                nextEl: '.testimonial-slide7 .testimonial-button-next',
+                prevEl: '.agency-supports-slider .testimonial-button-prev',
+              },
+              breakpoints: {
+                0: { slidesPerView: 1.5 },
+                768: { slidesPerView: 3 },
+                991: { slidesPerView: 5 },
+              },
+              on: {
+                init: function (this: any) {
+                  if (slider8agency) slider8agency.textContent = `1/${realTotalSlides}`;
+                },
+                slideChange: function (this: any) {
+                  const currentSlide = this.realIndex + 1;
+                  if (slider8agency) slider8agency.textContent = `${currentSlide}/${realTotalSlides}`;
+                }
+              }
+            });
+            console.log('✓ agency-supports-slider initialized');
+          } catch (e) {
+            console.error('Error initializing slider7:', e);
+          }
+        }
         
         // 15-25: Overview sliders, sap-service, testimonial-slideram, ecommers-8, architecture, ai-slider, CorusHR-slider, industries2, epicsecslide, mobiletesti5, msds, dew, sap
         // I'll add these with the same pattern for brevity
@@ -672,6 +711,8 @@ export default function SwiperInit() {
           { selector: '.msds', hasRty: true, hasCounter: true },
           { selector: '.dew', hasRty: true, hasCounter: true },
           { selector: '.sap', hasRty: false, hasCounter: true },
+          { selector: '.agency-supports-slider', hasRty: false, hasCounter: true },
+          { selector: '.agency-supports-slider2', hasRty: false, hasCounter: true },
         ];
         
         sliderConfigs.forEach(config => {

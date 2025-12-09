@@ -512,7 +512,7 @@ export default function EnterpriseSolutions() {
                         <div className="service-item-header">
                           <div className="service-card">
                             <img
-                              src="images/manufacturingexecution.svg"
+                              src="/images/manufacturingexecution.svg"
                               alt=""
                             />
                           </div>
@@ -562,7 +562,7 @@ export default function EnterpriseSolutions() {
                         <div className="service-item-header">
                           <div className="service-card">
                             <img
-                              src="images/financeplanninganalysis.svg"
+                              src="/images/financeplanninganalysis.svg"
                               alt=""
                             />
                           </div>
