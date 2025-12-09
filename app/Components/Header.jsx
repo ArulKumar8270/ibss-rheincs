@@ -36,16 +36,16 @@ export default function Header() {
         'enterprise-solutions',
         'epicor',
         'epicor-kinetic',
-        'Epicore-kinetic',
+        'Epicor-kinetic',
         'epicor-iscala',
-        'Epicore-iscala',
+        'Epicor-iscala',
         'epicor-companion',
-        'Epicore-companion',
+        'Epicor-companion',
         'epicor-epicpay',
-        'Epicore-epicpay',
-        'SAP',
-        'microsoft-dynamics-solutions',
-        'sugar-CRM',
+        'Epicor-epicpay',
+        'sap',
+        'ms-dynamics',
+        'sugar-crm',
         'ERP-customer-excellence',
         'digital-solutions',
         'digital-solutions-services',
@@ -205,7 +205,7 @@ export default function Header() {
 
     // All searchable pages with their titles and keywords
     const allPages = [
-        // About Us
+        // About Uscareers
         { url: '/overview', title: 'Overview', keywords: 'about company overview ibb information business solutions' },
         { url: '/leadership', title: 'Leadership', keywords: 'leadership team management executives directors' },
         { url: '/customer-speak', title: 'Customer Speak', keywords: 'customer testimonials reviews feedback clients' },
@@ -826,14 +826,14 @@ How to Build a Future-Ready Digital Strategy
                                                                                     </h3>
                                                                                     <ul>
                                                                                         <li className="ser-btn">
-                                                                                            <Link href="/corushr"
+                                                                                            <Link href="/CorusHR"
                                                                                                 className="animated-svg-link"
                                                                                             >
                                                                                                 Corus HR
                                                                                             </Link>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <Link href="/MeRLIN"
+                                                                                            <Link href="/MeRLIN-strategic-sourcing-software"
                                                                                                 className="animated-svg-link"
                                                                                             >
                                                                                                 MeRLIN Sourcing
@@ -924,38 +924,38 @@ How to Build a Future-Ready Digital Strategy
                                                                                                 className={`${epicorCollapsed ? 'show' : 'collapse'} content-box`}
                                                                                                 style={{ display: epicorCollapsed ? 'block' : 'none' }}
                                                                                             >
-                                                                                                <Link href="/Epicore-kinetic">
+                                                                                                <Link href="/Epicor-kinetic">
                                                                                                     {" "}
                                                                                                     Epicor Kinetic
                                                                                                 </Link>
-                                                                                                <Link href="/Epicore-iscala">
+                                                                                                <Link href="/Epicor-iscala">
                                                                                                     {" "}
                                                                                                     Epicor iScala
                                                                                                 </Link>
-                                                                                                <Link href="/Epicore-companion">
+                                                                                                <Link href="/Epicor-companion">
                                                                                                     {" "}
                                                                                                     Epicor Companion Products
                                                                                                 </Link>
-                                                                                                <Link href="/Epicore-epicpay">
+                                                                                                <Link href="/Epicor-epicpay">
                                                                                                     {" "}
                                                                                                     EpicPay
                                                                                                 </Link>
                                                                                             </div>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <Link href="/SAP" className="">
+                                                                                            <Link href="/sap" className="">
                                                                                                 SAP
                                                                                             </Link>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <Link href="/microsoft-dynamics-solutions"
+                                                                                            <Link href="/ms-dynamics"
                                                                                                 className=""
                                                                                             >
                                                                                                 MS Dynamics
                                                                                             </Link>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <Link href="/sugar-CRM" className="">
+                                                                                            <Link href="/sugar-crm" className="">
                                                                                                 Sugar CRM
                                                                                             </Link>
                                                                                         </li>
@@ -2267,10 +2267,10 @@ How to Build a Future-Ready Digital Strategy
                                     </div>
                                     <ul className="submenu">
                                         <li>
-                                            <Link href="/corushr">Corus HR</Link>
+                                            <Link href="/CorusHR">Corus HR</Link>
                                         </li>
                                         <li>
-                                            <Link href="/MeRLIN">MeRLIN Sourcing</Link>
+                                            <Link href="/MeRLIN-strategic-sourcing-software">MeRLIN Sourcing</Link>
                                         </li>
                                         {/*<li class="submenu-card-item">*/}
                                         {/*    <div class="swiper submenu-swiper">*/}
@@ -2479,27 +2479,27 @@ How to Build a Future-Ready Digital Strategy
                                             </div>
                                             <ul className="submenu sup-li-pading">
                                                 <li>
-                                                    <Link href="/Epicore-kinetic">Epicor Kinetic</Link>
+                                                    <Link href="/Epicor-kinetic">Epicor Kinetic</Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/Epicore-iscala">Epicor iScala</Link>
+                                                    <Link href="/Epicor-iscala">Epicor iScala</Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/Epicore-companion">Epicor Companion Products</Link>
+                                                    <Link href="/Epicor-companion">Epicor Companion Products</Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/Epicore-epicpay">EpicPay</Link>
+                                                    <Link href="/Epicor-epicpay">EpicPay</Link>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <Link href="/microsoft-dynamics-solutions">MS Dynamics</Link>
+                                            <Link href="/ms-dynamics">MS Dynamics</Link>
                                         </li>
                                         <li>
-                                            <Link href="/SAP">SAP</Link>
+                                            <Link href="/sap">SAP</Link>
                                         </li>
                                         <li>
-                                            <Link href="/sugar-CRM">Sugar CRM</Link>
+                                            <Link href="/sugar-crm">Sugar CRM</Link>
                                         </li>
                                         <li>
                                             <Link href="/ERP-customer-excellence">

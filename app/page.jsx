@@ -66,7 +66,7 @@ export default function Home() {
                           </button>
                         </div>
                         <div className="learn-more-circle">
-                          <Link href="">
+                          <Link href="/contact">
                             <span className="fa fa-arrow-up1">
                               <svg
                                 width={45}

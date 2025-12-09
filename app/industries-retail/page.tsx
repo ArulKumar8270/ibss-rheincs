@@ -331,8 +331,8 @@ export default function EnterpriseSolutions() {
     </div>
   </section>
   <section className="py-100">
-    <div className="retail-benifit-main-waber">
-      <div className="retail-benifit-design-one">
+    <div className="retail-benifit-main-waber row">
+      <div className="col-sm-6 retail-benifit-design-one">
         <div>
           <h4 className="benifit-title"> Tangible Outcomes</h4>
           <div className="benifit-points-waber">
@@ -374,7 +374,7 @@ export default function EnterpriseSolutions() {
         </div>
         <img src="/new/re-be-1.png" alt="" />
       </div>
-      <div className="retail-benifit-design-one">
+      <div className="col-sm-6 retail-benifit-design-one">
         <div>
           <h4 className="benifit-title">Global Best Practices We Apply</h4>
           <div className="benifit-points-waber">
@@ -404,7 +404,7 @@ export default function EnterpriseSolutions() {
         </div>
         <img src="/new/re-be-2.png" alt="" />
       </div>
-      <div className="retail-benifit-design-two">
+      <div className="col-sm-12 retail-benifit-design-two">
         <div>
           <h4 className="benifit-title"> Why Choose Us</h4>
           <div className="benifit-points-waber">
