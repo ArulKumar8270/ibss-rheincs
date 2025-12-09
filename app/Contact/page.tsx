@@ -51,7 +51,7 @@ export default function Contact() {
         setStatusMessage('Please enter a valid email address.');
         return;
       }
- 
+
       // Use client-side Supabase call
       const supabase = createClient();
       const { data, error } = await supabase
@@ -94,7 +94,7 @@ export default function Contact() {
           selection: '',
           message: ''
         });
-       router.push('/thanks');
+        router.push('/thanks');
         // Clear success message after 5 seconds
         setTimeout(() => {
           setStatus('idle');
@@ -108,88 +108,88 @@ export default function Contact() {
     }
   };
 
-    return (
-        <CommomLayout>
-<>
-  {/* Header Start */}
-  {/*?php include "navbar.php" ?*/}
-  {/* Header End */}
-  <div className="contect-waber">
-    <div className="container">
-      <div className="row">
-        <div className="col-sm-6">
-          <div className="section-title">
-            <h2
-              className="text-anime-style-2 text-white "
-              data-cursor="-opaque"
-            >
-              Talk to Our Experts
-            </h2>
-            <p className="">
-              {" "}
-              Thank you for your interest in RheinBrücke. Please contact us by
-              either visiting our office at the locations provided or write to
-              us for more information on how RheinBrücke can help you stay ahead
-              of competition. For additional information on our IT consulting
-              services, solutions or industry expertise, please visit the
-              relevant pages on our website.{" "}
-            </p>
-          </div>
-          <div className="contect-call">
-            <img src="/new/contect-call.svg" alt="" />{" "}
+  return (
+    <CommomLayout>
+      <>
+        {/* Header Start */}
+        {/*?php include "navbar.php" ?*/}
+        {/* Header End */}
+        <div className="contect-waber">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-6">
+                <div className="section-title">
+                  <h2
+                    className="text-anime-style-2 text-white "
+                    data-cursor="-opaque"
+                  >
+                    Talk to Our Experts
+                  </h2>
+                  <p className="">
+                    {" "}
+                    Thank you for your interest in RheinBrücke. Please contact us by
+                    either visiting our office at the locations provided or write to
+                    us for more information on how RheinBrücke can help you stay ahead
+                    of competition. For additional information on our IT consulting
+                    services, solutions or industry expertise, please visit the
+                    relevant pages on our website.{" "}
+                  </p>
+                </div>
+                <div className="contect-call">
+                  <img src="/new/contect-call.svg" alt="" />{" "}
                   <Link href=""> +49 231 292 95619</Link>
-          </div>
-          <div className="contect-call">
+                </div>
+                <div className="contect-call">
                   <img src="/new/c-mail.svg" alt="" /> <Link href=""> info@rheincs.com</Link>
-          </div>
-          <div className="contect-call sos">
-            <li>
+                </div>
+                <div className="contect-call sos">
+                  <li>
                     <Link href="https://www.linkedin.com/company/rheinbr%C3%BCcke-it-consulting"
-                target="_blank"
-              >
-                <i className="fa-brands fa-linkedin" />
+                      target="_blank"
+                    >
+                      <i className="fa-brands fa-linkedin" />
                     </Link>
-            </li>
-            <li>
+                  </li>
+                  <li>
                     <Link href="https://x.com/RheinBruckeIT" target="_blank">
-                <i className="fa-brands fa-x-twitter" />
+                      <i className="fa-brands fa-x-twitter" />
                     </Link>
-            </li>
-            <li>
+                  </li>
+                  <li>
                     <Link href="https://www.instagram.com/rheinbrucke_itconsulting/"
-                target="_blank"
-              >
-                <i className="fa-brands fa-instagram" />
+                      target="_blank"
+                    >
+                      <i className="fa-brands fa-instagram" />
                     </Link>
-            </li>
-            <li>
+                  </li>
+                  <li>
                     <Link href="https://www.facebook.com/RheinBrucke" target="_blank">
-                <i className="fa-brands fa-facebook" />
+                      <i className="fa-brands fa-facebook" />
                     </Link>
-            </li>
-          </div>
-          <div className="chat-main-waber">
-            <div className="chat-btn-1">
-              <img src="/new/chat-btn.svg" alt="" />
-              <p>Chat With Us</p>
-            </div>
-            <div className="chat-btn-1">
-              <img src="/new/chat-3.svg" alt="" />
-              <p>Become a Partner</p>
-            </div>
-          </div>
-        </div>
-        <div className="col-sm-6">
-          <div className="contect-enq-waber">
+                  </li>
+                </div>
+                <div className="chat-main-waber">
+                  <div className="chat-btn-1">
+                    <img src="/new/chat-btn.svg" alt="" />
+                    <p>Chat With Us</p>
+                  </div>
+                  <Link href="https://outlook.office365.com/book/RheinBruckeITConsulting@rheincs.com/?ismsaljsauthenabled=true" target="_blank" className="chat-btn-1">
+                    <img src="/new/chat-3.svg" alt="" />
+                    <p>Book a Meeting</p>
+                  </Link>
+                </div>
+              </div>
+              <div className="col-sm-6">
+                <div className="contect-enq-waber">
                   <h2> Let's Connect With Us</h2>
-            <p className="text-dark">
-              Complete the two-step process and submit your requirements — our
-              team will get in touch with you shortly.
-            </p>
+                  <p className="text-dark">
+                    Complete the two-step process and submit your requirements — our
+                    team will get in touch with you shortly.
+                  </p>
 
                   {/* Status Message */}
                   {statusMessage && (
-                    <div 
+                    <div
                       className={`alert ${status === 'success' ? 'alert-success' : status === 'error' ? 'alert-danger' : 'alert-info'}`}
                       style={{
                         padding: '15px',
@@ -207,87 +207,87 @@ export default function Contact() {
                   )}
 
                   <form onSubmit={handleSubmit} className="row g-3 pp-0">
-              {/* Full Name */}
-              <div className="col-12">
-                <input
-                  type="text"
-                  className="form-control custom-form-control"
-                  name="fullName"
-                  placeholder="Enter Your Full Name*"
+                    {/* Full Name */}
+                    <div className="col-12">
+                      <input
+                        type="text"
+                        className="form-control custom-form-control"
+                        name="fullName"
+                        placeholder="Enter Your Full Name*"
                         value={formData.fullName}
                         onChange={handleInputChange}
                         required={true}
                         disabled={status === 'loading'}
-                />
-              </div>
-              {/* Phone Number with Country Code */}
-              <div className="col-md-6">
-                <div className="input-group custom-form-control">
-                  <select
-                    className="form-select"
-                    name="countryCode"
+                      />
+                    </div>
+                    {/* Phone Number with Country Code */}
+                    <div className="col-md-6">
+                      <div className="input-group custom-form-control">
+                        <select
+                          className="form-select"
+                          name="countryCode"
                           value={formData.countryCode}
                           onChange={handleInputChange}
                           required={true}
                           disabled={status === 'loading'}
-                  >
+                        >
                           <option value="+91">+91</option>
                           <option value="+1">+1</option>
                           <option value="+44">+44</option>
                           <option value="+49">+49</option>
                           <option value="+971">+971</option>
-                  </select>
-                  <input
-                    type="tel"
-                    className="form-control"
-                    name="phone"
-                    placeholder="Enter Your Phone No*"
+                        </select>
+                        <input
+                          type="tel"
+                          className="form-control"
+                          name="phone"
+                          placeholder="Enter Your Phone No*"
                           value={formData.phone}
                           onChange={handleInputChange}
                           required={true}
                           disabled={status === 'loading'}
-                  />
-                </div>
-              </div>
-              {/* Email Address */}
-              <div className="col-md-6">
-                <input
-                  type="email"
-                  className="form-control custom-form-control"
-                  name="email"
-                  placeholder="Enter Your Email Address*"
+                        />
+                      </div>
+                    </div>
+                    {/* Email Address */}
+                    <div className="col-md-6">
+                      <input
+                        type="email"
+                        className="form-control custom-form-control"
+                        name="email"
+                        placeholder="Enter Your Email Address*"
                         value={formData.email}
                         onChange={handleInputChange}
                         required={true}
                         disabled={status === 'loading'}
-                />
-              </div>
-              {/* Company Name */}
-              <div className="col-md-6">
-                <input
-                  type="text"
-                  className="form-control custom-form-control"
-                  name="companyName"
-                  placeholder="Enter Your Company Name*"
+                      />
+                    </div>
+                    {/* Company Name */}
+                    <div className="col-md-6">
+                      <input
+                        type="text"
+                        className="form-control custom-form-control"
+                        name="companyName"
+                        placeholder="Enter Your Company Name*"
                         value={formData.companyName}
                         onChange={handleInputChange}
                         required={true}
                         disabled={status === 'loading'}
-                />
-              </div>
-              {/* Select Any One */}
-              <div className="col-md-6">
-                <select
-                  className="form-select custom-form-control"
-                  name="selection"
+                      />
+                    </div>
+                    {/* Select Any One */}
+                    <div className="col-md-6">
+                      <select
+                        className="form-select custom-form-control"
+                        name="selection"
                         value={formData.selection}
                         onChange={handleInputChange}
                         required={false}
                         disabled={status === 'loading'}
-                >
+                      >
                         <option value="" disabled>
-                    Select Any One
-                  </option>
+                          Select Any One
+                        </option>
                         <option value="SAP Solutions">SAP Solutions</option>
                         <option value="Digital Transformation">Digital Transformation</option>
                         <option value="Cloud Services">Cloud Services</option>
@@ -295,24 +295,24 @@ export default function Contact() {
                         <option value="Enterprise Solutions">Enterprise Solutions</option>
                         <option value="Consulting">Consulting</option>
                         <option value="Other">Other</option>
-                </select>
-              </div>
-              {/* Message */}
-              <div className="col-12">
-                <textarea
-                  className="form-control custom-form-control"
-                  name="message"
-                  placeholder="Message"
-                  rows={5}
+                      </select>
+                    </div>
+                    {/* Message */}
+                    <div className="col-12">
+                      <textarea
+                        className="form-control custom-form-control"
+                        name="message"
+                        placeholder="Message"
+                        rows={5}
                         value={formData.message}
                         onChange={handleInputChange}
                         disabled={status === 'loading'}
-                />
-              </div>
+                      />
+                    </div>
                     {/* Submit Button */}
-              <div className="col-12">
-                <div className="ser-btn2 contactsub">
-                       <a><button 
+                    <div className="col-12">
+                      <div className="ser-btn2 contactsub">
+                        <a><button
                           type="submit"
                           className="animated-svg-link1 btn-style-3"
                           disabled={status === 'loading'}
@@ -325,388 +325,388 @@ export default function Contact() {
                           }}
                         >
                           {status === 'loading' ? 'Submitting...' : 'Submit'}
-                    <span className="svg-container ">
-                      <span className=" left">
-                        <svg
-                          width={24}
-                          height={23}
-                          viewBox="0 0 24 23"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="16.0004"
-                            cy="4.79995"
-                            r="1.6"
-                            fill="#535353"
-                          />
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="12.7992"
-                            cy="1.6"
-                            r="1.6"
-                            fill="#535353"
-                          />
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="22.4008"
-                            cy="11.2"
-                            r="1.6"
-                            fill="#535353"
-                          />
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="1.6"
-                            cy="11.2"
-                            r="1.6"
-                            fill="#535353"
-                          />
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="6.40078"
-                            cy="11.2"
-                            r="1.6"
-                            fill="#535353"
-                          />
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="11.1996"
-                            cy="11.2"
-                            r="1.6"
-                            fill="#535353"
-                          />
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="16.0004"
-                            cy="11.2"
-                            r="1.6"
-                            fill="#535353"
-                          />
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="19.1996"
-                            cy="14.4"
-                            r="1.6"
-                            fill="#535353"
-                          />
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="16.0004"
-                            cy="17.6"
-                            r="1.6"
-                            fill="#535353"
-                          />
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="12.7992"
-                            cy="20.8"
-                            r="1.6"
-                            fill="#535353"
-                          />
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="19.1996"
-                            cy="8.00002"
-                            r="1.6"
-                            fill="#535353"
-                          />
-                        </svg>
-                      </span>
-                    </span>
+                          <span className="svg-container ">
+                            <span className=" left">
+                              <svg
+                                width={24}
+                                height={23}
+                                viewBox="0 0 24 23"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="16.0004"
+                                  cy="4.79995"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="12.7992"
+                                  cy="1.6"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="22.4008"
+                                  cy="11.2"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="1.6"
+                                  cy="11.2"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="6.40078"
+                                  cy="11.2"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="11.1996"
+                                  cy="11.2"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="16.0004"
+                                  cy="11.2"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="19.1996"
+                                  cy="14.4"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="16.0004"
+                                  cy="17.6"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="12.7992"
+                                  cy="20.8"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="19.1996"
+                                  cy="8.00002"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                              </svg>
+                            </span>
+                          </span>
                         </button></a>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div className="map-waber">
-    <div className="container">
-      <div className="section-title">
-        <h2
-          className="text-anime-style-2 text-center text-dark "
-          data-cursor="-opaque"
-        >
-          Talk to Our Experts
-        </h2>
-        <ul className="contres-15">
-          <li> Netherlands</li>
-          <li>Germany</li>
-          <li>USA</li>
-          <li>India</li>
-          <li>UAE</li>
-        </ul>
-      </div>
-      <div className="map-img-waber">
-        <img src="/new/map.svg" alt="" />
-        <div className="locat-icon location-1">
-          <button
-            id="myPopover"
-            type="button"
-            className="unstyld-btn"
-            data-bs-toggle="popover"
-            data-bs-placement="left"
-            data-bs-content='<div class="too-con-waber">
-              <h4> Netherlands</h4>
-              <p>
-                  Netherlands <br>
-                  RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
-              </p>
-              <div class="contect-call2">
-                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
-              </div>
-              <div class="contect-call2">
-                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
-              </div>
-          </div>'
-          >
-            <img src="/new/map-locat.svg" alt="" />
-          </button>
-        </div>
-        <div className="locat-icon location-2">
-          <button
-            id="myPopover2"
-            type="button"
-            className="unstyld-btn"
-            data-bs-toggle="popover"
-            data-bs-placement="left"
-            data-bs-content='<div class="too-con-waber">
-              <h4> Netherlands</h4>
-              <p>
-                  Netherlands <br>
-                  RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
-              </p>
-              <div class="contect-call2">
-                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
-              </div>
-              <div class="contect-call2">
-                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
-              </div>
-          </div>'
-          >
-            <img src="/new/map-locat.svg" alt="" />
-          </button>
-        </div>
-        <div className="locat-icon location-3">
-          <button
-            id="myPopover3"
-            type="button"
-            className="unstyld-btn"
-            data-bs-toggle="popover"
-            data-bs-placement="left"
-            data-bs-content='<div class="too-con-waber">
-              <h4> Netherlands</h4>
-              <p>
-                  Netherlands <br>
-                  RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
-              </p>
-              <div class="contect-call2">
-                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
-              </div>
-              <div class="contect-call2">
-                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
-              </div>
-          </div>'
-          >
-            <img src="/new/map-locat.svg" alt="" />
-          </button>
-        </div>
-        <div className="locat-icon location-4">
-          <button
-            id="myPopover4"
-            type="button"
-            className="unstyld-btn"
-            data-bs-toggle="popover"
-            data-bs-placement="left"
-            data-bs-content='<div class="too-con-waber">
-              <h4> Netherlands</h4>
-              <p>
-                  Netherlands <br>
-                  RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
-              </p>
-              <div class="contect-call2">
-                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
-              </div>
-              <div class="contect-call2">
-                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
-              </div>
-          </div>'
-          >
-            <img src="/new/map-locat.svg" alt="" />
-          </button>
-        </div>
-        <div className="locat-icon location-5">
-          <button
-            id="myPopover5"
-            type="button"
-            className="unstyld-btn"
-            data-bs-toggle="popover"
-            data-bs-placement="left"
-            data-bs-content='<div class="too-con-waber">
-              <h4> Netherlands</h4>
-              <p>
-                  Netherlands <br>
-                  RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
-              </p>
-              <div class="contect-call2">
-                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
-              </div>
-              <div class="contect-call2">
-                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
-              </div>
-          </div>'
-          >
-            <img src="/new/map-locat.svg" alt="" />
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  {/* Footer Start */}
-  <footer className="main-footer pd0">
-    {/* Footer Main Start */}
-    <div className="footer-main">
-      <div className="container">
-        <div className="firstrow">
-          <div className="row">
-            <div className="col-sm-8">
-              <h2>Ready to accelerate value creation across your portfolio?</h2>
-              <p>
-                Contact us today to learn how we can help modernise operations,
-                de-risk integrations, and improve commercial outcomes.
-              </p>
+        <div className="map-waber">
+          <div className="container">
+            <div className="section-title">
+              <h2
+                className="text-anime-style-2 text-center text-dark "
+                data-cursor="-opaque"
+              >
+                Talk to Our Experts
+              </h2>
+              <ul className="contres-15">
+                <li> Netherlands</li>
+                <li>Germany</li>
+                <li>USA</li>
+                <li>India</li>
+                <li>UAE</li>
+              </ul>
             </div>
-            <div className="col-sm-4">
-              <div className="ser-btn text-right">
+            <div className="map-img-waber">
+              <img src="/new/map.svg" alt="" />
+              <div className="locat-icon location-1">
+                <button
+                  id="myPopover"
+                  type="button"
+                  className="unstyld-btn"
+                  data-bs-toggle="popover"
+                  data-bs-placement="left"
+                  data-bs-content='<div class="too-con-waber">
+              <h4> Netherlands</h4>
+              <p>
+                  Netherlands <br>
+                  RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
+              </p>
+              <div class="contect-call2">
+                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
+              </div>
+              <div class="contect-call2">
+                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
+              </div>
+          </div>'
+                >
+                  <img src="/new/map-locat.svg" alt="" />
+                </button>
+              </div>
+              <div className="locat-icon location-2">
+                <button
+                  id="myPopover2"
+                  type="button"
+                  className="unstyld-btn"
+                  data-bs-toggle="popover"
+                  data-bs-placement="left"
+                  data-bs-content='<div class="too-con-waber">
+              <h4> Netherlands</h4>
+              <p>
+                  Netherlands <br>
+                  RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
+              </p>
+              <div class="contect-call2">
+                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
+              </div>
+              <div class="contect-call2">
+                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
+              </div>
+          </div>'
+                >
+                  <img src="/new/map-locat.svg" alt="" />
+                </button>
+              </div>
+              <div className="locat-icon location-3">
+                <button
+                  id="myPopover3"
+                  type="button"
+                  className="unstyld-btn"
+                  data-bs-toggle="popover"
+                  data-bs-placement="left"
+                  data-bs-content='<div class="too-con-waber">
+              <h4> Netherlands</h4>
+              <p>
+                  Netherlands <br>
+                  RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
+              </p>
+              <div class="contect-call2">
+                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
+              </div>
+              <div class="contect-call2">
+                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
+              </div>
+          </div>'
+                >
+                  <img src="/new/map-locat.svg" alt="" />
+                </button>
+              </div>
+              <div className="locat-icon location-4">
+                <button
+                  id="myPopover4"
+                  type="button"
+                  className="unstyld-btn"
+                  data-bs-toggle="popover"
+                  data-bs-placement="left"
+                  data-bs-content='<div class="too-con-waber">
+              <h4> Netherlands</h4>
+              <p>
+                  Netherlands <br>
+                  RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
+              </p>
+              <div class="contect-call2">
+                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
+              </div>
+              <div class="contect-call2">
+                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
+              </div>
+          </div>'
+                >
+                  <img src="/new/map-locat.svg" alt="" />
+                </button>
+              </div>
+              <div className="locat-icon location-5">
+                <button
+                  id="myPopover5"
+                  type="button"
+                  className="unstyld-btn"
+                  data-bs-toggle="popover"
+                  data-bs-placement="left"
+                  data-bs-content='<div class="too-con-waber">
+              <h4> Netherlands</h4>
+              <p>
+                  Netherlands <br>
+                  RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
+              </p>
+              <div class="contect-call2">
+                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
+              </div>
+              <div class="contect-call2">
+                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
+              </div>
+          </div>'
+                >
+                  <img src="/new/map-locat.svg" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Footer Start */}
+        <footer className="main-footer pd0">
+          {/* Footer Main Start */}
+          <div className="footer-main">
+            <div className="container">
+              <div className="firstrow">
+                <div className="row">
+                  <div className="col-sm-8">
+                    <h2>Ready to accelerate value creation across your portfolio?</h2>
+                    <p>
+                      Contact us today to learn how we can help modernise operations,
+                      de-risk integrations, and improve commercial outcomes.
+                    </p>
+                  </div>
+                  <div className="col-sm-4">
+                    <div className="ser-btn text-right">
                       <Link href="/contact" className="animated-svg-link">
-                  Contact Us
-                  <span className="svg-container ">
-                    <span className=" right">
-                      <svg
-                        width={24}
-                        height={23}
-                        viewBox="0 0 24 23"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle
-                          className="dot"
-                          opacity="0.5"
-                          cx="16.0004"
-                          cy="4.79995"
-                          r="1.6"
-                          fill="#535353"
-                        />
-                        <circle
-                          className="dot"
-                          opacity="0.5"
-                          cx="12.7992"
-                          cy="1.6"
-                          r="1.6"
-                          fill="#535353"
-                        />
-                        <circle
-                          className="dot"
-                          opacity="0.5"
-                          cx="22.4008"
-                          cy="11.2"
-                          r="1.6"
-                          fill="#535353"
-                        />
-                        <circle
-                          className="dot"
-                          opacity="0.5"
-                          cx="1.6"
-                          cy="11.2"
-                          r="1.6"
-                          fill="#535353"
-                        />
-                        <circle
-                          className="dot"
-                          opacity="0.5"
-                          cx="6.40078"
-                          cy="11.2"
-                          r="1.6"
-                          fill="#535353"
-                        />
-                        <circle
-                          className="dot"
-                          opacity="0.5"
-                          cx="11.1996"
-                          cy="11.2"
-                          r="1.6"
-                          fill="#535353"
-                        />
-                        <circle
-                          className="dot"
-                          opacity="0.5"
-                          cx="16.0004"
-                          cy="11.2"
-                          r="1.6"
-                          fill="#535353"
-                        />
-                        <circle
-                          className="dot"
-                          opacity="0.5"
-                          cx="19.1996"
-                          cy="14.4"
-                          r="1.6"
-                          fill="#535353"
-                        />
-                        <circle
-                          className="dot"
-                          opacity="0.5"
-                          cx="16.0004"
-                          cy="17.6"
-                          r="1.6"
-                          fill="#535353"
-                        />
-                        <circle
-                          className="dot"
-                          opacity="0.5"
-                          cx="12.7992"
-                          cy="20.8"
-                          r="1.6"
-                          fill="#535353"
-                        />
-                        <circle
-                          className="dot"
-                          opacity="0.5"
-                          cx="19.1996"
-                          cy="8.00002"
-                          r="1.6"
-                          fill="#535353"
-                        />
-                      </svg>
-                    </span>
-                  </span>
+                        Contact Us
+                        <span className="svg-container ">
+                          <span className=" right">
+                            <svg
+                              width={24}
+                              height={23}
+                              viewBox="0 0 24 23"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                className="dot"
+                                opacity="0.5"
+                                cx="16.0004"
+                                cy="4.79995"
+                                r="1.6"
+                                fill="#535353"
+                              />
+                              <circle
+                                className="dot"
+                                opacity="0.5"
+                                cx="12.7992"
+                                cy="1.6"
+                                r="1.6"
+                                fill="#535353"
+                              />
+                              <circle
+                                className="dot"
+                                opacity="0.5"
+                                cx="22.4008"
+                                cy="11.2"
+                                r="1.6"
+                                fill="#535353"
+                              />
+                              <circle
+                                className="dot"
+                                opacity="0.5"
+                                cx="1.6"
+                                cy="11.2"
+                                r="1.6"
+                                fill="#535353"
+                              />
+                              <circle
+                                className="dot"
+                                opacity="0.5"
+                                cx="6.40078"
+                                cy="11.2"
+                                r="1.6"
+                                fill="#535353"
+                              />
+                              <circle
+                                className="dot"
+                                opacity="0.5"
+                                cx="11.1996"
+                                cy="11.2"
+                                r="1.6"
+                                fill="#535353"
+                              />
+                              <circle
+                                className="dot"
+                                opacity="0.5"
+                                cx="16.0004"
+                                cy="11.2"
+                                r="1.6"
+                                fill="#535353"
+                              />
+                              <circle
+                                className="dot"
+                                opacity="0.5"
+                                cx="19.1996"
+                                cy="14.4"
+                                r="1.6"
+                                fill="#535353"
+                              />
+                              <circle
+                                className="dot"
+                                opacity="0.5"
+                                cx="16.0004"
+                                cy="17.6"
+                                r="1.6"
+                                fill="#535353"
+                              />
+                              <circle
+                                className="dot"
+                                opacity="0.5"
+                                cx="12.7992"
+                                cy="20.8"
+                                r="1.6"
+                                fill="#535353"
+                              />
+                              <circle
+                                className="dot"
+                                opacity="0.5"
+                                cx="19.1996"
+                                cy="8.00002"
+                                r="1.6"
+                                fill="#535353"
+                              />
+                            </svg>
+                          </span>
+                        </span>
                       </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
+              {/*?php include "footer.php" ?*/}
             </div>
           </div>
-        </div>
-        {/*?php include "footer.php" ?*/}
-      </div>
-    </div>
-  </footer>
-</>
+        </footer>
+      </>
 
-        </CommomLayout>
-    )
+    </CommomLayout>
+  )
 }
 
 <style jsx>{`

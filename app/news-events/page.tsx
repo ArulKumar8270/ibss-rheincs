@@ -28,7 +28,7 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-6">
                 <div className="section-title">
                   <h2
-                    className="text-anime-style-2  "
+                    className="text-anime-style-2"
                     style={{ color: "#082326" }}
                     data-cursor="-opaque"
                   >
@@ -438,7 +438,7 @@ export default function EnterpriseSolutions() {
                           alt="Top Berater Award"
                           className="timeline-image"
                         />
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -540,7 +540,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -556,7 +556,7 @@ export default function EnterpriseSolutions() {
                           Protiviti and RheinBrücke Collaborate to Optimise
                           eProcurement in the Middle East
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -658,7 +658,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -679,7 +679,7 @@ export default function EnterpriseSolutions() {
                           alt="Merlin Launch"
                           className="timeline-image"
                         />
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -781,7 +781,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -797,7 +797,7 @@ export default function EnterpriseSolutions() {
                           RheinBrücke launched its Academy for enterprises and
                           individuals
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -899,7 +899,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -914,7 +914,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           RheinBrücke receives Beste Berater award for 2020
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -1016,7 +1016,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -1032,7 +1032,7 @@ export default function EnterpriseSolutions() {
                           RheinBrücke joins forces with Moro and Epicor to drive Cloud
                           powered digital transformation
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -1134,7 +1134,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -1147,7 +1147,7 @@ export default function EnterpriseSolutions() {
                       <div className="card-body p-4">
                         <p className="text-primary mb-1">April, 2019</p>
                         <h5 className="card-title fw-bold">RheinKontakt 2019</h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -1249,7 +1249,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -1264,7 +1264,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           MoU for Collaboration with Ajman Chamber of Commerce
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -1366,7 +1366,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -1381,7 +1381,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           RheinBrücke Pinnacle Award of Excellence
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -1483,7 +1483,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -1498,7 +1498,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           Launch of Epicor Cloud Solution
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -1600,7 +1600,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -1615,7 +1615,7 @@ export default function EnterpriseSolutions() {
                           Launch of RheinBrücke Middle East Infrastructure LLC in
                           Dubai
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -1717,7 +1717,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -1731,7 +1731,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           Awarded <b>Top 10 Best IT Companies to Work for in 2019</b>
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -1833,7 +1833,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -1847,7 +1847,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           Recognized as Epicor International Partner of the Year
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -1949,7 +1949,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -1963,7 +1963,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           RheinBrücke IT Consulting and EPICOR at Gitex 2017
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -2065,7 +2065,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -2079,7 +2079,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           Epicor and RheinBrücke Join Forces with SmartWorld
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -2181,7 +2181,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -2195,7 +2195,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           Kenneth Taormina joins RheinBrücke as the Board Member
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -2297,7 +2297,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -2311,7 +2311,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           RheinBrücke shines at German Stevie Awards 2017
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -2413,7 +2413,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -2428,7 +2428,7 @@ export default function EnterpriseSolutions() {
                           RheinBrücke Recognized as Epicor International Partner of
                           the Year
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -2530,7 +2530,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -2545,7 +2545,7 @@ export default function EnterpriseSolutions() {
                           RheinBrücke shines at the Stevies International Business
                           Awards
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -2647,7 +2647,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -2661,7 +2661,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           RheinBrücke is honoured with three German Stevie awards 2016
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -2763,7 +2763,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -2777,7 +2777,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           RheinBrücke relaunches the Indian Development Center
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -2879,7 +2879,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -2894,7 +2894,7 @@ export default function EnterpriseSolutions() {
                           RheinBrücke Continues Its Winning Streak at the Stevie
                           Awards
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -2996,7 +2996,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -3011,7 +3011,7 @@ export default function EnterpriseSolutions() {
                           FLSmidth selects RheinBrücke for the global template
                           implementation and rollout of Epicor ERP 10
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -3113,7 +3113,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -3128,7 +3128,7 @@ export default function EnterpriseSolutions() {
                           RheinBrücke IT Consulting launches EpicPay a payroll
                           processing software
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -3230,7 +3230,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -3245,7 +3245,7 @@ export default function EnterpriseSolutions() {
                           RheinBrücke IT Consulting GmbH wins Stevie® Awards for
                           Company of the Year
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -3347,7 +3347,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -3366,7 +3366,7 @@ export default function EnterpriseSolutions() {
                           alt="Top Consultant Award"
                           className="timeline-image"
                         />
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -3468,7 +3468,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -3484,7 +3484,7 @@ export default function EnterpriseSolutions() {
                           status
                         </h5>
                         {/* <img src="/Assets/images/NewsEvents/Thumbnail/RheinBrücke-Microsoft-Partner-Oct-2014.jpg" alt="Microsoft Partner" class="timeline-image"> */}
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -3586,7 +3586,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -3600,7 +3600,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           Inauguration of the India Development Centre in Chennai
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -3702,7 +3702,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -3717,7 +3717,7 @@ export default function EnterpriseSolutions() {
                           RIC – signs up for ERP services for Global Life Sciences
                           Customer
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -3819,7 +3819,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -3833,7 +3833,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           RIC announced as EPICOR Platinum partner
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -3935,7 +3935,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -3950,7 +3950,7 @@ export default function EnterpriseSolutions() {
                           RheinBrücke completes acquisition of Indian subsidiary
                           Offices in NL, DE and IN
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -4052,7 +4052,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -4066,7 +4066,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           RIC – signs up 2 Fortune 100 Global Auto supplier customers
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -4168,7 +4168,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>
@@ -4182,7 +4182,7 @@ export default function EnterpriseSolutions() {
                         <h5 className="card-title fw-bold">
                           Ideation and finalization of KMU Model
                         </h5>
-                        <Link href="#" className="animated-svg-link hr-link">
+                        {/* <Link href="#" className="animated-svg-link hr-link">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">
@@ -4284,7 +4284,7 @@ export default function EnterpriseSolutions() {
                               </svg>
                             </span>
                           </span>
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   </div>

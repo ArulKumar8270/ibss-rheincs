@@ -12,6 +12,8 @@ interface Career {
   type: 'full-time' | 'part-time' | 'contract' | 'internship'
   description: string
   requirements: string
+  responsibilities?: string[] | string | null
+  qualifications?: string[] | string | null
   salary_range: string | null
   application_deadline: string | null
   published: boolean
@@ -32,6 +34,8 @@ export default function AdminCareersPage() {
     type: 'full-time' as 'full-time' | 'part-time' | 'contract' | 'internship',
     description: '',
     requirements: '',
+    responsibilities: '',
+    qualifications: '',
     salary_range: '',
     application_deadline: '',
     published: false
@@ -62,10 +66,29 @@ export default function AdminCareersPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
+      // Convert responsibilities and qualifications from text (line-separated) to JSON arrays
+      const responsibilitiesArray = formData.responsibilities
+        .split('\n')
+        .map(line => line.trim())
+        .filter(line => line.length > 0)
+      
+      const qualificationsArray = formData.qualifications
+        .split('\n')
+        .map(line => line.trim())
+        .filter(line => line.length > 0)
+
       const submitData = {
-        ...formData,
+        title: formData.title,
+        department: formData.department,
+        location: formData.location,
+        type: formData.type,
+        description: formData.description,
+        requirements: formData.requirements,
+        responsibilities: responsibilitiesArray.length > 0 ? JSON.stringify(responsibilitiesArray) : null,
+        qualifications: qualificationsArray.length > 0 ? JSON.stringify(qualificationsArray) : null,
         salary_range: formData.salary_range || null,
-        application_deadline: formData.application_deadline || null
+        application_deadline: formData.application_deadline || null,
+        published: formData.published
       }
       if (editingCareer) {
         const { error } = await supabase
@@ -88,6 +111,8 @@ export default function AdminCareersPage() {
         type: 'full-time',
         description: '',
         requirements: '',
+        responsibilities: '',
+        qualifications: '',
         salary_range: '',
         application_deadline: '',
         published: false
@@ -114,6 +139,37 @@ export default function AdminCareersPage() {
 
   const handleEdit = (career: Career) => {
     setEditingCareer(career)
+    
+    // Parse responsibilities and qualifications if they're JSON strings
+    let responsibilitiesText = ''
+    let qualificationsText = ''
+    
+    if (career.responsibilities) {
+      if (typeof career.responsibilities === 'string') {
+        try {
+          const parsed = JSON.parse(career.responsibilities)
+          responsibilitiesText = Array.isArray(parsed) ? parsed.join('\n') : career.responsibilities
+        } catch {
+          responsibilitiesText = career.responsibilities
+        }
+      } else if (Array.isArray(career.responsibilities)) {
+        responsibilitiesText = career.responsibilities.join('\n')
+      }
+    }
+    
+    if (career.qualifications) {
+      if (typeof career.qualifications === 'string') {
+        try {
+          const parsed = JSON.parse(career.qualifications)
+          qualificationsText = Array.isArray(parsed) ? parsed.join('\n') : career.qualifications
+        } catch {
+          qualificationsText = career.qualifications
+        }
+      } else if (Array.isArray(career.qualifications)) {
+        qualificationsText = career.qualifications.join('\n')
+      }
+    }
+    
     setFormData({
       title: career.title,
       department: career.department,
@@ -121,6 +177,8 @@ export default function AdminCareersPage() {
       type: career.type,
       description: career.description,
       requirements: career.requirements,
+      responsibilities: responsibilitiesText,
+      qualifications: qualificationsText,
       salary_range: career.salary_range || '',
       application_deadline: career.application_deadline || '',
       published: career.published
@@ -338,6 +396,8 @@ export default function AdminCareersPage() {
               type: 'full-time',
               description: '',
               requirements: '',
+              responsibilities: '',
+              qualifications: '',
               salary_range: '',
               application_deadline: '',
               published: false
@@ -464,6 +524,38 @@ export default function AdminCareersPage() {
               />
             </div>
             <div style={{ marginBottom: '15px' }}>
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>
+                Responsibilities (One per line) *
+              </label>
+              <textarea
+                value={formData.responsibilities}
+                onChange={(e) => setFormData({ ...formData, responsibilities: e.target.value })}
+                rows={8}
+                placeholder="Enter each responsibility on a new line. Example:&#10;Design, develop and maintain test plans&#10;Lead and execute end-to-end functional testing&#10;Develop and maintain automation scripts"
+                required
+                style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px', fontFamily: 'monospace' }}
+              />
+              <small style={{ color: '#666', fontSize: '12px', marginTop: '5px', display: 'block' }}>
+                Each line will become a bullet point in the Responsibilities tab
+              </small>
+            </div>
+            <div style={{ marginBottom: '15px' }}>
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>
+                Qualifications (One per line) *
+              </label>
+              <textarea
+                value={formData.qualifications}
+                onChange={(e) => setFormData({ ...formData, qualifications: e.target.value })}
+                rows={8}
+                placeholder="Enter each qualification on a new line. Example:&#10;Bachelor's degree in Computer Science&#10;8+ years of experience in software testing&#10;Strong understanding of SDLC, STLC"
+                required
+                style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px', fontFamily: 'monospace' }}
+              />
+              <small style={{ color: '#666', fontSize: '12px', marginTop: '5px', display: 'block' }}>
+                Each line will become a bullet point in the Qualifications tab
+              </small>
+            </div>
+            <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: '600', color: '#333', fontSize: '14px', cursor: 'pointer' }}>
                 <input
                   type="checkbox"
@@ -559,7 +651,7 @@ export default function AdminCareersPage() {
                     </td>
                     <td style={{ padding: '18px 20px' }}>
                       <Link 
-                        href={`/openings#${career.id}`}
+                        href={`/jobs/${career.id}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{ 
