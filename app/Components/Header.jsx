@@ -97,7 +97,7 @@ export default function Header() {
     // Initialize mega menu on mount and route change
     useEffect(() => {
         console.log('🔄 [Header] Initializing mega-menu for pathname:', pathname);
-        
+
         // Ensure first tab is active by default
         const initializeTabs = () => {
             document.querySelectorAll(".mega-menu-content").forEach((menu) => {
@@ -117,7 +117,7 @@ export default function Header() {
                             }
                         }
                     }
-                    
+
                     tabs.forEach((tab) => {
                         // Only add listener if it doesn't have React onClick
                         if (!tab.getAttribute('data-react-handled')) {
@@ -152,10 +152,10 @@ export default function Header() {
             const megaMenus = document.querySelectorAll('.mega-menu');
             megaMenus.forEach(menu => {
                 // Add explicit hover class for better control
-                menu.addEventListener('mouseenter', function() {
+                menu.addEventListener('mouseenter', function () {
                     this.classList.add('is-hovered');
                 });
-                menu.addEventListener('mouseleave', function() {
+                menu.addEventListener('mouseleave', function () {
                     this.classList.remove('is-hovered');
                 });
             });
@@ -180,20 +180,20 @@ export default function Header() {
 
         const handleScroll = () => {
             const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
+
             // Add sticky class when scrolled down past threshold
             if (currentScrollTop > scrollThreshold) {
                 setIsSticky(true);
             } else {
                 setIsSticky(false);
             }
-            
+
             lastScrollTop = currentScrollTop;
         };
 
         // Add scroll event listener
         window.addEventListener('scroll', handleScroll, { passive: true });
-        
+
         // Check initial scroll position
         handleScroll();
 
@@ -211,7 +211,7 @@ export default function Header() {
         { url: '/customer-speak', title: 'Customer Speak', keywords: 'customer testimonials reviews feedback clients' },
         { url: '/success-stories', title: 'Success Stories', keywords: 'case studies success stories achievements results' },
         { url: '/careers', title: 'Careers', keywords: 'careers jobs opportunities employment work' },
-        
+
         // Solutions & Services
         { url: '/CorusHR', title: 'CorusHR', keywords: 'corus hr human resources management' },
         { url: '/MeRLIN-strategic-sourcing-software', title: 'MeRLIN', keywords: 'merlin solution platform' },
@@ -238,7 +238,7 @@ export default function Header() {
         { url: '/fluent-commerce', title: 'Fluent Commerce', keywords: 'fluent commerce order management' },
         { url: '/ms-technology', title: 'MS Technology', keywords: 'microsoft technology solutions' },
         { url: '/digital-services', title: 'Digital Services', keywords: 'digital services technology consulting' },
-        
+
         // Industries
         { url: '/vertical-retail', title: 'Vertical Retail', keywords: 'retail vertical industry solutions' },
         { url: '/industries-retail', title: 'Industries Retail', keywords: 'retail industry solutions' },
@@ -250,7 +250,7 @@ export default function Header() {
         { url: '/private-quity', title: 'Private Equity', keywords: 'private equity investment finance' },
         { url: '/cable-manufacturing', title: 'Cable Manufacturing', keywords: 'cable manufacturing production' },
         { url: '/interior-design', title: 'Interior Design', keywords: 'interior design furniture' },
-        
+
         // Resources
         { url: '/blog', title: 'Blog', keywords: 'blog articles news updates' },
         { url: '/case-study-details', title: 'Case Studies', keywords: 'case studies examples success' },
@@ -259,7 +259,7 @@ export default function Header() {
         { url: '/corporate-videos', title: 'Corporate Videos', keywords: 'videos corporate media' },
         { url: '/news-events', title: 'News & Events', keywords: 'news events announcements' },
         { url: '/faq', title: 'FAQ', keywords: 'faq questions answers help' },
-        
+
         // Contact
         { url: '/contact', title: 'Contact Us', keywords: 'contact us reach support help' },
     ];
@@ -267,18 +267,18 @@ export default function Header() {
     // Search handler
     const handleSearch = (query) => {
         setSearchQuery(query);
-        
+
         if (!query.trim()) {
             setSearchResults([]);
             return;
         }
 
         const searchTerm = query.toLowerCase();
-        const results = allPages.filter(page => 
-            page.title.toLowerCase().includes(searchTerm) || 
+        const results = allPages.filter(page =>
+            page.title.toLowerCase().includes(searchTerm) ||
             page.keywords.toLowerCase().includes(searchTerm)
         );
-        
+
         setSearchResults(results);
     };
 
@@ -289,7 +289,7 @@ export default function Header() {
             const searchBtn = document.getElementById('searchBtn');
             const searchClose = document.getElementById('searchClose');
             const searchFull = document.getElementById('searchFull');
-            
+
             // Mobile search
             const mobileSearchBtn = document.getElementById('mobileSearchBtn');
             const mobileSearchClose = document.getElementById('mobileSearchClose');
@@ -636,7 +636,7 @@ export default function Header() {
                                                                                                 <span>Blog</span>
                                                                                             </h3>
                                                                                             <p>
-How to Build a Future-Ready Digital Strategy
+                                                                                                How to Build a Future-Ready Digital Strategy
                                                                                             </p>
                                                                                             <div className="ser-btn1">
                                                                                                 <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
@@ -847,38 +847,38 @@ How to Build a Future-Ready Digital Strategy
                                                                                     <div className="row">
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body">
-                                                                                            <h3>
-                                                                                                <span>News and events</span>
-                                                                                            </h3>
-                                                                                            <p>
-                                                                                                RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
-                                                                                            </p>
-                                                                                            <div className="ser-btn1">
-                                                                                                <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
-                                                                                                    className="animated-svg-link1 btn-style-3"
-                                                                                                >
-                                                                                                    Read More
-                                                                                                    <NavArrowLeft />
-                                                                                                </Link>
-                                                                                            </div>
+                                                                                                <h3>
+                                                                                                    <span>News and events</span>
+                                                                                                </h3>
+                                                                                                <p>
+                                                                                                    RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
+                                                                                                </p>
+                                                                                                <div className="ser-btn1">
+                                                                                                    <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
+                                                                                                        className="animated-svg-link1 btn-style-3"
+                                                                                                    >
+                                                                                                        Read More
+                                                                                                        <NavArrowLeft />
+                                                                                                    </Link>
+                                                                                                </div>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body secondser">
-                                                                                            <h3>
-                                                                                                <span>Blog</span>
-                                                                                            </h3>
-                                                                                            <p>
-How to Build a Future-Ready Digital Strategy
-                                                                                            </p>
-                                                                                            <div className="ser-btn1">
-                                                                                                <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
-                                                                                                    className="animated-svg-link1 btn-style-3"
-                                                                                                >
-                                                                                                    Read More
-                                                                                                    <NavArrowLeft />
-                                                                                                </Link>
-                                                                                            </div>
+                                                                                                <h3>
+                                                                                                    <span>Blog</span>
+                                                                                                </h3>
+                                                                                                <p>
+                                                                                                    How to Build a Future-Ready Digital Strategy
+                                                                                                </p>
+                                                                                                <div className="ser-btn1">
+                                                                                                    <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                        className="animated-svg-link1 btn-style-3"
+                                                                                                    >
+                                                                                                        Read More
+                                                                                                        <NavArrowLeft />
+                                                                                                    </Link>
+                                                                                                </div>
                                                                                             </div>
                                                                                             {/* Service Item End */}
                                                                                         </div>
@@ -975,38 +975,38 @@ How to Build a Future-Ready Digital Strategy
                                                                                     <div className="row">
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body">
-                                                                                            <h3>
-                                                                                                <span>News and events</span>
-                                                                                            </h3>
-                                                                                            <p>
-                                                                                                RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
-                                                                                            </p>
-                                                                                            <div className="ser-btn1">
-                                                                                                <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
-                                                                                                    className="animated-svg-link1 btn-style-3"
-                                                                                                >
-                                                                                                    Read More
-                                                                                                    <NavArrowLeft />
-                                                                                                </Link>
-                                                                                            </div>
+                                                                                                <h3>
+                                                                                                    <span>News and events</span>
+                                                                                                </h3>
+                                                                                                <p>
+                                                                                                    RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
+                                                                                                </p>
+                                                                                                <div className="ser-btn1">
+                                                                                                    <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
+                                                                                                        className="animated-svg-link1 btn-style-3"
+                                                                                                    >
+                                                                                                        Read More
+                                                                                                        <NavArrowLeft />
+                                                                                                    </Link>
+                                                                                                </div>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body secondser">
-                                                                                            <h3>
-                                                                                                <span>Blog</span>
-                                                                                            </h3>
-                                                                                            <p>
-How to Build a Future-Ready Digital Strategy
-                                                                                            </p>
-                                                                                            <div className="ser-btn1">
-                                                                                                <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
-                                                                                                    className="animated-svg-link1 btn-style-3"
-                                                                                                >
-                                                                                                    Read More
-                                                                                                    <NavArrowLeft />
-                                                                                                </Link>
-                                                                                            </div>
+                                                                                                <h3>
+                                                                                                    <span>Blog</span>
+                                                                                                </h3>
+                                                                                                <p>
+                                                                                                    How to Build a Future-Ready Digital Strategy
+                                                                                                </p>
+                                                                                                <div className="ser-btn1">
+                                                                                                    <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                        className="animated-svg-link1 btn-style-3"
+                                                                                                    >
+                                                                                                        Read More
+                                                                                                        <NavArrowLeft />
+                                                                                                    </Link>
+                                                                                                </div>
                                                                                             </div>
                                                                                             {/* Service Item End */}
                                                                                         </div>
@@ -1117,38 +1117,38 @@ How to Build a Future-Ready Digital Strategy
                                                                                     <div className="row">
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body">
-                                                                                            <h3>
-                                                                                                <span>News and events</span>
-                                                                                            </h3>
-                                                                                            <p>
-                                                                                                RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
-                                                                                            </p>
-                                                                                            <div className="ser-btn1">
-                                                                                                <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
-                                                                                                    className="animated-svg-link1 btn-style-3"
-                                                                                                >
-                                                                                                    Read More
-                                                                                                    <NavArrowLeft />
-                                                                                                </Link>
-                                                                                            </div>
+                                                                                                <h3>
+                                                                                                    <span>News and events</span>
+                                                                                                </h3>
+                                                                                                <p>
+                                                                                                    RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
+                                                                                                </p>
+                                                                                                <div className="ser-btn1">
+                                                                                                    <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
+                                                                                                        className="animated-svg-link1 btn-style-3"
+                                                                                                    >
+                                                                                                        Read More
+                                                                                                        <NavArrowLeft />
+                                                                                                    </Link>
+                                                                                                </div>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body secondser">
-                                                                                            <h3>
-                                                                                                <span>Blog</span>
-                                                                                            </h3>
-                                                                                            <p>
-How to Build a Future-Ready Digital Strategy
-                                                                                            </p>
-                                                                                            <div className="ser-btn1">
-                                                                                                <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
-                                                                                                    className="animated-svg-link1 btn-style-3"
-                                                                                                >
-                                                                                                    Read More
-                                                                                                    <NavArrowLeft />
-                                                                                                </Link>
-                                                                                            </div>
+                                                                                                <h3>
+                                                                                                    <span>Blog</span>
+                                                                                                </h3>
+                                                                                                <p>
+                                                                                                    How to Build a Future-Ready Digital Strategy
+                                                                                                </p>
+                                                                                                <div className="ser-btn1">
+                                                                                                    <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                        className="animated-svg-link1 btn-style-3"
+                                                                                                    >
+                                                                                                        Read More
+                                                                                                        <NavArrowLeft />
+                                                                                                    </Link>
+                                                                                                </div>
                                                                                             </div>
                                                                                             {/* Service Item End */}
                                                                                         </div>
@@ -1360,7 +1360,7 @@ How to Build a Future-Ready Digital Strategy
                                                                                                 <span>Blog</span>
                                                                                             </h3>
                                                                                             <p>
-How to Build a Future-Ready Digital Strategy
+                                                                                                How to Build a Future-Ready Digital Strategy
                                                                                             </p>
                                                                                             <div className="ser-btn1">
                                                                                                 <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
@@ -1565,7 +1565,7 @@ How to Build a Future-Ready Digital Strategy
                                                                                                 <span>Blog</span>
                                                                                             </h3>
                                                                                             <p>
-How to Build a Future-Ready Digital Strategy
+                                                                                                How to Build a Future-Ready Digital Strategy
                                                                                             </p>
                                                                                             <div className="ser-btn1">
                                                                                                 <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
@@ -1672,7 +1672,7 @@ How to Build a Future-Ready Digital Strategy
                                                                             <ul className="search-results-list">
                                                                                 {searchResults.map((result, index) => (
                                                                                     <li key={index}>
-                                                                                        <Link 
+                                                                                        <Link
                                                                                             href={result.url}
                                                                                             onClick={() => {
                                                                                                 setIsSearchOpen(false);
@@ -1853,9 +1853,7 @@ How to Build a Future-Ready Digital Strategy
                                         />
                                     </svg>
                                 </button>
-                                <span className="icon-close" id="mobileSearchClose">
-                                    ✕
-                                </span>
+
                                 <div
                                     className="search-full mobile-search-overlay"
                                     id="mobileSearchFull"
@@ -1885,12 +1883,15 @@ How to Build a Future-Ready Digital Strategy
                                                 />
                                             </svg>
                                         </span>
-                                        <input 
-                                            type="text" 
+                                        <input
+                                            type="text"
                                             placeholder="What are you looking for ?"
                                             value={searchQuery}
                                             onChange={(e) => handleSearch(e.target.value)}
                                         />
+                                        <span className="icon-close" id="mobileSearchClose">
+                                            ✕
+                                        </span>
                                     </div>
                                     {searchQuery && (
                                         <div className="search-results">
@@ -1902,7 +1903,7 @@ How to Build a Future-Ready Digital Strategy
                                                     <ul className="search-results-list">
                                                         {searchResults.map((result, index) => (
                                                             <li key={index}>
-                                                                <Link 
+                                                                <Link
                                                                     href={result.url}
                                                                     onClick={() => {
                                                                         setIsSearchOpen(false);

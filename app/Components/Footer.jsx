@@ -121,11 +121,12 @@ export default function Footer() {
                                                     <li>
                                                         <Link href="/epicor">Epicor</Link>
                                                     </li>
-                                                    <li>
-                                                        <Link href="/microsoft-dynamics-solutions">MS Dynamics</Link>
-                                                    </li>
+
                                                     <li>
                                                         <Link href="/SAP">SAP</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link href="/microsoft-dynamics-solutions">MS Dynamics</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/sugar-CRM">Sugar CRM</Link>

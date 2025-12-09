@@ -31,7 +31,7 @@ export default function EnterpriseSolutions() {
                     goals.
                   </p>
                   <div className="ser-btn mt-5">
-                    <Link href="#" className="animated-svg-link">
+                    <Link href="/contact" className="animated-svg-link">
                       Contact Us
                       <span className="svg-container ">
                         <span className=" right">
@@ -2456,7 +2456,7 @@ export default function EnterpriseSolutions() {
             <div className="row align-items-center">
               <div className="col-lg-12">
                 {/* Testimonial Slider Start */}
-                <div className=" industries2 ">
+                <div className="industries2">
                   <div className="swiper">
                     <div className="swiper-wrapper industries ">
                       {/* Testimonial Slide Start */}
