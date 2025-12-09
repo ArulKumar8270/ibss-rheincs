@@ -145,7 +145,7 @@ export default function Footer() {
                                                         <Link href="/AI-ML">AI/ML </Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/ecommerce">eCommerce</Link>
+                                                        <Link href="/Ecommerce">eCommerce</Link>
                                                     </li>
                                                     <li>
                                                         <span>Digital Services</span>
@@ -166,7 +166,7 @@ export default function Footer() {
                                                         <Link href="/user-exprience">User Experience</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/commercetools">Commercetools</Link>
+                                                        <Link href="/Commercetools">Commercetools</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/fluent-commerce">Fluent Commerce</Link>
@@ -200,19 +200,19 @@ export default function Footer() {
                                             <Link href="/discrete-manufacturing">Discrete Manufacturing </Link>
                                         </li>
                                         <li>
-                                            <Link href="/automotive">Automotive Industry</Link>
+                                            <Link href="/Automotive">Automotive Industry</Link>
                                         </li>
                                         <li>
-                                            <Link href="/epc">Engineering Procurement and Construction </Link>
+                                            <Link href="/Epc">Engineering Procurement and Construction </Link>
                                         </li>
                                         <li>
                                             <Link href="/process-manufacturing">Process Manufacturing </Link>
                                         </li>
                                         <li>
-                                            <Link href="/private-quity">Private Equity &amp; Funding Backed Ventures </Link>
+                                            <Link href="/Private-quity">Private Equity &amp; Funding Backed Ventures </Link>
                                         </li>
                                         <li>
-                                            <Link href="/cable-manufacturing">Cable Manufacturing </Link>
+                                            <Link href="/Cable-manufacturing">Cable Manufacturing </Link>
                                         </li>
                                         <li>
                                             <Link href="/interior-design">Interior Design </Link>
@@ -227,7 +227,7 @@ export default function Footer() {
                                     <h3>Resources</h3>
                                     <ul>
                                         <li>
-                                            <Link href="/blog">Blog </Link>
+                                            <Link href="/Blog">Blog </Link>
                                         </li>
                                         <li>
                                             <Link href="/case-study-details">Case studies</Link>
@@ -292,7 +292,7 @@ export default function Footer() {
                                             <h3>Resources</h3>
                                             <ul>
                                                 <li>
-                                                    <Link href="/blog">Blog </Link>
+                                                    <Link href="/Blog">Blog </Link>
                                                 </li>
                                                 <li>
                                                     <Link href="/case-study-details">Case studies</Link>
@@ -365,7 +365,7 @@ export default function Footer() {
                                                         <Link href="/AI-ML">AI/ML </Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/ecommerce">eCommerce</Link>
+                                                        <Link href="/Ecommerce">eCommerce</Link>
                                                     </li>
                                                     <li>
                                                         <b>Digital Services</b>
@@ -386,7 +386,7 @@ export default function Footer() {
                                                         <Link href="/user-exprience">User Experience</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/commercetools">Commercetools</Link>
+                                                        <Link href="/Commercetools">Commercetools</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/fluent-commerce">Fluent Commerce</Link>
@@ -424,23 +424,23 @@ export default function Footer() {
                                                     <Link href="/discrete-manufacturing">Discrete Manufacturing </Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/automotive">Automotive Industry</Link>
+                                                    <Link href="/Automotive">Automotive Industry</Link>
                                                 </li>
                                             </div>
                                             <div className=" col-6">
                                                 <li>
-                                                    <Link href="/epc">Engineering Procurement and Construction </Link>
+                                                    <Link href="/Epc">Engineering Procurement and Construction </Link>
                                                 </li>
                                                 <li>
                                                     <Link href="/process-manufacturing">Process Manufacturing </Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/private-quity">
+                                                    <Link href="/Private-quity">
                                                         Private Equity &amp; Funding Backed Ventures{" "}
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/cable-manufacturing">Cable Manufacturing </Link>
+                                                    <Link href="/Cable-manufacturing">Cable Manufacturing </Link>
                                                 </li>
                                                 <li>
                                                     <Link href="/interior-design">Interior Design </Link>

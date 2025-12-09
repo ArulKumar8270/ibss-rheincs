@@ -51,12 +51,12 @@ export default function Header() {
         'digital-solutions-services',
         'business-intelligence',
         'AI-ML',
-        'ecommerce',
+        'Ecommerce',
         'Architecture',
         'data-engineering-warehousing',
         'AM-S',
         'user-exprience',
-        'commercetools',
+        'Commercetools',
         'fluent-commerce',
         'ms-technology',
         'digital-services'
@@ -69,10 +69,10 @@ export default function Header() {
         'supply-chain',
         'discrete-manufacturing',
         'automotive',
-        'epc',
+        'Epc',
         'process-manufacturing',
-        'private-quity',
-        'cable-manufacturing',
+        'Private-quity',
+        'Cable-manufacturing',
         'interior-design'
     ];
 
@@ -229,12 +229,12 @@ export default function Header() {
         { url: '/digital-solutions-services', title: 'Digital Solutions Services', keywords: 'digital services technology solutions' },
         { url: '/business-intelligence', title: 'Business Intelligence', keywords: 'business intelligence analytics data bi' },
         { url: '/AI-ML', title: 'AI & ML', keywords: 'artificial intelligence machine learning ai ml' },
-        { url: '/ecommerce', title: 'E-Commerce', keywords: 'ecommerce online store retail digital commerce' },
+        { url: '/Ecommerce', title: 'E-Commerce', keywords: 'ecommerce online store retail digital commerce' },
         { url: '/Architecture', title: 'Architecture', keywords: 'architecture design system' },
         { url: '/data-engineering-warehousing', title: 'Data Engineering & Warehousing', keywords: 'data engineering warehousing etl' },
         { url: '/AM-S', title: 'AMS', keywords: 'application management support ams' },
         { url: '/user-exprience', title: 'User Experience', keywords: 'user experience ux design interface' },
-        { url: '/commercetools', title: 'Commercetools', keywords: 'commercetools commerce platform' },
+        { url: '/Commercetools', title: 'Commercetools', keywords: 'commercetools commerce platform' },
         { url: '/fluent-commerce', title: 'Fluent Commerce', keywords: 'fluent commerce order management' },
         { url: '/ms-technology', title: 'MS Technology', keywords: 'microsoft technology solutions' },
         { url: '/digital-services', title: 'Digital Services', keywords: 'digital services technology consulting' },
@@ -244,16 +244,16 @@ export default function Header() {
         { url: '/industries-retail', title: 'Industries Retail', keywords: 'retail industry solutions' },
         { url: '/supply-chain', title: 'Supply Chain', keywords: 'supply chain logistics management' },
         { url: '/discrete-manufacturing', title: 'Discrete Manufacturing', keywords: 'discrete manufacturing production' },
-        { url: '/automotive', title: 'Automotive', keywords: 'automotive industry vehicles' },
-        { url: '/epc', title: 'EPC', keywords: 'epc engineering procurement construction' },
+        { url: '/Automotive', title: 'Automotive', keywords: 'automotive industry vehicles' },
+        { url: '/Epc', title: 'EPC', keywords: 'epc engineering procurement construction' },
         { url: '/process-manufacturing', title: 'Process Manufacturing', keywords: 'process manufacturing production' },
-        { url: '/private-quity', title: 'Private Equity', keywords: 'private equity investment finance' },
-        { url: '/cable-manufacturing', title: 'Cable Manufacturing', keywords: 'cable manufacturing production' },
+        { url: '/Private-quity', title: 'Private Equity', keywords: 'private equity investment finance' },
+        { url: '/Cable-manufacturing', title: 'Cable Manufacturing', keywords: 'cable manufacturing production' },
         { url: '/interior-design', title: 'Interior Design', keywords: 'interior design furniture' },
 
         // Resources
-        { url: '/blog', title: 'Blog', keywords: 'blog articles news updates' },
-        { url: '/case-study-details', title: 'Case Studies', keywords: 'case studies examples success' },
+        { url: '/Blog', title: 'Blog', keywords: 'blog articles news updates' },
+        { url: '/Case-study', title: 'Case Studies', keywords: 'case studies examples success' },
         { url: '/webinars', title: 'Webinars', keywords: 'webinars online events training' },
         { url: '/collaterals', title: 'Collaterals', keywords: 'collaterals documents resources' },
         { url: '/corporate-videos', title: 'Corporate Videos', keywords: 'videos corporate media' },
@@ -1057,7 +1057,7 @@ export default function Header() {
                                                                                                 <Link href="/AI-ML">
                                                                                                     AI/ML
                                                                                                 </Link>
-                                                                                                <Link href="/ecommerce">
+                                                                                                <Link href="/Ecommerce">
                                                                                                     eCommerce
                                                                                                 </Link>
                                                                                             </div>
@@ -1098,7 +1098,7 @@ export default function Header() {
                                                                                                 <Link href="/user-exprience">
                                                                                                     User Experience
                                                                                                 </Link>
-                                                                                                <Link href="/commercetools">
+                                                                                                <Link href="/Commercetools">
                                                                                                     Commercetools
                                                                                                 </Link>
                                                                                                 <Link href="/fluent-commerce">
@@ -1281,7 +1281,7 @@ export default function Header() {
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
-                                                                                                <Link href="/automotive"
+                                                                                                <Link href="/Automotive"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Automotive Industry
@@ -1292,7 +1292,7 @@ export default function Header() {
                                                                                     <div className="col-sm-6 pdl0">
                                                                                         <ul>
                                                                                             <li className="ser-btn">
-                                                                                                <Link href="/epc"
+                                                                                                <Link href="/Epc"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Engineering Procurement and
@@ -1307,7 +1307,7 @@ export default function Header() {
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
-                                                                                                <Link href="/private-quity"
+                                                                                                <Link href="/Private-quity"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Private Equity &amp; Funding Backed
@@ -1315,7 +1315,7 @@ export default function Header() {
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
-                                                                                                <Link href="/cable-manufacturing"
+                                                                                                <Link href="/Cable-manufacturing"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Cable Manufacturing
@@ -1471,14 +1471,14 @@ export default function Header() {
                                                                                 <h1>Resources</h1>
                                                                                 <ul>
                                                                                     <li className="ser-btn">
-                                                                                        <Link href="/blog"
+                                                                                        <Link href="/Blog"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Blog
                                                                                         </Link>
                                                                                     </li>
                                                                                     <li className="ser-btn">
-                                                                                        <Link href="/case-study-details"
+                                                                                        <Link href="/Case-study"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Case Studies
@@ -2723,7 +2723,7 @@ export default function Header() {
                                                     <Link href="/AI-ML">AI/ML</Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/ecommerce">eCommerce</Link>
+                                                    <Link href="/Ecommerce">eCommerce</Link>
                                                 </li>
                                             </ul>
                                         </li>
@@ -2824,7 +2824,7 @@ export default function Header() {
                                                     <Link href="/user-exprience">User Experience</Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/commercetools">Commercetools</Link>
+                                                    <Link href="/Commercetools">Commercetools</Link>
                                                 </li>
                                                 <li>
                                                     <Link href="/fluent-commerce">Fluent Commerce</Link>
@@ -2980,21 +2980,21 @@ export default function Header() {
                                     <Link href="/discrete-manufacturing">Discrete Manufacturing</Link>
                                 </li>
                                 <li>
-                                    <Link href="/automotive">Automotive Industry</Link>
+                                    <Link href="/Automotive">Automotive Industry</Link>
                                 </li>
                                 <li>
-                                    <Link href="/epc">Engineering Procurement and Construction</Link>
+                                    <Link href="/Epc">Engineering Procurement and Construction</Link>
                                 </li>
                                 <li>
                                     <Link href="/process-manufacturing">Process Manufacturing</Link>
                                 </li>
                                 <li>
-                                    <Link href="/private-quity">
+                                    <Link href="/Private-quity">
                                         Private Equity &amp; Funding Backed Ventures
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/cable-manufacturing">Cable Manufacturing</Link>
+                                    <Link href="/Cable-manufacturing">Cable Manufacturing</Link>
                                 </li>
                                 <li>
                                     <Link href="/interior-design">Interior Design</Link>
@@ -3130,10 +3130,10 @@ export default function Header() {
                             </div>
                             <ul className="submenu">
                                 <li>
-                                    <Link href="/blog">Blog</Link>
+                                    <Link href="/Blog">Blog</Link>
                                 </li>
                                 <li>
-                                    <Link href="/case-study-details">Case Studies</Link>
+                                    <Link href="/Case-study">Case Studies</Link>
                                 </li>
                                 <li>
                                     <Link href="/webinars">Webinars</Link>

@@ -3097,6 +3097,7 @@ h2.section-title {
     width: auto;
     position: absolute;
     right: 0px;
+    object-fit:cover;
 }
 
 
