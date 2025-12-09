@@ -895,7 +895,7 @@ export default function EnterpriseSolutions() {
                 {/* Testimonial Slide End */}
                 {/* Testimonial Slide Start */}
                 <div className="swiper-slide">
-                  <div className="service-item-body in1">
+                  <div className="service-item-body fin1">
                     <h3>
                       <span>Financial Services </span>
                     </h3>
