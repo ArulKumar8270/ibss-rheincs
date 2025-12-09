@@ -21328,3 +21328,7 @@ body:has(.search-full.active) {
 .Awards .swiper-horizontal {
     padding: 0px 0px 50px !important;
 }
+
+.chat-btn-1 img{
+	height:60px
+}
