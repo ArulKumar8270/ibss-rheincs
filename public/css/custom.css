@@ -1355,11 +1355,20 @@ body:has(.offcanvas) {
 	height: 100%;
 	-o-object-fit: cover;
 	object-fit: cover;
+    z-index: -1;
+}
+
+.indexbanner .hero-bg-video video {
+	    width: 70%;
+	height: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
     position: absolute;
     z-index: -1;
     right: 0px;
     top: 0px;
 }
+
 
 .hero.bg-image {
 	position: relative;

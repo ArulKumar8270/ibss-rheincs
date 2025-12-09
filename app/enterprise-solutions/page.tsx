@@ -3126,8 +3126,8 @@ export default function EnterpriseSolutions() {
                     business transformation.
                   </p>
                   <div className="ser-btn2 mt-4">
-                    <Link href="#" className="animated-svg-link1 btn-style-3">
-                      Know More
+                    <Link href="/contact" className="animated-svg-link1 btn-style-3">
+                      Contact Us
                       <span className="svg-container ">
                         <span className=" left">
                           <svg
