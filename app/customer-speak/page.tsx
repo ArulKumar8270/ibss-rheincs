@@ -359,7 +359,7 @@ export default function AlMl() {
                                                                 <div className="testimonial-body">
                                                                     <div className="author-image">
                                                                         <figure className="image-anime">
-                                                                            <img src="/new/cs-3.png" alt="" />
+                                                                            <img src="/images/simon.png" alt="" />
                                                                         </figure>
                                                                     </div>
                                                                     <div className="author-content">
