@@ -25,6 +25,8 @@ export default function AdminNewsEventsPage() {
   const [showForm, setShowForm] = useState(false)
   const [editingItem, setEditingItem] = useState<NewsEvent | null>(null)
   const [searchTerm, setSearchTerm] = useState('')
+  const [uploading, setUploading] = useState(false)
+  const [uploadProgress, setUploadProgress] = useState(0)
   const [formData, setFormData] = useState({
     title: '',
     slug: '',
@@ -96,6 +98,58 @@ export default function AdminNewsEventsPage() {
       fetchItems()
     } catch (err: any) {
       alert('Error: ' + err.message)
+    }
+  }
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+      alert('Please select an image file')
+      return
+    }
+
+    // Validate file size (max 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      alert('Image size should be less than 5MB')
+      return
+    }
+
+    setUploading(true)
+    setUploadProgress(0)
+
+    try {
+      // Create unique filename
+      const fileExt = file.name.split('.').pop()
+      const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`
+      const filePath = `news-event-images/${fileName}`
+
+      // Upload to Supabase Storage
+      const { error: uploadError, data } = await supabase.storage
+        .from('news-event-images')
+        .upload(filePath, file, {
+          cacheControl: '3600',
+          upsert: false
+        })
+
+      if (uploadError) throw uploadError
+
+      // Get public URL
+      const { data: { publicUrl } } = supabase.storage
+        .from('news-event-images')
+        .getPublicUrl(filePath)
+
+      setFormData({ ...formData, featured_image: publicUrl })
+      setUploadProgress(100)
+      alert('Image uploaded successfully!')
+    } catch (error: any) {
+      console.error('Upload error:', error)
+      alert('Error uploading image: ' + error.message)
+    } finally {
+      setUploading(false)
+      setUploadProgress(0)
     }
   }
 
@@ -446,13 +500,67 @@ export default function AdminNewsEventsPage() {
               />
             </div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Featured Image URL</label>
-              <input
-                type="url"
-                value={formData.featured_image}
-                onChange={(e) => setFormData({ ...formData, featured_image: e.target.value })}
-                style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
-              />
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>
+                Featured Image
+              </label>
+              <div style={{ marginBottom: '10px' }}>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  disabled={uploading}
+                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
+                />
+                {uploading && (
+                  <div style={{ marginTop: '10px' }}>
+                    <div style={{
+                      width: '100%',
+                      background: '#f0f0f0',
+                      borderRadius: '4px',
+                      height: '20px',
+                      position: 'relative',
+                      overflow: 'hidden'
+                    }}>
+                      <div style={{
+                        width: `${uploadProgress}%`,
+                        background: '#667eea',
+                        height: '100%',
+                        transition: 'width 0.3s'
+                      }}></div>
+                    </div>
+                    <p style={{ fontSize: '12px', color: '#666', marginTop: '5px' }}>
+                      Uploading... {uploadProgress}%
+                    </p>
+                  </div>
+                )}
+              </div>
+              <div style={{ marginTop: '10px', marginBottom: '10px' }}>
+                <input
+                  type="url"
+                  value={formData.featured_image}
+                  onChange={(e) => setFormData({ ...formData, featured_image: e.target.value })}
+                  placeholder="Or enter image URL: https://example.com/image.jpg"
+                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
+                />
+              </div>
+              {formData.featured_image && (
+                <div style={{ marginTop: '10px' }}>
+                  <img
+                    src={formData.featured_image}
+                    alt="Preview"
+                    style={{
+                      maxWidth: '100%',
+                      maxHeight: '200px',
+                      borderRadius: '6px',
+                      border: '1px solid #ddd',
+                      objectFit: 'contain'
+                    }}
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none'
+                    }}
+                  />
+                </div>
+              )}
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: '600', color: '#333', fontSize: '14px', cursor: 'pointer' }}>
