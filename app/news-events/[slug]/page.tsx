@@ -21,8 +21,10 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
   if (!supabaseUrl || !supabaseAnonKey) {
-    console.warn('Supabase environment variables not set, returning empty params')
-    return []
+    console.warn('Supabase environment variables not set')
+    // Return a placeholder to satisfy static export requirement
+    // This will be handled gracefully by the page component
+    return [{ slug: 'placeholder' }]
   }
 
   try {
@@ -35,15 +37,20 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
 
     if (error) {
       console.error('Error fetching news/events for static params:', error)
-      return []
+      // Return a placeholder to satisfy static export requirement
+      return [{ slug: 'placeholder' }]
     }
 
-    return (items || []).map((item) => ({
+    const params = (items || []).map((item) => ({
       slug: item.slug,
     }))
+
+    // Ensure we always return at least one param for static export
+    return params.length > 0 ? params : [{ slug: 'placeholder' }]
   } catch (error) {
     console.error('Error in generateStaticParams:', error)
-    return []
+    // Return a placeholder to satisfy static export requirement
+    return [{ slug: 'placeholder' }]
   }
 }
 
