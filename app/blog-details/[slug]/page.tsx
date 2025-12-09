@@ -15,8 +15,7 @@ interface Blog {
   updated_at: string;
 }
 
-// Generate static params for all published blogs
-export async function generateStaticParams() {
+export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
@@ -28,7 +27,6 @@ export async function generateStaticParams() {
   try {
     const supabase = createClient(supabaseUrl, supabaseAnonKey)
     
-    // Fetch all published blog slugs
     const { data: blogs, error } = await supabase
       .from('blogs')
       .select('slug')
@@ -39,7 +37,6 @@ export async function generateStaticParams() {
       return []
     }
 
-    // Return array of params objects
     return (blogs || []).map((blog) => ({
       slug: blog.slug,
     }))
@@ -49,7 +46,6 @@ export async function generateStaticParams() {
   }
 }
 
-// Server component that fetches data and passes to client component
 export default async function BlogDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -62,7 +58,6 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
     try {
       const supabase = createClient(supabaseUrl, supabaseAnonKey)
       
-      // Fetch the current blog
       const { data: blogData, error: blogError } = await supabase
         .from('blogs')
         .select('*')
@@ -73,7 +68,6 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
       if (!blogError && blogData) {
         blog = blogData as Blog
 
-        // Fetch related blogs (same category, excluding current blog)
         const { data: relatedData } = await supabase
           .from('blogs')
           .select('*')

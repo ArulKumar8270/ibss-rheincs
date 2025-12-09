@@ -2,7 +2,7 @@ import { createClient } from '@supabase/supabase-js'
 import JobDetailClient from './JobDetailClient'
 
 // Generate static params for all published jobs
-export async function generateStaticParams() {
+export const generateStaticParams = async (): Promise<{ id: string }[]> => {
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
     const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
