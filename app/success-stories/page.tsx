@@ -6,23 +6,12 @@ function SuccessStories() {
     return (
         <CommomLayout>
             <>
-                {/* Header Start */}
-                {/*?php include "navbar.php" ?*/}
-                {/* Header End */}
-                {/*<link rel="stylesheet" href="style3.css">*/}
-                {/* Hero Section Start*/}
-                <div className="hero89 success-main1 webhero systemview pdb0">
-                    {/* <div class="parent2 retailparent2">
-  <video src="/videos/equity.mp4" autoplay muted loop playsinline class="bg-image1"></video>
-    </div> */}
-                    <div className="baner-img1 ssbimg webinarimg1">
-                        <img src="/images/successstories.png" alt="" />
-                    </div>
-                    <div className="container">
+                <div className="main-baner-hight retail-baner ">
+                    <div className="container bg-video-waber-content ">
                         <div className="row section-row1 align-items-center builtsec">
-                            <div className="col-sm-5">
-                                <div className="section-title">
-                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                            <div className="col-lg-5 col-11">
+                                <div className="pe-main-hadding-waber">
+                                    <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
                                         Real Results, <br /> Real Transformation
                                     </h2>
                                     <p>
@@ -31,10 +20,117 @@ function SuccessStories() {
                                         growth. Each story is a testament to our commitment to delivering
                                         powerful, technology-driven outcomes.
                                     </p>
+                                    <div className="ser-btn m-0">
+                                        <Link href="/contact" className="animated-svg-link">
+                                            Contact Us
+                                            <span className="svg-container ">
+                                                <span className=" right">
+                                                    <svg
+                                                        width={24}
+                                                        height={23}
+                                                        viewBox="0 0 24 23"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="4.79995"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="12.7992"
+                                                            cy="1.6"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="22.4008"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="1.6"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="6.40078"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="11.1996"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="11.2"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="19.1996"
+                                                            cy="14.4"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="16.0004"
+                                                            cy="17.6"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="12.7992"
+                                                            cy="20.8"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                        <circle
+                                                            className="dot"
+                                                            opacity="0.5"
+                                                            cx="19.1996"
+                                                            cy="8.00002"
+                                                            r="1.6"
+                                                            fill="#535353"
+                                                        />
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="col-sm-7"></div>
                         </div>
+                    </div>
+                    <div className="">
+                        <video src="/new/realresult.mp4" autoPlay={true} muted={true} loop={true} playsInline={true} />
                     </div>
                 </div>
                 {/* Hero Section End*/}
@@ -947,7 +1043,7 @@ function SuccessStories() {
                     <p className="lines" />
                 </div>
                 <TestimonialandAward />
-               
+
                 <Awards />
                 {/* Footer Start */}
                 <footer className="main-footer pd0">
