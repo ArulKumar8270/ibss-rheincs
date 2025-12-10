@@ -116,7 +116,7 @@ export default function Footer() {
                                                         <Link href="/MeRLIN-strategic-sourcing-software">MeRLIN – Strategic Sourcing Software</Link>
                                                     </li>
                                                     <li>
-                                                        <span>Enterprise Solutions &amp; Services</span>
+                                                        <Link href="/enterprise-solutions">Enterprise Solutions &amp; Services</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/epicor">Epicor</Link>
@@ -129,7 +129,7 @@ export default function Footer() {
                                                         <Link href="/ms-dynamics">MS Dynamics</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/sugar-CRM">Sugar CRM</Link>
+                                                        <Link href="/sugar-crm">Sugar CRM</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/ERP-customer-excellence">ERP Customer Excellence</Link>
@@ -139,7 +139,7 @@ export default function Footer() {
                                             <div className="col-sm-6">
                                                 <ul>
                                                     <li>
-                                                        <span>Digital Solutions</span>
+                                                        <Link href="/digital-solutions">Digital Solutions</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/AI-ML">AI/ML </Link>
@@ -148,7 +148,9 @@ export default function Footer() {
                                                         <Link href="/Ecommerce">eCommerce</Link>
                                                     </li>
                                                     <li>
-                                                        <span>Digital Services</span>
+                                                        <Link href="/digital-services">
+                                                            Digital Services
+                                                        </Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/Architecture">Architecture &amp; App Modernisation</Link>
@@ -229,9 +231,9 @@ export default function Footer() {
                                         <li>
                                             <Link href="/Blog">Blog </Link>
                                         </li>
-                                        <li>
+                                        {/* <li>
                                             <Link href="/case-study-details">Case studies</Link>
-                                        </li>
+                                        </li> */}
                                         <li>
                                             <Link href="/webinars">Webinars</Link>
                                         </li>
@@ -294,9 +296,9 @@ export default function Footer() {
                                                 <li>
                                                     <Link href="/Blog">Blog </Link>
                                                 </li>
-                                                <li>
+                                                {/* <li>
                                                     <Link href="/case-study-details">Case studies</Link>
-                                                </li>
+                                                </li> */}
                                                 <li>
                                                     <Link href="/webinars">Webinars</Link>
                                                 </li>
@@ -328,7 +330,7 @@ export default function Footer() {
                                             <div className="col-sm-6 col-6">
                                                 <ul>
                                                     <li>
-                                                        <b>Our Solutions</b>
+                                                        <Link href="/our-solution">Our Solutions</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/CorusHR">CorusHR </Link>
@@ -337,7 +339,7 @@ export default function Footer() {
                                                         <Link href="/MeRLIN-strategic-sourcing-software">MeRLIN – Strategic Sourcing Software</Link>
                                                     </li>
                                                     <li>
-                                                        <b>Enterprise Solutions &amp; Services</b>
+                                                        <Link href="/enterprise-solutions">Enterprise Solutions &amp; Services</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/epicor">Epicor</Link>
@@ -349,7 +351,7 @@ export default function Footer() {
                                                         <Link href="/sap">SAP</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/sugar-CRM">Sugar CRM</Link>
+                                                        <Link href="/sugar-crm">Sugar CRM</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/ERP-customer-excellence">ERP Customer Excellence</Link>
@@ -359,7 +361,7 @@ export default function Footer() {
                                             <div className="col-sm-6 col-6">
                                                 <ul>
                                                     <li>
-                                                        <b>Digital Solutions</b>
+                                                        <Link href="/digital-solutions">Digital Solutions</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/AI-ML">AI/ML </Link>
@@ -368,7 +370,7 @@ export default function Footer() {
                                                         <Link href="/Ecommerce">eCommerce</Link>
                                                     </li>
                                                     <li>
-                                                        <b>Digital Services</b>
+                                                        <Link href="/digital-services">Digital Services</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/Architecture">Architecture &amp; App Modernisation</Link>
@@ -466,20 +468,20 @@ export default function Footer() {
                                     <div className="places rights text-right">
                                         <ul>
                                             <li>
-                                                <Link href="">Sitemap</Link>
+                                                <Link href="/sitemap">Sitemap</Link>
                                             </li>
                                             <li>|</li>
                                             <li>
-                                                <Link href="">Impressum</Link>
+                                                <Link href="/impressum">Impressum</Link>
                                             </li>
                                             <li>|</li>
                                             <li>
-                                                <Link href="">Privacy</Link>
+                                                <Link href="/privacy">Privacy</Link>
                                             </li>
                                             <li>|</li>
                                             <li>
                                                 {" "}
-                                                <Link href="">Terms</Link>
+                                                <Link href="/terms">Terms</Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -492,20 +494,20 @@ export default function Footer() {
                                     <div className="places rights text-right">
                                         <ul>
                                             <li>
-                                                <Link href="">Sitemap</Link>
+                                                <Link href="/sitemap">Sitemap</Link>
                                             </li>
                                             <li>|</li>
                                             <li>
-                                                <Link href="">Impressum</Link>
+                                                <Link href="/impressum">Impressum</Link>
                                             </li>
                                             <li>|</li>
                                             <li>
-                                                <Link href="">Privacy</Link>
+                                                <Link href="/privacy">Privacy</Link>
                                             </li>
                                             <li>|</li>
                                             <li>
                                                 {" "}
-                                                <Link href="">Terms</Link>
+                                                <Link href="/terms">Terms</Link>
                                             </li>
                                         </ul>
                                     </div>

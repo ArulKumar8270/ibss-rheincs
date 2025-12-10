@@ -1477,13 +1477,13 @@ export default function Header() {
                                                                                             Blog
                                                                                         </Link>
                                                                                     </li>
-                                                                                    <li className="ser-btn">
+                                                                                    {/* <li className="ser-btn">
                                                                                         <Link href="/Case-study"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Case Studies
                                                                                         </Link>
-                                                                                    </li>
+                                                                                    </li> */}
                                                                                     <li className="ser-btn">
                                                                                         <Link href="/webinars"
                                                                                             className="animated-svg-link"
@@ -3132,9 +3132,9 @@ export default function Header() {
                                 <li>
                                     <Link href="/Blog">Blog</Link>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <Link href="/Case-study">Case Studies</Link>
-                                </li>
+                                </li> */}
                                 <li>
                                     <Link href="/webinars">Webinars</Link>
                                 </li>

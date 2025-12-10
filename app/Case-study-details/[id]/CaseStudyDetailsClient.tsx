@@ -68,7 +68,7 @@ export default function CaseStudyDetailsClient({
   const router = useRouter();
   const [caseStudy, setCaseStudy] = useState<CaseStudy | null>(initialCaseStudy);
   const [relatedCaseStudies, setRelatedCaseStudies] = useState<CaseStudy[]>(initialRelatedCaseStudies);
-  const [loading, setLoading] = useState(!initialCaseStudy);
+  const [loading, setLoading] = useState(!initialCaseStudy && !caseStudy);
   const supabase = createClient();
 
   useEffect(() => {
@@ -78,57 +78,69 @@ export default function CaseStudyDetailsClient({
     }
 
     // Always fetch fresh data on client side to get latest updates
+    // This ensures updated content appears immediately without needing a rebuild
     if (caseStudyId && caseStudyId !== 'placeholder') {
       fetchCaseStudy();
     }
-  }, [caseStudyId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [caseStudyId]) // Only depend on caseStudyId, not initialCaseStudy
 
   const fetchCaseStudy = async () => {
     try {
-      setLoading(true);
+      // Only show loading spinner if we don't have any case study data yet
+      // This prevents flash of loading when we have initialCaseStudy
+      const shouldShowLoading = !caseStudy && !initialCaseStudy
+      if (shouldShowLoading) {
+        setLoading(true)
+      }
       
-      // Fetch by ID - IDs are unique and don't have encoding issues
       const { data: caseStudyData, error: caseStudyError } = await supabase
         .from('case_studies')
         .select('*')
         .eq('id', caseStudyId)
         .eq('published', true)
-        .single();
+        .single()
 
-      if (caseStudyError) throw caseStudyError;
-      
-      if (!caseStudyData) {
-        if (!initialCaseStudy) {
-          router.push('/Case-study');
-          return;
-        }
-        setLoading(false);
-        return;
+      if (caseStudyError) {
+        console.error('Supabase error:', caseStudyError)
+        throw caseStudyError
       }
+      
+      if (caseStudyData) {
+        // Update with fresh data
+        setCaseStudy(caseStudyData)
 
-      // Update with fresh data
-      setCaseStudy(caseStudyData);
+        // Fetch related case studies
+        const { data: relatedData } = await supabase
+          .from('case_studies')
+          .select('*')
+          .eq('published', true)
+          .neq('id', caseStudyData.id)
+          .eq('category', caseStudyData.category || 'all')
+          .order('created_at', { ascending: false })
+          .limit(4)
 
-      // Fetch related case studies
-      const { data: relatedData } = await supabase
-        .from('case_studies')
-        .select('*')
-        .eq('published', true)
-        .neq('id', caseStudyData.id)
-        .eq('category', caseStudyData.category || 'all')
-        .order('created_at', { ascending: false })
-        .limit(4);
-
-      setRelatedCaseStudies(relatedData || []);
-    } catch (err) {
-      console.error('Error fetching case study:', err);
-      if (!initialCaseStudy) {
-        router.push('/Case-study');
+        setRelatedCaseStudies(relatedData || [])
+      } else {
+        // If no data found and we have no case study data at all, redirect
+        if (!initialCaseStudy && !caseStudy) {
+          console.warn('Case study not found, redirecting to case studies list')
+          router.push('/Case-study')
+          return
+        }
+        // Otherwise keep existing case study data (initialCaseStudy or current caseStudy state)
+        console.log('No data found but keeping existing case study data')
+      }
+    } catch (err: any) {
+      console.error('Error fetching case study:', err)
+      // If fetch fails but we have case study data (initial or current), keep showing it
+      if (!initialCaseStudy && !caseStudy) {
+        router.push('/Case-study')
       }
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -139,8 +151,9 @@ export default function CaseStudyDetailsClient({
     });
   };
 
-  // Only show loading if we don't have initial case study data
-  if (loading && !caseStudy) {
+  // Only show loading if we don't have any case study data
+  // This prevents flash of loading state when we have cached data
+  if (loading && !caseStudy && !initialCaseStudy) {
     return (
       <CommomLayout>
         <div style={{

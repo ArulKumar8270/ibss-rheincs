@@ -26,89 +26,90 @@ interface CaseStudy {
   industries: string[] | null;
 }
 
+// Generate static params for all published case studies
 export const generateStaticParams = async (): Promise<{ id: string }[]> => {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-  if (!supabaseUrl || !supabaseAnonKey) {
-    console.warn('Supabase environment variables not set')
-    return [{ id: 'placeholder' }]
-  }
-
-  try {
-    const supabase = createClient(supabaseUrl, supabaseAnonKey)
-    
-    const { data: caseStudies, error } = await supabase
-      .from('case_studies')
-      .select('id')
-      .eq('published', true)
-
-    if (error) {
-      console.error('Error fetching case studies for static params:', error)
-      return [{ id: 'placeholder' }]
+    if (!supabaseUrl || !supabaseAnonKey) {
+        console.warn('Supabase environment variables not set')
+        // Return a placeholder to satisfy static export requirement
+        return [{ id: 'placeholder' }]
     }
 
-    if (!caseStudies || caseStudies.length === 0) {
-      console.warn('No published case studies found, returning placeholder')
-      return [{ id: 'placeholder' }]
+    try {
+        const supabase = createClient(supabaseUrl, supabaseAnonKey)
+        
+        // Fetch all published case study IDs
+        const { data: caseStudies, error } = await supabase
+            .from('case_studies')
+            .select('id')
+            .eq('published', true)
+
+        if (error) {
+            console.error('Error fetching case studies for static params:', error)
+            // Return a placeholder to satisfy static export requirement
+            return [{ id: 'placeholder' }]
+        }
+
+        const params = (caseStudies || []).map((cs) => ({
+            id: cs.id,
+        }))
+
+        // Ensure we always return at least one param for static export
+        return params.length > 0 ? params : [{ id: 'placeholder' }]
+    } catch (error) {
+        console.error('Error in generateStaticParams:', error)
+        // Return a placeholder to satisfy static export requirement
+        return [{ id: 'placeholder' }]
     }
-
-    const params = (caseStudies || []).map((cs) => ({
-      id: cs.id,
-    }))
-
-    return params.length > 0 ? params : [{ id: 'placeholder' }]
-  } catch (error) {
-    console.error('Error in generateStaticParams:', error)
-    return [{ id: 'placeholder' }]
-  }
 }
 
+// Server component that renders the client component
 export default async function CaseStudyDetailsPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    const { id } = await params
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-  let initialCaseStudy: CaseStudy | null = null
-  let relatedCaseStudies: CaseStudy[] = []
+    let initialCaseStudy: CaseStudy | null = null
+    let relatedCaseStudies: CaseStudy[] = []
 
-  if (supabaseUrl && supabaseAnonKey && id !== 'placeholder') {
-    try {
-      const supabase = createClient(supabaseUrl, supabaseAnonKey)
-      
-      // Fetch the case study
-      const { data: caseStudyData, error: caseStudyError } = await supabase
-        .from('case_studies')
-        .select('*')
-        .eq('id', id)
-        .eq('published', true)
-        .single()
+    if (supabaseUrl && supabaseAnonKey && id !== 'placeholder') {
+        try {
+            const supabase = createClient(supabaseUrl, supabaseAnonKey)
+            
+            const { data: caseStudyData, error: caseStudyError } = await supabase
+                .from('case_studies')
+                .select('*')
+                .eq('id', id)
+                .eq('published', true)
+                .single()
 
-      if (!caseStudyError && caseStudyData) {
-        initialCaseStudy = caseStudyData as CaseStudy
+            if (!caseStudyError && caseStudyData) {
+                initialCaseStudy = caseStudyData as CaseStudy
 
-        // Fetch related case studies (same category, excluding current)
-        const { data: relatedData } = await supabase
-          .from('case_studies')
-          .select('*')
-          .eq('published', true)
-          .neq('id', caseStudyData.id)
-          .eq('category', caseStudyData.category || 'all')
-          .order('created_at', { ascending: false })
-          .limit(4)
+                // Fetch related case studies (same category, excluding current)
+                const { data: relatedData } = await supabase
+                    .from('case_studies')
+                    .select('*')
+                    .eq('published', true)
+                    .neq('id', caseStudyData.id)
+                    .eq('category', caseStudyData.category || 'all')
+                    .order('created_at', { ascending: false })
+                    .limit(4)
 
-        relatedCaseStudies = (relatedData || []) as CaseStudy[]
-      }
-    } catch (error) {
-      console.error('Error fetching case study in server component:', error)
+                relatedCaseStudies = (relatedData || []) as CaseStudy[]
+            }
+        } catch (error) {
+            console.error('Error fetching case study in server component:', error)
+        }
     }
-  }
-
-  return (
-    <CaseStudyDetailsClient 
-      initialCaseStudy={initialCaseStudy}
-      initialRelatedCaseStudies={relatedCaseStudies}
-      caseStudyId={id}
-    />
-  )
+    
+    return (
+        <CaseStudyDetailsClient 
+            initialCaseStudy={initialCaseStudy}
+            initialRelatedCaseStudies={relatedCaseStudies}
+            caseStudyId={id}
+        />
+    )
 }
