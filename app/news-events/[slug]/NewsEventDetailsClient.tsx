@@ -23,41 +23,62 @@ interface NewsEvent {
 
 interface NewsEventDetailsClientProps {
   initialItem: NewsEvent | null;
-  slug: string;
+  itemId: string;
 }
 
-export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventDetailsClientProps) {
+export default function NewsEventDetailsClient({ initialItem, itemId }: NewsEventDetailsClientProps) {
   const router = useRouter();
   const [item, setItem] = useState<NewsEvent | null>(initialItem);
   const [loading, setLoading] = useState(!initialItem);
   const supabase = createClient();
 
   useEffect(() => {
-    if (!initialItem && slug) {
+    if (itemId === 'placeholder' && !initialItem) {
+      // Handle placeholder case - redirect to news-events list
+      router.push('/news-events');
+      return;
+    }
+
+    // Always fetch fresh data on client side to get latest updates
+    // This ensures updated content appears immediately without needing a rebuild
+    if (itemId && itemId !== 'placeholder') {
       fetchItem();
     }
-  }, [slug, initialItem]);
+  }, [itemId]);
 
   const fetchItem = async () => {
     try {
-      const { data, error } = await supabase
+      setLoading(true);
+      
+      // Fetch by ID instead of slug - IDs are unique and don't have encoding issues
+      const { data: itemData, error: itemError } = await supabase
         .from('news_events')
         .select('*')
-        .eq('slug', slug)
+        .eq('id', itemId)
         .eq('published', true)
         .single();
 
-      if (error) throw error;
+      if (itemError) throw itemError;
       
-      if (!data) {
-        router.push('/news-events');
+      if (!itemData) {
+        // If no data found and we have initial item, keep showing it
+        if (!initialItem) {
+          router.push('/news-events');
+          return;
+        }
+        // Otherwise keep existing item data
+        setLoading(false);
         return;
       }
 
-      setItem(data);
-    } catch (err: any) {
+      // Update with fresh data
+      setItem(itemData);
+    } catch (err) {
       console.error('Error fetching news/event:', err);
-      router.push('/news-events');
+      // If fetch fails but we have initial item, keep showing it
+      if (!initialItem) {
+        router.push('/news-events');
+      }
     } finally {
       setLoading(false);
     }
@@ -72,16 +93,34 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
     });
   };
 
-  if (loading) {
+  // Only show loading if we don't have initial item data
+  // This prevents flash of loading state when we have cached data
+  if (loading && !item) {
     return (
       <CommomLayout>
         <div style={{ 
+          minHeight: '400px', 
           display: 'flex', 
-          justifyContent: 'center', 
           alignItems: 'center', 
-          minHeight: '400px' 
+          justifyContent: 'center',
+          flexDirection: 'column',
+          gap: '20px'
         }}>
-          <div>Loading...</div>
+          <div style={{
+            width: '60px',
+            height: '60px',
+            border: '4px solid #f3f3f3',
+            borderTop: '4px solid #667eea',
+            borderRadius: '50%',
+            animation: 'spin 1s linear infinite'
+          }}></div>
+          <p style={{ color: '#666', fontSize: '18px' }}>Loading news/event...</p>
+          <style jsx>{`
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+          `}</style>
         </div>
       </CommomLayout>
     );
@@ -91,12 +130,17 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
     return (
       <CommomLayout>
         <div style={{ 
+          minHeight: '400px', 
           display: 'flex', 
-          justifyContent: 'center', 
           alignItems: 'center', 
-          minHeight: '400px' 
+          justifyContent: 'center',
+          flexDirection: 'column',
+          gap: '20px'
         }}>
-          <div>News/Event not found</div>
+          <h2 style={{ color: '#333' }}>News/Event not found</h2>
+          <Link href="/news-events" style={{ color: '#667eea', textDecoration: 'none' }}>
+            ← Back to News & Events
+          </Link>
         </div>
       </CommomLayout>
     );
@@ -104,6 +148,10 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
 
   return (
     <CommomLayout>
+      <>
+        {/* Header Start */}
+        {/*?php include "navbar.php" ?*/}
+        {/* Header End */}
       <div className="collateralssec">
         <div className="container">
           <div className="row section-row1 align-items-center builtsec collat">
@@ -127,9 +175,13 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
                   {item.title}
                 </h2>
                 {item.featured_image && (
-                  <div className="corimg mt-5">
-                    <img src={item.featured_image} alt={item.title} />
-                  </div>
+                  <img 
+                    src={item.featured_image} 
+                    alt={item.title}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = "/new/dd-one.jpg";
+                    }}
+                  />
                 )}
                 {item.event_date && (
                   <p className="mt-3">
@@ -142,8 +194,12 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
                   </p>
                 )}
                 <div 
-                  className="mt-5"
                   dangerouslySetInnerHTML={{ __html: item.content }}
+                  style={{
+                    lineHeight: '1.8',
+                    color: '#333',
+                    fontSize: '16px'
+                  }}
                 />
               </div>
             </div>
@@ -274,6 +330,7 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
           </div>
         </div>
       </footer>
+      </>
     </CommomLayout>
   );
 }

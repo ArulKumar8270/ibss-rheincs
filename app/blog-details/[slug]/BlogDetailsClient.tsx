@@ -34,14 +34,24 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
   const supabase = createClient();
 
   useEffect(() => {
-    if (!initialBlog && slug) {
+    if (slug === 'placeholder' && !initialBlog) {
+      // Handle placeholder case - redirect to blog list
+      router.push('/blog');
+      return;
+    }
+
+    // Always fetch fresh data on client side to get latest updates
+    // This ensures updated content appears immediately without needing a rebuild
+    if (slug && slug !== 'placeholder') {
       fetchBlog();
     }
-  }, [slug, initialBlog]);
+  }, [slug]);
 
   const fetchBlog = async () => {
     try {
-      // Fetch the current blog
+      setLoading(true);
+      
+      // Fetch the current blog with cache-busting to ensure fresh data
       const { data: blogData, error: blogError } = await supabase
         .from('blogs')
         .select('*')
@@ -52,10 +62,17 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
       if (blogError) throw blogError;
       
       if (!blogData) {
-        router.push('/blog');
+        // If no data found and we have initial blog, keep showing it
+        if (!initialBlog) {
+          router.push('/blog');
+          return;
+        }
+        // Otherwise keep existing blog data
+        setLoading(false);
         return;
       }
 
+      // Update with fresh data
       setBlog(blogData);
 
       // Fetch related blogs (same category, excluding current blog)
@@ -71,7 +88,10 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
       setRelatedBlogs(relatedData || []);
     } catch (err) {
       console.error('Error fetching blog:', err);
-      router.push('/blog');
+      // If fetch fails but we have initial blog, keep showing it
+      if (!initialBlog) {
+        router.push('/blog');
+      }
     } finally {
       setLoading(false);
     }
@@ -108,7 +128,9 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
     </svg>
   );
 
-  if (loading) {
+  // Only show loading if we don't have initial blog data
+  // This prevents flash of loading state when we have cached data
+  if (loading && !blog) {
     return (
       <CommomLayout>
         <div style={{ 

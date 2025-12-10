@@ -120,7 +120,7 @@ export default function EnterpriseSolutions() {
                                   supply networks and innovative after sales services.
                                 </p>
                               </div>
-                              <div className="ser-btn leaderbtn  readmore">
+                              <div className="ser-btn leaderbtn readmore">
                                 <span
                                   className="animated-svg-link"
                                   id="toggleReadMore"
@@ -253,7 +253,7 @@ export default function EnterpriseSolutions() {
                                 successful transformation, growth and change in the
                                 US, Europe and Asia.
                               </p>
-                              <div id="more1" className="more-text hidden">
+                              <div id="more" className="more-text hidden">
                                 <p>
                                   {" "}
                                   While at Accenture he led the Automotive and
@@ -415,7 +415,7 @@ export default function EnterpriseSolutions() {
                                 M&amp;A team on several strategic acquisitions in
                                 support of the overall BPO growth strategy.
                               </p>
-                              <div id="more1" className="more-text hidden">
+                              <div id="more" className="more-text hidden">
                                 <p>
                                   {" "}
                                   Prior to his role at Accenture, Carlos was a VP at
@@ -441,7 +441,7 @@ export default function EnterpriseSolutions() {
                               </div>
                               {/* Button */}
                               <div className="ser-btn leaderbtn readmore">
-                                <span className="animated-svg-link">
+                                <span className="animated-svg-link" id="toggleReadMore">
                                   <span className="label">Read More</span>
                                   <span className="svg-container p-0">
                                     {/* Simple Down Arrow SVG */}

@@ -2488,7 +2488,7 @@ export default function EnterpriseSolutions() {
                       {/* Testimonial Slide End */}
                       {/* Testimonial Slide Start */}
                       <div className="swiper-slide">
-                        <div className="service-item-body in4">
+                        <div className="service-item-body fin1">
                           <h3>
                             <span>Financial Services </span>
                           </h3>
@@ -3090,7 +3090,7 @@ export default function EnterpriseSolutions() {
                           deliver integrated, enterprise-grade solutions.
                         </p>
                         <div className="ser-btn1">
-                          <Link href="https://www.rheincs.com/news-events/rheinbrucke-a-microsoft-partner"
+                          <Link href="/rheinbrucke-a-microsoft-partner"
                             className="animated-svg-link1 btn-style-3"
                           >
                             Know More

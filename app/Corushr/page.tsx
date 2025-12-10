@@ -1549,7 +1549,7 @@ export default function Corushr() {
                                                     </span>
                                                 </div>
                                                 <input
-                                                    type="tel"
+                                                    type="number"
                                                     name="phone"
                                                     placeholder="Enter Your Phone Number*"
                                                     value={formData.phone}

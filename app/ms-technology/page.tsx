@@ -1170,7 +1170,7 @@ export default function EnterpriseSolutions() {
             </div>
             <div className="col-lg-4 col-md-4 col-12">
               <div className="service-item-body1 imgpos1">
-                <Link href="/microsoft-dynamics-solutions">
+                <Link href="/ms-dynamics">
                   <h3>Microsoft Dynamics</h3>
                   <img src="/new/adv3.svg" alt="" />
                 </Link>

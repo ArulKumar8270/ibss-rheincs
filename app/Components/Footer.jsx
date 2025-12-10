@@ -110,10 +110,10 @@ export default function Footer() {
                                                         <span>Our Solutions</span>
                                                     </li>
                                                     <li>
-                                                        <Link href="/corushr">CorusHR </Link>
+                                                        <Link href="/CorusHR">CorusHR </Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/MeRLIN">MeRLIN – Strategic Sourcing Software</Link>
+                                                        <Link href="/MeRLIN-strategic-sourcing-software">MeRLIN – Strategic Sourcing Software</Link>
                                                     </li>
                                                     <li>
                                                         <span>Enterprise Solutions &amp; Services</span>
@@ -123,10 +123,10 @@ export default function Footer() {
                                                     </li>
 
                                                     <li>
-                                                        <Link href="/SAP">SAP</Link>
+                                                        <Link href="/sap">SAP</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/microsoft-dynamics-solutions">MS Dynamics</Link>
+                                                        <Link href="/ms-dynamics">MS Dynamics</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/sugar-CRM">Sugar CRM</Link>
@@ -331,10 +331,10 @@ export default function Footer() {
                                                         <b>Our Solutions</b>
                                                     </li>
                                                     <li>
-                                                        <Link href="/corushr">CorusHR </Link>
+                                                        <Link href="/CorusHR">CorusHR </Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/MeRLIN">MeRLIN – Strategic Sourcing Software</Link>
+                                                        <Link href="/MeRLIN-strategic-sourcing-software">MeRLIN – Strategic Sourcing Software</Link>
                                                     </li>
                                                     <li>
                                                         <b>Enterprise Solutions &amp; Services</b>
@@ -343,10 +343,10 @@ export default function Footer() {
                                                         <Link href="/epicor">Epicor</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/microsoft-dynamics-solutions">MS Dynamics</Link>
+                                                        <Link href="/ms-dynamics">MS Dynamics</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/SAP">SAP</Link>
+                                                        <Link href="/sap">SAP</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/sugar-CRM">Sugar CRM</Link>

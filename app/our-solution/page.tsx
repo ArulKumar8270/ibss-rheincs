@@ -82,7 +82,7 @@ export default function EnterpriseSolutions() {
                                                 </li>
                                             </ul>
                                             <div className="ser-btn m-0">
-                                                <Link href="/corushr" className="animated-svg-link p-0">
+                                                <Link href="/CorusHR" className="animated-svg-link p-0">
                                                     Explore More
                                                     <span className="svg-container ">
                                                         <span className=" right">
@@ -221,7 +221,7 @@ export default function EnterpriseSolutions() {
                                                 </li>
                                             </ul>
                                             <div className="ser-btn m-0">
-                                                <Link href="/MeRLIN" className="animated-svg-link p-0">
+                                                <Link href="/MeRLIN-strategic-sourcing-software" className="animated-svg-link p-0">
                                                     Explore More
                                                     <span className="svg-container ">
                                                         <span className=" right">

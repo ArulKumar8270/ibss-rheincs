@@ -651,7 +651,7 @@ export default function AdminCareersPage() {
                     </td>
                     <td style={{ padding: '18px 20px' }}>
                       <Link 
-                        href={`/jobs/${career.id}`}
+                        href={`/openings/${career.id}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{ 

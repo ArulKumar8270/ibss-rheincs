@@ -23,45 +23,45 @@ interface NewsEvent {
 }
 
 export default function EnterpriseSolutions() {
-    const [items, setItems] = useState<NewsEvent[]>([]);
-    const [loading, setLoading] = useState(true);
-    const supabase = createClient();
+  const [items, setItems] = useState<NewsEvent[]>([]);
+  const [loading, setLoading] = useState(true);
+  const supabase = createClient();
 
-    useEffect(() => {
-        fetchItems();
-    }, []);
+  useEffect(() => {
+    fetchItems();
+  }, []);
 
-    const fetchItems = async () => {
-        try {
-            const { data, error } = await supabase
-                .from('news_events')
-                .select('*')
-                .eq('published', true)
-                .order('created_at', { ascending: false });
+  const fetchItems = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('news_events')
+        .select('*')
+        .eq('published', true)
+        .order('created_at', { ascending: false });
 
-            if (error) throw error;
-            setItems(data || []);
-        } catch (err: any) {
-            console.error('Error fetching news/events:', err);
-        } finally {
-            setLoading(false);
-        }
-    };
+      if (error) throw error;
+      setItems(data || []);
+    } catch (err: any) {
+      console.error('Error fetching news/events:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    const formatDate = (dateString: string) => {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long'
-        });
-    };
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long'
+    });
+  };
 
-    const getIcon = (type: string) => {
-        if (type === 'event') {
-            return 'fas fa-calendar-alt';
-        }
-        return 'fas fa-newspaper';
-    };
+  const getIcon = (type: string) => {
+    if (type === 'event') {
+      return 'fas fa-calendar-alt';
+    }
+    return 'fas fa-newspaper';
+  };
   return (
     <CommomLayout>
       <>
@@ -128,7 +128,7 @@ export default function EnterpriseSolutions() {
                       <p>No news or events available at the moment.</p>
                     </div>
                   ) : (
-                    items.map((item) => (
+                    items.map((item, index) => (
                       <div key={item.id} className="timeline-item is-visible">
                         <div className="timeline-marker">
                           <i className={getIcon(item.type)} />
@@ -151,112 +151,114 @@ export default function EnterpriseSolutions() {
                             {item.excerpt && (
                               <p className="mt-3">{item.excerpt}</p>
                             )}
-                            <Link href={`/news-events/${item.slug}`} className="animated-svg-link hr-link">
-                              Read More
-                              <span className="svg-container ">
-                                <span className=" right">
-                                  <svg
-                                    width={24}
-                                    height={23}
-                                    viewBox="0 0 24 23"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="16.0004"
-                                      cy="4.79995"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="12.7992"
-                                      cy="1.6"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="22.4008"
-                                      cy="11.2"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="1.6"
-                                      cy="11.2"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="6.40078"
-                                      cy="11.2"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="11.1996"
-                                      cy="11.2"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="16.0004"
-                                      cy="11.2"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="19.1996"
-                                      cy="14.4"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="16.0004"
-                                      cy="17.6"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="12.7992"
-                                      cy="20.8"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="19.1996"
-                                      cy="8.00002"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                  </svg>
+                            {index < 3 && (
+                              <Link href={`/news-events/${item.id}`} className="animated-svg-link hr-link">
+                                Read More
+                                <span className="svg-container ">
+                                  <span className=" right">
+                                    <svg
+                                      width={24}
+                                      height={23}
+                                      viewBox="0 0 24 23"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <circle
+                                        className="dot"
+                                        opacity="0.5"
+                                        cx="16.0004"
+                                        cy="4.79995"
+                                        r="1.6"
+                                        fill="#535353"
+                                      />
+                                      <circle
+                                        className="dot"
+                                        opacity="0.5"
+                                        cx="12.7992"
+                                        cy="1.6"
+                                        r="1.6"
+                                        fill="#535353"
+                                      />
+                                      <circle
+                                        className="dot"
+                                        opacity="0.5"
+                                        cx="22.4008"
+                                        cy="11.2"
+                                        r="1.6"
+                                        fill="#535353"
+                                      />
+                                      <circle
+                                        className="dot"
+                                        opacity="0.5"
+                                        cx="1.6"
+                                        cy="11.2"
+                                        r="1.6"
+                                        fill="#535353"
+                                      />
+                                      <circle
+                                        className="dot"
+                                        opacity="0.5"
+                                        cx="6.40078"
+                                        cy="11.2"
+                                        r="1.6"
+                                        fill="#535353"
+                                      />
+                                      <circle
+                                        className="dot"
+                                        opacity="0.5"
+                                        cx="11.1996"
+                                        cy="11.2"
+                                        r="1.6"
+                                        fill="#535353"
+                                      />
+                                      <circle
+                                        className="dot"
+                                        opacity="0.5"
+                                        cx="16.0004"
+                                        cy="11.2"
+                                        r="1.6"
+                                        fill="#535353"
+                                      />
+                                      <circle
+                                        className="dot"
+                                        opacity="0.5"
+                                        cx="19.1996"
+                                        cy="14.4"
+                                        r="1.6"
+                                        fill="#535353"
+                                      />
+                                      <circle
+                                        className="dot"
+                                        opacity="0.5"
+                                        cx="16.0004"
+                                        cy="17.6"
+                                        r="1.6"
+                                        fill="#535353"
+                                      />
+                                      <circle
+                                        className="dot"
+                                        opacity="0.5"
+                                        cx="12.7992"
+                                        cy="20.8"
+                                        r="1.6"
+                                        fill="#535353"
+                                      />
+                                      <circle
+                                        className="dot"
+                                        opacity="0.5"
+                                        cx="19.1996"
+                                        cy="8.00002"
+                                        r="1.6"
+                                        fill="#535353"
+                                      />
+                                    </svg>
+                                  </span>
                                 </span>
-                              </span>
-                            </Link>
+                              </Link>
+                            )}
                           </div>
                         </div>
-                  </div>
+                      </div>
                     ))
                   )}
                 </div>{" "}
@@ -269,7 +271,7 @@ export default function EnterpriseSolutions() {
           <p className="lines" />
         </div>
         <TestimonialandAward />
-       
+
         <Awards />
         {/* Footer Start */}
         <footer className="main-footer pd0">

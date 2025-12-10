@@ -680,7 +680,7 @@ const page = () => {
                   <div className="col-sm-3 systemview">
                     <form action="" method="post">
                       <div className="blog-serch">
-                        <input type="text" placeholder="Search blogs" />
+                        <input type="text" placeholder="Search" />
                         <button type="submit">
                           <img src="/new/ser-blog.svg" alt="" />
                         </button>

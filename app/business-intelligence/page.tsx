@@ -1596,7 +1596,7 @@ export default function AlMl() {
                                                                 learning, and Snowflake for scalable data warehousing
                                                                 and seamless data management.
                                                             </p>
-                                                            <p id="more1" className="more-text hidden">
+                                                            <p id="more" className="more-text hidden">
                                                                 Complementing these, Epicor ERP delivers deep
                                                                 operational insights and integrates with BI tools for
                                                                 unified performance monitoring. Its suite includes
