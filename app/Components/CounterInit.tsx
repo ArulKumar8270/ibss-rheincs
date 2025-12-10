@@ -33,24 +33,13 @@ export default function CounterInit() {
         }
 
         // IMPORTANT: Get target value BEFORE modifying textContent
-        // First try data-target attribute, then try textContent, but preserve original
+        // Priority: data-target > data-original-target > textContent
         const dataTarget = htmlElement.getAttribute('data-target');
+        const originalTarget = htmlElement.getAttribute('data-original-target');
         const originalText = htmlElement.textContent || '';
         
-        // Get target value - prefer data-target, fallback to parsing textContent
-        let targetStr = dataTarget || originalText || '0';
-        
-        // If we're using textContent and it might have been modified, try to get from data attribute
-        if (!dataTarget && originalText === '0') {
-          // Element might have been reset, try to get from a data attribute or parent
-          const parentElement = htmlElement.parentElement;
-          if (parentElement) {
-            const parentDataTarget = parentElement.getAttribute('data-counter-target');
-            if (parentDataTarget) {
-              targetStr = parentDataTarget;
-            }
-          }
-        }
+        // Get target value - prefer data-target, then data-original-target, then textContent
+        let targetStr = dataTarget || originalTarget || originalText || '0';
         
         // Remove all non-numeric characters except digits
         const target = parseInt(targetStr.replace(/[^0-9]/g, ''), 10);
@@ -58,9 +47,11 @@ export default function CounterInit() {
         if (isNaN(target) || target === 0) {
           console.warn('⚠️ [CounterInit] Invalid counter value:', {
             dataTarget,
+            originalTarget,
             originalText,
             targetStr,
-            parsed: target
+            parsed: target,
+            element: htmlElement.outerHTML.substring(0, 100)
           });
           return;
         }
@@ -94,9 +85,17 @@ export default function CounterInit() {
         const duration = 2000; // 2 seconds
         const startTime = Date.now();
         
-        // Start from 0 - but only if we haven't already started
-        if (htmlElement.textContent !== '0') {
+        // Start from 0 - preserve suffix if it exists
+        // Only reset if current text is not already "0" or doesn't match target
+        const currentText = htmlElement.textContent || '';
+        const currentNum = parseInt(currentText.replace(/[^0-9]/g, ''), 10);
+        if (currentNum !== 0 && currentNum !== target) {
           htmlElement.textContent = '0';
+        } else if (currentNum === target && !htmlElement.hasAttribute('data-counted')) {
+          // If already at target but not marked as counted, just mark it
+          htmlElement.setAttribute('data-counted', 'true');
+          htmlElement.removeAttribute('data-animating');
+          return;
         }
 
         const animate = () => {
@@ -200,9 +199,9 @@ export default function CounterInit() {
           counters.forEach((counter) => {
             const htmlCounter = counter;
             if (!htmlCounter.hasAttribute('data-counted') && !htmlCounter.hasAttribute('data-animating')) {
-              // Check if element is visible (simple check)
+              // Check if element is visible (simple check with larger margin)
               const rect = htmlCounter.getBoundingClientRect();
-              const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+              const isVisible = rect.top < window.innerHeight + 200 && rect.bottom > -200;
               if (isVisible) {
                 console.log('🔢 [CounterInit] Counter is visible, triggering animation as fallback');
                 animateCounter(counter);
@@ -210,6 +209,17 @@ export default function CounterInit() {
             }
           });
         }, 1000);
+        
+        // Second fallback after longer delay - animate all remaining counters
+        setTimeout(() => {
+          counters.forEach((counter) => {
+            const htmlCounter = counter;
+            if (!htmlCounter.hasAttribute('data-counted') && !htmlCounter.hasAttribute('data-animating')) {
+              console.log('🔢 [CounterInit] Triggering animation as final fallback for remaining counters');
+              animateCounter(counter);
+            }
+          });
+        }, 2500);
       } else {
         // Fallback: animate immediately if no Intersection Observer support
         console.log('🔢 [CounterInit] No Intersection Observer, animating immediately');
