@@ -603,7 +603,7 @@ export default function Header() {
                                                                                                 RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
+                                                                                                <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -621,7 +621,7 @@ export default function Header() {
                                                                                                 Grand Opening of India Development Centre (IDC) in RheinBrücke
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://www.rheincs.com/news-events/grand-opening-of-india-development-centre-in-rheinBr%C3%BCcke"
+                                                                                                <Link href="/news-events/0aa57254-d987-4474-a229-0bd66716acb6"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -639,7 +639,7 @@ export default function Header() {
                                                                                                 How to Build a Future-Ready Digital Strategy
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -854,7 +854,7 @@ export default function Header() {
                                                                                                     RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                    <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
+                                                                                                    <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         Read More
@@ -872,7 +872,7 @@ export default function Header() {
                                                                                                     How to Build a Future-Ready Digital Strategy
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                    <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                    <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         Read More
@@ -982,7 +982,7 @@ export default function Header() {
                                                                                                     RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                    <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
+                                                                                                    <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         Read More
@@ -1000,7 +1000,7 @@ export default function Header() {
                                                                                                     How to Build a Future-Ready Digital Strategy
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                    <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                    <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         Read More
@@ -1124,7 +1124,7 @@ export default function Header() {
                                                                                                     RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                    <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
+                                                                                                    <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         Read More
@@ -1142,7 +1142,7 @@ export default function Header() {
                                                                                                     How to Build a Future-Ready Digital Strategy
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                    <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                    <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         Read More
@@ -1345,7 +1345,7 @@ export default function Header() {
                                                                                                 RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
+                                                                                                <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -1363,7 +1363,7 @@ export default function Header() {
                                                                                                 How to Build a Future-Ready Digital Strategy
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -1532,7 +1532,7 @@ export default function Header() {
                                                                                                 RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://www.rheincs.com/news-events/rheinBr%C3%BCcke%E2%80%99s-kinetic-erp-mea-cloud-receives-green-certificate-from-moro-hub-for-sustainable-cloud-adoption"
+                                                                                                <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -1550,7 +1550,7 @@ export default function Header() {
                                                                                                 Grand Opening of India Development Centre (IDC) in RheinBrücke
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://www.rheincs.com/news-events/grand-opening-of-india-development-centre-in-rheinBr%C3%BCcke"
+                                                                                                <Link href="/news-events/0aa57254-d987-4474-a229-0bd66716acb6"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More
@@ -1568,7 +1568,7 @@ export default function Header() {
                                                                                                 How to Build a Future-Ready Digital Strategy
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="https://blog.rheincs.com/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     Read More

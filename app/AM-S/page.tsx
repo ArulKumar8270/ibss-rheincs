@@ -33,7 +33,7 @@ export default function AlMl() {
                                         strategic value and best-in-class services for every enterprise.
                                     </p>
                                     <div className="ser-btn ">
-                                        <Link href="#" className="animated-svg-link">
+                                        <Link href="/contact" className="animated-svg-link">
                                             Schedule a Call
                                             <span className="svg-container ">
                                                 <span className=" right">
