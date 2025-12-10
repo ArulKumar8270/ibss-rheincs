@@ -306,9 +306,9 @@ body {
 	overflow-x: clip;
 }
 
-.container {
-	max-width: 1300px;
-}
+/*.container {*/
+/*	max-width: 1300px;*/
+/*}*/
 
 
 @media (min-width: 992px) {
@@ -13878,6 +13878,11 @@ header.boxshadow {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+.industries .service-item-body.bin5 {
+	background: url(../images/bo.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
 
 .industries .service-item-body::before {
 	position: absolute;
@@ -17735,6 +17740,11 @@ header.boxshadow {
 	background-repeat: no-repeat;
 }
 
+.epicorserve .service-item-body.rin1 {
+	background: url(../images/retail.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
 .epicorserve .testimonial-btn1 {
 	position: absolute;
 	bottom: -10px;
