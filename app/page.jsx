@@ -4035,7 +4035,7 @@ export default function Home() {
                       confidence. These are the projects that truly made a difference.
                     </p>
                     <div className="ser-btn">
-                      <Link href="#" className="animated-svg-link">
+                      <Link href="/success-stories" className="animated-svg-link">
                         Explore More
                         <svg
                           width={24}
@@ -4155,7 +4155,7 @@ export default function Home() {
                             their challenge by implementing Epicor ERP?
                           </p>
                           <div className="ser-btn1">
-                            <Link href="#" className="animated-svg-link1">
+                            <Link href="/case-studies" className="animated-svg-link1">
                               Read More
                               <svg
                                 width={24}
@@ -4267,7 +4267,7 @@ export default function Home() {
                             Specific Functionality
                           </p>
                           <div className="ser-btn1">
-                            <Link href="#" className="animated-svg-link1">
+                            <Link href="/case-studies" className="animated-svg-link1">
                               Read More
                               <svg
                                 width={24}
@@ -4376,7 +4376,7 @@ export default function Home() {
                           </h3>
                           <p>7 Game Changing Benefits of AI and Automation in ERP</p>
                           <div className="ser-btn1">
-                            <Link href="#" className="animated-svg-link1">
+                            <Link href="/blogs" className="animated-svg-link1">
                               Read More
                               <svg
                                 width={24}
@@ -4485,7 +4485,7 @@ export default function Home() {
                           </h3>
                           <p>10 Must-Have Features in a Modern ERP System</p>
                           <div className="ser-btn1">
-                            <Link href="#" className="animated-svg-link1">
+                            <Link href="/blogs" className="animated-svg-link1">
                               Read More
                               <svg
                                 width={24}
