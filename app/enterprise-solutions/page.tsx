@@ -5142,7 +5142,7 @@ export default function EnterpriseSolutions() {
           </div>
         </div>
         {/* Our Testimonial Section End */}
-        <div className="hero brainsec approachmblsec  enter pd30 pdb0">
+        <div className="hero brainsec approachmblsec  enter bulbimg pd30 pdb0">
           <div className="parent2">
             <video
               src="/videos/bulb1.mp4"

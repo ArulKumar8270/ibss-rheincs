@@ -20530,7 +20530,7 @@ body.popup-open .main-header {
 	.retail-help-bg-img {
     position: absolute;
     height: 100%;
-    left: 425px !important;
+    right: 0px !important;
     z-index: -2;
     bottom: 0px;
 }
@@ -21368,4 +21368,13 @@ body:has(.search-full.active) {
 	height:550px;
     width: 100%;
     object-fit: cover;
+}
+.bulbimg .bg-image1 {
+    width: 60%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    opacity: 0.6;
+    position: absolute;
+    right: 0px;
 }

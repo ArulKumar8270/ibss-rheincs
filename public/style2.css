@@ -1292,7 +1292,7 @@
 .job-table th {
     background-color: rgba(73, 154, 154, 1);
     /* text-align: center; */
-    padding: 17px 20px;
+    padding: 17px 10px;
     font-size: 16px;
     font-weight: 400;
     font-family: 'helvetica-neue-lt-pro';
@@ -1313,7 +1313,7 @@
 
 .job-table td {
     background-color: white;
-    padding: 4px 20px;
+    padding: 4px 10px;
     font-family: 'helvetica-neue-lt-pro';
     color: black;
 
@@ -3573,13 +3573,14 @@ h2.section-title {
 
 .family-heart-flex-waber {
     display: flex;
-    gap: 23px;
+    gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .heart-flex-item {
-    width: 300px;
+    /* width: 300px; */
+    flex: 0 0 24%;
 }
 
 .speaks-flex-waber {
@@ -3749,8 +3750,8 @@ h2.section-title {
 
 
     .heart-flex-item {
-        width: 280px;
-
+        /* width: 280px; */
+        flex: 0 0 23%;
     }
 
     .py-100 {
@@ -4131,7 +4132,8 @@ h2.section-title {
 .retail-help-bg-img {
     position: absolute;
     height: 100%;
-    left: 659px;
+    width: 60%;
+    right: 0px !important;
     z-index: -2;
     bottom: 0px;
 }
