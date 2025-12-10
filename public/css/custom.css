@@ -17805,7 +17805,7 @@ body.no-scroll {
 .search-full.active {
 	pointer-events: auto;
 	height: 500px;
-	top: 16%;
+	top: 130px;
 	background: #fffffff0;
 }
 
@@ -21022,7 +21022,7 @@ body.popup-open .main-header {
 } */
 
 .is-sticky .search-full {
-    top: 10%;
+    top: 82px;
 }
 
 .search-box:has(.search-full.active) .icon-close,
