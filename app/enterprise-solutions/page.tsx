@@ -8131,7 +8131,7 @@ export default function EnterpriseSolutions() {
                     <div className="swiper-wrapper">
                       {/* Testimonial Slide Start */}
                       <div className="swiper-slide">
-                        <div className="service-item-body in1">
+                        <div className="service-item-body bin1">
                           <h3>
                             <span>Brand Owners &amp; Vertical Retailers</span>
                           </h3>
