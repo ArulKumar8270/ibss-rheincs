@@ -401,7 +401,7 @@ export default function Header() {
                                     </span>
                                     <Link href="mailto:info@rheincs.com"> info@rheincs.com</Link>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <div className="custom-select top-icon-gap">
                                         <select name="lang" id="lang">
                                             <option value="German">German</option>
@@ -446,7 +446,7 @@ export default function Header() {
                                             </button>
                                         </span>
                                     </div>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
                     </div>

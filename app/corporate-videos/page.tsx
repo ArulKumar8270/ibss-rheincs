@@ -45,7 +45,7 @@ const page = () => {
               <div className="col-lg-4 col-md-6">
                 {/* image gallery start */}
                 <div className="video-gallery-image wow fadeInUp">
-                  <Link href="https://youtu.be/IDrR7hiizhI"
+                  <Link href="https://youtu.be/IDrR7hiizhI" target='_blank'
                     // className="popup-video"
                     data-cursor-text="Play"
                   >
@@ -63,7 +63,7 @@ const page = () => {
                   className="video-gallery-image wow fadeInUp"
                   data-wow-delay="0.2s"
                 >
-                  <Link href="https://youtu.be/MmXOpBXQdZM"
+                  <Link href="https://youtu.be/MmXOpBXQdZM" target='_blank'
                     // className="popup-video"
                     data-cursor-text="Play"
                   >
@@ -81,7 +81,7 @@ const page = () => {
                   className="video-gallery-image wow fadeInUp"
                   data-wow-delay="0.4s"
                 >
-                  <Link href="https://youtu.be/-t5b2gIdhyo"
+                  <Link href="https://youtu.be/-t5b2gIdhyo" target='_blank'
                     // className="popup-video"
                     data-cursor-text="Play"
                   >
@@ -99,7 +99,7 @@ const page = () => {
                   className="video-gallery-image wow fadeInUp"
                   data-wow-delay="0.6s"
                 >
-                  <Link href="https://youtu.be/B-XFRUeSlUs"
+                  <Link href="https://youtu.be/B-XFRUeSlUs" target='_blank'
                     // className="popup-video"
                     data-cursor-text="Play"
                   >
@@ -117,7 +117,7 @@ const page = () => {
                   className="video-gallery-image wow fadeInUp"
                   data-wow-delay="0.8s"
                 >
-                  <Link href="https://youtu.be/yvtX2yqWxVg"
+                  <Link href="https://youtu.be/yvtX2yqWxVg" target='_blank'
                     // className="popup-video"
                     data-cursor-text="Play"
                   >
@@ -132,7 +132,7 @@ const page = () => {
               <div className="col-lg-4 col-md-6">
                 {/* image gallery start */}
                 <div className="video-gallery-image wow fadeInUp" data-wow-delay="1s">
-                  <Link href="https://youtu.be/MmXOpBXQdZM"
+                  <Link href="https://youtu.be/MmXOpBXQdZM" target='_blank'
                     // className="popup-video"
                     data-cursor-text="Play"
                   >
@@ -150,7 +150,7 @@ const page = () => {
                   className="video-gallery-image wow fadeInUp"
                   data-wow-delay="1.2s"
                 >
-                  <Link href="https://youtu.be/C6sDlZCKIA4"
+                  <Link href="https://youtu.be/C6sDlZCKIA4" target='_blank'
                     // className="popup-video"
                     data-cursor-text="Play"
                   >
@@ -168,7 +168,7 @@ const page = () => {
                   className="video-gallery-image wow fadeInUp"
                   data-wow-delay="1.4s"
                 >
-                  <Link href="https://youtu.be/TIIjLQps44U"
+                  <Link href="https://youtu.be/TIIjLQps44U" target='_blank'
                     // className="popup-video"
                     data-cursor-text="Play"
                   >
@@ -186,7 +186,7 @@ const page = () => {
                   className="video-gallery-image wow fadeInUp"
                   data-wow-delay="1.6s"
                 >
-                  <Link href="https://youtu.be/s2jmxT8fP5c"
+                  <Link href="https://youtu.be/s2jmxT8fP5c" target='_blank'
                     // className="popup-video"
                     data-cursor-text="Play"
                   >
@@ -204,7 +204,7 @@ const page = () => {
                   className="video-gallery-image wow fadeInUp"
                   data-wow-delay="1.6s"
                 >
-                  <Link href="https://youtu.be/Y3Kc616jPU0"
+                  <Link href="https://youtu.be/Y3Kc616jPU0" target='_blank'
                     // className="popup-video"
                     data-cursor-text="Play"
                   >
@@ -222,7 +222,7 @@ const page = () => {
                   className="video-gallery-image wow fadeInUp"
                   data-wow-delay="1.6s"
                 >
-                  <Link href="https://youtu.be/G1M5A1CBpYY"
+                  <Link href="https://youtu.be/G1M5A1CBpYY" target='_blank'
                     // className="popup-video"
                     data-cursor-text="Play"
                   >

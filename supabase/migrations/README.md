@@ -52,6 +52,15 @@ supabase db push
 - Sets up auto-updating timestamps
 - Configures permissions
 
+### `20241207000000_create_case_studies_table.sql`
+- Creates the `case_studies` table
+- Includes all case study fields (title, content, client info, sections)
+- Sets up Row Level Security (RLS)
+- Creates indexes for performance (slug, category, published, created_at)
+- Sets up auto-updating timestamps
+- Configures permissions (authenticated users can manage, public can read published)
+- Supports industry array for filtering
+
 ## ✅ Verification
 
 After running the migration, verify:
