@@ -462,18 +462,18 @@ export default function Contact() {
                   data-bs-toggle="popover"
                   data-bs-placement="left"
                   data-bs-content='<div class="too-con-waber">
-              <h4> Netherlands</h4>
-              <p>
-                  Netherlands <br>
-                  RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
-              </p>
-              <div class="contect-call2">
-                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
-              </div>
-              <div class="contect-call2">
-                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
-              </div>
-          </div>'
+                      <h4> Netherlands</h4>
+                      <p>
+                          Netherlands <br>
+                          RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
+                      </p>
+                      <div class="contect-call2">
+                            <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
+                      </div>
+                      <div class="contect-call2">
+                            <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
+                      </div>
+                  </div>'
                 >
                   <img src="/new/map-locat.svg" alt="" />
                 </button>
@@ -486,18 +486,20 @@ export default function Contact() {
                   data-bs-toggle="popover"
                   data-bs-placement="left"
                   data-bs-content='<div class="too-con-waber">
-              <h4> Netherlands</h4>
-              <p>
-                  Netherlands <br>
-                  RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
-              </p>
-              <div class="contect-call2">
-                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
-              </div>
-              <div class="contect-call2">
-                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
-              </div>
-          </div>'
+                      <h4>USA</h4>
+                      <p>
+                          RheinBrücke IT Consulting,<br>
+3815 Chippenham Road,<br>
+Mechanicsburg,<br>
+PA 17050, United States<br>
+                      </p>
+                      <div class="contect-call2">
+                            <img src="/new/contect-call.svg" alt=""> <Link href=""> +1 717 265 3937</Link>
+                      </div>
+                      <div class="contect-call2">
+                            <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com</Link>
+                      </div>
+                  </div>'
                 >
                   <img src="/new/map-locat.svg" alt="" />
                 </button>
@@ -510,16 +512,18 @@ export default function Contact() {
                   data-bs-toggle="popover"
                   data-bs-placement="left"
                   data-bs-content='<div class="too-con-waber">
-              <h4> Netherlands</h4>
+              <h4> Germany</h4>
               <p>
-                  Netherlands <br>
-                  RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
+                  RheinBrücke IT Consulting GmbH <br>
+                  44139 Dortmund,
+Ruhrallee 9,<br>
+Germany<br>
               </p>
               <div class="contect-call2">
                     <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
               </div>
               <div class="contect-call2">
-                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
+                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com</Link>
               </div>
           </div>'
                 >
@@ -534,17 +538,20 @@ export default function Contact() {
                   data-bs-toggle="popover"
                   data-bs-placement="left"
                   data-bs-content='<div class="too-con-waber">
-              <h4> Netherlands</h4>
-              <p>
-                  Netherlands <br>
-                  RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
-              </p>
-              <div class="contect-call2">
-                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
-              </div>
-              <div class="contect-call2">
-                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
-              </div>
+              <h4>UAE- Office 1</h4>
+                      <p>
+                          RheinBrücke IT Consulting EMEA FZE<br>
+                          2-234-235 – Techno Hub 2,<br> 
+                          P.O Box : 342060<br>
+                          Dubai Silicon Oasis, Dubai<br>
+                          United Arab Emirates<br>
+                      </p>
+                      <div class="contect-call2">
+                            <img src="/new/contect-call.svg" alt=""> <Link href=""> +971 43 330 366</Link>
+                      </div>
+                      <div class="contect-call2">
+                            <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com</Link>
+                      </div>
           </div>'
                 >
                   <img src="/new/map-locat.svg" alt="" />
@@ -558,16 +565,20 @@ export default function Contact() {
                   data-bs-toggle="popover"
                   data-bs-placement="left"
                   data-bs-content='<div class="too-con-waber">
-              <h4> Netherlands</h4>
+              <h4> India</h4>
               <p>
-                  Netherlands <br>
-                  RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
+                  RheinBrücke IT Consulting Pvt Ltd <br>
+                  Bharati Vilas, 1st Floor,<br>
+                  26B Jawaharlal Nehru Salai,<br>
+                  Ekkatuthangal, Guindy Industrial Estate,<br>
+                  Chennai,<br>
+                  Tamil Nadu, India 600 032<br>
               </p>
               <div class="contect-call2">
-                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
+                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +91 44 6671 7555</Link>
               </div>
               <div class="contect-call2">
-                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
+                    <img src="/new/c-mail.svg" alt=""> <Link href="">info@rheincs.com</Link>
               </div>
           </div>'
                 >

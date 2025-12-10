@@ -17,22 +17,22 @@ export default function Footer() {
                                     <div className="header-social-links">
                                         <ul>
                                             <li>
-                                                <Link href="https://www.linkedin.com/company/rheinbr%C3%BCcke-it-consulting">
+                                                <Link href="https://www.linkedin.com/company/rheinbr%C3%BCcke-it-consulting" target="_blank">
                                                     <i className="fa-brands fa-linkedin" />
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link href="https://x.com/RheinBruckeIT">
+                                                <Link href="https://x.com/RheinBruckeIT" target="_blank">
                                                     <i className="fa-brands fa-x-twitter" />
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link href="https://www.instagram.com/rheinbrucke_itconsulting/">
+                                                <Link href="https://www.instagram.com/rheinbrucke_itconsulting/" target="_blank">
                                                     <i className="fa-brands fa-instagram" />
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link href="https://www.facebook.com/RheinBrucke">
+                                                <Link href="https://www.facebook.com/RheinBrucke" target="_blank">
                                                     <i className="fa-brands fa-facebook" />
                                                 </Link>
                                             </li>
@@ -244,9 +244,9 @@ export default function Footer() {
                                         <li>
                                             <Link href="/news-events">News and Events</Link>
                                         </li>
-                                        <li>
+                                        {/* <li>
                                             <Link href="/Faq">FAQs</Link>
-                                        </li>
+                                        </li> */}
                                     </ul>
                                 </div>
                                 {/* Footer Links end */}
