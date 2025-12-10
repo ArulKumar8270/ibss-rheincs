@@ -194,6 +194,47 @@ export default function SwiperInit() {
           }
         }
         
+        // 3.5. testimonial-slider77
+        const slider77El = document.querySelector('.testimonial-slider77 .swiper');
+        const slider77CounterEl = document.querySelector('.testimonial-slider77 .testspace');
+        
+        if (slider77El && slider77CounterEl && !(slider77El as any).swiper) {
+          try {
+            // Count only the actual slides inside .swiper-wrapper (not duplicates)
+            const realTotalSlides = slider77El.querySelectorAll('.swiper-wrapper .swiper-slide').length;
+            new Swiper(slider77El, {
+              slidesPerView: 1,
+              spaceBetween: 30,
+              loop: true,
+              speed: 800,
+              autoplay: true,
+              navigation: {
+                nextEl: '.testimonial-slider77 .testimonial-button-next',
+                prevEl: '.testimonial-slider77 .testimonial-button-prev',
+              },
+              breakpoints: {
+                0: { slidesPerView: 1 },
+                768: { slidesPerView: 1 },
+                991: { slidesPerView: 1 },
+              },
+              on: {
+                init: function (this: any) {
+                  // Set initial counter
+                  if (slider77CounterEl) slider77CounterEl.textContent = `1/${realTotalSlides}`;
+                },
+                slideChange: function (this: any) {
+                  // Show correct current / total (realIndex is correct for loop mode)
+                  const currentSlide = this.realIndex + 1;
+                  if (slider77CounterEl) slider77CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+                }
+              }
+            });
+            console.log('✓ testimonial-slider77 initialized');
+          } catch (e) {
+            console.error('Error initializing slider77:', e);
+          }
+        }
+        
         // 4. testimonial-sliders1
         const sliders1El = document.querySelector('.testimonial-sliders1 .swiper');
         const sliders1CounterEl = document.querySelector('.testimonial-sliders1 .testspace');

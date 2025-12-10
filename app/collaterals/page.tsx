@@ -7,6 +7,7 @@ import TestimonialandAward from "../Components/TestimonialandAward";
 import Awards from "../Components/Awards";
 import { createClient } from "@/lib/supabase-browser";
 import { useRouter } from "next/navigation";
+import { NavArrowRight } from "../icons";
 
 export default function Collaterals() {
     const router = useRouter();
@@ -234,7 +235,7 @@ export default function Collaterals() {
                                                             <div className="filtermbl search-row">
                                                                 <input
                                                                     type="text"
-                                                                    placeholder="Search blogs"
+                                                                    placeholder="Search"
                                                                     className="search-input"
                                                                 />
                                                                 <button className="filter-btn1" id="openFilterBtn">
@@ -358,7 +359,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -380,7 +381,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -402,7 +403,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -424,7 +425,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -446,7 +447,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -465,7 +466,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -485,7 +486,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -509,7 +510,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -533,7 +534,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -554,7 +555,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -577,7 +578,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -601,7 +602,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -622,7 +623,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -643,7 +644,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -664,7 +665,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -687,7 +688,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -699,7 +700,7 @@ export default function Collaterals() {
                                                 <div className="col-sm-3 systemview">
                                                     <form action="" method="post">
                                                         <div className="blog-serch">
-                                                            <input type="text" placeholder="Search blogs" />
+                                                            <input type="text" placeholder="Search" />
                                                             <button type="submit">
                                                                 <img src="/new/ser-blog.svg" alt="" />
                                                             </button>
@@ -781,7 +782,7 @@ export default function Collaterals() {
                                                             <div className="filtermbl search-row">
                                                                 <input
                                                                     type="text"
-                                                                    placeholder="Search blogs"
+                                                                    placeholder="Search"
                                                                     className="search-input"
                                                                 />
                                                                 <button className="filter-btn1" id="openFilterBtn">
@@ -1000,7 +1001,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1022,7 +1023,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1044,7 +1045,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1066,7 +1067,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1085,7 +1086,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1104,7 +1105,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1122,7 +1123,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1143,7 +1144,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1164,7 +1165,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1182,7 +1183,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1205,7 +1206,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1226,7 +1227,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1246,7 +1247,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1258,7 +1259,7 @@ export default function Collaterals() {
                                                 <div className="col-sm-3 systemview">
                                                     <form action="" method="post">
                                                         <div className="blog-serch">
-                                                            <input type="text" placeholder="Search blogs" />
+                                                            <input type="text" placeholder="Search" />
                                                             <button type="submit">
                                                                 <img src="/new/ser-blog.svg" alt="" />
                                                             </button>
@@ -1438,7 +1439,7 @@ export default function Collaterals() {
                                                             <div className="filtermbl search-row">
                                                                 <input
                                                                     type="text"
-                                                                    placeholder="Search blogs"
+                                                                    placeholder="Search"
                                                                     className="search-input"
                                                                 />
                                                                 <button className="filter-btn1" id="openFilterBtn">
@@ -1558,7 +1559,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1580,7 +1581,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1602,7 +1603,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1627,7 +1628,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1649,7 +1650,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -1668,7 +1669,7 @@ export default function Collaterals() {
                                                                                 data-bs-target="#myModal"
                                                                             >
                                                                                 Read More
-                                                                                {/*?php include "navarrowright.php" ?*/}
+                                                                                <NavArrowRight />
                                                                             </Link>
                                                                         </div>
                                                                     </div>
@@ -2164,7 +2165,7 @@ export default function Collaterals() {
                                                                 <option value="+971">+971</option>
                                                             </select>
                                                             <input
-                                                                type="tel"
+                                                                type="number"
                                                                 className="form-control"
                                                                 name="phone"
                                                                 placeholder="Enter Your Phone No*"

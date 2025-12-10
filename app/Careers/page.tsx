@@ -76,7 +76,7 @@ export default function AlMl() {
                                         is valued, and your career has purpose.
                                     </p>
                                     <div className="ser-btn m-0">
-                                        <Link href="/openings" className="animated-svg-link">
+                                        <Link href="#job-table-waber" className="animated-svg-link">
                                             View Current Openings
                                             <span className="svg-container ">
                                                 <span className=" right">
@@ -501,7 +501,7 @@ export default function AlMl() {
                                         {/* Testimonial Slide Start */}
                                         <div className="swiper-slide">
                                             <div className="ric-slider-img">
-                                                <img src="/images/l3.jpg" alt="" />
+                                                <img src="/images/l3.JPG" alt="" />
                                             </div>
                                         </div>
                                         {/* Testimonial Slide End */}
@@ -548,7 +548,7 @@ export default function AlMl() {
                                         {/* Testimonial Slide End */}
                                         <div className="swiper-slide">
                                             <div className="ric-slider-img">
-                                                <img src="/images/l10.jpg" alt="" />
+                                                <img src="/images/l10.JPG" alt="" />
                                             </div>
                                         </div>
                                         {/* Testimonial Slide End */}
@@ -889,7 +889,7 @@ export default function AlMl() {
                                 </div>
                             </div>
                         </div> */}
-                        <div className="job-table-waber m-h-09">
+                        <div className="job-table-waber m-h-09" id="job-table-waber">
                             {loading ? (
                                 <div style={{ padding: '40px', textAlign: 'center', color: '#fff' }}>
                                     Loading jobs...
@@ -1123,7 +1123,7 @@ export default function AlMl() {
                                     </svg>
                                 </button>
                             </div>
-                            <div className="mobile-jobs-waber">
+                            <div className="mobile-jobs-waber" id="mobile-jobs-waber">
                                 {loading ? (
                                     <div style={{ padding: '40px', textAlign: 'center', color: '#333' }}>
                                         Loading jobs...
@@ -1151,7 +1151,7 @@ export default function AlMl() {
                                                     </span>
                                                 </p>
                                                 <div className="ser-btn2">
-                                                    <Link href={`/jobs/${job.id}`} className="animated-svg-link1  ja-btn btn-style-3">
+                                                    <Link href={`/openings/${job.id}`} className="animated-svg-link1  ja-btn btn-style-3">
                                                         Apply Now
                                                         <span className="svg-container ">
                                                             <span className=" left">

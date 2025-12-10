@@ -7,7 +7,7 @@ import { NavArrowLeft, NavArrowRight } from "../icons";
 
 export default function Header() {
     const pathname = usePathname();
-    const [activeTab, setActiveTab] = useState('tab1');
+    const [activeTab, setActiveTab] = useState(' ');
     const [epicorCollapsed, setEpicorCollapsed] = useState(false);
     const [digitalSolutionsCollapsed, setDigitalSolutionsCollapsed] = useState(false);
     const [digitalServicesCollapsed, setDigitalServicesCollapsed] = useState(false);
@@ -743,7 +743,7 @@ export default function Header() {
                                                             <div className="col-sm-3">
                                                                 <div className="tab-buttons">
                                                                     <button
-                                                                        className={`tab-link`}
+                                                                        className={`tab-link ${activeTab === 'tab1' ? 'active' : ''}`}
                                                                         data-tab="tab1"
                                                                         onClick={(e) => {
                                                                             e.preventDefault();
@@ -753,9 +753,9 @@ export default function Header() {
                                                                             if (menu) {
                                                                                 const tabs = menu.querySelectorAll('.tab-link');
                                                                                 const contents = menu.querySelectorAll('.tab-content');
-                                                                                tabs.forEach(t => t.classList.remove('active'));
-                                                                                contents.forEach(c => c.classList.remove('active'));
-                                                                                button.classList.add('active');
+                                                                                // tabs.forEach(t => t.classList.remove('active'));
+                                                                                // contents.forEach(c => c.classList.remove('active'));
+                                                                                // button.classList.add('active');
                                                                                 const target = menu.querySelector('#tab1');
                                                                                 if (target) target.classList.add('active');
                                                                             }

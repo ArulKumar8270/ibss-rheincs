@@ -238,7 +238,7 @@ export default function Contact() {
                           <option value="+971">+971</option>
                         </select>
                         <input
-                          type="tel"
+                          type="number"
                           className="form-control"
                           name="phone"
                           placeholder="Enter Your Phone No*"

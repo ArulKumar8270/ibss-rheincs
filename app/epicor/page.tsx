@@ -1404,7 +1404,7 @@ export default function EnterpriseSolutions() {
                                   chain visibility, and optimize production.
                                 </p>
                                 <div className="ser-btn1">
-                                  <Link href="/Epicore-kinetic"
+                                  <Link href="/Epicor-kinetic"
                                     className="animated-svg-link1 btn-style-3"
                                   >
                                     Know More
@@ -1739,7 +1739,7 @@ export default function EnterpriseSolutions() {
                                   trade.
                                 </p>
                                 <div className="ser-btn1">
-                                  <Link href="/Epicore-iscala"
+                                  <Link href="/Epicor-iscala"
                                     className="animated-svg-link1 btn-style-3"
                                   >
                                     Know More
@@ -2080,7 +2080,7 @@ export default function EnterpriseSolutions() {
                                   Analytics, and more.{" "}
                                 </p>
                                 <div className="ser-btn1">
-                                  <Link href="/Epicore-companion"
+                                  <Link href="/Epicor-companion"
                                     className="animated-svg-link1 btn-style-3"
                                   >
                                     Know More
@@ -2369,7 +2369,7 @@ export default function EnterpriseSolutions() {
                                   industry.{" "}
                                 </p>
                                 <div className="ser-btn1">
-                                  <Link href="/Epicore-epicpay"
+                                  <Link href="/Epicor-epicpay"
                                     className="animated-svg-link1 btn-style-3"
                                   >
                                     Know More

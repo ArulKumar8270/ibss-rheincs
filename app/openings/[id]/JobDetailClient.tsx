@@ -29,7 +29,7 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
     const router = useRouter()
     
     const [job, setJob] = useState<Job | null>(initialJob || null)
-    const [loading, setLoading] = useState(!initialJob)
+    const [loading, setLoading] = useState(!initialJob && !job)
     const [formData, setFormData] = useState({
         selection: initialJob?.title || '',
         fullName: '',
@@ -44,13 +44,29 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
     const supabase = createClient()
 
     useEffect(() => {
-        if (!initialJob && jobId) {
+        if (jobId === 'placeholder' && !initialJob) {
+            // Handle placeholder case - redirect to careers list
+            router.push('/careers')
+            return
+        }
+
+        // Always fetch fresh data on client side to get latest updates
+        // This ensures updated content appears immediately without needing a rebuild
+        if (jobId && jobId !== 'placeholder') {
             fetchJob()
         }
-    }, [jobId, initialJob])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [jobId]) // Only depend on jobId, not initialJob
 
     const fetchJob = async () => {
         try {
+            // Only show loading spinner if we don't have any job data yet
+            // This prevents flash of loading when we have initialJob
+            const shouldShowLoading = !job && !initialJob
+            if (shouldShowLoading) {
+                setLoading(true)
+            }
+            
             const { data, error } = await supabase
                 .from('careers')
                 .select('*')
@@ -58,7 +74,10 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                 .eq('published', true)
                 .single()
 
-            if (error) throw error
+            if (error) {
+                console.error('Supabase error:', error)
+                throw error
+            }
             
             if (data) {
                 // Parse responsibilities and qualifications if they're JSON strings
@@ -74,11 +93,24 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                 setJob(parsedJob)
                 setFormData(prev => ({ ...prev, selection: data.title }))
             } else {
-                router.push('/careers')
+                // If no data found and we have no job data at all, redirect
+                if (!initialJob && !job) {
+                    console.warn('Job not found, redirecting to careers')
+                    router.push('/careers')
+                    return
+                }
+                // Otherwise keep existing job data (initialJob or current job state)
+                console.log('No data found but keeping existing job data')
             }
         } catch (err: any) {
             console.error('Error fetching job:', err)
-            router.push('/careers')
+            // If fetch fails but we have job data (initial or current), keep showing it
+            if (!initialJob && !job) {
+                console.warn('Fetch failed and no job data, redirecting to careers')
+                router.push('/careers')
+            } else {
+                console.log('Fetch failed but keeping existing job data')
+            }
         } finally {
             setLoading(false)
         }
@@ -193,7 +225,9 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
         }
     }
 
-    if (loading) {
+    // Only show loading if we don't have initial job data
+    // This prevents flash of loading state when we have cached data
+    if (loading && !job) {
         return (
             <CommomLayout>
                 <div style={{ 
@@ -223,8 +257,9 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
         )
     }
 
-    const responsibilities = job.responsibilities || []
-    const qualifications = job.qualifications || []
+    // Ensure responsibilities and qualifications are always arrays
+    const responsibilities = Array.isArray(job.responsibilities) ? job.responsibilities : []
+    const qualifications = Array.isArray(job.qualifications) ? job.qualifications : []
 
     return (
         <CommomLayout>
@@ -246,6 +281,8 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                     <div className="container">
                         <div className="row">
                             <div className="col-sm-7">
+                                <h4 className='mb-3 text-black'>Purpose of the Role</h4>
+                                <p className='text-black'>{job.description}</p>
                                 <div className="bolg-filter-waber collatpage">
                                     <ul
                                         className="nav nav-tabs filter-controls"
@@ -472,7 +509,7 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                                                     <option value="+971">+971</option>
                                                 </select>
                                                 <input
-                                                    type="tel"
+                                                    type="number"
                                                     className="form-control"
                                                     name="phone"
                                                     placeholder="Your Phone No*"

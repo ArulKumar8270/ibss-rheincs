@@ -745,7 +745,7 @@ export default function EnterpriseSolutions() {
                     SAP S/4HANA, SAP ECC, SAP Business ByDesign, SAP Business One.{" "}
                   </p>
                   <div className="ser-btn1">
-                    <Link href="/SAP" className="animated-svg-link1 btn-style-3">
+                    <Link href="/sap" className="animated-svg-link1 btn-style-3">
                       Know More
                       <span className="svg-container ">
                         <span className=" left">
@@ -975,7 +975,7 @@ export default function EnterpriseSolutions() {
                     Dynamics 365, Dynamics 365 Business Central, Navision, Axapta.
                   </p>
                   <div className="ser-btn1">
-                    <Link href="/microsoft-dynamics-solutions"
+                    <Link href="/ms-dynamics"
                       className="animated-svg-link1 btn-style-3"
                     >
                       Know More
@@ -1122,7 +1122,7 @@ export default function EnterpriseSolutions() {
                                       satisfaction across your organization.
                                     </p>
                                     <div className="ser-btn bgnone">
-                                      <Link href="/corushr"
+                                      <Link href="/CorusHR"
                                         className="animated-svg-link"
                                       >
                                         Read More
@@ -1253,7 +1253,7 @@ export default function EnterpriseSolutions() {
                                       Management, planning, and Advanced Analytics.
                                     </p>
                                     <div className="ser-btn bgnone">
-                                      <Link href="/MeRLIN"
+                                      <Link href="/MeRLIN-strategic-sourcing-software"
                                         className="animated-svg-link"
                                       >
                                         Read More
@@ -1384,7 +1384,7 @@ export default function EnterpriseSolutions() {
                                       support your organization’s growth.
                                     </p>
                                     <div className="ser-btn bgnone">
-                                      <Link href="/Epicore-companion"
+                                      <Link href="/Epicor-companion"
                                         className="animated-svg-link"
                                       >
                                         Read More

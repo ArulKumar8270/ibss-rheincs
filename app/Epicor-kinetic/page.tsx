@@ -3,7 +3,7 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
-export default function EpicoreKinetic() {
+export default function EpicorKinetic() {
     return (
         <CommomLayout>
 <>
