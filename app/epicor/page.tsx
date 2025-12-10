@@ -4252,7 +4252,7 @@ export default function EnterpriseSolutions() {
                       {/* Testimonial Slide End */}
                       {/* Testimonial Slide Start */}
                       <div className="swiper-slide">
-                        <div className="service-item-body in2">
+                        <div className="service-item-body in4">
                           <h3>
                             <span>Discrete &amp; Process Manufacturing</span>
                           </h3>
@@ -4291,7 +4291,7 @@ export default function EnterpriseSolutions() {
                       {/* Testimonial Slide End */}
                       {/* Testimonial Slide Start */}
                       <div className="swiper-slide">
-                        <div className="service-item-body ein6">
+                        <div className="service-item-body in2">
                           <h3>
                             <span>Retail &amp; Distribution</span>
                           </h3>
