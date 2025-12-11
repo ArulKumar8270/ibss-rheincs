@@ -138,8 +138,14 @@ export default function Footer() {
                                             </div>
                                             <div className="col-sm-6">
                                                 <ul>
+                                                <li>
+                                                        <Link href="/digital-solution-service">Digital Solutions and Services</Link>
+                                                    </li>
                                                     <li>
                                                         <Link href="/digital-solutions">Digital Solutions</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link href="/business-intelligence">BI & Analytics</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/AI-ML">AI/ML </Link>
@@ -361,7 +367,13 @@ export default function Footer() {
                                             <div className="col-sm-6 col-6">
                                                 <ul>
                                                     <li>
+                                                        <Link href="/digital-solution-service">Digital Solutions and Services</Link>
+                                                    </li>
+                                                    <li>
                                                         <Link href="/digital-solutions">Digital Solutions</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link href="/business-intelligence">BI & Analytics</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/AI-ML">AI/ML </Link>

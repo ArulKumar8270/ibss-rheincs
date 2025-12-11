@@ -484,12 +484,12 @@ export default function AdminCareersPage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
               <div>
-                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Salary Range</label>
+                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Experience</label>
                 <input
                   type="text"
                   value={formData.salary_range}
                   onChange={(e) => setFormData({ ...formData, salary_range: e.target.value })}
-                  placeholder="e.g., $50,000 - $70,000"
+                  placeholder="Enter Experience"
                   style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
                 />
               </div>
