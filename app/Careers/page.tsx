@@ -520,11 +520,11 @@ export default function AlMl() {
                                         </div>
                                         {/* Testimonial Slide End */}
                                         {/* Testimonial Slide Start */}
-                                        <div className="swiper-slide">
+                                        {/* <div className="swiper-slide">
                                             <div className="ric-slider-img">
                                                 <img src="/images/l6.jpg" alt="" />
                                             </div>
-                                        </div>
+                                        </div> */}
                                         {/* Testimonial Slide End */}
                                         {/* Testimonial Slide Start */}
                                         <div className="swiper-slide">

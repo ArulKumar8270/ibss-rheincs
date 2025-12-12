@@ -45,8 +45,8 @@ const page = () => {
               <div className="col-lg-4 col-md-6">
                 {/* image gallery start */}
                 <div className="video-gallery-image wow fadeInUp">
-                  <Link className="popup-youtube" href="https://youtu.be/IDrR7hiizhI" target='_blank'
-                    // className="popup-video"
+                  <Link href="https://youtu.be/IDrR7hiizhI"
+                    className="popup-video"
                     data-cursor-text="Play"
                   >
                     <figure>

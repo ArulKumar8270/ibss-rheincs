@@ -1272,7 +1272,7 @@ export default function Home() {
           </div>
           {/* About Us Section End */}
           {/* Hero Section Start*/}
-          <div className="hero brainbgsec brine-waper-padding">
+          <div className="hero brainbgsec brine-waper-padding1">
             <div className="container">
               <div className="row section-row align-items-center">
                 <div className="col-sm-7">
