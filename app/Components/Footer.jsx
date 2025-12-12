@@ -53,7 +53,7 @@ export default function Footer() {
                                         <li>|</li>
                                         <li>UAE</li>
                                         <li>|</li>
-                                        <li>SA</li>
+                                        <li>KSA</li>
                                     </ul>
                                     <div className="phone">
                                         <Link href="">
@@ -107,7 +107,7 @@ export default function Footer() {
                                             <div className="col-sm-6">
                                                 <ul>
                                                     <li>
-                                                        <span>Our Solutions</span>
+                                                        <Link href="/our-solution"><span>Our Solutions</span></Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/CorusHR">CorusHR </Link>
@@ -116,7 +116,7 @@ export default function Footer() {
                                                         <Link href="/MeRLIN-strategic-sourcing-software">MeRLIN – Strategic Sourcing Software</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/enterprise-solutions">Enterprise Solutions &amp; Services</Link>
+                                                        <Link href="/enterprise-solutions"><span>Enterprise Solutions &amp; Services</span></Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/epicor">Epicor</Link>
@@ -139,7 +139,7 @@ export default function Footer() {
                                             <div className="col-sm-6">
                                                 <ul>
                                                 <li>
-                                                        <Link href="/digital-solution-service">Digital Solutions and Services</Link>
+                                                        <Link href="/digital-solution-service"><span>Digital Solutions and Services</span></Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/digital-solutions">Digital Solutions</Link>

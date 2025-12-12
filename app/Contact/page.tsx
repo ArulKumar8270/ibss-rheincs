@@ -183,8 +183,7 @@ export default function Contact() {
                 <div className="contect-enq-waber">
                   <h2> Let's Connect With Us</h2>
                   <p className="text-dark">
-                    Complete the two-step process and submit your requirements — our
-                    team will get in touch with you shortly.
+                  Submit your details and our team will get in touch with you shortly.
                   </p>
 
                   {/* Status Message */}
@@ -658,7 +657,7 @@ export default function Contact() {
                 <li>USA</li>
                 <li>India</li>
                 <li>UAE</li>
-                <li>SA</li>
+                <li>KSA</li>
               </ul>
             </div>
             <div className="map-img-waber">

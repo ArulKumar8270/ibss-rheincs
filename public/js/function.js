@@ -1041,12 +1041,12 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
           }
         }
       });
-      const sliderEl = document.querySelector('.agency-supports-slider .swiper');
-      if (sliderEl) {
-        sliderEl.addEventListener('mouseenter', () => {
+      const sliderEl1 = document.querySelector('.agency-supports-slider .swiper');
+      if (sliderEl1) {
+        sliderEl1.addEventListener('mouseenter', () => {
           agency_supports_slider.autoplay.stop();
         });
-        sliderEl.addEventListener('mouseleave', () => {
+        sliderEl1.addEventListener('mouseleave', () => {
           agency_supports_slider.autoplay.start();
         });
       }
@@ -1303,7 +1303,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
 
     const testimonial_slider = new Swiper(swiperEl, {
       slidesPerView: 3,
-      spaceBetween: 30,
+      spaceBetween: 15,
       loop: true,
       speed: 800,
       autoplay: false,
@@ -1312,7 +1312,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         prevEl: '.testimonial-slider-08 .testimonial-button-prev',
       },
       breakpoints: {
-        0: { slidesPerView: 1.1 },
+        0: { slidesPerView: 1 },
         768: { slidesPerView: 3 },
         991: { slidesPerView: 3 },
       },
@@ -1561,7 +1561,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         prevEl: '.industries .testimonial-button-prev',
       },
       breakpoints: {
-        0: { slidesPerView: 1.3 },
+        0: { slidesPerView: 1 },
         768: { slidesPerView: 3 },
         991: { slidesPerView: 4 },
         1300: { slidesPerView: 5 },
@@ -4383,3 +4383,10 @@ if (typeof window !== 'undefined') {
 }
 
 console.log('🔥🔥🔥 END OF function.js FILE 🔥🔥🔥');
+
+
+$(document).ready(function() {
+	$('.popup-youtube').magnificPopup({
+    type: 'iframe'
+  });
+});

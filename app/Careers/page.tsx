@@ -789,50 +789,50 @@ export default function AlMl() {
                                     <div className="col-lg-6 col-md-6 col-sm-6">
                                         <div className="services-56 gl-05">
                                             <h3>Work with world-class clients across industries</h3>
-                                            <p>
+                                            {/* <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-                                            </p>
+                                            </p> */}
                                             <img className="jr-img" src="/new/mm-1.svg" alt="" />
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-md-6 col-sm-6">
                                         <div className="services-56">
                                             <h3>Be part of a diverse, global team</h3>
-                                            <p>
+                                            {/* <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-                                            </p>
+                                            </p> */}
                                             <img className="jr-img gl-5" src="/new/jr-2.svg" alt="" />
                                         </div>
                                     </div>
                                     <div className="col-lg-4 col-md-6 col-sm-6">
                                         <div className="services-56 ser-57">
                                             <h3>Grow through structured career models and mentoring</h3>
-                                            <p>
+                                            {/* <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-                                            </p>
+                                            </p> */}
                                             <img className="jr-img-22" src="/new/bg-56-1.png" alt="" />
                                         </div>
                                     </div>
                                     <div className="col-lg-4 col-md-6 col-sm-6">
                                         <div className="services-56 ser-57">
                                             <h3>Enjoy competitive rewards and recognition</h3>
-                                            <p>
+                                            {/* <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-                                            </p>
+                                            </p> */}
                                             <img className=" jr-img-22" src="/new/bg-56-2.png" alt="" />
                                         </div>
                                     </div>
                                     <div className="col-lg-4 col-md-6 col-sm-6">
                                         <div className="services-56 ser-57">
                                             <h3>Make an impact that matters</h3>
-                                            <p>
+                                            {/* <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-                                            </p>
+                                            </p> */}
                                             <img className=" jr-img-22" src="/new/bg-56-3.png" alt="" />
                                         </div>
                                     </div>

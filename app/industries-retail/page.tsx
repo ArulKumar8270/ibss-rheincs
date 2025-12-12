@@ -221,6 +221,7 @@ export default function EnterpriseSolutions() {
     >
       Why It Matters
     </h2>
+  <div className="container">
     <div className="pe-matters-content-waber">
       <div className="pe-matters-content">
         <img src="/new/g501.svg" alt="" />
@@ -251,6 +252,7 @@ export default function EnterpriseSolutions() {
         </p>
       </div>
     </div>
+  </div>
   </div>
   <section className="py-100  pe-help-waber irp2 ">
     <div className="container">
@@ -331,8 +333,10 @@ export default function EnterpriseSolutions() {
     </div>
   </section>
   <section className="py-100">
-    <div className="retail-benifit-main-waber row">
-      <div className="col-sm-6 retail-benifit-design-one">
+  <div className="container">
+    <div className="retail-benifit-main-waber1 row">
+    <div className="col-sm-6">
+      <div className="retail-benifit-design-one">
         <div>
           <h4 className="benifit-title"> Tangible Outcomes</h4>
           <div className="benifit-points-waber">
@@ -374,7 +378,9 @@ export default function EnterpriseSolutions() {
         </div>
         <img src="/new/re-be-1.png" alt="" />
       </div>
-      <div className="col-sm-6 retail-benifit-design-one">
+      </div>
+    <div className="col-sm-6">
+      <div className="retail-benifit-design-one">
         <div>
           <h4 className="benifit-title">Global Best Practices We Apply</h4>
           <div className="benifit-points-waber">
@@ -404,7 +410,9 @@ export default function EnterpriseSolutions() {
         </div>
         <img src="/new/re-be-2.png" alt="" />
       </div>
-      <div className="col-sm-12 retail-benifit-design-two">
+      </div>
+    <div className="col-sm-12">
+      <div className="retail-benifit-design-two">
         <div>
           <h4 className="benifit-title"> Why Choose Us</h4>
           <div className="benifit-points-waber">
@@ -443,6 +451,8 @@ export default function EnterpriseSolutions() {
           <img src="/new/why-22.svg" alt="" />
         </div>
       </div>
+      </div>
+    </div>
     </div>
   </section>
   {/* Footer Start */}
