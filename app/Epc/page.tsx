@@ -216,6 +216,7 @@ export default function EnterpriseSolutions() {
     >
       Why It Matters
     </h2>
+    <div className="container">
     <div className="pe-matters-content-waber">
       <div className="pe-matters-content">
         <img src="/new/mat-1.svg" alt="" />
@@ -252,6 +253,7 @@ export default function EnterpriseSolutions() {
           recognition, cash flow issues, and contract disputes
         </p>
       </div>
+    </div>
     </div>
   </div>
   <section className="py-100  pe-help-waber epc-help ">
