@@ -93,6 +93,7 @@ export default function RootLayout({
               '/js/wow.js',
               'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js',
               'https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.js',
+              '/js/popup-video.js',
               '/js/function.js',
               '/js/main.js',
               'http://dimsemenov.com/plugins/magnific-popup/dist/jquery.magnific-popup.min.js'

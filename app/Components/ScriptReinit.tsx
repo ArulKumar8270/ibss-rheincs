@@ -279,7 +279,11 @@ export default function ScriptReinit() {
                 });
               }
 
-              if ($('.popup-video').length) {
+              // Use the dedicated popup-video.js function if available
+              if ($('.popup-video').length && typeof window.initPopupVideo === 'function') {
+                window.initPopupVideo();
+              } else if ($('.popup-video').length) {
+                // Fallback initialization
                 $('.popup-video').magnificPopup({
                   type: 'iframe',
                   mainClass: 'mfp-fade',

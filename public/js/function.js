@@ -3767,25 +3767,29 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     };
 
     // Function to initialize Popup Video
-    window.initPopupVideo = function() {
+    // NOTE: This function is now handled by /js/popup-video.js
+    // Keeping this as a fallback that calls the main function
+    window.initPopupVideo = window.initPopupVideo || function() {
+      // If popup-video.js is loaded, it will handle initialization
+      // This is just a fallback
       if (typeof window.$ === 'undefined' || !window.$.fn) return;
       var $ = window.$;
-    if ($('.popup-video').length && typeof $.fn.magnificPopup !== 'undefined') {
+      if ($('.popup-video').length && typeof $.fn.magnificPopup !== 'undefined') {
+        console.warn('Popup Video: Using fallback initialization. Please ensure /js/popup-video.js is loaded.');
         try {
-          // Destroy existing instances
           if ($.magnificPopup && $.magnificPopup.instance) {
             $.magnificPopup.instance.close();
           }
-      $('.popup-video').magnificPopup({
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-        fixedContentPos: true
-      });
+          $('.popup-video').magnificPopup({
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: true
+          });
         } catch (e) {
           console.error('Error initializing popup video:', e);
-    }
+        }
       }
     };
 
