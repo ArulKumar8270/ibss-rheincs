@@ -289,6 +289,7 @@ export default function AlMl() {
                     >
                         Why It Matters
                     </h2>
+                    <div className="container">
                     <div className="pe-matters-content-waber">
                         <div className="pe-matters-content">
                             <img src="/new/mat-1.svg" alt="" />
@@ -324,6 +325,7 @@ export default function AlMl() {
                                 efficiency, and innovation cycles
                             </p>
                         </div>
+                    </div>
                     </div>
                 </div>
                 <section className="py-100  pe-help-waber auto-help ">
