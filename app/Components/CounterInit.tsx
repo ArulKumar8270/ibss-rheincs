@@ -79,16 +79,37 @@ export default function CounterInit() {
         // Store original target in data attribute for future reference
         htmlElement.setAttribute('data-original-target', target.toString());
         
-        // Get suffix from parent element (since "+" might be outside the span)
+        // Check if parent element already has "+" after the span
+        // The HTML structure is: <span class="counter">10</span>+
+        // So the "+" is outside the span, and we should NOT add it to the span's textContent
         const parentElement = htmlElement.parentElement;
-        const parentText = parentElement ? parentElement.textContent || '' : '';
-        
-        // Extract suffix - check if there's a "+" after the number in parent
         let suffix = '';
-        if (parentText.includes('+')) {
-          suffix = '+';
+        
+        if (parentElement) {
+          // Check the parent's innerHTML to see if "+" comes after our span
+          const parentHTML = parentElement.innerHTML || '';
+          const spanOuterHTML = htmlElement.outerHTML;
+          const spanIndex = parentHTML.indexOf(spanOuterHTML);
+          
+          if (spanIndex !== -1) {
+            // Get text after the span
+            const afterSpan = parentHTML.substring(spanIndex + spanOuterHTML.length);
+            // Check if there's a "+" immediately after (allowing for whitespace)
+            const hasPlusAfter = /^\s*\+/.test(afterSpan);
+            
+            if (hasPlusAfter) {
+              // "+" is already in parent, don't add to span
+              suffix = '';
+            } else {
+              // No "+" in parent, check if original text had suffix
+              suffix = originalText.replace(/[0-9]/g, '');
+            }
+          } else {
+            // Can't find span in parent HTML, extract from original text
+            suffix = originalText.replace(/[0-9]/g, '');
+          }
         } else {
-          // Fallback: extract from original text
+          // No parent, extract suffix from original text
           suffix = originalText.replace(/[0-9]/g, '');
         }
         
