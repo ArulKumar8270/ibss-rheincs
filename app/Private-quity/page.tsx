@@ -325,11 +325,12 @@ export default function EnterpriseSolutions() {
   </section>
   <div className="pe-benifites-waber py-100">
     <div className="container">
-      <div className="pe-benifites-container">
-        <div className="">
-          <div className="pe-benifet-content-waber">
-            <div className="pe-benifet-content benifet-content-2">
-              <div>
+      <div className="pe-benifites-container ">
+      <div className="row">
+        <div className="col-sm-6">
+          <div className="pe-benifet-content-waber1">
+            <div className="pe-benifet-content benifet-content-2 row">
+              <div className="">
                 <h4 className="benifit-title"> Tangible Outcomes</h4>
                 <div className="pe-bf-content-waber">
                   <div className="bf-content">
@@ -385,8 +386,8 @@ export default function EnterpriseSolutions() {
             </div>
           </div>
         </div>
-        <div className="">
-          <div className="pe-benifet-content-waber">
+        <div className="col-sm-6">
+          <div className="pe-benifet-content-waber1">
             <div className="pe-benifet-content benifet-content-2">
               <div>
                 <h4 className="benifit-title">Why Choose Us</h4>
@@ -424,9 +425,12 @@ export default function EnterpriseSolutions() {
                   </div>
                 </div>
               </div>
-              <img src="/new/pe-benifit-2.png" alt="" />
+              <div className="noteimg">
+              <img src="/new/nodr.svg" className="img-fluid" alt="" />
+              </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>

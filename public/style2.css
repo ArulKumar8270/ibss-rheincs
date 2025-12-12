@@ -4150,7 +4150,7 @@ h2.section-title {
 }
 
 .retail-benifit-design-one {
-    width: 630px;
+    width: 100%;
     border: 1px solid #082326;
     border-radius: 8px;
     padding: 24px;
@@ -4182,11 +4182,11 @@ h2.section-title {
 
 .retail-benifit-design-two {
     padding: 24px;
-    width: 1290px;
+    width: 100%;
     gap: 24px;
     border: 1px solid #082326;
     border-radius: 8px;
-
+    margin-top: 24px;
     display: flex;
 }
 
@@ -4243,7 +4243,6 @@ h2.section-title {
         height: 470px;
 
     }
-
     #lottie-container {
         width: 70%;
         margin: auto;
@@ -4357,7 +4356,7 @@ h2.section-title {
 .commen-help-bg-img-ds {
     position: absolute;
     height: 100%;
-    right: -9%;
+    right: -18%;
     /* left: 659px; */
     z-index: -2;
     bottom: 0px;
@@ -5556,7 +5555,7 @@ h2.section-title {
 
     .marlin-baner::after {
         content: "";
-        background: linear-gradient(180deg, rgba(8, 35, 38, 1) 57%, rgb(8 35 38) 54%, rgb(8 35 38 / 0%) 65%, rgba(255, 255, 255, 0) 100%) !important;
+        background: linear-gradient(180deg, rgba(8, 35, 38, 1) 69%, rgb(8 35 38) 54%, rgb(8 35 38 / 0%) 75%, rgba(255, 255, 255, 0) 100%) !important;
 
     }
 
@@ -5592,7 +5591,7 @@ h2.section-title {
         content: "";
         width: 100%;
         height: 100%;
-        background: linear-gradient(180deg, #082326 0%, #082326 81%, rgba(8, 35, 38, 0.4) 83%, rgba(8, 35, 38, 0) 100%);
+        background: linear-gradient(180deg, #082326 6%, #082326 88%, rgba(8, 35, 38, 0.4) 89%, rgba(8, 35, 38, 0) 100%);
 
     }
 
@@ -5735,7 +5734,14 @@ h2.section-title {
     .sap-hide-11 {
         display: none !important;
     }
-
+.commen-help-bg-img-ds {
+    position: absolute;
+    height: 100%;
+    right: -10% !important;
+    /* left: 659px; */
+    z-index: -2;
+    bottom: 0px;
+}
     .sm-img {
         position: relative;
         z-index: 1;
@@ -5863,7 +5869,7 @@ h2.section-title {
 .sap-service-waber:hover {
     color: white;
     border: none;
-    background: linear-gradient(180deg, rgb(217, 241, 241) 0%, rgb(11, 46, 46) 100%);
+    background: linear-gradient(180deg, rgb(27 79 79) 0%, #082326 100%);
 }
 
 .sap-service-waber h3 {

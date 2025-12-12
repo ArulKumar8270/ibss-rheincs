@@ -272,10 +272,7 @@ export default function Home() {
                       </div>
                       <div className="service-item-body">
                         <h3>Analyse</h3>
-                        <p>
-                          We start by understanding your business at its core your
-                          operating model, value drivers, and constraints. Using
-                          data-led diagnostics and performance benchmarking, we identify
+                        <p>We start by understanding your business, its core your operating model, value drivers, and constraints. Using data-led diagnostics and performance  benchmarking, we identify
                           the real levers for impact whether it’s efficiency, margin
                           growth, agility, or customer experience.
                         </p>
