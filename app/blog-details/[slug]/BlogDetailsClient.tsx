@@ -106,6 +106,75 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
     });
   };
 
+  // Get current page URL
+  const getCurrentUrl = () => {
+    if (typeof window !== 'undefined') {
+      return window.location.href;
+    }
+    return '';
+  };
+
+  // Share functions for each platform
+  const shareOnLinkedIn = () => {
+    if (!blog) return;
+    const url = encodeURIComponent(getCurrentUrl());
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank', 'width=600,height=400');
+  };
+
+  const shareOnTwitter = () => {
+    if (!blog) return;
+    const url = encodeURIComponent(getCurrentUrl());
+    const text = encodeURIComponent(`${blog.title}${blog.excerpt ? ' - ' + blog.excerpt : ''}`);
+    window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+  };
+
+  const shareOnFacebook = () => {
+    if (!blog) return;
+    const url = encodeURIComponent(getCurrentUrl());
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
+  };
+
+  const shareOnWhatsApp = () => {
+    if (!blog) return;
+    const url = encodeURIComponent(getCurrentUrl());
+    const text = encodeURIComponent(`${blog.title}\n${getCurrentUrl()}`);
+    window.open(`https://wa.me/?text=${text}`, '_blank');
+  };
+
+  const shareOnInstagram = () => {
+    if (!blog) return;
+    // Instagram doesn't support direct URL sharing, so copy URL to clipboard
+    const url = getCurrentUrl();
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(() => {
+        alert('URL copied to clipboard! You can now paste it on Instagram.');
+      }).catch(() => {
+        // Fallback if clipboard API fails
+        copyToClipboardFallback(url);
+      });
+    } else {
+      // Fallback for older browsers
+      copyToClipboardFallback(url);
+    }
+  };
+
+  const copyToClipboardFallback = (text: string) => {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.opacity = '0';
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      alert('URL copied to clipboard! You can now paste it on Instagram.');
+    } catch (err) {
+      console.error('Failed to copy:', err);
+      alert('Please copy this URL manually: ' + text);
+    }
+    document.body.removeChild(textArea);
+  };
+
   const ArrowSVG = () => (
     <svg
       width={24}
@@ -231,11 +300,41 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
                   <div className="stu-sociyal-waber">
                     <h6 className="stu-sub-title"> Share with </h6>
                     <div className="stu-sociyal">
-                      <img src="/new/Linked-in.svg" alt="" />
-                      <img src="/new/twitter.svg" alt="" />
-                      <img src="/new/instagram.svg" alt="" />
-                      <img src="/new/facebook.svg" alt="" />
-                      <img src="/new/whatsapp-3.svg" alt="" />
+                      <img 
+                        src="/new/Linked-in.svg" 
+                        alt="Share on LinkedIn" 
+                        onClick={shareOnLinkedIn}
+                        style={{ cursor: 'pointer' }}
+                        title="Share on LinkedIn"
+                      />
+                      <img 
+                        src="/new/twitter.svg" 
+                        alt="Share on Twitter" 
+                        onClick={shareOnTwitter}
+                        style={{ cursor: 'pointer' }}
+                        title="Share on Twitter"
+                      />
+                      <img 
+                        src="/new/instagram.svg" 
+                        alt="Share on Instagram" 
+                        onClick={shareOnInstagram}
+                        style={{ cursor: 'pointer' }}
+                        title="Share on Instagram"
+                      />
+                      <img 
+                        src="/new/facebook.svg" 
+                        alt="Share on Facebook" 
+                        onClick={shareOnFacebook}
+                        style={{ cursor: 'pointer' }}
+                        title="Share on Facebook"
+                      />
+                      <img 
+                        src="/new/whatsapp-3.svg" 
+                        alt="Share on WhatsApp" 
+                        onClick={shareOnWhatsApp}
+                        style={{ cursor: 'pointer' }}
+                        title="Share on WhatsApp"
+                      />
                     </div>
                   </div>
                 </div>
