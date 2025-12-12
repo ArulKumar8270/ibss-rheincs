@@ -1047,7 +1047,7 @@ export default function Home() {
                 <div className="success-counter-box1 firstbox">
                   <div className="success-counter-item">
                     <h2>
-                      <span className="counter" data-target="10">10</span>+
+                      <span className="counter" data-target="10">10</span>
                     </h2>
                     <p>Years of Experience</p>
                   </div>
@@ -1057,7 +1057,7 @@ export default function Home() {
                 <div className="success-counter-box1">
                   <div className="success-counter-item">
                     <h2>
-                      <span className="counter" data-target="45">45</span>+
+                      <span className="counter" data-target="45">45</span>
                     </h2>
                     <p>Countries Served</p>
                   </div>
@@ -1067,7 +1067,7 @@ export default function Home() {
                 <div className="success-counter-box1">
                   <div className="success-counter-item">
                     <h2>
-                      <span className="counter" data-target="300">300</span>+
+                      <span className="counter" data-target="300">300</span>
                     </h2>
                     <p>Projects Delivered</p>
                   </div>
@@ -1077,7 +1077,7 @@ export default function Home() {
                 <div className="success-counter-box1">
                   <div className="success-counter-item">
                     <h2>
-                      <span className="counter" data-target="8">8</span>+
+                      <span className="counter" data-target="8">8</span>
                     </h2>
                     <p>Industries Covered</p>
                   </div>
