@@ -351,8 +351,8 @@ const page = () => {
       <div className="row">
         <div className="col-sm-6">
           <div className="benifet-content-waber">
-            <div className="benifet-content benifet-content-2 vr-b-h">
-              <div>
+            <div className="benifet-content benifet-content-2 vr-b-h1">
+              <div className="benifithght">
                 <h4 className="benifit-title"> Tangible Outcomes</h4>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
@@ -397,14 +397,16 @@ const page = () => {
                   </p>
                 </div>
               </div>
+              <div className="text-center">
               <img src="/new/pf-6.svg" alt="" />
+              </div>
             </div>
           </div>
         </div>
         <div className="col-sm-6">
           <div className="benifet-content-waber">
-            <div className="benifet-content benifet-content-2 vr-b-h">
-              <div>
+            <div className="benifet-content benifet-content-2 vr-b-h1">
+              <div className="benifithght">
                 <h4 className="benifit-title">
                   Global Best Practices We Apply
                 </h4>

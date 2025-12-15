@@ -214,6 +214,7 @@ const page = () => {
     >
       Why It Matters
     </h2>
+    <div className="container">
     <div className="pe-matters-content-waber">
       <div className="pe-matters-content">
         <img src="/new/g501.svg" alt="" />
@@ -243,6 +244,7 @@ const page = () => {
           operational control
         </p>
       </div>
+    </div>
     </div>
   </div>
   <section className="py-100  pe-help-waber sup-pre ">
@@ -304,8 +306,8 @@ const page = () => {
       <div className="row">
         <div className="col-sm-6">
           <div className="benifet-content-waber">
-            <div className="benifet-content benifet-content-2 sc-b-h">
-              <div>
+            <div className="benifet-content benifet-content-2 sc-b-h1">
+              <div className="benifithght">
                 <h4 className="benifit-title"> Tangible Outcomes</h4>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
@@ -346,14 +348,16 @@ const page = () => {
                   </p>
                 </div>
               </div>
+              <div className="text-center">
               <img src="/new/pf-6.svg" alt="" />
+              </div>
             </div>
           </div>
         </div>
         <div className="col-sm-6">
           <div className="benifet-content-waber">
             <div className="benifet-content benifet-content-2 sc-b-h">
-              <div>
+              <div className="benifithght">
                 <h4 className="benifit-title">Why Choose Us</h4>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
@@ -387,7 +391,7 @@ const page = () => {
                 </div>
               </div>
               <div className="text-center">
-                <img src="/new/nodr.svg" style={{ width: "70%" }} alt="" />
+                <img src="/new/nodr.svg"  alt="" />
               </div>
             </div>
           </div>

@@ -214,6 +214,7 @@ export default function AlMl() {
                         <img src="/new/cm-09.jpeg" alt="" />
                     </div>
                 </div>
+                <div className="container">
                 <div className="py-100 pe-matters-waber">
                     <h2
                         className="main-hadding-1 them-dark-text-color text-center mb-40"
@@ -251,6 +252,7 @@ export default function AlMl() {
                             </p>
                         </div>
                     </div>
+                </div>
                 </div>
                 <section className="py-100  pe-help-waber cable-help ">
                     <div className="container">

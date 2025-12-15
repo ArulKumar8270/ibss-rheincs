@@ -151,8 +151,9 @@ export default function EnterpriseSolutions() {
           >
             Challenges in Process Manufacturing
           </h2>
-          <div className="d-g24 flex-wrap">
-            <div className="challenge-point-waber">
+          <div className="d-g241 flex-wrap1 processman row">
+            <div className="col-sm-6">
+              <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
                 Increasing complexity across multi-step formulations, stringent
@@ -173,6 +174,8 @@ export default function EnterpriseSolutions() {
                 compliance, and logistics
               </p>
             </div>
+            </div>
+            <div className="col-sm-6">
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
@@ -187,6 +190,8 @@ export default function EnterpriseSolutions() {
                 cost-to-serve metrics
               </p>
             </div>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -202,6 +207,8 @@ export default function EnterpriseSolutions() {
     >
       Why It Matters
     </h2>
+    <div className="container">
+
     <div className="pe-matters-content-waber">
       <div className="pe-matters-content">
         <img src="/new/g501.svg" alt="" />
@@ -228,6 +235,7 @@ export default function EnterpriseSolutions() {
           competitiveness across regulated markets
         </p>
       </div>
+    </div>
     </div>
   </div>
   <section className="py-100  pe-help-waber ">
@@ -284,8 +292,8 @@ export default function EnterpriseSolutions() {
       <div className="row">
         <div className="col-sm-6">
           <div className="benifet-content-waber">
-            <div className="benifet-content benifet-content-2 pm-b-h">
-              <div>
+            <div className="benifet-content benifet-content-2 pm-b-h1">
+              <div className="benifithght">
                 <h4 className="benifit-title">Tangible Outcomes</h4>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
@@ -314,14 +322,16 @@ export default function EnterpriseSolutions() {
                   </p>
                 </div>
               </div>
+              <div className="text-center">
               <img src="/new/pf-6.svg" alt="" />
+            </div>
             </div>
           </div>
         </div>
         <div className="col-sm-6">
           <div className="benifet-content-waber">
-            <div className="benifet-content benifet-content-2 pm-b-h">
-              <div>
+            <div className="benifet-content benifet-content-2 pm-b-h1">
+              <div className="benifithght">
                 <h4 className="benifit-title">
                   Global Industry Best Practices We Apply
                 </h4>
@@ -353,7 +363,7 @@ export default function EnterpriseSolutions() {
                 </div>
               </div>
               <div className="text-center">
-                <img src="/new/nodr.svg" style={{ width: "70%" }} alt="" />
+                <img src="/new/nodr.svg"  alt="" />
               </div>
             </div>
           </div>

@@ -220,6 +220,7 @@ export default function EnterpriseSolutions() {
     >
       Why It Matters
     </h2>
+    <div className="container">
     <div className="pe-matters-content-waber">
       <div className="pe-matters-content">
         <img src="/new/g501.svg" alt="" />
@@ -249,6 +250,7 @@ export default function EnterpriseSolutions() {
           multi-location rollouts
         </p>
       </div>
+    </div>
     </div>
   </div>
   <section className="py-100  pe-help-waber int-help ">
