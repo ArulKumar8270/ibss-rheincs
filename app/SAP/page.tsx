@@ -13,14 +13,14 @@ const page = () => {
             <div className="animesan-waber llo">
               <div className="sap-title sap-paner-text">
                 <h2 className="text-anime-style-2" data-cursor="-opaque">
-                  Run Better. Scale Faster. Innovate Continuously with SAP.
+                  Build Resilient, Connected, Scalable and Future-Ready Enterprises with SAP
                 </h2>
-                <p className="mt-3 mb-0">
+                {/* <p className="mt-3 mb-0">
                   SAP is not just a system. It’s the backbone for building operational
                   excellence. At RheinBrücke, we help organisations unlock the real
                   value of SAP through faster adoption, smarter integrations, and
                   outcome-focused execution.
-                </p>
+                </p> */}
                 <div className="ser-btn ">
                   <Link href="/contact" className="animated-svg-link">
                     Contact Us

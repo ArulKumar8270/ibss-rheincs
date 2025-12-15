@@ -1194,7 +1194,7 @@
 
 .services-56 h3 {
     font-size: 24px;
-    width: 371px;
+    width: 100%;
     font-weight: 400;
     color: rgba(0, 57, 51, 1);
 
@@ -3993,7 +3993,7 @@ h2.section-title {
 }
 
 .pe-matters-content {
-    width: 300px;
+    /* width: 300px; */
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -4053,14 +4053,14 @@ h2.section-title {
 }
 
 .pe-help-content-waber {
-    width: 632px;
+    width: 600px;
     display: flex;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: 16px;
 }
 
 .pe-help-content {
-    width: 300px;
+    width: 280px;
     display: flex;
     gap: 16px;
 
@@ -4079,7 +4079,7 @@ h2.section-title {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    height: 854px;
+    /* height: 854px; */
 }
 
 .pe-bf-content-waber {
@@ -4275,19 +4275,22 @@ h2.section-title {
 }
 
 .sc-b-h {
-    min-height: 750px;
+    min-height: 670px;
 }
 
 .dm-b-h {
-    min-height: 830px;
+    min-height: 770px;
 }
 
 .auto-b-h {
-    min-height: 900px;
+    min-height: 850px;
 }
 
+.auto-b-h1 {
+    min-height: 860px;
+}
 .epc-b-h {
-    min-height: 800px;
+    min-height: 760px;
 }
 
 .pm-b-h {
@@ -4295,7 +4298,7 @@ h2.section-title {
 }
 
 .ind-b-h {
-    min-height: 650px;
+    min-height: 675px;
 }
 
 .commen-help-bg-img {

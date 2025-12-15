@@ -329,7 +329,7 @@ export default function EnterpriseSolutions() {
       <div className="row">
         <div className="col-sm-6">
           <div className="pe-benifet-content-waber1">
-            <div className="pe-benifet-content benifet-content-2 row">
+            <div className="pe-benifet-content benifet-content-2 auto-b-h1 row">
               <div className="">
                 <h4 className="benifit-title"> Tangible Outcomes</h4>
                 <div className="pe-bf-content-waber">
@@ -388,7 +388,7 @@ export default function EnterpriseSolutions() {
         </div>
         <div className="col-sm-6">
           <div className="pe-benifet-content-waber1">
-            <div className="pe-benifet-content benifet-content-2">
+            <div className="pe-benifet-content benifet-content-2 auto-b-h1">
               <div>
                 <h4 className="benifit-title">Why Choose Us</h4>
                 <div className="pe-bf-content-waber">

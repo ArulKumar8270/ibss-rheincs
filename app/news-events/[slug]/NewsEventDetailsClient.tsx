@@ -158,7 +158,8 @@ export default function NewsEventDetailsClient({ initialItem, itemId }: NewsEven
             <div className="col-sm-12">
               <div className="section-title text-center ">
                 <h2 className="text-anime-style-2" data-cursor="-opaque">
-                  {item.type === 'event' ? 'EVENT' : 'NEWS'}
+                  {/* {item.type === 'event' ? 'EVENT' : 'NEWS'} */}
+                   NEWS AND EVENTS
                 </h2>
               </div>
             </div>
