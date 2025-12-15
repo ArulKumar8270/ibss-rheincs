@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavArrowLeft, NavArrowRight } from "../icons";
+import translations from "../translations.json";
 
 export default function Header() {
     const pathname = usePathname();
@@ -15,6 +16,12 @@ export default function Header() {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+    const [currentLanguage, setCurrentLanguage] = useState('English');
+
+    // Function to get translated text
+    const t = (key) => {
+        return translations[currentLanguage]?.[key] || translations['English'][key] || key;
+    };
 
     // Get the current page name (e.g., 'leadership' from '/leadership')
     const currentPage = pathname.split('/').pop() || 'index';
@@ -201,6 +208,16 @@ export default function Header() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
+    }, []);
+
+    // Load language preference from localStorage on mount
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const savedLanguage = localStorage.getItem('preferredLanguage');
+            if (savedLanguage && (savedLanguage === 'English' || savedLanguage === 'German')) {
+                setCurrentLanguage(savedLanguage);
+            }
+        }
     }, []);
 
     // All searchable pages with their titles and keywords
@@ -401,11 +418,23 @@ export default function Header() {
                                     </span>
                                     <Link href="mailto:info@rheincs.com"> info@rheincs.com</Link>
                                 </li>
-                                {/* <li>
+                                <li>
                                     <div className="custom-select top-icon-gap">
-                                        <select name="lang" id="lang">
-                                            <option value="German">German</option>
+                                        <select 
+                                            name="lang" 
+                                            id="lang"
+                                            value={currentLanguage}
+                                            onChange={(e) => {
+                                                const selectedLang = e.target.value;
+                                                setCurrentLanguage(selectedLang);
+                                                // Store language preference in localStorage
+                                                if (typeof window !== 'undefined') {
+                                                    localStorage.setItem('preferredLanguage', selectedLang);
+                                                }
+                                            }}
+                                        >
                                             <option value="English">English</option>
+                                            <option value="German">German</option>
                                         </select>
                                         <label htmlFor="lang" className="ml-4" style={{ marginLeft: '5px' }}>
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -427,7 +456,7 @@ export default function Header() {
                                         </label>
                                     </div>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <div id="chcp_font_size" className="input-group">
                                         <span className="input-group-btn font-increase-waber">
                                             <button
@@ -469,7 +498,7 @@ export default function Header() {
                                             {/* <li class="nav-item submenu1"><Link class="nav-link" href="index.php">Home</Link> </li> */}
                                             <li className={`nav-item submenu mega-menu ${isPageInArray(aboutPages) ? 'active' : ''}`}>
                                                 <Link className="nav-link drop-1" href="#">
-                                                    <span> About Us</span>
+                                                    <span> {t("About Us")}</span>
                                                     <span style={{ marginLeft: '5px' }}>
                                                         <svg
                                                             width={24}
@@ -662,7 +691,7 @@ export default function Header() {
                                             <li className={`nav-item submenu mega-menu ${isPageInArray(solutionsPages) ? 'active' : ''}`}>
                                                 <Link className="nav-link darp-1" href="#">
                                                     {" "}
-                                                    <span> Solutions &amp; Services </span>
+                                                    <span> {t("Solutions & Services")} </span>
                                                     <span>
                                                         <svg
                                                             width={24}
@@ -1166,7 +1195,7 @@ export default function Header() {
                                             <li className={`nav-item submenu mega-menu ${isPageInArray(industryPages) ? 'active' : ''}`}>
                                                 <Link className="nav-link darp-1" href="#">
                                                     {" "}
-                                                    <span>Industries</span>
+                                                    <span>{t("Industries")}</span>
                                                     <span>
                                                         <svg
                                                             width={24}
@@ -1386,7 +1415,7 @@ export default function Header() {
                                             <li className={`nav-item submenu mega-menu ${isPageInArray(resourcePages) ? 'active' : ''}`}>
                                                 <Link className="nav-link darp-1" href="#">
                                                     {" "}
-                                                    <span>Resources </span>{" "}
+                                                    <span>{t("Resources")} </span>{" "}
                                                     <span>
                                                         <svg
                                                             width={24}
@@ -1590,7 +1619,7 @@ export default function Header() {
                                             </li>
                                             <li className={`nav-item ${pathname === '/contact' || currentPage === 'contact' ? 'active' : ''}`}>
                                                 <Link className="nav-link" href="/contact">
-                                                    Contact Us
+                                                    {t("Contact Us")}
                                                 </Link>
                                             </li>
                                         </ul>
@@ -1969,7 +1998,7 @@ export default function Header() {
                         {/* About Us */}
                         <li>
                             <div className="menu-item">
-                                <Link href="#">About Us</Link>
+                                <Link href="#">{t("About Us")}</Link>
                                 <span className="submenu-toggle">
                                     <svg
                                         className="submenu-arrow"
@@ -2114,7 +2143,7 @@ export default function Header() {
                         {/* Solutions & Services */}
                         <li>
                             <div className="menu-item">
-                                <Link href="#">Solutions &amp; Services</Link>
+                                <Link href="#">{t("Solutions & Services")}</Link>
                                 <span className="submenu-toggle">
                                     <svg
                                         className="submenu-arrow"
@@ -2890,7 +2919,7 @@ export default function Header() {
                         {/* Industries */}
                         <li>
                             <div className="menu-item">
-                                <Link href="#">Industries</Link>
+                                <Link href="#">{t("Industries")}</Link>
                                 <span className="submenu-toggle">
                                     <svg
                                         className="submenu-arrow"
@@ -3054,7 +3083,7 @@ export default function Header() {
                         {/* Resources */}
                         <li>
                             <div className="menu-item">
-                                <Link href="#">Resources</Link>
+                                <Link href="#">{t("Resources")}</Link>
                                 <span className="submenu-toggle">
                                     <svg
                                         className="submenu-arrow"
@@ -3202,7 +3231,7 @@ export default function Header() {
                         {/* Contact Us */}
                         <li>
                             <div className="menu-item">
-                                <Link href="/contact">Contact Us</Link>
+                                <Link href="/contact">{t("Contact Us")}</Link>
                             </div>
                         </li>
                     </ul>
