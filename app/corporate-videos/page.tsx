@@ -50,7 +50,7 @@ const page = () => {
                     data-cursor-text="Play"
                   >
                     <figure>
-                      <img src="/images/v1.jpg" alt="" />
+                      <img src="/images/vi1.jpg" alt="" />
                     </figure>
                   </Link>
                   <h4>RheinBrucke IT Consulting – Corporate video</h4>
@@ -68,7 +68,7 @@ const page = () => {
                     data-cursor-text="Play"
                   >
                     <figure>
-                      <img src="/images/v2.jpg" alt="" />
+                      <img src="/images/vi2.jpg" alt="" />
                     </figure>
                   </Link>
                   <h4>RheinBrücke IT Consulting - Stevie Awards 2015 German</h4>
@@ -86,7 +86,7 @@ const page = () => {
                     data-cursor-text="Play"
                   >
                     <figure>
-                      <img src="/images/v3.webp" alt="" />
+                      <img src="/images/vi3.jpg" alt="" />
                     </figure>
                   </Link>
                   <h4>RheinBrücke – Pinnacle Awards of Excellence 2016</h4>
@@ -104,7 +104,7 @@ const page = () => {
                     data-cursor-text="Play"
                   >
                     <figure>
-                      <img src="/images/v4.webp" alt="" />
+                      <img src="/images/vi4.jpg" alt="" />
                     </figure>
                   </Link>
                   <h4>RheinBrücke – Customer Reference by Martin Peters</h4>
@@ -122,7 +122,7 @@ const page = () => {
                     data-cursor-text="Play"
                   >
                     <figure>
-                      <img src="/images/v12.webp" alt="" />
+                      <img src="/images/vi5.jpg" alt="" />
                     </figure>
                   </Link>
                   <h4>RheinBrücke – Customer Reference by Dr. Schrettl</h4>
@@ -137,7 +137,7 @@ const page = () => {
                     data-cursor-text="Play"
                   >
                     <figure>
-                      <img src="/images/v8.jpg" alt="" />
+                      <img src="/images/vi6.jpg" alt="" />
                     </figure>
                   </Link>
                   <h4>RheinBrücke – Customer Reference by Greg Bryan</h4>
@@ -155,7 +155,7 @@ const page = () => {
                     data-cursor-text="Play"
                   >
                     <figure>
-                      <img src="/images/v7.jpg" alt="" />
+                      <img src="/images/vi7.jpg" alt="" />
                     </figure>
                   </Link>
                   <h4>RheinBrücke – Customer Reference by Harry Hezel</h4>
@@ -173,7 +173,7 @@ const page = () => {
                     data-cursor-text="Play"
                   >
                     <figure>
-                      <img src="/images/v9.jpg" alt="" />
+                      <img src="/images/vi8.jpg" alt="" />
                     </figure>
                   </Link>
                   <h4>RheinBrucke – IDC Inauguration Event</h4>
@@ -191,7 +191,7 @@ const page = () => {
                     data-cursor-text="Play"
                   >
                     <figure>
-                      <img src="/images/v2.jpg" alt="" />
+                      <img src="/images/vi9.jpg" alt="" />
                     </figure>
                   </Link>
                   <h4>RheinBrucke – Stevie Awards 2016 German</h4>
@@ -209,7 +209,7 @@ const page = () => {
                     data-cursor-text="Play"
                   >
                     <figure>
-                      <img src="/images/v10.webp" alt="" />
+                      <img src="/images/vi10.jpg" alt="" />
                     </figure>
                   </Link>
                   <h4>RheinBrucke – FLSmidth Testimonial | Mads Madsbjerg Hansen</h4>
@@ -227,7 +227,7 @@ const page = () => {
                     data-cursor-text="Play"
                   >
                     <figure>
-                      <img src="/images/v11.jpg" alt="" />
+                      <img src="/images/vi11.jpg" alt="" />
                     </figure>
                   </Link>
                   <h4>
