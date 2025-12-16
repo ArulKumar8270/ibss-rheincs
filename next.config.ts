@@ -9,6 +9,10 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   trailingSlash: true,
+  // Disable static optimization issues that can cause chunk loading problems
+  experimental: {
+    missingSuspenseWithCSRBailout: false,
+  },
 };
 
 module.exports = nextConfig;
