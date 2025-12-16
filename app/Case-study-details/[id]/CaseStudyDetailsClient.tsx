@@ -69,6 +69,7 @@ export default function CaseStudyDetailsClient({
   const [caseStudy, setCaseStudy] = useState<CaseStudy | null>(initialCaseStudy);
   const [relatedCaseStudies, setRelatedCaseStudies] = useState<CaseStudy[]>(initialRelatedCaseStudies);
   const [loading, setLoading] = useState(!initialCaseStudy && !caseStudy);
+  const [activeSection, setActiveSection] = useState<string>('overview-section');
   const supabase = createClient();
 
   // Define fetchCaseStudy before using it in useEffect
@@ -189,6 +190,70 @@ export default function CaseStudyDetailsClient({
     };
   }, [caseStudyId, fetchCaseStudy])
 
+  // Set up Intersection Observer to track active section
+  useEffect(() => {
+    if (!caseStudy) return;
+
+    const sections = [
+      { id: 'overview-section', condition: caseStudy.overview },
+      { id: 'challenges-section', condition: caseStudy.challenges },
+      { id: 'solution-section', condition: caseStudy.solution },
+      { id: 'benefits-section', condition: caseStudy.benefits },
+      { id: 'implementation-section', condition: caseStudy.implementation }
+    ].filter(section => section.condition);
+
+    if (sections.length === 0) return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observers: IntersectionObserver[] = [];
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id);
+      if (!element) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(section.id);
+          }
+        });
+      }, observerOptions);
+
+      observer.observe(element);
+      observers.push(observer);
+    });
+
+    // Set initial active section based on scroll position
+    const checkInitialSection = () => {
+      const scrollPosition = window.scrollY + 200; // Offset for nav position
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sections[i].id);
+        if (element) {
+          const elementTop = element.offsetTop;
+          if (scrollPosition >= elementTop) {
+            setActiveSection(sections[i].id);
+            break;
+          }
+        }
+      }
+    };
+
+    // Check on mount and after a short delay to ensure DOM is ready
+    setTimeout(checkInitialSection, 100);
+    window.addEventListener('scroll', checkInitialSection);
+
+    return () => {
+      observers.forEach(observer => observer.disconnect());
+      window.removeEventListener('scroll', checkInitialSection);
+    };
+  }, [caseStudy])
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {
@@ -284,35 +349,85 @@ export default function CaseStudyDetailsClient({
                   >
                     {caseStudy.overview && (
                       <li className="nav-item" role="presentation">
-                        <Link className="nav-link active" href="#overview-section">
+                        <Link 
+                          className={`nav-link ${activeSection === 'overview-section' ? 'active' : ''}`} 
+                          href="#overview-section"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const element = document.getElementById('overview-section');
+                            if (element) {
+                              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                          }}
+                        >
                           Overview
                         </Link>
                       </li>
                     )}
                     {caseStudy.challenges && (
                       <li className="nav-item" role="presentation">
-                        <Link className="nav-link" href="#challenges-section">
+                        <Link 
+                          className={`nav-link ${activeSection === 'challenges-section' ? 'active' : ''}`} 
+                          href="#challenges-section"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const element = document.getElementById('challenges-section');
+                            if (element) {
+                              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                          }}
+                        >
                           Challenges
                         </Link>
                       </li>
                     )}
                     {caseStudy.solution && (
                       <li className="nav-item" role="presentation">
-                        <Link className="nav-link" href="#solution-section">
+                        <Link 
+                          className={`nav-link ${activeSection === 'solution-section' ? 'active' : ''}`} 
+                          href="#solution-section"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const element = document.getElementById('solution-section');
+                            if (element) {
+                              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                          }}
+                        >
                           Our Solution
                         </Link>
                       </li>
                     )}
                     {caseStudy.benefits && (
                       <li className="nav-item" role="presentation">
-                        <Link className="nav-link" href="#benefits-section">
+                        <Link 
+                          className={`nav-link ${activeSection === 'benefits-section' ? 'active' : ''}`} 
+                          href="#benefits-section"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const element = document.getElementById('benefits-section');
+                            if (element) {
+                              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                          }}
+                        >
                           Benefits
                         </Link>
                       </li>
                     )}
                     {caseStudy.implementation && (
                       <li className="nav-item" role="presentation">
-                        <Link className="nav-link" href="#implementation-section">
+                        <Link 
+                          className={`nav-link ${activeSection === 'implementation-section' ? 'active' : ''}`} 
+                          href="#implementation-section"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const element = document.getElementById('implementation-section');
+                            if (element) {
+                              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                          }}
+                        >
                           Implementation
                         </Link>
                       </li>
