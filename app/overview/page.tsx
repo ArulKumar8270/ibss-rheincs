@@ -673,7 +673,9 @@ export default function EnterpriseSolutions() {
                                                 </p>
                                             </div>
                                         </div>
+                                        </div>
                                         {/* Benefits Steps Item End */}
+                                    <div className="col-lg-6 col-md-6 col-6">
                                         {/* Benefits Steps Item Start */}
                                         <div
                                             className="benefits-steps-item wow fadeInUp"
@@ -811,7 +813,173 @@ export default function EnterpriseSolutions() {
                                                 </p>
                                             </div>
                                         </div>
+                                        </div>
                                         {/* Benefits Steps Item End */}
+                                    <div className="col-lg-6 col-md-6  col-6">
+                                        {/* Benefits Steps Item Start */}
+                                        <div
+                                            className="benefits-steps-item wow fadeInUp"
+                                            data-wow-delay="0.2s"
+                                        >
+                                            <div className="icon-box">
+                                                {/*<img src="/images/aboute2.svg" alt="">*/}
+                                                <svg
+                                                    width={80}
+                                                    height={80}
+                                                    viewBox="0 0 80 80"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <g clipPath="url(#clip0_3650_6125)">
+                                                        <path
+                                                            d="M60.4463 62.931C55.5056 67.34 49.1316 70.1767 42.1094 70.653V74.9453H37.8906V70.653C22.6029 69.616 10.384 57.3969 9.34698 42.1094H5.05469V37.8906H9.34698C10.384 22.6029 22.6031 10.384 37.8906 9.34698V5.05469H42.1094V9.34698C57.3969 10.384 69.616 22.6029 70.653 37.8906H74.9453V42.1094H70.653C70.2445 48.1319 68.0995 53.6775 64.7163 58.2516M61.9835 61.4826L63.4101 59.9288M20.5022 22.043C16.5969 26.2813 14.0555 31.7958 13.5757 37.8906H19.8203V42.1094H13.5757C14.596 55.0673 24.9326 65.4042 37.8906 66.4243V60.1797H42.1094V66.4243C55.0674 65.4042 65.404 55.0673 66.4243 42.1094H60.1797V37.8906H66.4243C65.4042 24.9326 55.0674 14.5958 42.1094 13.5757V19.8203H37.8906V13.5757C31.7959 14.0555 26.2813 16.5968 22.043 20.5022"
+                                                            stroke="#499A9A"
+                                                            strokeWidth="1.8"
+                                                            strokeMiterlimit="22.9256"
+                                                        />
+                                                        <path
+                                                            d="M35.7812 48.4374V35.7812L44.2188 38.9453V48.4375M35.7812 38.9453L27.3438 35.7812V48.4374H52.6562V38.9452L50.5469 31.5625H46.328L44.2186 38.9452"
+                                                            stroke="#499A9A"
+                                                            strokeWidth="1.8"
+                                                            strokeMiterlimit="22.9256"
+                                                        />
+                                                        <path
+                                                            d="M48.4375 48.4375V44.2188M31.5625 44.2188V42.1094M39.9999 44.2188V42.1094M48.4375 42.1094V40"
+                                                            stroke="#499A9A"
+                                                            strokeWidth="1.8"
+                                                            strokeMiterlimit="22.9256"
+                                                        />
+                                                        <path
+                                                            d="M48.4375 20.875V18.7656M52.6562 22.9844V20.875"
+                                                            stroke="#499A9A"
+                                                            strokeWidth="1.8"
+                                                            strokeMiterlimit="22.9256"
+                                                        />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_3650_6125">
+                                                            <rect
+                                                                width={72}
+                                                                height={72}
+                                                                fill="white"
+                                                                transform="translate(4 4)"
+                                                            />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </div>
+                                            <div className="benefits-steps-content">
+                                                <h3>Enterprise-Grade Solutions</h3>
+                                                <p>
+                                                    Scalable, cloud-ready systems designed to meet evolving
+                                                    enterprise needs.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        {/* Benefits Steps Item End */}
+                                    <div className="col-lg-6 col-md-6 col-6">
+                                        {/* Benefits Steps Item Start */}
+                                        <div
+                                            className="benefits-steps-item wow fadeInUp"
+                                            data-wow-delay="0.6s"
+                                        >
+                                            <div className="icon-box">
+                                                {/*<img src="/images/aboute5.svg" alt="">*/}
+                                                <svg
+                                                    width={80}
+                                                    height={80}
+                                                    viewBox="0 0 80 80"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <g clipPath="url(#clip0_3650_6143)">
+                                                        <g clipPath="url(#clip1_3650_6143)">
+                                                            <path
+                                                                d="M73.8411 39.3272C79.9679 33.2004 79.9679 23.2669 73.8411 17.1401C67.7143 11.0133 57.7808 11.0133 51.6541 17.1401C45.5273 23.2669 45.5273 33.2004 51.6541 39.3272C57.7808 45.4539 67.7143 45.4539 73.8411 39.3272Z"
+                                                                stroke="#499A9A"
+                                                                strokeWidth="3.125"
+                                                                strokeMiterlimit={10}
+                                                                strokeLinecap="round"
+                                                                strokeLinejoin="round"
+                                                            />
+                                                            <path
+                                                                d="M62.7481 43.9222C66.214 43.9222 69.0236 36.8981 69.0236 28.2334C69.0236 19.5688 66.214 12.5447 62.7481 12.5447C59.2823 12.5447 56.4727 19.5688 56.4727 28.2334C56.4727 36.8981 59.2823 43.9222 62.7481 43.9222Z"
+                                                                stroke="#499A9A"
+                                                                strokeWidth="3.125"
+                                                                strokeMiterlimit={10}
+                                                                strokeLinecap="round"
+                                                                strokeLinejoin="round"
+                                                            />
+                                                            <path
+                                                                d="M15.2285 36.0916L28.8952 36.0791C31.152 36.0752 33.3205 36.8841 34.9335 38.3319L51.1668 52.9016C52.8255 54.4294 52.8227 56.9001 51.1602 58.4246C49.4927 59.9536 46.7884 59.951 45.1246 58.4182L38.7418 52.5391"
+                                                                stroke="#499A9A"
+                                                                strokeWidth="3.125"
+                                                                strokeMiterlimit={10}
+                                                                strokeLinecap="round"
+                                                                strokeLinejoin="round"
+                                                            />
+                                                            <path
+                                                                d="M15.2285 53.2844L31.931 65.6529C34.0621 66.8321 36.5037 67.4554 38.9924 67.4554C40.6805 67.4554 75.614 67.4554 74.1612 67.4554C76.5263 67.4554 78.442 65.6946 78.4368 63.5257C78.4316 61.3672 76.5248 59.6185 74.1707 59.6136L47.8576 59.5694"
+                                                                stroke="#499A9A"
+                                                                strokeWidth="3.125"
+                                                                strokeMiterlimit={10}
+                                                                strokeLinecap="round"
+                                                                strokeLinejoin="round"
+                                                            />
+                                                            <path
+                                                                d="M1.5625 61.1362H10.5227C13.122 61.1362 15.2292 59.029 15.2292 56.4295V36.0779C15.2292 33.4785 13.122 31.3713 10.5227 31.3713H1.5625V61.1362Z"
+                                                                stroke="#499A9A"
+                                                                strokeWidth="3.125"
+                                                                strokeMiterlimit={10}
+                                                                strokeLinecap="round"
+                                                                strokeLinejoin="round"
+                                                            />
+                                                            <circle
+                                                                cx="7.83789"
+                                                                cy="37.6467"
+                                                                r="1.5625"
+                                                                fill="#499A9A"
+                                                            />
+                                                            <path
+                                                                d="M77.7178 32.9399C74.0986 32.9399 51.4303 32.9399 47.7773 32.9399"
+                                                                stroke="#499A9A"
+                                                                strokeWidth="3.125"
+                                                                strokeMiterlimit={10}
+                                                                strokeLinecap="round"
+                                                                strokeLinejoin="round"
+                                                            />
+                                                            <path
+                                                                d="M47.7773 23.5266C51.3966 23.5266 74.0648 23.5266 77.7178 23.5266"
+                                                                stroke="#499A9A"
+                                                                strokeWidth="3.125"
+                                                                strokeMiterlimit={10}
+                                                                strokeLinecap="round"
+                                                                strokeLinejoin="round"
+                                                            />
+                                                        </g>
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_3650_6143">
+                                                            <rect width={80} height={80} fill="white" />
+                                                        </clipPath>
+                                                        <clipPath id="clip1_3650_6143">
+                                                            <rect width={80} height={80} fill="white" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </div>
+                                            <div className="benefits-steps-content">
+                                                <h3>Global Delivery, Local Touch</h3>
+                                                <p>
+                                                    A hybrid model combining offshore capability with local
+                                                    responsiveness.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        {/* Benefits Steps Item End */}
+                                    <div className="col-lg-6 col-md-6 col-6">
                                         {/* Benefits Steps Item Start */}
                                         <div
                                             className="benefits-steps-item wow fadeInUp"
@@ -922,167 +1090,7 @@ export default function EnterpriseSolutions() {
                                         </div>
                                         {/* Benefits Steps Item End */}
                                     </div>
-                                    <div className="col-lg-6 col-md-6  col-6">
-                                        {/* Benefits Steps Item Start */}
-                                        <div
-                                            className="benefits-steps-item wow fadeInUp"
-                                            data-wow-delay="0.2s"
-                                        >
-                                            <div className="icon-box">
-                                                {/*<img src="/images/aboute2.svg" alt="">*/}
-                                                <svg
-                                                    width={80}
-                                                    height={80}
-                                                    viewBox="0 0 80 80"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <g clipPath="url(#clip0_3650_6125)">
-                                                        <path
-                                                            d="M60.4463 62.931C55.5056 67.34 49.1316 70.1767 42.1094 70.653V74.9453H37.8906V70.653C22.6029 69.616 10.384 57.3969 9.34698 42.1094H5.05469V37.8906H9.34698C10.384 22.6029 22.6031 10.384 37.8906 9.34698V5.05469H42.1094V9.34698C57.3969 10.384 69.616 22.6029 70.653 37.8906H74.9453V42.1094H70.653C70.2445 48.1319 68.0995 53.6775 64.7163 58.2516M61.9835 61.4826L63.4101 59.9288M20.5022 22.043C16.5969 26.2813 14.0555 31.7958 13.5757 37.8906H19.8203V42.1094H13.5757C14.596 55.0673 24.9326 65.4042 37.8906 66.4243V60.1797H42.1094V66.4243C55.0674 65.4042 65.404 55.0673 66.4243 42.1094H60.1797V37.8906H66.4243C65.4042 24.9326 55.0674 14.5958 42.1094 13.5757V19.8203H37.8906V13.5757C31.7959 14.0555 26.2813 16.5968 22.043 20.5022"
-                                                            stroke="#499A9A"
-                                                            strokeWidth="1.8"
-                                                            strokeMiterlimit="22.9256"
-                                                        />
-                                                        <path
-                                                            d="M35.7812 48.4374V35.7812L44.2188 38.9453V48.4375M35.7812 38.9453L27.3438 35.7812V48.4374H52.6562V38.9452L50.5469 31.5625H46.328L44.2186 38.9452"
-                                                            stroke="#499A9A"
-                                                            strokeWidth="1.8"
-                                                            strokeMiterlimit="22.9256"
-                                                        />
-                                                        <path
-                                                            d="M48.4375 48.4375V44.2188M31.5625 44.2188V42.1094M39.9999 44.2188V42.1094M48.4375 42.1094V40"
-                                                            stroke="#499A9A"
-                                                            strokeWidth="1.8"
-                                                            strokeMiterlimit="22.9256"
-                                                        />
-                                                        <path
-                                                            d="M48.4375 20.875V18.7656M52.6562 22.9844V20.875"
-                                                            stroke="#499A9A"
-                                                            strokeWidth="1.8"
-                                                            strokeMiterlimit="22.9256"
-                                                        />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_3650_6125">
-                                                            <rect
-                                                                width={72}
-                                                                height={72}
-                                                                fill="white"
-                                                                transform="translate(4 4)"
-                                                            />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </div>
-                                            <div className="benefits-steps-content">
-                                                <h3>Enterprise-Grade Solutions</h3>
-                                                <p>
-                                                    Scalable, cloud-ready systems designed to meet evolving
-                                                    enterprise needs.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        {/* Benefits Steps Item End */}
-                                        {/* Benefits Steps Item Start */}
-                                        <div
-                                            className="benefits-steps-item wow fadeInUp"
-                                            data-wow-delay="0.6s"
-                                        >
-                                            <div className="icon-box">
-                                                {/*<img src="/images/aboute5.svg" alt="">*/}
-                                                <svg
-                                                    width={80}
-                                                    height={80}
-                                                    viewBox="0 0 80 80"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                    <g clipPath="url(#clip0_3650_6143)">
-                                                        <g clipPath="url(#clip1_3650_6143)">
-                                                            <path
-                                                                d="M73.8411 39.3272C79.9679 33.2004 79.9679 23.2669 73.8411 17.1401C67.7143 11.0133 57.7808 11.0133 51.6541 17.1401C45.5273 23.2669 45.5273 33.2004 51.6541 39.3272C57.7808 45.4539 67.7143 45.4539 73.8411 39.3272Z"
-                                                                stroke="#499A9A"
-                                                                strokeWidth="3.125"
-                                                                strokeMiterlimit={10}
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                            />
-                                                            <path
-                                                                d="M62.7481 43.9222C66.214 43.9222 69.0236 36.8981 69.0236 28.2334C69.0236 19.5688 66.214 12.5447 62.7481 12.5447C59.2823 12.5447 56.4727 19.5688 56.4727 28.2334C56.4727 36.8981 59.2823 43.9222 62.7481 43.9222Z"
-                                                                stroke="#499A9A"
-                                                                strokeWidth="3.125"
-                                                                strokeMiterlimit={10}
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                            />
-                                                            <path
-                                                                d="M15.2285 36.0916L28.8952 36.0791C31.152 36.0752 33.3205 36.8841 34.9335 38.3319L51.1668 52.9016C52.8255 54.4294 52.8227 56.9001 51.1602 58.4246C49.4927 59.9536 46.7884 59.951 45.1246 58.4182L38.7418 52.5391"
-                                                                stroke="#499A9A"
-                                                                strokeWidth="3.125"
-                                                                strokeMiterlimit={10}
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                            />
-                                                            <path
-                                                                d="M15.2285 53.2844L31.931 65.6529C34.0621 66.8321 36.5037 67.4554 38.9924 67.4554C40.6805 67.4554 75.614 67.4554 74.1612 67.4554C76.5263 67.4554 78.442 65.6946 78.4368 63.5257C78.4316 61.3672 76.5248 59.6185 74.1707 59.6136L47.8576 59.5694"
-                                                                stroke="#499A9A"
-                                                                strokeWidth="3.125"
-                                                                strokeMiterlimit={10}
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                            />
-                                                            <path
-                                                                d="M1.5625 61.1362H10.5227C13.122 61.1362 15.2292 59.029 15.2292 56.4295V36.0779C15.2292 33.4785 13.122 31.3713 10.5227 31.3713H1.5625V61.1362Z"
-                                                                stroke="#499A9A"
-                                                                strokeWidth="3.125"
-                                                                strokeMiterlimit={10}
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                            />
-                                                            <circle
-                                                                cx="7.83789"
-                                                                cy="37.6467"
-                                                                r="1.5625"
-                                                                fill="#499A9A"
-                                                            />
-                                                            <path
-                                                                d="M77.7178 32.9399C74.0986 32.9399 51.4303 32.9399 47.7773 32.9399"
-                                                                stroke="#499A9A"
-                                                                strokeWidth="3.125"
-                                                                strokeMiterlimit={10}
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                            />
-                                                            <path
-                                                                d="M47.7773 23.5266C51.3966 23.5266 74.0648 23.5266 77.7178 23.5266"
-                                                                stroke="#499A9A"
-                                                                strokeWidth="3.125"
-                                                                strokeMiterlimit={10}
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                            />
-                                                        </g>
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_3650_6143">
-                                                            <rect width={80} height={80} fill="white" />
-                                                        </clipPath>
-                                                        <clipPath id="clip1_3650_6143">
-                                                            <rect width={80} height={80} fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </div>
-                                            <div className="benefits-steps-content">
-                                                <h3>Global Delivery, Local Touch</h3>
-                                                <p>
-                                                    A hybrid model combining offshore capability with local
-                                                    responsiveness.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        {/* Benefits Steps Item End */}
+                                    <div className="col-lg-6 col-md-6 col-6">
                                         {/* Benefits Steps Item Start */}
                                         <div
                                             className="benefits-steps-item wow fadeInUp"
@@ -1172,7 +1180,7 @@ export default function EnterpriseSolutions() {
                                                 </svg>
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Platform Partnerships and Alliances</h3>
+                                                <h3>Platform Partnership and Alliances</h3>
                                                 <p>
                                                     Epicor Premium Partner, Microsoft ISV Partner, Microsoft AI
                                                     Cloud Partner, Protiviti ME, Moro Hub, N Tech and more.
