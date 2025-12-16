@@ -11886,8 +11886,14 @@ body:has(.offcanvas) {
 	.hero video {
 		height: 300px !important;
 		margin-bottom: -8px;
+		        margin-top: 10px;
 	}
-
+.new-controls-rendered {
+    position: fixed;
+    inset: 0;
+    padding-bottom: 0;
+    z-index: 99 !important;
+}
 	.mobilesself1 .buildsecont .mobileh2 h2 {
 		margin-bottom: 0px !important;
 	}
@@ -19960,10 +19966,17 @@ body.popup-open .main-header {
 	.mobile-nav {
 		display: block;
 		position: sticky;
-		z-index: 9999;
+		z-index: 9;
 		top: 0;
 	}
-
+.video-popup iframe {
+    width: 95% !important;
+    height: 75% !important;
+}.video-popup .close-popup {
+    position: absolute;
+    top: 4%;
+    right: 3% !important;
+}
 	/* --- Mobile Header Bar (Top Bar) --- */
 	.mobile-header {
 		background-color: #082326;
@@ -21941,4 +21954,8 @@ img.mfp-img {
 
   .epicoroffer .service-item-header {
 	display: block !important;
+  }
+
+  .stu-tap-content ul li{
+	color: #000;
   }

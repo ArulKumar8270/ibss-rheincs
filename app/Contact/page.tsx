@@ -167,6 +167,11 @@ export default function Contact() {
                       <i className="fa-brands fa-facebook" />
                     </Link>
                   </li>
+                  <li>
+                    <Link href="https://www.youtube.com/@rheinbruckeitconsulting" target="_blank">
+                      <i className="fa-brands fa-youtube" />
+                    </Link>
+                  </li>
                 </div>
                 <div className="chat-main-waber">
                   <div className="chat-btn-1">

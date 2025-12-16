@@ -1841,6 +1841,7 @@
 .blog-img-waber-img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .blog-content-in-blog-page {
