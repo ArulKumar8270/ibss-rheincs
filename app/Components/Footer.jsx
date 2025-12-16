@@ -36,6 +36,11 @@ export default function Footer() {
                                                     <i className="fa-brands fa-facebook" />
                                                 </Link>
                                             </li>
+                                            <li>
+                                                <Link href="https://www.youtube.com/@rheinbruckeitconsulting" target="_blank">
+                                                    <i className="fa-brands fa-youtube" />
+                                                </Link>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -237,9 +242,9 @@ export default function Footer() {
                                         <li>
                                             <Link href="/Blog">Blog </Link>
                                         </li>
-                                        {/* <li>
-                                            <Link href="/case-study-details">Case studies</Link>
-                                        </li> */}
+                                        <li>
+                                            <Link href="/case-study">Case studies</Link>
+                                        </li>
                                         <li>
                                             <Link href="/webinars">Webinars</Link>
                                         </li>

@@ -8029,7 +8029,7 @@ body:has(.offcanvas) {
 
 .about-footer .header-social-links ul li {
 	line-height: normal;
-	margin-right: 40px;
+	margin-right: 30px;
 	padding: 0;
 }
 
@@ -19877,7 +19877,7 @@ body.popup-open .main-header {
 
 .epicsecslide .valueslide p {
 	font-family: "Raleway";
-	font-size: 24px;
+	font-size: 20px;
 	line-height: 32px;
 	font-weight: 600;
 }
@@ -21932,4 +21932,13 @@ img.mfp-img {
   }
   .indexwhatdo .testimonial-slider .service-item{
 	height: 420px;
+  }
+
+  .video-gallery-image img{
+	height: 100%;
+	width: 100%;
+  }
+
+  .epicoroffer .service-item-header {
+	display: block !important;
   }

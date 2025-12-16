@@ -1506,13 +1506,13 @@ export default function Header() {
                                                                                             Blog
                                                                                         </Link>
                                                                                     </li>
-                                                                                    {/* <li className="ser-btn">
+                                                                                    <li className="ser-btn">
                                                                                         <Link href="/Case-study"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             Case Studies
                                                                                         </Link>
-                                                                                    </li> */}
+                                                                                    </li>
                                                                                     <li className="ser-btn">
                                                                                         <Link href="/webinars"
                                                                                             className="animated-svg-link"
