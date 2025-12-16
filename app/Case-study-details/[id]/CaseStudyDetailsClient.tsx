@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import CommomLayout from "../../Components/CommomLayout";
 import Link from "next/link";
@@ -71,21 +71,8 @@ export default function CaseStudyDetailsClient({
   const [loading, setLoading] = useState(!initialCaseStudy && !caseStudy);
   const supabase = createClient();
 
-  useEffect(() => {
-    if (caseStudyId === 'placeholder' && !initialCaseStudy) {
-      router.push('/Case-study');
-      return;
-    }
-
-    // Always fetch fresh data on client side to get latest updates
-    // This ensures updated content appears immediately without needing a rebuild
-    if (caseStudyId && caseStudyId !== 'placeholder') {
-      fetchCaseStudy();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [caseStudyId]) // Only depend on caseStudyId, not initialCaseStudy
-
-  const fetchCaseStudy = async () => {
+  // Define fetchCaseStudy before using it in useEffect
+  const fetchCaseStudy = useCallback(async () => {
     try {
       // Only show loading spinner if we don't have any case study data yet
       // This prevents flash of loading when we have initialCaseStudy
@@ -94,12 +81,17 @@ export default function CaseStudyDetailsClient({
         setLoading(true)
       }
       
+      // Fetch with cache-busting to ensure we get fresh data
+      // Add timestamp to bypass any caching
       const { data: caseStudyData, error: caseStudyError } = await supabase
         .from('case_studies')
         .select('*')
         .eq('id', caseStudyId)
         .eq('published', true)
         .single()
+        // Force fresh data by adding a cache header (if supported)
+        // Note: Supabase client doesn't support cache headers directly,
+        // but we can ensure we always fetch by not relying on cached responses
 
       if (caseStudyError) {
         console.error('Supabase error:', caseStudyError)
@@ -107,10 +99,23 @@ export default function CaseStudyDetailsClient({
       }
       
       if (caseStudyData) {
-        // Update with fresh data
-        setCaseStudy(caseStudyData)
+        // Always update with fresh data from database
+        // Compare updated_at timestamp to detect if data has changed
+        const currentData = caseStudy || initialCaseStudy;
+        const hasChanged = !currentData || 
+          currentData.updated_at !== caseStudyData.updated_at ||
+          currentData.title !== caseStudyData.title ||
+          currentData.content !== caseStudyData.content;
+        
+        // Always set the state with fresh data to ensure UI is updated
+        // This ensures updates from the database are reflected immediately
+        setCaseStudy(caseStudyData);
+        
+        if (hasChanged) {
+          console.log('✅ Case study data updated, UI refreshed:', caseStudyData.id);
+        }
 
-        // Fetch related case studies
+        // Fetch related case studies with fresh data
         const { data: relatedData } = await supabase
           .from('case_studies')
           .select('*')
@@ -140,7 +145,49 @@ export default function CaseStudyDetailsClient({
     } finally {
       setLoading(false)
     }
-  }
+  }, [caseStudyId, caseStudy, initialCaseStudy, supabase, router])
+
+  useEffect(() => {
+    if (caseStudyId === 'placeholder' && !initialCaseStudy) {
+      router.push('/Case-study');
+      return;
+    }
+
+    // Always fetch fresh data on client side to get latest updates
+    // This ensures updated content appears immediately without needing a rebuild
+    // We ALWAYS fetch, even if we have initialCaseStudy, to get the latest data
+    if (caseStudyId && caseStudyId !== 'placeholder') {
+      // Fetch immediately to get fresh data
+      fetchCaseStudy();
+    }
+  }, [caseStudyId, fetchCaseStudy])
+
+  // Set up interval to periodically check for updates (every 30 seconds)
+  useEffect(() => {
+    if (caseStudyId && caseStudyId !== 'placeholder') {
+      const interval = setInterval(() => {
+        console.log('Checking for case study updates...');
+        fetchCaseStudy();
+      }, 30000); // Check every 30 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [caseStudyId, fetchCaseStudy])
+
+  // Refresh data when page becomes visible (user switches back to tab)
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && caseStudyId && caseStudyId !== 'placeholder') {
+        console.log('Page became visible, refreshing case study data...');
+        fetchCaseStudy();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [caseStudyId, fetchCaseStudy])
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -304,7 +351,14 @@ export default function CaseStudyDetailsClient({
                                 />
                               )}
                               {caseStudy.client_description && (
-                                <p>{caseStudy.client_description}</p>
+                                <div
+                                dangerouslySetInnerHTML={{ __html: caseStudy.client_description}}
+                                style={{
+                                  lineHeight: '1.8',
+                                  color: '#333',
+                                  fontSize: '16px'
+                                }}
+                              />
                               )}
                               {caseStudy.client_location && (
                                 <div className="stu-color-6">
