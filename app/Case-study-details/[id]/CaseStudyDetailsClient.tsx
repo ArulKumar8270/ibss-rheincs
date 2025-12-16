@@ -326,14 +326,8 @@ export default function CaseStudyDetailsClient({
                         <div className="col-sm-6">
                           <div className="stu-tap-content">
                             <h6 className="stu-sub-title">Overview</h6>
-                            <div
-                              dangerouslySetInnerHTML={{ __html: caseStudy.overview }}
-                              style={{
-                                lineHeight: '1.8',
-                                color: '#333',
-                                fontSize: '16px'
-                              }}
-                            />
+                            <p
+                              dangerouslySetInnerHTML={{ __html: caseStudy.overview }}/>
                           </div>
                         </div>
                         {(caseStudy.client_name || caseStudy.client_logo || caseStudy.client_description) && (
@@ -351,14 +345,8 @@ export default function CaseStudyDetailsClient({
                                 />
                               )}
                               {caseStudy.client_description && (
-                                <div
-                                dangerouslySetInnerHTML={{ __html: caseStudy.client_description}}
-                                style={{
-                                  lineHeight: '1.8',
-                                  color: '#333',
-                                  fontSize: '16px'
-                                }}
-                              />
+                                <p
+                                dangerouslySetInnerHTML={{ __html: caseStudy.client_description}}/>
                               )}
                               {caseStudy.client_location && (
                                 <div className="stu-color-6">
@@ -378,13 +366,8 @@ export default function CaseStudyDetailsClient({
                         {caseStudy.content && (
                           <div className="col-sm-12">
                             <div className="stu-tab-dark-color">
-                              <div
+                              <p
                                 dangerouslySetInnerHTML={{ __html: caseStudy.content }}
-                                style={{
-                                  lineHeight: '1.8',
-                                  color: '#333',
-                                  fontSize: '16px'
-                                }}
                               />
                             </div>
                           </div>
@@ -398,13 +381,8 @@ export default function CaseStudyDetailsClient({
                         <div className="col-sm-12">
                           <div className="stu-tap-content">
                             <h6 className="stu-sub-title">Challenges</h6>
-                            <div
+                            <p
                               dangerouslySetInnerHTML={{ __html: caseStudy.challenges }}
-                              style={{
-                                lineHeight: '1.8',
-                                color: '#333',
-                                fontSize: '16px'
-                              }}
                             />
                           </div>
                         </div>
@@ -417,13 +395,8 @@ export default function CaseStudyDetailsClient({
                         <div className="col-sm-12">
                           <div className="stu-tap-content">
                             <h6 className="stu-sub-title">Our Solution</h6>
-                            <div
+                            <p
                               dangerouslySetInnerHTML={{ __html: caseStudy.solution }}
-                              style={{
-                                lineHeight: '1.8',
-                                color: '#333',
-                                fontSize: '16px'
-                              }}
                             />
                           </div>
                         </div>
@@ -436,13 +409,8 @@ export default function CaseStudyDetailsClient({
                         <div className="col-sm-12">
                           <div className="stu-tap-content">
                             <h6 className="stu-sub-title">Benefits</h6>
-                            <div
+                            <p
                               dangerouslySetInnerHTML={{ __html: caseStudy.benefits }}
-                              style={{
-                                lineHeight: '1.8',
-                                color: '#333',
-                                fontSize: '16px'
-                              }}
                             />
                           </div>
                         </div>
@@ -455,13 +423,8 @@ export default function CaseStudyDetailsClient({
                         <div className="col-sm-12">
                           <div className="stu-tap-content">
                             <h6 className="stu-sub-title">Implementation</h6>
-                            <div
+                            <p
                               dangerouslySetInnerHTML={{ __html: caseStudy.implementation }}
-                              style={{
-                                lineHeight: '1.8',
-                                color: '#333',
-                                fontSize: '16px'
-                              }}
                             />
                           </div>
                         </div>
