@@ -26,14 +26,17 @@ interface CaseStudy {
   industries: string[] | null;
 }
 
+// Note: With static export, all routes must be generated at build time
+// The client component will fetch data for any ID, even if not pre-generated
 // Generate static params for all published case studies
 export const generateStaticParams = async (): Promise<{ id: string }[]> => {
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
     const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
     if (!supabaseUrl || !supabaseAnonKey) {
-        console.warn('Supabase environment variables not set')
+        console.warn('Supabase environment variables not set during build')
         // Return a placeholder to satisfy static export requirement
+        // The client component will handle fetching for any ID
         return [{ id: 'placeholder' }]
     }
 
@@ -41,10 +44,12 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
         const supabase = createClient(supabaseUrl, supabaseAnonKey)
         
         // Fetch all published case study IDs
+        // Increase limit to ensure we get all case studies
         const { data: caseStudies, error } = await supabase
             .from('case_studies')
             .select('id')
             .eq('published', true)
+            .order('created_at', { ascending: false })
 
         if (error) {
             console.error('Error fetching case studies for static params:', error)
@@ -52,10 +57,22 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
             return [{ id: 'placeholder' }]
         }
 
-        const params = (caseStudies || []).map((cs) => ({
+        if (!caseStudies || caseStudies.length === 0) {
+            console.warn('No published case studies found during build')
+            return [{ id: 'placeholder' }]
+        }
+
+        const params = caseStudies.map((cs) => ({
             id: cs.id,
         }))
 
+        console.log(`✅ Generated static params for ${params.length} case studies`)
+        
+        // Log first few IDs for debugging
+        if (params.length > 0) {
+            console.log(`Sample IDs: ${params.slice(0, 3).map(p => p.id).join(', ')}`)
+        }
+        
         // Ensure we always return at least one param for static export
         return params.length > 0 ? params : [{ id: 'placeholder' }]
     } catch (error) {
@@ -74,7 +91,9 @@ export default async function CaseStudyDetailsPage({ params }: { params: Promise
     let initialCaseStudy: CaseStudy | null = null
     let relatedCaseStudies: CaseStudy[] = []
 
-    if (supabaseUrl && supabaseAnonKey && id !== 'placeholder') {
+    // Try to fetch data at build time, but don't fail if it doesn't exist
+    // The client component will handle fetching for any ID
+    if (supabaseUrl && supabaseAnonKey && id && id !== 'placeholder') {
         try {
             const supabase = createClient(supabaseUrl, supabaseAnonKey)
             
@@ -99,12 +118,18 @@ export default async function CaseStudyDetailsPage({ params }: { params: Promise
                     .limit(4)
 
                 relatedCaseStudies = (relatedData || []) as CaseStudy[]
+            } else {
+                // If not found at build time, client will fetch it
+                console.log(`Case study ${id} not found at build time, will be fetched client-side`)
             }
         } catch (error) {
-            console.error('Error fetching case study in server component:', error)
+            // Don't fail the build if there's an error
+            // The client component will handle fetching
+            console.log(`Error fetching case study ${id} at build time (will fetch client-side):`, error)
         }
     }
     
+    // Always render the client component - it will fetch data if needed
     return (
         <CaseStudyDetailsClient 
             initialCaseStudy={initialCaseStudy}

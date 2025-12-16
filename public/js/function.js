@@ -593,16 +593,33 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     });
   });
   
-  // Also listen for Next.js router events if available
-  if (typeof window !== 'undefined' && window.next && window.next.router) {
-    window.next.router.events.on('routeChangeComplete', function() {
-      console.log('🔄 Next.js route change complete, re-initializing toggles...');
-      // Remove markers
-      document.querySelectorAll('[data-readmore-init]').forEach(function(el) {
-        el.removeAttribute('data-readmore-init');
-        el.removeAttribute('data-index');
+  // Also listen for Next.js router events if available (Pages Router only)
+  // Note: App Router doesn't have router.events, and static export doesn't have client-side routing
+  if (typeof window !== 'undefined' && window.next && window.next.router && window.next.router.events && typeof window.next.router.events.on === 'function') {
+    try {
+      window.next.router.events.on('routeChangeComplete', function() {
+        console.log('🔄 Next.js route change complete, re-initializing toggles...');
+        // Remove markers
+        document.querySelectorAll('[data-readmore-init]').forEach(function(el) {
+          el.removeAttribute('data-readmore-init');
+          el.removeAttribute('data-index');
+        });
+        // Re-initialize
+        setTimeout(initReadMoreToggles, 200);
+        setTimeout(initReadMoreToggles, 600);
+        setTimeout(initReadMoreToggles, 1200);
       });
-      // Re-initialize
+    } catch (e) {
+      console.log('⚠️ Next.js router events not available (App Router or static export):', e.message);
+    }
+  } else {
+    // Silently skip if router events are not available (expected for App Router/static export)
+  }
+  
+  // For static export, listen to custom route change events
+  if (typeof window !== 'undefined') {
+    window.addEventListener('routeChange', function() {
+      console.log('🔄 Route change event detected, re-initializing toggles...');
       setTimeout(initReadMoreToggles, 200);
       setTimeout(initReadMoreToggles, 600);
       setTimeout(initReadMoreToggles, 1200);
@@ -1041,7 +1058,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
           }
         }
       });
-      const sliderEl1 = document.querySelector('.agency-supports-slider .swiper');
       if (sliderEl1) {
         sliderEl1.addEventListener('mouseenter', () => {
           agency_supports_slider.autoplay.stop();
@@ -1083,12 +1099,12 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
           }
         }
       });
-      const sliderEl = document.querySelector('.agency-supports-slider2 .swiper');
-      if (sliderEl) {
-        sliderEl.addEventListener('mouseenter', () => {
+      const sliderEl2Mouse = document.querySelector('.agency-supports-slider2 .swiper');
+      if (sliderEl2Mouse) {
+        sliderEl2Mouse.addEventListener('mouseenter', () => {
           agency_supports_slider2.autoplay.stop();
         });
-        sliderEl.addEventListener('mouseleave', () => {
+        sliderEl2Mouse.addEventListener('mouseleave', () => {
           agency_supports_slider2.autoplay.start();
         });
       }
