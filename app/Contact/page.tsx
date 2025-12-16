@@ -24,6 +24,18 @@ export default function Contact() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
+    
+    // Restrict negative values for phone number
+    if (name === 'phone' && value !== '') {
+      // Remove any negative signs and ensure only positive numbers
+      const numericValue = value.replace(/[^0-9]/g, '');
+      setFormData(prev => ({
+        ...prev,
+        [name]: numericValue
+      }));
+      return;
+    }
+    
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -491,12 +503,19 @@ export default function Contact() {
                         </div>
                         </div>
                         <input
-                          type="number"
+                          type="tel"
                           className="form-control"
                           name="phone"
                           placeholder="Enter Your Phone No*"
                           value={formData.phone}
                           onChange={handleInputChange}
+                          onKeyDown={(e) => {
+                            // Prevent minus, plus, and 'e' keys (scientific notation)
+                            if (e.key === '-' || e.key === '+' || e.key === 'e' || e.key === 'E') {
+                              e.preventDefault();
+                            }
+                          }}
+                          min="0"
                           required={true}
                           disabled={status === 'loading'}
                         />

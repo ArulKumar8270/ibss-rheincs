@@ -1767,11 +1767,18 @@ export default function Corushr() {
                                                     </span>
                                                 </div>
                                                 <input
-                                                    type="number"
+                                                    type="tel"
                                                     name="phone"
                                                     placeholder="Enter Your Phone Number*"
                                                     value={formData.phone}
                                                     onChange={handleInputChange}
+                                                    onKeyDown={(e) => {
+                                                        // Prevent minus, plus, and 'e' keys (scientific notation)
+                                                        if (e.key === '-' || e.key === '+' || e.key === 'e' || e.key === 'E') {
+                                                          e.preventDefault();
+                                                        }
+                                                      }}
+                                                      min="0"
                                                     required={true}
                                                     disabled={status === 'loading'}
                                                 />

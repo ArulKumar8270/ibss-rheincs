@@ -2414,12 +2414,19 @@ export default function Collaterals() {
                                                                 </div>
                                                             </div>
                                                             <input
-                                                                type="number"
+                                                                type="tel"
                                                                 className="form-control"
                                                                 name="phone"
                                                                 placeholder="Enter Your Phone No*"
                                                                 value={formData.phone}
                                                                 onChange={handleInputChange}
+                                                                onKeyDown={(e) => {
+                                                                    // Prevent minus, plus, and 'e' keys (scientific notation)
+                                                                    if (e.key === '-' || e.key === '+' || e.key === 'e' || e.key === 'E') {
+                                                                      e.preventDefault();
+                                                                    }
+                                                                  }}
+                                                                  min="0"
                                                                 required={true}
                                                                 disabled={status === 'loading'}
                                                             />
