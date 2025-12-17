@@ -21985,3 +21985,7 @@ img.mfp-img {
 .country-code-select {
     border-right: 1px solid #b3b3b3 !important;
 }
+
+.form-control:focus {
+    box-shadow: none !important;
+}

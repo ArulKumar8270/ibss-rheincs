@@ -82,7 +82,7 @@ export default function EnterpriseSolutions() {
                                                 </li>
                                             </ul>
                                             <div className="ser-btn m-0">
-                                                <Link href="/CorusHR" className="animated-svg-link p-0">
+                                                <Link href="/solutions/CorusHR" className="animated-svg-link p-0">
                                                     Explore More
                                                     <span className="svg-container ">
                                                         <span className=" right">

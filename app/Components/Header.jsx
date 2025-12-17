@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavArrowLeft, NavArrowRight } from "../icons";
-import translations from "../translations.json";
+import useTranslation from "../hooks/useTranslation";
 
 export default function Header() {
     const pathname = usePathname();
@@ -16,12 +16,7 @@ export default function Header() {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
-    const [currentLanguage, setCurrentLanguage] = useState('English');
-
-    // Function to get translated text
-    const t = (key) => {
-        return translations[currentLanguage]?.[key] || translations['English'][key] || key;
-    };
+    const { t, language: currentLanguage, changeLanguage: setCurrentLanguage } = useTranslation();
 
     // Get the current page name (e.g., 'leadership' from '/leadership')
     const currentPage = pathname.split('/').pop() || 'index';
@@ -40,7 +35,7 @@ export default function Header() {
     const solutionsPages = [
         'corushr',
         'MeRLIN-strategic-sourcing-software',
-        'enterprise-solutions',
+        'erp',
         'epicor',
         'epicor-kinetic',
         'Epicor-kinetic',
@@ -55,7 +50,7 @@ export default function Header() {
         'sugar-crm',
         'ERP-customer-excellence',
         'digital-solutions',
-        'digital-solutions-services',
+        'digital-services-and-solutions',
         'business-intelligence',
         'AI-ML',
         'Ecommerce',
@@ -210,40 +205,30 @@ export default function Header() {
         };
     }, []);
 
-    // Load language preference from localStorage on mount
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const savedLanguage = localStorage.getItem('preferredLanguage');
-            if (savedLanguage && (savedLanguage === 'English' || savedLanguage === 'German')) {
-                setCurrentLanguage(savedLanguage);
-            }
-        }
-    }, []);
-
     // All searchable pages with their titles and keywords
     const allPages = [
         // About Uscareers
-        { url: '/overview', title: 'Overview', keywords: 'about company overview ibb information business solutions' },
-        { url: '/leadership', title: 'Leadership', keywords: 'leadership team management executives directors' },
-        { url: '/customer-speak', title: 'Customer Speak', keywords: 'customer testimonials reviews feedback clients' },
-        { url: '/success-stories', title: 'Success Stories', keywords: 'case studies success stories achievements results' },
+        { url: '/about-us/overview', title: 'Overview', keywords: 'about company overview ibb information business solutions' },
+        { url: '/about-us/leadership', title: 'Leadership', keywords: 'leadership team management executives directors' },
+        { url: '/about-us/customer-speak', title: 'Customer Speak', keywords: 'customer testimonials reviews feedback clients' },
+        { url: '/about-us/success-stories', title: 'Success Stories', keywords: 'case studies success stories achievements results' },
         { url: '/careers', title: 'Careers', keywords: 'careers jobs opportunities employment work' },
 
         // Solutions & Services
-        { url: '/CorusHR', title: 'CorusHR', keywords: 'corus hr human resources management' },
+        { url: '/solutions/CorusHR', title: 'CorusHR', keywords: 'corus hr human resources management' },
         { url: '/MeRLIN-strategic-sourcing-software', title: 'MeRLIN', keywords: 'merlin solution platform' },
-        { url: '/enterprise-solutions', title: 'Enterprise Solutions', keywords: 'enterprise solutions erp business' },
-        { url: '/epicor', title: 'Epicor', keywords: 'epicor erp enterprise resource planning' },
+        { url: '/solutions/erp-enterprise-solutions-and-services/erp', title: 'Enterprise Solutions', keywords: 'enterprise solutions erp business' },
+        { url: '/solutions/erp-enterprise-solutions-and-services/epicor', title: 'Epicor', keywords: 'epicor erp enterprise resource planning' },
         { url: '/Epicor-kinetic', title: 'Epicor Kinetic', keywords: 'epicor kinetic erp cloud' },
         { url: '/Epicor-iscala', title: 'Epicor iScala', keywords: 'epicor iscala erp' },
         { url: '/Epicor-companion', title: 'Epicor Companion', keywords: 'epicor companion mobile' },
         { url: '/Epicor-epicpay', title: 'Epicor EpicPay', keywords: 'epicor epicpay payment' },
-        { url: '/sap', title: 'SAP', keywords: 'sap erp enterprise' },
+        { url: '/solutions/erp-enterprise-solutions-and-services/sap', title: 'SAP', keywords: 'sap erp enterprise' },
         { url: '/ms-dynamics', title: 'Microsoft Dynamics Solutions', keywords: 'microsoft dynamics erp crm' },
-        { url: '/sugar-crm', title: 'Sugar CRM', keywords: 'sugar crm customer relationship management' },
+        { url: '/solutions/erp-enterprise-solutions-and-services/sugar-crm', title: 'Sugar CRM', keywords: 'sugar crm customer relationship management' },
         { url: '/ERP-customer-excellence', title: 'ERP Customer Excellence', keywords: 'erp customer excellence service' },
         { url: '/digital-solutions', title: 'Digital Solutions', keywords: 'digital solutions technology innovation' },
-        { url: '/digital-solutions-services', title: 'Digital Solutions Services', keywords: 'digital services technology solutions' },
+        { url: '/solutions/digital-services-and-solutions', title: 'Digital Solutions Services', keywords: 'digital services technology solutions' },
         { url: '/business-intelligence', title: 'Business Intelligence', keywords: 'business intelligence analytics data bi' },
         { url: '/AI-ML', title: 'AI & ML', keywords: 'artificial intelligence machine learning ai ml' },
         { url: '/Ecommerce', title: 'E-Commerce', keywords: 'ecommerce online store retail digital commerce' },
@@ -418,7 +403,7 @@ export default function Header() {
                                     </span>
                                     <Link href="mailto:info@rheincs.com"> info@rheincs.com</Link>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <div className="custom-select top-icon-gap">
                                         <select 
                                             name="lang" 
@@ -455,7 +440,7 @@ export default function Header() {
                                             </svg>
                                         </label>
                                     </div>
-                                </li>
+                                </li> */}
                                 {/* <li>
                                     <div id="chcp_font_size" className="input-group">
                                         <span className="input-group-btn font-increase-waber">
@@ -580,41 +565,41 @@ export default function Header() {
                                                                     <div className="row">
                                                                         <div className="col-sm-4">
                                                                             <div className="tabcont1">
-                                                                                <h1>About Us</h1>
+                                                                                <h1>{t("About Us")}</h1>
                                                                                 <ul>
                                                                                     <li className="ser-btn">
-                                                                                        <Link href="/overview"
+                                                                                        <Link href="/about-us/overview"
                                                                                             className="animated-svg-link"
                                                                                         >
-                                                                                            Overview
+                                                                                            {t("Overview")}
                                                                                         </Link>
                                                                                     </li>
                                                                                     <li className="ser-btn">
-                                                                                        <Link href="/leadership"
+                                                                                        <Link href="/about-us/leadership"
                                                                                             className="animated-svg-link"
                                                                                         >
-                                                                                            Leadership
+                                                                                            {t("Leadership")}
                                                                                         </Link>
                                                                                     </li>
                                                                                     <li className="ser-btn">
-                                                                                        <Link href="/customer-speak"
+                                                                                        <Link href="/about-us/customer-speak"
                                                                                             className="animated-svg-link"
                                                                                         >
-                                                                                            Customers Speak
+                                                                                            {t("Customers Speak")}
                                                                                         </Link>
                                                                                     </li>
                                                                                     <li className="ser-btn">
-                                                                                        <Link href="/success-stories"
+                                                                                        <Link href="/about-us/success-stories"
                                                                                             className="animated-svg-link"
                                                                                         >
-                                                                                            Success Stories
+                                                                                            {t("Success Stories")}
                                                                                         </Link>
                                                                                     </li>
                                                                                     <li className="ser-btn">
                                                                                         <Link href="/careers"
                                                                                             className="animated-svg-link"
                                                                                         >
-                                                                                            Careers
+                                                                                            {t("Careers")}
                                                                                         </Link>
                                                                                     </li>
                                                                                 </ul>
@@ -626,7 +611,7 @@ export default function Header() {
                                                                                     <div className="col-lg-4 col-md-4">
                                                                                         <div className="service-item-body">
                                                                                             <h3>
-                                                                                                <span>News and events</span>
+                                                                                                <span>{t("News and events")}</span>
                                                                                             </h3>
                                                                                             <p>
                                                                                                 RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
@@ -635,7 +620,7 @@ export default function Header() {
                                                                                                 <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
-                                                                                                    Read More
+                                                                                                    {t("Read More")}
                                                                                                     <NavArrowLeft />
                                                                                                 </Link>
                                                                                             </div>
@@ -644,7 +629,7 @@ export default function Header() {
                                                                                     <div className="col-lg-4 col-md-4">
                                                                                         <div className="service-item-body">
                                                                                             <h3>
-                                                                                                <span>News and events</span>
+                                                                                                <span>{t("News and events")}</span>
                                                                                             </h3>
                                                                                             <p>
                                                                                                 Grand Opening of India Development Centre (IDC) in RheinBrücke
@@ -653,7 +638,7 @@ export default function Header() {
                                                                                                 <Link href="/news-events/0aa57254-d987-4474-a229-0bd66716acb6"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
-                                                                                                    Read More
+                                                                                                    {t("Read More")}
                                                                                                     <NavArrowLeft />
                                                                                                 </Link>
                                                                                             </div>
@@ -662,7 +647,7 @@ export default function Header() {
                                                                                     <div className="col-lg-4 col-md-4">
                                                                                         <div className="service-item-body secondser">
                                                                                             <h3>
-                                                                                                <span>Blog</span>
+                                                                                                <span>{t("Blog")}</span>
                                                                                             </h3>
                                                                                             <p>
                                                                                                 How to Build a Future-Ready Digital Strategy
@@ -671,7 +656,7 @@ export default function Header() {
                                                                                                 <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
-                                                                                                    Read More
+                                                                                                    {t("Read More")}
                                                                                                     <NavArrowLeft />
                                                                                                 </Link>
                                                                                             </div>
@@ -766,7 +751,7 @@ export default function Header() {
                                                 </Link>
                                                 <div className="mega-menu-content full-width">
                                                     <div className="container">
-                                                        <h1>Solutions &amp; Services</h1>
+                                                        <h1>{t("Solutions & Services")}</h1>
                                                         {/* Vertical tabs */}
                                                         <div className="row">
                                                             <div className="col-sm-3">
@@ -790,7 +775,7 @@ export default function Header() {
                                                                             }
                                                                         }}
                                                                     >
-                                                                        Our Solutions
+                                                                        {t("Our Solutions")}
                                                                     </button>
                                                                     <button
                                                                         className={`tab-link ${activeTab === 'tab2' ? 'active' : ''}`}
@@ -811,7 +796,7 @@ export default function Header() {
                                                                             }
                                                                         }}
                                                                     >
-                                                                        Enterprise Solutions &amp; Services
+                                                                        {t("Enterprise Solutions & Services")}
                                                                     </button>
                                                                     <button
                                                                         className={`tab-link ${activeTab === 'tab3' ? 'active' : ''}`}
@@ -832,7 +817,7 @@ export default function Header() {
                                                                             }
                                                                         }}
                                                                     >
-                                                                        Digital Solutions &amp; Services
+                                                                        {t("Digital Solutions & Services")}
                                                                     </button>
                                                                     {/*<button class="tab-link" data-tab="tab4">Digital*/}
                                                                     {/*    Services</button>*/}
@@ -849,13 +834,13 @@ export default function Header() {
                                                                                         <Link className="animated-svg-link"
                                                                                             href="/our-solution"
                                                                                         >
-                                                                                            Our Solutions
+                                                                                            {t("Our Solutions")}
                                                                                             <NavArrowLeft />
                                                                                         </Link>
                                                                                     </h3>
                                                                                     <ul>
                                                                                         <li className="ser-btn">
-                                                                                            <Link href="/CorusHR"
+                                                                                            <Link href="/solutions/CorusHR"
                                                                                                 className="animated-svg-link"
                                                                                             >
                                                                                                 Corus HR
@@ -877,7 +862,7 @@ export default function Header() {
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body">
                                                                                                 <h3>
-                                                                                                    <span>News and events</span>
+                                                                                                    <span>{t("News and events")}</span>
                                                                                                 </h3>
                                                                                                 <p>
                                                                                                     RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
@@ -886,7 +871,7 @@ export default function Header() {
                                                                                                     <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
-                                                                                                        Read More
+                                                                                                        {t("Read More")}
                                                                                                         <NavArrowLeft />
                                                                                                     </Link>
                                                                                                 </div>
@@ -895,7 +880,7 @@ export default function Header() {
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body secondser">
                                                                                                 <h3>
-                                                                                                    <span>Blog</span>
+                                                                                                    <span>{t("Blog")}</span>
                                                                                                 </h3>
                                                                                                 <p>
                                                                                                     How to Build a Future-Ready Digital Strategy
@@ -904,7 +889,7 @@ export default function Header() {
                                                                                                     <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
-                                                                                                        Read More
+                                                                                                        {t("Read More")}
                                                                                                         <NavArrowLeft />
                                                                                                     </Link>
                                                                                                 </div>
@@ -922,16 +907,16 @@ export default function Header() {
                                                                                 <div className="tabcont">
                                                                                     <h3 className="ser-btn">
                                                                                         <Link className="animated-svg-link"
-                                                                                            href="/enterprise-solutions"
+                                                                                            href="/solutions/erp-enterprise-solutions-and-services/erp"
                                                                                         >
-                                                                                            Enterprise Solutions and Services
+                                                                                            {t("Enterprise Solutions & Services")}
                                                                                             <NavArrowLeft />
                                                                                         </Link>
                                                                                     </h3>
                                                                                     <ul>
                                                                                         <li className="ser-btn">
                                                                                             <div className="menu-item">
-                                                                                                <Link href="/epicor"
+                                                                                                <Link href="/solutions/erp-enterprise-solutions-and-services/epicor"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Epicor
@@ -972,19 +957,19 @@ export default function Header() {
                                                                                             </div>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <Link href="/sap" className="">
+                                                                                            <Link href="/solutions/erp-enterprise-solutions-and-services/sap" className="">
                                                                                                 SAP
                                                                                             </Link>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <Link href="/ms-dynamics"
+                                                                                            <Link href="/solutions/erp-enterprise-solutions-and-services/ms-dynamics"
                                                                                                 className=""
                                                                                             >
                                                                                                 MS Dynamics
                                                                                             </Link>
                                                                                         </li>
                                                                                         <li className="ser-btn">
-                                                                                            <Link href="/sugar-crm" className="">
+                                                                                            <Link href="/solutions/erp-enterprise-solutions-and-services/sugar-crm" className="">
                                                                                                 Sugar CRM
                                                                                             </Link>
                                                                                         </li>
@@ -1005,7 +990,7 @@ export default function Header() {
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body">
                                                                                                 <h3>
-                                                                                                    <span>News and events</span>
+                                                                                                    <span>{t("News and events")}</span>
                                                                                                 </h3>
                                                                                                 <p>
                                                                                                     RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
@@ -1014,7 +999,7 @@ export default function Header() {
                                                                                                     <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
-                                                                                                        Read More
+                                                                                                        {t("Read More")}
                                                                                                         <NavArrowLeft />
                                                                                                     </Link>
                                                                                                 </div>
@@ -1023,7 +1008,7 @@ export default function Header() {
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body secondser">
                                                                                                 <h3>
-                                                                                                    <span>Blog</span>
+                                                                                                    <span>{t("Blog")}</span>
                                                                                                 </h3>
                                                                                                 <p>
                                                                                                     How to Build a Future-Ready Digital Strategy
@@ -1032,7 +1017,7 @@ export default function Header() {
                                                                                                     <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
-                                                                                                        Read More
+                                                                                                        {t("Read More")}
                                                                                                         <NavArrowLeft />
                                                                                                     </Link>
                                                                                                 </div>
@@ -1051,10 +1036,9 @@ export default function Header() {
                                                                                 <div className="tabcont">
                                                                                     <h3 className="ser-btn">
                                                                                         <Link className="animated-svg-link"
-                                                                                            href="/digital-services-and-solutions"
+                                                                                            href="/solutions/digital-services-and-solutions"
                                                                                         >
-                                                                                            Digital Solutions
-                                                                                            and Services
+                                                                                            {t("Digital Solutions & Services")}
                                                                                             <NavArrowRight />
                                                                                         </Link>
                                                                                     </h3>
@@ -1062,7 +1046,7 @@ export default function Header() {
                                                                                         <li className="ser-btn ">
                                                                                             <div className="menu-item">
                                                                                                 <Link href="/digital-solutions"
-                                                                                                    className="animated-svg-link">Digital Solutions
+                                                                                                    className="animated-svg-link">{t("Digital Solutions")}
                                                                                                 </Link>
                                                                                                 <button
                                                                                                     type="button"
@@ -1081,20 +1065,20 @@ export default function Header() {
                                                                                                 style={{ display: digitalSolutionsCollapsed ? 'block' : 'none' }}
                                                                                             >
                                                                                                 <Link href="/business-intelligence">
-                                                                                                    BI &amp; Analytics
+                                                                                                    {t("BI & Analytics")}
                                                                                                 </Link>
                                                                                                 <Link href="/AI-ML">
-                                                                                                    AI/ML
+                                                                                                    {t("AI/ML")}
                                                                                                 </Link>
                                                                                                 <Link href="/Ecommerce">
-                                                                                                    eCommerce
+                                                                                                    {t("eCommerce")}
                                                                                                 </Link>
                                                                                             </div>
                                                                                         </li>
                                                                                         <li className="ser-btn ">
                                                                                             <div className="menu-item">
                                                                                                 <Link href="/digital-services"
-                                                                                                    className="animated-svg-link">Digital Services
+                                                                                                    className="animated-svg-link">{t("Digital Services")}
                                                                                                 </Link>
                                                                                                 <button
                                                                                                     type="button"
@@ -1113,28 +1097,28 @@ export default function Header() {
                                                                                                 style={{ display: digitalServicesCollapsed ? 'block' : 'none' }}
                                                                                             >
                                                                                                 <Link href="/Architecture">
-                                                                                                    Architecture &amp; App Modernisation
+                                                                                                    {t("Architecture & App Modernisation")}
                                                                                                 </Link>
                                                                                                 <Link href="/data-engineering-warehousing">
-                                                                                                    Data Engineering and Warehousing
+                                                                                                    {t("Data Engineering and Warehousing")}
                                                                                                 </Link>
-                                                                                                <Link href="/enterprise-solutions">
-                                                                                                    Enterprise Software
+                                                                                                <Link href="/solutions/erp-enterprise-solutions-and-services/erp">
+                                                                                                    {t("Enterprise Software")}
                                                                                                 </Link>
                                                                                                 <Link href="/AM-S">
-                                                                                                    A M &amp; S
+                                                                                                    {t("A M & S")}
                                                                                                 </Link>
                                                                                                 <Link href="/user-exprience">
-                                                                                                    User Experience
+                                                                                                    {t("User Experience")}
                                                                                                 </Link>
                                                                                                 <Link href="/Commercetools">
-                                                                                                    Commercetools
+                                                                                                    {t("Commercetools")}
                                                                                                 </Link>
                                                                                                 <Link href="/fluent-commerce">
-                                                                                                    Fluent Commerce
+                                                                                                    {t("Fluent Commerce")}
                                                                                                 </Link>
                                                                                                 <Link href="/ms-technology">
-                                                                                                    MS Technologies
+                                                                                                    {t("MS Technologies")}
                                                                                                 </Link>
                                                                                             </div>
                                                                                         </li>
@@ -1147,7 +1131,7 @@ export default function Header() {
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body">
                                                                                                 <h3>
-                                                                                                    <span>News and events</span>
+                                                                                                    <span>{t("News and events")}</span>
                                                                                                 </h3>
                                                                                                 <p>
                                                                                                     RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
@@ -1156,7 +1140,7 @@ export default function Header() {
                                                                                                     <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
-                                                                                                        Read More
+                                                                                                        {t("Read More")}
                                                                                                         <NavArrowLeft />
                                                                                                     </Link>
                                                                                                 </div>
@@ -1165,7 +1149,7 @@ export default function Header() {
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body secondser">
                                                                                                 <h3>
-                                                                                                    <span>Blog</span>
+                                                                                                    <span>{t("Blog")}</span>
                                                                                                 </h3>
                                                                                                 <p>
                                                                                                     How to Build a Future-Ready Digital Strategy
@@ -1174,7 +1158,7 @@ export default function Header() {
                                                                                                     <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
-                                                                                                        Read More
+                                                                                                        {t("Read More")}
                                                                                                         <NavArrowLeft />
                                                                                                     </Link>
                                                                                                 </div>
@@ -1277,7 +1261,7 @@ export default function Header() {
                                                                     <div className="row">
                                                                         <div className="width60">
                                                                             <div className="tabcont1">
-                                                                                <h1>Industries</h1>
+                                                                                <h1>{t("Industries")}</h1>
                                                                                 <div className="row">
                                                                                     <div className="col-sm-6">
                                                                                         <ul className="verline">
@@ -1285,35 +1269,35 @@ export default function Header() {
                                                                                                 <Link href="/vertical-retail"
                                                                                                     className="animated-svg-link"
                                                                                                 >
-                                                                                                    Brand Owners and Vertical Retailers
+                                                                                                    {t("Brand Owners and Vertical Retailers")}
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <Link href="/industries-retail"
                                                                                                     className="animated-svg-link"
                                                                                                 >
-                                                                                                    Retail Industry
+                                                                                                    {t("Retail Industry")}
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <Link href="/supply-chain"
                                                                                                     className="animated-svg-link"
                                                                                                 >
-                                                                                                    Distribution and Supply Chain
+                                                                                                    {t("Distribution and Supply Chain")}
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <Link href="/discrete-manufacturing"
                                                                                                     className="animated-svg-link"
                                                                                                 >
-                                                                                                    Discrete Manufacturing
+                                                                                                    {t("Discrete Manufacturing")}
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <Link href="/Automotive"
                                                                                                     className="animated-svg-link"
                                                                                                 >
-                                                                                                    Automotive Industry
+                                                                                                    {t("Automotive Industry")}
                                                                                                 </Link>
                                                                                             </li>
                                                                                         </ul>
@@ -1324,37 +1308,35 @@ export default function Header() {
                                                                                                 <Link href="/Epc"
                                                                                                     className="animated-svg-link"
                                                                                                 >
-                                                                                                    Engineering Procurement and
-                                                                                                    Construction
+                                                                                                    {t("Engineering Procurement and Construction")}
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <Link href="/process-manufacturing"
                                                                                                     className="animated-svg-link"
                                                                                                 >
-                                                                                                    Process Manufacturing
+                                                                                                    {t("Process Manufacturing")}
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <Link href="/Private-quity"
                                                                                                     className="animated-svg-link"
                                                                                                 >
-                                                                                                    Private Equity &amp; Funding Backed
-                                                                                                    Ventures
+                                                                                                    {t("Private Equity & Funding Backed Ventures")}
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <Link href="/Cable-manufacturing"
                                                                                                     className="animated-svg-link"
                                                                                                 >
-                                                                                                    Cable Manufacturing
+                                                                                                    {t("Cable Manufacturing")}
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
                                                                                                 <Link href="/interior-design"
                                                                                                     className="animated-svg-link"
                                                                                                 >
-                                                                                                    Interior Design
+                                                                                                    {t("Interior Design")}
                                                                                                 </Link>
                                                                                             </li>
                                                                                         </ul>
@@ -2074,16 +2056,16 @@ export default function Header() {
                             </div>
                             <ul className="submenu">
                                 <li>
-                                    <Link href="/overview">Overview</Link>
+                                    <Link href="/about-us/overview">Overview</Link>
                                 </li>
                                 <li>
-                                    <Link href="/leadership">Leadership</Link>
+                                    <Link href="/about-us/leadership">Leadership</Link>
                                 </li>
                                 <li>
-                                    <Link href="/customer-speak">Customers Speak</Link>
+                                    <Link href="/about-us/customer-speak">Customers Speak</Link>
                                 </li>
                                 <li>
-                                    <Link href="/success-stories">Success Stories</Link>
+                                    <Link href="/about-us/success-stories">Success Stories</Link>
                                 </li>
                                 <li>
                                     <Link href="/careers">Careers</Link>
@@ -2297,7 +2279,7 @@ export default function Header() {
                                     </div>
                                     <ul className="submenu">
                                         <li>
-                                            <Link href="/CorusHR">Corus HR</Link>
+                                            <Link href="/solutions/CorusHR">Corus HR</Link>
                                         </li>
                                         <li>
                                             <Link href="/MeRLIN-strategic-sourcing-software">MeRLIN Sourcing</Link>
@@ -2356,7 +2338,7 @@ export default function Header() {
                                 {/* Enterprise Solutions & Services (Tab 2) */}
                                 <li>
                                     <div className="menu-item">
-                                        <Link href="/enterprise-solutions">Enterprise Solutions</Link>
+                                        <Link href="/solutions/erp-enterprise-solutions-and-services/erp">Enterprise Solutions</Link>
                                         <span className="submenu-toggle">
                                             <svg
                                                 className="submenu-arrow"
@@ -2433,7 +2415,7 @@ export default function Header() {
                                     <ul className="submenu">
                                         <li>
                                             <div className="menu-item">
-                                                <Link href="/epicor"> Epicor</Link>
+                                                <Link href="/solutions/erp-enterprise-solutions-and-services/epicor"> Epicor</Link>
                                                 <span className="submenu-toggle">
                                                     <svg
                                                         className="submenu-arrow"
@@ -2523,13 +2505,13 @@ export default function Header() {
                                             </ul>
                                         </li>
                                         <li>
-                                            <Link href="/ms-dynamics">MS Dynamics</Link>
+                                            <Link href="/solutions/erp-enterprise-solutions-and-services/ms-dynamics">MS Dynamics</Link>
                                         </li>
                                         <li>
-                                            <Link href="/sap">SAP</Link>
+                                            <Link href="/solutions/erp-enterprise-solutions-and-services/sap">SAP</Link>
                                         </li>
                                         <li>
-                                            <Link href="/sugar-crm">Sugar CRM</Link>
+                                            <Link href="/solutions/erp-enterprise-solutions-and-services/sugar-crm">Sugar CRM</Link>
                                         </li>
                                         <li>
                                             <Link href="/ERP-customer-excellence">
@@ -2591,7 +2573,7 @@ export default function Header() {
                                 {/* Tab 3: Digital Solutions & Services */}
                                 <li>
                                     <div className="menu-item">
-                                        <Link href="/digital-solutions-services">
+                                        <Link href="/solutions/digital-services-and-solutions">
                                             Digital Solutions &amp; Services
                                         </Link>
                                         <span className="submenu-toggle">
@@ -2844,7 +2826,7 @@ export default function Header() {
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/enterprise-solutions">Enterprise Software</Link>
+                                                    <Link href="/solutions/erp-enterprise-solutions-and-services/erp">Enterprise Software</Link>
                                                 </li>
                                                 <li>
                                                     <Link href="/AM-S">A M &amp; S</Link>
