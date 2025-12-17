@@ -736,7 +736,7 @@ export default function Contact() {
                   data-bs-content='<div class="too-con-waber">
                       <h4> Netherlands</h4>
                       <p>
-                          Netherlands <br>
+                          
                           RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
                       </p>
                       <div class="contect-call2">
