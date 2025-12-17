@@ -2900,7 +2900,7 @@ textarea.custom-form-control {
     scroll-margin-top: 150px;
 
     /* Your existing styles are below */
-    padding: 20px 0;
+    /* padding: 20px 0; */
     border-bottom: 0px solid #eee;
 }
 
