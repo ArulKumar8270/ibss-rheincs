@@ -14,7 +14,7 @@ const TestimonialandAward = () => {
                                     Trusted by Enterprises Worldwide
                                 </h2>
                                 <div className="ser-btn2 mt-4">
-                                    <Link href="/customer-speak" className="animated-svg-link1 btn-style-3">
+                                    <Link href="/about-us/customer-speak" className="animated-svg-link1 btn-style-3">
                                         View All
                                         <span className="svg-container ">
                                             <span className=" left">

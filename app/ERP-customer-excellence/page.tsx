@@ -745,7 +745,7 @@ export default function EnterpriseSolutions() {
                     SAP S/4HANA, SAP ECC, SAP Business ByDesign, SAP Business One.{" "}
                   </p>
                   <div className="ser-btn1">
-                    <Link href="/sap" className="animated-svg-link1 btn-style-3">
+                    <Link href="/solutions/erp-enterprise-solutions-and-services/sap" className="animated-svg-link1 btn-style-3">
                       Know More
                       <span className="svg-container ">
                         <span className=" left">
@@ -860,7 +860,7 @@ export default function EnterpriseSolutions() {
                     Kinetic, Grow, Data Analytics, FP&amp;A, IP&amp;O, ECM and more.{" "}
                   </p>
                   <div className="ser-btn1">
-                    <Link href="/epicor" className="animated-svg-link1 btn-style-3">
+                    <Link href="/solutions/erp-enterprise-solutions-and-services/epicor" className="animated-svg-link1 btn-style-3">
                       Know More
                       <span className="svg-container ">
                         <span className=" left">
@@ -975,7 +975,7 @@ export default function EnterpriseSolutions() {
                     Dynamics 365, Dynamics 365 Business Central, Navision, Axapta.
                   </p>
                   <div className="ser-btn1">
-                    <Link href="/ms-dynamics"
+                    <Link href="/solutions/erp-enterprise-solutions-and-services/ms-dynamics"
                       className="animated-svg-link1 btn-style-3"
                     >
                       Know More
@@ -1122,7 +1122,7 @@ export default function EnterpriseSolutions() {
                                       satisfaction across your organization.
                                     </p>
                                     <div className="ser-btn bgnone">
-                                      <Link href="/CorusHR"
+                                      <Link href="/solutions/CorusHR"
                                         className="animated-svg-link"
                                       >
                                         Read More

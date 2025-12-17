@@ -4,8 +4,10 @@ import CommomLayout from "./Components/CommomLayout";
 import Link from "next/link";
 import TestimonialandAward from "./Components/TestimonialandAward";
 import Awards from "./Components/Awards";
+import useTranslation from "./hooks/useTranslation";
 
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <>
       <CommomLayout>
@@ -23,16 +25,15 @@ export default function Home() {
                       <h1 className=" mainbannerh1">
                         <div className="topbar_text_slider1">
                           <ul className="vertical-reveal">
-                            <li>Analyse</li>
-                            <li>Integrate</li>
-                            <li>Transform</li>
+                            <li>{t("Analyse")}</li>
+                            <li>{t("Integrate")}</li>
+                            <li>{t("Transform")}</li>
                           </ul>
                         </div>
                       </h1>
                       <div className="hero-video-content wow fadeInUp mt-3">
                         <p>
-                          Empowering businesses to operate smarter, adapt faster, and
-                          unlock new opportunities in a technology-driven economy.
+                          {t("Empowering businesses to operate smart, adapt faster, and unlock new opportunity in a technology - driven economy  ")}
                         </p>
                       </div>
                     </div>
@@ -119,18 +120,15 @@ export default function Home() {
                   {/* Section Title Start */}
                   <div className="section-title text-center">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      The Path to Transformation
+                      {t("The path to transformation")}
                     </h2>
                     <p>
-                      Every successful transformation starts with clarity and ends with
-                      measurable impact. Our approach is built to take you from insight
-                      to execution, helping your business unlock real value at every
-                      stage of the journey
+                      {t("Every successful transformation starts with clarity and ends with measurable impact. Our approach is built to take you from insights to execution, helping your business unlock real value at every single stage of journey")}
                     </p>
                     <div className="ser-btn">
-                      <Link href="/enterprise-solutions" className="animated-svg-link">
+                      <Link href="/solutions/erp-enterprise-solutions-and-services/erp" className="animated-svg-link">
                         <span>
-                          Know More
+                          {t("Know More")}
                           <span className="svg-container ">
                             <span className=" right">
                               <svg
@@ -271,11 +269,8 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="service-item-body">
-                        <h3>Analyse</h3>
-                        <p>We start by understanding your business, its core your operating model, value drivers, and constraints. Using data-led diagnostics and performance  benchmarking, we identify
-                          the real levers for impact whether it’s efficiency, margin
-                          growth, agility, or customer experience.
-                        </p>
+                        <h3>{t("Analyse")}</h3>
+                        <p>{t("We start by understanding your business at its core -your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact -whether it’s efficiency, margin growth, agility, or customer experience.")}</p>
                         {/*<div class="ser-btn1">*/}
                         {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
                         {/*        Know More*/}
@@ -339,14 +334,9 @@ export default function Home() {
                               </div> */}
                       </div>
                       <div className="service-item-body">
-                        <h3>Integrate</h3>
+                        <h3>{t("Integrate")}</h3>
                         <p>
-                          Next, we bring together the systems, tools, and workflows that
-                          drive your operations. We align technology with your strategic
-                          goals – implementing and integrating ERP and digital platforms
-                          including Epicor, Microsoft Dynamics, SAP, and others,
-                          tailored to your unique needs. Our focus: speed, reliability,
-                          and scalability.
+                          {t("Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals – implementing and integrating ERP and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability.")}
                         </p>
                         {/*<div class="ser-btn1">*/}
                         {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
@@ -439,12 +429,9 @@ export default function Home() {
                               </div> */}
                       </div>
                       <div className="service-item-body">
-                        <h3>Transform</h3>
+                        <h3>{t("Transform")}</h3>
                         <p>
-                          This is where change becomes reality. From digitised supply
-                          chains to intelligent forecasting, we help you deploy
-                          solutions that move the needle - unlocking new revenue,
-                          simplifying complexity, and accelerating time-to-value.
+                          {t("This is where change becomes reality. From digitised supply chains to intelligent forecasting, we help you deploy solutions that move the needle - unlocking new revenue, simplifying complexity, and accelerating time-to-value.")}
                         </p>
                         {/*<div class="ser-btn1">*/}
                         {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
@@ -505,15 +492,8 @@ export default function Home() {
                             </div>
                           </div>
                           <div className="service-item-body">
-                            <h3>Analyse</h3>
-                            <p>
-                              We start by understanding your business at its core your
-                              operating model, value drivers, and constraints. Using
-                              data-led diagnostics and performance benchmarking, we
-                              identify the real levers for impact whether it’s
-                              efficiency, margin growth, agility, or customer
-                              experience.
-                            </p>
+                            <h3>{t("Analyse")}</h3>
+                            <p>{t("We start by understanding your business at its core -your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact -whether it’s efficiency, margin growth, agility, or customer experience.")}</p>
                             {/*<div class="ser-btn1">*/}
                             {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
                             {/*        Know More*/}
@@ -565,15 +545,10 @@ export default function Home() {
                               </div> */}
                           </div>
                           <div className="service-item-body">
-                            <h3>Integrate</h3>
-                            <p>
-                              Next, we bring together the systems, tools, and workflows
-                              that drive your operations. We align technology with your
-                              strategic goals – implementing and integrating ERP and
-                              digital platforms including Epicor, Microsoft Dynamics,
-                              SAP, and others, tailored to your unique needs. Our focus:
-                              speed, reliability, and scalability.
-                            </p>
+                            <h3>{t("Integrate")}</h3>
+                        <p>
+                          {t("Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals – implementing and integrating ERP and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability.")}
+                        </p>
                             {/*<div class="ser-btn1">*/}
                             {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
                             {/*        Know More*/}
@@ -625,13 +600,9 @@ export default function Home() {
                               </div> */}
                           </div>
                           <div className="service-item-body">
-                            <h3>Transform</h3>
+                            <h3>{t("Transform")}</h3>
                             <p>
-                              This is where change becomes reality. From digitised
-                              supply chains to intelligent forecasting, we help you
-                              deploy solutions that move the needle - unlocking new
-                              revenue, simplifying complexity, and accelerating
-                              time-to-value.
+                              {t("This is where change becomes reality. From digitised supply chains to intelligent forecasting, we help you deploy solutions that move the needle - unlocking new revenue, simplifying complexity, and accelerating time-to-value.")}
                             </p>
                             {/*<div class="ser-btn1">*/}
                             {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
@@ -903,8 +874,7 @@ export default function Home() {
                   <div className="about-agency-content">
                     <div className="section-title">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        Powering Enterprise Growth Through Digital-Enabled
-                        Transformation
+                        {t("Powering Enterprise Growth Through Digital-Enabled Transformation")}
                       </h2>
                     </div>
                   </div>
@@ -914,22 +884,16 @@ export default function Home() {
                     <div className="about-agency-item wow fadeInUp">
                       <div className="agency-item-content">
                         <p>
-                          At RheinBrücke, we believe transformation is not just about
-                          technology -it’s about unlocking new business models, new ways
-                          of working, and new value for your customers.
+                          {t("At RheinBrücke, we believe transformation is not just about technology -it’s about unlocking new business models, new ways of working, and new value for your customers.")}
                         </p>
                         <p>
-                          We help enterprises go beyond incremental change. Whether
-                          you’re scaling operations, modernizing your ERP landscape, or
-                          launching entirely new services, we enable rapid, meaningful
-                          transformation across your organisation -powered by enterprise
-                          technology, real-world insight, and strategic execution.
+                          {t("We help enterprises go beyond incremental change. Whether you’re scaling operations, modernizing your ERP landscape, or launching entirely new services, we enable rapid, meaningful transformation across your organisation -powered by enterprise technology, real-world insight, and strategic execution.")}
                         </p>
                         <div className="ser-btn2">
-                          <Link href="/overview"
+                          <Link href="/about-us/overview"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            Learn More About Our Story
+                            {t("Learn More About Our Story")}
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -1046,7 +1010,7 @@ export default function Home() {
                     <h2>
                       <span className="counter" data-target="10">10</span>+
                     </h2>
-                    <p>Years of Experience</p>
+                    <p>{t("Years of Experience")}</p>
                   </div>
                 </div>
               </div>
@@ -1056,7 +1020,7 @@ export default function Home() {
                     <h2>
                       <span className="counter" data-target="45">45</span>+
                     </h2>
-                    <p>Countries Served</p>
+                    <p>{t("Countries Served")}</p>
                   </div>
                 </div>
               </div>
@@ -1066,7 +1030,7 @@ export default function Home() {
                     <h2>
                       <span className="counter" data-target="300">300</span>+
                     </h2>
-                    <p>Projects Delivered</p>
+                    <p>{t("Projects Delivered")}</p>
                   </div>
                 </div>
               </div>
@@ -1076,7 +1040,7 @@ export default function Home() {
                     <h2>
                       <span className="counter" data-target="8">8</span>+
                     </h2>
-                    <p>Industries Covered</p>
+                    <p>{t("Industries Covered")}</p>
                   </div>
                 </div>
               </div>
@@ -1090,8 +1054,7 @@ export default function Home() {
                   <div className="about-agency-content">
                     <div className="section-title">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        Powering Enterprise Growth Through Digital-Enabled
-                        Transformation
+                        {t("Powering Enterprise Growth Through Digital-Enabled Transformation")}
                       </h2>
                     </div>
                   </div>
@@ -1101,22 +1064,16 @@ export default function Home() {
                     <div className="about-agency-item wow fadeInUp">
                       <div className="agency-item-content">
                         <p>
-                          At RheinBrücke, we believe transformation is not just about
-                          technology -it’s about unlocking new business models, new ways
-                          of working, and new value for your customers.
+                          {t("At RheinBrücke, we believe transformation is not just about technology -it’s about unlocking new business models, new ways of working, and new value for your customers.")}
                         </p>
                         <p>
-                          We help enterprises go beyond incremental change. Whether
-                          you’re scaling operations, modernizing your ERP landscape, or
-                          launching entirely new services, we enable rapid, meaningful
-                          transformation across your organisation -powered by enterprise
-                          technology, real-world insight, and strategic execution.
+                          {t("We help enterprises go beyond incremental change. Whether you’re scaling operations, modernizing your ERP landscape, or launching entirely new services, we enable rapid, meaningful transformation across your organisation -powered by enterprise technology, real-world insight, and strategic execution.")}
                         </p>
                         <div className="ser-btn2">
-                          <Link href="/overview"
+                          <Link href="/about-us/overview"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            Learn More About Our Story
+                            {t("Learn More About Our Story")}
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -1232,7 +1189,7 @@ export default function Home() {
                       <h2>
                         <span className="counter" data-target="10">10</span>+
                       </h2>
-                      <p>Years of Experience</p>
+                      <p>{t("Years of Experience")}</p>
                     </div>
                   </div>
                 </div>
@@ -1242,7 +1199,7 @@ export default function Home() {
                       <h2>
                         <span className="counter" data-target="45">45</span>+
                       </h2>
-                      <p>Countries Served</p>
+                      <p>{t("Countries Served")}</p>
                     </div>
                   </div>
                 </div>
@@ -1252,7 +1209,7 @@ export default function Home() {
                       <h2>
                         <span className="counter" data-target="300">300</span>+
                       </h2>
-                      <p>Projects Delivered</p>
+                      <p>{t("Projects Delivered")}</p>
                     </div>
                   </div>
                 </div>
@@ -1262,7 +1219,7 @@ export default function Home() {
                       <h2>
                         <span className="counter" data-target="8">8</span>+
                       </h2>
-                      <p>Industries Covered</p>
+                      <p>{t("Industries Covered")}</p>
                     </div>
                   </div>
                 </div>
@@ -1279,19 +1236,16 @@ export default function Home() {
                   {/* Section Title Start */}
                   <div className="prine-title">
                     <h2 data-cursor="-opaque">
-                      Built for Enterprises that Want to Scale
+                      {t("Built for Enterprises that Want to Scale")}
                     </h2>
                     <p className="brin-p-tag m-0">
-                      Scaling successfully means balancing agility with execution. We
-                      design solutions that are digital at the core, powered by trusted
-                      platforms, and tailored for enterprise growth. Every engagement is
-                      focused on measurable outcomes that drive lasting business value.
+                      {t("Scaling successfully means balancing agility with execution. We design solutions that are digital at the core, powered by trusted platforms, and tailored for enterprise growth. Every engagement is focused on measurable outcomes that drive lasting business value.")}
                     </p>
                     <div className="ser-btn m-0">
                       <Link href="/digital-services-and-solutions"
                         className="animated-svg-link"
                       >
-                        Konw More
+                        {t("Know More")}
                         <span className="svg-container ">
                           <span className=" right">
                             <svg
@@ -1631,7 +1585,7 @@ export default function Home() {
                       future-ready enterprises.
                     </p>
                     <div className="ser-btn2">
-                      <Link href="/enterprise-solutions" className="animated-svg-link1 btn-style-3">
+                      <Link href="/solutions/erp-enterprise-solutions-and-services/erp" className="animated-svg-link1 btn-style-3">
                         Read More
                         <span className="svg-container ">
                           <span className=" left">
@@ -3259,7 +3213,7 @@ export default function Home() {
                       rethinking your model, we help you unlock growth.
                     </p>
                     <div className="ser-btn2 mt-4">
-                      <Link href="/enterprise-solutions" className="animated-svg-link1 btn-style-3">
+                      <Link href="/solutions/erp-enterprise-solutions-and-services/erp" className="animated-svg-link1 btn-style-3">
                         Know More
                         <span className="svg-container ">
                           <span className=" left">
@@ -3433,7 +3387,7 @@ export default function Home() {
                       confidence. These are the projects that truly made a difference.
                     </p>
                     <div className="ser-btn">
-                      <Link href="/success-stories" className="animated-svg-link">
+                      <Link href="/about-us/success-stories" className="animated-svg-link">
                         Explore More
                         <span className="svg-container ">
                           <span className=" right">
@@ -4032,7 +3986,7 @@ export default function Home() {
                       confidence. These are the projects that truly made a difference.
                     </p>
                     <div className="ser-btn">
-                      <Link href="/success-stories" className="animated-svg-link">
+                      <Link href="/about-us/success-stories" className="animated-svg-link">
                         Explore More
                         <svg
                           width={24}
