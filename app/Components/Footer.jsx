@@ -144,7 +144,7 @@ export default function Footer() {
                                             <div className="col-sm-6">
                                                 <ul>
                                                 <li>
-                                                        <Link href="/digital-solution-service"><span>Digital Solutions and Services</span></Link>
+                                                        <Link href="/digital-services-and-solutions"><span>Digital Solutions and Services</span></Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/digital-solutions">Digital Solutions</Link>
@@ -372,7 +372,7 @@ export default function Footer() {
                                             <div className="col-sm-6 col-6">
                                                 <ul>
                                                     <li>
-                                                        <Link href="/digital-solution-service">Digital Solutions and Services</Link>
+                                                        <Link href="/digital-services-and-solutions">Digital Solutions and Services</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/digital-solutions">Digital Solutions</Link>

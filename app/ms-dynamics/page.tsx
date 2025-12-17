@@ -3326,7 +3326,7 @@ export default function EnterpriseSolutions() {
                     </p>
                     <div className="ser-btn">
                       <Link 
-                        href="/digital-solution-service"
+                        href="/digital-services-and-solutions"
                         className="animated-svg-link"
                       >
                         Know More

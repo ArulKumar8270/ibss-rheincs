@@ -1051,7 +1051,7 @@ export default function Header() {
                                                                                 <div className="tabcont">
                                                                                     <h3 className="ser-btn">
                                                                                         <Link className="animated-svg-link"
-                                                                                            href="/digital-solution-service"
+                                                                                            href="/digital-services-and-solutions"
                                                                                         >
                                                                                             Digital Solutions
                                                                                             and Services

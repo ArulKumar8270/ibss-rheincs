@@ -1288,7 +1288,7 @@ export default function Home() {
                       focused on measurable outcomes that drive lasting business value.
                     </p>
                     <div className="ser-btn m-0">
-                      <Link href="/digital-solution-service"
+                      <Link href="/digital-services-and-solutions"
                         className="animated-svg-link"
                       >
                         Konw More
