@@ -1513,7 +1513,7 @@ export default function EnterpriseSolutions() {
                                       Business.
                                     </p>
                                     <div className="ser-btn bgnone">
-                                      <Link href="/digital-solution-service"
+                                      <Link href="/digital-services-and-solutions"
                                         className="animated-svg-link"
                                       >
                                         Read More

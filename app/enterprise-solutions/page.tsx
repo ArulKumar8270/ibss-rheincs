@@ -7043,7 +7043,7 @@ export default function EnterpriseSolutions() {
                       innovation and measurable business outcomes.
                     </p>
                     <div className="ser-btn">
-                      <Link    href="/digital-solution-service"
+                      <Link    href="/digital-services-and-solutions"
                         className="animated-svg-link"
                       >
                         Know More
