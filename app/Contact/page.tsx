@@ -743,7 +743,7 @@ export default function Contact() {
                             <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
                       </div>
                       <div class="contect-call2">
-                            <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
+                            <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com</Link>
                       </div>
                   </div>'
                 >
