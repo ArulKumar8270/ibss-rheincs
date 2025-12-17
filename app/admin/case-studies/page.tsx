@@ -229,6 +229,48 @@ export default function AdminCaseStudiesPage() {
     }
   }
 
+  const handleClientLogoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    if (file.size > 5 * 1024 * 1024) {
+      alert('Logo size should be less than 5MB')
+      return
+    }
+
+    setUploading(true)
+    setUploadProgress(0)
+
+    try {
+      const fileExt = file.name.split('.').pop()
+      const fileName = `client-logo-${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`
+      const filePath = `case-study-images/${fileName}`
+
+      const { error: uploadError } = await supabase.storage
+        .from('case-study-images')
+        .upload(filePath, file, {
+          cacheControl: '3600',
+          upsert: false
+        })
+
+      if (uploadError) throw uploadError
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('case-study-images')
+        .getPublicUrl(filePath)
+
+      setFormData({ ...formData, client_logo: publicUrl })
+      setUploadProgress(100)
+      alert('Client logo uploaded successfully!')
+    } catch (error: any) {
+      console.error('Upload error:', error)
+      alert('Error uploading client logo: ' + error.message)
+    } finally {
+      setUploading(false)
+      setUploadProgress(0)
+    }
+  }
+
   const handleEdit = (caseStudy: CaseStudy) => {
     setEditingCaseStudy(caseStudy)
     setFormData({
@@ -603,13 +645,36 @@ export default function AdminCaseStudiesPage() {
               </div>
 
               <div style={{ marginBottom: '15px' }}>
-                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Client Logo URL</label>
+                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Client Logo</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleClientLogoUpload}
+                  disabled={uploading}
+                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', fontSize: '14px', marginBottom: '10px' }}
+                />
+                {uploading && (
+                  <div style={{ marginTop: '10px', marginBottom: '10px' }}>
+                    <div style={{ width: '100%', background: '#f0f0f0', borderRadius: '4px', height: '20px', position: 'relative', overflow: 'hidden' }}>
+                      <div style={{ width: `${uploadProgress}%`, background: '#667eea', height: '100%', transition: 'width 0.3s' }}></div>
+                    </div>
+                  </div>
+                )}
                 <input
                   type="url"
                   value={formData.client_logo}
                   onChange={(e) => setFormData({ ...formData, client_logo: e.target.value })}
-                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', fontSize: '14px' }}
+                  placeholder="Or enter logo URL"
+                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', fontSize: '14px', marginTop: '10px' }}
                 />
+                {formData.client_logo && (
+                  <img
+                    src={formData.client_logo}
+                    alt="Client Logo Preview"
+                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+                    style={{ maxWidth: '200px', maxHeight: '100px', borderRadius: '8px', marginTop: '10px', objectFit: 'contain' }}
+                  />
+                )}
               </div>
 
               <div style={{ marginBottom: '15px' }}>
