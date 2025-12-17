@@ -21978,3 +21978,10 @@ img.mfp-img {
     color: black !important;
     padding: 16px;
 }
+
+.country-code-select .form-select{
+	border-radius: 0px !important;
+}
+.country-code-select {
+    border-right: 1px solid #b3b3b3 !important;
+}

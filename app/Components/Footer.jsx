@@ -243,7 +243,7 @@ export default function Footer() {
                                             <Link href="/Blog">Blog </Link>
                                         </li>
                                         <li>
-                                            <Link href="/case-study">Case studies</Link>
+                                            <Link href="/Case-study">Case studies</Link>
                                         </li>
                                         <li>
                                             <Link href="/webinars">Webinars</Link>
