@@ -18,7 +18,7 @@ export default function EnterpriseSolutions() {
           <div className="section-title wow fadeInUp">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
               Extend ERP with integrated solutions for payroll (EpicPay), MES,
-              ECM, FP&amp;A, IP&amp;O, WMS, Data Analytics, and more.
+              ECM, FP&amp;A, IP&amp;O, WMS, Data Analytics, and more
             </h2>
             <p>
               Epicor Companion Products enhance your core ERP system, enabling
@@ -1195,7 +1195,7 @@ export default function EnterpriseSolutions() {
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
-                <Link href="/contact" className="animated-svg-link">
+                <Link href="/contact-us" className="animated-svg-link">
                   Contact Us
                   <span className="svg-container ">
                     <span className=" right">

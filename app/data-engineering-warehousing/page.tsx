@@ -31,7 +31,7 @@ export default function AlMl() {
               flow, fuel advanced analytics, and enable AI/ML at scale.
             </p>
             <div className="ser-btn mt-5">
-              <Link href="/contact" className="animated-svg-link">
+              <Link href="/contact-us" className="animated-svg-link">
                 Contact Us
                 <span className="svg-container ">
                   <span className=" right">

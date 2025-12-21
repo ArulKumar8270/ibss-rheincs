@@ -18,7 +18,7 @@ export default function EnterpriseSolutions() {
           <div className="section-title wow fadeInUp">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
               Flexible ERP for mid-sized companies in regulated industries like
-              pharma, hospitality, and global trade.
+              pharma, hospitality, and global trade
             </h2>
             <p>
               Epicor iScala helps mid-sized businesses manage complex operations
@@ -681,7 +681,7 @@ export default function EnterpriseSolutions() {
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
-                <Link href="/contact" className="animated-svg-link">
+                <Link href="/contact-us" className="animated-svg-link">
                   Contact Us
                   <span className="svg-container ">
                     <span className=" right">

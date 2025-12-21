@@ -249,7 +249,7 @@ export default function Header() {
         { url: '/Automotive', title: 'Automotive', keywords: 'automotive industry vehicles' },
         { url: '/Epc', title: 'EPC', keywords: 'epc engineering procurement construction' },
         { url: '/process-manufacturing', title: 'Process Manufacturing', keywords: 'process manufacturing production' },
-        { url: '/Private-quity', title: 'Private Equity', keywords: 'private equity investment finance' },
+        { url: '/Private-Equity-Funding-Backed-Ventures', title: 'Private Equity', keywords: 'private equity investment finance' },
         { url: '/Cable-manufacturing', title: 'Cable Manufacturing', keywords: 'cable manufacturing production' },
         { url: '/interior-design', title: 'Interior Design', keywords: 'interior design furniture' },
 
@@ -263,7 +263,7 @@ export default function Header() {
         { url: '/faq', title: 'FAQ', keywords: 'faq questions answers help' },
 
         // Contact
-        { url: '/contact', title: 'Contact Us', keywords: 'contact us reach support help' },
+        { url: '/contact-us', title: 'Contact Us', keywords: 'contact us reach support help' },
     ];
 
     // Search handler
@@ -394,7 +394,7 @@ export default function Header() {
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M17 20.5H7C4 20.5 2 19 2 15.5V8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5Z"
-                                                stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                                stroke="white" strokeWidth="1.5" strokeMiterlimit="10" stroke-linecap="round"
                                                 stroke-linejoin="round" />
                                             <path d="M17 9L13.87 11.5C12.84 12.32 11.15 12.32 10.12 11.5L7 9" stroke="white"
                                                 stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
@@ -403,7 +403,7 @@ export default function Header() {
                                     </span>
                                     <Link href="mailto:info@rheincs.com"> info@rheincs.com</Link>
                                 </li>
-                                {/* <li>
+                                 <li>
                                     <div className="custom-select top-icon-gap">
                                         <select 
                                             name="lang" 
@@ -440,7 +440,7 @@ export default function Header() {
                                             </svg>
                                         </label>
                                     </div>
-                                </li> */}
+                                </li> 
                                 {/* <li>
                                     <div id="chcp_font_size" className="input-group">
                                         <span className="input-group-btn font-increase-waber">
@@ -1266,7 +1266,7 @@ export default function Header() {
                                                                                     <div className="col-sm-6">
                                                                                         <ul className="verline">
                                                                                             <li className="ser-btn">
-                                                                                                <Link href="/vertical-retail"
+                                                                                                <Link href="/Brand-owners-and-vertical-retail"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     {t("Brand Owners and Vertical Retailers")}
@@ -1280,7 +1280,7 @@ export default function Header() {
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
-                                                                                                <Link href="/supply-chain"
+                                                                                                <Link href="/Distribution-and-supply-chain"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     {t("Distribution and Supply Chain")}
@@ -1305,7 +1305,7 @@ export default function Header() {
                                                                                     <div className="col-sm-6 pdl0">
                                                                                         <ul>
                                                                                             <li className="ser-btn">
-                                                                                                <Link href="/Epc"
+                                                                                                <Link href="/Engineering-Procurement-Construction-(EPC)"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     {t("Engineering Procurement and Construction")}
@@ -1319,7 +1319,7 @@ export default function Header() {
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
-                                                                                                <Link href="/Private-quity"
+                                                                                                <Link href="/Private-Equity-Funding-Backed-Ventures"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     {t("Private Equity & Funding Backed Ventures")}
@@ -1599,8 +1599,8 @@ export default function Header() {
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li className={`nav-item ${pathname === '/contact' || currentPage === 'contact' ? 'active' : ''}`}>
-                                                <Link className="nav-link" href="/contact">
+                                            <li className={`nav-item ${pathname === '/contact-us' || currentPage === 'contact-us' ? 'active' : ''}`}>
+                                                <Link className="nav-link" href="/contact-us">
                                                     {t("Contact Us")}
                                                 </Link>
                                             </li>
@@ -2977,7 +2977,7 @@ export default function Header() {
                             </div>
                             <ul className="submenu">
                                 <li>
-                                    <Link href="/vertical-retail">
+                                    <Link href="/Brand-owners-and-vertical-retail">
                                         Brand Owners and Vertical Retailers
                                     </Link>
                                 </li>
@@ -2985,7 +2985,7 @@ export default function Header() {
                                     <Link href="/industries-retail">Retail Industry</Link>
                                 </li>
                                 <li>
-                                    <Link href="/supply-chain">Distribution and Supply Chain</Link>
+                                    <Link href="/Distribution-and-supply-chain">Distribution and Supply Chain</Link>
                                 </li>
                                 <li>
                                     <Link href="/discrete-manufacturing">Discrete Manufacturing</Link>
@@ -2994,13 +2994,13 @@ export default function Header() {
                                     <Link href="/Automotive">Automotive Industry</Link>
                                 </li>
                                 <li>
-                                    <Link href="/Epc">Engineering Procurement and Construction</Link>
+                                    <Link href="/Engineering-Procurement-Construction-(EPC)">Engineering Procurement and Construction</Link>
                                 </li>
                                 <li>
                                     <Link href="/process-manufacturing">Process Manufacturing</Link>
                                 </li>
                                 <li>
-                                    <Link href="/Private-quity">
+                                    <Link href="/Private-Equity-Funding-Backed-Ventures">
                                         Private Equity &amp; Funding Backed Ventures
                                     </Link>
                                 </li>
@@ -3213,7 +3213,7 @@ export default function Header() {
                         {/* Contact Us */}
                         <li>
                             <div className="menu-item">
-                                <Link href="/contact">{t("Contact Us")}</Link>
+                                <Link href="/contact-us">{t("Contact Us")}</Link>
                             </div>
                         </li>
                     </ul>

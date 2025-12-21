@@ -11,6 +11,27 @@ export default function useTranslation() {
       if (saved && (saved === 'English' || saved === 'German')) {
         setLanguage(saved);
       }
+
+      const handlePreferredLanguageChange = (e) => {
+        const next = e.detail;
+        if (next && (next === 'English' || next === 'German')) {
+          setLanguage(next);
+        }
+      };
+      window.addEventListener('preferredLanguageChange', handlePreferredLanguageChange);
+
+      const handleVisibility = () => {
+        const current = localStorage.getItem('preferredLanguage');
+        if (current && (current === 'English' || current === 'German')) {
+          setLanguage(current);
+        }
+      };
+      document.addEventListener('visibilitychange', handleVisibility);
+
+      return () => {
+        window.removeEventListener('preferredLanguageChange', handlePreferredLanguageChange);
+        document.removeEventListener('visibilitychange', handleVisibility);
+      };
     }
   }, []);
 
@@ -18,6 +39,9 @@ export default function useTranslation() {
     setLanguage(lang);
     if (typeof window !== 'undefined') {
       localStorage.setItem('preferredLanguage', lang);
+      try {
+        window.dispatchEvent(new CustomEvent('preferredLanguageChange', { detail: lang }));
+      } catch {}
     }
   };
 

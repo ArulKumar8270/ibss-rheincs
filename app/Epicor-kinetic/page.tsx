@@ -18,7 +18,7 @@ export default function EpicorKinetic() {
           <div className="section-title wow fadeInUp">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
               Next-gen ERP to automate workflows, improve supply chain
-              visibility, and optimize production.
+              visibility, and optimize production
             </h2>
             <p>
               Epicor Kinetic is a modern, cloud-enabled ERP designed to
@@ -683,7 +683,7 @@ export default function EpicorKinetic() {
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
-                <Link href="/contact" className="animated-svg-link">
+                <Link href="/contact-us" className="animated-svg-link">
                   Contact Us
                   <span className="svg-container ">
                     <span className=" right">

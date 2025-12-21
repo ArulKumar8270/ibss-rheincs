@@ -22,7 +22,7 @@ const page = () => {
                   outcome-focused execution.
                 </p> */}
                 <div className="ser-btn ">
-                  <Link href="/contact" className="animated-svg-link">
+                  <Link href="/contact-us" className="animated-svg-link">
                     Contact Us
                     <span className="svg-container ">
                       <span className=" right">
@@ -259,7 +259,7 @@ const page = () => {
                   </h2>
                   <p>
                     Designed for organisations moving from “systems that run the
-                    business” to “systems that shape the business.{" "}
+                    business” to “systems that shape the business".{" "}
                   </p>
                 </div>
               </div>
@@ -1235,7 +1235,7 @@ const page = () => {
             {/* Testimonial Slider End */}
             <p className="mt-3">
               {" "}
-              We don’t just implement SAP; we help you run, optimise, and scale with
+              We don’t just implement SAP - we help you run, optimise, and scale with
               it.
             </p>
           </div>
@@ -1571,7 +1571,7 @@ const page = () => {
                   </div>
                   <div className="col-sm-4">
                     <div className="ser-btn text-right">
-                      <a href="/contact" className="animated-svg-link">
+                      <a href="/contact-us" className="animated-svg-link">
                         Contact Us
                         <span className="svg-container ">
                           <span className=" right">

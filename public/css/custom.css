@@ -709,7 +709,7 @@ body {
 }
 
 .about-agency-content .section-title h2 {
-	width: 70%;
+	width: 80%;
 	color: #000 !important;
 }
 
@@ -13162,9 +13162,9 @@ header.boxshadow {
 	left: 0px;
 	height: 100%;
 	width: 100%;
-	background: -webkit-gradient(linear, left top, right top, color-stop(13%, rgb(8 33 36 / 66%)), color-stop(31%, rgb(8 35 38 / 46%)), color-stop(50%, rgba(255, 255, 255, .99)));
-	background: -o-linear-gradient(left, rgb(8 33 36 / 66%) 13%, rgb(8 35 38 / 46%) 31%, rgba(255, 255, 255, .99) 50%);
-	background: linear-gradient(90deg, rgb(8 33 36 / 66%) 13%, rgb(8 35 38 / 46%) 31%, rgba(255, 255, 255, .99) 50%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(15%, rgb(8 33 36 / 66%)), color-stop(44%, rgb(8 35 38 / 10%)), color-stop(50%, rgba(255, 255, 255, .99)));
+	background: -o-linear-gradient(left, rgb(8 33 36 / 66%) 15%, rgb(8 35 38 / 10%) 44%, rgba(255, 255, 255, .99) 50%);
+	background: linear-gradient(90deg, rgb(8 33 36 / 66%) 15%, rgb(8 35 38 / 10%) 44%, rgba(255, 255, 255, .99) 50%);
 }
 
 .hero .buildsec video {
@@ -14284,7 +14284,7 @@ header.boxshadow {
 }
 
 .germanpath .service-item-body p {
-	height: 280px !important;
+	height: 240px !important;
 }
 
 .gerslider .flip-card-inner p {
@@ -14573,7 +14573,9 @@ header.boxshadow {
 		/*z-index: 1;*/
 		min-height: 900px;
 	}
-
+.stackimg .excelimg li {
+    min-height: 250px !important;
+}
 .benifithght {
     min-height: 300px !important;
 }.auto-b-h1 {
@@ -16717,16 +16719,47 @@ header.boxshadow {
 }
 
 .self1 .buildsec video {
-	width: 50%;
-	height: 100%;
-	-o-object-fit: cover;
-	object-fit: cover;
+	    width: 50%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    mix-blend-mode: normal;
+}
+.mobileself .buildsec video{
+    object-fit: cover;
+    mix-blend-mode: normal;
+    position: absolute;
+    height: 100%;
+        width: 95%;
+    left: -40%;
+}
+.corusolsec .hero-bg-video2::before {
+    background: -webkit-gradient(linear, left top, right top, color-stop(40%, rgba(0, 0, 0, .1)), color-stop(34%, rgba(0, 0, 0, .1)), color-stop(80%, rgba(8, 35, 38, 1))) !important;
+    background: -o-linear-gradient(left, rgba(0, 0, 0, .1) 40%, rgba(0, 0, 0, .1) 34%, rgba(8, 35, 38, 1) 80%) !important;
+    background: linear-gradient(90deg, rgba(0, 0, 0, .1) 40%, rgba(0, 0, 0, .1) 34%, rgba(8, 35, 38, 1) 50%) !important;
 }
 
+.corusolsec .hero-bg-video2 {
+    position: absolute;
+    width: 100% !important;
+    height: 100%;
+    top: 0%;
+    left: 0px;
+}
 .corusolution p {
 	font-size: 16px !important;
 	line-height: 24px !important;
 	font-weight: 400;
+}
+
+.corushrbanner {
+    background: none !important;
+    position: relative;
+    background: url(../images/chorus.jpg) !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    z-index: 0;
+    background-position: 130% !important;
 }
 
 .additional1 .imgadd img {
@@ -18590,10 +18623,10 @@ body.no-scroll {
 	min-height: -moz-max-content !important;
 	min-height: max-content !important;
 	border: 1px solid #fff !important;
-	min-height: 340px !important;
+	min-height: 290px !important;
 	border-radius: 8px;
 	    display: flex;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .excelimg .cs p {
@@ -18608,9 +18641,9 @@ body.no-scroll {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: start;
 	margin-bottom: 0px !important;
 }
 
@@ -20977,7 +21010,7 @@ body.popup-open .main-header {
 }
 
 .oursolutionsec .service-item-body {
-	padding: 24px;
+	padding: 25px 27px;
 }
 
 .oursolutionsec .service-item h3 {
@@ -21988,4 +22021,47 @@ img.mfp-img {
 
 .form-control:focus {
     box-shadow: none !important;
+}
+
+
+
+.erpexp .eslh-waber{
+	justify-content: initial !important;
+	    display: -webkit-inline-box !important;
+}
+.erpexp .eslh-waber p {
+    font-size: 20px !important;
+    font-family: 'Raleway';
+    color: white !important;
+    min-height: 70px;
+}
+
+
+.card1.cs .micfabric .ser-btn{
+	margin-bottom:0px !important;
+}
+
+.card1.cs .micfabric {
+    padding: 30px 30px 15px;
+}
+
+.bloginside ol li{
+color:#000 !important;
+}
+
+/* .gercounts .success-counter-box1 h2{
+    height: 205px;
+    font-family: "Inter", sans-serif;
+    font-size: 60px;
+} */
+.gercounts .success-counter-item p {
+    font-size: 18.5px !important;
+}
+.geranim .testimonial-slider .service-item{
+	height:460px !important
+}
+.gerprojects .service-item-body p {
+    height: auto;
+    color: #fff;
+    font-size: 22px;
 }
