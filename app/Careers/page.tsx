@@ -1715,6 +1715,163 @@ export default function AlMl() {
                     </div>
                 </div>
                 {/* Our Testimonial Section End */}
+
+
+
+        {/* Page Faqs Start */}
+        <div className="page-faqs bggray pd60">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-2" />
+              <div className="col-lg-8">
+                {/* Page FAQs Category Start */}
+                <div className="page-faqs-catagery">
+                  {/* FAQs section start */}
+                  <div
+                    className="our-faq-section page-faq-accordion"
+                    id="general_information"
+                  >
+                    <div className="section-title text-center">
+                      <h2 className="text-anime-style-2" data-cursor="-opaque">
+                        Wondering Why? We’re Here to Answer
+                      </h2>
+                    </div>
+                    {/* FAQ Accordion Start */}
+                    <div className="faq-accordion" id="accordion">
+                      {/* FAQ Item Start */}
+                      <div className="accordion-item wow fadeInUp">
+                        <h2 className="accordion-header" id="heading1">
+                          <button
+                            className="accordion-button collapsein"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse1"
+                            aria-expanded="true"
+                            aria-controls="collapse1"
+                          >
+                            What career opportunities are available at RheinBrücke?
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse1"
+                          className="accordion-collapse collapse show"
+                          aria-labelledby="heading1"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              RheinBrücke offers diverse global career opportunities, specializing in SAP, Epicor ERP implementation and consulting, Microsoft Dynamics 365, Cloud solutions and Digital Transformation. Roles are available across ERP Functional Consulting, Technical Development (e.g., C#, .NET), AI/Machine Learning Engineers, Data Analytics and Project Management.  
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.2s"
+                      >
+                        <h2 className="accordion-header" id="heading2">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse2"
+                            aria-expanded="false"
+                            aria-controls="collapse2"
+                          >
+                            How does RheinBrücke support employee growth?
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse2"
+                          className="accordion-collapse collapse "
+                          aria-labelledby="heading2"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              RheinBrücke invests heavily in continuous growth. Support includes dedicated mentorship programs, funding for industry-recognized certifications (e.g., Epicor Certified Consultant, Microsoft Azure certifications), and guaranteed exposure to international and GCC-based digital transformation projects. The organisational culture encourages innovation, collaboration, and ownership. 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.4s"
+                      >
+                        <h2 className="accordion-header" id="heading3">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse3"
+                            aria-expanded="false"
+                            aria-controls="collapse3"
+                          >
+                            Can I apply for remote or hybrid roles?
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse3"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading3"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              Yes. Selected roles offer flexible and hybrid work options based on project scope and client requirements. 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.6s"
+                      >
+                        <h2 className="accordion-header" id="heading4">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse4"
+                            aria-expanded="false"
+                            aria-controls="collapse4"
+                          >
+                           How can I apply? 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse4"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading4"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              Applicants can visit the Careers page, explore current openings, and submit applications online. They may also join the Talent Community to be considered for future opportunities in ERP and Digital Consulting. They can also contact our HR team via the email address <a href="mailto:careers@rheincs.com">careers@rheincs.com.</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                    </div>
+                    {/* FAQ Accordion End */}
+                  </div>
+                  {/* FAQs section End */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Page Faq End */}
+
+
+
                 {/* Footer Start */}
                 <footer className="main-footer pd0">
                     {/* Footer Main Start */}

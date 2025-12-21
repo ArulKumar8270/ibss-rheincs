@@ -1182,6 +1182,164 @@ export default function EnterpriseSolutions() {
       </div>
     </div>
   </div>
+
+
+
+
+        {/* Page Faqs Start */}
+        <div className="page-faqs bggray pd60">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-2" />
+              <div className="col-lg-8">
+                {/* Page FAQs Category Start */}
+                <div className="page-faqs-catagery">
+                  {/* FAQs section start */}
+                  <div
+                    className="our-faq-section page-faq-accordion"
+                    id="general_information"
+                  >
+                    <div className="section-title text-center">
+                      <h2 className="text-anime-style-2" data-cursor="-opaque">
+                        Wondering Why? We’re Here to Answer
+                      </h2>
+                    </div>
+                    {/* FAQ Accordion Start */}
+                    <div className="faq-accordion" id="accordion">
+                      {/* FAQ Item Start */}
+                      <div className="accordion-item wow fadeInUp">
+                        <h2 className="accordion-header" id="heading1">
+                          <button
+                            className="accordion-button collapsein"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse1"
+                            aria-expanded="true"
+                            aria-controls="collapse1"
+                          >
+                            What are Epicor Companion Products? 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse1"
+                          className="accordion-collapse collapse show"
+                          aria-labelledby="heading1"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              Epicor Companion Products are a suite of tools and add-ons that extend Epicor’s core functionality with specific business solutions and enhance business efficiency. These solutions enhance business efficiency, fill specific operational gaps, and are designed to maximize your return on investment (ROI) in the Epicor platform.  
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.2s"
+                      >
+                        <h2 className="accordion-header" id="heading2">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse2"
+                            aria-expanded="false"
+                            aria-controls="collapse2"
+                          >
+                             What are some examples of Companion Products? 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse2"
+                          className="accordion-collapse collapse "
+                          aria-labelledby="heading2"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              Examples include EpicPay for MEA Payroll, MES (Manufacturing Execution System), ECM (Enterprise Content Management), FP&A (Financial Planning & Analysis), IP&O (Inventory Planning & Optimisation), WMS (Warehouse Management System), and Data Analytics, which integrate with Epicor to streamline operations. 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.4s"
+                      >
+                        <h2 className="accordion-header" id="heading3">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse3"
+                            aria-expanded="false"
+                            aria-controls="collapse3"
+                          >
+                            Do these products work with both on-premises and cloud Epicor versions? 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse3"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading3"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              Yes. Companion Products are engineered for high compatibility across deployment environments. They are verified to work with both on-premises and Cloud versions of Epicor, including Epicor Kinetic. This ensures a smooth path for users planning future Cloud migration or version upgrades. 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.6s"
+                      >
+                        <h2 className="accordion-header" id="heading4">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse4"
+                            aria-expanded="false"
+                            aria-controls="collapse4"
+                          >
+                          Can Companion Products be customised for specific business needs? 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse4"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading4"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              Yes. RheinBrücke supports in-depth customization and configuration of Companion Products. Our certified Epicor experts tailor the solutions to align precisely with your unique organizational process requirements, especially those specific to global regulatory needs or complex multi-company structures. 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                    </div>
+                    {/* FAQ Accordion End */}
+                  </div>
+                  {/* FAQs section End */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Page Faq End */}
+
+
+
   {/* Footer Start */}
   <footer className="main-footer pd0">
     {/* Footer Main Start */}

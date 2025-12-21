@@ -1402,9 +1402,11 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       }
       new Swiper(swiperEl, {
         loop: true,
+        speed: 3000,
         autoplay: {
-          delay: 3000,
-          disableOnInteraction: false
+          delay: 8000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
         },
         spaceBetween: 20,
         navigation: {
@@ -1414,18 +1416,28 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         breakpoints: {
           0: {
             slidesPerView: 1.2,
+            speed: 1400,
+            autoplay: { delay: 12000, disableOnInteraction: false, pauseOnMouseEnter: true }
           },
           480: {
             slidesPerView: 1.2,
+            speed: 1400,
+            autoplay: { delay: 12000, disableOnInteraction: false, pauseOnMouseEnter: true }
           },
           768: {
             slidesPerView: 2,
+            speed: 1200,
+            autoplay: { delay: 10000, disableOnInteraction: false, pauseOnMouseEnter: true }
           },
           1024: {
             slidesPerView: 3,
+            speed: 3000,
+            autoplay: { delay: 8000, disableOnInteraction: false, pauseOnMouseEnter: true }
           },
           1366: {
             slidesPerView: 4,
+            speed: 900,
+            autoplay: { delay: 8000, disableOnInteraction: false, pauseOnMouseEnter: true }
           }
         }
       });

@@ -666,6 +666,164 @@ export default function EnterpriseSolutions() {
       </div>
     </div>
   </div>
+
+
+
+
+
+        {/* Page Faqs Start */}
+        <div className="page-faqs bggray pd60">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-2" />
+              <div className="col-lg-8">
+                {/* Page FAQs Category Start */}
+                <div className="page-faqs-catagery">
+                  {/* FAQs section start */}
+                  <div
+                    className="our-faq-section page-faq-accordion"
+                    id="general_information"
+                  >
+                    <div className="section-title text-center">
+                      <h2 className="text-anime-style-2" data-cursor="-opaque">
+                        Wondering Why? We’re Here to Answer
+                      </h2>
+                    </div>
+                    {/* FAQ Accordion Start */}
+                    <div className="faq-accordion" id="accordion">
+                      {/* FAQ Item Start */}
+                      <div className="accordion-item wow fadeInUp">
+                        <h2 className="accordion-header" id="heading1">
+                          <button
+                            className="accordion-button collapsein"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse1"
+                            aria-expanded="true"
+                            aria-controls="collapse1"
+                          >
+                            What is Epicor iScala used for? 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse1"
+                          className="accordion-collapse collapse show"
+                          aria-labelledby="heading1"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                             Epicor iScala is a robust ERP solution ideally designed for international subsidiaries of large corporations and mid-sized organizations with complex requirements. It offers exceptional multi-company financials, sophisticated supply chain management, and strong capabilities for project accounting and inventory control. 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.2s"
+                      >
+                        <h2 className="accordion-header" id="heading2">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse2"
+                            aria-expanded="false"
+                            aria-controls="collapse2"
+                          >
+                            How does RheinBrücke support Epicor iScala users? 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse2"
+                          className="accordion-collapse collapse "
+                          aria-labelledby="heading2"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              RheinBrücke is a dedicated iScala expert, providing comprehensive services including strategic implementation, version upgrades, secure migration services to Epicor Kinetic, and continuous managed support and optimization of existing processes. We specialize in maintaining stability while planning the next-gen evolution. 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.4s"
+                      >
+                        <h2 className="accordion-header" id="heading3">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse3"
+                            aria-expanded="false"
+                            aria-controls="collapse3"
+                          >
+                            Can Epicor iScala integrate with modern digital platforms? 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse3"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading3"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              Yes. RheinBrücke uses modern middleware and API integration strategies to connect iScala seamlessly with analytics, CRM systems and AI platforms. This extended functionality allows iScala users to gain unified business visibility and leverage new digital tools without losing their core system stability.  
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.6s"
+                      >
+                        <h2 className="accordion-header" id="heading4">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse4"
+                            aria-expanded="false"
+                            aria-controls="collapse4"
+                          >
+                            Is Epicor iScala suitable for multi-country operations? 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse4"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading4"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              Yes, iScala is highly suitable for multi-country operations. It features comprehensive support for multiple languages and currencies, making it the ideal choice for globally distributed enterprises. Furthermore, its structure easily adapts to diverse regional compliance and reporting requirements. 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                    </div>
+                    {/* FAQ Accordion End */}
+                  </div>
+                  {/* FAQs section End */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Page Faq End */}
+
+
   {/* Footer Start */}
   <footer className="main-footer pd0">
     {/* Footer Main Start */}
