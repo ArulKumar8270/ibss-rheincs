@@ -134,35 +134,6 @@ function SuccessStories() {
                     </div>
                 </div>
                 {/* Hero Section End*/}
-                {/* Hero Section Start*/}
-                <div className="hero89 success-main1 webhero1 mobileview pdb0">
-                    {/* <div class="parent2 retailparent2">
-  <video src="/videos/equity.mp4" autoplay muted loop playsinline class="bg-image1"></video>
-    </div> */}
-                    <div className="container">
-                        <div className="row section-row1 align-items-center builtsec">
-                            <div className="col-sm-5">
-                                <div className="section-title">
-                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Real Results, <br /> Real Transformation
-                                    </h2>
-                                    <p>
-                                        Explore how we've partnered with industry leaders to overcome
-                                        complex challenges, modernize operations, and drive measurable
-                                        growth. Each story is a testament to our commitment to delivering
-                                        powerful, technology-driven outcomes.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-sm-7">
-                                <div className="baner-img1 ssbimg webinarimg1">
-                                    <img src="/images/successstories.png" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {/* Hero Section End*/}
                 {/* Success Stories Section Start*/}
                 <div className="advantage additional1 successsec pd-50">
                     <div className="container">

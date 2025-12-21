@@ -1384,7 +1384,7 @@ export default function AlMl() {
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        <b>Customized Dashboards</b>
+                                                        <b>Customized Dashboards</b> &nbsp;
                                                         Dashboards for a real-time snapshot of business
                                                         performance via Interactive visualization tools like Power
                                                         BI, Tableau and Looker.
@@ -1393,7 +1393,7 @@ export default function AlMl() {
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        <b>Interactive Reports</b>
+                                                        <b>Interactive Reports</b> &nbsp;
                                                         Structured data presented in tables, charts, and graphs,
                                                         allowing users to analyse historical trends, monitor key
                                                         performance indicators - KPIs and identify patterns.

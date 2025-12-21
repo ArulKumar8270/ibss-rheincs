@@ -1678,7 +1678,7 @@ const page = () => {
                     Gain actionable insights with SugarCRM’s advanced analytics and
                     reporting capabilities. Track key performance indicators, measure
                     campaign effectiveness, and identify trends to make informed
-                    business decisions and drive growth
+                    business decisions and drive growth.
                   </p>
                 </div>
                 <div>
@@ -1749,7 +1749,7 @@ const page = () => {
                     adapting CRM functionalities to align with unique business
                     processes or enhancing ERP systems to support industry-specific
                     workflows, RheinBrücke’s customisation capabilities empower
-                    businesses to maximise the value of their software investments..{" "}
+                    businesses to maximise the value of their software investments.{" "}
                   </p>
                 </div>
               </div>

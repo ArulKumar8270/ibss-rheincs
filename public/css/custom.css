@@ -3287,7 +3287,15 @@ body:has(.offcanvas) {
 		left: 4px;
 		top: -20px;
 	}
-
+.cuccess-story-waber .flex1 {
+    width: 100% !important;
+}.cuccess-story-waber .flex2 {
+    padding: 20px 20px !important;
+    width: 100% !important;
+}
+.cuccess-story-waber .d-flex{
+	display: block !important;
+}
 	.msadvmobile .w80 h3 {
 		width: 100%;
 	}
@@ -22049,6 +22057,8 @@ img.mfp-img {
 color:#000 !important;
 }
 
+
+
 /* .gercounts .success-counter-box1 h2{
     height: 205px;
     font-family: "Inter", sans-serif;
@@ -22064,4 +22074,9 @@ color:#000 !important;
     height: auto;
     color: #fff;
     font-size: 22px;
+}
+
+.accordion-item:last-of-type>.accordion-header .accordion-button.collapsed {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
