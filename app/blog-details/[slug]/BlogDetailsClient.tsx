@@ -287,7 +287,7 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
                       }}
                     />
                     <div className="ser-btn2">
-                      <Link href="/contact" className="animated-svg-link1 btn-style-3">
+                      <Link href="/contact-us" className="animated-svg-link1 btn-style-3">
                         Contact Us
                         <span className="svg-container ">
                           <span className=" left">
@@ -391,7 +391,7 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
                   </div>
                   <div className="col-sm-4">
                     <div className="ser-btn text-right">
-                      <Link href="/contact" className="animated-svg-link">
+                      <Link href="/contact-us" className="animated-svg-link">
                         Request a Consultation
                         <span className="svg-container ">
                           <span className=" right">

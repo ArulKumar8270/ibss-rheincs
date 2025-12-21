@@ -263,7 +263,7 @@ export default function EnterpriseSolutions() {
             <div className="swiper-slide">
               <div className="valueslide">
                 <img
-                  src="images/integrate-with-existing-application.svg"
+                  src="/images/integrate-with-existing-application.svg"
                   alt=""
                 />
                 <p>
@@ -614,7 +614,7 @@ export default function EnterpriseSolutions() {
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Document management and collaboration using with MIcrosoft
+                    Document management and collaboration using with Microsoft
                     365:
                   </p>
                 </div>
@@ -1225,7 +1225,7 @@ export default function EnterpriseSolutions() {
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
-                <Link href="/contact" className="animated-svg-link">
+                <Link href="/contact-us" className="animated-svg-link">
                   Contact Us
                   <span className="svg-container ">
                     <span className=" right">

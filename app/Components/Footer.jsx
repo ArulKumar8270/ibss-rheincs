@@ -50,7 +50,7 @@ export default function Footer() {
                             <div className="col-sm-8">
                                 <div className="places text-right">
                                     <ul>
-                                        <li>Netherlands</li>
+                                        <li>{t("Netherlands")}</li>
                                         <li>|</li>
                                         <li>Germany</li>
                                         <li>|</li>
@@ -60,7 +60,7 @@ export default function Footer() {
                                         <li>|</li>
                                         <li>UAE</li>
                                         <li>|</li>
-                                        <li>KSA</li>
+                                        <li>{t("KSA")}</li>
                                     </ul>
                                     <div className="phone">
                                         <Link href="">
@@ -96,7 +96,7 @@ export default function Footer() {
                                                 <Link href="/careers">{t("Careers")}</Link>
                                             </li>
                                             <li>
-                                                <Link href="/contact">{t("Contact Us")}</Link>
+                                                <Link href="/contact-us">{t("Contact Us")}</Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -201,13 +201,13 @@ export default function Footer() {
                                     <h3>{t("Industries")}</h3>
                                     <ul>
                                         <li>
-                                            <Link href="/vertical-retail">{t("Brand Owners and Vertical Retailers")}</Link>
+                                            <Link href="/Brand-owners-and-vertical-retail">{t("Brand Owners and Vertical Retailers")}</Link>
                                         </li>
                                         <li>
                                             <Link href="/industries-retail">{t("Retail Industry")}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/supply-chain">{t("Distribution and Supply Chain")}</Link>
+                                            <Link href="/Distribution-and-supply-chain">{t("Distribution and Supply Chain")}</Link>
                                         </li>
                                         <li>
                                             <Link href="/discrete-manufacturing">{t("Discrete Manufacturing")}</Link>
@@ -216,13 +216,13 @@ export default function Footer() {
                                             <Link href="/Automotive">{t("Automotive Industry")}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/Epc">{t("Engineering Procurement and Construction")}</Link>
+                                            <Link href="/Engineering-Procurement-Construction-(EPC)">{t("Engineering Procurement and Construction")}</Link>
                                         </li>
                                         <li>
                                             <Link href="/process-manufacturing">{t("Process Manufacturing")}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/Private-quity">{t("Private Equity & Funding Backed Ventures")}</Link>
+                                            <Link href="/Private-Equity-Funding-Backed-Ventures">{t("Private Equity & Funding Backed Ventures")}</Link>
                                         </li>
                                         <li>
                                             <Link href="/Cable-manufacturing">{t("Cable Manufacturing")}</Link>
@@ -249,13 +249,13 @@ export default function Footer() {
                                             <Link href="/webinars">{t("Webinars")}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/collaterals">Collaterals</Link>
+                                            <Link href="/collaterals">{t("Collaterals")}</Link>
                                         </li>
                                         <li>
                                             <Link href="/corporate-videos">Videos</Link>
                                         </li>
                                         <li>
-                                            <Link href="/news-events">News and Events</Link>
+                                            <Link href="/news-events">{t("News and Events")}</Link>
                                         </li>
                                         {/* <li>
                                             <Link href="/Faq">FAQs</Link>
@@ -291,7 +291,7 @@ export default function Footer() {
                                                         <Link href="/careers">{t("Careers")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/contact">{t("Contact Us")}</Link>
+                                                        <Link href="/contact-us">{t("Contact Us")}</Link>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -429,7 +429,7 @@ export default function Footer() {
                                         <div className="row">
                                             <div className=" col-6">
                                                 <li>
-                                                    <Link href="/vertical-retail">
+                                                    <Link href="/Brand-owners-and-vertical-retail">
                                                         Brand Owners and Vertical Retailers{" "}
                                                     </Link>
                                                 </li>
@@ -437,7 +437,7 @@ export default function Footer() {
                                                     <Link href="/industries-retail">Retail Industry </Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/supply-chain">Distribution and Supply Chain</Link>
+                                                    <Link href="/Distribution-and-supply-chain">Distribution and Supply Chain</Link>
                                                 </li>
                                                 <li>
                                                     <Link href="/discrete-manufacturing">Discrete Manufacturing </Link>
@@ -448,13 +448,13 @@ export default function Footer() {
                                             </div>
                                             <div className=" col-6">
                                                 <li>
-                                                    <Link href="/Epc">Engineering Procurement and Construction </Link>
+                                                    <Link href="/Engineering-Procurement-Construction-(EPC)">Engineering Procurement and Construction </Link>
                                                 </li>
                                                 <li>
                                                     <Link href="/process-manufacturing">Process Manufacturing </Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/Private-quity">
+                                                    <Link href="/Private-Equity-Funding-Backed-Ventures">
                                                         Private Equity &amp; Funding Backed Ventures{" "}
                                                     </Link>
                                                 </li>

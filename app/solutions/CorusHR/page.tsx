@@ -131,7 +131,7 @@ export default function Corushr() {
                                         device.
                                     </p>
                                     <div className="ser-btn ">
-                                        <Link href="/contact" className="animated-svg-link">
+                                        <Link href="/contact-us" className="animated-svg-link">
                                             Contact Us
                                             <span className="svg-container ">
                                                 <span className=" right">
@@ -262,7 +262,7 @@ export default function Corushr() {
                                         coverage that is available on mobile and desktop.
                                     </p>
                                     <div className="ser-btn mt-5">
-                                        <Link href="/contact" className="animated-svg-link">
+                                        <Link href="/contact-us" className="animated-svg-link">
                                             Contact Us
                                             <span className="svg-container ">
                                                 <span className=" right">
@@ -1205,13 +1205,6 @@ export default function Corushr() {
                                                 eliminating paper and email trails with digital workflows and
                                                 enhances user satisfaction.
                                             </p>
-                                            <p>
-                                                The solution is adaptable, quick to respond, and highly
-                                                customisable, aimed at improving operational efficiencies. It
-                                                facilitates streamlined HR operations, improves efficiency by
-                                                eliminating paper and email trails with digital workflows and
-                                                enhances user satisfaction.
-                                            </p>
                                             <img src="/images/af2.svg" alt="" />
                                         </div>
                                         <div className="service-item-body1 light-bg-1 imgadd1 mobileimgadd mobileview w80">
@@ -1318,6 +1311,8 @@ export default function Corushr() {
                                             </div>
                                         </div>
                                         {/* Benefits Steps Item End */}
+                                        </div>
+                                    <div className="col-lg-6 col-md-6">
                                         {/* Benefits Steps Item Start */}
                                         <div
                                             className="benefits-steps-item wow fadeInUp"
@@ -1332,6 +1327,8 @@ export default function Corushr() {
                                             </div>
                                         </div>
                                         {/* Benefits Steps Item End */}
+                                        </div>
+                                    <div className="col-lg-6 col-md-6">
                                         {/* Benefits Steps Item Start */}
                                         <div
                                             className="benefits-steps-item wow fadeInUp"
@@ -1346,6 +1343,8 @@ export default function Corushr() {
                                             </div>
                                         </div>
                                         {/* Benefits Steps Item End */}
+                                        </div>
+                                    <div className="col-lg-6 col-md-6">
                                         {/* Benefits Steps Item Start */}
                                         <div
                                             className="benefits-steps-item wow fadeInUp"
@@ -1376,6 +1375,8 @@ export default function Corushr() {
                                             </div>
                                         </div>
                                         {/* Benefits Steps Item End */}
+                                        </div>
+                                    <div className="col-lg-6 col-md-6">
                                         {/* Benefits Steps Item Start */}
                                         <div
                                             className="benefits-steps-item wow fadeInUp"
@@ -1390,6 +1391,8 @@ export default function Corushr() {
                                             </div>
                                         </div>
                                         {/* Benefits Steps Item End */}
+                                        </div>
+                                    <div className="col-lg-6 col-md-6">
                                         {/* Benefits Steps Item Start */}
                                         <div
                                             className="benefits-steps-item wow fadeInUp"
@@ -1404,6 +1407,8 @@ export default function Corushr() {
                                             </div>
                                         </div>
                                         {/* Benefits Steps Item End */}
+                                        </div>
+                                    <div className="col-lg-6 col-md-6">
                                         {/* Benefits Steps Item Start */}
                                         <div
                                             className="benefits-steps-item wow fadeInUp"

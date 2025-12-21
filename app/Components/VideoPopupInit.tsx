@@ -79,7 +79,11 @@ export default function VideoPopupInit() {
         
         // Set video source with autoplay
         const videoUrl = 'https://www.youtube.com/watch?v=molnWIax5DU'
-        updatedVideo.src = getEmbedUrl(videoUrl)
+        try {
+          updatedVideo.src = getEmbedUrl(videoUrl)
+        } catch (err) {
+          console.warn('⚠️ [VideoPopup] Failed to set iframe src:', err)
+        }
         
         console.log('✅ [VideoPopup] Popup opened')
       }
@@ -87,7 +91,11 @@ export default function VideoPopupInit() {
       const closePopup = () => {
         updatedPopup.style.display = 'none'
         // Stop video by clearing src
-        updatedVideo.src = ''
+        try {
+          updatedVideo.src = ''
+        } catch (err) {
+          console.warn('⚠️ [VideoPopup] Failed to clear iframe src:', err)
+        }
         document.body.classList.remove('popup-open')
         
         console.log('✅ [VideoPopup] Popup closed')

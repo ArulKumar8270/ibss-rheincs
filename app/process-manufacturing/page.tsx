@@ -29,7 +29,7 @@ export default function EnterpriseSolutions() {
               market, regulatory, and sustainability pressures.
             </p>
             <div className="ser-btn m-0">
-              <Link href="/contact" className="animated-svg-link">
+              <Link href="/contact-us" className="animated-svg-link">
                 Contact Us
                 <span className="svg-container ">
                   <span className=" right">
@@ -429,7 +429,7 @@ export default function EnterpriseSolutions() {
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
-                <Link href="/contact" className="animated-svg-link">
+                <Link href="/contact-us" className="animated-svg-link">
                   Contact Us
                   <span className="svg-container ">
                     <span className=" right">

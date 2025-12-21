@@ -1,7 +1,10 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
+import useTranslation from '../hooks/useTranslation'
 
 const TestimonialandAward = () => {
+    const { t } = useTranslation()
     return (
         <>
             {/* Our Testimonial Section Start */}
@@ -11,11 +14,11 @@ const TestimonialandAward = () => {
                         <div className="col-lg-12">
                             <div className="section-title text-center headingss">
                                 <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                    Trusted by Enterprises Worldwide
+                                    {t("Trusted by Enterprise Worldwide")}
                                 </h2>
                                 <div className="ser-btn2 mt-4">
                                     <Link href="/about-us/customer-speak" className="animated-svg-link1 btn-style-3">
-                                        View All
+                                        {t("View All")}
                                         <span className="svg-container ">
                                             <span className=" left">
                                                 <svg

@@ -2188,7 +2188,10 @@
 }
 
 .marline-bg-video video {
-    height: 100%;
+        height: 100%;
+    width: 100%;
+    position: relative;
+    object-fit: cover;
 }
 
 
@@ -3138,9 +3141,11 @@ h2.section-title {
 }
 
 .marline-bg-video {
-    position: absolute;
+   position: absolute;
     left: 0%;
     top: 0px;
+    width: 100%;
+    height: 100%;
     z-index: -2;
 }
 
@@ -3994,7 +3999,7 @@ h2.section-title {
 }
 
 .pe-matters-content {
-    /* width: 300px; */
+    width: 25%;
     display: flex;
     flex-direction: column;
     gap: 24px;
