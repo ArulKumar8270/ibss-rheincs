@@ -18,7 +18,6 @@ const initPopoverStandalone = () => {
   // Note: Bootstrap 5 requires Popper.js
   // We'll let the actual popover creation handle errors if Popper.js is missing
   
-  console.log('🔄 [Popover] Initializing popovers...');
   
   const popoverIds = ['myPopover', 'myPopover2', 'myPopover3', 'myPopover4', 'myPopover5'];
   let initializedCount = 0;
@@ -26,13 +25,11 @@ const initPopoverStandalone = () => {
   popoverIds.forEach((popoverId) => {
     const popoverTriggerEl = document.getElementById(popoverId);
     if (!popoverTriggerEl) {
-      console.log(`ℹ️ [Popover] Element ${popoverId} not found, skipping`);
       return;
     }
     
     // Check if already initialized (to avoid duplicates)
     if (popoverTriggerEl.hasAttribute('data-popover-init')) {
-      console.log(`ℹ️ [Popover] ${popoverId} already initialized, cleaning up first...`);
       // Dispose existing popover if it exists
       const existingPopover = bootstrap.Popover.getInstance(popoverTriggerEl);
       if (existingPopover) {
@@ -155,13 +152,10 @@ const initPopoverStandalone = () => {
     });
     
     initializedCount++;
-    console.log(`✅ [Popover] Initialized ${popoverId}`);
   });
   
   if (initializedCount > 0) {
-    console.log(`✅ [Popover] Successfully initialized ${initializedCount} popover(s)`);
   } else {
-    console.log('ℹ️ [Popover] No popovers found to initialize');
   }
   
   return initializedCount > 0;
@@ -215,7 +209,6 @@ export default function PopoverInit() {
     const reinit = () => {
       if (typeof window === 'undefined') return;
       
-      console.log('🔄 [Popover] Route changed, re-initializing...');
       
       // Wait for Bootstrap and DOM to be ready
       const tryReinit = (attempt: number = 1) => {

@@ -219,6 +219,36 @@ export default function AdminDashboard() {
           >
             ➕ Post New Career
           </Link>
+          <Link
+            href="/admin/industries"
+            style={{
+              padding: '15px',
+              background: '#e6f3ff',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              color: '#3182ce',
+              fontWeight: '500',
+              textAlign: 'center',
+              border: '2px solid #3182ce20'
+            }}
+          >
+            🏭 Manage Industries
+          </Link>
+          <Link
+            href="/admin/case-studies?action=create"
+            style={{
+              padding: '15px',
+              background: '#fff0f5',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              color: '#c53030',
+              fontWeight: '500',
+              textAlign: 'center',
+              border: '2px solid #c5303020'
+            }}
+          >
+            ➕ Create Case Study
+          </Link>
         </div>
       </div>
     </div>

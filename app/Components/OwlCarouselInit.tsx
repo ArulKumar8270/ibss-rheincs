@@ -14,7 +14,6 @@ export default function OwlCarouselInit() {
   const pathname = usePathname();
 
   useEffect(() => {
-    console.log('🦉 [OwlCarouselInit] Component mounted, pathname:', pathname);
 
     const initOwlCarousels = () => {
       // Check if jQuery is available
@@ -33,7 +32,6 @@ export default function OwlCarouselInit() {
         return;
       }
 
-      console.log('✅ [OwlCarouselInit] jQuery and OwlCarousel are ready!');
 
       // Initialize skew-carousel
       initSkewCarousel();
@@ -47,11 +45,9 @@ export default function OwlCarouselInit() {
       const $carousel = $('.skew-carousel');
       
       if ($carousel.length === 0) {
-        console.log('ℹ️ [skew-carousel] No elements found on this page');
         return;
       }
 
-      console.log(`🦉 [skew-carousel] Found ${$carousel.length} carousel(s)`);
 
       try {
         // Destroy existing instances
@@ -60,7 +56,6 @@ export default function OwlCarouselInit() {
           const existingCarousel = $this.data('owl.carousel');
           
           if (existingCarousel) {
-            console.log('🦉 [skew-carousel] Destroying existing instance...');
             $this.trigger('destroy.owl.carousel');
             $this.removeClass('owl-carousel owl-loaded');
             $this.find('.owl-stage-outer').children().unwrap();
@@ -68,7 +63,6 @@ export default function OwlCarouselInit() {
         });
 
         // Initialize carousel
-        console.log('🦉 [skew-carousel] Initializing...');
         $carousel.owlCarousel({
           loop: false,
           margin: 10,
@@ -82,7 +76,6 @@ export default function OwlCarouselInit() {
           pullDrag: false
         });
 
-        console.log('✅ [skew-carousel] Initialized successfully!');
       } catch (error) {
         console.error('❌ [skew-carousel] Error:', error);
       }
@@ -93,11 +86,9 @@ export default function OwlCarouselInit() {
       const $carousel = $('.skew-carousel1');
       
       if ($carousel.length === 0) {
-        console.log('ℹ️ [skew-carousel1] No elements found on this page');
         return;
       }
 
-      console.log(`🦉 [skew-carousel1] Found ${$carousel.length} carousel(s)`);
 
       try {
         // Destroy existing instances
@@ -106,7 +97,6 @@ export default function OwlCarouselInit() {
           const existingCarousel = $this.data('owl.carousel');
           
           if (existingCarousel) {
-            console.log('🦉 [skew-carousel1] Destroying existing instance...');
             $this.trigger('destroy.owl.carousel');
             $this.removeClass('owl-carousel owl-loaded');
             $this.find('.owl-stage-outer').children().unwrap();
@@ -114,7 +104,6 @@ export default function OwlCarouselInit() {
         });
 
         // Initialize carousel
-        console.log('🦉 [skew-carousel1] Initializing...');
         $carousel.owlCarousel({
           loop: false,
           margin: 15,
@@ -144,7 +133,6 @@ export default function OwlCarouselInit() {
         $carousel.on('changed.owl.carousel', setActiveSlide);
         $carousel.on('translated.owl.carousel', setActiveSlide);
 
-        console.log('✅ [skew-carousel1] Initialized successfully!');
       } catch (error) {
         console.error('❌ [skew-carousel1] Error:', error);
       }
@@ -162,7 +150,6 @@ export default function OwlCarouselInit() {
 
     // Listen for OwlCarousel loaded event
     const handleOwlCarouselLoaded = () => {
-      console.log('🦉 [OwlCarouselInit] owlCarouselLoaded event received');
       setTimeout(initOwlCarousels, 100);
     };
 
@@ -172,7 +159,6 @@ export default function OwlCarouselInit() {
 
     // Cleanup function
     return () => {
-      console.log('🦉 [OwlCarouselInit] Cleaning up...');
       timeouts.forEach(timeout => clearTimeout(timeout));
       
       if (typeof window !== 'undefined') {

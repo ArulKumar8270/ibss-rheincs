@@ -7,18 +7,14 @@ export default function CounterInit() {
   const pathname = usePathname();
 
   useEffect(() => {
-    console.log('🔢 [CounterInit] Component mounted, pathname:', pathname);
 
     const initCounters = () => {
       // Try to find counter section first
       const counterSection = document.getElementById('counter-section');
       const counters = document.querySelectorAll('.counter');
       
-      console.log(`🔢 [CounterInit] Found ${counters.length} counter elements`);
-      console.log(`🔢 [CounterInit] Counter section found:`, !!counterSection);
       
       if (counters.length === 0) {
-        console.log('ℹ️ [CounterInit] No counter elements found on this page');
         return;
       }
 
@@ -28,7 +24,6 @@ export default function CounterInit() {
         
         // Skip if already animated or currently animating
         if (htmlElement.hasAttribute('data-counted') || htmlElement.hasAttribute('data-animating')) {
-          console.log('🔢 [CounterInit] Counter already animated or animating, skipping');
           return;
         }
 
@@ -67,11 +62,6 @@ export default function CounterInit() {
           return;
         }
 
-        console.log(`🔢 [CounterInit] Starting animation for counter, target: ${target}`, {
-          dataTarget,
-          originalText,
-          targetStr
-        });
 
         // Mark as being animated to prevent multiple animations
         htmlElement.setAttribute('data-animating', 'true');
@@ -127,7 +117,6 @@ export default function CounterInit() {
         if (currentNum === target && !htmlElement.hasAttribute('data-counted')) {
           htmlElement.setAttribute('data-counted', 'true');
           htmlElement.removeAttribute('data-animating');
-          console.log(`✅ [CounterInit] Counter already at target ${target}, marked as counted`);
           return;
         }
         
@@ -152,7 +141,6 @@ export default function CounterInit() {
             htmlElement.textContent = target.toString() + suffix;
             htmlElement.setAttribute('data-counted', 'true');
             htmlElement.removeAttribute('data-animating');
-            console.log(`✅ [CounterInit] Counter animated to ${target}${suffix}`);
           }
         };
         
@@ -168,7 +156,6 @@ export default function CounterInit() {
 
       // Use Intersection Observer to trigger animation when visible
       if ('IntersectionObserver' in window) {
-        console.log('🔢 [CounterInit] Using Intersection Observer');
         
         const observerOptions = {
           threshold: 0.1, // Trigger when 10% visible (more sensitive)
@@ -178,7 +165,6 @@ export default function CounterInit() {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              console.log('🔢 [CounterInit] Counter entered viewport, animating...');
               animateCounter(entry.target);
               observer.unobserve(entry.target); // Stop observing after animation
             }
@@ -224,7 +210,6 @@ export default function CounterInit() {
               if (currentNum === 0 || (dataTarget && currentNum !== target)) {
                 htmlCounter.textContent = target.toString();
                 if (currentNum === 0) {
-                  console.log(`🔢 [CounterInit] Restored counter from 0 to ${target} (will animate from 0)`);
                 }
               }
             } else {
@@ -242,7 +227,6 @@ export default function CounterInit() {
           
           if (isVisible) {
             // Element is already visible, trigger animation immediately
-            console.log('🔢 [CounterInit] Counter already visible, animating immediately');
             // Use requestAnimationFrame to ensure DOM is ready
             requestAnimationFrame(() => {
               requestAnimationFrame(() => {
@@ -261,7 +245,6 @@ export default function CounterInit() {
           const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                console.log('🔢 [CounterInit] Counter section entered viewport');
                 // Animate all counters that haven't been animated yet
                 counters.forEach((counter) => {
                   const htmlCounter = counter;
@@ -275,10 +258,8 @@ export default function CounterInit() {
           }, { threshold: 0.1, rootMargin: '100px' });
           
           sectionObserver.observe(counterSection);
-          console.log('✅ [CounterInit] Also observing counter section');
         }
 
-        console.log('✅ [CounterInit] Intersection Observer initialized for', counters.length, 'counters');
         
         // Fallback: Also trigger animation after a delay if Intersection Observer hasn't fired
         // This ensures counters animate even if they're already in viewport
@@ -290,7 +271,6 @@ export default function CounterInit() {
               const rect = htmlCounter.getBoundingClientRect();
               const isVisible = rect.top < window.innerHeight + 200 && rect.bottom > -200;
               if (isVisible) {
-                console.log('🔢 [CounterInit] Counter is visible, triggering animation as fallback');
                 animateCounter(counter);
               }
             }
@@ -302,14 +282,12 @@ export default function CounterInit() {
           counters.forEach((counter) => {
             const htmlCounter = counter;
             if (!htmlCounter.hasAttribute('data-counted') && !htmlCounter.hasAttribute('data-animating')) {
-              console.log('🔢 [CounterInit] Triggering animation as final fallback for remaining counters');
               animateCounter(counter);
             }
           });
         }, 2500);
       } else {
         // Fallback: animate immediately if no Intersection Observer support
-        console.log('🔢 [CounterInit] No Intersection Observer, animating immediately');
         counters.forEach((counter) => {
           animateCounter(counter);
         });
@@ -336,7 +314,6 @@ export default function CounterInit() {
 
       // Cleanup function
       return () => {
-        console.log('🔢 [CounterInit] Cleaning up...');
         timeouts.forEach(timeout => clearTimeout(timeout));
         
         // Reset all counters but preserve original target

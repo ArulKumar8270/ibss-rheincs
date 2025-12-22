@@ -111,10 +111,6 @@ export default function CaseStudyDetailsClient({
         // Always set the state with fresh data to ensure UI is updated
         // This ensures updates from the database are reflected immediately
         setCaseStudy(caseStudyData);
-        
-        if (hasChanged) {
-          console.log('✅ Case study data updated, UI refreshed:', caseStudyData.id);
-        }
 
         // Fetch related case studies with fresh data
         const { data: relatedData } = await supabase
@@ -135,7 +131,6 @@ export default function CaseStudyDetailsClient({
           return
         }
         // Otherwise keep existing case study data (initialCaseStudy or current caseStudy state)
-        console.log('No data found but keeping existing case study data')
       }
     } catch (err: any) {
       console.error('Error fetching case study:', err)
@@ -167,7 +162,6 @@ export default function CaseStudyDetailsClient({
   useEffect(() => {
     if (caseStudyId && caseStudyId !== 'placeholder') {
       const interval = setInterval(() => {
-        console.log('Checking for case study updates...');
         fetchCaseStudy();
       }, 30000); // Check every 30 seconds
 
@@ -179,7 +173,6 @@ export default function CaseStudyDetailsClient({
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible' && caseStudyId && caseStudyId !== 'placeholder') {
-        console.log('Page became visible, refreshing case study data...');
         fetchCaseStudy();
       }
     };

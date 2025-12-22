@@ -8,7 +8,6 @@ import { usePathname } from 'next/navigation';
 const initMobileMenuStandalone = () => {
   if (typeof window === 'undefined' || typeof document === 'undefined') return;
   
-  console.log('🔄 [MobileMenu] Initializing mobile menu...');
   
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const closeBtn = document.getElementById('close-btn');
@@ -29,7 +28,6 @@ const initMobileMenuStandalone = () => {
     return false;
   }
 
-  console.log('✅ [MobileMenu] Found all required elements');
 
   // Remove old event listeners by cloning elements
   const newHamburgerBtn = hamburgerBtn.cloneNode(true) as HTMLElement;
@@ -59,13 +57,11 @@ const initMobileMenuStandalone = () => {
       e.preventDefault();
       e.stopPropagation();
     }
-    console.log('🍔 [MobileMenu] Opening mobile menu');
     updatedMobileNavPanel.classList.add('open');
     if (updatedMenuOverlay) {
       updatedMenuOverlay.classList.add('open');
     }
     document.body.style.overflow = 'hidden';
-    console.log('✅ [MobileMenu] Menu opened');
   };
 
   // Function to close the main menu
@@ -74,13 +70,11 @@ const initMobileMenuStandalone = () => {
       e.preventDefault();
       e.stopPropagation();
     }
-    console.log('❌ [MobileMenu] Closing mobile menu');
     updatedMobileNavPanel.classList.remove('open');
     if (updatedMenuOverlay) {
       updatedMenuOverlay.classList.remove('open');
     }
     document.body.style.overflow = '';
-    console.log('✅ [MobileMenu] Menu closed');
   };
 
   // Add event listeners using multiple methods for maximum compatibility
@@ -99,7 +93,6 @@ const initMobileMenuStandalone = () => {
 
   // --- Submenu Accordion Logic ---
   const allSubmenuToggles = document.querySelectorAll('.submenu-toggle');
-  console.log(`🔄 [MobileMenu] Found ${allSubmenuToggles.length} submenu toggles`);
   
   allSubmenuToggles.forEach((toggle, index) => {
     // Clone to remove old listeners
@@ -143,14 +136,12 @@ const initMobileMenuStandalone = () => {
         submenu.style.display = 'block';
       }
       
-      console.log(`✅ [MobileMenu] Submenu ${index} toggled`);
     });
   });
 
   // Note: Search box functionality is now handled by MobileSearchInit component
   // This keeps the components separated and easier to maintain
 
-  console.log('✅ [MobileMenu] Mobile menu fully initialized');
   return true;
 };
 
@@ -158,7 +149,6 @@ const initMobileMenuStandalone = () => {
 if (typeof window !== 'undefined') {
   (window as any).initMobileMenuStandalone = initMobileMenuStandalone;
   (window as any).reinitMobileMenu = initMobileMenuStandalone;
-  console.log('✅ [MobileMenu] Function registered globally');
 }
 
 export default function MobileMenuInit() {
@@ -192,7 +182,6 @@ export default function MobileMenuInit() {
     const reinit = () => {
       if (typeof window === 'undefined') return;
       
-      console.log('🔄 [MobileMenu] Route changed, re-initializing...');
       
       // Use requestAnimationFrame to ensure DOM is updated
       requestAnimationFrame(() => {

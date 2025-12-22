@@ -133,7 +133,7 @@ export default function Contact() {
               <div className="col-sm-6">
                 <div className="section-title">
                   <h2
-                    className="text-anime-style-21 text-white "
+                    className="text-anime-style-2 text-white "
                     data-cursor="-opaque"
                   >
                     Talk to Our Experts
@@ -241,21 +241,21 @@ export default function Contact() {
                     <div className="col-md-6">
                       <div className="input-group custom-form-control">
                         <div className="country-code-select">
-                          <select
+                        <select
                             className="form-select country-code-select"
-                            name="countryCode"
-                            value={formData.countryCode}
-                            onChange={handleInputChange}
+                          name="countryCode"
+                          value={formData.countryCode}
+                          onChange={handleInputChange}
                             onFocus={() => setIsCountryCodeFocused(true)}
                             onBlur={() => setIsCountryCodeFocused(false)}
-                            required={true}
-                            disabled={status === 'loading'}
+                          required={true}
+                          disabled={status === 'loading'}
                             style={{
                               appearance: 'none',
                               paddingRight: '35px',
                               color: 'transparent'
                             }}
-                          >
+                        >
                           <option value="+93">Afghanistan (+93)</option>
                           <option value="+355">Albania (+355)</option>
                           <option value="+213">Algeria (+213)</option>
@@ -736,14 +736,14 @@ export default function Contact() {
                   data-bs-content='<div class="too-con-waber">
                       <h4> Netherlands</h4>
                       <p>
-                          
+                          Netherlands <br>
                           RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
                       </p>
                       <div class="contect-call2">
                             <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
                       </div>
                       <div class="contect-call2">
-                            <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com</Link>
+                            <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
                       </div>
                   </div>'
                 >
@@ -876,7 +876,7 @@ Germany<br>
                   </div>
                   <div className="col-sm-4">
                     <div className="ser-btn text-right">
-                      <Link href="/contact-us" className="animated-svg-link">
+                      <Link href="/contact" className="animated-svg-link">
                         Contact Us
                         <span className="svg-container ">
                           <span className=" right">
@@ -1023,22 +1023,3 @@ Germany<br>
     border: 1px solid #bee5eb;
   }
 `}</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-

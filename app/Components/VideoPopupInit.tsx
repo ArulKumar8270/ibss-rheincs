@@ -79,26 +79,16 @@ export default function VideoPopupInit() {
         
         // Set video source with autoplay
         const videoUrl = 'https://www.youtube.com/watch?v=molnWIax5DU'
-        try {
-          updatedVideo.src = getEmbedUrl(videoUrl)
-        } catch (err) {
-          console.warn('⚠️ [VideoPopup] Failed to set iframe src:', err)
-        }
+        updatedVideo.src = getEmbedUrl(videoUrl)
         
-        console.log('✅ [VideoPopup] Popup opened')
       }
 
       const closePopup = () => {
         updatedPopup.style.display = 'none'
         // Stop video by clearing src
-        try {
-          updatedVideo.src = ''
-        } catch (err) {
-          console.warn('⚠️ [VideoPopup] Failed to clear iframe src:', err)
-        }
+        updatedVideo.src = ''
         document.body.classList.remove('popup-open')
         
-        console.log('✅ [VideoPopup] Popup closed')
       }
 
       // Attach event listeners
@@ -120,7 +110,6 @@ export default function VideoPopupInit() {
       }
       document.addEventListener('keydown', handleEscape)
 
-      console.log('✅ [VideoPopup] Initialized successfully')
 
       // Return cleanup function
       return () => {

@@ -597,14 +597,14 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
   // Note: App Router doesn't have router.events, and static export doesn't have client-side routing
   if (typeof window !== 'undefined' && window.next && window.next.router && window.next.router.events && typeof window.next.router.events.on === 'function') {
     try {
-      window.next.router.events.on('routeChangeComplete', function() {
-        console.log('🔄 Next.js route change complete, re-initializing toggles...');
-        // Remove markers
-        document.querySelectorAll('[data-readmore-init]').forEach(function(el) {
-          el.removeAttribute('data-readmore-init');
-          el.removeAttribute('data-index');
-        });
-        // Re-initialize
+    window.next.router.events.on('routeChangeComplete', function() {
+      console.log('🔄 Next.js route change complete, re-initializing toggles...');
+      // Remove markers
+      document.querySelectorAll('[data-readmore-init]').forEach(function(el) {
+        el.removeAttribute('data-readmore-init');
+        el.removeAttribute('data-index');
+      });
+      // Re-initialize
         setTimeout(initReadMoreToggles, 200);
         setTimeout(initReadMoreToggles, 600);
         setTimeout(initReadMoreToggles, 1200);
