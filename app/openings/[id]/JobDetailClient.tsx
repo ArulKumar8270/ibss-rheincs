@@ -101,7 +101,6 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                     return
                 }
                 // Otherwise keep existing job data (initialJob or current job state)
-                console.log('No data found but keeping existing job data')
             }
         } catch (err: any) {
             console.error('Error fetching job:', err)
@@ -110,7 +109,6 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                 console.warn('Fetch failed and no job data, redirecting to careers')
                 router.push('/careers')
             } else {
-                console.log('Fetch failed but keeping existing job data')
             }
         } finally {
             setLoading(false)

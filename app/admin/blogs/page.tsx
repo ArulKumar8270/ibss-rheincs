@@ -3,6 +3,11 @@
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
+import 'quill/dist/quill.snow.css'
+
+// Dynamically import ReactQuill to avoid SSR issues
+const ReactQuill = dynamic(() => import('react-quill-new'), { ssr: false })
 
 interface Blog {
   id: string
@@ -16,6 +21,7 @@ interface Blog {
   published: boolean
   created_at: string
   updated_at: string
+  industries: string[] | null
 }
 
 export default function AdminBlogsPage() {
@@ -32,10 +38,14 @@ export default function AdminBlogsPage() {
     author: '',
     featured_image: '',
     category: 'all',
-    published: false
+    published: false,
+    industries: [] as string[]
   })
   const [uploading, setUploading] = useState(false)
   const [uploadProgress, setUploadProgress] = useState(0)
+  const [uploadingImage, setUploadingImage] = useState(false)
+  const [quillEditor, setQuillEditor] = useState<any>(null)
+  const [industries, setIndustries] = useState<Array<{ id: string; name: string; slug: string }>>([])
   const supabase = createClient()
 
   const categories = [
@@ -48,7 +58,25 @@ export default function AdminBlogsPage() {
 
   useEffect(() => {
     fetchBlogs()
+    fetchIndustries()
   }, [])
+
+  const fetchIndustries = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('industries')
+        .select('id, name, slug')
+        .eq('active', true)
+        .order('display_order', { ascending: true })
+        .order('name', { ascending: true })
+
+      if (error) throw error
+      setIndustries(data || [])
+    } catch (err: any) {
+      // Fallback to empty array if table doesn't exist yet
+      setIndustries([])
+    }
+  }
 
   const fetchBlogs = async () => {
     setLoading(true)
@@ -86,11 +114,21 @@ export default function AdminBlogsPage() {
     }
   }
 
+  const toggleIndustry = (industrySlug: string) => {
+    setFormData(prev => ({
+      ...prev,
+      industries: prev.industries.includes(industrySlug)
+        ? prev.industries.filter(i => i !== industrySlug)
+        : [...prev.industries, industrySlug]
+    }))
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
       const submitData = {
         ...formData,
+        industries: formData.industries.length > 0 ? formData.industries : null,
         updated_at: new Date().toISOString()
       }
       
@@ -116,7 +154,8 @@ export default function AdminBlogsPage() {
         author: '',
         featured_image: '',
         category: 'all',
-        published: false
+        published: false,
+        industries: []
       })
       fetchBlogs()
       alert(editingBlog ? 'Blog updated successfully!' : 'Blog created successfully!')
@@ -191,17 +230,116 @@ export default function AdminBlogsPage() {
     }
   }
 
+  // Handle image upload in editor
+  const handleEditorImageUpload = async () => {
+    const input = document.createElement('input')
+    input.setAttribute('type', 'file')
+    input.setAttribute('accept', 'image/*')
+    input.click()
+
+    input.onchange = async () => {
+      const file = input.files?.[0]
+      if (!file) return
+
+      if (file.size > 5 * 1024 * 1024) {
+        alert('Image size should be less than 5MB')
+        return
+      }
+
+      setUploadingImage(true)
+
+      try {
+        const fileExt = file.name.split('.').pop()
+        const fileName = `blog-content-${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`
+        const filePath = `blog-images/${fileName}`
+
+        const { error: uploadError } = await supabase.storage
+          .from('blog-images')
+          .upload(filePath, file, {
+            cacheControl: '3600',
+            upsert: false
+          })
+
+        if (uploadError) throw uploadError
+
+        const { data: { publicUrl } } = supabase.storage
+          .from('blog-images')
+          .getPublicUrl(filePath)
+
+        // Insert image into editor - get editor from DOM
+        const editorElement = document.querySelector('.ql-editor') as any
+        if (editorElement && editorElement.__quill) {
+          const quill = editorElement.__quill
+          const range = quill.getSelection(true)
+          quill.insertEmbed(range ? range.index : 0, 'image', publicUrl)
+          quill.setSelection((range ? range.index : 0) + 1)
+        }
+      } catch (error: any) {
+        console.error('Upload error:', error)
+        alert('Error uploading image: ' + error.message)
+      } finally {
+        setUploadingImage(false)
+      }
+    }
+  }
+
+  // Get Quill editor instance when component mounts or content changes
+  useEffect(() => {
+    if (showForm && !quillEditor) {
+      const timer = setTimeout(() => {
+        const editorElement = document.querySelector('.ql-editor') as any
+        if (editorElement && editorElement.__quill) {
+          setQuillEditor(editorElement.__quill)
+        }
+      }, 100)
+      return () => clearTimeout(timer)
+    }
+  }, [showForm, quillEditor])
+
+  // Quill editor modules configuration
+  const quillModules = {
+    toolbar: {
+      container: [
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        [{ 'font': [] }],
+        [{ 'size': [] }],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'indent': '-1'}, { 'indent': '+1' }],
+        [{ 'color': [] }, { 'background': [] }],
+        [{ 'align': [] }],
+        ['link', 'image', 'video'],
+        ['clean']
+      ],
+      handlers: {
+        image: handleEditorImageUpload
+      }
+    },
+    clipboard: {
+      matchVisual: false
+    }
+  }
+
+  const quillFormats = [
+    'header', 'font', 'size',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet', 'indent',
+    'color', 'background',
+    'align',
+    'link', 'image', 'video'
+  ]
+
   const handleEdit = (blog: Blog) => {
     setEditingBlog(blog)
     setFormData({
       title: blog.title,
       slug: blog.slug,
       content: blog.content,
-      excerpt: blog.excerpt,
-      author: blog.author,
+      excerpt: blog.excerpt || '',
+      author: blog.author || '',
       featured_image: blog.featured_image || '',
       category: blog.category || 'all',
-      published: blog.published
+      published: blog.published,
+      industries: blog.industries || []
     })
     setShowForm(true)
   }
@@ -414,7 +552,8 @@ export default function AdminBlogsPage() {
               author: '',
               featured_image: '',
               category: 'all',
-              published: false
+              published: false,
+              industries: []
             })
           }}
           style={{
@@ -486,15 +625,33 @@ export default function AdminBlogsPage() {
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Content *</label>
-              <textarea
-                value={formData.content}
-                onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                rows={15}
-                required
-                placeholder="Write your blog content here. You can use HTML for formatting."
-                style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', fontFamily: 'inherit', color: '#333', fontSize: '14px' }}
-              />
-              <small style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '5px' }}>Supports HTML formatting</small>
+              {uploadingImage && (
+                <div style={{ marginBottom: '10px', padding: '10px', background: '#f0f0f0', borderRadius: '6px', color: '#666', fontSize: '14px' }}>
+                  Uploading image...
+                </div>
+              )}
+              <div style={{ background: '#fff', borderRadius: '6px' }}>
+                <ReactQuill
+                  theme="snow"
+                  value={formData.content}
+                  onChange={(value: string) => setFormData({ ...formData, content: value })}
+                  modules={quillModules}
+                  formats={quillFormats}
+                  placeholder="Write your blog content here..."
+                />
+                <style jsx global>{`
+                  .ql-container {
+                    min-height: 400px;
+                    font-size: 14px;
+                  }
+                  .ql-editor {
+                    min-height: 400px;
+                  }
+                `}</style>
+              </div>
+              <small style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '5px' }}>
+                Use the toolbar to format text, add images, links, and more
+              </small>
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Author</label>
@@ -504,6 +661,32 @@ export default function AdminBlogsPage() {
                 onChange={(e) => setFormData({ ...formData, author: e.target.value })}
                 style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
               />
+            </div>
+            <div style={{ marginBottom: '15px' }}>
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>
+                Industries
+                <Link href="/admin/industries" style={{ marginLeft: '10px', fontSize: '12px', color: '#667eea', textDecoration: 'none' }}>
+                  (Manage Industries)
+                </Link>
+              </label>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                {industries.length > 0 ? (
+                  industries.map((industry) => (
+                    <label key={industry.id} style={{ display: 'flex', alignItems: 'center', gap: '5px', cursor: 'pointer' }}>
+                      <input
+                        type="checkbox"
+                        checked={formData.industries.includes(industry.slug)}
+                        onChange={() => toggleIndustry(industry.slug)}
+                      />
+                      <span style={{ fontSize: '14px' }}>
+                        {industry.name}
+                      </span>
+                    </label>
+                  ))
+                ) : (
+                  <div style={{ color: '#666', fontSize: '14px' }}>No industries available. <Link href="/admin/industries" style={{ color: '#667eea', textDecoration: 'none' }}>Create industries first</Link></div>
+                )}
+              </div>
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Category *</label>

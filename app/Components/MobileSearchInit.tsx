@@ -8,7 +8,6 @@ import { usePathname } from 'next/navigation';
 const initMobileSearchStandalone = () => {
   if (typeof window === 'undefined' || typeof document === 'undefined') return;
   
-  console.log('🔄 [MobileSearch] Initializing mobile search box...');
   
   const mobileSearchBtn = document.getElementById('mobileSearchBtn');
   const mobileSearchClose = document.getElementById('mobileSearchClose');
@@ -29,12 +28,6 @@ const initMobileSearchStandalone = () => {
     return false;
   }
 
-  console.log('✅ [MobileSearch] Found all required elements:', {
-    mobileSearchBtn: !!mobileSearchBtn,
-    mobileSearchClose: !!mobileSearchClose,
-    mobileSearchBox: !!mobileSearchBox,
-    mobileSearchFull: !!mobileSearchFull
-  });
 
   // Remove old event listeners by cloning elements
   const newMobileSearchBtn = mobileSearchBtn.cloneNode(true);
@@ -64,7 +57,6 @@ const initMobileSearchStandalone = () => {
       e.preventDefault();
       e.stopPropagation();
     }
-    console.log('🔍 [MobileSearch] Opening mobile search box');
     
     try {
       // Trigger React state update by dispatching a custom event
@@ -85,13 +77,11 @@ const initMobileSearchStandalone = () => {
         const searchInput = updatedMobileSearchFull?.querySelector('input');
         if (searchInput) {
           searchInput.focus();
-          console.log('✅ [MobileSearch] Input focused');
         } else {
           console.warn('⚠️ [MobileSearch] Input field not found in mobileSearchFull');
         }
       }, 300);
       
-      console.log('✅ [MobileSearch] Search box opened');
     } catch (error) {
       console.error('❌ [MobileSearch] Error opening search:', error);
     }
@@ -103,7 +93,6 @@ const initMobileSearchStandalone = () => {
       e.preventDefault();
       e.stopPropagation();
     }
-    console.log('❌ [MobileSearch] Closing mobile search box');
     
     try {
       // Trigger React state update by dispatching a custom event
@@ -125,7 +114,6 @@ const initMobileSearchStandalone = () => {
         searchInput.blur();
       }
       
-      console.log('✅ [MobileSearch] Search box closed');
     } catch (error) {
       console.error('❌ [MobileSearch] Error closing search:', error);
     }
@@ -146,7 +134,6 @@ const initMobileSearchStandalone = () => {
     updatedMobileSearchBtn.style.pointerEvents = 'auto';
     updatedMobileSearchBtn.style.userSelect = 'none';
     
-    console.log('✅ [MobileSearch] Search button listeners attached');
   } else {
     console.error('❌ [MobileSearch] updatedMobileSearchBtn is null!');
   }
@@ -182,7 +169,6 @@ const initMobileSearchStandalone = () => {
   const searchFull = document.getElementById('searchFull');
 
   if (searchBtn && searchClose && searchBox) {
-    console.log('🔄 [MobileSearch] Also initializing desktop search box...');
     
     const newSearchBtn = searchBtn.cloneNode(true);
     const newSearchClose = searchClose.cloneNode(true);
@@ -234,7 +220,6 @@ const initMobileSearchStandalone = () => {
       updatedSearchClose.onclick = closeDesktopSearch;
       updatedSearchClose.addEventListener('click', closeDesktopSearch, false);
       
-      console.log('✅ [MobileSearch] Desktop search box initialized');
     }
   }
 
@@ -262,7 +247,6 @@ const initMobileSearchStandalone = () => {
   document.removeEventListener('keydown', handleEscapeKey);
   document.addEventListener('keydown', handleEscapeKey);
 
-  console.log('✅ [MobileSearch] Mobile search box fully initialized');
   return true;
 };
 
@@ -270,7 +254,6 @@ const initMobileSearchStandalone = () => {
 if (typeof window !== 'undefined') {
   (window as any).initMobileSearchStandalone = initMobileSearchStandalone;
   (window as any).reinitMobileSearch = initMobileSearchStandalone;
-  console.log('✅ [MobileSearch] Function registered globally');
 }
 
 export default function MobileSearchInit() {
@@ -304,7 +287,6 @@ export default function MobileSearchInit() {
     const reinit = () => {
       if (typeof window === 'undefined') return;
       
-      console.log('🔄 [MobileSearch] Route changed, re-initializing...');
       
       // Use requestAnimationFrame to ensure DOM is updated
       requestAnimationFrame(() => {

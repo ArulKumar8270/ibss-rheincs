@@ -61,7 +61,6 @@ export default function LottieInit() {
           // Store reference for cleanup
           container._lottieAnimation = animation
 
-          console.log('✅ [Lottie] Animation loaded successfully')
         } catch (error) {
           console.error('❌ [Lottie] Error loading animation:', error)
         }

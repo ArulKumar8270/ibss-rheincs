@@ -8,7 +8,6 @@ import { usePathname } from 'next/navigation';
 const initReadMoreTogglesStandalone = () => {
   if (typeof window === 'undefined' || typeof document === 'undefined') return;
   
-  console.log('🔄 [Standalone] Initializing Read More Toggles...');
   
   // Remove ALL initialization markers to allow complete re-initialization
   document.querySelectorAll('[data-readmore-init]').forEach((el) => {
@@ -20,11 +19,9 @@ const initReadMoreTogglesStandalone = () => {
   const allMoreTexts = document.querySelectorAll('[id="more"]');
   
   if (toggleButtons.length === 0) {
-    console.log('⚠️ [Standalone] No toggle buttons found');
     return;
   }
   
-  console.log(`✅ [Standalone] Found ${toggleButtons.length} toggle buttons and ${allMoreTexts.length} more texts`);
   
   toggleButtons.forEach((originalBtn: Element, index: number) => {
     // Skip if already initialized (check after we remove markers above)
@@ -156,7 +153,6 @@ const initReadMoreTogglesStandalone = () => {
       // Update ARIA
       toggleBtn.setAttribute('aria-expanded', isNowHidden ? 'false' : 'true');
       
-      console.log(`✅ [Standalone] Toggle ${index} clicked: ${wasHidden ? 'hidden → visible' : 'visible → hidden'}`);
     };
     
     // Add multiple event listeners to ensure it works
@@ -195,33 +191,18 @@ const initReadMoreTogglesStandalone = () => {
       }
     });
     
-    console.log(`✅ [Standalone] Button ${index} fully initialized`);
   });
   
-  console.log('✅ [Standalone] Toggle initialization complete');
 };
 
 // Make it globally available so it can be called from anywhere
 if (typeof window !== 'undefined') {
   (window as any).initReadMoreTogglesStandalone = initReadMoreTogglesStandalone;
-  console.log('✅ [Standalone] Function registered globally as window.initReadMoreTogglesStandalone');
 }
 
 export default function ScriptReinit() {
   const pathname = usePathname();
   
-  // Debug: Log available window functions on mount
-  useEffect(() => {
-    console.log('🔍 [ScriptReinit] Component mounted');
-    console.log('🔍 [ScriptReinit] Available functions:', {
-      functionJsLoaded: (window as any).functionJsLoaded,
-      reinitJQueryPlugins: typeof (window as any).reinitJQueryPlugins,
-      initReadMoreTogglesStandalone: typeof (window as any).initReadMoreTogglesStandalone,
-      initLoopingAnimation: typeof (window as any).initLoopingAnimation,
-    });
-    
-    // Note: Counter initialization is now handled by CounterInit.tsx component
-  }, []);
 
   useEffect(() => {
     // Re-initialize scripts and jQuery-dependent code on route change
@@ -332,7 +313,6 @@ export default function ScriptReinit() {
         const reinitMobileMenu = () => {
           if (typeof (window as any).initMobileMenuStandalone === 'function') {
             try {
-              console.log('🔄 [ScriptReinit] Re-initializing mobile menu (standalone)...');
               (window as any).initMobileMenuStandalone();
               return true;
             } catch (error) {
@@ -341,7 +321,6 @@ export default function ScriptReinit() {
             }
           } else if (typeof (window as any).reinitMobileMenu === 'function') {
             try {
-              console.log('🔄 [ScriptReinit] Re-initializing mobile menu (using reinitMobileMenu)...');
               (window as any).reinitMobileMenu();
               return true;
             } catch (error) {
@@ -357,7 +336,6 @@ export default function ScriptReinit() {
         const reinitMobileSearch = () => {
           if (typeof (window as any).initMobileSearchStandalone === 'function') {
             try {
-              console.log('🔄 [ScriptReinit] Re-initializing mobile search (standalone)...');
               (window as any).initMobileSearchStandalone();
               return true;
             } catch (error) {
@@ -366,7 +344,6 @@ export default function ScriptReinit() {
             }
           } else if (typeof (window as any).reinitMobileSearch === 'function') {
             try {
-              console.log('🔄 [ScriptReinit] Re-initializing mobile search (using reinitMobileSearch)...');
               (window as any).reinitMobileSearch();
               return true;
             } catch (error) {
@@ -381,7 +358,6 @@ export default function ScriptReinit() {
         const reinitSearchBox = () => {
           if (typeof (window as any).initSearchBoxStandalone === 'function') {
             try {
-              console.log('🔄 [ScriptReinit] Re-initializing search box (standalone)...');
               (window as any).initSearchBoxStandalone();
               return true;
             } catch (error) {
@@ -390,7 +366,6 @@ export default function ScriptReinit() {
             }
           } else if (typeof (window as any).reinitSearchBox === 'function') {
             try {
-              console.log('🔄 [ScriptReinit] Re-initializing search box (using reinitSearchBox)...');
               (window as any).reinitSearchBox();
               return true;
             } catch (error) {
@@ -434,7 +409,6 @@ export default function ScriptReinit() {
           // Also try the function.js version if available (as backup)
           if (typeof (window as any).initReadMoreToggles === 'function') {
             try {
-              console.log('🔄 Also calling function.js initReadMoreToggles...');
               (window as any).initReadMoreToggles();
             } catch (error) {
               console.error('❌ Error calling function.js initReadMoreToggles:', error);

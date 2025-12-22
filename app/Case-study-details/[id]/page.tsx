@@ -66,12 +66,6 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
             id: cs.id,
         }))
 
-        console.log(`✅ Generated static params for ${params.length} case studies`)
-        
-        // Log first few IDs for debugging
-        if (params.length > 0) {
-            console.log(`Sample IDs: ${params.slice(0, 3).map(p => p.id).join(', ')}`)
-        }
         
         // Ensure we always return at least one param for static export
         return params.length > 0 ? params : [{ id: 'placeholder' }]
@@ -120,12 +114,10 @@ export default async function CaseStudyDetailsPage({ params }: { params: Promise
                 relatedCaseStudies = (relatedData || []) as CaseStudy[]
             } else {
                 // If not found at build time, client will fetch it
-                console.log(`Case study ${id} not found at build time, will be fetched client-side`)
             }
         } catch (error) {
             // Don't fail the build if there's an error
             // The client component will handle fetching
-            console.log(`Error fetching case study ${id} at build time (will fetch client-side):`, error)
         }
     }
     

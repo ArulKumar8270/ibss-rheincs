@@ -58,6 +58,7 @@ export default function AdminCaseStudiesPage() {
   })
   const [uploading, setUploading] = useState(false)
   const [uploadProgress, setUploadProgress] = useState(0)
+  const [industries, setIndustries] = useState<Array<{ id: string; name: string; slug: string }>>([])
   const supabase = createClient()
 
   const categories = [
@@ -68,16 +69,32 @@ export default function AdminCaseStudiesPage() {
     { value: 'digital-services', label: 'Digital Services' }
   ]
 
-  const industryOptions = [
-    'our-solutions',
-    'enterprise-solutions',
-    'digital-solutions',
-    'digital-services'
-  ]
-
   useEffect(() => {
     fetchCaseStudies()
+    fetchIndustries()
   }, [])
+
+  const fetchIndustries = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('industries')
+        .select('id, name, slug')
+        .eq('active', true)
+        .order('display_order', { ascending: true })
+        .order('name', { ascending: true })
+
+      if (error) throw error
+      setIndustries(data || [])
+    } catch (err: any) {
+      // Fallback to hardcoded options if table doesn't exist yet
+      setIndustries([
+        { id: '1', name: 'Our Solutions', slug: 'our-solutions' },
+        { id: '2', name: 'Enterprise Solutions & Services', slug: 'enterprise-solutions' },
+        { id: '3', name: 'Digital Solutions', slug: 'digital-solutions' },
+        { id: '4', name: 'Digital Services', slug: 'digital-services' }
+      ])
+    }
+  }
 
   const fetchCaseStudies = async () => {
     setLoading(true)
@@ -579,20 +596,29 @@ export default function AdminCaseStudiesPage() {
               </div>
 
               <div style={{ marginBottom: '15px' }} className="text-black">
-                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Industries</label>
+                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>
+                  Industries
+                  <Link href="/admin/industries" style={{ marginLeft: '10px', fontSize: '12px', color: '#667eea', textDecoration: 'none' }}>
+                    (Manage Industries)
+                  </Link>
+                </label>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-                  {industryOptions.map((industry) => (
-                    <label key={industry} style={{ display: 'flex', alignItems: 'center', gap: '5px', cursor: 'pointer' }}>
-                      <input
-                        type="checkbox"
-                        checked={formData.industries.includes(industry)}
-                        onChange={() => toggleIndustry(industry)}
-                      />
-                      <span style={{ fontSize: '14px' }}>
-                        {categories.find(c => c.value === industry)?.label || industry}
-                      </span>
-                    </label>
-                  ))}
+                  {industries.length > 0 ? (
+                    industries.map((industry) => (
+                      <label key={industry.id} style={{ display: 'flex', alignItems: 'center', gap: '5px', cursor: 'pointer' }}>
+                        <input
+                          type="checkbox"
+                          checked={formData.industries.includes(industry.slug)}
+                          onChange={() => toggleIndustry(industry.slug)}
+                        />
+                        <span style={{ fontSize: '14px' }}>
+                          {industry.name}
+                        </span>
+                      </label>
+                    ))
+                  ) : (
+                    <div style={{ color: '#666', fontSize: '14px' }}>Loading industries...</div>
+                  )}
                 </div>
               </div>
 

@@ -33,7 +33,6 @@ export default function SwiperInit() {
         }
       });
       
-      console.log('🔄 Initializing all Swiper carousels...', pathname);
       
       // Helper function for dynamic offset calculation
       const getDynamicOffset = () => {
@@ -112,7 +111,6 @@ export default function SwiperInit() {
                 }
               }
             });
-            console.log('✓ testimonial-slider initialized');
           } catch (e) {
             console.error('Error initializing testimonial-slider:', e);
           }
@@ -150,7 +148,6 @@ export default function SwiperInit() {
                 }
               }
             });
-            console.log('✓ testimonial-slider-marquee initialized');
           } catch (e) {
             console.error('Error initializing marquee slider:', e);
           }
@@ -188,7 +185,6 @@ export default function SwiperInit() {
                 }
               }
             });
-            console.log('✓ testimonial-slider-08 initialized');
           } catch (e) {
             console.error('Error initializing slider-08:', e);
           }
@@ -229,7 +225,6 @@ export default function SwiperInit() {
                 }
               }
             });
-            console.log('✓ testimonial-slider77 initialized');
           } catch (e) {
             console.error('Error initializing slider77:', e);
           }
@@ -267,7 +262,6 @@ export default function SwiperInit() {
                 }
               }
             });
-            console.log('✓ testimonial-sliders1 initialized');
           } catch (e) {
             console.error('Error initializing sliders1:', e);
           }
@@ -296,7 +290,6 @@ export default function SwiperInit() {
                 1366: { slidesPerView: 4 }
               }
             });
-            console.log('✓ testslide1 initialized');
           } catch (e) {
             console.error('Error initializing testslide1:', e);
           }
@@ -336,7 +329,6 @@ export default function SwiperInit() {
                 }
               }
             });
-            console.log('✓ testimonial-slider59 initialized');
           } catch (e) {
             console.error('Error initializing slider59:', e);
           }
@@ -384,7 +376,6 @@ export default function SwiperInit() {
                 }
               }
             });
-            console.log('✓ industries slider initialized');
           } catch (e) {
             console.error('Error initializing industries:', e);
           }
@@ -444,7 +435,6 @@ export default function SwiperInit() {
                 }
               }
             });
-            console.log('✓ testimonial-slider1 initialized');
           } catch (e) {
             console.error('Error initializing slider1:', e);
           }
@@ -483,7 +473,6 @@ export default function SwiperInit() {
                 }
               }
             });
-            console.log('✓ testimonial-slider11 initialized');
           } catch (e) {
             console.error('Error initializing slider11:', e);
           }
@@ -527,7 +516,6 @@ export default function SwiperInit() {
                   }
                 }
               });
-              console.log('✓ testimonial-slider3 initialized');
             } catch (e) {
               console.error('Error initializing slider3:', e);
             }
@@ -572,7 +560,6 @@ export default function SwiperInit() {
                   }
                 }
               });
-              console.log('✓ testimonial-slider33 initialized');
             } catch (e) {
               console.error('Error initializing slider33:', e);
             }
@@ -612,7 +599,6 @@ export default function SwiperInit() {
                 }
               }
             });
-            console.log('✓ testimonial-slider5 initialized');
           } catch (e) {
             console.error('Error initializing slider5:', e);
           }
@@ -650,7 +636,6 @@ export default function SwiperInit() {
                 }
               }
             });
-            console.log('✓ testimonial-slider-awards initialized');
           } catch (e) {
             console.error('Error initializing awards:', e);
           }
@@ -688,7 +673,6 @@ export default function SwiperInit() {
                 }
               }
             });
-            console.log('✓ testimonial-slider7 initialized');
           } catch (e) {
             console.error('Error initializing slider7:', e);
           }
@@ -727,7 +711,6 @@ export default function SwiperInit() {
                 }
               }
             });
-            console.log('✓ agency-supports-slider initialized');
           } catch (e) {
             console.error('Error initializing slider7:', e);
           }
@@ -800,7 +783,6 @@ export default function SwiperInit() {
                   }
                 }
               });
-              console.log(`✓ ${config.selector} initialized`);
             } catch (e) {
               console.error(`Error initializing ${config.selector}:`, e);
             }
@@ -842,7 +824,6 @@ export default function SwiperInit() {
                   }
                 }
               });
-              console.log('✓ testimonial-slider-009 initialized');
             } catch (e) {
               console.error('Error initializing slider-009:', e);
             }
@@ -884,14 +865,12 @@ export default function SwiperInit() {
                   }
                 }
               });
-              console.log('✓ testimonial-slider-0009 initialized');
             } catch (e) {
               console.error('Error initializing slider-0009:', e);
             }
           }
         }
         
-        console.log('✅ All Swiper initializations complete');
       };
       
       // Initialize with delay
