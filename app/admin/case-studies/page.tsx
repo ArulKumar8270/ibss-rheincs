@@ -3,6 +3,11 @@
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
+import 'quill/dist/quill.snow.css'
+
+// Dynamically import ReactQuill to avoid SSR issues
+const ReactQuill = dynamic(() => import('react-quill-new'), { ssr: false })
 
 interface CaseStudy {
   id: string
@@ -54,12 +59,88 @@ export default function AdminCaseStudiesPage() {
     benefits: '',
     implementation: '',
     download_url: '',
+    created_at: '',
     industries: [] as string[]
   })
   const [uploading, setUploading] = useState(false)
   const [uploadProgress, setUploadProgress] = useState(0)
   const [industries, setIndustries] = useState<Array<{ id: string; name: string; slug: string }>>([])
   const supabase = createClient()
+
+  // Handle image upload in editor
+  const handleEditorImageUpload = async () => {
+    const input = document.createElement('input')
+    input.setAttribute('type', 'file')
+    input.setAttribute('accept', 'image/*')
+    input.click()
+
+    input.onchange = async () => {
+      const file = input.files?.[0]
+      if (!file) return
+
+      try {
+        setUploading(true)
+        const fileExt = file.name.split('.').pop()
+        const fileName = `case-study-content-${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`
+        const filePath = `case-studies/${fileName}`
+
+        const { error: uploadError } = await supabase.storage
+          .from('uploads')
+          .upload(filePath, file)
+
+        if (uploadError) throw uploadError
+
+        const { data } = supabase.storage.from('uploads').getPublicUrl(filePath)
+        const publicUrl = data.publicUrl
+
+        // Insert image into editor
+        const editorElement = document.querySelector('.ql-editor') as any
+        if (editorElement && editorElement.__quill) {
+          const quill = editorElement.__quill
+          const range = quill.getSelection(true)
+          quill.insertEmbed(range ? range.index : 0, 'image', publicUrl)
+          quill.setSelection((range ? range.index : 0) + 1)
+        }
+      } catch (error: any) {
+        console.error('Error uploading image:', error)
+        alert('Error uploading image: ' + error.message)
+      } finally {
+        setUploading(false)
+      }
+    }
+  }
+
+  // Quill editor modules configuration
+  const quillModules = {
+    toolbar: {
+      container: [
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        [{ 'font': [] }],
+        [{ 'size': [] }],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'indent': '-1'}, { 'indent': '+1' }],
+        [{ 'color': [] }, { 'background': [] }],
+        [{ 'align': [] }],
+        ['link', 'image', 'video'],
+        ['clean']
+      ],
+      handlers: {
+        image: handleEditorImageUpload
+      }
+    },
+    clipboard: {
+      matchVisual: false
+    }
+  }
+
+  const quillFormats = [
+    'header', 'font', 'size',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet', 'indent',
+    'color', 'background',
+    'align',
+    'link', 'image', 'video'
+  ]
 
   const categories = [
     { value: 'all', label: 'All' },
@@ -136,6 +217,7 @@ export default function AdminCaseStudiesPage() {
       const submitData = {
         ...formData,
         industries: formData.industries.length > 0 ? formData.industries : null,
+        created_at: formData.created_at ? new Date(formData.created_at).toISOString() : new Date().toISOString(),
         updated_at: new Date().toISOString()
       }
       
@@ -181,6 +263,7 @@ export default function AdminCaseStudiesPage() {
       benefits: '',
       implementation: '',
       download_url: '',
+      created_at: '',
       industries: []
     })
   }
@@ -290,6 +373,8 @@ export default function AdminCaseStudiesPage() {
 
   const handleEdit = (caseStudy: CaseStudy) => {
     setEditingCaseStudy(caseStudy)
+    // Convert ISO date to datetime-local format
+    const createdDate = caseStudy.created_at ? new Date(caseStudy.created_at).toISOString().slice(0, 16) : ''
     setFormData({
       title: caseStudy.title,
       slug: caseStudy.slug,
@@ -309,6 +394,7 @@ export default function AdminCaseStudiesPage() {
       benefits: caseStudy.benefits || '',
       implementation: caseStudy.implementation || '',
       download_url: caseStudy.download_url || '',
+      created_at: createdDate,
       industries: caseStudy.industries || []
     })
     setShowForm(true)
@@ -580,6 +666,19 @@ export default function AdminCaseStudiesPage() {
               </div>
 
               <div style={{ marginBottom: '15px' }}>
+                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Created Date</label>
+                <input
+                  type="datetime-local"
+                  value={formData.created_at}
+                  onChange={(e) => setFormData({ ...formData, created_at: e.target.value })}
+                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', fontSize: '14px' }}
+                />
+                <small style={{ color: '#666', fontSize: '12px', marginTop: '5px', display: 'block' }}>
+                  Date when this case study was created (defaults to current date if not set)
+                </small>
+              </div>
+
+              <div style={{ marginBottom: '15px' }}>
                 <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Category *</label>
                 <select
                   value={formData.category}
@@ -705,12 +804,17 @@ export default function AdminCaseStudiesPage() {
 
               <div style={{ marginBottom: '15px' }}>
                 <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Client Description</label>
-                <textarea
-                  value={formData.client_description}
-                  onChange={(e) => setFormData({ ...formData, client_description: e.target.value })}
-                  rows={3}
-                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', fontSize: '14px' }}
-                />
+                <div style={{ background: 'white', borderRadius: '6px' }}>
+                  <ReactQuill
+                    theme="snow"
+                    value={formData.client_description}
+                    onChange={(value: string) => setFormData({ ...formData, client_description: value })}
+                    modules={quillModules}
+                    formats={quillFormats}
+                    placeholder="Client description"
+                    style={{ minHeight: '150px' }}
+                  />
+                </div>
               </div>
 
               <div style={{ marginBottom: '15px' }}>
@@ -730,69 +834,97 @@ export default function AdminCaseStudiesPage() {
               
               <div style={{ marginBottom: '15px' }}>
                 <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Content *</label>
-                <textarea
-                  value={formData.content}
-                  onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                  rows={8}
-                  required
-                  placeholder="Main content (supports HTML)"
-                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', fontSize: '14px' }}
-                />
+                <div style={{ background: 'white', borderRadius: '6px' }}>
+                  <ReactQuill
+                    theme="snow"
+                    value={formData.content}
+                    onChange={(value: string) => setFormData({ ...formData, content: value })}
+                    modules={quillModules}
+                    formats={quillFormats}
+                    placeholder="Main content"
+                    style={{ minHeight: '300px' }}
+                  />
+                </div>
+                <style jsx>{`
+                  .ql-editor {
+                    min-height: 300px;
+                  }
+                `}</style>
               </div>
 
               <div style={{ marginBottom: '15px' }}>
                 <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Overview</label>
-                <textarea
-                  value={formData.overview}
-                  onChange={(e) => setFormData({ ...formData, overview: e.target.value })}
-                  rows={5}
-                  placeholder="Overview section (supports HTML)"
-                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', fontSize: '14px' }}
-                />
+                <div style={{ background: 'white', borderRadius: '6px' }}>
+                  <ReactQuill
+                    theme="snow"
+                    value={formData.overview}
+                    onChange={(value: string) => setFormData({ ...formData, overview: value })}
+                    modules={quillModules}
+                    formats={quillFormats}
+                    placeholder="Overview section"
+                    style={{ minHeight: '200px' }}
+                  />
+                </div>
               </div>
 
               <div style={{ marginBottom: '15px' }}>
                 <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Challenges</label>
-                <textarea
-                  value={formData.challenges}
-                  onChange={(e) => setFormData({ ...formData, challenges: e.target.value })}
-                  rows={5}
-                  placeholder="Challenges section (supports HTML)"
-                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', fontSize: '14px' }}
-                />
+                <div style={{ background: 'white', borderRadius: '6px' }}>
+                  <ReactQuill
+                    theme="snow"
+                    value={formData.challenges}
+                    onChange={(value: string) => setFormData({ ...formData, challenges: value })}
+                    modules={quillModules}
+                    formats={quillFormats}
+                    placeholder="Challenges section"
+                    style={{ minHeight: '200px' }}
+                  />
+                </div>
               </div>
 
               <div style={{ marginBottom: '15px' }}>
                 <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Solution</label>
-                <textarea
-                  value={formData.solution}
-                  onChange={(e) => setFormData({ ...formData, solution: e.target.value })}
-                  rows={5}
-                  placeholder="Solution section (supports HTML)"
-                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', fontSize: '14px' }}
-                />
+                <div style={{ background: 'white', borderRadius: '6px' }}>
+                  <ReactQuill
+                    theme="snow"
+                    value={formData.solution}
+                    onChange={(value: string) => setFormData({ ...formData, solution: value })}
+                    modules={quillModules}
+                    formats={quillFormats}
+                    placeholder="Solution section"
+                    style={{ minHeight: '200px' }}
+                  />
+                </div>
               </div>
 
               <div style={{ marginBottom: '15px' }}>
                 <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Benefits</label>
-                <textarea
-                  value={formData.benefits}
-                  onChange={(e) => setFormData({ ...formData, benefits: e.target.value })}
-                  rows={5}
-                  placeholder="Benefits section (supports HTML)"
-                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', fontSize: '14px' }}
-                />
+                <div style={{ background: 'white', borderRadius: '6px' }}>
+                  <ReactQuill
+                    theme="snow"
+                    value={formData.benefits}
+                    onChange={(value: string) => setFormData({ ...formData, benefits: value })}
+                    modules={quillModules}
+                    formats={quillFormats}
+                    placeholder="Benefits section"
+                    style={{ minHeight: '200px' }}
+                  />
+                </div>
               </div>
 
               <div style={{ marginBottom: '15px' }}>
                 <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Implementation</label>
-                <textarea
-                  value={formData.implementation}
-                  onChange={(e) => setFormData({ ...formData, implementation: e.target.value })}
-                  rows={5}
-                  placeholder="Implementation section (supports HTML)"
-                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', fontSize: '14px' }}
-                />
+                <div style={{ background: 'white', borderRadius: '6px' }}>
+                  <ReactQuill
+                    theme="snow"
+                    value={formData.implementation}
+                    onChange={(value: string) => setFormData({ ...formData, implementation: value })}
+                    modules={quillModules}
+                    formats={quillFormats}
+                    placeholder="Implementation section"
+                    style={{ minHeight: '200px' }}
+                  />
+                </div>
               </div>
 
               <div style={{ marginBottom: '15px' }}>

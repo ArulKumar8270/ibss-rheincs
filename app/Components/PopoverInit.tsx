@@ -25,6 +25,14 @@ const initPopoverStandalone = () => {
   popoverIds.forEach((popoverId) => {
     const popoverTriggerEl = document.getElementById(popoverId);
     if (!popoverTriggerEl) {
+      // Element not found - this is okay if we're on a page without popovers
+      return;
+    }
+    
+    // Skip if element doesn't have data-bs-content or data-bs-toggle="popover" attribute (not a popover)
+    const hasContent = popoverTriggerEl.hasAttribute('data-bs-content') || popoverTriggerEl.getAttribute('data-bs-content');
+    const hasToggle = popoverTriggerEl.hasAttribute('data-bs-toggle') && popoverTriggerEl.getAttribute('data-bs-toggle') === 'popover';
+    if (!hasContent && !hasToggle) {
       return;
     }
     
@@ -38,16 +46,21 @@ const initPopoverStandalone = () => {
     }
     
     // Clone element to remove old event listeners
-    const newPopoverTriggerEl = popoverTriggerEl.cloneNode(true) as HTMLElement;
-    if (popoverTriggerEl.parentNode) {
-      popoverTriggerEl.parentNode.replaceChild(newPopoverTriggerEl, popoverTriggerEl);
-    }
-    
-    // Get fresh reference
-    const updatedPopoverTriggerEl = document.getElementById(popoverId);
-    if (!updatedPopoverTriggerEl) {
-      console.error(`❌ [Popover] Failed to get updated element for ${popoverId}`);
-      return;
+    // Only clone if we need to (if it's already initialized)
+    let updatedPopoverTriggerEl = popoverTriggerEl;
+    if (popoverTriggerEl.hasAttribute('data-popover-init')) {
+      const newPopoverTriggerEl = popoverTriggerEl.cloneNode(true) as HTMLElement;
+      if (popoverTriggerEl.parentNode) {
+        popoverTriggerEl.parentNode.replaceChild(newPopoverTriggerEl, popoverTriggerEl);
+      }
+      
+      // Get fresh reference
+      const freshElement = document.getElementById(popoverId);
+      if (!freshElement) {
+        console.error(`❌ [Popover] Failed to get updated element for ${popoverId}`);
+        return;
+      }
+      updatedPopoverTriggerEl = freshElement;
     }
     
     // Initialize Bootstrap Popover
@@ -155,7 +168,7 @@ const initPopoverStandalone = () => {
   });
   
   if (initializedCount > 0) {
-  } else {
+    console.log(`✅ [Popover] Successfully initialized ${initializedCount} popover(s)`);
   }
   
   return initializedCount > 0;
@@ -209,14 +222,42 @@ export default function PopoverInit() {
     const reinit = () => {
       if (typeof window === 'undefined') return;
       
+      // First, dispose all existing popovers to clean up
+      const popoverIds = ['myPopover', 'myPopover2', 'myPopover3', 'myPopover4', 'myPopover5'];
+      popoverIds.forEach((popoverId) => {
+        const element = document.getElementById(popoverId);
+        if (element) {
+          const bootstrap = (window as any).bootstrap;
+          if (bootstrap && bootstrap.Popover) {
+            const existingPopover = bootstrap.Popover.getInstance(element);
+            if (existingPopover) {
+              try {
+                existingPopover.dispose();
+              } catch (e) {
+                // Ignore disposal errors
+              }
+            }
+          }
+          // Remove initialization marker
+          element.removeAttribute('data-popover-init');
+        }
+      });
       
       // Wait for Bootstrap and DOM to be ready
       const tryReinit = (attempt: number = 1) => {
         const bootstrap = (window as any).bootstrap;
         if (typeof bootstrap === 'undefined' || !bootstrap.Popover) {
-          if (attempt < 15) {
-            setTimeout(() => tryReinit(attempt + 1), 200 * attempt);
+          if (attempt < 20) {
+            setTimeout(() => tryReinit(attempt + 1), 150 * attempt);
           }
+          return;
+        }
+        
+        // Check if popover elements exist in DOM
+        const hasPopoverElements = popoverIds.some(id => document.getElementById(id) !== null);
+        if (!hasPopoverElements && attempt < 10) {
+          // Elements not in DOM yet, retry
+          setTimeout(() => tryReinit(attempt + 1), 200 * attempt);
           return;
         }
         
@@ -225,19 +266,40 @@ export default function PopoverInit() {
           requestAnimationFrame(() => {
             const success = initPopoverStandalone();
             if (!success) {
-              // Retry with delays
-              setTimeout(() => initPopoverStandalone(), 200);
-              setTimeout(() => initPopoverStandalone(), 500);
+              // Retry with delays - more aggressive retries
+              setTimeout(() => initPopoverStandalone(), 100);
+              setTimeout(() => initPopoverStandalone(), 300);
+              setTimeout(() => initPopoverStandalone(), 600);
               setTimeout(() => initPopoverStandalone(), 1000);
+              setTimeout(() => initPopoverStandalone(), 1500);
             }
           });
         });
       };
       
-      tryReinit();
+      // Start with delays to let DOM settle and function.js finish
+      // Multiple attempts to catch different timing scenarios
+      setTimeout(() => tryReinit(), 100);
+      setTimeout(() => tryReinit(), 300);
+      setTimeout(() => tryReinit(), 600);
     };
 
     reinit();
+    
+    // Also listen to routeChange event from ScriptReinit as backup
+    const handleRouteChange = () => {
+      setTimeout(() => {
+        if (typeof (window as any).reinitPopover === 'function') {
+          (window as any).reinitPopover();
+        }
+      }, 300);
+    };
+    
+    window.addEventListener('routeChange', handleRouteChange);
+    
+    return () => {
+      window.removeEventListener('routeChange', handleRouteChange);
+    };
   }, [pathname]);
 
   return null;

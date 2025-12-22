@@ -3,6 +3,11 @@
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
+import 'quill/dist/quill.snow.css'
+
+// Dynamically import ReactQuill to avoid SSR issues
+const ReactQuill = dynamic(() => import('react-quill-new'), { ssr: false })
 
 interface Career {
   id: string
@@ -38,9 +43,39 @@ export default function AdminCareersPage() {
     qualifications: '',
     salary_range: '',
     application_deadline: '',
+    created_at: '',
     published: false
   })
   const supabase = createClient()
+
+  // Quill editor modules configuration
+  const quillModules = {
+    toolbar: {
+      container: [
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        [{ 'font': [] }],
+        [{ 'size': [] }],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'indent': '-1'}, { 'indent': '+1' }],
+        [{ 'color': [] }, { 'background': [] }],
+        [{ 'align': [] }],
+        ['link', 'image', 'video'],
+        ['clean']
+      ]
+    },
+    clipboard: {
+      matchVisual: false
+    }
+  }
+
+  const quillFormats = [
+    'header', 'font', 'size',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet', 'indent',
+    'color', 'background',
+    'align',
+    'link', 'image', 'video'
+  ]
 
   useEffect(() => {
     fetchCareers()
@@ -88,6 +123,7 @@ export default function AdminCareersPage() {
         qualifications: qualificationsArray.length > 0 ? JSON.stringify(qualificationsArray) : null,
         salary_range: formData.salary_range || null,
         application_deadline: formData.application_deadline || null,
+        created_at: formData.created_at ? new Date(formData.created_at).toISOString() : new Date().toISOString(),
         published: formData.published
       }
       if (editingCareer) {
@@ -115,6 +151,7 @@ export default function AdminCareersPage() {
         qualifications: '',
         salary_range: '',
         application_deadline: '',
+        created_at: '',
         published: false
       })
       fetchCareers()
@@ -181,7 +218,8 @@ export default function AdminCareersPage() {
       qualifications: qualificationsText,
       salary_range: career.salary_range || '',
       application_deadline: career.application_deadline || '',
-      published: career.published
+      published: career.published,
+      created_at: career.created_at,
     })
     setShowForm(true)
   }
@@ -400,6 +438,7 @@ export default function AdminCareersPage() {
               qualifications: '',
               salary_range: '',
               application_deadline: '',
+              created_at: '',
               published: false
             })
           }}
@@ -502,26 +541,46 @@ export default function AdminCareersPage() {
                   style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
                 />
               </div>
+              <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Created Date</label>
+                <input
+                  type="datetime-local"
+                  value={formData.created_at}
+                  onChange={(e) => setFormData({ ...formData, created_at: e.target.value })}
+                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
+                />
+                <small style={{ color: '#666', fontSize: '12px', marginTop: '5px', display: 'block' }}>
+                  Date when this career was created (defaults to current date if not set)
+                </small>
+              </div>
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Job Description *</label>
-              <textarea
-                value={formData.description}
-                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                rows={6}
-                required
-                style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
-              />
+              <div style={{ background: 'white', borderRadius: '6px' }}>
+                <ReactQuill
+                  theme="snow"
+                  value={formData.description}
+                  onChange={(value: string) => setFormData({ ...formData, description: value })}
+                  modules={quillModules}
+                  formats={quillFormats}
+                  placeholder="Job description"
+                  style={{ minHeight: '250px' }}
+                />
+              </div>
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Requirements *</label>
-              <textarea
-                value={formData.requirements}
-                onChange={(e) => setFormData({ ...formData, requirements: e.target.value })}
-                rows={6}
-                required
-                style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
-              />
+              <div style={{ background: 'white', borderRadius: '6px' }}>
+                <ReactQuill
+                  theme="snow"
+                  value={formData.requirements}
+                  onChange={(value: string) => setFormData({ ...formData, requirements: value })}
+                  modules={quillModules}
+                  formats={quillFormats}
+                  placeholder="Job requirements"
+                  style={{ minHeight: '250px' }}
+                />
+              </div>
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>

@@ -30,6 +30,12 @@ interface CaseStudy {
   industries: string[] | null;
 }
 
+interface Industry {
+  id: string;
+  name: string;
+  slug: string;
+}
+
 // Arrow SVG Component
 const ArrowSVG = ({ direction = "right" }: { direction?: "left" | "right" }) => (
   <svg
@@ -55,13 +61,34 @@ const ArrowSVG = ({ direction = "right" }: { direction?: "left" | "right" }) => 
 
 export default function CaseStudyPage() {
   const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([]);
+  const [industries, setIndustries] = useState<Industry[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedIndustries, setSelectedIndustries] = useState<string[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const supabase = createClient();
 
   useEffect(() => {
     fetchCaseStudies();
+    fetchIndustries();
   }, []);
+
+  const fetchIndustries = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('industries')
+        .select('id, name, slug')
+        .eq('active', true)
+        .order('display_order', { ascending: true })
+        .order('name', { ascending: true });
+
+      if (error) throw error;
+      setIndustries(data || []);
+    } catch (err) {
+      console.error('Error fetching industries:', err);
+      setIndustries([]);
+    }
+  };
 
   const fetchCaseStudies = async () => {
     try {
@@ -89,22 +116,54 @@ export default function CaseStudyPage() {
     });
   };
 
-  // Get unique categories from all case studies
-  const allCategories = Array.from(
-    new Set(
-      caseStudies.flatMap(cs => cs.industries || [])
-    )
-  );
+  // Filter case studies by category, industries, and search term
+  const filteredCaseStudies = caseStudies.filter(cs => {
+    // Category filter - when "all" is selected, show case studies from ALL categories
+    const categoryMatch = selectedCategory === "all" 
+      ? true  // Show all case studies regardless of category when "All" is selected
+      : (cs.industries?.includes(selectedCategory) || cs.category === selectedCategory);
+    
+    // Industry filter
+    const industryMatch = selectedIndustries.length === 0 || 
+      (cs.industries && cs.industries.length > 0 && 
+       selectedIndustries.some(selectedSlug => cs.industries!.includes(selectedSlug)));
+    
+    // Search filter
+    const searchMatch = searchTerm === '' || 
+      cs.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (cs.excerpt && cs.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) ||
+      (cs.content && cs.content.toLowerCase().includes(searchTerm.toLowerCase())) ||
+      (cs.client_name && cs.client_name.toLowerCase().includes(searchTerm.toLowerCase())) ||
+      (cs.overview && cs.overview.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+    return categoryMatch && industryMatch && searchMatch;
+  });
 
-  // Filter case studies by selected category
-  const filteredCaseStudies = selectedCategory === "all"
-    ? caseStudies
-    : caseStudies.filter(cs => 
-        cs.industries?.includes(selectedCategory) || cs.category === selectedCategory
-      );
+  // Get latest 4 case studies for the carousel - from filtered results
+  const carouselItems = filteredCaseStudies.slice(0, 4);
 
-  // Get first 3-6 case studies for the carousel
-  const carouselItems = caseStudies.slice(0, 6);
+  // Handle industry checkbox change
+  const handleIndustryChange = (industrySlug: string) => {
+    setSelectedIndustries(prev => {
+      if (prev.includes(industrySlug)) {
+        return prev.filter(slug => slug !== industrySlug);
+      } else {
+        return [...prev, industrySlug];
+      }
+    });
+  };
+
+  // Handle search
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
+  // Clear all filters
+  const clearFilters = () => {
+    setSelectedCategory('all');
+    setSelectedIndustries([]);
+    setSearchTerm('');
+  };
 
   if (loading) {
     return (
@@ -243,37 +302,44 @@ export default function CaseStudyPage() {
               <div className="col-sm-9">
                 <div className="bolg-filter-waber">
                   {/* Filter Buttons */}
-                  <div className="filter-controls">
-                    <button
-                      className={`filter-btn ${selectedCategory === "all" ? "active" : ""}`}
-                      onClick={() => setSelectedCategory("all")}
-                    >
-                      All
-                    </button>
-                    <button
-                      className={`filter-btn ${selectedCategory === "our-solutions" ? "active" : ""}`}
-                      onClick={() => setSelectedCategory("our-solutions")}
-                    >
-                      Our Solutions
-                    </button>
-                    <button
-                      className={`filter-btn ${selectedCategory === "enterprise-solutions" ? "active" : ""}`}
-                      onClick={() => setSelectedCategory("enterprise-solutions")}
-                    >
-                      Enterprise Solutions & Services
-                    </button>
-                    <button
-                      className={`filter-btn ${selectedCategory === "digital-solutions" ? "active" : ""}`}
-                      onClick={() => setSelectedCategory("digital-solutions")}
-                    >
-                      Digital Solutions
-                    </button>
-                    <button
-                      className={`filter-btn ${selectedCategory === "digital-services" ? "active" : ""}`}
-                      onClick={() => setSelectedCategory("digital-services")}
-                    >
-                      Digital Services
-                    </button>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '15px' }}>
+                    <div className="filter-controls">
+                      <button
+                        className={`filter-btn ${selectedCategory === "all" ? "active" : ""}`}
+                        onClick={() => setSelectedCategory("all")}
+                      >
+                        All
+                      </button>
+                      <button
+                        className={`filter-btn ${selectedCategory === "our-solutions" ? "active" : ""}`}
+                        onClick={() => setSelectedCategory("our-solutions")}
+                      >
+                        Our Solutions
+                      </button>
+                      <button
+                        className={`filter-btn ${selectedCategory === "enterprise-solutions" ? "active" : ""}`}
+                        onClick={() => setSelectedCategory("enterprise-solutions")}
+                      >
+                        Enterprise Solutions & Services
+                      </button>
+                      <button
+                        className={`filter-btn ${selectedCategory === "digital-solutions" ? "active" : ""}`}
+                        onClick={() => setSelectedCategory("digital-solutions")}
+                      >
+                        Digital Solutions
+                      </button>
+                      <button
+                        className={`filter-btn ${selectedCategory === "digital-services" ? "active" : ""}`}
+                        onClick={() => setSelectedCategory("digital-services")}
+                      >
+                        Digital Services
+                      </button>
+                    </div>
+                    {(selectedIndustries.length > 0 || selectedCategory !== 'all' || searchTerm) && (
+                      <div style={{ fontSize: '14px', color: '#666' }}>
+                        Showing {filteredCaseStudies.length} of {caseStudies.length} case stud{caseStudies.length !== 1 ? 'ies' : 'y'}
+                      </div>
+                    )}
                   </div>
                   <div className="row">
                     {filteredCaseStudies.length > 0 ? (
@@ -327,9 +393,29 @@ export default function CaseStudyPage() {
                       })
                     ) : (
                       <div className="col-sm-12">
-                        <p style={{ textAlign: 'center', padding: '40px' }}>
-                          No case studies found in this category.
-                        </p>
+                        {(selectedIndustries.length > 0 || selectedCategory !== 'all' || searchTerm) ? (
+                          <div style={{ textAlign: 'center', padding: '40px' }}>
+                            <p>No case studies match your current filters.</p>
+                            <button
+                              onClick={clearFilters}
+                              style={{
+                                background: '#499A9A',
+                                color: 'white',
+                                border: 'none',
+                                padding: '10px 20px',
+                                borderRadius: '4px',
+                                cursor: 'pointer',
+                                marginTop: '10px'
+                              }}
+                            >
+                              Clear All Filters
+                            </button>
+                          </div>
+                        ) : (
+                          <p style={{ textAlign: 'center', padding: '40px' }}>
+                            No case studies available yet.
+                          </p>
+                        )}
                       </div>
                     )}
                   </div>
@@ -354,127 +440,97 @@ export default function CaseStudyPage() {
                 </div>
               </div>
               <div className="col-sm-3">
-                <form action="" method="post">
+                <form onSubmit={handleSearch}>
                   <div className="blog-serch">
-                    <input type="text" placeholder="Search case studies" />
+                    <input 
+                      type="text" 
+                      placeholder="Search case studies" 
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                    />
                     <button type="submit">
-                      <img src="/new/ser-blog.svg" alt="" />
+                      <img src="/new/ser-blog.svg" alt="Search" />
                     </button>
                   </div>
                 </form>
-                <h6 className="fome-filter-title">Industries</h6>
-                <div className="filter-check-box-waber">
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      defaultValue=""
-                      id="flexCheckDefault1"
-                    />
-                    <label className="form-check-label" htmlFor="flexCheckDefault1">
-                      Brand Owners and Vertical Retailers
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      defaultValue=""
-                      id="flexCheckDefault2"
-                    />
-                    <label className="form-check-label" htmlFor="flexCheckDefault2">
-                      Retail Industry
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      defaultValue=""
-                      id="flexCheckDefault3"
-                    />
-                    <label className="form-check-label" htmlFor="flexCheckDefault3">
-                      Distribution and Supply Chain
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      defaultValue=""
-                      id="flexCheckDefault4"
-                    />
-                    <label className="form-check-label" htmlFor="flexCheckDefault4">
-                      Discrete Manufacturing
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      defaultValue=""
-                      id="flexCheckDefault5"
-                    />
-                    <label className="form-check-label" htmlFor="flexCheckDefault5">
-                      Automotive Industry
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      defaultValue=""
-                      id="flexCheckDefault6"
-                    />
-                    <label className="form-check-label" htmlFor="flexCheckDefault6">
-                      Engineering Procurement and Construction
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      defaultValue=""
-                      id="flexCheckDefault7"
-                    />
-                    <label className="form-check-label" htmlFor="flexCheckDefault7">
-                      Process Manufacturing
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      defaultValue=""
-                      id="flexCheckDefault8"
-                    />
-                    <label className="form-check-label" htmlFor="flexCheckDefault8">
-                      Private Equity & Funding Backed Ventures
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      defaultValue=""
-                      id="flexCheckDefault9"
-                    />
-                    <label className="form-check-label" htmlFor="flexCheckDefault9">
-                      Cable Manufacturing
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      defaultValue=""
-                      id="flexCheckDefault10"
-                    />
-                    <label className="form-check-label" htmlFor="flexCheckDefault10">
-                      Interior Design
-                    </label>
-                  </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '20px', marginBottom: '15px' }}>
+                  <h6 className="fome-filter-title" style={{ margin: 0 }}>Industries</h6>
+                  {(selectedIndustries.length > 0 || selectedCategory !== 'all' || searchTerm) && (
+                    <button
+                      onClick={clearFilters}
+                      style={{
+                        background: 'none',
+                        border: '1px solid #499A9A',
+                        color: '#499A9A',
+                        padding: '5px 15px',
+                        borderRadius: '4px',
+                        cursor: 'pointer',
+                        fontSize: '12px'
+                      }}
+                    >
+                      Clear Filters
+                    </button>
+                  )}
                 </div>
+                <div className="filter-check-box-waber">
+                  {industries.length === 0 ? (
+                    <p style={{ color: '#666', fontSize: '14px' }}>No industries available</p>
+                  ) : (
+                    industries.map((industry) => (
+                      <div key={industry.id} className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          checked={selectedIndustries.includes(industry.slug)}
+                          onChange={() => handleIndustryChange(industry.slug)}
+                          id={`case-study-industry-${industry.slug}`}
+                        />
+                        <label 
+                          className="form-check-label" 
+                          htmlFor={`case-study-industry-${industry.slug}`}
+                          style={{ cursor: 'pointer' }}
+                        >
+                          {industry.name}
+                        </label>
+                      </div>
+                    ))
+                  )}
+                </div>
+                {/* Show active filters */}
+                {(selectedIndustries.length > 0 || searchTerm) && (
+                  <div style={{ marginTop: '20px', padding: '10px', background: '#f5f5f5', borderRadius: '4px' }}>
+                    <p style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px' }}>Active Filters:</p>
+                    {searchTerm && (
+                      <span style={{ 
+                        display: 'inline-block', 
+                        background: '#499A9A', 
+                        color: 'white', 
+                        padding: '4px 8px', 
+                        borderRadius: '3px', 
+                        fontSize: '11px',
+                        margin: '2px'
+                      }}>
+                        Search: {searchTerm}
+                      </span>
+                    )}
+                    {selectedIndustries.map(slug => {
+                      const industry = industries.find(ind => ind.slug === slug);
+                      return industry ? (
+                        <span key={slug} style={{ 
+                          display: 'inline-block', 
+                          background: '#499A9A', 
+                          color: 'white', 
+                          padding: '4px 8px', 
+                          borderRadius: '3px', 
+                          fontSize: '11px',
+                          margin: '2px'
+                        }}>
+                          {industry.name}
+                        </span>
+                      ) : null;
+                    })}
+                  </div>
+                )}
               </div>
             </div>
           </div>
