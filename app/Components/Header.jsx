@@ -401,7 +401,7 @@ export default function Header() {
                                     </span>
                                     <Link href="mailto:info@rheincs.com"> info@rheincs.com</Link>
                                 </li>
-                                 <li>
+                                 {/* <li>
                                     <div className="custom-select top-icon-gap">
                                         <select 
                                             name="lang" 
@@ -438,7 +438,7 @@ export default function Header() {
                                             </svg>
                                         </label>
                                     </div>
-                                </li> 
+                                </li>  */}
                                 {/* <li>
                                     <div id="chcp_font_size" className="input-group">
                                         <span className="input-group-btn font-increase-waber">
