@@ -20773,7 +20773,7 @@ body.popup-open .main-header {
 	text-align: left;
 	margin: 32px 0px 32px;
 	font-weight: 600;
-	font-size: 24px;
+	font-size: 20px;
 	line-height: 32px;
 	padding: 0px 0px;
 }
@@ -20971,7 +20971,7 @@ body.popup-open .main-header {
 .collatmodal .modal-dialog {
 	max-width: 600px;
 	/* Important */
-	top: 20%
+	top: 10%;
 }
 
 .dataengg .mds-waber2:hover .swiper-slide-active {
