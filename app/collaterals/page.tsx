@@ -2104,7 +2104,7 @@ export default function Collaterals() {
                                     <div className="modal-content">
                                         {/* Modal Header */}
                                         <div className="modal-header">
-                                            <h4 className="modal-title">Let’s Connect With Us</h4>
+                                            <h4 className="modal-title">Download a copy now!</h4>
                                             <button
                                                 type="button"
                                                 className="btn-close"
