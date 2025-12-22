@@ -254,7 +254,9 @@ body {
 	background-position: top 900px center;
 	background-size: 100% auto; */
 }
-
+.ql-editor{
+	color: initial;
+}
 button {}
 
 p {
@@ -22079,4 +22081,10 @@ color:#000 !important;
 .accordion-item:last-of-type>.accordion-header .accordion-button.collapsed {
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+}
+
+
+.ql-container.ql-snow {
+	height: 65vh;
+    overflow: auto;
 }

@@ -740,10 +740,10 @@ export default function Contact() {
                           RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
                       </p>
                       <div class="contect-call2">
-                            <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
+                            <img src="/new/contect-call.svg" alt=""> <a href="tel:+4923129295619"> +49 231 292 95619</a>
                       </div>
                       <div class="contect-call2">
-                            <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com9</Link>
+                            <img src="/new/c-mail.svg" alt=""> <a href="mailto:info@rheincs.com"> info@rheincs.com</a>
                       </div>
                   </div>'
                 >
@@ -766,10 +766,10 @@ Mechanicsburg,<br>
 PA 17050, United States<br>
                       </p>
                       <div class="contect-call2">
-                            <img src="/new/contect-call.svg" alt=""> <Link href=""> +1 717 265 3937</Link>
+                            <img src="/new/contect-call.svg" alt=""> <a href="tel:+17172653937"> +1 717 265 3937</a>
                       </div>
                       <div class="contect-call2">
-                            <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com</Link>
+                            <img src="/new/c-mail.svg" alt=""> <a href="mailto:info@rheincs.com"> info@rheincs.com</a>
                       </div>
                   </div>'
                 >
@@ -792,10 +792,10 @@ Ruhrallee 9,<br>
 Germany<br>
               </p>
               <div class="contect-call2">
-                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +49 231 292 95619</Link>
+                    <img src="/new/contect-call.svg" alt=""> <a href="tel:+4923129295619"> +49 231 292 95619</a>
               </div>
               <div class="contect-call2">
-                    <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com</Link>
+                    <img src="/new/c-mail.svg" alt=""> <a href="mailto:info@rheincs.com"> info@rheincs.com</a>
               </div>
           </div>'
                 >
@@ -819,10 +819,10 @@ Germany<br>
                           United Arab Emirates<br>
                       </p>
                       <div class="contect-call2">
-                            <img src="/new/contect-call.svg" alt=""> <Link href=""> +971 43 330 366</Link>
+                            <img src="/new/contect-call.svg" alt=""> <a href="tel:+97143330366"> +971 43 330 366</a>
                       </div>
                       <div class="contect-call2">
-                            <img src="/new/c-mail.svg" alt=""> <Link href=""> info@rheincs.com</Link>
+                            <img src="/new/c-mail.svg" alt=""> <a href="mailto:info@rheincs.com"> info@rheincs.com</a>
                       </div>
           </div>'
                 >
@@ -847,10 +847,10 @@ Germany<br>
                   Tamil Nadu, India 600 032<br>
               </p>
               <div class="contect-call2">
-                    <img src="/new/contect-call.svg" alt=""> <Link href=""> +91 44 6671 7555</Link>
+                    <img src="/new/contect-call.svg" alt=""> <a href="tel:+914466717555"> +91 44 6671 7555</a>
               </div>
               <div class="contect-call2">
-                    <img src="/new/c-mail.svg" alt=""> <Link href="">info@rheincs.com</Link>
+                    <img src="/new/c-mail.svg" alt=""> <a href="mailto:info@rheincs.com">info@rheincs.com</a>
               </div>
           </div>'
                 >

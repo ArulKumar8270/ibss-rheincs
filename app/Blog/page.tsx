@@ -17,13 +17,24 @@ interface Blog {
   published: boolean;
   created_at: string;
   updated_at: string;
+  industries: string[] | null;
+}
+
+interface Industry {
+  id: string;
+  name: string;
+  slug: string;
 }
 
 export default function Blog() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [industries, setIndustries] = useState<Industry[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedIndustries, setSelectedIndustries] = useState<string[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
   const itemsPerPage = 9; // 3 columns x 3 rows
   const supabase = createClient();
 
@@ -37,7 +48,25 @@ export default function Blog() {
 
   useEffect(() => {
     fetchBlogs();
+    fetchIndustries();
   }, []);
+
+  const fetchIndustries = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('industries')
+        .select('id, name, slug')
+        .eq('active', true)
+        .order('display_order', { ascending: true })
+        .order('name', { ascending: true });
+
+      if (error) throw error;
+      setIndustries(data || []);
+    } catch (err) {
+      console.error('Error fetching industries:', err);
+      setIndustries([]);
+    }
+  };
 
   const fetchBlogs = async () => {
     try {
@@ -56,13 +85,30 @@ export default function Blog() {
     }
   };
 
-  // Filter blogs by category
-  const filteredBlogs = selectedCategory === 'all' 
-    ? blogs 
-    : blogs.filter(blog => (blog.category || 'all') === selectedCategory);
+  // Filter blogs by category, industries, and search term
+  const filteredBlogs = blogs.filter(blog => {
+    // Category filter - when "all" is selected, show blogs from ALL categories
+    // This includes: our-solutions, enterprise-solutions, digital-solutions, digital-services, and any other category
+    const categoryMatch = selectedCategory === 'all' 
+      ? true  // Show all blogs regardless of category when "All" is selected
+      : (blog.category || 'all') === selectedCategory;  // Match specific category
+    
+    // Industry filter
+    const industryMatch = selectedIndustries.length === 0 || 
+      (blog.industries && blog.industries.length > 0 && 
+       selectedIndustries.some(selectedSlug => blog.industries!.includes(selectedSlug)));
+    
+    // Search filter
+    const searchMatch = searchTerm === '' || 
+      blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (blog.excerpt && blog.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) ||
+      (blog.content && blog.content.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+    return categoryMatch && industryMatch && searchMatch;
+  });
 
-  // Get featured blogs for slider (first 6) - from filtered blogs
-  const featuredBlogs = filteredBlogs.slice(0, 6);
+  // Get featured blogs for slider (latest 4) - from filtered blogs
+  const featuredBlogs = filteredBlogs.slice(0, 4);
   
   // Calculate pagination based on filtered blogs
   const totalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
@@ -70,10 +116,35 @@ export default function Blog() {
   const endIndex = startIndex + itemsPerPage;
   const gridBlogs = filteredBlogs.slice(startIndex, endIndex);
 
-  // Reset to page 1 when category changes
+  // Reset to page 1 when filters change
   useEffect(() => {
     setCurrentPage(1);
-  }, [selectedCategory]);
+  }, [selectedCategory, selectedIndustries, searchTerm]);
+
+  // Handle industry checkbox change
+  const handleIndustryChange = (industrySlug: string) => {
+    setSelectedIndustries(prev => {
+      if (prev.includes(industrySlug)) {
+        return prev.filter(slug => slug !== industrySlug);
+      } else {
+        return [...prev, industrySlug];
+      }
+    });
+  };
+
+  // Handle search
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    setCurrentPage(1);
+  };
+
+  // Clear all filters
+  const clearFilters = () => {
+    setSelectedCategory('all');
+    setSelectedIndustries([]);
+    setSearchTerm('');
+    setCurrentPage(1);
+  };
 
   // Generate pagination numbers
   const getPaginationNumbers = () => {
@@ -343,7 +414,7 @@ export default function Blog() {
                                             </div>
                                         </div>
                                         <span className="testspace" style={{ color: "#000" }}>
-                                            1/6
+                                            1/{featuredBlogs.length}
                                         </span>
                                         <div className="testimonial-button-next">
                                             <div className="animated-svg-link">
@@ -459,12 +530,25 @@ export default function Blog() {
                                 <div className="mobileview">
                                     <div className="mobile-blog-top ">
                                         <div className="filtermbl search-row">
-                                            <input
-                                                type="text"
-                                                placeholder="Search blogs"
-                                                className="search-input"
-                                            />
-                                            <button className="filter-btn1" id="openFilterBtn">
+                                            <form onSubmit={handleSearch} style={{ display: 'flex', width: '100%', gap: '10px' }}>
+                                                <input
+                                                    type="text"
+                                                    placeholder="Search blogs"
+                                                    className="search-input"
+                                                    value={searchTerm}
+                                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                                    style={{ flex: 1 }}
+                                                />
+                                                <button type="submit" style={{ background: 'none', border: 'none', padding: 0 }}>
+                                                    <img src="/new/ser-blog.svg" alt="Search" style={{ width: '20px', height: '20px' }} />
+                                                </button>
+                                            </form>
+                                            <button 
+                                                className="filter-btn1" 
+                                                id="openFilterBtn"
+                                                onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
+                                                style={{ marginLeft: '10px' }}
+                                            >
                                                 <svg
                                                     width={20}
                                                     height={23}
@@ -485,156 +569,60 @@ export default function Blog() {
                                         </div>
                                     </div>
                                     {/* Filter Content */}
-                                    <div className="mobile-filter" id="mobileFilter">
-                                        <Link                        href="#demo3"
+                                    <div className="mobile-filter" id="mobileFilter" style={{ display: mobileFilterOpen ? 'block' : 'none' }}>
+                                        <Link
+                                            href="#demo3"
                                             data-bs-toggle="collapse"
                                             className="arrow-toggle"
                                             aria-expanded="true"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                setMobileFilterOpen(!mobileFilterOpen);
+                                            }}
                                         ></Link>
                                         <div id="demo3" className="collapse content-box collapse show">
                                             <div className="col-sm-12 width100">
-                                                <h6 className="fome-filter-title">Industries</h6>
+                                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+                                                    <h6 className="fome-filter-title" style={{ margin: 0 }}>Industries</h6>
+                                                    {(selectedIndustries.length > 0 || selectedCategory !== 'all' || searchTerm) && (
+                                                        <button
+                                                            onClick={clearFilters}
+                                                            style={{
+                                                                background: 'none',
+                                                                border: '1px solid #499A9A',
+                                                                color: '#499A9A',
+                                                                padding: '5px 15px',
+                                                                borderRadius: '4px',
+                                                                cursor: 'pointer',
+                                                                fontSize: '12px'
+                                                            }}
+                                                        >
+                                                            Clear Filters
+                                                        </button>
+                                                    )}
+                                                </div>
                                                 <div className="filter-check-box-waber">
-                                                    <div className="form-check">
-                                                        <input
-                                                            className="form-check-input"
-                                                            type="checkbox"
-                                                            defaultValue=""
-                                                            id="flexCheckDefault"
-                                                        />
-                                                        <label
-                                                            className="form-check-label"
-                                                            htmlFor="flexCheckDefault"
-                                                        >
-                                                            Brand Owners and Vertical Retailers
-                                                        </label>
-                                                    </div>
-                                                    <div className="form-check">
-                                                        <input
-                                                            className="form-check-input"
-                                                            type="checkbox"
-                                                            defaultValue=""
-                                                            id="flexCheckDefault"
-                                                        />
-                                                        <label
-                                                            className="form-check-label"
-                                                            htmlFor="flexCheckDefault"
-                                                        >
-                                                            Retail Industry
-                                                        </label>
-                                                    </div>
-                                                    <div className="form-check">
-                                                        <input
-                                                            className="form-check-input"
-                                                            type="checkbox"
-                                                            defaultValue=""
-                                                            id="flexCheckDefault"
-                                                        />
-                                                        <label
-                                                            className="form-check-label"
-                                                            htmlFor="flexCheckDefault"
-                                                        >
-                                                            Distribution and Supply Chain
-                                                        </label>
-                                                    </div>
-                                                    <div className="form-check">
-                                                        <input
-                                                            className="form-check-input"
-                                                            type="checkbox"
-                                                            defaultValue=""
-                                                            id="flexCheckDefault"
-                                                        />
-                                                        <label
-                                                            className="form-check-label"
-                                                            htmlFor="flexCheckDefault"
-                                                        >
-                                                            Discrete Manufacturing
-                                                        </label>
-                                                    </div>
-                                                    <div className="form-check">
-                                                        <input
-                                                            className="form-check-input"
-                                                            type="checkbox"
-                                                            defaultValue=""
-                                                            id="flexCheckDefault"
-                                                        />
-                                                        <label
-                                                            className="form-check-label"
-                                                            htmlFor="flexCheckDefault"
-                                                        >
-                                                            Automotive Industry
-                                                        </label>
-                                                    </div>
-                                                    <div className="form-check">
-                                                        <input
-                                                            className="form-check-input"
-                                                            type="checkbox"
-                                                            defaultValue=""
-                                                            id="flexCheckDefault"
-                                                        />
-                                                        <label
-                                                            className="form-check-label"
-                                                            htmlFor="flexCheckDefault"
-                                                        >
-                                                            Engineering Procurement and Construction
-                                                        </label>
-                                                    </div>
-                                                    <div className="form-check">
-                                                        <input
-                                                            className="form-check-input"
-                                                            type="checkbox"
-                                                            defaultValue=""
-                                                            id="flexCheckDefault"
-                                                        />
-                                                        <label
-                                                            className="form-check-label"
-                                                            htmlFor="flexCheckDefault"
-                                                        >
-                                                            Process Manufacturing
-                                                        </label>
-                                                    </div>
-                                                    <div className="form-check">
-                                                        <input
-                                                            className="form-check-input"
-                                                            type="checkbox"
-                                                            defaultValue=""
-                                                            id="flexCheckDefault"
-                                                        />
-                                                        <label
-                                                            className="form-check-label"
-                                                            htmlFor="flexCheckDefault"
-                                                        >
-                                                            Private Equity &amp; Funding Backed Ventures
-                                                        </label>
-                                                    </div>
-                                                    <div className="form-check">
-                                                        <input
-                                                            className="form-check-input"
-                                                            type="checkbox"
-                                                            defaultValue=""
-                                                            id="flexCheckDefault"
-                                                        />
-                                                        <label
-                                                            className="form-check-label"
-                                                            htmlFor="flexCheckDefault"
-                                                        >
-                                                            Cable Manufacturing
-                                                        </label>
-                                                    </div>
-                                                    <div className="form-check">
-                                                        <input
-                                                            className="form-check-input"
-                                                            type="checkbox"
-                                                            defaultValue=""
-                                                            id="flexCheckDefault"
-                                                        />
-                                                        <label
-                                                            className="form-check-label"
-                                                            htmlFor="flexCheckDefault"
-                                                        >
-                                                            Interior Design
-                                                        </label>
-                                                    </div>
+                                                    {industries.length === 0 ? (
+                                                        <p style={{ color: '#666', fontSize: '14px' }}>No industries available</p>
+                                                    ) : (
+                                                        industries.map((industry) => (
+                                                            <div key={industry.id} className="form-check">
+                                                                <input
+                                                                    className="form-check-input"
+                                                                    type="checkbox"
+                                                                    checked={selectedIndustries.includes(industry.slug)}
+                                                                    onChange={() => handleIndustryChange(industry.slug)}
+                                                                    id={`mobile-industry-${industry.slug}`}
+                                                                />
+                                                                <label
+                                                                    className="form-check-label"
+                                                                    htmlFor={`mobile-industry-${industry.slug}`}
+                                                                >
+                                                                    {industry.name}
+                                                                </label>
+                                                            </div>
+                                                        ))
+                                                    )}
                                                 </div>
                                             </div>
                                         </div>
@@ -642,21 +630,28 @@ export default function Blog() {
                                 </div>
                                 <div className="bolg-filter-waber">
                                     {/* 1. Filter Buttons (Controls) */}
-                                    <div className="filter-controls">
-                                        {categories.map((cat) => (
-                                            <button
-                                                key={cat.value}
-                                                className={`filter-btn ${selectedCategory === cat.value ? 'active' : ''}`}
-                                                data-filter={cat.value}
-                                                onClick={() => setSelectedCategory(cat.value)}
-                                                style={{
-                                                    cursor: 'pointer',
-                                                    transition: 'all 0.2s'
-                                                }}
-                                            >
-                                                {cat.label}
-                                            </button>
-                                        ))}
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '15px' }}>
+                                        <div className="filter-controls">
+                                            {categories.map((cat) => (
+                                                <button
+                                                    key={cat.value}
+                                                    className={`filter-btn ${selectedCategory === cat.value ? 'active' : ''}`}
+                                                    data-filter={cat.value}
+                                                    onClick={() => setSelectedCategory(cat.value)}
+                                                    style={{
+                                                        cursor: 'pointer',
+                                                        transition: 'all 0.2s'
+                                                    }}
+                                                >
+                                                    {cat.label}
+                                                </button>
+                                            ))}
+                                        </div>
+                                        {(selectedIndustries.length > 0 || selectedCategory !== 'all' || searchTerm) && (
+                                            <div style={{ fontSize: '14px', color: '#666' }}>
+                                                Showing {filteredBlogs.length} of {blogs.length} blog{blogs.length !== 1 ? 's' : ''}
+                                            </div>
+                                        )}
                                     </div>
                                     <div className="row">
                                         {loading ? (
@@ -665,7 +660,27 @@ export default function Blog() {
                                             </div>
                                         ) : gridBlogs.length === 0 ? (
                                             <div className="col-sm-12" style={{ textAlign: 'center', padding: '40px' }}>
-                                                <p>No blogs available yet.</p>
+                                                {(selectedIndustries.length > 0 || selectedCategory !== 'all' || searchTerm) ? (
+                                                    <div>
+                                                        <p>No blogs match your current filters.</p>
+                                                        <button
+                                                            onClick={clearFilters}
+                                                            style={{
+                                                                background: '#499A9A',
+                                                                color: 'white',
+                                                                border: 'none',
+                                                                padding: '10px 20px',
+                                                                borderRadius: '4px',
+                                                                cursor: 'pointer',
+                                                                marginTop: '10px'
+                                                            }}
+                                                        >
+                                                            Clear All Filters
+                                                        </button>
+                                                    </div>
+                                                ) : (
+                                                    <p>No blogs available yet.</p>
+                                                )}
                                             </div>
                                         ) : (
                                             gridBlogs.map((blog) => (
@@ -795,127 +810,97 @@ export default function Blog() {
                                 </div>
                             </div>
                             <div className="col-sm-3 systemview">
-                                <form action="" method="post">
+                                <form onSubmit={handleSearch}>
                                     <div className="blog-serch">
-                                        <input type="text" placeholder="Search blogs" />
+                                        <input 
+                                            type="text" 
+                                            placeholder="Search blogs" 
+                                            value={searchTerm}
+                                            onChange={(e) => setSearchTerm(e.target.value)}
+                                        />
                                         <button type="submit">
-                                            <img src="/new/ser-blog.svg" alt="" />
+                                            <img src="/new/ser-blog.svg" alt="Search" />
                                         </button>
                                     </div>
                                 </form>
-                                <h6 className="fome-filter-title">Industries</h6>
-                                <div className="filter-check-box-waber">
-                                    <div className="form-check">
-                                        <input
-                                            className="form-check-input"
-                                            type="checkbox"
-                                            defaultValue=""
-                                            id="flexCheckDefault"
-                                        />
-                                        <label className="form-check-label" htmlFor="flexCheckDefault">
-                                            Brand Owners and Vertical Retailers
-                                        </label>
-                                    </div>
-                                    <div className="form-check">
-                                        <input
-                                            className="form-check-input"
-                                            type="checkbox"
-                                            defaultValue=""
-                                            id="flexCheckDefault"
-                                        />
-                                        <label className="form-check-label" htmlFor="flexCheckDefault">
-                                            Retail Industry
-                                        </label>
-                                    </div>
-                                    <div className="form-check">
-                                        <input
-                                            className="form-check-input"
-                                            type="checkbox"
-                                            defaultValue=""
-                                            id="flexCheckDefault"
-                                        />
-                                        <label className="form-check-label" htmlFor="flexCheckDefault">
-                                            Distribution and Supply Chain
-                                        </label>
-                                    </div>
-                                    <div className="form-check">
-                                        <input
-                                            className="form-check-input"
-                                            type="checkbox"
-                                            defaultValue=""
-                                            id="flexCheckDefault"
-                                        />
-                                        <label className="form-check-label" htmlFor="flexCheckDefault">
-                                            Discrete Manufacturing
-                                        </label>
-                                    </div>
-                                    <div className="form-check">
-                                        <input
-                                            className="form-check-input"
-                                            type="checkbox"
-                                            defaultValue=""
-                                            id="flexCheckDefault"
-                                        />
-                                        <label className="form-check-label" htmlFor="flexCheckDefault">
-                                            Automotive Industry
-                                        </label>
-                                    </div>
-                                    <div className="form-check">
-                                        <input
-                                            className="form-check-input"
-                                            type="checkbox"
-                                            defaultValue=""
-                                            id="flexCheckDefault"
-                                        />
-                                        <label className="form-check-label" htmlFor="flexCheckDefault">
-                                            Engineering Procurement and Construction
-                                        </label>
-                                    </div>
-                                    <div className="form-check">
-                                        <input
-                                            className="form-check-input"
-                                            type="checkbox"
-                                            defaultValue=""
-                                            id="flexCheckDefault"
-                                        />
-                                        <label className="form-check-label" htmlFor="flexCheckDefault">
-                                            Process Manufacturing
-                                        </label>
-                                    </div>
-                                    <div className="form-check">
-                                        <input
-                                            className="form-check-input"
-                                            type="checkbox"
-                                            defaultValue=""
-                                            id="flexCheckDefault"
-                                        />
-                                        <label className="form-check-label" htmlFor="flexCheckDefault">
-                                            Private Equity &amp; Funding Backed Ventures
-                                        </label>
-                                    </div>
-                                    <div className="form-check">
-                                        <input
-                                            className="form-check-input"
-                                            type="checkbox"
-                                            defaultValue=""
-                                            id="flexCheckDefault"
-                                        />
-                                        <label className="form-check-label" htmlFor="flexCheckDefault">
-                                            Cable Manufacturing
-                                        </label>
-                                    </div>
-                                    <div className="form-check">
-                                        <input
-                                            className="form-check-input"
-                                            type="checkbox"
-                                            defaultValue=""
-                                            id="flexCheckDefault"
-                                        />
-                                        <label className="form-check-label" htmlFor="flexCheckDefault">
-                                            Interior Design
-                                        </label>
-                                    </div>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '20px', marginBottom: '15px' }}>
+                                    <h6 className="fome-filter-title" style={{ margin: 0 }}>Industries</h6>
+                                    {(selectedIndustries.length > 0 || selectedCategory !== 'all' || searchTerm) && (
+                                        <button
+                                            onClick={clearFilters}
+                                            style={{
+                                                background: 'none',
+                                                border: '1px solid #499A9A',
+                                                color: '#499A9A',
+                                                padding: '5px 15px',
+                                                borderRadius: '4px',
+                                                cursor: 'pointer',
+                                                fontSize: '12px'
+                                            }}
+                                        >
+                                            Clear Filters
+                                        </button>
+                                    )}
                                 </div>
+                                <div className="filter-check-box-waber">
+                                    {industries.length === 0 ? (
+                                        <p style={{ color: '#666', fontSize: '14px' }}>No industries available</p>
+                                    ) : (
+                                        industries.map((industry) => (
+                                            <div key={industry.id} className="form-check">
+                                                <input
+                                                    className="form-check-input"
+                                                    type="checkbox"
+                                                    checked={selectedIndustries.includes(industry.slug)}
+                                                    onChange={() => handleIndustryChange(industry.slug)}
+                                                    id={`desktop-industry-${industry.slug}`}
+                                                />
+                                                <label 
+                                                    className="form-check-label" 
+                                                    htmlFor={`desktop-industry-${industry.slug}`}
+                                                    style={{ cursor: 'pointer' }}
+                                                >
+                                                    {industry.name}
+                                                </label>
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
+                                {/* Show active filters */}
+                                {(selectedIndustries.length > 0 || searchTerm) && (
+                                    <div style={{ marginTop: '20px', padding: '10px', background: '#f5f5f5', borderRadius: '4px' }}>
+                                        <p style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px' }}>Active Filters:</p>
+                                        {searchTerm && (
+                                            <span style={{ 
+                                                display: 'inline-block', 
+                                                background: '#499A9A', 
+                                                color: 'white', 
+                                                padding: '4px 8px', 
+                                                borderRadius: '3px', 
+                                                fontSize: '11px',
+                                                margin: '2px'
+                                            }}>
+                                                Search: {searchTerm}
+                                            </span>
+                                        )}
+                                        {selectedIndustries.map(slug => {
+                                            const industry = industries.find(ind => ind.slug === slug);
+                                            return industry ? (
+                                                <span key={slug} style={{ 
+                                                    display: 'inline-block', 
+                                                    background: '#499A9A', 
+                                                    color: 'white', 
+                                                    padding: '4px 8px', 
+                                                    borderRadius: '3px', 
+                                                    fontSize: '11px',
+                                                    margin: '2px'
+                                                }}>
+                                                    {industry.name}
+                                                </span>
+                                            ) : null;
+                                        })}
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>

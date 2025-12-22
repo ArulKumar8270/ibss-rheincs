@@ -123,8 +123,18 @@ export default function CounterInit() {
         // Animation parameters - smoother animation
         const duration = 2000; // 2 seconds
         let startTime = Date.now();
+        let hasStarted = false;
         
         const animate = () => {
+          // Only reset to 0 on the very first frame of animation
+          // This ensures we don't show "0" if animation doesn't start
+          if (!hasStarted) {
+            hasStarted = true;
+            startTime = Date.now();
+            // Don't set to 0 here - calculate first frame value immediately
+            // This prevents showing "0" even for one frame
+          }
+          
           const elapsed = Date.now() - startTime;
           const progress = Math.min(elapsed / duration, 1);
           
@@ -132,7 +142,9 @@ export default function CounterInit() {
           const easeOut = 1 - Math.pow(1 - progress, 3);
           const currentValue = Math.floor(easeOut * target);
           
-          htmlElement.textContent = currentValue.toString();
+          // Ensure we never show 0 - start from at least 1 if target > 0
+          const displayValue = target > 0 && currentValue === 0 ? 1 : currentValue;
+          htmlElement.textContent = displayValue.toString();
           
           if (progress < 1) {
             requestAnimationFrame(animate);
@@ -144,12 +156,9 @@ export default function CounterInit() {
           }
         };
         
-        // Reset to 0 and start animation
-        // Do this right before requestAnimationFrame to minimize "0" visibility
+        // Start animation immediately - reset to 0 happens inside animate() on first frame
         if (currentNum !== target) {
-          // Reset to 0 synchronously right before animation starts
-          htmlElement.textContent = '0';
-          // Start animation on next frame (minimal delay)
+          // Start animation immediately - the reset to 0 will happen on the first frame
           requestAnimationFrame(animate);
         }
       };
@@ -205,12 +214,11 @@ export default function CounterInit() {
               // This prevents showing "0" before animation starts
               const currentNum = parseInt((htmlCounter.textContent || '').replace(/[^0-9]/g, ''), 10);
               
-              // If textContent is "0" or doesn't match target, restore it
-              // We'll reset to 0 only when animation actually starts
-              if (currentNum === 0 || (dataTarget && currentNum !== target)) {
+              // Always ensure the counter shows the target value initially
+              // This is critical - if textContent is "0" or doesn't match target, restore it
+              // The animation will reset to 0 only when it actually starts (inside animate function)
+              if (currentNum === 0 || currentNum !== target) {
                 htmlCounter.textContent = target.toString();
-                if (currentNum === 0) {
-                }
               }
             } else {
               console.warn('⚠️ [CounterInit] Invalid target value:', targetStr, 'for counter:', htmlCounter);

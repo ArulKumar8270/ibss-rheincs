@@ -88,6 +88,7 @@ export default function AdminLayout({
     { href: '/admin/case-studies', label: 'Case Studies', icon: '📄' },
     { href: '/admin/careers', label: 'Careers', icon: '💼' },
     { href: '/admin/job-applications', label: 'Job Applications', icon: '💼' },
+    { href: '/admin/industries', label: 'Industries', icon: '🔍' },
   ]
 
   return (

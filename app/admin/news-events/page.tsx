@@ -3,6 +3,11 @@
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
+import 'quill/dist/quill.snow.css'
+
+// Dynamically import ReactQuill to avoid SSR issues
+const ReactQuill = dynamic(() => import('react-quill-new'), { ssr: false })
 
 interface NewsEvent {
   id: string
@@ -36,13 +41,107 @@ export default function AdminNewsEventsPage() {
     event_date: '',
     location: '',
     featured_image: '',
+    created_at: '',
     published: false
   })
   const supabase = createClient()
 
+  // Handle image upload in editor
+  const handleEditorImageUpload = async () => {
+    const input = document.createElement('input')
+    input.setAttribute('type', 'file')
+    input.setAttribute('accept', 'image/*')
+    input.click()
+
+    input.onchange = async () => {
+      const file = input.files?.[0]
+      if (!file) return
+
+      try {
+        setUploading(true)
+        const fileExt = file.name.split('.').pop()
+        const fileName = `news-event-content-${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`
+        const filePath = `news-events/${fileName}`
+
+        const { error: uploadError } = await supabase.storage
+          .from('uploads')
+          .upload(filePath, file)
+
+        if (uploadError) throw uploadError
+
+        const { data } = supabase.storage.from('uploads').getPublicUrl(filePath)
+        const publicUrl = data.publicUrl
+
+        // Insert image into editor
+        const editorElement = document.querySelector('.ql-editor') as any
+        if (editorElement && editorElement.__quill) {
+          const quill = editorElement.__quill
+          const range = quill.getSelection(true)
+          quill.insertEmbed(range ? range.index : 0, 'image', publicUrl)
+          quill.setSelection((range ? range.index : 0) + 1)
+        }
+      } catch (error: any) {
+        console.error('Error uploading image:', error)
+        alert('Error uploading image: ' + error.message)
+      } finally {
+        setUploading(false)
+      }
+    }
+  }
+
+  // Quill editor modules configuration
+  const quillModules = {
+    toolbar: {
+      container: [
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        [{ 'font': [] }],
+        [{ 'size': [] }],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'indent': '-1'}, { 'indent': '+1' }],
+        [{ 'color': [] }, { 'background': [] }],
+        [{ 'align': [] }],
+        ['link', 'image', 'video'],
+        ['clean']
+      ],
+      handlers: {
+        image: handleEditorImageUpload
+      }
+    },
+    clipboard: {
+      matchVisual: false
+    }
+  }
+
+  const quillFormats = [
+    'header', 'font', 'size',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet', 'indent',
+    'color', 'background',
+    'align',
+    'link', 'image', 'video'
+  ]
+
   useEffect(() => {
     fetchItems()
   }, [])
+
+  const generateSlug = (title: string) => {
+    return title
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/[\s_-]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+  }
+
+  const handleTitleChange = (title: string) => {
+    // Auto-generate slug if not editing or if slug is empty
+    if (!editingItem || !formData.slug) {
+      setFormData(prev => ({ ...prev, title, slug: generateSlug(title) }))
+    } else {
+      setFormData(prev => ({ ...prev, title }))
+    }
+  }
 
   const fetchItems = async () => {
     setLoading(true)
@@ -93,6 +192,7 @@ export default function AdminNewsEventsPage() {
         event_date: '',
         location: '',
         featured_image: '',
+        created_at: '',
         published: false
       })
       fetchItems()
@@ -169,6 +269,8 @@ export default function AdminNewsEventsPage() {
 
   const handleEdit = (item: NewsEvent) => {
     setEditingItem(item)
+    // Convert ISO date to datetime-local format
+    const createdDate = item.created_at ? new Date(item.created_at).toISOString().slice(0, 16) : ''
     setFormData({
       title: item.title,
       slug: item.slug,
@@ -178,6 +280,7 @@ export default function AdminNewsEventsPage() {
       event_date: item.event_date || '',
       location: item.location || '',
       featured_image: item.featured_image || '',
+      created_at: createdDate,
       published: item.published
     })
     setShowForm(true)
@@ -392,6 +495,7 @@ export default function AdminNewsEventsPage() {
               event_date: '',
               location: '',
               featured_image: '',
+              created_at: '',
               published: false
             })
           }}
@@ -424,7 +528,7 @@ export default function AdminNewsEventsPage() {
           marginBottom: '30px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
         }}>
-          <h2 style={{ marginBottom: '20px', color: '#333', fontWeight: 'bold' }}>{editingItem ? 'Edit' : 'Create New'} {formData.type === 'news' ? 'News' : 'Event'}</h2>
+          <h2 style={{ marginBottom: '20px', color: '#333', fontWeight: 'bold' }}>{editingItem ? 'Edit' : 'Create'} {formData.type === 'news' ? 'News' : 'Event'}</h2>
           <form onSubmit={handleSubmit}>
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Type *</label>
@@ -443,18 +547,24 @@ export default function AdminNewsEventsPage() {
               <input
                 type="text"
                 value={formData.title}
-                onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                onChange={(e) => handleTitleChange(e.target.value)}
                 required
                 style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
               />
             </div>
             <div style={{ marginBottom: '15px' }}>
-              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Slug *</label>
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>
+                Slug * 
+                <small style={{ fontWeight: 'normal', color: '#666', marginLeft: '8px', fontSize: '12px' }}>
+                  (Auto-generated from title, can be edited)
+                </small>
+              </label>
               <input
                 type="text"
                 value={formData.slug}
                 onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
                 required
+                placeholder="URL-friendly identifier"
                 style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
               />
             </div>
@@ -482,22 +592,36 @@ export default function AdminNewsEventsPage() {
             )}
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Excerpt</label>
-              <textarea
-                value={formData.excerpt}
-                onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
-                rows={3}
-                style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
-              />
+              <div style={{ background: 'white', borderRadius: '6px', marginBottom: '15px' }}>
+                <ReactQuill
+                  theme="snow"
+                  value={formData.excerpt}
+                  onChange={(value: string) => setFormData({ ...formData, excerpt: value })}
+                  modules={quillModules}
+                  formats={quillFormats}
+                  placeholder="Short excerpt/summary"
+                  style={{ minHeight: '150px' }}
+                />
+              </div>
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Content *</label>
-              <textarea
-                value={formData.content}
-                onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                rows={10}
-                required
-                style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
-              />
+              <div style={{ background: 'white', borderRadius: '6px' }}>
+                <ReactQuill
+                  theme="snow"
+                  value={formData.content}
+                  onChange={(value: string) => setFormData({ ...formData, content: value })}
+                  modules={quillModules}
+                  formats={quillFormats}
+                  placeholder="Main content"
+                  style={{ minHeight: '300px' }}
+                />
+              </div>
+              <style jsx>{`
+                .ql-editor {
+                  min-height: 150px;
+                }
+              `}</style>
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>

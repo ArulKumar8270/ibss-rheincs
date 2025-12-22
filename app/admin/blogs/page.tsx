@@ -39,6 +39,7 @@ export default function AdminBlogsPage() {
     featured_image: '',
     category: 'all',
     published: false,
+    created_at: '',
     industries: [] as string[]
   })
   const [uploading, setUploading] = useState(false)
@@ -129,6 +130,7 @@ export default function AdminBlogsPage() {
       const submitData = {
         ...formData,
         industries: formData.industries.length > 0 ? formData.industries : null,
+        created_at: formData.created_at ? new Date(formData.created_at).toISOString() : new Date().toISOString(),
         updated_at: new Date().toISOString()
       }
       
@@ -155,6 +157,7 @@ export default function AdminBlogsPage() {
         featured_image: '',
         category: 'all',
         published: false,
+        created_at: '',
         industries: []
       })
       fetchBlogs()
@@ -330,6 +333,8 @@ export default function AdminBlogsPage() {
 
   const handleEdit = (blog: Blog) => {
     setEditingBlog(blog)
+    // Convert ISO date to datetime-local format
+    const createdDate = blog.created_at ? new Date(blog.created_at).toISOString().slice(0, 16) : ''
     setFormData({
       title: blog.title,
       slug: blog.slug,
@@ -339,6 +344,7 @@ export default function AdminBlogsPage() {
       featured_image: blog.featured_image || '',
       category: blog.category || 'all',
       published: blog.published,
+      created_at: createdDate,
       industries: blog.industries || []
     })
     setShowForm(true)
@@ -553,6 +559,7 @@ export default function AdminBlogsPage() {
               featured_image: '',
               category: 'all',
               published: false,
+              created_at: '',
               industries: []
             })
           }}
@@ -663,13 +670,25 @@ export default function AdminBlogsPage() {
               />
             </div>
             <div style={{ marginBottom: '15px' }}>
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Created Date</label>
+              <input
+                type="datetime-local"
+                value={formData.created_at}
+                onChange={(e) => setFormData({ ...formData, created_at: e.target.value })}
+                style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
+              />
+              <small style={{ color: '#666', fontSize: '12px', marginTop: '5px', display: 'block' }}>
+                Date when this blog was created (defaults to current date if not set)
+              </small>
+            </div>
+            <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>
                 Industries
                 <Link href="/admin/industries" style={{ marginLeft: '10px', fontSize: '12px', color: '#667eea', textDecoration: 'none' }}>
                   (Manage Industries)
                 </Link>
               </label>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', color: '#333' }}>
                 {industries.length > 0 ? (
                   industries.map((industry) => (
                     <label key={industry.id} style={{ display: 'flex', alignItems: 'center', gap: '5px', cursor: 'pointer' }}>
@@ -747,7 +766,7 @@ export default function AdminBlogsPage() {
                   style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
                 />
                 <small style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '5px' }}>
-                  Upload an image file or paste an image URL
+                  Upload an image file or paste an image URL (Recommended size: 268 x 447)
                 </small>
               </div>
               {formData.featured_image && (

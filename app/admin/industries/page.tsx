@@ -3,6 +3,11 @@
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
+import 'quill/dist/quill.snow.css'
+
+// Dynamically import ReactQuill to avoid SSR issues
+const ReactQuill = dynamic(() => import('react-quill-new'), { ssr: false })
 
 interface Industry {
   id: string
@@ -29,6 +34,35 @@ export default function AdminIndustriesPage() {
     active: true
   })
   const supabase = createClient()
+
+  // Quill editor modules configuration
+  const quillModules = {
+    toolbar: {
+      container: [
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        [{ 'font': [] }],
+        [{ 'size': [] }],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'indent': '-1'}, { 'indent': '+1' }],
+        [{ 'color': [] }, { 'background': [] }],
+        [{ 'align': [] }],
+        ['link', 'image', 'video'],
+        ['clean']
+      ]
+    },
+    clipboard: {
+      matchVisual: false
+    }
+  }
+
+  const quillFormats = [
+    'header', 'font', 'size',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet', 'indent',
+    'color', 'background',
+    'align',
+    'link', 'image', 'video'
+  ]
 
   useEffect(() => {
     fetchIndustries()
@@ -197,12 +231,17 @@ export default function AdminIndustriesPage() {
 
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Description</label>
-              <textarea
-                value={formData.description}
-                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                rows={3}
-                style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', fontSize: '14px' }}
-              />
+              <div style={{ background: 'white', borderRadius: '6px' }}>
+                <ReactQuill
+                  theme="snow"
+                  value={formData.description}
+                  onChange={(value: string) => setFormData({ ...formData, description: value })}
+                  modules={quillModules}
+                  formats={quillFormats}
+                  placeholder="Industry description"
+                  style={{ minHeight: '200px' }}
+                />
+              </div>
             </div>
 
             <div style={{ marginBottom: '15px' }}>
