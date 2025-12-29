@@ -835,7 +835,7 @@ export default function EnterpriseSolutions() {
               <h2>
                 Ready to simplify payroll and stay compliant with Epic Pay?
               </h2>
-              <p>Talk to our enterprise solutions experts today.</p>
+              <p>Talk to our Epicor experts today.</p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
