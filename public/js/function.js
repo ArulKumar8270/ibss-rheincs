@@ -888,6 +888,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
 
   // --- Bootstrap Popover Initialization ---
   whenReady(function() {
+    if (!window.__USE_LEGACY_POPOVER__) { return; }
     function initPopover(popoverId) {
       const popoverTriggerEl = document.getElementById(popoverId);
       if (!popoverTriggerEl) return;
@@ -3884,7 +3885,10 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     // Main initialization function that calls all sub-functions
     window.reinitJQueryPlugins = function() {
       window.initYTVideo();
-      window.initCounter();
+      // Prefer React CounterInit for counters; keep legacy as opt-in
+      if (window.__USE_LEGACY_COUNTER__ === true) {
+        window.initCounter();
+      }
       window.initImageReveal();
       window.initGridOverlay();
       window.initTextAnimations();
@@ -3905,8 +3909,8 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       }
     };
     
-    // Initialize on first load
-    whenReady(function() {
+  // Initialize on first load
+  whenReady(function() {
       window.reinitJQueryPlugins();
   }, ['jQuery']);
 
@@ -4172,18 +4176,20 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       }
       
       // Re-initialize popovers if needed
-      if (typeof bootstrap !== 'undefined' && bootstrap.Popover) {
-        document.querySelectorAll('[data-bs-toggle="popover"]').forEach(function(el) {
-          try {
-            const existingPopover = bootstrap.Popover.getInstance(el);
-            if (existingPopover) {
-              existingPopover.dispose();
+      if (window.__USE_LEGACY_POPOVER__) {
+        if (typeof bootstrap !== 'undefined' && bootstrap.Popover) {
+          document.querySelectorAll('[data-bs-toggle="popover"]').forEach(function(el) {
+            try {
+              const existingPopover = bootstrap.Popover.getInstance(el);
+              if (existingPopover) {
+                existingPopover.dispose();
+              }
+              new bootstrap.Popover(el);
+            } catch (e) {
+              console.error('Error re-initializing popover:', e);
             }
-            new bootstrap.Popover(el);
-          } catch (e) {
-            console.error('Error re-initializing popover:', e);
-          }
-        });
+          });
+        }
       }
       
       // Re-initialize WOW animations
@@ -4192,7 +4198,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       }
       
       // Re-initialize counters
-      if (typeof $ !== 'undefined' && $.fn.counterUp && $('.counter').length) {
+      if (typeof $ !== 'undefined' && $.fn.counterUp && $('.counter').length && false) {
         $('.counter').counterUp({ delay: 6, time: 3000 });
       }
       

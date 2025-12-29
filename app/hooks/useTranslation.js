@@ -45,9 +45,7 @@ export default function useTranslation() {
     }
   };
 
-  const t = (key) => {
-    return translations[language]?.[key] || translations['English']?.[key] || key;
-  };
+  const t = (key) => key;
 
   return { t, language, changeLanguage };
 }

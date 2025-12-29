@@ -4,10 +4,10 @@ import CommomLayout from "./Components/CommomLayout";
 import Link from "next/link";
 import TestimonialandAward from "./Components/TestimonialandAward";
 import Awards from "./Components/Awards";
-import useTranslation from "./hooks/useTranslation";
+// Removed translations for home page; using English literals
 
 export default function Home() {
-  const { t, language } = useTranslation();
+  const t = (s) => s
   return (
     <>
       <CommomLayout>
@@ -25,16 +25,14 @@ export default function Home() {
                       <h1 className=" mainbannerh1">
                         <div className="topbar_text_slider1">
                           <ul className="vertical-reveal">
-                            <li>{t("Analyse")}</li>
-                            <li>{t("Integrate")}</li>
-                            <li>{t("Transform")}</li>
+                            <li>Analyse</li>
+                            <li>Integrate</li>
+                            <li>Transform</li>
                           </ul>
                         </div>
                       </h1>
                       <div className="hero-video-content wow fadeInUp mt-3">
-                        <p>
-                          {t("Empowering businesses to operate smart, adapt faster, and unlock new opportunity in a technology - driven economy  ")}
-                        </p>
+                        <p>Empowering businesses to operate smart, adapt faster, and unlock new opportunity in a technology - driven economy</p>
                       </div>
                     </div>
                     <div className="hero-content-body">
@@ -113,22 +111,18 @@ export default function Home() {
           </div>
           {/* Hero Section End*/}
           {/* Our Services Section Start */}
-          <div className={`our-services thepath pd30 ${language === 'German' ? 'germanpath' : ''}`}>
+          <div className="our-services thepath pd30">
             <div className="container">
               <div className="row section-row text-center">
                 <div className="col-lg-12">
                   {/* Section Title Start */}
                   <div className="section-title text-center">
-                    <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      {t("The path to transformation")}
-                    </h2>
-                    <p>
-                      {t("Every successful transformation starts with clarity and ends with measurable impact. Our approach is built to take you from insights to execution, helping your business unlock real value at every single stage of journey")}
-                    </p>
+                    <h2 className="text-anime-style-2" data-cursor="-opaque">The Path to Transformation</h2>
+                    <p>Every successful transformation starts with clarity and ends with measurable impact. Our approach is built to take you from insights to execution, helping your business unlock real value at every single stage of journey</p>
                     <div className="ser-btn">
                       <Link href="/solutions/erp-enterprise-solutions-and-services/erp" className="animated-svg-link">
-                        <span>
-                          {t("Know More")}
+                          <span>
+                            Know More
                           <span className="svg-container ">
                             <span className=" right">
                               <svg
@@ -269,8 +263,10 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="service-item-body">
-                        <h3>{t("Analyse")}</h3>
-                        <p>{t("We start by understanding your business at its core -your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact -whether it’s efficiency, margin growth, agility, or customer experience.")}</p>
+                        <h3>Analyse</h3>
+                        <p>We start by understanding your business, its core your operating model, value drivers, and constraints. Using data-led diagnostics and performance
+                                benchmarking, we identify the real levers for impact whether it’s efficiency,
+                                margin growth, agility, or customer experience.</p>
                         {/*<div class="ser-btn1">*/}
                         {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
                         {/*        Know More*/}
@@ -334,9 +330,9 @@ export default function Home() {
                               </div> */}
                       </div>
                       <div className="service-item-body">
-                        <h3>{t("Integrate")}</h3>
+                        <h3>Integrate</h3>
                         <p>
-                          {t("Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals – implementing and integrating ERP and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability.")}
+                          Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals – implementing and integrating ERP and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability.
                         </p>
                         {/*<div class="ser-btn1">*/}
                         {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
@@ -429,9 +425,9 @@ export default function Home() {
                               </div> */}
                       </div>
                       <div className="service-item-body">
-                        <h3>{t("Transform")}</h3>
+                        <h3>Transform</h3>
                         <p>
-                          {t("This is where change becomes reality. From digitised supply chains to intelligent forecasting, we help you deploy solutions that move the needle - unlocking new revenue, simplifying complexity, and accelerating time-to-value.")}
+                          This is where change becomes reality. From digitised supply chains to intelligent forecasting, we help you deploy solutions that move the needle - unlocking new revenue, simplifying complexity, and accelerating time-to-value.
                         </p>
                         {/*<div class="ser-btn1">*/}
                         {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
@@ -492,8 +488,8 @@ export default function Home() {
                             </div>
                           </div>
                           <div className="service-item-body">
-                            <h3>{t("Analyse")}</h3>
-                            <p>{t("We start by understanding your business at its core -your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact -whether it’s efficiency, margin growth, agility, or customer experience.")}</p>
+                            <h3>Analyse</h3>
+                            <p>We start by understanding your business at its core -your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact -whether it’s efficiency, margin growth, agility, or customer experience.</p>
                             {/*<div class="ser-btn1">*/}
                             {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
                             {/*        Know More*/}
@@ -545,9 +541,9 @@ export default function Home() {
                               </div> */}
                           </div>
                           <div className="service-item-body">
-                            <h3>{t("Integrate")}</h3>
+                            <h3>Integrate</h3>
                         <p>
-                          {t("Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals – implementing and integrating ERP and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability.")}
+                          Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals – implementing and integrating ERP and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability.
                         </p>
                             {/*<div class="ser-btn1">*/}
                             {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
@@ -600,9 +596,9 @@ export default function Home() {
                               </div> */}
                           </div>
                           <div className="service-item-body">
-                            <h3>{t("Transform")}</h3>
+                            <h3>Transform</h3>
                             <p>
-                              {t("This is where change becomes reality. From digitised supply chains to intelligent forecasting, we help you deploy solutions that move the needle - unlocking new revenue, simplifying complexity, and accelerating time-to-value.")}
+                              This is where change becomes reality. From digitised supply chains to intelligent forecasting, we help you deploy solutions that move the needle - unlocking new revenue, simplifying complexity, and accelerating time-to-value.
                             </p>
                             {/*<div class="ser-btn1">*/}
                             {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
@@ -874,7 +870,7 @@ export default function Home() {
                   <div className="about-agency-content">
                     <div className="section-title">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        {t("Powering Enterprise Growth Through Digital-Enabled Transformation")}
+                        Powering Enterprise Growth Through Digital-Enabled Transformation
                       </h2>
                     </div>
                   </div>
@@ -884,16 +880,16 @@ export default function Home() {
                     <div className="about-agency-item wow fadeInUp">
                       <div className="agency-item-content">
                         <p>
-                          {t("At RheinBrücke, we believe transformation is not just about technology -it’s about unlocking new business models, new ways of working, and new value for your customers.")}
+                          At RheinBrücke, we believe transformation is not just about technology -it’s about unlocking new business models, new ways of working, and new value for your customers.
                         </p>
                         <p>
-                          {t("We help enterprises go beyond incremental change. Whether you’re scaling operations, modernizing your ERP landscape, or launching entirely new services, we enable rapid, meaningful transformation across your organisation -powered by enterprise technology, real-world insight, and strategic execution.")}
+                          We help enterprises go beyond incremental change. Whether you’re scaling operations, modernizing your ERP landscape, or launching entirely new services, we enable rapid, meaningful transformation across your organisation -powered by enterprise technology, real-world insight, and strategic execution.
                         </p>
                         <div className="ser-btn2">
                           <Link href="/about-us/overview"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            {t("Learn More About Our Story")}
+                            Learn More About Our Story
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -1002,7 +998,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className={`row countingss mt-5 ${language === 'German' ? 'gercounts' : ''}`} id="counter-section">
+            <div className="row countingss mt-5" id="counter-section">
               <div className="col-sm-2" />
               <div className="col-sm-2 col-6">
                 <div className="success-counter-box1 firstbox">
@@ -1010,7 +1006,7 @@ export default function Home() {
                     <h2>
                       <span className="counter" data-target="10">10</span>+
                     </h2>
-                    <p>{t("Years of Experience")}</p>
+                    <p>Years of Experience</p>
                   </div>
                 </div>
               </div>
@@ -1020,7 +1016,7 @@ export default function Home() {
                     <h2>
                       <span className="counter" data-target="45">45</span>+
                     </h2>
-                    <p>{t("Countries Served")}</p>
+                    <p>Countries Served</p>
                   </div>
                 </div>
               </div>
@@ -1030,7 +1026,7 @@ export default function Home() {
                     <h2>
                       <span className="counter" data-target="300">300</span>+
                     </h2>
-                    <p>{t("Projects Delivered")}</p>
+                    <p>Projects Delivered</p>
                   </div>
                 </div>
               </div>
@@ -1040,7 +1036,7 @@ export default function Home() {
                     <h2>
                       <span className="counter" data-target="8">8</span>+
                     </h2>
-                    <p>{t("Industries Covered")}</p>
+                    <p>Industries Covered</p>
                   </div>
                 </div>
               </div>
@@ -1054,7 +1050,7 @@ export default function Home() {
                   <div className="about-agency-content">
                     <div className="section-title">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        {t("Powering Enterprise Growth Through Digital-Enabled Transformation")}
+                        Powering Enterprise Growth Through Digital-Enabled Transformation
                       </h2>
                     </div>
                   </div>
@@ -1064,16 +1060,16 @@ export default function Home() {
                     <div className="about-agency-item wow fadeInUp">
                       <div className="agency-item-content">
                         <p>
-                          {t("At RheinBrücke, we believe transformation is not just about technology -it’s about unlocking new business models, new ways of working, and new value for your customers.")}
+                          At RheinBrücke, we believe transformation is not just about technology -it’s about unlocking new business models, new ways of working, and new value for your customers.
                         </p>
                         <p>
-                          {t("We help enterprises go beyond incremental change. Whether you’re scaling operations, modernizing your ERP landscape, or launching entirely new services, we enable rapid, meaningful transformation across your organisation -powered by enterprise technology, real-world insight, and strategic execution.")}
+                          We help enterprises go beyond incremental change. Whether you’re scaling operations, modernizing your ERP landscape, or launching entirely new services, we enable rapid, meaningful transformation across your organisation -powered by enterprise technology, real-world insight, and strategic execution.
                         </p>
                         <div className="ser-btn2">
                           <Link href="/about-us/overview"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            {t("Learn More About Our Story")}
+                            Learn More About Our Story
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -1181,7 +1177,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className={`row countingss mt-2 ${language === 'German' ? 'gercounts' : ''}`}>
+              <div className="row countingss mt-2">
                 <div className="col-sm-2" />
                 <div className="col-sm-2 col-6">
                   <div className="success-counter-box1 firstbox">
@@ -1189,7 +1185,7 @@ export default function Home() {
                       <h2>
                         <span className="counter" data-target="10">10</span>+
                       </h2>
-                      <p>{t("Years of Experience")}</p>
+                      <p>Years of Experience</p>
                     </div>
                   </div>
                 </div>
@@ -1199,7 +1195,7 @@ export default function Home() {
                       <h2>
                         <span className="counter" data-target="45">45</span>+
                       </h2>
-                      <p>{t("Countries Served")}</p>
+                      <p>Countries Served</p>
                     </div>
                   </div>
                 </div>
@@ -1209,7 +1205,7 @@ export default function Home() {
                       <h2>
                         <span className="counter" data-target="300">300</span>+
                       </h2>
-                      <p>{t("Projects Delivered")}</p>
+                      <p>Projects Delivered</p>
                     </div>
                   </div>
                 </div>
@@ -1219,7 +1215,7 @@ export default function Home() {
                       <h2>
                         <span className="counter" data-target="8">8</span>+
                       </h2>
-                      <p>{t("Industries Covered")}</p>
+                      <p>Industries Covered</p>
                     </div>
                   </div>
                 </div>
@@ -1236,16 +1232,16 @@ export default function Home() {
                   {/* Section Title Start */}
                   <div className="prine-title">
                     <h2 data-cursor="-opaque">
-                      {t("Built for Enterprises that Want to Scale")}
+                      Built for Enterprises that Want to Scale
                     </h2>
                     <p className="brin-p-tag m-0">
-                      {t("Scaling successfully means balancing agility with execution. We design solutions that are digital at the core, powered by trusted platforms, and tailored for enterprise growth. Every engagement is focused on measurable outcomes that drive lasting business value.")}
+                      Scaling successfully means balancing agility with execution. We design solutions that are digital at the core, powered by trusted platforms, and tailored for enterprise growth. Every engagement is focused on measurable outcomes that drive lasting business value.
                     </p>
                     <div className="ser-btn m-0">
                       <Link href="/digital-services-and-solutions"
                         className="animated-svg-link"
                       >
-                        {t("Know More")}
+                        Know More
                         <span className="svg-container ">
                           <span className=" right">
                             <svg
@@ -1380,8 +1376,8 @@ export default function Home() {
                           </svg>
                         </div>
                         <div className="benefits-steps-content">
-                          <h3>{t("Digital by Design")}</h3>
-                          <p>{t("Cloud-native, mobile-first, AI-ready -every solution is designed for agility and growth.")}</p>
+                          <h3>Digital by Design</h3>
+                          <p>Cloud-native, mobile-first, AI-ready -every solution is designed for agility and growth.</p>
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
@@ -1452,8 +1448,8 @@ export default function Home() {
                           </svg>
                         </div>
                         <div className="benefits-steps-content">
-                          <h3>{t("Outcomes-Driven")}</h3>
-                          <p>{t("We quantify the impact -from cost savings and operational KPIs to customer lifetime value.")}</p>
+                          <h3>Outcomes-Driven</h3>
+                          <p>We quantify the impact -from cost savings and operational KPIs to customer lifetime value.</p>
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
@@ -1492,8 +1488,8 @@ export default function Home() {
                           </svg>
                         </div>
                         <div className="benefits-steps-content">
-                          <h3>{t("Trusted Enterprise Platforms")}</h3>
-                          <p>{t("Epicor Premium Partner, Microsoft ISV Partner, Microsoft AI Cloud Partner, SAP certified -we bring deep expertise in platforms that run the world’s leading businesses.")}</p>
+                          <h3>Trusted Enterprise Platforms</h3>
+                          <p>Epicor Premium Partner, Microsoft ISV Partner, Microsoft AI Cloud Partner, SAP certified -we bring deep expertise in platforms that run the world’s leading businesses.</p>
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
@@ -1531,8 +1527,8 @@ export default function Home() {
                           </svg>
                         </div>
                         <div className="benefits-steps-content">
-                          <h3>{t("Deep Execution Capability")}</h3>
-                          <p>{t("We combine global delivery centres with local expertise to execute transformation programs at speed, and at scale.")}</p>
+                          <h3>Deep Execution Capability</h3>
+                          <p>We combine global delivery centres with local expertise to execute transformation programs at speed, and at scale.</p>
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
@@ -1556,18 +1552,18 @@ export default function Home() {
           </div>
           {/* Hero Section End*/}
           {/* Our Testimonial Section Start */}
-          <div className={`our-testimonial indexwhatdo pd0 pd30 ${language === 'German' ? 'geranim' : ''}`}>
+          <div className="our-testimonial indexwhatdo pd0 pd30">
             <div className="container">
               <div className="row section-row align-items-center">
                 <div className="col-lg-6">
                   <div className="section-title testidescription">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      {t("What We Do to Driver Enterprise Transformation")}
+                      What We Do to Driver Enterprise Transformation
                     </h2>
-                    <p>{t("We help enterprises modernise systems, build digital capabilities, and unlock growth. From ERP transformation to automation and data strategy , our solution simplify complexity and create future ready enterprise")}</p>
+                    <p>We help enterprises modernise systems, build digital capabilities, and unlock growth. From ERP transformation to automation and data strategy , our solution simplify complexity and create future ready enterprise</p>
                     <div className="ser-btn2">
                       <Link href="/solutions/erp-enterprise-solutions-and-services/erp" className="animated-svg-link1 btn-style-3">
-                        {t("CTA – Read more")}
+                        Read more
                         <span className="svg-container ">
                           <span className=" left">
                             <svg
@@ -1746,8 +1742,8 @@ export default function Home() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>{t("Business Model Transformation")}</h3>
-                                <p>{t("We help businesses rethink their operating models, uncover new revenue streams, and deliver innovative services that drive sustainable growth.")}</p>
+                                <h3>Business Model Transformation</h3>
+                                <p>We help businesses rethink their operating models, uncover new revenue streams, and deliver innovative services that drive sustainable growth.</p>
                                 {/*<div class="ser-btn serbtn1">*/}
                                 {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
                                 {/*        class="animated-svg-link1 animated-svg-link12">*/}
@@ -1890,8 +1886,8 @@ export default function Home() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>{t("ERP Modernisation")}</h3>
-                                <p>{t("We modernise legacy ERP systems to unlock agility, reduce complexity, supporting faster decisions and scalable operations.")}</p>
+                                <h3>ERP Modernisation</h3>
+                                <p>We modernise legacy ERP systems to unlock agility, reduce complexity, supporting faster decisions and scalable operations.</p>
                                 {/*<div class="ser-btn serbtn1">*/}
                                 {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
                                 {/*        class="animated-svg-link1 animated-svg-link12">*/}
@@ -2104,8 +2100,8 @@ export default function Home() {
                                   </div>
                                 </div>
                                 <div className="service-item-body">
-                                  <h3>{t("Digital Supply Chain Enablement")}</h3>
-                                  <p>{t("We connect your supply chain through cloud and analytics solutions, providing real-time visibility and seamless collaboration with partners.")}</p>
+                                  <h3>Digital Supply Chain Enablement</h3>
+                                  <p>We connect your supply chain through cloud and analytics solutions, providing real-time visibility and seamless collaboration with partners.</p>
                                   {/*<div class="ser-btn serbtn1">*/}
                                   {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
                                   {/*        class="animated-svg-link1 animated-svg-link12">*/}
@@ -2226,8 +2222,8 @@ export default function Home() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>{t("Data & Analytics Strategy")}</h3>
-                                <p>{t("We turn data into a strategic asset, with analytics frameworks that deliver actionable insights, improve decision-making and unlock opportunities.")}</p>
+                                <h3>Data & Analytics Strategy</h3>
+                                <p>We turn data into a strategic asset, with analytics frameworks that deliver actionable insights, improve decision-making and unlock opportunities.</p>
                                 {/*<div class="ser-btn serbtn1">*/}
                                 {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
                                 {/*        class="animated-svg-link1 animated-svg-link12">*/}
@@ -2348,8 +2344,8 @@ export default function Home() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>{t("Intelligent Automation")}</h3>
-                                <p>{t("We deploy RPA and AI-driven automation solutions that streamline operations, reduce manual effort and improve accuracy.")}</p>
+                                <h3>Intelligent Automation</h3>
+                                <p>We deploy RPA and AI-driven automation solutions that streamline operations, reduce manual effort and improve accuracy.</p>
                                 {/*<div class="ser-btn serbtn1">*/}
                                 {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
                                 {/*        class="animated-svg-link1 animated-svg-link12">*/}
@@ -2468,8 +2464,8 @@ export default function Home() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>{t("Cross-Platform Integration")}</h3>
-                                <p>{t("We integrate diverse enterprise applications into a connected digital ecosystem, ensuring consistent data flow and seamless process execution.")}</p>
+                                <h3>Cross-Platform Integration</h3>
+                                <p>We integrate diverse enterprise applications into a connected digital ecosystem, ensuring consistent data flow and seamless process execution.</p>
                                 {/*<div class="ser-btn serbtn1">*/}
                                 {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
                                 {/*        class="animated-svg-link1 animated-svg-link12">*/}
@@ -2885,7 +2881,7 @@ export default function Home() {
                   <div className="section-title">
                     {/* <h3 class="wow fadeInUp">key benefits</h3> */}
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      {t("Our Edge in Driving Transformation")}
+                      Our Edge in Driving Transformation
                     </h2>
                   </div>
                   <div className="row mt-5 index-benefit">
@@ -2910,12 +2906,14 @@ export default function Home() {
                           </svg>
                         </div>
                         <div className="benefits-steps-content">
-                          <h3>{t("Proven Methodology (AIT) - Analyse. Integrate. Transform.")}</h3>
-                          <p>{t("Achieve measurable transformation across your business.")}</p>
+                          <h3>Proven Methodology (AIT) - Analyse. Integrate. Transform.</h3>
+                          <p>Achieve measurable transformation across your business.</p>
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
+                      </div>
                       {/* Benefits Steps Item Start */}
+                    <div className="col-lg-6 col-md-6 col-6">
                       <div
                         className="benefits-steps-item wow fadeInUp"
                         data-wow-delay="0.4s"
@@ -2936,8 +2934,8 @@ export default function Home() {
                           </svg>
                         </div>
                         <div className="benefits-steps-content">
-                          <h3>{t("Industry Expertise Across Verticals")}</h3>
-                          <p>{t("Deep experience in manufacturing, retail, automotive and private equity.")}</p>
+                          <h3>Industry Expertise Across Verticals</h3>
+                          <p>Deep experience in manufacturing, retail, automotive and private equity.</p>
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
@@ -2980,12 +2978,14 @@ export default function Home() {
                           </svg>
                         </div>
                         <div className="benefits-steps-content">
-                          <h3>{t("Global Delivery. Local Execution.")}</h3>
-                          <p>{t("Efficient, rapidly executed cost-effective transformation programs.")}</p>
+                          <h3>Global Delivery. Local Execution.</h3>
+                          <p>Efficient, rapidly executed cost-effective transformation programs.</p>
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
+                      </div>
                       {/* Benefits Steps Item Start */}
+                    <div className="col-lg-6 col-md-6 col-6">
                       <div
                         className="benefits-steps-item wow fadeInUp"
                         data-wow-delay="0.6s"
@@ -3034,8 +3034,8 @@ export default function Home() {
                           </svg>
                         </div>
                         <div className="benefits-steps-content">
-                          <h3>{t("Clear ROI, Quantified Results")}</h3>
-                          <p>{t("Enhanced operational performance and customer value.")}</p>
+                          <h3>Clear ROI, Quantified Results</h3>
+                          <p>Enhanced operational performance and customer value.</p>
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
@@ -3053,7 +3053,7 @@ export default function Home() {
                   <div className="section-title">
                     {/* <h3 class="wow fadeInUp">key benefits</h3> */}
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      {t("Our Edge in Driving Transformation")}
+                      Our Edge in Driving Transformation
                     </h2>
                   </div>
                   <div className="row mt-5">
@@ -3064,12 +3064,14 @@ export default function Home() {
                           <img src="/images/r1.svg" alt="" />
                         </div>
                         <div className="benefits-steps-content">
-                          <h3>{t("Proven Methodology (AIT) - Analyse. Integrate. Transform.")}</h3>
-                          <p>{t("Achieve measurable transformation across your business.")}</p>
+                          <h3>Proven Methodology (AIT) - Analyse. Integrate. Transform.</h3>
+                          <p>Achieve measurable transformation across your business.</p>
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
+                      </div>
                       {/* Benefits Steps Item Start */}
+                    <div className="col-lg-6 col-md-6 col-6">
                       <div
                         className="benefits-steps-item wow fadeInUp"
                         data-wow-delay="0.4s"
@@ -3078,8 +3080,8 @@ export default function Home() {
                           <img src="/images/r2.svg" alt="" />
                         </div>
                         <div className="benefits-steps-content">
-                          <h3>{t("Industry Expertise Across Verticals")}</h3>
-                          <p>{t("Deep experience in manufacturing, retail, automotive and private equity.")}</p>
+                          <h3>Industry Expertise Across Verticals</h3>
+                          <p>Deep experience in manufacturing, retail, automotive and private equity.</p>
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
@@ -3094,12 +3096,14 @@ export default function Home() {
                           <img src="/images/r3.svg" alt="" />
                         </div>
                         <div className="benefits-steps-content">
-                          <h3>{t("Global Delivery. Local Execution.")}</h3>
-                          <p>{t("Efficient, rapidly executed cost-effective transformation programs.")}</p>
+                          <h3>Global Delivery. Local Execution.</h3>
+                          <p>Efficient, rapidly executed cost-effective transformation programs.</p>
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
+                      </div>
                       {/* Benefits Steps Item Start */}
+                    <div className="col-lg-6 col-md-6 col-6">
                       <div
                         className="benefits-steps-item wow fadeInUp"
                         data-wow-delay="0.6s"
@@ -3108,8 +3112,8 @@ export default function Home() {
                           <img src="/images/r4.svg" alt="" />
                         </div>
                         <div className="benefits-steps-content">
-                          <h3>{t("Clear ROI, Quantified Results")}</h3>
-                          <p>{t("Enhanced operational performance and customer value.")}</p>
+                          <h3>Clear ROI, Quantified Results</h3>
+                          <p>Enhanced operational performance and customer value.</p>
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
@@ -3141,13 +3145,13 @@ export default function Home() {
                 <div className="col-lg-12">
                   <div className="section-title text-center">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      {t("Partnering with Business Worldwide")}
+                      Partnering with Business Worldwide
                     </h2>
-                    <p>{t("We partner with businesses in over 40 countries to deliver high-impact transformation across key sectors including brand owners and vertical retailers, the retail industry, distribution and supply chain, discrete and process manufacturing, the automotive industry, engineering, procurement and construction as well as the private equity and funding backed ventures.")}</p>
-                    <p>{t("Whether you are mid-sized and scaling, or enterprise-level and rethinking your model -we help you unlock growth.")}</p>
+                    <p>We partner with businesses in over 40 countries to deliver high-impact transformation across key sectors including brand owners and vertical retailers, the retail industry, distribution and supply chain, discrete and process manufacturing, the automotive industry, engineering, procurement and construction as well as the private equity and funding backed ventures.</p>
+                    <p>Whether you are mid-sized and scaling, or enterprise-level and rethinking your model -we help you unlock growth.</p>
                     <div className="ser-btn2 mt-4">
                       <Link href="/solutions/erp-enterprise-solutions-and-services/erp" className="animated-svg-link1 btn-style-3">
-                        {t("Know more")}
+                        Know more
                         <span className="svg-container ">
                           <span className=" left">
                             <svg
@@ -3302,19 +3306,19 @@ export default function Home() {
           </div>
           {/* Our Testimonial Section End */}
           {/* Our Services Section Start */}
-          <div className={`our-services projects systemview ${language === 'German' ? 'gerprojects' : ''}`}>
+          <div className="our-services projects systemview">
             <div className="container">
               <div className="row section-row text-center">
                 <div className="col-lg-12">
                   {/* Section Title Start */}
                   <div className="section-title text-center">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      {t("Projects that made a difference.")}
+                      Projects that made a difference.
                     </h2>
-                    <p>{t("At Rheinbrucke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.")}</p>
+                    <p>At Rheinbrucke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.</p>
                     <div className="ser-btn">
                       <Link href="/about-us/success-stories" className="animated-svg-link">
-                        {t("Explore more")}
+                        Explore more
                         <span className="svg-container ">
                           <span className=" right">
                             <svg
@@ -3425,10 +3429,10 @@ export default function Home() {
                 <div className="col-lg-3 col-md-6">
                   <div className="service-item-body">
                     <h3>
-                      <span>{t("Case Study")}</span>
+                      <span>Case Study</span>
                     </h3>
                     <p>
-                      {t("How an Engineering Procurement Construction Company overcame their challenge by implementing Epicor ERP?")}
+                      How an Engineering Procurement Construction Company overcame their challenge by implementing Epicor ERP?
                     </p>
                     <div className="ser-btn1">
                       <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
@@ -3542,7 +3546,7 @@ export default function Home() {
                 <div className="col-lg-3 col-md-6">
                   <div className="service-item-body secondser">
                     <h3>
-                      <span>{t("Case Study")}</span>
+                      <span>Case Study</span>
                     </h3>
                     <p>
                       Welding Equipment Manufacturer Implements Epicor Country Specific
@@ -3900,12 +3904,12 @@ export default function Home() {
                   {/* Section Title Start */}
                   <div className="section-title">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      {t("Projects that made a difference.")}
+                      Projects that made a difference.
                     </h2>
-                    <p>{t("At Rheinbrucke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.")}</p>
+                    <p>At Rheinbrucke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.</p>
                     <div className="ser-btn">
                       <Link href="/about-us/success-stories" className="animated-svg-link">
-                        {t("Explore more")}
+                        Explore more
                         <svg
                           width={24}
                           height={23}
@@ -4017,10 +4021,10 @@ export default function Home() {
                       <div className="swiper-slide">
                         <div className="service-item-body">
                           <h3>
-                            <span>{t("Case Study")}</span>
+                            <span>Case Study</span>
                           </h3>
                           <p>
-                            {t("How an Engineering Procurement Construction Company overcame their challenge by implementing Epicor ERP?")}
+                            How an Engineering Procurement Construction Company overcame their challenge by implementing Epicor ERP?
                           </p>
                           <div className="ser-btn1">
                             <Link href="/case-studies" className="animated-svg-link1">
@@ -4128,7 +4132,7 @@ export default function Home() {
                       <div className="swiper-slide">
                         <div className="service-item-body secondser">
                           <h3>
-                            <span>{t("Case Study")}</span>
+                            <span>Case Study</span>
                           </h3>
                           <p>
                             Welding Equipment Manufacturer Implements Epicor Country
@@ -4686,14 +4690,14 @@ export default function Home() {
                 <div className="firstrow">
                   <div className="row">
                     <div className="col-sm-8">
-                      <h2>{t("Ready to start your next project?")}</h2>
-                      <p>{t("From ERP modernization to AI – Driven innovation, we enable enterprise to move faster and smarter.")}</p>
-                      <p>{t("Together, we design the future of your business.")}</p>
+                      <h2>Ready to start your next project?</h2>
+                      <p>From ERP modernization to AI – Driven innovation, we enable enterprise to move faster and smarter.</p>
+                      <p>Together, we design the future of your business.</p>
                     </div>
                     <div className="col-sm-4">
                       <div className="ser-btn text-right">
                         <Link href="/contact-us" className="animated-svg-link">
-                          {t("Contact Us")}
+                          Contact Us
                           <span className="svg-container ">
                             <span className=" right">
                               <svg
