@@ -231,7 +231,7 @@ export default function ScriptReinit() {
             }
 
             // Re-initialize counter
-            if ($('.counter').length && $.fn.counterUp) {
+            if (false && $('.counter').length && $.fn.counterUp) {
               $('.counter').counterUp({ delay: 6, time: 3000 });
             }
 

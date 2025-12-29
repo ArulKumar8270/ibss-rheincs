@@ -36,13 +36,9 @@ const initPopoverStandalone = () => {
       return;
     }
     
-    // Check if already initialized (to avoid duplicates)
-    if (popoverTriggerEl.hasAttribute('data-popover-init')) {
-      // Dispose existing popover if it exists
-      const existingPopover = bootstrap.Popover.getInstance(popoverTriggerEl);
-      if (existingPopover) {
-        existingPopover.dispose();
-      }
+    const existingPopover = bootstrap.Popover.getInstance(popoverTriggerEl);
+    if (existingPopover) {
+      existingPopover.dispose();
     }
     
     // Clone element to remove old event listeners

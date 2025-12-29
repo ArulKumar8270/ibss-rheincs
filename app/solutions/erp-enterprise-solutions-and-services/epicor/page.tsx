@@ -4166,7 +4166,7 @@ export default function EnterpriseSolutions() {
                     <div className="service-item-body1 firstmobilebox w80">
                       {/* <h3>Seamless Integration</h3> */}
                       <h3>
-                        Epicor Premium Partner with 12 (multiplied by experience)
+                        Epicor Premium Partner with 12 
                         years of ERP delivery excellence
                       </h3>
                       <div className="text-center">

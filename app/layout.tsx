@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import SwiperInit from './Components/SwiperInit'
@@ -239,10 +240,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
         </noscript>
         
-        {/* LiveChat Widget */}
-        <script dangerouslySetInnerHTML={{
-          __html: `window.__lc = window.__lc || {}; window.__lc.license = 14850255; ; (function (n, t, c) { function i(n) { return e._h ? e._h.apply(null, n) : e._q.push(n) } var e = { _q: [], _h: null, _v: "2.0", on: function () { i(["on", c.call(arguments)]) }, once: function () { i(["once", c.call(arguments)]) }, off: function () { i(["off", c.call(arguments)]) }, get: function () { if (!e._h) throw new Error("[LiveChatWidget] You can't use getters before load."); return i(["get", c.call(arguments)]) }, call: function () { i(["call", c.call(arguments)]) }, init: function () { var n = t.createElement("script"); n.async = !0, n.type = "text/javascript", n.src = "https://cdn.livechatinc.com/tracking.js", t.head.appendChild(n) } }; !n.__lc.asyncInit && e.init(), n.LiveChatWidget = n.LiveChatWidget || e }(window, document, [].slice))`
-        }} />
+        {/* LiveChat Widget (loads only after cookie consent) */}
+        <Script id="livechat-init" strategy="afterInteractive">
+          {`
+            (function () {
+              function isAccepted() {
+                var consent = null;
+                try { consent = localStorage.getItem('cookieConsent'); } catch (e) {}
+                var cookie = (document.cookie || '').split(';').map(function(s){return s.trim();}).find(function(s){ return s.indexOf('CookieConsent=') === 0; });
+                var val = cookie ? cookie.split('=')[1] : null;
+                return consent === 'accepted' || val === 'accepted';
+              }
+              function initLiveChat() {
+                if (window.LiveChatWidget && window.LiveChatWidget.get) return;
+                window.__lc = window.__lc || {}; window.__lc.license = 14850255;
+                (function (n, t, c) {
+                  function i(n) { return e._h ? e._h.apply(null, n) : e._q.push(n) }
+                  var e = {
+                    _q: [], _h: null, _v: "2.0",
+                    on: function () { i(["on", c.call(arguments)]) },
+                    once: function () { i(["once", c.call(arguments)]) },
+                    off: function () { i(["off", c.call(arguments)]) },
+                    get: function () { if (!e._h) throw new Error("[LiveChatWidget] You can't use getters before load."); return i(["get", c.call(arguments)]) },
+                    call: function () { i(["call", c.call(arguments)]) },
+                    init: function () { var n = t.createElement("script"); n.async = !0; n.type = "text/javascript"; n.src = "https://cdn.livechatinc.com/tracking.js"; t.head.appendChild(n) }
+                  };
+                  !n.__lc.asyncInit && e.init(), n.LiveChatWidget = n.LiveChatWidget || e
+                }(window, document, [].slice));
+              }
+              if (isAccepted()) {
+                initLiveChat();
+              } else {
+                window.addEventListener('cookieConsentAccepted', function(){ initLiveChat(); }, { once: true });
+              }
+            })();
+          `}
+        </Script>
         <noscript><a href="https://www.livechat.com/chat-with/14850255/" rel="nofollow">Chat with us</a>, powered by <a href="#" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
         
         {/* Google reCAPTCHA */}

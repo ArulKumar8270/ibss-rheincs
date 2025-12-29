@@ -113,13 +113,6 @@ export default function CounterInit() {
           return;
         }
         
-        // If already at target but not marked, just mark it and skip animation
-        if (currentNum === target && !htmlElement.hasAttribute('data-counted')) {
-          htmlElement.setAttribute('data-counted', 'true');
-          htmlElement.removeAttribute('data-animating');
-          return;
-        }
-        
         // Animation parameters - smoother animation
         const duration = 2000; // 2 seconds
         let startTime = Date.now();
@@ -156,11 +149,8 @@ export default function CounterInit() {
           }
         };
         
-        // Start animation immediately - reset to 0 happens inside animate() on first frame
-        if (currentNum !== target) {
-          // Start animation immediately - the reset to 0 will happen on the first frame
-          requestAnimationFrame(animate);
-        }
+        // Start animation regardless of current displayed number
+        requestAnimationFrame(animate);
       };
 
       // Use Intersection Observer to trigger animation when visible
@@ -199,30 +189,21 @@ export default function CounterInit() {
               }
             }
             
-            if (!targetStr) {
-              console.warn('⚠️ [CounterInit] No valid target found for counter:', htmlCounter);
-              return; // Skip this counter
-            }
-            
-            const target = parseInt(targetStr.replace(/[^0-9]/g, ''), 10);
-            
-            if (!isNaN(target) && target > 0) {
-              // Store the target value immediately
-              htmlCounter.setAttribute('data-original-target', target.toString());
-              
-              // IMPORTANT: Always ensure textContent shows the target value initially
-              // This prevents showing "0" before animation starts
-              const currentNum = parseInt((htmlCounter.textContent || '').replace(/[^0-9]/g, ''), 10);
-              
-              // Always ensure the counter shows the target value initially
-              // This is critical - if textContent is "0" or doesn't match target, restore it
-              // The animation will reset to 0 only when it actually starts (inside animate function)
-              if (currentNum === 0 || currentNum !== target) {
-                htmlCounter.textContent = target.toString();
-              }
-            } else {
-              console.warn('⚠️ [CounterInit] Invalid target value:', targetStr, 'for counter:', htmlCounter);
-            }
+          if (!targetStr) {
+            console.warn('⚠️ [CounterInit] No valid target found for counter:', htmlCounter);
+            return; // Skip this counter
+          }
+          
+          const target = parseInt(targetStr.replace(/[^0-9]/g, ''), 10);
+          
+          if (!isNaN(target) && target > 0) {
+            // Store the target value immediately
+            htmlCounter.setAttribute('data-original-target', target.toString());
+            // Always ensure the counter shows the target value initially
+            htmlCounter.textContent = target.toString();
+          } else {
+            console.warn('⚠️ [CounterInit] Invalid target value:', targetStr, 'for counter:', htmlCounter);
+          }
           }
           
           // Reset animation flags (but keep original target)
@@ -300,6 +281,18 @@ export default function CounterInit() {
           animateCounter(counter);
         });
       }
+      
+      // Final safety: if any counter still shows "0", restore its original target
+      setTimeout(() => {
+        counters.forEach((counter) => {
+          const htmlCounter = counter as HTMLElement;
+          const currentNum = parseInt((htmlCounter.textContent || '').replace(/[^0-9]/g, ''), 10);
+          const originalTarget = htmlCounter.getAttribute('data-original-target');
+          if (currentNum === 0 && originalTarget) {
+            htmlCounter.textContent = originalTarget;
+          }
+        });
+      }, 3000);
     };
 
     // Wait for DOM to be ready
