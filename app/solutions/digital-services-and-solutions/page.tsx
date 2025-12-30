@@ -19,8 +19,7 @@ export default function digitalsolution() {
               Innovative Digital Services
             </h2>
             <p>
-              We deliver outcome-driven solutions that combine advanced
-              technology, proven frameworks, and scalable architectures to solve
+              We deliver outcome-driven digital transformation powered by advanced technology and proven frameworks, and scalable architectures to solve
               complex business challenges. Driven by our
               Analyse-Integrate-Transform framework, every engagement is built
               for measurable, sustained impact.
