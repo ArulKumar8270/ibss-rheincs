@@ -28,47 +28,63 @@ interface CaseStudy {
 
 // Note: With static export, all routes must be generated at build time
 // The client component will fetch data for any ID, even if not pre-generated
-// Generate static params for all published case studies
+// Generate static params for all case studies (published and unpublished)
 export const generateStaticParams = async (): Promise<{ id: string }[]> => {
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
     const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    // Use service role key if available (bypasses RLS for build-time fetching)
+    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
-    if (!supabaseUrl || !supabaseAnonKey) {
-        console.warn('Supabase environment variables not set during build')
-        // Return a placeholder to satisfy static export requirement
-        // The client component will handle fetching for any ID
+    if (!supabaseUrl) {
+        console.warn('Supabase URL not set')
         return [{ id: 'placeholder' }]
     }
 
     try {
-        const supabase = createClient(supabaseUrl, supabaseAnonKey)
+        // Use service role key if available to bypass RLS and fetch all case studies including drafts
+        // This is safe because generateStaticParams only runs at build time, not at runtime
+        const supabase = supabaseServiceKey 
+            ? createClient(supabaseUrl, supabaseServiceKey)
+            : createClient(supabaseUrl, supabaseAnonKey || '')
         
-        // Fetch all published case study IDs
-        // Increase limit to ensure we get all case studies
+        console.log(`[generateStaticParams] Using ${supabaseServiceKey ? 'service role key' : 'anon key'}`)
+        
+        // Generate params for ALL case studies (published and unpublished)
+        // Service role key bypasses RLS, allowing us to fetch draft case studies
         const { data: caseStudies, error } = await supabase
             .from('case_studies')
-            .select('id')
-            .eq('published', true)
+            .select('id, published')
             .order('created_at', { ascending: false })
+            .limit(1000)
 
         if (error) {
             console.error('Error fetching case studies for static params:', error)
-            // Return a placeholder to satisfy static export requirement
-            return [{ id: 'placeholder' }]
+            console.error('This might be due to RLS policies blocking unpublished case studies')
+            // Try fetching only published case studies as fallback
+            const { data: publishedCaseStudies } = await supabase
+                .from('case_studies')
+                .select('id')
+                .eq('published', true)
+                .limit(1000)
+            
+            const fallbackParams = (publishedCaseStudies || []).map((cs) => ({
+                id: cs.id,
+            }))
+            fallbackParams.push({ id: 'placeholder' })
+            return fallbackParams
         }
 
-        if (!caseStudies || caseStudies.length === 0) {
-            console.warn('No published case studies found during build')
-            return [{ id: 'placeholder' }]
-        }
-
-        const params = caseStudies.map((cs) => ({
+        console.log(`[generateStaticParams] Found ${caseStudies?.length || 0} case studies (including drafts)`)
+        
+        const params = (caseStudies || []).map((cs) => ({
             id: cs.id,
         }))
 
+        // Always include placeholder for fallback
+        const allParams = params.length > 0 ? params : []
+        allParams.push({ id: 'placeholder' })
         
-        // Ensure we always return at least one param for static export
-        return params.length > 0 ? params : [{ id: 'placeholder' }]
+        return allParams
     } catch (error) {
         console.error('Error in generateStaticParams:', error)
         // Return a placeholder to satisfy static export requirement
@@ -85,47 +101,14 @@ export default async function CaseStudyDetailsPage({ params }: { params: Promise
     let initialCaseStudy: CaseStudy | null = null
     let relatedCaseStudies: CaseStudy[] = []
 
-    // Try to fetch data at build time, but don't fail if it doesn't exist
-    // The client component will handle fetching for any ID
-    if (supabaseUrl && supabaseAnonKey && id && id !== 'placeholder') {
-        try {
-            const supabase = createClient(supabaseUrl, supabaseAnonKey)
-            
-            const { data: caseStudyData, error: caseStudyError } = await supabase
-                .from('case_studies')
-                .select('*')
-                .eq('id', id)
-                .eq('published', true)
-                .single()
-
-            if (!caseStudyError && caseStudyData) {
-                initialCaseStudy = caseStudyData as CaseStudy
-
-                // Fetch related case studies (same category, excluding current)
-                const { data: relatedData } = await supabase
-                    .from('case_studies')
-                    .select('*')
-                    .eq('published', true)
-                    .neq('id', caseStudyData.id)
-                    .eq('category', caseStudyData.category || 'all')
-                    .order('created_at', { ascending: false })
-                    .limit(4)
-
-                relatedCaseStudies = (relatedData || []) as CaseStudy[]
-            } else {
-                // If not found at build time, client will fetch it
-            }
-        } catch (error) {
-            // Don't fail the build if there's an error
-            // The client component will handle fetching
-        }
-    }
+    // Pass null to client component - all data fetching will be done client-side
+    // This ensures admin preview works correctly
     
     // Always render the client component - it will fetch data if needed
     return (
         <CaseStudyDetailsClient 
-            initialCaseStudy={initialCaseStudy}
-            initialRelatedCaseStudies={relatedCaseStudies}
+            initialCaseStudy={null}
+            initialRelatedCaseStudies={[]}
             caseStudyId={id}
         />
     )

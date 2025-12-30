@@ -36,6 +36,12 @@ export default function Footer() {
         setCookie("CookieConsent", "declined", 365);
         setShowCookieBanner(false);
     };
+    const manageCookies = () => {
+        
+        // Open cookie preferences or scroll to privacy policy
+        // You can customize this behavior
+        window.location.href = "/privacy#cookies";
+    };
     useEffect(() => {
         let stored = null;
         try {
@@ -119,25 +125,25 @@ export default function Footer() {
                                 <div className="about-footer">
                                     {/* Footer Links start */}
                                     <div className="footer-links">
-                                        <h3>About Us</h3>
+                                        <h3>{t("About Us")}</h3>
                                         <ul>
                                             <li>
-                                                <Link href="/about-us/overview">Overview</Link>
+                                                <Link href="/about-us/overview">{t("Overview")}</Link>
                                             </li>
                                             <li>
-                                                <Link href="/about-us/leadership">Leadership</Link>
+                                                <Link href="/about-us/leadership">{t("Leadership")}</Link>
                                             </li>
                                             <li>
-                                                <Link href="/about-us/customer-speak">Customers Speak</Link>
+                                                <Link href="/about-us/customer-speak">{t("Customers Speak")}</Link>
                                             </li>
                                             <li>
-                                                <Link href="/about-us/success-stories">Success Stories</Link>
+                                                <Link href="/about-us/success-stories">{t("Success Stories")}</Link>
                                             </li>
                                             <li>
-                                                <Link href="/careers">Careers</Link>
+                                                <Link href="/careers">{t("Careers")}</Link>
                                             </li>
                                             <li>
-                                                <Link href="/contact-us">Contact Us</Link>
+                                                <Link href="/contact-us">{t("Contact Us")}</Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -150,7 +156,7 @@ export default function Footer() {
                                 <div className="about-footer">
                                     {/* Footer Links start */}
                                     <div className="footer-links">
-                                        <h3>Solutions & Services</h3>
+                                        <h3>{t("Solutions & Services")}</h3>
                                         <div className="row">
                                             <div className="col-sm-6">
                                                 <ul>
@@ -238,8 +244,8 @@ export default function Footer() {
                             </div>
                             <div className="col-lg-3 col-md-3 col-6">
                                 {/* Footer Links start */}
-                                <div className="footer-links">
-                                    <h3>Industries</h3>
+                                    <div className="footer-links">
+                                        <h3>{t("Industries")}</h3>
                                     <ul>
                                         <li>
                                             <Link href="/Brand-owners-and-vertical-retail">Brand Owners and Vertical Retailers</Link>
@@ -277,27 +283,27 @@ export default function Footer() {
                             </div>
                             <div className="col-lg-2 col-md-3 col-6">
                                 {/* Footer Links start */}
-                                <div className="footer-links">
-                                    <h3>Resources</h3>
-                                    <ul>
-                                        <li>
-                                            <Link href="/Blog">Blog</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/Case-study">Case studies</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/webinars">Webinars</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/collaterals">Collaterals</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/corporate-videos">Videos</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/news-events">News and Events</Link>
-                                        </li>
+                                    <div className="footer-links">
+                                        <h3>{t("Resources")}</h3>
+                                        <ul>
+                                            <li>
+                                                <Link href="/Blog">{t("Blog")}</Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/Case-study">{t("Case Studies")}</Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/webinars">{t("Webinars")}</Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/collaterals">{t("Collaterals")}</Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/corporate-videos">{t("Videos")}</Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/news-events">{t("News and Events")}</Link>
+                                            </li>
                                         {/* <li>
                                             <Link href="/Faq">FAQs</Link>
                                         </li> */}
@@ -464,8 +470,8 @@ export default function Footer() {
                             </div>
                             <div className=" col-12">
                                 {/* Footer Links start */}
-                                <div className="footer-links">
-                                    <h3>Industries</h3>
+                                    <div className="footer-links">
+                                        <h3>{t("Industries")}</h3>
                                     <ul>
                                         <div className="row">
                                             <div className=" col-6">
@@ -611,61 +617,131 @@ export default function Footer() {
                         position: "fixed",
                         left: 0,
                         right: 0,
-                        bottom: 20,
+                        bottom: 0,
+                        top: 0,
                         zIndex: 2147483647,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        backgroundColor: "rgba(0, 0, 0, 0.5)",
+                        backdropFilter: "blur(4px)",
+                    }}
+                    onClick={(e) => {
+                        // Close if clicking outside the banner
+                        if (e.target === e.currentTarget) {
+                            // Optional: Don't close on outside click, or add this behavior
+                        }
                     }}
                 >
                     <div
                         style={{
-                            maxWidth: 1140,
+                            maxWidth: 600,
+                            width: "90%",
                             margin: "0 auto",
-                            background: "#082326",
-                            color: "#fff",
-                            borderRadius: 8,
-                            padding: "16px 20px",
-                            boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
+                            background: "#fff",
+                            color: "#333",
+                            borderRadius: 12,
+                            padding: "24px 28px",
+                            boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+                            position: "relative",
                         }}
+                        onClick={(e) => e.stopPropagation()}
                     >
-                        <div className="row align-items-center">
-                            <div className="col-md-8">
-                                <span className="cookies">
-                                    We use cookies to improve your experience.{" "}
-                                    <Link style={{
-                                        color: "#b8b8b8"
-                                    }} href="/privacy">Learn more</Link>
-                                </span>
-                            </div>
-                            <div className="col-md-4 text-right">
-                                <button
-                                    onClick={acceptCookies}
-                                    style={{
-                                        background: "#fff",
-                                        color: "#082326",
-                                        border: 0,
-                                        borderRadius: 6,
-                                        padding: "8px 14px",
-                                        fontWeight: 600,
-                                        cursor: "pointer",
-                                    }}
-                                >
-                                    Accept
-                                </button>
-                                <button
-                                    onClick={declineCookies}
-                                    style={{
-                                        marginLeft: 8,
-                                        background: "#fff",
-                                        color: "#082326",
-                                        border: 0,
-                                        borderRadius: 6,
-                                        padding: "8px 14px",
-                                        fontWeight: 600,
-                                        cursor: "pointer",
-                                    }}
-                                >
-                                    Decline
-                                </button>
-                            </div>
+                        <h3
+                            style={{
+                                fontSize: "20px",
+                                fontWeight: 700,
+                                color: "#1a1a1a",
+                                marginBottom: "16px",
+                                lineHeight: "1.4",
+                            }}
+                        >
+                            How we use cookies and your consent
+                        </h3>
+                        <p
+                            style={{
+                                fontSize: "14px",
+                                color: "#4a4a4a",
+                                lineHeight: "1.6",
+                                marginBottom: "24px",
+                            }}
+                        >
+                            We use cookies and similar technologies ('Cookies') on our websites to improve them, measure their performance, understand our audience and enhance the user experience. On some sites, we also use Cookies to show ads based on users' browsing activities and interests on the site and other sites. Click 'Manage Cookies' below to learn what Cookies we use on this site and why. You can always change your consent preferences using the 'Manage Cookies' tool at the bottom of the screen. This includes rejecting some or all Cookies, except those that are strictly necessary for the site to work.
+                        </p>
+                        <div
+                            style={{
+                                display: "flex",
+                                gap: "12px",
+                                flexWrap: "wrap",
+                                justifyContent: "flex-end",
+                            }}
+                        >
+                            <button
+                                onClick={acceptCookies}
+                                style={{
+                                    background: "#082326",
+                                    color: "#fff",
+                                    border: 0,
+                                    borderRadius: 6,
+                                    padding: "8px 14px",
+                                    fontWeight: 600,
+                                    cursor: "pointer",
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.background = "#061a1c";
+                                    e.currentTarget.style.transform = "translateY(-1px)";
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.background = "#082326";
+                                    e.currentTarget.style.transform = "translateY(0)";
+                                }}
+                            >
+                                Accept cookies
+                            </button>
+                            <button
+                                onClick={declineCookies}
+                                style={{
+                                    background: "#082326",
+                                    color: "#fff",
+                                    border: 0,
+                                    borderRadius: 6,
+                                    padding: "8px 14px",
+                                    fontWeight: 600,
+                                    cursor: "pointer",
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.background = "#061a1c";
+                                    e.currentTarget.style.transform = "translateY(-1px)";
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.background = "#082326";
+                                    e.currentTarget.style.transform = "translateY(0)";
+                                }}
+                            >
+                                Reject all
+                            </button>
+                            <button
+                                onClick={manageCookies}
+                                style={{
+                                    background: "#082326",
+                                    color: "#fff",
+                                    border: 0,  
+                                    borderRadius: 6,
+                                    padding: "8px 14px",
+                                    fontWeight: 600,
+                                    cursor: "pointer",
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.background = "#061a1c";
+                                    e.currentTarget.style.transform = "translateY(-1px)";
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.background = "#082326";
+                                    e.currentTarget.style.transform = "translateY(0)";
+                                }}
+                            >
+                                Manage cookies
+                            </button>
                         </div>
                     </div>
                 </div>

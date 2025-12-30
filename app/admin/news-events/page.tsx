@@ -115,7 +115,7 @@ export default function AdminNewsEventsPage() {
   const quillFormats = [
     'header', 'font', 'size',
     'bold', 'italic', 'underline', 'strike', 'blockquote',
-    'list', 'bullet', 'indent',
+    'list', 'indent',
     'color', 'background',
     'align',
     'link', 'image', 'video'
@@ -124,6 +124,175 @@ export default function AdminNewsEventsPage() {
   useEffect(() => {
     fetchItems()
   }, [])
+
+  // Add image resize functionality
+  useEffect(() => {
+    if (!showForm) return
+
+    const initImageResize = () => {
+      const editor = document.querySelector('.ql-editor') as HTMLElement
+      if (!editor) {
+        setTimeout(initImageResize, 200)
+        return
+      }
+
+      if (window.getComputedStyle(editor).position === 'static') {
+        editor.style.position = 'relative'
+      }
+
+      const addResizeHandles = (img: HTMLImageElement) => {
+        if ((img as any).__hasResizeHandle) return
+        ;(img as any).__hasResizeHandle = true
+
+        if (window.getComputedStyle(img).display === 'inline') {
+          img.style.display = 'inline-block'
+        }
+
+        const wrapper = document.createElement('span')
+        wrapper.className = 'ql-image-resize-wrapper'
+        wrapper.style.cssText = `
+          display: inline-block;
+          position: relative;
+          vertical-align: middle;
+        `
+
+        img.parentNode?.insertBefore(wrapper, img)
+        wrapper.appendChild(img)
+
+        const handle = document.createElement('div')
+        handle.className = 'ql-image-resize-handle'
+        handle.innerHTML = '⋰'
+        handle.style.cssText = `
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background: #667eea;
+          border: 2px solid white;
+          border-radius: 4px;
+          cursor: nwse-resize;
+          z-index: 10000;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+          right: -10px;
+          bottom: -10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-size: 12px;
+          font-weight: bold;
+          line-height: 1;
+          pointer-events: auto;
+        `
+
+        wrapper.appendChild(handle)
+
+        let isResizing = false
+        let startX = 0
+        let startWidth = 0
+        let startHeight = 0
+        let aspectRatio = 1
+
+        const startResize = (e: MouseEvent) => {
+          e.preventDefault()
+          e.stopPropagation()
+          isResizing = true
+          startX = e.clientX
+          startWidth = img.offsetWidth || img.naturalWidth || 300
+          startHeight = img.offsetHeight || img.naturalHeight || 200
+          aspectRatio = startWidth / startHeight
+          
+          document.body.style.cursor = 'nwse-resize'
+          document.body.style.userSelect = 'none'
+          document.addEventListener('mousemove', doResize, { passive: false })
+          document.addEventListener('mouseup', stopResize)
+        }
+
+        const doResize = (e: MouseEvent) => {
+          if (!isResizing) return
+          e.preventDefault()
+          e.stopPropagation()
+          
+          const deltaX = e.clientX - startX
+          const newWidth = Math.max(50, Math.min(2000, startWidth + deltaX))
+          const newHeight = newWidth / aspectRatio
+          
+          img.style.width = `${newWidth}px`
+          img.style.height = `${newHeight}px`
+          img.style.maxWidth = 'none'
+          img.style.maxHeight = 'none'
+        }
+
+        const stopResize = () => {
+          if (!isResizing) return
+          isResizing = false
+          document.body.style.cursor = ''
+          document.body.style.userSelect = ''
+          document.removeEventListener('mousemove', doResize)
+          document.removeEventListener('mouseup', stopResize)
+        }
+
+        handle.addEventListener('mousedown', startResize)
+        handle.addEventListener('click', (e) => {
+          e.preventDefault()
+          e.stopPropagation()
+        })
+
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            mutation.removedNodes.forEach((node) => {
+              if (node === wrapper || (node as Element)?.contains?.(wrapper)) {
+                observer.disconnect()
+                ;(img as any).__hasResizeHandle = false
+              }
+            })
+          })
+        })
+        observer.observe(editor, { childList: true, subtree: true })
+      }
+
+      const images = editor.querySelectorAll('img:not([data-resize-processed])')
+      images.forEach((img) => {
+        ;(img as HTMLImageElement).setAttribute('data-resize-processed', 'true')
+        addResizeHandles(img as HTMLImageElement)
+      })
+
+      const imageObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.addedNodes.forEach((node) => {
+            if (node.nodeType === 1) {
+              const element = node as Element
+              if (element.tagName === 'IMG' && !element.hasAttribute('data-resize-processed')) {
+                element.setAttribute('data-resize-processed', 'true')
+                setTimeout(() => addResizeHandles(element as HTMLImageElement), 100)
+              }
+              const imgs = element.querySelectorAll?.('img:not([data-resize-processed])')
+              imgs?.forEach(img => {
+                img.setAttribute('data-resize-processed', 'true')
+                setTimeout(() => addResizeHandles(img as HTMLImageElement), 100)
+              })
+            }
+          })
+        })
+      })
+
+      imageObserver.observe(editor, { childList: true, subtree: true })
+
+      return () => {
+        imageObserver.disconnect()
+        editor.querySelectorAll('.ql-image-resize-handle').forEach(h => h.remove())
+        editor.querySelectorAll('.ql-image-resize-wrapper').forEach(w => {
+          const img = w.querySelector('img')
+          if (img && w.parentNode) {
+            w.parentNode.insertBefore(img, w)
+            w.remove()
+          }
+        })
+      }
+    }
+
+    const timer = setTimeout(initImageResize, 300)
+    return () => clearTimeout(timer)
+  }, [showForm])
 
   const generateSlug = (title: string) => {
     return title
@@ -617,10 +786,47 @@ export default function AdminNewsEventsPage() {
                   style={{ minHeight: '300px' }}
                 />
               </div>
-              <style jsx>{`
+              <style jsx global>{`
                 .ql-editor {
                   min-height: 150px;
                 }
+                .ql-editor img {
+                  cursor: pointer;
+                  max-width: 100%;
+                  height: auto;
+                }
+                .ql-editor img:hover {
+                  outline: 2px dashed #667eea;
+                  outline-offset: 2px;
+                }
+                  .ql-image-resize-wrapper {
+                    display: inline-block !important;
+                    position: relative !important;
+                    vertical-align: middle !important;
+                  }
+                  .ql-image-resize-handle {
+                    transition: transform 0.1s, background 0.1s !important;
+                    user-select: none !important;
+                    -webkit-user-select: none !important;
+                    display: flex !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    pointer-events: auto !important;
+                  }
+                  .ql-image-resize-handle:hover {
+                    transform: scale(1.15) !important;
+                    background: #5568d3 !important;
+                  }
+                  .ql-image-resize-handle:active {
+                    transform: scale(0.95) !important;
+                    background: #4c5fd0 !important;
+                  }
+                  .ql-editor .ql-image-resize-handle {
+                    display: flex !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    pointer-events: auto !important;
+                  }
               `}</style>
             </div>
             <div style={{ marginBottom: '15px' }}>

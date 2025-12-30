@@ -35,6 +35,7 @@ export default function Blog() {
   const [selectedIndustries, setSelectedIndustries] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const itemsPerPage = 9; // 3 columns x 3 rows
   const supabase = createClient();
 
@@ -47,9 +48,19 @@ export default function Blog() {
   ];
 
   useEffect(() => {
+    checkAdminStatus();
     fetchBlogs();
     fetchIndustries();
   }, []);
+
+  const checkAdminStatus = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      setIsAdmin(!!user);
+    } catch (err) {
+      setIsAdmin(false);
+    }
+  };
 
   const fetchIndustries = async () => {
     try {
@@ -70,11 +81,23 @@ export default function Blog() {
 
   const fetchBlogs = async () => {
     try {
-      const { data, error } = await supabase
+      // Check if user is admin
+      const { data: { user } } = await supabase.auth.getUser();
+      const userIsAdmin = !!user;
+      setIsAdmin(userIsAdmin);
+
+      let query = supabase
         .from('blogs')
         .select('*')
-        .eq('published', true)
         .order('created_at', { ascending: false });
+
+      // If not admin, only fetch published blogs
+      if (!userIsAdmin) {
+        query = query.eq('published', true);
+      }
+      // If admin, fetch all blogs (published and unpublished)
+
+      const { data, error } = await query;
 
       if (error) throw error;
       setBlogs(data || []);
@@ -274,6 +297,20 @@ export default function Blog() {
                                 <div className="blog-content-waber">
                                   <div>
                                     <p className="blog-bage">Blog</p>
+                                    {isAdmin && !blog.published && (
+                                      <span style={{
+                                        display: 'inline-block',
+                                        marginLeft: '10px',
+                                        padding: '4px 8px',
+                                        background: '#ff9800',
+                                        color: '#fff',
+                                        borderRadius: '4px',
+                                        fontSize: '12px',
+                                        fontWeight: '600'
+                                      }}>
+                                        DRAFT
+                                      </span>
+                                    )}
                                   </div>
                                   <h2 className="blog-baner-title">
                                     {blog.title}
@@ -701,6 +738,20 @@ export default function Blog() {
                                                         <div className="blog-content-in-blog-page">
                                                             <div>
                                                                 <p className="blag-page-1">Blog</p>
+                                                                {isAdmin && !blog.published && (
+                                                                  <span style={{
+                                                                    display: 'inline-block',
+                                                                    marginLeft: '10px',
+                                                                    padding: '4px 8px',
+                                                                    background: '#ff9800',
+                                                                    color: '#fff',
+                                                                    borderRadius: '4px',
+                                                                    fontSize: '11px',
+                                                                    fontWeight: '600'
+                                                                  }}>
+                                                                    DRAFT
+                                                                  </span>
+                                                                )}
                                                             </div>
                                                             <h5 className="blog-page-blog-titles">
                                                                 {blog.title}

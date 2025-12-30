@@ -18,6 +18,7 @@ interface Job {
     qualifications?: string[] | null
     salary_range?: string | null
     application_deadline?: string | null
+    published?: boolean
 }
 
 interface JobDetailClientProps {
@@ -30,6 +31,7 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
 
     const [job, setJob] = useState<Job | null>(initialJob || null)
     const [loading, setLoading] = useState(!initialJob && !job)
+    const [isAdmin, setIsAdmin] = useState(false)
     const [formData, setFormData] = useState({
         selection: initialJob?.title || '',
         fullName: '',
@@ -44,7 +46,19 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
     const [isCountryCodeFocused, setIsCountryCodeFocused] = useState(false)
     const supabase = createClient()
 
+    const checkAdminStatus = async () => {
+        try {
+            const { data: { user } } = await supabase.auth.getUser();
+            setIsAdmin(!!user);
+        } catch (err) {
+            setIsAdmin(false);
+        }
+    };
+
     useEffect(() => {
+        // Check admin status on mount
+        checkAdminStatus();
+        
         if (jobId === 'placeholder' && !initialJob) {
             // Handle placeholder case - redirect to careers list
             router.push('/careers')
@@ -61,6 +75,9 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
 
     const fetchJob = async () => {
         try {
+            // Check admin status
+            await checkAdminStatus();
+            
             // Only show loading spinner if we don't have any job data yet
             // This prevents flash of loading when we have initialJob
             const shouldShowLoading = !job && !initialJob
@@ -68,11 +85,11 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                 setLoading(true)
             }
 
+            // Fetch without published filter - access control will be handled below
             const { data, error } = await supabase
                 .from('careers')
                 .select('*')
                 .eq('id', jobId)
-                .eq('published', true)
                 .single()
 
             if (error) {
@@ -81,6 +98,16 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
             }
 
             if (data) {
+                // Check if job is published or user is admin
+                const { data: { user } } = await supabase.auth.getUser();
+                const userIsAdmin = !!user;
+                
+                if (!data.published && !userIsAdmin) {
+                    // Not published and user is not admin - redirect to careers list
+                    router.push('/careers');
+                    return;
+                }
+                
                 // Parse responsibilities and qualifications if they're JSON strings
                 const parsedJob = {
                     ...data,
@@ -270,6 +297,20 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                                 <div className="section-title text-center ">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
                                         {job.title}
+                                        {!job.published && isAdmin && (
+                                            <span style={{
+                                                marginLeft: '15px',
+                                                padding: '5px 10px',
+                                                backgroundColor: '#f97316',
+                                                color: 'white',
+                                                borderRadius: '5px',
+                                                fontSize: '0.7em',
+                                                fontWeight: 'bold',
+                                                verticalAlign: 'middle',
+                                            }}>
+                                                DRAFT
+                                            </span>
+                                        )}
                                     </h2>
                                 </div>
                             </div>

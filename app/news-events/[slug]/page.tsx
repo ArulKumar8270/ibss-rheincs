@@ -19,40 +19,69 @@ interface NewsEvent {
 export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  // Use service role key if available (bypasses RLS for build-time fetching)
+  const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
-  if (!supabaseUrl || !supabaseAnonKey) {
-    console.warn('Supabase environment variables not set')
-    // Return a placeholder to satisfy static export requirement
-    // This will be handled gracefully by the page component
+  if (!supabaseUrl) {
+    console.warn('Supabase URL not set')
     return [{ slug: 'placeholder' }]
   }
 
   try {
-    const supabase = createClient(supabaseUrl, supabaseAnonKey)
+    // Use service role key if available to bypass RLS and fetch all news/events including drafts
+    // This is safe because generateStaticParams only runs at build time, not at runtime
+    const supabase = supabaseServiceKey 
+      ? createClient(supabaseUrl, supabaseServiceKey)
+      : createClient(supabaseUrl, supabaseAnonKey || '')
     
+    console.log(`[generateStaticParams] Using ${supabaseServiceKey ? 'service role key' : 'anon key'}`)
+    
+    // Generate params for ALL news/events (published and unpublished)
+    // Service role key bypasses RLS, allowing us to fetch draft items
     const { data: items, error } = await supabase
       .from('news_events')
-      .select('id')
-      .eq('published', true)
+      .select('slug, published')
+      .order('created_at', { ascending: false })
+      .limit(1000)
 
     if (error) {
       console.error('Error fetching news/events for static params:', error)
-      // Return a placeholder to satisfy static export requirement
-      return [{ slug: 'placeholder' }]
+      console.error('This might be due to RLS policies blocking unpublished items')
+      // Try fetching only published items as fallback
+      const { data: publishedItems } = await supabase
+        .from('news_events')
+        .select('slug')
+        .eq('published', true)
+        .limit(1000)
+      
+      const fallbackParams = (publishedItems || []).map((item) => ({
+        slug: item.slug,
+      }))
+      fallbackParams.push({ slug: 'placeholder' })
+      return fallbackParams
     }
 
-    if (!items || items.length === 0) {
-      console.warn('No published news/events found, returning placeholder')
-      return [{ slug: 'placeholder' }]
+    console.log(`[generateStaticParams] Found ${items?.length || 0} news/events (including drafts)`)
+    
+    // Log each item's slug and published status for debugging
+    if (items && items.length > 0) {
+      items.forEach((item: any) => {
+        console.log(`  - Slug: "${item.slug}", Published: ${item.published}`)
+      })
     }
-
-    // Use ID instead of slug - IDs are unique and don't have encoding issues
+    
+    // Use slug as requested by user
     const params = (items || []).map((item) => ({
-      slug: item.id, // Using 'slug' param name but storing ID value
+      slug: item.slug,
     }))
 
-    // Ensure we always return at least one param for static export
-    return params.length > 0 ? params : [{ slug: 'placeholder' }]
+    // Always include placeholder for fallback
+    const allParams = params.length > 0 ? params : []
+    allParams.push({ slug: 'placeholder' })
+
+    console.log(`[generateStaticParams] Generated ${allParams.length} static params`)
+    
+    return allParams
   } catch (error) {
     console.error('Error in generateStaticParams:', error)
     // Return a placeholder to satisfy static export requirement
@@ -63,38 +92,15 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
 export default async function NewsEventDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   
-  // The 'slug' param now contains the ID value
-  const itemId = slug
-  
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-  let item: NewsEvent | null = null
-
-  if (supabaseUrl && supabaseAnonKey && itemId && itemId !== 'placeholder') {
-    try {
-      const supabase = createClient(supabaseUrl, supabaseAnonKey)
-      
-      // Query by ID instead of slug - IDs are unique and don't have encoding issues
-      const { data: itemData, error: itemError } = await supabase
-        .from('news_events')
-        .select('*')
-        .eq('id', itemId)
-        .eq('published', true)
-        .single()
-
-      if (!itemError && itemData) {
-        item = itemData as NewsEvent
-      }
-    } catch (error) {
-      console.error('Error fetching news/event in server component:', error)
-    }
-  }
-
+  // Pass null to client component - all data fetching will be done client-side
+  // This ensures admin preview works correctly
   return (
     <NewsEventDetailsClient 
-      initialItem={item}
-      itemId={itemId}
+      initialItem={null}
+      slug={slug}
     />
   )
 }
