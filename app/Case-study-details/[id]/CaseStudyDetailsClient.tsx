@@ -70,11 +70,24 @@ export default function CaseStudyDetailsClient({
   const [relatedCaseStudies, setRelatedCaseStudies] = useState<CaseStudy[]>(initialRelatedCaseStudies);
   const [loading, setLoading] = useState(!initialCaseStudy && !caseStudy);
   const [activeSection, setActiveSection] = useState<string>('overview-section');
+  const [isAdmin, setIsAdmin] = useState(false);
   const supabase = createClient();
+
+  const checkAdminStatus = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      setIsAdmin(!!user);
+    } catch (err) {
+      setIsAdmin(false);
+    }
+  };
 
   // Define fetchCaseStudy before using it in useEffect
   const fetchCaseStudy = useCallback(async () => {
     try {
+      // Check admin status first
+      await checkAdminStatus();
+      
       // Only show loading spinner if we don't have any case study data yet
       // This prevents flash of loading when we have initialCaseStudy
       const shouldShowLoading = !caseStudy && !initialCaseStudy
@@ -84,11 +97,11 @@ export default function CaseStudyDetailsClient({
       
       // Fetch with cache-busting to ensure we get fresh data
       // Add timestamp to bypass any caching
+      // Fetch without published filter - access control will be handled below
       const { data: caseStudyData, error: caseStudyError } = await supabase
         .from('case_studies')
         .select('*')
         .eq('id', caseStudyId)
-        .eq('published', true)
         .single()
         // Force fresh data by adding a cache header (if supported)
         // Note: Supabase client doesn't support cache headers directly,
@@ -100,6 +113,16 @@ export default function CaseStudyDetailsClient({
       }
       
       if (caseStudyData) {
+        // Check if case study is published or user is admin
+        const { data: { user } } = await supabase.auth.getUser();
+        const userIsAdmin = !!user;
+        
+        if (!caseStudyData.published && !userIsAdmin) {
+          // Not published and user is not admin - redirect to case studies list
+          router.push('/Case-study');
+          return;
+        }
+        
         // Always update with fresh data from database
         // Compare updated_at timestamp to detect if data has changed
         const currentData = caseStudy || initialCaseStudy;
@@ -144,6 +167,9 @@ export default function CaseStudyDetailsClient({
   }, [caseStudyId, caseStudy, initialCaseStudy, supabase, router])
 
   useEffect(() => {
+    // Check admin status on mount
+    checkAdminStatus();
+    
     if (caseStudyId === 'placeholder' && !initialCaseStudy) {
       router.push('/Case-study');
       return;
@@ -320,6 +346,20 @@ export default function CaseStudyDetailsClient({
               <div className="col-sm-8">
                 <h2 className="case-study-main-title" data-cursor="-opaque">
                   {caseStudy.title}
+                  {!caseStudy.published && isAdmin && (
+                    <span style={{
+                      marginLeft: '15px',
+                      padding: '5px 10px',
+                      backgroundColor: '#f97316',
+                      color: 'white',
+                      borderRadius: '5px',
+                      fontSize: '0.7em',
+                      fontWeight: 'bold',
+                      verticalAlign: 'middle',
+                    }}>
+                      DRAFT
+                    </span>
+                  )}
                 </h2>
                 <div className="study-img-info my-24">
                   <p>{formatDate(caseStudy.created_at)}</p>

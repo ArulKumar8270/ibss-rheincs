@@ -31,9 +31,29 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
   const [blog, setBlog] = useState<Blog | null>(initialBlog);
   const [relatedBlogs, setRelatedBlogs] = useState<Blog[]>(initialRelatedBlogs);
   const [loading, setLoading] = useState(!initialBlog);
+  const [isAdmin, setIsAdmin] = useState(false);
   const supabase = createClient();
 
   useEffect(() => {
+    const checkInitialBlog = async () => {
+      // Check admin status first
+      await checkAdminStatus();
+      
+      // If we have an initial blog, check if it's accessible
+      if (initialBlog) {
+        const { data: { user } } = await supabase.auth.getUser();
+        const userIsAdmin = !!user;
+        
+        // If blog is not published and user is not admin, redirect
+        if (!initialBlog.published && !userIsAdmin) {
+          router.push('/blog');
+          return;
+        }
+      }
+    };
+    
+    checkInitialBlog();
+    
     if (slug === 'placeholder' && !initialBlog) {
       // Handle placeholder case - redirect to blog list
       router.push('/blog');
@@ -47,16 +67,30 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
     }
   }, [slug]);
 
+  const checkAdminStatus = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      setIsAdmin(!!user);
+    } catch (err) {
+      setIsAdmin(false);
+    }
+  };
+
   const fetchBlog = async () => {
     try {
       setLoading(true);
       
-      // Fetch the current blog with cache-busting to ensure fresh data
+      // Check admin status
+      const { data: { user } } = await supabase.auth.getUser();
+      const userIsAdmin = !!user;
+      setIsAdmin(userIsAdmin);
+      
+      // Fetch the current blog without published filter
+      // Access control will be handled below
       const { data: blogData, error: blogError } = await supabase
         .from('blogs')
         .select('*')
         .eq('slug', slug)
-        .eq('published', true)
         .single();
 
       if (blogError) throw blogError;
@@ -72,10 +106,18 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
         return;
       }
 
+      // Check if blog is published or user is admin
+      if (!blogData.published && !userIsAdmin) {
+        // Not published and user is not admin - redirect to blog list
+        router.push('/blog');
+        return;
+      }
+
       // Update with fresh data
       setBlog(blogData);
 
       // Fetch related blogs (same category, excluding current blog)
+      // Only show published blogs in related section
       const { data: relatedData } = await supabase
         .from('blogs')
         .select('*')
@@ -262,9 +304,25 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
               <div className="col-sm-8">
                 <div className="blog-details-waber">
                   <div className="blog-details-alignment">
-                    <h2 className="case-study-main-title" data-cursor="-opaque">
-                      {blog.title}
-                    </h2>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '10px', flexWrap: 'wrap' }}>
+                      <h2 className="case-study-main-title" data-cursor="-opaque" style={{ margin: 0 }}>
+                        {blog.title}
+                      </h2>
+                      {isAdmin && !blog.published && (
+                        <span style={{
+                          display: 'inline-block',
+                          padding: '6px 12px',
+                          background: '#ff9800',
+                          color: '#fff',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          fontWeight: '600',
+                          whiteSpace: 'nowrap'
+                        }}>
+                          DRAFT
+                        </span>
+                      )}
+                    </div>
                     <div className="study-img-info">
                       <p>{formatDate(blog.created_at)}</p>
                       <p>{blog.author || 'Admin'}</p>

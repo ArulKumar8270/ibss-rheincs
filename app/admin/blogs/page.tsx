@@ -299,6 +299,375 @@ export default function AdminBlogsPage() {
     }
   }, [showForm, quillEditor])
 
+  // Add image resize functionality
+  useEffect(() => {
+    if (!showForm) return
+
+    const initImageResize = () => {
+      const editor = document.querySelector('.ql-editor') as HTMLElement
+      if (!editor) {
+        setTimeout(initImageResize, 200)
+        return
+      }
+
+      // Make editor positioned relatively
+      if (window.getComputedStyle(editor).position === 'static') {
+        editor.style.position = 'relative'
+      }
+
+      const addResizeHandles = (img: HTMLImageElement) => {
+        // Skip if already processed
+        if ((img as any).__hasResizeHandle) return
+        ;(img as any).__hasResizeHandle = true
+
+        // Make image display block or inline-block for better control
+        const imgStyle = window.getComputedStyle(img)
+        if (imgStyle.display === 'inline') {
+          img.style.display = 'inline-block'
+        }
+        
+        // Ensure image has position relative for absolute positioning of handle
+        if (imgStyle.position === 'static') {
+          img.style.position = 'relative'
+        }
+
+        // Create wrapper
+        const wrapper = document.createElement('div')
+        wrapper.className = 'ql-image-resize-wrapper'
+        wrapper.setAttribute('contenteditable', 'false')
+        wrapper.setAttribute('data-quill-resize-wrapper', 'true')
+        wrapper.style.cssText = `
+          display: inline-block !important;
+          position: relative !important;
+          vertical-align: middle !important;
+          margin: 5px !important;
+        `
+
+        // Wrap the image
+        const parent = img.parentNode
+        if (parent) {
+          parent.insertBefore(wrapper, img)
+          wrapper.appendChild(img)
+        }
+        
+        // Create resize handle - make it very visible
+        const handle = document.createElement('div')
+        handle.className = 'ql-image-resize-handle'
+        handle.innerHTML = '⋰'
+        handle.setAttribute('contenteditable', 'false')
+        handle.setAttribute('draggable', 'false')
+        handle.setAttribute('data-resize-handle', 'true')
+        handle.setAttribute('unselectable', 'on')
+        handle.setAttribute('spellcheck', 'false')
+        
+        // Apply styles directly to element
+        Object.assign(handle.style, {
+          position: 'absolute',
+          width: '32px',
+          height: '32px',
+          background: '#667eea',
+          border: '3px solid white',
+          borderRadius: '50%',
+          cursor: 'nwse-resize',
+          zIndex: '999999',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.7)',
+          right: '-16px',
+          bottom: '-16px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: 'white',
+          fontSize: '20px',
+          fontWeight: 'bold',
+          lineHeight: '1',
+          pointerEvents: 'auto',
+          userSelect: 'none',
+          WebkitUserSelect: 'none',
+          MozUserSelect: 'none',
+          touchAction: 'none',
+          WebkitTouchCallout: 'none',
+        })
+
+        wrapper.appendChild(handle)
+
+        // Resize state
+        let isResizing = false
+        let startX = 0
+        let startWidth = 0
+        let startHeight = 0
+        let aspectRatio = 1
+
+        const startResize = (e: MouseEvent | TouchEvent) => {
+          console.log('Start resize triggered', e)
+          e.preventDefault()
+          e.stopPropagation()
+          e.stopImmediatePropagation()
+          
+          // Disable Quill's contenteditable during resize
+          if (editor) {
+            editor.setAttribute('contenteditable', 'false')
+            editor.style.pointerEvents = 'none'
+          }
+          
+          isResizing = true
+          const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
+          const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY
+          startX = clientX
+          startWidth = img.offsetWidth || img.naturalWidth || 300
+          startHeight = img.offsetHeight || img.naturalHeight || 200
+          aspectRatio = startWidth / startHeight
+          
+          document.body.style.cursor = 'nwse-resize'
+          document.body.style.userSelect = 'none'
+          document.body.style.pointerEvents = 'none'
+          handle.style.pointerEvents = 'auto'
+          wrapper.style.pointerEvents = 'auto'
+          
+          const moveHandler = (e: MouseEvent | TouchEvent) => {
+            e.preventDefault()
+            e.stopPropagation()
+            doResize(e)
+          }
+          const upHandler = (e: MouseEvent | TouchEvent) => {
+            e.preventDefault()
+            e.stopPropagation()
+            stopResize()
+          }
+          
+          // Use capture phase and make sure we catch events before Quill
+          document.addEventListener('mousemove', moveHandler, { passive: false, capture: true })
+          document.addEventListener('touchmove', moveHandler, { passive: false, capture: true })
+          document.addEventListener('mouseup', upHandler, { capture: true })
+          document.addEventListener('touchend', upHandler, { capture: true })
+          document.addEventListener('mouseleave', upHandler, { capture: true })
+          
+          // Store handlers for cleanup
+          ;(handle as any).__moveHandler = moveHandler
+          ;(handle as any).__upHandler = upHandler
+          
+          console.log('Resize started', { startWidth, startHeight, aspectRatio })
+        }
+
+        const doResize = (e: MouseEvent | TouchEvent) => {
+          if (!isResizing) return
+          e.preventDefault()
+          e.stopPropagation()
+          
+          const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
+          const deltaX = clientX - startX
+          const newWidth = Math.max(50, Math.min(2000, startWidth + deltaX))
+          const newHeight = newWidth / aspectRatio
+          
+          // Apply width and height directly
+          img.setAttribute('width', String(newWidth))
+          img.setAttribute('height', String(newHeight))
+          img.style.width = `${newWidth}px`
+          img.style.height = `${newHeight}px`
+          img.style.maxWidth = 'none'
+          img.style.maxHeight = 'none'
+          
+          console.log('Resizing:', { newWidth, newHeight, deltaX })
+        }
+
+        const stopResize = () => {
+          if (!isResizing) return
+          console.log('Stop resize')
+          isResizing = false
+          
+          // Re-enable Quill's contenteditable
+          if (editor) {
+            editor.setAttribute('contenteditable', 'true')
+            editor.style.pointerEvents = ''
+          }
+          
+          document.body.style.cursor = ''
+          document.body.style.userSelect = ''
+          document.body.style.pointerEvents = ''
+          
+          // Remove event listeners
+          const moveHandler = (handle as any).__moveHandler
+          const upHandler = (handle as any).__upHandler
+          if (moveHandler) {
+            document.removeEventListener('mousemove', moveHandler, { capture: true } as any)
+            document.removeEventListener('touchmove', moveHandler, { capture: true } as any)
+          }
+          if (upHandler) {
+            document.removeEventListener('mouseup', upHandler, { capture: true } as any)
+            document.removeEventListener('touchend', upHandler, { capture: true } as any)
+            document.removeEventListener('mouseleave', upHandler, { capture: true } as any)
+          }
+          
+          // Clear handlers
+          ;(handle as any).__moveHandler = null
+          ;(handle as any).__upHandler = null
+        }
+
+        // Store resize handlers on the handle element for cleanup
+        const handleMouseDown = (e: MouseEvent) => {
+          e.preventDefault()
+          e.stopPropagation()
+          e.stopImmediatePropagation()
+          startResize(e)
+        }
+        
+        const handleTouchStart = (e: TouchEvent) => {
+          e.preventDefault()
+          e.stopPropagation()
+          e.stopImmediatePropagation()
+          startResize(e)
+        }
+        
+        // Use capture phase and make handlers non-removable
+        handle.addEventListener('mousedown', handleMouseDown, { capture: true, once: false })
+        handle.addEventListener('touchstart', handleTouchStart, { capture: true, once: false })
+        
+        // Prevent all other interactions
+        const preventAll = (e: Event) => {
+          e.preventDefault()
+          e.stopPropagation()
+          e.stopImmediatePropagation()
+        }
+        
+        handle.addEventListener('click', preventAll, { capture: true })
+        handle.addEventListener('dragstart', preventAll, { capture: true })
+        handle.addEventListener('selectstart', preventAll)
+        handle.addEventListener('contextmenu', preventAll)
+        
+        // Store handlers for cleanup
+        ;(handle as any).__mouseDown = handleMouseDown
+        ;(handle as any).__touchStart = handleTouchStart
+        
+        // Make sure handle is visible and positioned correctly
+        const ensureVisible = () => {
+          if (handle.parentElement === wrapper && img.parentElement === wrapper) {
+            handle.style.display = 'flex'
+            handle.style.visibility = 'visible'
+            handle.style.opacity = '1'
+            handle.style.pointerEvents = 'auto'
+            
+            // Force repaint
+            void handle.offsetHeight
+            
+            // Verify handle is in the right position
+            const rect = wrapper.getBoundingClientRect()
+            const handleRect = handle.getBoundingClientRect()
+            const isVisible = handleRect.width > 0 && handleRect.height > 0
+            
+            console.log('Resize handle status:', {
+              visible: isVisible,
+              display: window.getComputedStyle(handle).display,
+              visibility: window.getComputedStyle(handle).visibility,
+              zIndex: window.getComputedStyle(handle).zIndex,
+              pointerEvents: window.getComputedStyle(handle).pointerEvents,
+              wrapperRect: { width: rect.width, height: rect.height },
+              handleRect: { left: handleRect.left, top: handleRect.top, width: handleRect.width, height: handleRect.height },
+              imgSize: { width: img.offsetWidth, height: img.offsetHeight }
+            })
+            
+            if (!isVisible) {
+              console.warn('Handle is not visible, retrying...')
+              setTimeout(ensureVisible, 100)
+            }
+          }
+        }
+        
+        // Use multiple animation frames to ensure visibility
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            ensureVisible()
+          })
+        })
+
+        // Cleanup when image is removed
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            mutation.removedNodes.forEach((node) => {
+              if (node === wrapper || (node as Element)?.contains?.(wrapper)) {
+                observer.disconnect()
+                ;(img as any).__hasResizeHandle = false
+              }
+            })
+          })
+        })
+        observer.observe(editor, { childList: true, subtree: true })
+      }
+
+      // Process existing images with retry mechanism
+      const processImages = () => {
+        const images = editor.querySelectorAll('img:not([data-resize-processed])')
+        console.log(`[ImageResize] Found ${images.length} unprocessed images`)
+        images.forEach((img) => {
+          try {
+            ;(img as HTMLImageElement).setAttribute('data-resize-processed', 'true')
+            addResizeHandles(img as HTMLImageElement)
+          } catch (err) {
+            console.error('Error adding resize handle:', err)
+          }
+        })
+      }
+      
+      // Process immediately and with delays to catch images loaded asynchronously
+      processImages()
+      setTimeout(processImages, 200)
+      setTimeout(processImages, 500)
+      setTimeout(processImages, 1000)
+
+      // Watch for new images
+      const imageObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.addedNodes.forEach((node) => {
+            if (node.nodeType === 1) {
+              const element = node as Element
+              if (element.tagName === 'IMG' && !element.hasAttribute('data-resize-processed')) {
+                element.setAttribute('data-resize-processed', 'true')
+                // Use multiple timeouts to ensure image is fully loaded
+                setTimeout(() => addResizeHandles(element as HTMLImageElement), 50)
+                setTimeout(() => addResizeHandles(element as HTMLImageElement), 200)
+                setTimeout(() => addResizeHandles(element as HTMLImageElement), 500)
+              }
+              const imgs = element.querySelectorAll?.('img:not([data-resize-processed])')
+              imgs?.forEach(img => {
+                img.setAttribute('data-resize-processed', 'true')
+                setTimeout(() => addResizeHandles(img as HTMLImageElement), 50)
+                setTimeout(() => addResizeHandles(img as HTMLImageElement), 200)
+                setTimeout(() => addResizeHandles(img as HTMLImageElement), 500)
+              })
+            }
+          })
+        })
+      })
+
+      imageObserver.observe(editor, { childList: true, subtree: true, attributes: true })
+      
+      // Also watch for image load events
+      editor.querySelectorAll('img').forEach(img => {
+        if (!img.hasAttribute('data-resize-processed')) {
+          img.addEventListener('load', () => {
+            if (!img.hasAttribute('data-resize-processed')) {
+              img.setAttribute('data-resize-processed', 'true')
+              addResizeHandles(img as HTMLImageElement)
+            }
+          }, { once: true })
+        }
+      })
+
+      return () => {
+        imageObserver.disconnect()
+        editor.querySelectorAll('.ql-image-resize-handle').forEach(h => h.remove())
+        editor.querySelectorAll('.ql-image-resize-wrapper').forEach(w => {
+          const img = w.querySelector('img')
+          if (img && w.parentNode) {
+            w.parentNode.insertBefore(img, w)
+            w.remove()
+          }
+        })
+      }
+    }
+
+    const timer = setTimeout(initImageResize, 300)
+    return () => clearTimeout(timer)
+  }, [showForm])
+
   // Quill editor modules configuration
   const quillModules = {
     toolbar: {
@@ -325,7 +694,7 @@ export default function AdminBlogsPage() {
   const quillFormats = [
     'header', 'font', 'size',
     'bold', 'italic', 'underline', 'strike', 'blockquote',
-    'list', 'bullet', 'indent',
+    'list', 'indent',
     'color', 'background',
     'align',
     'link', 'image', 'video'
@@ -653,6 +1022,54 @@ export default function AdminBlogsPage() {
                   }
                   .ql-editor {
                     min-height: 400px;
+                  }
+                  .ql-editor img {
+                    cursor: pointer;
+                    max-width: 100%;
+                    height: auto;
+                  }
+                  .ql-editor img:hover {
+                    outline: 2px dashed #667eea;
+                    outline-offset: 2px;
+                  }
+                  .ql-image-resize-wrapper {
+                    display: inline-block !important;
+                    position: relative !important;
+                    vertical-align: middle !important;
+                  }
+                  .ql-image-resize-handle {
+                    transition: transform 0.1s, background 0.1s !important;
+                    user-select: none !important;
+                    -webkit-user-select: none !important;
+                    -moz-user-select: none !important;
+                    display: flex !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    pointer-events: auto !important;
+                    cursor: nwse-resize !important;
+                    z-index: 999999 !important;
+                  }
+                  .ql-image-resize-handle:hover {
+                    transform: scale(1.15) !important;
+                    background: #5568d3 !important;
+                  }
+                  .ql-image-resize-handle:active {
+                    transform: scale(0.95) !important;
+                    background: #4c5fd0 !important;
+                  }
+                  .ql-editor .ql-image-resize-handle {
+                    display: flex !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    pointer-events: auto !important;
+                    cursor: nwse-resize !important;
+                  }
+                  .ql-editor .ql-image-resize-wrapper {
+                    position: relative !important;
+                  }
+                  .ql-editor img {
+                    max-width: 100% !important;
+                    height: auto !important;
                   }
                 `}</style>
               </div>

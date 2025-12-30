@@ -23,17 +23,30 @@ interface NewsEvent {
 
 interface NewsEventDetailsClientProps {
   initialItem: NewsEvent | null;
-  itemId: string;
+  slug: string;
 }
 
-export default function NewsEventDetailsClient({ initialItem, itemId }: NewsEventDetailsClientProps) {
+export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventDetailsClientProps) {
   const router = useRouter();
   const [item, setItem] = useState<NewsEvent | null>(initialItem);
   const [loading, setLoading] = useState(!initialItem);
+  const [isAdmin, setIsAdmin] = useState(false);
   const supabase = createClient();
 
+  const checkAdminStatus = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      setIsAdmin(!!user);
+    } catch (err) {
+      setIsAdmin(false);
+    }
+  };
+
   useEffect(() => {
-    if (itemId === 'placeholder' && !initialItem) {
+    // Check admin status on mount
+    checkAdminStatus();
+    
+    if (slug === 'placeholder' && !initialItem) {
       // Handle placeholder case - redirect to news-events list
       router.push('/news-events');
       return;
@@ -41,21 +54,24 @@ export default function NewsEventDetailsClient({ initialItem, itemId }: NewsEven
 
     // Always fetch fresh data on client side to get latest updates
     // This ensures updated content appears immediately without needing a rebuild
-    if (itemId && itemId !== 'placeholder') {
+    if (slug && slug !== 'placeholder') {
       fetchItem();
     }
-  }, [itemId]);
+  }, [slug]);
 
   const fetchItem = async () => {
     try {
+      // Check admin status
+      await checkAdminStatus();
+      
       setLoading(true);
       
-      // Fetch by ID instead of slug - IDs are unique and don't have encoding issues
+      // Fetch by slug as requested by user
+      // Fetch without published filter - access control will be handled below
       const { data: itemData, error: itemError } = await supabase
         .from('news_events')
         .select('*')
-        .eq('id', itemId)
-        .eq('published', true)
+        .eq('slug', slug)
         .single();
 
       if (itemError) throw itemError;
@@ -68,6 +84,16 @@ export default function NewsEventDetailsClient({ initialItem, itemId }: NewsEven
         }
         // Otherwise keep existing item data
         setLoading(false);
+        return;
+      }
+
+      // Check if item is published or user is admin
+      const { data: { user } } = await supabase.auth.getUser();
+      const userIsAdmin = !!user;
+      
+      if (!itemData.published && !userIsAdmin) {
+        // Not published and user is not admin - redirect to news-events list
+        router.push('/news-events');
         return;
       }
 
@@ -174,6 +200,20 @@ export default function NewsEventDetailsClient({ initialItem, itemId }: NewsEven
               <div className="section-title">
                 <h2 className="text-anime-style-2" data-cursor="-opaque">
                   {item.title}
+                  {!item.published && isAdmin && (
+                    <span style={{
+                      marginLeft: '15px',
+                      padding: '5px 10px',
+                      backgroundColor: '#f97316',
+                      color: 'white',
+                      borderRadius: '5px',
+                      fontSize: '0.7em',
+                      fontWeight: 'bold',
+                      verticalAlign: 'middle',
+                    }}>
+                      DRAFT
+                    </span>
+                  )}
                 </h2>
                 {item.featured_image && (
                   <img 
