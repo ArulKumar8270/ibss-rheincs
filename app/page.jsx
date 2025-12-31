@@ -120,7 +120,7 @@ export default function Home() {
                   {/* Section Title Start */}
                   <div className="section-title text-center">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      {t("The path to transformation")}
+                      {t("The Path to Transformation")}
                     </h2>
                     <p>
                       {t("Every successful transformation starts with clarity and ends with measurable impact. Our approach is built to take you from insights to execution, helping your business unlock real value at every single stage of journey")}
@@ -270,7 +270,7 @@ export default function Home() {
                       </div>
                       <div className="service-item-body">
                         <h3>{t("Analyse")}</h3>
-                        <p>{t("We start by understanding your business at its core -your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact -whether it’s efficiency, margin growth, agility, or customer experience.")}</p>
+                        <p>{t("We start by understanding your business, its core your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact -whether it’s efficiency, margin growth, agility, or customer experience.")}</p>
                         {/*<div class="ser-btn1">*/}
                         {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
                         {/*        Know More*/}
@@ -493,7 +493,7 @@ export default function Home() {
                           </div>
                           <div className="service-item-body">
                             <h3>{t("Analyse")}</h3>
-                            <p>{t("We start by understanding your business at its core -your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact -whether it’s efficiency, margin growth, agility, or customer experience.")}</p>
+                            <p>{t("We start by understanding your business, its core your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact -whether it’s efficiency, margin growth, agility, or customer experience.")}</p>
                             {/*<div class="ser-btn1">*/}
                             {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
                             {/*        Know More*/}
@@ -1567,7 +1567,7 @@ export default function Home() {
                     <p>{t("We help enterprises modernise systems, build digital capabilities, and unlock growth. From ERP transformation to automation and data strategy , our solution simplify complexity and create future ready enterprise")}</p>
                     <div className="ser-btn2">
                       <Link href="/solutions/erp-enterprise-solutions-and-services/erp" className="animated-svg-link1 btn-style-3">
-                        {t("CTA – Read more")}
+                        {t("Read more")}
                         <span className="svg-container ">
                           <span className=" left">
                             <svg
@@ -2914,7 +2914,8 @@ export default function Home() {
                           <p>{t("Achieve measurable transformation across your business.")}</p>
                         </div>
                       </div>
-                      {/* Benefits Steps Item End */}
+                      {/* Benefits Steps Item End */}</div>
+                    <div className="col-lg-6 col-md-6">
                       {/* Benefits Steps Item Start */}
                       <div
                         className="benefits-steps-item wow fadeInUp"
@@ -2985,6 +2986,8 @@ export default function Home() {
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
+                      {/* Benefits Steps Item End */}</div>
+                    <div className="col-lg-6 col-md-6">
                       {/* Benefits Steps Item Start */}
                       <div
                         className="benefits-steps-item wow fadeInUp"
@@ -3434,7 +3437,8 @@ export default function Home() {
                       <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
                         className="animated-svg-link1 btn-style-3"
                       >
-                        Read More
+                        
+                        {t("Read More")}
                         <span className="svg-container ">
                           <span className=" left">
                             <svg
@@ -3552,7 +3556,7 @@ export default function Home() {
                       <Link href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
                         className="animated-svg-link1 btn-style-3"
                       >
-                        Read More
+                       {t("Read More")}
                         <span className="svg-container ">
                           <span className=" left">
                             <svg
@@ -3668,7 +3672,7 @@ export default function Home() {
                       <Link href="https://blog.rheincs.com/7-game-changing-benefits-of-ai-and-automation-in-erp/"
                         className="animated-svg-link1 btn-style-3"
                       >
-                        Read More
+                        {t("Read More")}
                         <span className="svg-container ">
                           <span className=" left">
                             <svg
@@ -3784,7 +3788,7 @@ export default function Home() {
                       <Link href="https://blog.rheincs.com/10-must-have-features-in-a-modern-erp-system/"
                         className="animated-svg-link1 btn-style-3"
                       >
-                        Read More
+                        {t("Read More")}
                         <span className="svg-container ">
                           <span className=" left">
                             <svg
@@ -4024,7 +4028,7 @@ export default function Home() {
                           </p>
                           <div className="ser-btn1">
                             <Link href="/case-studies" className="animated-svg-link1">
-                              Read More
+                              {t("Read More")}
                               <svg
                                 width={24}
                                 height={23}
@@ -4136,7 +4140,7 @@ export default function Home() {
                           </p>
                           <div className="ser-btn1">
                             <Link href="/case-studies" className="animated-svg-link1">
-                              Read More
+                              {t("Read More")}
                               <svg
                                 width={24}
                                 height={23}
@@ -4245,7 +4249,7 @@ export default function Home() {
                           <p>7 Game Changing Benefits of AI and Automation in ERP</p>
                           <div className="ser-btn1">
                             <Link href="/blogs" className="animated-svg-link1">
-                              Read More
+                              {t("Read More")}
                               <svg
                                 width={24}
                                 height={23}
@@ -4354,7 +4358,7 @@ export default function Home() {
                           <p>10 Must-Have Features in a Modern ERP System</p>
                           <div className="ser-btn1">
                             <Link href="/blogs" className="animated-svg-link1">
-                              Read More
+                              {t("Read More")}
                               <svg
                                 width={24}
                                 height={23}
