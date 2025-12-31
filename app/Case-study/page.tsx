@@ -71,6 +71,23 @@ export default function CaseStudyPage() {
   useEffect(() => {
     fetchCaseStudies();
     fetchIndustries();
+    
+    // Refetch case studies when window gains focus (user returns to tab)
+    const handleFocus = () => {
+      fetchCaseStudies();
+    };
+    
+    // Refetch case studies periodically (every 30 seconds) to catch new records
+    const intervalId = setInterval(() => {
+      fetchCaseStudies();
+    }, 30000);
+    
+    window.addEventListener('focus', handleFocus);
+    
+    return () => {
+      window.removeEventListener('focus', handleFocus);
+      clearInterval(intervalId);
+    };
   }, []);
 
   const fetchIndustries = async () => {
@@ -92,6 +109,7 @@ export default function CaseStudyPage() {
 
   const fetchCaseStudies = async () => {
     try {
+      // Add cache-busting to ensure fresh data
       const { data, error } = await supabase
         .from('case_studies')
         .select('*')
@@ -99,7 +117,21 @@ export default function CaseStudyPage() {
         .order('created_at', { ascending: false });
 
       if (error) throw error;
-      setCaseStudies(data || []);
+      
+      // Only update if data has actually changed (prevent unnecessary re-renders)
+      setCaseStudies(prevCaseStudies => {
+        const prevIds = new Set(prevCaseStudies.map(cs => cs.id));
+        const newIds = new Set((data || []).map((cs: CaseStudy) => cs.id));
+        const idsChanged = prevCaseStudies.length !== (data || []).length || 
+          ![...prevIds].every(id => newIds.has(id)) ||
+          ![...newIds].every(id => prevIds.has(id));
+        
+        // If data changed, update state
+        if (idsChanged || JSON.stringify(prevCaseStudies) !== JSON.stringify(data)) {
+          return data || [];
+        }
+        return prevCaseStudies;
+      });
     } catch (err: any) {
       console.error('Error fetching case studies:', err);
     } finally {

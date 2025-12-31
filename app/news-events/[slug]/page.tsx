@@ -16,6 +16,11 @@ interface NewsEvent {
   updated_at: string;
 }
 
+// Note: With static export, we cannot use dynamicParams = true
+// All routes must be pre-generated at build time via generateStaticParams
+// For new content created after build, the page will still render the client component
+// The client component will fetch data client-side and handle 404s gracefully
+
 export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -23,7 +28,7 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
   const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
   if (!supabaseUrl) {
-    console.warn('Supabase URL not set')
+    console.warn('[generateStaticParams] Supabase URL not set')
     return [{ slug: 'placeholder' }]
   }
 
@@ -45,45 +50,73 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
       .limit(1000)
 
     if (error) {
-      console.error('Error fetching news/events for static params:', error)
-      console.error('This might be due to RLS policies blocking unpublished items')
+      console.error('[generateStaticParams] Error fetching news/events:', error)
+      console.error('[generateStaticParams] This might be due to RLS policies blocking unpublished items')
       // Try fetching only published items as fallback
-      const { data: publishedItems } = await supabase
+      const { data: publishedItems, error: publishedError } = await supabase
         .from('news_events')
         .select('slug')
         .eq('published', true)
         .limit(1000)
       
-      const fallbackParams = (publishedItems || []).map((item) => ({
-        slug: item.slug,
-      }))
+      if (publishedError) {
+        console.error('[generateStaticParams] Error fetching published news/events:', publishedError)
+        return [{ slug: 'placeholder' }]
+      }
+      
+      const fallbackParams = (publishedItems || [])
+        .filter((item: any) => item.slug && typeof item.slug === 'string')
+        .map((item: any) => ({
+          slug: item.slug.trim(),
+        }))
+      
+      if (fallbackParams.length === 0) {
+        console.warn('[generateStaticParams] No published news/events found, returning placeholder')
+        return [{ slug: 'placeholder' }]
+      }
+      
       fallbackParams.push({ slug: 'placeholder' })
+      console.log(`[generateStaticParams] Generated ${fallbackParams.length} fallback params (published only)`)
       return fallbackParams
     }
 
-    console.log(`[generateStaticParams] Found ${items?.length || 0} news/events (including drafts)`)
+    if (!items || items.length === 0) {
+      console.warn('[generateStaticParams] No news/events found')
+      return [{ slug: 'placeholder' }]
+    }
+
+    console.log(`[generateStaticParams] Found ${items.length} news/events (including drafts)`)
     
-    // Log each item's slug and published status for debugging
-    if (items && items.length > 0) {
-      items.forEach((item: any) => {
-        console.log(`  - Slug: "${item.slug}", Published: ${item.published}`)
-      })
+    // Filter out invalid slugs and ensure they're strings
+    const validItems = items.filter((item: any) => 
+      item.slug && 
+      typeof item.slug === 'string' && 
+      item.slug.trim().length > 0
+    )
+    
+    if (validItems.length === 0) {
+      console.warn('[generateStaticParams] No valid news/event slugs found')
+      return [{ slug: 'placeholder' }]
     }
     
+    // Log each item's slug and published status for debugging
+    validItems.forEach((item: any) => {
+      console.log(`  - Slug: "${item.slug}", Published: ${item.published}`)
+    })
+    
     // Use slug as requested by user
-    const params = (items || []).map((item) => ({
-      slug: item.slug,
+    const params = validItems.map((item: any) => ({
+      slug: item.slug.trim(),
     }))
 
     // Always include placeholder for fallback
-    const allParams = params.length > 0 ? params : []
-    allParams.push({ slug: 'placeholder' })
+    const allParams = [...params, { slug: 'placeholder' }]
 
     console.log(`[generateStaticParams] Generated ${allParams.length} static params`)
     
     return allParams
   } catch (error) {
-    console.error('Error in generateStaticParams:', error)
+    console.error('[generateStaticParams] Error in generateStaticParams:', error)
     // Return a placeholder to satisfy static export requirement
     return [{ slug: 'placeholder' }]
   }
@@ -92,15 +125,19 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
 export default async function NewsEventDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-
-  // Pass null to client component - all data fetching will be done client-side
-  // This ensures admin preview works correctly
+  // Normalize slug - remove trailing slash if present (since trailingSlash is true in config)
+  const normalizedSlug = slug?.replace(/\/$/, '') || ''
+  
+  // Debug: Log the requested slug
+  console.log(`[NewsEventDetailsPage] Requested slug: "${normalizedSlug}"`)
+  
+  // ALWAYS pass null for initialItem to force client-side fetch
+  // This ensures new content created after build is always fetched from database
+  // The client component will ALWAYS fetch from Supabase, never rely on server-side data
   return (
     <NewsEventDetailsClient 
       initialItem={null}
-      slug={slug}
+      slug={normalizedSlug}
     />
   )
 }

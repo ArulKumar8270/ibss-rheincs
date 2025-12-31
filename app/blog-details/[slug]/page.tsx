@@ -15,6 +15,11 @@ interface Blog {
   updated_at: string;
 }
 
+// Note: With static export, we cannot use dynamicParams = true
+// All routes must be pre-generated at build time via generateStaticParams
+// For new content created after build, the page will still render the client component
+// The client component will fetch data client-side and handle 404s gracefully
+
 export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -22,7 +27,7 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
   const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
   if (!supabaseUrl) {
-    console.warn('Supabase URL not set')
+    console.warn('[generateStaticParams] Supabase URL not set')
     return [{ slug: 'placeholder' }]
   }
 
@@ -44,50 +49,73 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
       .limit(1000)
 
     if (error) {
-      console.error('Error fetching blogs for static params:', error)
-      console.error('This might be due to RLS policies blocking unpublished blogs')
+      console.error('[generateStaticParams] Error fetching blogs:', error)
+      console.error('[generateStaticParams] This might be due to RLS policies blocking unpublished blogs')
       // Try fetching only published blogs as fallback
-      const { data: publishedBlogs } = await supabase
+      const { data: publishedBlogs, error: publishedError } = await supabase
         .from('blogs')
         .select('slug')
         .eq('published', true)
         .limit(1000)
       
-      const fallbackParams = (publishedBlogs || []).map((blog) => ({
-        slug: blog.slug,
-      }))
+      if (publishedError) {
+        console.error('[generateStaticParams] Error fetching published blogs:', publishedError)
+        return [{ slug: 'placeholder' }]
+      }
+      
+      const fallbackParams = (publishedBlogs || [])
+        .filter((blog: any) => blog.slug && typeof blog.slug === 'string')
+        .map((blog: any) => ({
+          slug: blog.slug.trim(),
+        }))
+      
+      if (fallbackParams.length === 0) {
+        console.warn('[generateStaticParams] No published blogs found, returning placeholder')
+        return [{ slug: 'placeholder' }]
+      }
+      
       fallbackParams.push({ slug: 'placeholder' })
+      console.log(`[generateStaticParams] Generated ${fallbackParams.length} fallback params (published only)`)
       return fallbackParams
     }
 
-    console.log(`[generateStaticParams] Found ${blogs?.length || 0} blogs (including drafts)`)
+    if (!blogs || blogs.length === 0) {
+      console.warn('[generateStaticParams] No blogs found')
+      return [{ slug: 'placeholder' }]
+    }
+
+    console.log(`[generateStaticParams] Found ${blogs.length} blogs (including drafts)`)
     
-    // Log each blog's slug and published status for debugging
-    if (blogs && blogs.length > 0) {
-      blogs.forEach((blog: any) => {
-        console.log(`  - Slug: "${blog.slug}", Published: ${blog.published}`)
-      })
+    // Filter out invalid slugs and ensure they're strings
+    const validBlogs = blogs.filter((blog: any) => 
+      blog.slug && 
+      typeof blog.slug === 'string' && 
+      blog.slug.trim().length > 0
+    )
+    
+    if (validBlogs.length === 0) {
+      console.warn('[generateStaticParams] No valid blog slugs found')
+      return [{ slug: 'placeholder' }]
     }
     
-    const params = (blogs || []).map((blog) => ({
-      slug: blog.slug,
+    // Log each blog's slug and published status for debugging
+    validBlogs.forEach((blog: any) => {
+      console.log(`  - Slug: "${blog.slug}", Published: ${blog.published}`)
+    })
+    
+    const params = validBlogs.map((blog: any) => ({
+      slug: blog.slug.trim(),
     }))
 
     // Always include placeholder for fallback
-    const allParams = params.length > 0 ? params : []
-    allParams.push({ slug: 'placeholder' })
+    const allParams = [...params, { slug: 'placeholder' }]
 
     console.log(`[generateStaticParams] Generated ${allParams.length} static params`)
     console.log(`[generateStaticParams] All slugs:`, allParams.map(p => `"${p.slug}"`).join(', '))
     
-    // Check if the problematic slug is in the list
-    const targetSlug = 'how-to-build-a-future-ready-digital-strategy'
-    const hasTargetSlug = allParams.some(p => p.slug === targetSlug)
-    console.log(`[generateStaticParams] Has target slug "${targetSlug}": ${hasTargetSlug}`)
-    
     return allParams
   } catch (error) {
-    console.error('Error in generateStaticParams:', error)
+    console.error('[generateStaticParams] Error in generateStaticParams:', error)
     // Return a placeholder to satisfy static export requirement
     return [{ slug: 'placeholder' }]
   }
@@ -96,50 +124,20 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
 export default async function BlogDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   
-  // Debug: Log the requested slug
-  console.log(`[BlogDetailsPage] Requested slug: "${slug}"`)
+  // Normalize slug - remove trailing slash if present (since trailingSlash is true in config)
+  const normalizedSlug = slug?.replace(/\/$/, '') || ''
   
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-
-  let blog: Blog | null = null
-  let relatedBlogs: Blog[] = []
-
-  if (supabaseUrl && supabaseAnonKey) {
-    try {
-      const supabase = createClient(supabaseUrl, supabaseAnonKey)
-      
-      // Fetch blog without published filter - access control handled in client component
-      const { data: blogData, error: blogError } = await supabase
-        .from('blogs')
-        .select('*')
-        .eq('slug', slug)
-        .single()
-
-      if (!blogError && blogData) {
-        blog = blogData as Blog
-
-        const { data: relatedData } = await supabase
-          .from('blogs')
-          .select('*')
-          .eq('published', true)
-          .neq('id', blog.id)
-          .eq('category', blog.category || 'all')
-          .order('created_at', { ascending: false })
-          .limit(4)
-
-        relatedBlogs = (relatedData || []) as Blog[]
-      }
-    } catch (error) {
-      console.error('Error fetching blog in server component:', error)
-    }
-  }
-
+  // Debug: Log the requested slug
+  console.log(`[BlogDetailsPage] Requested slug: "${normalizedSlug}"`)
+  
+  // ALWAYS pass null for initialBlog to force client-side fetch
+  // This ensures new content created after build is always fetched from database
+  // The client component will ALWAYS fetch from Supabase, never rely on server-side data
   return (
     <BlogDetailsClient 
-      initialBlog={blog}
-      initialRelatedBlogs={relatedBlogs}
-      slug={slug}
+      initialBlog={null}
+      initialRelatedBlogs={[]}
+      slug={normalizedSlug}
     />
   )
 }

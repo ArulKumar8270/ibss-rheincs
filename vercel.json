@@ -1,0 +1,40 @@
+{
+  "rewrites": [
+    {
+      "source": "/blog-details/:slug*",
+      "destination": "/blog-details/:slug*"
+    },
+    {
+      "source": "/Case-study-details/:id*",
+      "destination": "/Case-study-details/:id*"
+    },
+    {
+      "source": "/news-events/:slug*",
+      "destination": "/news-events/:slug*"
+    },
+    {
+      "source": "/openings/:id*",
+      "destination": "/openings/:id*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}
+
