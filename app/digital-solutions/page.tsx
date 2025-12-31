@@ -1495,10 +1495,7 @@ export default function digitalsolution() {
               <div className="service-item-body">
                 <h3>User Experience:</h3>
                 <p>
-                  Architect composable eCommerce solutions using MACH
-                  principles, integrating omnichannel experiences, scalable
-                  microservices, and operational dashboards for continuous KPI
-                  tracking.
+                  We design intuitive, user-centric digital experiences that drive productivity and unlock measurable business value.
                 </p>
                 <img src="/images/cus2.png" alt="" />
               </div>
