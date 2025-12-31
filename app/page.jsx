@@ -117,12 +117,13 @@ export default function Home() {
                 <div className="col-lg-12">
                   {/* Section Title Start */}
                   <div className="section-title text-center">
-                    <h2 className="text-anime-style-2" data-cursor="-opaque">{t("The path to transformation")}</h2>
+                    <h2 className="text-anime-style-2" data-cursor="-opaque">{t("The Path to Transformation")}</h2>
                     <p>{t("Every successful transformation starts with clarity and ends with measurable impact. Our approach is built to take you from insights to execution, helping your business unlock real value at every single stage of journey")}</p>
                     <div className="ser-btn">
                       <Link href="/solutions/erp-enterprise-solutions-and-services/erp" className="animated-svg-link">
                           <span>
-                            Know More
+                            {t("Know More")}
+
                           <span className="svg-container ">
                             <span className=" right">
                               <svg
@@ -264,7 +265,7 @@ export default function Home() {
                       </div>
                       <div className="service-item-body">
                         <h3>{t("Analyse")}</h3>
-                        <p>{t("We start by understanding your business at its core -your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact -whether it's efficiency, margin growth, agility, or customer experience.")}</p>
+                        <p>{t("We start by understanding your business, its core your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact -whether it's efficiency, margin growth, agility, or customer experience.")}</p>
                         {/*<div class="ser-btn1">*/}
                         {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
                         {/*        Know More*/}
@@ -487,7 +488,7 @@ export default function Home() {
                           </div>
                           <div className="service-item-body">
                             <h3>Analyse</h3>
-                            <p>We start by understanding your business at its core -your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact -whether it’s efficiency, margin growth, agility, or customer experience.</p>
+                            <p>We start by understanding your business, its core your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact -whether it’s efficiency, margin growth, agility, or customer experience.</p>
                             {/*<div class="ser-btn1">*/}
                             {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
                             {/*        Know More*/}
@@ -2098,8 +2099,8 @@ export default function Home() {
                                   </div>
                                 </div>
                                 <div className="service-item-body">
-                                  <h3>Digital Supply Chain Enablement</h3>
-                                  <p>We connect your supply chain through cloud and analytics solutions, providing real-time visibility and seamless collaboration with partners.</p>
+                                  <h3>{t("Digital Supply Chain Enablement")}</h3>
+                                  <p>{t("We connect your supply chain through cloud and analytics solutions, providing real-time visibility and seamless collaboration with partners.")}</p>
                                   {/*<div class="ser-btn serbtn1">*/}
                                   {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
                                   {/*        class="animated-svg-link1 animated-svg-link12">*/}
