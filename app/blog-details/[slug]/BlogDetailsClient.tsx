@@ -35,35 +35,19 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
   const supabase = createClient();
 
   useEffect(() => {
-    const checkInitialBlog = async () => {
-      // Check admin status first
-      await checkAdminStatus();
-      
-      // If we have an initial blog, check if it's accessible
-      if (initialBlog) {
-        const { data: { user } } = await supabase.auth.getUser();
-        const userIsAdmin = !!user;
-        
-        // If blog is not published and user is not admin, redirect
-        if (!initialBlog.published && !userIsAdmin) {
-          router.push('/blog');
-          return;
-        }
-      }
-    };
-    
-    checkInitialBlog();
-    
-    if (slug === 'placeholder' && !initialBlog) {
+    // ALWAYS fetch from database - never rely on initialBlog
+    // This ensures new content created after build is always accessible
+    if (slug && slug !== 'placeholder') {
+      console.log(`[BlogDetailsClient] Fetching blog for slug: "${slug}"`);
+      fetchBlog();
+    } else if (slug === 'placeholder') {
       // Handle placeholder case - redirect to blog list
+      console.log(`[BlogDetailsClient] Placeholder slug detected, redirecting`);
       router.push('/blog');
       return;
-    }
-
-    // Always fetch fresh data on client side to get latest updates
-    // This ensures updated content appears immediately without needing a rebuild
-    if (slug && slug !== 'placeholder') {
-      fetchBlog();
+    } else {
+      console.log(`[BlogDetailsClient] No slug provided, redirecting`);
+      router.push('/blog');
     }
   }, [slug]);
 
@@ -78,6 +62,7 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
 
   const fetchBlog = async () => {
     try {
+      console.log(`[BlogDetailsClient] Starting fetch for slug: "${slug}"`);
       setLoading(true);
       
       // Check admin status
@@ -85,35 +70,43 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
       const userIsAdmin = !!user;
       setIsAdmin(userIsAdmin);
       
-      // Fetch the current blog without published filter
-      // Access control will be handled below
+      // ALWAYS fetch from database - never use cached/initial data
+      // This ensures new content created after build is always accessible
+      console.log(`[BlogDetailsClient] Querying Supabase for slug: "${slug}"`);
       const { data: blogData, error: blogError } = await supabase
         .from('blogs')
         .select('*')
         .eq('slug', slug)
         .single();
 
-      if (blogError) throw blogError;
-      
-      if (!blogData) {
-        // If no data found and we have initial blog, keep showing it
-        if (!initialBlog) {
+      if (blogError) {
+        console.error(`[BlogDetailsClient] Supabase error:`, blogError);
+        // If blog not found, redirect to blog list
+        if (blogError.code === 'PGRST116') {
+          console.log(`[BlogDetailsClient] Blog not found, redirecting to blog list`);
           router.push('/blog');
           return;
         }
-        // Otherwise keep existing blog data
-        setLoading(false);
-        return;
+        throw blogError;
       }
-
-      // Check if blog is published or user is admin
-      if (!blogData.published && !userIsAdmin) {
-        // Not published and user is not admin - redirect to blog list
+      
+      if (!blogData) {
+        console.log(`[BlogDetailsClient] No blog data returned, redirecting to blog list`);
         router.push('/blog');
         return;
       }
 
-      // Update with fresh data
+      console.log(`[BlogDetailsClient] Blog found: "${blogData.title}" (Published: ${blogData.published})`);
+
+      // Check if blog is published or user is admin
+      if (!blogData.published && !userIsAdmin) {
+        console.log(`[BlogDetailsClient] Blog not published and user is not admin, redirecting`);
+        router.push('/blog');
+        return;
+      }
+
+      // Always update with fresh data from database
+      console.log(`[BlogDetailsClient] Setting blog data`);
       setBlog(blogData);
 
       // Fetch related blogs (same category, excluding current blog)
@@ -128,12 +121,11 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
         .limit(4);
 
       setRelatedBlogs(relatedData || []);
+      console.log(`[BlogDetailsClient] Fetch completed successfully`);
     } catch (err) {
-      console.error('Error fetching blog:', err);
-      // If fetch fails but we have initial blog, keep showing it
-      if (!initialBlog) {
-        router.push('/blog');
-      }
+      console.error('[BlogDetailsClient] Error fetching blog:', err);
+      // Always redirect on error - never show stale data
+      router.push('/blog');
     } finally {
       setLoading(false);
     }

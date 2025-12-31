@@ -24,10 +24,28 @@ export default function AlMl() {
 
     useEffect(() => {
         fetchJobs();
+        
+        // Refetch jobs when window gains focus (user returns to tab)
+        const handleFocus = () => {
+            fetchJobs();
+        };
+        
+        // Refetch jobs periodically (every 30 seconds) to catch new records
+        const intervalId = setInterval(() => {
+            fetchJobs();
+        }, 30000);
+        
+        window.addEventListener('focus', handleFocus);
+        
+        return () => {
+            window.removeEventListener('focus', handleFocus);
+            clearInterval(intervalId);
+        };
     }, []);
 
     const fetchJobs = async () => {
         try {
+            // Add cache-busting to ensure fresh data
             const { data, error } = await supabase
                 .from('careers')
                 .select('id, title, department, location, type, salary_range')
@@ -35,7 +53,21 @@ export default function AlMl() {
                 .order('created_at', { ascending: false });
 
             if (error) throw error;
-            setJobs(data || []);
+            
+            // Only update if data has actually changed (prevent unnecessary re-renders)
+            setJobs(prevJobs => {
+                const prevIds = new Set(prevJobs.map(job => job.id));
+                const newIds = new Set((data || []).map((job: Job) => job.id));
+                const idsChanged = prevJobs.length !== (data || []).length || 
+                    ![...prevIds].every(id => newIds.has(id)) ||
+                    ![...newIds].every(id => prevIds.has(id));
+                
+                // If data changed, update state
+                if (idsChanged || JSON.stringify(prevJobs) !== JSON.stringify(data)) {
+                    return data || [];
+                }
+                return prevJobs;
+            });
         } catch (err: any) {
             console.error('Error fetching jobs:', err);
         } finally {

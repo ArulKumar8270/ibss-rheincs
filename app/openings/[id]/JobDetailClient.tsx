@@ -56,36 +56,33 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
     };
 
     useEffect(() => {
-        // Check admin status on mount
-        checkAdminStatus();
-        
-        if (jobId === 'placeholder' && !initialJob) {
-            // Handle placeholder case - redirect to careers list
+        // ALWAYS fetch from database - never rely on initialJob
+        // This ensures new content created after build is always accessible
+        if (jobId && jobId !== 'placeholder') {
+            console.log(`[JobDetailClient] Fetching job for ID: "${jobId}"`);
+            fetchJob()
+        } else if (jobId === 'placeholder') {
+            console.log(`[JobDetailClient] Placeholder ID detected, redirecting`);
             router.push('/careers')
             return
-        }
-
-        // Always fetch fresh data on client side to get latest updates
-        // This ensures updated content appears immediately without needing a rebuild
-        if (jobId && jobId !== 'placeholder') {
-            fetchJob()
+        } else {
+            console.log(`[JobDetailClient] No ID provided, redirecting`);
+            router.push('/careers')
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [jobId]) // Only depend on jobId, not initialJob
 
     const fetchJob = async () => {
         try {
+            console.log(`[JobDetailClient] Starting fetch for ID: "${jobId}"`);
+            setLoading(true);
+            
             // Check admin status
             await checkAdminStatus();
-            
-            // Only show loading spinner if we don't have any job data yet
-            // This prevents flash of loading when we have initialJob
-            const shouldShowLoading = !job && !initialJob
-            if (shouldShowLoading) {
-                setLoading(true)
-            }
 
-            // Fetch without published filter - access control will be handled below
+            // ALWAYS fetch from database - never use cached/initial data
+            // This ensures new content created after build is always accessible
+            console.log(`[JobDetailClient] Querying Supabase for ID: "${jobId}"`);
             const { data, error } = await supabase
                 .from('careers')
                 .select('*')
@@ -93,52 +90,54 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                 .single()
 
             if (error) {
-                console.error('Supabase error:', error)
-                throw error
-            }
-
-            if (data) {
-                // Check if job is published or user is admin
-                const { data: { user } } = await supabase.auth.getUser();
-                const userIsAdmin = !!user;
-                
-                if (!data.published && !userIsAdmin) {
-                    // Not published and user is not admin - redirect to careers list
+                console.error(`[JobDetailClient] Supabase error:`, error);
+                // If job not found, redirect to careers list
+                if (error.code === 'PGRST116') {
+                    console.log(`[JobDetailClient] Job not found, redirecting to careers list`);
                     router.push('/careers');
                     return;
                 }
-                
-                // Parse responsibilities and qualifications if they're JSON strings
-                const parsedJob = {
-                    ...data,
-                    responsibilities: typeof data.responsibilities === 'string'
-                        ? JSON.parse(data.responsibilities || '[]')
-                        : data.responsibilities || [],
-                    qualifications: typeof data.qualifications === 'string'
-                        ? JSON.parse(data.qualifications || '[]')
-                        : data.qualifications || []
-                }
-                setJob(parsedJob)
-                setFormData(prev => ({ ...prev, selection: data.title }))
-            } else {
-                // If no data found and we have no job data at all, redirect
-                if (!initialJob && !job) {
-                    console.warn('Job not found, redirecting to careers')
-                    router.push('/careers')
-                    return
-                }
-                // Otherwise keep existing job data (initialJob or current job state)
+                throw error;
             }
+
+            if (!data) {
+                console.log(`[JobDetailClient] No job data returned, redirecting`);
+                router.push('/careers');
+                return;
+            }
+
+            console.log(`[JobDetailClient] Job found: "${data.title}" (Published: ${data.published})`);
+
+            // Check if job is published or user is admin
+            const { data: { user } } = await supabase.auth.getUser();
+            const userIsAdmin = !!user;
+            
+            if (!data.published && !userIsAdmin) {
+                console.log(`[JobDetailClient] Job not published and user is not admin, redirecting`);
+                router.push('/careers');
+                return;
+            }
+            
+            // Parse responsibilities and qualifications if they're JSON strings
+            const parsedJob = {
+                ...data,
+                responsibilities: typeof data.responsibilities === 'string'
+                    ? JSON.parse(data.responsibilities || '[]')
+                    : data.responsibilities || [],
+                qualifications: typeof data.qualifications === 'string'
+                    ? JSON.parse(data.qualifications || '[]')
+                    : data.qualifications || []
+            }
+            console.log(`[JobDetailClient] Setting job data`);
+            setJob(parsedJob)
+            setFormData(prev => ({ ...prev, selection: data.title }))
+            console.log(`[JobDetailClient] Fetch completed successfully`);
         } catch (err: any) {
-            console.error('Error fetching job:', err)
-            // If fetch fails but we have job data (initial or current), keep showing it
-            if (!initialJob && !job) {
-                console.warn('Fetch failed and no job data, redirecting to careers')
-                router.push('/careers')
-            } else {
-            }
+            console.error('[JobDetailClient] Error fetching job:', err);
+            // Always redirect on error - never show stale data
+            router.push('/careers');
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
     }
 
@@ -749,7 +748,7 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                                                     <option value="+90">Turkey (+90)</option>
                                                     <option value="+993">Turkmenistan (+993)</option>
                                                     <option value="+1-649">Turks and Caicos (+1-649)</option>
-                                                    <option value="+688">Tuvalu (+688)</option>
+                                                    <option value="+688">Tuvalu (+688)</option> 
                                                     <option value="+256">Uganda (+256)</option>
                                                     <option value="+380">Ukraine (+380)</option>
                                                     <option value="+971">United Arab Emirates (+971)</option>

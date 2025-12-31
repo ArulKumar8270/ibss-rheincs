@@ -85,86 +85,74 @@ export default function CaseStudyDetailsClient({
   // Define fetchCaseStudy before using it in useEffect
   const fetchCaseStudy = useCallback(async () => {
     try {
+      console.log(`[CaseStudyDetailsClient] Starting fetch for ID: "${caseStudyId}"`);
+      setLoading(true);
+      
       // Check admin status first
       await checkAdminStatus();
       
-      // Only show loading spinner if we don't have any case study data yet
-      // This prevents flash of loading when we have initialCaseStudy
-      const shouldShowLoading = !caseStudy && !initialCaseStudy
-      if (shouldShowLoading) {
-        setLoading(true)
-      }
-      
-      // Fetch with cache-busting to ensure we get fresh data
-      // Add timestamp to bypass any caching
-      // Fetch without published filter - access control will be handled below
+      // ALWAYS fetch from database - never use cached/initial data
+      // This ensures new content created after build is always accessible
+      console.log(`[CaseStudyDetailsClient] Querying Supabase for ID: "${caseStudyId}"`);
       const { data: caseStudyData, error: caseStudyError } = await supabase
         .from('case_studies')
         .select('*')
         .eq('id', caseStudyId)
         .single()
-        // Force fresh data by adding a cache header (if supported)
-        // Note: Supabase client doesn't support cache headers directly,
-        // but we can ensure we always fetch by not relying on cached responses
 
       if (caseStudyError) {
-        console.error('Supabase error:', caseStudyError)
-        throw caseStudyError
-      }
-      
-      if (caseStudyData) {
-        // Check if case study is published or user is admin
-        const { data: { user } } = await supabase.auth.getUser();
-        const userIsAdmin = !!user;
-        
-        if (!caseStudyData.published && !userIsAdmin) {
-          // Not published and user is not admin - redirect to case studies list
+        console.error(`[CaseStudyDetailsClient] Supabase error:`, caseStudyError);
+        // If case study not found, redirect to case studies list
+        if (caseStudyError.code === 'PGRST116') {
+          console.log(`[CaseStudyDetailsClient] Case study not found, redirecting to case studies list`);
           router.push('/Case-study');
           return;
         }
-        
-        // Always update with fresh data from database
-        // Compare updated_at timestamp to detect if data has changed
-        const currentData = caseStudy || initialCaseStudy;
-        const hasChanged = !currentData || 
-          currentData.updated_at !== caseStudyData.updated_at ||
-          currentData.title !== caseStudyData.title ||
-          currentData.content !== caseStudyData.content;
-        
-        // Always set the state with fresh data to ensure UI is updated
-        // This ensures updates from the database are reflected immediately
-        setCaseStudy(caseStudyData);
-
-        // Fetch related case studies with fresh data
-        const { data: relatedData } = await supabase
-          .from('case_studies')
-          .select('*')
-          .eq('published', true)
-          .neq('id', caseStudyData.id)
-          .eq('category', caseStudyData.category || 'all')
-          .order('created_at', { ascending: false })
-          .limit(4)
-
-        setRelatedCaseStudies(relatedData || [])
-      } else {
-        // If no data found and we have no case study data at all, redirect
-        if (!initialCaseStudy && !caseStudy) {
-          console.warn('Case study not found, redirecting to case studies list')
-          router.push('/Case-study')
-          return
-        }
-        // Otherwise keep existing case study data (initialCaseStudy or current caseStudy state)
+        throw caseStudyError;
       }
+      
+      if (!caseStudyData) {
+        console.log(`[CaseStudyDetailsClient] No case study data returned, redirecting`);
+        router.push('/Case-study');
+        return;
+      }
+
+      console.log(`[CaseStudyDetailsClient] Case study found: "${caseStudyData.title}" (Published: ${caseStudyData.published})`);
+      
+      // Check if case study is published or user is admin
+      const { data: { user } } = await supabase.auth.getUser();
+      const userIsAdmin = !!user;
+      
+      if (!caseStudyData.published && !userIsAdmin) {
+        console.log(`[CaseStudyDetailsClient] Case study not published and user is not admin, redirecting`);
+        router.push('/Case-study');
+        return;
+      }
+      
+      // Always update with fresh data from database
+      console.log(`[CaseStudyDetailsClient] Setting case study data`);
+      setCaseStudy(caseStudyData);
+
+      // Fetch related case studies with fresh data
+      const { data: relatedData } = await supabase
+        .from('case_studies')
+        .select('*')
+        .eq('published', true)
+        .neq('id', caseStudyData.id)
+        .eq('category', caseStudyData.category || 'all')
+        .order('created_at', { ascending: false })
+        .limit(4)
+
+      setRelatedCaseStudies(relatedData || [])
+      console.log(`[CaseStudyDetailsClient] Fetch completed successfully`);
     } catch (err: any) {
-      console.error('Error fetching case study:', err)
-      // If fetch fails but we have case study data (initial or current), keep showing it
-      if (!initialCaseStudy && !caseStudy) {
-        router.push('/Case-study')
-      }
+      console.error('[CaseStudyDetailsClient] Error fetching case study:', err);
+      // Always redirect on error - never show stale data
+      router.push('/Case-study');
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }, [caseStudyId, caseStudy, initialCaseStudy, supabase, router])
+  }, [caseStudyId, supabase, router])
 
   useEffect(() => {
     // Check admin status on mount

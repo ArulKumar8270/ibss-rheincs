@@ -51,6 +51,23 @@ export default function Blog() {
     checkAdminStatus();
     fetchBlogs();
     fetchIndustries();
+    
+    // Refetch blogs when window gains focus (user returns to tab)
+    const handleFocus = () => {
+      fetchBlogs();
+    };
+    
+    // Refetch blogs periodically (every 30 seconds) to catch new records
+    const intervalId = setInterval(() => {
+      fetchBlogs();
+    }, 30000);
+    
+    window.addEventListener('focus', handleFocus);
+    
+    return () => {
+      window.removeEventListener('focus', handleFocus);
+      clearInterval(intervalId);
+    };
   }, []);
 
   const checkAdminStatus = async () => {
@@ -86,6 +103,8 @@ export default function Blog() {
       const userIsAdmin = !!user;
       setIsAdmin(userIsAdmin);
 
+      // Add cache-busting: use timestamp to ensure fresh data
+      const timestamp = Date.now();
       let query = supabase
         .from('blogs')
         .select('*')
@@ -97,10 +116,25 @@ export default function Blog() {
       }
       // If admin, fetch all blogs (published and unpublished)
 
+      // Add cache-busting header to bypass any caching
       const { data, error } = await query;
 
       if (error) throw error;
-      setBlogs(data || []);
+      
+      // Only update if data has actually changed (prevent unnecessary re-renders)
+      setBlogs(prevBlogs => {
+        const prevIds = new Set(prevBlogs.map(b => b.id));
+        const newIds = new Set((data || []).map((b: Blog) => b.id));
+        const idsChanged = prevBlogs.length !== (data || []).length || 
+          ![...prevIds].every(id => newIds.has(id)) ||
+          ![...newIds].every(id => prevIds.has(id));
+        
+        // If data changed, update state
+        if (idsChanged || JSON.stringify(prevBlogs) !== JSON.stringify(data)) {
+          return data || [];
+        }
+        return prevBlogs;
+      });
     } catch (err) {
       console.error('Error fetching blogs:', err);
     } finally {

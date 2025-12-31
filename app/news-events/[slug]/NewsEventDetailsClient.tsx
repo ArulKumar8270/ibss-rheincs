@@ -43,68 +43,75 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
   };
 
   useEffect(() => {
-    // Check admin status on mount
-    checkAdminStatus();
-    
-    if (slug === 'placeholder' && !initialItem) {
-      // Handle placeholder case - redirect to news-events list
+    // ALWAYS fetch from database - never rely on initialItem
+    // This ensures new content created after build is always accessible
+    if (slug && slug !== 'placeholder') {
+      console.log(`[NewsEventDetailsClient] Fetching news/event for slug: "${slug}"`);
+      fetchItem();
+    } else if (slug === 'placeholder') {
+      console.log(`[NewsEventDetailsClient] Placeholder slug detected, redirecting`);
       router.push('/news-events');
       return;
-    }
-
-    // Always fetch fresh data on client side to get latest updates
-    // This ensures updated content appears immediately without needing a rebuild
-    if (slug && slug !== 'placeholder') {
-      fetchItem();
+    } else {
+      console.log(`[NewsEventDetailsClient] No slug provided, redirecting`);
+      router.push('/news-events');
     }
   }, [slug]);
 
   const fetchItem = async () => {
     try {
-      // Check admin status
-      await checkAdminStatus();
-      
+      console.log(`[NewsEventDetailsClient] Starting fetch for slug: "${slug}"`);
       setLoading(true);
       
-      // Fetch by slug as requested by user
-      // Fetch without published filter - access control will be handled below
+      // Check admin status
+      await checkAdminStatus();
+       
+      // ALWAYS fetch from database - never use cached/initial data
+      // This ensures new content created after build is always accessible
+      console.log(`[NewsEventDetailsClient] Querying Supabase for slug: "${slug}"`);
       const { data: itemData, error: itemError } = await supabase
         .from('news_events')
         .select('*')
         .eq('slug', slug)
         .single();
 
-      if (itemError) throw itemError;
-      
-      if (!itemData) {
-        // If no data found and we have initial item, keep showing it
-        if (!initialItem) {
+      if (itemError) {
+        console.error(`[NewsEventDetailsClient] Supabase error:`, itemError);
+        // If item not found, redirect to news-events list
+        if (itemError.code === 'PGRST116') {
+          console.log(`[NewsEventDetailsClient] News/event not found, redirecting to news-events list`);
           router.push('/news-events');
           return;
         }
-        // Otherwise keep existing item data
-        setLoading(false);
+        throw itemError;
+      }
+      
+      if (!itemData) {
+        console.log(`[NewsEventDetailsClient] No item data returned, redirecting`);
+        router.push('/news-events');
         return;
       }
+
+      console.log(`[NewsEventDetailsClient] Item found: "${itemData.title}" (Published: ${itemData.published})`);
 
       // Check if item is published or user is admin
       const { data: { user } } = await supabase.auth.getUser();
       const userIsAdmin = !!user;
       
       if (!itemData.published && !userIsAdmin) {
-        // Not published and user is not admin - redirect to news-events list
+        console.log(`[NewsEventDetailsClient] Item not published and user is not admin, redirecting`);
         router.push('/news-events');
         return;
       }
 
-      // Update with fresh data
+      // Always update with fresh data from database
+      console.log(`[NewsEventDetailsClient] Setting item data`);
       setItem(itemData);
+      console.log(`[NewsEventDetailsClient] Fetch completed successfully`);
     } catch (err) {
-      console.error('Error fetching news/event:', err);
-      // If fetch fails but we have initial item, keep showing it
-      if (!initialItem) {
-        router.push('/news-events');
-      }
+      console.error('[NewsEventDetailsClient] Error fetching news/event:', err);
+      // Always redirect on error - never show stale data
+      router.push('/news-events');
     } finally {
       setLoading(false);
     }

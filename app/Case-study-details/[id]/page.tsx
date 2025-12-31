@@ -26,6 +26,11 @@ interface CaseStudy {
   industries: string[] | null;
 }
 
+// Note: With static export, we cannot use dynamicParams = true
+// All routes must be pre-generated at build time via generateStaticParams
+// For new content created after build, the page will still render the client component
+// The client component will fetch data client-side and handle 404s gracefully
+
 // Note: With static export, all routes must be generated at build time
 // The client component will fetch data for any ID, even if not pre-generated
 // Generate static params for all case studies (published and unpublished)
@@ -36,7 +41,7 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
     const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
     if (!supabaseUrl) {
-        console.warn('Supabase URL not set')
+        console.warn('[generateStaticParams] Supabase URL not set')
         return [{ id: 'placeholder' }]
     }
 
@@ -58,35 +63,67 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
             .limit(1000)
 
         if (error) {
-            console.error('Error fetching case studies for static params:', error)
-            console.error('This might be due to RLS policies blocking unpublished case studies')
+            console.error('[generateStaticParams] Error fetching case studies:', error)
+            console.error('[generateStaticParams] This might be due to RLS policies blocking unpublished case studies')
             // Try fetching only published case studies as fallback
-            const { data: publishedCaseStudies } = await supabase
+            const { data: publishedCaseStudies, error: publishedError } = await supabase
                 .from('case_studies')
                 .select('id')
                 .eq('published', true)
                 .limit(1000)
             
-            const fallbackParams = (publishedCaseStudies || []).map((cs) => ({
-                id: cs.id,
-            }))
+            if (publishedError) {
+                console.error('[generateStaticParams] Error fetching published case studies:', publishedError)
+                return [{ id: 'placeholder' }]
+            }
+            
+            const fallbackParams = (publishedCaseStudies || [])
+                .filter((cs: any) => cs.id && typeof cs.id === 'string')
+                .map((cs: any) => ({
+                    id: cs.id.trim(),
+                }))
+            
+            if (fallbackParams.length === 0) {
+                console.warn('[generateStaticParams] No published case studies found, returning placeholder')
+                return [{ id: 'placeholder' }]
+            }
+            
             fallbackParams.push({ id: 'placeholder' })
+            console.log(`[generateStaticParams] Generated ${fallbackParams.length} fallback params (published only)`)
             return fallbackParams
         }
 
-        console.log(`[generateStaticParams] Found ${caseStudies?.length || 0} case studies (including drafts)`)
+        if (!caseStudies || caseStudies.length === 0) {
+            console.warn('[generateStaticParams] No case studies found')
+            return [{ id: 'placeholder' }]
+        }
+
+        console.log(`[generateStaticParams] Found ${caseStudies.length} case studies (including drafts)`)
         
-        const params = (caseStudies || []).map((cs) => ({
-            id: cs.id,
+        // Filter out invalid IDs and ensure they're strings
+        const validCaseStudies = caseStudies.filter((cs: any) => 
+            cs.id && 
+            typeof cs.id === 'string' && 
+            cs.id.trim().length > 0
+        )
+        
+        if (validCaseStudies.length === 0) {
+            console.warn('[generateStaticParams] No valid case study IDs found')
+            return [{ id: 'placeholder' }]
+        }
+        
+        const params = validCaseStudies.map((cs: any) => ({
+            id: cs.id.trim(),
         }))
 
         // Always include placeholder for fallback
-        const allParams = params.length > 0 ? params : []
-        allParams.push({ id: 'placeholder' })
+        const allParams = [...params, { id: 'placeholder' }]
+        
+        console.log(`[generateStaticParams] Generated ${allParams.length} static params`)
         
         return allParams
     } catch (error) {
-        console.error('Error in generateStaticParams:', error)
+        console.error('[generateStaticParams] Error in generateStaticParams:', error)
         // Return a placeholder to satisfy static export requirement
         return [{ id: 'placeholder' }]
     }
@@ -95,21 +132,21 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
 // Server component that renders the client component
 export default async function CaseStudyDetailsPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-
-    let initialCaseStudy: CaseStudy | null = null
-    let relatedCaseStudies: CaseStudy[] = []
-
-    // Pass null to client component - all data fetching will be done client-side
-    // This ensures admin preview works correctly
     
-    // Always render the client component - it will fetch data if needed
+    // Normalize ID - remove trailing slash if present (since trailingSlash is true in config)
+    const normalizedId = id?.replace(/\/$/, '') || ''
+    
+    // Debug: Log the requested ID
+    console.log(`[CaseStudyDetailsPage] Requested ID: "${normalizedId}"`)
+    
+    // ALWAYS pass null for initialCaseStudy to force client-side fetch
+    // This ensures new content created after build is always fetched from database
+    // The client component will ALWAYS fetch from Supabase, never rely on server-side data
     return (
         <CaseStudyDetailsClient 
             initialCaseStudy={null}
             initialRelatedCaseStudies={[]}
-            caseStudyId={id}
+            caseStudyId={normalizedId}
         />
     )
 }

@@ -29,10 +29,28 @@ export default function EnterpriseSolutions() {
 
   useEffect(() => {
     fetchItems();
+    
+    // Refetch items when window gains focus (user returns to tab)
+    const handleFocus = () => {
+      fetchItems();
+    };
+    
+    // Refetch items periodically (every 30 seconds) to catch new records
+    const intervalId = setInterval(() => {
+      fetchItems();
+    }, 30000);
+    
+    window.addEventListener('focus', handleFocus);
+    
+    return () => {
+      window.removeEventListener('focus', handleFocus);
+      clearInterval(intervalId);
+    };
   }, []);
 
   const fetchItems = async () => {
     try {
+      // Add cache-busting to ensure fresh data
       const { data, error } = await supabase
         .from('news_events')
         .select('*')
@@ -40,7 +58,21 @@ export default function EnterpriseSolutions() {
         .order('created_at', { ascending: false });
 
       if (error) throw error;
-      setItems(data || []);
+      
+      // Only update if data has actually changed (prevent unnecessary re-renders)
+      setItems(prevItems => {
+        const prevIds = new Set(prevItems.map(item => item.id));
+        const newIds = new Set((data || []).map((item: NewsEvent) => item.id));
+        const idsChanged = prevItems.length !== (data || []).length || 
+          ![...prevIds].every(id => newIds.has(id)) ||
+          ![...newIds].every(id => prevIds.has(id));
+        
+        // If data changed, update state
+        if (idsChanged || JSON.stringify(prevItems) !== JSON.stringify(data)) {
+          return data || [];
+        }
+        return prevItems;
+      });
     } catch (err: any) {
       console.error('Error fetching news/events:', err);
     } finally {

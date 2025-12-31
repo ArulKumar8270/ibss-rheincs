@@ -1,0 +1,4 @@
+# Netlify redirects - SPA fallback
+# The custom 404 page will handle dynamic detail routes
+/*  /index.html  200
+
