@@ -4,7 +4,7 @@ import CommomLayout from "./Components/CommomLayout";
 import Link from "next/link";
 import TestimonialandAward from "./Components/TestimonialandAward";
 import Awards from "./Components/Awards";
-import useTranslation from "./hooks/useTranslation";
+import {useTranslation} from "./hooks/useTranslation";
 
 export default function Home() {
   const { t, language } = useTranslation();

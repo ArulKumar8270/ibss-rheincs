@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function EpicorKinetic() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
 <>
@@ -16,16 +18,11 @@ export default function EpicorKinetic() {
       <div className="row section-row align-items-center  digitalsec">
         <div className="col-sm-6">
           <div className="section-title wow fadeInUp">
-            <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Next-gen ERP to automate workflows, improve supply chain
-              visibility, and optimize production
+          <h2 className="text-anime-style-2" data-cursor="-opaque">
+              {t("Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production")}
             </h2>
             <p>
-              Epicor Kinetic is a modern, cloud-enabled ERP designed to
-              streamline operations, reduce manual processes, and provide
-              real-time insights across your business. It empowers organizations
-              to scale efficiently while staying compliant and competitive in
-              today’s fast-paced industries.{" "}
+              {t("Epicor Kinetic is a modern, cloud-enabled ERP designed to streamline operations, reduce manual processes, and provide real-time insights across your business. It empowers organizations to scale efficiently while staying compliant and competitive in today’s fast-paced industries.")}
             </p>
           </div>
         </div>
@@ -469,7 +466,7 @@ export default function EpicorKinetic() {
         <div className="col-sm-5">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Our Epicor Kinetic Capabilities
+              {t("Our Epicor Kinetic Capabilities")}
             </h2>
           </div>
           <div className="pill-points appro">
@@ -477,8 +474,7 @@ export default function EpicorKinetic() {
               <img src="/images/Automate.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Automate end-to-end workflows across finance, manufacturing,
-                  and supply chain.
+                  {t("Automate end-to-end workflows across finance, manufacturing, and supply chain.")}
                 </p>
               </div>
             </div>
@@ -486,8 +482,7 @@ export default function EpicorKinetic() {
               <img src="/images/Enhance.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Enhance supply chain visibility for better planning and
-                  forecasting.
+                  {t("Enhance supply chain visibility for better planning and forecasting.")}
                 </p>
               </div>
             </div>
@@ -495,7 +490,7 @@ export default function EpicorKinetic() {
               <img src="/images/Optimize.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Optimize production with real-time tracking and analytics.
+                  {t("Optimize production with real-time tracking and analytics.")}
                 </p>
               </div>
             </div>
@@ -503,7 +498,7 @@ export default function EpicorKinetic() {
               <img src="/images/Enable.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Enable mobile and cloud access for global, distributed teams.
+                  {t("Enable mobile and cloud access for global, distributed teams.")}
                 </p>
               </div>
             </div>
@@ -511,8 +506,7 @@ export default function EpicorKinetic() {
               <img src="/images/Embed.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Embed analytics and dashboards for faster, data-driven
-                  decision-making.
+                  {t("Embed analytics and dashboards for faster, data-driven decision-making.")}
                 </p>
               </div>
             </div>
@@ -520,8 +514,7 @@ export default function EpicorKinetic() {
               <img src="/images/Integrate.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Integrate smart sensors with ERP for real-time data on
-                  monitoring, pre-emptive maintenance, and process optimization.
+                  {t("Integrate smart sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.")}
                 </p>
               </div>
             </div>
@@ -540,7 +533,7 @@ export default function EpicorKinetic() {
         <div className="col-sm-12">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Our Epicor Kinetic Capabilities
+              {t("Our Epicor Kinetic Capabilities")}
             </h2>
           </div>
           <div className="pill-points appro">
@@ -548,8 +541,7 @@ export default function EpicorKinetic() {
               <img src="/images/ss1.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Automate end-to-end workflows across finance, manufacturing,
-                  and supply chain.
+                  {t("Automate end-to-end workflows across finance, manufacturing, and supply chain.")}
                 </p>
               </div>
             </div>
@@ -557,8 +549,7 @@ export default function EpicorKinetic() {
               <img src="/images/ss2.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Enhance supply chain visibility for better planning and
-                  forecasting.
+                  {t("Enhance supply chain visibility for better planning and forecasting.")}
                 </p>
               </div>
             </div>
@@ -566,7 +557,7 @@ export default function EpicorKinetic() {
               <img src="/images/ss3.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Optimize production with real-time tracking and analytics.
+                  {t("Optimize production with real-time tracking and analytics.")}
                 </p>
               </div>
             </div>
@@ -574,7 +565,7 @@ export default function EpicorKinetic() {
               <img src="/images/ss7.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Enable mobile and cloud access for global, distributed teams.
+                  {t("Enable mobile and cloud access for global, distributed teams.")}
                 </p>
               </div>
             </div>
@@ -582,8 +573,7 @@ export default function EpicorKinetic() {
               <img src="/images/ss8.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Embed analytics and dashboards for faster, data-driven
-                  decision-making.
+                  {t("Embed analytics and dashboards for faster, data-driven decision-making.")}
                 </p>
               </div>
             </div>
@@ -591,8 +581,7 @@ export default function EpicorKinetic() {
               <img src="/images/ss9.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Integrate smart sensors with ERP for real-time data on
-                  monitoring, pre-emptive maintenance, and process optimization.
+                  {t("Integrate smart sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.")}
                 </p>
               </div>
             </div>
@@ -611,7 +600,7 @@ export default function EpicorKinetic() {
         <div className="col-sm-12">
           <div className="section-title text-center text-black">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Why Choose Epicor Kinetic?
+              {t("Why Choose Epicor Kinetic?")}
             </h2>
           </div>
           <div className="row mt-5">
@@ -619,7 +608,7 @@ export default function EpicorKinetic() {
               <div className="service-item-body1  w80">
                 {/* <h3>Seamless Integration</h3> */}
                 <h3>
-                  Proven enterprise ERP solution trusted across industries.{" "}
+                  {t("Proven enterprise ERP solution trusted across industries.")}
                 </h3>
                 <div className="text-center">
                   <img src="/images/advant1.svg" alt="" />
@@ -630,8 +619,7 @@ export default function EpicorKinetic() {
               <div className="service-item-body1 epicright1  w80">
                 {/* <h3>Configurable</h3> */}
                 <h3>
-                  Seamless integration with companion products and third-party
-                  applications.
+                  {t("Seamless integration with companion products and third-party applications.")}
                 </h3>
                 <img src="/images/advant2.svg" alt="" />
               </div>
@@ -639,7 +627,7 @@ export default function EpicorKinetic() {
             <div className="col-lg-4 col-md-4 col-12">
               <div className="service-item-body1 epicright">
                 {/* <h3>Reporting and Analytics</h3> */}
-                <h3>Scalable deployment to grow with your business. </h3>
+                <h3>{t("Scalable deployment to grow with your business.")} </h3>
                 <img src="/images/advant3.svg" alt="" />
               </div>
             </div>
@@ -647,8 +635,7 @@ export default function EpicorKinetic() {
               <div className="service-item-body1 epicright">
                 {/* <h3>Mobile Accessibility</h3> */}
                 <h3>
-                  End-to-end support from design to implementation and
-                  optimization.{" "}
+                  {t("End-to-end support from design to implementation and optimization.")}
                 </h3>
                 <div className="text-center">
                   <img src="/images/advant4.svg" alt="" />
@@ -659,8 +646,7 @@ export default function EpicorKinetic() {
               <div className="service-item-body1 epicleft">
                 {/* <h3>Effective Data Management</h3> */}
                 <h3>
-                  Focus on measurable business outcomes, including efficiency,
-                  cost savings, and compliance.{" "}
+                  {t("Focus on measurable business outcomes, including efficiency, cost savings, and compliance.")}
                 </h3>
                 <img src="/images/advant5.svg" alt="" />
               </div>
@@ -835,13 +821,14 @@ export default function EpicorKinetic() {
         <div className="firstrow">
           <div className="row">
             <div className="col-sm-8">
-              <h2>Ready to transform your operations with Epicor Kinetic?</h2>
-              <p>Talk to our enterprise solutions experts today.</p>
+              <h2>{t("Ready to transform your operations with Epicor Kinetic?")}</h2>
+
+              <p>{t("Talk to our enterprise solutions experts today.")}</p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <Link href="/contact-us" className="animated-svg-link">
-                  Contact Us
+                  {t("Contact Us")}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg

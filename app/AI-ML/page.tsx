@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function AlMl() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
             <>
@@ -15,17 +17,13 @@ export default function AlMl() {
                             <div className="col-sm-5">
                                 <div className="section-title wow fadeInUp">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        AI/ML &amp; Data Analytics
+                                        {t("AI/ML & Data Analytics")}
                                     </h2>
                                     <p>
-                                        Harness the combined power of Google AI/ML, Azure Machine
-                                        Learning, and advanced signature analytics to deliver predictive
-                                        maintenance, intelligent automation, and real-time insights.{" "}
+                    {t("Harness the combined power of Google AI/ML, Azure Machine Learning, and advanced signature analytics to deliver predictive maintenance, intelligent automation, and real-time insights.")}
                                     </p>
                                     <p>
-                                        We help organisations across industries transform data into
-                                        intelligence—driving smarter decisions, greater efficiency, and
-                                        measurable business impact.{" "}
+                        {t("We help organisations across industries transform data into intelligence—driving smarter decisions, greater efficiency, and measurable business impact.")}
                                     </p>
                                 </div>
                             </div>
@@ -1196,441 +1194,450 @@ export default function AlMl() {
                 </div>
                 {/* Hero Section End*/}
                 {/* Our Testimonial Section Start */}
-                <div className="our-testimonial epiccompanion pd30">
+                <div className={`our-testimonial epiccompanion pd30 ${language === 'German' ? 'germanaiml' : ''}`}>
                     <div className="container">
                         <div className="row section-row align-items-center">
                             <div className="col-lg-6">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        AI/ML Use Cases by Industry
+                            {t("AI/ML Use Cases by Industry")}
                                     </h2>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="container-fluid">
-                        <div className="row align-items-center">
-                            <div className="col-lg-12">
-                                {/* Testimonial Slider Start */}
-                                <div className="testimonial-slider enterslide epiccomp">
-                                    <div className="swiper">
-                                        <div className="swiper-wrapper">
-                                            {/* Testimonial Slide Start */}
-                                            <div className="swiper-slide">
-                                                <div className="service-item flip-card ">
-                                                    <div className="flip-card-inner">
-                                                        {/* Front Side */}
-                                                        <div className="flip-card-front">
-                                                            {/* Your current service content */}
-                                                            <div className="service-item-header ">
-                                                                <div className="service-card">
-                                                                    <img src="/images/ss1.svg" alt="" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="service-item-body  oa-para-waber">
-                                                                <h3>Brand Owners &amp; Vertical Retailers</h3>
-                                                                <p className="oa-para">
-                                                                    Personalised Recommendations, Dynamic pricing,
-                                                                    Inventory optimisation, and Loss prevention.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+<div className="container-fluid">
+    <div className="row align-items-center">
+        <div className="col-lg-12">
+            {/* Testimonial Slider Start */}
+            <div className="testimonial-slider enterslide epiccomp">
+                <div className="swiper">
+                    <div className="swiper-wrapper">
+                        {/* Testimonial Slide Start */}
+                        <div className="swiper-slide">
+                            <div className="service-item flip-card ">
+                                <div className="flip-card-inner">
+                                    {/* Front Side */}
+                                    <div className="flip-card-front">
+                                        {/* Your current service content */}
+                                        <div className="service-item-header ">
+                                            <div className="service-card">
+                                                <img src="/images/ss1.svg" alt="" />
                                             </div>
-                                            {/* Testimonial Slide End */}
-                                            {/* Testimonial Slide Start */}
-                                            <div className="swiper-slide">
-                                                <div className="service-item flip-card">
-                                                    <div className="flip-card-inner">
-                                                        {/* Front Side */}
-                                                        <div className="flip-card-front ">
-                                                            {/* Your current service content */}
-                                                            <div className="service-item-header">
-                                                                <div className="service-card">
-                                                                    <img src="/images/ss2.svg" alt="" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="service-item-body oa-para-waber">
-                                                                <h3>Retail Industry</h3>
-                                                                <p className="oa-para">
-                                                                    Customer segmentation, demand forecasting, fraud
-                                                                    detection, and real-time analytics to improve
-                                                                    in-store and online performance.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {/* Testimonial Slide End */}
-                                            {/* Testimonial Slide Start */}
-                                            <div className="swiper-slide">
-                                                <div className="service-item flip-card">
-                                                    <div className="flip-card-inner">
-                                                        {/* Front Side */}
-                                                        <div className="flip-card-front">
-                                                            {/* Your current service content */}
-                                                            <div className="service-item-header">
-                                                                <div className="service-card">
-                                                                    <img src="/images/ss3.svg" alt="" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="service-item-body oa-para-waber">
-                                                                <h3>Distribution &amp; Supply Chain</h3>
-                                                                <p className="oa-para">
-                                                                    Route optimisation, warehouse automation, predictive
-                                                                    delivery times, and supply chain risk analytics.{" "}
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {/* Testimonial Slide End */}
-                                            {/* Testimonial Slide Start */}
-                                            <div className="swiper-slide">
-                                                <div className="service-item flip-card">
-                                                    <div className="flip-card-inner">
-                                                        {/* Front Side */}
-                                                        <div className="flip-card-front">
-                                                            {/* Your current service content */}
-                                                            <div className="service-item-header">
-                                                                <div className="service-card">
-                                                                    <img src="/images/ss10.svg" alt="" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="service-item-body oa-para-waber">
-                                                                <h3>Discrete Manufacturing</h3>
-                                                                <p className="oa-para">
-                                                                    Predictive maintenance, computer vision for quality
-                                                                    control, production scheduling, and digital twins.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {/* Testimonial Slide End */}
-                                            {/* Testimonial Slide Start */}
-                                            <div className="swiper-slide">
-                                                <div className="service-item flip-card">
-                                                    <div className="flip-card-inner">
-                                                        {/* Front Side */}
-                                                        <div className="flip-card-front ">
-                                                            {/* Your current service content */}
-                                                            <div className="service-item-header">
-                                                                <div className="service-card">
-                                                                    <img src="/images/ss4.svg" alt="" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="service-item-body oa-para-waber">
-                                                                <h3>Automotive Industry</h3>
-                                                                <p className="oa-para">
-                                                                    Smart manufacturing, connected vehicle analytics,
-                                                                    predictive maintenance, and safety monitoring.{" "}
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {/* Testimonial Slide End */}
-                                            {/* Testimonial Slide Start */}
-                                            <div className="swiper-slide">
-                                                <div className="service-item flip-card">
-                                                    <div className="flip-card-inner">
-                                                        {/* Front Side */}
-                                                        <div className="flip-card-front ">
-                                                            {/* Your current service content */}
-                                                            <div className="service-item-header">
-                                                                <div className="service-card">
-                                                                    <img src="/images/ss5.svg" alt="" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="service-item-body oa-para-waber">
-                                                                <h3>
-                                                                    Engineering, Procurement &amp; Construction (EPC)
-                                                                </h3>
-                                                                <p className="oa-para">
-                                                                    Project cost forecasting, risk modelling, resource
-                                                                    optimisation, and contract intelligence.{" "}
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {/* Testimonial Slide End */}
-                                            {/* Testimonial Slide Start */}
-                                            <div className="swiper-slide">
-                                                <div className="service-item flip-card">
-                                                    <div className="flip-card-inner">
-                                                        {/* Front Side */}
-                                                        <div className="flip-card-front ">
-                                                            {/* Your current service content */}
-                                                            <div className="service-item-header">
-                                                                <div className="service-card">
-                                                                    <img src="/images/ss6.svg" alt="" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="service-item-body oa-para-waber">
-                                                                <h3>Process Manufacturing</h3>
-                                                                <p className="oa-para">
-                                                                    Predictive process control, energy optimisation,
-                                                                    waste reduction, and safety analytics.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {/* Testimonial Slide End */}
-                                            {/* Testimonial Slide Start */}
-                                            <div className="swiper-slide">
-                                                <div className="service-item flip-card">
-                                                    <div className="flip-card-inner">
-                                                        {/* Front Side */}
-                                                        <div className="flip-card-front ">
-                                                            {/* Your current service content */}
-                                                            <div className="service-item-header">
-                                                                <div className="service-card">
-                                                                    <img src="/images/ss6.svg" alt="" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="service-item-body oa-para-waber">
-                                                                <h3>Private Equity &amp; Funding-backed Ventures</h3>
-                                                                <p className="oa-para">
-                                                                    Portfolio performance analytics, risk scoring,
-                                                                    market trend prediction, and value creation
-                                                                    tracking.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {/* Testimonial Slide End */}
                                         </div>
-                                        <div className="testimonial-btn rtyElement">
-                                            <div className="testimonial-button-prev">
-                                                <div className="animated-svg-link">
-                                                    <span className="svg-container ">
-                                                        <span className=" right">
-                                                            <svg
-                                                                width={24}
-                                                                height={23}
-                                                                viewBox="0 0 24 23"
-                                                                fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                            >
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="16.0004"
-                                                                    cy="4.79995"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="12.7992"
-                                                                    cy="1.6"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="22.4008"
-                                                                    cy="11.2"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="1.6"
-                                                                    cy="11.2"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="6.40078"
-                                                                    cy="11.2"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="11.1996"
-                                                                    cy="11.2"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="16.0004"
-                                                                    cy="11.2"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="19.1996"
-                                                                    cy="14.4"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="16.0004"
-                                                                    cy="17.6"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="12.7992"
-                                                                    cy="20.8"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="19.1996"
-                                                                    cy="8.00002"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                            </svg>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <span className="testspace" style={{ color: "#000" }}>
-                                                1/6
-                                            </span>
-                                            <div className="testimonial-button-next">
-                                                <div className="animated-svg-link">
-                                                    <span className="svg-container ">
-                                                        <span className=" right">
-                                                            <svg
-                                                                width={24}
-                                                                height={23}
-                                                                viewBox="0 0 24 23"
-                                                                fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                            >
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="16.0004"
-                                                                    cy="4.79995"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="12.7992"
-                                                                    cy="1.6"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="22.4008"
-                                                                    cy="11.2"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="1.6"
-                                                                    cy="11.2"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="6.40078"
-                                                                    cy="11.2"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="11.1996"
-                                                                    cy="11.2"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="16.0004"
-                                                                    cy="11.2"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="19.1996"
-                                                                    cy="14.4"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="16.0004"
-                                                                    cy="17.6"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="12.7992"
-                                                                    cy="20.8"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="19.1996"
-                                                                    cy="8.00002"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                            </svg>
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
+                                        <div className="service-item-body  oa-para-waber">
+                                            <h3>
+                                                {t("Brand Owners & Vertical Retailers")}
+                                                </h3>
+                                            <p className="oa-para">
+                                                {t("Personalised Recommendations, Dynamic pricing, Inventory optimisation, and Loss prevention.")}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                                {/* Testimonial Slider End */}
+                            </div>
+                        </div>
+                        {/* Testimonial Slide End */}
+                        {/* Testimonial Slide Start */}
+                        <div className="swiper-slide">
+                            <div className="service-item flip-card">
+                                <div className="flip-card-inner">
+                                    {/* Front Side */}
+                                    <div className="flip-card-front ">
+                                        {/* Your current service content */}
+                                        <div className="service-item-header">
+                                            <div className="service-card">
+                                                <img src="/images/ss2.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div className="service-item-body oa-para-waber">
+                                            <h3>
+                                                {t("Retail Industry")}
+</h3>
+                                            <p className="oa-para">
+                                    
+                                                {t("Customer segmentation, demand forecasting, fraud detection, and real-time analytics to improve in-store and online performance.")}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Testimonial Slide End */}
+                        {/* Testimonial Slide Start */}
+                        <div className="swiper-slide">
+                            <div className="service-item flip-card">
+                                <div className="flip-card-inner">
+                                    {/* Front Side */}
+                                    <div className="flip-card-front">
+                                        {/* Your current service content */}
+                                        <div className="service-item-header">
+                                            <div className="service-card">
+                                                <img src="/images/ss3.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div className="service-item-body oa-para-waber">
+                                            <h3>
+                                                {t("Distribution & Supply Chain")}
+                                            </h3>
+
+                                            <p className="oa-para">
+                                                {t("Route optimisation, warehouse automation, predictive delivery times, and supply chain risk analytics.")}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Testimonial Slide End */}
+                        {/* Testimonial Slide Start */}
+                        <div className="swiper-slide">
+                            <div className="service-item flip-card">
+                                <div className="flip-card-inner">
+                                    {/* Front Side */}
+                                    <div className="flip-card-front">
+                                        {/* Your current service content */}
+                                        <div className="service-item-header">
+                                            <div className="service-card">
+                                                <img src="/images/ss10.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div className="service-item-body oa-para-waber">
+                                            <h3>
+                                                {t("Discrete Manufacturing")}
+                                            </h3>
+
+                                            <p className="oa-para">
+                                                {t("Predictive maintenance, computer vision for quality control, production scheduling, and digital twins.")}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Testimonial Slide End */}
+                        {/* Testimonial Slide Start */}
+                        <div className="swiper-slide">
+                            <div className="service-item flip-card">
+                                <div className="flip-card-inner">
+                                    {/* Front Side */}
+                                    <div className="flip-card-front ">
+                                        {/* Your current service content */}
+                                        <div className="service-item-header">
+                                            <div className="service-card">
+                                                <img src="/images/ss4.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div className="service-item-body oa-para-waber">
+                                            <h3>
+                                    {t("Automotive Industry")}
+</h3>
+                                            <p className="oa-para">
+                                                {t("Smart manufacturing, connected vehicle analytics, predictive maintenance, and safety monitoring.")}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Testimonial Slide End */}
+                        {/* Testimonial Slide Start */}
+                        <div className="swiper-slide">
+                            <div className="service-item flip-card">
+                                <div className="flip-card-inner">
+                                    {/* Front Side */}
+                                    <div className="flip-card-front ">
+                                        {/* Your current service content */}
+                                        <div className="service-item-header">
+                                            <div className="service-card">
+                                                <img src="/images/ss5.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div className="service-item-body oa-para-waber">
+                                            <h3>
+                                                {t("Engineering, Procurement & Construction (EPC)")}
+                                            </h3>
+                                            <p className="oa-para">
+                                                {t("Project cost forecasting, risk modelling, resource optimisation, and contract intelligence.")}
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Testimonial Slide End */}
+                        {/* Testimonial Slide Start */}
+                        <div className="swiper-slide">
+                            <div className="service-item flip-card">
+                                <div className="flip-card-inner">
+                                    {/* Front Side */}
+                                    <div className="flip-card-front ">
+                                        {/* Your current service content */}
+                                        <div className="service-item-header">
+                                            <div className="service-card">
+                                                <img src="/images/ss6.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div className="service-item-body oa-para-waber">
+                                            <h3>
+                                                {t("Process Manufacturing")}
+                                            </h3>
+
+                                            <p className="oa-para">
+                                                {t("Predictive process control, energy optimisation, waste reduction, and safety analytics.")}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Testimonial Slide End */}
+                        {/* Testimonial Slide Start */}
+                        <div className="swiper-slide">
+                            <div className="service-item flip-card">
+                                <div className="flip-card-inner">
+                                    {/* Front Side */}
+                                    <div className="flip-card-front ">
+                                        {/* Your current service content */}
+                                        <div className="service-item-header">
+                                            <div className="service-card">
+                                                <img src="/images/ss6.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div className="service-item-body oa-para-waber">
+                                            <h3>
+                                                {t("Private Equity &amp; Funding-backed Ventures")}
+                                            </h3>
+                                            <p className="oa-para">
+                                                {t("Portfolio performance analytics, risk scoring, market trend prediction, and value creation tracking.")}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Testimonial Slide End */}
+                    </div>
+                    <div className="testimonial-btn rtyElement">
+                        <div className="testimonial-button-prev">
+                            <div className="animated-svg-link">
+                                <span className="svg-container ">
+                                    <span className=" right">
+                                        <svg
+                                            width={24}
+                                            height={23}
+                                            viewBox="0 0 24 23"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="16.0004"
+                                                cy="4.79995"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="12.7992"
+                                                cy="1.6"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="22.4008"
+                                                cy="11.2"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="1.6"
+                                                cy="11.2"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="6.40078"
+                                                cy="11.2"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="11.1996"
+                                                cy="11.2"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="16.0004"
+                                                cy="11.2"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="19.1996"
+                                                cy="14.4"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="16.0004"
+                                                cy="17.6"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="12.7992"
+                                                cy="20.8"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="19.1996"
+                                                cy="8.00002"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                        </svg>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <span className="testspace" style={{ color: "#000" }}>
+                            1/6
+                        </span>
+                        <div className="testimonial-button-next">
+                            <div className="animated-svg-link">
+                                <span className="svg-container ">
+                                    <span className=" right">
+                                        <svg
+                                            width={24}
+                                            height={23}
+                                            viewBox="0 0 24 23"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="16.0004"
+                                                cy="4.79995"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="12.7992"
+                                                cy="1.6"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="22.4008"
+                                                cy="11.2"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="1.6"
+                                                cy="11.2"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="6.40078"
+                                                cy="11.2"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="11.1996"
+                                                cy="11.2"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="16.0004"
+                                                cy="11.2"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="19.1996"
+                                                cy="14.4"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="16.0004"
+                                                cy="17.6"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="12.7992"
+                                                cy="20.8"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                            <circle
+                                                className="dot"
+                                                opacity="0.5"
+                                                cx="19.1996"
+                                                cy="8.00002"
+                                                r="1.6"
+                                                fill="#535353"
+                                            />
+                                        </svg>
+                                    </span>
+                                </span>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            {/* Testimonial Slider End */}
+        </div>
+    </div>
+</div>
                 </div>
                 {/* Our Testimonial Section End */}
                 <div className=" buildsection mobilepdb40">
@@ -1644,7 +1651,7 @@ export default function AlMl() {
                                                 className="text-anime-style-2 text-center"
                                                 data-cursor="-opaque"
                                             >
-                                                Why Choose Us?
+                                                {t("Why Choose Us?")}
                                             </h2>
                                         </div>
                                     </div>
@@ -1656,29 +1663,32 @@ export default function AlMl() {
                                 <div className="dynamics-advantage-waber">
                                     <img src="/new/g501.svg" alt="" />
                                     <p>
-                                        Proven expertise in Google Cloud AI and Azure-based AI
-                                        implementations.
+                                        {t("Proven expertise in Google Cloud AI and Azure-based AI implementations.")}
                                     </p>
                                 </div>
                             </div>
                             <div className="col-sm-3 col-6">
                                 <div className="dynamics-advantage-waber">
                                     <img src="/new/ad2.svg" alt="" />
-                                    <p>Seamless integration with ERP, CRM, and custom applications.</p>
+                                    <p> 
+                                        {t("Seamless integration with ERP, CRM, and custom applications.")}
+                                    </p>
                                 </div>
                             </div>
                             <div className="col-sm-3 col-6">
                                 <div className="dynamics-advantage-waber">
                                     <img src="/new/ad3.svg" alt="" />
-                                    <p>
-                                        End-to-end support — from design to deployment and optimisation.
+                                    <p> 
+                                        {t("End-to-end support — from design to deployment and optimisation.")}
                                     </p>
                                 </div>
                             </div>
                             <div className="col-sm-3 col-6">
                                 <div className="dynamics-advantage-waber">
                                     <img src="/new/ad4.svg" alt="" />
-                                    <p>Relentless focus on measurable outcomes.</p>
+                                    <p> 
+                                        {t("Relentless focus on measurable outcomes.")}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -1693,14 +1703,16 @@ export default function AlMl() {
                                 <div className="row">
                                     <div className="col-sm-8">
                                         <h2>
-                                            Your data is more than numbers—it’s your next competitive edge.{" "}
+                                            {t("Your data is more than numbers—it’s your next competitive edge.")}
                                         </h2>
-                                        <p>Talk to our AI/ML experts today.</p>
+                                        <p> 
+                                            {t("Talk to our AI/ML experts today.")}
+                                        </p>
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
                                             <Link href="/contact-us" className="animated-svg-link">
-                                                Contact Us
+                                                {t("Contact Us")}
                                                 <span className="svg-container ">
                                                     <span className=" right">
                                                         <svg

@@ -4,7 +4,9 @@ import React from "react";
 import CommomLayout from "../../../Components/CommomLayout";
 import Link from "next/link";
 import TestimonialandAward from "../../../Components/TestimonialandAward";
+import {useTranslation} from "../../../hooks/useTranslation";
 export default function EnterpriseSolutions() {
+  const { t, language } = useTranslation();
   return (
     <CommomLayout>
       <>
@@ -18,21 +20,17 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-6">
                 <div className="section-title">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Microsoft Dynamics Solutions
+                    {t("Microsoft Dynamics Solutions")}
                   </h2>
                   <p>
-                    Empower your enterprise with intelligent, scalable ERP and CRM
-                    solutions from Microsoft Dynamics.
+                    {t("Empower your enterprise with intelligent, scalable ERP and CRM solutions from Microsoft Dynamics.")}
                   </p>
                   <p>
-                    At RheinBrücke, we help organisations streamline operations,
-                    integrate business functions, and unlock real-time insights using
-                    Microsoft Solutions all tailored to your industry and growth
-                    goals.
+                    {t("At RheinBrücke, we help organisations streamline operations, integrate business functions, and unlock real-time insights using Microsoft Solutions all tailored to your industry and growth goals.")}
                   </p>
                   <div className="ser-btn mt-5">
                     <Link href="/contact-us" className="animated-svg-link">
-                      Contact Us
+                      {t("Contact Us")}
                       <span className="svg-container ">
                         <span className=" right">
                           <svg
@@ -704,12 +702,10 @@ export default function EnterpriseSolutions() {
                         className="text-anime-style-2 text-center"
                         data-cursor="-opaque"
                       >
-                        The Microsoft Dynamics Advantage
+                        {t("The Microsoft Dynamics Advantage")}
                       </h2>
                       <p className="text-center">
-                        Modern businesses face increasing complexity, competitive
-                        pressures, and evolving customer expectations. Common
-                        challenges include
+                      {t("Modern businesses face increasing complexity, competitive pressures, and evolving customer expectations. Common challenges include")}
                       </p>
                     </div>
                   </div>
@@ -720,44 +716,42 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-3 col-6">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/g501.svg" alt="" />
-                  <p>Disconnected legacy systems limiting agility and scalability</p>
+                  <p>{t("Disconnected legacy systems limiting agility and scalability")}</p>
                 </div>
               </div>
               <div className="col-sm-3 col-6">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/ad2.svg" alt="" />
-                  <p>Siloed data and inconsistent reporting</p>
+                  <p>{t("Siloed data and inconsistent reporting")}</p>
                 </div>
               </div>
               <div className="col-sm-3 col-6">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/ad3.svg" alt="" />
-                  <p>Manual, time-consuming workflows</p>
+                  <p>{t("Manual, time-consuming workflows")}</p>
                 </div>
               </div>
               <div className="col-sm-3 col-6">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/ad4.svg" alt="" />
-                  <p>Rising operational costs and inefficiencies</p>
+                  <p>{t("Rising operational costs and inefficiencies")}</p>
                 </div>
               </div>
               <div className="col-sm-3 col-6">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/ad5.svg" alt="" />
-                  <p>Limited real-time visibility fordecision-making</p>
+                  <p>{t("Limited real-time visibility fordecision-making")}</p>
                 </div>
               </div>
               <div className="col-sm-3 col-6">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/ad6.svg" alt="" />
-                  <p>Difficulty integrating ERP, CRM, and productivity tools</p>
+                  <p>{t("Difficulty integrating ERP, CRM, and productivity tools")}</p>
                 </div>
               </div>
               <div className="col-sm-7 col-12">
                 <p className="text-dark text-center">
-                  Microsoft Dynamics addresses these with unified, cloud-based ERP and
-                  CRM capabilities, enabling you to digitise core operations, optimise
-                  processes, and drive growth.
+                {t("Microsoft Dynamics addresses these with unified, cloud-based ERP and CRM capabilities, enabling you to digitise core operations, optimise processes, and drive growth.")}
                 </p>
               </div>
             </div>
@@ -770,11 +764,10 @@ export default function EnterpriseSolutions() {
               <div className="section-title ">
                 <div className="hero-video-content1 wow fadeInUp mt-4">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Our Microsoft Dynamics Solutions
+                    {t("Our Microsoft Dynamics Solutions")}
                   </h2>
                   <p>
-                    We deliver end-to-end Microsoft Dynamics services to help you
-                    modernise, integrate, and optimise your business:
+                  {t("We deliver end-to-end Microsoft Dynamics services to help you modernise, integrate, and optimise your business:")}
                   </p>
                 </div>
               </div>
@@ -789,10 +782,10 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="mds-waber">
                       <img src="/new/ds1.svg" alt="" />
-                      <h6> Dynamics 365 ERP &amp; CRM Solutions</h6>
+                      <h6> {t("Dynamics 365 ERP & CRM Solutions")}</h6>
                       <p>
-                        Finance, Operations, Sales, Marketing, Customer Service, Field
-                        Service, HR
+                        {t("Finance, Operations, Sales, Marketing, Customer Service, Field Service, HR")}
+
                       </p>
                     </div>
                   </div>
@@ -801,10 +794,9 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="mds-waber">
                       <img src="/new/ds2.svg" alt="" />
-                      <h6> Business Central Migration &amp; Implementation</h6>
-                      <p>
-                        Cloud-based ERP for SMBs covering finance, supply chain,
-                        sales, service, and projects
+                      <h6> {t("Business Central Migration & Implementation")}</h6>
+<p>
+                        {t("Cloud-based ERP for SMBs covering finance, supply chain, sales, service, and projects")}
                       </p>
                     </div>
                   </div>
@@ -813,10 +805,9 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="mds-waber">
                       <img src="/new/ds3.svg" alt="" />
-                      <h6> Navision Support, Migration &amp; Upgrades </h6>
+                      <h6> {t("Navision Support, Migration & Upgrades")}</h6>
                       <p>
-                        Maintain and modernise NAV with a clear path to Business
-                        Central
+                        {t("Maintain and modernise NAV with a clear path to Business Central")}
                       </p>
                     </div>
                   </div>
@@ -825,10 +816,10 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="mds-waber">
                       <img src="/new/ds4.svg" alt="" />
-                      <h6> AX (Axapta) Support, Migration and Upgrades</h6>
+                      <h6> {t("AX (Axapta) Support, Migration and Upgrades")}</h6>
+
                       <p>
-                        Move to Dynamics 365 Finance &amp; Operations for scalability
-                        and advanced capabilities
+                        {t("Move to Dynamics 365 Finance & Operations for scalability and advanced capabilities")}
                       </p>
                     </div>
                   </div>
@@ -839,10 +830,12 @@ export default function EnterpriseSolutions() {
                       <img src="/new/ds5.svg" alt="" />
                       <h6>
                         {" "}
-                        Integration with Microsoft 365, Power Platform, Azure, and
-                        Power BI{" "}
+                        {t("Integration with Microsoft 365, Power Platform, Azure, and Power BI")}
                       </h6>
-                      <p>Boost collaboration, analytics, and automation</p>
+                      <p>
+                        {t("Boost collaboration, analytics, and automation")}
+                      </p>
+
                     </div>
                   </div>
                   {/* Testimonial Slide End */}
@@ -1070,11 +1063,11 @@ export default function EnterpriseSolutions() {
               <div className="col-lg-6">
                 <div className="section-title">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Our Approach
+                     {t("Our Approach")}
                   </h2>
                   <p>
-                    We align Microsoft Dynamics capabilities with your strategic
-                    objectives using our Analyse–Integrate–Transform (AIT) methodology
+                  {t("We align Microsoft Dynamics capabilities with your strategic objectives using our Analyse–Integrate–Transform (AIT) methodology")}
+
                   </p>
                 </div>
               </div>
@@ -1188,11 +1181,12 @@ export default function EnterpriseSolutions() {
                               </div>
                               <div className="service-item-body  oa-para-waber">
                                 <h3>
-                                  Embed AI for predictive insights and smarter actions{" "}
+                                  {t("Embed AI for predictive insights and smarter actions")}
+
                                 </h3>
                                 <p className="oa-para">
-                                  Leverage AI within Dynamics to forecast trends,
-                                  automate decisions, and enhance productivity.{" "}
+                                  {t("Leverage AI within Dynamics to forecast trends, automate decisions, and enhance productivity.")}
+
                                 </p>
                               </div>
                             </div>
@@ -1289,10 +1283,12 @@ export default function EnterpriseSolutions() {
                                 </div>
                               </div>
                               <div className="service-item-body oa-para-waber">
-                                <h3>Assess business challenges and system gaps </h3>
+                                <h3>
+                                  {t("Assess business challenges and system gaps")}
+                                </h3>
+
                                 <p className="oa-para">
-                                  Identify process inefficiencies and system gaps to
-                                  build a clear Dynamics roadmap.{" "}
+                                  {t("Identify process inefficiencies and system gaps to build a clear Dynamics roadmap.")}
                                 </p>
                               </div>
                             </div>
@@ -1390,11 +1386,11 @@ export default function EnterpriseSolutions() {
                               </div>
                               <div className="service-item-body oa-para-waber">
                                 <h3>
-                                  Configure Dynamics to industry-specific requirements{" "}
+                                  {t("Configure Dynamics to industry-specific requirements")}
+
                                 </h3>
                                 <p className="oa-para">
-                                  Tailor Microsoft Dynamics to your industry workflows
-                                  and compliance needs.{" "}
+                                  {t("Tailor Microsoft Dynamics to your industry workflows and compliance needs.")}
                                 </p>
                               </div>
                             </div>
@@ -1616,12 +1612,10 @@ export default function EnterpriseSolutions() {
                               </div>
                               <div className="service-item-body oa-para-waber">
                                 <h3>
-                                  Integrate with existing applications for seamless
-                                  workflows{" "}
+                                  {t("Integrate with existing applications for seamless workflows")}
                                 </h3>
                                 <p className="oa-para">
-                                  Connect Dynamics with your apps for smooth,
-                                  end-to-end workflows.{" "}
+                                  {t("Connect Dynamics with your apps for smooth, end-to-end workflows.")}
                                 </p>
                               </div>
                             </div>
@@ -1742,10 +1736,12 @@ export default function EnterpriseSolutions() {
                                 </div>
                               </div>
                               <div className="service-item-body oa-para-waber">
-                                <h3>Automate manual processes for efficiency </h3>
+                                <h3>
+                                  {t("Automate manual processes for efficiency")}
+                                </h3>
+
                                 <p className="oa-para">
-                                  Streamline repetitive tasks and approvals through
-                                  Dynamics automation.{" "}
+                                  {t("Streamline repetitive tasks and approvals through Dynamics automation.")}
                                 </p>
                               </div>
                             </div>
@@ -1852,12 +1848,10 @@ export default function EnterpriseSolutions() {
                               </div>
                               <div className="service-item-body oa-para-waber">
                                 <h3>
-                                  Deliver real-time data insights for smarter
-                                  decisions{" "}
+                                  {t("Deliver real-time data insights for smarter decisions")}
                                 </h3>
                                 <p className="oa-para">
-                                  Gain actionable insights and dashboards for informed
-                                  business decisions.{" "}
+                                  {t("Gain actionable insights and dashboards for informed business decisions.")}
                                 </p>
                               </div>
                             </div>
@@ -2156,11 +2150,11 @@ export default function EnterpriseSolutions() {
                               </div>
                               <div className="service-item-body oa-para-waber">
                                 <h3>
-                                  Ensure scalability and security for future growth{" "}
+                                  {t("Ensure scalability and security for future growth")}
+
                                 </h3>
                                 <p className="oa-para">
-                                  Scale Dynamics securely to support growth and
-                                  long-term resilience.{" "}
+                                  {t("Scale Dynamics securely to support growth and long-term resilience.")}
                                 </p>
                               </div>
                             </div>
@@ -2396,42 +2390,50 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-12">
                 <div className="section-title text-center ">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    The RheinBrücke Advantage
+                    {t("The RheinBrücke Advantage")}
                   </h2>
                 </div>
                 <div className="row mt-5">
                   <div className="col-lg-6 col-md-6 col-12">
                     <div className="service-item-body1 imgpos w80">
                       <h3>
-                        Microsoft AI Cloud and ISV Partner <br />
-                        with deep ERP expertise
+                        {t("Microsoft AI Cloud and ISV Partner")} <br />
+                        {t("with deep ERP expertise")}
                       </h3>
                       <img src="/new/adv1.svg" alt="" />
                     </div>
                   </div>
                   <div className="col-lg-6 col-md-6 col-12 w80">
                     <div className="service-item-body1 imgpos">
-                      <h3>End-to-end services from strategy to support</h3>
-                      <img src="/new/gt.svg" alt="" />
+                      <h3>
+                        {t("End-to-end services from strategy to support")}
+                      </h3>
+                     <img src="/new/gt.svg" alt="" />
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-12">
                     <div className="service-item-body1 imgpos1">
-                      <h3>Proven global rollouts with localisation capabilities</h3>
+                      <h3>
+                        {t("Proven global rollouts with localisation capabilities")}
+                      </h3>
+
                       <img src="/new/adv3.svg" alt="" />
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-12">
                     <div className="service-item-body1 imgpos2">
-                      <h3>Smooth migrations from legacy systems (NAV, AX)</h3>
+                      <h3>
+                        {t("Smooth migrations from legacy systems (NAV, AX)")}
+                      </h3>
+
                       <img src="/new/adv4.svg" alt="" />
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-12">
                     <div className="service-item-body1 imgpos3">
                       <h3>
-                        Outcome-focused delivery ensuring operational resilience and
-                        business value
+                        {t("Outcome-focused delivery ensuring operational resilience and")} <br />
+                    {t("business value")}
                       </h3>
                       <img src="/images/advant5.svg" alt="" />
                     </div>
@@ -2448,7 +2450,7 @@ export default function EnterpriseSolutions() {
               <div className="col-lg-12">
                 <div className="section-title text-center headingss">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Industries We Serve
+                    {t("Industries We Serve")}
                   </h2>
                 </div>
               </div>
@@ -2463,7 +2465,7 @@ export default function EnterpriseSolutions() {
                       <div className="swiper-slide">
                         <div className="service-item-body in4">
                           <h3>
-                            <span>Manufacturing </span>
+                            <span>{t("Manufacturing")}</span>
                           </h3>
                         </div>
                       </div>
@@ -2472,7 +2474,7 @@ export default function EnterpriseSolutions() {
                       <div className="swiper-slide">
                         <div className="service-item-body in2">
                           <h3>
-                            <span>Retail &amp; E-commerce </span>
+                            <span>{t("Retail & E-commerce")}</span>
                           </h3>
                         </div>
                       </div>
@@ -2481,7 +2483,7 @@ export default function EnterpriseSolutions() {
                       <div className="swiper-slide">
                         <div className="service-item-body in3">
                           <h3>
-                            <span>Automotive</span>
+                            <span>{t("Automotive")}</span>
                           </h3>
                         </div>
                       </div>
@@ -2490,7 +2492,7 @@ export default function EnterpriseSolutions() {
                       <div className="swiper-slide">
                         <div className="service-item-body fin1">
                           <h3>
-                            <span>Financial Services </span>
+                            <span>{t("Financial Services")}</span>
                           </h3>
                         </div>
                       </div>
@@ -2962,7 +2964,7 @@ export default function EnterpriseSolutions() {
                 <div className="platdesc">
                   <div className="section-title">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      Explore our enterprise platform capabilities
+                      {t("Explore our enterprise platform capabilities")}
                     </h2>
                   </div>
                   <div className="row ">
@@ -2970,14 +2972,13 @@ export default function EnterpriseSolutions() {
                       <div className="plat-in">
                         <img src="/new/msc1.svg" alt="" />
                         <p>
-                          Unlock actionable insights and visualise your business data
-                          in real time with Power BI.
+                          {t("Unlock actionable insights and visualise your business data in real time with Power BI.")}
                         </p>
                         <div className="ser-btn1">
                           <Link href="/business-intelligence"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            Know More
+                            {t("Know More")}
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -3086,14 +3087,14 @@ export default function EnterpriseSolutions() {
                       <div className="plat-in">
                         <img src="/new/msc2.svg" alt="" />
                         <p>
-                          Leverage our expertise as a Microsoft Solutions Partner to
-                          deliver integrated, enterprise-grade solutions.
+                          {t("Leverage our expertise as a Microsoft Solutions Partner to deliver integrated, enterprise-grade solutions.")}
+
                         </p>
                         <div className="ser-btn1">
                           <Link href="/rheinbrucke-a-microsoft-partner"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            Know More
+                            {t("Know More")}
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -3202,14 +3203,14 @@ export default function EnterpriseSolutions() {
                       <div className="plat-in">
                         <img src="/new/msc3.svg" alt="" />
                         <p>
-                          Build low-code applications that simplify workflows, enhance
-                          collaboration, and accelerate digital transformation.
+                        {t("Build low-code applications that simplify workflows, enhance collaboration, and accelerate digital transformation.")}
+
                         </p>
                         <div className="ser-btn1">
                           <Link href="/ms-technology"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            Know More
+                            {t("Know More")}
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -3317,19 +3318,17 @@ export default function EnterpriseSolutions() {
                   </div>
                   <div className="section-title mt150 plath2">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      Digital Solutions and Services
+                      {t("Digital Solutions and Services")}
                     </h2>
                     <p>
-                      RheinBrücke helps enterprises modernise systems, automate
-                      processes, and harness real-time insights to drive faster
-                      innovation and measurable business outcomes.
+                       {t("RheinBrücke helps enterprises modernise systems, automate processes, and harness real-time insights to drive faster innovation and measurable business outcomes.")}
                     </p>
                     <div className="ser-btn">
                       <Link 
                         href="/digital-services-and-solutions"
                         className="animated-svg-link"
                       >
-                        Know More
+                        {t("Know More")}
                         <span className="svg-container ">
                           <span className=" right">
                             <svg
@@ -3445,7 +3444,7 @@ export default function EnterpriseSolutions() {
                 <div className="platdesc">
                   <div className="section-title">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      Explore our enterprise platform capabilities
+                      {t("Explore our enterprise platform capabilities")}
                     </h2>
                   </div>
                   <div className="row ">
@@ -3458,12 +3457,11 @@ export default function EnterpriseSolutions() {
                             <div className="plat-in">
                               <img src="/images/plat1.png" alt="" />
                               <p>
-                                Unlock actionable insights and visualise your business
-                                data in real time with Power BI.
+                                {t("Unlock actionable insights and visualise your business data in real time with Power BI.")}
                               </p>
                               <div className="ser-btn1">
                                 <Link href="" className="animated-svg-link1 btn-style-3">
-                                  Know More
+                                  {t("Know More")}
                                   <span className="svg-container ">
                                     <span className=" left">
                                       <svg
@@ -3572,13 +3570,12 @@ export default function EnterpriseSolutions() {
                             <div className="plat-in">
                               <img src="/images/plat2.png" alt="" />
                               <p>
-                                Leverage our expertise as a Microsoft Solutions
-                                Partner to deliver integrated, enterprise-grade
-                                solutions.
+                                  {t("Leverage our expertise as a Microsoft Solutions Partner to deliver integrated, enterprise-grade solutions.")}
                               </p>
                               <div className="ser-btn1">
                                 <Link href="" className="animated-svg-link1 btn-style-3">
-                                  Know More
+                                {t("Know More")}
+
                                   <span className="svg-container ">
                                     <span className=" left">
                                       <svg
@@ -3687,13 +3684,11 @@ export default function EnterpriseSolutions() {
                             <div className="plat-in">
                               <img src="/images/plat3.png" alt="" />
                               <p>
-                                Build low-code applications that simplify workflows,
-                                enhance collaboration, and accelerate digital
-                                transformation.
+                                {t("Build low-code applications that simplify workflows, enhance collaboration, and accelerate digital transformation.")}
                               </p>
                               <div className="ser-btn1">
                                 <Link href="" className="animated-svg-link1 btn-style-3">
-                                  Know More
+                                  {t("Know More")}
                                   <span className="svg-container ">
                                     <span className=" left">
                                       <svg
@@ -4276,16 +4271,15 @@ export default function EnterpriseSolutions() {
                   </div>
                   <div className="section-title plath2">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      Digital Solutions and Services
+                      {t("Digital Solutions and Services")}
                     </h2>
                     <p>
-                      RheinBrücke helps enterprises modernise systems, automate
-                      processes, and harness real-time insights to drive faster
-                      innovation and measurable business outcomes.
+                    {t("RheinBrücke helps enterprises modernise systems, automate processes, and harness real-time insights to drive faster innovation and measurable business outcomes.")}
+
                     </p>
                     <div className="ser-btn">
                       <Link href="#" className="animated-svg-link">
-                        Know More
+                        {t("Know More")}
                         <span className="svg-container ">
                           <span className=" right">
                             <svg
@@ -4560,17 +4554,16 @@ export default function EnterpriseSolutions() {
               <div className="firstrow">
                 <div className="row">
                   <div className="col-sm-8">
-                    <h2>Let us Transform Your Enterprise </h2>
+                    <h2>{t("Let us Transform Your Enterprise")}</h2>
                     <p>
-                      Discover how RheinBrücke can help you optimise operations,
-                      automate workflows, and grow with Microsoft Dynamics.
+                      {t("Discover how RheinBrücke can help you optimise operations, automate workflows, and grow with Microsoft Dynamics.")}
                     </p>
-                    <p>Talk to our Microsoft Dynamics experts today. </p>
+                    <p>{t("Talk to our Microsoft Dynamics experts today.")}</p>
                   </div>
                   <div className="col-sm-4">
                     <div className="ser-btn text-right">
                       <Link href="/contact-us" className="animated-svg-link">
-                        Contact Us
+                        {t("Contact Us")}
                         <span className="svg-container ">
                           <span className=" right">
                             <svg

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import useTranslation from '../hooks/useTranslation'
+import {useTranslation} from '../hooks/useTranslation'
 
 const TestimonialandAward = () => {
     const { t } = useTranslation()

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import useTranslation from "../hooks/useTranslation";
+import {useTranslation} from "../hooks/useTranslation";
 export default function Footer() {
     const { t } = useTranslation();
     const [showCookieBanner, setShowCookieBanner] = useState(false);
