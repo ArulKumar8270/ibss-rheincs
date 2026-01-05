@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function EnterpriseSolutions() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
             <>
@@ -15,14 +17,10 @@ export default function EnterpriseSolutions() {
                             <div className="col-sm-6">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Innovative Products to Empower Your Business
+                                        {t("Innovative Products to Empower Your Business")}
                                     </h2>
                                     <p>
-                                        At RheinBrücke, we design and deliver innovative business
-                                        solutions that solve complex challenges and help organisations
-                                        achieve sustainable growth. Our offerings combine deep industry
-                                        knowledge with advanced technology, enabling businesses to operate
-                                        efficiently, adapt quickly, and stay competitive.
+                                        {t("At RheinBrücke, we design and deliver innovative business solutions that solve complex challenges and help organisations achieve sustainable growth. Our offerings combine deep industry knowledge with advanced technology, enabling businesses to operate efficiently, adapt quickly, and stay competitive.")}
                                     </p>
                                 </div>
                             </div>
@@ -43,11 +41,10 @@ export default function EnterpriseSolutions() {
                                 {/* Section Title Start */}
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Our Solution Portfolio
+                                        {t("Our Solution Portfolio")}
                                     </h2>
                                     <p>
-                                        Our portfolio includes cutting-edge, industry-focused platforms
-                                        that deliver measurable business outcomes:
+                                        {t("Our portfolio includes cutting-edge, industry-focused platforms that deliver measurable business outcomes:")}
                                     </p>
                                 </div>
                                 {/* Section Title End */}
@@ -58,32 +55,41 @@ export default function EnterpriseSolutions() {
                                 <div className="col-lg-6 col-md-6">
                                     <div className="service-item ">
                                         <div className="service-item-body">
-                                            <h3>Corus HR – Transforming Human Capital Management </h3>
+                                            <h3>
+{t("Corus HR – Transforming Human Capital Management.")}         
+</h3>
                                             <ul>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> Automates the
-                                                    entire hire-to-retire cycle from recruitment to exit.
+                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    {t("Automates the entire hire-to-retire cycle from recruitment to exit.")}
+
                                                 </li>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> Simplifies
-                                                    onboarding, probation, and employee lifecycle tracking.
+                                        <img src="/images/socilapoint.svg" alt="" /> 
+
+                                        {t("Simplifies onboarding, probation, and employee lifecycle tracking.")}
                                                 </li>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> Integrates
-                                                    attendance, leave, payroll, and compliance management.
+                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    {t("Integrates attendance, leave, payroll, and compliance management.")}
+
                                                 </li>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> Streamlines
-                                                    performance reviews and goal tracking.
+                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    {t("Streamlines performance reviews and goal tracking.")}
+
                                                 </li>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> Offers
-                                                    self-service portals for employees and managers.{" "}
+                                                    <img src="/images/socilapoint.svg" alt="" /> 
+
+                                                    {t("Offers self-service portals for employees and managers.")}
+
+
                                                 </li>
                                             </ul>
                                             <div className="ser-btn m-0">
                                                 <Link href="/solutions/CorusHR" className="animated-svg-link p-0">
-                                                    Explore More
+                                                    {t("Explore More")}
                                                     <span className="svg-container ">
                                                         <span className=" right">
                                                             <svg
@@ -195,34 +201,39 @@ export default function EnterpriseSolutions() {
                                     <div className="service-item ">
                                         <div className="service-item-body">
                                             <h3>
-                                                MeRLIN Sourcing – Driving Strategic Sourcing Excellence{" "}
+                                                {t("MeRLIN Sourcing – Driving Strategic Sourcing Excellence.")}
+
                                             </h3>
                                             <ul>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> Advanced
-                                                    Supplier Relationship Management (SRM) and eSourcing
-                                                    solution{" "}
+                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    {t("Advanced Supplier Relationship Management (SRM) and eSourcing solution.")}
+
                                                 </li>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> Facilitates
-                                                    strategic procurement and collaborative supplier management{" "}
+                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    {t("Facilitates strategic procurement and collaborative supplier management.")}
+
                                                 </li>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> Optimises costs
-                                                    while mitigating supply chain risks
+                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    {t("Optimises costs while mitigating supply chain risks.")}
+
                                                 </li>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> Provides
-                                                    AI-driven analytics for data-backed sourcing decisions{" "}
+                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    {t("Provides AI-driven analytics for data-backed sourcing decisions.")}
+
                                                 </li>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> Encourages
-                                                    innovation through supplier partnerships{" "}
+                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    {t("Encourages innovation through supplier partnerships.")}
+
                                                 </li>
                                             </ul>
                                             <div className="ser-btn m-0">
                                                 <Link href="/MeRLIN-strategic-sourcing-software" className="animated-svg-link p-0">
-                                                    Explore More
+                                                    {t("Explore More")}
                                                     <span className="svg-container ">
                                                         <span className=" right">
                                                             <svg
@@ -353,11 +364,11 @@ export default function EnterpriseSolutions() {
                                                 className="text-anime-style-2 text-dark"
                                                 data-cursor="-opaque"
                                             >
-                                                Why Choose Our Solutions?
+                                                {t("Why Choose Our Solutions?")}
                                             </h2>
                                             <p>
-                                                Our solutions are designed to deliver tangible benefits and
-                                                long-term value:{" "}
+                                                {t("Our solutions are designed to deliver tangible benefits and long-term value:")}
+
                                             </p>
                                         </div>
                                     </div>
@@ -366,24 +377,24 @@ export default function EnterpriseSolutions() {
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/new/g501.svg" alt="" />
                                                 <p>
-                                                    Proven success across diverse industries and geographies
+                                                    {t("Proven success across diverse industries and geographies")}
                                                 </p>
                                             </div>
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/new/ad2.svg" alt="" />
-                                                <p>Flexible, scalable, and secure architecture</p>
+                                                <p>{t("Flexible, scalable, and secure architecture")}</p>
                                             </div>
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/new/ad3.svg" alt="" />
-                                                <p>Rapid deployment for quicker ROI</p>
+                                                <p>{t("Rapid deployment for quicker ROI")}</p>
                                             </div>
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/new/ad4.svg" alt="" />
-                                                <p>Seamless integration with existing business systems</p>
+                                                <p>{t("Seamless integration with existing business systems")}</p>
                                             </div>
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/new/ad5.svg" alt="" />
-                                                <p>Dedicated expert support and continuous innovation</p>
+                                                <p>{t("Dedicated expert support and continuous innovation")}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -400,20 +411,19 @@ export default function EnterpriseSolutions() {
                             <div className="firstrow">
                                 <div className="row">
                                     <div className="col-sm-8">
-                                        <h2>Ready to Transform Your Business? </h2>
+                                        <h2>{t("Ready to Transform Your Business?")}</h2>
                                         <p>
-                                            Unlock the potential of your organisation with innovative
-                                            solutions tailored to your needs.{" "}
+                                            {t("Unlock the potential of your organisation with innovative solutions tailored to your needs.")}
                                         </p>
                                         <p>
-                                            Contact us today to discover how our platforms can help you
-                                            achieve measurable results.{" "}
+                                            {t("Contact us today to discover how our platforms can help you achieve measurable results.")}
+
                                         </p>
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
                                             <Link href="/contact-us" className="animated-svg-link">
-                                                Contact Us
+                                                {t("Contact Us")}
                                                 <span className="svg-container ">
                                                     <span className=" right">
                                                         <svg

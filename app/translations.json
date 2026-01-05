@@ -128,11 +128,632 @@
     "Intelligent Automation & Integration": "Intelligent Automation & Integration",
     "We automate and integrate workflows to eliminate inefficiencies, improve accuracy, and create a seamless flow of information across the enterprise.": "We automate and integrate workflows to eliminate inefficiencies, improve accuracy, and create a seamless flow of information across the enterprise.",
     "Strategic System Design & Delivery": "Strategic System Design & Delivery",
-    "We design and deliver systems that are built for speed, reliability, and business impact, helping you move from strategy to measurable results.": "We design and deliver systems that are built for speed, reliability, and business impact, helping you move from strategy to measurable results."
+    "We design and deliver systems that are built for speed, reliability, and business impact, helping you move from strategy to measurable results.": "We design and deliver systems that are built for speed, reliability, and business impact, helping you move from strategy to measurable results.",
   
   
 
 
+
+
+    "Enterprise Solutions and Services": "Enterprise Solutions and Services",
+    "Build resilient, connected, and future-ready enterprises with intelligent platforms and scalable solutions.": "Build resilient, connected, and future-ready enterprises with intelligent platforms and scalable solutions.",
+    "At RheinBrücke, we help organisations modernise operations, unify business processes, and improve decision-making through enterprise-grade solutions. From ERP and CRM to cloud-native platforms and business process automation, we deliver scalable, integrated systems that drive operational agility and business growth.": "At RheinBrücke, we help organisations modernise operations, unify business processes, and improve decision-making through enterprise-grade solutions. From ERP and CRM to cloud-native platforms and business process automation, we deliver scalable, integrated systems that drive operational agility and business growth.",
+
+    "The Enterprise Advantage": "The Enterprise Advantage",
+    "Modern enterprises need agile, connected systems to stay competitive, improve productivity, and make data-driven decisions. Many organisations struggle with:": "Modern enterprises need agile, connected systems to stay competitive, improve productivity, and make data-driven decisions. Many organisations struggle with:",
+    "Disconnected legacy systems limiting operational agility": "Disconnected legacy systems limiting operational agility",
+    "Siloed data and processes restricting enterprise-wide visibility": "Siloed data and processes restricting enterprise-wide visibility",
+    "Rising operational costs and inefficiencies across business functions": "Rising operational costs and inefficiencies across business functions",
+    "Inability to adapt quickly to market shifts, customer expectations, and compliance demands": "Inability to adapt quickly to market shifts, customer expectations, and compliance demands",
+    "Lack of real-time insights for fast, informed decision-making": "Lack of real-time insights for fast, informed decision-making",
+    "Complex, fragmented business application landscapes": "Complex, fragmented business application landscapes",
+    "Manual processes slowing down innovation and scalability": "Manual processes slowing down innovation and scalability",
+    "Our Solutions address these challenges by modernising core systems, automating processes, integrating enterprise applications, and enabling data-driven operational excellence.": "Our Solutions address these challenges by modernising core systems, automating processes, integrating enterprise applications, and enabling data-driven operational excellence.",
+
+    "Our Enterprise Solutions and Services": "Our Enterprise Solutions and Services",
+    "ERP Implementation & Support Services": "ERP Implementation & Support Services",
+    "Industry-Specific ERP Solutions": "Industry-Specific ERP Solutions",
+    "ERP Modernisation & Upgrades": "ERP Modernisation & Upgrades",
+    "CRM and Customer Engagement Platforms": "CRM and Customer Engagement Platforms",
+    "Procurement & Strategic Sourcing Solutions": "Procurement & Strategic Sourcing Solutions",
+    "Digital Transformation Solutions": "Digital Transformation Solutions",
+    "HCM and Payroll Solutions": "HCM and Payroll Solutions",
+    "Cloud Migrations & Managed Services": "Cloud Migrations & Managed Services",
+    "Regulatory Compliance Solutions including eInvoicing, ZATCA (Saudi Arabia), Oman VAT, and CSF": "Regulatory Compliance Solutions including eInvoicing, ZATCA (Saudi Arabia), Oman VAT, and CSF",
+
+    "Our Approach to Building Future-Ready Enterprises": "Our Approach to Building Future-Ready Enterprises",
+    "We help organisations modernise operations, unify systems, and unlock the power of real-time data. By streamlining business processes, integrating critical functions, and enhancing operational resilience, we enable enterprises to stay agile, connected, and future ready.": "We help organisations modernise operations, unify systems, and unlock the power of real-time data. By streamlining business processes, integrating critical functions, and enhancing operational resilience, we enable enterprises to stay agile, connected, and future ready.",
+    "Applying our Analyse–Integrate–Transform (AIT) methodology to identify gaps, unify systems, and enable business transformation": "Applying our Analyse–Integrate–Transform (AIT) methodology to identify gaps, unify systems, and enable business transformation",
+    "Automating business processes and eliminating inefficiencies": "Automating business processes and eliminating inefficiencies",
+    "Digitising core business functions across finance, operations, HR, supply chain, and customer engagement": "Digitising core business functions across finance, operations, HR, supply chain, and customer engagement",
+    "Delivering real-time data visibility for faster, smarter decision-making": "Delivering real-time data visibility for faster, smarter decision-making",
+    "Enhancing operational resilience through scalable, secure architecture": "Enhancing operational resilience through scalable, secure architecture",
+    "Building future-ready platforms designed to evolve with your business": "Building future-ready platforms designed to evolve with your business",
+
+    "The RheinBrücke Advantage": "The RheinBrücke Advantage",
+    "Epicor Premium, Microsoft AI Cloud and Microsoft ISV partner": "Epicor Premium, Microsoft AI Cloud and Microsoft ISV partner",
+    "End-to-end platform services from strategy to support": "End-to-end platform services from strategy to support",
+    "Proven global rollout and localisation capabilities": "Proven global rollout and localisation capabilities",
+    "Accelerated cloud-native development and integrations": "Accelerated cloud-native development and integrations",
+    "Outcome-driven delivery with a focus on operational resilience and sustained business value": "Outcome-driven delivery with a focus on operational resilience and sustained business value",
+
+    "Explore our enterprise platform capabilities": "Explore our enterprise platform capabilities",
+    "Epicor Solutions": "Epicor Solutions",
+    "SAP Solutions": "SAP Solutions",
+    "Microsoft Dynamics": "Microsoft Dynamics",
+    "Digital Solutions and Services": "Digital Solutions and Services",
+    "Industries We Serve": "Industries We Serve",
+
+    "Let us Modernise Your Enterprise": "Let us Modernise Your Enterprise",
+    "Discover how RheinBrücke can help you optimise core systems, automate processes, and build future-ready platforms.": "Discover how RheinBrücke can help you optimise core systems, automate processes, and build future-ready platforms.",
+    "Talk to our enterprise solutions experts today.": "Talk to our enterprise solutions experts today.",
+
+
+
+
+
+"Epicor Kinetic ERP": "Epicor Kinetic ERP",
+
+    "Epicor Kinetic ERP delivers industry-focused solutions that simplify complex processes, improve visibility, and drive operational efficiency for manufacturing, distribution, and retail businesses. Built for agility, it supports your digital transformation with scalable, cloud-based technology.":
+    "Epicor Kinetic ERP delivers industry-focused solutions that simplify complex processes, improve visibility, and drive operational efficiency for manufacturing, distribution, and retail businesses. Built for agility, it supports your digital transformation with scalable, cloud-based technology.",
+
+    "Empower your business with agile, industry-ready ERP from Epicor.":
+    "Empower your business with agile, industry-ready ERP from Epicor.",
+
+    "As an Epicor Premium Partner, RheinBrücke brings over a decade of proven expertise in Epicor implementation, migration, rollouts, and support across 45+ countries, with a strong focus on the EMEA region.":
+    "As an Epicor Premium Partner, RheinBrücke brings over a decade of proven expertise in Epicor implementation, migration, rollouts, and support across 45+ countries, with a strong focus on the EMEA region.",
+
+    "Epicor ERP empowers your business with agile, industry-tailored solutions that streamline operations, reduce costs, and enhance performance.":
+    "Epicor ERP empowers your business with agile, industry-tailored solutions that streamline operations, reduce costs, and enhance performance.",
+
+    "Our extensive Epicor presence in the EMEA region enables us to support businesses in achieving operational excellence at scale.":
+    "Our extensive Epicor presence in the EMEA region enables us to support businesses in achieving operational excellence at scale.",
+
+    "The Epicor Advantage":
+    "The Epicor Advantage",
+
+    "Empowering businesses to accelerate growth and enhance efficiency through:":
+    "Empowering businesses to accelerate growth and enhance efficiency through:",
+
+    "Streamlined and automated business processes with unified systems":
+    "Streamlined and automated business processes with unified systems",
+
+    "Scalable architecture that supports growth and cost efficiency":
+    "Scalable architecture that supports growth and cost efficiency",
+
+    "Optimized supply chain and inventory management for better control":
+    "Optimized supply chain and inventory management for better control",
+
+    "Built-in compliance and regulatory support across regions":
+    "Built-in compliance and regulatory support across regions",
+
+    "Real-time insights enabling faster, data-driven decision-making":
+    "Real-time insights enabling faster, data-driven decision-making",
+
+    "Epicor ERP addresses business complexities with modern, cloud-enabled solutions built for industry.":
+    "Epicor ERP addresses business complexities with modern, cloud-enabled solutions built for industry.",
+
+    "With automation, analytics, and deep functionality, Epicor helps you streamline processes, scale globally, and stay competitive.":
+    "With automation, analytics, and deep functionality, Epicor helps you streamline processes, scale globally, and stay competitive.",
+   "SCALE Methodology – The 4 Service Pillars":
+    "SCALE Methodology – The 4 Service Pillars",
+
+    "RheinBrücke’s proprietary SCALE methodology helps ensure successful project implementation.":
+    "RheinBrücke’s proprietary SCALE methodology helps ensure successful project implementation.",
+
+    "The methodology’s five key stages—Prepare, Plan, Design, Validate, and Deploy—enable structured execution.":
+    "The methodology’s five key stages—Prepare, Plan, Design, Validate, and Deploy—enable structured execution.",
+
+    "It integrates the best practices of Waterfall and Agile practices to optimize performance and delivery outcomes.":
+    "It integrates the best practices of Waterfall and Agile practices to optimize performance and delivery outcomes.",
+
+    "Solution Architecture":
+    "Solution Architecture",
+
+    "Design and configure the ERP system to fit your business needs, processes, and industry requirements.":
+    "Design and configure the ERP system to fit your business needs, processes, and industry requirements.",
+
+    "Project Management":
+    "Project Management",
+
+    "End-to-end oversight of implementation, migration, and rollouts, ensuring timelines, budgets, and quality standards are met.":
+    "End-to-end oversight of implementation, migration, and rollouts, ensuring timelines, budgets, and quality standards are met.",
+
+    "Consulting":
+    "Consulting",
+
+    "Expert guidance on process optimization, industry best practices, and aligning ERP functionality with business strategy.":
+    "Expert guidance on process optimization, industry best practices, and aligning ERP functionality with business strategy.",
+
+    "Customer Excellence":
+    "Customer Excellence",
+
+    "Ongoing support, training, and service to ensure adoption, performance, and ROI from your Epicor investment.":
+    "Ongoing support, training, and service to ensure adoption, performance, and ROI from your Epicor investment.",
+
+    "Our Epicor Service Offerings":
+    "Our Epicor Service Offerings",
+
+    "We provide end-to-end Epicor ERP services to maximize your investment and transform your operations.":
+    "We provide end-to-end Epicor ERP services to maximize your investment and transform your operations.",
+
+    "Epicor Kinetic (Epicor ERP): Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production.":
+    "Epicor Kinetic (Epicor ERP): Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production.",
+
+    "Epicor iScala: Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade.":
+    "Epicor iScala: Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade.",
+
+    "Epicor Companion Products: Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more.":
+    "Epicor Companion Products: Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more.",
+
+    "Industry Verticals Solutions for Epicor ERP: Manufacturing, Oil & Gas, EPC & Construction, Architecture and Interior Design, Retail, and Distribution.":
+    "Industry Verticals Solutions for Epicor ERP: Manufacturing, Oil & Gas, EPC & Construction, Architecture and Interior Design, Retail, and Distribution.",
+
+  "Our Approach":
+    "Our Approach",
+
+    "We align Epicor ERP with your business goals using RheinBrücke’s proven SCALE methodology.":
+    "We align Epicor ERP with your business goals using RheinBrücke’s proven SCALE methodology.",
+
+    "RheinBrücke’s proprietary SCALE methodology helps ensure successful project implementation.":
+    "RheinBrücke’s proprietary SCALE methodology helps ensure successful project implementation.",
+
+    "The methodology’s five key stages - Prepare, Plan, Design, Validate, and Deploy – enable structured execution.":
+    "The methodology’s five key stages - Prepare, Plan, Design, Validate, and Deploy – enable structured execution.",
+
+    "It integrates the best practices of Waterfall and Agile practices to optimize performance and delivery outcomes.":
+    "It integrates the best practices of Waterfall and Agile practices to optimize performance and delivery outcomes.",
+
+    "The RheinBrücke Advantage":
+    "The RheinBrücke Advantage",
+
+    "Epicor Premium Partner with over 12 years of ERP delivery excellence":
+    "Epicor Premium Partner with over 12 years of ERP delivery excellence",
+
+    "One of the largest pools of Epicor certified and trained consultants":
+    "One of the largest pools of Epicor certified and trained consultants",
+
+    "Expertise in end-to-end ERP lifecycle: implementation, migration, rollouts, optimization, and support":
+    "Expertise in end-to-end ERP lifecycle: implementation, migration, rollouts, optimization, and support",
+
+    "Industry-specific knowledge in manufacturing, oil & gas, retail, construction, and more":
+    "Industry-specific knowledge in manufacturing, oil & gas, retail, construction, and more",
+
+    "Outcome-focused delivery ensuring resilience, efficiency, and business growth":
+    "Outcome-focused delivery ensuring resilience, efficiency, and business growth",
+
+    "Industries We Serve":
+    "Industries We Serve",
+
+    "Interior Design and Architecture":
+    "Interior Design and Architecture",
+
+    "Discrete & Process Manufacturing":
+    "Discrete & Process Manufacturing",
+
+    "Automotive (Components & Vehicle Manufacturing)":
+    "Automotive (Components & Vehicle Manufacturing)",
+
+    "Construction & EPC":
+    "Construction & EPC",
+
+    "Oil & Gas":
+    "Oil & Gas",
+
+    "Retail & Distribution":
+    "Retail & Distribution",
+
+    "Explore Our ERP Capabilities":
+    "Explore Our ERP Capabilities",
+
+    "ERP Implementation through onsite, offshore, hybrid model as per project needs":
+    "ERP Implementation through onsite, offshore, hybrid model as per project needs",
+
+    "Customer Excellence (Support, Premium Support, Training) that enhance ERP adoption and performance":
+    "Customer Excellence (Support, Premium Support, Training) that enhance ERP adoption and performance",
+
+    "Upgrade legacy Epicor versions to Kinetic UI":
+    "Upgrade legacy Epicor versions to Kinetic UI",
+
+    "Migrate on-prem ERP versions to Kinetic UI version for seamless transition":
+    "Migrate on-prem ERP versions to Kinetic UI version for seamless transition",
+
+    "Performance Optimization to enhance ERP performance and reliability":
+    "Performance Optimization to enhance ERP performance and reliability",
+
+    "Companion Products to enhance ERP functionality and business process efficiency":
+    "Companion Products to enhance ERP functionality and business process efficiency",
+
+    "ERP Consulting & Advisory aligned with business priorities":
+    "ERP Consulting & Advisory aligned with business priorities",
+
+    "Transform with Epicor ERP":
+    "Transform with Epicor ERP",
+
+    "Discover how RheinBrücke can help you unlock efficiency, streamline operations, and scale globally with Epicor.":
+    "Discover how RheinBrücke can help you unlock efficiency, streamline operations, and scale globally with Epicor.",
+
+    "Talk to our Epicor experts today.":
+    "Talk to our Epicor experts today.",
+
+
+
+
+
+    "Microsoft Dynamics Solutions": "Microsoft Dynamics Solutions",
+    "Empower your enterprise with intelligent, scalable ERP and CRM solutions from Microsoft Dynamics.": "Empower your enterprise with intelligent, scalable ERP and CRM solutions from Microsoft Dynamics.",
+    "At RheinBrücke, we help organisations streamline operations, integrate business functions, and unlock real-time insights using Microsoft Solutions all tailored to your industry and growth goals.": "At RheinBrücke, we help organisations streamline operations, integrate business functions, and unlock real-time insights using Microsoft Solutions all tailored to your industry and growth goals.",
+
+    "The Microsoft Dynamics Advantage": "The Microsoft Dynamics Advantage",
+    "Modern businesses face increasing complexity, competitive pressures, and evolving customer expectations. Common challenges include:": "Modern businesses face increasing complexity, competitive pressures, and evolving customer expectations. Common challenges include:",
+    "Disconnected legacy systems limiting agility and scalability": "Disconnected legacy systems limiting agility and scalability",
+    "Siloed data and inconsistent reporting": "Siloed data and inconsistent reporting",
+    "Manual, time-consuming workflows": "Manual, time-consuming workflows",
+    "Rising operational costs and inefficiencies": "Rising operational costs and inefficiencies",
+    "Limited real-time visibility for decision-making": "Limited real-time visibility for decision-making",
+    "Difficulty integrating ERP, CRM, and productivity tools": "Difficulty integrating ERP, CRM, and productivity tools",
+    "Microsoft Dynamics addresses these with unified, cloud-based ERP and CRM capabilities, enabling you to digitise core operations, optimise processes, and drive growth.": "Microsoft Dynamics addresses these with unified, cloud-based ERP and CRM capabilities, enabling you to digitise core operations, optimise processes, and drive growth.",
+
+    "Our Microsoft Dynamics Solutions": "Our Microsoft Dynamics Solutions",
+    "Dynamics 365 ERP & CRM Solutions": "Dynamics 365 ERP & CRM Solutions",
+    "Finance, Operations, Sales, Marketing, Customer Service, Field Service, HR": "Finance, Operations, Sales, Marketing, Customer Service, Field Service, HR",
+    "Business Central Migration & Implementation": "Business Central Migration & Implementation",
+    "Cloud-based ERP for SMBs covering finance, supply chain, sales, service, and projects": "Cloud-based ERP for SMBs covering finance, supply chain, sales, service, and projects",
+    "Navision Support, Migration & Upgrades": "Navision Support, Migration & Upgrades",
+    "Maintain and modernise NAV with a clear path to Business Central": "Maintain and modernise NAV with a clear path to Business Central",
+    "AX (Axapta) Support, Migration and Upgrades": "AX (Axapta) Support, Migration and Upgrades",
+    "Move to Dynamics 365 Finance & Operations for scalability and advanced capabilities": "Move to Dynamics 365 Finance & Operations for scalability and advanced capabilities",
+    "Integration with Microsoft 365, Power Platform, Azure, and Power BID": "Integration with Microsoft 365, Power Platform, Azure, and Power BI",
+    "Boost collaboration, analytics, and automation": "Boost collaboration, analytics, and automation",
+
+    "Our Approach": "Our Approach",
+    "We align Microsoft Dynamics capabilities with your strategic objectives using our Analyse–Integrate–Transform (AIT) methodology:": "We align Microsoft Dynamics capabilities with your strategic objectives using our Analyse–Integrate–Transform (AIT) methodology:",
+    "Assess business challenges and system gaps": "Assess business challenges and system gaps",
+    "Configure Dynamics to industry-specific requirements": "Configure Dynamics to industry-specific requirements",
+    "Integrate with existing applications for seamless workflows": "Integrate with existing applications for seamless workflows",
+    "Automate manual processes for efficiency": "Automate manual processes for efficiency",
+    "Deliver real-time data insights for smarter decisions": "Deliver real-time data insights for smarter decisions",
+    "Ensure scalability and security for future growth": "Ensure scalability and security for future growth",
+
+    "The RheinBrücke Advantage": "The RheinBrücke Advantage",
+    "Microsoft AI Cloud and ISV Partner with deep ERP expertise": "Microsoft AI Cloud and ISV Partner with deep ERP expertise",
+    "Proven global rollouts with localisation capabilities": "Proven global rollouts with localisation capabilities",
+    "End-to-end services from strategy to support": "End-to-end services from strategy to support",
+    "Smooth migrations from legacy systems (NAV, AX)": "Smooth migrations from legacy systems (NAV, AX)",
+    "Outcome-focused delivery ensuring operational resilience and business value": "Outcome-focused delivery ensuring operational resilience and business value",
+
+    "Industries We Serve": "Industries We Serve",
+    "Manufacturing": "Manufacturing",
+    "Retail & E-commerce": "Retail & E-commerce",
+    "Automotive": "Automotive",
+    "Financial Services": "Financial Services",
+
+    "Explore Our Microsoft Capabilities": "Explore Our Microsoft Capabilities",
+    "Business Intelligence (BI)": "Business Intelligence (BI)",
+    "Digital Solutions & Services": "Digital Solutions & Services",
+    "Microsoft Technologies": "Microsoft Technologies",
+
+    "Let us Transform Your Enterprise": "Let us Transform Your Enterprise",
+    "Discover how RheinBrücke can help you optimise operations, automate workflows, and grow with Microsoft Dynamics.": "Discover how RheinBrücke can help you optimise operations, automate workflows, and grow with Microsoft Dynamics.",
+    "Talk to our Microsoft Dynamics experts today.": "Talk to our Microsoft Dynamics experts today.",
+
+
+
+
+    "Main Features": "Main Features",
+    "CorusHR is a complete Human Capital Management (HCM) solution that handles many aspects of talent management. Here are some of its main features:": "CorusHR is a complete Human Capital Management (HCM) solution that handles many aspects of talent management. Here are some of its main features:",
+    "Recruitment and Onboarding": "Recruitment and Onboarding",
+    "Make better hiring decisions through structured and configurable workflows": "Make better hiring decisions through structured and configurable workflows",
+    "Probation": "Probation",
+    "Automated probation evaluations with workflows": "Automated probation evaluations with workflows",
+    "Time and Attendance": "Time and Attendance",
+    "Capture daily attendance and work times and process them to reflect in the Employee dashboard": "Capture daily attendance and work times and process them to reflect in the Employee dashboard",
+    "Performance Management": "Performance Management",
+    "Inspire your team to reach their full potential, sync their efforts with company goals, and foster a thriving, positive workplace": "Inspire your team to reach their full potential, sync their efforts with company goals, and foster a thriving, positive workplace",
+    "Training Management": "Training Management",
+    "Ensure employees have necessary skills and knowledge to perform their jobs effectively and efficiently": "Ensure employees have necessary skills and knowledge to perform their jobs effectively and efficiently",
+    "Shift Roster": "Shift Roster",
+    "Operate 24/7 with round-the-clock business support": "Operate 24/7 with round-the-clock business support",
+    "Leadership Development": "Leadership Development",
+    "Identify and nurture employees for leadership roles in the organisation": "Identify and nurture employees for leadership roles in the organisation",
+    "Employee Engagement Surveys": "Employee Engagement Surveys",
+    "Manage organisational engagement effectively through survey": "Manage organisational engagement effectively through survey",
+    "Exit Initiation & Approval Process": "Exit Initiation & Approval Process",
+    "Gather feedback through exit interview and identify areas for improvement and help with the final settlement": "Gather feedback through exit interview and identify areas for improvement and help with the final settlement",
+    "Employee Self-Service": "Employee Self-Service",
+    "Employee Information Management": "Employee Information Management",
+    "Training & Development": "Training & Development",
+    "Travel Requests": "Travel Requests",
+    "Leave Management": "Leave Management",
+    "Work Permit Process": "Work Permit Process",
+    "Timesheets & Attendance": "Timesheets & Attendance",
+    "Loan Management": "Loan Management",
+    "Miscellaneous Reimbursement Request": "Miscellaneous Reimbursement Request",
+    "User Dashboard": "User Dashboard",
+    "Grievances Management": "Grievances Management",
+    "Approval & Delegation Process": "Approval & Delegation Process",
+    "Additional Features of CorusHR": "Additional Features of CorusHR",
+    "Seamless Integration": "Seamless Integration",
+    "The seamless integration of CorusHR with Epicor ERP ensures that these two systems operate together in real-time, enabling effective communication, and functioning as a unified platform without any disruptions or complications.": "The seamless integration of CorusHR with Epicor ERP ensures that these two systems operate together in real-time, enabling effective communication, and functioning as a unified platform without any disruptions or complications.",
+    "Effective Data Management": "Effective Data Management",
+    "Updating and retrieval of employee data, including personal information, employment history, performance evaluations, and benefits enrolment, reducing data loss and errors and improved data integrity.": "Updating and retrieval of employee data, including personal information, employment history, performance evaluations, and benefits enrolment, reducing data loss and errors and improved data integrity.",
+    "Reporting and Analytics": "Reporting and Analytics",
+    "Get insights on regular and overtime hours, transaction, performance assessment, requirements fulfilment, and exit process enabling informed decision-making and planning.": "Get insights on regular and overtime hours, transaction, performance assessment, requirements fulfilment, and exit process enabling informed decision-making and planning.",
+    "Mobile Accessibility": "Mobile Accessibility",
+    "With our solution, employees can stay connected around the clock through a user-friendly mobile application, ensuring seamless access to vital information and better collaboration.": "With our solution, employees can stay connected around the clock through a user-friendly mobile application, ensuring seamless access to vital information and better collaboration.",
+    "Configurable": "Configurable",
+    "The solution is adaptable, quick to respond, and highly configurable, aimed at improving operational efficiencies. It facilitates streamlined HR operations, improves efficiency by eliminating paper and email trails with digital workflows and enhances user satisfaction.": "The solution is adaptable, quick to respond, and highly configurable, aimed at improving operational efficiencies. It facilitates streamlined HR operations, improves efficiency by eliminating paper and email trails with digital workflows and enhances user satisfaction."
+    ,
+    "Benefits": "Benefits",
+    "CorusHR provides a comprehensive solution for talent management for employees, managers and HR department. With CorusHR, you can enjoy:": "CorusHR provides a comprehensive solution for talent management for employees, managers and HR department. With CorusHR, you can enjoy:",
+    "Easy Implementation": "Easy Implementation",
+    "Designed for seamless deployment": "Designed for seamless deployment",
+    "Rich Functionalities": "Rich Functionalities",
+    "Complete Hire to Retire features": "Complete Hire to Retire features",
+    "Easy Usage": "Easy Usage",
+    "Intuitive, user-friendly interface": "Intuitive, user-friendly interface",
+    "Comprehensive Reporting": "Comprehensive Reporting",
+    "Robust reporting capabilities": "Robust reporting capabilities",
+    "Seamless Integration (Benefits)": "Seamless Integration",
+    "Out-of-the-box Epicor integration": "Out-of-the-box Epicor integration",
+    "Multisite Capabilities": "Multisite Capabilities",
+    "Manage multiple locations": "Manage multiple locations",
+    "Mobile Interface": "Mobile Interface",
+    "Access anytime, anywhere": "Access anytime, anywhere",
+    "Configurable Setup & Fluid Workflows": "Configurable Setup & Fluid Workflows",
+    "Flexible configurations and workflows": "Flexible configurations and workflows",
+    "Download Our Brochure": "Download Our Brochure",
+    "Download Our Brochure now to know more about our CorusHR Solution!": "Download Our Brochure now to know more about our CorusHR Solution!"
+    ,
+    "Revolutionizing HR Management with Smart, Scalable Solutions": "Revolutionizing HR Management with Smart, Scalable Solutions",
+    "Ready to elevate your global workforce experience with an intuitive HRMS?": "Ready to elevate your global workforce experience with an intuitive HRMS?",
+    "CorusHR provides powerful self-service and end-to-end HR coverage, keeping your teams supported from recruitment to retirement on any device.": "CorusHR provides powerful self-service and end-to-end HR coverage, keeping your teams supported from recruitment to retirement on any device.",
+    "What Makes CorusHR Stand Out": "What Makes CorusHR Stand Out",
+    "We provide a holistic approach to streamlining and automating various aspects of Human Resource Management, that is integrated with your ERP. CorusHR addresses key challenges faced by businesses, including time-consuming manual onboarding processes, lengthy HR solution implementation timelines, complex and difficult-to-use systems, limited region-specific functionality, and poor integration with existing ERP platforms.": "We provide a holistic approach to streamlining and automating various aspects of Human Resource Management, that is integrated with your ERP. CorusHR addresses key challenges faced by businesses, including time-consuming manual onboarding processes, lengthy HR solution implementation timelines, complex and difficult-to-use systems, limited region-specific functionality, and poor integration with existing ERP platforms.",
+    "Are you looking for an intuitive and streamlined Human Resource Management Solution (HRMS) designed to enhance global workforce management? CorusHR offers you an intuitive, user-friendly self-service portal for organisation-wide collaboration offering HR services, Employee Self Service and Manager Self Service. From recruitment to retirement, we have comprehensive functional coverage that is available on mobile and desktop.": "Are you looking for an intuitive and streamlined Human Resource Management Solution (HRMS) designed to enhance global workforce management? CorusHR offers you an intuitive, user-friendly self-service portal for organisation-wide collaboration offering HR services, Employee Self Service and Manager Self Service. From recruitment to retirement, we have comprehensive functional coverage that is available on mobile and desktop.",
+    "Customers": "Customers",
+
+
+
+
+    "Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production.":
+    "Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production.",
+
+    "Epicor Kinetic is a modern, cloud-enabled ERP designed to streamline operations, reduce manual processes, and provide real-time insights across your business.":
+    "Epicor Kinetic is a modern, cloud-enabled ERP designed to streamline operations, reduce manual processes, and provide real-time insights across your business.",
+
+    "It empowers organizations to scale efficiently while staying compliant and competitive in today’s fast-paced industries.":
+    "It empowers organizations to scale efficiently while staying compliant and competitive in today’s fast-paced industries.",
+
+    "Our Epicor Kinetic Capabilities":
+    "Our Epicor Kinetic Capabilities",
+
+    "Automate end-to-end workflows across finance, manufacturing, and supply chain.":
+    "Automate end-to-end workflows across finance, manufacturing, and supply chain.",
+
+    "Enhance supply chain visibility for better planning and forecasting.":
+    "Enhance supply chain visibility for better planning and forecasting.",
+
+    "Optimize production with real-time tracking and analytics.":
+    "Optimize production with real-time tracking and analytics.",
+
+    "Enable mobile and cloud access for global, distributed teams.":
+    "Enable mobile and cloud access for global, distributed teams.",
+
+    "Embed analytics and dashboards for faster, data-driven decision-making.":
+    "Embed analytics and dashboards for faster, data-driven decision-making.",
+
+    "Integrate smart sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.":
+    "Integrate smart sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.",
+
+    "Why Choose Epicor Kinetic?":
+    "Why Choose Epicor Kinetic?",
+
+    "Proven enterprise ERP solution trusted across industries.":
+    "Proven enterprise ERP solution trusted across industries.",
+
+    "Seamless integration with companion products and third-party applications.":
+    "Seamless integration with companion products and third-party applications.",
+
+    "Scalable deployment to grow with your business.":
+    "Scalable deployment to grow with your business.",
+
+    "End-to-end support from design to implementation and optimization.":
+    "End-to-end support from design to implementation and optimization.",
+
+    "Focus on measurable business outcomes, including efficiency, cost savings, and compliance.":
+    "Focus on measurable business outcomes, including efficiency, cost savings, and compliance.",
+
+    "Ready to transform your operations with Epicor Kinetic?":
+    "Ready to transform your operations with Epicor Kinetic?",
+
+    "Talk to Our ERP Experts.":
+    "Talk to Our ERP Experts.",
+
+
+
+
+    "Epicor iScala": "Epicor iScala",
+    "Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade.": "Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade.",
+    "Epicor iScala helps mid-sized businesses manage complex operations with a flexible, configurable ERP platform. It ensures compliance, simplifies financial and operational management, and supports growth across multiple geographies.": "Epicor iScala helps mid-sized businesses manage complex operations with a flexible, configurable ERP platform. It ensures compliance, simplifies financial and operational management, and supports growth across multiple geographies.",
+
+    "Our Epicor iScala Capabilities": "Our Epicor iScala Capabilities",
+    "Streamline financials, supply chain, and production management.": "Streamline financials, supply chain, and production management.",
+    "Ensure regulatory and compliance adherence in highly regulated industries.": "Ensure regulatory and compliance adherence in highly regulated industries.",
+    "Support multi-currency, multi-language, and multi-entity operations.": "Support multi-currency, multi-language, and multi-entity operations.",
+    "Enable real-time reporting and business intelligence insights.": "Enable real-time reporting and business intelligence insights.",
+    "Flexible deployment options for cloud or on-premise environments.": "Flexible deployment options for cloud or on-premise environments.",
+    "Manage in-house repair and maintenance processes, ensuring correct stock valuation.": "Manage in-house repair and maintenance processes, ensuring correct stock valuation.",
+
+    "Why Choose Epicor iScala?": "Why Choose Epicor iScala?",
+    "Industry-specific ERP for mid-sized organizations.": "Industry-specific ERP for mid-sized organizations.",
+    "Scalable and adaptable to evolving business needs.": "Scalable and adaptable to evolving business needs.",
+    "Integrated analytics and reporting for smarter decisions.": "Integrated analytics and reporting for smarter decisions.",
+    "End-to-end support from consulting and implementation to training.": "End-to-end support from consulting and implementation to training.",
+    "Focused on operational efficiency, growth, and compliance assurance.": "Focused on operational efficiency, growth, and compliance assurance.",
+
+    "Ready to scale your mid-sized business with Epicor iScala?": "Ready to scale your mid-sized business with Epicor iScala?",
+    "Talk to Our ERP Experts.": "Talk to Our ERP Experts.",
+
+
+
+
+
+    "Epicor Companion Products": "Epicor Companion Products",
+    "Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more.": "Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more.",
+    "Epicor Companion Products enhance your core ERP system, enabling end-to-end operational control and insights. They are designed to integrate seamlessly with Epicor ERP for complete business management.": "Epicor Companion Products enhance your core ERP system, enabling end-to-end operational control and insights. They are designed to integrate seamlessly with Epicor ERP for complete business management.",
+
+    "Our Companion Products Capabilities": "Our Companion Products Capabilities",
+    "EpicPay: Simplify payroll management and compliance.": "EpicPay: Simplify payroll management and compliance.",
+    "MES (Manufacturing Execution): Optimize shop-floor operations and production tracking.": "MES (Manufacturing Execution): Optimize shop-floor operations and production tracking.",
+    "ECM (Enterprise Content Management): Centralize documents and workflows.": "ECM (Enterprise Content Management): Centralize documents and workflows.",
+    "FP&A (Financial Planning & Analysis): Improve budgeting, forecasting, and reporting.": "FP&A (Financial Planning & Analysis): Improve budgeting, forecasting, and reporting.",
+    "IP&O (Inventory Planning & Optimization): Maximize inventory efficiency and reduce costs.": "IP&O (Inventory Planning & Optimization): Maximize inventory efficiency and reduce costs.",
+    "WMS (Warehouse Management System): Streamline warehouse operations and logistics.": "WMS (Warehouse Management System): Streamline warehouse operations and logistics.",
+    "Epicor Data Analytics (Phocas) – Drive data-driven decisions with advanced analytics and visualizations.": "Epicor Data Analytics (Phocas) – Drive data-driven decisions with advanced analytics and visualizations.",
+    "Epicor eCommerce – Provide a connected, self-service online storefront for manufacturers, distributors, and wholesalers to drive customer loyalty and profitability.": "Epicor eCommerce – Provide a connected, self-service online storefront for manufacturers, distributors, and wholesalers to drive customer loyalty and profitability.",
+    "Epicor Grow – Cloud-based business intelligence solution to harness data for better decision-making and operational efficiency.": "Epicor Grow – Cloud-based business intelligence solution to harness data for better decision-making and operational efficiency.",
+    "Epicor Data Discovery – Visualize and interact with ERP data through intuitive dashboards and charts.": "Epicor Data Discovery – Visualize and interact with ERP data through intuitive dashboards and charts.",
+    "Epicor Spreadsheet Server – Connect ERP data directly to Excel for real-time reporting, drill-down analysis, and planning.": "Epicor Spreadsheet Server – Connect ERP data directly to Excel for real-time reporting, drill-down analysis, and planning.",
+    "Epicor Kinetic Warehouse – Mobile-first scanning solution to optimize warehouse and shop-floor transactions.": "Epicor Kinetic Warehouse – Mobile-first scanning solution to optimize warehouse and shop-floor transactions.",
+    "Automation Studio – Connect applications and automate workflows with low-code/no-code integration.": "Automation Studio – Connect applications and automate workflows with low-code/no-code integration.",
+    "Service Connect – Simplify system integrations and process automation across Epicor solutions.": "Service Connect – Simplify system integrations and process automation across Epicor solutions.",
+    "QuickShip – Optimize shipping operations with real-time carrier integration and tracking.": "QuickShip – Optimize shipping operations with real-time carrier integration and tracking.",
+    "Epicor BarTender – Barcode labeling solution to create, manage, and print labels across warehouses and manufacturing operations.": "Epicor BarTender – Barcode labeling solution to create, manage, and print labels across warehouses and manufacturing operations.",
+    "Integrate smart sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.": "Integrate smart sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.",
+
+    "Why Choose Epicor Companion Products?": "Why Choose Epicor Companion Products?",
+    "Seamless integration with Epicor ERP for a unified platform.": "Seamless integration with Epicor ERP for a unified platform.",
+    "Enhance operational efficiency and visibility across all business functions.": "Enhance operational efficiency and visibility across all business functions.",
+    "Scalable solutions to grow with your business needs.": "Scalable solutions to grow with your business needs.",
+    "End-to-end support, including deployment, training, and optimization.": "End-to-end support, including deployment, training, and optimization.",
+    "Deliver measurable business impact with smarter operations and insights.": "Deliver measurable business impact with smarter operations and insights.",
+    "Ready to extend your ERP with Epicor Companion Products? Talk to Our ERP Experts.": "Ready to extend your ERP with Epicor Companion Products? Talk to Our ERP Experts.",
+
+
+
+
+
+    "Epic Pay – Epicor Payroll MEA": "Epic Pay – Epicor Payroll MEA",
+    "Comprehensive payroll solution tailored for businesses across the Middle East and Africa.": "Comprehensive payroll solution tailored for businesses across the Middle East and Africa.",
+    "Epic Pay (Epicor Payroll MEA) helps organizations streamline payroll processing with seamless integration to Epicor ERP. It ensures compliance with regional labour laws, simplifies HR and payroll operations, and empowers employees with self-service access.": "Epic Pay (Epicor Payroll MEA) helps organizations streamline payroll processing with seamless integration to Epicor ERP. It ensures compliance with regional labour laws, simplifies HR and payroll operations, and empowers employees with self-service access.",
+
+    "Our Epic Pay Capabilities": "Our Epic Pay Capabilities",
+    "Automate payroll processing and salary calculations.": "Automate payroll processing and salary calculations.",
+    "Ensure compliance with MEA labour laws, tax rules, and statutory reporting.": "Ensure compliance with MEA labour laws, tax rules, and statutory reporting.",
+    "Integrate time, attendance, leave, and loan management directly into payroll.": "Integrate time, attendance, leave, and loan management directly into payroll.",
+    "Provide employee and manager self-service portals for anytime, anywhere access.": "Provide employee and manager self-service portals for anytime, anywhere access.",
+    "Deliver real-time analytics and reporting on payroll costs, overtime, and compliance.": "Deliver real-time analytics and reporting on payroll costs, overtime, and compliance.",
+    "Enable mobile accessibility for a connected workforce.": "Enable mobile accessibility for a connected workforce.",
+
+    "Why Choose Epic Pay?": "Why Choose Epic Pay?",
+    "Designed specifically for organizations in the MEA region.": "Designed specifically for organizations in the MEA region.",
+    "Seamless integration with Epicor ERP for end-to-end efficiency.": "Seamless integration with Epicor ERP for end-to-end efficiency.",
+    "Scalable and customizable to suit single-site or multi-site operations.": "Scalable and customizable to suit single-site or multi-site operations.",
+    "Enhances employee engagement with intuitive self-service access.": "Enhances employee engagement with intuitive self-service access.",
+    "Trusted with over half a million payrolls processed across industries.": "Trusted with over half a million payrolls processed across industries.",
+
+    "Ready to simplify payroll and stay compliant with Epic Pay? Talk to our Epicor Experts today.": "Ready to simplify payroll and stay compliant with Epic Pay? Talk to our Epicor Experts today.",
+
+
+
+
+    "Our Solution Portfolio": "Our Solution Portfolio",
+    "Our portfolio includes cutting-edge, industry-focused platforms that deliver measurable business outcomes.": "Our portfolio includes cutting-edge, industry-focused platforms that deliver measurable business outcomes.",
+
+    "Corus HR – Transforming Human Capital Management": "Corus HR – Transforming Human Capital Management",
+    "Automates the entire hire-to-retire employee lifecycle": "Automates the entire hire-to-retire employee lifecycle",
+    "Simplifies onboarding, probation, and workforce management": "Simplifies onboarding, probation, and workforce management",
+    "Integrates attendance, leave, payroll, and compliance": "Integrates attendance, leave, payroll, and compliance",
+    "Streamlines performance reviews and goal tracking": "Streamlines performance reviews and goal tracking",
+    "Provides intuitive self-service portals for employees and managers": "Provides intuitive self-service portals for employees and managers",
+    "Explore More → Corus HR": "Explore More → Corus HR",
+
+    "MeRLIN Sourcing – Driving Strategic Sourcing Excellence": "MeRLIN Sourcing – Driving Strategic Sourcing Excellence",
+    "Advanced Supplier Relationship Management (SRM) and eSourcing platform": "Advanced Supplier Relationship Management (SRM) and eSourcing platform",
+    "Enables strategic procurement and collaborative supplier engagement": "Enables strategic procurement and collaborative supplier engagement",
+    "Optimises costs while mitigating supply chain risks": "Optimises costs while mitigating supply chain risks",
+    "AI-driven analytics for data-backed sourcing decisions": "AI-driven analytics for data-backed sourcing decisions",
+    "Drives innovation through strong supplier partnerships": "Drives innovation through strong supplier partnerships",
+    "Explore More → MeRLIN Sourcing": "Explore More → MeRLIN Sourcing",
+
+    "Why Choose Our Solutions?": "Why Choose Our Solutions?",
+    "Proven success across industries and geographies": "Proven success across industries and geographies",
+    "Flexible, scalable, and secure architecture": "Flexible, scalable, and secure architecture",
+    "Rapid deployment for faster ROI": "Rapid deployment for faster ROI",
+    "Seamless integration with existing business systems": "Seamless integration with existing business systems",
+    "Dedicated expert support and continuous innovation": "Dedicated expert support and continuous innovation",
+
+    "Ready to Transform Your Business?": "Ready to Transform Your Business?",
+    "Unlock the full potential of your organisation with innovative solutions tailored to your needs.": "Unlock the full potential of your organisation with innovative solutions tailored to your needs.",
+    "Contact us today to discover how our platforms can deliver measurable results.": "Contact us today to discover how our platforms can deliver measurable results.",
+
+
+
+
+    "CORPORATE VIDEOS":
+    "CORPORATE VIDEOS",
+
+    "RheinBrucke IT Consulting – Corporate video":
+    "RheinBrucke IT Consulting – Corporate video",
+
+    "play":
+    "play",
+
+    "RheinBrücke IT Consulting - Stevie Awards 2015 German":
+    "RheinBrücke IT Consulting - Stevie Awards 2015 German",
+
+    "RheinBrücke – Pinnacle Awards of Excellence 2016":
+    "RheinBrücke – Pinnacle Awards of Excellence 2016",
+
+    "RheinBrücke – Customer Reference by Martin Peters":
+    "RheinBrücke – Customer Reference by Martin Peters",
+
+    "RheinBrücke – Customer Reference by Dr. Schrettl":
+    "RheinBrücke – Customer Reference by Dr. Schrettl",
+
+    "RheinBrücke – Customer Reference by Greg Bryan":
+    "RheinBrücke – Customer Reference by Greg Bryan",
+
+    "RheinBrücke – Customer Reference by Harry Hezel":
+    "RheinBrücke – Customer Reference by Harry Hezel",
+
+    "RheinBrucke – IDC Inauguration Event":
+    "RheinBrucke – IDC Inauguration Event",
+
+    "RheinBrucke – Stevie Awards 2016 German":
+    "RheinBrucke – Stevie Awards 2016 German",
+
+    "RheinBrucke – FLSmidth Testimonial | Mads Madsbjerg Hansen":
+    "RheinBrucke – FLSmidth Testimonial | Mads Madsbjerg Hansen",
+
+    "Liftek's ERP Transformation Journey with RheinBrücke: A Success Story":
+    "Liftek's ERP Transformation Journey with RheinBrücke: A Success Story",
+
+
+
+
+    "AI/ML & Data Analytics": "AI/ML & Data Analytics",
+    "Harness the combined power of Google AI/ML, Azure Machine Learning, and advanced signature analytics to deliver predictive maintenance, intelligent automation, and real-time insights.": "Harness the combined power of Google AI/ML, Azure Machine Learning, and advanced signature analytics to deliver predictive maintenance, intelligent automation, and real-time insights.",
+    "We help organisations across industries transform data into intelligence—driving smarter decisions, greater efficiency, and measurable business impact.": "We help organisations across industries transform data into intelligence—driving smarter decisions, greater efficiency, and measurable business impact.",
+
+    "AI/ML Use Cases by Industry": "AI/ML Use Cases by Industry",
+    "Brand Owners & Vertical Retailers – personalised recommendations, dynamic pricing, inventory optimisation, and loss prevention.": "Brand Owners & Vertical Retailers – personalised recommendations, dynamic pricing, inventory optimisation, and loss prevention.",
+    "Retail Industry – customer segmentation, demand forecasting, fraud detection, and real-time analytics to improve in-store and online performance.": "Retail Industry – customer segmentation, demand forecasting, fraud detection, and real-time analytics to improve in-store and online performance.",
+    "Distribution & Supply Chain – route optimisation, warehouse automation, predictive delivery times, and supply chain risk analytics.": "Distribution & Supply Chain – route optimisation, warehouse automation, predictive delivery times, and supply chain risk analytics.",
+    "Discrete Manufacturing – predictive maintenance, computer vision for quality control, production scheduling, and digital twins.": "Discrete Manufacturing – predictive maintenance, computer vision for quality control, production scheduling, and digital twins.",
+    "Automotive Industry – smart manufacturing, connected vehicle analytics, predictive maintenance, and safety monitoring.": "Automotive Industry – smart manufacturing, connected vehicle analytics, predictive maintenance, and safety monitoring.",
+    "Engineering, Procurement & Construction (EPC) – project cost forecasting, risk modelling, resource optimisation, and contract intelligence.": "Engineering, Procurement & Construction (EPC) – project cost forecasting, risk modelling, resource optimisation, and contract intelligence.",
+    "Process Manufacturing – predictive process control, energy optimisation, waste reduction, and safety analytics.": "Process Manufacturing – predictive process control, energy optimisation, waste reduction, and safety analytics.",
+    "Private Equity & Funding-backed Ventures – portfolio performance analytics, risk scoring, market trend prediction, and value creation tracking.": "Private Equity & Funding-backed Ventures – portfolio performance analytics, risk scoring, market trend prediction, and value creation tracking.",
+
+    "Why Choose Us?": "Why Choose Us?",
+    "Proven expertise in Google Cloud AI and Azure-based AI implementations.": "Proven expertise in Google Cloud AI and Azure-based AI implementations.",
+    "Seamless integration with ERP, CRM, and custom applications.": "Seamless integration with ERP, CRM, and custom applications.",
+    "End-to-end support — from design to deployment and optimisation.": "End-to-end support — from design to deployment and optimisation.",
+    "Relentless focus on measurable outcomes.": "Relentless focus on measurable outcomes.",
+    "Your data is more than numbers—it’s your next competitive edge.": "Your data is more than numbers—it’s your next competitive edge.",
+    "Talk to our AI experts today.": "Talk to our AI experts today."
   
   },
   "German": {
@@ -273,7 +894,632 @@
     "From ERP modernization to AI – Driven innovation, we enable enterprise to move faster and smarter.": "Von der ERP-Modernisierung bis hin zu KI-gesteuerten Innovationen – wir ermöglichen Unternehmen, schneller und intelligenter zu agieren.",
     "Together, we design the future of your business.": "Gemeinsam gestalten wir die Zukunft Ihres Unternehmens.",
     "Request a Consultation": "Beratung anfordern",
-    "Trusted by Enterprise Worldwide":"Weltweit bewährt. Von Unternehmen geschätzt"
+    "Trusted by Enterprise Worldwide":"Weltweit bewährt. Von Unternehmen geschätzt",
+  
+  
+  
+  
+
+  "Enterprise Solutions and Services": "Enterprise Solutions & Services",
+    "Build resilient, connected, and future-ready enterprises with intelligent platforms and scalable solutions.": "Bauen Sie widerstandsfähige, vernetzte und zukunftsorientierte Unternehmen auf – mit intelligenten Plattformen und skalierbaren Lösungen.",
+    "At RheinBrücke, we help organisations modernise operations, unify business processes, and improve decision-making through enterprise-grade solutions. From ERP and CRM to cloud-native platforms and business process automation, we deliver scalable, integrated systems that drive operational agility and business growth.": "Bei RheinBrücke unterstützen wir Unternehmen dabei, ihre Betriebsabläufe zu modernisieren, Geschäftsprozesse zu harmonisieren und bessere Entscheidungen zu treffen – durch Enterprise-Lösungen auf höchstem Niveau. Von ERP- und CRM-Systemen bis hin zu Cloud-Plattformen und automatisierten Geschäftsprozessen liefern wir integrierte, skalierbare Systeme, die operative Agilität fördern und nachhaltiges Wachstum ermöglichen.",
+
+    "The Enterprise Advantage": "Ihr Unternehmensvorteil",
+    "Modern enterprises need agile, connected systems to stay competitive, improve productivity, and make data-driven decisions. Many organisations struggle with:": "Moderne Unternehmen benötigen agile und vernetzte Systeme, um wettbewerbsfähig zu bleiben, die Produktivität zu steigern und datenbasierte Entscheidungen zu treffen. Viele Organisationen stehen dabei vor Herausforderungen wie:",
+    "Disconnected legacy systems limiting operational agility": "Unverbundene Altsysteme, die die operative Agilität einschränken",
+    "Siloed data and processes restricting enterprise-wide visibility": "Datensilos und isolierte Prozesse ohne unternehmensweite Transparenz",
+    "Rising operational costs and inefficiencies across business functions": "Steigende Betriebskosten und Ineffizienzen in verschiedenen Geschäftsbereichen",
+    "Inability to adapt quickly to market shifts, customer expectations, and compliance demands": "Eingeschränkte Anpassungsfähigkeit an Marktveränderungen, Kundenanforderungen und regulatorische Vorgaben",
+    "Lack of real-time insights for fast, informed decision-making": "Fehlende Echtzeit-Einblicke für schnelle, fundierte Entscheidungen",
+    "Complex, fragmented business application landscapes": "Komplexe, fragmentierte Anwendungslandschaften",
+    "Manual processes slowing down innovation and scalability": "Manuelle Prozesse, die Innovation und Skalierbarkeit bremsen",
+    "Our Solutions address these challenges by modernising core systems, automating processes, integrating enterprise applications, and enabling data-driven operational excellence.": "Unsere Enterprise-Lösungen begegnen diesen Herausforderungen, indem sie Kernsysteme modernisieren, Prozesse automatisieren, Anwendungen integrieren und datengetriebene operative Exzellenz ermöglichen.",
+
+    "Our Enterprise Solutions and Services": "Unsere Enterprise Solutions & Services",
+    "ERP Implementation & Support Services": "ERP-Implementierung & Support-Services",
+    "Industry-Specific ERP Solutions": "Branchenspezifische ERP-Lösungen",
+    "ERP Modernisation & Upgrades": "ERP-Modernisierung & Upgrades",
+    "CRM and Customer Engagement Platforms": "CRM- und Customer-Engagement-Plattformen",
+    "Procurement & Strategic Sourcing Solutions": "Beschaffungs- & Strategische Sourcing-Lösungen",
+    "Digital Transformation Solutions": "Digitale Transformationslösungen",
+    "HCM and Payroll Solutions": "HCM- und Payroll-Systeme",
+    "Cloud Migrations & Managed Services": "Cloud-Migration & Managed Services",
+    "Regulatory Compliance Solutions including eInvoicing, ZATCA (Saudi Arabia), Oman VAT, and CSF": "Compliance-Lösungen – inklusive eInvoicing, ZATCA (Saudi-Arabien), Oman VAT und CSF",
+
+    "Our Approach to Building Future-Ready Enterprises": "Unser Ansatz für zukunftsfähige Unternehmen",
+    "We help organisations modernise operations, unify systems, and unlock the power of real-time data. By streamlining business processes, integrating critical functions, and enhancing operational resilience, we enable enterprises to stay agile, connected, and future ready.": "Wir helfen Organisationen, ihre Abläufe zu modernisieren, Systeme zu vereinheitlichen und das volle Potenzial von Echtzeit-Daten auszuschöpfen. Durch die Optimierung von Geschäftsprozessen, die Integration zentraler Funktionen und den Aufbau widerstandsfähiger Strukturen machen wir Unternehmen agiler, vernetzter und zukunftssicher.",
+    "Applying our Analyse–Integrate–Transform (AIT) methodology to identify gaps, unify systems, and enable business transformation": "Anwendung unserer Analyse–Integrations–Transformations-Methodik (AIT) zur Identifikation von Lücken, Systemharmonisierung und Geschäftstransformation",
+    "Automating business processes and eliminating inefficiencies": "Automatisierung von Prozessen und Eliminierung von Ineffizienzen",
+    "Digitising core business functions across finance, operations, HR, supply chain, and customer engagement": "Digitalisierung zentraler Geschäftsbereiche – Finanzen, Betrieb, HR, Lieferkette und Kundenmanagement",
+    "Delivering real-time data visibility for faster, smarter decision-making": "Echtzeit-Transparenz für schnellere und präzisere Entscheidungen",
+    "Enhancing operational resilience through scalable, secure architecture": "Skalierbare und sichere Architekturen zur Stärkung der betrieblichen Resilienz",
+    "Building future-ready platforms designed to evolve with your business": "Aufbau zukunftsfähiger Plattformen, die mit dem Unternehmen wachsen",
+
+    "The RheinBrücke Advantage": "Der RheinBrücke-Vorteil",
+    "Epicor Premium, Microsoft AI Cloud and Microsoft ISV partner": "Epicor Premium-, Microsoft AI Cloud- und Microsoft ISV-Partner",
+    "End-to-end platform services from strategy to support": "End-to-End-Services – von Strategie über Implementierung bis Support",
+    "Proven global rollout and localisation capabilities": "Erprobte internationale Rollout- und Lokalisierungskompetenz",
+    "Accelerated cloud-native development and integrations": "Beschleunigte Cloud-native Entwicklung & Integration",
+    "Outcome-driven delivery with a focus on operational resilience and sustained business value": "Ergebnisorientierte Umsetzung mit Fokus auf operative Stabilität und nachhaltigen Geschäftswert",
+
+    "Explore our enterprise platform capabilities": "Unsere Enterprise-Plattformen im Überblick",
+    "Epicor Solutions": "Epicor Lösungen",
+    "SAP Solutions": "SAP-Lösungen",
+    "Microsoft Dynamics": "Microsoft Dynamics",
+    "Digital Solutions and Services": "Digitale Lösungen & Services",
+    "Industries We Serve": "Branchen, die wir unterstützen",
+
+    "Let us Modernise Your Enterprise": "Modernisieren Sie Ihr Unternehmen mit RheinBrücke",
+    "Discover how RheinBrücke can help you optimise core systems, automate processes, and build future-ready platforms.": "Erfahren Sie, wie RheinBrücke Ihnen hilft, Kernsysteme zu optimieren, Prozesse zu automatisieren und zukunftssichere Plattformen aufzubauen.",
+    "Talk to our enterprise solutions experts today.": "Sprechen Sie noch heute mit unseren Enterprise-Experten!",
+
+
+
+
+
+    "Epicor Kinetic ERP": "Epicor Kinetic ERP",
+
+    "Epicor Kinetic ERP delivers industry-focused solutions that simplify complex processes, improve visibility, and drive operational efficiency for manufacturing, distribution, and retail businesses. Built for agility, it supports your digital transformation with scalable, cloud-based technology.":
+    "Epicor Kinetic ERP bietet branchenspezifische Lösungen, die komplexe Prozesse vereinfachen, Transparenz erhöhen und die operative Effizienz in Fertigung, Distribution und Handel steigern.",
+
+    "Empower your business with agile, industry-ready ERP from Epicor.":
+    "Stärken Sie Ihr Unternehmen mit einem agilen, branchengerechten ERP-System von Epicor.",
+
+    "As an Epicor Premium Partner, RheinBrücke brings over a decade of proven expertise in Epicor implementation, migration, rollouts, and support across 45+ countries, with a strong focus on the EMEA region.":
+    "Als Epicor Premium Partner bringt RheinBrücke über ein Jahrzehnt an Erfahrung in Implementierung, Migration, Rollout und Support von Epicor-Lösungen in über 45 Ländern mit – mit besonderem Fokus auf der EMEA-Region.",
+
+    "Epicor ERP empowers your business with agile, industry-tailored solutions that streamline operations, reduce costs, and enhance performance.":
+    "Epicor ERP unterstützt Unternehmen mit agilen, branchenspezifischen Lösungen zur Optimierung von Abläufen, Kostensenkung und Leistungssteigerung.",
+
+    "Our extensive Epicor presence in the EMEA region enables us to support businesses in achieving operational excellence at scale.":
+    "Unsere starke Epicor-Präsenz in der EMEA-Region ermöglicht es uns, Unternehmen bei der Erreichung operativer Exzellenz im großen Maßstab zu unterstützen.",
+
+    "The Epicor Advantage":
+    "Der Epicor-Vorteil",
+
+    "Empowering businesses to accelerate growth and enhance efficiency through:":
+    "Epicor ERP unterstützt Unternehmen dabei, Wachstum zu beschleunigen und Effizienz zu steigern – durch:",
+
+    "Streamlined and automated business processes with unified systems":
+    "Durchgängige und automatisierte Geschäftsprozesse mit integrierten Systemen",
+
+    "Scalable architecture that supports growth and cost efficiency":
+    "Skalierbare Architektur für Wachstum und Kosteneffizienz",
+
+    "Optimized supply chain and inventory management for better control":
+    "Optimiertes Supply-Chain- und Bestandsmanagement für mehr Kontrolle",
+
+    "Built-in compliance and regulatory support across regions":
+    "Integrierte Compliance- und Regulierungsfunktionen über Regionen hinweg",
+
+    "Real-time insights enabling faster, data-driven decision-making":
+    "Echtzeit-Einblicke für schnellere, datenbasierte Entscheidungen",
+
+    "Epicor ERP addresses business complexities with modern, cloud-enabled solutions built for industry.":
+    "Epicor ERP löst geschäftliche Komplexität mit modernen, cloudbasierten Lösungen, die speziell für Branchen entwickelt wurden.",
+
+    "With automation, analytics, and deep functionality, Epicor helps you streamline processes, scale globally, and stay competitive.":
+    "Mit Automatisierung, Analytik und tiefer Funktionalität hilft Epicor, Prozesse zu verschlanken, global zu skalieren und wettbewerbsfähig zu bleiben.",
+  
+"SCALE Methodology – The 4 Service Pillars":
+    "SCALE-Methodik – Die 4 Service-Säulen",
+
+    "RheinBrücke’s proprietary SCALE methodology helps ensure successful project implementation.":
+    "Mit der SCALE-Methodik von RheinBrücke setzen wir Ihre Projekte erfolgreich um.",
+
+    "The methodology’s five key stages—Prepare, Plan, Design, Validate, and Deploy—enable structured execution.":
+    "Die Methodik umfasst fünf zentrale Phasen – Prepare, Plan, Design, Validate und Deploy – und ermöglicht eine strukturierte Umsetzung.",
+
+    "It integrates the best practices of Waterfall and Agile practices to optimize performance and delivery outcomes.":
+    "Sie kombiniert die Stärken des Wasserfallmodells mit der Agilität moderner Methoden – für höchste Effizienz und erfolgreiche Projektergebnisse.",
+
+    "Solution Architecture":
+    "Solution Architecture",
+
+    "Design and configure the ERP system to fit your business needs, processes, and industry requirements.":
+    "Konzeption und Konfiguration Ihres ERP-Systems nach Ihren Geschäftsprozessen, Anforderungen und Branchenstandards.",
+
+    "Project Management":
+    "Project Management",
+
+    "End-to-end oversight of implementation, migration, and rollouts, ensuring timelines, budgets, and quality standards are met.":
+    "Ganzheitliches Management von Implementierungen, Migrationen und Rollouts – mit Fokus auf Zeitplan, Budget und Qualität.",
+
+    "Consulting":
+    "Consulting",
+
+    "Expert guidance on process optimization, industry best practices, and aligning ERP functionality with business strategy.":
+    "Fachliche Beratung zu Prozessoptimierung, Best Practices und strategischer Ausrichtung Ihrer ERP-Funktionalitäten.",
+
+    "Customer Excellence":
+    "Customer Excellence",
+
+    "Ongoing support, training, and service to ensure adoption, performance, and ROI from your Epicor investment.":
+    "Kontinuierlicher Support, Schulungen und Service – für erfolgreiche Einführung, hohe Performance und nachhaltigen ROI.",
+
+    "Our Epicor Service Offerings":
+    "Unsere Epicor-Services",
+
+    "We provide end-to-end Epicor ERP services to maximize your investment and transform your operations.":
+    "Wir bieten End-to-End-Services rund um Epicor ERP, um Ihr Investment zu maximieren und Ihre Abläufe zu transformieren.",
+
+    "Epicor Kinetic (Epicor ERP): Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production.":
+    "Epicor Kinetic (Epicor ERP): Next-Gen ERP zur Automatisierung von Workflows, Verbesserung der Supply-Chain-Transparenz und Produktionsoptimierung.",
+
+    "Epicor iScala: Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade.":
+    "Epicor iScala: Flexibles ERP für mittelständische Unternehmen in regulierten Branchen wie Pharma, Hotellerie und internationalem Handel.",
+
+    "Epicor Companion Products: Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more.":
+    "Erweiterte Epicor-Lösungen: Integrierte ERP-Erweiterungen für Payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics und mehr.",
+
+    "Industry Verticals Solutions for Epicor ERP: Manufacturing, Oil & Gas, EPC & Construction, Architecture and Interior Design, Retail, and Distribution.":
+    "Branchenspezifische Lösungen für Epicor ERP: Fertigung, Öl & Gas, EPC & Bauwesen, Architektur & Innenausbau, Handel und Distribution.",
+
+"Our Approach":
+    "Unser Ansatz",
+
+    "We align Epicor ERP with your business goals using RheinBrücke’s proven SCALE methodology.":
+    "Wir richten Epicor ERP gezielt an Ihren Geschäftsstrategien aus – mit der bewährten SCALE-Methodik von RheinBrücke.",
+
+    "RheinBrücke’s proprietary SCALE methodology helps ensure successful project implementation.":
+    "Die proprietäre SCALE-Methodik von RheinBrücke stellt eine erfolgreiche Projektumsetzung sicher.",
+
+    "The methodology’s five key stages - Prepare, Plan, Design, Validate, and Deploy – enable structured execution.":
+    "Strukturierte Umsetzung durch die fünf Projektphasen: Prepare, Plan, Design, Validate und Deploy.",
+
+    "It integrates the best practices of Waterfall and Agile practices to optimize performance and delivery outcomes.":
+    "Kombination der Stärken des Wasserfallmodells mit der Agilität moderner Methoden – für höchste Effizienz und erfolgreiche Projektergebnisse.",
+
+    "The RheinBrücke Advantage":
+    "Der RheinBrücke-Vorteil",
+
+    "Epicor Premium Partner with over 12 years of ERP delivery excellence":
+    "Epicor Premium Partner mit über 12 Jahren ERP-Expertise",
+
+    "One of the largest pools of Epicor certified and trained consultants":
+    "Eines der größten Teams aus zertifizierten Epicor-Consultants weltweit",
+
+    "Expertise in end-to-end ERP lifecycle: implementation, migration, rollouts, optimization, and support":
+    "End-to-End-Kompetenz: Implementierung, Migration, Rollout, Optimierung und Support",
+
+    "Industry-specific knowledge in manufacturing, oil & gas, retail, construction, and more":
+    "Tiefes Branchenwissen in Fertigung, Öl & Gas, Bau, Handel und Distribution",
+
+    "Outcome-focused delivery ensuring resilience, efficiency, and business growth":
+    "Ergebnisorientierte Umsetzung mit Fokus auf Resilienz, Effizienz und Wachstum",
+
+    "Industries We Serve":
+    "Branchen, die wir unterstützen",
+
+    "Interior Design and Architecture":
+    "Architektur & Innenausbau",
+
+    "Discrete & Process Manufacturing":
+    "Diskrete & Prozessfertigung",
+
+    "Automotive (Components & Vehicle Manufacturing)":
+    "Automobil (Komponenten- & Fahrzeugbau)",
+
+    "Construction & EPC":
+    "Bauwesen & EPC",
+
+    "Oil & Gas":
+    "Öl & Gas",
+
+    "Retail & Distribution":
+    "Handel & Distribution",
+
+    "Explore Our ERP Capabilities":
+    "Entdecken Sie unsere ERP-Kompetenzen",
+
+    "ERP Implementation through onsite, offshore, hybrid model as per project needs":
+    "ERP-Implementierung vor Ort, offshore oder im hybriden Modell – je nach Projektbedarf",
+
+    "Customer Excellence (Support, Premium Support, Training) that enhance ERP adoption and performance":
+    "Customer Excellence: Support, Premium-Support und Schulungen für maximale ERP-Performance",
+
+    "Upgrade legacy Epicor versions to Kinetic UI":
+    "Upgrade älterer Epicor-Versionen auf die moderne Kinetic UI",
+
+    "Migrate on-prem ERP versions to Kinetic UI version for seamless transition":
+    "Migration von On-Premise-Systemen in die Kinetic UI für einen reibungslosen Übergang",
+
+    "Performance Optimization to enhance ERP performance and reliability":
+    "Performance-Optimierung für maximale Systemleistung und Stabilität",
+
+    "Companion Products to enhance ERP functionality and business process efficiency":
+    "Companion Products zur Erweiterung der ERP-Funktionalität und Prozesseffizienz",
+
+    "ERP Consulting & Advisory aligned with business priorities":
+    "ERP-Beratung und strategische Ausrichtung entsprechend Ihrer Geschäftsprioritäten",
+
+    "Transform with Epicor ERP":
+    "Transformation mit Epicor ERP",
+
+    "Discover how RheinBrücke can help you unlock efficiency, streamline operations, and scale globally with Epicor.":
+    "Entdecken Sie, wie RheinBrücke Ihre Prozesse effizienter gestaltet, Abläufe optimiert und Ihr Geschäft global skaliert – mit Epicor ERP.",
+
+    "Talk to our Epicor experts today.":
+    "Sprechen Sie noch heute mit unseren Epicor-Experten.",
+
+
+
+
+
+    "Microsoft Dynamics Solutions": "Microsoft Dynamics-Lösungen",
+    "Empower your enterprise with intelligent, scalable ERP and CRM solutions from Microsoft Dynamics.": "Stärken Sie Ihr Unternehmen mit intelligenten, skalierbaren ERP- und CRM-Lösungen von Microsoft Dynamics.",
+    "At RheinBrücke, we help organisations streamline operations, integrate business functions, and unlock real-time insights using Microsoft Solutions all tailored to your industry and growth goals.": "Bei RheinBrücke helfen wir Unternehmen dabei, ihre Abläufe zu optimieren, Geschäftsfunktionen zu integrieren und Echtzeit-Einblicke zu gewinnen – mit Microsoft-Lösungen, die ganz auf Ihre Branche und Ihre Wachstumsziele zugeschnitten sind.",
+
+    "The Microsoft Dynamics Advantage": "Die Vorteile von Microsoft Dynamics",
+    "Modern businesses face increasing complexity, competitive pressures, and evolving customer expectations. Common challenges include:": "Moderne Unternehmen sehen sich mit zunehmender Komplexität, Wettbewerbsdruck und sich wandelnden Kundenerwartungen konfrontiert. Zu den häufigsten Herausforderungen zählen:",
+    "Disconnected legacy systems limiting agility and scalability": "Unzusammenhängende Altsysteme, die Agilität und Skalierbarkeit einschränken",
+    "Siloed data and inconsistent reporting": "Siloartige Daten und inkonsistente Berichterstellung",
+    "Manual, time-consuming workflows": "Manuelle, zeitaufwändige Arbeitsabläufe",
+    "Rising operational costs and inefficiencies": "Steigende Betriebskosten und Ineffizienzen",
+    "Limited real-time visibility for decision-making": "Eingeschränkte Echtzeit-Transparenz für die Entscheidungsfindung",
+    "Difficulty integrating ERP, CRM, and productivity tools": "Schwierigkeiten bei der Integration von ERP-, CRM- und Produktivitäts-Tools",
+    "Microsoft Dynamics addresses these with unified, cloud-based ERP and CRM capabilities, enabling you to digitise core operations, optimise processes, and drive growth.": "Microsoft Dynamics begegnet diesen Herausforderungen mit einheitlichen, cloudbasierten ERP- und CRM-Funktionen, mit denen Sie Ihre Kerngeschäftsprozesse digitalisieren, Prozesse optimieren und das Wachstum vorantreiben können.",
+
+      "Our Microsoft Dynamics Solutions": "Unsere Microsoft Dynamics-Lösungen",
+    "Dynamics 365 ERP & CRM Solutions": "Dynamics 365 ERP- und CRM-Lösungen",
+"Finance, Operations, Sales, Marketing, Customer Service, Field Service, HR": "– Finanzen, Betrieb, Vertrieb, Marketing, Kundenservice, Außendienst, Personalwesen",
+    "Business Central Migration & Implementation": "Business Central-Migration und -Implementierung",
+"Cloud-based ERP for SMBs covering finance, supply chain, sales, service, and projects": "Cloudbasiertes ERP für KMUs, das Finanzen, Lieferkette, Vertrieb, Service und Projekte abdeckt",
+    "Navision Support, Migration & Upgrades": "Navision-Support, Migration und Upgrades",
+"Maintain and modernise NAV with a clear path to Business Central": "Wartung und Modernisierung von NAV mit einem klaren Weg zu Business Central",
+    "AX (Axapta) Support, Migration and Upgrades": "AX (Axapta)-Support, Migration und Upgrades",
+"Move to Dynamics 365 Finance & Operations for scalability and advanced capabilities": "Umstieg auf Dynamics 365 Finance & Operations für Skalierbarkeit und erweiterte Funktionen",
+    "Integration with Microsoft 365, Power Platform, Azure, and Power BI": "Integration mit Microsoft 365, Power Platform, Azure und Power BI",
+"Boost collaboration, analytics, and automation": "Verbesserung der Zusammenarbeit, Analyse und Automatisierung",
+
+    "Our Approach": "Unser Ansatz",
+    "We align Microsoft Dynamics capabilities with your strategic objectives using our Analyse–Integrate–Transform (AIT) methodology:": "Wir passen die Funktionen von Microsoft Dynamics mithilfe unserer AIT-Methodik (Analyse–Integration–Transformation) an Ihre strategischen Ziele an:",
+    "Assess business challenges and system gaps": "Bewertung von geschäftlichen Herausforderungen und Systemlücken",
+    "Configure Dynamics to industry-specific requirements": "Konfiguration von Dynamics gemäß branchenspezifischen Anforderungen",
+    "Integrate with existing applications for seamless workflows": "Integration in bestehende Anwendungen für nahtlose Arbeitsabläufe",
+    "Automate manual processes for efficiency": "Automatisierung manueller Prozesse für mehr Effizienz",
+    "Deliver real-time data insights for smarter decisions": "Bereitstellung von Echtzeit-Datenanalysen für intelligentere Entscheidungen",
+    "Ensure scalability and security for future growth": "Gewährleistung von Skalierbarkeit und Sicherheit für zukünftiges Wachstum",
+
+    "The RheinBrücke Advantage": "Die Vorteile von RheinBrücke",
+    "Microsoft AI Cloud and ISV Partner with deep ERP expertise": "Microsoft AI Cloud und ISV-Partner mit fundierter ERP-Expertise",
+    "Proven global rollouts with localisation capabilities": "Bewährte globale Rollouts mit Lokalisierungsfunktionen",
+    "End-to-end services from strategy to support": "End-to-End-Services von der Strategie bis zum Support",
+    "Smooth migrations from legacy systems (NAV, AX)": "Reibungslose Migrationen von Altsystemen (NAV, AX)",
+    "Outcome-focused delivery ensuring operational resilience and business value": "Ergebnisorientierte Umsetzung, die operative Ausfallsicherheit und geschäftlichen Mehrwert gewährleistet",
+
+    "Industries We Serve": "Branchen, die wir bedienen",
+    "Manufacturing": "Fertigung",
+    "Retail & E-commerce": "Einzelhandel und E-Commerce",
+    "Automotive": "Automobilindustrie",
+    "Financial Services": "Finanzdienstleistungen",
+
+    "Explore Our Microsoft Capabilities": "Entdecken Sie unsere Microsoft-Kompetenzen",
+    "Business Intelligence (BI)": "Business Intelligence (BI)",
+    "Digital Solutions & Services": "Digitale Lösungen und Services",
+    "Microsoft Technologies": "Microsoft-Technologien",
+
+    "Let us Transform Your Enterprise": "Lassen Sie uns Ihr Unternehmen transformieren",
+    "Discover how RheinBrücke can help you optimise operations, automate workflows, and grow with Microsoft Dynamics.": "Entdecken Sie, wie RheinBrücke Ihnen dabei helfen kann, Ihre Abläufe zu optimieren, Workflows zu automatisieren und mit Microsoft Dynamics zu wachsen.",
+    "Talk to our Microsoft Dynamics experts today.": "Sprechen Sie noch heute mit unseren Microsoft Dynamics-Experten.",
+
+
+
+
+    "Main Features": "Hauptfunktionen",
+      "Recruitment and Onboarding": "Recruiting & Onboarding",
+      "Make better hiring decisions through structured and configurable workflows.": "Treffen Sie fundierte Einstellungsentscheidungen dank strukturierter, konfigurierbarer Workflows.",
+      "Probation": "Probezeitmanagement",
+      "Automated probation evaluations with workflows.": "Automatisierte Bewertungen mit genehmigten Workflows.",
+      "Time and Attendance": "Zeit- und Anwesenheitsmanagement",
+      "Capture daily attendance and work times and process them to reflect in the Employee dashboard.": "Erfassen Sie Arbeitszeiten und Abwesenheiten – transparent im Mitarbeiter-Dashboard.",
+      "Performance Management": "Performance Management",
+      "Inspire your team to reach their full potential, sync their efforts with company goals, and foster a thriving, positive workplace .": "Motivieren Sie Ihr Team, Ziele zu erreichen, Leistungen zu steigern und eine positive Unternehmenskultur zu fördern.",
+      "Training Management": "Trainingsmanagement",
+      "Ensure employees have necessary skills and knowledge to perform their jobs effectively and efficiently.": "Sorgen Sie dafür, dass Ihre Mitarbeitenden über die richtigen Kenntnisse und Fähigkeiten verfügen.",
+      "Shift Roster": "Schichtplanung",
+      "Operate 24/7 with round-the-clock business support.": "24/7-Betrieb durch flexible, planbare Schichtmodelle.",
+      "Leadership Development": "Führungskräfteentwicklung",
+      "Identify and nurture employees for leadership roles in the organisation.": "Identifizieren und fördern Sie Talente für zukünftige Führungsaufgaben.",
+      "Employee Engagement Surveys": "Mitarbeiterbefragungen",
+      "Manage organisational engagement effectively through survey.": "Messen Sie Engagement und Zufriedenheit gezielt über integrierte Umfragetools.",
+      "Exit Initiation & Approval Process": "Offboarding & Exit-Prozesse",
+      "Gather feedback through exit interview and identify areas for improvement and help with the final settlement.": "Erfassen Sie Feedback, leiten Sie Erkenntnisse ab und unterstützen Sie die reibungslose Abwicklung.",
+      "Employee Self-Service": "Mitarbeiter-Self-Service (ESS)",
+      "Employee Information Management": "Persönliche Datenverwaltung",
+      "Training & Development": "Schulungs- und Weiterbildungsanträge",
+      "Travel Requests": "Reiseanträge",
+      "Leave Management": "Urlaubsverwaltung",
+      "Work Permit Process": "Arbeitserlaubnisprozesse",
+      "Timesheets & Attendance": "Zeiterfassung & Anwesenheit",
+      "Loan Management": "Kredit- und Vorschussverwaltung",
+      "Miscellaneous Reimbursement Request": "Spesen- und Kostenerstattung",
+      "User Dashboard": "Benutzer-Dashboard",
+      "Grievances Management": "Beschwerde-Management",
+      "Approval & Delegation Process": "Genehmigungs- & Delegationsprozesse",
+      "Additional Features of CorusHR": "Zusätzliche Funktionen von CorusHR",
+      "Seamless Integration": "Nahtlose Integration",
+      "The seamless integration of CorusHR with Epicor ERP ensures that these two systems operate together in real-time, enabling effective communication, and functioning as a unified platform without any disruptions or complications.": "Die direkte Integration mit Epicor ERP sorgt für einen durchgängigen Informationsfluss in Echtzeit – ohne Systembrüche oder Datenverluste.",
+      "Effective Data Management": "Effizientes Datenmanagement",
+      "Updating and retrieval of employee data, including personal information, employment history, performance evaluations, and benefits enrolment, reducing data loss and errors and improved data integrity.": "Aktualisieren und verwalten Sie Mitarbeiterdaten zentral – sicher, konsistent und fehlerfrei.",
+      "Reporting and Analytics": "Reporting & Analytics",
+      "Get insights on regular and overtime hours, transaction, performance assessment, requirements fulfilment, and exit process enabling informed decision-making and planning.": "Gewinnen Sie Einblicke in Arbeitszeiten, Leistungen, Personalbewegungen und Austrittsanalysen – für fundierte Entscheidungen und bessere Planung.",
+      "Mobile Accessibility": "Mobile Zugänglichkeit",
+      "With our solution, employees can stay connected around the clock through a user-friendly mobile application, ensuring seamless access to vital information and better collaboration.": "Über unsere benutzerfreundliche App bleiben Mitarbeiter jederzeit verbunden – mit Zugriff auf alle wichtigen Informationen.",
+      "Configurable": "Hohe Anpassbarkeit",
+      "The solution is adaptable, quick to respond, and highly configurable, aimed at improving operational efficiencies. It facilitates streamlined HR operations, improves efficiency by eliminating paper and email trails with digital workflows and enhances user satisfaction.": "CorusHR ist flexibel, skalierbar und schnell konfigurierbar. Digitale Workflows ersetzen Papier- und E-Mail-Prozesse und steigern Effizienz sowie Benutzerzufriedenheit.",
+      "Benefits": "Ihre Vorteile mit CorusHR",
+      "CorusHR provides a comprehensive solution for talent management for employees, managers and HR department. With CorusHR, you can enjoy:": "CorusHR bietet eine umfassende Lösung für Talentmanagement – für Mitarbeitende, Führungskräfte und die HR-Abteilung.",
+      "Easy Implementation": "Einfache Implementierung",
+      "Designed for seamless deployment": "Schnell startklar und leicht integrierbar",
+      "Rich Functionalities": "Umfassende Funktionen",
+      "Complete Hire to Retire features": "Von der Einstellung bis zum Ruhestand",
+      "Easy Usage": "Benutzerfreundlich",
+      "Intuitive, user-friendly interface": "Intuitives Design, einfache Bedienung",
+      "Comprehensive Reporting": "Aussagekräftige Berichte",
+      "Robust reporting capabilities": "Umfassende Analysefunktionen",
+      "Seamless Integration (Benefits)": "Epicor-Integration",
+      "Out-of-the-box Epicor integration": "Out-of-the-box Anbindung",
+      "Multisite Capabilities": "Multi-Site-Fähigkeit",
+      "Manage multiple locations": "Mehrere Standorte zentral verwalten",
+      "Mobile Interface": "Mobil nutzbar",
+      "Access anytime, anywhere": "Jederzeit, überall",
+      "Configurable Setup & Fluid Workflows": "Flexible Workflows",
+      "Flexible configurations and workflows": "Individuell anpassbare Prozesse",
+    "Download Our Brochure": "Broschüre herunterladen",
+    "Download Our Brochure now to know more about our CorusHR Solution!": "Laden Sie jetzt unsere Broschüre herunter und entdecken Sie, wie CorusHR Ihr Personalmanagement transformiert.",
+      "Revolutionizing HR Management with Smart, Scalable Solutions": "HR-Management neu gedacht – intelligent und skalierbar",
+      "Ready to elevate your global workforce experience with an intuitive HRMS?": "Bereit, Ihre globale Workforce mit einem intuitiven HRMS zu stärken?",
+      "CorusHR provides powerful self-service and end-to-end HR coverage, keeping your teams supported from recruitment to retirement on any device.": "CorusHR bietet leistungsstarken Self‑Service und End‑to‑End‑HR‑Abdeckung – vom Recruiting bis zur Rente, auf jedem Gerät.",
+      "What Makes CorusHR Stand Out": "Das macht CorusHR besonders",
+      "We provide a holistic approach to streamlining and automating various aspects of Human Resource Management, that is integrated with your ERP. CorusHR addresses key challenges faced by businesses, including time-consuming manual onboarding processes, lengthy HR solution implementation timelines, complex and difficult-to-use systems, limited region-specific functionality, and poor integration with existing ERP platforms.": "Wir verfolgen einen ganzheitlichen Ansatz zur Optimierung und Automatisierung zentraler HR‑Prozesse – integriert in Ihr ERP. CorusHR adressiert typische Herausforderungen wie zeitaufwendiges manuelles Onboarding, lange Implementierungszeiten, komplizierte und schwer bedienbare Systeme, begrenzte länderspezifische Funktionen sowie mangelnde Integration mit bestehenden ERP‑Plattformen.",
+      "Are you looking for an intuitive and streamlined Human Resource Management Solution (HRMS) designed to enhance global workforce management? CorusHR offers you an intuitive, user-friendly self-service portal for organisation-wide collaboration offering HR services, Employee Self Service and Manager Self Service. From recruitment to retirement, we have comprehensive functional coverage that is available on mobile and desktop.": "Suchen Sie eine intuitive, schlanke HRMS‑Lösung zur Verbesserung des globalen Personalmanagements? CorusHR bietet ein benutzerfreundliches Self‑Service‑Portal für unternehmensweite Zusammenarbeit – mit HR‑Services, Employee Self Service und Manager Self Service. Von Recruiting bis Offboarding: umfassende Funktionen für Mobil‑ und Desktop‑Nutzung.",
+      "Customers": "Kunden",
+
+
+
+"Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production.":
+    "Das ERP der nächsten Generation – für automatisierte Workflows, transparente Lieferketten und optimierte Produktion.",
+
+    "Epicor Kinetic is a modern, cloud-enabled ERP designed to streamline operations, reduce manual processes, and provide real-time insights across your business.":
+    "Epicor Kinetic ist ein modernes, cloudbasiertes ERP-System, das Geschäftsprozesse vereinfacht, manuelle Abläufe reduziert und Echtzeit-Einblicke in Ihre gesamte Organisation bietet.",
+
+    "It empowers organizations to scale efficiently while staying compliant and competitive in today’s fast-paced industries.":
+    "Es unterstützt Unternehmen dabei, effizient zu skalieren, Compliance-Anforderungen zu erfüllen und wettbewerbsfähig in dynamischen Märkten zu bleiben.",
+
+    "Our Epicor Kinetic Capabilities":
+    "Unsere Epicor Kinetic Funktionen",
+
+    "Automate end-to-end workflows across finance, manufacturing, and supply chain.":
+    "Automatisierung durchgängiger Workflows in Finanzen, Fertigung und Supply Chain",
+
+    "Enhance supply chain visibility for better planning and forecasting.":
+    "Erhöhte Transparenz in der Lieferkette für bessere Planung und Prognosen",
+
+    "Optimize production with real-time tracking and analytics.":
+    "Produktionsoptimierung durch Echtzeit-Tracking und Analysen",
+
+    "Enable mobile and cloud access for global, distributed teams.":
+    "Mobiler und Cloud-basierter Zugriff für global verteilte Teams",
+
+    "Embed analytics and dashboards for faster, data-driven decision-making.":
+    "Integrierte Dashboards und Analytics für schnellere, datengetriebene Entscheidungen",
+
+    "Integrate smart sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.":
+    "Integration intelligenter Sensoren ins ERP für Echtzeitüberwachung, präventive Wartung und Prozessoptimierung",
+
+    "Why Choose Epicor Kinetic?":
+    "Warum Epicor Kinetic?",
+
+    "Proven enterprise ERP solution trusted across industries.":
+    "Bewährte Enterprise-ERP-Lösung, der branchenübergreifend vertraut wird",
+
+    "Seamless integration with companion products and third-party applications.":
+    "Nahtlose Integration mit ergänzenden Epicor-Produkten und Drittanbieteranwendungen",
+
+    "Scalable deployment to grow with your business.":
+    "Skalierbare Implementierung, die mit Ihrem Unternehmen mitwächst",
+
+    "End-to-end support from design to implementation and optimization.":
+    "End-to-End-Unterstützung – von der Konzeption bis zur Optimierung",
+
+    "Focus on measurable business outcomes, including efficiency, cost savings, and compliance.":
+    "Fokus auf messbare Geschäftsergebnisse wie Effizienzsteigerung, Kostensenkung und Compliance",
+
+    "Ready to transform your operations with Epicor Kinetic?":
+    "Bereit, Ihre Prozesse mit Epicor Kinetic zu transformieren?",
+
+    "Talk to Our ERP Experts.":
+    "Sprechen Sie noch heute mit unseren ERP-Experten.",
+
+
+
+
+    "Epicor iScala": "Epicor iScala",
+    "Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade.": "Flexibles ERP für mittelständische Unternehmen in regulierten Branchen wie Pharma, Hotellerie und internationalem Handel.",
+    "Epicor iScala helps mid-sized businesses manage complex operations with a flexible, configurable ERP platform. It ensures compliance, simplifies financial and operational management, and supports growth across multiple geographies.": "Epicor iScala unterstützt mittelständische Unternehmen dabei, komplexe Geschäftsprozesse effizient zu steuern – mit einer flexiblen, konfigurierbaren ERP-Plattform. Die Lösung vereinfacht Finanz- und Betriebsabläufe, stellt Compliance sicher und fördert Wachstum über verschiedene Standorte und Regionen hinweg.",
+
+    "Our Epicor iScala Capabilities": "Unsere Epicor iScala Funktionen",
+    "Streamline financials, supply chain, and production management.": "Optimierung von Finanz-, Supply-Chain- und Produktionsprozessen für mehr Effizienz",
+    "Ensure regulatory and compliance adherence in highly regulated industries.": "Sicherstellung der Compliance in stark regulierten Branchen",
+    "Support multi-currency, multi-language, and multi-entity operations.": "Unterstützung von Multi-Währungs-, Multi-Sprachen- und Multi-Entity-Strukturen",
+    "Enable real-time reporting and business intelligence insights.": "Echtzeit-Reporting und Business Intelligence für datenbasierte Entscheidungen",
+    "Flexible deployment options for cloud or on-premise environments.": "Flexible Bereitstellungsoptionen – in der Cloud oder On-Premise",
+    "Manage in-house repair and maintenance processes, ensuring correct stock valuation.": "Verwaltung interner Reparatur- und Wartungsprozesse mit korrekter Bestandsbewertung",
+
+    "Why Choose Epicor iScala?": "Warum Epicor iScala?",
+    "Industry-specific ERP for mid-sized organizations.": "Branchenspezifisches ERP für mittelständische Unternehmen",
+    "Scalable and adaptable to evolving business needs.": "Skalierbar und anpassungsfähig an sich wandelnde Geschäftsanforderungen",
+    "Integrated analytics and reporting for smarter decisions.": "Integrierte Analysen und Reports für fundierte Entscheidungen",
+    "End-to-end support from consulting and implementation to training.": "Umfassender Support – von Beratung und Implementierung bis Schulung",
+    "Focused on operational efficiency, growth, and compliance assurance.": "Fokus auf operative Effizienz, Wachstum und Compliance-Sicherheit",
+
+    "Ready to scale your mid-sized business with Epicor iScala?": "Bereit, Ihr mittelständisches Unternehmen mit Epicor iScala zu skalieren?",
+    "Talk to Our ERP Experts.": "Sprechen Sie noch heute mit unseren ERP-Experten.",
+
+
+
+
+    "Epicor Companion Products": "Epicor ERP-Erweiterungen",
+    "Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more.": "Erweitern Sie Ihr ERP mit integrierten Business-Lösungen für Payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics und mehr.",
+    "Epicor Companion Products enhance your core ERP system, enabling end-to-end operational control and insights. They are designed to integrate seamlessly with Epicor ERP for complete business management.": "Die Epicor Companion Products erweitern Ihr Kern-ERP um durchgängige Steuerungs-, Automatisierungs- und Analysefunktionen und lassen sich nahtlos in Epicor ERP integrieren.",
+
+    "Our Companion Products Capabilities": "Unsere ERP-Erweiterungen im Überblick",
+    "EpicPay: Simplify payroll management and compliance.": "EpicPay – Vereinfachte Lohn- und Gehaltsabrechnung mit automatisierter Compliance.",
+    "MES (Manufacturing Execution): Optimize shop-floor operations and production tracking.": "MES (Manufacturing Execution System) – Optimieren Sie Fertigungsprozesse und Produktionsnachverfolgung.",
+    "ECM (Enterprise Content Management): Centralize documents and workflows.": "ECM (Enterprise Content Management) – Zentrale Verwaltung von Dokumenten, Inhalten und Workflows.",
+    "FP&A (Financial Planning & Analysis): Improve budgeting, forecasting, and reporting.": "FP&A (Financial Planning & Analysis) – Verbesserte Budgetierung, Prognosen und Finanzberichterstattung.",
+    "IP&O (Inventory Planning & Optimization): Maximize inventory efficiency and reduce costs.": "IP&O (Inventory Planning & Optimization) – Effiziente Bestandsplanung zur Kostenreduktion.",
+    "WMS (Warehouse Management System): Streamline warehouse operations and logistics.": "WMS (Warehouse Management System) – Schlankere Lagerlogistik und optimierte Materialflüsse.",
+    "Epicor Data Analytics (Phocas) – Drive data-driven decisions with advanced analytics and visualizations.": "Epicor Data Analytics (Phocas) – Fundierte Entscheidungen durch leistungsstarke Analysen und Visualisierungen.",
+    "Epicor eCommerce – Provide a connected, self-service online storefront for manufacturers, distributors, and wholesalers to drive customer loyalty and profitability.": "Epicor eCommerce – Durchgängiges Online-Erlebnis für Hersteller, Distributoren und Großhändler.",
+    "Epicor Grow – Cloud-based business intelligence solution to harness data for better decision-making and operational efficiency.": "Epicor Grow – Cloudbasierte Business-Intelligence-Lösung für datengestützte Entscheidungen.",
+    "Epicor Data Discovery – Visualize and interact with ERP data through intuitive dashboards and charts.": "Epicor Data Discovery – Interaktive Dashboards und Visualisierung von ERP-Daten.",
+    "Epicor Spreadsheet Server – Connect ERP data directly to Excel for real-time reporting, drill-down analysis, and planning.": "Epicor Spreadsheet Server – Direkte ERP-Datenintegration in Excel für Echtzeitberichte und Analysen.",
+    "Epicor Kinetic Warehouse – Mobile-first scanning solution to optimize warehouse and shop-floor transactions.": "Epicor Kinetic Warehouse – Mobile-First-Lösung für effiziente Scan- und Lagerprozesse.",
+    "Automation Studio – Connect applications and automate workflows with low-code/no-code integration.": "Automation Studio – Anwendungen verbinden und Workflows mit Low-Code/No-Code automatisieren.",
+    "Service Connect – Simplify system integrations and process automation across Epicor solutions.": "Service Connect – Vereinfachte Systemintegration und Prozessautomatisierung.",
+    "QuickShip – Optimize shipping operations with real-time carrier integration and tracking.": "QuickShip – Versandoptimierung mit Echtzeit-Carrier-Integration und Tracking.",
+    "Epicor BarTender – Barcode labeling solution to create, manage, and print labels across warehouses and manufacturing operations.": "Epicor BarTender – Intelligente Barcode-Lösung für Etikettierung in Lager und Produktion.",
+    "Integrate smart sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.": "IoT-Integration – Smarte Sensoren für Echtzeitdaten, vorausschauende Wartung und Prozessoptimierung.",
+
+    "Why Choose Epicor Companion Products?": "Ihre Vorteile mit den Epicor ERP-Erweiterungen",
+    "Seamless integration with Epicor ERP for a unified platform.": "Nahtlose Integration – Perfekt abgestimmt auf Epicor ERP.",
+    "Enhance operational efficiency and visibility across all business functions.": "Mehr Effizienz & Transparenz in allen Geschäftsbereichen.",
+    "Scalable solutions to grow with your business needs.": "Skalierbare und flexible Lösungen.",
+    "End-to-end support, including deployment, training, and optimization.": "Rundum-Support von Implementierung bis Optimierung.",
+    "Deliver measurable business impact with smarter operations and insights.": "Messbarer Mehrwert durch smarte Abläufe und klare Einblicke.",
+    "Ready to extend your ERP with Epicor Companion Products? Talk to Our ERP Experts.": "Bereit, Ihr ERP zu erweitern? Sprechen Sie mit unseren ERP-Experten.",
+
+
+
+
+
+    "Epic Pay – Epicor Payroll MEA": "Epic Pay – Epicor Payroll MEA",
+    "Comprehensive payroll solution tailored for businesses across the Middle East and Africa.": "Umfassende Payroll-Lösung für Unternehmen im Nahen Osten und Afrika.",
+    "Epic Pay (Epicor Payroll MEA) helps organizations streamline payroll processing with seamless integration to Epicor ERP. It ensures compliance with regional labour laws, simplifies HR and payroll operations, and empowers employees with self-service access.": "Epic Pay (Epicor Payroll MEA) unterstützt Unternehmen dabei, die Lohn- und Gehaltsabrechnung zu optimieren – mit nahtloser Integration in Epicor ERP. Die Lösung gewährleistet die Einhaltung regionaler Arbeitsgesetze, vereinfacht HR- und Payroll-Prozesse und bietet Mitarbeitenden Self-Service-Zugang.",
+
+    "Our Epic Pay Capabilities": "Unsere Epic Pay Funktionen",
+    "Automate payroll processing and salary calculations.": "Automatisierung von Gehaltsabrechnungen und Lohnberechnungen.",
+    "Ensure compliance with MEA labour laws, tax rules, and statutory reporting.": "Einhaltung regionaler Arbeitsgesetze, Steuervorschriften und gesetzlicher Berichtspflichten.",
+    "Integrate time, attendance, leave, and loan management directly into payroll.": "Integration von Zeit-, Anwesenheits-, Urlaubs- und Darlehensmanagement direkt in die Payroll.",
+    "Provide employee and manager self-service portals for anytime, anywhere access.": "Self-Service-Portale für Mitarbeitende und Führungskräfte – jederzeit und überall verfügbar.",
+    "Deliver real-time analytics and reporting on payroll costs, overtime, and compliance.": "Echtzeit-Analysen und Reports zu Gehaltskosten, Überstunden und Compliance.",
+    "Enable mobile accessibility for a connected workforce.": "Mobile Zugänglichkeit für eine vernetzte Belegschaft.",
+
+    "Why Choose Epic Pay?": "Warum Epic Pay wählen?",
+    "Designed specifically for organizations in the MEA region.": "Speziell entwickelt für Unternehmen in der MEA-Region.",
+    "Seamless integration with Epicor ERP for end-to-end efficiency.": "Nahtlose Integration mit Epicor ERP für durchgängige Effizienz.",
+    "Scalable and customizable to suit single-site or multi-site operations.": "Skalierbar und anpassbar für Einzelstandorte oder Multi-Site-Betriebe.",
+    "Enhances employee engagement with intuitive self-service access.": "Fördert Mitarbeitereinbindung durch intuitive Self-Service-Funktionen.",
+    "Trusted with over half a million payrolls processed across industries.": "Vertrauenswürdig: Über eine halbe Million Payrolls in verschiedenen Branchen verarbeitet.",
+
+    "Ready to simplify payroll and stay compliant with Epic Pay? Talk to our Epicor Experts today.": "Payroll vereinfachen und Compliance sichern – sprechen Sie noch heute mit unseren Epicor-Experten.",
+
+
+
+
+    "Our Solution Portfolio": "Unser Lösungsportfolio",
+    "Our portfolio includes cutting-edge, industry-focused platforms that deliver measurable business outcomes.": "Unser Portfolio umfasst innovative, branchenspezifische Plattformen, die messbare Geschäftsergebnisse liefern.",
+
+    "Corus HR – Transforming Human Capital Management": "Corus HR – Effizientes Personalmanagement neu definiert",
+    "Automates the entire hire-to-retire employee lifecycle": "Automatisiert den gesamten Mitarbeiterlebenszyklus – von der Einstellung bis zum Austritt",
+    "Simplifies onboarding, probation, and workforce management": "Vereinfacht Onboarding, Probezeit und Mitarbeiterverwaltung",
+    "Integrates attendance, leave, payroll, and compliance": "Integriert Zeiterfassung, Abwesenheiten, Gehaltsabrechnung und Compliance",
+    "Streamlines performance reviews and goal tracking": "Optimiert Leistungsbeurteilungen und Zielverfolgung",
+    "Provides intuitive self-service portals for employees and managers": "Bietet Self-Service-Portale für Mitarbeitende und Führungskräfte",
+    "Explore More → Corus HR": "Mehr erfahren → Corus HR",
+
+    "MeRLIN Sourcing – Driving Strategic Sourcing Excellence": "MeRLIN Sourcing – Strategische Beschaffung auf höchstem Niveau",
+    "Advanced Supplier Relationship Management (SRM) and eSourcing platform": "Modernes Supplier Relationship Management (SRM) und eSourcing-Plattform",
+    "Enables strategic procurement and collaborative supplier engagement": "Unterstützt strategische Beschaffung und enge Lieferantenkooperation",
+    "Optimises costs while mitigating supply chain risks": "Kostenoptimierung bei gleichzeitiger Reduzierung von Supply-Chain-Risiken",
+    "AI-driven analytics for data-backed sourcing decisions": "KI-gestützte Analysen für datenbasierte Beschaffungsentscheidungen",
+    "Drives innovation through strong supplier partnerships": "Fördert Innovation durch starke Lieferantenpartnerschaften",
+    "Explore More → MeRLIN Sourcing": "Mehr erfahren → MeRLIN Sourcing",
+
+    "Why Choose Our Solutions?": "Warum unsere Lösungen?",
+    "Proven success across industries and geographies": "Bewährter Erfolg in unterschiedlichen Branchen und Regionen",
+    "Flexible, scalable, and secure architecture": "Flexible, skalierbare und sichere Architektur",
+    "Rapid deployment for faster ROI": "Schnelle Implementierung für einen raschen ROI",
+    "Seamless integration with existing business systems": "Nahtlose Integration in bestehende Unternehmenssysteme",
+    "Dedicated expert support and continuous innovation": "Engagierter Experten-Support und kontinuierliche Weiterentwicklung",
+
+    "Ready to Transform Your Business?": "Bereit, Ihr Unternehmen zu transformieren?",
+    "Unlock the full potential of your organisation with innovative solutions tailored to your needs.": "Entfalten Sie das volle Potenzial Ihres Unternehmens mit innovativen, passgenauen Lösungen.",
+    "Contact us today to discover how our platforms can deliver measurable results.": "Kontaktieren Sie uns, um zu erfahren, wie unsere Plattformen messbare Ergebnisse erzielen.",
+
+
+
+
+    "CORPORATE VIDEOS":
+    "Unternehmensvideos",
+
+    "RheinBrucke IT Consulting – Corporate video":
+    "RheinBrücke IT Consulting – Unternehmensvideo",
+
+    "play":
+    "Zum Abspielen",
+
+
+    "RheinBrücke IT Consulting - Stevie Awards 2015 German":
+    "RheinBrücke IT Consulting – Stevie Awards 2015 (Deutsch)",
+
+    "RheinBrücke – Pinnacle Awards of Excellence 2016":
+    "RheinBrücke – Pinnacle Awards of Excellence 2016",
+
+    "RheinBrücke – Customer Reference by Martin Peters":
+    "RheinBrücke – Kundenreferenz von Martin Peters",
+
+    "RheinBrücke – Customer Reference by Dr. Schrettl":
+    "RheinBrücke – Kundenreferenz von Dr. Schrettl",
+
+    "RheinBrücke – Customer Reference by Greg Bryan":
+    "RheinBrücke – Kundenreferenz von Greg Bryan",
+
+    "RheinBrücke – Customer Reference by Harry Hezel":
+    "RheinBrücke – Kundenreferenz von Harry Hezel",
+
+    "RheinBrucke – IDC Inauguration Event":
+    "RheinBrücke – Eröffnung des India Development Centre (IDC)",
+
+    "RheinBrucke – Stevie Awards 2016 German":
+    "RheinBrücke – Stevie Awards 2016 (Deutsch)",
+
+    "RheinBrucke – FLSmidth Testimonial | Mads Madsbjerg Hansen":
+    "RheinBrücke – FLSmidth Erfahrungsbericht | Mads Madsbjerg Hansen",
+
+    "Liftek's ERP Transformation Journey with RheinBrücke: A Success Story":
+    "Liftek’s ERP-Transformationsreise mit RheinBrücke – Eine Erfolgsgeschichte",
+
+
+
+
+
+    "AI/ML & Data Analytics": "AI/ML & Data Analytics",
+    "Harness the combined power of Google AI/ML, Azure Machine Learning, and advanced signature analytics to deliver predictive maintenance, intelligent automation, and real-time insights.": "Nutzen Sie die kombinierte Kraft von Google AI/ML, Azure Machine Learning und fortschrittlicher Signaturanalyse, um vorausschauende Wartung, intelligente Automatisierung und Echtzeit-Insights zu ermöglichen.",
+    "We help organisations across industries transform data into intelligence—driving smarter decisions, greater efficiency, and measurable business impact.": "Wir helfen Unternehmen in verschiedenen Branchen, Daten in Wissen zu verwandeln – für intelligentere Entscheidungen, höhere Effizienz und messbaren Geschäftserfolg.",
+
+    "AI/ML Use Cases by Industry": "AI/ML-Anwendungsfälle nach Branche",
+    "Brand Owners & Vertical Retailers – personalised recommendations, dynamic pricing, inventory optimisation, and loss prevention.": "Marken und vertikale Einzelhändler – Personalisierte Empfehlungen, dynamische Preisgestaltung, Bestandsoptimierung und Verlustprävention.",
+    "Retail Industry – customer segmentation, demand forecasting, fraud detection, and real-time analytics to improve in-store and online performance.": "Einzelhandel – Kundensegmentierung, Nachfrageprognosen, Betrugserkennung und Echtzeit-Analysen zur Verbesserung der Performance in Store und Online.",
+    "Distribution & Supply Chain – route optimisation, warehouse automation, predictive delivery times, and supply chain risk analytics.": "Distribution & Supply Chain – Routenoptimierung, Lagerautomatisierung, vorausschauende Lieferzeiten und Risikoanalysen in der Lieferkette.",
+    "Discrete Manufacturing – predictive maintenance, computer vision for quality control, production scheduling, and digital twins.": "Diskrete Fertigung – Predictive Maintenance, Computer Vision für Qualitätskontrolle, Produktionsplanung und digitale Zwillinge.",
+    "Automotive Industry – smart manufacturing, connected vehicle analytics, predictive maintenance, and safety monitoring.": "Automobilindustrie – Smart Manufacturing, vernetzte Fahrzeuganalysen, vorausschauende Wartung und Sicherheitsüberwachung.",
+    "Engineering, Procurement & Construction (EPC) – project cost forecasting, risk modelling, resource optimisation, and contract intelligence.": "Engineering, Procurement & Construction (EPC) – Projektkostenprognosen, Risikomodellierung, Ressourcenoptimierung und Vertragsanalyse.",
+    "Process Manufacturing – predictive process control, energy optimisation, waste reduction, and safety analytics.": "Prozessfertigung – Vorausschauende Prozesssteuerung, Energieoptimierung, Abfallreduktion und Sicherheitsanalysen.",
+    "Private Equity & Funding-backed Ventures – portfolio performance analytics, risk scoring, market trend prediction, and value creation tracking.": "Private Equity & Venture Investments – Portfolio-Performance-Analysen, Risikobewertung, Markttrendprognosen und Wertentwicklungstracking.",
+
+    "Why Choose Us?": "Warum wir?",
+    "Proven expertise in Google Cloud AI and Azure-based AI implementations.": "Nachweisliche Expertise in Google Cloud AI und Azure-basierten KI-Implementierungen",
+    "Seamless integration with ERP, CRM, and custom applications.": "Nahtlose Integration mit ERP-, CRM- und Individualanwendungen",
+    "End-to-end support — from design to deployment and optimisation.": "End-to-End-Support – von Design über Implementierung bis zur Optimierung",
+    "Relentless focus on measurable outcomes.": "Klare Fokussierung auf messbare Ergebnisse",
+    "Your data is more than numbers—it’s your next competitive edge.": "Ihre Daten sind mehr als Zahlen – sie sind Ihr nächster Wettbewerbsvorteil.",
+    "Talk to our AI experts today.": "Sprechen Sie noch heute mit unseren AI-Experten."
+
+  
+  
   }
 }
 

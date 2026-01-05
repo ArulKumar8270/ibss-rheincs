@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavArrowLeft, NavArrowRight } from "../icons";
-import useTranslation from "../hooks/useTranslation";
+import {useTranslation} from "../hooks/useTranslation";
 
 export default function Header() {
     const pathname = usePathname();
@@ -14,8 +14,11 @@ export default function Header() {
     const [digitalServicesCollapsed, setDigitalServicesCollapsed] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+    const selectRef = useRef(null);
+    const dropdownRef = useRef(null);
     const { t, language: currentLanguage, changeLanguage: setCurrentLanguage } = useTranslation();
 
     // Get the current page name (e.g., 'leadership' from '/leadership')
@@ -380,6 +383,21 @@ export default function Header() {
         handleSearchEvents();
     }, [isSearchOpen]);
 
+    // Handle clicks outside the custom dropdown to close it
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsDropdownOpen(false);
+            }
+        }
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            // Unbind the event listener on clean up
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [dropdownRef]);
+
     return (
         <>
             <div className="topheader text-right">
@@ -403,10 +421,12 @@ export default function Header() {
                                     </span>
                                     <Link href="mailto:info@rheincs.com"> info@rheincs.com</Link>
                                 </li>
-                                 {/* <li>
-                                    <div className="custom-select top-icon-gap">
-                                        <select 
-                                            name="lang" 
+                                 <li>
+                                     <div className="custom-select top-icon-gap" style={{ position: 'relative' }} ref={dropdownRef}>
+                                        {/* Visually hidden select for accessibility and form submission */}
+                                        <select
+                                            ref={selectRef}
+                                            name="lang"
                                             id="lang"
                                             value={currentLanguage || 'English'}
                                             onChange={(e) => {
@@ -416,35 +436,88 @@ export default function Header() {
                                                 }
                                             }}
                                             style={{
+                                                position: 'absolute',
+                                                top: 0,
+                                                left: 0,
+                                                width: '100%',
+                                                height: '100%',
+                                                opacity: 0,
                                                 cursor: 'pointer',
-                                                WebkitAppearance: 'none',
-                                                MozAppearance: 'none',
-                                                appearance: 'none'
+                                                zIndex: 1, // Ensure it's clickable if needed for accessibility
                                             }}
+                                            aria-hidden="true" // Hide from screen readers, as we'll have a custom visible element
+                                            tabIndex="-1" // Prevent tabbing to it directly
                                         >
                                             <option value="English">English</option>
                                             <option value="German">German</option>
                                         </select>
-                                        <label htmlFor="lang" className="ml-4" style={{ marginLeft: '5px', pointerEvents: 'none' }}>
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <g clipPath="url(#clip0_5511_10679)">
-                                                    <circle cx="16.8" cy="10.8" r="1.2" transform="rotate(90 16.8 10.8)" fill="white" />
-                                                    <circle cx="19.1999" cy="8.40001" r="1.2" transform="rotate(90 19.1999 8.40001)" fill="white" />
-                                                    <circle cx="12" cy="15.6" r="1.2" transform="rotate(90 12 15.6)" fill="white" />
-                                                    <circle cx="9.60005" cy="13.2" r="1.2" transform="rotate(90 9.60005 13.2)" fill="white" />
-                                                    <circle cx="7.1999" cy="10.8" r="1.2" transform="rotate(90 7.1999 10.8)" fill="white" />
-                                                    <circle cx="4.8" cy="8.40001" r="1.2" transform="rotate(90 4.8 8.40001)" fill="white" />
-                                                    <circle cx="14.4001" cy="13.2" r="1.2" transform="rotate(90 14.4001 13.2)" fill="white" />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_5511_10679">
-                                                        <rect width="24" height="24" fill="white" transform="translate(24 1.04907e-06) rotate(90)" />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </label>
+                                        {/* Custom visible dropdown trigger */}
+                                        <div
+                                            className="custom-dropdown-trigger"
+                                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                            style={{
+                                                cursor: 'pointer',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                            }}
+                                        >
+                                            <span>{currentLanguage || 'English'}</span>
+                                            <label htmlFor="lang" className="ml-4" style={{ marginLeft: '5px' }}>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clipPath="url(#clip0_5511_10679)">
+                                                        <circle cx="16.8" cy="10.8" r="1.2" transform="rotate(90 16.8 10.8)" fill="white" />
+                                                        <circle cx="19.1999" cy="8.40001" r="1.2" transform="rotate(90 19.1999 8.40001)" fill="white" />
+                                                        <circle cx="12" cy="15.6" r="1.2" transform="rotate(90 12 15.6)" fill="white" />
+                                                        <circle cx="9.60005" cy="13.2" r="1.2" transform="rotate(90 9.60005 13.2)" fill="white" />
+                                                        <circle cx="7.1999" cy="10.8" r="1.2" transform="rotate(90 7.1999 10.8)" fill="white" />
+                                                        <circle cx="4.8" cy="8.40001" r="1.2" transform="rotate(90 4.8 8.40001)" fill="white" />
+                                                        <circle cx="14.4001" cy="13.2" r="1.2" transform="rotate(90 14.4001 13.2)" fill="white" />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_5511_10679">
+                                                            <rect width="24" height="24" fill="white" transform="translate(24 1.04907e-06) rotate(90)" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </label>
+                                        </div>
+                                        {isDropdownOpen && (
+                                            <div
+                                                className="custom-dropdown-options"
+                                                style={{
+                                                    position: 'absolute',
+                                                    top: '100%',
+                                                    left: 0,
+                                                    backgroundColor: '#fff',
+                                                    border: '1px solid #ccc',
+                                                    borderRadius: '4px',
+                                                    zIndex: 10,
+                                                    minWidth: '100%',
+                                                    boxShadow: '0px 8px 16px 0px rgba(0,0,0,0.2)',
+                                                }}
+                                            >
+                                                <div
+                                                    onClick={() => {
+                                                        setCurrentLanguage('English');
+                                                        setIsDropdownOpen(false);
+                                                    }}
+                                                    style={{ padding: '8px 10px', cursor: 'pointer', '&:hover': { backgroundColor: '#f1f1f1' } }}
+                                                >
+                                                    English
+                                                </div>
+                                                <div
+                                                    onClick={() => {
+                                                        setCurrentLanguage('German');
+                                                        setIsDropdownOpen(false);
+                                                    }}
+                                                    style={{ padding: '8px 10px', cursor: 'pointer', '&:hover': { backgroundColor: '#f1f1f1' } }}
+                                                >
+                                                    German
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
-                                </li>  */}
+                                </li> 
                                 {/* <li>
                                     <div id="chcp_font_size" className="input-group">
                                         <span className="input-group-btn font-increase-waber">

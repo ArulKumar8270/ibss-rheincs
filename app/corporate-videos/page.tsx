@@ -3,7 +3,9 @@ import CommomLayout from '../Components/CommomLayout'
 import Link from "next/link";
 import TestimonialandAward from '../Components/TestimonialandAward';
 import Awards from '../Components/Awards';
+import {useTranslation} from "../hooks/useTranslation";
 const page = () => {
+  const { t, language } = useTranslation();
   return (
     <CommomLayout>
       <>
@@ -19,7 +21,7 @@ const page = () => {
               <div className="col-sm-12">
                 <div className="section-title text-center ">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    CORPORATE VIDEOS
+                    {t("CORPORATE VIDEOS")}
                   </h2>
                   {/* <p>In today’s digital-first world, great design is more than looks—it’s about creating seamless, intuitive experiences that drive engagement, satisfaction, and loyalty. </p> */}
                 </div>
@@ -53,7 +55,7 @@ const page = () => {
                       <img src="/images/vi1.jpg" alt="" />
                     </figure>
                   </Link>
-                  <h4>RheinBrucke IT Consulting – Corporate video</h4>
+                  <h4>{t("RheinBrucke IT Consulting – Corporate video")}</h4>
                 </div>
                 {/* image gallery end */}
               </div>
@@ -71,7 +73,7 @@ const page = () => {
                       <img src="/images/vi2.jpg" alt="" />
                     </figure>
                   </Link>
-                  <h4>RheinBrücke IT Consulting - Stevie Awards 2015 German</h4>
+                  <h4>{t("RheinBrücke IT Consulting - Stevie Awards 2015 German")}</h4>
                 </div>
                 {/* image gallery end */}
               </div>
@@ -89,7 +91,7 @@ const page = () => {
                       <img src="/images/vi3.jpg" alt="" />
                     </figure>
                   </Link>
-                  <h4>RheinBrücke – Pinnacle Awards of Excellence 2016</h4>
+                  <h4>{t("RheinBrücke – Pinnacle Awards of Excellence 2016")}</h4>
                 </div>
                 {/* image gallery end */}
               </div>
@@ -107,7 +109,7 @@ const page = () => {
                       <img src="/images/vi4.jpg" alt="" />
                     </figure>
                   </Link>
-                  <h4>RheinBrücke – Customer Reference by Martin Peters</h4>
+                  <h4>{t("RheinBrücke – Customer Reference by Martin Peters")}</h4>
                 </div>
                 {/* image gallery end */}
               </div>
@@ -125,7 +127,7 @@ const page = () => {
                       <img src="/images/vi5.jpg" alt="" />
                     </figure>
                   </Link>
-                  <h4>RheinBrücke – Customer Reference by Dr. Schrettl</h4>
+                  <h4>{t("RheinBrücke – Customer Reference by Dr. Schrettl")}</h4>
                 </div>
                 {/* image gallery end */}
               </div>
@@ -140,7 +142,7 @@ const page = () => {
                       <img src="/images/vi6.jpg" alt="" />
                     </figure>
                   </Link>
-                  <h4>RheinBrücke – Customer Reference by Greg Bryan</h4>
+                  <h4>{t("RheinBrücke – Customer Reference by Greg Bryan")}</h4>
                 </div>
                 {/* image gallery end */}
               </div>
@@ -158,7 +160,7 @@ const page = () => {
                       <img src="/images/vi7.jpg" alt="" />
                     </figure>
                   </Link>
-                  <h4>RheinBrücke – Customer Reference by Harry Hezel</h4>
+                  <h4>{t("RheinBrücke – Customer Reference by Harry Hezel")}</h4>
                 </div>
                 {/* image gallery end */}
               </div>
@@ -176,7 +178,7 @@ const page = () => {
                       <img src="/images/vi8.jpg" alt="" />
                     </figure>
                   </Link>
-                  <h4>RheinBrucke – IDC Inauguration Event</h4>
+                  <h4>{t("RheinBrucke – IDC Inauguration Event")}</h4>
                 </div>
                 {/* image gallery end */}
               </div>
@@ -194,7 +196,7 @@ const page = () => {
                       <img src="/images/vi9.jpg" alt="" />
                     </figure>
                   </Link>
-                  <h4>RheinBrucke – Stevie Awards 2016 German</h4>
+                  <h4>{t("RheinBrucke – Stevie Awards 2016 German")}</h4>
                 </div>
                 {/* image gallery end */}
               </div>
@@ -212,7 +214,7 @@ const page = () => {
                       <img src="/images/vi10.jpg" alt="" />
                     </figure>
                   </Link>
-                  <h4>RheinBrucke – FLSmidth Testimonial | Mads Madsbjerg Hansen</h4>
+                  <h4>{t("RheinBrucke – FLSmidth Testimonial | Mads Madsbjerg Hansen")}</h4>
                 </div>
                 {/* image gallery end */}
               </div>
@@ -230,10 +232,7 @@ const page = () => {
                       <img src="/images/vi11.jpg" alt="" />
                     </figure>
                   </Link>
-                  <h4>
-                    Liftek's ERP Transformation Journey with RheinBrücke: A Success
-                    Story
-                  </h4>
+                  <h4>{t("Liftek's ERP Transformation Journey with RheinBrücke: A Success Story")}</h4>
                 </div>
                 {/* image gallery end */}
               </div>
@@ -255,16 +254,15 @@ const page = () => {
               <div className="firstrow">
                 <div className="row">
                   <div className="col-sm-8">
-                    <h2>Ready to accelerate value creation across your portfolio?</h2>
+                    <h2>{t("Ready to accelerate value creation across your portfolio?")}</h2>
                     <p>
-                      Contact us today to learn how we can help modernise operations,
-                      de-risk integrations, and improve commercial outcomes.
+                    {t("Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.")}
                     </p>
                   </div>
                   <div className="col-sm-4">
                     <div className="ser-btn text-right">
                       <Link href="/contact-us" className="animated-svg-link">
-                        Contact Us
+                        {t("Contact Us")}
                         <span className="svg-container ">
                           <span className=" right">
                             <svg

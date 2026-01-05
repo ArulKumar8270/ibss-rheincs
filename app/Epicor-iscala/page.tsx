@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function EnterpriseSolutions() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
 <>
@@ -17,14 +19,10 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-6">
           <div className="section-title wow fadeInUp">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Flexible ERP for mid-sized companies in regulated industries like
-              pharma, hospitality, and global trade
+              {t("Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade")}
             </h2>
             <p>
-              Epicor iScala helps mid-sized businesses manage complex operations
-              with a flexible, configurable ERP platform. It ensures compliance,
-              simplifies financial and operational management, and supports
-              growth across multiple geographies.{" "}
+              {t("Epicor iScala helps mid-sized businesses manage complex operations with a flexible, configurable ERP platform. It ensures compliance, simplifies financial and operational management, and supports growth across multiple geographies.")}{" "}
             </p>
           </div>
         </div>
@@ -467,7 +465,7 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-5">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Our Epicor iScala Capabilities
+              {t("Our Epicor iScala Capabilities")}
             </h2>
           </div>
           <div className="pill-points appro">
@@ -475,8 +473,7 @@ export default function EnterpriseSolutions() {
               <img src="/images/Streamline.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Streamline financials, supply chain, and production
-                  management.
+                  {t("Streamline financials, supply chain, and production management.")}
                 </p>
               </div>
             </div>
@@ -484,8 +481,7 @@ export default function EnterpriseSolutions() {
               <img src="/images/Ensure.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Ensure regulatory and compliance adherence in highly regulated
-                  industries.
+                  {t("Ensure regulatory and compliance adherence in highly regulated industries.")}
                 </p>
               </div>
             </div>
@@ -493,8 +489,7 @@ export default function EnterpriseSolutions() {
               <img src="/images/Support.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Support multi-currency, multi-language, and multi-entity
-                  operations.
+                  {t("Support multi-currency, multi-language, and multi-entity operations.")}
                 </p>
               </div>
             </div>
@@ -502,7 +497,7 @@ export default function EnterpriseSolutions() {
               <img src="/images/Enable1.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Enable real-time reporting and business intelligence insights.
+                  {t("Enable real-time reporting and business intelligence insights.")}
                 </p>
               </div>
             </div>
@@ -510,8 +505,7 @@ export default function EnterpriseSolutions() {
               <img src="/images/cloud.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Flexible deployment options for cloud or on-premise
-                  environments.
+                  {t("Flexible deployment options for cloud or on-premise environments.")}
                 </p>
               </div>
             </div>
@@ -519,8 +513,7 @@ export default function EnterpriseSolutions() {
               <img src="/images/Manage.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Manage in-house repair and maintenance processes, ensuring
-                  correct stock valuation.&nbsp;
+                  {t("Manage in-house repair and maintenance processes, ensuring correct stock valuation.")}&nbsp;
                 </p>
               </div>
             </div>
@@ -539,7 +532,7 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-12">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Our Epicor iScala Capabilities
+              {t("Our Epicor iScala Capabilities")}
             </h2>
           </div>
           <div className="pill-points appro">
@@ -547,8 +540,7 @@ export default function EnterpriseSolutions() {
               <img src="/images/ss1.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Streamline financials, supply chain, and production
-                  management.
+                  {t("Streamline financials, supply chain, and production management.")}
                 </p>
               </div>
             </div>
@@ -556,8 +548,7 @@ export default function EnterpriseSolutions() {
               <img src="/images/ss2.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Ensure regulatory and compliance adherence in highly regulated
-                  industries.
+                  {t("Ensure regulatory and compliance adherence in highly regulated industries.")}
                 </p>
               </div>
             </div>
@@ -565,8 +556,7 @@ export default function EnterpriseSolutions() {
               <img src="/images/ss3.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Support multi-currency, multi-language, and multi-entity
-                  operations.
+                  {t("Support multi-currency, multi-language, and multi-entity operations.")}
                 </p>
               </div>
             </div>
@@ -574,7 +564,7 @@ export default function EnterpriseSolutions() {
               <img src="/images/ss7.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Enable real-time reporting and business intelligence insights.
+                  {t("Enable real-time reporting and business intelligence insights.")}
                 </p>
               </div>
             </div>
@@ -582,8 +572,7 @@ export default function EnterpriseSolutions() {
               <img src="/images/ss8.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Flexible deployment options for cloud or on-premise
-                  environments.
+                  {t("Flexible deployment options for cloud or on-premise environments.")}
                 </p>
               </div>
             </div>
@@ -591,8 +580,7 @@ export default function EnterpriseSolutions() {
               <img src="/images/ss9.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Manage in-house repair and maintenance processes, ensuring
-                  correct stock valuation.&nbsp;
+                  {t("Manage in-house repair and maintenance processes, ensuring correct stock valuation.")}&nbsp;
                 </p>
               </div>
             </div>
@@ -610,14 +598,15 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-12">
           <div className="section-title text-center text-black">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Why Choose Epicor iScala?
+              {t("Why Choose Epicor iScala?")}
             </h2>
           </div>
           <div className="row mt-5">
             <div className="col-lg-6 col-md-6 col-12">
               <div className="service-item-body1  w80">
                 {/* <h3>Seamless Integration</h3> */}
-                <h3>Industry-specific ERP for mid-sized organizations.</h3>
+                <h3>
+              {t("Industry-specific ERP for mid-sized organizations.")}</h3>
                 <div className="text-center">
                   <img src="/images/advant1.svg" alt="" />
                 </div>
@@ -626,7 +615,7 @@ export default function EnterpriseSolutions() {
             <div className="col-lg-6 col-md-6 col-12">
               <div className="service-item-body1 epicright1  w80">
                 {/* <h3>Configurable</h3> */}
-                <h3>Scalable and adaptable to evolving business needs. </h3>
+              <h3>{t("Scalable and adaptable to evolving business needs.")} </h3>
                 <img src="/images/advant2.svg" alt="" />
               </div>
             </div>
@@ -634,7 +623,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicright">
                 {/* <h3>Reporting and Analytics</h3> */}
                 <h3>
-                  Integrated analytics and reporting for smarter decisions.
+                  {t("Integrated analytics and reporting for smarter decisions.")}
                 </h3>
                 <img src="/images/advant3.svg" alt="" />
               </div>
@@ -643,8 +632,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicright">
                 {/* <h3>Mobile Accessibility</h3> */}
                 <h3>
-                  End-to-end support from consulting and implementation to
-                  training.
+                  {t("End-to-end support from consulting and implementation to\n                  training.")}
                 </h3>
                 <div className="text-center">
                   <img src="/images/advant4.svg" alt="" />
@@ -655,8 +643,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicleft">
                 {/* <h3>Effective Data Management</h3> */}
                 <h3>
-                  Focused on operational efficiency, growth, and compliance
-                  assurance.
+                  {t("Focused on operational efficiency, growth, and compliance\n                  assurance.")}
                 </h3>
                 <img src="/images/advant5.svg" alt="" />
               </div>
@@ -833,14 +820,15 @@ export default function EnterpriseSolutions() {
           <div className="row">
             <div className="col-sm-8">
               <h2>
-                Ready to scale your mid-sized business with Epicor iScala?
+                {t("Ready to scale your mid-sized business with Epicor iScala?")}
               </h2>
-              <p>Talk to our enterprise solutions experts today.</p>
+              <p>{t("Talk to our enterprise solutions experts today.")}</p>
+
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <Link href="/contact-us" className="animated-svg-link">
-                  Contact Us
+                  {t("Contact Us")}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg

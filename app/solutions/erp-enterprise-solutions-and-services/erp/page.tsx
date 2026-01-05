@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../../../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../../../hooks/useTranslation";
 export default function EnterpriseSolutions() {
+  const { t, language } = useTranslation();
   return (
     <CommomLayout>
       <>
@@ -17,15 +19,14 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-6">
                 <div className="section-title">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Powering enterprise agility through intelligent systems
+                    {t("Powering enterprise agility through intelligent systems")}
                   </h2>
                   <p>
-                    From ERP to integration; we design solutions that adapt as you
-                    grow.
+                    {t("From ERP to integration; we design solutions that adapt as you grow.")}
                   </p>
                   <div className="ser-btn ">
                       <Link href="/contact-us" className="animated-svg-link">
-                      Contact Us
+                      {t("Contact Us")}
                       <span className="svg-container ">
                         <span className=" right">
                           <svg
@@ -703,16 +704,10 @@ export default function EnterpriseSolutions() {
                   <div className="section-title">
                     <div className="hero-video-content wow fadeInUp mt-4">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        Build resilient, connected, and future-ready enterprises with
-                        intelligent platforms and scalable solutions.
+                        {t("Build resilient, connected, and future-ready enterprises with intelligent platforms and scalable solutions.")}
                       </h2>
                       <p>
-                        At RheinBrücke, we help organisations modernise operations,
-                        unify business processes, and improve decision-making through
-                        enterprise-grade solutions. From ERP and CRM to cloud-native
-                        platforms and business process automation, we deliver
-                        scalable, integrated systems that drive operational agility
-                        and business growth.
+                        {t("At RheinBrücke, we help organisations modernise operations, unify business processes, and improve decision-making through enterprise-grade solutions. From ERP and CRM to cloud-native platforms and business process automation, we deliver scalable, integrated systems that drive operational agility and business growth.")}
                       </p>
                     </div>
                   </div>
@@ -729,12 +724,10 @@ export default function EnterpriseSolutions() {
               <div className="section-title">
                 <div className="hero-video-content wow fadeInUp mt-4">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    The Enterprise Advantage
+                    {t("The Enterprise Advantage")}
                   </h2>
                   <p>
-                    Modern enterprises need agile, connected systems to stay
-                    competitive, improve productivity, and make data-driven decisions.
-                    Many organisations struggle with:
+                    {t("Modern enterprises need agile, connected systems to stay competitive, improve productivity, and make data-driven decisions. Many organisations struggle with:")}
                   </p>
                 </div>
               </div>
@@ -853,7 +846,7 @@ export default function EnterpriseSolutions() {
                     </clipPath>
                   </defs>
                 </svg>
-                <p>Disconnected legacy systems limiting operational agility</p>
+                <p>{t("Disconnected legacy systems limiting operational agility")}</p>
               </div>
             </div>
             <div className="item">
@@ -972,7 +965,7 @@ export default function EnterpriseSolutions() {
                   />
                 </svg>
                 <p>
-                  Siloed data and processes restricting enterprise-wide visibility
+                  {t("Siloed data and processes restricting enterprise-wide visibility")}
                 </p>
               </div>
             </div>
@@ -1052,8 +1045,7 @@ export default function EnterpriseSolutions() {
                   />
                 </svg>
                 <p>
-                  Rising operational costs and inefficiencies across business
-                  functions
+                  {t("Rising operational costs and inefficiencies across business functions")}
                 </p>
               </div>
             </div>
@@ -1129,8 +1121,7 @@ export default function EnterpriseSolutions() {
                   />
                 </svg>
                 <p>
-                  Inability to adapt quickly to market shifts, customer expectations,
-                  and compliance demands
+                  {t("Inability to adapt quickly to market shifts, customer expectations, and compliance demands")}
                 </p>
               </div>
             </div>
@@ -1273,7 +1264,7 @@ export default function EnterpriseSolutions() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <p>Lack of real-time insights for fast, informed decision-making</p>
+                <p>{t("Lack of real-time insights for fast, informed decision-making")}</p>
               </div>
             </div>
             <div className="item">
@@ -1379,7 +1370,7 @@ export default function EnterpriseSolutions() {
                     />
                   </g>
                 </svg>
-                <p>Complex, fragmented business application landscapes </p>
+                <p>{t("Complex, fragmented business application landscapes")}</p>
               </div>
             </div>
             <div className="item">
@@ -1425,7 +1416,7 @@ export default function EnterpriseSolutions() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <p>Manual processes slowing down innovation and scalability </p>
+                <p>{t("Manual processes slowing down innovation and scalability")}</p>
               </div>
             </div>
             {/* Duplicate for seamless marquee */}
@@ -1541,7 +1532,7 @@ export default function EnterpriseSolutions() {
                     </clipPath>
                   </defs>
                 </svg>
-                <p>Disconnected legacy systems limiting operational agility</p>
+                <p>{t("Disconnected legacy systems limiting operational agility")}</p>
               </div>
             </div>
             <div className="item">
@@ -1660,7 +1651,7 @@ export default function EnterpriseSolutions() {
                   />
                 </svg>
                 <p>
-                  Siloed data and processes restricting enterprise-wide visibility
+                  {t("Siloed data and processes restricting enterprise-wide visibility")}
                 </p>
               </div>
             </div>
@@ -1740,8 +1731,7 @@ export default function EnterpriseSolutions() {
                   />
                 </svg>
                 <p>
-                  Rising operational costs and inefficiencies across business
-                  functions
+                  {t("Rising operational costs and inefficiencies across business functions")}
                 </p>
               </div>
             </div>
@@ -1817,8 +1807,7 @@ export default function EnterpriseSolutions() {
                   />
                 </svg>
                 <p>
-                  Inability to adapt quickly to market shifts, customer expectations,
-                  and compliance demands
+                  {t("Inability to adapt quickly to market shifts, customer expectations, and compliance demands")}
                 </p>
               </div>
             </div>
@@ -1961,7 +1950,7 @@ export default function EnterpriseSolutions() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <p>Lack of real-time insights for fast, informed decision-making</p>
+                <p>{t("Lack of real-time insights for fast, informed decision-making")}</p>
               </div>
             </div>
             <div className="item">
@@ -2067,7 +2056,7 @@ export default function EnterpriseSolutions() {
                     />
                   </g>
                 </svg>
-                <p>Complex, fragmented business application landscapes </p>
+                <p>{t("Complex, fragmented business application landscapes")}</p>
               </div>
             </div>
             <div className="item">
@@ -2113,7 +2102,7 @@ export default function EnterpriseSolutions() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <p>Manual processes slowing down innovation and scalability </p>
+                <p>{t("Manual processes slowing down innovation and scalability")}</p>
               </div>
             </div>
           </div>
@@ -2122,12 +2111,10 @@ export default function EnterpriseSolutions() {
               <div className="section-title ">
                 <div className="hero-video-content1 wow fadeInUp mt-4">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Solution
+                    {t("Solution")}
                   </h2>
                   <p>
-                    Our Solutions address these challenges by modernising core
-                    systems, automating processes, integrating enterprise
-                    applications, and enabling data-driven operational excellence.
+                    {t("Our Solutions address these challenges by modernising core systems, automating processes, integrating enterprise applications, and enabling data-driven operational excellence.")}
                   </p>
                 </div>
               </div>
@@ -2141,12 +2128,10 @@ export default function EnterpriseSolutions() {
               <div className="section-title">
                 <div className="hero-video-content wow fadeInUp mt-4">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    The Enterprise Advantage
+                    {t("The Enterprise Advantage")}
                   </h2>
                   <p>
-                    Modern enterprises need agile, connected systems to stay
-                    competitive, improve productivity, and make data-driven decisions.
-                    Many organisations struggle with:
+                    {t("Modern enterprises need agile, connected systems to stay competitive, improve productivity,and make data-driven decisions. Many organisations struggle with:")}
                   </p>
                 </div>
               </div>
@@ -2271,7 +2256,7 @@ export default function EnterpriseSolutions() {
                           </defs>
                         </svg>
                         <p>
-                          Disconnected legacy systems limiting operational agility
+                          {t("Disconnected legacy systems limiting operational agility")}
                         </p>
                       </div>
                     </div>
@@ -2395,8 +2380,7 @@ export default function EnterpriseSolutions() {
                           />
                         </svg>
                         <p>
-                          Siloed data and processes restricting enterprise-wide
-                          visibility
+                          {t("Siloed data and processes restricting enterprise-wide visibility")}
                         </p>
                       </div>
                     </div>
@@ -2479,8 +2463,7 @@ export default function EnterpriseSolutions() {
                           />
                         </svg>
                         <p>
-                          Rising operational costs and inefficiencies across business
-                          functions
+                          {t("Rising operational costs and inefficiencies across business functions")}
                         </p>
                       </div>
                     </div>
@@ -2560,8 +2543,7 @@ export default function EnterpriseSolutions() {
                           />
                         </svg>
                         <p>
-                          Inability to adapt quickly to market shifts, customer
-                          expectations, and compliance demands
+                          {t("Inability to adapt quickly to market shifts, customer expectations, and compliance demands")}
                         </p>
                       </div>
                     </div>
@@ -2709,8 +2691,7 @@ export default function EnterpriseSolutions() {
                           />
                         </svg>
                         <p>
-                          Lack of real-time insights for fast, informed
-                          decision-making
+                          {t("Lack of real-time insights for fast, informed decision-making")}
                         </p>
                       </div>
                     </div>
@@ -2821,7 +2802,10 @@ export default function EnterpriseSolutions() {
                             />
                           </g>
                         </svg>
-                        <p>Complex, fragmented business application landscapes </p>
+                        <p>
+                          {t("Complex, fragmented business application landscapes")}
+                          </p>
+
                       </div>
                     </div>
                   </div>
@@ -2872,7 +2856,8 @@ export default function EnterpriseSolutions() {
                           />
                         </svg>
                         <p>
-                          Manual processes slowing down innovation and scalability{" "}
+                          {t("Manual processes slowing down innovation and scalability")}
+
                         </p>
                       </div>
                     </div>
@@ -3098,12 +3083,10 @@ export default function EnterpriseSolutions() {
               <div className="section-title ">
                 <div className="hero-video-content1 wow fadeInUp mt-4">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Solution
+                    {t("Solution")}
                   </h2>
                   <p>
-                    Our Solutions address these challenges by modernising core
-                    systems, automating processes, integrating enterprise
-                    applications, and enabling data-driven operational excellence.
+                    {t("Our Solutions address these challenges by modernising core systems, automating processes, integrating enterprise applications, and enabling data-driven operational excellence.")}
                   </p>
                 </div>
               </div>
@@ -3117,7 +3100,7 @@ export default function EnterpriseSolutions() {
               <div className="col-lg-6">
                 <div className="section-title">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Our Enterprise <br /> Solutions and Services
+                    {t("Our Enterprise Solutions and Services")}
                   </h2>
                   <p>
                     We offer a comprehensive portfolio of enterprise solutions and
@@ -3127,7 +3110,7 @@ export default function EnterpriseSolutions() {
                   </p>
                   <div className="ser-btn2 mt-4">
                     <Link href="/contact-us" className="animated-svg-link1 btn-style-3">
-                      Contact Us
+                      {t("Contact Us")}
                       <span className="svg-container ">
                         <span className=" left">
                           <svg
@@ -3353,11 +3336,9 @@ export default function EnterpriseSolutions() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>ERP Modernisation &amp; Upgrades</h3>
+                                <h3>{t("ERP Modernisation & Upgrades")}</h3>
                                 <p>
-                                  Modernise your ERP systems with minimal disruption
-                                  and maximum impact, ensuring your organisation stays
-                                  agile and future-ready.
+                                  {t("Modernise your ERP systems with minimal disruption and maximum impact, ensuring your organisation stays agile and future-ready.")}
                                 </p>
                               </div>
                             </div>
@@ -3528,11 +3509,9 @@ export default function EnterpriseSolutions() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>CRM &amp; Customer Engagement Platforms</h3>
+                                <h3>{t("CRM & Customer Engagement Platforms")}</h3>
                                 <p>
-                                  Enhance customer experiences and engagement with
-                                  intelligent CRM solutions that connect your teams
-                                  and streamline interactions.{" "}
+                                 {t("Enhance customer experiences and engagement with intelligent CRM solutions that connect your teams and streamline interactions.")}
                                 </p>
                               </div>
                             </div>
@@ -3702,12 +3681,11 @@ export default function EnterpriseSolutions() {
                               </div>
                               <div className="service-item-body">
                                 <h3>
-                                  Procurement &amp; Strategic Sourcing Solutions
+                                  {t("Procurement & Strategic Sourcing Solutions")}
                                 </h3>
                                 <p>
-                                  Optimise procurement operations and strategic
-                                  sourcing to reduce costs, manage risk, and improve
-                                  supplier collaboration.{" "}
+                                {t("Optimise procurement operations and strategic sourcing to reduce costs, manage risk, and improve supplier collaboration.")}
+
                                 </p>
                               </div>
                             </div>
@@ -3964,11 +3942,9 @@ export default function EnterpriseSolutions() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>Digital Transformation Solutions </h3>
+                                <h3>{t("Digital Transformation Solutions")}</h3>
                                 <p>
-                                  Leverage digital technologies to transform
-                                  processes, improve efficiency, and drive innovation
-                                  across your enterprise.{" "}
+                                {t("Leverage digital technologies to transform processes, improve efficiency, and drive innovation across your enterprise.")}
                                 </p>
                               </div>
                             </div>
@@ -4055,11 +4031,9 @@ export default function EnterpriseSolutions() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>HCM and Payroll Solutions </h3>
+                                <h3>{t("HCM and Payroll Solutions")}</h3>
                                 <p>
-                                  Simplify human capital management and payroll
-                                  processes, ensuring compliance and empowering your
-                                  workforce.{" "}
+                                  {t("Simplify human capital management and payroll processes, ensuring compliance and empowering your workforce.")}
                                 </p>
                               </div>
                             </div>
@@ -4230,11 +4204,9 @@ export default function EnterpriseSolutions() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>Cloud Migrations &amp; Managed Services </h3>
+                                <h3>{t("Cloud Migrations & Managed Services")}</h3>
                                 <p>
-                                  Move to the cloud seamlessly with secure, scalable,
-                                  and fully managed services tailored to your business
-                                  needs.{" "}
+                                  {t("Move to the cloud seamlessly with secure, scalable, and fully managed services tailored to your business needs.")}
                                 </p>
                               </div>
                             </div>
@@ -4403,11 +4375,9 @@ export default function EnterpriseSolutions() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>Regulatory Compliance Solutions </h3>
+                                <h3>{t("Regulatory Compliance Solutions")}</h3>
                                 <p>
-                                  Stay ahead of regulations with solutions that ensure
-                                  compliance, mitigate risk, and support governance
-                                  frameworks.{" "}
+                                  {t("Stay ahead of regulations with solutions that ensure  compliance, mitigate risk, and support governance frameworks.")}
                                 </p>
                               </div>
                             </div>
@@ -4670,11 +4640,9 @@ export default function EnterpriseSolutions() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>ERP Implementation &amp; Support Services</h3>
+                                <h3>{t("ERP Implementation & Support Services")}</h3>
                                 <p>
-                                  Deploy ERP systems confidently with end-to-end
-                                  implementation and ongoing support for sustainable
-                                  success.{" "}
+                                  {t("Deploy ERP systems confidently with end-to-end implementation and ongoing support for sustainable success.")}
                                 </p>
                               </div>
                             </div>
@@ -4908,11 +4876,9 @@ export default function EnterpriseSolutions() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>Industry-Specific ERP Solutions</h3>
+                                <h3>{t("Industry-Specific ERP Solutions")}</h3>
                                 <p>
-                                  Benefit from ERP solutions designed for your
-                                  industry, addressing unique operational challenges
-                                  and optimising performance.
+                                  {t("Benefit from ERP solutions designed for your industry, addressing unique operational challenges and optimising performance.")}
                                 </p>
                               </div>
                             </div>
@@ -5158,14 +5124,10 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-6">
                 <div className="section-title ">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Our Approach to Building Future-Ready Enterprises
+                    {t("Our Approach to Building Future-Ready Enterprises")}
                   </h2>
                   <p>
-                    We help organisations modernise operations, unify systems, and
-                    unlock the power of real-time data. By streamlining business
-                    processes, integrating critical functions, and enhancing
-                    operational resilience, we enable enterprises to stay agile,
-                    connected, and future ready.
+                    {t("We help organisations modernise operations, unify systems, and unlock the power of real-time data. By streamlining business processes, integrating critical functions, and enhancing operational resilience, we enable enterprises to stay agile, connected, and future ready.")}
                   </p>
                 </div>
                 <div className="row mt-5">
@@ -5190,9 +5152,8 @@ export default function EnterpriseSolutions() {
                       </div>
                       <div className="benefits-steps-content">
                         <p>
-                          Applying our Analyse–Integrate-Transform (AIT) methodology
-                          to identify gaps, unify systems, and enable business
-                          transformation
+                          {t("Applying our Analyse–Integrate-Transform (AIT) methodology to identify gaps, unify systems, and enable business transformation")}
+
                         </p>
                       </div>
                     </div>
@@ -5279,7 +5240,7 @@ export default function EnterpriseSolutions() {
                       </div>
                       <div className="benefits-steps-content">
                         <p>
-                          Automating business processes and eliminating inefficiencies
+                          {t("Automating business processes and eliminating inefficiencies")}
                         </p>
                       </div>
                     </div>
@@ -5509,8 +5470,7 @@ export default function EnterpriseSolutions() {
                       </div>
                       <div className="benefits-steps-content">
                         <p>
-                          Digitsing core business functions across finance,
-                          operations, HR, supply chain, and customer engagement
+                          {t("Digitsing core business functions across finance, operations, HR, supply chain, and customer engagement")}
                         </p>
                       </div>
                     </div>
@@ -5708,8 +5668,7 @@ export default function EnterpriseSolutions() {
                       </div>
                       <div className="benefits-steps-content">
                         <p>
-                          Delivering real-time data visibility for faster, smarter
-                          decision-making
+                          {t("Delivering real-time data visibility for faster, smarter decision-making")} 
                         </p>
                       </div>
                     </div>
@@ -5779,8 +5738,8 @@ export default function EnterpriseSolutions() {
                       </div>
                       <div className="benefits-steps-content">
                         <p>
-                          Enhancing operational resilience through scalable, secure
-                          architecture.
+                          {t("Enhancing operational resilience through scalable, secure architecture.")}
+
                         </p>
                       </div>
                     </div>
@@ -5899,8 +5858,7 @@ export default function EnterpriseSolutions() {
                       </div>
                       <div className="benefits-steps-content">
                         <p>
-                          Building future-ready platforms designed to evolve with your
-                          business.
+                          {t("Building future-ready platforms designed to evolve with your business.")}
                         </p>
                       </div>
                     </div>
@@ -5916,15 +5874,14 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-12">
                 <div className="section-title text-center text-black">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    The RheinBrücke Advantage
+                    {t("The RheinBrücke Advantage")}
                   </h2>
                 </div>
                 <div className="row mt-5">
                   <div className="col-lg-6 col-md-6 col-12">
                     <div className="service-item-body1 imgpos">
                       <h3>
-                        Epicor Premium, Microsoft AI Cloud <br /> and Microsoft ISV
-                        partner
+                        {t("Epicor Premium, Microsoft AI Cloud  and Microsoft ISV partner")}
                       </h3>
                       {/*<img src="/images/ad1.png" alt="">*/}
                       <svg
@@ -6377,7 +6334,7 @@ export default function EnterpriseSolutions() {
                   <div className="col-lg-6 col-md-6 col-12">
                     <div className="service-item-body1 imgpos">
                       <h3>
-                        End-to-end platform services from <br /> strategy to support
+                        {t("End-to-end platform services from  strategy to support")}
                       </h3>
                       <img src="/images/ad2.png" alt="" />
                     </div>
@@ -6385,22 +6342,24 @@ export default function EnterpriseSolutions() {
                   <div className="col-lg-4 col-md-4 col-12">
                     <div className="service-item-body1 imgpos1">
                       <h3>
-                        Proven global rollout and <br /> localisation capabilities
+                        {t("Proven global rollout and localisation capabilities")}
                       </h3>
                       <img src="/images/ad3.png" alt="" />
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-12">
                     <div className="service-item-body1 imgpos2">
-                      <h3>Accelerated cloud-native development and integrations</h3>
+                      <h3>
+                        {t("Accelerated cloud-native development and integrations")}
+                        </h3>
                       <img src="/images/ad4.png" alt="" />
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-12">
                     <div className="service-item-body1 imgpos3">
                       <h3>
-                        Outcome-driven delivery with a focus on operational resilience
-                        and sustained business value
+                        {t("Outcome-driven delivery with a focus on operational resilience and sustained business value")}
+
                       </h3>
                       <img src="/images/advant5.svg" alt="" />
                     </div>
@@ -6677,7 +6636,7 @@ export default function EnterpriseSolutions() {
                 <div className="platdesc">
                   <div className="section-title">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      Explore our enterprise platform capabilities
+                      {t("Explore our enterprise platform capabilities")}
                     </h2>
                   </div>
                   <div className="row ">
@@ -6685,15 +6644,13 @@ export default function EnterpriseSolutions() {
                       <div className="plat-in">
                         <img src="/images/plat1.png" alt="" />
                         <p>
-                          Streamline operations and accelerate performance with a
-                          modern, flexible ERP built for manufacturers. Unlock
-                          real-time visibility, automation, and scalable growth.
+                          {t("Streamline operations and accelerate performance with a modern, flexible ERP built for manufacturers. Unlock real-time visibility, automation, and scalable growth.")}
                         </p>
                         <div className="ser-btn1">
                           <Link        href="/solutions/erp-enterprise-solutions-and-services/epicor"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            Know More
+                            {t("Know More")}
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -6802,15 +6759,13 @@ export default function EnterpriseSolutions() {
                       <div className="plat-in">
                         <img src="/images/plat2.png" alt="" />
                         <p>
-                          Unify finance, sales, operations, and service on one
-                          intelligent cloud platform. Drive agility, efficiency, and
-                          connected decision-making.
+                          {t("Unify finance, sales, operations, and service on one intelligent cloud platform. Drive agility, efficiency, and connected decision-making.")}
                         </p>
                         <div className="ser-btn1">
                           <Link        href="/ms-dynamics/"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            Know More
+                            {t("Know More")}
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -6919,15 +6874,13 @@ export default function EnterpriseSolutions() {
                       <div className="plat-in">
                         <img src="/images/plat3.png" alt="" />
                         <p>
-                          Transform your enterprise with intelligent, integrated
-                          systems powered by SAP’s digital core. Simplify processes
-                          and accelerate end-to-end digital transformation.
+                          {t("Transform your enterprise with intelligent, integrated systems powered by SAP’s digital core. Simplify processes and accelerate end-to-end digital transformation.")}
                         </p>
                         <div className="ser-btn1">
                           <Link href="/solutions/erp-enterprise-solutions-and-services/sap"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            Know More
+                            {t("Know More")}
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -7035,18 +6988,16 @@ export default function EnterpriseSolutions() {
                   </div>
                   <div className="section-title mt150 plath2">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      Digital Solutions and Services
+                      {t("Digital Solutions and Services")}
                     </h2>
                     <p>
-                      RheinBrücke helps enterprises modernise systems, automate
-                      processes, and harness real-time insights to drive faster
-                      innovation and measurable business outcomes.
+                      {t("RheinBrücke helps enterprises modernise systems, automate processes, and harness real-time insights to drive faster innovation and measurable business outcomes.")}
                     </p>
                     <div className="ser-btn">
                       <Link    href="/digital-services-and-solutions"
                         className="animated-svg-link"
                       >
-                        Know More
+                        {t("Know More")}
                         <span className="svg-container ">
                           <span className=" right">
                             <svg
@@ -7162,7 +7113,7 @@ export default function EnterpriseSolutions() {
                 <div className="platdesc">
                   <div className="section-title">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      Explore our enterprise platform capabilities
+                      {t("Explore our enterprise platform capabilities")}
                     </h2>
                   </div>
                   <div className="row ">
@@ -7175,12 +7126,11 @@ export default function EnterpriseSolutions() {
                             <div className="plat-in">
                               <img src="/images/plat1.png" alt="" />
                               <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor
+                                {t("Streamline operations and accelerate performance with a modern, flexible ERP built for manufacturers. Unlock real-time visibility, automation, and scalable growth.")}
                               </p>
                               <div className="ser-btn1">
                                 <Link href="" className="animated-svg-link1 btn-style-3">
-                                  Know More
+                                  {t("Know More")}
                                   <span className="svg-container ">
                                     <span className=" left">
                                       <svg
@@ -7289,12 +7239,11 @@ export default function EnterpriseSolutions() {
                             <div className="plat-in">
                               <img src="/images/plat2.png" alt="" />
                               <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor
+                               {t("Unify finance, sales, operations, and service on one intelligent cloud platform. Drive agility, efficiency, and connected decision-making.")}
                               </p>
                               <div className="ser-btn1">
                                 <Link href="" className="animated-svg-link1 btn-style-3">
-                                  Know More
+                                  {t("Know More")}
                                   <span className="svg-container ">
                                     <span className=" left">
                                       <svg
@@ -7403,12 +7352,11 @@ export default function EnterpriseSolutions() {
                             <div className="plat-in">
                               <img src="/images/plat3.png" alt="" />
                               <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor
+                                {t("Transform your enterprise with intelligent, integrated systems powered by SAP’s digital core. Simplify processes and accelerate end-to-end digital transformation.")}
                               </p>
                               <div className="ser-btn1">
                                 <Link href="" className="animated-svg-link1 btn-style-3">
-                                  Know More
+                                  {t("Know More")}
                                   <span className="svg-container ">
                                     <span className=" left">
                                       <svg
@@ -7991,16 +7939,14 @@ export default function EnterpriseSolutions() {
                   </div>
                   <div className="section-title plath2">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      Digital Solutions and Services
+                      {t("Digital Solutions and Services")}
                     </h2>
                     <p>
-                      RheinBrücke helps enterprises modernise systems, automate
-                      processes, and harness real-time insights to drive faster
-                      innovation and measurable business outcomes.
+                      {t("RheinBrücke helps enterprises modernise systems, automate processes, and harness real-time insights to drive faster innovation and measurable business outcomes.")}
                     </p>
                     <div className="ser-btn">
                       <Link href="#" className="animated-svg-link">
-                        Know More
+                        {t("Know More")}
                         <span className="svg-container ">
                           <span className=" right">
                             <svg
@@ -8116,7 +8062,7 @@ export default function EnterpriseSolutions() {
               <div className="col-lg-12">
                 <div className="section-title text-center headingss">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Industries We Serve
+                    {t("Industries We Serve")}
                   </h2>
                 </div>
               </div>
@@ -8133,7 +8079,7 @@ export default function EnterpriseSolutions() {
                       <div className="swiper-slide">
                         <div className="service-item-body bin1">
                           <h3>
-                            <span>Brand Owners &amp; Vertical Retailers</span>
+                            <span>{t("Brand Owners & Vertical Retailers")}</span>
                           </h3>
                         </div>
                       </div>
@@ -8142,7 +8088,7 @@ export default function EnterpriseSolutions() {
                       <div className="swiper-slide">
                         <div className="service-item-body in2">
                           <h3>
-                            <span>Retail Industry</span>
+                            <span>{t("Retail Industry")}</span>
                           </h3>
                         </div>
                       </div>
@@ -8151,7 +8097,7 @@ export default function EnterpriseSolutions() {
                       <div className="swiper-slide">
                         <div className="service-item-body in3">
                           <h3>
-                            <span>Distribution &amp; Supply Chain</span>
+                            <span>{t("Distribution & Supply Chain")} </span>
                           </h3>
                         </div>
                       </div>
@@ -8160,7 +8106,7 @@ export default function EnterpriseSolutions() {
                       <div className="swiper-slide">
                         <div className="service-item-body in4">
                           <h3>
-                            <span>Discrete Manufacturing</span>
+                            <span>{t("Discrete Manufacturing")} </span>
                           </h3>
                         </div>
                       </div>
@@ -8169,7 +8115,7 @@ export default function EnterpriseSolutions() {
                       <div className="swiper-slide">
                         <div className="service-item-body in5">
                           <h3>
-                            <span>Automotive Industry</span>
+                            <span>{t("Automotive Industry")} </span>
                           </h3>
                         </div>
                       </div>
@@ -8178,7 +8124,7 @@ export default function EnterpriseSolutions() {
                       <div className="swiper-slide">
                         <div className="service-item-body in6">
                           <h3>
-                            <span>Engineering, Procurement &amp; Construction</span>
+                            <span>{t("Engineering, Procurement & Construction")} </span>
                           </h3>
                         </div>
                       </div>
@@ -8583,17 +8529,17 @@ export default function EnterpriseSolutions() {
               <div className="firstrow">
                 <div className="row">
                   <div className="col-sm-8">
-                    <h2>Let us Modernise Your Enterprise</h2>
+                    <h2>{t("Let us Modernise Your Enterprise")}</h2>
+
                     <p>
-                      Discover how RheinBrücke can help you optimise core systems,
-                      automate processes, and build future-ready platforms.
+                      {t("Discover how RheinBrücke can help you optimise core systems, automate processes, and build future-ready platforms.")}
                     </p>
-                    <p>Talk to our enterprise solutions experts today.</p>
+                    <p>{t("Talk to our enterprise solutions experts today.")}</p>
                   </div>
                   <div className="col-sm-4">
                     <div className="ser-btn text-right">
                       <Link href="/contact-us" className="animated-svg-link">
-                        Contact Us
+                        {t("Contact Us")}
                         <span className="svg-container ">
                           <span className=" right">
                             <svg

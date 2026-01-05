@@ -7,8 +7,10 @@ import TestimonialandAward from "../../Components/TestimonialandAward";
 import Awards from "../../Components/Awards";
 import { createClient } from "@/lib/supabase-browser";
 import { useRouter } from "next/navigation";
+import {useTranslation} from "../../hooks/useTranslation";
 
 export default function Corushr() {
+  const { t, language } = useTranslation();
     const router = useRouter();
     const [formData, setFormData] = useState({
         fullName: '',
@@ -119,20 +121,18 @@ export default function Corushr() {
                             <div className="col-sm-5">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Revolutionizing HR Management with Smart, Scalable Solutions
+                                        {t('Revolutionizing HR Management with Smart, Scalable Solutions')}
                                     </h2>
                                     <p>
-                                        Ready to elevate your global workforce experience with an
-                                        intuitive HRMS?
+                                        {t('Ready to elevate your global workforce experience with an intuitive HRMS?')}
+
                                     </p>
                                     <p>
-                                        CorusHR provides powerful self-service and end-to-end HR coverage,
-                                        keeping your teams supported from recruitment to retirement on any
-                                        device.
+                                        {t('CorusHR provides powerful self-service and end-to-end HR coverage, keeping your teams supported from recruitment to retirement on any device.')}
                                     </p>
                                     <div className="ser-btn ">
                                         <Link href="/contact-us" className="animated-svg-link">
-                                            Contact Us
+                                            {t('Contact Us')}
                                             <span className="svg-container ">
                                                 <span className=" right">
                                                     <svg
@@ -250,20 +250,14 @@ export default function Corushr() {
                             <div className="col-sm-5">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Revolutionizing HR Management with Smart, Scalable Solutions
+                                        {t('Revolutionizing HR Management with Smart, Scalable Solutions')}
                                     </h2>
                                     <p>
-                                        Are you looking for an intuitive and streamlined Human Resource
-                                        Management Solution (HRMS) designed to enhance global workforce
-                                        management? CorusHR offers you an intuitive, user-friendly
-                                        self-service portal for organisation-wide collaboration offering
-                                        HR services, Employee Self Service and Manager Self Service. From
-                                        recruitment to retirement, we have comprehensive functional
-                                        coverage that is available on mobile and desktop.
+                                {t('Are you looking for an intuitive and streamlined Human Resource Management Solution (HRMS) designed to enhance global workforce management? CorusHR offers you an intuitive, user-friendly self-service portal for organisation-wide collaboration offering HR services, Employee Self Service and Manager Self Service. From recruitment to retirement, we have comprehensive functional coverage that is available on mobile and desktop.')}
                                     </p>
                                     <div className="ser-btn mt-5">
                                         <Link href="/contact-us" className="animated-svg-link">
-                                            Contact Us
+                                            {t('Contact Us')}
                                             <span className="svg-container ">
                                                 <span className=" right">
                                                     <svg
@@ -381,16 +375,10 @@ export default function Corushr() {
                             <div className="col-lg-12">
                                 <div className="section-title text-center">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        What Makes CorusHR Stand Out
+                                        {t('What Makes CorusHR Stand Out')} 
                                     </h2>
                                     <p className="mt-5">
-                                        We provide a holistic approach to streamlining and automating
-                                        various aspects of Human Resource Management, that is integrated
-                                        with your ERP. CorusHR addresses key challenges faced by
-                                        businesses, including time-consuming manual onboarding processes,
-                                        lengthy HR solution implementation timelines, complex and
-                                        difficult-to-use systems, limited region-specific functionality,
-                                        and poor integration with existing ERP platforms.
+                {t('We provide a holistic approach to streamlining and automating various aspects of Human Resource Management, that is integrated with your ERP. CorusHR addresses key challenges faced by businesses, including time-consuming manual onboarding processes, lengthy HR solution implementation timelines, complex and difficult-to-use systems, limited region-specific functionality, and poor integration with existing ERP platforms.')} 
                                     </p>
                                     <div className="corimg mt-5">
                                         <img src="/images/makescorus.svg" alt="" />
@@ -401,18 +389,16 @@ export default function Corushr() {
                     </div>
                 </div>
                 {/* Our Testimonial Section End */}
-                <section className="mds-section dynamics features1 mobilefeatures pd50">
+                <section className={`mds-section dynamics features1 mobilefeatures pd50 ${language === 'German' ? 'corusmainpage' : ''}`}>
                     <div className="container">
                         <div className="content text-left">
                             <div className="section-title ">
                                 <div className="hero-video-content1 wow fadeInUp mt-4">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Main Features
+                                        {t('Main Features')} 
                                     </h2>
                                     <p>
-                                        CorusHR is a complete Human Capital Management (HCM) solution that
-                                        handles many aspects of talent management. Here are some of its
-                                        main features:
+                                        {t('CorusHR is a complete Human Capital Management (HCM) solution that handles many aspects of talent management. Here are some of its main features:')}
                                     </p>
                                 </div>
                             </div>
@@ -426,10 +412,10 @@ export default function Corushr() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/images/fe1.svg" alt="" />
-                                            <h6> Recruitment and Onboarding</h6>
+                                            <h6> {t('Recruitment and Onboarding')}  </h6>
                                             <p>
-                                                Make better hiring decisions through structured and
-                                                configurable workflows
+                                                {t('Make better hiring decisions through structured and configurable workflows')}
+
                                             </p>
                                         </div>
                                     </div>
@@ -438,8 +424,12 @@ export default function Corushr() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/images/fe2.svg" alt="" />
-                                            <h6> Probation</h6>
-                                            <p>Automated probation evaluations with workflows</p>
+                                            <h6> {t('Probation')}  </h6>
+
+                                            <p>
+                                        {t('Automated probation evaluations with workflows')}
+                                        </p>
+
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -447,10 +437,9 @@ export default function Corushr() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/images/fe3.svg" alt="" />
-                                            <h6> Time and Attendance </h6>
+                                            <h6> {t('Time and Attendance')}  </h6>
                                             <p>
-                                                Capture daily attendance and work times and process them to
-                                                reflect in the Employee dashboard
+                                                 {t('Capture daily attendance and work times and process them to reflect in the Employee dashboard')}
                                             </p>
                                         </div>
                                     </div>
@@ -459,11 +448,9 @@ export default function Corushr() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/images/fe4.svg" alt="" />
-                                            <h6> Performance Management</h6>
+                                            <h6> {t('Performance Management')}  </h6>
                                             <p>
-                                                Inspire your team to reach their full potential, sync their
-                                                efforts with company goals, and foster a thriving, positive
-                                                workplace
+                                                 {t('Inspire your team to reach their full potential, sync their efforts with company goals, and foster a thriving, positive workplace')}
                                             </p>
                                         </div>
                                     </div>
@@ -472,10 +459,9 @@ export default function Corushr() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/images/fe5.svg" alt="" />
-                                            <h6> Training Management</h6>
+                                            <h6> {t('Training Management')}  </h6>
                                             <p>
-                                                Ensure employees have necessary skills and knowledge to
-                                                perform their jobs effectively and efficiently
+                                                 {t('Ensure employees have necessary skills and knowledge to perform their jobs effectively and efficiently')}
                                             </p>
                                         </div>
                                     </div>
@@ -597,8 +583,9 @@ export default function Corushr() {
                                                     strokeLinejoin="round"
                                                 />
                                             </svg>
-                                            <h6> Shift Roster </h6>
-                                            <p>Operate 24/7 with round-the-clock business support</p>
+                                        <h6> {t('Shift Roster')}  </h6>
+
+                                            <p> {t('Operate 24/7 with round-the-clock business support')} </p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -686,10 +673,9 @@ export default function Corushr() {
                                                     strokeLinejoin="round"
                                                 />
                                             </svg>
-                                            <h6> Leadership Development</h6>
+                                        <h6> {t('Leadership Development')}  </h6>
                                             <p>
-                                                Identify and nurture employees for leadership roles in the
-                                                organisation
+                                                 {t('Identify and nurture employees for leadership roles in the organisation')}
                                             </p>
                                         </div>
                                     </div>
@@ -806,9 +792,9 @@ export default function Corushr() {
                                                     strokeLinejoin="round"
                                                 />
                                             </svg>
-                                            <h6> Employee Engagement Surveys </h6>
+                                        <h6> {t('Employee Engagement Surveys')}  </h6>
                                             <p>
-                                                Manage organisational engagement effectively through surveys
+                                                {t('Manage organisational engagement effectively through surveys')}
                                             </p>
                                         </div>
                                     </div>
@@ -865,10 +851,10 @@ export default function Corushr() {
                                                     strokeLinejoin="round"
                                                 />
                                             </svg>
-                                            <h6>Exit Initiation &amp; Approval Process</h6>
+                                        <h6> {t('Exit Initiation &amp; Approval Process')}  </h6>
                                             <p>
-                                                Gather feedback through exit interview and identify areas for
-                                                improvement and help with the final settlement
+                                            {t('Gather feedback through exit interview and identify areas for improvement and help with the final settlement')}
+
                                             </p>
                                         </div>
                                     </div>
@@ -1109,7 +1095,7 @@ export default function Corushr() {
                                                 className="text-anime-style-2 text-dark"
                                                 data-cursor="-opaque"
                                             >
-                                                Employee Self-Service
+                                                {t('Employee Self-Service')}
                                             </h2>
                                         </div>
                                     </div>
@@ -1117,53 +1103,55 @@ export default function Corushr() {
                                         <div className="col-sm-6 col-6">
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/images/ss1.svg" alt="" />
-                                                <p>Employee Information Management</p>
+                                                <p>{t('Employee Information Management')}</p>
                                             </div>
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/images/ss2.svg" alt="" />
-                                                <p>Travel Requests</p>
+                                                <p>{t('Travel Requests')}</p>
                                             </div>
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/images/ss3.svg" alt="" />
-                                                <p>Leave Management</p>
+                                                <p>{t('Leave Management')}</p>
                                             </div>
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/images/ss4.svg" alt="" />
-                                                <p>Timesheets &amp; Attendance</p>
+                                                <p>{t('Timesheets & Attendance')}</p>
                                             </div>
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/images/ss5.svg" alt="" />
-                                                <p>Miscellaneous Reimbursement Request</p>
+                                                <p>{t('Miscellaneous Reimbursement Request')}</p>
                                             </div>
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/images/ss6.svg" alt="" />
-                                                <p>Grievances Management</p>
+                                                <p>{t('Grievances Management')}</p>
                                             </div>
                                         </div>
                                         <div className="col-sm-6 col-6">
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/images/ss7.svg" alt="" />
-                                                <p>Training &amp; Development</p>
+                                                <p>{t('Training & Development')}    </p>
                                             </div>
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/images/ss8.svg" alt="" />
-                                                <p>Performance Management</p>
+                                                <p> 
+                                                     {t('Performance Management ')} 
+                                                    </p>
                                             </div>
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/images/ss9.svg" alt="" />
-                                                <p>Work Permit Process</p>
+                                                <p>{t('Work Permit Process')}</p>
                                             </div>
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/images/ss10.svg" alt="" />
-                                                <p>Loan Management</p>
+                                                <p>{t('Loan Management')}</p>
                                             </div>
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/images/ss11.svg" alt="" />
-                                                <p>User Dashboard</p>
+                                                <p>{t('User Dashboard')}</p>
                                             </div>
                                             <div className="challenge-point-waber self-service">
                                                 <img src="/images/ss12.svg" alt="" />
-                                                <p>Approval &amp; Delegation Process</p>
+                                                <p>{t('Approval & Delegation Process')}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1179,71 +1167,53 @@ export default function Corushr() {
                             <div className="col-sm-12">
                                 <div className="section-title text-center text-black">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Additional Features of CorusHR
+                                        {t('Additional Features of CorusHR')}
                                     </h2>
                                 </div>
                                 <div className="row mt-5">
                                     <div className="col-lg-6 col-md-6 col-12">
                                         <div className="service-item-body1 light-bg-1 imgadd w80">
-                                            <h3>Seamless Integration</h3>
+                                            <h3>{t('Seamless Integration')}</h3>
                                             <p>
-                                                The seamless integration of CorusHR with Epicor ERP ensures
-                                                that these two systems operate together in real-time, enabling
-                                                effective communication, and functioning as a unified platform
-                                                without any disruptions or complications.
+                    {t('The seamless integration of CorusHR with Epicor ERP ensures that these two systems operate together in real-time, enabling effective communication, and functioning as a unified platform without any disruptions or complications.')}
                                             </p>
                                             <img src="/images/af1.svg" alt="" />
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-md-6 col-12">
                                         <div className="service-item-body1 light-bg-1 imgadd1 w80 systemview">
-                                            <h3>Configurable</h3>
+                                            <h3>{t('Configurable')}</h3>
                                             <p>
-                                                The solution is adaptable, quick to respond, and highly
-                                                configurable, aimed at improving operational efficiencies. It
-                                                facilitates streamlined HR operations, improves efficiency by
-                                                eliminating paper and email trails with digital workflows and
-                                                enhances user satisfaction.
+                                                {t('The solution is adaptable, quick to respond, and highly configurable, aimed at improving operational efficiencies. It facilitates streamlined HR operations, improves efficiency by eliminating paper and email trails with digital workflows and enhances user satisfaction.')}
                                             </p>
                                             <img src="/images/af2.svg" alt="" />
                                         </div>
                                         <div className="service-item-body1 light-bg-1 imgadd1 mobileimgadd mobileview w80">
-                                            <h3>Configurable</h3>
+                                            <h3>{t('Configurable')}</h3>
                                             <p>
-                                                The solution is adaptable, quick to respond, and highly
-                                                configurable, aimed at improving operational efficiencies. It
-                                                facilitates streamlined HR operations, improves efficiency by
-                                                eliminating paper and email trails with digital workflows and
-                                                enhances user satisfaction.
+                    {t('The solution is adaptable, quick to respond, and highly configurable, aimed at improving operational efficiencies. It facilitates streamlined HR operations, improves efficiency by eliminating paper and email trails with digital workflows and enhances user satisfaction.')}
                                             </p>
                                             <p>
-                                                The solution is adaptable, quick to respond, and highly
-                                                customisable, aimed at improving operational efficiencies. It
-                                                facilitates streamlined HR operations, improves efficiency by
-                                                eliminating paper and email trails with digital workflows and
-                                                enhances user satisfaction.
+                    {t('The solution is adaptable, quick to respond, and highly customisable, aimed at improving operational efficiencies. It facilitates streamlined HR operations, improves efficiency by eliminating paper and email trails with digital workflows and enhances user satisfaction.')}
                                             </p>
                                             <img src="/images/corusim.svg" alt="" />
                                         </div>
                                     </div>
                                     <div className="col-lg-4 col-md-4 col-12">
                                         <div className="service-item-body1 light-bg-1 imgadd">
-                                            <h3>Reporting and Analytics</h3>
+                                            <h3>{t('Reporting and Analytics')}</h3>
                                             <p>
-                                                Get insights on regular and overtime hours, transaction,
-                                                performance assessment, requirements fulfilment, and exit
-                                                process enabling informed decision-making and planning.
+                {t('Get insights on regular and overtime hours, transaction, performance assessment, requirements fulfilment, and exit process enabling informed decision-making and planning.')}
                                             </p>
                                             <img src="/images/af3.svg" alt="" />
                                         </div>
                                     </div>
                                     <div className="col-lg-4 col-md-4 col-12">
                                         <div className="service-item-body1 light-bg-1 imgadd2">
-                                            <h3>Mobile Accessibility</h3>
+                                            <h3>{t('Mobile Accessibility')}</h3>
                                             <p>
-                                                With our solution, employees can stay connected around the
-                                                clock through a user-friendly mobile application, ensuring
-                                                seamless access to vital information and better collaboration.
+                                    {t('With our solution, employees can stay connected around the clock through a user-friendly mobile application, ensuring seamless access to vital information and better collaboration.')}
+
                                             </p>
                                             <div className="text-center">
                                                 <img src="/images/af4.svg" alt="" />
@@ -1252,12 +1222,9 @@ export default function Corushr() {
                                     </div>
                                     <div className="col-lg-4 col-md-4 col-12">
                                         <div className="service-item-body1 light-bg-1 imgadd">
-                                            <h3>Effective Data Management</h3>
+                                            <h3>{t('Effective Data Management')}</h3>
                                             <p>
-                                                Updating and retrieval of employee data, including personal
-                                                information, employment history, performance evaluations, and
-                                                benefits enrolment, reducing data loss and errors and improved
-                                                data integrity.
+                    {t('Updating and retrieval of employee data, including personal information, employment history, performance evaluations, and benefits enrolment, reducing data loss and errors and improved data integrity.')}
                                             </p>
                                             <img src="/images/af5.svg" alt="" />
                                         </div>
@@ -1290,12 +1257,11 @@ export default function Corushr() {
                                 <div className="section-title corusolution">
                                     {/* <h3 class="wow fadeInUp">key benefits</h3> */}
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Benefits
+                                        {t('Benefits')}
                                     </h2>
                                     <p className="posrelative">
-                                        CorusHR provides a comprehensive solution for talent management
-                                        for employees, managers and HR department. With CorusHR, you can
-                                        enjoy:
+                                    {t('CorusHR provides a comprehensive solution for talent management for employees, managers and HR department. With CorusHR, you can enjoy:')}
+
                                     </p>
                                 </div>
                                 <div className="row mt-5">
@@ -1306,8 +1272,9 @@ export default function Corushr() {
                                                 <img src="/images/be1.svg" alt="" />
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Easy Implementation</h3>
-                                                <p>Designed for seamless deployment</p>
+                                                <h3>{t('Easy Implementation')}</h3>
+
+                                                <p>{t('Designed for seamless deployment')}</p>
                                             </div>
                                         </div>
                                         {/* Benefits Steps Item End */}
@@ -1322,8 +1289,9 @@ export default function Corushr() {
                                                 <img src="/images/be2.svg" alt="" />
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Easy Usage</h3>
-                                                <p>Intuitive, user-friendly interface</p>
+                                                <h3>{t('Easy Usage')}</h3>
+
+                                                <p>{t('Intuitive, user-friendly interface')}</p>
                                             </div>
                                         </div>
                                         {/* Benefits Steps Item End */}
@@ -1338,8 +1306,8 @@ export default function Corushr() {
                                                 <img src="/images/be3.svg" alt="" />
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Seamless Integration</h3>
-                                                <p>Out-of-the-box Epicor integration</p>
+                                                <h3>{t('Seamless Integration')}</h3>
+                                                <p>{t('Out-of-the-box Epicor integration')}</p> 
                                             </div>
                                         </div>
                                         {/* Benefits Steps Item End */}
@@ -1354,8 +1322,8 @@ export default function Corushr() {
                                                 <img src="/images/be4.svg" alt="" />
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Mobile Interface</h3>
-                                                <p>Access anytime, anywhere</p>
+                                                <h3>{t('Mobile Interface')}</h3>
+                                                <p>{t('Access anytime, anywhere')}</p>
                                             </div>
                                         </div>
                                         {/* Benefits Steps Item End */}
@@ -1370,8 +1338,9 @@ export default function Corushr() {
                                                 <img src="/images/be5.svg" alt="" />
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Rich Functionalities</h3>
-                                                <p>Complete Hire to Retire features</p>
+                                                <h3>{t('Rich Functionalities')}</h3>
+
+                                                <p>{t('Complete Hire to Retire features')}</p>
                                             </div>
                                         </div>
                                         {/* Benefits Steps Item End */}
@@ -1386,8 +1355,9 @@ export default function Corushr() {
                                                 <img src="/images/be6.svg" alt="" />
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Comprehensive Reporting</h3>
-                                                <p>Robust reporting capabilities</p>
+                                                <h3>{t('Comprehensive Reporting')}</h3>
+
+                                                <p>{t('Robust reporting capabilities')}</p>
                                             </div>
                                         </div>
                                         {/* Benefits Steps Item End */}
@@ -1402,8 +1372,10 @@ export default function Corushr() {
                                                 <img src="/images/be7.svg" alt="" />
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Multisite Capabilities</h3>
-                                                <p>Manage multiple locations</p>
+                                                <h3>{t('Multisite Capabilities')}</h3>
+
+
+                                                <p>{t('Manage multiple locations')}</p>
                                             </div>
                                         </div>
                                         {/* Benefits Steps Item End */}
@@ -1418,8 +1390,9 @@ export default function Corushr() {
                                                 <img src="/images/be8.svg" alt="" />
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Configurable Setup &amp; Fluid Workflows</h3>
-                                                <p>Flexible configurations and workflows</p>
+                                                <h3>{t('Configurable Setup & Fluid Workflows')}</h3>
+
+                                                <p>{t('Flexible configurations and workflows')}</p>
                                             </div>
                                         </div>
                                         {/* Benefits Steps Item End */}
@@ -1436,7 +1409,7 @@ export default function Corushr() {
                             <div className="col-lg-12">
                                 <div className="section-title text-center">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Customers
+                                        {t('Customers')}
                                     </h2>
                                 </div>
                             </div>
@@ -1497,10 +1470,10 @@ export default function Corushr() {
                             <div className="col-sm-6">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Download Our Brochure
+                                        {t('Download Our Brochure')}
                                     </h2>
                                     <p>
-                                        Download Our Brochure now to know more about our CorusHR Solution!
+                                        {t('Download Our Brochure now to know more about our CorusHR Solution!')}
                                     </p>
                                     {/* Status Message */}
                                     {statusMessage && (
@@ -2220,17 +2193,17 @@ export default function Corushr() {
                                 <div className="row">
                                     <div className="col-sm-9">
                                         <h2>
-                                            Ready to accelerate value creation <br /> across your portfolio?
+                                            {t('Ready to accelerate value creation across your portfolio?')}
                                         </h2>
                                         <p>
-                                            Contact us today to learn how we can help modernise operations,
-                                            de-risk integrations, and improve commercial outcomes.
+                                            {t('Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.')}
+
                                         </p>
                                     </div>
                                     <div className="col-sm-3">
                                         <div className="ser-btn text-right">
                                             <Link href="#" className="animated-svg-link">
-                                                Contact Us
+                                                {t('Contact Us')}
                                                 <span className="svg-container ">
                                                     <span className=" right">
                                                         <svg
@@ -2341,8 +2314,6 @@ export default function Corushr() {
                     </div>
                 </footer>
             </>
-
-
         </CommomLayout>
     )
 }

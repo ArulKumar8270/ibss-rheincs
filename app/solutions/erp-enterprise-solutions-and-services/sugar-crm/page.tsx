@@ -30,7 +30,7 @@ const page = () => {
               <div className="col-sm-6">
                 <div className="section-title wow fadeInUp">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Sugar CRM Transform Customer Relationships
+                Sugar CRM Transform Customer Relationships
                   </h2>
                   <p>
                     {" "}

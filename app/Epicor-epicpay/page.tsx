@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function EnterpriseSolutions() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
 <>
@@ -17,18 +19,15 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-6">
           <div className="section-title wow fadeInUp">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Epic Pay – Epicor Payroll MEA
+              {t("Epic Pay – Epicor Payroll MEA")}
             </h2>
             <p>
-              Comprehensive payroll solution tailored for businesses across the
-              Middle East and Africa.{" "}
+              {t("Comprehensive payroll solution tailored for businesses across the Middle East and Africa.")}
+
             </p>
             <p>
-              Epic Pay (Epicor Payroll MEA) helps organizations streamline
-              payroll processing with seamless integration to Epicor ERP. It
-              ensures compliance with regional labour laws, simplifies HR and
-              payroll operations, and empowers employees with self-service
-              access.
+            {t("Epic Pay (Epicor Payroll MEA) helps organizations streamline payroll processing with seamless integration to Epicor ERP. It ensures compliance with regional labour laws, simplifies HR and payroll operations, and empowers employees with self-service access.")}
+
             </p>
           </div>
         </div>
@@ -471,22 +470,25 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-5">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Our Epic Pay Capabilities
+              {t("Our Epic Pay Capabilities")}
             </h2>
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
               <img src="/images/Automatepayrollprocessing.svg" alt="" />
               <div className="pill-cont">
-                <p>Automate payroll processing and salary calculations.</p>
+        <p>
+                  {t("Automate payroll processing and salary calculations.")}
+                </p>
+
               </div>
             </div>
             <div className="challenge-point-waber self-service">
               <img src="/images/compliance.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Ensure compliance with MEA labour laws, tax rules, and
-                  statutory reporting.
+                  {t("Ensure compliance with MEA labour laws, tax rules, and statutory reporting.")}
+
                 </p>
               </div>
             </div>
@@ -494,8 +496,8 @@ export default function EnterpriseSolutions() {
               <img src="/images/Integratetime,attendance,leave.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Integrate time, attendance, leave, and loan management
-                  directly into payroll.
+                  {t("Integrate time, attendance, leave, and loan management directly into payroll.")}
+
                 </p>
               </div>
             </div>
@@ -503,8 +505,8 @@ export default function EnterpriseSolutions() {
               <img src="/images/self-serviceportals.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Provide employee and manager self-service portals for anytime,
-                  anywhere access.
+                  {t("Provide employee and manager self-service portals for anytime, anywhere access.")}
+
                 </p>
               </div>
             </div>
@@ -512,15 +514,18 @@ export default function EnterpriseSolutions() {
               <img src="/images/real-timeanalytics.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Deliver real-time analytics and reporting on payroll costs,
-                  overtime, and compliance.
+                  {t("Deliver real-time analytics and reporting on payroll costs, overtime, and compliance.")}
+
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
               <img src="/images/mobileaccessibility.svg" alt="" />
               <div className="pill-cont">
-                <p>Enable mobile accessibility for a connected workforce.</p>
+                <p>
+                  {t("Enable mobile accessibility for a connected workforce.")}
+                </p>
+
               </div>
             </div>
           </div>
@@ -538,22 +543,23 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-12">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Our Epic Pay Capabilities
+              {t("Our Epic Pay Capabilities")}
             </h2>
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
               <img src="/images/ss1.svg" alt="" />
               <div className="pill-cont">
-                <p>Automate payroll processing and salary calculations.</p>
+  <p>
+  {t("Automate payroll processing and salary calculations.")}</p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
               <img src="/images/ss2.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Ensure compliance with MEA labour laws, tax rules, and
-                  statutory reporting.
+                  {t("Ensure compliance with MEA labour laws, tax rules, and statutory reporting.")}
+
                 </p>
               </div>
             </div>
@@ -561,8 +567,8 @@ export default function EnterpriseSolutions() {
               <img src="/images/ss3.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Integrate time, attendance, leave, and loan management
-                  directly into payroll.
+                  {t("Integrate time, attendance, leave, and loan management directly into payroll.")}
+
                 </p>
               </div>
             </div>
@@ -570,8 +576,7 @@ export default function EnterpriseSolutions() {
               <img src="/images/ss7.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Provide employee and manager self-service portals for anytime,
-                  anywhere access.
+                  {t("Provide employee and manager self-service portals for anytime, anywhere access.")}
                 </p>
               </div>
             </div>
@@ -579,15 +584,17 @@ export default function EnterpriseSolutions() {
               <img src="/images/ss8.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  Deliver real-time analytics and reporting on payroll costs,
-                  overtime, and compliance.
+                  {t("Deliver real-time analytics and reporting on payroll costs, overtime, and compliance.")}
+
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
               <img src="/images/ss9.svg" alt="" />
               <div className="pill-cont">
-                <p>Enable mobile accessibility for a connected workforce.</p>
+  <p>
+    {t("Enable mobile accessibility for a connected workforce.")}
+</p>
               </div>
             </div>
           </div>
@@ -604,7 +611,7 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-12">
           <div className="section-title text-center text-black">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Why Choose Epic Pay?
+              {t("Why Choose Epic Pay?")}
             </h2>
           </div>
           <div className="row mt-5">
@@ -612,7 +619,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1  w80">
                 {/* <h3>Seamless Integration</h3> */}
                 <h3>
-                  Designed specifically for organizations in the MEA region.
+                  {t("Designed specifically for organizations in the MEA region.")}
                 </h3>
                 <div className="text-center">
                   <img src="/images/advant1.svg" alt="" />
@@ -623,8 +630,8 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicright1  w80">
                 {/* <h3>Configurable</h3> */}
                 <h3>
-                  Seamless integration with Epicor ERP for end-to-end
-                  efficiency.{" "}
+                  {t("Seamless integration with Epicor ERP for end-to-end efficiency.")}
+
                 </h3>
                 <img src="/images/advant2.svg" alt="" />
               </div>
@@ -633,8 +640,8 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicright">
                 {/* <h3>Reporting and Analytics</h3> */}
                 <h3>
-                  Scalable and customizable to suit single-site or multi-site
-                  operations.
+                  {t("Scalable and customizable to suit single-site or multi-site operations.")}
+
                 </h3>
                 <img src="/images/advant3.svg" alt="" />
               </div>
@@ -643,8 +650,8 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicright">
                 {/* <h3>Mobile Accessibility</h3> */}
                 <h3>
-                  Enhances employee engagement with intuitive self-service
-                  access.{" "}
+                  {t("Enhances employee engagement with intuitive self-service access.")}
+
                 </h3>
                 <div className="text-center">
                   <img src="/images/advant4.svg" alt="" />
@@ -655,8 +662,8 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicleft">
                 {/* <h3>Effective Data Management</h3> */}
                 <h3>
-                  Trusted with over half a million payrolls processed across
-                  industries.
+                  {t("Trusted with over half a million payrolls processed across industries.")}
+
                 </h3>
                 <img src="/images/advant5.svg" alt="" />
               </div>
@@ -833,14 +840,14 @@ export default function EnterpriseSolutions() {
           <div className="row">
             <div className="col-sm-8">
               <h2>
-                Ready to simplify payroll and stay compliant with Epic Pay?
+                {t("Ready to simplify payroll and stay compliant with Epic Pay?")}
               </h2>
-              <p>Talk to our Epicor experts today.</p>
+              <p>{t("Talk to our Epicor experts today.")}</p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <Link href="/contact-us" className="animated-svg-link">
-                  Contact Us
+                  {t("Contact Us")}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import translations from '../translations.json';
 
-export default function useTranslation() {
+export const useTranslation = () => {
   // Initialize with value from localStorage if available, otherwise default to 'English'
   const [language, setLanguage] = useState(() => {
     if (typeof window !== 'undefined') {
