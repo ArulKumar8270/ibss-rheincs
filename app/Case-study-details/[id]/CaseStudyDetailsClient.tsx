@@ -270,6 +270,14 @@ export default function CaseStudyDetailsClient({
     });
   };
 
+  // Replace &nbsp; with regular spaces in HTML content to allow proper word breaking
+  const processContent = (html: string): string => {
+    if (!html) return '';
+    // Replace &nbsp; with regular spaces, but preserve HTML structure
+    // This allows words to break naturally at word boundaries
+    return html.replace(/&nbsp;/g, ' ');
+  };
+
   // Only show loading if we don't have any case study data
   // This prevents flash of loading state when we have cached data
   if (loading && !caseStudy && !initialCaseStudy) {
@@ -463,7 +471,13 @@ export default function CaseStudyDetailsClient({
                           <div className="stu-tap-content">
                             <h6 className="stu-sub-title">Overview</h6>
                             <p
-                              dangerouslySetInnerHTML={{ __html: caseStudy.overview }}/>
+                              dangerouslySetInnerHTML={{ __html: processContent(caseStudy.overview) }}
+                              style={{
+                                wordBreak: 'normal',
+                                overflowWrap: 'break-word',
+                                whiteSpace: 'normal'
+                              }}
+                            />
                           </div>
                         </div>
                         {(caseStudy.client_name || caseStudy.client_logo || caseStudy.client_description) && (
@@ -482,7 +496,13 @@ export default function CaseStudyDetailsClient({
                               )}
                               {caseStudy.client_description && (
                                 <p
-                                dangerouslySetInnerHTML={{ __html: caseStudy.client_description}}/>
+                                  dangerouslySetInnerHTML={{ __html: processContent(caseStudy.client_description) }}
+                                  style={{
+                                    wordBreak: 'normal',
+                                    overflowWrap: 'break-word',
+                                    whiteSpace: 'normal'
+                                  }}
+                                />
                               )}
                               {caseStudy.client_location && (
                                 <div className="stu-color-6">
@@ -503,7 +523,12 @@ export default function CaseStudyDetailsClient({
                           <div className="col-sm-12">
                             <div className="stu-tab-dark-color">
                               <p
-                                dangerouslySetInnerHTML={{ __html: caseStudy.content }}
+                                dangerouslySetInnerHTML={{ __html: processContent(caseStudy.content) }}
+                                style={{
+                                  wordBreak: 'normal',
+                                  overflowWrap: 'break-word',
+                                  whiteSpace: 'normal'
+                                }}
                               />
                             </div>
                           </div>
@@ -518,7 +543,12 @@ export default function CaseStudyDetailsClient({
                           <div className="stu-tap-content">
                             <h6 className="stu-sub-title">Challenges</h6>
                             <p
-                              dangerouslySetInnerHTML={{ __html: caseStudy.challenges }}
+                              dangerouslySetInnerHTML={{ __html: processContent(caseStudy.challenges) }}
+                              style={{
+                                wordBreak: 'normal',
+                                overflowWrap: 'break-word',
+                                whiteSpace: 'normal'
+                              }}
                             />
                           </div>
                         </div>
@@ -532,7 +562,12 @@ export default function CaseStudyDetailsClient({
                           <div className="stu-tap-content">
                             <h6 className="stu-sub-title">Our Solution</h6>
                             <p
-                              dangerouslySetInnerHTML={{ __html: caseStudy.solution }}
+                              dangerouslySetInnerHTML={{ __html: processContent(caseStudy.solution) }}
+                              style={{
+                                wordBreak: 'normal',
+                                overflowWrap: 'break-word',
+                                whiteSpace: 'normal'
+                              }}
                             />
                           </div>
                         </div>
@@ -546,7 +581,12 @@ export default function CaseStudyDetailsClient({
                           <div className="stu-tap-content">
                             <h6 className="stu-sub-title">Benefits</h6>
                             <p
-                              dangerouslySetInnerHTML={{ __html: caseStudy.benefits }}
+                              dangerouslySetInnerHTML={{ __html: processContent(caseStudy.benefits) }}
+                              style={{
+                                wordBreak: 'normal',
+                                overflowWrap: 'break-word',
+                                whiteSpace: 'normal'
+                              }}
                             />
                           </div>
                         </div>
@@ -560,7 +600,12 @@ export default function CaseStudyDetailsClient({
                           <div className="stu-tap-content">
                             <h6 className="stu-sub-title">Implementation</h6>
                             <p
-                              dangerouslySetInnerHTML={{ __html: caseStudy.implementation }}
+                              dangerouslySetInnerHTML={{ __html: processContent(caseStudy.implementation) }}
+                              style={{
+                                wordBreak: 'normal',
+                                overflowWrap: 'break-word',
+                                whiteSpace: 'normal'
+                              }}
                             />
                           </div>
                         </div>

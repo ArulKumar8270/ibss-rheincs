@@ -126,6 +126,14 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
     });
   };
 
+  // Replace &nbsp; with regular spaces in HTML content to allow proper word breaking
+  const processContent = (html: string): string => {
+    if (!html) return '';
+    // Replace &nbsp; with regular spaces, but preserve HTML structure
+    // This allows words to break naturally at word boundaries
+    return html.replace(/&nbsp;/g, ' ');
+  };
+
   // Only show loading if we don't have initial item data
   // This prevents flash of loading state when we have cached data
   if (loading && !item) {
@@ -242,11 +250,14 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
                   </p>
                 )}
                 <div 
-                  dangerouslySetInnerHTML={{ __html: item.content }}
+                  dangerouslySetInnerHTML={{ __html: processContent(item.content) }}
                   style={{
                     lineHeight: '1.8',
                     color: '#333',
-                    fontSize: '16px'
+                    fontSize: '16px',
+                    wordBreak: 'normal',
+                    overflowWrap: 'break-word',
+                    whiteSpace: 'normal'
                   }}
                 />
               </div>
