@@ -4,6 +4,7 @@ import React from "react";
 import CommomLayout from "../../Components/CommomLayout";
 import Link from "next/link";
 import TestimonialandAward from "../../Components/TestimonialandAward";
+import Awards from "@/app/Components/Awards";
 export default function AlMl() {
     return (
         <CommomLayout>
@@ -520,7 +521,8 @@ export default function AlMl() {
                 <div className="container">
                     <p className="lines" />
                 </div>
-                <TestimonialandAward />
+                <br/>
+                <Awards />
                 {/* Footer Start */}
                 <footer className="main-footer pd0">
                     {/* Footer Main Start */}

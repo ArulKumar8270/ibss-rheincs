@@ -16,7 +16,7 @@ export default function AlMl() {
                             <div className="col-lg-5">
                                 <div className="pe-main-hadding-waber">
                                     <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
-                                        Automotive
+                                        Automotive Industry
                                     </h2>
                                     <p>
                                         Automotive manufacturers, whether producing components, complete

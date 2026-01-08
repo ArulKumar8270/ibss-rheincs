@@ -2641,7 +2641,7 @@ export default function Home() {
                         </div>
                         {/* Testimonial Slide End */}
                       </div>
-                      <div className="testimonial-btn rtyElement">
+                      <div className="testimonial-btn rtyElement" style={{ display: 'flex', justifyContent: 'center', margin: '0 auto', width: '100%' }}>
                         <div className="testimonial-button-prev">
                           <div className="animated-svg-link">
                             <span className="svg-container ">

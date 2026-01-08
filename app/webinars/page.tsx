@@ -195,7 +195,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Future of ERP Series – How to Choose
+                            Webinar Title: Future of ERP Series – How to Choose
                             the Right ERP for a Rapidly Changing Business Landscape
                           </h4>
                           <p>
@@ -218,7 +218,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> #Future-Proofing with ERP – Top
+                            Webinar Title: #Future-Proofing with ERP – Top
                             Trends in Enterprise Software for 2024 and Beyond
                           </h4>
                           <p>
@@ -238,7 +238,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Maximizing ROI with Field Service
+                            Webinar Title: Maximizing ROI with Field Service
                             Automation for ERP
                           </h4>
                           <p>
@@ -258,7 +258,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Webinar on Top ERP Extensions to
+                            Webinar Title: Webinar on Top ERP Extensions to
                             improve Your IT ROI | ECM | Demand Planning| Data Analysis
                             Solution
                           </h4>
@@ -279,7 +279,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Why Manufacturing Industry Needs a
+                            Webinar Title: Why Manufacturing Industry Needs a
                             Vertical Specific ERP Solution?
                           </h4>
                           <p>
@@ -299,7 +299,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Essential Strategies for ERP Project
+                            Webinar Title: Essential Strategies for ERP Project
                             Success
                           </h4>
                           <p>
@@ -318,7 +318,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> How ERP on the cloud can Improve
+                            Webinar Title: How ERP on the cloud can Improve
                             Efficiency of your Interior Design Business
                           </h4>
                           <p>
@@ -340,7 +340,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> #Webinar Leveraging Effective Change
+                            Webinar Title: #Webinar Leveraging Effective Change
                             Management for ERP Project Success
                           </h4>
                           <p>
@@ -362,7 +362,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> #Webinar Get your ERP Implemented
+                            Webinar Title: #Webinar Get your ERP Implemented
                             Right{" "}
                           </h4>
                           <p>
@@ -381,7 +381,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Post Pandemic: 5 Proven Reasons for
+                            Webinar Title: Post Pandemic: 5 Proven Reasons for
                             Adopting Cloud ERP
                           </h4>
                           <p>
@@ -403,7 +403,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Panel Discussion - Rebooting your
+                            Webinar Title: Panel Discussion - Rebooting your
                             EPC Business for the New Normal
                           </h4>
                           <p>
@@ -425,7 +425,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Webinar Procurement Beyond 2020
+                            Webinar Title: Webinar Procurement Beyond 2020
                             Evolving Technology Trends and Priorities
                           </h4>
                           <p>
@@ -447,7 +447,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> [Panel Discussion] Growing Your
+                            Webinar Title: [Panel Discussion] Growing Your
                             Business Through Digital Transformation
                           </h4>
                           <p>
@@ -469,7 +469,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Digitally Transform your Procurement
+                            Webinar Title: Digitally Transform your Procurement
                             Function with MeRLIN
                           </h4>
                           <p>
@@ -491,7 +491,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Webinar on Digitally Transform your
+                            Webinar Title: Webinar on Digitally Transform your
                             Procurement Function with MeRLIN
                           </h4>
                           <p>
@@ -513,7 +513,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Improve the Strategic Quotient of
+                            Webinar Title: Improve the Strategic Quotient of
                             Sourcing through Analytics
                           </h4>
                           <p>
@@ -535,7 +535,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> [Panel Discussion] Agile Procurement
+                            Webinar Title: [Panel Discussion] Agile Procurement
                             Processes to Manage a Dynamic Business Environment
                           </h4>
                           <p>
@@ -557,7 +557,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Enhance and Extend your Epicor ERP's
+                            Webinar Title: Enhance and Extend your Epicor ERP's
                             Value to Business with the right Ancillary Software
                           </h4>
                           <p>
@@ -579,7 +579,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Getting Your ERP Implemented Right -
+                            Webinar Title: Getting Your ERP Implemented Right -
                             A Key to Successful Digital Transformation
                           </h4>
                           <p>
@@ -601,7 +601,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Enabling a Virtual Workplace with
+                            Webinar Title: Enabling a Virtual Workplace with
                             Document Management System
                           </h4>
                           <p>
@@ -623,7 +623,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> How COVID-19 will change the design,
+                            Webinar Title: How COVID-19 will change the design,
                             planning and operation of global supply chains
                           </h4>
                           <p>
@@ -645,7 +645,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Epicor ERP Performance Management –
+                            Webinar Title: Epicor ERP Performance Management –
                             Approach, Tools and Techniques
                           </h4>
                           <p>
@@ -667,7 +667,7 @@ const page = () => {
                             </figure>
                           </Link>
                           <h4>
-                            <b>Webinar Title:</b> Calculate ROI for your ERP to save
+                            Webinar Title: Calculate ROI for your ERP to save
                             Money during this Economic Crisis
                           </h4>
                           <p>

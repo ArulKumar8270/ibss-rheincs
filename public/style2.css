@@ -829,6 +829,7 @@
 .dynamics h6 {
     margin-bottom: 0px !important;
     font-size: 22px;
+    font-family: 'helvetica-neue-lt-pro' !important;
 }
 
 
@@ -2932,7 +2933,7 @@ h2.section-title {
     /* transform: translate(-50%, -50%); */
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     margin-top: 30px;
     z-index: 2;
 }
@@ -5872,7 +5873,7 @@ h2.section-title {
 
 .sap-ser-1 {
     position: relative !important;
-    justify-content: left !important;
+    justify-content: center !important;
 }
 
 .sap-service-waber:hover {
