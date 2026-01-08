@@ -21,18 +21,79 @@ export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [statusMessage, setStatusMessage] = useState('');
   const [isCountryCodeFocused, setIsCountryCodeFocused] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  const validateField = (name: string, value: string): string => {
+    switch (name) {
+      case 'fullName':
+        if (!value.trim()) {
+          return 'Name is required';
+        }
+        if (value.trim().length < 2) {
+          return 'Name must be at least 2 characters';
+        }
+        if (!/^[a-zA-Z\s'-]+$/.test(value.trim())) {
+          return 'Name can only contain letters, spaces, hyphens, and apostrophes';
+        }
+        return '';
+      case 'email':
+        if (!value.trim()) {
+          return 'Email is required';
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+          return 'Please enter a valid email address';
+        }
+        return '';
+      case 'phone':
+        if (!value.trim()) {
+          return 'Phone number is required';
+        }
+        const phoneDigits = value.replace(/\D/g, '');
+        if (phoneDigits.length < 7) {
+          return 'Phone number must be at least 7 digits';
+        }
+        if (phoneDigits.length > 15) {
+          return 'Phone number is too long';
+        }
+        return '';
+      case 'companyName':
+        if (!value.trim()) {
+          return 'Company name is required';
+        }
+        if (value.trim().length < 2) {
+          return 'Company name must be at least 2 characters';
+        }
+        return '';
+      case 'message':
+        if (value.length > 5000) {
+          return 'Message must be less than 5000 characters';
+        }
+        return '';
+      default:
+        return '';
+    }
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     
-    // Restrict negative values for phone number
-    if (name === 'phone' && value !== '') {
-      // Remove any negative signs and ensure only positive numbers
-      const numericValue = value.replace(/[^0-9]/g, '');
+    // For phone, only allow digits, spaces, hyphens, and parentheses
+    if (name === 'phone') {
+      const phoneValue = value.replace(/[^\d\s\-()]/g, '');
       setFormData(prev => ({
         ...prev,
-        [name]: numericValue
+        [name]: phoneValue
       }));
+      // Validate after change
+      if (touched[name]) {
+        const error = validateField(name, phoneValue);
+        setErrors(prev => ({
+          ...prev,
+          [name]: error
+        }));
+      }
       return;
     }
     
@@ -40,10 +101,60 @@ export default function Contact() {
       ...prev,
       [name]: value
     }));
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      const error = validateField(name, value);
+      setErrors(prev => ({
+        ...prev,
+        [name]: error
+      }));
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setTouched(prev => ({ ...prev, [name]: true }));
+    const error = validateField(name, value);
+    setErrors(prev => ({
+      ...prev,
+      [name]: error
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Mark all required fields as touched
+    const allTouched = {
+      fullName: true,
+      email: true,
+      phone: true,
+      companyName: true,
+    };
+    setTouched(allTouched);
+
+    // Validate all fields
+    const validationErrors: Record<string, string> = {};
+    validationErrors.fullName = validateField('fullName', formData.fullName);
+    validationErrors.email = validateField('email', formData.email);
+    validationErrors.phone = validateField('phone', formData.phone);
+    validationErrors.companyName = validateField('companyName', formData.companyName);
+
+    if (formData.message) {
+      validationErrors.message = validateField('message', formData.message);
+    }
+
+    setErrors(validationErrors);
+
+    // Check if there are any errors
+    const hasErrors = Object.values(validationErrors).some(error => error !== '');
+    if (hasErrors) {
+      setStatus('error');
+      setStatusMessage('Please fix the errors in the form before submitting.');
+      return;
+    }
+
     setStatus('loading');
     setStatusMessage('Submitting your inquiry...');
 
@@ -54,14 +165,6 @@ export default function Contact() {
       if (!fullName || !phone || !email || !companyName) {
         setStatus('error');
         setStatusMessage('Please fill in all required fields.');
-        return;
-      }
-
-      // Validate email format
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        setStatus('error');
-        setStatusMessage('Please enter a valid email address.');
         return;
       }
 
@@ -107,6 +210,8 @@ export default function Contact() {
           selection: '',
           message: ''
         });
+        setErrors({});
+        setTouched({});
         router.push('/thanks');
         // Clear success message after 5 seconds
         setTimeout(() => {
@@ -228,14 +333,20 @@ export default function Contact() {
                     <div className="col-12">
                       <input
                         type="text"
-                        className="form-control custom-form-control"
+                        className={`form-control custom-form-control ${touched.fullName && errors.fullName ? 'is-invalid' : ''}`}
                         name="fullName"
                         placeholder="Enter Your Full Name*"
                         value={formData.fullName}
                         onChange={handleInputChange}
+                        onBlur={handleBlur}
                         required={true}
                         disabled={status === 'loading'}
                       />
+                      {touched.fullName && errors.fullName && (
+                        <div className="invalid-feedback" style={{ display: 'block', color: '#dc3545', fontSize: '0.875rem', marginTop: '0.25rem' }}>
+                          {errors.fullName}
+                        </div>
+                      )}
                     </div>
                     {/* Phone Number with Country Code */}
                     <div className="col-md-6">
@@ -504,11 +615,12 @@ export default function Contact() {
                         </div>
                         <input
                           type="tel"
-                          className="form-control"
+                          className={`form-control ${touched.phone && errors.phone ? 'is-invalid' : ''}`}
                           name="phone"
                           placeholder="Enter Your Phone No*"
                           value={formData.phone}
                           onChange={handleInputChange}
+                          onBlur={handleBlur}
                           onKeyDown={(e) => {
                             // Prevent minus, plus, and 'e' keys (scientific notation)
                             if (e.key === '-' || e.key === '+' || e.key === 'e' || e.key === 'E') {
@@ -520,32 +632,49 @@ export default function Contact() {
                           disabled={status === 'loading'}
                         />
                       </div>
+                      {touched.phone && errors.phone && (
+                        <div className="invalid-feedback" style={{ display: 'block', color: '#dc3545', fontSize: '0.875rem', marginTop: '0.25rem' }}>
+                          {errors.phone}
+                        </div>
+                      )}
                     </div>
                     {/* Email Address */}
                     <div className="col-md-6">
                       <input
                         type="email"
-                        className="form-control custom-form-control"
+                        className={`form-control custom-form-control ${touched.email && errors.email ? 'is-invalid' : ''}`}
                         name="email"
                         placeholder="Enter Your Email Address*"
                         value={formData.email}
                         onChange={handleInputChange}
+                        onBlur={handleBlur}
                         required={true}
                         disabled={status === 'loading'}
                       />
+                      {touched.email && errors.email && (
+                        <div className="invalid-feedback" style={{ display: 'block', color: '#dc3545', fontSize: '0.875rem', marginTop: '0.25rem' }}>
+                          {errors.email}
+                        </div>
+                      )}
                     </div>
                     {/* Company Name */}
                     <div className="col-md-6">
                       <input
                         type="text"
-                        className="form-control custom-form-control"
+                        className={`form-control custom-form-control ${touched.companyName && errors.companyName ? 'is-invalid' : ''}`}
                         name="companyName"
                         placeholder="Enter Your Company Name*"
                         value={formData.companyName}
                         onChange={handleInputChange}
+                        onBlur={handleBlur}
                         required={true}
                         disabled={status === 'loading'}
                       />
+                      {touched.companyName && errors.companyName && (
+                        <div className="invalid-feedback" style={{ display: 'block', color: '#dc3545', fontSize: '0.875rem', marginTop: '0.25rem' }}>
+                          {errors.companyName}
+                        </div>
+                      )}
                     </div>
                     {/* Select Any One */}
                     <div className="col-md-6">
@@ -572,14 +701,24 @@ export default function Contact() {
                     {/* Message */}
                     <div className="col-12">
                       <textarea
-                        className="form-control custom-form-control"
+                        className={`form-control custom-form-control ${touched.message && errors.message ? 'is-invalid' : ''}`}
                         name="message"
                         placeholder="Message"
                         rows={5}
                         value={formData.message}
                         onChange={handleInputChange}
+                        onBlur={handleBlur}
+                        maxLength={5000}
                         disabled={status === 'loading'}
                       />
+                      {touched.message && errors.message && (
+                        <div className="invalid-feedback" style={{ display: 'block', color: '#dc3545', fontSize: '0.875rem', marginTop: '0.25rem' }}>
+                          {errors.message}
+                        </div>
+                      )}
+                      <small className="text-muted">
+                        {formData.message.length}/5000 characters
+                      </small>
                     </div>
                     {/* Submit Button */}
                     <div className="col-12">

@@ -127,7 +127,7 @@ const TestimonialandAward = () => {
                     <div className="row align-items-center">
                         <div className="col-lg-12">
                             {/* Testimonial Slider Start */}
-                            <div className="testimonial-slider1 ">
+                            <div className="testimonial-slider1">
                                 <div className="swiper">
                                     <div className="swiper-wrapper">
                                         {/* Testimonial Slide Start */}
