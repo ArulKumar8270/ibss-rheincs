@@ -280,6 +280,10 @@ h6 {
 	font-family: "Raleway", sans-serif;
 }
 
+.ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4, .ql-editor h5, .ql-editor h6, .ql-editor em {
+    color: black;
+}
+
 figure {
 	margin: 0;
 }
@@ -21553,9 +21557,9 @@ body:has(.search-full.active) {
     object-fit: cover;
 }
 .blog-details-alignment img{
-	height:550px;
+	/* height:550px; */
     width: 100%;
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 .bulbimg .bg-image1 {
     width: 60%;

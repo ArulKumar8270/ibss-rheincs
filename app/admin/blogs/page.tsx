@@ -16,6 +16,7 @@ interface Blog {
   content: string
   excerpt: string
   author: string
+  author_linkedin: string | null
   featured_image: string | null
   category: string
   published: boolean
@@ -36,6 +37,7 @@ export default function AdminBlogsPage() {
     content: '',
     excerpt: '',
     author: '',
+    author_linkedin: '',
     featured_image: '',
     category: 'all',
     published: false,
@@ -129,6 +131,7 @@ export default function AdminBlogsPage() {
     try {
       const submitData = {
         ...formData,
+        author_linkedin: formData.author_linkedin.trim() || null,
         industries: formData.industries.length > 0 ? formData.industries : null,
         created_at: formData.created_at ? new Date(formData.created_at).toISOString() : new Date().toISOString(),
         updated_at: new Date().toISOString()
@@ -154,6 +157,7 @@ export default function AdminBlogsPage() {
         content: '',
         excerpt: '',
         author: '',
+        author_linkedin: '',
         featured_image: '',
         category: 'all',
         published: false,
@@ -710,6 +714,7 @@ export default function AdminBlogsPage() {
       content: blog.content,
       excerpt: blog.excerpt || '',
       author: blog.author || '',
+      author_linkedin: blog.author_linkedin || '',
       featured_image: blog.featured_image || '',
       category: blog.category || 'all',
       published: blog.published,
@@ -925,6 +930,7 @@ export default function AdminBlogsPage() {
               content: '',
               excerpt: '',
               author: '',
+              author_linkedin: '',
               featured_image: '',
               category: 'all',
               published: false,
@@ -1085,6 +1091,19 @@ export default function AdminBlogsPage() {
                 onChange={(e) => setFormData({ ...formData, author: e.target.value })}
                 style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
               />
+            </div>
+            <div style={{ marginBottom: '15px' }}>
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Author LinkedIn Profile Link</label>
+              <input
+                type="url"
+                value={formData.author_linkedin}
+                onChange={(e) => setFormData({ ...formData, author_linkedin: e.target.value })}
+                placeholder="https://www.linkedin.com/in/username"
+                style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
+              />
+              <small style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '5px' }}>
+                Optional: LinkedIn profile URL for the author
+              </small>
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Created Date</label>
