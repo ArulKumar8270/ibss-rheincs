@@ -56,7 +56,7 @@ export default function EnterpriseSolutions() {
                                     <div className="service-item ">
                                         <div className="service-item-body">
                                             <h3>
-{t("Corus HR – Transforming Human Capital Management.")}         
+{t("Corus HR – Transforming Human Capital Management")}         
 </h3>
                                             <ul>
                                                 <li>
@@ -201,7 +201,7 @@ export default function EnterpriseSolutions() {
                                     <div className="service-item ">
                                         <div className="service-item-body">
                                             <h3>
-                                                {t("MeRLIN Sourcing – Driving Strategic Sourcing Excellence.")}
+                                                {t("MeRLIN Sourcing – Driving Strategic Sourcing Excellence")}
 
                                             </h3>
                                             <ul>

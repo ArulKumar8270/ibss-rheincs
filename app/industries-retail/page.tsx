@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function EnterpriseSolutions() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
 <>
@@ -16,20 +18,14 @@ export default function EnterpriseSolutions() {
         <div className="col-lg-5">
           <div className="pe-main-hadding-waber">
             <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
-              Retail
+              {t("Retail")}
             </h2>
             <p>
-              The retail sector is under relentless pressure from fast-changing
-              consumer behaviour, fragmented omnichannel sales, rising
-              operational costs, and legacy systems that hinder agility.
-              Multi-brand, multi-format, and franchise-based retailers must
-              address these challenges by reimagining store operations,
-              omnichannel fulfilment, and customer engagement through connected
-              digital infrastructure.
+              {t("The retail sector is under relentless pressure from fast-changing consumer behaviour, fragmented omnichannel sales, rising operational costs, and legacy systems that hinder agility. Multi-brand, multi-format, and franchise-based retailers must address these challenges by reimagining store operations, omnichannel fulfilment, and customer engagement through connected digital infrastructure.")}
             </p>
             <div className="ser-btn m-0">
               <Link href="/contact-us" className="animated-svg-link">
-                Contact Us
+                {t("Contact Us")}
                 <span className="svg-container ">
                   <span className=" right">
                     <svg
@@ -154,56 +150,49 @@ export default function EnterpriseSolutions() {
             className="main-hadding-1 them-dark-text-color"
             data-cursor="-opaque"
           >
-            Challenges in Retail
+            {t("Challenges in Retail")}
           </h2>
           <div className="d-g24 flex-wrap">
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Volatile, promotion-driven demand and seasonal peaks impacting
-                inventory and fulfilment
+                {t("Volatile, promotion-driven demand and seasonal peaks impacting inventory and fulfilment")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Stock imbalances and fulfilment delays across stores,
-                warehouses, and click-and-collect points
+                {t("Stock imbalances and fulfilment delays across stores, warehouses, and click-and-collect points")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Disconnected systems and siloed data slowing decision-making and
-                operational alignment
+                {t("Disconnected systems and siloed data slowing decision-making and operational alignment")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Limited real-time visibility for store teams to manage
-                performance effectively
+                {t("Limited real-time visibility for store teams to manage performance effectively")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Complex pricing and promotion models eroding margins and
-                complicating profitability tracking
+                {t("Complex pricing and promotion models eroding margins and complicating profitability tracking")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Fragmented customer engagement and loyalty programmes weakening
-                retention and lifetime value
+                {t("Fragmented customer engagement and loyalty programmes weakening retention and lifetime value")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Insights without operational execution, leaving valuable data
-                underutilised
+                {t("Insights without operational execution, leaving valuable data underutilised")}
               </p>
             </div>
           </div>
@@ -219,36 +208,32 @@ export default function EnterpriseSolutions() {
       className="main-hadding-1 them-dark-text-color text-center mb-40"
       data-cursor="-opaque"
     >
-      Why It Matters
+      {t("Why It Matters")}
     </h2>
   <div className="container">
     <div className="pe-matters-content-waber">
       <div className="pe-matters-content">
         <img src="/new/g501.svg" alt="" />
         <p>
-          Poor omnichannel and fulfilment integration leads to lost sales and
-          inconsistent customer experiences
+          {t("Poor omnichannel and fulfilment integration leads to lost sales and inconsistent customer experiences")}
         </p>
       </div>
       <div className="pe-matters-content">
         <img src="/new/ad2.svg" alt="" />
         <p>
-          Inefficient store operations and margin leakage threaten
-          competitiveness in a crowded market
+          {t("Inefficient store operations and margin leakage threaten competitiveness in a crowded market")}
         </p>
       </div>
       <div className="pe-matters-content">
         <img src="/new/ad3.svg" alt="" />
         <p>
-          Delayed responses to market trends weaken brand relevance and customer
-          loyalty
+          {t("Delayed responses to market trends weaken brand relevance and customer loyalty")}
         </p>
       </div>
       <div className="pe-matters-content">
         <img src="/new/ad4.svg" alt="" />
         <p>
-          Disconnected systems hinder the impact of analytics, pricing, and
-          category strategies
+          {t("Disconnected systems hinder the impact of analytics, pricing, and category strategies")}
         </p>
       </div>
     </div>
@@ -257,67 +242,61 @@ export default function EnterpriseSolutions() {
   <section className="py-100  pe-help-waber irp2 ">
     <div className="container">
       <h2 className="main-hadding-1 text-white  mb-40" data-cursor="-opaque">
-        How We Help
+        {t("How We Help")}
       </h2>
       <div className="pe-help-content-waber">
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Deploy modern POS, inventory, and omnichannel retail management
-            systems
+            {t("Deploy modern POS, inventory, and omnichannel retail management systems")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Integrate ERP, POS, WMS, and ecommerce platforms for seamless,
-            real-time operational data{" "}
+            {t("Integrate ERP, POS, WMS, and ecommerce platforms for seamless, real-time operational data")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Implement centralised inventory and order management to balance
-            stock across physical and digital channels
+            {t("Implement centralised inventory and order management to balance stock across physical and digital channels")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Enable advanced analytics for pricing, promotions, and category
-            optimisation{" "}
-          </p>
-        </div>
-        <div className="pe-help-content">
-          <img src="/new/Headset.svg" alt="" />
-          <p>Streamline omnichannel promotions and markdown management</p>
-        </div>
-        <div className="pe-help-content">
-          <img src="/new/Headset.svg" alt="" />
-          <p>
-            Support click-and-collect, ship-from-store, and third-party
-            fulfilment integration
+            {t("Enable advanced analytics for pricing, promotions, and category optimisation")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Deploy connected CRM and loyalty management platforms for consistent
-            customer engagement
+            {t("Streamline omnichannel promotions and markdown management")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Provide executive dashboards and operational MIS tools for
-            performance management
+            {t("Support click-and-collect, ship-from-store, and third-party fulfilment integration")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Deliver offshore-enabled transformation programmes for scalable,
-            cost-effective execution
+            {t("Deploy connected CRM and loyalty management platforms for consistent customer engagement")}
+          </p>
+        </div>
+        <div className="pe-help-content">
+          <img src="/new/Headset.svg" alt="" />
+          <p>
+            {t("Provide executive dashboards and operational MIS tools for performance management")}
+          </p>
+        </div>
+        <div className="pe-help-content">
+          <img src="/new/Headset.svg" alt="" />
+          <p>
+            {t("Deliver offshore-enabled transformation programmes for scalable, cost-effective execution")}
           </p>
         </div>
       </div>
@@ -338,40 +317,38 @@ export default function EnterpriseSolutions() {
     <div className="col-sm-6">
       <div className="retail-benifit-design-one">
         <div>
-          <h4 className="benifit-title"> Tangible Outcomes</h4>
+          <h4 className="benifit-title"> {t("Tangible Outcomes")}</h4>
           <div className="benifit-points-waber">
             <div className="bf-content">
               <img src="/new/lp.svg" alt="" />
               <p>
-                Improved inventory turnover, stock accuracy, and on-shelf
-                availability{" "}
+                {t("Improved inventory turnover, stock accuracy, and on-shelf availability")}
               </p>
             </div>
             <div className="bf-content">
               <img src="/new/lp.svg" alt="" />
               <p>
-                Increased conversion rates and customer retention via consistent
-                omnichannel experiences{" "}
+                {t("Increased conversion rates and customer retention via consistent omnichannel experiences")}
               </p>
             </div>
             <div className="bf-content">
               <img src="/new/lp.svg" alt="" />
               <p>
                 {" "}
-                Dynamic, data-driven pricing and promotions improving margin
-                protection{" "}
+                {t("Dynamic, data-driven pricing and promotions improving margin protection")}
               </p>
             </div>
             <div className="bf-content">
               <img src="/new/lp.svg" alt="" />
-              <p> Faster, data-led operational decision-making </p>
+              <p> 
+                {t("Faster, data-led operational decision-making")}
+              </p>
             </div>
             <div className="bf-content">
               <img src="/new/lp.svg" alt="" />
               <p>
                 {" "}
-                Enhanced customer lifetime value through connected loyalty
-                programmes{" "}
+                {t("Enhanced customer lifetime value through connected loyalty programmes")}
               </p>
             </div>
           </div>
@@ -382,28 +359,25 @@ export default function EnterpriseSolutions() {
     <div className="col-sm-6">
       <div className="retail-benifit-design-one">
         <div>
-          <h4 className="benifit-title">Global Best Practices We Apply</h4>
+          <h4 className="benifit-title"> {t("Global Best Practices We Apply")}</h4>
           <div className="benifit-points-waber">
             <div className="bf-content">
               <img src="/new/lp.svg" alt="" />
               <p>
-                AI-driven demand sensing, digital order orchestration, and
-                omnichannel fulfilment models{" "}
+                {t("AI-driven demand sensing, digital order orchestration, and omnichannel fulfilment models")}
               </p>
             </div>
             <div className="bf-content">
               <img src="/new/lp.svg" alt="" />
               <p>
-                Data-first inventory and order management systems standard among
-                leading omnichannel retailers{" "}
+                {t("Data-first inventory and order management systems standard among leading omnichannel retailers")}
               </p>
             </div>
             <div className="bf-content">
               <img src="/new/lp.svg" alt="" />
               <p>
                 {" "}
-                Connected customer, sales, and operational data ecosystems for
-                real-time agility
+                {t("Connected customer, sales, and operational data ecosystems for real-time agility")}
               </p>
             </div>
           </div>
@@ -414,35 +388,32 @@ export default function EnterpriseSolutions() {
     <div className="col-sm-12">
       <div className="retail-benifit-design-two">
         <div>
-          <h4 className="benifit-title"> Why Choose Us</h4>
+          <h4 className="benifit-title"> {t("Why Choose Us")}</h4>
           <div className="benifit-points-waber">
             <div className="bf-content">
               <img src="/new/lp.svg" alt="" />
               <p>
-                Deep expertise in retail and omnichannel transformation
-                programmes
+                {t("Deep expertise in retail and omnichannel transformation programmes")}
               </p>
             </div>
             <div className="bf-content">
               <img src="/new/lp.svg" alt="" />
               <p>
-                Proven track record modernising multi-format, multi-country
-                retail businesses{" "}
-              </p>
-            </div>
-            <div className="bf-content">
-              <img src="/new/lp.svg" alt="" />
-              <p>
-                {" "}
-                Focus on operational outcomes and measurable business value
+                {t("Proven track record modernising multi-format, multi-country retail businesses")}
               </p>
             </div>
             <div className="bf-content">
               <img src="/new/lp.svg" alt="" />
               <p>
                 {" "}
-                Offshore delivery model ensuring scalable, high-quality,
-                cost-effective programme execution
+                {t("Focus on operational outcomes and measurable business value")}
+              </p>
+            </div>
+            <div className="bf-content">
+              <img src="/new/lp.svg" alt="" />
+              <p>
+                {" "}
+                {t("Offshore delivery model ensuring scalable, high-quality, cost-effective programme execution")}
               </p>
             </div>
           </div>
@@ -463,16 +434,15 @@ export default function EnterpriseSolutions() {
         <div className="firstrow">
           <div className="row">
             <div className="col-sm-8">
-              <h2 data-cursor="-opaque">Modernise Your Retail Operations</h2>
+              <h2 data-cursor="-opaque"> {t("Modernise Your Retail Operations")}</h2>
               <p>
-                Let’s future-proof your retail business with connected, agile
-                infrastructure and consistent, omnichannel customer experiences.
+                {t("Let’s future-proof your retail business with connected, agile infrastructure and consistent, omnichannel customer experiences.")}
               </p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <Link href="/contact-us" className="animated-svg-link">
-                  Contact Us
+                  {t("Contact Us")}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg
