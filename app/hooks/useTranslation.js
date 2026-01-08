@@ -4,21 +4,39 @@ import translations from '../translations.json';
 
 export const useTranslation = () => {
   // Initialize with value from localStorage if available, otherwise default to 'English'
+  // On first visit, ignore localStorage and use default
   const [language, setLanguage] = useState(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('preferredLanguage');
-      if (saved && (saved === 'English' || saved === 'German')) {
-        return saved;
+      // Check if user has visited before
+      const hasVisitedBefore = localStorage.getItem('hasVisitedBefore');
+      if (hasVisitedBefore) {
+        // Not first visit - use saved preference
+        const saved = localStorage.getItem('preferredLanguage');
+        if (saved && (saved === 'English' || saved === 'German')) {
+          return saved;
+        }
       }
+      // First visit or no saved preference - use default
     }
     return 'English';
   });
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('preferredLanguage');
-      if (saved && (saved === 'English' || saved === 'German')) {
-        setLanguage(saved);
+      // Check if this is the first visit to the domain
+      const hasVisitedBefore = localStorage.getItem('hasVisitedBefore');
+      if (!hasVisitedBefore) {
+        // First time visiting - remove preferredLanguage and set flag
+        localStorage.removeItem('preferredLanguage');
+        localStorage.setItem('hasVisitedBefore', 'true');
+        // Reset to default language
+        setLanguage('English');
+      } else {
+        // Not first visit - load saved preference
+        const saved = localStorage.getItem('preferredLanguage');
+        if (saved && (saved === 'English' || saved === 'German')) {
+          setLanguage(saved);
+        }
       }
 
       const handlePreferredLanguageChange = (e) => {

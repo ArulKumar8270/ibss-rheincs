@@ -13,6 +13,7 @@ interface Blog {
   content: string;
   excerpt: string;
   author: string;
+  author_linkedin: string | null;
   featured_image: string | null;
   category: string;
   published: boolean;
@@ -138,6 +139,69 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
       month: 'long',
       day: 'numeric'
     });
+  };
+
+  // Replace &nbsp; with regular spaces in HTML content to allow proper word breaking
+  // Also decode HTML entities and remove <p> tags that wrap iframes
+  const processContent = (html: string): string => {
+    if (!html) return '';
+    let processed = html.replace(/&nbsp;/g, ' ');
+    
+    // First, handle escaped iframe tags inside <p> tags
+    // Match: <p>&lt;iframe ...&gt;&lt;/iframe&gt;</p>
+    // This regex captures the full iframe tag with all attributes
+    processed = processed.replace(
+      /<p[^>]*>\s*&lt;iframe\s+([^&]*?)&gt;([\s\S]*?)&lt;\/iframe&gt;\s*<\/p>/gi,
+      (match, attributes, content) => {
+        // Return the properly decoded iframe tag
+        return `<iframe ${attributes}>${content}</iframe>`;
+      }
+    );
+    
+    // Also handle self-closing iframe tags: <p>&lt;iframe .../&gt;</p>
+    processed = processed.replace(
+      /<p[^>]*>\s*&lt;iframe\s+([^&]*?)\s*\/&gt;\s*<\/p>/gi,
+      (match, attributes) => {
+        return `<iframe ${attributes}></iframe>`;
+      }
+    );
+    
+    // Now decode remaining HTML entities (convert &lt; to < and &gt; to >)
+    // This handles cases where iframe HTML is stored as escaped text
+    processed = processed.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+    processed = processed.replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+    // Handle &amp; carefully - decode it but avoid double-decoding
+    processed = processed.replace(/&amp;(?![a-z#])/gi, '&');
+    
+    // Remove <p> tags that wrap iframes (for already decoded iframes)
+    // Matches: <p>...<iframe>...</iframe>...</p> or <p><iframe>...</iframe></p>
+    processed = processed.replace(
+      /<p[^>]*>([\s\S]*?)<iframe\s+([^>]*>[\s\S]*?<\/iframe>)([\s\S]*?)<\/p>/gi,
+      (match, before, iframeContent, after) => {
+        // If there's only whitespace before and after the iframe, remove the p tag entirely
+        const beforeTrim = before.trim();
+        const afterTrim = after.trim();
+        if (!beforeTrim && !afterTrim) {
+          return `<iframe ${iframeContent}`;
+        }
+        // If there's content before or after, keep it but remove p tag around iframe
+        return (beforeTrim ? `<p>${beforeTrim}</p>` : '') + `<iframe ${iframeContent}` + (afterTrim ? `<p>${afterTrim}</p>` : '');
+      }
+    );
+    
+    // Also handle cases where iframe is directly in p tag with no other content
+    processed = processed.replace(
+      /<p[^>]*>\s*<iframe\s+([^>]*>[\s\S]*?<\/iframe>)\s*<\/p>/gi,
+      '<iframe $1'
+    );
+    
+    // Handle self-closing iframe tags
+    processed = processed.replace(
+      /<p[^>]*>\s*<iframe\s+([^>]*\/>)\s*<\/p>/gi,
+      '<iframe $1'
+    );
+    
+    return processed;
   };
 
   // Get current page URL
@@ -296,7 +360,7 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
               <div className="col-sm-8">
                 <div className="blog-details-waber">
                   <div className="blog-details-alignment">
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '10px', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', gap: '15px', marginBottom: '10px', flexWrap: 'wrap' }}>
                       <h2 className="case-study-main-title" data-cursor="-opaque" style={{ margin: 0 }}>
                         {blog.title}
                       </h2>
@@ -317,7 +381,38 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
                     </div>
                     <div className="study-img-info">
                       <p>{formatDate(blog.created_at)}</p>
-                      <p>{blog.author || 'Admin'}</p>
+                      <p style={{ display: 'flex',  gap: '8px', flexWrap: 'wrap' }}>
+                        {blog.author || 'Admin'}
+                        {blog.author_linkedin && (
+                          <Link
+                            href={blog.author_linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              display: 'inline-flex',
+                             
+                              textDecoration: 'none',
+                              marginLeft: '4px',
+                              marginTop: '-7px',
+                            }}
+                            title="View author's LinkedIn profile"
+                          >
+                            <img 
+                              src="/new/Linked-in.svg" 
+                              alt="LinkedIn" 
+                              style={{ 
+                                width: '18px', 
+                                height: '18px',
+                                verticalAlign: 'middle',
+                                cursor: 'pointer',
+                                transition: 'opacity 0.2s'
+                              }}
+                              onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
+                              onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                            />
+                          </Link>
+                        )}
+                      </p>
                     </div>
                     {blog.featured_image && (
                       <img 
@@ -329,11 +424,14 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
                       />
                     )}
                     <div 
-                      dangerouslySetInnerHTML={{ __html: blog.content }}
+                      dangerouslySetInnerHTML={{ __html: processContent(blog.content) }}
                       style={{
                         lineHeight: '1.8',
                         color: '#333',
-                        fontSize: '16px'
+                        fontSize: '16px',
+                        wordBreak: 'normal',
+                        overflowWrap: 'break-word',
+                        whiteSpace: 'normal'
                       }}
                     />
                     <div className="ser-btn2">

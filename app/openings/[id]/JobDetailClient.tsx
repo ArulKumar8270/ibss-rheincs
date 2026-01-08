@@ -55,6 +55,14 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
         }
     };
 
+    // Replace &nbsp; with regular spaces in text content to allow proper word breaking
+    const processContent = (text: string | null | undefined): string => {
+        if (!text) return '';
+        // Replace &nbsp; with regular spaces
+        // This allows words to break naturally at word boundaries
+        return text.replace(/&nbsp;/g, ' ');
+    };
+
     useEffect(() => {
         // ALWAYS fetch from database - never rely on initialJob
         // This ensures new content created after build is always accessible
@@ -321,7 +329,16 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                         <div className="row">
                             <div className="col-sm-7">
                                 <h4 className='mb-3 text-black'>Purpose of the Role</h4>
-                                <p className='text-black'>{job.description}</p>
+                                <p 
+                                    className='text-black'
+                                    style={{
+                                        wordBreak: 'normal',
+                                        overflowWrap: 'break-word',
+                                        whiteSpace: 'normal'
+                                    }}
+                                >
+                                    {processContent(job.description)}
+                                </p>
                                 <div className="bolg-filter-waber collatpage">
                                     <ul
                                         className="nav nav-tabs filter-controls"
@@ -389,13 +406,25 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                                                                 responsibilities.map((resp, index) => (
                                                                     <div key={index} className="challenge-point-waber">
                                                                         <img src="/images/socilapoint.svg" alt="" />
-                                                                        <p>{resp}</p>
+                                                                        <p style={{
+                                                                            wordBreak: 'normal',
+                                                                            overflowWrap: 'break-word',
+                                                                            whiteSpace: 'normal'
+                                                                        }}>
+                                                                            {processContent(resp)}
+                                                                        </p>
                                                                     </div>
                                                                 ))
                                                             ) : (
                                                                 <div className="challenge-point-waber">
                                                                     <img src="/images/socilapoint.svg" alt="" />
-                                                                    <p>{job.description}</p>
+                                                                    <p style={{
+                                                                        wordBreak: 'normal',
+                                                                        overflowWrap: 'break-word',
+                                                                        whiteSpace: 'normal'
+                                                                    }}>
+                                                                        {processContent(job.description)}
+                                                                    </p>
                                                                 </div>
                                                             )}
                                                         </div>
@@ -418,13 +447,25 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                                                                 qualifications.map((qual, index) => (
                                                                     <div key={index} className="challenge-point-waber">
                                                                         <img src="/images/socilapoint.svg" alt="" />
-                                                                        <p>{qual}</p>
+                                                                        <p style={{
+                                                                            wordBreak: 'normal',
+                                                                            overflowWrap: 'break-word',
+                                                                            whiteSpace: 'normal'
+                                                                        }}>
+                                                                            {processContent(qual)}
+                                                                        </p>
                                                                     </div>
                                                                 ))
                                                             ) : (
                                                                 <div className="challenge-point-waber">
                                                                     <img src="/images/socilapoint.svg" alt="" />
-                                                                    <p>{job.requirements}</p>
+                                                                    <p style={{
+                                                                        wordBreak: 'normal',
+                                                                        overflowWrap: 'break-word',
+                                                                        whiteSpace: 'normal'
+                                                                    }}>
+                                                                        {processContent(job.requirements)}
+                                                                    </p>
                                                                 </div>
                                                             )}
                                                         </div>
@@ -449,7 +490,13 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                                                                     style={{ width: 10 }}
                                                                     alt=""
                                                                 />
-                                                                <p>{job.location}</p>
+                                                                <p style={{
+                                                                    wordBreak: 'normal',
+                                                                    overflowWrap: 'break-word',
+                                                                    whiteSpace: 'normal'
+                                                                }}>
+                                                                    {processContent(job.location)}
+                                                                </p>
                                                             </div>
                                                         </div>
                                                     </div>

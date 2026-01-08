@@ -4324,7 +4324,7 @@ h2.section-title {
     font-size: 40px;
     font-weight: 600;
     line-height: 48px;
-    color: #082326;
+    color: #082326 !important;
     font-family: Raleway, sans-serif;
 }
 
@@ -4333,7 +4333,7 @@ h2.section-title {
     font-family: Raleway;
     line-height: 32px;
     font-weight: 600;
-    color: #082326;
+    color: #082326 !important;
     margin-bottom: 24px;
 }
 
