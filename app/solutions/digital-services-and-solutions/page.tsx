@@ -6780,9 +6780,9 @@ export default function digitalsolution() {
   <div className="our-services1 customer  pd30">
     <div className="container">
       <div className="row section-row">
-        <div className="col-lg-6">
+        <div className="col-lg-12">
           {/* Section Title Start */}
-          <div className="section-title">
+          <div className="section-title digitaltitlesec">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
               Modernise Commerce and Customer Engagement
             </h2>

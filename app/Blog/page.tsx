@@ -954,7 +954,7 @@ export default function Blog() {
                                 {/* Show active filters */}
                                 {(selectedIndustries.length > 0 || searchTerm) && (
                                     <div style={{ marginTop: '20px', padding: '10px', background: '#f5f5f5', borderRadius: '4px' }}>
-                                        <p style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px' }}>Active Filters:</p>
+                                        <p style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px', color:'#000' }}>Active Filters:</p>
                                         {searchTerm && (
                                             <span style={{ 
                                                 display: 'inline-block', 

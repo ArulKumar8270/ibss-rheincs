@@ -193,7 +193,7 @@ export default function Footer() {
                                             <div className="col-sm-6">
                                                 <ul>
                                                 <li>
-                                                        <Link href="/digital-services-and-solutions"><span>Digital Solutions and Services</span></Link>
+                                                        <Link href="/solutions/digital-services-and-solutions/"><span>Digital Solutions and Services</span></Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/digital-solutions">Digital Solutions</Link>
@@ -419,7 +419,7 @@ export default function Footer() {
                                             <div className="col-sm-6 col-6">
                                                 <ul>
                                                     <li>
-                                                        <Link href="/digital-services-and-solutions">Digital Solutions and Services</Link>
+                                                        <Link href="/solutions/digital-services-and-solutions/">Digital Solutions and Services</Link>
                                                     </li>
                                                     <li>
                                                         <Link href="/digital-solutions">Digital Solutions</Link>
@@ -531,10 +531,10 @@ export default function Footer() {
                                 <div className="col-sm-6">
                                     <div className="places rights text-right">
                                         <ul>
-                                            <li>
+                                            {/* <li>
                                                 <Link href="/sitemap">Sitemap</Link>
                                             </li>
-                                            <li>|</li>
+                                            <li>|</li> */}
                                             <li>
                                                 <Link href="/impressum">Impressum</Link>
                                             </li>

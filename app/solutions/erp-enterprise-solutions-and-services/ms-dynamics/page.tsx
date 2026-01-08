@@ -3325,7 +3325,7 @@ export default function EnterpriseSolutions() {
                     </p>
                     <div className="ser-btn">
                       <Link 
-                        href="/digital-services-and-solutions"
+                        href="/solutions/digital-services-and-solutions/"
                         className="animated-svg-link"
                       >
                         {t("Know More")}
@@ -4278,7 +4278,7 @@ export default function EnterpriseSolutions() {
 
                     </p>
                     <div className="ser-btn">
-                      <Link href="#" className="animated-svg-link">
+                      <Link href="/solutions/digital-services-and-solutions/" className="animated-svg-link">
                         {t("Know More")}
                         <span className="svg-container ">
                           <span className=" right">

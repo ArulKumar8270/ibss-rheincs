@@ -1013,7 +1013,8 @@ function SuccessStories() {
                 <div className="container">
                     <p className="lines" />
                 </div>
-                <TestimonialandAward />
+                <br/>
+                {/* <TestimonialandAward /> */}
 
                 <Awards />
                 {/* Footer Start */}

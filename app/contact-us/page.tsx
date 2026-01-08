@@ -150,10 +150,10 @@ export default function Contact() {
                 </div>
                 <div className="contect-call">
                   <img src="/new/contect-call.svg" alt="" />{" "}
-                  <Link href=""> +49 231 292 95619</Link>
+                  <Link href="tel:+49 231 292 95619"> +49 231 292 95619</Link>
                 </div>
                 <div className="contect-call">
-                  <img src="/new/c-mail.svg" alt="" /> <Link href=""> info@rheincs.com</Link>
+                  <img src="/new/c-mail.svg" alt="" /> <Link href="mailto:info@rheincs.com"> info@rheincs.com</Link>
                 </div>
                 <div className="contect-call sos">
                   <li>

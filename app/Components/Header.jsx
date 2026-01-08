@@ -2296,49 +2296,49 @@ export default function Header() {
                                                         cy="10.8"
                                                         r="1.2"
                                                         transform="rotate(90 16.8 10.8)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx="19.1999"
                                                         cy="8.40001"
                                                         r="1.2"
                                                         transform="rotate(90 19.1999 8.40001)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx={12}
                                                         cy="15.6"
                                                         r="1.2"
                                                         transform="rotate(90 12 15.6)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx="9.60005"
                                                         cy="13.2"
                                                         r="1.2"
                                                         transform="rotate(90 9.60005 13.2)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx="7.1999"
                                                         cy="10.8"
                                                         r="1.2"
                                                         transform="rotate(90 7.1999 10.8)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx="4.8"
                                                         cy="8.40001"
                                                         r="1.2"
                                                         transform="rotate(90 4.8 8.40001)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx="14.4001"
                                                         cy="13.2"
                                                         r="1.2"
                                                         transform="rotate(90 14.4001 13.2)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                 </g>
                                                 <defs>
@@ -2346,7 +2346,7 @@ export default function Header() {
                                                         <rect
                                                             width={24}
                                                             height={24}
-                                                            fill="white"
+                                                            fill="#000"
                                                             transform="translate(24 1.04907e-06) rotate(90)"
                                                         />
                                                     </clipPath>
@@ -2431,49 +2431,49 @@ export default function Header() {
                                                         cy="10.8"
                                                         r="1.2"
                                                         transform="rotate(90 16.8 10.8)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx="19.1999"
                                                         cy="8.40001"
                                                         r="1.2"
                                                         transform="rotate(90 19.1999 8.40001)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx={12}
                                                         cy="15.6"
                                                         r="1.2"
                                                         transform="rotate(90 12 15.6)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx="9.60005"
                                                         cy="13.2"
                                                         r="1.2"
                                                         transform="rotate(90 9.60005 13.2)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx="7.1999"
                                                         cy="10.8"
                                                         r="1.2"
                                                         transform="rotate(90 7.1999 10.8)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx="4.8"
                                                         cy="8.40001"
                                                         r="1.2"
                                                         transform="rotate(90 4.8 8.40001)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx="14.4001"
                                                         cy="13.2"
                                                         r="1.2"
                                                         transform="rotate(90 14.4001 13.2)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                 </g>
                                                 <defs>
@@ -2481,7 +2481,7 @@ export default function Header() {
                                                         <rect
                                                             width={24}
                                                             height={24}
-                                                            fill="white"
+                                                            fill="#000"
                                                             transform="translate(24 1.04907e-06) rotate(90)"
                                                         />
                                                     </clipPath>
@@ -2668,49 +2668,49 @@ export default function Header() {
                                                         cy="10.8"
                                                         r="1.2"
                                                         transform="rotate(90 16.8 10.8)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx="19.1999"
                                                         cy="8.40001"
                                                         r="1.2"
                                                         transform="rotate(90 19.1999 8.40001)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx={12}
                                                         cy="15.6"
                                                         r="1.2"
                                                         transform="rotate(90 12 15.6)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx="9.60005"
                                                         cy="13.2"
                                                         r="1.2"
                                                         transform="rotate(90 9.60005 13.2)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx="7.1999"
                                                         cy="10.8"
                                                         r="1.2"
                                                         transform="rotate(90 7.1999 10.8)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx="4.8"
                                                         cy="8.40001"
                                                         r="1.2"
                                                         transform="rotate(90 4.8 8.40001)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                     <circle
                                                         cx="14.4001"
                                                         cy="13.2"
                                                         r="1.2"
                                                         transform="rotate(90 14.4001 13.2)"
-                                                        fill="white"
+                                                        fill="#000"
                                                     />
                                                 </g>
                                                 <defs>
@@ -2718,7 +2718,7 @@ export default function Header() {
                                                         <rect
                                                             width={24}
                                                             height={24}
-                                                            fill="white"
+                                                            fill="#000"
                                                             transform="translate(24 1.04907e-06) rotate(90)"
                                                         />
                                                     </clipPath>
