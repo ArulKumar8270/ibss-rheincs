@@ -2,12 +2,14 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { NavArrowLeft, NavArrowRight } from "../icons";
 import {useTranslation} from "../hooks/useTranslation";
+import Loading from "./Loading";
 
 export default function Header() {
     const pathname = usePathname();
+    const router = useRouter();
     const [activeTab, setActiveTab] = useState(' ');
     const [epicorCollapsed, setEpicorCollapsed] = useState(false);
     const [digitalSolutionsCollapsed, setDigitalSolutionsCollapsed] = useState(false);
@@ -17,12 +19,41 @@ export default function Header() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+    const [isNavigating, setIsNavigating] = useState(false);
     const selectRef = useRef(null);
     const dropdownRef = useRef(null);
     const { t, language: currentLanguage, changeLanguage: setCurrentLanguage } = useTranslation();
 
     // Get the current page name (e.g., 'leadership' from '/leadership')
     const currentPage = pathname.split('/').pop() || 'index';
+
+    // Handle route changes for loading state
+    useEffect(() => {
+        setIsNavigating(false);
+    }, [pathname]);
+
+    // Intercept link clicks to show loading
+    useEffect(() => {
+        const handleLinkClick = (e) => {
+            const target = e.target;
+            const link = target.closest('a');
+            
+            if (link && link.href) {
+                const url = new URL(link.href);
+                const currentUrl = new URL(window.location.href);
+                
+                // Only show loading for internal navigation
+                if (url.origin === currentUrl.origin && url.pathname !== currentUrl.pathname) {
+                    setIsNavigating(true);
+                }
+            }
+        };
+
+        document.addEventListener('click', handleLinkClick);
+        return () => {
+            document.removeEventListener('click', handleLinkClick);
+        };
+    }, []);
 
     // Define lists of pages for each Main Menu (without .php extension for Next.js)
     // Pages under "About Us"
@@ -400,6 +431,7 @@ export default function Header() {
 
     return (
         <>
+            {isNavigating && <Loading message="Loading page..." fullScreen={true} size="large" />}
             <div className="topheader text-right">
                 <div className="container">
                     <div className="row">
@@ -421,9 +453,8 @@ export default function Header() {
                                     </span>
                                     <Link href="mailto:info@rheincs.com"> info@rheincs.com</Link>
                                 </li>
-                                 <li>
+                                 {/* <li>
                                      <div className="custom-select top-icon-gap" style={{ position: 'relative' }} ref={dropdownRef}>
-                                        {/* Visually hidden select for accessibility and form submission */}
                                         <select
                                             ref={selectRef}
                                             name="lang"
@@ -451,7 +482,6 @@ export default function Header() {
                                             <option value="English">English</option>
                                             <option value="German">German</option>
                                         </select>
-                                        {/* Custom visible dropdown trigger */}
                                         <div
                                             className="custom-dropdown-trigger"
                                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -517,7 +547,7 @@ export default function Header() {
                                             </div>
                                         )}
                                     </div>
-                                </li> 
+                                </li>  */}
                                 {/* <li>
                                     <div id="chcp_font_size" className="input-group">
                                         <span className="input-group-btn font-increase-waber">
@@ -557,7 +587,7 @@ export default function Header() {
                                 <div className="collapse navbar-collapse main-menu">
                                     <div className="nav-menu-wrapper">
                                         <ul className="navbar-nav mr-auto" id="menu">
-                                            {/* <li class="nav-item submenu1"><Link class="nav-link" href="index.php">Home</Link> </li> */}
+                                            <li class="nav-item submenu1"><Link class="nav-link" href="/"><i class="fa fa-home"></i></Link> </li>
                                             <li className={`nav-item submenu mega-menu ${isPageInArray(aboutPages) ? 'active' : ''}`}>
                                                 <Link className="nav-link drop-1" href="#">
                                                     <span> {t("About Us")}</span>
