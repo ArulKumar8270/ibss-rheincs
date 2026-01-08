@@ -1,33 +1,28 @@
+"use client";
+
 import React from 'react'
 import CommomLayout from '../Components/CommomLayout'
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 const page = () => {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
            <>
-  {/* Header Start */}
-  {/*?php include "navbar.php" ?*/}
-  {/* Header End */}
   <div className="main-baner-hight retail-baner ">
     <div className="container bg-video-waber-content ">
       <div className="row section-row1 align-items-center builtsec">
         <div className="col-lg-5 col-11">
           <div className="pe-main-hadding-waber">
             <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
-              Vertical Retail
+                {t("Vertical Retail")}
             </h2>
             <p>
-              Vertical retail businesses, brand-led organisations controlling
-              product design, manufacturing, and sales through their own
-              physical, ecommerce, and D2C channels, face intensified market
-              pressures. Accelerating product launches, controlling inventory
-              across multiple channels, and delivering consistent, personalised
-              customer experiences are vital for sustainable growth and
-              competitive positioning.
+                {t("Vertical retail businesses, brand-led organisations controlling product design, manufacturing, and sales through their own physical, ecommerce, and D2C channels, face intensified market pressures. Accelerating product launches, controlling inventory across multiple channels, and delivering consistent, personalised customer experiences are vital for sustainable growth and competitive positioning.")}
             </p>
             <div className="ser-btn m-0">
               <Link href="/contact-us" className="animated-svg-link">
-                Contact Us
+                {t("Contact Us")}
                 <span className="svg-container ">
                   <span className=" right">
                     <svg
@@ -146,67 +141,61 @@ const page = () => {
             className="main-hadding-1 them-dark-text-color"
             data-cursor="-opaque"
           >
-            Challenges in Vertical Retail
+            {t("Challenges in Vertical Retail")}
           </h2>
           <div className="d-g24 flex-wrap">
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Rapidly shifting demand driven by promotions, social media
-                trends, and influencer marketing
-              </p>
-            </div>
-            <div className="challenge-point-waber">
-              <img src="/new/qs-2.svg" alt="" />
-              <p>Complex promotions and markdowns eroding profit margins</p>
-            </div>
-            <div className="challenge-point-waber">
-              <img src="/new/qs-2.svg" alt="" />
-              <p>
-                Inventory and fulfilment imbalances between retail stores, D2C,
-                and marketplaces
+                {t("Rapidly shifting demand driven by promotions, social media trends, and influencer marketing")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Fragmented customer engagement and loyalty programmes weakening
-                brand affinity
+                {t("Complex promotions and markdowns eroding profit margins")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Disconnected brand, retail, and D2C systems slowing operational
-                decision-making
+                {t("Inventory and fulfilment imbalances between retail stores, D2C, and marketplaces")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Slow product launches and weak design-to-shelf agility limiting
-                market responsiveness
+                {t("Fragmented customer engagement and loyalty programmes weakening brand affinity")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Limited real-time sales and inventory visibility for brand
-                managers and planners
+                {t("Disconnected brand, retail, and D2C systems slowing operational decision-making")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Insights without operational execution leaving valuable product
-                and customer data unused
+                {t("Slow product launches and weak design-to-shelf agility limiting market responsiveness")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Static category, merchandising, and pricing decisions
-                disconnected from live sales trends
+                {t("Limited real-time sales and inventory visibility for brand managers and planners")}
+              </p>
+            </div>
+            <div className="challenge-point-waber">
+              <img src="/new/qs-2.svg" alt="" />
+              <p>
+                {t("Insights without operational execution leaving valuable product and customer data unused")}
+              </p>
+            </div>
+            <div className="challenge-point-waber">
+              <img src="/new/qs-2.svg" alt="" />
+              <p>
+                {t("Static category, merchandising, and pricing decisions disconnected from live sales trends")}
               </p>
             </div>
           </div>
@@ -223,42 +212,37 @@ const page = () => {
         className="main-hadding-1 them-dark-text-color text-center mb-40"
         data-cursor="-opaque"
       >
-        Why It Matters
+        {t("Why It Matters")}
       </h2>
       <div className="pe-matters-content-waber">
         <div className="pe-matters-content">
           <img src="/new/mat-1.svg" alt="" />
           <p>
-            Poor omnichannel and D2C integration risks lost sales and customer
-            dissatisfaction
+            {t("Poor omnichannel and D2C integration risks lost sales and customer dissatisfaction")}
           </p>
         </div>
         <div className="pe-matters-content">
           <img src="/new/met-2.svg" alt="" />
           <p>
-            Operational inefficiencies directly compress already-slim retail
-            margins
+            {t("Operational inefficiencies directly compress already-slim retail margins")}
           </p>
         </div>
         <div className="pe-matters-content">
           <img src="/new/met-3.svg" alt="" />
           <p>
-            Delayed response to market trends weakens brand relevance and
-            retention
+            {t("Delayed response to market trends weakens brand relevance and retention")}
           </p>
         </div>
         <div className="pe-matters-content">
           <img src="/new/met-4.svg" alt="" />
           <p>
-            Disconnected systems hinder analytics-driven pricing, promotions,
-            and merchandising strategies
+            {t("Disconnected systems hinder analytics-driven pricing, promotions, and merchandising strategies")}
           </p>
         </div>
         <div className="pe-matters-content">
           <img src="/new/met-5.svg" alt="" />
           <p>
-            Missed opportunities to monetise customer data through
-            personalisation and loyalty
+            {t("Missed opportunities to monetise customer data through personalisation and loyalty")}
           </p>
         </div>
       </div>
@@ -270,7 +254,7 @@ const page = () => {
         <div className="section-title ">
           <div className="hero-video-content1 wow fadeInUp mt-4">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              How We Help
+              {t("How We Help")}
             </h2>
           </div>
         </div>
@@ -280,63 +264,57 @@ const page = () => {
           <div className="help-waber">
             <img src="/new/Headset.svg" alt="" />
             <p>
-              Implement modern retail, D2C, and brand management systems for
-              operational efficiency
+              {t("Implement modern retail, D2C, and brand management systems for operational efficiency")}
             </p>
           </div>
           <div className="help-waber">
             <img src="/new/Headset.svg" alt="" />
             <p>
-              Integrate ERP, POS, ecommerce, WMS, PLM, and omnichannel
-              fulfilment for seamless real-time visibility
+              {t("Integrate ERP, POS, ecommerce, WMS, PLM, and omnichannel fulfilment for seamless real-time visibility")}
             </p>
           </div>
           <div className="help-waber">
             <img src="/new/Headset.svg" alt="" />
             <p>
-              Deploy centralised order and inventory management to synchronise
-              stock across retail, D2C, and marketplaces
+              {t("Deploy centralised order and inventory management to synchronise stock across retail, D2C, and marketplaces")}
             </p>
           </div>
           <div className="help-waber">
             <img src="/new/Headset.svg" alt="" />
             <p>
-              Enable advanced analytics for demand forecasting, pricing,
-              promotions, and product lifecycle management
+              {t("Enable advanced analytics for demand forecasting, pricing, promotions, and product lifecycle management")}
             </p>
           </div>
           <div className="help-waber">
             <img src="/new/Headset.svg" alt="" />
-            <p>Deliver offshore-enabled, scalable transformation programmes</p>
+            <p>
+              {t("Deliver offshore-enabled, scalable transformation programmes")}
+            </p>
           </div>
         </div>
         <div className="col-lg-3">
           <div className="help-waber">
             <img src="/new/Headset.svg" alt="" />
             <p>
-              Optimise D2C fulfilment, real-time order tracking, and marketplace
-              operations
+              {t("Optimise D2C fulfilment, real-time order tracking, and marketplace operations")}
             </p>
           </div>
           <div className="help-waber">
             <img src="/new/Headset.svg" alt="" />
             <p>
-              Accelerate product launches via integrated digital PLM and
-              omnichannel launch management{" "}
+              {t("Accelerate product launches via integrated digital PLM and omnichannel launch management")}
             </p>
           </div>
           <div className="help-waber">
             <img src="/new/Headset.svg" alt="" />
             <p>
-              Personalise customer engagement through connected CRM, loyalty,
-              and marketing automation platforms
+              {t("Personalise customer engagement through connected CRM, loyalty, and marketing automation platforms")}
             </p>
           </div>
           <div className="help-waber">
             <img src="/new/Headset.svg" alt="" />
             <p>
-              Build executive dashboards and retail brand performance management
-              tools
+              {t("Build executive dashboards and retail brand performance management tools")}
             </p>
           </div>
         </div>
@@ -353,47 +331,45 @@ const page = () => {
           <div className="benifet-content-waber">
             <div className="benifet-content benifet-content-2 vr-b-h1">
               <div className="benifithght">
-                <h4 className="benifit-title"> Tangible Outcomes</h4>
+                <h4 className="benifit-title"> {t("Tangible Outcomes")}</h4>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Improved stock accuracy, inventory turnover, and
-                    sell-through across all channels
+                    {t("Improved stock accuracy, inventory turnover, and sell-through across all channels")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
-                  <p>Faster time-to-market for new products and collections</p>
-                </div>
-                <div className="bf-content">
-                  <img src="/new/lp.svg" alt="" />
                   <p>
-                    {" "}
-                    Greater pricing and promotion agility protecting margins
+                    {t("Faster time-to-market for new products and collections")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
                     {" "}
-                    Increased conversion and customer retention through
-                    connected omnichannel experiences{" "}
+                    {t("Greater pricing and promotion agility protecting margins")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
                     {" "}
-                    Enhanced decision-making through unified product, inventory,
-                    and customer insights{" "}
+                    {t("Increased conversion and customer retention through connected omnichannel experiences")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
                     {" "}
-                    Stronger customer lifetime value through personalised,
-                    data-driven engagement{" "}
+                    {t("Enhanced decision-making through unified product, inventory, and customer insights")}
+                  </p>
+                </div>
+                <div className="bf-content">
+                  <img src="/new/lp.svg" alt="" />
+                  <p>
+                    {" "}
+                    {t("Stronger customer lifetime value through personalised, data-driven engagement")}
                   </p>
                 </div>
               </div>
@@ -408,28 +384,25 @@ const page = () => {
             <div className="benifet-content benifet-content-2 vr-b-h1">
               <div className="benifithght">
                 <h4 className="benifit-title">
-                  Global Best Practices We Apply
+                  {t("Global Best Practices We Apply")}
                 </h4>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    AI-driven demand sensing, digital PLM, and omnichannel order
-                    orchestration{" "}
+                    {t("AI-driven demand sensing, digital PLM, and omnichannel order orchestration")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Data-led product lifecycle management for rapid
-                    design-to-shelf agility{" "}
+                    {t("Data-led product lifecycle management for rapid design-to-shelf agility")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
                     {" "}
-                    Connected customer, product, and operational data ecosystems
-                    for brand-led decision-making
+                    {t("Connected customer, product, and operational data ecosystems for brand-led decision-making")}
                   </p>
                 </div>
               </div>
@@ -443,35 +416,33 @@ const page = () => {
           <div className="benifet-content-waber">
             <div className="benifet-content pm-flex">
               <div>
-                <h4 className="benifit-title">Why Choose Us</h4>
+                <h4 className="benifit-title">
+                  {t("Why Choose Us")}
+                </h4>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Extensive experience modernising vertically integrated,
-                    brand-led retail operations
+                    {t("Extensive experience modernising vertically integrated, brand-led retail operations")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Proven capability delivering omnichannel, D2C, and brand
-                    management transformations{" "}
-                  </p>
-                </div>
-                <div className="bf-content">
-                  <img src="/new/lp.svg" alt="" />
-                  <p>
-                    {" "}
-                    Commercial focus on operational outcomes and measurable
-                    business value
+                    {t("Proven capability delivering omnichannel, D2C, and brand management transformations")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
                     {" "}
-                    Offshore delivery model for scalable, high-quality,
-                    cost-effective programme execution
+                    {t("Commercial focus on operational outcomes and measurable business value")}
+                  </p>
+                </div>
+                <div className="bf-content">
+                  <img src="/new/lp.svg" alt="" />
+                  <p>
+                    {" "}
+                    {t("Offshore delivery model for scalable, high-quality, cost-effective programme execution")}
                   </p>
                 </div>
               </div>
@@ -492,19 +463,17 @@ const page = () => {
             <div className="col-sm-8">
               <h2 data-cursor="-opaque">
                 {" "}
-                Accelerate Your Brand-Led Retail Growth
+                {t("Accelerate Your Brand-Led Retail Growth")}
               </h2>
               <p>
                 {" "}
-                Discover how we help brand-led businesses modernise operations,
-                streamline D2C and retail channels, and deliver consistent,
-                omnichannel customer experiences.
+                {t("Discover how we help brand-led businesses modernise operations, streamline D2C and retail channels, and deliver consistent, omnichannel customer experiences.")}
               </p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <Link href="/contact-us" className="animated-svg-link">
-                  Contact Us
+                  {t("Contact Us")}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg
