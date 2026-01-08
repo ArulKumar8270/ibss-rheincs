@@ -276,7 +276,7 @@ h6 {
 	margin: 0;
 	font-weight: 700;
 	line-height: 1.2em;
-	color: var(--primary-color);
+	/* color: var(--primary-color); */
 	font-family: "Raleway", sans-serif;
 }
 .blog-details-alignment h1, .blog-details-alignment h2, .blog-details-alignment h3, .blog-details-alignment h4, .blog-details-alignment h5, .blog-details-alignment h6, .blog-details-alignment em {
@@ -6427,7 +6427,7 @@ body:has(.offcanvas) {
 .top-in li a {
 	color: #fff !important;
 	font-family: "helvetica-neue-lt-pro", sans-serif;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 400;
 }
 
@@ -6437,7 +6437,7 @@ body:has(.offcanvas) {
 	border: none;
 	outline: none;
 	font-family: "helvetica-neue-lt-pro", sans-serif;
-	font-size: 13px;
+	font-size: 14px !important;
 }
 
 .top-icon-gap {
@@ -6506,7 +6506,7 @@ body:has(.offcanvas) {
 
 	padding: 8px 30px 8px 10px;
 	/* space on right for arrow */
-	font-size: 16px;
+	font-size: 14px;
 	border: 1px solid #ccc;
 	border-radius: 8px;
 	background-color: #fff;
@@ -19185,7 +19185,7 @@ body.no-scroll {
 .our-testimonial .testidescription p {
 	margin-top: 0px !important;
 	margin-bottom: 0px !important;
-	padding: 32px 0px !important;
+	padding: 16px 0px 16px !important;
 	line-height: 24px;
 	font-weight: 400;
 	font-family: "helvetica-neue-lt-pro";
@@ -19741,7 +19741,7 @@ body.popup-open .main-header {
 	}
 
 	.navbar-expand-lg .navbar-collapse {
-		gap: 60px !important;
+		gap: 40px !important;
 	}
 
 	.darp-1 {
@@ -22100,4 +22100,13 @@ color:#000 !important;
 
 .cookies a{
 	color: #fff !important;
+}
+
+.corusmainpage h6 {
+    font-size: 17px !important;
+}
+
+
+.germanaiml .flip-card {
+    height: 380px !important;
 }

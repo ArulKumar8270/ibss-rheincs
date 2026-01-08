@@ -375,7 +375,6 @@ const page = () => {
           </div>
         </footer>
       </>
-
     </CommomLayout>
   )
 }
