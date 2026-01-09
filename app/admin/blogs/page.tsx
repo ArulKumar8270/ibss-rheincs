@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { createClient } from '@/lib/supabase-browser'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
@@ -672,8 +672,8 @@ export default function AdminBlogsPage() {
     return () => clearTimeout(timer)
   }, [showForm])
 
-  // Quill editor modules configuration
-  const quillModules = {
+  // Quill editor modules configuration - memoized to prevent recreation
+  const quillModules = useMemo(() => ({
     toolbar: {
       container: [
         [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
@@ -693,16 +693,22 @@ export default function AdminBlogsPage() {
     clipboard: {
       matchVisual: false
     }
-  }
+  }), [])
 
-  const quillFormats = [
+  const quillFormats = useMemo(() => [
     'header', 'font', 'size',
     'bold', 'italic', 'underline', 'strike', 'blockquote',
     'list', 'indent',
     'color', 'background',
     'align',
     'link', 'image', 'video'
-  ]
+  ], [])
+
+  // Memoize onChange handler to prevent recreation
+  // Use functional update to prevent stale closures and ensure smooth typing
+  const handleContentChange = useCallback((value: string) => {
+    setFormData(prev => ({ ...prev, content: value }))
+  }, [])
 
   const handleEdit = (blog: Blog) => {
     setEditingBlog(blog)
@@ -722,6 +728,15 @@ export default function AdminBlogsPage() {
       industries: blog.industries || []
     })
     setShowForm(true)
+    // Scroll to form container smoothly
+    setTimeout(() => {
+      const formContainer = document.getElementById('blog-form-container')
+      if (formContainer) {
+        formContainer.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+    }, 100)
   }
 
   const filteredBlogs = blogs.filter(blog =>
@@ -960,13 +975,15 @@ export default function AdminBlogsPage() {
       </div>
 
       {showForm && (
-        <div style={{
-          background: '#fff',
-          borderRadius: '12px',
-          padding: '25px',
-          marginBottom: '30px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-        }}>
+        <div 
+          id="blog-form-container"
+          style={{
+            background: '#fff',
+            borderRadius: '12px',
+            padding: '25px',
+            marginBottom: '30px',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+          }}>
           <h2 style={{ marginBottom: '20px', color: '#333', fontWeight: 'bold' }}>{editingBlog ? 'Edit Blog' : 'Create New Blog'}</h2>
           <form onSubmit={handleSubmit}>
             <div style={{ marginBottom: '15px' }}>
@@ -1014,9 +1031,10 @@ export default function AdminBlogsPage() {
               )}
               <div style={{ background: '#fff', borderRadius: '6px' }}>
                 <ReactQuill
+                  key={editingBlog?.id || 'new-blog'}
                   theme="snow"
                   value={formData.content}
-                  onChange={(value: string) => setFormData({ ...formData, content: value })}
+                  onChange={handleContentChange}
                   modules={quillModules}
                   formats={quillFormats}
                   placeholder="Write your blog content here..."
@@ -1028,6 +1046,10 @@ export default function AdminBlogsPage() {
                   }
                   .ql-editor {
                     min-height: 400px;
+                    overflow-anchor: none !important;
+                  }
+                  .ql-editor:focus {
+                    outline: none;
                   }
                   .ql-editor img {
                     cursor: pointer;

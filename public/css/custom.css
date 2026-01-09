@@ -22118,7 +22118,7 @@ color:#000 !important;
 
 
 .ql-container.ql-snow {
-	height: 65vh;
+	/* height: 65vh; */
     overflow: auto;
 }
 
