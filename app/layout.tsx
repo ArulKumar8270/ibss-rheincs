@@ -198,7 +198,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         
         <LoadingWrapper>
-          {children}
+        {children}
         </LoadingWrapper>
         <SwiperInit />
         <OwlCarouselInit />
