@@ -201,7 +201,66 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
       '<iframe $1'
     );
     
+    // Insert Contact Us button after the first paragraph
+    processed = insertContactButtonAfterFirstParagraph(processed);
+    
     return processed;
+  };
+
+  // Function to insert Contact Us button after the first paragraph
+  const insertContactButtonAfterFirstParagraph = (html: string): string => {
+    if (!html) return '';
+    
+    // Check if button already exists right after a paragraph tag (indicating it's already been inserted)
+    // This pattern matches: </p> followed by <div class="ser-btn2" with contact-us link
+    if (/<\/p>\s*<div[^>]*class="ser-btn2"[^>]*>[\s\S]*?href="\/contact-us"/i.test(html)) {
+      return html;
+    }
+    
+    // Find the first <p> tag that contains actual text content (not empty, not just whitespace)
+    // This regex matches opening <p> tag with optional attributes, followed by content, then closing </p>
+    const firstParagraphRegex = /<p[^>]*>([\s\S]*?)<\/p>/i;
+    const match = html.match(firstParagraphRegex);
+    
+    if (match && match[0]) {
+      const firstParagraph = match[0];
+      const paragraphContent = match[1];
+      
+      // Check if paragraph has actual content (not just whitespace or empty)
+      if (paragraphContent.trim().length > 0) {
+        // Create the Contact Us button HTML with SVG arrow
+        const contactButton = `
+          <div class="ser-btn2" style="margin: 30px 0;">
+            <a href="/contact-us" class="animated-svg-link1 btn-style-3">
+              Contact Us
+              <span class="svg-container">
+                <span class="left">
+                  <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle className="dot" opacity="0.5" cx="16.0004" cy="4.79995" r="1.6" fill="#535353" />
+                    <circle className="dot" opacity="0.5" cx="12.7992" cy="1.6" r="1.6" fill="#535353" />
+                    <circle className="dot" opacity="0.5" cx="22.4008" cy="11.2" r="1.6" fill="#535353" />
+                    <circle className="dot" opacity="0.5" cx="1.6" cy="11.2" r="1.6" fill="#535353" />
+                    <circle className="dot" opacity="0.5" cx="6.40078" cy="11.2" r="1.6" fill="#535353" />
+                    <circle className="dot" opacity="0.5" cx="11.1996" cy="11.2" r="1.6" fill="#535353" />
+                    <circle className="dot" opacity="0.5" cx="16.0004" cy="11.2" r="1.6" fill="#535353" />
+                    <circle className="dot" opacity="0.5" cx="19.1996" cy="14.4" r="1.6" fill="#535353" />
+                    <circle className="dot" opacity="0.5" cx="16.0004" cy="17.6" r="1.6" fill="#535353" />
+                    <circle className="dot" opacity="0.5" cx="12.7992" cy="20.8" r="1.6" fill="#535353" />
+                    <circle className="dot" opacity="0.5" cx="19.1996" cy="8.00002" r="1.6" fill="#535353" />
+                  </svg>
+                </span>
+              </span>
+            </a>
+          </div>
+        `;
+        
+        // Replace the first paragraph with itself followed by the button
+        return html.replace(firstParagraph, firstParagraph + contactButton);
+      }
+    }
+    
+    // If no paragraph found or paragraph is empty, return original HTML
+    return html;
   };
 
   // Get current page URL
@@ -414,7 +473,7 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
                         )}
                       </p>
                     </div>
-                    {blog.featured_image && (
+                    {/* {blog.featured_image && (
                       <img 
                         src={blog.featured_image} 
                         alt={blog.title}
@@ -422,7 +481,7 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
                           (e.target as HTMLImageElement).src = "/new/dd-one.jpg";
                         }}
                       />
-                    )}
+                    )} */}
                     <div 
                       dangerouslySetInnerHTML={{ __html: processContent(blog.content) }}
                       style={{
