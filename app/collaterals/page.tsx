@@ -24,6 +24,11 @@ export default function Collaterals() {
     const [isCountryCodeFocused, setIsCountryCodeFocused] = useState(false);
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [touched, setTouched] = useState<Record<string, boolean>>({});
+    const [searchTerm, setSearchTerm] = useState({
+        whitePapers: '',
+        brochures: '',
+        factsheets: ''
+    });
 
     const validateField = (name: string, value: string): string => {
         switch (name) {
@@ -116,6 +121,18 @@ export default function Collaterals() {
             ...prev,
             [name]: error
         }));
+    };
+
+    const handleSearchChange = (tab: 'whitePapers' | 'brochures' | 'factsheets', value: string) => {
+        setSearchTerm(prev => ({
+            ...prev,
+            [tab]: value
+        }));
+    };
+
+    const filterItems = (itemTitle: string, searchValue: string): boolean => {
+        if (!searchValue.trim()) return true;
+        return itemTitle.toLowerCase().includes(searchValue.toLowerCase());
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -346,6 +363,8 @@ export default function Collaterals() {
                                                                     type="text"
                                                                     placeholder="Search"
                                                                     className="search-input"
+                                                                    value={searchTerm.whitePapers}
+                                                                    onChange={(e) => handleSearchChange('whitePapers', e.target.value)}
                                                                 />
                                                                 <button className="filter-btn1" id="openFilterBtn">
                                                                     <svg
@@ -452,6 +471,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems('Choosing the right ERP solution for your business', searchTerm.whitePapers) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -477,6 +497,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems('Future with Manufacturing Technology', searchTerm.whitePapers) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -499,6 +520,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="1 2"
+                                                                    style={{ display: filterItems('Finding the Perfect Candidate', searchTerm.whitePapers) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -521,6 +543,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="3  4"
+                                                                    style={{ display: filterItems('The Need for Speed and Accurate Data', searchTerm.whitePapers) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -540,7 +563,7 @@ export default function Collaterals() {
                                                                     </div>
                                                                 </div>
                                                                 {/* Item 5: Enterprise Solutions (Takes full width if only 5 items in col-sm-3) */}
-                                                                <div className="col-sm-4 mb-4 item" data-category={2}>
+                                                                <div className="col-sm-4 mb-4 item" data-category={2} style={{ display: filterItems("Top 6 Technologies Small And Midsize Manufacturers Can't Afford to Ignore", searchTerm.whitePapers) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
                                                                             <img src="/images/white5.png" alt="" />
@@ -562,7 +585,7 @@ export default function Collaterals() {
                                                                     </div>
                                                                 </div>
                                                                 {/* Item 3: Digital Solutions */}
-                                                                <div className="col-sm-4 mb-4 item" data-category={3}>
+                                                                <div className="col-sm-4 mb-4 item" data-category={3} style={{ display: filterItems('ERP Guide 2023', searchTerm.whitePapers) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
                                                                             <img src="/images/white6.jpg" alt="" />
@@ -580,7 +603,7 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div className="col-sm-4 mb-4 item" data-category={3}>
+                                                                <div className="col-sm-4 mb-4 item" data-category={3} style={{ display: filterItems('ERP and Digital transfornation Outlook for 2023', searchTerm.whitePapers) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
                                                                             <img src="/images/white7.jpg" alt="" />
@@ -603,6 +626,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="solution popular"
+                                                                    style={{ display: filterItems('Four Quick Ways to Unlock Hidden Manufacturing Capacity', searchTerm.whitePapers) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -627,6 +651,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems('The Future of ERP : Predictions and Trends for 2023', searchTerm.whitePapers) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -648,7 +673,7 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div className="col-sm-4 mb-4 item" data-category={3}>
+                                                                <div className="col-sm-4 mb-4 item" data-category={3} style={{ display: filterItems('Choosing the Right ERP Solution to Support a Global Business', searchTerm.whitePapers) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
                                                                             <img src="/images/white10.png" alt="" />
@@ -672,6 +697,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems('Best Practices for ERP Implementation Success', searchTerm.whitePapers) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -695,6 +721,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems("Time to Rethink Accounting Software and switch to an ERP?", searchTerm.whitePapers) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -719,6 +746,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems('Transforming HR Made Easy', searchTerm.whitePapers) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -740,6 +768,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems("Buyer's guide to choosing the right ERP", searchTerm.whitePapers) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -761,6 +790,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems('Choosing your ERP in 2024', searchTerm.whitePapers) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -782,6 +812,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems('ERP-in-2025-Your-Essential-Guide-to-the-Future', searchTerm.whitePapers) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -807,9 +838,14 @@ export default function Collaterals() {
                                                     </div>
                                                 </div>
                                                 <div className="col-sm-3 systemview">
-                                                    <form action="" method="post">
+                                                    <form action="" method="post" onSubmit={(e) => e.preventDefault()}>
                                                         <div className="blog-serch">
-                                                            <input type="text" placeholder="Search" />
+                                                            <input 
+                                                                type="text" 
+                                                                placeholder="Search" 
+                                                                value={searchTerm.whitePapers}
+                                                                onChange={(e) => handleSearchChange('whitePapers', e.target.value)}
+                                                            />
                                                             <button type="submit">
                                                                 <img src="/new/ser-blog.svg" alt="" />
                                                             </button>
@@ -893,6 +929,8 @@ export default function Collaterals() {
                                                                     type="text"
                                                                     placeholder="Search"
                                                                     className="search-input"
+                                                                    value={searchTerm.brochures}
+                                                                    onChange={(e) => handleSearchChange('brochures', e.target.value)}
                                                                 />
                                                                 <button className="filter-btn1" id="openFilterBtn">
                                                                     <svg
@@ -1097,6 +1135,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems('Corporate Brochure', searchTerm.brochures) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -1119,6 +1158,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems('Epicor ERP Brochure', searchTerm.brochures) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -1141,6 +1181,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="1 2"
+                                                                    style={{ display: filterItems('Epicor for Oil and Gas Brochure', searchTerm.brochures) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -1163,6 +1204,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="3  4"
+                                                                    style={{ display: filterItems('Epicor Copy Company Tool Overview', searchTerm.brochures) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -1182,7 +1224,7 @@ export default function Collaterals() {
                                                                     </div>
                                                                 </div>
                                                                 {/* Item 5: Enterprise Solutions (Takes full width if only 5 items in col-sm-3) */}
-                                                                <div className="col-sm-4 mb-4 item" data-category={2}>
+                                                                <div className="col-sm-4 mb-4 item" data-category={2} style={{ display: filterItems('Epicor Payroll MEA Overview', searchTerm.brochures) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
                                                                             <img src="/images/bro5.png" alt="" />
@@ -1201,7 +1243,7 @@ export default function Collaterals() {
                                                                     </div>
                                                                 </div>
                                                                 {/* Item 3: Digital Solutions */}
-                                                                <div className="col-sm-4 mb-4 item" data-category={3}>
+                                                                <div className="col-sm-4 mb-4 item" data-category={3} style={{ display: filterItems('Epicor HCM Overview', searchTerm.brochures) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
                                                                             <img src="/images/bro6.png" alt="" />
@@ -1219,7 +1261,7 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div className="col-sm-4 mb-4 item" data-category={3}>
+                                                                <div className="col-sm-4 mb-4 item" data-category={3} style={{ display: filterItems('Epicor for Manufacturing Brochure', searchTerm.brochures) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
                                                                             <img src="/images/bro7.png" alt="" />
@@ -1240,6 +1282,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="solution popular"
+                                                                    style={{ display: filterItems('Epicor for EPC and Construction Brochure', searchTerm.brochures) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -1261,6 +1304,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems('Epicor for Distribution Brochure', searchTerm.brochures) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -1279,7 +1323,7 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div className="col-sm-4 mb-4 item" data-category={3}>
+                                                                <div className="col-sm-4 mb-4 item" data-category={3} style={{ display: filterItems('Epicor for Automotive Brochure', searchTerm.brochures) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
                                                                             <img src="/images/bro10.png" alt="" />
@@ -1300,6 +1344,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems("RheinBrücke's Power Plant Analytics Brochure", searchTerm.brochures) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -1323,6 +1368,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems('Epicor iScala for Hospitality Overview', searchTerm.brochures) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -1366,9 +1412,14 @@ export default function Collaterals() {
                                                     </div>
                                                 </div>
                                                 <div className="col-sm-3 systemview">
-                                                    <form action="" method="post">
+                                                    <form action="" method="post" onSubmit={(e) => e.preventDefault()}>
                                                         <div className="blog-serch">
-                                                            <input type="text" placeholder="Search" />
+                                                            <input 
+                                                                type="text" 
+                                                                placeholder="Search" 
+                                                                value={searchTerm.brochures}
+                                                                onChange={(e) => handleSearchChange('brochures', e.target.value)}
+                                                            />
                                                             <button type="submit">
                                                                 <img src="/new/ser-blog.svg" alt="" />
                                                             </button>
@@ -1550,6 +1601,8 @@ export default function Collaterals() {
                                                                     type="text"
                                                                     placeholder="Search"
                                                                     className="search-input"
+                                                                    value={searchTerm.factsheets}
+                                                                    onChange={(e) => handleSearchChange('factsheets', e.target.value)}
                                                                 />
                                                                 <button className="filter-btn1" id="openFilterBtn">
                                                                     <svg
@@ -1655,6 +1708,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems('Choosing the right ERP Vendor', searchTerm.factsheets) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -1677,6 +1731,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="product popular"
+                                                                    style={{ display: filterItems('ROI Analysis Factsheet', searchTerm.factsheets) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -1699,6 +1754,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="1 2"
+                                                                    style={{ display: filterItems('Oilfield services Factsheet', searchTerm.factsheets) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -1721,6 +1777,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="3  4"
+                                                                    style={{ display: filterItems('3 Reasons why ERP software is a must for Financial Management', searchTerm.factsheets) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
@@ -1743,7 +1800,7 @@ export default function Collaterals() {
                                                                     </div>
                                                                 </div>
                                                                 {/* Item 5: Enterprise Solutions (Takes full width if only 5 items in col-sm-3) */}
-                                                                <div className="col-sm-4 mb-4 item" data-category={2}>
+                                                                <div className="col-sm-4 mb-4 item" data-category={2} style={{ display: filterItems('20 Questions to ask before you choose your cloud ERP', searchTerm.factsheets) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
                                                                             <img src="/images/fact5.jpg" alt="" />
@@ -1765,7 +1822,7 @@ export default function Collaterals() {
                                                                     </div>
                                                                 </div>
                                                                 {/* Item 3: Digital Solutions */}
-                                                                <div className="col-sm-4 mb-4 item" data-category={3}>
+                                                                <div className="col-sm-4 mb-4 item" data-category={3} style={{ display: filterItems('Warning Signs of A Growing business', searchTerm.factsheets) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image wow fadeInUp">
                                                                         <figure>
                                                                             <img src="/images/fact6.png" alt="" />
@@ -1788,9 +1845,14 @@ export default function Collaterals() {
                                                     </div>
                                                 </div>
                                                 <div className="col-sm-3 systemview">
-                                                    <form action="" method="post">
+                                                    <form action="" method="post" onSubmit={(e) => e.preventDefault()}>
                                                         <div className="blog-serch">
-                                                            <input type="text" placeholder="Search blogs" />
+                                                            <input 
+                                                                type="text" 
+                                                                placeholder="Search blogs" 
+                                                                value={searchTerm.factsheets}
+                                                                onChange={(e) => handleSearchChange('factsheets', e.target.value)}
+                                                            />
                                                             <button type="submit">
                                                                 <img src="/new/ser-blog.svg" alt="" />
                                                             </button>
