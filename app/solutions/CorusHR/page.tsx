@@ -1248,7 +1248,7 @@ export default function Corushr() {
                                         height={700}
                                         width="100%"
                                     >
-                                        <source src="/videos/benefits.mp4" type="video/mp4" />
+                                        <source src="/videos/benefits.mov" type="video/mp4" />
                                     </video>
                                 </div>
                             </div>

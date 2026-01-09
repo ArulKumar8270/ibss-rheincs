@@ -3251,7 +3251,7 @@ h2.section-title {
     top: 0px;
     width: 100%;
     background: #082326;
-    background: linear-gradient(83deg, rgba(8, 35, 38, 1) 42%, rgba(255, 255, 255, 0) 50%);
+    background: linear-gradient(90deg, rgba(8, 35, 38, 1) 45%, rgba(255, 255, 255, 0) 51%);
     z-index: -1;
     height: 100%;
 }
@@ -3262,7 +3262,7 @@ h2.section-title {
     width: 60%;
     right: 0px;
     /*height: 100%;*/
-    top: 0px;
+    bottom: -30%;
 
 }
 

@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function AlMl() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
             <>
@@ -16,20 +18,14 @@ export default function AlMl() {
                             <div className="col-lg-5">
                                 <div className="pe-main-hadding-waber">
                                     <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
-                                        Discrete Manufacturing
+                                        {t("Discrete Manufacturing")}
                                     </h2>
                                     <p>
-                                        Discrete manufacturers operate in highly competitive markets where
-                                        precision, operational efficiency, and supply chain agility
-                                        directly impact profitability and customer loyalty. Characterised
-                                        by assembly-based, unit-specific production models, discrete
-                                        manufacturers must manage complex Bills of Materials (BOMs),
-                                        frequent product variations, and dynamic customer demands while
-                                        controlling costs and lead times.
+                                        {t("Discrete manufacturers operate in highly competitive markets where precision, operational efficiency, and supply chain agility directly impact profitability and customer loyalty. Characterised by assembly-based, unit-specific production models, discrete manufacturers must manage complex Bills of Materials (BOMs), frequent product variations, and dynamic customer demands while controlling costs and lead times.")}
                                     </p>
                                     <div className="ser-btn m-0">
                                         <Link href="/contact-us" className="animated-svg-link">
-                                            Contact Us
+                                            {t("Contact Us")}
                                             <span className="svg-container ">
                                                 <span className=" right">
                                                     <svg
@@ -148,56 +144,49 @@ export default function AlMl() {
                                     className="main-hadding-1 them-dark-text-color"
                                     data-cursor="-opaque"
                                 >
-                                    Challenges in Discrete Manufacturing
+                                    {t("Challenges in Discrete Manufacturing")}
                                 </h2>
                                 <div className="d-g24 flex-wrap">
                                     <div className="challenge-point-waber">
                                         <img src="/new/qs-2.svg" alt="" />
                                         <p>
-                                            Complex multi-level BOM and routing management increasing
-                                            operational complexity
+                                            {t("Complex multi-level BOM and routing management increasing operational complexity")}
                                         </p>
                                     </div>
                                     <div className="challenge-point-waber">
                                         <img src="/new/qs-2.svg" alt="" />
                                         <p>
-                                            Slow responsiveness to engineering changes, customer
-                                            customisation, and urgent orders
+                                            {t("Slow responsiveness to engineering changes, customer customisation, and urgent orders")}
                                         </p>
                                     </div>
                                     <div className="challenge-point-waber">
                                         <img src="/new/qs-2.svg" alt="" />
                                         <p>
-                                            Disconnected production planning, procurement, and inventory
-                                            systems causing inefficiencies and delays
+                                            {t("Disconnected production planning, procurement, and inventory systems causing inefficiencies and delays")}
                                         </p>
                                     </div>
                                     <div className="challenge-point-waber">
                                         <img src="/new/qs-2.svg" alt="" />
                                         <p>
-                                            Inconsistent product quality and traceability across production
-                                            lines and suppliers
+                                            {t("Inconsistent product quality and traceability across production lines and suppliers")}
                                         </p>
                                     </div>
                                     <div className="challenge-point-waber">
                                         <img src="/new/qs-2.svg" alt="" />
                                         <p>
-                                            Limited real-time visibility into shop-floor performance,
-                                            resource utilisation, and production bottlenecks
+                                            {t("Limited real-time visibility into shop-floor performance, resource utilisation, and production bottlenecks")}
                                         </p>
                                     </div>
                                     <div className="challenge-point-waber">
                                         <img src="/new/qs-2.svg" alt="" />
                                         <p>
-                                            Manual, reactive issue management impacting delivery performance
-                                            and operational resilience
+                                            {t("Manual, reactive issue management impacting delivery performance and operational resilience")}
                                         </p>
                                     </div>
                                     <div className="challenge-point-waber">
                                         <img src="/new/qs-2.svg" alt="" />
                                         <p>
-                                            High mix, low-volume orders increasing scheduling complexity and
-                                            cost-to-serve
+                                            {t("High mix, low-volume orders increasing scheduling complexity and cost-to-serve")}
                                         </p>
                                     </div>
                                 </div>
@@ -214,43 +203,38 @@ export default function AlMl() {
                             className="main-hadding-1 them-dark-text-color text-center mb-40"
                             data-cursor="-opaque"
                         >
-                            Why It Matters
+                            {t("Why It Matters")}
                         </h2>
                         <div className="pe-matters-content-waber">
                             <div className="pe-matters-content">
                                 <img src="/new/mat-1.svg" alt="" />
                                 <p>
-                                    Inefficient operational control drives excess inventory, missed
-                                    delivery deadlines, and cost overruns
+                                    {t("Inefficient operational control drives excess inventory, missed delivery deadlines, and cost overruns")}
                                 </p>
                             </div>
                             <div className="pe-matters-content">
                                 <img src="/new/met-2.svg" alt="" />
                                 <p>
-                                    Poor scheduling flexibility restricts the ability to respond to
-                                    market fluctuations or urgent demand
+                                    {t("Poor scheduling flexibility restricts the ability to respond to market fluctuations or urgent demand")}
                                 </p>
                             </div>
                             <div className="pe-matters-content">
                                 <img src="/new/met-3.svg" alt="" />
                                 <p>
-                                    Disconnected data systems weaken profitability analysis, resource
-                                    planning, and production decision-making
+                                    {t("Disconnected data systems weaken profitability analysis, resource planning, and production decision-making")}
                                 </p>
                             </div>
                             <div className="pe-matters-content">
                                 <img src="/new/met-4.svg" alt="" />
                                 <p>
-                                    Quality lapses or traceability failures risk product recalls,
-                                    customer penalties, and reputational damage
+                                    {t("Quality lapses or traceability failures risk product recalls, customer penalties, and reputational damage")}
                                 </p>
                             </div>
                             <div className="pe-matters-content">
                                 <div className="matters-content-waber">
                                     <img src="/new/met-5.svg" alt="" />
                                     <p>
-                                        Lack of operational agility undermines competitiveness in highly
-                                        customised, fast-changing markets
+                                        {t("Lack of operational agility undermines competitiveness in highly customised, fast-changing markets")}
                                     </p>
                                 </div>
                             </div>
@@ -270,49 +254,43 @@ export default function AlMl() {
                 <section className="py-100  pe-help-waber ">
                     <div className="container">
                         <h2 className="main-hadding-1 text-white  mb-40" data-cursor="-opaque">
-                            How We Help
+                                    {t("How We Help")}
                         </h2>
                         <div className="pe-help-content-waber">
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    Deploy integrated production planning, scheduling, and shop-floor
-                                    control systems for real-time coordination
+                                    {t("Deploy integrated production planning, scheduling, and shop-floor control systems for real-time coordination")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    Automate quality management, traceability, and compliance reporting
-                                    across production and supplier networks
+                                    {t("Automate quality management, traceability, and compliance reporting across production and supplier networks")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    Implement advanced BOM management frameworks supporting product
-                                    variants, engineering changes, and order-specific configurations
+                                    {t("Implement advanced BOM management frameworks supporting product variants, engineering changes, and order-specific configurations")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    Integrate inventory management, procurement, and production
-                                    scheduling for seamless operational control
+                                    {t("Integrate inventory management, procurement, and production scheduling for seamless operational control")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    Enable real-time production monitoring dashboards and digital
-                                    performance management tools
+                                    {t("Enable real-time production monitoring dashboards and digital performance management tools")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    Deliver scalable, offshore-supported operational modernisation
-                                    programmes optimised for multi-site, multi-country operations
+                                    {t("Deliver scalable, offshore-supported operational modernisation programmes optimised for multi-site, multi-country operations")}
                                 </p>
                             </div>
                         </div>
@@ -328,47 +306,41 @@ export default function AlMl() {
                                 <div className="benifet-content-waber">
                                     <div className="benifet-content benifet-content-2   dm-b-h">
                                         <div>
-                                            <h4 className="benifit-title">Tangible Outcomes</h4>
+                                            <h4 className="benifit-title">{t("Tangible Outcomes")}</h4>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Faster production cycles and improved on-time delivery rates
-                                                    through optimised scheduling and operational control
+                                                    {t("Faster production cycles and improved on-time delivery rates through optimised scheduling and operational control")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Reduced operational costs and working capital requirements
-                                                    via better inventory, procurement, and production alignment
+                                                    {t("Reduced operational costs and working capital requirements via better inventory, procurement, and production alignment")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Enhanced product quality and traceability through integrated
-                                                    quality management and reporting frameworks
+                                                    {t("Enhanced product quality and traceability through integrated quality management and reporting frameworks")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Greater operational agility and responsiveness to urgent
-                                                    demand, engineering changes, and supply chain disruptions
+                                                    {t("Greater operational agility and responsiveness to urgent demand, engineering changes, and supply chain disruptions")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Improved resource utilisation and downtime reduction through
-                                                    real-time shop-floor performance insights
+                                                    {t("Improved resource utilisation and downtime reduction through real-time shop-floor performance insights")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Lower operational overhead and accelerated transformation
-                                                    delivery via scalable, offshore-supported models
+                                                    {t("Lower operational overhead and accelerated transformation delivery via scalable, offshore-supported models")}
                                                 </p>
                                             </div>
                                         </div>
@@ -380,34 +352,29 @@ export default function AlMl() {
                                 <div className="benifet-content-waber">
                                     <div className="benifet-content benifet-content-2 dm-b-h">
                                         <div>
-                                            <h4 className="benifit-title">Why Choose Us</h4>
+                                            <h4 className="benifit-title">{t("Why Choose Us")}</h4>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Deep expertise in discrete manufacturing operational
-                                                    transformation across industrial, automotive, machinery, and
-                                                    electronics sectors
+                                                    {t("Deep expertise in discrete manufacturing operational transformation across industrial, automotive, machinery, and electronics sectors")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Proven capability delivering integrated production, quality,
-                                                    and supply chain modernisation programmes
+                                                    {t("Proven capability delivering integrated production, quality, and supply chain modernisation programmes")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Commercially focused — committed to profitability
-                                                    protection, operational agility, and delivery performance
+                                                    {t("Commercially focused — committed to profitability protection, operational agility, and delivery performance")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Offshore-enabled delivery capability ensuring scalable,
-                                                    high-quality, cost-effective project execution
+                                                    {t("Offshore-enabled delivery capability ensuring scalable, high-quality, cost-effective project execution")}
                                                 </p>
                                             </div>
                                         </div>
@@ -429,17 +396,16 @@ export default function AlMl() {
                                 <div className="row">
                                     <div className="col-sm-8">
                                         <h2 data-cursor="-opaque">
-                                            Ready to optimise your discrete manufacturing operations?
+                                            {t("Ready to optimise your discrete manufacturing operations?")}
                                         </h2>
                                         <p>
-                                            Contact us today to discover how we can help improve production
-                                            performance, quality, and operational resilience.
+                                            {t("Contact us today to discover how we can help improve production performance, quality, and operational resilience.")}
                                         </p>
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
                                             <Link href="/contact-us" className="animated-svg-link">
-                                                Contact Us
+                                                {t("Contact Us")}
                                                 <span className="svg-container ">
                                                     <span className=" right">
                                                         <svg

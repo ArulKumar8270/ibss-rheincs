@@ -1151,7 +1151,7 @@ export default function digitalsolution() {
   </div>
   {/* Our Testimonial Section End */}
   {/* Hero Section Start*/}
-  <div className="aboutretail retail-baner1 retail-baner-11 approachh systemview pd60">
+  <div className="aboutretail retail-baner1 retail-baner-11 approachh1 turndatadigital systemview pd60">
     <div className="container">
       <div className="row section-row1 align-items-center builtsec">
         <div className="col-sm-6">

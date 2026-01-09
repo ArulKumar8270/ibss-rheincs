@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function AlMl() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
             <>
@@ -16,20 +18,14 @@ export default function AlMl() {
                             <div className="col-lg-5">
                                 <div className="pe-main-hadding-waber">
                                     <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
-                                        Cable Manufacturing
+                                        {t("Cable Manufacturing")}
                                     </h2>
                                     <p>
-                                        The cable manufacturing industry faces persistent challenges, from
-                                        rising raw material costs and complex, multi-level production
-                                        processes to stringent quality mandates and growing demands for
-                                        customisation. Manufacturers must navigate operational
-                                        inefficiencies, disconnected systems, and increasing pressure to
-                                        reduce lead times while maintaining product quality and
-                                        profitability.
+                                        {t("The cable manufacturing industry faces persistent challenges, from rising raw material costs and complex, multi-level production processes to stringent quality mandates and growing demands for customisation. Manufacturers must navigate operational inefficiencies, disconnected systems, and increasing pressure to reduce lead times while maintaining product quality and profitability.")}
                                     </p>
                                     <div className="ser-btn m-0">
                                         <Link href="/contact-us" className="animated-svg-link">
-                                            Contact Us
+                                            {t("Contact Us")}
                                             <span className="svg-container ">
                                                 <span className=" right">
                                                     <svg
@@ -154,56 +150,49 @@ export default function AlMl() {
                                     className="main-hadding-1 them-dark-text-color"
                                     data-cursor="-opaque"
                                 >
-                                    Challenges in Cable Manufacturing
+                                    {t("Challenges in Cable Manufacturing")}
                                 </h2>
                                 <div className="d-g24 flex-wrap">
                                     <div className="challenge-point-waber">
                                         <img src="/new/qs-2.svg" alt="" />
                                         <p>
-                                            Complex, multi-stage production processes impacting efficiency
-                                            and on-time delivery
+                                            {t("Complex, multi-stage production processes impacting efficiency and on-time delivery")}
                                         </p>
                                     </div>
                                     <div className="challenge-point-waber">
                                         <img src="/new/qs-2.svg" alt="" />
                                         <p>
-                                            Manual reporting processes slowing financial closure and
-                                            operational decision-making
+                                            {t("Manual reporting processes slowing financial closure and operational decision-making")}
                                         </p>
                                     </div>
                                     <div className="challenge-point-waber">
                                         <img src="/new/qs-2.svg" alt="" />
                                         <p>
-                                            Rising material costs and fluctuating demand affecting inventory
-                                            and cash flow management
+                                            {t("Rising material costs and fluctuating demand affecting inventory and cash flow management")}
                                         </p>
                                     </div>
                                     <div className="challenge-point-waber">
                                         <img src="/new/qs-2.svg" alt="" />
                                         <p>
-                                            Difficulty in forecasting demand and planning capacity
-                                            effectively
+                                            {t("Difficulty in forecasting demand and planning capacity effectively")}
                                         </p>
                                     </div>
                                     <div className="challenge-point-waber">
                                         <img src="/new/qs-2.svg" alt="" />
                                         <p>
-                                            Disconnected legacy systems limiting real-time operational
-                                            visibility
+                                            {t("Disconnected legacy systems limiting real-time operational visibility")}
                                         </p>
                                     </div>
                                     <div className="challenge-point-waber">
                                         <img src="/new/qs-2.svg" alt="" />
                                         <p>
-                                            Limited data integration hindering collaboration between
-                                            departments and external partners
+                                            {t("Limited data integration hindering collaboration between departments and external partners")}
                                         </p>
                                     </div>
                                     <div className="challenge-point-waber">
                                         <img src="/new/qs-2.svg" alt="" />
                                         <p>
-                                            Traceability gaps and compliance risks across production and
-                                            supply chain
+                                            {t("Traceability gaps and compliance risks across production and supply chain")}
                                         </p>
                                     </div>
                                 </div>
@@ -220,35 +209,31 @@ export default function AlMl() {
                         className="main-hadding-1 them-dark-text-color text-center mb-40"
                         data-cursor="-opaque"
                     >
-                        Why It Matters
+                        {t("Why It Matters")}
                     </h2>
                     <div className="pe-matters-content-waber">
                         <div className="pe-matters-content">
                             <img src="/new/g501.svg" alt="" />
                             <p>
-                                Operational inefficiencies and poor system integration lead to higher
-                                production costs and delayed deliveries
+                                {t("Operational inefficiencies and poor system integration lead to higher production costs and delayed deliveries")}
                             </p>
                         </div>
                         <div className="pe-matters-content">
                             <img src="/new/ad2.svg" alt="" />
                             <p>
-                                Weak inventory and batch traceability increases quality risks and
-                                regulatory non-compliance
+                                {t("Weak inventory and batch traceability increases quality risks and regulatory non-compliance")}
                             </p>
                         </div>
                         <div className="pe-matters-content">
                             <img src="/new/ad3.svg" alt="" />
                             <p>
-                                Manual, disconnected reporting delays decision-making and impairs
-                                profitability control
+                                {t("Manual, disconnected reporting delays decision-making and impairs profitability control")}
                             </p>
                         </div>
                         <div className="pe-matters-content">
                             <img src="/new/ad4.svg" alt="" />
                             <p>
-                                Ineffective demand forecasting impacts cash flow, capacity planning,
-                                and customer satisfaction
+                                {t("Ineffective demand forecasting impacts cash flow, capacity planning, and customer satisfaction")}
                             </p>
                         </div>
                     </div>
@@ -257,68 +242,61 @@ export default function AlMl() {
                 <section className="py-100  pe-help-waber cable-help ">
                     <div className="container">
                         <h2 className="main-hadding-1 text-white  mb-40" data-cursor="-opaque">
-                            How We Help
+                            {t("How We Help")}
                         </h2>
                         <div className="pe-help-content-waber">
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    Deploy modern ERP solutions tailored for cable manufacturing
-                                    operations
+                                    {t("Deploy modern ERP solutions tailored for cable manufacturing operations")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    Automate forecasting, cash flow management, and month-end closure
-                                    processes{" "}
+                                    {t("Automate forecasting, cash flow management, and month-end closure processes")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    Integrate production, inventory, quality, and finance functions into
-                                    a single, connected platform
+                                    {t("Integrate production, inventory, quality, and finance functions into a single, connected platform")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    Simplify third-party managed procurement and project operations
-                                    within the ERP system{" "}
+                                    {t("Simplify third-party managed procurement and project operations within the ERP system")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    Automate multi-level job orders, sub-assemblies, and material issues
-                                    for streamlined production
+                                    {t("Automate multi-level job orders, sub-assemblies, and material issues for streamlined production")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    Migrate legacy data seamlessly using structured data migration tools
-                                    and templates
+                                    {t("Migrate legacy data seamlessly using structured data migration tools and templates")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    Enable barcode-driven batch tracking for end-to-end traceability
+                                    {t("Enable barcode-driven batch tracking for end-to-end traceability")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    Deliver offshore-enabled, cost-effective transformation programmes
+                                    {t("Deliver offshore-enabled, cost-effective transformation programmes")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    Provide centralised data access and real-time business insights
-                                    through interactive dashboards
+                                    {t("Provide centralised data access and real-time business insights through interactive dashboards")}
                                 </p>
                             </div>
                         </div>
@@ -340,43 +318,38 @@ export default function AlMl() {
                                 <div className="benifet-content-waber">
                                     <div className="benifet-content benifet-content-1">
                                         <div>
-                                            <h4 className="benifit-title"> Tangible Outcomes</h4>
+                                            <h4 className="benifit-title"> {t("Tangible Outcomes")}</h4>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Improved production efficiency, inventory accuracy, and
-                                                    on-time delivery rates
+                                                    {t("Improved production efficiency, inventory accuracy, and on-time delivery rates")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Faster, data-led operational decision-making and financial
-                                                    reporting{" "}
-                                                </p>
-                                            </div>
-                                            <div className="bf-content">
-                                                <img src="/new/lp.svg" alt="" />
-                                                <p>
-                                                    {" "}
-                                                    Enhanced traceability and regulatory compliance through
-                                                    batch tracking{" "}
+                                                    {t("Faster, data-led operational decision-making and financial reporting")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
                                                     {" "}
-                                                    Increased profitability via dynamic forecasting and margin
-                                                    control{" "}
+                                                    {t("Enhanced traceability and regulatory compliance through batch tracking")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
                                                     {" "}
-                                                    Stronger collaboration across production, procurement,
-                                                    finance, and sales functions
+                                                    {t("Increased profitability via dynamic forecasting and margin control")}
+                                                </p>
+                                            </div>
+                                            <div className="bf-content">
+                                                <img src="/new/lp.svg" alt="" />
+                                                <p>
+                                                    {" "}
+                                                    {t("Stronger collaboration across production, procurement, finance, and sales functions")}
                                                 </p>
                                             </div>
                                         </div>
@@ -389,35 +362,31 @@ export default function AlMl() {
                                     <div className="benifet-content benifet-content-1">
                                         <div>
                                             <h4 className="benifit-title">
-                                                Global Best Practices We Apply
+                                                {t("Global Best Practices We Apply")}
                                             </h4>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Automated job scheduling and production planning integrated
-                                                    with real-time shop floor data
+                                                    {t("Automated job scheduling and production planning integrated with real-time shop floor data")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    End-to-end traceability using barcode-driven batch
-                                                    management{" "}
+                                                    {t("End-to-end traceability using barcode-driven batch management")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
                                                     {" "}
-                                                    Connected data ecosystems enabling operational agility and
-                                                    faster decision cycles
+                                                    {t("Connected data ecosystems enabling operational agility and faster decision cycles")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Industry-proven inventory, order, and cost control processes
-                                                    tailored for cable manufacturers
+                                                    {t("Industry-proven inventory, order, and cost control processes tailored for cable manufacturers")}
                                                 </p>
                                             </div>
                                         </div>
@@ -429,34 +398,33 @@ export default function AlMl() {
                                 <div className="benifet-content-waber">
                                     <div className="benifet-content  pm-flex">
                                         <div>
-                                            <h4 className="benifit-title">Why Choose Us</h4>
+                                            <h4 className="benifit-title">
+                                                {t("Why Choose Us")}
+                                            </h4>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Deep domain expertise in cable manufacturing ERP
-                                                    implementations
+                                                    {t("Deep domain expertise in cable manufacturing ERP implementations")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    Proven track record of modernising production and
-                                                    operational systems for leading manufacturers{" "}
-                                                </p>
-                                            </div>
-                                            <div className="bf-content">
-                                                <img src="/new/lp.svg" alt="" />
-                                                <p>
-                                                    {" "}
-                                                    Focus on tangible business outcomes and operational value
+                                                    {t("Proven track record of modernising production and operational systems for leading manufacturers")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
                                                     {" "}
-                                                    Offshore delivery model for scalable, efficient,
-                                                    cost-effective programme execution
+                                                    {t("Focus on tangible business outcomes and operational value")}
+                                                </p>
+                                            </div>
+                                            <div className="bf-content">
+                                                <img src="/new/lp.svg" alt="" />
+                                                <p>
+                                                    {" "}
+                                                    {t("Offshore delivery model for scalable, efficient, cost-effective programme execution")}
                                                 </p>
                                             </div>
                                         </div>
@@ -476,19 +444,17 @@ export default function AlMl() {
                                 <div className="row">
                                     <div className="col-sm-8">
                                         <h2 data-cursor="-opaque">
-                                            Modernise Your Cable Manufacturing Operations
+                                            {t("Modernise Your Cable Manufacturing Operations")}
                                         </h2>
                                         <p>
                                             {" "}
-                                            Let us future-proof your cable manufacturing business with
-                                            connected, agile infrastructure, automated production workflows,
-                                            and real-time operational insights.
+                                            {t("Let us future-proof your cable manufacturing business with connected, agile infrastructure, automated production workflows, and real-time operational insights.")}
                                         </p>
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
                                             <Link href="/contact-us" className="animated-svg-link">
-                                                Contact Us
+                                                {t("Contact Us")}
                                                 <span className="svg-container ">
                                                     <span className=" right">
                                                         <svg
