@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import CommomLayout from "../Components/CommomLayout";
+import { useTranslation } from "../hooks/useTranslation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase-browser";
 
@@ -27,6 +28,8 @@ interface Industry {
 }
 
 export default function Blog() {
+  const { t, language } = useTranslation();
+  
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [industries, setIndustries] = useState<Industry[]>([]);
   const [loading, setLoading] = useState(true);

@@ -834,7 +834,7 @@ header.main-header .header-sticky.active {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	gap: 80px;
+	gap: 60px;
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
 	display: inline-flex;
@@ -6396,8 +6396,10 @@ body:has(.offcanvas) {
 .top-in li {
 	list-style: none;
 	/* display: inline-block; */
-	text-transform: lowercase;
-	padding: 0px 0px;
+	/* text-transform: lowercase; */
+	/* padding: 0px 0px; */
+	font-size: 14px;
+	color:#fff;
 }
 
 .topheader {
@@ -17836,7 +17838,12 @@ header.boxshadow {
 .approachh::before {
 	background-image: url(../images/approach.jpg);
 }
-
+.turndatadigital::before{
+	background-image: url(../images/turndata.jpg) !important;
+}
+.activateservice::before{
+	background-image: url(../images/activate.jpg) !important;
+}
 .erpbenefits::before {
 	background-image: url(../images/excbenefit.webp);
 	background-attachment: fixed;
@@ -19758,7 +19765,7 @@ body.popup-open .main-header {
 
 	.main-menu .nav-menu-wrapper>ul {
 
-		gap: 60px !important;
+		gap:40px !important;
 
 	}
 

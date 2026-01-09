@@ -1,7 +1,10 @@
+"use client";
 import React from 'react'
 import CommomLayout from '../Components/CommomLayout'
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 const page = () => {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
          <>
@@ -14,21 +17,14 @@ const page = () => {
         <div className="col-lg-5">
           <div className="pe-main-hadding-waber">
             <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
-              Distribution &amp; Supply Chain
+              {t("Distribution & Supply Chain")}
             </h2>
             <p>
-              Distribution businesses operate at the frontline of supply chain
-              complexity. Balancing supply reliability, service level
-              commitments, and operational costs in increasingly volatile
-              markets requires agility, visibility, and intelligent
-              decision-making. Fragmented systems, unpredictable demand, and
-              rising logistics costs put further pressure on margins, making
-              operational efficiency and digital integration essential for
-              survival.
+              {t("Distribution businesses operate at the frontline of supply chain complexity. Balancing supply reliability, service level commitments, and operational costs in increasingly volatile markets requires agility, visibility, and intelligent decision-making. Fragmented systems, unpredictable demand, and rising logistics costs put further pressure on margins, making operational efficiency and digital integration essential for survival.")}
             </p>
             <div className="ser-btn m-0">
               <Link href="/contact-us" className="animated-svg-link">
-                Contact Us
+                {t("Contact Us")}
                 <span className="svg-container ">
                   <span className=" right">
                     <svg
@@ -147,56 +143,49 @@ const page = () => {
             className="main-hadding-1 them-dark-text-color"
             data-cursor="-opaque"
           >
-            Challenges in Distribution &amp; Supply Chain
+            {t("Challenges in Distribution & Supply Chain")}
           </h2>
           <div className="d-g24 flex-wrap">
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Unpredictable demand patterns and supply disruptions affecting
-                inventory and delivery performance
+                {t("Unpredictable demand patterns and supply disruptions affecting inventory and delivery performance")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Manual, reactive inventory planning and replenishment processes
-                leading to overstocking or stockouts
+                {t("Manual, reactive inventory planning and replenishment processes leading to overstocking or stockouts")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Stock imbalances and fulfilment delays impacting customer
-                service and increasing working capital lock-up
+                {t("Stock imbalances and fulfilment delays impacting customer service and increasing working capital lock-up")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Inefficient partner and customer collaboration workflows causing
-                delays and service issues
+                {t("Inefficient partner and customer collaboration workflows causing delays and service issues")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Fragmented systems and siloed data across warehousing,
-                transport, order management, and ERP platforms
+                {t("Fragmented systems and siloed data across warehousing, transport, order management, and ERP platforms")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Rising logistics and transport costs squeezing already-thin
-                margins
+                {t("Rising logistics and transport costs squeezing already-thin margins")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Limited real-time visibility into stock, order status, delivery
-                schedules, and supplier performance
+                {t("Limited real-time visibility into stock, order status, delivery schedules, and supplier performance")}
               </p>
             </div>
           </div>
@@ -212,36 +201,32 @@ const page = () => {
       className="main-hadding-1 them-dark-text-color text-center mb-40"
       data-cursor="-opaque"
     >
-      Why It Matters
+      {t("Why It Matters")}
     </h2>
     <div className="container">
     <div className="pe-matters-content-waber">
       <div className="pe-matters-content">
         <img src="/new/g501.svg" alt="" />
         <p>
-          Poor inventory and order visibility leads to missed service level
-          agreements (SLAs), penalties, and lost business
+          {t("Poor inventory and order visibility leads to missed service level agreements (SLAs), penalties, and lost business")}
         </p>
       </div>
       <div className="pe-matters-content">
         <img src="/new/ad2.svg" alt="" />
         <p>
-          Inefficient operations increase carrying costs, working capital
-          exposure, and operational waste
+          {t("Inefficient operations increase carrying costs, working capital exposure, and operational waste")}
         </p>
       </div>
       <div className="pe-matters-content">
         <img src="/new/ad3.svg" alt="" />
         <p>
-          Slow response to disruptions weakens customer trust, competitiveness,
-          and profitability
+          {t("Slow response to disruptions weakens customer trust, competitiveness, and profitability")}
         </p>
       </div>
       <div className="pe-matters-content">
         <img src="/new/ad4.svg" alt="" />
         <p>
-          Disconnected systems limit forecast accuracy, fulfilment agility, and
-          operational control
+          {t("Disconnected systems limit forecast accuracy, fulfilment agility, and operational control")}
         </p>
       </div>
     </div>
@@ -250,49 +235,43 @@ const page = () => {
   <section className="py-100  pe-help-waber sup-pre ">
     <div className="container">
       <h2 className="main-hadding-1 text-white  mb-40" data-cursor="-opaque">
-        How We Help
+        {t("How We Help")}
       </h2>
       <div className="pe-help-content-waber">
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Optimise inventory management using predictive analytics, demand
-            forecasting, and automated replenishment
+            {t("Optimise inventory management using predictive analytics, demand forecasting, and automated replenishment")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Deploy real-time stock, order, and delivery tracking solutions to
-            improve fulfilment performance and SLA adherence
+            {t("Deploy real-time stock, order, and delivery tracking solutions to improve fulfilment performance and SLA adherence")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Integrate ERP, warehouse, transport, and order management systems
-            for seamless, real-time operational visibility
+            {t("Integrate ERP, warehouse, transport, and order management systems for seamless, real-time operational visibility")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Enable automated workflows for order management, dispatch, and
-            logistics coordination{" "}
+            {t("Enable automated workflows for order management, dispatch, and logistics coordination")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Implement centralised inventory and order tracking dashboards for
-            improved control and customer communication
+            {t("Implement centralised inventory and order tracking dashboards for improved control and customer communication")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Improve supplier, partner, and customer collaboration through shared
-            data access and alerts
+            {t("Improve supplier, partner, and customer collaboration through shared data access and alerts")}
           </p>
         </div>
       </div>
@@ -308,43 +287,36 @@ const page = () => {
           <div className="benifet-content-waber">
             <div className="benifet-content benifet-content-2 sc-b-h1">
               <div className="benifithght">
-                <h4 className="benifit-title"> Tangible Outcomes</h4>
+                <h4 className="benifit-title"> {t("Tangible Outcomes")}</h4>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Improved inventory turnover and stock accuracy across
-                    warehouses and delivery points
+                    {t("Improved inventory turnover and stock accuracy across warehouses and delivery points")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Enhanced service levels and customer satisfaction through
-                    real-time fulfilment visibility
+                    {t("Enhanced service levels and customer satisfaction through real-time fulfilment visibility")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {" "}
-                    Reduced carrying costs, inventory wastage, and stockouts via
-                    data-led demand planning
+                    {t("Reduced carrying costs, inventory wastage, and stockouts via data-led demand planning")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {" "}
-                    Greater operational agility and resilience in managing
-                    supply disruptions and volatile demand{" "}
+                    {t("Greater operational agility and resilience in managing supply disruptions and volatile demand")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
                     {" "}
-                    Higher productivity and reduced operational costs through
-                    automation and process optimisation{" "}
+                    {t("Higher productivity and reduced operational costs through automation and process optimisation")}
                   </p>
                 </div>
               </div>
@@ -358,35 +330,31 @@ const page = () => {
           <div className="benifet-content-waber">
             <div className="benifet-content benifet-content-2 sc-b-h">
               <div className="benifithght">
-                <h4 className="benifit-title">Why Choose Us</h4>
+                <h4 className="benifit-title"> {t("Why Choose Us")}</h4>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Proven transformation expertise across distribution, supply
-                    chain, logistics, and fulfilment operations{" "}
+                    {t("Proven transformation expertise across distribution, supply chain, logistics, and fulfilment operations")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Practical focus on delivering operational outcomes,
-                    measurable savings, and service improvements{" "}
-                  </p>
-                </div>
-                <div className="bf-content">
-                  <img src="/new/lp.svg" alt="" />
-                  <p>
-                    {" "}
-                    Experienced in deploying integrated, real-time supply chain
-                    platforms and operational control systems
+                    {t("Practical focus on delivering operational outcomes, measurable savings, and service improvements")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
                     {" "}
-                    Offshore delivery model ensuring high-quality, scalable, and
-                    cost-efficient project execution
+                    {t("Experienced in deploying integrated, real-time supply chain platforms and operational control systems")}
+                  </p>
+                </div>
+                <div className="bf-content">
+                  <img src="/new/lp.svg" alt="" />
+                  <p>
+                    {" "}
+                    {t("Offshore delivery model ensuring high-quality, scalable, and cost-efficient project execution")}
                   </p>
                 </div>
               </div>
@@ -408,20 +376,17 @@ const page = () => {
           <div className="row">
             <div className="col-sm-8">
               <h2 data-cursor="-opaque">
-                Ready to modernise your distribution operations and supply chain
-                performance?
+                {t("Ready to modernise your distribution operations and supply chain performance?")}
               </h2>
               <p>
-                Contact us today to discover how we can help optimise your
-                warehousing, inventory, and order management for a more
-                resilient, agile business.
+                {t("Contact us today to discover how we can help optimise your warehousing, inventory, and order management for a more resilient, agile business.")}  
               </p>
               {/*<p>Talk to our enterprise solutions experts today.</p>*/}
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <Link href="/contact-us" className="animated-svg-link">
-                  Contact Us
+                    {t("Contact Us")}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg

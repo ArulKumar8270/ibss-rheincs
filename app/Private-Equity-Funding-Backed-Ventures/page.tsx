@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function EnterpriseSolutions() {
+  const { t, language } = useTranslation();
     return (
 
         <CommomLayout>
@@ -17,20 +19,14 @@ export default function EnterpriseSolutions() {
         <div className="col-lg-5">
           <div className="pe-main-hadding-waber">
             <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
-              Private Equity &amp; Funding-Backed Ventures
+              {t("Private Equity & Funding-Backed Ventures")}
             </h2>
             <p>
-              Private Equity (PE) firms and funding-backed ventures operate in
-              fast-moving, margin-focused environments where value creation
-              depends on operational discipline, rapid transformation, and
-              scalable governance. Whether navigating carve-outs, integrations,
-              platform roll-ups, or pre-exit optimisations, portfolio companies
-              must modernise operational models, improve data visibility, and
-              de-risk execution to meet growth targets and return expectations.
+               {t("Private Equity (PE) firms and funding-backed ventures operate in fast-moving, margin-focused environments where value creation depends on operational discipline, rapid transformation, and scalable governance. Whether navigating carve-outs, integrations, platform roll-ups, or pre-exit optimisations, portfolio companies must modernise operational models, improve data visibility, and de-risk execution to meet growth targets and return expectations.")}
             </p>
             <div className="ser-btn m-0">
               <Link href="/contact-us" className="animated-svg-link">
-                Contact Us
+                {t("Contact Us")}
                 <span className="svg-container ">
                   <span className=" right">
                     <svg
@@ -149,56 +145,49 @@ export default function EnterpriseSolutions() {
             className="main-hadding-1 them-dark-text-color"
             data-cursor="-opaque"
           >
-            Challenges in PE and Fund-Backed Portfolios
+            {t("Challenges in PE and Fund-Backed Portfolios")}
           </h2>
           <div className="d-g24 flex-wrap">
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Inconsistent operational maturity across portfolio companies
-                acquired from diverse backgrounds
+                {t("Inconsistent operational maturity across portfolio companies acquired from diverse backgrounds")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Fragmented systems, siloed data, and limited operational
-                transparency restricting performance oversight
+                {t("Fragmented systems, siloed data, and limited operational transparency restricting performance oversight")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Slow, high-cost transformation programmes delaying value capture
-                and exit-readiness
+                {t("Slow, high-cost transformation programmes delaying value capture and exit-readiness")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Unstructured reporting and KPI tracking hindering real-time
-                operational and financial control
+                {t("Unstructured reporting and KPI tracking hindering real-time operational and financial control")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Limited scalability in operational models restricting
-                integration of bolt-ons, carve-outs, and acquisitions
+                {t("Limited scalability in operational models restricting integration of bolt-ons, carve-outs, and acquisitions")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                High-risk integrations and carve-out transitions with potential
-                value leakage during deal execution
+                {t("High-risk integrations and carve-out transitions with potential value leakage during deal execution")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                Disconnected financial, commercial, and operational reporting
-                frameworks weakening governance{" "}
+                {t("Disconnected financial, commercial, and operational reporting frameworks weakening governance")}
               </p>
             </div>
           </div>
@@ -215,42 +204,37 @@ export default function EnterpriseSolutions() {
         className="main-hadding-1 them-dark-text-color text-center mb-40"
         data-cursor="-opaque"
       >
-        Why It Matters
+        {t("Why It Matters")}
       </h2>
       <div className="pe-matters-content-waber">
         <div className="pe-matters-content">
           <img src="/new/mat-1.svg" alt="" />
           <p>
-            Delayed operational improvements slow down EBITDA uplift and
-            exit-readiness
+            {t("Delayed operational improvements slow down EBITDA uplift and exit-readiness")}
           </p>
         </div>
         <div className="pe-matters-content">
           <img src="/new/met-2.svg" alt="" />
           <p>
-            Inconsistent reporting limits the ability to monitor and manage
-            portfolio performance proactively
+            {t("Inconsistent reporting limits the ability to monitor and manage portfolio performance proactively")}
           </p>
         </div>
         <div className="pe-matters-content">
           <img src="/new/met-3.svg" alt="" />
           <p>
-            Inefficient, disjointed systems increase operational costs, delivery
-            risks, and integration complexity
+            {t("Inefficient, disjointed systems increase operational costs, delivery risks, and integration complexity")}
           </p>
         </div>
         <div className="pe-matters-content">
           <img src="/new/met-4.svg" alt="" />
           <p>
-            Lack of scalable, repeatable transformation models reduces the speed
-            and success of post-acquisition value creation
+            {t("Lack of scalable, repeatable transformation models reduces the speed and success of post-acquisition value creation")}
           </p>
         </div>
         <div className="pe-matters-content">
           <img src="/new/met-5.svg" alt="" />
           <p>
-            Poor risk visibility during integrations and transitions leads to
-            financial leakage and reputational risk
+            {t("Poor risk visibility during integrations and transitions leads to financial leakage and reputational risk")}
           </p>
         </div>
       </div>
@@ -259,56 +243,49 @@ export default function EnterpriseSolutions() {
   <section className="py-100  pe-help-waber pq-help ">
     <div className="container">
       <h2 className="main-hadding-1 text-white  mb-40" data-cursor="-opaque">
-        How We Help
+        {t("How We Help")}
       </h2>
       <div className="pe-help-content-waber">
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Rapidly assess operational, financial, and digital maturity across
-            portfolio companies
+            {t("Rapidly assess operational, financial, and digital maturity across portfolio companies")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Deploy integrated data platforms and operational dashboards for
-            consolidated, real-time performance oversight{" "}
+            {t("Deploy integrated data platforms and operational dashboards for consolidated, real-time performance oversight")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Implement repeatable transformation playbooks for platform
-            integrations, carve-outs, and roll-ups
+            {t("Implement repeatable transformation playbooks for platform integrations, carve-outs, and roll-ups")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Build standard operating models (SOM) to align procurement, supply
-            chain, finance, and operational governance{" "}
+            {t("Build standard operating models (SOM) to align procurement, supply chain, finance, and operational governance")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Support deal execution with carve-out, integration, and
-            post-acquisition operational readiness frameworks
+            {t("Support deal execution with carve-out, integration, and post-acquisition operational readiness frameworks")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Integrate risk management, compliance, and ESG reporting into
-            operational oversight structures
+            {t("Integrate risk management, compliance, and ESG reporting into operational oversight structures")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            Deliver scalable, offshore-enabled operational modernisation
-            programmes for multi-country, multi-sector portfolios
+            {t("Deliver scalable, offshore-enabled operational modernisation programmes for multi-country, multi-sector portfolios")}
           </p>
         </div>
       </div>
@@ -331,53 +308,42 @@ export default function EnterpriseSolutions() {
           <div className="pe-benifet-content-waber1">
             <div className="pe-benifet-content benifet-content-2 auto-b-h1 row">
               <div className="">
-                <h4 className="benifit-title"> Tangible Outcomes</h4>
+                <h4 className="benifit-title"> {t("Tangible Outcomes")}</h4>
                 <div className="pe-bf-content-waber">
                   <div className="bf-content">
                     <img src="/new/lp.svg" alt="" />
                     <p>
-                      Faster operational stabilisation post-deal through
-                      standardised, scalable governance models
+                      {t("Faster operational stabilisation post-deal through standardised, scalable governance models")}
                     </p>
                   </div>
                   <div className="bf-content">
                     <img src="/new/lp.svg" alt="" />
                     <p>
-                      Improved portfolio performance tracking and risk oversight
-                      via integrated reporting frameworks{" "}
+                      {t("Improved portfolio performance tracking and risk oversight via integrated reporting frameworks")}
                     </p>
                   </div>
                   <div className="bf-content">
                     <img src="/new/lp.svg" alt="" />
                     <p>
-                      {" "}
-                      Accelerated EBITDA improvement through operational
-                      streamlining, cost control, and data-driven
-                      decision-making
+                      {t("Accelerated EBITDA improvement through operational streamlining, cost control, and data-driven decision-making")}
                     </p>
                   </div>
                   <div className="bf-content">
                     <img src="/new/lp.svg" alt="" />
                     <p>
-                      {" "}
-                      Reduced integration risk and value leakage during
-                      carve-outs, platform mergers, and add-on acquisitions{" "}
+                      {t("Reduced integration risk and value leakage during carve-outs, platform mergers, and add-on acquisitions")}
                     </p>
                   </div>
                   <div className="bf-content">
                     <img src="/new/lp.svg" alt="" />
                     <p>
-                      {" "}
-                      Increased exit-readiness with auditable, scalable
-                      operational processes and governance structures{" "}
+                      {t("Increased exit-readiness with auditable, scalable operational processes and governance structures")}
                     </p>
                   </div>
                   <div className="bf-content">
                     <img src="/new/lp.svg" alt="" />
                     <p>
-                      {" "}
-                      Lower operational overhead and higher ROI through
-                      cost-effective, offshore-supported transformation delivery{" "}
+                      {t("Lower operational overhead and higher ROI through cost-effective, offshore-supported transformation delivery")}
                     </p>
                   </div>
                 </div>
@@ -390,37 +356,30 @@ export default function EnterpriseSolutions() {
           <div className="pe-benifet-content-waber1">
             <div className="pe-benifet-content benifet-content-2 auto-b-h1">
               <div>
-                <h4 className="benifit-title">Why Choose Us</h4>
+                <h4 className="benifit-title"> {t("Why Choose Us")}</h4>
                 <div className="pe-bf-content-waber">
                   <div className="bf-content">
                     <img src="/new/lp.svg" alt="" />
                     <p>
-                      Deep experience in operational transformation and
-                      performance improvement for PE and fund-backed ventures{" "}
+                      {t("Deep experience in operational transformation and performance improvement for PE and fund-backed ventures")}
                     </p>
                   </div>
                   <div className="bf-content">
                     <img src="/new/lp.svg" alt="" />
                     <p>
-                      Proven track record in integration, carve-out, and
-                      post-acquisition operational stabilisation projects{" "}
+                      {t("Proven track record in integration, carve-out, and post-acquisition operational stabilisation projects")}
                     </p>
                   </div>
                   <div className="bf-content">
                     <img src="/new/lp.svg" alt="" />
                     <p>
-                      {" "}
-                      Focused on delivering measurable EBITDA impact,
-                      operational resilience, and exit-readiness
+                      {t("Focused on delivering measurable EBITDA impact, operational resilience, and exit-readiness")}
                     </p>
                   </div>
                   <div className="bf-content">
                     <img src="/new/lp.svg" alt="" />
                     <p>
-                      {" "}
-                      Offshore-enabled delivery capability ensuring scalable,
-                      high-quality, cost-efficient execution across
-                      multi-sector, multi-region portfolios
+                      {t("Offshore-enabled delivery capability ensuring scalable, high-quality, cost-efficient execution across multi-sector, multi-region portfolios")}
                     </p>
                   </div>
                 </div>
@@ -444,17 +403,16 @@ export default function EnterpriseSolutions() {
           <div className="row">
             <div className="col-sm-8">
               <h2 data-cursor="-opaque">
-                Ready to accelerate value creation across your portfolio?
+                {t("Ready to accelerate value creation across your portfolio?")}
               </h2>
               <p>
-                Contact us today to learn how we can help modernise operations,
-                de-risk integrations, and improve commercial outcomes.
+                {t("Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.")}
               </p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <Link href="/contact-us" className="animated-svg-link">
-                  Contact Us
+                  {t("Contact Us")}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg

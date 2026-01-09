@@ -97,7 +97,7 @@ export default function AlMl() {
                 <div className="img-baner-1 dark-them-bg careerbanner">
                     <div className="container baner-content-center">
                         <div className="row">
-                            <div className="col-sm-7">
+                            <div className="col-sm-6">
                                 <div className="main-dark-title-waber br-0">
                                     <h2 className="main-dark-title" data-cursor="-opaque">
                                         Careers at RheinBrücke
