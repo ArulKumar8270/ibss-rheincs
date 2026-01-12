@@ -1,9 +1,301 @@
-import React from 'react'
+'use client'
+
+import React, { useState, useMemo } from 'react'
 import CommomLayout from '../Components/CommomLayout'
 import Link from "next/link";
 import TestimonialandAward from '../Components/TestimonialandAward';
 import Awards from '../Components/Awards';
+
+interface Webinar {
+  id: number;
+  title: string;
+  date: string;
+  dateObj: Date;
+  videoUrl: string;
+  image: string;
+  categories: string[];
+}
+
 const page = () => {
+  // Webinar data
+  const allWebinars: Webinar[] = [
+    {
+      id: 1,
+      title: "Webinar Title: Future of ERP Series – How to Choose the Right ERP for a Rapidly Changing Business Landscape",
+      date: "06/November/2024",
+      dateObj: new Date(2024, 10, 6),
+      videoUrl: "https://youtu.be/09M-Mq4cNrs",
+      image: "/images/1.jpg",
+      categories: ["product", "popular"]
+    },
+    {
+      id: 2,
+      title: "Webinar Title: #Future-Proofing with ERP – Top Trends in Enterprise Software for 2024 and Beyond",
+      date: "02/July/2024",
+      dateObj: new Date(2024, 6, 2),
+      videoUrl: "https://youtu.be/D_-8yEYVXAI",
+      image: "/images/2.jpg",
+      categories: ["product", "popular"]
+    },
+    {
+      id: 3,
+      title: "Webinar Title: Maximizing ROI with Field Service Automation for ERP",
+      date: "23/August/2023",
+      dateObj: new Date(2023, 7, 23),
+      videoUrl: "https://youtu.be/NfyIuui1VwI",
+      image: "/images/3.jpg",
+      categories: ["1", "2"]
+    },
+    {
+      id: 4,
+      title: "Webinar Title: Webinar on Top ERP Extensions to improve Your IT ROI | ECM | Demand Planning| Data Analysis Solution",
+      date: "08/March/2023",
+      dateObj: new Date(2023, 2, 8),
+      videoUrl: "https://youtu.be/W64fGZcwNCs",
+      image: "/images/4.jpg",
+      categories: ["3", "4"]
+    },
+    {
+      id: 5,
+      title: "Webinar Title: Why Manufacturing Industry Needs a Vertical Specific ERP Solution?",
+      date: "05/October/2022",
+      dateObj: new Date(2022, 9, 5),
+      videoUrl: "https://youtu.be/EVC-oAYXURg",
+      image: "/images/5.jpg",
+      categories: ["2"]
+    },
+    {
+      id: 6,
+      title: "Webinar Title: Essential Strategies for ERP Project Success",
+      date: "16/March/2022",
+      dateObj: new Date(2022, 2, 16),
+      videoUrl: "https://youtu.be/LAA3YcA49H0",
+      image: "/images/6.jpg",
+      categories: ["3"]
+    },
+    {
+      id: 7,
+      title: "Webinar Title: How ERP on the cloud can Improve Efficiency of your Interior Design Business",
+      date: "10/November/2021",
+      dateObj: new Date(2021, 10, 10),
+      videoUrl: "https://youtu.be/D5uhU1W-k-0",
+      image: "/images/7.jpg",
+      categories: ["3"]
+    },
+    {
+      id: 8,
+      title: "Webinar Title: #Webinar Leveraging Effective Change Management for ERP Project Success",
+      date: "27/January/2021",
+      dateObj: new Date(2021, 0, 27),
+      videoUrl: "https://youtu.be/miDuBj216ZQ",
+      image: "/images/8.jpg",
+      categories: ["solution", "popular"]
+    },
+    {
+      id: 9,
+      title: "Webinar Title: #Webinar Get your ERP Implemented Right",
+      date: "25/November/2020",
+      dateObj: new Date(2020, 10, 25),
+      videoUrl: "https://youtu.be/nFjdgAf6rBI",
+      image: "/images/9.jpg",
+      categories: ["product", "popular"]
+    },
+    {
+      id: 10,
+      title: "Webinar Title: Post Pandemic: 5 Proven Reasons for Adopting Cloud ERP",
+      date: "07/October/2020",
+      dateObj: new Date(2020, 9, 7),
+      videoUrl: "https://youtu.be/EVC-oAYXURg",
+      image: "/images/10.jpg",
+      categories: ["3"]
+    },
+    {
+      id: 11,
+      title: "Webinar Title: Panel Discussion - Rebooting your EPC Business for the New Normal",
+      date: "30/September/2020",
+      dateObj: new Date(2020, 8, 30),
+      videoUrl: "https://youtu.be/uPZZ7SJwMPo",
+      image: "/images/11.jpg",
+      categories: ["product", "popular"]
+    },
+    {
+      id: 12,
+      title: "Webinar Title: Webinar Procurement Beyond 2020 Evolving Technology Trends and Priorities",
+      date: "16/September/2020",
+      dateObj: new Date(2020, 8, 16),
+      videoUrl: "https://youtu.be/mMyLo1CjnlA",
+      image: "/images/12.jpg",
+      categories: ["product", "popular"]
+    },
+    {
+      id: 13,
+      title: "Webinar Title: [Panel Discussion] Growing Your Business Through Digital Transformation",
+      date: "09/September/2020",
+      dateObj: new Date(2020, 8, 9),
+      videoUrl: "https://youtu.be/9w7FKUXH0gA",
+      image: "/images/13.jpg",
+      categories: ["product", "popular"]
+    },
+    {
+      id: 14,
+      title: "Webinar Title: Digitally Transform your Procurement Function with MeRLIN",
+      date: "19/August/2020",
+      dateObj: new Date(2020, 7, 19),
+      videoUrl: "https://youtu.be/LMlV9rICS-s",
+      image: "/images/14.jpg",
+      categories: ["product", "popular"]
+    },
+    {
+      id: 15,
+      title: "Webinar Title: Webinar on Digitally Transform your Procurement Function with MeRLIN",
+      date: "19/August/2020",
+      dateObj: new Date(2020, 7, 19),
+      videoUrl: "https://youtu.be/LMlV9rICS-s",
+      image: "/images/15.jpg",
+      categories: ["product", "popular"]
+    },
+    {
+      id: 16,
+      title: "Webinar Title: Improve the Strategic Quotient of Sourcing through Analytics",
+      date: "15/July/2020",
+      dateObj: new Date(2020, 6, 15),
+      videoUrl: "https://youtu.be/xr1ygxE9w3E",
+      image: "/images/16.jpg",
+      categories: ["product", "popular"]
+    },
+    {
+      id: 17,
+      title: "Webinar Title: [Panel Discussion] Agile Procurement Processes to Manage a Dynamic Business Environment",
+      date: "24/June/2020",
+      dateObj: new Date(2020, 5, 24),
+      videoUrl: "https://youtu.be/zxGuq3paQ1Y",
+      image: "/images/17.jpg",
+      categories: ["solution", "popular"]
+    },
+    {
+      id: 18,
+      title: "Webinar Title: Enhance and Extend your Epicor ERP's Value to Business with the right Ancillary Software",
+      date: "10/June/2020",
+      dateObj: new Date(2020, 5, 10),
+      videoUrl: "https://youtu.be/-qMGaFuHPg8",
+      image: "/images/18.jpg",
+      categories: ["solution", "popular"]
+    },
+    {
+      id: 19,
+      title: "Webinar Title: Getting Your ERP Implemented Right - A Key to Successful Digital Transformation",
+      date: "03/June/2020",
+      dateObj: new Date(2020, 5, 3),
+      videoUrl: "https://youtu.be/ZnKxMi93xKQ",
+      image: "/images/19.jpg",
+      categories: ["product", "popular"]
+    },
+    {
+      id: 20,
+      title: "Webinar Title: Enabling a Virtual Workplace with Document Management System",
+      date: "14/May/2020",
+      dateObj: new Date(2020, 4, 14),
+      videoUrl: "https://youtu.be/48x_V8JzDqI",
+      image: "/images/20.jpg",
+      categories: ["solution", "popular"]
+    },
+    {
+      id: 21,
+      title: "Webinar Title: How COVID-19 will change the design, planning and operation of global supply chains",
+      date: "07/May/2020",
+      dateObj: new Date(2020, 4, 7),
+      videoUrl: "https://youtu.be/vJWwRzzSU60",
+      image: "/images/21.jpg",
+      categories: ["product", "popular"]
+    },
+    {
+      id: 22,
+      title: "Webinar Title: Epicor ERP Performance Management – Approach, Tools and Techniques",
+      date: "06/May/2020",
+      dateObj: new Date(2020, 4, 6),
+      videoUrl: "https://youtu.be/NEWSDI_DFKE",
+      image: "/images/22.jpg",
+      categories: ["product", "popular"]
+    },
+    {
+      id: 23,
+      title: "Webinar Title: Calculate ROI for your ERP to save Money during this Economic Crisis",
+      date: "29/April/2020",
+      dateObj: new Date(2020, 3, 29),
+      videoUrl: "https://youtu.be/h9ICNH2xVKI",
+      image: "/images/23.jpg",
+      categories: ["solution", "popular"]
+    }
+  ];
+
+  // State management
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filters, setFilters] = useState({
+    product: false,
+    solution: false,
+    popular: false,
+    recent: false
+  });
+  const [sortByDate, setSortByDate] = useState(false);
+  const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
+
+  // Filter and sort webinars
+  const filteredWebinars = useMemo(() => {
+    let result = [...allWebinars];
+
+    // Apply search filter
+    if (searchTerm.trim()) {
+      const searchLower = searchTerm.toLowerCase();
+      result = result.filter(webinar =>
+        webinar.title.toLowerCase().includes(searchLower)
+      );
+    }
+
+    // Apply category filters
+    const activeFilters: string[] = [];
+    if (filters.product) activeFilters.push('product');
+    if (filters.solution) activeFilters.push('solution');
+    if (filters.popular) activeFilters.push('popular');
+
+    if (activeFilters.length > 0) {
+      result = result.filter(webinar =>
+        activeFilters.some(filter => webinar.categories.includes(filter))
+      );
+    }
+
+    // Apply recent filter (last 2 years)
+    if (filters.recent) {
+      const twoYearsAgo = new Date();
+      twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
+      result = result.filter(webinar => webinar.dateObj >= twoYearsAgo);
+    }
+
+    // Sort by date if enabled
+    if (sortByDate) {
+      result.sort((a, b) => b.dateObj.getTime() - a.dateObj.getTime());
+    }
+
+    return result;
+  }, [searchTerm, filters, sortByDate]);
+
+  // Handle filter checkbox changes
+  const handleFilterChange = (filterName: keyof typeof filters) => {
+    setFilters(prev => ({
+      ...prev,
+      [filterName]: !prev[filterName]
+    }));
+  };
+
+  // Handle search
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
+  // Toggle mobile filter
+  const toggleMobileFilter = () => {
+    setMobileFilterOpen(!mobileFilterOpen);
+  };
+
   return (
     <CommomLayout>
       <>
@@ -67,10 +359,17 @@ const page = () => {
                         <div className="filtermbl search-row">
                           <input
                             type="text"
-                            placeholder="Search blogs"
+                            placeholder="Search webinars"
                             className="search-input"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
                           />
-                          <button className="filter-btn1" id="openFilterBtn">
+                          <button 
+                            className="filter-btn1" 
+                            id="openFilterBtn"
+                            onClick={toggleMobileFilter}
+                            type="button"
+                          >
                             <svg
                               width={20}
                               height={23}
@@ -91,15 +390,19 @@ const page = () => {
                         </div>
                       </div>
                       {/* Filter Content */}
-                      <div className="mobile-filter" id="mobileFilter">
+                      <div className={`mobile-filter ${mobileFilterOpen ? 'show' : ''}`} id="mobileFilter">
                         <Link href="#demo3"
                           data-bs-toggle="collapse"
                           className="arrow-toggle"
-                          aria-expanded="true"
+                          aria-expanded={mobileFilterOpen}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            toggleMobileFilter();
+                          }}
                         ></Link>
                         <div
                           id="demo3"
-                          className="collapse content-box collapse show"
+                          className={`collapse content-box ${mobileFilterOpen ? 'show' : ''}`}
                         >
                           <div className="col-sm-12 width100">
                             <h6 className="fome-filter-title">Webinars</h6>
@@ -108,12 +411,13 @@ const page = () => {
                                 <input
                                   className="form-check-input"
                                   type="checkbox"
-                                  defaultValue=""
-                                  id="flexCheckDefault"
+                                  checked={filters.product}
+                                  onChange={() => handleFilterChange('product')}
+                                  id="mobileFilterProduct"
                                 />
                                 <label
                                   className="form-check-label"
-                                  htmlFor="flexCheckDefault"
+                                  htmlFor="mobileFilterProduct"
                                 >
                                   Product Based
                                 </label>
@@ -122,12 +426,13 @@ const page = () => {
                                 <input
                                   className="form-check-input"
                                   type="checkbox"
-                                  defaultValue=""
-                                  id="flexCheckDefault"
+                                  checked={filters.solution}
+                                  onChange={() => handleFilterChange('solution')}
+                                  id="mobileFilterSolution"
                                 />
                                 <label
                                   className="form-check-label"
-                                  htmlFor="flexCheckDefault"
+                                  htmlFor="mobileFilterSolution"
                                 >
                                   Solution based
                                 </label>
@@ -136,12 +441,13 @@ const page = () => {
                                 <input
                                   className="form-check-input"
                                   type="checkbox"
-                                  defaultValue=""
-                                  id="flexCheckDefault"
+                                  checked={filters.popular}
+                                  onChange={() => handleFilterChange('popular')}
+                                  id="mobileFilterPopular"
                                 />
                                 <label
                                   className="form-check-label"
-                                  htmlFor="flexCheckDefault"
+                                  htmlFor="mobileFilterPopular"
                                 >
                                   Popular
                                 </label>
@@ -150,12 +456,13 @@ const page = () => {
                                 <input
                                   className="form-check-input"
                                   type="checkbox"
-                                  defaultValue=""
-                                  id="flexCheckDefault"
+                                  checked={filters.recent}
+                                  onChange={() => handleFilterChange('recent')}
+                                  id="mobileFilterRecent"
                                 />
                                 <label
                                   className="form-check-label"
-                                  htmlFor="flexCheckDefault"
+                                  htmlFor="mobileFilterRecent"
                                 >
                                   Recent
                                 </label>
@@ -164,12 +471,13 @@ const page = () => {
                                 <input
                                   className="form-check-input"
                                   type="checkbox"
-                                  defaultValue=""
-                                  id="flexCheckDefault"
+                                  checked={sortByDate}
+                                  onChange={() => setSortByDate(!sortByDate)}
+                                  id="mobileFilterSort"
                                 />
                                 <label
                                   className="form-check-label"
-                                  htmlFor="flexCheckDefault"
+                                  htmlFor="mobileFilterSort"
                                 >
                                   Sort by Release Date
                                 </label>
@@ -180,507 +488,48 @@ const page = () => {
                       </div>
                     </div>
                     <div className="row">
-                      {/* Item 1: Our Solutions & Digital Services */}
+                      {filteredWebinars.length > 0 ? (
+                        filteredWebinars.map((webinar) => (
                       <div
+                            key={webinar.id}
                         className="col-sm-4 mb-4 item"
-                        data-category="product popular"
+                            data-category={webinar.categories.join(' ')}
                       >
                         <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/09M-Mq4cNrs"
+                              <Link
+                                href={webinar.videoUrl}
                                 className="popup-video"
                             data-cursor-text="Play"
                           >
                             <figure>
-                              <img src="/images/1.jpg" alt="" />
+                                  <img src={webinar.image} alt={webinar.title} />
                             </figure>
                           </Link>
-                          <h4>
-                            Webinar Title: Future of ERP Series – How to Choose
-                            the Right ERP for a Rapidly Changing Business Landscape
-                          </h4>
+                              <h4>{webinar.title}</h4>
                           <p>
-                            <b>Webinar Date:</b> 06/November/2024
+                                <b>Webinar Date:</b> {webinar.date}
                           </p>
                         </div>
                       </div>
-                      {/* Item 2: Enterprise Solutions & Digital Services */}
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="product popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/D_-8yEYVXAI"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/2.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: #Future-Proofing with ERP – Top
-                            Trends in Enterprise Software for 2024 and Beyond
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 02/July/2024
+                        ))
+                      ) : (
+                        <div className="col-sm-12">
+                          <p className="text-center" style={{ padding: '2rem' }}>
+                            No webinars found matching your search criteria.
                           </p>
                         </div>
-                      </div>
-                      {/* Item 3: Digital Solutions */}
-                      <div className="col-sm-4 mb-4 item" data-category="1 2">
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/NfyIuui1VwI"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/3.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: Maximizing ROI with Field Service
-                            Automation for ERP
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 23/August/2023
-                          </p>
-                        </div>
-                      </div>
-                      {/* Item 4: Our Solutions & Digital Solutions */}
-                      <div className="col-sm-4 mb-4 item" data-category="3  4">
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/W64fGZcwNCs"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/4.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: Webinar on Top ERP Extensions to
-                            improve Your IT ROI | ECM | Demand Planning| Data Analysis
-                            Solution
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 08/March/2023
-                          </p>
-                        </div>
-                      </div>
-                      {/* Item 5: Enterprise Solutions (Takes full width if only 5 items in col-sm-3) */}
-                      <div className="col-sm-4 mb-4 item" data-category={2}>
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/EVC-oAYXURg"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/5.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: Why Manufacturing Industry Needs a
-                            Vertical Specific ERP Solution?
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 05/October/2022
-                          </p>
-                        </div>
-                      </div>
-                      {/* Item 3: Digital Solutions */}
-                      <div className="col-sm-4 mb-4 item" data-category={3}>
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/LAA3YcA49H0"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/6.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: Essential Strategies for ERP Project
-                            Success
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 16/March/2022
-                          </p>
-                        </div>
-                      </div>
-                      <div className="col-sm-4 mb-4 item" data-category={3}>
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/D5uhU1W-k-0"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/7.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: How ERP on the cloud can Improve
-                            Efficiency of your Interior Design Business
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 10/November/2021
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="solution popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/miDuBj216ZQ"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/8.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: #Webinar Leveraging Effective Change
-                            Management for ERP Project Success
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 27/January/2021
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="product popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/nFjdgAf6rBI"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/9.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: #Webinar Get your ERP Implemented
-                            Right{" "}
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 25/November/2020
-                          </p>
-                        </div>
-                      </div>
-                      <div className="col-sm-4 mb-4 item" data-category={3}>
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/EVC-oAYXURg"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/10.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: Post Pandemic: 5 Proven Reasons for
-                            Adopting Cloud ERP
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 07/October/2020
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="product popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/uPZZ7SJwMPo"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/11.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: Panel Discussion - Rebooting your
-                            EPC Business for the New Normal
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 30/September/2020
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="product popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/mMyLo1CjnlA"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/12.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: Webinar Procurement Beyond 2020
-                            Evolving Technology Trends and Priorities
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 16/September/2020
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="product popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/9w7FKUXH0gA"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/13.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: [Panel Discussion] Growing Your
-                            Business Through Digital Transformation
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 09/September/2020
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="product popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/LMlV9rICS-s"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/14.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: Digitally Transform your Procurement
-                            Function with MeRLIN
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 19/August/2020
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="product popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/LMlV9rICS-s"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/15.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: Webinar on Digitally Transform your
-                            Procurement Function with MeRLIN
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 19/August/2020
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="product popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/xr1ygxE9w3E"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/16.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: Improve the Strategic Quotient of
-                            Sourcing through Analytics
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 15/July/2020
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="solution popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/zxGuq3paQ1Y"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/17.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: [Panel Discussion] Agile Procurement
-                            Processes to Manage a Dynamic Business Environment
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 24/June/2020
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="solution popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/-qMGaFuHPg8"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/18.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: Enhance and Extend your Epicor ERP's
-                            Value to Business with the right Ancillary Software
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 10/June/2020
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="product popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/ZnKxMi93xKQ"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/19.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: Getting Your ERP Implemented Right -
-                            A Key to Successful Digital Transformation
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 03/June/2020
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="solution popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/48x_V8JzDqI"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/20.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: Enabling a Virtual Workplace with
-                            Document Management System
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 14/May/2020
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="product popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/vJWwRzzSU60"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/21.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: How COVID-19 will change the design,
-                            planning and operation of global supply chains
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 07/May/2020
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="product popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/NEWSDI_DFKE"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/22.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: Epicor ERP Performance Management –
-                            Approach, Tools and Techniques
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 06/May/2020
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="col-sm-4 mb-4 item"
-                        data-category="solution popular"
-                      >
-                        <div className="video-gallery-image wow fadeInUp">
-                          <Link href="https://youtu.be/h9ICNH2xVKI"
-                                className="popup-video"
-                            data-cursor-text="Play"
-                          >
-                            <figure>
-                              <img src="/images/23.jpg" alt="" />
-                            </figure>
-                          </Link>
-                          <h4>
-                            Webinar Title: Calculate ROI for your ERP to save
-                            Money during this Economic Crisis
-                          </h4>
-                          <p>
-                            <b>Webinar Date:</b> 29/April/2020
-                          </p>
-                        </div>
-                      </div>
+                      )}
                     </div>
                   </div>
                   <div className="col-sm-3 systemview">
-                    <form action="" method="post">
+                    <form action="" method="post" onSubmit={handleSearch}>
                       <div className="blog-serch">
-                        <input type="text" placeholder="Search" />
+                        <input 
+                          type="text" 
+                          placeholder="Search webinars" 
+                          value={searchTerm}
+                          onChange={(e) => setSearchTerm(e.target.value)}
+                        />
                         <button type="submit">
                           <img src="/new/ser-blog.svg" alt="" />
                         </button>
@@ -692,12 +541,13 @@ const page = () => {
                         <input
                           className="form-check-input"
                           type="checkbox"
-                          defaultValue=""
-                          id="flexCheckDefault"
+                          checked={filters.product}
+                          onChange={() => handleFilterChange('product')}
+                          id="desktopFilterProduct"
                         />
                         <label
                           className="form-check-label"
-                          htmlFor="flexCheckDefault"
+                          htmlFor="desktopFilterProduct"
                         >
                           Product Based
                         </label>
@@ -706,12 +556,13 @@ const page = () => {
                         <input
                           className="form-check-input"
                           type="checkbox"
-                          defaultValue=""
-                          id="flexCheckDefault"
+                          checked={filters.solution}
+                          onChange={() => handleFilterChange('solution')}
+                          id="desktopFilterSolution"
                         />
                         <label
                           className="form-check-label"
-                          htmlFor="flexCheckDefault"
+                          htmlFor="desktopFilterSolution"
                         >
                           Solution based
                         </label>
@@ -720,12 +571,13 @@ const page = () => {
                         <input
                           className="form-check-input"
                           type="checkbox"
-                          defaultValue=""
-                          id="flexCheckDefault"
+                          checked={filters.popular}
+                          onChange={() => handleFilterChange('popular')}
+                          id="desktopFilterPopular"
                         />
                         <label
                           className="form-check-label"
-                          htmlFor="flexCheckDefault"
+                          htmlFor="desktopFilterPopular"
                         >
                           Popular
                         </label>
@@ -734,12 +586,13 @@ const page = () => {
                         <input
                           className="form-check-input"
                           type="checkbox"
-                          defaultValue=""
-                          id="flexCheckDefault"
+                          checked={filters.recent}
+                          onChange={() => handleFilterChange('recent')}
+                          id="desktopFilterRecent"
                         />
                         <label
                           className="form-check-label"
-                          htmlFor="flexCheckDefault"
+                          htmlFor="desktopFilterRecent"
                         >
                           Recent
                         </label>
@@ -748,12 +601,13 @@ const page = () => {
                         <input
                           className="form-check-input"
                           type="checkbox"
-                          defaultValue=""
-                          id="flexCheckDefault"
+                          checked={sortByDate}
+                          onChange={() => setSortByDate(!sortByDate)}
+                          id="desktopFilterSort"
                         />
                         <label
                           className="form-check-label"
-                          htmlFor="flexCheckDefault"
+                          htmlFor="desktopFilterSort"
                         >
                           Sort by Release Date
                         </label>

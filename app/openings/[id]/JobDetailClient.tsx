@@ -21,6 +21,99 @@ interface Job {
     published?: boolean
 }
 
+// Mapping of location names to phone codes
+// Maps common location strings to exact values in the select dropdown
+const locationToPhoneCode: Record<string, string> = {
+    // Countries
+    'Afghanistan': '+93', 'Albania': '+355', 'Algeria': '+213', 'Andorra': '+376', 'Angola': '+244',
+    'Antigua and Barbuda': '+1-268', 'Argentina': '+54', 'Armenia': '+374', 'Australia': '+61', 'Austria': '+43',
+    'Azerbaijan': '+994', 'Bahamas': '+1-242', 'Bahrain': '+973', 'Bangladesh': '+880', 'Barbados': '+1-246',
+    'Belarus': '+375', 'Belgium': '+32', 'Belize': '+501', 'Benin': '+229', 'Bermuda': '+1-441',
+    'Bhutan': '+975', 'Bolivia': '+591', 'Bosnia and Herzegovina': '+387', 'Botswana': '+267', 'Brazil': '+55',
+    'Brunei': '+673', 'Bulgaria': '+359', 'Burkina Faso': '+226', 'Burundi': '+257', 'Cambodia': '+855',
+    'Cameroon': '+237', 'Canada': '+1', 'Cape Verde': '+238', 'Cayman Islands': '+1-345', 'Central African Republic': '+236',
+    'Chad': '+235', 'Chile': '+56', 'China': '+86', 'Colombia': '+57', 'Comoros': '+269',
+    'Congo': '+242', 'Costa Rica': '+506', 'Croatia': '+385', 'Cuba': '+53', 'Cyprus': '+357',
+    'Czech Republic': '+420', 'Denmark': '+45', 'Djibouti': '+253', 'Dominica': '+1-767', 'Dominican Republic': '+1-809',
+    'Ecuador': '+593', 'Egypt': '+20', 'El Salvador': '+503', 'Equatorial Guinea': '+240', 'Eritrea': '+291',
+    'Estonia': '+372', 'Ethiopia': '+251', 'Falkland Islands': '+500', 'Faroe Islands': '+298', 'Fiji': '+679',
+    'Finland': '+358', 'France': '+33', 'French Guiana': '+594', 'French Polynesia': '+689', 'Gabon': '+241',
+    'Gambia': '+220', 'Georgia': '+995', 'Germany': '+49', 'Ghana': '+233', 'Gibraltar': '+350',
+    'Greece': '+30', 'Greenland': '+299', 'Grenada': '+1-473', 'Guadeloupe': '+590', 'Guam': '+1-671',
+    'Guatemala': '+502', 'Guinea': '+224', 'Guinea-Bissau': '+245', 'Guyana': '+592', 'Haiti': '+509',
+    'Honduras': '+504', 'Hong Kong': '+852', 'Hungary': '+36', 'Iceland': '+354', 'India': '+91',
+    'Indonesia': '+62', 'Iran': '+98', 'Iraq': '+964', 'Ireland': '+353', 'Israel': '+972',
+    'Italy': '+39', 'Jamaica': '+1-876', 'Japan': '+81', 'Jordan': '+962', 'Kazakhstan': '+7',
+    'Kenya': '+254', 'Kiribati': '+686', 'Kuwait': '+965', 'Kyrgyzstan': '+996', 'Laos': '+856',
+    'Latvia': '+371', 'Lebanon': '+961', 'Lesotho': '+266', 'Liberia': '+231', 'Libya': '+218',
+    'Liechtenstein': '+423', 'Lithuania': '+370', 'Luxembourg': '+352', 'Macau': '+853', 'North Macedonia': '+389',
+    'Macedonia': '+389', 'Madagascar': '+261', 'Malawi': '+265', 'Malaysia': '+60', 'Maldives': '+960',
+    'Mali': '+223', 'Malta': '+356', 'Marshall Islands': '+692', 'Martinique': '+596', 'Mauritania': '+222',
+    'Mauritius': '+230', 'Mexico': '+52', 'Micronesia': '+691', 'Moldova': '+373', 'Monaco': '+377',
+    'Mongolia': '+976', 'Montenegro': '+382', 'Montserrat': '+1-664', 'Morocco': '+212', 'Mozambique': '+258',
+    'Myanmar': '+95', 'Namibia': '+264', 'Nauru': '+674', 'Nepal': '+977', 'Netherlands': '+31',
+    'New Caledonia': '+687', 'New Zealand': '+64', 'Nicaragua': '+505', 'Niger': '+227', 'Nigeria': '+234',
+    'North Korea': '+850', 'Norway': '+47', 'Oman': '+968', 'Pakistan': '+92', 'Palau': '+680',
+    'Palestine': '+970', 'Panama': '+507', 'Papua New Guinea': '+675', 'Paraguay': '+595', 'Peru': '+51',
+    'Philippines': '+63', 'Poland': '+48', 'Portugal': '+351', 'Puerto Rico': '+1-787', 'Qatar': '+974',
+    'Réunion': '+262', 'Romania': '+40', 'Russia': '+7', 'Rwanda': '+250', 'Saint Kitts and Nevis': '+1-869',
+    'Saint Lucia': '+1-758', 'Saint Vincent': '+1-784', 'Samoa': '+685', 'San Marino': '+378', 'São Tomé and Príncipe': '+239',
+    'Saudi Arabia': '+966', 'Senegal': '+221', 'Serbia': '+381', 'Seychelles': '+248', 'Sierra Leone': '+232',
+    'Singapore': '+65', 'Slovakia': '+421', 'Slovenia': '+386', 'Solomon Islands': '+677', 'Somalia': '+252',
+    'South Africa': '+27', 'South Korea': '+82', 'South Sudan': '+211', 'Spain': '+34', 'Sri Lanka': '+94',
+    'Sudan': '+249', 'Suriname': '+597', 'Eswatini': '+268', 'Sweden': '+46', 'Switzerland': '+41',
+    'Syria': '+963', 'Taiwan': '+886', 'Tajikistan': '+992', 'Tanzania': '+255', 'Thailand': '+66',
+    'Togo': '+228', 'Tonga': '+676', 'Trinidad and Tobago': '+1-868', 'Tunisia': '+216', 'Turkey': '+90',
+    'Turkmenistan': '+993', 'Turks and Caicos': '+1-649', 'Tuvalu': '+688', 'Uganda': '+256', 'Ukraine': '+380',
+    'United Arab Emirates': '+971', 'UAE': '+971', 'United Kingdom': '+44', 'UK': '+44', 'United States': '+1',
+    'USA': '+1', 'US': '+1', 'Uruguay': '+598', 'Uzbekistan': '+998', 'Vanuatu': '+678',
+    'Vatican City': '+379', 'Venezuela': '+58', 'Vietnam': '+84', 'British Virgin Islands': '+1-284', 'US Virgin Islands': '+1-340',
+    'Wallis and Futuna': '+681', 'Yemen': '+967', 'Zambia': '+260', 'Zimbabwe': '+263',
+    // Common city/country combinations
+    'Dubai': '+971', 'Abu Dhabi': '+971', 'London': '+44', 'New York': '+1', 'Toronto': '+1',
+    'Mumbai': '+91', 'Delhi': '+91', 'Bangalore': '+91', 'Chennai': '+91', 'Hyderabad': '+91',
+    'Kolkata': '+91', 'Pune': '+91', 'Berlin': '+49', 'Munich': '+49', 'Frankfurt': '+49',
+    'Paris': '+33', 'Amsterdam': '+31', 'Brussels': '+32', 'Madrid': '+34', 'Rome': '+39',
+    'Milan': '+39', 'Vienna': '+43', 'Zurich': '+41', 'Stockholm': '+46', 'Oslo': '+47',
+    'Copenhagen': '+45', 'Helsinki': '+358', 'Warsaw': '+48', 'Prague': '+420', 'Budapest': '+36',
+    'Athens': '+30', 'Lisbon': '+351', 'Dublin': '+353', 'Sydney': '+61', 'Melbourne': '+61',
+    'Tokyo': '+81', 'Singapore': '+65', 'Hong Kong': '+852', 'Seoul': '+82', 'Bangkok': '+66',
+    'Kuala Lumpur': '+60', 'Jakarta': '+62', 'Manila': '+63', 'Beijing': '+86', 'Shanghai': '+86',
+    'Sao Paulo': '+55', 'Buenos Aires': '+54', 'Mexico City': '+52', 'Johannesburg': '+27',
+    'Cairo': '+20', 'Riyadh': '+966', 'Doha': '+974', 'Kuwait City': '+965', 'Tel Aviv': '+972',
+    'Istanbul': '+90', 'Moscow': '+7', 'Warsaw': '+48'
+};
+
+// Helper function to find phone code from location string
+const getPhoneCodeFromLocation = (location: string): string | null => {
+    if (!location) return null;
+    
+    // Normalize location string
+    const normalizedLocation = location.trim();
+    
+    // Direct match
+    if (locationToPhoneCode[normalizedLocation]) {
+        return locationToPhoneCode[normalizedLocation];
+    }
+    
+    // Case-insensitive match
+    const locationLower = normalizedLocation.toLowerCase();
+    for (const [key, value] of Object.entries(locationToPhoneCode)) {
+        if (key.toLowerCase() === locationLower) {
+            return value;
+        }
+    }
+    
+    // Partial match (e.g., "Mumbai, India" -> "+91")
+    for (const [key, value] of Object.entries(locationToPhoneCode)) {
+        if (locationLower.includes(key.toLowerCase()) || key.toLowerCase().includes(locationLower)) {
+            return value;
+        }
+    }
+    
+    return null;
+};
+
 interface JobDetailClientProps {
     jobId: string
     initialJob?: Job | null
@@ -150,6 +243,19 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
             setLoading(false);
         }
     }
+
+    // Auto-detect country code based on job location
+    useEffect(() => {
+        if (job && job.location) {
+            const phoneCode = getPhoneCodeFromLocation(job.location);
+            if (phoneCode) {
+                setFormData(prev => ({
+                    ...prev,
+                    countryCode: phoneCode
+                }));
+            }
+        }
+    }, [job]);
 
     const checkEmailExists = async (email: string, jobTitle: string): Promise<boolean> => {
         if (!email || !jobTitle) return false
