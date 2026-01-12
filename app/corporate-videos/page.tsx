@@ -48,6 +48,78 @@ const page = () => {
             <div className="row">
               <div className="col-lg-4 col-md-6">
                 {/* image gallery start */}
+                <div
+                  className="video-gallery-image wow fadeInUp"
+                  data-wow-delay="1.6s"
+                >
+                  <Link href="https://youtu.be/G1M5A1CBpYY" 
+                    className="popup-video"
+                    data-cursor-text="Play"
+                  >
+                    <figure>
+                      <img src="/images/vi11.jpg" alt="" />
+                    </figure>
+                  </Link>
+                  <h4>{t("Liftek's ERP Transformation Journey with RheinBrücke: A Success Story")}</h4>
+                </div>
+                {/* image gallery end */}
+              </div>
+              <div className="col-lg-4 col-md-6">
+                {/* image gallery start */}
+                <div
+                  className="video-gallery-image wow fadeInUp"
+                  data-wow-delay="1.6s"
+                >
+                  <Link href="https://youtu.be/Y3Kc616jPU0" 
+                    className="popup-video"
+                    data-cursor-text="Play"
+                  >
+                    <figure>
+                      <img src="/images/vi10.jpg" alt="" />
+                    </figure>
+                  </Link>
+                  <h4>{t("RheinBrucke – FLSmidth Testimonial | Mads Madsbjerg Hansen")}</h4>
+                </div>
+                {/* image gallery end */}
+              </div>
+              <div className="col-lg-4 col-md-6">
+                {/* image gallery start */}
+                <div
+                  className="video-gallery-image wow fadeInUp"
+                  data-wow-delay="1.6s"
+                >
+                  <Link href="https://youtu.be/s2jmxT8fP5c" 
+                    className="popup-video"
+                    data-cursor-text="Play"
+                  >
+                    <figure>
+                      <img src="/images/vi9.jpg" alt="" />
+                    </figure>
+                  </Link>
+                  <h4>{t("RheinBrucke – Stevie Awards 2016 German")}</h4>
+                </div>
+                {/* image gallery end */}
+              </div>
+              <div className="col-lg-4 col-md-6">
+                {/* image gallery start */}
+                <div
+                  className="video-gallery-image wow fadeInUp"
+                  data-wow-delay="0.4s"
+                >
+                  <Link href="https://youtu.be/-t5b2gIdhyo" 
+                    className="popup-video"
+                    data-cursor-text="Play"
+                  >
+                    <figure>
+                      <img src="/images/vi3.jpg" alt="" />
+                    </figure>
+                  </Link>
+                  <h4>{t("RheinBrücke – Pinnacle Awards of Excellence 2016")}</h4>
+                </div>
+                {/* image gallery end */}
+              </div>
+              <div className="col-lg-4 col-md-6">
+                {/* image gallery start */}
                 <div className="video-gallery-image wow fadeInUp">
                   <Link href="https://youtu.be/IDrR7hiizhI"
                     className="popup-video"
@@ -67,7 +139,7 @@ const page = () => {
                   className="video-gallery-image wow fadeInUp"
                   data-wow-delay="0.2s"
                 >
-                  <Link href="https://youtu.be/MmXOpBXQdZM" 
+                  <Link href="https://www.youtube.com/watch?app=desktop&v=Fh6P6teEH3c" 
                     className="popup-video"
                     data-cursor-text="Play"
                   >
@@ -76,24 +148,6 @@ const page = () => {
                     </figure>
                   </Link>
                   <h4>{t("RheinBrücke IT Consulting - Stevie Awards 2015 German")}</h4>
-                </div>
-                {/* image gallery end */}
-              </div>
-              <div className="col-lg-4 col-md-6">
-                {/* image gallery start */}
-                <div
-                  className="video-gallery-image wow fadeInUp"
-                  data-wow-delay="0.4s"
-                >
-                  <Link href="https://youtu.be/-t5b2gIdhyo" 
-                    className="popup-video"
-                    data-cursor-text="Play"
-                  >
-                    <figure>
-                      <img src="/images/vi3.jpg" alt="" />
-                    </figure>
-                  </Link>
-                  <h4>{t("RheinBrücke – Pinnacle Awards of Excellence 2016")}</h4>
                 </div>
                 {/* image gallery end */}
               </div>
@@ -181,60 +235,6 @@ const page = () => {
                     </figure>
                   </Link>
                   <h4>{t("RheinBrucke – IDC Inauguration Event")}</h4>
-                </div>
-                {/* image gallery end */}
-              </div>
-              <div className="col-lg-4 col-md-6">
-                {/* image gallery start */}
-                <div
-                  className="video-gallery-image wow fadeInUp"
-                  data-wow-delay="1.6s"
-                >
-                  <Link href="https://youtu.be/s2jmxT8fP5c" 
-                    className="popup-video"
-                    data-cursor-text="Play"
-                  >
-                    <figure>
-                      <img src="/images/vi9.jpg" alt="" />
-                    </figure>
-                  </Link>
-                  <h4>{t("RheinBrucke – Stevie Awards 2016 German")}</h4>
-                </div>
-                {/* image gallery end */}
-              </div>
-              <div className="col-lg-4 col-md-6">
-                {/* image gallery start */}
-                <div
-                  className="video-gallery-image wow fadeInUp"
-                  data-wow-delay="1.6s"
-                >
-                  <Link href="https://youtu.be/Y3Kc616jPU0" 
-                    className="popup-video"
-                    data-cursor-text="Play"
-                  >
-                    <figure>
-                      <img src="/images/vi10.jpg" alt="" />
-                    </figure>
-                  </Link>
-                  <h4>{t("RheinBrucke – FLSmidth Testimonial | Mads Madsbjerg Hansen")}</h4>
-                </div>
-                {/* image gallery end */}
-              </div>
-              <div className="col-lg-4 col-md-6">
-                {/* image gallery start */}
-                <div
-                  className="video-gallery-image wow fadeInUp"
-                  data-wow-delay="1.6s"
-                >
-                  <Link href="https://youtu.be/G1M5A1CBpYY" 
-                    className="popup-video"
-                    data-cursor-text="Play"
-                  >
-                    <figure>
-                      <img src="/images/vi11.jpg" alt="" />
-                    </figure>
-                  </Link>
-                  <h4>{t("Liftek's ERP Transformation Journey with RheinBrücke: A Success Story")}</h4>
                 </div>
                 {/* image gallery end */}
               </div>

@@ -5,8 +5,10 @@ import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase-browser";
 import { useRouter } from "next/navigation";
+import {useTranslation} from "../hooks/useTranslation";
 
 export default function Contact() {
+  const { t, language } = useTranslation();
   const router = useRouter();
   const [formData, setFormData] = useState({
     fullName: '',
@@ -245,20 +247,15 @@ export default function Contact() {
                   </h2>
                   <p className="">
                     {" "}
-                    Thank you for your interest in RheinBrücke. Please contact us by
-                    either visiting our office at the locations provided or write to
-                    us for more information on how RheinBrücke can help you stay ahead
-                    of competition. For additional information on our IT consulting
-                    services, solutions or industry expertise, please visit the
-                    relevant pages on our website.{" "}
+                        {t("Thank you for your interest in RheinBrücke. Please contact us by either visiting our office at the locations provided or write to us for more information on how RheinBrücke can help you stay ahead of competition. For additional information on our IT consulting services, solutions or industry expertise, please visit the relevant pages on our website.")}
                   </p>
                 </div>
                 <div className="contect-call">
-                  <img src="/new/contect-call.svg" alt="" />{" "}
-                  <Link href="tel:+49 231 292 95619"> +49 231 292 95619</Link>
+                  <Link href="tel:+49 231 292 95619"> <img src="/new/contect-call.svg" alt="" />
+                   +49 231 292 95619</Link>
                 </div>
                 <div className="contect-call">
-                  <img src="/new/c-mail.svg" alt="" /> <Link href="mailto:info@rheincs.com"> info@rheincs.com</Link>
+                  <Link href="mailto:info@rheincs.com"><img src="/new/c-mail.svg" alt="" />  info@rheincs.com</Link>
                 </div>
                 <div className="contect-call sos">
                   <li>
