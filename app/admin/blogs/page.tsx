@@ -52,6 +52,57 @@ export default function AdminBlogsPage() {
   const quillRef = useRef<any>(null)
   const supabase = createClient()
 
+  // Handle image upload in editor
+  const handleEditorImageUpload = async () => {
+    console.log('handleEditorImageUpload triggered (static URL test)');
+    const staticImageUrl = 'https://via.placeholder.com/300x200.png?text=Test+Image'; // A static placeholder image
+
+    const editorElement = document.querySelector('.ql-editor') as any
+    if (editorElement && editorElement.__quill) {
+      const quill = editorElement.__quill
+      const range = quill.getSelection(true)
+      quill.insertEmbed(range ? range.index : 0, 'image', staticImageUrl)
+      quill.setSelection((range ? range.index : 0) + 1)
+      console.log('Static image URL inserted:', staticImageUrl);
+    } else {
+      console.log('Quill editor instance not found.');
+    }
+  }
+
+
+
+  // Quill editor modules configuration
+  const quillModules = useMemo(() => ({
+    toolbar: {
+      container: [
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        [{ 'font': [] }],
+        [{ 'size': [] }],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'indent': '-1'}, { 'indent': '+1' }],
+        [{ 'color': [] }, { 'background': [] }],
+        [{ 'align': [] }],
+        ['link', 'image', 'video'],
+        ['clean']
+      ],
+      handlers: {
+        image: handleEditorImageUpload
+      }
+    },
+    clipboard: {
+      matchVisual: false
+    }
+  }), [handleEditorImageUpload])
+
+  const quillFormats = [
+    'header', 'font', 'size',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'indent',
+    'color', 'background',
+    'align',
+    'link', 'image', 'video'
+  ]
+
   const categories = [
     { value: 'all', label: 'All' },
     { value: 'our-solutions', label: 'Our Solutions' },
@@ -238,58 +289,7 @@ export default function AdminBlogsPage() {
     }
   }
 
-  // Handle image upload in editor
-  const handleEditorImageUpload = async () => {
-    const input = document.createElement('input')
-    input.setAttribute('type', 'file')
-    input.setAttribute('accept', 'image/*')
-    input.click()
 
-    input.onchange = async () => {
-      const file = input.files?.[0]
-      if (!file) return
-
-      if (file.size > 5 * 1024 * 1024) {
-        alert('Image size should be less than 5MB')
-        return
-      }
-
-      setUploadingImage(true)
-
-      try {
-        const fileExt = file.name.split('.').pop()
-        const fileName = `blog-content-${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`
-        const filePath = `blog-images/${fileName}`
-
-        const { error: uploadError } = await supabase.storage
-          .from('blog-images')
-          .upload(filePath, file, {
-            cacheControl: '3600',
-            upsert: false
-          })
-
-        if (uploadError) throw uploadError
-
-        const { data: { publicUrl } } = supabase.storage
-          .from('blog-images')
-          .getPublicUrl(filePath)
-
-        // Insert image into editor - get editor from DOM
-        const editorElement = document.querySelector('.ql-editor') as any
-        if (editorElement && editorElement.__quill) {
-          const quill = editorElement.__quill
-          const range = quill.getSelection(true)
-          quill.insertEmbed(range ? range.index : 0, 'image', publicUrl)
-          quill.setSelection((range ? range.index : 0) + 1)
-        }
-      } catch (error: any) {
-        console.error('Upload error:', error)
-        alert('Error uploading image: ' + error.message)
-      } finally {
-        setUploadingImage(false)
-      }
-    }
-  }
 
   // Get Quill editor instance when component mounts or content changes
   useEffect(() => {
@@ -308,68 +308,98 @@ export default function AdminBlogsPage() {
 
   // Ensure images (including base64) are properly set when editing a blog with images
   useEffect(() => {
-    if (!showForm || !editingBlog || !formData.content) return
+    console.log('useEffect for image rendering triggered.');
+    if (!showForm || !editingBlog || !formData.content) {
+      console.log('useEffect skipped: showForm, editingBlog, or formData.content is missing.');
+      return;
+    }
     
     // Check if content has images (including base64)
-    const hasImages = formData.content.includes('<img') || formData.content.includes('data:image')
+    const hasImages = formData.content.includes('<img') || formData.content.includes('data:image');
+    console.log('formData.content has images:', hasImages);
+
     if (hasImages) {
       const timer = setTimeout(() => {
         try {
-          const quill = quillRef.current || quillEditor
+          const quill = quillRef.current || quillEditor;
+          console.log('Initial setTimeout (800ms) fired. Quill instance:', quill ? 'available' : 'not available');
+
           if (!quill) {
+            console.log('Quill instance not ready, retrying in 500ms.');
             // Retry if quill not ready
             setTimeout(() => {
-              const retryQuill = quillRef.current || quillEditor
+              const retryQuill = quillRef.current || quillEditor;
+              console.log('Retry setTimeout (500ms) fired. Quill instance:', retryQuill ? 'available' : 'not available');
               if (retryQuill) {
-                const currentContent = retryQuill.root.innerHTML
-                const hasImagesInRendered = currentContent.includes('<img') || currentContent.includes('data:image')
+                const currentContent = retryQuill.root.innerHTML;
+                const hasImagesInRendered = currentContent.includes('<img') || currentContent.includes('data:image');
+                console.log('Retry: currentContent has images in rendered:', hasImagesInRendered, 'Content length:', currentContent.length);
                 if (!hasImagesInRendered) {
-                  retryQuill.setText('')
-                  retryQuill.clipboard.dangerouslyPasteHTML(0, formData.content, 'silent')
-                  console.log('Re-set content with images (retry)')
+                  console.log('Retry: Re-setting content with images (retry).');
+                  retryQuill.setText('');
+                  retryQuill.clipboard.dangerouslyPasteHTML(0, formData.content, 'silent');
+                  console.log('Retry: Content re-set. New content length:', retryQuill.root.innerHTML.length);
+                } else {
+                  console.log('Retry: Images already present in rendered content, no re-paste needed.');
                 }
               }
-            }, 500)
-            return
+            }, 500);
+            return;
           }
           
-          const currentContent = quill.root.innerHTML
+          const currentContent = quill.root.innerHTML;
+          console.log('Current editor content (before check):', currentContent.length > 500 ? currentContent.substring(0, 500) + '...' : currentContent);
           // Check if images are missing from rendered content
-          const hasImagesInRendered = currentContent.includes('<img') || currentContent.includes('data:image')
+          const hasImagesInRendered = currentContent.includes('<img') || currentContent.includes('data:image');
+          console.log('currentContent has images in rendered:', hasImagesInRendered);
           
           if (!hasImagesInRendered) {
+            console.log('Images are in content but not rendered - re-setting content using Quill API.');
             // Images are in content but not rendered - re-set content using Quill API
             // Clear first, then set new content
-            quill.setText('')
-            quill.clipboard.dangerouslyPasteHTML(0, formData.content, 'silent')
-            console.log('Re-set content with images using Quill API')
+            quill.setText('');
+            quill.clipboard.dangerouslyPasteHTML(0, formData.content, 'silent');
+            console.log('Content re-set using Quill API. New content length:', quill.root.innerHTML.length);
             
             // Process images again after a delay
             setTimeout(() => {
-              const editor = document.querySelector('.ql-editor') as HTMLElement
+              console.log('Image styling setTimeout (300ms) fired.');
+              const editor = document.querySelector('.ql-editor') as HTMLElement;
               if (editor) {
-                const images = editor.querySelectorAll('img')
+                const images = editor.querySelectorAll('img');
+                console.log('Found images in editor for styling:', images.length);
                 images.forEach((img: HTMLImageElement) => {
-                  img.style.display = 'block'
-                  img.style.visibility = 'visible'
-                  img.style.opacity = '1'
+                  img.style.display = 'block';
+                  img.style.visibility = 'visible';
+                  img.style.opacity = '1';
                   // Ensure base64 images are properly loaded
-                  const src = img.getAttribute('src')
+                  const src = img.getAttribute('src');
                   if (src && src.startsWith('data:image')) {
-                    img.setAttribute('src', src) // Force reload
+                    img.setAttribute('src', src); // Force reload
+                    console.log('Forcing reload for base64 image:', src.substring(0, 50) + '...');
                   }
-                })
+                  console.log('Applied styles to image:', img.src.substring(0, 50) + '...');
+                });
+              } else {
+                console.log('Quill editor element (.ql-editor) not found for styling.');
               }
-            }, 300)
+            }, 300);
+          } else {
+            console.log('Images already present in rendered content, no re-paste needed.');
           }
         } catch (err) {
-          console.error('Error ensuring images in content:', err)
+          console.error('Error ensuring images in content:', err);
         }
-      }, 800) // Wait longer for editor to be fully ready
+      }, 800); // Wait longer for editor to be fully ready
       
-      return () => clearTimeout(timer)
+      return () => {
+        clearTimeout(timer);
+        console.log('useEffect cleanup: timer cleared.');
+      };
+    } else {
+      console.log('No images in formData.content, skipping image rendering logic.');
     }
-  }, [showForm, editingBlog?.id, formData.content, quillEditor])
+  }, [showForm, editingBlog?.id, formData.content, quillEditor]);
 
   // Ensure images are visible when editing - process images after content is loaded
   useEffect(() => {
@@ -489,427 +519,16 @@ export default function AdminBlogsPage() {
     }
   }, [showForm, formData.content, editingBlog?.id, quillEditor])
 
-  // Add image resize functionality
-  useEffect(() => {
-    if (!showForm) return
 
-    const initImageResize = () => {
-      const editor = document.querySelector('.ql-editor') as HTMLElement
-      if (!editor) {
-        setTimeout(initImageResize, 200)
-        return
-      }
 
-      // Make editor positioned relatively
-      if (window.getComputedStyle(editor).position === 'static') {
-        editor.style.position = 'relative'
-      }
 
-      const addResizeHandles = (img: HTMLImageElement) => {
-        // Skip if already processed
-        if ((img as any).__hasResizeHandle) return
-        ;(img as any).__hasResizeHandle = true
 
-        // Make image display block or inline-block for better control
-        const imgStyle = window.getComputedStyle(img)
-        if (imgStyle.display === 'inline') {
-          img.style.display = 'inline-block'
-        }
-        
-        // Ensure image has position relative for absolute positioning of handle
-        if (imgStyle.position === 'static') {
-          img.style.position = 'relative'
-        }
 
-        // Create wrapper
-        const wrapper = document.createElement('div')
-        wrapper.className = 'ql-image-resize-wrapper'
-        wrapper.setAttribute('contenteditable', 'false')
-        wrapper.setAttribute('data-quill-resize-wrapper', 'true')
-        wrapper.style.cssText = `
-          display: inline-block !important;
-          position: relative !important;
-          vertical-align: middle !important;
-          margin: 5px !important;
-        `
 
-        // Ensure image is visible before wrapping
-        img.style.display = 'block'
-        img.style.visibility = 'visible'
-        img.style.opacity = '1'
 
-        // Wrap the image
-        const parent = img.parentNode
-        if (parent) {
-          parent.insertBefore(wrapper, img)
-          wrapper.appendChild(img)
-        }
 
-        // Ensure image remains visible after wrapping
-        img.style.display = 'block'
-        img.style.visibility = 'visible'
-        img.style.opacity = '1'
-        
-        // Create resize handle - make it very visible
-        const handle = document.createElement('div')
-        handle.className = 'ql-image-resize-handle'
-        handle.innerHTML = '⋰'
-        handle.setAttribute('contenteditable', 'false')
-        handle.setAttribute('draggable', 'false')
-        handle.setAttribute('data-resize-handle', 'true')
-        handle.setAttribute('unselectable', 'on')
-        handle.setAttribute('spellcheck', 'false')
-        
-        // Apply styles directly to element
-        Object.assign(handle.style, {
-          position: 'absolute',
-          width: '32px',
-          height: '32px',
-          background: '#667eea',
-          border: '3px solid white',
-          borderRadius: '50%',
-          cursor: 'nwse-resize',
-          zIndex: '999999',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.7)',
-          right: '-16px',
-          bottom: '-16px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: 'white',
-          fontSize: '20px',
-          fontWeight: 'bold',
-          lineHeight: '1',
-          pointerEvents: 'auto',
-          userSelect: 'none',
-          WebkitUserSelect: 'none',
-          MozUserSelect: 'none',
-          touchAction: 'none',
-          WebkitTouchCallout: 'none',
-        })
 
-        wrapper.appendChild(handle)
 
-        // Resize state
-        let isResizing = false
-        let startX = 0
-        let startWidth = 0
-        let startHeight = 0
-        let aspectRatio = 1
-
-        const startResize = (e: MouseEvent | TouchEvent) => {
-          console.log('Start resize triggered', e)
-          e.preventDefault()
-          e.stopPropagation()
-          e.stopImmediatePropagation()
-          
-          // Disable Quill's contenteditable during resize
-          if (editor) {
-            editor.setAttribute('contenteditable', 'false')
-            editor.style.pointerEvents = 'none'
-          }
-          
-          isResizing = true
-          const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
-          const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY
-          startX = clientX
-          startWidth = img.offsetWidth || img.naturalWidth || 300
-          startHeight = img.offsetHeight || img.naturalHeight || 200
-          aspectRatio = startWidth / startHeight
-          
-          document.body.style.cursor = 'nwse-resize'
-          document.body.style.userSelect = 'none'
-          document.body.style.pointerEvents = 'none'
-          handle.style.pointerEvents = 'auto'
-          wrapper.style.pointerEvents = 'auto'
-          
-          const moveHandler = (e: MouseEvent | TouchEvent) => {
-            e.preventDefault()
-            e.stopPropagation()
-            doResize(e)
-          }
-          const upHandler = (e: MouseEvent | TouchEvent) => {
-            e.preventDefault()
-            e.stopPropagation()
-            stopResize()
-          }
-          
-          // Use capture phase and make sure we catch events before Quill
-          document.addEventListener('mousemove', moveHandler, { passive: false, capture: true })
-          document.addEventListener('touchmove', moveHandler, { passive: false, capture: true })
-          document.addEventListener('mouseup', upHandler, { capture: true })
-          document.addEventListener('touchend', upHandler, { capture: true })
-          document.addEventListener('mouseleave', upHandler, { capture: true })
-          
-          // Store handlers for cleanup
-          ;(handle as any).__moveHandler = moveHandler
-          ;(handle as any).__upHandler = upHandler
-          
-          console.log('Resize started', { startWidth, startHeight, aspectRatio })
-        }
-
-        const doResize = (e: MouseEvent | TouchEvent) => {
-          if (!isResizing) return
-          e.preventDefault()
-          e.stopPropagation()
-          
-          const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
-          const deltaX = clientX - startX
-          const newWidth = Math.max(50, Math.min(2000, startWidth + deltaX))
-          const newHeight = newWidth / aspectRatio
-          
-          // Apply width and height directly
-          img.setAttribute('width', String(newWidth))
-          img.setAttribute('height', String(newHeight))
-          img.style.width = `${newWidth}px`
-          img.style.height = `${newHeight}px`
-          img.style.maxWidth = 'none'
-          img.style.maxHeight = 'none'
-          
-          console.log('Resizing:', { newWidth, newHeight, deltaX })
-        }
-
-        const stopResize = () => {
-          if (!isResizing) return
-          console.log('Stop resize')
-          isResizing = false
-          
-          // Re-enable Quill's contenteditable
-          if (editor) {
-            editor.setAttribute('contenteditable', 'true')
-            editor.style.pointerEvents = ''
-          }
-          
-          document.body.style.cursor = ''
-          document.body.style.userSelect = ''
-          document.body.style.pointerEvents = ''
-          
-          // Remove event listeners
-          const moveHandler = (handle as any).__moveHandler
-          const upHandler = (handle as any).__upHandler
-          if (moveHandler) {
-            document.removeEventListener('mousemove', moveHandler, { capture: true } as any)
-            document.removeEventListener('touchmove', moveHandler, { capture: true } as any)
-          }
-          if (upHandler) {
-            document.removeEventListener('mouseup', upHandler, { capture: true } as any)
-            document.removeEventListener('touchend', upHandler, { capture: true } as any)
-            document.removeEventListener('mouseleave', upHandler, { capture: true } as any)
-          }
-          
-          // Clear handlers
-          ;(handle as any).__moveHandler = null
-          ;(handle as any).__upHandler = null
-        }
-
-        // Store resize handlers on the handle element for cleanup
-        const handleMouseDown = (e: MouseEvent) => {
-          e.preventDefault()
-          e.stopPropagation()
-          e.stopImmediatePropagation()
-          startResize(e)
-        }
-        
-        const handleTouchStart = (e: TouchEvent) => {
-          e.preventDefault()
-          e.stopPropagation()
-          e.stopImmediatePropagation()
-          startResize(e)
-        }
-        
-        // Use capture phase and make handlers non-removable
-        handle.addEventListener('mousedown', handleMouseDown, { capture: true, once: false })
-        handle.addEventListener('touchstart', handleTouchStart, { capture: true, once: false })
-        
-        // Prevent all other interactions
-        const preventAll = (e: Event) => {
-          e.preventDefault()
-          e.stopPropagation()
-          e.stopImmediatePropagation()
-        }
-        
-        handle.addEventListener('click', preventAll, { capture: true })
-        handle.addEventListener('dragstart', preventAll, { capture: true })
-        handle.addEventListener('selectstart', preventAll)
-        handle.addEventListener('contextmenu', preventAll)
-        
-        // Store handlers for cleanup
-        ;(handle as any).__mouseDown = handleMouseDown
-        ;(handle as any).__touchStart = handleTouchStart
-        
-        // Make sure handle is visible and positioned correctly
-        const ensureVisible = () => {
-          if (handle.parentElement === wrapper && img.parentElement === wrapper) {
-            handle.style.display = 'flex'
-            handle.style.visibility = 'visible'
-            handle.style.opacity = '1'
-            handle.style.pointerEvents = 'auto'
-            
-            // Force repaint
-            void handle.offsetHeight
-            
-            // Verify handle is in the right position
-            const rect = wrapper.getBoundingClientRect()
-            const handleRect = handle.getBoundingClientRect()
-            const isVisible = handleRect.width > 0 && handleRect.height > 0
-            
-            console.log('Resize handle status:', {
-              visible: isVisible,
-              display: window.getComputedStyle(handle).display,
-              visibility: window.getComputedStyle(handle).visibility,
-              zIndex: window.getComputedStyle(handle).zIndex,
-              pointerEvents: window.getComputedStyle(handle).pointerEvents,
-              wrapperRect: { width: rect.width, height: rect.height },
-              handleRect: { left: handleRect.left, top: handleRect.top, width: handleRect.width, height: handleRect.height },
-              imgSize: { width: img.offsetWidth, height: img.offsetHeight }
-            })
-            
-            if (!isVisible) {
-              console.warn('Handle is not visible, retrying...')
-              setTimeout(ensureVisible, 100)
-            }
-          }
-        }
-        
-        // Use multiple animation frames to ensure visibility
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            ensureVisible()
-          })
-        })
-
-        // Cleanup when image is removed
-        const observer = new MutationObserver((mutations) => {
-          mutations.forEach((mutation) => {
-            mutation.removedNodes.forEach((node) => {
-              if (node === wrapper || (node as Element)?.contains?.(wrapper)) {
-                observer.disconnect()
-                ;(img as any).__hasResizeHandle = false
-              }
-            })
-          })
-        })
-        observer.observe(editor, { childList: true, subtree: true })
-      }
-
-      // Process existing images with retry mechanism
-      const processImages = () => {
-        const images = editor.querySelectorAll('img:not([data-resize-processed])')
-        console.log(`[ImageResize] Found ${images.length} unprocessed images`)
-        images.forEach((img) => {
-          try {
-            ;(img as HTMLImageElement).setAttribute('data-resize-processed', 'true')
-            addResizeHandles(img as HTMLImageElement)
-          } catch (err) {
-            console.error('Error adding resize handle:', err)
-          }
-        })
-      }
-      
-      // Process immediately and with delays to catch images loaded asynchronously
-      processImages()
-      setTimeout(processImages, 200)
-      setTimeout(processImages, 500)
-      setTimeout(processImages, 1000)
-
-      // Watch for new images
-      const imageObserver = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-          mutation.addedNodes.forEach((node) => {
-            if (node.nodeType === 1) {
-              const element = node as Element
-              if (element.tagName === 'IMG' && !element.hasAttribute('data-resize-processed')) {
-                element.setAttribute('data-resize-processed', 'true')
-                // Use multiple timeouts to ensure image is fully loaded
-                setTimeout(() => addResizeHandles(element as HTMLImageElement), 50)
-                setTimeout(() => addResizeHandles(element as HTMLImageElement), 200)
-                setTimeout(() => addResizeHandles(element as HTMLImageElement), 500)
-              }
-              const imgs = element.querySelectorAll?.('img:not([data-resize-processed])')
-              imgs?.forEach(img => {
-                img.setAttribute('data-resize-processed', 'true')
-                setTimeout(() => addResizeHandles(img as HTMLImageElement), 50)
-                setTimeout(() => addResizeHandles(img as HTMLImageElement), 200)
-                setTimeout(() => addResizeHandles(img as HTMLImageElement), 500)
-              })
-            }
-          })
-        })
-      })
-
-      imageObserver.observe(editor, { childList: true, subtree: true, attributes: true })
-      
-      // Also watch for image load events
-      editor.querySelectorAll('img').forEach(img => {
-        if (!img.hasAttribute('data-resize-processed')) {
-          img.addEventListener('load', () => {
-            if (!img.hasAttribute('data-resize-processed')) {
-              img.setAttribute('data-resize-processed', 'true')
-              addResizeHandles(img as HTMLImageElement)
-            }
-          }, { once: true })
-        }
-      })
-
-      return () => {
-        imageObserver.disconnect()
-        editor.querySelectorAll('.ql-image-resize-handle').forEach(h => h.remove())
-        editor.querySelectorAll('.ql-image-resize-wrapper').forEach(w => {
-          const img = w.querySelector('img')
-          if (img && w.parentNode) {
-            w.parentNode.insertBefore(img, w)
-            w.remove()
-          }
-        })
-      }
-    }
-
-    const timer = setTimeout(initImageResize, 300)
-    return () => clearTimeout(timer)
-  }, [showForm])
-
-  // Quill editor modules configuration - memoized to prevent recreation
-  const quillModules = useMemo(() => ({
-    toolbar: {
-      container: [
-        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-        [{ 'font': [] }],
-        [{ 'size': [] }],
-        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'indent': '-1'}, { 'indent': '+1' }],
-        [{ 'color': [] }, { 'background': [] }],
-        [{ 'align': [] }],
-        ['link', 'image', 'video'],
-        ['clean']
-      ],
-      handlers: {
-        image: handleEditorImageUpload
-      }
-    },
-    clipboard: {
-      matchVisual: false,
-      // Custom matcher to preserve base64 images
-      matchers: [
-        ['img', (node: any, delta: any) => {
-          const src = node.getAttribute('src')
-          if (src) {
-            // Preserve both regular URLs and base64 images
-            return delta.insert({ image: src })
-          }
-          return delta
-        }]
-      ]
-    }
-  }), [])
-
-  const quillFormats = useMemo(() => [
-    'header', 'font', 'size',
-    'bold', 'italic', 'underline', 'strike', 'blockquote',
-    'list', 'indent',
-    'color', 'background',
-    'align',
-    'link', 'image', 'video'
-  ], [])
 
   // Memoize onChange handler to prevent recreation
   // Use functional update to prevent stale closures and ensure smooth typing
