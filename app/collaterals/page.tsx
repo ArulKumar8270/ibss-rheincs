@@ -208,7 +208,7 @@ export default function Collaterals() {
                 setStatusMessage(errorMessage);
             } else {
                 setStatus('success');
-                setStatusMessage('Thank you! Your request has been submitted successfully. We will contact you shortly.');
+                setStatusMessage('Thank you for downloading our collateral. If you require any additional information or assistance, please do not hesitate to reach out to info@rheincs.com');
                 // Reset form
                 setFormData({
                     fullName: '',
