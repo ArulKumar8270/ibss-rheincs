@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
 import { createClient } from '@/lib/supabase-browser';
+import {useTranslation} from "../hooks/useTranslation";
 
 interface Job {
   id: string;
@@ -15,6 +16,8 @@ interface Job {
 }
 
 export default function AlMl() {
+  const { t, language } = useTranslation();
+
     const [jobs, setJobs] = useState<Job[]>([]);
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
@@ -100,16 +103,14 @@ export default function AlMl() {
                             <div className="col-sm-6">
                                 <div className="main-dark-title-waber br-0">
                                     <h2 className="main-dark-title" data-cursor="-opaque">
-                                        Careers at RheinBrücke
+                                        {t('Careers at RheinBrücke')}
                                     </h2>
                                     <p className="m-0">
-                                        At RheinBrücke, our people are at the heart of everything we do.
-                                        Join a diverse, global family where your ideas matter, your growth
-                                        is valued, and your career has purpose.
+                                        {t('At RheinBrücke, our people are at the heart of everything we do. Join a diverse, global family where your ideas matter, your growth is valued, and your career has purpose.')}
                                     </p>
                                     <div className="ser-btn m-0">
                                         <Link href="#job-table-waber" className="animated-svg-link">
-                                            View Current Openings
+                                            {t('View Current Openings')}
                                             <span className="svg-container ">
                                                 <span className=" right">
                                                     <svg
@@ -222,18 +223,17 @@ export default function AlMl() {
                     </div>
                 </div>
                 {/* Our Testimonial Section Start */}
-                <div className=" py-100">
+                <div className={`py-100 ${language === 'German' ? 'careergerman' : ''}`}>
                     <div className="container">
                         <div className="row section-row1 align-items-center">
                             <div className="col-lg-12">
                                 <div className="white-center-heading-waber">
                                     <h2 className="center-heading" data-cursor="-opaque">
-                                        Family Culture: Associate-Centric at Heart
+                                        {t('Family Culture: Associate-Centric at Heart')}
                                     </h2>
                                     <p className="m-0">
                                         {" "}
-                                        We believe great companies are built on strong relationships. At
-                                        RheinBrücke, you will find:
+                                        {t('We believe great companies are built on strong relationships. At RheinBrücke, you will find:')}
                                     </p>
                                 </div>
                             </div>
@@ -247,8 +247,7 @@ export default function AlMl() {
                             <div className="heart-flex-item">
                                 <div className="family-content">
                                     <h5>
-                                        A workplace where diversity is celebrated and collaboration drives
-                                        success
+                                        {t('A workplace where diversity is celebrated and collaboration drives success')}
                                     </h5>
                                 </div>
                             </div>
@@ -259,14 +258,15 @@ export default function AlMl() {
                             </div>
                             <div className="heart-flex-item">
                                 <div className="family-content">
-                                    <h5>Mentoring and career support at every stage of your journey</h5>
+                                    <h5>
+                                        {t('Mentoring and career support at every stage of your journey')}
+                                    </h5>
                                 </div>
                             </div>
                             <div className="heart-flex-item">
                                 <div className="family-content">
                                     <h5>
-                                        A trust-based culture that values ownership, creativity, and
-                                        initiative
+                                        {t('A trust-based culture that values ownership, creativity, and initiative')}
                                     </h5>
                                 </div>
                             </div>
@@ -277,7 +277,9 @@ export default function AlMl() {
                             </div>
                             <div className="heart-flex-item">
                                 <div className="family-content">
-                                    <h5>Recognition for your contributions, big or small</h5>
+                                    <h5>
+                                        {t('Recognition for your contributions, big or small')}
+                                    </h5>
                                 </div>
                             </div>
                             <div className="heart-flex-item">
@@ -296,33 +298,34 @@ export default function AlMl() {
                                 <div className="campes-0">
                                     <div className="main-dark-title-waber">
                                         <h2 className="main-dark-title" data-cursor="-opaque">
-                                            Campus to Corporate: Freshers at RheinBrücke
+                                            {t('Campus to Corporate: Freshers at RheinBrücke')}
                                         </h2>
                                         <p className="m-0">
-                                            We welcome fresh graduates with open arms. Our Campus to
-                                            Corporate program helps young talent transition into
-                                            professional consulting through:
+                                            {t('We welcome fresh graduates with open arms. Our Campus to Corporate program helps young talent transition into professional consulting through:')}
                                         </p>
                                     </div>
                                     <div className="campes-3">
                                         <div className="campes-3-waber">
                                             <img src="/new/m2.svg" alt="" />
-                                            <p>Intensive training and hands-on learning</p>
+                                            <p>
+                                                {t('Intensive training and hands-on learning')}
+                                            </p>
                                         </div>
                                         <div className="campes-3-waber">
                                             <img src="/new/m3.svg" alt="" />
-                                            <p>Guidance from mentors and industry experts</p>
+                                            <p>
+                                                {t('Guidance from mentors and industry experts')}
+                                            </p>
                                         </div>
                                         <div className="campes-3-waber">
                                             <img src="/new/m4.svg" alt="" />
                                             <p>
-                                                Opportunities to work on real projects with global clients
+                                                {t('Opportunities to work on real projects with global clients')}
                                             </p>
                                         </div>
                                     </div>
                                     <p>
-                                        If you are ready to start your journey, we are ready to walk with
-                                        you.
+                                        {t('If you are ready to start your journey, we are ready to walk with you.')}
                                     </p>
                                 </div>
                             </div>
@@ -350,12 +353,11 @@ export default function AlMl() {
                             <div className="col-lg-12">
                                 <div className="white-center-heading-waber">
                                     <h2 className="center-heading" data-cursor="-opaque">
-                                        Experience Speaks: Lateral Hiring
+                                        {t('Experience Speaks: Lateral Hiring')}
                                     </h2>
                                     <p className="m-0">
                                         {" "}
-                                        Bring your expertise, and we’ll help you take it further. As an
-                                        experienced professional at RheinBrücke, you will
+                                        {t('Bring your expertise, and we’ll help you take it further. As an experienced professional at RheinBrücke, you will')}
                                     </p>
                                 </div>
                             </div>
@@ -365,7 +367,7 @@ export default function AlMl() {
                                 <div className="eslh-waber">
                                     <img src="/new/es-1.svg" alt="" />
                                     <p className="secont-title">
-                                        Lead challenging projects with global impact
+                                        {t('Lead challenging projects with global impact')}
                                     </p>
                                 </div>
                             </div>
@@ -373,7 +375,7 @@ export default function AlMl() {
                                 <div className="eslh-waber">
                                     <img src="/new/es-2.svg" alt="" />
                                     <p className="secont-title">
-                                        Work alongside talented peers in a collaborative environment
+                                        {t('Work alongside talented peers in a collaborative environment')}
                                     </p>
                                 </div>
                             </div>
@@ -381,13 +383,13 @@ export default function AlMl() {
                                 <div className="eslh-waber">
                                     <img src="/new/es-3.svg" alt="" />
                                     <p className="secont-title">
-                                        Shape business outcomes while growing your career
+                                        {t('Shape business outcomes while growing your career')}
                                     </p>
                                 </div>
                             </div>
                         </div>
                         <p className="eslh-waber-p">
-                            Your experience matters and at RIC, it creates lasting impact.
+                                {t('Your experience matters and at RIC, it creates lasting impact.')}
                         </p>
                     </div>
                 </div>
@@ -400,33 +402,28 @@ export default function AlMl() {
                                 <div className="campes-0">
                                     <div className="main-dark-title-waber cr-3">
                                         <h2 className="main-dark-title" data-cursor="-opaque">
-                                            Return to Work:
-                                            <br />
-                                            Restart with Confidence
+                                            {t('Return to Work: Restart with Confidence')}
                                         </h2>
                                         <p className="m-0">
-                                            We believe a career break should never be a barrier. Our
-                                            Return-to-Work program supports professionals re-entering the
-                                            workforce with
+                                            {t('We believe a career break should never be a barrier. Our Return-to-Work program supports professionals re-entering the workforce with')}
                                         </p>
                                     </div>
                                     <div className="campes-3">
                                         <div className="campes-3-waber">
                                             <img src="/new/m2.svg" alt="" />
-                                            <p>Flexible opportunities to ease back into corporate life</p>
+                                            <p>{t('Flexible opportunities to ease back into corporate life')}</p>
                                         </div>
                                         <div className="campes-3-waber">
                                             <img src="/new/m3.svg" alt="" />
-                                            <p>Reskilling and upskilling initiatives</p>
+                                            <p>{t('Reskilling and upskilling initiatives')}</p>
                                         </div>
                                         <div className="campes-3-waber">
                                             <img src="/new/m4.svg" alt="" />
-                                            <p>Mentorship and guidance to rebuild confidence</p>
+                                            <p>{t('Mentorship and guidance to rebuild confidence')}</p>
                                         </div>
                                     </div>
                                     <p>
-                                        It is never too late to restart, and we are here to make it
-                                        possible.
+                                        {t('It is never too late to restart, and we are here to make it possible.')}
                                     </p>
                                 </div>
                             </div>
@@ -455,30 +452,29 @@ export default function AlMl() {
                                 <div className="re-avad">
                                     <div className="main-dark-title-waber text-dark-1">
                                         <h2 className="main-dark-title" data-cursor="-opaque">
-                                            Recognitions &amp; Awards
+                                            {t('Recognitions & Awards')}
                                         </h2>
                                         <p className="m-0">
-                                            Success deserves to be celebrated. At RheinBrücke, we honour
-                                            achievements through
+                                            {t('Success deserves to be celebrated. At RheinBrücke, we honour achievements through')}
                                         </p>
                                     </div>
                                     <div className="awards-list-flex">
                                         <div className="campes-3-waber">
                                             <img src="/new/ra-1.jpg" alt="" />
-                                            <p>Company-wide recognition programs</p>
+                                            <p>{t('Company-wide recognition programs')}</p>
                                         </div>
                                         <div className="campes-3-waber">
                                             <img src="/new/ra-2.jpg" alt="" />
-                                            <p>Performance and innovation awards</p>
+                                            <p>{t('Performance and innovation awards')}</p>
                                         </div>
                                         <div className="campes-3-waber">
                                             <img src="/new/ra-3.jpg" alt="" />
-                                            <p>Global client appreciation</p>
+                                            <p>{t('Global client appreciation')}</p>
                                         </div>
                                     </div>
                                     <p>
                                         {" "}
-                                        Your efforts will not just be noticed; they will be celebrated.
+                                        {t('Your efforts will not just be noticed; they will be celebrated.')}
                                     </p>
                                 </div>
                             </div>
@@ -499,14 +495,11 @@ export default function AlMl() {
                             <div className="col-lg-12">
                                 <div className="white-center-heading-waber ">
                                     <h2 className="center-heading text-white" data-cursor="-opaque">
-                                        Life at RIC
+                                        {t('Life at RIC')}
                                     </h2>
                                     <p className="m-0 text-white hn">
                                         {" "}
-                                        Life at RheinBrücke is about more than work, it is about being
-                                        part of a family that supports, inspires, and grows together. Our
-                                        culture blends innovation with inclusivity, giving every associate
-                                        the space to learn , contribute, and thrive.
+                                        {t('Life at RheinBrücke is about more than work, it is about being part of a family that supports, inspires, and grows together. Our culture blends innovation with inclusivity, giving every associate the space to learn , contribute, and thrive.')}
                                     </p>
                                 </div>
                             </div>
@@ -814,13 +807,13 @@ export default function AlMl() {
                             <div className="col-sm-12">
                                 <div className="section-title text-center text-black">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Why Join RheinBrücke?
+                                        {t('Why Join RheinBrücke?')}
                                     </h2>
                                 </div>
                                 <div className="row mt-sm-5">
                                     <div className="col-lg-6 col-md-6 col-sm-6">
                                         <div className="services-56 gl-05">
-                                            <h3>Work with world-class clients across industries</h3>
+                                            <h3>{t('Work with world-class clients across industries')}</h3>
                                             {/* <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
@@ -830,7 +823,7 @@ export default function AlMl() {
                                     </div>
                                     <div className="col-lg-6 col-md-6 col-sm-6">
                                         <div className="services-56">
-                                            <h3>Be part of a diverse, global team</h3>
+                                            <h3>{t('Be part of a diverse, global team')}</h3>
                                             {/* <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
@@ -840,7 +833,7 @@ export default function AlMl() {
                                     </div>
                                     <div className="col-lg-4 col-md-6 col-sm-6">
                                         <div className="services-56 ser-57">
-                                            <h3>Grow through structured career models and mentoring</h3>
+                                            <h3>{t('Grow through structured career models and mentoring')}</h3>
                                             {/* <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
@@ -850,7 +843,7 @@ export default function AlMl() {
                                     </div>
                                     <div className="col-lg-4 col-md-6 col-sm-6">
                                         <div className="services-56 ser-57">
-                                            <h3>Enjoy competitive rewards and recognition</h3>
+                                            <h3>{t('Enjoy competitive rewards and recognition')}</h3>
                                             {/* <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
@@ -860,7 +853,7 @@ export default function AlMl() {
                                     </div>
                                     <div className="col-lg-4 col-md-6 col-sm-6">
                                         <div className="services-56 ser-57">
-                                            <h3>Make an impact that matters</h3>
+                                            <h3>{t('Make an impact that matters')}</h3>
                                             {/* <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
@@ -880,7 +873,7 @@ export default function AlMl() {
                             <div className="col-lg-12">
                                 <div className="white-center-heading-waber">
                                     <h2 className="center-heading text-white" data-cursor="-opaque">
-                                        Explore Current Openings
+                                        {t('Explore Current Openings')}
                                     </h2>
                                 </div>
                             </div>

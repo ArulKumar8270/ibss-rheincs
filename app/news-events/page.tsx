@@ -6,6 +6,7 @@ import Link from "next/link";
 import TestimonialandAward from "../Components/TestimonialandAward";
 import Awards from "../Components/Awards";
 import { createClient } from "@/lib/supabase-browser";
+import {useTranslation} from "../hooks/useTranslation";
 
 interface NewsEvent {
   id: string;
@@ -23,6 +24,8 @@ interface NewsEvent {
 }
 
 export default function EnterpriseSolutions() {
+  const { t, language } = useTranslation();
+  
   const [items, setItems] = useState<NewsEvent[]>([]);
   const [loading, setLoading] = useState(true);
   const supabase = createClient();
@@ -120,12 +123,12 @@ export default function EnterpriseSolutions() {
                     style={{ color: "#082326" }}
                     data-cursor="-opaque"
                   >
-                    Our History
+                    {t('Our History')}
                   </h2>
                   <p className="text-dark">
                     {" "}
-                    The latest in news and events from RheinBrücke, giving you
-                    insights on the recent developments in our organization.{" "}
+                    {t('The latest in news and events from RheinBrücke, giving you')}
+                    {t('insights on the recent developments in our organization.')}
                   </p>
                 </div>
               </div>

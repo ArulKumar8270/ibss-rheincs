@@ -453,7 +453,7 @@ export default function Header() {
                                     </span>
                                     <Link href="mailto:info@rheincs.com"> info@rheincs.com</Link>
                                 </li>
-                                 {/* <li>
+                                 <li>
                                      <div className="custom-select top-icon-gap" style={{ position: 'relative' }} ref={dropdownRef}>
                                         <select
                                             ref={selectRef}
@@ -547,7 +547,7 @@ export default function Header() {
                                             </div>
                                         )}
                                     </div>
-                                </li>  */}
+                                </li> 
                                 {/* <li>
                                     <div id="chcp_font_size" className="input-group">
                                         <span className="input-group-btn font-increase-waber">

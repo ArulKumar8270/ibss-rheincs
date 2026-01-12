@@ -1836,7 +1836,7 @@
 
 .ecom {
     position: relative !important;
-    justify-content: start !important;
+    justify-content: center !important;
 }
 
 .blog-img-waber-img {
@@ -3293,7 +3293,7 @@ h2.section-title {
     flex-direction: column;
     /* justify-content: space-between; */
     gap: 32px;
-    height: 216px;
+    height: 100%;
 }
 
 .main-dark-title {
