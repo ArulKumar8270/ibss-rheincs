@@ -49,6 +49,7 @@ export default function AdminBlogsPage() {
   const [uploadingImage, setUploadingImage] = useState(false)
   const [quillEditor, setQuillEditor] = useState<any>(null)
   const [industries, setIndustries] = useState<Array<{ id: string; name: string; slug: string }>>([])
+  const quillRef = useRef<any>(null)
   const supabase = createClient()
 
   const categories = [
@@ -292,16 +293,201 @@ export default function AdminBlogsPage() {
 
   // Get Quill editor instance when component mounts or content changes
   useEffect(() => {
-    if (showForm && !quillEditor) {
+    if (showForm) {
       const timer = setTimeout(() => {
         const editorElement = document.querySelector('.ql-editor') as any
         if (editorElement && editorElement.__quill) {
-          setQuillEditor(editorElement.__quill)
+          const quill = editorElement.__quill
+          setQuillEditor(quill)
+          quillRef.current = quill
         }
       }, 100)
       return () => clearTimeout(timer)
     }
   }, [showForm, quillEditor])
+
+  // Ensure images (including base64) are properly set when editing a blog with images
+  useEffect(() => {
+    if (!showForm || !editingBlog || !formData.content) return
+    
+    // Check if content has images (including base64)
+    const hasImages = formData.content.includes('<img') || formData.content.includes('data:image')
+    if (hasImages) {
+      const timer = setTimeout(() => {
+        try {
+          const quill = quillRef.current || quillEditor
+          if (!quill) {
+            // Retry if quill not ready
+            setTimeout(() => {
+              const retryQuill = quillRef.current || quillEditor
+              if (retryQuill) {
+                const currentContent = retryQuill.root.innerHTML
+                const hasImagesInRendered = currentContent.includes('<img') || currentContent.includes('data:image')
+                if (!hasImagesInRendered) {
+                  retryQuill.setText('')
+                  retryQuill.clipboard.dangerouslyPasteHTML(0, formData.content, 'silent')
+                  console.log('Re-set content with images (retry)')
+                }
+              }
+            }, 500)
+            return
+          }
+          
+          const currentContent = quill.root.innerHTML
+          // Check if images are missing from rendered content
+          const hasImagesInRendered = currentContent.includes('<img') || currentContent.includes('data:image')
+          
+          if (!hasImagesInRendered) {
+            // Images are in content but not rendered - re-set content using Quill API
+            // Clear first, then set new content
+            quill.setText('')
+            quill.clipboard.dangerouslyPasteHTML(0, formData.content, 'silent')
+            console.log('Re-set content with images using Quill API')
+            
+            // Process images again after a delay
+            setTimeout(() => {
+              const editor = document.querySelector('.ql-editor') as HTMLElement
+              if (editor) {
+                const images = editor.querySelectorAll('img')
+                images.forEach((img: HTMLImageElement) => {
+                  img.style.display = 'block'
+                  img.style.visibility = 'visible'
+                  img.style.opacity = '1'
+                  // Ensure base64 images are properly loaded
+                  const src = img.getAttribute('src')
+                  if (src && src.startsWith('data:image')) {
+                    img.setAttribute('src', src) // Force reload
+                  }
+                })
+              }
+            }, 300)
+          }
+        } catch (err) {
+          console.error('Error ensuring images in content:', err)
+        }
+      }, 800) // Wait longer for editor to be fully ready
+      
+      return () => clearTimeout(timer)
+    }
+  }, [showForm, editingBlog?.id, formData.content, quillEditor])
+
+  // Ensure images are visible when editing - process images after content is loaded
+  useEffect(() => {
+    if (!showForm || !formData.content) return
+
+    // First, ensure content with images is properly set in Quill
+    let contentTimer: NodeJS.Timeout | null = null
+    if (editingBlog && formData.content.includes('<img') && quillEditor) {
+      contentTimer = setTimeout(() => {
+        try {
+          const currentContent = quillEditor.root.innerHTML
+          // Check if images are missing from rendered content
+          const hasImagesInContent = formData.content.includes('<img')
+          const hasImagesInRendered = currentContent.includes('<img')
+          
+          if (hasImagesInContent && !hasImagesInRendered) {
+            // Images are in content but not rendered - re-set content using Quill API
+            quillEditor.clipboard.dangerouslyPasteHTML(0, formData.content, 'silent')
+          }
+        } catch (err) {
+          console.error('Error ensuring images in content:', err)
+        }
+      }, 300)
+    }
+
+    const processImagesForDisplay = () => {
+      const editor = document.querySelector('.ql-editor') as HTMLElement
+      if (!editor) return
+
+      // Find all images in the editor
+      const images = editor.querySelectorAll('img')
+      images.forEach((img) => {
+        // Ensure image is visible
+        img.style.display = 'block'
+        img.style.visibility = 'visible'
+        img.style.opacity = '1'
+        img.style.maxWidth = '100%'
+        img.style.height = 'auto'
+        
+        // Ensure image has proper src attribute
+        let src = img.getAttribute('src')
+        if (!src || src === '') {
+          const dataSrc = img.getAttribute('data-src')
+          if (dataSrc) {
+            img.setAttribute('src', dataSrc)
+            src = dataSrc
+          }
+        }
+        
+        // Special handling for base64 images
+        if (src && src.startsWith('data:image')) {
+          // Base64 image - ensure it's properly set
+          if (img.src !== src) {
+            img.src = src
+          }
+          // Force visibility for base64 images
+          img.style.display = 'block !important'
+          img.style.visibility = 'visible !important'
+          img.style.opacity = '1 !important'
+        }
+
+        // Add error handler to log broken images
+        img.onerror = () => {
+          console.warn('Image failed to load:', img.getAttribute('src'))
+          // Don't hide the image, just log the error
+        }
+
+        // Add load handler to ensure image is visible after loading
+        img.onload = () => {
+          img.style.display = 'block'
+          img.style.visibility = 'visible'
+          img.style.opacity = '1'
+        }
+
+        // If image is wrapped in resize wrapper, ensure wrapper is visible
+        const wrapper = img.closest('.ql-image-resize-wrapper') as HTMLElement | null
+        if (wrapper) {
+          wrapper.style.display = 'inline-block'
+          wrapper.style.visibility = 'visible'
+          wrapper.style.opacity = '1'
+        }
+
+        // Ensure image loads properly - check if image is already loaded
+        if (src && src !== '' && !img.complete) {
+          // Image hasn't loaded yet, ensure it will load
+          img.loading = 'eager' as any
+        }
+      })
+    }
+
+    // Process images with multiple delays to catch all cases
+    const timers = [
+      setTimeout(processImagesForDisplay, 100),
+      setTimeout(processImagesForDisplay, 300),
+      setTimeout(processImagesForDisplay, 500),
+      setTimeout(processImagesForDisplay, 1000)
+    ]
+
+    // Also watch for new images being added
+    const editor = document.querySelector('.ql-editor') as HTMLElement
+    if (editor) {
+      const imageObserver = new MutationObserver(() => {
+        processImagesForDisplay()
+      })
+      imageObserver.observe(editor, { childList: true, subtree: true, attributes: true })
+
+      return () => {
+        timers.forEach(timer => clearTimeout(timer))
+        if (contentTimer) clearTimeout(contentTimer)
+        imageObserver.disconnect()
+      }
+    }
+
+    return () => {
+      timers.forEach(timer => clearTimeout(timer))
+      if (contentTimer) clearTimeout(contentTimer)
+    }
+  }, [showForm, formData.content, editingBlog?.id, quillEditor])
 
   // Add image resize functionality
   useEffect(() => {
@@ -347,12 +533,22 @@ export default function AdminBlogsPage() {
           margin: 5px !important;
         `
 
+        // Ensure image is visible before wrapping
+        img.style.display = 'block'
+        img.style.visibility = 'visible'
+        img.style.opacity = '1'
+
         // Wrap the image
         const parent = img.parentNode
         if (parent) {
           parent.insertBefore(wrapper, img)
           wrapper.appendChild(img)
         }
+
+        // Ensure image remains visible after wrapping
+        img.style.display = 'block'
+        img.style.visibility = 'visible'
+        img.style.opacity = '1'
         
         // Create resize handle - make it very visible
         const handle = document.createElement('div')
@@ -691,7 +887,18 @@ export default function AdminBlogsPage() {
       }
     },
     clipboard: {
-      matchVisual: false
+      matchVisual: false,
+      // Custom matcher to preserve base64 images
+      matchers: [
+        ['img', (node: any, delta: any) => {
+          const src = node.getAttribute('src')
+          if (src) {
+            // Preserve both regular URLs and base64 images
+            return delta.insert({ image: src })
+          }
+          return delta
+        }]
+      ]
     }
   }), [])
 
@@ -978,12 +1185,12 @@ export default function AdminBlogsPage() {
         <div 
           id="blog-form-container"
           style={{
-            background: '#fff',
-            borderRadius: '12px',
-            padding: '25px',
-            marginBottom: '30px',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-          }}>
+          background: '#fff',
+          borderRadius: '12px',
+          padding: '25px',
+          marginBottom: '30px',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+        }}>
           <h2 style={{ marginBottom: '20px', color: '#333', fontWeight: 'bold' }}>{editingBlog ? 'Edit Blog' : 'Create New Blog'}</h2>
           <form onSubmit={handleSubmit}>
             <div style={{ marginBottom: '15px' }}>
@@ -1055,10 +1262,17 @@ export default function AdminBlogsPage() {
                     cursor: pointer;
                     max-width: 100%;
                     height: auto;
+                    display: block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
                   }
                   .ql-editor img:hover {
                     outline: 2px dashed #667eea;
                     outline-offset: 2px;
+                  }
+                  .ql-editor img[src=""],
+                  .ql-editor img:not([src]) {
+                    display: none !important;
                   }
                   .ql-image-resize-wrapper {
                     display: inline-block !important;
@@ -1094,10 +1308,23 @@ export default function AdminBlogsPage() {
                   }
                   .ql-editor .ql-image-resize-wrapper {
                     position: relative !important;
+                    display: inline-block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                  }
+                  .ql-editor .ql-image-resize-wrapper img {
+                    display: block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    max-width: 100% !important;
+                    height: auto !important;
                   }
                   .ql-editor img {
                     max-width: 100% !important;
                     height: auto !important;
+                    display: block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
                   }
                 `}</style>
               </div>
