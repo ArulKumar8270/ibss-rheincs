@@ -228,6 +228,39 @@ export default function Contact() {
     }));
   };
 
+  // Handle opening LiveChat widget
+  const handleOpenLiveChat = () => {
+    try {
+      // Check if LiveChat widget is available
+      if (typeof window !== 'undefined' && (window as any).LiveChatWidget) {
+        const LiveChatWidget = (window as any).LiveChatWidget;
+        
+        // Try to maximize/open the chat widget
+        if (LiveChatWidget.call) {
+          LiveChatWidget.call('maximize');
+        } else if (LiveChatWidget.get) {
+          // Alternative method if call doesn't work
+          LiveChatWidget.get('state', (state: any) => {
+            if (state && state.visibility && state.visibility.hidden) {
+              LiveChatWidget.call('maximize');
+            }
+          });
+        }
+      } else {
+        // If widget is not loaded yet, wait a bit and try again
+        setTimeout(() => {
+          if ((window as any).LiveChatWidget && (window as any).LiveChatWidget.call) {
+            (window as any).LiveChatWidget.call('maximize');
+          }
+        }, 500);
+      }
+    } catch (error) {
+      console.error('Error opening LiveChat:', error);
+      // Fallback: open LiveChat in a new window
+      window.open('https://www.livechat.com/chat-with/14850255/', '_blank');
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -393,7 +426,19 @@ export default function Contact() {
                   </li>
                 </div>
                 <div className="chat-main-waber">
-                  <div className="chat-btn-1">
+                  <div 
+                    className="chat-btn-1" 
+                    onClick={handleOpenLiveChat}
+                    style={{ cursor: 'pointer' }}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleOpenLiveChat();
+                      }
+                    }}
+                  >
                     <img src="/new/chat-btn.svg" alt="" />
                     <p>Chat With Us</p>
                   </div>
