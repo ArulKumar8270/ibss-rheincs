@@ -1239,7 +1239,7 @@ export default function Corushr() {
                     <div className="container">
                         <div className="row section-row align-items-center">
                             <div className="col-sm-6">
-                                <div className="hero-bg-video2">
+                                <div className="hero-bg-video2 corusbenefit">
                                     <video
                                         autoPlay={true}
                                         muted={true}
