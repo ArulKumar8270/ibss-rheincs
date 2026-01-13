@@ -1183,7 +1183,7 @@ export default function EnterpriseSolutions() {
                                                 <h3>Platform Partnership and Alliances</h3>
                                                 <p>
                                                     Epicor Premium Partner, Microsoft ISV Partner, Microsoft AI
-                                                    Cloud Partner, Protiviti ME, Moro Hub, N Tech and more.
+                                                    Cloud Partner, Protiviti ME, Moro Hub, SAP and National Technology Enterprises Company and more.
                                                 </p>
                                             </div>
                                         </div>
