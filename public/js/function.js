@@ -1889,7 +1889,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     const testimonial_slider = new Swiper(swiperEl, {
       slidesPerView: 5,
       spaceBetween: 30,
-      loop: true,
+      loop: false,
       speed: 800,
       autoplay: true,
       navigation: {

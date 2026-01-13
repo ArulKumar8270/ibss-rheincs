@@ -18049,11 +18049,11 @@ body.no-scroll {
 
 .icon-close {
 	font-size: 24px;
-	color: white;
+	color: #000;
 	/* always white */
 	cursor: pointer;
 	position: absolute;
-	right: 18px;
+	right: 40px;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
@@ -18068,14 +18068,7 @@ body.no-scroll {
 	visibility: visible !important;
 }
 
-.search-box.active .icon-search,
-.search-box.active .btn-search .icon-search {
-	display: none !important;
-}
 
-.search-box.active .btn-search svg.icon-search {
-	display: none !important;
-}
 
 .width100 h2 {
 	width: 100% !important;
