@@ -116,18 +116,8 @@ const Awards = () => {
                                         </div>
                                     </div>
                                 </div>
-                                {/* Testimonial Slide Start */}
-                                <div className="swiper-slide">
-                                    <div className="awards-waber">
-                                        <img src="/new/aw-5.png" alt="" />
-                                        <div className="aw-text-waber">
-                                            <p>Stevie Company of the Year 2015 &amp; 2017</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* Testimonial Slide End */}
                             </div>
-                            <div className="testimonial-btn-awards mt-10">
+                            {/* <div className="testimonial-btn-awards mt-10">
                                 <div className="testimonial-button-prev">
                                     <div className="animated-svg-link">
                                         <span className="svg-container ">
@@ -339,7 +329,7 @@ const Awards = () => {
                                         </span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     {/* Testimonial Slider End */}

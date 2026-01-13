@@ -20,10 +20,9 @@ const page = () => {
                         <div className="check-icon">
                             <i className="fa-solid fa-check" />
                         </div>
-                        <h1>Thank you!</h1>
+                        <h1>Thank you for downloading our collateral!</h1>
                         <p>
-                            Your request has been received and the email has been sent successfully.
-                            Please check your inbox for further details.
+                            If you require any additional information or assistance, please do not hesitate to reach out to <a href="mailto:info@rheincs.com" className="text-blue-600 hover:underline">info@rheincs.com</a>
                         </p>
                     </div>
                 </div>

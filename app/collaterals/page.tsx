@@ -208,7 +208,7 @@ export default function Collaterals() {
                 setStatusMessage(errorMessage);
             } else {
                 setStatus('success');
-                setStatusMessage('Thank you for downloading our collateral. If you require any additional information or assistance, please do not hesitate to reach out to info@rheincs.com');
+                // setStatusMessage('Thank you for downloading our collateral. If you require any additional information or assistance, please do not hesitate to reach out to <a href="mailto:info@rheincs.com" class="text-blue-600 hover:underline">info@rheincs.com</a>');
                 // Reset form
                 setFormData({
                     fullName: '',
@@ -2299,7 +2299,7 @@ export default function Collaterals() {
                                                         {status === 'success' && '✅ '}
                                                         {status === 'error' && '❌ '}
                                                         {status === 'loading' && '⏳ '}
-                                                        {statusMessage}
+                                                        <div dangerouslySetInnerHTML={{ __html: statusMessage }} />
                                                     </div>
                                                 )}
 

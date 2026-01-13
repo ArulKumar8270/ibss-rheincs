@@ -514,7 +514,7 @@ const page = () => {
                         ))
                       ) : (
                         <div className="col-sm-12">
-                          <p className="text-center" style={{ padding: '2rem' }}>
+                          <p className="text-center" style={{ padding: '2rem', color: '#000' }}>
                             No webinars found matching your search criteria.
                           </p>
                         </div>
