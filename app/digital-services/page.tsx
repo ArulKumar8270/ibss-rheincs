@@ -1310,7 +1310,7 @@ export default function AlMl() {
   </div>
   {/* Our Services Section End */}
   {/* Our Services Section Start */}
-  <div className="our-services1 customer  pd30">
+  <div className="our-services1 customer digiserpage pd30">
     <div className="container">
       <div className="row section-row">
         <div className="col-lg-6">
@@ -1352,7 +1352,7 @@ export default function AlMl() {
           <div className="col-lg-6 col-md-6">
             {/* Service Item Start */}
             <div className="service-item ">
-              <div className="service-item-body">
+              <div className="service-item-body identifyimg">
                 <h3>{t("Identity Solutions")}</h3>
                 <p>
                   {t("We secure access with Zero Trust architectures and Microsoft Entra for identity management and MFA, ensuring protected, compliant operations.")}
@@ -1361,7 +1361,9 @@ export default function AlMl() {
                   <b>{t("Tech:")}</b> 
                   {t("Microsoft Entra, Zero Trust, MFA")}
                 </p>
+                <div className="text-center">
                 <img src="/images/cus2.png" alt="" />
+                </div>
               </div>
             </div>
             {/* Service Item End */}
