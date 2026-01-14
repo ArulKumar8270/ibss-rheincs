@@ -21471,9 +21471,10 @@ body:has(.search-full.active) {
 
 #mobileSearchBox .icon-close {
     position: fixed;
-    top: -25px;
+    top: 15px;
     color: #333;
-    left: 95%;
+    right: 0px;
+    left: auto;
 }
 
 #mobileSearchBox:has(.search-full.active) .icon-close {
