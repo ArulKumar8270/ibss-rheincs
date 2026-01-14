@@ -19495,7 +19495,7 @@ body.popup-open .main-header {
 }
 
 .customer .section-title {
-	width: 508px;
+	width: 100%;
 }
 
 .msdynamics h2 {
@@ -22188,4 +22188,13 @@ color:#000 !important;
 
 .awrdstest{
 	display:none !important;
+}
+
+.identifyimg img{
+	height:300px;
+	width:auto;
+	margin:auto;
+}
+.digiserpage .service-item-body {
+    min-height: 560px;
 }
