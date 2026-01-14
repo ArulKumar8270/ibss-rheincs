@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function AlMl() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
 <>
@@ -15,20 +17,15 @@ export default function AlMl() {
         <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Digital Services – Delivering Scalable, Agile, and Future-Ready
-              Technology Services
+              {t("Digital Services – Delivering Scalable, Agile, and Future-Ready Technology Services")}
             </h2>
             <p>
-              Our Digital Services empower your business with the tools,
-              technologies, and expertise needed to drive transformation and
-              sustain growth. Through our Analyse-Integrate-Transform framework,
-              we ensure every engagement delivers measurable, long-term value,
-              with solutions that are scalable, agile, and future-ready.
+              {t("Our Digital Services empower your business with the tools, technologies, and expertise needed to drive transformation and sustain growth. Through our Analyse-Integrate-Transform framework, we ensure every engagement delivers measurable, long-term value, with solutions that are scalable, agile, and future-ready.")}
             </p>
             
                         <div className="ser-btn mt-5">
                           <Link href="/contact-us" className="animated-svg-link">
-                            Contact Us
+                            {t("Contact Us")}
                             <span className="svg-container ">
                               <span className=" right">
                                 <svg
@@ -151,14 +148,10 @@ export default function AlMl() {
           <div className="section-title testidescription text-center">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
               {" "}
-              Modernise and Upgrade Your Enterprise Core
+              {t("Modernise and Upgrade Your Enterprise Core")}
             </h2>
             <p>
-              To stay competitive, businesses must evolve their core systems to
-              be agile, scalable, and cloud-ready. Our enterprise modernisation
-              services help you move beyond legacy systems with cutting-edge
-              platforms, architectures, and applications, enabling faster
-              innovation and operational flexibility.
+              {t("To stay competitive, businesses must evolve their core systems to be agile, scalable, and cloud-ready. Our enterprise modernisation services help you move beyond legacy systems with cutting-edge platforms, architectures, and applications, enabling faster innovation and operational flexibility.")}
             </p>
           </div>
         </div>
@@ -291,18 +284,13 @@ export default function AlMl() {
                         </svg>
                         {/* <i class="bi bi-people-fill"></i> */}
                       </div>
-                      <h3>Architecture Services: </h3>
+                      <h3>{t("Architecture Services: ")} </h3>
                       <ul>
                         <li>
-                          Our cloud-native architectures on Microsoft Azure
-                          integrate microservices and event-driven frameworks,
-                          allowing your business to adapt quickly and innovate
-                          continuously. We also help migrate legacy systems,
-                          optimising workflows to support growth.
+                          {t("Our cloud-native architectures on Microsoft Azure integrate microservices and event-driven frameworks, allowing your business to adapt quickly and innovate continuously. We also help migrate legacy systems, optimising workflows to support growth.")}
                         </li>
                         <li>
-                          <b>Tech:</b> MACH, SOA, Microsoft Azure, Event-driven
-                          Frameworks
+                          <b>{t("Tech:")}</b> {t("MACH, SOA, Microsoft Azure, Event-driven Frameworks")}
                         </li>
                       </ul>
                     </div>
@@ -441,18 +429,14 @@ export default function AlMl() {
                         {/*<img src="/images/ss5.svg" alt="">*/}
                         {/* <i class="bi bi-cart-check-fill"></i> */}
                       </div>
-                      <h3>App Modernisation:</h3>
+                      <h3>{t("App Modernisation:")}</h3>
                       <ul>
                         <li>
                           {" "}
-                          We modernise legacy applications into scalable,
-                          secure, cloud-ready platforms using modern frameworks,
-                          cloud-native infrastructure, and tools like Algolia,
-                          Amplience, and Metapack.{" "}
+                          {t("We modernise legacy applications into scalable, secure, cloud-ready platforms using modern frameworks, cloud-native infrastructure, and tools like Algolia, Amplience, and Metapack.")}
                         </li>
                         <li>
-                          <b>Tech:</b> Microservices, Serverless Computing,
-                          Emarsys
+                          <b>{t("Tech:")}</b> {t("Microservices, Serverless Computing, Emarsys")}
                         </li>
                       </ul>
                     </div>
@@ -539,17 +523,13 @@ export default function AlMl() {
                         {/*<img src="/images/ss6.svg" alt="">*/}
                         {/* <i class="bi bi-pie-chart-fill"></i> */}
                       </div>
-                      <h3>Application Development: </h3>
+                      <h3>{t("Application Development:")}</h3>
                       <ul>
-                        <li>
-                          From custom designs to cloud migrations, we develop
-                          tailored enterprise applications that evolve with your
-                          needs. We ensure a seamless application lifecycle,
-                          from concept to delivery and beyond.
+                      <li>
+                          {t("From custom designs to cloud migrations, we develop tailored enterprise applications that evolve with your needs. We ensure a seamless application lifecycle, from concept to delivery and beyond.")}
                         </li>
                         <li>
-                          <b>Tech:</b> .NET, C#, VB.NET, Angular, React, Blazor,
-                          Azure DevOps.
+                          <b>{t("Tech:")}</b> {t(".NET, C#, VB.NET, Angular, React, Blazor, Azure DevOps.")}
                         </li>
                       </ul>
                     </div>
@@ -683,18 +663,13 @@ export default function AlMl() {
                       </svg>
                       {/* <i class="bi bi-people-fill"></i> */}
                     </div>
-                    <h3>Architecture Services: </h3>
+                    <h3>{t("Architecture Services:")}</h3>
                     <ul>
                       <li>
-                        Our cloud-native architectures on Microsoft Azure
-                        integrate microservices and event-driven frameworks,
-                        allowing your business to adapt quickly and innovate
-                        continuously. We also help migrate legacy systems,
-                        optimising workflows to support growth.
+                        {t("Our cloud-native architectures on Microsoft Azure integrate microservices and event-driven frameworks, allowing your business to adapt quickly and innovate continuously. We also help migrate legacy systems, optimising workflows to support growth.")}
                       </li>
                       <li>
-                        <b>Tech:</b> MACH, SOA, Microsoft Azure, Event-driven
-                        Frameworks
+                        <b>{t("Tech:")}</b> {t("MACH, SOA, Microsoft Azure, Event-driven Frameworks")}
                       </li>
                     </ul>
                   </div>
@@ -832,18 +807,14 @@ export default function AlMl() {
                       {/*<img src="/images/ss5.svg" alt="">*/}
                       {/* <i class="bi bi-cart-check-fill"></i> */}
                     </div>
-                    <h3>App Modernisation:</h3>
+                    <h3>{t("App Modernisation:")}</h3>
                     <ul>
                       <li>
                         {" "}
-                        We modernise legacy applications into scalable, secure,
-                        cloud-ready platforms using modern frameworks,
-                        cloud-native infrastructure, and tools like Algolia,
-                        Amplience, and Metapack.{" "}
+                        {t("We modernise legacy applications into scalable, secure, cloud-ready platforms using modern frameworks, cloud-native infrastructure, and tools like Algolia, Amplience, and Metapack.")}
                       </li>
                       <li>
-                        <b>Tech:</b> Microservices, Serverless Computing,
-                        Emarsys
+                        <b>{t("Tech:")}</b> {t("Microservices, Serverless Computing, Emarsys")}
                       </li>
                     </ul>
                   </div>
@@ -928,17 +899,13 @@ export default function AlMl() {
                       {/*<img src="/images/ss6.svg" alt="">*/}
                       {/* <i class="bi bi-pie-chart-fill"></i> */}
                     </div>
-                    <h3>Application Development: </h3>
+                    <h3>{t("Application Development:")}</h3>
                     <ul>
                       <li>
-                        From custom designs to cloud migrations, we develop
-                        tailored enterprise applications that evolve with your
-                        needs. We ensure a seamless application lifecycle, from
-                        concept to delivery and beyond.
+                        {t("From custom designs to cloud migrations, we develop tailored enterprise applications that evolve with your needs. We ensure a seamless application lifecycle, from concept to delivery and beyond.")}
                       </li>
                       <li>
-                        <b>Tech:</b> .NET, C#, VB.NET, Angular, React, Blazor,
-                        Azure DevOps.
+                        <b>{t("Tech:")}</b> {t(".NET, C#, VB.NET, Angular, React, Blazor, Azure DevOps.")}
                       </li>
                     </ul>
                   </div>
@@ -1172,54 +1139,43 @@ export default function AlMl() {
         <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Activate Data and Intelligence
+              {t("Activate Data and Intelligence")}
             </h2>
             <p>
-              Unlock the full potential of your data to drive smarter, faster
-              business decisions. By connecting, integrating, and activating
-              your data, we turn it into real-time, actionable intelligence that
-              empowers you to make data-driven decisions and optimise
-              performance at scale.
+              {t("Unlock the full potential of your data to drive smarter, faster business decisions. By connecting, integrating, and activating your data, we turn it into real-time, actionable intelligence that empowers you to make data-driven decisions and optimise performance at scale.")}
             </p>
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
               <img src="/images/app1.svg" alt="" />
               <div className="pill-cont">
-                <h5>Integration &amp; Data Services:</h5>
+                <h5>{t("Integration & Data Services:")}</h5>
                 <p>
-                  We connect your digital ecosystem with seamless integrations,
-                  real-time insights, and automated workflows using Azure Logic
-                  Apps, API Management, and Cosmos DB. <br /> <b>Tech:</b> SQL
-                  Azure, Data Factory, Real-time Data Services
+                  {t("We connect your digital ecosystem with seamless integrations, real-time insights, and automated workflows using Azure Logic Apps, API Management, and Cosmos DB.")} <br /> <b>{t("Tech:")}</b> 
+                  {t("SQL, Azure, Data Factory, Real-time Data Services")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
               <img src="/images/app2.svg" alt="" />
               <div className="pill-cont">
-                <h5>Data Engineering &amp; Warehousing:</h5>
+                <h5>{t("Data Engineering & Warehousing:")}</h5>
                 <p>
-                  Engineer scalable data pipelines and modern cloud warehouses
-                  to unlock enterprise insights. We build and manage secure,
-                  optimised data platforms for advanced analytics using Azure
-                  Data Lake, Synapse Analytics, and Delta Lake architectures.{" "}
-                  <br /> <b>Tech:</b> Azure Data Lake, Synapse Analytics, Delta
-                  Lake, Azure Data Factory
+                  {t("Engineer scalable data pipelines and modern cloud warehouses to unlock enterprise insights. We build and manage secure, optimised data platforms for advanced analytics using Azure Data Lake, Synapse Analytics, and Delta Lake architectures.")}
+                  <br /> <b>{t("Tech:")}</b> 
+                  {t("Azure Data Lake, Synapse Analytics, Delta Lake, Azure Data Factory")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
               <img src="/images/app3.svg" alt="" />
               <div className="pill-cont">
-                <h5>AI &amp; Analytics:</h5>
+                <h5>{t("AI & Analytics:")}</h5>
                 <p>
                   {" "}
-                  We operationalise AI and analytics with Azure Machine
-                  Learning, delivering predictive insights and process
-                  automation. Power BI and Tableau turn data into actionable
-                  intelligence for smarter, faster decisions. <br />{" "}
-                  <b>Tech:</b> Azure Machine Learning, Power BI, Tableau
+                  {t("We operationalise AI and analytics with Azure Machine Learning, delivering predictive insights and process automation. Power BI and Tableau turn data into actionable intelligence for smarter, faster decisions.")} <br />{" "}
+                  <b>{t("Tech:")}</b> 
+                  {t("Azure Machine Learning, Power BI, Tableau")}
                 </p>
               </div>
             </div>
@@ -1237,54 +1193,43 @@ export default function AlMl() {
         <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Activate Data and Intelligence
+              {t("Activate Data and Intelligence")}
             </h2>
             <p>
-              Unlock the full potential of your data to drive smarter, faster
-              business decisions. By connecting, integrating, and activating
-              your data, we turn it into real-time, actionable intelligence that
-              empowers you to make data-driven decisions and optimise
-              performance at scale.
+              {t("Unlock the full potential of your data to drive smarter, faster business decisions. By connecting, integrating, and activating your data, we turn it into real-time, actionable intelligence that empowers you to make data-driven decisions and optimise performance at scale.")}
             </p>
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
               <img src="/images/app1.svg" alt="" />
               <div className="pill-cont">
-                <h5>Integration &amp; Data Services:</h5>
+                <h5>{t("Integration & Data Services:")}</h5>
                 <p>
-                  We connect your digital ecosystem with seamless integrations,
-                  real-time insights, and automated workflows using Azure Logic
-                  Apps, API Management, and Cosmos DB. <br /> <b>Tech:</b> SQL
-                  Azure, Data Factory, Real-time Data Services
+                  {t("We connect your digital ecosystem with seamless integrations, real-time insights, and automated workflows using Azure Logic Apps, API Management, and Cosmos DB.")} <br /> <b>{t("Tech:")}</b> 
+                  {t("SQL, Azure, Data Factory, Real-time Data Services")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
               <img src="/images/app2.svg" alt="" />
               <div className="pill-cont">
-                <h5>Data Engineering &amp; Warehousing:</h5>
+                <h5>{t("Data Engineering & Warehousing:")}</h5>
                 <p>
-                  Engineer scalable data pipelines and modern cloud warehouses
-                  to unlock enterprise insights. We build and manage secure,
-                  optimised data platforms for advanced analytics using Azure
-                  Data Lake, Synapse Analytics, and Delta Lake architectures.{" "}
-                  <br /> <b>Tech:</b> Azure Data Lake, Synapse Analytics, Delta
-                  Lake, Azure Data Factory
+                  {t("Engineer scalable data pipelines and modern cloud warehouses to unlock enterprise insights. We build and manage secure, optimised data platforms for advanced analytics using Azure Data Lake, Synapse Analytics, and Delta Lake architectures.")}
+                  <br /> <b>{t("Tech:")}</b> 
+                  {t("Azure Data Lake, Synapse Analytics, Delta Lake, Azure Data Factory")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
               <img src="/images/app3.svg" alt="" />
               <div className="pill-cont">
-                <h5>AI &amp; Analytics:</h5>
+                <h5>{t("AI & Analytics:")}</h5>
                 <p>
                   {" "}
-                  We operationalise AI and analytics with Azure Machine
-                  Learning, delivering predictive insights and process
-                  automation. Power BI and Tableau turn data into actionable
-                  intelligence for smarter, faster decisions. <br />{" "}
-                  <b>Tech:</b> Azure Machine Learning, Power BI, Tableau
+                  {t("We operationalise AI and analytics with Azure Machine Learning, delivering predictive insights and process automation. Power BI and Tableau turn data into actionable intelligence for smarter, faster decisions.")}<br />{" "}
+                  <b>{t("Tech:")}</b> 
+                  {t("Azure Machine Learning, Power BI, Tableau")}
                 </p>
               </div>
             </div>
@@ -1305,14 +1250,14 @@ export default function AlMl() {
           {/* Section Title Start */}
           <div className="section-title digitalexp">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Enhance Digital Experiences
+              {t("Enhance Digital Experiences")}
             </h2>
             <p>
-              In a digital-first world, creating seamless and intuitive user
-              experiences is key to driving engagement and satisfaction. We
-              design modern, responsive, and accessible digital interfaces that
-              empower your users and deliver exceptional experiences across all
-              platforms.
+              {t("In a digital-first world, creating seamless and intuitive user")}
+              {t(" experiences is key to driving engagement and satisfaction. We")}
+              {t(" design modern, responsive, and accessible digital interfaces that")}
+              {t(" empower your users and deliver exceptional experiences across all")}
+              {t(" platforms.")}
             </p>
           </div>
           {/* Section Title End */}
@@ -1323,15 +1268,16 @@ export default function AlMl() {
           <div className="col-lg-6 col-md-6">
             <div className="service-item firstmobile">
               <div className="service-item-body">
-                <h3>UX/UI Services</h3>
+                <h3>{t("UX/UI Services")}</h3>
                 <p>
-                  We design intuitive, user-friendly interfaces using tools like
-                  Figma, Webflow, and Adobe XD, blending AR/VR and inclusive
-                  design. Every experience is clear, responsive, engaging, and
-                  future-ready.{" "}
+                  {t("We design intuitive, user-friendly interfaces using tools like")}
+                  {t(" Figma, Webflow, and Adobe XD, blending AR/VR and inclusive")}
+                  {t(" design. Every experience is clear, responsive, engaging, and")}
+                  {t(" future-ready.")}
                 </p>
                 <p>
-                  <b>Tech: </b> Figma, Webflow, Anima, AR/VR Design, Adobe XD
+                  <b>{t("Tech:")}</b> 
+                  {t("Figma, Webflow, Anima, AR/VR Design, Adobe XD")}
                 </p>
                 <img src="/images/digiexp.png" alt="" />
               </div>
@@ -1342,16 +1288,16 @@ export default function AlMl() {
             {/* Service Item Start */}
             <div className="service-item secondmobile">
               <div className="service-item-body">
-                <h3>Mobile Applications</h3>
+                <h3>{t("Mobile Applications")}</h3>
                 <p>
-                  We build high-performance, scalable mobile apps using React
-                  Native, Flutter, and native SDKs. Integrated with Azure, our
-                  solutions deliver reliable, engaging experiences for
-                  standalone and hybrid deployments.{" "}
+                  {t("We build high-performance, scalable mobile apps using React")}
+                  {t(" Native, Flutter, and native SDKs. Integrated with Azure, our")}
+                  {t(" solutions deliver reliable, engaging experiences for")}
+                  {t(" standalone and hybrid deployments.")}
                 </p>
                 <p>
-                  <b>Tech: </b>React Native, Flutter, iOS SDK, Android SDK,
-                  Microsoft Azure, Hybrid Apps, Standalone Apps
+                  <b>{t("Tech:")}</b> 
+                  {t("React Native, Flutter, iOS SDK, Android SDK, Microsoft Azure, Hybrid Apps, Standalone Apps")}
                 </p>
                 <img src="/images/digiexp2.png" alt="" />
               </div>
@@ -1371,14 +1317,14 @@ export default function AlMl() {
           {/* Section Title Start */}
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Secure and Optimise Operations
+              {t("Secure and Optimise Operations")}
             </h2>
             <p>
-              Building a secure and resilient IT environment is crucial for
-              sustaining operations and ensuring business continuity. We offer a
-              range of services to safeguard your infrastructure, optimise
-              performance, and enable continuous, proactive management of your
-              technology environment.
+              {t("Building a secure and resilient IT environment is crucial for")}
+              {t(" sustaining operations and ensuring business continuity. We offer a")}
+              {t(" range of services to safeguard your infrastructure, optimise")}
+              {t(" performance, and enable continuous, proactive management of your")}
+              {t(" technology environment.")}
             </p>
           </div>
           {/* Section Title End */}
@@ -1389,17 +1335,14 @@ export default function AlMl() {
           <div className="col-lg-6 col-md-6">
             <div className="service-item ">
               <div className="service-item-body">
-                <h3>Managed Services</h3>
+                <h3>{t("Managed Services")}</h3>
                 <p>
                   {" "}
-                  We deliver 24/7 monitoring, proactive support, and
-                  optimisation to keep your IT environment secure and resilient.
-                  Using Azure Sentinel and Defender, we protect against threats
-                  and enhance performance.
+                  {t("We deliver 24/7 monitoring, proactive support, and optimisation to keep your IT environment secure and resilient. Using Azure Sentinel and Defender, we protect against threats and enhance performance.")}
                 </p>
                 <p>
-                  <b>Tech: </b>Azure Sentinel, Azure Defender, Proactive
-                  Security Management
+                  <b>{t("Tech:")}</b> 
+                  {t("Azure Sentinel, Azure Defender, Proactive Security Management")}
                 </p>
                 <img src="/images/cu1.png" alt="" />
               </div>
@@ -1410,14 +1353,13 @@ export default function AlMl() {
             {/* Service Item Start */}
             <div className="service-item ">
               <div className="service-item-body">
-                <h3>Identity Solutions</h3>
+                <h3>{t("Identity Solutions")}</h3>
                 <p>
-                  We secure access with Zero Trust architectures and Microsoft
-                  Entra for identity management and MFA, ensuring protected,
-                  compliant operations.{" "}
+                  {t("We secure access with Zero Trust architectures and Microsoft Entra for identity management and MFA, ensuring protected, compliant operations.")}
                 </p>
                 <p>
-                  <b>Tech: </b>Microsoft Entra, Zero Trust, MFA
+                  <b>{t("Tech:")}</b> 
+                  {t("Microsoft Entra, Zero Trust, MFA")}
                 </p>
                 <img src="/images/cus2.png" alt="" />
               </div>
@@ -1437,18 +1379,16 @@ export default function AlMl() {
         <div className="firstrow">
           <div className="row">
             <div className="col-sm-8">
-              <h2>Built for Today, Ready for What’s Next</h2>
+              <h2>{t("Built for Today, Ready for What’s Next")}</h2>
               <p>
-                Every engagement is designed for measurable value — modernising
-                systems, activating data, transforming user experiences, and
-                safeguarding operations.
+                {t("Every engagement is designed for measurable value — modernising systems, activating data, transforming user experiences, and safeguarding operations.")}
               </p>
-              <p>Let’s operationalise your digital future. </p>
+              <p>{t("Let’s operationalise your digital future.")}</p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <Link href="/contact-us" className="animated-svg-link">
-                  Contact Us
+                  {t("Contact Us")}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg
