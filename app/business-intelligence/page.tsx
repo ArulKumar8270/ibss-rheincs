@@ -5,7 +5,9 @@ import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
 import TestimonialandAward from "../Components/TestimonialandAward";
 import Awards from "../Components/Awards";
+import {useTranslation} from "../hooks/useTranslation";
 export default function AlMl() {
+  const { t, language } = useTranslation();
     const [activeTab, setActiveTab] = useState('London');
     return (
         <CommomLayout>
@@ -18,18 +20,14 @@ export default function AlMl() {
                             <div className="col-sm-5">
                                 <div className="section-title wow fadeInUp">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Transforming <br /> Enterprises With <br />
-                                        Innovative Digital Services
+                                        {t("Transforming Enterprises With Innovative Digital Services")}
                                     </h2>
                                     <p>
-                                        At RheinBrücke, we help enterprises reimagine their digital future
-                                        by combining technology, strategy, and industry expertise. With
-                                        scalable solutions and a business-first approach, we ensure your
-                                        transformation drives measurable results and long-term growth.
+                                        {t("At RheinBrücke, we help enterprises reimagine their digital future by combining technology, strategy, and industry expertise. With scalable solutions and a business-first approach, we ensure your transformation drives measurable results and long-term growth.")}
                                     </p>
                                     <div className="ser-btn ">
                                         <Link href="/contact-us" className="animated-svg-link">
-                                            Contact Us
+                                            {t("Contact Us")}
                                             <span className="svg-container ">
                                                 <span className=" right">
                                                     <svg
@@ -1050,24 +1048,13 @@ export default function AlMl() {
                                     <div className="section-title">
                                         <div className="hero-video-content wow fadeInUp mt-4">
                                             <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                                Benefits and Challenges of BI Implementation
+                                                {t("Benefits and Challenges of BI Implementation")}
                                             </h2>
                                             <p>
-                                                Business Intelligence acts as a data manager, guiding
-                                                enterprises through the complexities of their data landscape.
-                                                It transcends basic data collection, providing a comprehensive
-                                                view that helps decode intricate patterns and trends.
-                                                Businesses can identify hidden connections and uncover
-                                                previously unseen opportunities by leveraging BI. This
-                                                holistic approach allows companies to transition from reactive
-                                                to proactive, making informed predictions about market shifts
-                                                and customer behavior.
+                                                {t("Business Intelligence acts as a data manager, guiding enterprises through the complexities of their data landscape. It transcends basic data collection, providing a comprehensive view that helps decode intricate patterns and trends. Businesses can identify hidden connections and uncover previously unseen opportunities by leveraging BI. This holistic approach allows companies to transition from reactive to proactive, making informed predictions about market shifts and customer behavior.")}
                                             </p>
                                             <p>
-                                                The success of BI implementation centres around effective
-                                                planning, stakeholder engagement, and skill development that
-                                                maximize the benefits of BI for informed decision-making and
-                                                business performance.
+                                                {t("The success of BI implementation centres around effective planning, stakeholder engagement, and skill development that maximize the benefits of BI for informed decision-making and business performance.")}
                                             </p>
                                         </div>
                                     </div>
@@ -1084,7 +1071,7 @@ export default function AlMl() {
                             <div className="col-lg-12">
                                 <div className="section-title text-left">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        BI Service Offerings
+                                        {t("BI Service Offerings")}
                                     </h2>
                                 </div>
                                 <div className="biimp-tabs">
@@ -1094,37 +1081,37 @@ export default function AlMl() {
                                             onClick={() => setActiveTab('London')}
                                             id="defaultOpen"
                                         >
-                                            Data Collection &amp; Preparation
+                                           {t("Data Collection & Preparation")}
                                         </button>
                                         <button 
                                             className={`tablinks ${activeTab === 'Paris' ? 'active' : ''}`}
                                             onClick={() => setActiveTab('Paris')}
                                         >
-                                            Integration with Existing Systems
+                                             {t("Integration with Existing Systems")}
                                         </button>
                                         <button 
                                             className={`tablinks ${activeTab === 'Tokyo' ? 'active' : ''}`}
                                             onClick={() => setActiveTab('Tokyo')}
                                         >
-                                            Data Warehousing
+                                             {t("Data Warehousing")}
                                         </button>
                                         <button 
                                             className={`tablinks ${activeTab === 'Tokyo1' ? 'active' : ''}`}
                                             onClick={() => setActiveTab('Tokyo1')}
                                         >
-                                            Data Governance and Security
+                                             {t("Data Governance and Security")}
                                         </button>
                                         <button 
                                             className={`tablinks ${activeTab === 'Tokyo2' ? 'active' : ''}`}
                                             onClick={() => setActiveTab('Tokyo2')}
                                         >
-                                            Data Mining and Analytics
+                                             {t("Data Mining and Analytics")}
                                         </button>
                                         <button 
                                             className={`tablinks ${activeTab === 'Tokyo3' ? 'active' : ''}`}
                                             onClick={() => setActiveTab('Tokyo3')}
                                         >
-                                            Reports and Dashboards
+                                             {t("Reports and Dashboards")}
                                         </button>
                                     </div>
                                     <div
@@ -1134,33 +1121,26 @@ export default function AlMl() {
                                     >
                                         <div className="tab-cards">
                                             <div className="card-left">
-                                                <h5>Data Collection and Preparation</h5>
+                                                <h5> {t("Data Collection and Preparation")}</h5>
                                                 <p>
-                                                    Ensuring that enterprise data can be identified, aggregated
-                                                    and transformed using ETL processes to make it accessible
-                                                    and useful.
+                                                     {t("Ensuring that enterprise data can be identified, aggregated and transformed using ETL processes to make it accessible and useful.")}
                                                 </p>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Data aggregation from databases, APIs and Cloud services,
-                                                        integrating with data lakes for scalable storage.
+                                                         {t("Data aggregation from databases, APIs and Cloud services, integrating with data lakes for scalable storage.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Data preparation - cleansing viz. correcting errors and
-                                                        removing duplicates, transforming by standardizing formats
-                                                        &amp; aggregating, and enriching data by adding contextual
-                                                        details.
+                                                         {t("Data preparation - cleansing viz. correcting errors and removing duplicates, transforming by standardizing formats & aggregating, and enriching data by adding contextual details.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Tools such as Power BI Dataflows and Power Query automate
-                                                        processes, enhancing efficiency.
+                                                         {t("Tools such as Power BI Dataflows and Power Query automate processes, enhancing efficiency.")}
                                                     </p>
                                                 </div>
                                             </div>
@@ -1179,36 +1159,32 @@ export default function AlMl() {
                                     >
                                         <div className="tab-cards">
                                             <div className="card-left">
-                                                <h5>Integration with Existing Systems</h5>
-                                                <p>Seamless integration with on-premise systems or Cloud.</p>
+                                                <h5> {t("Integration with Existing Systems")}</h5>
+                                                <p>
+                                                     {t("Seamless integration with on-premise systems or Cloud.")}
+                                                </p>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Data Sources like SQL Server, Oracle, and MySQL database,
-                                                        Cloud services such as Azure Data Lake, Amazon S3, and
-                                                        Google BigQuery, APIs, Flat Files
+                                                         {t("Data Sources like SQL Server, Oracle, and MySQL database, Cloud services such as Azure Data Lake, Amazon S3, and Google BigQuery, APIs, Flat Files")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        CRM Systems Salesforce, Dynamics 365, or HubSpot and ERP
-                                                        Systems like SAP, Oracle, Epicor or Microsoft Dynamics
-                                                        365.{" "}
+                                                         {t("CRM Systems Salesforce, Dynamics 365, or HubSpot and ERP Systems like SAP, Oracle, Epicor or Microsoft Dynamics 365.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Integration with Data Lakes, BI Tools, Collaboration tools
-                                                        like Teams, Slack and more.
+                                                         {t("Integration with Data Lakes, BI Tools, Collaboration tools like Teams, Slack and more.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Integration using Microsoft Power Automate or Zapier
-                                                        Workflow and Automation Tools.
+                                                         {t("Integration using Microsoft Power Automate or Zapier Workflow and Automation Tools.")}
                                                     </p>
                                                 </div>
                                             </div>
@@ -1227,37 +1203,32 @@ export default function AlMl() {
                                     >
                                         <div className="tab-cards">
                                             <div className="card-left">
-                                                <h5>Data Warehousing</h5>
+                                                <h5>{t("Data Warehousing")}</h5>
                                                 <p>
-                                                    Our architecture and design services ensure optimised data
-                                                    accessibility, scalability and performance.
+                                                    {t("Our architecture and design services ensure optimised data accessibility, scalability and performance.")}
                                                 </p>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Data Modelling, such as Star or Snowflake schemas, to
-                                                        organize data for efficient querying and reporting.
+                                                        {t("Data Modelling, such as Star or Snowflake schemas, to organize data for efficient querying and reporting.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Data Integration and ETL to pull data from various
-                                                        sources, transform and load into the data warehouse.
+                                                        {t("Data Integration and ETL to pull data from various sources, transform and load into the data warehouse.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Centralized Data Storage from sources like databases, CRM
-                                                        systems and ERP platforms.
+                                                        {t("Centralized Data Storage from sources like databases, CRM systems and ERP platforms.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Performance Optimization using indexing and partitioning
-                                                        techniques.
+                                                        {t("Performance Optimization using indexing and partitioning techniques.")}
                                                     </p>
                                                 </div>
                                             </div>
@@ -1273,39 +1244,32 @@ export default function AlMl() {
                                     >
                                         <div className="tab-cards">
                                             <div className="card-left">
-                                                <h5>Data Governance and Security</h5>
+                                                <h5>{t("Data Governance and Security")}</h5>
                                                 <p>
-                                                    Defining the framework, policies and then implementing the
-                                                    required tools to enforce confidentiality, integrity and
-                                                    availability of data throughout the lifecycle.
+                                                    {t("Defining the framework, policies and then implementing the required tools to enforce confidentiality, integrity and availability of data throughout the lifecycle.")}
                                                 </p>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Data definition and management policies are set for
-                                                        handling, retention and retrieving.
+                                                        {t("Data definition and management policies are set for handling, retention and retrieving.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Implementation of measures to protect sensitive
-                                                        information and personally identifiable information,
-                                                        adherence to regulatory standards such as GDPR.
+                                                        {t("Implementation of measures to protect sensitive information and personally identifiable information, adherence to regulatory standards such as GDPR.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Data governance frameworks and security protocols to
-                                                        ensure integrity, confidentiality, and compliance.
+                                                        {t("Data governance frameworks and security protocols to ensure integrity, confidentiality, and compliance.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Data accuracy and consistency through cleansing and
-                                                        profiling.
+                                                        {t("Data accuracy and consistency through cleansing and profiling.")}
                                                     </p>
                                                 </div>
                                             </div>
@@ -1321,45 +1285,38 @@ export default function AlMl() {
                                     >
                                         <div className="tab-cards">
                                             <div className="card-left">
-                                                <h5>Data Mining and Analytics</h5>
+                                                <h5>{t("Data Mining and Analytics")}</h5>
                                                 <p>
-                                                    Analyse large datasets using ML, statistical analysis &amp;
-                                                    pattern recognition.
+                                                    {t("Analyse large datasets using ML, statistical analysis & pattern recognition.")}
                                                 </p>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Prescriptive Analytics: Achieve desired outcomes using
-                                                        both quantitative and qualitative insights.
+                                                        {t("Prescriptive Analytics: Achieve desired outcomes using both quantitative and qualitative insights.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Predictive Analytics: Identify patterns and relationships
-                                                        in historical data to predict future outcomes.
+                                                        {t("Predictive Analytics: Identify patterns and relationships in historical data to predict future outcomes.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Clustering Analytics: Uncover patterns, segment data for
-                                                        targeted strategies, detect anomalies, simplify data
-                                                        analysis.
+                                                        {t("Clustering Analytics: Uncover patterns, segment data for targeted strategies, detect anomalies, simplify data analysis.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Big Data Analytics: Analyse vast datasets to uncover
-                                                        hidden patterns and insights.
+                                                        {t("Big Data Analytics: Analyse vast datasets to uncover hidden patterns and insights.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        Online Analytical Processing: Explore and understand data
-                                                        from multiple perspectives with OLAP.
+                                                        {t("Online Analytical Processing: Explore and understand data from multiple perspectives with OLAP.")}
                                                     </p>
                                                 </div>
                                             </div>
@@ -1375,28 +1332,22 @@ export default function AlMl() {
                                     >
                                         <div className="tab-cards">
                                             <div className="card-left">
-                                                <h5>Reports and Dashboards</h5>
+                                                <h5>{t("Reports and Dashboards")}</h5>
                                                 <p>
-                                                    Reports and Dashboards for Business Intelligence systems,
-                                                    designed to present data in a structured and visually
-                                                    appealing format for decision-makers.
+                                                    {t("Reports and Dashboards for Business Intelligence systems, designed to present data in a structured and visually appealing format for decision-makers.")}
                                                 </p>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        <b>Customized Dashboards</b> &nbsp;
-                                                        Dashboards for a real-time snapshot of business
-                                                        performance via Interactive visualization tools like Power
-                                                        BI, Tableau and Looker.
+                                                        <b>{t("Customized Dashboards")}</b> &nbsp;
+                                                        {t("Dashboards for a real-time snapshot of business performance via Interactive visualization tools like Power BI, Tableau and Looker.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        <b>Interactive Reports</b> &nbsp;
-                                                        Structured data presented in tables, charts, and graphs,
-                                                        allowing users to analyse historical trends, monitor key
-                                                        performance indicators - KPIs and identify patterns.
+                                                        <b>{t("Interactive Reports")}</b> &nbsp;
+                                                        {t("Structured data presented in tables, charts, and graphs, allowing users to analyse historical trends, monitor key performance indicators - KPIs and identify patterns.")}
                                                     </p>
                                                 </div>
                                             </div>
@@ -1418,18 +1369,10 @@ export default function AlMl() {
                             <div className="col-lg-12">
                                 <div className="section-title text-center">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Technologies
+                                        {t("Technologies")}
                                     </h2>
                                     <p className="mt-5">
-                                        BI technologies enable organizations to derive meaningful insights
-                                        from their data, improve decision-making processes, and gain a
-                                        competitive edge by understanding trends, patterns, and
-                                        opportunities within their operations and market landscapes. It
-                                        encompasses tools such as Azure Data Factory for ETL processes,
-                                        Power BI for intuitive visualization, and Azure Analysis Services
-                                        for advanced analytics, enabling organizations to extract
-                                        actionable insights from data for informed decision-making and
-                                        strategic planning.
+                                        {t("BI technologies enable organizations to derive meaningful insights from their data, improve decision-making processes, and gain a competitive edge by understanding trends, patterns, and opportunities within their operations and market landscapes. It encompasses tools such as Azure Data Factory for ETL processes, Power BI for intuitive visualization, and Azure Analysis Services for advanced analytics, enabling organizations to extract actionable insights from data for informed decision-making and strategic planning.")}
                                     </p>
                                 </div>
                                 <div className="corimg mt-5">
@@ -1439,43 +1382,19 @@ export default function AlMl() {
                                                 <div className="row">
                                                     <div className="col-sm-7">
                                                         <div className="micfabric">
-                                                            <h2>Microsoft Fabric</h2>
+                                                            <h2>{t("Microsoft Fabric")}</h2>
                                                             <p>
-                                                                Microsoft Fabric is a comprehensive platform designed
-                                                                to streamline data management and analytics across its
-                                                                entire lifecycle. By integrating key components such
-                                                                as data engineering, data science, real-time
-                                                                analytics, data warehousing, and visualization, it
-                                                                offers a unified approach to handling data
-                                                                efficiently.
+                                                                {t("Microsoft Fabric is a comprehensive platform designed to streamline data management and analytics across its entire lifecycle. By integrating key components such as data engineering, data science, real-time analytics, data warehousing, and visualization, it offers a unified approach to handling data efficiently.")}
                                                             </p>
                                                             <p>
-                                                                Data Engineering is powered by Azure Data Factory,
-                                                                which orchestrates and automates data workflows and
-                                                                ETL operations. Data Factory also leverages this tool
-                                                                for effective data movement and transformation. In
-                                                                Data Science, Azure Machine Learning enables the
-                                                                creation and deployment of machine learning models for
-                                                                actionable insights.
+                                                                {t("Data Engineering is powered by Azure Data Factory, which orchestrates and automates data workflows and ETL operations. Data Factory also leverages this tool for effective data movement and transformation. In Data Science, Azure Machine Learning enables the creation and deployment of machine learning models for actionable insights.")}
                                                             </p>
                                                             <div id="more" className="more-text hidden">
                                                                 <p>
-                                                                    For Real-Time Analytics, Azure Stream Analytics and
-                                                                    Azure Synapse Analytics provide capabilities for
-                                                                    immediate data processing and unified analytics.
-                                                                    Data Warehousing needs are addressed by Azure
-                                                                    Synapse Analytics, which manages large volumes of
-                                                                    structured data. Databases are handled by Azure SQL
-                                                                    Database and Azure Cosmos DB, supporting both
-                                                                    relational and multi-model data.
+                                                                    {t("For Real-Time Analytics, Azure Stream Analytics and Azure Synapse Analytics provide capabilities for immediate data processing and unified analytics. Data Warehousing needs are addressed by Azure Synapse Analytics, which manages large volumes of structured data. Databases are handled by Azure SQL Database and Azure Cosmos DB, supporting both relational and multi-model data.")}
                                                                 </p>
                                                                 <p>
-                                                                    Power BI offers robust data visualization and
-                                                                    reporting tools, turning complex data into
-                                                                    interactive dashboards and reports. Microsoft Fabric
-                                                                    integrates these components to create a seamless
-                                                                    data ecosystem, facilitating effective data
-                                                                    ingestion, storage, analysis, and visualization.{" "}
+                                                                    {t("Power BI offers robust data visualization and reporting tools, turning complex data into interactive dashboards and reports. Microsoft Fabric integrates these components to create a seamless data ecosystem, facilitating effective data ingestion, storage, analysis, and visualization.")}
                                                                 </p>
                                                             </div>
                                                             <div className="ser-btn1 readmore">
@@ -1483,7 +1402,7 @@ export default function AlMl() {
                                                                     className="animated-svg-link1 btn-style-3"
                                                                     id="toggleReadMore"
                                                                 >
-                                                                    <span className="label">Read More</span>
+                                                                    <span className="label">{t("Read More")}</span>
                                                                     <span className="svg-container">
                                                                         <span className=" left">
                                                                             <svg
@@ -1574,49 +1493,22 @@ export default function AlMl() {
                                                 <div className="row">
                                                     <div className="col-sm-7">
                                                         <div className="micfabric">
-                                                            <h2>Other Technologies</h2>
+                                                            <h2>{t("Other Technologies")}</h2>
                                                             <p>
-                                                                Our technology stack supports a diverse array of data
-                                                                visualization, business intelligence, and enterprise
-                                                                resource planning solutions, enabling comprehensive
-                                                                insights across business functions. Tableau provides a
-                                                                powerful, user-friendly platform for creating
-                                                                interactive dashboards and data visualizations, making
-                                                                complex data easily accessible for business users,
-                                                                while Qlik Sense offers similarly intuitive analytics
-                                                                capabilities. SAP Business Objects addresses
-                                                                enterprise-level reporting and analytics needs.
+                                                                {t("Our technology stack supports a diverse array of data visualization, business intelligence, and enterprise resource planning solutions, enabling comprehensive insights across business functions. Tableau provides a powerful, user-friendly platform for creating interactive dashboards and data visualizations, making complex data easily accessible for business users, while Qlik Sense offers similarly intuitive analytics capabilities. SAP Business Objects addresses enterprise-level reporting and analytics needs.")}
                                                             </p>
                                                             <p>
-                                                                Anvizent streamlines data integration from multiple
-                                                                sources for real-time insights, and Google Data Studio
-                                                                provides an intuitive, cloud-based platform for
-                                                                customizable reporting. To support advanced analytics,
-                                                                we leverage Databricks for data processing and machine
-                                                                learning, and Snowflake for scalable data warehousing
-                                                                and seamless data management.
+                                                                {t("Anvizent streamlines data integration from multiple sources for real-time insights, and Google Data Studio provides an intuitive, cloud-based platform for customizable reporting. To support advanced analytics, we leverage Databricks for data processing and machine learning, and Snowflake for scalable data warehousing and seamless data management.")}
                                                             </p>
                                                             <p id="more" className="more-text hidden">
-                                                                Complementing these, Epicor ERP delivers deep
-                                                                operational insights and integrates with BI tools for
-                                                                unified performance monitoring. Its suite includes
-                                                                Epicor Data Analytics (EDA) for consolidating sales
-                                                                and operational data into customizable dashboards,
-                                                                Epicor Financial Planning and Analysis (FP&amp;A) for
-                                                                real-time financial insights, budgeting, and
-                                                                forecasting, and the Business Activity Query (BAQ)
-                                                                tool for flexible T-SQL querying, enabling dynamic
-                                                                dashboards and custom reporting. Epicor Grow enhances
-                                                                these capabilities with AI-driven, self-service
-                                                                analytics, enabling users to explore live ERP data and
-                                                                build visualizations using natural language.
+                                                                {t("Complementing these, Epicor ERP delivers deep operational insights and integrates with BI tools for unified performance monitoring. Its suite includes Epicor Data Analytics (EDA) for consolidating sales and operational data into customizable dashboards, Epicor Financial Planning and Analysis (FP&amp;A) for real-time financial insights, budgeting, and forecasting, and the Business Activity Query (BAQ) tool for flexible T-SQL querying, enabling dynamic dashboards and custom reporting. Epicor Grow enhances these capabilities with AI-driven, self-service analytics, enabling users to explore live ERP data and build visualizations using natural language.")}
                                                             </p>
                                                             <div className="ser-btn1 readmore">
                                                                 <span
                                                                     className="animated-svg-link1 btn-style-3"
                                                                     id="toggleReadMore"
                                                                 >
-                                                                    <span className="label">Read More</span>
+                                                                    <span className="label">{t("Read More")}</span>
                                                                     <span className="svg-container">
                                                                         <span className=" left">
                                                                             <svg
@@ -1715,17 +1607,13 @@ export default function AlMl() {
                             <div className="col-sm-12">
                                 <div className="section-title text-center ">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Integration with Enterprise Systems
+                                        {t("Integration with Enterprise Systems")}
                                     </h2>
                                     <p>
-                                        Revolutionizing Tech Solutions: Microsoft Dynamics 365 and
-                                        Microsoft Technologies Lead the Way.
+                                        {t("Revolutionizing Tech Solutions: Microsoft Dynamics 365 and Microsoft Technologies Lead the Way.")}
                                     </p>
                                     <p>
-                                        We integrate Power BI with Dynamics 365, enabling a cohesive and
-                                        finely tuned data environment. Combining BI's analytical
-                                        capabilities with Dynamics 365's ERP and CRM functionalities
-                                        offers several benefits such as
+                                        {t("We integrate Power BI with Dynamics 365, enabling a cohesive and finely tuned data environment. Combining BI's analytical capabilities with Dynamics 365's ERP and CRM functionalities offers several benefits such as")}
                                     </p>
                                 </div>
                                 <div className="row mt-5">
@@ -1741,54 +1629,45 @@ export default function AlMl() {
                             <div className="col-sm-12">
                                 <div className="section-title text-center text-black">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        The RheinBrücke Advantage
+                                        {t("The RheinBrücke Advantage")}
                                     </h2>
                                     <p>
-                                        We are passionate about empowering your organization to make
-                                        informed decisions with confidence. Our team of highly skilled
-                                        professionals possesses unmatched expertise in diverse data models
-                                        and cutting-edge analytics tools. As a Microsoft Gold Competency
-                                        Partner, we work closely with you to unlock the full potential of
-                                        your data.
+                                        {t("We are passionate about empowering your organization to make informed decisions with confidence. Our team of highly skilled professionals possesses unmatched expertise in diverse data models and cutting-edge analytics tools. As a Microsoft Gold Competency Partner, we work closely with you to unlock the full potential of your data.")}
                                     </p>
                                 </div>
                                 <div className="row mt-5 advant">
                                     <div className="col-lg-6 col-md-6 col-12">
                                         <div className="service-item-body1 imgadd w80">
-                                            <h3>Exceptional Performance</h3>
+                                            <h3>{t("Exceptional Performance")}</h3>
                                             <p>
-                                                Experience unparalleled speed and efficiency with our
-                                                state-of-the-art technology and design capabilities.
+                                                {t("Experience unparalleled speed and efficiency with our state-of-the-art technology and design capabilities.")}
                                             </p>
                                             <img src="/images/adv1.svg" alt="" />
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-md-6 col-12">
                                         <div className="service-item-body1 imgadd w80">
-                                            <h3>Customized Solutions</h3>
+                                            <h3>{t("Customized Solutions")}</h3>
                                             <p>
-                                                Implement bespoke data models and solutions tailored precisely
-                                                to your unique business requirements.
+                                                {t("Implement bespoke data models and solutions tailored precisely to your unique business requirements.")}
                                             </p>
                                             <img src="/images/adv2.svg" alt="" />
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-md-6 col-12">
                                         <div className="service-item-body1 imgadd">
-                                            <h3>End-to-End Support</h3>
+                                            <h3>{t("End-to-End Support")}</h3>
                                             <p>
-                                                Rely on our comprehensive services for seamless support
-                                                throughout your entire data journey.
+                                                {t("Rely on our comprehensive services for seamless support throughout your entire data journey.")}
                                             </p>
                                             <img src="/images/adv3.svg" alt="" />
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-md-6 col-12">
                                         <div className="service-item-body1 imgadd">
-                                            <h3>Industry Expertise</h3>
+                                            <h3>{t("Industry Expertise")}</h3>
                                             <p>
-                                                Utilize our deep knowledge and experience in your sector to
-                                                address and overcome your specific challenges.
+                                                {t("Utilize our deep knowledge and experience in your sector to address and overcome your specific challenges.")}
                                             </p>
                                             <div className="text-center">
                                                 <img src="/images/adv41.svg" alt="" />
@@ -1816,42 +1695,19 @@ export default function AlMl() {
                             <div className="col-sm-7 col-12">
                                 <div className="section-title casetitle">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Case Study
+                                        {t("Case Study")}
                                     </h2>
                                     <p>
-                                        RheinBrücke IT Consulting GmbH's Power Plant Analytics (PPA) tool
-                                        was a transformative solution tailored specifically to the unique
-                                        demands of the power plant industry. Unlike traditional ERP
-                                        suites, PPA excelled in critical areas such as billing, revenue
-                                        calculations, power generation scheduling, and management of power
-                                        purchase agreements. With advanced features providing real-time
-                                        access to comprehensive operational, financial, and market data,
-                                        PPA empowered decision-makers to gain deep insights into plant
-                                        operations and market profitability. The tool's analytical
-                                        dashboards and self-service reporting capabilities enabled users
-                                        to foresee opportunities, detect risks, and make informed
-                                        decisions swiftly.
+                                        {t("RheinBrücke IT Consulting GmbH's Power Plant Analytics (PPA) tool was a transformative solution tailored specifically to the unique demands of the power plant industry. Unlike traditional ERP suites, PPA excelled in critical areas such as billing, revenue calculations, power generation scheduling, and management of power purchase agreements. With advanced features providing real-time access to comprehensive operational, financial, and market data, PPA empowered decision-makers to gain deep insights into plant operations and market profitability. The tool's analytical dashboards and self-service reporting capabilities enabled users to foresee opportunities, detect risks, and make informed decisions swiftly.")}
                                     </p>
                                     <p />
-                                    PPA enhanced decision-making through historical trend analysis and
-                                    "What-If" scenario evaluations, assessing the impacts of operational
-                                    metrics and potential disruptions. Field officers benefited from
-                                    real-time data access via smartphones for proactive maintenance,
-                                    while standard BI reports and dashboards facilitated comprehensive
-                                    analysis. The seamless interface for MIS reporting minimized manual
-                                    intervention, enhancing reporting accuracy and efficiency.
+                                    {t("PPA enhanced decision-making through historical trend analysis and What-If scenario evaluations, assessing the impacts of operational metrics and potential disruptions. Field officers benefited from real-time data access via smartphones for proactive maintenance, while standard BI reports and dashboards facilitated comprehensive analysis. The seamless interface for MIS reporting minimized manual intervention, enhancing reporting accuracy and efficiency.")}
                                     <p />
                                     <p>
-                                        PPA's modular design included functionalities for billing,
-                                        scheduling, revenue management, and budget forecasting, ensuring
-                                        streamlined operations and efficient resource management.
+                                        {t("PPA's modular design included functionalities for billing, scheduling, revenue management, and budget forecasting, ensuring streamlined operations and efficient resource management.")}
                                     </p>
                                     <p>
-                                        PPA's user-friendly design ensured ease of use with minimal
-                                        training for business users. RheinBrücke successfully delivered a
-                                        robust solution that enhanced operational and financial efficiency
-                                        in the power plant industry, solidifying its commitment to
-                                        innovative and impactful industry solutions.
+                                        {t("PPA's user-friendly design ensured ease of use with minimal training for business users. RheinBrücke successfully delivered a robust solution that enhanced operational and financial efficiency in the power plant industry, solidifying its commitment to innovative and impactful industry solutions.")}
                                     </p>
                                 </div>
                             </div>

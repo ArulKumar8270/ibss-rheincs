@@ -517,21 +517,10 @@ export default function AdminBlogsPage() {
       timers.forEach(timer => clearTimeout(timer))
       if (contentTimer) clearTimeout(contentTimer)
     }
-  }, [showForm, formData.content, editingBlog?.id, quillEditor])
+  }, [showForm, editingBlog, formData.content, quillEditor])
 
 
 
-
-
-
-
-
-
-
-
-
-  // Memoize onChange handler to prevent recreation
-  // Use functional update to prevent stale closures and ensure smooth typing
   const handleContentChange = useCallback((value: string) => {
     setFormData(prev => ({ ...prev, content: value }))
   }, [])

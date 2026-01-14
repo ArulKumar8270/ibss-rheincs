@@ -18049,11 +18049,11 @@ body.no-scroll {
 
 .icon-close {
 	font-size: 24px;
-	color: white;
+	color: #000;
 	/* always white */
 	cursor: pointer;
 	position: absolute;
-	right: 18px;
+	right: 40px;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
@@ -18068,14 +18068,7 @@ body.no-scroll {
 	visibility: visible !important;
 }
 
-.search-box.active .icon-search,
-.search-box.active .btn-search .icon-search {
-	display: none !important;
-}
 
-.search-box.active .btn-search svg.icon-search {
-	display: none !important;
-}
 
 .width100 h2 {
 	width: 100% !important;
@@ -19502,7 +19495,7 @@ body.popup-open .main-header {
 }
 
 .customer .section-title {
-	width: 508px;
+	width: 100%;
 }
 
 .msdynamics h2 {
@@ -21478,9 +21471,10 @@ body:has(.search-full.active) {
 
 #mobileSearchBox .icon-close {
     position: fixed;
-    top: -25px;
+    top: 15px;
     color: #333;
-    left: 95%;
+    right: 0px;
+    left: auto;
 }
 
 #mobileSearchBox:has(.search-full.active) .icon-close {
@@ -21580,9 +21574,9 @@ body:has(.search-full.active) {
 	object-fit: cover;
 }
 
-.Awards .swiper-horizontal {
+/* .Awards .swiper-horizontal {
     padding: 0px 0px 50px !important;
-}
+} */
 
 .chat-btn-1 img{
 	height:60px
@@ -22175,4 +22169,32 @@ color:#000 !important;
 	background: #e9e9e9;
 	color: #082326;
 	transition: all .5s ease-in-out;
+}
+
+
+.careerreturn{   
+	 position: absolute;
+    height: 100%;
+    left: -20% !important;
+    top: 0%;
+    z-index: -22;
+}
+.corusbenefit video {
+    width: 70% !important;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.awrdstest{
+	display:none !important;
+}
+
+.identifyimg img{
+	height:300px;
+	width:auto;
+	margin:auto;
+}
+.digiserpage .service-item-body {
+    min-height: 560px;
 }
