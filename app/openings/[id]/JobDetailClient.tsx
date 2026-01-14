@@ -77,11 +77,11 @@ const locationToPhoneCode: Record<string, string> = {
     'Milan': '+39', 'Vienna': '+43', 'Zurich': '+41', 'Stockholm': '+46', 'Oslo': '+47',
     'Copenhagen': '+45', 'Helsinki': '+358', 'Warsaw': '+48', 'Prague': '+420', 'Budapest': '+36',
     'Athens': '+30', 'Lisbon': '+351', 'Dublin': '+353', 'Sydney': '+61', 'Melbourne': '+61',
-    'Tokyo': '+81', 'Singapore': '+65', 'Hong Kong': '+852', 'Seoul': '+82', 'Bangkok': '+66',
+    'Tokyo': '+81', 'Seoul': '+82', 'Bangkok': '+66',
     'Kuala Lumpur': '+60', 'Jakarta': '+62', 'Manila': '+63', 'Beijing': '+86', 'Shanghai': '+86',
     'Sao Paulo': '+55', 'Buenos Aires': '+54', 'Mexico City': '+52', 'Johannesburg': '+27',
     'Cairo': '+20', 'Riyadh': '+966', 'Doha': '+974', 'Kuwait City': '+965', 'Tel Aviv': '+972',
-    'Istanbul': '+90', 'Moscow': '+7', 'Warsaw': '+48'
+    'Istanbul': '+90', 'Moscow': '+7'
 };
 
 // Helper function to find phone code from location string
@@ -280,10 +280,10 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
         }
     }
 
-    const validateField = async (name: string, value: string): Promise<string> => {
+    const validateField = async (name: string, value: string | File | null): Promise<string> => {
         switch (name) {
             case 'fullName':
-                if (!value.trim()) {
+                if (!value || typeof value !== 'string' || !value.trim()) {
                     return 'Name is required'
                 }
                 if (value.trim().length < 2) {
@@ -294,7 +294,7 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                 }
                 return ''
             case 'email':
-                if (!value.trim()) {
+                if (!value || typeof value !== 'string' || !value.trim()) {
                     return 'Email is required'
                 }
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -310,7 +310,7 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                 }
                 return ''
             case 'phone':
-                if (!value.trim()) {
+                if (!value || typeof value !== 'string' || !value.trim()) {
                     return 'Phone number is required'
                 }
                 // Remove any non-digit characters for validation
@@ -323,9 +323,52 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                 }
                 return ''
             case 'message':
-                if (value.length > 5000) {
+                if (value && typeof value === 'string' && value.length > 5000) {
                     return 'Covering letter must be less than 5000 characters'
                 }
+                return ''
+            case 'file':
+                // File validation
+                const maxSize = 5 * 1024 * 1024 // 5MB
+                const allowedTypes = [
+                    'application/pdf',
+                    'application/msword',
+                    'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+                ]
+                const allowedExtensions = ['.pdf', '.doc', '.docx']
+
+                // File is optional, but if provided, it must be valid
+                if (value === null || value === undefined) {
+                    return '' // File is optional
+                }
+
+                if (!(value instanceof File)) {
+                    return 'Invalid file type'
+                }
+
+                const file = value as File
+
+                // Validate file type by MIME type
+                if (!allowedTypes.includes(file.type)) {
+                    // Fallback: validate by file extension
+                    const fileName = file.name.toLowerCase()
+                    const hasValidExtension = allowedExtensions.some(ext => fileName.endsWith(ext))
+                    
+                    if (!hasValidExtension) {
+                        return 'Please upload a PDF, DOC, or DOCX file'
+                    }
+                }
+
+                // Validate file size
+                if (file.size > maxSize) {
+                    return 'File size must be less than 5MB'
+                }
+
+                // Additional validation: check if file is empty
+                if (file.size === 0) {
+                    return 'File is empty. Please select a valid file'
+                }
+
                 return ''
             default:
                 return ''
@@ -401,28 +444,17 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
         }))
     }
 
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
             const selectedFile = e.target.files[0]
-            const maxSize = 5 * 1024 * 1024 // 5MB
-            const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
-
-            // Validate file type
-            if (!allowedTypes.includes(selectedFile.type)) {
+            
+            // Use validateField for consistent validation
+            const error = await validateField('file', selectedFile)
+            
+            if (error) {
                 setErrors(prev => ({
                     ...prev,
-                    file: 'Please upload a PDF, DOC, or DOCX file'
-                }))
-                e.target.value = ''
-                setFile(null)
-                return
-            }
-
-            // Validate file size
-            if (selectedFile.size > maxSize) {
-                setErrors(prev => ({
-                    ...prev,
-                    file: 'File size must be less than 5MB'
+                    file: error
                 }))
                 e.target.value = ''
                 setFile(null)
@@ -438,6 +470,12 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
             setFile(selectedFile)
         } else {
             setFile(null)
+            // Clear file error when file is removed
+            setErrors(prev => {
+                const newErrors = { ...prev }
+                delete newErrors.file
+                return newErrors
+            })
         }
     }
 
@@ -460,6 +498,11 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
 
         if (formData.message) {
             validationErrors.message = await validateField('message', formData.message)
+        }
+
+        // Validate file if provided
+        if (file) {
+            validationErrors.file = await validateField('file', file)
         }
 
         setErrors(validationErrors)

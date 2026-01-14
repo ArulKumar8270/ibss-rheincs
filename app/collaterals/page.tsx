@@ -229,7 +229,7 @@ export default function Collaterals() {
                             modal.hide();
                         }
                     }
-                    router.push('/thanks');
+                    // router.push('/thanks');
                 }, 2000);
             }
         } catch (error: any) {
