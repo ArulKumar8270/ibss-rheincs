@@ -320,99 +320,124 @@ export default function Header() {
 
     // Handle search box open/close
     useEffect(() => {
-        const handleSearchEvents = () => {
-            // Desktop search
-            const searchBtn = document.getElementById('searchBtn');
-            const searchClose = document.getElementById('searchClose');
-            const searchFull = document.getElementById('searchFull');
+        // Desktop search elements
+        const searchBtn = document.getElementById('searchBtn');
+        const searchClose = document.getElementById('searchClose');
+        const searchFull = document.getElementById('searchFull');
 
-            // Mobile search
-            const mobileSearchBtn = document.getElementById('mobileSearchBtn');
-            const mobileSearchClose = document.getElementById('mobileSearchClose');
-            const mobileSearchFull = document.getElementById('mobileSearchFull');
+        // Mobile search elements
+        const mobileSearchBtn = document.getElementById('mobileSearchBtn');
+        const mobileSearchClose = document.getElementById('mobileSearchClose');
+        const mobileSearchFull = document.getElementById('mobileSearchFull');
 
-            // Desktop search button
-            if (searchBtn) {
-                searchBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    setIsSearchOpen(true);
-                    if (searchFull) {
-                        searchFull.classList.add('active');
-                    }
-                    // Focus on input after opening
-                    setTimeout(() => {
-                        const searchInput = searchFull?.querySelector('input');
-                        if (searchInput) searchInput.focus();
-                    }, 100);
-                });
+        // Desktop search button handler
+        const handleDesktopSearchClick = (e) => {
+            e.preventDefault();
+            setIsSearchOpen(true);
+            if (searchFull) {
+                searchFull.classList.add('active');
             }
-
-            // Desktop close button
-            if (searchClose) {
-                searchClose.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    setIsSearchOpen(false);
-                    setSearchQuery('');
-                    setSearchResults([]);
-                    if (searchFull) {
-                        searchFull.classList.remove('active');
-                    }
-                });
-            }
-
-            // Mobile search button
-            if (mobileSearchBtn) {
-                mobileSearchBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    setIsSearchOpen(true);
-                    if (mobileSearchFull) {
-                        mobileSearchFull.classList.add('active');
-                    }
-                    // Focus on input after opening
-                    setTimeout(() => {
-                        const mobileSearchInput = mobileSearchFull?.querySelector('input');
-                        if (mobileSearchInput) mobileSearchInput.focus();
-                    }, 100);
-                });
-            }
-
-            // Mobile close button
-            if (mobileSearchClose) {
-                mobileSearchClose.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    setIsSearchOpen(false);
-                    setSearchQuery('');
-                    setSearchResults([]);
-                    if (mobileSearchFull) {
-                        mobileSearchFull.classList.remove('active');
-                    }
-                });
-            }
-
-            // Close search on Escape key
-            const handleEscape = (e) => {
-                if (e.key === 'Escape' && isSearchOpen) {
-                    setIsSearchOpen(false);
-                    setSearchQuery('');
-                    setSearchResults([]);
-                    if (searchFull) {
-                        searchFull.classList.remove('active');
-                    }
-                    if (mobileSearchFull) {
-                        mobileSearchFull.classList.remove('active');
-                    }
-                }
-            };
-
-            document.addEventListener('keydown', handleEscape);
-
-            return () => {
-                document.removeEventListener('keydown', handleEscape);
-            };
+            setTimeout(() => {
+                const searchInput = searchFull?.querySelector('input');
+                if (searchInput) searchInput.focus();
+            }, 100);
         };
 
-        handleSearchEvents();
-    }, [isSearchOpen]);
+        // Desktop close button handler
+        const handleDesktopCloseClick = (e) => {
+            e.preventDefault();
+            setIsSearchOpen(false);
+            setSearchQuery('');
+            setSearchResults([]);
+            if (searchFull) {
+                searchFull.classList.remove('active');
+            }
+        };
+
+        // Mobile search button handler
+        const handleMobileSearchClick = (e) => {
+            e.preventDefault();
+            setIsSearchOpen(true);
+            if (mobileSearchFull) {
+                mobileSearchFull.classList.add('active');
+            }
+            setTimeout(() => {
+                const mobileSearchInput = mobileSearchFull?.querySelector('input');
+                if (mobileSearchInput) mobileSearchInput.focus();
+            }, 100);
+        };
+
+        // Mobile close button handler
+        const handleMobileCloseClick = (e) => {
+            e.preventDefault();
+            setIsSearchOpen(false);
+            setSearchQuery('');
+            setSearchResults([]);
+            if (mobileSearchFull) {
+                mobileSearchFull.classList.remove('active');
+            }
+        };
+
+        // Escape key handler
+        const handleEscape = (e) => {
+            if (e.key === 'Escape') {
+                setIsSearchOpen(prevIsSearchOpen => {
+                    if (prevIsSearchOpen) {
+                        setSearchQuery('');
+                        setSearchResults([]);
+                        if (searchFull) {
+                            searchFull.classList.remove('active');
+                        }
+                        if (mobileSearchFull) {
+                            mobileSearchFull.classList.remove('active');
+                        }
+                        return false;
+                    }
+                    return prevIsSearchOpen;
+                });
+            }
+        };
+
+        // Attach event listeners
+        if (searchBtn) {
+            searchBtn.addEventListener('click', handleDesktopSearchClick);
+        }
+        if (searchClose) {
+            searchClose.addEventListener('click', handleDesktopCloseClick);
+        }
+        if (mobileSearchBtn) {
+            mobileSearchBtn.addEventListener('click', handleMobileSearchClick);
+        }
+        if (mobileSearchClose) {
+            console.log('mobileSearchClose element found:', mobileSearchClose);
+            mobileSearchClose.addEventListener('click', handleMobileCloseClick);
+        } else {
+            console.log('mobileSearchClose element NOT found');
+        }
+        if (mobileSearchFull) {
+            console.log('mobileSearchFull element found:', mobileSearchFull);
+        } else {
+            console.log('mobileSearchFull element NOT found');
+        }
+        document.addEventListener('keydown', handleEscape);
+
+        // Cleanup function
+        return () => {
+            if (searchBtn) {
+                searchBtn.removeEventListener('click', handleDesktopSearchClick);
+            }
+            if (searchClose) {
+                searchClose.removeEventListener('click', handleDesktopCloseClick);
+            }
+            if (mobileSearchBtn) {
+                mobileSearchBtn.removeEventListener('click', handleMobileSearchClick);
+            }
+            if (mobileSearchClose) {
+                mobileSearchClose.removeEventListener('click', handleMobileCloseClick);
+            }
+            document.removeEventListener('keydown', handleEscape);
+        };
+    }, []);
 
     // Handle clicks outside the custom dropdown to close it
     useEffect(() => {
@@ -453,7 +478,7 @@ export default function Header() {
                                     </span>
                                     <Link href="mailto:info@rheincs.com"> info@rheincs.com</Link>
                                 </li>
-                                 {/* <li>
+                                 <li>
                                      <div className="custom-select top-icon-gap" style={{ position: 'relative' }} ref={dropdownRef}>
                                         <select
                                             ref={selectRef}
@@ -547,7 +572,7 @@ export default function Header() {
                                             </div>
                                         )}
                                     </div>
-                                </li>  */}
+                                </li> 
                                 {/* <li>
                                     <div id="chcp_font_size" className="input-group">
                                         <span className="input-group-btn font-increase-waber">
@@ -1744,11 +1769,8 @@ export default function Header() {
                                                                 />
                                                             </svg>
                                                         </button>
-                                                        <span className="icon-close" id="searchClose">
-                                                            ✕
-                                                        </span>
                                                         <div className="search-full" id="searchFull">
-                                                            <div className="search-bar">
+                                                            <div className="search-bar" style={{ display: 'flex', alignItems: 'center' }}>
                                                                 <span className="search-icon-left ">
                                                                     <svg
                                                                         className="icon-search1"
@@ -1779,6 +1801,9 @@ export default function Header() {
                                                                     value={searchQuery}
                                                                     onChange={(e) => handleSearch(e.target.value)}
                                                                 />
+                                                                <span className="icon-close" id="searchClose">
+                                                                    ✕
+                                                                </span>
                                                             </div>
                                                             {searchQuery && (
                                                                 <div className="search-results">
@@ -1859,8 +1884,6 @@ export default function Header() {
                                                                 strokeLinejoin="round"
                                                             />
                                                         </svg>
-                                                        {/* ✕ Close Icon */}
-                                                        <span className="icon-close">✕</span>
                                                     </button>
                                                     <div
                                                         className="search-full"
@@ -1869,7 +1892,7 @@ export default function Header() {
                                                         aria-hidden="true"
                                                     >
                                                         <div className="container">
-                                                            <div className="search-bar">
+                                                            <div className="search-bar" style={{ display: 'flex', alignItems: 'center' }}>
                                                                 <span className="search-icon-left">
                                                                     <svg
                                                                         className="icon-search"
@@ -1976,7 +1999,7 @@ export default function Header() {
                                     className="search-full mobile-search-overlay"
                                     id="mobileSearchFull"
                                 >
-                                    <div className="search-bar">
+                                    <div className="search-bar" style={{ display: 'flex', alignItems: 'center' }}>
                                         <span className="search-icon-left ">
                                             <svg
                                                 className="icon-search1"

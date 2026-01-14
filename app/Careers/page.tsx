@@ -241,7 +241,7 @@ export default function AlMl() {
                         <div className="family-heart-flex-waber">
                             <div className="heart-flex-item">
                                 <div className="family-img">
-                                    <img src="/new/family.svg" alt="" />
+                                    <img src="/images/trust.png" alt="" />
                                 </div>
                             </div>
                             <div className="heart-flex-item">
@@ -252,8 +252,8 @@ export default function AlMl() {
                                 </div>
                             </div>
                             <div className="heart-flex-item">
-                                <div className="family-img">
-                                    <img src="/new/family-img.svg" alt="" />
+                                <div className="family-img family-imgreg">
+                                    <img src="/images/Recognition.png" alt="" />
                                 </div>
                             </div>
                             <div className="heart-flex-item">
@@ -272,7 +272,7 @@ export default function AlMl() {
                             </div>
                             <div className="heart-flex-item">
                                 <div className="family-img">
-                                    <img src="/new/family-img3.svg" alt="" />
+                                    <img src="/images/workplace.png" alt="" />
                                 </div>
                             </div>
                             <div className="heart-flex-item">
@@ -284,7 +284,7 @@ export default function AlMl() {
                             </div>
                             <div className="heart-flex-item">
                                 <div className="family-img">
-                                    <img src="/new/family-img4.svg" alt="" />
+                                    <img src="/images/Mentoring.png" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -341,8 +341,6 @@ export default function AlMl() {
                             playsInline={true}
                         >
                             <source src="/new/cr-v2.mp4" type="video/mp4" />
-                            <source src="movie.ogg" type="video/ogg" />
-                            Your browser does not support the video tag.
                         </video>
                     </div>
                 </div>
@@ -429,7 +427,7 @@ export default function AlMl() {
                             </div>
                         </div>
                     </div>
-                    <div className="dark-img-two">
+                    <div className="dark-img-two careerreturn">
                         {/*<img src="/new/rwr-1.jpg" alt="">*/}
                         <video
                             width="100%"

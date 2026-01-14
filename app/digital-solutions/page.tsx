@@ -1442,7 +1442,7 @@ export default function digitalsolution() {
   <div className="our-services1 customer digicustomer  pd30">
     <div className="container">
       <div className="row section-row">
-        <div className="col-lg-6">
+        <div className="col-lg-12">
           {/* Section Title Start */}
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
@@ -1483,7 +1483,6 @@ export default function digitalsolution() {
                   user-centric principles to create seamless experiences and
                   accelerate user adoption.
                 </p>
-                <br />
                 <img src="/images/cus2.png" alt="" />
               </div>
             </div>
