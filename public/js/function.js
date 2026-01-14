@@ -188,6 +188,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     const toggleButtons = document.querySelectorAll('[id="toggleReadMore"]');
     
     if (toggleButtons.length === 0) {
+      console.log('⚠️ No toggle buttons found');
       return;
     }
     
@@ -1886,15 +1887,15 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
 
     const testimonial_slider = new Swiper(swiperEl, {
-      slidesPerView: 9,
+      slidesPerView: 5,
       spaceBetween: 30,
       loop: true,
       speed: 800,
       autoplay: true,
-      navigation: {
-        nextEl: '.testimonial-slider-awards .testimonial-button-next',
-        prevEl: '.testimonial-slider-awards .testimonial-button-prev',
-      },
+      // navigation: {
+      //   nextEl: '.testimonial-slider-awards .testimonial-button-next',
+      //   prevEl: '.testimonial-slider-awards .testimonial-button-prev',
+      // },
       breakpoints: {
         0: {
           slidesPerView: 2,
