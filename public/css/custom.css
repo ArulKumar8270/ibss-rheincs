@@ -22188,13 +22188,9 @@ color:#000 !important;
 
 .awrdstest{
 	display:none !important;
-}
+	}
 
-.identifyimg img{
-	height:300px;
-	width:auto;
-	margin:auto;
-}
-.digiserpage .service-item-body {
-    min-height: 560px;
-}
+	.impressum h1{
+		margin-bottom:20px;
+		margin-top:20px;
+	}
