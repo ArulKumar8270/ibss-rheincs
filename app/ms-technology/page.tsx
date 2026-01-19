@@ -404,7 +404,7 @@ export default function EnterpriseSolutions() {
                 </span>
               </div>
             </div>
-            <span className="testspace">1/6</span>
+            <span className="testspace"></span>
             <div className="testimonial-button-next">
               <div className="animated-svg-link1 btn-style-3">
                 <span className="svg-container ">

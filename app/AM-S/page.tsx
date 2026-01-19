@@ -344,7 +344,6 @@ export default function AlMl() {
                                                 </div>
                                             </div>
                                             <span className="testspace" style={{ color: "#000" }}>
-                                                1/6
                                             </span>
                                             <div className="testimonial-button-next">
                                                 <div className="animated-svg-link">
