@@ -402,8 +402,8 @@ export default function SwiperInit() {
               },
               breakpoints: {
                 0: { slidesPerView: 1, spaceBetween: 10 },
-                500: { slidesPerView: 1.3, spaceBetween: 20 },
-                768: { slidesPerView: 1.3, spaceBetween: 20 },
+                500: { slidesPerView: 1, spaceBetween: 20 },
+                768: { slidesPerView: 1, spaceBetween: 20 },
                 900: { slidesPerView: 2 },
                 1200: { slidesPerView: 2 },
                 1500: { slidesPerView: 2 },
@@ -763,7 +763,7 @@ export default function SwiperInit() {
                   prevEl: `${config.selector} .testimonial-button-prev`,
                 },
                 breakpoints: {
-                  0: { slidesPerView: config.selector === '.sap-service' ? 1.2 : config.selector === '.sap' ? 1.2 : config.selector === '.industries2' ? 1.2 : config.selector === '.msds' ? 1 : 1 },
+                  0: { slidesPerView: config.selector === '.sap-service' ? 1 : config.selector === '.sap' ? 1 : config.selector === '.industries2' ? 1 : config.selector === '.msds' ? 1 : 1 },
                   768: { slidesPerView: config.selector === '.sap-service' ? 2 : config.selector === '.sap' ? 2 : config.selector === '.industries2' ? 2 : config.selector === '.msds' ? 2 : 3 },
                   991: { slidesPerView: config.selector === '.sap-service' ? 2 : config.selector === '.sap' ? 3 : config.selector === '.industries2' ? 3 : config.selector === '.msds' ? 3 : 4 },
                   1300: { slidesPerView: config.selector === '.sap-service' ? 3 : config.selector === '.sap' ? 4 : config.selector === '.industries2' ? 4 : config.selector === '.msds' ? 4 : 5 },

@@ -1671,24 +1671,24 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
           spaceBetween: 10,
         },
         500: {
-          slidesPerView: 1.3,
+          slidesPerView: 1,
           spaceBetween: 20,
         },
         768: {
-          slidesPerView: 1.3,
+          slidesPerView: 1,
           spaceBetween: 20,
         },
         900: {
           slidesPerView: 2,
         },
         1200: {
-          slidesPerView: 2.5,
+          slidesPerView: 2,
         },
         1500: {
-          slidesPerView: 2.8,
+          slidesPerView: 2,
         },
         1600: {
-          slidesPerView: 2.8,
+          slidesPerView: 2,
         }
       },
       // on: {
@@ -2628,11 +2628,11 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         prevEl: '.CorusHR-slider .testimonial-button-prev',
       },
       breakpoints: {
-        0: { slidesPerView: 1.3 },
+        0: { slidesPerView: 1 },
         768: { slidesPerView: 3 },
         991: { slidesPerView: 4 },
-        1300: { slidesPerView: 5 },
-        1700: { slidesPerView: 5.8 },
+        1300: { slidesPerView: 4 },
+        1700: { slidesPerView: 4 },
       },
       // on: {
       //   init: function () {
