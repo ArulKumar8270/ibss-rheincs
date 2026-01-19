@@ -337,9 +337,9 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                 ]
                 const allowedExtensions = ['.pdf', '.doc', '.docx']
 
-                // File is optional, but if provided, it must be valid
+                // File is required
                 if (value === null || value === undefined) {
-                    return '' // File is optional
+                    return 'Resume is required. Please upload a PDF, DOC, or DOCX file'
                 }
 
                 if (!(value instanceof File)) {
@@ -470,12 +470,21 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
             setFile(selectedFile)
         } else {
             setFile(null)
-            // Clear file error when file is removed
-            setErrors(prev => {
-                const newErrors = { ...prev }
-                delete newErrors.file
-                return newErrors
-            })
+            // Validate if field has been touched (file is required)
+            if (touched.file) {
+                const error = await validateField('file', null)
+                setErrors(prev => ({
+                    ...prev,
+                    file: error
+                }))
+            } else {
+                // Clear file error when file is removed and field not touched
+                setErrors(prev => {
+                    const newErrors = { ...prev }
+                    delete newErrors.file
+                    return newErrors
+                })
+            }
         }
     }
 
@@ -487,6 +496,7 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
             fullName: true,
             email: true,
             phone: true,
+            file: true,
         }
         setTouched(allTouched)
 
@@ -500,10 +510,8 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
             validationErrors.message = await validateField('message', formData.message)
         }
 
-        // Validate file if provided
-        if (file) {
-            validationErrors.file = await validateField('file', file)
-        }
+        // Validate file (required)
+        validationErrors.file = await validateField('file', file)
 
         setErrors(validationErrors)
 
@@ -525,14 +533,15 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
         try {
             const { fullName, email, phone, selection } = formData
 
-            if (!fullName || !email || !phone || !selection) {
+            if (!fullName || !email || !phone || !selection || !file) {
                 setStatus('error')
-                setStatusMessage('Please fill in all required fields.')
+                setStatusMessage('Please fill in all required fields including resume.')
                 return
             }
 
             let resumeUrl = null
 
+            // File is required, so this should always execute
             if (file) {
                 // Double-check file validation before upload
                 const maxSize = 5 * 1024 * 1024 // 5MB
@@ -1265,11 +1274,12 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                                         <div className="col-md-12">
                                             <input
                                                 type="file"
-                                                className={`form-control custom-form-control ${errors.file ? 'is-invalid' : ''}`}
+                                                className={`form-control custom-form-control ${touched.file && errors.file ? 'is-invalid' : ''}`}
                                                 name="file"
                                                 accept=".pdf,.doc,.docx"
                                                 onChange={handleFileChange}
                                                 disabled={status === 'loading'}
+                                                required
                                             />
                                             {file && (
                                                 <div style={{ marginTop: '0.5rem', fontSize: '0.875rem', color: '#28a745' }}>
@@ -1277,12 +1287,12 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                                                     {file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)
                                                 </div>
                                             )}
-                                            {errors.file && (
+                                            {touched.file && errors.file && (
                                                 <div className="invalid-feedback" style={{ display: 'block', color: '#dc3545', fontSize: '0.875rem', marginTop: '0.25rem' }}>
                                                     {errors.file}
                                                 </div>
                                             )}
-                                            <small className="text-muted">Accepted formats: PDF, DOC, DOCX (Max 5MB)</small>
+                                            <small className="text-muted">Accepted formats: PDF, DOC, DOCX (Max 5MB) *Required</small>
                                         </div>
                                         <div className="col-12">
                                             <textarea
