@@ -49,6 +49,7 @@ export default function AdminBlogsPage() {
   const [uploadingImage, setUploadingImage] = useState(false)
   const [quillEditor, setQuillEditor] = useState<any>(null)
   const [industries, setIndustries] = useState<Array<{ id: string; name: string; slug: string }>>([])
+  const [isUserTyping, setIsUserTyping] = useState(false)
   const quillRef = useRef<any>(null)
   const supabase = createClient()
 
@@ -91,6 +92,11 @@ export default function AdminBlogsPage() {
     },
     clipboard: {
       matchVisual: false
+    },
+    history: {
+      delay: 1000,
+      maxStack: 100,
+      userOnly: true
     }
   }), [handleEditorImageUpload])
 
@@ -180,9 +186,21 @@ export default function AdminBlogsPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    // Ensure we have the latest content from ref before submitting
+    if (contentRef.current && contentRef.current !== formData.content) {
+      setFormData(prev => ({ ...prev, content: contentRef.current }))
+      // Wait a moment for state to update
+      await new Promise(resolve => setTimeout(resolve, 100))
+    }
+    
     try {
+      // Use contentRef if available, otherwise use formData
+      const finalContent = contentRef.current || formData.content
+      
       const submitData = {
         ...formData,
+        content: finalContent,
         author_linkedin: formData.author_linkedin.trim() || null,
         industries: formData.industries.length > 0 ? formData.industries : null,
         created_at: formData.created_at ? new Date(formData.created_at).toISOString() : new Date().toISOString(),
@@ -291,12 +309,12 @@ export default function AdminBlogsPage() {
 
 
 
-  // Get Quill editor instance when component mounts or content changes
+  // Get Quill editor instance when component mounts - only once
   useEffect(() => {
-    if (showForm) {
+    if (showForm && !quillEditor) {
       const timer = setTimeout(() => {
         const editorElement = document.querySelector('.ql-editor') as any
-        if (editorElement && editorElement.__quill) {
+        if (editorElement && editorElement.__quill && !quillEditor) {
           const quill = editorElement.__quill
           setQuillEditor(quill)
           quillRef.current = quill
@@ -304,142 +322,98 @@ export default function AdminBlogsPage() {
       }, 100)
       return () => clearTimeout(timer)
     }
-  }, [showForm, quillEditor])
+  }, [showForm]) // Only depend on showForm, not quillEditor
 
   // Ensure images (including base64) are properly set when editing a blog with images
+  // ONLY run once on initial load, never during editing
+  const imageInitRef = useRef<string | null>(null)
+  
   useEffect(() => {
-    console.log('useEffect for image rendering triggered.');
-    if (!showForm || !editingBlog || !formData.content) {
-      console.log('useEffect skipped: showForm, editingBlog, or formData.content is missing.');
-      return;
-    }
+    if (!showForm || !editingBlog || !quillEditor) return
     
-    // Check if content has images (including base64)
-    const hasImages = formData.content.includes('<img') || formData.content.includes('data:image');
-    console.log('formData.content has images:', hasImages);
-
-    if (hasImages) {
-      const timer = setTimeout(() => {
-        try {
-          const quill = quillRef.current || quillEditor;
-          console.log('Initial setTimeout (800ms) fired. Quill instance:', quill ? 'available' : 'not available');
-
-          if (!quill) {
-            console.log('Quill instance not ready, retrying in 500ms.');
-            // Retry if quill not ready
-            setTimeout(() => {
-              const retryQuill = quillRef.current || quillEditor;
-              console.log('Retry setTimeout (500ms) fired. Quill instance:', retryQuill ? 'available' : 'not available');
-              if (retryQuill) {
-                const currentContent = retryQuill.root.innerHTML;
-                const hasImagesInRendered = currentContent.includes('<img') || currentContent.includes('data:image');
-                console.log('Retry: currentContent has images in rendered:', hasImagesInRendered, 'Content length:', currentContent.length);
-                if (!hasImagesInRendered) {
-                  console.log('Retry: Re-setting content with images (retry).');
-                  retryQuill.setText('');
-                  retryQuill.clipboard.dangerouslyPasteHTML(0, formData.content, 'silent');
-                  console.log('Retry: Content re-set. New content length:', retryQuill.root.innerHTML.length);
-                } else {
-                  console.log('Retry: Images already present in rendered content, no re-paste needed.');
-                }
-              }
-            }, 500);
-            return;
-          }
+    // Only run once per blog edit session
+    const blogId = editingBlog.id
+    if (imageInitRef.current === blogId) return
+    imageInitRef.current = blogId
+    
+    // Only run once when editing a blog with images, not on every content change
+    const timer = setTimeout(() => {
+      try {
+        const quill = quillRef.current || quillEditor;
+        if (!quill) return;
+        
+        const currentContent = quill.root.innerHTML;
+        // Check if images are missing from rendered content
+        const hasImagesInRendered = currentContent.includes('<img') || currentContent.includes('data:image');
+        
+        // Only re-paste if images are completely missing (initial load issue)
+        if (!hasImagesInRendered && formData.content && (formData.content.includes('<img') || formData.content.includes('data:image'))) {
+          // Save cursor position if possible
+          const selection = quill.getSelection(true);
+          const savedIndex = selection ? selection.index : 0;
           
-          const currentContent = quill.root.innerHTML;
-          console.log('Current editor content (before check):', currentContent.length > 500 ? currentContent.substring(0, 500) + '...' : currentContent);
-          // Check if images are missing from rendered content
-          const hasImagesInRendered = currentContent.includes('<img') || currentContent.includes('data:image');
-          console.log('currentContent has images in rendered:', hasImagesInRendered);
+          // Re-set content using Quill API
+          quill.setText('');
+          quill.clipboard.dangerouslyPasteHTML(0, formData.content, 'silent');
           
-          if (!hasImagesInRendered) {
-            console.log('Images are in content but not rendered - re-setting content using Quill API.');
-            // Images are in content but not rendered - re-set content using Quill API
-            // Clear first, then set new content
-            quill.setText('');
-            quill.clipboard.dangerouslyPasteHTML(0, formData.content, 'silent');
-            console.log('Content re-set using Quill API. New content length:', quill.root.innerHTML.length);
-            
-            // Process images again after a delay
-            setTimeout(() => {
-              console.log('Image styling setTimeout (300ms) fired.');
-              const editor = document.querySelector('.ql-editor') as HTMLElement;
-              if (editor) {
-                const images = editor.querySelectorAll('img');
-                console.log('Found images in editor for styling:', images.length);
-                images.forEach((img: HTMLImageElement) => {
-                  img.style.display = 'block';
-                  img.style.visibility = 'visible';
-                  img.style.opacity = '1';
-                  // Ensure base64 images are properly loaded
-                  const src = img.getAttribute('src');
-                  if (src && src.startsWith('data:image')) {
-                    img.setAttribute('src', src); // Force reload
-                    console.log('Forcing reload for base64 image:', src.substring(0, 50) + '...');
-                  }
-                  console.log('Applied styles to image:', img.src.substring(0, 50) + '...');
-                });
-              } else {
-                console.log('Quill editor element (.ql-editor) not found for styling.');
-              }
-            }, 300);
-          } else {
-            console.log('Images already present in rendered content, no re-paste needed.');
+          // Try to restore cursor position
+          try {
+            quill.setSelection(savedIndex, 'silent');
+          } catch (e) {
+            // If selection fails, just set to end
+            quill.setSelection(quill.getLength(), 'silent');
           }
-        } catch (err) {
-          console.error('Error ensuring images in content:', err);
         }
-      }, 800); // Wait longer for editor to be fully ready
-      
-      return () => {
-        clearTimeout(timer);
-        console.log('useEffect cleanup: timer cleared.');
-      };
-    } else {
-      console.log('No images in formData.content, skipping image rendering logic.');
-    }
-  }, [showForm, editingBlog?.id, formData.content, quillEditor]);
+      } catch (err) {
+        console.error('Error ensuring images in content:', err);
+      }
+    }, 1000); // Wait for editor to be fully ready
+    
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [showForm, editingBlog?.id]); // Removed quillEditor from dependencies
 
-  // Ensure images are visible when editing - process images after content is loaded
+  // Ensure images are visible when editing - process images ONCE on initial load only
+  const imageProcessRef = useRef<string | null>(null)
+  
   useEffect(() => {
-    if (!showForm || !formData.content) return
+    if (!showForm || !quillEditor) return
 
-    // First, ensure content with images is properly set in Quill
-    let contentTimer: NodeJS.Timeout | null = null
-    if (editingBlog && formData.content.includes('<img') && quillEditor) {
-      contentTimer = setTimeout(() => {
-        try {
-          const currentContent = quillEditor.root.innerHTML
-          // Check if images are missing from rendered content
-          const hasImagesInContent = formData.content.includes('<img')
-          const hasImagesInRendered = currentContent.includes('<img')
-          
-          if (hasImagesInContent && !hasImagesInRendered) {
-            // Images are in content but not rendered - re-set content using Quill API
-            quillEditor.clipboard.dangerouslyPasteHTML(0, formData.content, 'silent')
-          }
-        } catch (err) {
-          console.error('Error ensuring images in content:', err)
-        }
-      }, 300)
-    }
+    // Only run once per blog edit session
+    const blogId = editingBlog?.id || 'new'
+    if (imageProcessRef.current === blogId) return
+    imageProcessRef.current = blogId
+
+    let processTimeout: NodeJS.Timeout | null = null
 
     const processImagesForDisplay = () => {
-      const editor = document.querySelector('.ql-editor') as HTMLElement
-      if (!editor) return
+      const editorElement = document.querySelector('.ql-editor') as HTMLElement
+      if (!editorElement) return
 
       // Find all images in the editor
-      const images = editor.querySelectorAll('img')
+      const images = editorElement.querySelectorAll('img')
+      if (images.length === 0) return
+
       images.forEach((img) => {
-        // Ensure image is visible
-        img.style.display = 'block'
-        img.style.visibility = 'visible'
-        img.style.opacity = '1'
-        img.style.maxWidth = '100%'
-        img.style.height = 'auto'
+        // Only set styles if they're not already set to avoid layout shifts
+        if (img.style.display !== 'block') {
+          img.style.display = 'block'
+        }
+        if (img.style.visibility !== 'visible') {
+          img.style.visibility = 'visible'
+        }
+        if (img.style.opacity !== '1') {
+          img.style.opacity = '1'
+        }
+        if (img.style.maxWidth !== '100%') {
+          img.style.maxWidth = '100%'
+        }
+        if (img.style.height !== 'auto') {
+          img.style.height = 'auto'
+        }
         
-        // Ensure image has proper src attribute
+        // Ensure image has proper src attribute (only if missing)
         let src = img.getAttribute('src')
         if (!src || src === '') {
           const dataSrc = img.getAttribute('data-src')
@@ -449,99 +423,115 @@ export default function AdminBlogsPage() {
           }
         }
         
-        // Special handling for base64 images
-        if (src && src.startsWith('data:image')) {
-          // Base64 image - ensure it's properly set
-          if (img.src !== src) {
-            img.src = src
+        // Special handling for base64 images (only if src changed)
+        if (src && src.startsWith('data:image') && img.src !== src) {
+          img.src = src
+        }
+
+        // Add error handler to log broken images (only once)
+        if (!img.hasAttribute('data-error-handler')) {
+          img.setAttribute('data-error-handler', 'true')
+          img.onerror = () => {
+            console.warn('Image failed to load:', img.getAttribute('src'))
           }
-          // Force visibility for base64 images
-          img.style.display = 'block !important'
-          img.style.visibility = 'visible !important'
-          img.style.opacity = '1 !important'
         }
 
-        // Add error handler to log broken images
-        img.onerror = () => {
-          console.warn('Image failed to load:', img.getAttribute('src'))
-          // Don't hide the image, just log the error
-        }
-
-        // Add load handler to ensure image is visible after loading
-        img.onload = () => {
-          img.style.display = 'block'
-          img.style.visibility = 'visible'
-          img.style.opacity = '1'
+        // Add load handler to ensure image is visible after loading (only once)
+        if (!img.hasAttribute('data-load-handler')) {
+          img.setAttribute('data-load-handler', 'true')
+          img.onload = () => {
+            if (img.style.display !== 'block') {
+              img.style.display = 'block'
+            }
+            if (img.style.visibility !== 'visible') {
+              img.style.visibility = 'visible'
+            }
+            if (img.style.opacity !== '1') {
+              img.style.opacity = '1'
+            }
+          }
         }
 
         // If image is wrapped in resize wrapper, ensure wrapper is visible
         const wrapper = img.closest('.ql-image-resize-wrapper') as HTMLElement | null
         if (wrapper) {
-          wrapper.style.display = 'inline-block'
-          wrapper.style.visibility = 'visible'
-          wrapper.style.opacity = '1'
-        }
-
-        // Ensure image loads properly - check if image is already loaded
-        if (src && src !== '' && !img.complete) {
-          // Image hasn't loaded yet, ensure it will load
-          img.loading = 'eager' as any
+          if (wrapper.style.display !== 'inline-block') {
+            wrapper.style.display = 'inline-block'
+          }
+          if (wrapper.style.visibility !== 'visible') {
+            wrapper.style.visibility = 'visible'
+          }
+          if (wrapper.style.opacity !== '1') {
+            wrapper.style.opacity = '1'
+          }
         }
       })
     }
 
-    // Process images with multiple delays to catch all cases
-    const timers = [
-      setTimeout(processImagesForDisplay, 100),
-      setTimeout(processImagesForDisplay, 300),
-      setTimeout(processImagesForDisplay, 500),
-      setTimeout(processImagesForDisplay, 1000)
-    ]
-
-    // Also watch for new images being added
-    const editor = document.querySelector('.ql-editor') as HTMLElement
-    if (editor) {
-      const imageObserver = new MutationObserver(() => {
-        processImagesForDisplay()
-      })
-      imageObserver.observe(editor, { childList: true, subtree: true, attributes: true })
-
-      return () => {
-        timers.forEach(timer => clearTimeout(timer))
-        if (contentTimer) clearTimeout(contentTimer)
-        imageObserver.disconnect()
-      }
-    }
+    // Only process images ONCE when editor is ready, with a delay
+    // This runs only on initial load, never during editing
+    processTimeout = setTimeout(() => {
+      processImagesForDisplay()
+    }, 1000)
 
     return () => {
-      timers.forEach(timer => clearTimeout(timer))
-      if (contentTimer) clearTimeout(contentTimer)
+      if (processTimeout) clearTimeout(processTimeout)
     }
-  }, [showForm, editingBlog, formData.content, quillEditor])
+  }, [showForm, editingBlog?.id]) // Removed quillEditor from dependencies
 
 
+
+  // Use ref to store content and prevent re-renders during typing
+  const contentRef = useRef<string>('')
+  const isTypingRef = useRef<boolean>(false)
+  const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const handleContentChange = useCallback((value: string) => {
-    setFormData(prev => ({ ...prev, content: value }))
+    // Store content in ref immediately
+    contentRef.current = value
+    isTypingRef.current = true
+    
+    // Clear existing timeout
+    if (typingTimeoutRef.current) {
+      clearTimeout(typingTimeoutRef.current)
+    }
+    
+    // Update state after user stops typing (debounced)
+    typingTimeoutRef.current = setTimeout(() => {
+      isTypingRef.current = false
+      setFormData(prev => {
+        if (prev.content !== contentRef.current) {
+          return { ...prev, content: contentRef.current }
+        }
+        return prev
+      })
+    }, 500) // Update state 500ms after last keystroke
   }, [])
 
   const handleEdit = (blog: Blog) => {
     setEditingBlog(blog)
     // Convert ISO date to datetime-local format
     const createdDate = blog.created_at ? new Date(blog.created_at).toISOString().slice(0, 16) : ''
-    setFormData({
-      title: blog.title,
-      slug: blog.slug,
-      content: blog.content,
-      excerpt: blog.excerpt || '',
-      author: blog.author || '',
-      author_linkedin: blog.author_linkedin || '',
-      featured_image: blog.featured_image || '',
-      category: blog.category || 'all',
-      published: blog.published,
-      created_at: createdDate,
-      industries: blog.industries || []
-    })
+      setFormData({
+        title: blog.title,
+        slug: blog.slug,
+        content: blog.content,
+        excerpt: blog.excerpt || '',
+        author: blog.author || '',
+        author_linkedin: blog.author_linkedin || '',
+        featured_image: blog.featured_image || '',
+        category: blog.category || 'all',
+        published: blog.published,
+        created_at: createdDate,
+        industries: blog.industries || []
+      })
+    // Sync ref with initial content
+    contentRef.current = blog.content
+    isTypingRef.current = false
+    if (typingTimeoutRef.current) {
+      clearTimeout(typingTimeoutRef.current)
+      typingTimeoutRef.current = null
+    }
     setShowForm(true)
     // Scroll to form container smoothly
     setTimeout(() => {
@@ -853,30 +843,66 @@ export default function AdminBlogsPage() {
                   modules={quillModules}
                   formats={quillFormats}
                   placeholder="Write your blog content here..."
+                  bounds="self"
+                  readOnly={false}
                 />
                 <style jsx global>{`
                   .ql-container {
                     min-height: 400px;
                     font-size: 14px;
+                    position: relative;
+                    isolation: isolate;
+                    contain: layout style paint;
                   }
                   .ql-editor {
                     min-height: 400px;
                     overflow-anchor: none !important;
+                    scroll-behavior: auto !important;
+                    overscroll-behavior: contain !important;
+                    -webkit-overflow-scrolling: touch;
+                    contain: strict !important;
+                    content-visibility: auto;
+                    transform: translate3d(0, 0, 0);
+                    backface-visibility: hidden;
+                    perspective: 1000px;
                   }
                   .ql-editor:focus {
                     outline: none;
                   }
+                  .ql-editor * {
+                    scroll-margin: 0 !important;
+                    scroll-padding: 0 !important;
+                  }
+                  /* Prevent layout shifts during typing */
+                  .ql-editor p,
+                  .ql-editor div,
+                  .ql-editor span,
+                  .ql-editor li {
+                    min-height: 1.5em;
+                    line-height: 1.5;
+                    contain: layout style;
+                  }
+                  /* Prevent reflow during typing */
+                  .ql-editor {
+                    text-rendering: optimizeSpeed;
+                  }
+                  @media (prefers-reduced-motion: no-preference) {
+                    .ql-editor {
+                      scroll-behavior: auto !important;
+                    }
+                  }
                   .ql-editor img {
-                    cursor: pointer;
                     max-width: 100%;
                     height: auto;
                     display: block !important;
                     visibility: visible !important;
                     opacity: 1 !important;
+                    cursor: default !important;
                   }
                   .ql-editor img:hover {
                     outline: 2px dashed #667eea;
                     outline-offset: 2px;
+                    cursor: default !important;
                   }
                   .ql-editor img[src=""],
                   .ql-editor img:not([src]) {
@@ -886,6 +912,7 @@ export default function AdminBlogsPage() {
                     display: inline-block !important;
                     position: relative !important;
                     vertical-align: middle !important;
+                    cursor: default !important;
                   }
                   .ql-image-resize-handle {
                     transition: transform 0.1s, background 0.1s !important;
@@ -902,10 +929,12 @@ export default function AdminBlogsPage() {
                   .ql-image-resize-handle:hover {
                     transform: scale(1.15) !important;
                     background: #5568d3 !important;
+                    cursor: nwse-resize !important;
                   }
                   .ql-image-resize-handle:active {
                     transform: scale(0.95) !important;
                     background: #4c5fd0 !important;
+                    cursor: nwse-resize !important;
                   }
                   .ql-editor .ql-image-resize-handle {
                     display: flex !important;
@@ -914,11 +943,16 @@ export default function AdminBlogsPage() {
                     pointer-events: auto !important;
                     cursor: nwse-resize !important;
                   }
+                  .ql-editor .ql-image-resize-handle * {
+                    cursor: nwse-resize !important;
+                    pointer-events: none !important;
+                  }
                   .ql-editor .ql-image-resize-wrapper {
                     position: relative !important;
                     display: inline-block !important;
                     visibility: visible !important;
                     opacity: 1 !important;
+                    cursor: default !important;
                   }
                   .ql-editor .ql-image-resize-wrapper img {
                     display: block !important;
@@ -926,6 +960,13 @@ export default function AdminBlogsPage() {
                     opacity: 1 !important;
                     max-width: 100% !important;
                     height: auto !important;
+                    cursor: default !important;
+                  }
+                  .ql-editor .ql-image-resize-wrapper:hover img {
+                    cursor: default !important;
+                  }
+                  .ql-editor .ql-image-resize-wrapper:hover .ql-image-resize-handle {
+                    cursor: nwse-resize !important;
                   }
                   .ql-editor img {
                     max-width: 100% !important;
@@ -933,6 +974,7 @@ export default function AdminBlogsPage() {
                     display: block !important;
                     visibility: visible !important;
                     opacity: 1 !important;
+                    cursor: default !important;
                   }
                 `}</style>
               </div>
