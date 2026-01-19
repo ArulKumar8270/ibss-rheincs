@@ -1258,7 +1258,7 @@ const page = () => {
             <div className="row align-items-center">
               <div className="col-lg-12">
                 {/* Testimonial Slider Start */}
-                <div className=" industries enterintsec">
+                <div className="industries enterintsec">
                   <div className="swiper">
                     <div className="swiper-wrapper">
                       {/* Testimonial Slide Start */}
