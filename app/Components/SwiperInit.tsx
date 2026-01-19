@@ -763,7 +763,7 @@ export default function SwiperInit() {
                   prevEl: `${config.selector} .testimonial-button-prev`,
                 },
                 breakpoints: {
-                  0: { slidesPerView: config.selector === '.sap-service' ? 1.2 : config.selector === '.sap' ? 1.2 : config.selector === '.industries2' ? 1.2 : config.selector === '.msds' ? 1.2 : 1.3 },
+                  0: { slidesPerView: config.selector === '.sap-service' ? 1.2 : config.selector === '.sap' ? 1.2 : config.selector === '.industries2' ? 1.2 : config.selector === '.msds' ? 1 : 1 },
                   768: { slidesPerView: config.selector === '.sap-service' ? 2 : config.selector === '.sap' ? 2 : config.selector === '.industries2' ? 2 : config.selector === '.msds' ? 2 : 3 },
                   991: { slidesPerView: config.selector === '.sap-service' ? 2 : config.selector === '.sap' ? 3 : config.selector === '.industries2' ? 3 : config.selector === '.msds' ? 3 : 4 },
                   1300: { slidesPerView: config.selector === '.sap-service' ? 3 : config.selector === '.sap' ? 4 : config.selector === '.industries2' ? 4 : config.selector === '.msds' ? 4 : 5 },
