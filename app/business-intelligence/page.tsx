@@ -1384,17 +1384,17 @@ export default function AlMl() {
                                                         <div className="micfabric">
                                                             <h2>{t("Microsoft Fabric")}</h2>
                                                             <p>
-                                                                {t("Microsoft Fabric is a comprehensive platform designed to streamline data management and analytics across its entire lifecycle. By integrating key components such as data engineering, data science, real-time analytics, data warehousing, and visualization, it offers a unified approach to handling data efficiently.")}
+                                                                {t("Microsoft Fabric is a comprehensive platform designed to streamline data management and analytics across its entire lifecycle.")} {t("By integrating key components such as data engineering, data science, real-time analytics, data warehousing, and visualization, it offers a unified approach to handling data efficiently.")}
                                                             </p>
                                                             <p>
-                                                                {t("Data Engineering is powered by Azure Data Factory, which orchestrates and automates data workflows and ETL operations. Data Factory also leverages this tool for effective data movement and transformation. In Data Science, Azure Machine Learning enables the creation and deployment of machine learning models for actionable insights.")}
+                                                                {t("Data Engineering is powered by Azure Data Factory, which orchestrates and automates data workflows and ETL operations.")} {t("Data Factory also leverages this tool for effective data movement and transformation.")} {t("In Data Science, Azure Machine Learning enables the creation and deployment of machine learning models for actionable insights.")}
                                                             </p>
                                                             <div id="more" className="more-text hidden">
                                                                 <p>
-                                                                    {t("For Real-Time Analytics, Azure Stream Analytics and Azure Synapse Analytics provide capabilities for immediate data processing and unified analytics. Data Warehousing needs are addressed by Azure Synapse Analytics, which manages large volumes of structured data. Databases are handled by Azure SQL Database and Azure Cosmos DB, supporting both relational and multi-model data.")}
+                                                                    {t("For Real-Time Analytics, Azure Stream Analytics and Azure Synapse Analytics provide capabilities for immediate data processing and unified analytics.")} {t("Data Warehousing needs are addressed by Azure Synapse Analytics, which manages large volumes of structured data. ")}{t("Databases are handled by Azure SQL Database and Azure Cosmos DB, supporting both relational and multi-model data.")}
                                                                 </p>
                                                                 <p>
-                                                                    {t("Power BI offers robust data visualization and reporting tools, turning complex data into interactive dashboards and reports. Microsoft Fabric integrates these components to create a seamless data ecosystem, facilitating effective data ingestion, storage, analysis, and visualization.")}
+                                                                    {t("Power BI offers robust data visualization and reporting tools, turning complex data into interactive dashboards and reports.")}  {t("Microsoft Fabric integrates these components to create a seamless data ecosystem, facilitating effective data ingestion, storage, analysis, and visualization.")}
                                                                 </p>
                                                             </div>
                                                             <div className="ser-btn1 readmore">
@@ -1495,13 +1495,13 @@ export default function AlMl() {
                                                         <div className="micfabric">
                                                             <h2>{t("Other Technologies")}</h2>
                                                             <p>
-                                                                {t("Our technology stack supports a diverse array of data visualization, business intelligence, and enterprise resource planning solutions, enabling comprehensive insights across business functions. Tableau provides a powerful, user-friendly platform for creating interactive dashboards and data visualizations, making complex data easily accessible for business users, while Qlik Sense offers similarly intuitive analytics capabilities. SAP Business Objects addresses enterprise-level reporting and analytics needs.")}
+                                                                {t("Our technology stack supports a diverse array of data visualization, business intelligence, and enterprise resource planning solutions, enabling comprehensive insights across business functions.")} {t("Tableau provides a powerful, user-friendly platform for creating interactive dashboards and data visualizations, making complex data easily accessible for business users, while Qlik Sense offers similarly intuitive analytics capabilities.")} {t("SAP Business Objects addresses enterprise-level reporting and analytics needs.")}
                                                             </p>
                                                             <p>
-                                                                {t("Anvizent streamlines data integration from multiple sources for real-time insights, and Google Data Studio provides an intuitive, cloud-based platform for customizable reporting. To support advanced analytics, we leverage Databricks for data processing and machine learning, and Snowflake for scalable data warehousing and seamless data management.")}
+                                                                {t("Anvizent streamlines data integration from multiple sources for real-time insights, and Google Data Studio provides an intuitive, cloud-based platform for customizable reporting.")} {t("To support advanced analytics, we leverage Databricks for data processing and machine learning, and Snowflake for scalable data warehousing and seamless data management.")}
                                                             </p>
                                                             <p id="more" className="more-text hidden">
-                                                                {t("Complementing these, Epicor ERP delivers deep operational insights and integrates with BI tools for unified performance monitoring. Its suite includes Epicor Data Analytics (EDA) for consolidating sales and operational data into customizable dashboards, Epicor Financial Planning and Analysis (FP&amp;A) for real-time financial insights, budgeting, and forecasting, and the Business Activity Query (BAQ) tool for flexible T-SQL querying, enabling dynamic dashboards and custom reporting. Epicor Grow enhances these capabilities with AI-driven, self-service analytics, enabling users to explore live ERP data and build visualizations using natural language.")}
+                                                                {t("Complementing these, Epicor ERP delivers deep operational insights and integrates with BI tools for unified performance monitoring.")} {t("Its suite includes Epicor Data Analytics (EDA) for consolidating sales and operational data into customizable dashboards, Epicor Financial Planning and Analysis (FP&amp;A) for real-time financial insights, budgeting, and forecasting, and the Business Activity Query (BAQ) tool for flexible T-SQL querying, enabling dynamic dashboards and custom reporting.")} {t("Epicor Grow enhances these capabilities with AI-driven, self-service analytics, enabling users to explore live ERP data and build visualizations using natural language.")}
                                                             </p>
                                                             <div className="ser-btn1 readmore">
                                                                 <span
@@ -1613,7 +1613,7 @@ export default function AlMl() {
                                         {t("Revolutionizing Tech Solutions: Microsoft Dynamics 365 and Microsoft Technologies Lead the Way.")}
                                     </p>
                                     <p>
-                                        {t("We integrate Power BI with Dynamics 365, enabling a cohesive and finely tuned data environment. Combining BI's analytical capabilities with Dynamics 365's ERP and CRM functionalities offers several benefits such as")}
+                                        {t("We integrate Power BI with Dynamics 365, enabling a cohesive and finely tuned data environment.")} {t("Combining BI's analytical capabilities with Dynamics 365's ERP and CRM functionalities offers several benefits such as")}
                                     </p>
                                 </div>
                                 <div className="row mt-5">
@@ -1632,7 +1632,7 @@ export default function AlMl() {
                                         {t("The RheinBrücke Advantage")}
                                     </h2>
                                     <p>
-                                        {t("We are passionate about empowering your organization to make informed decisions with confidence. Our team of highly skilled professionals possesses unmatched expertise in diverse data models and cutting-edge analytics tools. As a Microsoft Gold Competency Partner, we work closely with you to unlock the full potential of your data.")}
+                                        {t("We are passionate about empowering your organization to make informed decisions with confidence.")}  {t("Our team of highly skilled professionals possesses unmatched expertise in diverse data models and cutting-edge analytics tools.")}  {t("As a Microsoft Gold Competency Partner, we work closely with you to unlock the full potential of your data.")}
                                     </p>
                                 </div>
                                 <div className="row mt-5 advant">
@@ -1698,16 +1698,16 @@ export default function AlMl() {
                                         {t("Case Study")}
                                     </h2>
                                     <p>
-                                        {t("RheinBrücke IT Consulting GmbH's Power Plant Analytics (PPA) tool was a transformative solution tailored specifically to the unique demands of the power plant industry. Unlike traditional ERP suites, PPA excelled in critical areas such as billing, revenue calculations, power generation scheduling, and management of power purchase agreements. With advanced features providing real-time access to comprehensive operational, financial, and market data, PPA empowered decision-makers to gain deep insights into plant operations and market profitability. The tool's analytical dashboards and self-service reporting capabilities enabled users to foresee opportunities, detect risks, and make informed decisions swiftly.")}
+                                        {t("RheinBrücke IT Consulting GmbH's Power Plant Analytics (PPA) tool was a transformative solution tailored specifically to the unique demands of the power plant industry.")}{t("Unlike traditional ERP suites, PPA excelled in critical areas such as billing, revenue calculations, power generation scheduling, and management of power purchase agreements.")}{t("With advanced features providing real-time access to comprehensive operational, financial, and market data, PPA empowered decision-makers to gain deep insights into plant operations and market profitability.")}{t("The tool's analytical dashboards and self-service reporting capabilities enabled users to foresee opportunities, detect risks, and make informed decisions swiftly.")}
                                     </p>
                                     <p />
-                                    {t("PPA enhanced decision-making through historical trend analysis and What-If scenario evaluations, assessing the impacts of operational metrics and potential disruptions. Field officers benefited from real-time data access via smartphones for proactive maintenance, while standard BI reports and dashboards facilitated comprehensive analysis. The seamless interface for MIS reporting minimized manual intervention, enhancing reporting accuracy and efficiency.")}
+                                    {t("PPA enhanced decision-making through historical trend analysis and What-If scenario evaluations, assessing the impacts of operational metrics and potential disruptions.")} {t("Field officers benefited from real-time data access via smartphones for proactive maintenance, while standard BI reports and dashboards facilitated comprehensive analysis.")} {t("The seamless interface for MIS reporting minimized manual intervention, enhancing reporting accuracy and efficiency.")}
                                     <p />
                                     <p>
                                         {t("PPA's modular design included functionalities for billing, scheduling, revenue management, and budget forecasting, ensuring streamlined operations and efficient resource management.")}
                                     </p>
                                     <p>
-                                        {t("PPA's user-friendly design ensured ease of use with minimal training for business users. RheinBrücke successfully delivered a robust solution that enhanced operational and financial efficiency in the power plant industry, solidifying its commitment to innovative and impactful industry solutions.")}
+                                        {t("PPA's user-friendly design ensured ease of use with minimal training for business users.")}  {t("RheinBrücke successfully delivered a robust solution that enhanced operational and financial efficiency in the power plant industry, solidifying its commitment to innovative and impactful industry solutions.")}
                                     </p>
                                 </div>
                             </div>
@@ -1738,8 +1738,7 @@ export default function AlMl() {
                                     <div className="col-sm-8">
                                         <h2>Ready to accelerate value creation across your portfolio?</h2>
                                         <p>
-                                            Contact us today to learn how we can help modernise operations,
-                                            de-risk integrations, and improve commercial outcomes.
+                                            Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.
                                         </p>
                                     </div>
                                     <div className="col-sm-4">
