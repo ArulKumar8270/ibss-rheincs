@@ -100,19 +100,19 @@ export default function SwiperInit() {
                 1300: { slidesPerView: 5 },
                 1700: { slidesPerView: 5 },
               },
-              // on: {
-              //   init: function (this: any) {
-              //     applyOffset(this, testimonialRtyEl as HTMLElement);
-              //     if (testimonialCounterEl) testimonialCounterEl.textContent = `1/${realTotalSlides}`;
-              //   },
-              //   resize: function (this: any) {
-              //     applyOffset(this, testimonialRtyEl as HTMLElement);
-              //   },
-              //   slideChange: function (this: any) {
-              //     const currentSlide = this.realIndex + 1;
-              //     if (testimonialCounterEl) testimonialCounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-              //   }
-              // }
+              on: {
+                init: function (this: any) {
+                  // applyOffset(this, testimonialRtyEl as HTMLElement);
+                  if (testimonialCounterEl) testimonialCounterEl.textContent = `1/${realTotalSlides}`;
+                },
+                // resize: function (this: any) {
+                //   applyOffset(this, testimonialRtyEl as HTMLElement);
+                // },
+                slideChange: function (this: any) {
+                  const currentSlide = this.realIndex + 1;
+                  if (testimonialCounterEl) testimonialCounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+                }
+              }
             });
           } catch (e) {
             console.error('Error initializing testimonial-slider:', e);
@@ -141,15 +141,15 @@ export default function SwiperInit() {
                 768: { slidesPerView: 3 },
                 991: { slidesPerView: 5 },
               },
-              // on: {
-              //   init: function (this: any) {
-              //     if (marqueeCounterEl) marqueeCounterEl.textContent = `1/${realTotalSlides}`;
-              //   },
-              //   slideChange: function (this: any) {
-              //     const currentSlide1 = this.realIndex + 1;
-              //     if (marqueeCounterEl) marqueeCounterEl.textContent = `${currentSlide1}/${realTotalSlides}`;
-              //   }
-              // }
+              on: {
+                init: function (this: any) {
+                  if (marqueeCounterEl) marqueeCounterEl.textContent = `1/${realTotalSlides}`;
+                },
+                slideChange: function (this: any) {
+                  const currentSlide1 = this.realIndex + 1;
+                  if (marqueeCounterEl) marqueeCounterEl.textContent = `${currentSlide1}/${realTotalSlides}`;
+                }
+              }
             });
           } catch (e) {
             console.error('Error initializing marquee slider:', e);
@@ -158,38 +158,54 @@ export default function SwiperInit() {
         
         // 3. testimonial-slider-08
         const slider08El = document.querySelector('.testimonial-slider-08 .swiper');
-        const slider08CounterEl = document.querySelector('.testimonial-slider-08 .testspace');
+        const slider08CounterEl = document.querySelector('.testimonial-slider-08 .testspace') || document.querySelector('.testimonial-btn-08 .testspace');
         
-        if (slider08El && slider08CounterEl && !(slider08El as any).swiper) {
+        if (slider08El) {
+          // Force destroy any existing swiper instance before reinitializing
           try {
-            const realTotalSlides = slider08El.querySelectorAll('.swiper-wrapper .swiper-slide').length;
-            new Swiper(slider08El, {
-              slidesPerView: 3,
-              spaceBetween: 30,
-              loop: true,
-              speed: 800,
-              autoplay: false,
-              navigation: {
-                nextEl: '.testimonial-slider-08 .testimonial-button-next',
-                prevEl: '.testimonial-slider-08 .testimonial-button-prev',
-              },
-              breakpoints: {
-                0: { slidesPerView: 1.1 },
-                768: { slidesPerView: 3 },
-                991: { slidesPerView: 3 },
-              },
-              // on: {
-              //   init: function (this: any) {
-              //     if (slider08CounterEl) slider08CounterEl.textContent = `1/${realTotalSlides}`;
-              //   },
-              //   slideChange: function (this: any) {
-              //     const currentSlide = this.realIndex + 1;
-              //     if (slider08CounterEl) slider08CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-              //   }
-              // }
-            });
+            if ((slider08El as any).swiper && typeof (slider08El as any).swiper.destroy === 'function') {
+              (slider08El as any).swiper.destroy(true, true);
+            }
           } catch (e) {
-            console.error('Error initializing slider-08:', e);
+            // Ignore destroy errors
+          }
+          // Clean up swiper property and classes
+          slider08El.classList.remove('swiper-initialized', 'swiper-horizontal', 'swiper-vertical', 'swiper-rtl');
+          if ((slider08El as any).swiper) {
+            delete (slider08El as any).swiper;
+          }
+          
+          if (slider08CounterEl) {
+            try {
+              const realTotalSlides = slider08El.querySelectorAll('.swiper-wrapper .swiper-slide').length;
+              new Swiper(slider08El, {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                loop: true,
+                speed: 800,
+                autoplay: false,
+                navigation: {
+                  nextEl: '.testimonial-slider-08 .testimonial-button-next',
+                  prevEl: '.testimonial-slider-08 .testimonial-button-prev',
+                },
+                breakpoints: {
+                  0: { slidesPerView: 1.1 },
+                  768: { slidesPerView: 3 },
+                  991: { slidesPerView: 3 },
+                },
+                on: {
+                  init: function (this: any) {
+                    if (slider08CounterEl) slider08CounterEl.textContent = `1/${realTotalSlides}`;
+                  },
+                  slideChange: function (this: any) {
+                    const currentSlide = this.realIndex + 1;
+                    if (slider08CounterEl) slider08CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+                  }
+                }
+              });
+            } catch (e) {
+              console.error('Error initializing slider-08:', e);
+            }
           }
         }
         
@@ -216,17 +232,17 @@ export default function SwiperInit() {
                 768: { slidesPerView: 1 },
                 991: { slidesPerView: 1 },
               },
-              // on: {
-              //   init: function (this: any) {
-              //     // Set initial counter
-              //     if (slider77CounterEl) slider77CounterEl.textContent = `1/${realTotalSlides}`;
-              //   },
-              //   slideChange: function (this: any) {
-              //     // Show correct current / total (realIndex is correct for loop mode)
-              //     const currentSlide = this.realIndex + 1;
-              //     if (slider77CounterEl) slider77CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-              //   }
-              // }
+              on: {
+                init: function (this: any) {
+                  // Set initial counter
+                  if (slider77CounterEl) slider77CounterEl.textContent = `1/${realTotalSlides}`;
+                },
+                slideChange: function (this: any) {
+                  // Show correct current / total (realIndex is correct for loop mode)
+                  const currentSlide = this.realIndex + 1;
+                  if (slider77CounterEl) slider77CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+                }
+              }
             });
           } catch (e) {
             console.error('Error initializing slider77:', e);
@@ -255,15 +271,15 @@ export default function SwiperInit() {
                 768: { slidesPerView: 2 },
                 991: { slidesPerView: 3 },
               },
-              // on: {
-              //   init: function (this: any) {
-              //     if (sliders1CounterEl) sliders1CounterEl.textContent = `1/${realTotalSlides}`;
-              //   },
-              //   slideChange: function (this: any) {
-              //     const currentSlide = this.realIndex + 1;
-              //     if (sliders1CounterEl) sliders1CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-              //   }
-              // }
+              on: {
+                init: function (this: any) {
+                  if (sliders1CounterEl) sliders1CounterEl.textContent = `1/${realTotalSlides}`;
+                },
+                slideChange: function (this: any) {
+                  const currentSlide = this.realIndex + 1;
+                  if (sliders1CounterEl) sliders1CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+                }
+              }
             });
           } catch (e) {
             console.error('Error initializing sliders1:', e);
@@ -322,15 +338,15 @@ export default function SwiperInit() {
                 991: { slidesPerView: 5 },
                 1200: { slidesPerView: 6 },
               },
-              // on: {
-              //   init: function (this: any) {
-              //     if (slider59CounterEl) slider59CounterEl.textContent = `1/${realTotalSlides}`;
-              //   },
-              //   slideChange: function (this: any) {
-              //     const currentSlide = this.realIndex + 1;
-              //     if (slider59CounterEl) slider59CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-              //   }
-              // }
+              on: {
+                init: function (this: any) {
+                  if (slider59CounterEl) slider59CounterEl.textContent = `1/${realTotalSlides}`;
+                },
+                slideChange: function (this: any) {
+                  const currentSlide = this.realIndex + 1;
+                  if (slider59CounterEl) slider59CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+                }
+              }
             });
           } catch (e) {
             console.error('Error initializing slider59:', e);
@@ -365,19 +381,19 @@ export default function SwiperInit() {
                 1300: { slidesPerView: 5 },
                 1700: { slidesPerView: 5.8 },
               },
-              // on: {
-              //   init: function (this: any) {
-              //     applyOffset(this, industriesRtyEl as HTMLElement);
-              //     if (industriesCounterEl) industriesCounterEl.textContent = `1/${realTotalSlides}`;
-              //   },
-              //   resize: function (this: any) {
-              //     applyOffset(this, industriesRtyEl as HTMLElement);
-              //   },
-              //   slideChange: function (this: any) {
-              //     const currentSlide = this.realIndex + 1;
-              //     if (industriesCounterEl) industriesCounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-              //   }
-              // }
+              on: {
+                init: function (this: any) {
+                  // applyOffset(this, industriesRtyEl as HTMLElement);
+                  if (industriesCounterEl) industriesCounterEl.textContent = `1/${realTotalSlides}`;
+                },
+                // resize: function (this: any) {
+                //   applyOffset(this, industriesRtyEl as HTMLElement);
+                // },
+                slideChange: function (this: any) {
+                  const currentSlide = this.realIndex + 1;
+                  if (industriesCounterEl) industriesCounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+                }
+              }
             });
           } catch (e) {
             console.error('Error initializing industries:', e);
@@ -412,31 +428,31 @@ export default function SwiperInit() {
                 1500: { slidesPerView: 2 },
                 1600: { slidesPerView: 2 }
               },
-              // on: {
-              //   init: function (this: any) {
-              //     const offset = getDynamicOffset();
-              //     if (window.innerWidth >= 1200) {
-              //       this.params.slidesOffsetBefore = offset;
-              //     } else {
-              //       this.params.slidesOffsetBefore = 0;
-              //     }
-              //     this.update();
-              //     if (slider1CounterEl) slider1CounterEl.textContent = `1/${realTotalSlides}`;
-              //   },
-              //   resize: function (this: any) {
-              //     const offset = getDynamicOffset();
-              //     if (window.innerWidth >= 1200) {
-              //       this.params.slidesOffsetBefore = offset;
-              //     } else {
-              //       this.params.slidesOffsetBefore = 0;
-              //     }
-              //     this.update();
-              //   },
-              //   slideChange: function (this: any) {
-              //     const currentSlide = this.realIndex + 1;
-              //     if (slider1CounterEl) slider1CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-              //   }
-              // }
+              on: {
+                init: function (this: any) {
+                  const offset = getDynamicOffset();
+                  if (window.innerWidth >= 1200) {
+                    this.params.slidesOffsetBefore = offset;
+                  } else {
+                    this.params.slidesOffsetBefore = 0;
+                  }
+                  this.update();
+                  if (slider1CounterEl) slider1CounterEl.textContent = `1/${realTotalSlides}`;
+                },
+                // resize: function (this: any) {
+                //   const offset = getDynamicOffset();
+                //   if (window.innerWidth >= 1200) {
+                //     this.params.slidesOffsetBefore = offset;
+                //   } else {
+                //     this.params.slidesOffsetBefore = 0;
+                //   }
+                //   this.update();
+                // },
+                slideChange: function (this: any) {
+                  const currentSlide = this.realIndex + 1;
+                  if (slider1CounterEl) slider1CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+                }
+              }
             });
           } catch (e) {
             console.error('Error initializing slider1:', e);
@@ -466,15 +482,15 @@ export default function SwiperInit() {
                 768: { slidesPerView: 3 },
                 991: { slidesPerView: 5 },
               },
-              // on: {
-              //   init: function (this: any) {
-              //     if (slider11CounterEl) slider11CounterEl.textContent = `1/${realTotalSlides}`;
-              //   },
-              //   slideChange: function (this: any) {
-              //     const currentSlide = this.realIndex + 1;
-              //     if (slider11CounterEl) slider11CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-              //   }
-              // }
+              on: {
+                init: function (this: any) {
+                  if (slider11CounterEl) slider11CounterEl.textContent = `1/${realTotalSlides}`;
+                },
+                slideChange: function (this: any) {
+                  const currentSlide = this.realIndex + 1;
+                  if (slider11CounterEl) slider11CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+                }
+              }
             });
           } catch (e) {
             console.error('Error initializing slider11:', e);
@@ -492,8 +508,8 @@ export default function SwiperInit() {
                 loop: false,
                 speed: 800,
                 breakpoints: {
-                  420: { slidesPerView: 1.2, spaceBetween: 10 },
-                  768: { slidesPerView: 1.5, spaceBetween: 15 },
+                  420: { slidesPerView: 1, spaceBetween: 10 },
+                  768: { slidesPerView: 1, spaceBetween: 15 },
                 },
                 autoplay: {
                   delay: 5000,
@@ -503,21 +519,21 @@ export default function SwiperInit() {
                   nextEl: '.testimonial-slider3 .testimonial-button-next',
                   prevEl: '.testimonial-slider3 .testimonial-button-prev',
                 },
-                // on: {
-                //   init: function (this: any) {
-                //     const totalSlides = Array.from(this.slides)
-                //       .filter((slide: any) => !slide.classList.contains('swiper-slide-duplicate'))
-                //       .length;
-                //     this.totalRealSlides = totalSlides;
-                //     const testspace = document.querySelector('.testspace1');
-                //     if (testspace) testspace.textContent = `1/${totalSlides}`;
-                //   },
-                //   slideChange: function (this: any) {
-                //     const currentSlide = this.realIndex + 1;
-                //     const testspace = document.querySelector('.testspace1');
-                //     if (testspace) testspace.textContent = `${currentSlide}/${this.totalRealSlides}`;
-                //   }
-                // }
+                on: {
+                  init: function (this: any) {
+                    const totalSlides = Array.from(this.slides)
+                      .filter((slide: any) => !slide.classList.contains('swiper-slide-duplicate'))
+                      .length;
+                    this.totalRealSlides = totalSlides;
+                    const testspace = document.querySelector('.testimonial-slider3 .testspace1');
+                    if (testspace) testspace.textContent = `1/${totalSlides}`;
+                  },
+                  slideChange: function (this: any) {
+                    const currentSlide = this.realIndex + 1;
+                    const testspace = document.querySelector('.testimonial-slider3 .testspace1');
+                    if (testspace) testspace.textContent = `${currentSlide}/${this.totalRealSlides}`;
+                  }
+                }
               });
             } catch (e) {
               console.error('Error initializing slider3:', e);
@@ -547,21 +563,21 @@ export default function SwiperInit() {
                   nextEl: '.testimonial-slider33 .testimonial-button-next',
                   prevEl: '.testimonial-slider33 .testimonial-button-prev',
                 },
-                // on: {
-                //   init: function (this: any) {
-                //     const totalSlides = Array.from(this.slides)
-                //       .filter((slide: any) => !slide.classList.contains('swiper-slide-duplicate'))
-                //       .length;
-                //     this.totalRealSlides = totalSlides;
-                //     const testspace = document.querySelector('.testspace');
-                //     if (testspace) testspace.textContent = `1/${totalSlides}`;
-                //   },
-                //   slideChange: function (this: any) {
-                //     const currentSlide = this.realIndex + 1;
-                //     const testspace = document.querySelector('.testspace');
-                //     if (testspace) testspace.textContent = `${currentSlide}/${this.totalRealSlides}`;
-                //   }
-                // }
+                on: {
+                  init: function (this: any) {
+                    const totalSlides = Array.from(this.slides)
+                      .filter((slide: any) => !slide.classList.contains('swiper-slide-duplicate'))
+                      .length;
+                    this.totalRealSlides = totalSlides;
+                    const testspace = document.querySelector('.testimonial-slider33 .testspace');
+                    if (testspace) testspace.textContent = `1/${totalSlides}`;
+                  },
+                  slideChange: function (this: any) {
+                    const currentSlide = this.realIndex + 1;
+                    const testspace = document.querySelector('.testimonial-slider33 .testspace');
+                    if (testspace) testspace.textContent = `${currentSlide}/${this.totalRealSlides}`;
+                  }
+                }
               });
             } catch (e) {
               console.error('Error initializing slider33:', e);
@@ -592,15 +608,15 @@ export default function SwiperInit() {
                 768: { slidesPerView: 3 },
                 991: { slidesPerView: 5 },
               },
-              // on: {
-              //   init: function (this: any) {
-              //     if (slider5CounterEl) slider5CounterEl.textContent = `1/${realTotalSlides}`;
-              //   },
-              //   slideChange: function (this: any) {
-              //     const currentSlide = this.realIndex + 1;
-              //     if (slider5CounterEl) slider5CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-              //   }
-              // }
+              on: {
+                init: function (this: any) {
+                  if (slider5CounterEl) slider5CounterEl.textContent = `1/${realTotalSlides}`;
+                },
+                slideChange: function (this: any) {
+                  const currentSlide = this.realIndex + 1;
+                  if (slider5CounterEl) slider5CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+                }
+              }
             });
           } catch (e) {
             console.error('Error initializing slider5:', e);
@@ -629,15 +645,15 @@ export default function SwiperInit() {
                 768: { slidesPerView: 3, spaceBetween: 15 },
                 991: { slidesPerView: 9, spaceBetween: 15 },
               },
-              // on: {
-              //   init: function (this: any) {
-              //     if (awardsCounterEl) awardsCounterEl.textContent = `1/${realTotalSlides}`;
-              //   },
-              //   slideChange: function (this: any) {
-              //     const currentSlide = this.realIndex + 1;
-              //     if (awardsCounterEl) awardsCounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-              //   }
-              // }
+              on: {
+                init: function (this: any) {
+                  if (awardsCounterEl) awardsCounterEl.textContent = `1/${realTotalSlides}`;
+                },
+                slideChange: function (this: any) {
+                  const currentSlide = this.realIndex + 1;
+                  if (awardsCounterEl) awardsCounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+                }
+              }
             });
           } catch (e) {
             console.error('Error initializing awards:', e);
@@ -666,15 +682,15 @@ export default function SwiperInit() {
                 768: { slidesPerView: 3 },
                 991: { slidesPerView: 5 },
               },
-              // on: {
-              //   init: function (this: any) {
-              //     if (slider7CounterEl) slider7CounterEl.textContent = `1/${realTotalSlides}`;
-              //   },
-              //   slideChange: function (this: any) {
-              //     const currentSlide = this.realIndex + 1;
-              //     if (slider7CounterEl) slider7CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-              //   }
-              // }
+              on: {
+                init: function (this: any) {
+                  if (slider7CounterEl) slider7CounterEl.textContent = `1/${realTotalSlides}`;
+                },
+                slideChange: function (this: any) {
+                  const currentSlide = this.realIndex + 1;
+                  if (slider7CounterEl) slider7CounterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+                }
+              }
             });
           } catch (e) {
             console.error('Error initializing slider7:', e);
@@ -704,15 +720,15 @@ export default function SwiperInit() {
                 768: { slidesPerView: 3 },
                 991: { slidesPerView: 5 },
               },
-              // on: {
-              //   init: function (this: any) {
-              //     if (slider8agency) slider8agency.textContent = `1/${realTotalSlides}`;
-              //   },
-              //   slideChange: function (this: any) {
-              //     const currentSlide = this.realIndex + 1;
-              //     if (slider8agency) slider8agency.textContent = `${currentSlide}/${realTotalSlides}`;
-              //   }
-              // }
+              on: {
+                init: function (this: any) {
+                  if (slider8agency) slider8agency.textContent = `1/${realTotalSlides}`;
+                },
+                slideChange: function (this: any) {
+                  const currentSlide = this.realIndex + 1;
+                  if (slider8agency) slider8agency.textContent = `${currentSlide}/${realTotalSlides}`;
+                }
+              }
             });
           } catch (e) {
             console.error('Error initializing slider7:', e);
@@ -786,19 +802,19 @@ export default function SwiperInit() {
                   1300: { slidesPerView: config.selector === '.sap-service' ? 3 : config.selector === '.sap' ? 4 : config.selector === '.industries2' ? 4 : config.selector === '.msds' ? 4 : 5 },
                   1700: { slidesPerView: config.selector === '.sap-service' ? 3 : config.selector === '.sap' ? 4 : config.selector === '.industries2' ? 4 : config.selector === '.msds' ? 4 : 6 },
                 },
-                // on: {
-                //   init: function (this: any) {
-                //     if (config.hasRty) applyOffset(this, rtyEl as HTMLElement);
-                //     if (counterEl && config.hasCounter) counterEl.textContent = `1/${realTotalSlides}`;
-                //   },
-                //   resize: function (this: any) {
-                //     if (config.hasRty) applyOffset(this, rtyEl as HTMLElement);
-                //   },
-                //   slideChange: function (this: any) {
-                //     const currentSlide = this.realIndex + 1;
-                //     if (counterEl && config.hasCounter) counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-                //   }
-                // }
+                on: {
+                  init: function (this: any) {
+                    // if (config.hasRty) applyOffset(this, rtyEl as HTMLElement);
+                    if (counterEl && config.hasCounter) counterEl.textContent = `1/${realTotalSlides}`;
+                  },
+                  // resize: function (this: any) {
+                  //   if (config.hasRty) applyOffset(this, rtyEl as HTMLElement);
+                  // },
+                  slideChange: function (this: any) {
+                    const currentSlide = this.realIndex + 1;
+                    if (counterEl && config.hasCounter) counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+                  }
+                }
               });
             } catch (e) {
               console.error(`Error initializing ${config.selector}:`, e);
@@ -831,15 +847,15 @@ export default function SwiperInit() {
                   1300: { slidesPerView: 4 },
                   1700: { slidesPerView: 5 }
                 },
-                // on: {
-                //   init: function (this: any) {
-                //     if (counter009El) counter009El.textContent = `1/${totalSlides}`;
-                //   },
-                //   slideChange: function (this: any) {
-                //     const currentSlide = this.realIndex + 1;
-                //     if (counter009El) counter009El.textContent = `${currentSlide}/${totalSlides}`;
-                //   }
-                // }
+                on: {
+                  init: function (this: any) {
+                    if (counter009El) counter009El.textContent = `1/${totalSlides}`;
+                  },
+                  slideChange: function (this: any) {
+                    const currentSlide = this.realIndex + 1;
+                    if (counter009El) counter009El.textContent = `${currentSlide}/${totalSlides}`;
+                  }
+                }
               });
             } catch (e) {
               console.error('Error initializing slider-009:', e);
@@ -872,15 +888,15 @@ export default function SwiperInit() {
                   1300: { slidesPerView: 4 },
                   1700: { slidesPerView: 4 }
                 },
-                // on: {
-                //   init: function (this: any) {
-                //     if (counter0009El) counter0009El.textContent = `1/${totalSlides}`;
-                //   },
-                //   slideChange: function (this: any) {
-                //     const currentSlide = this.realIndex + 1;
-                //     if (counter0009El) counter0009El.textContent = `${currentSlide}/${totalSlides}`;
-                //   }
-                // }
+                on: {
+                  init: function (this: any) {
+                    if (counter0009El) counter0009El.textContent = `1/${totalSlides}`;
+                  },
+                  slideChange: function (this: any) {
+                    const currentSlide = this.realIndex + 1;
+                    if (counter0009El) counter0009El.textContent = `${currentSlide}/${totalSlides}`;
+                  }
+                }
               });
             } catch (e) {
               console.error('Error initializing slider-0009:', e);
