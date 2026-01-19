@@ -21,16 +21,19 @@ export default function SwiperInit() {
       // Destroy all existing Swiper instances first
       document.querySelectorAll('.swiper').forEach((el: any) => {
         try {
-          if (el.swiper && el.swiper.destroy) {
+          if (el.swiper && typeof el.swiper.destroy === 'function') {
             el.swiper.destroy(true, true);
           }
         } catch (e) {
           // Ignore errors
         }
-        el.classList.remove('swiper-initialized');
+        // Clean up swiper property and classes
+        el.classList.remove('swiper-initialized', 'swiper-horizontal', 'swiper-vertical');
         if (el.swiper) {
           delete el.swiper;
         }
+        // Also remove any swiper-related data attributes
+        el.removeAttribute('data-swiper-slide-index');
       });
       
       
@@ -744,7 +747,21 @@ export default function SwiperInit() {
           const counterEl = config.hasCounter ? document.querySelector(`${config.selector} .testspace`) : null;
           const rtyEl = config.hasRty ? document.querySelector(`${config.selector} .rtyElement`) : null;
           
-          if (swiperEl && !(swiperEl as any).swiper) {
+          if (swiperEl) {
+            // Force destroy any existing swiper instance before reinitializing
+            try {
+              if ((swiperEl as any).swiper && typeof (swiperEl as any).swiper.destroy === 'function') {
+                (swiperEl as any).swiper.destroy(true, true);
+              }
+            } catch (e) {
+              // Ignore destroy errors
+            }
+            // Clean up swiper property and classes
+            swiperEl.classList.remove('swiper-initialized', 'swiper-horizontal', 'swiper-vertical', 'swiper-rtl');
+            if ((swiperEl as any).swiper) {
+              delete (swiperEl as any).swiper;
+            }
+            
             try {
               const realTotalSlides = swiperEl.querySelectorAll('.swiper-slide').length;
               const swiperInstance = new Swiper(swiperEl, {

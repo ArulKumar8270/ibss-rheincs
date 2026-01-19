@@ -1223,19 +1223,19 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         1300: { slidesPerView: 5 },
         1700: { slidesPerView: 5.8 },
       },
-      on: {
-        init: function () {
-          applyOffset(this);
-          counterEl.textContent = `1/${realTotalSlides}`;
-        },
-        resize: function () {
-          applyOffset(this);
-        },
-        slideChange: function () {
-          const currentSlide = this.realIndex + 1;
-          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-        }
-      }
+      // on: {
+      //   init: function () {
+      //     applyOffset(this);
+      //     counterEl.textContent = `1/${realTotalSlides}`;
+      //   },
+      //   resize: function () {
+      //     applyOffset(this);
+      //   },
+      //   slideChange: function () {
+      //     const currentSlide = this.realIndex + 1;
+      //     counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+      //   }
+      // }
     });
 
     function applyOffset(swiperInstance) {
@@ -1289,15 +1289,15 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         768: { slidesPerView: 3 },
         991: { slidesPerView: 5 },
       },
-      on: {
-        init: function () {
-          counterEl.textContent = `1/${realTotalSlides}`;
-        },
-        slideChange: function () {
-          const currentSlide1 = this.realIndex + 1;
-          counterEl.textContent = `${currentSlide1}/${realTotalSlides}`;
-        }
-      }
+      // on: {
+      //   init: function () {
+      //     counterEl.textContent = `1/${realTotalSlides}`;
+      //   },
+      //   slideChange: function () {
+      //     const currentSlide1 = this.realIndex + 1;
+      //     counterEl.textContent = `${currentSlide1}/${realTotalSlides}`;
+      //   }
+      // }
     });
   }, ['Swiper']);
 
@@ -1333,15 +1333,15 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         768: { slidesPerView: 3 },
         991: { slidesPerView: 3 },
       },
-      on: {
-        init: function () {
-          counterEl.textContent = `1/${realTotalSlides}`;
-        },
-        slideChange: function () {
-          const currentSlide = this.realIndex + 1;
-          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-        }
-      }
+      // on: {
+      //   init: function () {
+      //     counterEl.textContent = `1/${realTotalSlides}`;
+      //   },
+      //   slideChange: function () {
+      //     const currentSlide = this.realIndex + 1;
+      //     counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+      //   }
+      // }
     });
   }, ['Swiper']);
 
@@ -1378,15 +1378,15 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         768: { slidesPerView: 2 },
         991: { slidesPerView: 3 },
       },
-      on: {
-        init: function () {
-          counterEl.textContent = `1/${realTotalSlides}`;
-        },
-        slideChange: function () {
-          const currentSlide = this.realIndex + 1;
-          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-        }
-      }
+      // on: {
+      //   init: function () {
+      //     counterEl.textContent = `1/${realTotalSlides}`;
+      //   },
+      //   slideChange: function () {
+      //     const currentSlide = this.realIndex + 1;
+      //     counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+      //   }
+      // }
     });
   }, ['Swiper']);
 
@@ -1542,15 +1542,15 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         991: { slidesPerView: 5 },
         1200: { slidesPerView: 6 },
       },
-      on: {
-        init: function () {
-          counterEl.textContent = `1/${realTotalSlides}`;
-        },
-        slideChange: function () {
-          const currentSlide = this.realIndex + 1;
-          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-        }
-      }
+      // on: {
+      //   init: function () {
+      //     counterEl.textContent = `1/${realTotalSlides}`;
+      //   },
+      //   slideChange: function () {
+      //     const currentSlide = this.realIndex + 1;
+      //     counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+      //   }
+      // }
     });
   }, ['Swiper']);
 
@@ -1808,11 +1808,11 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         speed: 800,
         breakpoints: {
           420: {
-            slidesPerView: 1.2,
+            slidesPerView: 1,
             spaceBetween: 10
           },
           768: {
-            slidesPerView: 1.5,
+            slidesPerView: 1,
             spaceBetween: 15
           },
         },
@@ -1862,7 +1862,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         prevEl: '.testimonial-slider5 .testimonial-button-prev',
       },
       breakpoints: {
-        0: { slidesPerView: 1.5 },
+        0: { slidesPerView: 1 },
         768: { slidesPerView: 3 },
         991: { slidesPerView: 5 },
       },
@@ -1936,7 +1936,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         prevEl: '.testimonial-slider7 .testimonial-button-prev',
       },
       breakpoints: {
-        0: { slidesPerView: 1.5 },
+        0: { slidesPerView: 1 },
         768: { slidesPerView: 3 },
         991: { slidesPerView: 5 },
       },
@@ -2014,9 +2014,9 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         prevEl: '.overview-slider .testimonial-button-prev',
       },
       breakpoints: {
-        0: { slidesPerView: 1.3 },
+        0: { slidesPerView: 1 },
         450: { slidesPerView: 2 },
-        600: { slidesPerView: 2.5 },
+        600: { slidesPerView: 2 },
         768: { slidesPerView: 3 },
         991: { slidesPerView: 4 },
         1300: { slidesPerView: 5 },
@@ -2092,12 +2092,12 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         prevEl: '.overview-slider2 .testimonial-button-prev',
       },
       breakpoints: {
-        0: { slidesPerView: 1.3 },
+        0: { slidesPerView: 1 },
         450: { slidesPerView: 2 },
-        600: { slidesPerView: 2.5 },
+        600: { slidesPerView: 2 },
         768: { slidesPerView: 3 },
         991: { slidesPerView: 4 },
-        1300: { slidesPerView: 4.5 },
+        1300: { slidesPerView: 4 },
         1700: { slidesPerView: 5 },
       },
       // on: {
@@ -2170,9 +2170,9 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         prevEl: '.overview-slider5 .testimonial-button-prev',
       },
       breakpoints: {
-        0: { slidesPerView: 1.3 },
+        0: { slidesPerView: 1 },
         450: { slidesPerView: 2 },
-        600: { slidesPerView: 2.5 },
+        600: { slidesPerView: 2 },
         768: { slidesPerView: 3 },
         991: { slidesPerView: 4 },
         1300: { slidesPerView: 5 },
@@ -2406,19 +2406,19 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         1300: { slidesPerView: 5 },
         1700: { slidesPerView: 5 },
       },
-      on: {
-        init: function () {
-          applyOffset(this);
-          counterEl.textContent = `1/${realTotalSlides}`;
-        },
-        resize: function () {
-          applyOffset(this);
-        },
-        slideChange: function () {
-          const currentSlide = this.realIndex + 1;
-          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-        }
-      }
+      // on: {
+      //   init: function () {
+      //     applyOffset(this);
+      //     counterEl.textContent = `1/${realTotalSlides}`;
+      //   },
+      //   resize: function () {
+      //     applyOffset(this);
+      //   },
+      //   slideChange: function () {
+      //     const currentSlide = this.realIndex + 1;
+      //     counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+      //   }
+      // }
     });
 
     function applyOffset(swiperInstance) {
@@ -3047,15 +3047,15 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
           autoplay: false
         },
       },
-      on: {
-        init: function () {
-          counterEl.textContent = `1/${realTotalSlides}`;
-        },
-        slideChange: function () {
-          const currentSlide = this.realIndex + 1;
-          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-        }
-      }
+      // on: {
+      //   init: function () {
+      //     counterEl.textContent = `1/${realTotalSlides}`;
+      //   },
+      //   slideChange: function () {
+      //     const currentSlide = this.realIndex + 1;
+      //     counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+      //   }
+      // }
     });
   }, ['Swiper']);
 
@@ -3465,7 +3465,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
             mouseDrag: true,
             touchDrag: true,
             responsive: {
-              0: { items: 1.5 },
+              0: { items: 1 },
               480: { items: 2 },
               768: { items: 3 },
               1024: { items: 5 }
