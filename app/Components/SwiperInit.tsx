@@ -430,13 +430,13 @@ export default function SwiperInit() {
               },
               on: {
                 init: function (this: any) {
-                  const offset = getDynamicOffset();
-                  if (window.innerWidth >= 1200) {
-                    this.params.slidesOffsetBefore = offset;
-                  } else {
-                    this.params.slidesOffsetBefore = 0;
-                  }
-                  this.update();
+                  // const offset = getDynamicOffset();
+                  // if (window.innerWidth >= 1200) {
+                  //   this.params.slidesOffsetBefore = offset;
+                  // } else {
+                  //   this.params.slidesOffsetBefore = 0;
+                  // }
+                  // this.update();
                   if (slider1CounterEl) slider1CounterEl.textContent = `1/${realTotalSlides}`;
                 },
                 // resize: function (this: any) {
