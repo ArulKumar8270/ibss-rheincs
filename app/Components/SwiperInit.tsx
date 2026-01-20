@@ -82,7 +82,7 @@ export default function SwiperInit() {
             const realTotalSlides = testimonialSliderEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
             const swiperInstance = new Swiper(testimonialSliderEl, {
               spaceBetween: 15,
-              loop: true,
+              loop: false,
               speed: 800,
               autoplay: {
                 delay: 3000,
@@ -220,7 +220,7 @@ export default function SwiperInit() {
             new Swiper(slider77El, {
               slidesPerView: 1,
               spaceBetween: 30,
-              loop: true,
+              loop: false,
               speed: 800,
               autoplay: true,
               navigation: {
@@ -324,7 +324,7 @@ export default function SwiperInit() {
             new Swiper(slider59El, {
               slidesPerView: 6,
               spaceBetween: 30,
-              loop: true,
+              loop: false,
               speed: 800,
               centeredSlides: true,
               autoplay: true,
@@ -363,7 +363,7 @@ export default function SwiperInit() {
             const realTotalSlides = industriesEl.querySelectorAll('.industries .swiper-slide').length;
             const swiperInstance = new Swiper(industriesEl, {
               spaceBetween: 15,
-              loop: true,
+                loop: false,
               speed: 800,
               autoplay: {
                 delay: 3000,
@@ -409,7 +409,7 @@ export default function SwiperInit() {
             const realTotalSlides = slider1El.querySelectorAll('.swiper-wrapper .swiper-slide').length;
             const swiperInstance = new Swiper(slider1El, {
               spaceBetween: 20,
-              loop: true,
+              loop: false,
               speed: 1000,
               autoplay: {
                 delay: 3000,
@@ -633,7 +633,7 @@ export default function SwiperInit() {
             new Swiper(awardsEl, {
               slidesPerView: 5,
               spaceBetween: 30,
-              loop: true,
+              loop: false,
               speed: 800,
               autoplay: true,
               navigation: {
