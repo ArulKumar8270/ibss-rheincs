@@ -22,7 +22,7 @@ export default function EnterpriseSolutions() {
                     {t("Powering enterprise agility through intelligent systems")}
                   </h2>
                   <p>
-                    {t("From ERP to integration; we design solutions that adapt as you grow.")}
+                    {t("From ERP to integration, we design solutions that adapt as you grow.")}
                   </p>
                   <div className="ser-btn ">
                       <Link href="/contact-us" className="animated-svg-link">

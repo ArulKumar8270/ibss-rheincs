@@ -31,7 +31,7 @@ export default function EnterpriseSolutions() {
                     ERP Customer Excellence (CX)
                   </h2>
                   <p>
-                    Empower your ERP with RheinBrücke’s Customer Excellence (CX);
+                    Empower your ERP with RheinBrücke’s Customer Excellence (CX),
                     responsive support, continuous optimisation and data-driven
                     insights.{" "}
                   </p>

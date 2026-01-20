@@ -539,40 +539,40 @@ function SuccessStories() {
                                                         <ul className="success-point-waber">
                                                             <li>
                                                                 {" "}
-                                                                Global Standardisation at Scale — a harmonised ERP
+                                                                Global Standardisation at Scale - a harmonised ERP
                                                                 footprint across 21+ countries, reducing complexity
                                                                 from dozens of legacy systems.
                                                             </li>
                                                             <li>
                                                                 {" "}
-                                                                Massive Rollout Efficiency — phased deployments
+                                                                Massive Rollout Efficiency - phased deployments
                                                                 delivered with minimal disruption, keeping local
                                                                 operations running smoothly.
                                                             </li>
                                                             <li>
-                                                                Seamless Data Integration — HQ and subsidiaries now
+                                                                Seamless Data Integration - HQ and subsidiaries now
                                                                 operate on shared, real-time data for finance,
                                                                 projects, and operations.
                                                             </li>
                                                             <li>
                                                                 {" "}
-                                                                Actionable Insights — advanced analytics with Power
+                                                                Actionable Insights - advanced analytics with Power
                                                                 BI, improving visibility into performance across
                                                                 geographies.
                                                             </li>
                                                             <li>
-                                                                Mobility Breakthroughs — mobile-enabled processes
+                                                                Mobility Breakthroughs - mobile-enabled processes
                                                                 boosted productivity for remote and field staff.
                                                             </li>
                                                             <li>
                                                                 {" "}
-                                                                Operational Stability — 7+ years of sustained ERP
+                                                                Operational Stability - 7+ years of sustained ERP
                                                                 support and continuous improvements ensured
                                                                 reliability and ROI.
                                                             </li>
                                                             <li>
                                                                 {" "}
-                                                                Sustainable Knowledge Transfer — rebadged employees
+                                                                Sustainable Knowledge Transfer - rebadged employees
                                                                 formed an in-house ERP centre of excellence for
                                                                 long-term independence.
                                                             </li>
@@ -722,28 +722,28 @@ function SuccessStories() {
                                                         <ul className="success-point-waber">
                                                             <li>
                                                                 {" "}
-                                                                Optimised Operational Efficiency – Automated order and
+                                                                Optimised Operational Efficiency - Automated order and
                                                                 product data handling reduced manual errors.
                                                             </li>
                                                             <li>
                                                                 {" "}
-                                                                Enhanced Data Accuracy – Master product data
+                                                                Enhanced Data Accuracy - Master product data
                                                                 synchronisation improved reliability and reporting.
                                                             </li>
                                                             <li>
-                                                                Significant Cost Savings – Retiring Salesforce and
+                                                                Significant Cost Savings - Retiring Salesforce and
                                                                 streamlining Navision reduced operational overheads.
                                                             </li>
                                                             <li>
-                                                                Revenue Growth – eCommerce integration projected to
+                                                                Revenue Growth - eCommerce integration projected to
                                                                 deliver a 7.5% uplift in online revenue.
                                                             </li>
                                                             <li>
-                                                                Future-Ready Infrastructure – Flexible, scalable
+                                                                Future-Ready Infrastructure - Flexible, scalable
                                                                 architecture supporting ongoing innovation.
                                                             </li>
                                                             <li>
-                                                                Business Continuity – Robust, round-the-clock offshore
+                                                                Business Continuity - Robust, round-the-clock offshore
                                                                 support ensured stability during peak trading.
                                                             </li>
                                                         </ul>

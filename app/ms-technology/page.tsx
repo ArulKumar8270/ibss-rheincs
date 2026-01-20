@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function EnterpriseSolutions() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
 <>
@@ -20,16 +22,13 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-5">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Microsoft Technologies
+              {t("Microsoft Technologies")}
             </h2>
             <p>
-              Empower agile, scalable, and intelligent solutions with
-              Microsoft’s technology ecosystem.{" "}
+              {t("Empower agile, scalable, and intelligent solutions with Microsoft’s technology ecosystem.")}
             </p>
             <p>
-              At RheinBrücke, we help organisations modernise applications,
-              migrate to the cloud, integrate platforms, and operationalise AI
-              with secure, scalable solutions tailored to your business goals.{" "}
+              {t("At RheinBrücke, we help organisations modernise applications, migrate to the cloud, integrate platforms, and operationalise AI with secure, scalable solutions tailored to your business goals.")}
             </p>
           </div>
         </div>
@@ -50,9 +49,11 @@ export default function EnterpriseSolutions() {
         <div className="section-title ">
           <div className="hero-video-content1 wow fadeInUp mt-4">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              The Microsoft Technologies Advantage
+              {t("The Microsoft Technologies Advantage")}
             </h2>
-            <p>Modern enterprises face challenges such as: </p>
+            <p>
+              {t("Modern enterprises face challenges such as: ")}
+            </p>  
           </div>
         </div>
       </div>
@@ -66,8 +67,7 @@ export default function EnterpriseSolutions() {
                   <div className="dynamics-advantage-waber">
                     <img src="/images/ss1.svg" alt="" />
                     <p>
-                      Complex integrations with disconnected legacy systems that
-                      limit agility and scalability
+                      {t("Complex integrations with disconnected legacy systems that limit agility and scalability")}
                     </p>
                   </div>
                 </div>
@@ -76,7 +76,9 @@ export default function EnterpriseSolutions() {
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
                     <img src="/images/ss2.svg" alt="" />
-                    <p>Inconsistent UI/UX across applications</p>
+                    <p>
+                      {t("Inconsistent UI/UX across applications")}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -85,7 +87,7 @@ export default function EnterpriseSolutions() {
                   <div className="dynamics-advantage-waber">
                     <img src="/images/ss3.svg" alt="" />
                     <p>
-                      Applications not communicating effectively with each other
+                      {t("Applications not communicating effectively with each other")}
                     </p>
                   </div>
                 </div>
@@ -94,7 +96,9 @@ export default function EnterpriseSolutions() {
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
                     <img src="/images/ss4.svg" alt="" />
-                    <p>Siloed data and inconsistent reporting</p>
+                    <p>
+                      {t("Siloed data and inconsistent reporting")}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -102,7 +106,9 @@ export default function EnterpriseSolutions() {
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
                     <img src="/images/ss5.svg" alt="" />
-                    <p>Manual, time-consuming workflows</p>
+                    <p>
+                      {t("Manual, time-consuming workflows")}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -110,7 +116,9 @@ export default function EnterpriseSolutions() {
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
                     <img src="/images/ss6.svg" alt="" />
-                    <p>Rising operational costs and inefficiencies</p>
+                    <p>
+                      {t("Rising operational costs and inefficiencies")}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -118,7 +126,9 @@ export default function EnterpriseSolutions() {
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
                     <img src="/images/ss7.svg" alt="" />
-                    <p>Limited real-time visibility for decision-making</p>
+                    <p>
+                      {t("Limited real-time visibility for decision-making")}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -127,8 +137,7 @@ export default function EnterpriseSolutions() {
                   <div className="dynamics-advantage-waber">
                     <img src="/images/ss8.svg" alt="" />
                     <p>
-                      Difficulty integrating applications, analytics, and AI
-                      securely
+                      {t("Difficulty integrating applications, analytics, and AI securely")}
                     </p>
                   </div>
                 </div>
@@ -140,8 +149,7 @@ export default function EnterpriseSolutions() {
       </div>
       <div className="hero-video-content1 wow fadeInUp mt-4">
         <p>
-          Microsoft Technologies address these challenges with enterprise-ready
-          platforms that provide:{" "}
+          {t("Microsoft Technologies address these challenges with enterprise-ready platforms that provide:")}
         </p>
       </div>
       <div className="digital-features-item agency-supports mstechadv">
@@ -152,7 +160,9 @@ export default function EnterpriseSolutions() {
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
                     <img src="/images/ss1.svg" alt="" />
-                    <p>Unified development, cloud, and integration tools</p>
+                    <p>
+                      {t("Unified development, cloud, and integration tools")}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -160,7 +170,9 @@ export default function EnterpriseSolutions() {
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
                     <img src="/images/ss2.svg" alt="" />
-                    <p>Secure, scalable cloud services with Azure</p>
+                    <p>
+                      {t("Secure, scalable cloud services with Azure")}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -169,9 +181,7 @@ export default function EnterpriseSolutions() {
                   <div className="dynamics-advantage-waber">
                     <img src="/images/ss3.svg" alt="" />
                     <p>
-                      AI &amp; ML capabilities for smarter
-                      decision-makingpredictive insights and automation
-                      (including Microsoft Copilot)
+                      {t("AI & ML capabilities for smarter decision-making, predictive insights and automation (including Microsoft Copilot)")}
                     </p>
                   </div>
                 </div>
@@ -181,8 +191,7 @@ export default function EnterpriseSolutions() {
                   <div className="dynamics-advantage-waber">
                     <img src="/images/ss4.svg" alt="" />
                     <p>
-                      Low-code platforms for faster business-led innovation
-                      through Power Platform
+                      {t("Low-code platforms for faster business-led innovation through Power Platform")}
                     </p>
                   </div>
                 </div>
@@ -192,8 +201,7 @@ export default function EnterpriseSolutions() {
                   <div className="dynamics-advantage-waber">
                     <img src="/images/ss5.svg" alt="" />
                     <p>
-                      Enterprise-grade security, governance, and compliance
-                      tools
+                      {t("Enterprise-grade security, governance, and compliance tools")}
                     </p>
                   </div>
                 </div>
@@ -203,9 +211,7 @@ export default function EnterpriseSolutions() {
                   <div className="dynamics-advantage-waber">
                     <img src="/images/ss6.svg" alt="" />
                     <p>
-                      Intelligent, cloud-based business applications with
-                      Microsoft Power Platform, enhanced by Copilot, enabling
-                      faster automation, integration, and innovation
+                      {t("Intelligent, cloud-based business applications with Microsoft Power Platform, enhanced by Copilot, enabling faster automation, integration, and innovation")}
                     </p>
                   </div>
                 </div>
@@ -224,11 +230,10 @@ export default function EnterpriseSolutions() {
         <div className="section-title ">
           <div className="hero-video-content1 wow fadeInUp mt-4">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Our Approach
+              {t("Our Approach")}
             </h2>
             <p>
-              We align Microsoft Technologies with your business objectives
-              using RheinBrücke’s Analyse–Integrate–Transform (AIT) methodology:{" "}
+              {t("We align Microsoft Technologies with your business objectives using RheinBrücke’s Analyse–Integrate–Transform (AIT) methodology:")}
             </p>
           </div>
         </div>
@@ -244,7 +249,9 @@ export default function EnterpriseSolutions() {
               <div className="valueslide">
                 <img src="/images/access-technology-challenges.svg" alt="" />
                 {/* <h6> Dynamics 365 ERP & CRM Solutions</h6> */}
-                <p>Assess technology challenges and system gaps</p>
+                <p>
+                  {t("Assess technology challenges and system gaps")}
+                </p>
               </div>
             </div>
             {/* Testimonial Slide End */}
@@ -253,8 +260,7 @@ export default function EnterpriseSolutions() {
               <div className="valueslide">
                 <img src="/images/configure-microsoft-solution.svg" alt="" />
                 <p>
-                  Configure Microsoft solutions to industry-specific
-                  requirements
+                  {t("Configure Microsoft solutions to industry-specific requirements")}
                 </p>
               </div>
             </div>
@@ -267,7 +273,7 @@ export default function EnterpriseSolutions() {
                   alt=""
                 />
                 <p>
-                  Integrate with existing applications for seamless workflows
+                  {t("Integrate with existing applications for seamless workflows")}
                 </p>
               </div>
             </div>
@@ -276,7 +282,9 @@ export default function EnterpriseSolutions() {
             <div className="swiper-slide">
               <div className="valueslide">
                 <img src="/images/auto-manual-process.svg" alt="" />
-                <p>Automate manual processes for efficiency</p>
+                <p>
+                  {t("Automate manual processes for efficiency")}
+                </p>
               </div>
             </div>
             {/* Testimonial Slide End */}
@@ -284,7 +292,9 @@ export default function EnterpriseSolutions() {
             <div className="swiper-slide">
               <div className="valueslide">
                 <img src="/images/real-time-data-insights.svg" alt="" />
-                <p>Deliver real-time data insights for smarter decisions</p>
+                <p>
+                  {t("Deliver real-time data insights for smarter decisions")}
+                </p>
               </div>
             </div>
             {/* Testimonial Slide End */}
@@ -293,13 +303,13 @@ export default function EnterpriseSolutions() {
               <div className="valueslide">
                 <img src="/images/scalability-security.svg" alt="" />
                 <p>
-                  Ensure scalability, security, and governance for future growth
+                  {t("Ensure scalability, security, and governance for future growth")}
                 </p>
               </div>
             </div>
             {/* Testimonial Slide End */}
           </div>
-          <div className="testimonial-btn rtyElement">
+          <div className="testimonial-btn rtyElement mobileview">
             <div className="testimonial-button-prev">
               <div className="animated-svg-link1 btn-style-3">
                 <span className="svg-container ">
@@ -404,7 +414,7 @@ export default function EnterpriseSolutions() {
                 </span>
               </div>
             </div>
-            <span className="testspace"></span>
+            <span className="testspace">1/6</span>
             <div className="testimonial-button-next">
               <div className="animated-svg-link1 btn-style-3">
                 <span className="svg-container ">
@@ -525,11 +535,12 @@ export default function EnterpriseSolutions() {
                 className="text-anime-style-2 text-center"
                 data-cursor="-opaque"
               >
-                Our Microsoft Technology Solutions
+                {t("Our Microsoft Technology Solutions")}
               </h2>
               <p className="text-center">
-                We deliver end-to-end Microsoft services to help you modernise,
-                integrate, and optimise your enterprise:{" "}
+                {t(
+                  "We deliver end-to-end Microsoft services to help you modernise, integrate, and optimise your enterprise:"
+                )}
               </p>
             </div>
           </div>
@@ -542,43 +553,48 @@ export default function EnterpriseSolutions() {
               <div>
                 <h4 className="benifit-title">
                   {" "}
-                  Business Intelligence and Analytics{" "}
+                  {t("Business Intelligence and Analytics")}{" "}
                 </h4>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Create rich visualisations and self-service dashboards with
-                    Power BI{" "}
+                    {t(
+                      "Create rich visualisations and self-service dashboards with Power BI"
+                    )}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Orchestrate backend data flows and transformations using
-                    Microsoft Fabric Data Factory{" "}
+                    {t(
+                      "Orchestrate backend data flows and transformations using Microsoft Fabric Data Factory"
+                    )}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Store and manage enterprise-scale datasets with Fabric
-                    Lakehouse and Data Warehouse
+                    {t(
+                      "Store and manage enterprise-scale datasets with Fabric Lakehouse and Data Warehouse"
+                    )}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
                     {" "}
-                    Enable real-time monitoring and automation with Fabric
-                    Real-Time Intelligence (including Activator){" "}
+                    {t(
+                      "Enable real-time monitoring and automation with Fabric Real-Time Intelligence (including Activator)"
+                    )}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
                     {" "}
-                    Leverage Microsoft Fabric’s unified SaaS data platform for
-                    scalable analytics and AI
+                    {t(
+                      "Leverage Microsoft Fabric’s unified SaaS data platform for scalable analytics and AI"
+                    )}
                   </p>
                 </div>
               </div>
@@ -591,42 +607,66 @@ export default function EnterpriseSolutions() {
             <div className="benifet-content benifet-content-2 height500">
               <div>
                 <h4 className="benifit-title">
-                  Integration and Workflow Automation{" "}
+                  {" "}
+                  {t("Integration and Workflow Automation")}{" "}
                 </h4>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Enterprise integrations with Azure API Management and Logic
-                    Apps{" "}
+                    {" "}
+                    {t(
+                      "Enterprise integrations with Azure API Management and Logic Apps"
+                    )}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Cross-platform workflow automation using Power Automate with
-                    Copilot assistance
+                    {" "}
+                    {t(
+                      "Cross-platform workflow automation using Power Automate with Copilot assistance"
+                    )}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
-                  <p>Low-code business apps with Power Apps</p>
+                  <p> {" "}
+                    {t("Low-code business apps with Power Apps")}
+                  </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Document management and collaboration using with Microsoft
-                    365:
+                    {" "}
+                    {t(
+                      "Document management and collaboration using with Microsoft 365:"
+                    )}
                   </p>
                 </div>
                 <ul className="pdl15 ullist">
-                  <li>SharePoint for enterprise content and workflows </li>
                   <li>
-                    OneDrive for Business for secure personal file storage and
-                    sharing{" "}
+                    {" "}
+                    {t(
+                      "SharePoint for enterprise content and workflows"
+                    )}
                   </li>
-                  <li>Teams for real-time co-authoring and collaboration </li>
                   <li>
-                    Microsoft Loop for dynamic, modular content across apps.{" "}
+                    {" "}
+                    {t(
+                      "OneDrive for Business for secure personal file storage and sharing"
+                    )}
+                  </li>
+                  <li>
+                    {" "}
+                    {t(
+                      "Teams for real-time co-authoring and collaboration"
+                    )}
+                  </li>
+                  <li>
+                    {" "}
+                    {t(
+                      "Microsoft Loop for dynamic, modular content across apps."
+                    )}
                   </li>
                 </ul>
               </div>
@@ -640,32 +680,40 @@ export default function EnterpriseSolutions() {
               <div>
                 <h4 className="benifit-title">
                   {" "}
-                  Application Development and Modernisation{" "}
+                  {t("Application Development and Modernisation")}{" "}
                 </h4>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
-                  <p>Azure-native application development and cloud hosting </p>
-                </div>
-                <div className="bf-content">
-                  <img src="/new/lp.svg" alt="" />
                   <p>
-                    Legacy app modernisation using microservices and API-first
-                    architecture{" "}
+                    {" "}
+                    {t("Azure-native application development and cloud hosting")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
                     {" "}
-                    CI/CD pipelines and automated release management with Azure
-                    DevOps{" "}
+                    {t(
+                      "Legacy app modernisation using microservices and API-first architecture"
+                    )}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
                     {" "}
-                    Custom developed applications using C#, ASP.NET Core, VB.NET{" "}
+                    {t(
+                      "CI/CD pipelines and automated release management with Azure DevOps"
+                    )}
+                  </p>
+                </div>
+                <div className="bf-content">
+                  <img src="/new/lp.svg" alt="" />
+                  <p>
+                    {" "}
+                    {t(
+                      "Custom developed applications using C#, ASP.NET Core, VB.NET"
+                    )}
                   </p>
                 </div>
               </div>
@@ -679,35 +727,41 @@ export default function EnterpriseSolutions() {
               <div>
                 <h4 className="benifit-title">
                   {" "}
-                  AI, Machine Learning, and Intelligent Services{" "}
+                  {t("AI, Machine Learning, and Intelligent Services")}{" "}
                 </h4>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    AI/ML model training and deployment via Azure Machine
-                    Learning{" "}
-                  </p>
-                </div>
-                <div className="bf-content">
-                  <img src="/new/lp.svg" alt="" />
-                  <p>
-                    Embedded AI capabilities using Azure AI services (vision,
-                    speech, language, search)
-                  </p>
-                </div>
-                <div className="bf-content">
-                  <img src="/new/lp.svg" alt="" />
-                  <p>
-                    AI-powered automation, bots, and document processing
-                    workflows{" "}
+                    {" "}
+                    {t(
+                      "AI/ML model training and deployment via Azure Machine Learning"
+                    )}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
                     {" "}
-                    Low-code/no-code AI solutions with Power Platform and AI
-                    Builder{" "}
+                    {t(
+                      "Embedded AI capabilities using Azure AI services (vision, speech, language, search)")}
+                  </p>
+                </div>
+                <div className="bf-content">
+                  <img src="/new/lp.svg" alt="" />
+                  <p>
+                    {" "}
+                    {t(
+                      "AI-powered automation, bots, and document processing workflows"
+                    )}
+                  </p>
+                </div>
+                <div className="bf-content">
+                  <img src="/new/lp.svg" alt="" />
+                  <p>
+                    {" "}
+                    {t(
+                      "Low-code/no-code AI solutions with Power Platform and AI Builder"
+                    )}
                   </p>
                 </div>
               </div>
@@ -721,24 +775,33 @@ export default function EnterpriseSolutions() {
               <div>
                 <h4 className="benifit-title">
                   {" "}
-                  Cloud Security and Governance{" "}
+                  {t("Cloud Security and Governance")}{" "}
                 </h4>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Threat detection and response with Microsoft Defender for
-                    Cloud and Microsoft Sentinel{" "}
+                    {" "}
+                    {t(
+                      "Threat detection and response with Microsoft Defender for Cloud and Microsoft Sentinel"
+                    )}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
-                  <p>Identity and access governance with Microsoft Entra ID</p>
+                  <p>
+                    {" "}
+                    {t(
+                      "Identity and access governance with Microsoft Entra ID"
+                    )}
+                  </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Policy management, compliance, and operational monitoring
-                    for cloud infrastructure
+                    {" "}
+                    {t(
+                      "Policy management, compliance, and operational monitoring for cloud infrastructure")}
+                    
                   </p>
                 </div>
               </div>
@@ -751,24 +814,34 @@ export default function EnterpriseSolutions() {
             <div className="benifet-content benifet-content-2 height600">
               <div>
                 <h4 className="benifit-title">
-                  Azure Infrastructure and Managed Services{" "}
+                  {" "}
+                  {t("Azure Infrastructure and Managed Services")}{" "}
                 </h4>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    Cloud infrastructure provisioning, virtual networks, and
-                    storage management{" "}
+                    {" "}
+                    {t(
+                      "Cloud infrastructure provisioning, virtual networks, and storage management"
+                    )}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
-                  <p>Microsoft licensing optimisation and advisory services </p>
+                  <p>
+                    {" "}
+                    {t(
+                      "Microsoft licensing optimisation and advisory services"
+                    )}
+                  </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    24x7 managed services for Azure, Microsoft 365, and Power
-                    Platform{" "}
+                    {" "}
+                    {t(
+                      "24x7 managed services for Azure, Microsoft 365, and Power Platform"
+                    )}
                   </p>
                 </div>
               </div>
@@ -786,7 +859,8 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-5">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              The RheinBrücke Advantage
+              {" "}
+              {t("The RheinBrücke Advantage")}{" "}
             </h2>
           </div>
           <div className="pill-points appro">
@@ -795,8 +869,10 @@ export default function EnterpriseSolutions() {
               <div className="pill-cont">
                 {/* <h5>Solution Architecture</h5> */}
                 <p>
-                  Microsoft ISV Partner and AI Cloud Partner with proven
-                  expertise{" "}
+                  {" "}
+                  {t(
+                    "Microsoft ISV Partner and AI Cloud Partner with proven expertise"
+                  )}
                 </p>
               </div>
             </div>
@@ -804,7 +880,12 @@ export default function EnterpriseSolutions() {
               <img src="/images/app2.svg" alt="" />
               <div className="pill-cont">
                 {/* <h5>Project Management</h5> */}
-                <p>End-to-end project delivery from strategy to support </p>
+                <p>
+                  {" "}
+                  {t(
+                    "End-to-end project delivery from strategy to support"
+                  )}
+                </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
@@ -812,8 +893,10 @@ export default function EnterpriseSolutions() {
               <div className="pill-cont">
                 {/* <h5>Consulting</h5> */}
                 <p>
-                  Accelerated adoption of cloud-native development and DevOps
-                  practices{" "}
+                  {" "}
+                  {t(
+                    "Accelerated adoption of cloud-native development and DevOps practices"
+                  )}
                 </p>
               </div>
             </div>
@@ -821,7 +904,12 @@ export default function EnterpriseSolutions() {
               <img src="/images/fe3.svg" alt="" />
               <div className="pill-cont">
                 {/* <h5>Consulting</h5> */}
-                <p>Continuous security, governance, and platform management </p>
+                <p>
+                  {" "}
+                  {t(
+                    "Continuous security, governance, and platform management"
+                  )}
+                </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
@@ -829,8 +917,10 @@ export default function EnterpriseSolutions() {
               <div className="pill-cont">
                 {/* <h5>Consulting</h5> */}
                 <p>
-                  Outcome-focused delivery ensuring resilience and business
-                  value{" "}
+                  {" "}
+                  {t(
+                    "Outcome-focused delivery ensuring resilience and business value"
+                  )}
                 </p>
               </div>
             </div>
@@ -852,10 +942,14 @@ export default function EnterpriseSolutions() {
         <div className="col-lg-12">
           <div className="section-title text-center headingss">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Industries We Serve
+              {" "}
+              {t("Industries We Serve")}{" "}
             </h2>
             <p>
-              Our Microsoft technology services support industries including:{" "}
+              {" "}
+              {t(
+                "Our Microsoft technology services support industries including:"
+              )}
             </p>
           </div>
         </div>
@@ -870,7 +964,9 @@ export default function EnterpriseSolutions() {
                 <div className="swiper-slide ">
                   <div className="service-item-body in4">
                     <h3>
-                      <span>Manufacturing </span>
+                      <span>{" "}
+                        {t("Manufacturing ")}{" "}
+                      </span>
                     </h3>
                   </div>
                 </div>
@@ -879,7 +975,9 @@ export default function EnterpriseSolutions() {
                 <div className="swiper-slide">
                   <div className="service-item-body in2">
                     <h3>
-                      <span>Retail &amp; E-commerce </span>
+                      <span>{" "}
+                        {t("Retail & E-commerce")}{" "}
+                      </span>
                     </h3>
                   </div>
                 </div>
@@ -888,7 +986,9 @@ export default function EnterpriseSolutions() {
                 <div className="swiper-slide">
                   <div className="service-item-body in5">
                     <h3>
-                      <span>Automotive</span>
+                      <span>{" "}
+                        {t("Automotive")}{" "}
+                      </span>
                     </h3>
                   </div>
                 </div>
@@ -897,7 +997,9 @@ export default function EnterpriseSolutions() {
                 <div className="swiper-slide">
                   <div className="service-item-body fin1">
                     <h3>
-                      <span>Financial Services </span>
+                      <span>{" "}
+                        {t("Financial Services")}{" "}
+                      </span>
                     </h3>
                   </div>
                 </div>
@@ -1148,14 +1250,17 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-12">
           <div className="section-title text-center ">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Explore Our Microsoft Capabilities
+              {" "}
+              {t("Explore Our Microsoft Capabilities")}{" "}
             </h2>
           </div>
           <div className="row mt-5">
             <div className="col-lg-4 col-md-4 col-12">
               <div className="service-item-body1 imgpos ">
                 <Link href="/business-intelligence">
-                  <h3>Business Intelligence (BI)</h3>
+                  <h3>{" "}
+                    {t("Business Intelligence (BI)")}{" "}
+                  </h3>
                   <img src="/new/adv1.svg" alt="" />
                 </Link>
               </div>
@@ -1163,7 +1268,9 @@ export default function EnterpriseSolutions() {
             <div className="col-lg-4 col-md-4 col-12">
               <div className="service-item-body1 imgpos">
                 <Link href="/digital-solutions">
-                  <h3>Digital Solutions &amp; Services</h3>
+                  <h3>{" "}
+                    {t("Digital Solutions & Services")}{" "}
+                  </h3>
                   <img src="/new/gt.svg" alt="" />
                 </Link>
               </div>
@@ -1171,7 +1278,9 @@ export default function EnterpriseSolutions() {
             <div className="col-lg-4 col-md-4 col-12">
               <div className="service-item-body1 imgpos1">
                 <Link href="/solutions/erp-enterprise-solutions-and-services/ms-dynamics">
-                  <h3>Microsoft Dynamics</h3>
+                  <h3>{" "}
+                    {t("Microsoft Dynamics")}{" "}
+                  </h3>
                   <img src="/new/adv3.svg" alt="" />
                 </Link>
               </div>
@@ -1188,14 +1297,14 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-5">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Delivering Values that Last
+              {" "}
+              {t("Delivering Values that Last")}{" "}
             </h2>
             <p>
-              Our Microsoft technology services are built for operational
-              resilience, faster innovation, and sustained business impact. From
-              cloud migrations and AI adoption to workflow automation and
-              security frameworks, we ensure your digital foundation is ready
-              for what’s next.
+              {" "}
+              {t(
+                "Our Microsoft technology services are built for operational resilience, faster innovation, and sustained business impact. From cloud migrations and AI adoption to workflow automation and security frameworks, we ensure your digital foundation is ready for what’s next."
+              )}{" "}
             </p>
           </div>
         </div>
@@ -1218,15 +1327,20 @@ export default function EnterpriseSolutions() {
           <div className="row">
             <div className="col-sm-8">
               <h2>
-                Let us build your future-ready systems with Microsoft
-                technologies.{" "}
+                {" "}
+                {t(
+                  "Let us build your future-ready systems with Microsoft technologies."
+                )}{" "}
               </h2>
-              <p>Talk to our experts today.</p>
+              <p>{" "}
+                {t("Talk to our experts today.")}{" "}
+              </p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <Link href="/contact-us" className="animated-svg-link">
-                  Contact Us
+                  {" "}
+                  {t("Contact Us")}{" "}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg

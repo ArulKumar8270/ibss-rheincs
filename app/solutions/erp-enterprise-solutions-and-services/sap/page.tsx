@@ -203,7 +203,7 @@ const page = () => {
                     <h6> Real-time decisions powered by embedded analytics</h6>
                     <p>
                       S/4HANA and SAP Analytics Cloud enable business users to make
-                      decisions with live data — not spreadsheets or monthly reports.
+                      decisions with live data - not spreadsheets or monthly reports.
                     </p>
                   </div>
                   <div className="advantage-sap">
@@ -237,7 +237,7 @@ const page = () => {
                     </p>
                   </div>
                   <p>
-                    This is the future of SAP — agile, modular, analytics-driven, and
+                    This is the future of SAP - agile, modular, analytics-driven, and
                     business-led.
                   </p>
                 </div>
@@ -286,12 +286,12 @@ const page = () => {
                           <ul>
                             <li>
                               {" "}
-                              S/4HANA Public &amp; Private Cloud implementations
+                              S/4HANA Public & Private Cloud implementations
                             </li>
                             <li>ECC to S/4HANA conversions</li>
                             <li>Selective data transitions</li>
                             <li> Embedded analytics setup</li>
-                            <li> Post-go-live stabilisation &amp; optimisation</li>
+                            <li> Post-go-live stabilisation & optimisation</li>
                           </ul>
                           <p>
                             Our team focuses on speed, stability, and adoption, not
@@ -306,7 +306,7 @@ const page = () => {
                         <div className="sap-service-waber">
                           <h3>RISE with SAP Transformation </h3>
                           <p>
-                            RISE with SAP is more than a technical migration — it’s an
+                            RISE with SAP is more than a technical migration - it’s an
                             opportunity to redesign your operating model.{" "}
                           </p>
                           <h5>We support you with:</h5>
@@ -342,7 +342,7 @@ const page = () => {
                             </li>
                             <li> Workflow automation and event-driven processes</li>
                             <li>Low-code / custom extensions</li>
-                            <li>AI &amp; ML enablement</li>
+                            <li>AI & ML enablement</li>
                             <li>API management and security</li>
                           </ul>
                           <p>
@@ -356,7 +356,7 @@ const page = () => {
                       <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
-                          <h3> SAP Signavio &amp; Process Intelligence </h3>
+                          <h3> SAP Signavio & Process Intelligence </h3>
                           <p>
                             Transform the way your organisation understands and
                             improves processes.{" "}
@@ -384,7 +384,7 @@ const page = () => {
                         <div className="sap-service-waber">
                           <h3>
                             {" "}
-                            SAP Analytics Cloud (SAC) &amp; Enterprise Insights{" "}
+                            SAP Analytics Cloud (SAC) & Enterprise Insights{" "}
                           </h3>
                           <p>
                             Move beyond reports, give your teams real-time,
@@ -392,14 +392,14 @@ const page = () => {
                           </p>
                           <h5>Our expertise covers:</h5>
                           <ul>
-                            <li>SAC dashboards &amp; storyboards</li>
-                            <li>Predictive planning &amp; forecasting</li>
+                            <li>SAC dashboards & storyboards</li>
+                            <li>Predictive planning & forecasting</li>
                             <li>
                               Consolidated reporting for finance, supply chain, and
                               operations
                             </li>
                             <li>Embedded analytics in S/4HANA</li>
-                            <li>Data modelling, integration &amp; governance</li>
+                            <li>Data modelling, integration & governance</li>
                           </ul>
                           <p>
                             We help organisations shift from data-rich to
@@ -414,7 +414,7 @@ const page = () => {
                         <div className="sap-service-waber">
                           <h3>
                             {" "}
-                            SAP AMS+ (Application Management &amp; Optimisation)
+                            SAP AMS+ (Application Management & Optimisation)
                           </h3>
                           <p>
                             {" "}
@@ -423,10 +423,10 @@ const page = () => {
                           </p>
                           <h5>We offer:</h5>
                           <ul>
-                            <li> Functional &amp; technical support</li>
+                            <li> Functional & technical support</li>
                             <li> Change request management</li>
                             <li> Performance optimisation</li>
-                            <li> Basis &amp; security administration</li>
+                            <li> Basis & security administration</li>
                             <li> Monitoring, automation, and root-cause analysis</li>
                             <li> Mini-projects and enhancements</li>
                           </ul>
@@ -441,7 +441,7 @@ const page = () => {
                       <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
-                          <h3> Custom Development &amp; Technical Services </h3>
+                          <h3> Custom Development & Technical Services </h3>
                           <p>
                             {" "}
                             Extend SAP responsibly with a clean-core-aligned
@@ -449,11 +449,11 @@ const page = () => {
                           </p>
                           <h5>Services include:</h5>
                           <ul>
-                            <li> ABAP development &amp; enhancements</li>
+                            <li> ABAP development & enhancements</li>
                             <li> RAP-based developments on BTP</li>
                             <li> API services and integration layers</li>
                             <li> Fiori / UI5 apps</li>
-                            <li> Core interface design &amp; automation</li>
+                            <li> Core interface design & automation</li>
                             <li> BASIS support</li>
                           </ul>
                           <p>
@@ -570,6 +570,7 @@ const page = () => {
                         </div>
                       </div>
                       <span className="testspace" style={{ color: "#000" }}>
+                        1/6
                       </span>
                       <div className="testimonial-button-next">
                         <div className="animated-svg-link">
@@ -708,7 +709,7 @@ const page = () => {
                       <img src="/images/cap1.svg" alt="" />
                       {/* <h6> Dynamics 365 ERP & CRM Solutions</h6> */}
                       <p>
-                        Strong S/4HANA, ECC, RISE, BTP, Signavio &amp; SAC expertise
+                        Strong S/4HANA, ECC, RISE, BTP, Signavio & SAC expertise
                       </p>
                     </div>
                   </div>
@@ -1282,7 +1283,7 @@ const page = () => {
                       <div className="swiper-slide">
                         <div className="service-item-body in6">
                           <h3>
-                            <span>Engineering, Procurement &amp; Construction</span>
+                            <span>Engineering, Procurement & Construction</span>
                           </h3>
                         </div>
                       </div>
@@ -1291,7 +1292,7 @@ const page = () => {
                       <div className="swiper-slide">
                         <div className="service-item-body in2">
                           <h3>
-                            <span>Distribution &amp; Retail </span>
+                            <span>Distribution & Retail </span>
                           </h3>
                         </div>
                       </div>
@@ -1309,7 +1310,7 @@ const page = () => {
                       <div className="swiper-slide">
                         <div className="service-item-body ein5">
                           <h3>
-                            <span>Energy &amp; Utilities</span>
+                            <span>Energy & Utilities</span>
                           </h3>
                         </div>
                       </div>

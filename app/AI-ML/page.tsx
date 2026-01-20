@@ -23,7 +23,7 @@ export default function AlMl() {
                     {t("Harness the combined power of Google AI/ML, Azure Machine Learning, and advanced signature analytics to deliver predictive maintenance, intelligent automation, and real-time insights.")}
                                     </p>
                                     <p>
-                        {t("We help organisations across industries transform data into intelligence—driving smarter decisions, greater efficiency, and measurable business impact.")}
+                        {t("We help organisations across industries transform data into intelligence-driving smarter decisions, greater efficiency, and measurable business impact.")}
                                     </p>
                                 </div>
                             </div>
@@ -1679,7 +1679,7 @@ export default function AlMl() {
                                 <div className="dynamics-advantage-waber">
                                     <img src="/new/ad3.svg" alt="" />
                                     <p> 
-                                        {t("End-to-end support — from design to deployment and optimisation.")}
+                                        {t("End-to-end support - from design to deployment and optimisation.")}
                                     </p>
                                 </div>
                             </div>
@@ -1703,7 +1703,7 @@ export default function AlMl() {
                                 <div className="row">
                                     <div className="col-sm-8">
                                         <h2>
-                                            {t("Your data is more than numbers—it’s your next competitive edge.")}
+                                            {t("Your data is more than numbers-it’s your next competitive edge.")}
                                         </h2>
                                         <p> 
                                             {t("Talk to our AI/ML experts today.")}
