@@ -377,7 +377,7 @@ export default function Contact() {
               <div className="col-sm-6">
                 <div className="section-title">
                   <h2
-                    className="text-anime-style-2 text-white "
+                    className="text-anime-style-21 text-white "
                     data-cursor="-opaque"
                   >
                     Talk to Our Experts

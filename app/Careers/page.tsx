@@ -241,7 +241,7 @@ export default function AlMl() {
                         <div className="family-heart-flex-waber">
                             <div className="heart-flex-item">
                                 <div className="family-img">
-                                    <img src="/images/trust.png" alt="" />
+                                    <img src="/images/workplace.png" alt="" />
                                 </div>
                             </div>
                             <div className="heart-flex-item">
@@ -252,8 +252,8 @@ export default function AlMl() {
                                 </div>
                             </div>
                             <div className="heart-flex-item">
-                                <div className="family-img family-imgreg">
-                                    <img src="/images/Recognition.png" alt="" />
+                                <div className="family-img">
+                                    <img src="/images/Mentoring.jpg" alt="" />
                                 </div>
                             </div>
                             <div className="heart-flex-item">
@@ -272,7 +272,7 @@ export default function AlMl() {
                             </div>
                             <div className="heart-flex-item">
                                 <div className="family-img">
-                                    <img src="/images/workplace.png" alt="" />
+                                    <img src="/images/trust.png" alt="" />
                                 </div>
                             </div>
                             <div className="heart-flex-item">
@@ -283,8 +283,8 @@ export default function AlMl() {
                                 </div>
                             </div>
                             <div className="heart-flex-item">
-                                <div className="family-img">
-                                    <img src="/images/Mentoring.png" alt="" />
+                                <div className="family-img ">
+                                    <img src="/images/mentor.JPG" alt="" />
                                 </div>
                             </div>
                         </div>

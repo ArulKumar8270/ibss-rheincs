@@ -5,7 +5,9 @@ import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
 import TestimonialandAward from "../Components/TestimonialandAward";
 import Awards from "../Components/Awards";
+import {useTranslation} from "../hooks/useTranslation";
 export default function AlMl() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
             <>
@@ -21,8 +23,8 @@ export default function AlMl() {
                         <div className="row section-row1 align-items-center width90">
                             <div className="col-sm-5">
                                 <div className="section-title">
-                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        AMS–Application Maintenance &amp; Support
+                                    <h2 className="text-anime-style-21" data-cursor="-opaque">
+                                        AMS–Application Maintenance & Support
                                     </h2>
                                     <p>
                                         We deliver end-to-end technology services across ERP, software
@@ -159,7 +161,7 @@ export default function AlMl() {
                             <div className="col-lg-12">
                                 <div className="section-title text-center headingss">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Services Provided
+                                        {t("Services Provided")}
                                     </h2>
                                 </div>
                             </div>
@@ -174,7 +176,7 @@ export default function AlMl() {
                                             <div className="swiper-slide">
                                                 <div className="matters-content-waber">
                                                     <img src="/new/mat-1.svg" alt="" />
-                                                    <p>ERP Support – SAP, EPICOR, Microsoft Dynamics</p>
+                                                    <p>{t("ERP Support – SAP, EPICOR, Microsoft Dynamics")}</p>
                                                 </div>
                                             </div>
                                             {/* Testimonial Slide End */}
@@ -182,7 +184,7 @@ export default function AlMl() {
                                             <div className="swiper-slide">
                                                 <div className="matters-content-waber">
                                                     <img src="/new/met-2.svg" alt="" />
-                                                    <p>Software Development, Support and Maintenance</p>
+                                                    <p>{t("Software Development, Support and Maintenance")}</p>
                                                 </div>
                                             </div>
                                             {/* Testimonial Slide End */}
@@ -190,7 +192,7 @@ export default function AlMl() {
                                             <div className="swiper-slide">
                                                 <div className="matters-content-waber">
                                                     <img src="/new/met-3.svg" alt="" />
-                                                    <p>Business Intelligence and Data Analytics, DBA Support</p>
+                                                    <p>{t("Business Intelligence and Data Analytics, DBA Support")}</p>
                                                 </div>
                                             </div>
                                             {/* Testimonial Slide End */}
@@ -199,8 +201,7 @@ export default function AlMl() {
                                                 <div className="matters-content-waber">
                                                     <img src="/new/met-4.svg" alt="" />
                                                     <p>
-                                                        Dedicated support specialists for 24X7 helpdesk and IT
-                                                        service management
+                                                        {t("Dedicated support specialists for 24X7 helpdesk and IT service management")}
                                                     </p>
                                                 </div>
                                             </div>
@@ -209,7 +210,7 @@ export default function AlMl() {
                                             <div className="swiper-slide">
                                                 <div className="matters-content-waber">
                                                     <img src="/new/met-5.svg" alt="" />
-                                                    <p>Security and IT Governance</p>
+                                                    <p>{t("Security and IT Governance")}</p>
                                                 </div>
                                             </div>
                                             {/* Testimonial Slide End */}
@@ -217,7 +218,7 @@ export default function AlMl() {
                                             <div className="swiper-slide">
                                                 <div className="matters-content-waber">
                                                     <img src="/new/met-5.svg" alt="" />
-                                                    <p>Cloud and Infrastructure Management Services</p>
+                                                    <p>{t("Cloud and Infrastructure Management Services")}</p>
                                                 </div>
                                             </div>
                                             {/* Testimonial Slide End */}
@@ -225,7 +226,7 @@ export default function AlMl() {
                                             <div className="swiper-slide">
                                                 <div className="matters-content-waber">
                                                     <img src="/new/mat-1.svg" alt="" />
-                                                    <p>Helpdesk with Managed Services</p>
+                                                    <p>{t("Helpdesk with Managed Services")}</p>
                                                 </div>
                                             </div>
                                             {/* Testimonial Slide End */}
@@ -233,7 +234,7 @@ export default function AlMl() {
                                             <div className="swiper-slide">
                                                 <div className="matters-content-waber">
                                                     <img src="/new/met-2.svg" alt="" />
-                                                    <p>POC Development and Outsourced Product Development</p>
+                                                    <p>{t("POC Development and Outsourced Product Development")}</p>
                                                 </div>
                                             </div>
                                             {/* Testimonial Slide End */}
@@ -344,6 +345,7 @@ export default function AlMl() {
                                                 </div>
                                             </div>
                                             <span className="testspace" style={{ color: "#000" }}>
+                                                1/6
                                             </span>
                                             <div className="testimonial-button-next">
                                                 <div className="animated-svg-link">
@@ -464,7 +466,7 @@ export default function AlMl() {
                             <div className="section-title ">
                                 <div className="hero-video-content1 wow fadeInUp mt-4">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Benefits of having RIC as a service partner
+                                        {t("Benefits of having RIC as a service partner")}
                                     </h2>
                                 </div>
                             </div>
@@ -480,7 +482,7 @@ export default function AlMl() {
                                         <div className="valueslide">
                                             <img src="/images/cap1.svg" alt="" />
                                             {/* <h6> Dynamics 365 ERP & CRM Solutions</h6> */}
-                                            <p>International best practice know-how</p>
+                                            <p>{t("International best practice know-how")}</p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -488,7 +490,7 @@ export default function AlMl() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/cap2.svg" alt="" />
-                                            <p>Global reach with customers across 42 countries</p>
+                                            <p>{t("Global reach with customers across 42 countries")}</p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -496,7 +498,7 @@ export default function AlMl() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/cap3.svg" alt="" />
-                                            <p>Process-driven, but with the right cultural sensitivity</p>
+                                            <p>{t("Process-driven, but with the right cultural sensitivity")}</p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -504,7 +506,7 @@ export default function AlMl() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/cap4.svg" alt="" />
-                                            <p>Delivery innovation</p>
+                                            <p>{t("Delivery innovation")}</p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -512,7 +514,7 @@ export default function AlMl() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/cap5.svg" alt="" />
-                                            <p>Highest end user satisfaction</p>
+                                            <p>{t("Highest end user satisfaction")}</p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -521,7 +523,7 @@ export default function AlMl() {
                                         <div className="valueslide">
                                             <img src="/images/cap1.svg" alt="" />
                                             {/* <h6> Dynamics 365 ERP & CRM Solutions</h6> */}
-                                            <p>SLA driven Customer-centric approach</p>
+                                            <p>{t("SLA driven Customer-centric approach")}</p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -529,7 +531,7 @@ export default function AlMl() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/cap2.svg" alt="" />
-                                            <p>Ease of Scalability with our “Right-Shoring” approach</p>
+                                            <p>{t("Ease of Scalability with our “Right-Shoring” approach")}</p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -538,14 +540,13 @@ export default function AlMl() {
                                         <div className="valueslide">
                                             <img src="/images/cap3.svg" alt="" />
                                             <p>
-                                                Leadership team with several decades of experience in setting
-                                                up and managing large global service delivery organisations
+                                                {t("Leadership team with several decades of experience in setting up and managing large global service delivery organisations")}
                                             </p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
                                 </div>
-                                <div className="testimonial-btn rtyElement amt-t mt-2 ">
+                                <div className="testimonial-btn rtyElement amt-t mt-2">
                                     <div className="testimonial-button-prev">
                                         <div className="animated-svg-link1 btn-style-3">
                                             <span className="svg-container ">
@@ -760,19 +761,10 @@ export default function AlMl() {
                         </div>
                         <div className="container">
                             <p>
-                                Our clients are assisted with developing a transparent governance
-                                process, enabling applications to be transitioned seamlessly into
-                                Application and Production support, to be decommissioned. This
-                                releases underlying software (license) and hardware (server)
-                                infrastructure.
+                                {t("Our clients are assisted with developing a transparent governance process, enabling applications to be transitioned seamlessly into Application and Production support, to be decommissioned. This releases underlying software (license) and hardware (server) infrastructure.")}
                             </p>
                             <p>
-                                RheinBrücke provides SLA based application support services based on
-                                the ITIL framework. Our support personnel and robust process allow for
-                                a smooth transition of application support in optimum timelines and
-                                serve to stabilize services during the initial stages of steady state.
-                                Timely intervention and a strict focus on continuous improvement along
-                                with preventive maintenance ensures the delight of business users.
+                                {t("RheinBrücke provides SLA based application support services based on the ITIL framework. Our support personnel and robust process allow for a smooth transition of application support in optimum timelines and serve to stabilize services during the initial stages of steady state. Timely intervention and a strict focus on continuous improvement along with preventive maintenance ensures the delight of business users.")}
                             </p>
                         </div>
                         {/* Testimonial Slider End */}
@@ -784,12 +776,10 @@ export default function AlMl() {
                             <div className="col-sm-6">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2 text-dark" data-cursor="-opaque">
-                                        Our Methodology:
+                                        {t("Our Methodology:")}
                                     </h2>
                                     <p>
-                                        Our methodology is based on the ITIL framework and ensures that
-                                        the KPIs agreed with the clients are adhered to and the SLAs are
-                                        monitored, tracked and met consistently.
+                                        {t("Our methodology is based on the ITIL framework and ensures that the KPIs agreed with the clients are adhered to and the SLAs are monitored, tracked and met consistently.")}
                                     </p>
                                 </div>
                                 <div className="row">
@@ -797,28 +787,25 @@ export default function AlMl() {
                                         <div className="challenge-point-waber">
                                             <img src="/new/qs-2.svg" alt="" />
                                             <p>
-                                                Scientific application analysis framework which ensures the
-                                                solution-framework caters to your specific requirement.
+                                                {t("Scientific application analysis framework which ensures the solution-framework caters to your specific requirement.")}
                                             </p>
                                         </div>
                                         <div className="challenge-point-waber">
                                             <img src="/new/qs-2.svg" alt="" />
                                             <p>
-                                                An intensive due diligence to validate assumptions made as
-                                                part of application analysis and solution development.
+                                                {t("An intensive due diligence to validate assumptions made as part of application analysis and solution development.")}
                                             </p>
                                         </div>
                                         <div className="challenge-point-waber">
                                             <img src="/new/qs-2.svg" alt="" />
                                             <p>
-                                                Rigorous and intensive sessions of orientation to ensure that
-                                                the team is equipped for transition.
+                                                {t("Rigorous and intensive sessions of orientation to ensure that the team is equipped for transition.")}
                                             </p>
                                         </div>
                                         <div className="challenge-point-waber">
                                             <img src="/new/qs-2.svg" alt="" />
                                             <p>
-                                                Process convergence to align RIC’s process with the clients.
+                                                {t("Process convergence to align RIC’s process with the clients.")}
                                             </p>
                                         </div>
                                     </div>
@@ -826,31 +813,25 @@ export default function AlMl() {
                                         <div className="challenge-point-waber">
                                             <img src="/new/qs-2.svg" alt="" />
                                             <p>
-                                                Scientifically modelled transition approach with minimal
-                                                service disruption.
+                                                {t("Scientifically modelled transition approach with minimal service disruption.")}
                                             </p>
                                         </div>
                                         <div className="challenge-point-waber">
                                             <img src="/new/qs-2.svg" alt="" />
                                             <p>
-                                                Implementation of continuous improvement initiatives like
-                                                Benchmarking, Customer
+                                                {t("Implementation of continuous improvement initiatives like Benchmarking, Customer Feedback, and Process Automation.")}
                                             </p>
                                         </div>
                                         <div className="challenge-point-waber">
                                             <img src="/new/qs-2.svg" alt="" />
                                             <p>
-                                                Satisfaction Surveys, Process Automation, Root Cause Analysis,
-                                                driven by a Six-Sigma Approach.
+                                                {t("Satisfaction Surveys, Process Automation, Root Cause Analysis, driven by a Six-Sigma Approach.")}
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <p className="paramb32">
-                                    With customers across 42 countries, we deeply understand your
-                                    cultural industry specific needs. Some of our renowned clients
-                                    include FLSmidth, Visteon, ZF-TRW, Novartis, and EPICOR Corporation
-                                    to name a few.
+                                    {t("With customers across 42 countries, we deeply understand your cultural industry specific needs.")} {t("Some of our renowned clients include FLSmidth, Visteon, ZF-TRW, Novartis, and EPICOR Corporation to name a few.")}
                                 </p>
                             </div>
                         </div>
@@ -866,11 +847,7 @@ export default function AlMl() {
                         <div className="row align-items-center">
                             <div className="col-sm-6">
                                 <p className="text-white">
-                                    Transform your business with next-generation ERP: discover how
-                                    modern ERP solutions streamline operations, improve efficiency, and
-                                    enable data-driven decision-making. Watch now to learn why so many
-                                    companies are embracing cloud-ERP, automation, and predictive
-                                    workflows.
+                                    {t("Transform your business with next-generation ERP: discover how modern ERP solutions streamline operations, improve efficiency, and enable data-driven decision-making.")} {t("Watch now to learn why so many companies are embracing cloud-ERP, automation, and predictive workflows.")}
                                 </p>
                             </div>
                             <div className="col-sm-6">
@@ -898,7 +875,7 @@ export default function AlMl() {
                                             className="text-anime-style-2 text-center"
                                             data-cursor="-opaque"
                                         >
-                                            Services Provided
+                                            {t("Services Provided")}
                                         </h2>
                                     </div>
                                 </div>
@@ -910,35 +887,35 @@ export default function AlMl() {
                                     <div className="benifet-content benifet-content-2 height600">
                                         <div>
                                             <h4 className="benifit-title">
-                                                IP and Product Development Services
+                                                {t("IP and Product Development Services")}
                                             </h4>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Proof of Concept Development </p>
+                                                <p>{t("Proof of Concept Development")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>New Product Design and Development</p>
+                                                <p>{t("New Product Design and Development")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Product Engineering and Development</p>
+                                                <p>{t("Product Engineering and Development")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Platform Migration</p>
+                                                <p>{t("Platform Migration")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Maintenance and Support</p>
+                                                <p>{t("Maintenance and Support")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Independent Product Testing</p>
+                                                <p>{t("Independent Product Testing")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Product Release and License Management</p>
+                                                <p>{t("Product Release and License Management")}</p>
                                             </div>
                                         </div>
                                         {/* <img src="/new/pf-6.svg" alt=""> */}
@@ -951,31 +928,31 @@ export default function AlMl() {
                                         <div>
                                             <h4 className="benifit-title">
                                                 {" "}
-                                                Enterprise Solutions and Services{" "}
+                                                {t("Enterprise Solutions and Services")}
                                             </h4>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Custom Development and Integration </p>
+                                                <p>{t("Custom Development and Integration")} </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Implementation, Rollout and Support</p>
+                                                <p>{t("Implementation, Rollout and Support")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Performance Tuning and BI Analytics</p>
+                                                <p>{t("Performance Tuning and BI Analytics")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Version Upgrade</p>
+                                                <p>{t("Version Upgrade")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Preconfigured Industry Solutions</p>
+                                                <p>{t("Preconfigured Industry Solutions")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Product Audit and Recovery</p>
+                                                <p>{t("Product Audit and Recovery")}</p>
                                             </div>
                                         </div>
                                         {/* <img src="/new/pf-6.svg" alt=""> */}
@@ -987,23 +964,24 @@ export default function AlMl() {
                                     <div className="benifet-content benifet-content-2 height600">
                                         <div>
                                             <h4 className="benifit-title">
-                                                IT Surround Solution and Services
+                                                {" "}
+                                                {t("IT Surround Solution and Services")}
                                             </h4>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Application Development Maintenance and Support</p>
+                                                <p>{t("Application Development Maintenance and Support")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Portals and Collaborations</p>
+                                                <p>{t("Portals and Collaborations")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Product Testing as a Service</p>
+                                                <p>{t("Product Testing as a Service")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>SharePoint and .NET upgrades</p>
+                                                <p>{t("SharePoint and .NET upgrades")}</p>
                                             </div>
                                         </div>
                                         {/* <img src="/new/pf-6.svg" alt=""> */}
@@ -1015,27 +993,28 @@ export default function AlMl() {
                                     <div className="benifet-content benifet-content-2 height600">
                                         <div>
                                             <h4 className="benifit-title">
-                                                Consulting and Advisory Services
+                                                {" "}
+                                                {t("Consulting and Advisory Services")}
                                             </h4>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Program / Project Management</p>
+                                                <p>{t("Program / Project Management")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>IT Cost Optimization</p>
+                                                <p>{t("IT Cost Optimization")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>IT Outsourcing Services</p>
+                                                <p>{t("IT Outsourcing Services")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>IT Due Diligence</p>
+                                                <p>{t("IT Due Diligence")}</p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
-                                                <p>Project Audit and Turnaround</p>
+                                                <p>{t("Project Audit and Turnaround")}</p>
                                             </div>
                                         </div>
                                         {/* <img src="/new/pf-6.svg" alt=""> */}
@@ -1059,14 +1038,14 @@ export default function AlMl() {
                                 <div className="row">
                                     <div className="col-sm-8">
                                         <h2>
-                                            Ready to modernise your applications and accelerate growth?{" "}
+                                            {t("Ready to modernise your applications and accelerate growth?")}{" "}
                                         </h2>
-                                        <p>Talk to our experts today.</p>
+                                        <p>{t("Talk to our experts today.")}</p>
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
                                             <Link href="/contact-us" className="animated-svg-link">
-                                                Contact Us
+                                                {t("Contact Us")}
                                                 <span className="svg-container ">
                                                     <span className=" right">
                                                         <svg

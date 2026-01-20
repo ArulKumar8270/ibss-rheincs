@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function AlMl() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
             <>
@@ -19,19 +21,15 @@ export default function AlMl() {
                         <div className="row section-row1 align-items-center builtsec">
                             <div className="col-sm-5">
                                 <div className="section-title">
-                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Architecture &amp; App Modernisation
+                                    <h2 className="text-anime-style-21" data-cursor="-opaque">
+                                    {t("Architecture & App Modernisation")}
                                     </h2>
                                     <p>
-                                        Transform legacy applications into agile, cloud-ready platforms
-                                        that are secure, scalable, and built for the future. Using modern
-                                        frameworks, cloud-native infrastructure, and best-in-class tools,
-                                        we help you accelerate transformation, cut technical debt, and
-                                        unlock new business value.
+                                        {t("Transform legacy applications into agile, cloud-ready platforms that are secure, scalable, and built for the future.")} {t("Using modern frameworks, cloud-native infrastructure, and best-in-class tools, we help you accelerate transformation, cut technical debt, and unlock new business value.")}
                                     </p>
                                     <div className="ser-btn mt-5">
                                         <Link href="/contact-us" className="animated-svg-link">
-                                            Contact Us
+                                            {t("Contact Us")}
                                             <span className="svg-container ">
                                                 <span className=" right">
                                                     <svg
@@ -159,7 +157,7 @@ export default function AlMl() {
                                                 className="text-anime-style-2 text-center"
                                                 data-cursor="-opaque"
                                             >
-                                                Why Choose Us?{" "}
+                                                {t("Why Choose Us?")}   
                                             </h2>
                                         </div>
                                     </div>
@@ -171,7 +169,7 @@ export default function AlMl() {
                                 <div className="dynamics-advantage-waber">
                                     <img src="/new/g501.svg" alt="" />
                                     <p>
-                                        Proven track record in re-architecting complex enterprise systems.
+                                        {t("Proven track record in re-architecting complex enterprise systems.")}
                                     </p>
                                 </div>
                             </div>
@@ -179,7 +177,7 @@ export default function AlMl() {
                                 <div className="dynamics-advantage-waber">
                                     <img src="/new/ad2.svg" alt="" />
                                     <p>
-                                        Deep expertise in Microsoft Azure and multi-cloud modernisation.
+                                        {t("Deep expertise in Microsoft Azure and multi-cloud modernisation.")}
                                     </p>
                                 </div>
                             </div>
@@ -187,8 +185,7 @@ export default function AlMl() {
                                 <div className="dynamics-advantage-waber">
                                     <img src="/new/ad3.svg" alt="" />
                                     <p>
-                                        End-to-end delivery from assessment to deployment and continuous
-                                        optimisation.
+                                        {t("End-to-end delivery from assessment to deployment and continuous optimisation.")}
                                     </p>
                                 </div>
                             </div>
@@ -196,8 +193,7 @@ export default function AlMl() {
                                 <div className="dynamics-advantage-waber">
                                     <img src="/new/ad4.svg" alt="" />
                                     <p>
-                                        Focus on lowering costs, improving agility, and scaling with
-                                        confidence.
+                                        {t("Focus on lowering costs, improving agility, and scaling with confidence.")}
                                     </p>
                                 </div>
                             </div>
@@ -211,7 +207,7 @@ export default function AlMl() {
                             <div className="section-title ">
                                 <div className="hero-video-content1 wow fadeInUp mt-4">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Our Capabilities
+                                        {t("Our Capabilities")}
                                     </h2>
                                 </div>
                             </div>
@@ -226,8 +222,10 @@ export default function AlMl() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/images/fe1.svg" alt="" />
-                                            <h6> Application Re-engineering</h6>
-                                            <p>Cloud-native,Microservices, and Serverless Environments.</p>
+                                            <h6> {t("Application Re-engineering.")}</h6>
+                                            <p>
+                                                {t("Cloud-native, microservices, and serverless environments.")}
+                                            </p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -235,8 +233,10 @@ export default function AlMl() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/images/fe2.svg" alt="" />
-                                            <h6> Legacy System Migration</h6>
-                                            <p>With Minimal Risk and Disruption.</p>
+                                            <h6> {t("Legacy System Migration")}</h6>
+                                            <p>
+                                                {t("With minimal risk and disruption.")}
+                                            </p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -244,10 +244,9 @@ export default function AlMl() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/images/fe3.svg" alt="" />
-                                            <h6> Modern Tool Integration </h6>
+                                            <h6> {t("Modern Tool Integration")}</h6>
                                             <p>
-                                                Algolia, Amplience, Metapack, and more for digital-first
-                                                operations.
+                                                {t("Algolia, Amplience, Metapack, and more for digital-first operations.")}
                                             </p>
                                         </div>
                                     </div>
@@ -256,8 +255,10 @@ export default function AlMl() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/images/fe4.svg" alt="" />
-                                            <h6> Secure &amp; Compliant Architecture</h6>
-                                            <p>Designed with governance at the core.</p>
+                                            <h6> {t("Secure & Compliant Architecture")}</h6>
+                                            <p>
+                                                {t("Designed with governance at the core.")}
+                                            </p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -265,13 +266,15 @@ export default function AlMl() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/images/fe5.svg" alt="" />
-                                            <h6> Performance Optimisation</h6>
-                                            <p>Ensuring resilience, high availability, and speed.</p>
+                                            <h6> {t("Performance Optimisation")}</h6>
+                                            <p>
+                                                {t("Ensuring resilience, high availability, and speed.")}
+                                            </p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
                                 </div>
-                                <div className="testimonial-btn rtyElement">
+                                <div className="testimonial-btn rtyElement mobileview">
                                     <div className="testimonial-button-prev">
                                         <div className="animated-svg-link1 btn-style-3">
                                             <span className="svg-container ">
@@ -494,15 +497,10 @@ export default function AlMl() {
                             <div className="col-sm-5">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Proven in Action American Golf
+                                        {t("Proven in Action American Golf")}
                                     </h2>
                                     <p>
-                                        For American Golf, Europe’s largest golf retailer, we modernised
-                                        legacy Salesforce and Navision systems by implementing a headless,
-                                        microservices-based architecture. Through API-driven integrations
-                                        and a scalable, cloud-ready design, the solution improved
-                                        operational efficiency, ensured data consistency, and laid the
-                                        foundation for digital growth.
+                        {t("For American Golf, Europe’s largest golf retailer, we modernised legacy Salesforce and Navision systems by implementing a headless, microservices-based architecture.")} {t("Through API-driven integrations and a scalable, cloud-ready design, the solution improved operational efficiency, ensured data consistency, and laid the foundation for digital growth.")}
                                     </p>
                                 </div>
                             </div>
@@ -523,16 +521,16 @@ export default function AlMl() {
                             <div className="firstrow">
                                 <div className="row">
                                     <div className="col-sm-8">
-                                        <h2>Future-Proof Your Business </h2>
+                                        <h2> {t("Future-Proof Your Business ")} </h2>
                                         <p>
-                                            Ready to modernise your applications and accelerate growth?{" "}
+                                            {t("Ready to modernise your applications and accelerate growth?")}
                                         </p>
-                                        <p>Talk to our experts today.</p>
+                                        <p> {t("Talk to our experts today.")} </p>
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
                                             <Link href="/contact-us" className="animated-svg-link">
-                                                Contact Us
+                                                {t("Contact Us")}
                                                 <span className="svg-container ">
                                                     <span className=" right">
                                                         <svg

@@ -19,7 +19,7 @@ export default function digitalsolution() {
                         <div className="row section-row1 align-items-center builtsec">
                             <div className="col-sm-5">
                                 <div className="section-title">
-                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                    <h2 className="text-anime-style-21" data-cursor="-opaque">
                                         eCommerce Solutions
                                     </h2>
                                     <p>
@@ -863,7 +863,7 @@ export default function digitalsolution() {
                                             </div>
                                             {/* Testimonial Slide End */}
                                         </div>
-                                        <div className="testimonial-btn ecom rtyElement">
+                                        <div className="testimonial-btn ecom rtyElement systemview">
                                             <div
                                                 className="testimonial-button-prev swiper-button-disabled"
                                                 tabIndex={-1}

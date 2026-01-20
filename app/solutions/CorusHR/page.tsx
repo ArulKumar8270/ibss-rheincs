@@ -120,7 +120,7 @@ export default function Corushr() {
                         <div className="row section-row1 align-items-center builtsec">
                             <div className="col-sm-5">
                                 <div className="section-title">
-                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                    <h2 className="text-anime-style-21" data-cursor="-opaque">
                                         {t('Revolutionizing HR Management with Smart, Scalable Solutions')}
                                     </h2>
                                     <p>

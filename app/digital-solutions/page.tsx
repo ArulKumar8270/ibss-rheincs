@@ -14,7 +14,7 @@ export default function digitalsolution() {
       <div className="row section-row align-items-center  digitalsec">
         <div className="col-sm-6">
           <div className="section-title">
-            <h2 className="text-anime-style-2" data-cursor="-opaque">
+            <h2 className="text-anime-style-21" data-cursor="-opaque">
               Digital Solutions – Innovating Business, One Solution at a Time
             </h2>
             <p>
