@@ -119,7 +119,7 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-6">
                 <div className="section-title">
                   <h2
-                    className="text-anime-style-2"
+                    className="text-anime-style-21"
                     style={{ color: "#082326" }}
                     data-cursor="-opaque"
                   >

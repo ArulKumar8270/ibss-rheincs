@@ -13,7 +13,7 @@
     "The Path to Transformation": "The Path to Transformation",
     "Every successful transformation starts with clarity and ends with measurable impact. Our approach is built to take you from insights to execution, helping your business unlock real value at every single stage of journey": "Every successful transformation starts with clarity and ends with measurable impact. Our approach is built to take you from insights to execution, helping your business unlock real value at every single stage of journey",
     "Know More": "Know More",
-    "We start by understanding your business-its core operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact, whether it’s efficiency, margin growth, agility, or customer experience.": "We start by understanding your business-its core operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact, whether it’s efficiency, margin growth, agility, or customer experience.",
+    "We start by understanding your business, its core your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact whether it's efficiency, margin growth, agility, or customer experience.": "We start by understanding your business, its core your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact whether it's efficiency, margin growth, agility, or customer experience.",
     "Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals – implementing and integrating ERP and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability.": "Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals – implementing and integrating ERP and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability.",
     "This is where change becomes reality. From digitised supply chains to intelligent forecasting, we help you deploy solutions that move the needle - unlocking new revenue, simplifying complexity, and accelerating time-to-value.": "This is where change becomes reality. From digitised supply chains to intelligent forecasting, we help you deploy solutions that move the needle - unlocking new revenue, simplifying complexity, and accelerating time-to-value.",
     "Powering Enterprise Growth Through Digital-Enabled Transformation": "Powering Enterprise Growth Through Digital-Enabled Transformation",
@@ -1670,7 +1670,248 @@
     "The seamless interface for MIS reporting minimized manual intervention, enhancing reporting accuracy and efficiency.": "The seamless interface for MIS reporting minimized manual intervention, enhancing reporting accuracy and efficiency.",
     "PPA's modular design included functionalities for billing, scheduling, revenue management, and budget forecasting, ensuring streamlined operations and efficient resource management.": "PPA's modular design included functionalities for billing, scheduling, revenue management, and budget forecasting, ensuring streamlined operations and efficient resource management.",
     "PPA's user-friendly design ensured ease of use with minimal training for business users.": "PPA's user-friendly design ensured ease of use with minimal training for business users.",
-    "RheinBrücke successfully delivered a robust solution that enhanced operational and financial efficiency in the power plant industry, solidifying its commitment to innovative and impactful industry solutions.": "RheinBrücke successfully delivered a robust solution that enhanced operational and financial efficiency in the power plant industry, solidifying its commitment to innovative and impactful industry solutions."
+    "RheinBrücke successfully delivered a robust solution that enhanced operational and financial efficiency in the power plant industry, solidifying its commitment to innovative and impactful industry solutions.": "RheinBrücke successfully delivered a robust solution that enhanced operational and financial efficiency in the power plant industry, solidifying its commitment to innovative and impactful industry solutions.",
+
+
+
+
+
+
+    "Architecture & App Modernisation": "Architecture & App Modernisation",
+    "Transform legacy applications into agile, cloud-ready platforms that are secure, scalable, and built for the future.": "Transform legacy applications into agile, cloud-ready platforms that are secure, scalable, and built for the future.",
+    "Using modern frameworks, cloud-native infrastructure, and best-in-class tools, we help you accelerate transformation, cut technical debt, and unlock new business value.": "Using modern frameworks, cloud-native infrastructure, and best-in-class tools, we help you accelerate transformation, cut technical debt, and unlock new business value.",
+
+    "Our Capabilities": "Our Capabilities",
+    "Application Re-engineering": "Application Re-engineering",
+    "Cloud-native, microservices, and serverless environments.": "Cloud-native, microservices, and serverless environments.",
+    "Legacy System Migration": "Legacy System Migration",
+    "With minimal risk and disruption.": "with minimal risk and disruption.",
+    "Modern Tool Integration": "Modern Tool Integration",
+    "Algolia, Amplience, Metapack, and more for digital-first operations.": "Algolia, Amplience, Metapack, and more for digital-first operations.",
+    "Secure & Compliant Architecture": "Secure & Compliant Architecture",
+    "Designed with governance at the core.": "Designed with governance at the core.",
+    "Performance Optimisation": "Performance Optimisation",
+    "Ensuring resilience, high availability, and speed.": "Ensuring resilience, high availability, and speed.",
+
+    "Why Choose Us?": "Why Choose Us?",
+    "Proven track record in re-architecting complex enterprise systems.": "Proven track record in re-architecting complex enterprise systems.",
+    "Deep expertise in Microsoft Azure and multi-cloud modernisation.": "Deep expertise in Microsoft Azure and multi-cloud modernisation.",
+    "End-to-end delivery from assessment to deployment and continuous optimisation.": "End-to-end delivery from assessment to deployment and continuous optimisation.",
+    "Focus on lowering costs, improving agility, and scaling with confidence.": "Focus on lowering costs, improving agility, and scaling with confidence.",
+
+    "Proven in Action American Golf": "Proven in Action American Golf",
+    "For American Golf, Europe’s largest golf retailer, we modernised legacy Salesforce and Navision systems by implementing a headless, microservices-based architecture.": "For American Golf, Europe’s largest golf retailer, we modernised legacy Salesforce and Navision systems by implementing a headless, microservices-based architecture.",
+    "Through API-driven integrations and a scalable, cloud-ready design, the solution improved operational efficiency, ensured data consistency, and laid the foundation for digital growth.": "Through API-driven integrations and a scalable, cloud-ready design, the solution improved operational efficiency, ensured data consistency, and laid the foundation for digital growth.",
+
+    "Future-Proof Your Business": "Future-Proof Your Business",
+    "Ready to modernise your applications and accelerate growth?": "Ready to modernise your applications and accelerate growth?",
+    "Talk to our experts today.": "Talk to our experts today.",
+
+
+
+    "Data Engineering & Warehousing": "Data Engineering & Warehousing",
+    "Unlock the full potential of your data by consolidating siloed sources into scalable warehouses and lakes.": "Unlock the full potential of your data by consolidating siloed sources into scalable warehouses and lakes.",
+    "We design real-time and batch pipelines that ensure seamless data flow, fuel advanced analytics, and enable AI/ML at scale.": "We design real-time and batch pipelines that ensure seamless data flow, fuel advanced analytics, and enable AI/ML at scale.",
+
+    "Our Capabilities": "Our Capabilities",
+    "Real-Time & Batch Pipelines – built for high-volume, high-velocity data.": "Real-Time & Batch Pipelines – built for high-volume, high-velocity data.",
+    "Data Consolidation – unifying ERP, CRM, IoT, and third-party sources.": "Data Consolidation – unifying ERP, CRM, IoT, and third-party sources.",
+    "Scalable Warehouses & Lakes – including Microsoft Fabric OneLake.": "Scalable Warehouses & Lakes – including Microsoft Fabric OneLake.",
+    "Analytics & AI/ML Enablement – powering predictive and real-time insights.": "Analytics & AI/ML Enablement – powering predictive and real-time insights.",
+    "Cloud-Native Platforms – architected on Azure and other leading technologies.": "Cloud-Native Platforms – architected on Azure and other leading technologies.",
+
+    "Why Choose Us?": "Why Choose Us?",
+    "Proven expertise in modern data architectures and Azure Synapse solutions.": "Proven expertise in modern data architectures and Azure Synapse solutions.",
+    "Success with complex, enterprise-scale data challenges.": "Success with complex, enterprise-scale data challenges.",
+    "Seamless integration with AI/ML frameworks for operational intelligence.": "Seamless integration with AI/ML frameworks for operational intelligence.",
+    "End-to-end services: design, build, migrate, and optimise.": "End-to-end services: design, build, migrate, and optimise.",
+
+    "Proven in Action – Sembcorp": "Proven in Action – Sembcorp",
+    "For Sembcorp Industries, we built a Power Plant Analytics (PPA) system that consolidated data from SAP, IoT devices, and grid meters into a single platform.": "For Sembcorp Industries, we built a Power Plant Analytics (PPA) system that consolidated data from SAP, IoT devices, and grid meters into a single platform.",
+    "With real-time and batch pipelines, the solution enabled seamless MIS reporting, predictive analytics, and stronger decision support across global operations.": "With real-time and batch pipelines, the solution enabled seamless MIS reporting, predictive analytics, and stronger decision support across global operations.",
+
+    "Future-Ready Data": "Future-Ready Data",
+    "Make your data insight-driven and AI-ready.": "Make your data insight-driven and AI-ready.",
+    "Talk to our experts today.": "Talk to our experts today.",
+
+
+
+
+
+
+    "Services Provided":
+    "Services Provided",
+
+    "ERP Support – SAP, EPICOR, Microsoft Dynamics":
+    "ERP Support – SAP, EPICOR, Microsoft Dynamics",
+
+    "Software Development, Support and Maintenance":
+    "Software Development, Support and Maintenance",
+
+    "Business Intelligence and Data Analytics, DBA Support":
+    "Business Intelligence and Data Analytics, DBA Support",
+
+    "Dedicated support specialists for 24X7 helpdesk and IT service management":
+    "Dedicated support specialists for 24X7 helpdesk and IT service management",
+
+    "Security and IT Governance":
+    "Security and IT Governance",
+
+    "Cloud and Infrastructure Management Services":
+    "Cloud and Infrastructure Management Services",
+
+    "Helpdesk with Managed Services":
+    "Helpdesk with Managed Services",
+
+    "POC Development and Outsourced Product Development":
+    "POC Development and Outsourced Product Development",
+
+    "Benefits of having RIC as a service partner":
+    "Benefits of having RIC as a service partner",
+
+    "International best practice know-how":
+    "International best practice know-how",
+
+    "Global reach with customers across 42 countries":
+    "Global reach with customers across 42 countries",
+
+    "Process-driven, but with the right cultural sensitivity":
+    "Process-driven, but with the right cultural sensitivity",
+
+    "Delivery innovation":
+    "Delivery innovation",
+
+    "Highest end user satisfaction":
+    "Highest end user satisfaction",
+
+    "SLA driven Customer-centric approach":
+    "SLA driven Customer-centric approach",
+
+    "Ease of Scalability with our Right-Shoring approach":
+    "Ease of Scalability with our Right-Shoring approach",
+
+    "Leadership team with several decades of experience in setting up and managing large global service delivery organisations":
+    "Leadership team with several decades of experience in setting up and managing large global service delivery organisations",
+
+    "Our clients are assisted with developing a transparent governance process, enabling applications to be transitioned seamlessly into Application and Production support, to be decommissioned. This releases underlying software (license) and hardware (server) infrastructure.":
+    "Our clients are assisted with developing a transparent governance process, enabling applications to be transitioned seamlessly into Application and Production support, to be decommissioned. This releases underlying software (license) and hardware (server) infrastructure.",
+
+    "RheinBrücke provides SLA based application support services based on the ITIL framework. Our support personnel and robust process allow for a smooth transition of application support in optimum timelines and serve to stabilize services during the initial stages of steady state. Timely intervention and a strict focus on continuous improvement along with preventive maintenance ensures the delight of business users.":
+    "RheinBrücke provides SLA based application support services based on the ITIL framework. Our support personnel and robust process allow for a smooth transition of application support in optimum timelines and serve to stabilize services during the initial stages of steady state. Timely intervention and a strict focus on continuous improvement along with preventive maintenance ensures the delight of business users.",
+  
+"Our Methodology":
+    "Our Methodology",
+
+    "Our methodology is based on the ITIL framework and ensures that the KPIs agreed with the clients are adhered to and the SLAs are monitored, tracked and met consistently.":
+    "Our methodology is based on the ITIL framework and ensures that the KPIs agreed with the clients are adhered to and the SLAs are monitored, tracked and met consistently.",
+
+    "Scientific application analysis framework which ensures the solution-framework caters to your specific requirement.":
+    "Scientific application analysis framework which ensures the solution-framework caters to your specific requirement.",
+
+    "An intensive due diligence to validate assumptions made as part of application analysis and solution development.":
+    "An intensive due diligence to validate assumptions made as part of application analysis and solution development.",
+
+    "Rigorous and intensive sessions of orientation to ensure that the team is equipped for transition.":
+    "Rigorous and intensive sessions of orientation to ensure that the team is equipped for transition.",
+
+    "Process convergence to align RIC’s process with the clients.":
+    "Process convergence to align RIC’s process with the clients.",
+
+    "Scientifically modelled transition approach with minimal service disruption.":
+    "Scientifically modelled transition approach with minimal service disruption.",
+
+    "Implementation of continuous improvement initiatives driven by a Six-Sigma Approach.":
+    "Implementation of continuous improvement initiatives driven by a Six-Sigma Approach.",
+
+    "With customers across 42 countries, we deeply understand your cultural industry specific needs.":
+    "With customers across 42 countries, we deeply understand your cultural industry specific needs.",
+
+    "Some of our renowned clients include FLSmidth, Visteon, ZF-TRW, Novartis, and EPICOR Corporation.":
+    "Some of our renowned clients include FLSmidth, Visteon, ZF-TRW, Novartis, and EPICOR Corporation.",
+
+    "Services Provided":
+    "Services Provided",
+
+    "IP and Product Development Services":
+    "IP and Product Development Services",
+
+    "Proof of Concept Development":
+    "Proof of Concept Development",
+
+    "New Product Design and Development":
+    "New Product Design and Development",
+
+    "Product Engineering and Development":
+    "Product Engineering and Development",
+
+    "Platform Migration":
+    "Platform Migration",
+
+    "Maintenance and Support":
+    "Maintenance and Support",
+
+    "Independent Product Testing":
+    "Independent Product Testing",
+
+    "Product Release and License Management":
+    "Product Release and License Management",
+
+    "Enterprise Solutions and Services":
+    "Enterprise Solutions and Services",
+
+    "Custom Development and Integration":
+    "Custom Development and Integration",
+
+    "Implementation, Rollout and Support":
+    "Implementation, Rollout and Support",
+
+    "Performance Tuning and BI Analytics":
+    "Performance Tuning and BI Analytics",
+
+    "Version Upgrade":
+    "Version Upgrade",
+
+    "Preconfigured Industry Solutions":
+    "Preconfigured Industry Solutions",
+
+    "Product Audit and Recovery":
+    "Product Audit and Recovery",
+
+    "IT Surround Solution and Services":
+    "IT Surround Solution and Services",
+
+    "Application Development Maintenance and Support":
+    "Application Development Maintenance and Support",
+
+    "Portals and Collaborations":
+    "Portals and Collaborations",
+
+    "Product Testing as a Service":
+    "Product Testing as a Service",
+
+    "SharePoint and .NET upgrades":
+    "SharePoint and .NET upgrades",
+
+    "Consulting and Advisory Services":
+    "Consulting and Advisory Services",
+
+    "Program / Project Management":
+    "Program / Project Management",
+
+    "IT Cost Optimization":
+    "IT Cost Optimization",
+
+    "IT Outsourcing Services":
+    "IT Outsourcing Services",
+
+    "IT Due Diligence":
+    "IT Due Diligence",
+
+    "Project Audit and Turnaround":
+    "Project Audit and Turnaround",
+
+    "For more information on our Application Maintenance & Support services, please click here.":
+    "For more information on our Application Maintenance & Support services, please click here."
 
 
 
@@ -1717,7 +1958,7 @@
     "The Path to Transformation": "Der Weg zur Transformation",
     "Every successful transformation starts with clarity and ends with measurable impact. Our approach is built to take you from insights to execution, helping your business unlock real value at every single stage of journey": "Erfolgreiche Transformation beginnt mit Klarheit und endet mit messbaren Ergebnissen. Unser Ansatz ist darauf ausgerichtet, diesen Prozess zu begleiten: von der Identifikation bis zur Umsetzung. So generiert Ihr Unternehmen in jeder Phase echten Mehrwert. ",
     "Know More": "Mehr erfahren",
-    "We start by understanding your business-its core operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact, whether it’s efficiency, margin growth, agility, or customer experience.": "Wir beginnen mit einer Bestandsaufnahme des Kerngeschäfts – Ihr Betriebsmodell, Ihre Werttreiber und Ihre Einschränkungen. Mithilfe datengestützter Diagnosen und Leistungsbenchmarks identifizieren wir die tatsächlichen Hebel für Veränderungen – sei es Effizienz, Margenwachstum, Agilität oder Kundenerfahrung.",
+    "We start by understanding your business, its core your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact whether it's efficiency, margin growth, agility, or customer experience.": "Wir beginnen mit einer Bestandsaufnahme des Kerngeschäfts – Ihr Betriebsmodell, Ihre Werttreiber und Ihre Einschränkungen. Mithilfe datengestützter Diagnosen und Leistungsbenchmarks identifizieren wir die tatsächlichen Hebel für Veränderungen – sei es Effizienz, Margenwachstum, Agilität oder Kundenerfahrung.",
     "Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals – implementing and integrating ERP and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability.": "Als Nächstes führen wir Systeme, Tools und Arbeitsabläufe zusammen, die Ihre Betriebsabläufe steuern. Wir stimmen die Technologie auf Ihre strategischen Ziele und individuellen Bedürfnisse ab. Es folgt die Implementierung und Integration von ERP-Systemen oder anderen digitalen Lösungen (Epicor, Microsoft Dynamics, SAP u.a.) Unser Fokus: Geschwindigkeit, Qualität und Skalierbarkeit.",
     "This is where change becomes reality. From digitised supply chains to intelligent forecasting, we help you deploy solutions that move the needle - unlocking new revenue, simplifying complexity, and accelerating time-to-value.": "Die Veränderung wird zur Realität. Von digitalisierten Lieferketten bis hin zu intelligenten Prognosen – wir implementieren Lösungen, die etwas bewegen. Sie erschließen neue Einnahmequellen, vereinfachen komplexe Prozesse und beschleunigen die Amortisationszeit.",
     "Powering Enterprise Growth Through Digital-Enabled Transformation": "Unternehmenswachstum durch digitale Transformation",
@@ -3362,7 +3603,259 @@
     "The seamless interface for MIS reporting minimized manual intervention, enhancing reporting accuracy and efficiency.": "Die nahtlose Schnittstelle für Management-Reporting reduziert manuelle Eingriffe und steigert die Genauigkeit sowie Effizienz der Berichterstattung.",
     "PPA's modular design included functionalities for billing, scheduling, revenue management, and budget forecasting, ensuring streamlined operations and efficient resource management.": "Das modulare Design von PPA umfasst Funktionen für Abrechnung, Produktionsplanung, Umsatzmanagement und Budgetprognosen und gewährleistet optimierte Abläufe sowie effizientes Ressourcenmanagement.",
     "PPA's user-friendly design ensured ease of use with minimal training for business users.": "Die benutzerfreundliche Gestaltung sorgt für einfache Bedienbarkeit mit minimalem Schulungsaufwand für Geschäftsbenutzer.",
-    "RheinBrücke successfully delivered a robust solution that enhanced operational and financial efficiency in the power plant industry, solidifying its commitment to innovative and impactful industry solutions.": "RheinBrücke lieferte erfolgreich eine robuste Lösung, die sowohl die operative als auch die finanzielle Effizienz in der Kraftwerksbranche steigert und das Engagement für innovative und wirkungsvolle Branchenlösungen unterstreicht."
+    "RheinBrücke successfully delivered a robust solution that enhanced operational and financial efficiency in the power plant industry, solidifying its commitment to innovative and impactful industry solutions.": "RheinBrücke lieferte erfolgreich eine robuste Lösung, die sowohl die operative als auch die finanzielle Effizienz in der Kraftwerksbranche steigert und das Engagement für innovative und wirkungsvolle Branchenlösungen unterstreicht.",
+
+
+
+
+
+
+
+
+    "Architecture & App Modernisation": "Architektur- & Applikationsmodernisierung",
+    "Transform legacy applications into agile, cloud-ready platforms that are secure, scalable, and built for the future.": "Verwandeln Sie Ihre Legacy-Anwendungen in agile, cloudfähige Plattformen – sicher, skalierbar und bereit für die Zukunft.",
+    "Using modern frameworks, cloud-native infrastructure, and best-in-class tools, we help you accelerate transformation, cut technical debt, and unlock new business value.": "Mit modernen Frameworks, Cloud-native Infrastrukturen und Best-in-Class Tools unterstützen wir Sie dabei, Transformation zu beschleunigen, technische Schulden abzubauen und neuen Geschäftswert freizusetzen.",
+
+    "Our Capabilities": "Unsere Kompetenzen",
+    "Application Re-engineering ": "Application Re-Engineering",
+    "cloud-native, microservices, and serverless environments.": "für Cloud-native, Microservices- und Serverless-Umgebungen",
+    "Legacy System Migration": "Migration von Legacy-Systemen",
+    "With minimal risk and disruption.": "mit minimalem Risiko und minimalen Unterbrechungen",
+    "Modern Tool Integration": "Integration moderner Tools",
+    "Algolia, Amplience, Metapack, and more for digital-first operations.": "wie Algolia, Amplience, Metapack und mehr – für digitale Exzellenz",
+    "Secure & Compliant Architecture": "Sichere und konforme Architektur",
+    "Designed with governance at the core.": "mit Governance und Compliance im Kern",
+    "Performance Optimisation": "Performance-Optimierung",
+    "Ensuring resilience, high availability, and speed.": "für Resilienz, hohe Verfügbarkeit und Geschwindigkeit",
+
+    "Why Choose Us?": "Warum wir?",
+    "Proven track record in re-architecting complex enterprise systems.": "Nachweisliche Erfolge bei der Modernisierung komplexer Unternehmenssysteme",
+    "Deep expertise in Microsoft Azure and multi-cloud modernisation.": "Tiefes Know-how in Microsoft Azure und Multi-Cloud-Architekturen",
+    "End-to-end delivery from assessment to deployment and continuous optimisation.": "End-to-End Delivery – von der Analyse bis zur Implementierung und kontinuierlichen Optimierung",
+    "Focus on lowering costs, improving agility, and scaling with confidence.": "Fokus auf Kostenreduktion, höhere Agilität und skalierbares Wachstum",
+
+    "Proven in Action American Golf": "Erfolg in der Praxis – American Golf",
+    "For American Golf, Europe’s largest golf retailer, we modernised legacy Salesforce and Navision systems by implementing a headless, microservices-based architecture.": "Für American Golf, Europas größten Golfhändler, haben wir Legacy-Systeme wie Salesforce und Navision mit einer Headless- und Microservices-basierten Architektur modernisiert.",
+    "Through API-driven integrations and a scalable, cloud-ready design, the solution improved operational efficiency, ensured data consistency, and laid the foundation for digital growth.": "Durch API-gesteuerte Integrationen und ein skalierbares, cloudfähiges Design konnten die operative Effizienz gesteigert, die Datenkonsistenz sichergestellt und die Grundlage für weiteres digitales Wachstum geschaffen werden.",
+
+    "Future-Proof Your Business": "Gestalten Sie die Zukunft Ihres Unternehmens",
+    "Ready to modernise your applications and accelerate growth?": "Bereit, Ihre Anwendungen zu modernisieren und Wachstum zu beschleunigen?",
+    "Talk to our experts today.": "Sprechen Sie mit unseren Experten.",
+
+
+
+
+
+
+
+
+    "Data Engineering & Warehousing": "Datenengineering & Data Warehousing",
+    "Unlock the full potential of your data by consolidating siloed sources into scalable warehouses and lakes.": "Nutzen Sie das volle Potenzial Ihrer Daten, indem Sie isolierte Systeme und Quellen in skalierbaren Data Warehouses und Data Lakes zusammenführen.",
+    "We design real-time and batch pipelines that ensure seamless data flow, fuel advanced analytics, and enable AI/ML at scale.": "Wir entwickeln Echtzeit- und Batch-Pipelines, die einen nahtlosen Datenfluss ermöglichen – als Basis für Analytics, KI und Machine Learning im großen Maßstab.",
+
+    "Our Capabilities": "Unsere Kompetenzen",
+    "Real-Time & Batch Pipelines": "Echtzeit- & Batch-Datenpipelines",
+    "Built for high-volume, high-velocity data.": "für hohe Datenvolumen und Geschwindigkeit",
+    "Data Consolidation": "Datenkonsolidierung",
+    "unifying ERP, CRM, IoT, and third-party sources.": "Integration von ERP-, CRM-, IoT- und Drittquellen",
+    "Scalable Warehouses & Lakes": "Skalierbare Warehouses & Data Lakes",
+    "Including Microsoft Fabric OneLake.": "Inklusive Microsoft Fabric OneLake",
+    "Analytics & AI/ML Enablement": "Analytics- & KI/ML-Enablement",
+    "powering predictive and real-time insights.": "für prädiktive und Echtzeit-Insights",
+    "Cloud-Native Platforms.": "Cloud-native Plattformen",
+    "Architected on Azure and other leading technologies.": "Entwickelt auf Azure und anderen führenden Technologien",
+
+    "Why Choose Us?": "Warum wir?",
+    "Proven expertise in modern data architectures and Azure Synapse solutions.": "Nachgewiesene Expertise in modernen Datenarchitekturen und Azure-Synapse-Lösungen",
+    "Success with complex, enterprise-scale data challenges.": "Erfolgreiche Umsetzung komplexer Enterprise-Data-Herausforderungen",
+    "Seamless integration with AI/ML frameworks for operational intelligence.": "Nahtlose Integration mit KI- und ML-Frameworks für operative Intelligenz",
+    "End-to-end services: design, build, migrate, and optimise.": "End-to-End-Services: Design, Aufbau, Migration und Optimierung",
+
+    "Proven in Action – Sembcorp": "Erfolg in der Praxis – Sembcorp",
+    "For Sembcorp Industries, we built a Power Plant Analytics (PPA) system that consolidated data from SAP, IoT devices, and grid meters into a single platform.": "Für Sembcorp Industries entwickelten wir ein Power Plant Analytics (PPA)-System, das Daten aus SAP, IoT-Geräten und Netzwerkmessungen in einer zentralen Plattform vereint.",
+    "With real-time and batch pipelines, the solution enabled seamless MIS reporting, predictive analytics, and stronger decision support across global operations.": "Mit Echtzeit- und Batch-Pipelines ermöglicht die Lösung automatisiertes Reporting, prädiktive Analysen und datenbasierte Entscheidungen über globale Standorte hinweg.",
+
+    "Future-Ready Data": "Bereit für die Zukunft",
+    "Make your data insight-driven and AI-ready.": "Machen Sie Ihre Daten insight-driven und AI-ready.",
+    "Talk to our experts today.": "Sprechen Sie mit unseren Experten – weil Zukunft mit Daten beginnt.",
+
+
+
+
+    "Services Provided":
+    "Unsere Leistungen im Überblick",
+
+    "ERP Support – SAP, EPICOR, Microsoft Dynamics":
+    "ERP Support – SAP, EPICOR, Microsoft Dynamics",
+
+    "Software Development, Support and Maintenance":
+    "Softwareentwicklung, Wartung und Support",
+
+    "Business Intelligence and Data Analytics, DBA Support":
+    "Business Intelligence, Data Analytics & Datenbank-Services",
+
+    "Dedicated support specialists for 24X7 helpdesk and IT service management":
+    "24/7 Helpdesk und IT Service Management",
+
+    "Security and IT Governance":
+    "Security & IT Governance",
+
+    "Cloud and Infrastructure Management Services":
+    "Cloud- & Infrastrukturmanagement",
+
+    "Helpdesk with Managed Services":
+    "Managed Helpdesk Services",
+
+    "POC Development and Outsourced Product Development":
+    "Proof of Concept (POC) & Outsourced Product Development",
+
+    "Benefits of having RIC as a service partner":
+    "Ihre Vorteile mit RheinBrücke als Servicepartner",
+
+    "International best practice know-how":
+    "Internationale Best Practices und langjährige Erfahrung",
+
+    "Global reach with customers across 42 countries":
+    "Kunden in über 42 Ländern weltweit",
+
+    "Process-driven, but with the right cultural sensitivity":
+    "Prozessgetrieben – mit kulturellem Feingefühl",
+
+    "Delivery innovation":
+    "Innovative Delivery-Modelle und flexible Skalierbarkeit",
+
+    "Highest end user satisfaction":
+    "Höchste Anwenderzufriedenheit",
+
+    "SLA driven Customer-centric approach":
+    "SLA-basierter, kundenorientierter Ansatz",
+
+    "Ease of Scalability with our Right-Shoring approach":
+    "Right-Shoring-Modell für optimale Kosten und Qualität",
+
+    "Leadership team with several decades of experience in setting up and managing large global service delivery organisations":
+    "Führungsteam mit jahrzehntelanger Erfahrung im globalen Service Delivery Management",
+
+    
+    "Our clients are assisted with developing a transparent governance process, enabling applications to be transitioned seamlessly into Application and Production support, to be decommissioned. This releases underlying software (license) and hardware (server) infrastructure.":
+    "Wir begleiten Sie bei der Entwicklung transparenter Governance-Prozesse, damit Anwendungen reibungslos in Betrieb und Support überführt oder außer Betrieb genommen werden können – inklusive Optimierung von Lizenzen und Hardwarekosten.",
+
+    "RheinBrücke provides SLA based application support services based on the ITIL framework. Our support personnel and robust process allow for a smooth transition of application support in optimum timelines and serve to stabilize services during the initial stages of steady state. Timely intervention and a strict focus on continuous improvement along with preventive maintenance ensures the delight of business users.":
+    "Unser ITIL-basiertes Supportmodell garantiert eine stabile Transition und langfristige Servicequalität. Durch präventive Wartung, kontinuierliche Verbesserung und schnelle Reaktionszeiten sichern wir höchste Benutzerzufriedenheit.",
+  
+"Our Methodology":
+    "Unsere Methodik",
+
+    "Our methodology is based on the ITIL framework and ensures that the KPIs agreed with the clients are adhered to and the SLAs are monitored, tracked and met consistently.":
+    "Unsere Methodik basiert auf dem ITIL-Framework und stellt sicher, dass vereinbarte KPIs eingehalten sowie SLAs konsequent überwacht, verfolgt und erfüllt werden.",
+
+    "Scientific application analysis framework which ensures the solution-framework caters to your specific requirement.":
+    "Analytischer, wissenschaftlich fundierter Ansatz für maßgeschneiderte Lösungen",
+
+    "An intensive due diligence to validate assumptions made as part of application analysis and solution development.":
+    "Intensive Due-Diligence-Phase zur Validierung getroffener Annahmen",
+
+    "Rigorous and intensive sessions of orientation to ensure that the team is equipped for transition.":
+    "Schulung und Wissenstransfer für nahtlose Übergänge",
+
+    "Process convergence to align RIC’s process with the clients.":
+    "Prozessharmonisierung zwischen RIC und dem Kunden",
+
+    "Scientifically modelled transition approach with minimal service disruption.":
+    "Service-Transition mit minimaler Unterbrechung",
+
+    "Implementation of continuous improvement initiatives driven by a Six-Sigma Approach.":
+    "Kontinuierliche Verbesserung durch Benchmarking, Kundenumfragen, Automatisierung und Root Cause Analysen nach Six Sigma",
+
+    "With customers across 42 countries, we deeply understand your cultural industry specific needs.":
+    "Mit Kunden in über 42 Ländern verstehen wir kulturelle und branchenspezifische Anforderungen bestens.",
+
+    "Some of our renowned clients include FLSmidth, Visteon, ZF-TRW, Novartis, and EPICOR Corporation.":
+    "Zu unseren renommierten Kunden zählen unter anderem FLSmidth, Visteon, ZF-TRW, Novartis und die EPICOR Corporation.",
+
+"Services Provided":
+    "Weitere Services",
+
+    "IP and Product Development Services":
+    "IP & Produktentwicklung",
+
+    "Proof of Concept Development":
+    "Proof of Concept & Prototyping",
+
+    "New Product Design and Development":
+    "Produktdesign & -entwicklung",
+
+    "Product Engineering and Development":
+    "Produktmigration & Engineering",
+
+    "Platform Migration":
+    "Plattformmigration",
+
+    "Maintenance and Support":
+    "Wartung und Support",
+
+    "Independent Product Testing":
+    "Unabhängiges Produkttesting",
+
+    "Product Release and License Management":
+    "Produkt-Release- & Lizenzmanagement",
+
+    "Enterprise Solutions and Services":
+    "Enterprise Solutions",
+
+    "Custom Development and Integration":
+    "Individuelle Entwicklung & Integration",
+
+    "Implementation, Rollout and Support":
+    "Rollout, Support & Implementierung",
+
+    "Performance Tuning and BI Analytics":
+    "Performance-Tuning & BI-Analytics",
+
+    "Version Upgrade":
+    "Versionsupgrade",
+
+    "Preconfigured Industry Solutions":
+    "Vorgefertigte Branchenlösungen",
+
+    "Product Audit and Recovery":
+    "Produkt-Audit & Wiederherstellung",
+
+    "IT Surround Solution and Services":
+    "IT Surround Solutions",
+
+    "Application Development Maintenance and Support":
+    "Application Development, Maintenance & Support",
+
+    "Portals and Collaborations":
+    "Portale & Kollaborationsplattformen",
+
+    "Product Testing as a Service":
+    "Testing as a Service",
+
+    "SharePoint and .NET upgrades":
+    "SharePoint- & .NET-Modernisierung",
+
+    "Consulting and Advisory Services":
+    "Beratung und Consulting Services",
+
+    "Program / Project Management":
+    "Programm- & Projektmanagement",
+
+    "IT Cost Optimization":
+    "IT-Kostenoptimierung",
+
+    "IT Outsourcing Services":
+    "IT-Outsourcing-Services",
+
+    "IT Due Diligence":
+    "IT Due Diligence",
+
+    "Project Audit and Turnaround":
+    "Projekt-Audit & Turnaround Management",
+
+    "For more information on our Application Maintenance & Support services, please click here.":
+    "Mehr Informationen zu unseren Application Maintenance & Support Services finden Sie hier."
 
 
 

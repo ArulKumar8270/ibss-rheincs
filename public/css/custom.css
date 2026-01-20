@@ -3287,11 +3287,11 @@ body:has(.offcanvas) {
 /*}*/
 
 .testimonial-button-prev {
-	left: -20px;
+	left: -15px;
 }
 
 .testimonial-button-next {
-	right: -20px;
+	right: -10px;
 }
 
 /* tiny responsive tweaks */
@@ -20891,7 +20891,7 @@ body.popup-open .main-header {
 }
 
 .amslide .valueslide p {
-	font-size: 24px;
+	font-size: 21px;
 	line-height: 32px;
 }
 
@@ -22193,4 +22193,10 @@ color:#000 !important;
 	.impressum h1{
 		margin-bottom:20px;
 		margin-top:20px;
+	}
+
+	.merlinimgnew img{
+		width: 70%;
+		height: 100%;
+		object-fit: cover;
 	}

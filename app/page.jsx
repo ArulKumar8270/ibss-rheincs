@@ -270,7 +270,7 @@ export default function Home() {
                       </div>
                       <div className="service-item-body">
                         <h3>{t("Analyse")}</h3>
-                        <p>{t("We start by understanding your business-its core operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact, whether it’s efficiency, margin growth, agility, or customer experience.")}</p>
+                        <p>{t("We start by understanding your business, its core your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact whether it's efficiency, margin growth, agility, or customer experience.")}</p>
                         {/*<div class="ser-btn1">*/}
                         {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
                         {/*        Know More*/}
@@ -493,7 +493,7 @@ export default function Home() {
                           </div>
                           <div className="service-item-body">
                             <h3>{t("Analyse")}</h3>
-                            <p>{t("We start by understanding your business, its core your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact -whether it’s efficiency, margin growth, agility, or customer experience.")}</p>
+                            <p>{t("We start by understanding your business, its core your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact whether it's efficiency, margin growth, agility, or customer experience.")}</p>
                             {/*<div class="ser-btn1">*/}
                             {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
                             {/*        Know More*/}

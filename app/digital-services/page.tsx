@@ -1316,7 +1316,7 @@ export default function AlMl() {
         <div className="col-lg-6">
           {/* Section Title Start */}
           <div className="section-title">
-            <h2 className="text-anime-style-2" data-cursor="-opaque">
+            <h2 className="text-anime-style-21" data-cursor="-opaque">
               {t("Secure and Optimise Operations")}
             </h2>
             <p>

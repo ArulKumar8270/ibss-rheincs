@@ -4,7 +4,9 @@ import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
 import TestimonialandAward from "../Components/TestimonialandAward";
+import {useTranslation} from "../hooks/useTranslation";
 export default function AlMl() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
            <>
@@ -19,20 +21,18 @@ export default function AlMl() {
       <div className="row section-row1 align-items-center builtsec">
         <div className="col-sm-5">
           <div className="section-title">
-            <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Data Engineering &amp; Warehousing
+            <h2 className="text-anime-style-21" data-cursor="-opaque">
+              {t("Data Engineering & Warehousing")}
             </h2>
             <p>
-              Unlock the full potential of your data by consolidating siloed
-              sources into scalable warehouses and lakes.
+              {t("Unlock the full potential of your data by consolidating siloed sources into scalable warehouses and lakes.")}
             </p>
             <p>
-              We design real-time and batch pipelines that ensure seamless data
-              flow, fuel advanced analytics, and enable AI/ML at scale.
+              {t("We design real-time and batch pipelines that ensure seamless data flow, fuel advanced analytics, and enable AI/ML at scale.")}
             </p>
             <div className="ser-btn mt-5">
               <Link href="/contact-us" className="animated-svg-link">
-                Contact Us
+                {t("Contact Us")}
                 <span className="svg-container ">
                   <span className=" right">
                     <svg
@@ -153,7 +153,7 @@ export default function AlMl() {
       <div className="content text-left">
         <div className="section-title ">
           <div className="hero-video-content1 wow fadeInUp mt-4">
-            <h2 className="text-anime-style-2 text-dark">Our Capabilities</h2>
+            <h2 className="text-anime-style-2 text-dark">{t("Our Capabilities")}</h2>
           </div>
         </div>
       </div>
@@ -165,8 +165,8 @@ export default function AlMl() {
             <div className="swiper-slide">
               <div className="mds-waber2">
                 <img src="/new/cr-1.svg" alt="" />
-                <h6> Real-Time &amp; Batch Pipelines </h6>
-                <p>Built for high-volume, high-velocity data.</p>
+                <h6> {t("Real-Time & Batch Pipelines")} </h6>
+                <p>{t("Built for high-volume, high-velocity data.")}</p>
               </div>
             </div>
             {/* Testimonial Slide End */}
@@ -174,8 +174,8 @@ export default function AlMl() {
             <div className="swiper-slide">
               <div className="mds-waber2">
                 <img src="/new/cr-2.svg" alt="" />
-                <h6> Data Consolidation</h6>
-                <p>Unifying ERP, CRM, IoT, and third-party sources.</p>
+                <h6> {t("Data Consolidation")} </h6>
+                <p>{t("Unifying ERP, CRM, IoT, and third-party sources.")}</p>
               </div>
             </div>
             {/* Testimonial Slide End */}
@@ -183,8 +183,8 @@ export default function AlMl() {
             <div className="swiper-slide">
               <div className="mds-waber2">
                 <img src="/new/cr-3.svg" alt="" />
-                <h6> Scalable Warehouses &amp; Lakes </h6>
-                <p>Including Microsoft Fabric OneLake.</p>
+                <h6> {t("Scalable Warehouses & Lakes")} </h6>
+                <p>{t("Including Microsoft Fabric OneLake.")}</p>
               </div>
             </div>
             {/* Testimonial Slide End */}
@@ -192,8 +192,8 @@ export default function AlMl() {
             <div className="swiper-slide">
               <div className="mds-waber2">
                 <img src="/new/cr-4.svg" alt="" />
-                <h6> Analytics &amp; AI/ML Enablement</h6>
-                <p>Powering predictive and real-time insights.</p>
+                <h6> {t("Analytics & AI/ML Enablement")} </h6>
+                <p>{t("Powering predictive and real-time insights.")}</p>
               </div>
             </div>
             {/* Testimonial Slide End */}
@@ -201,8 +201,8 @@ export default function AlMl() {
             <div className="swiper-slide">
               <div className="mds-waber2">
                 <img src="/new/cr-5.svg" alt="" />
-                <h6> Cloud-Native Platforms </h6>
-                <p>Architected on Azure and other leading technologies.</p>
+                <h6> {t("Cloud-Native Platforms")} </h6>
+                <p>{t("Architected on Azure and other leading technologies.")}</p>
               </div>
             </div>
             {/* Testimonial Slide End */}
@@ -430,7 +430,7 @@ export default function AlMl() {
       <div className="platdesc">
         <div className="section-title">
           <h2 className="text-anime-style-2" data-cursor="-opaque">
-            Why Choose Us?
+            {t("Why Choose Us?")}
           </h2>
         </div>
         <div className="row">
@@ -438,15 +438,16 @@ export default function AlMl() {
             <div className="wcu-waber-1">
               <img src="/new/wcu-11.svg" alt="" />
               <p>
-                Proven expertise in modern data architectures and Azure Synapse
-                solutions.
+                {t("Proven expertise in modern data architectures and Azure Synapse solutions.")}
               </p>
             </div>
           </div>
           <div className="col-sm-3 col-6">
             <div className="wcu-waber-1">
               <img src="/new/wcu-12.svg" alt="" />
-              <p>Success with complex, enterprise-scale data challenges.</p>
+              <p>
+                {t("Success with complex, enterprise-scale data challenges.")}
+              </p>
             </div>
           </div>
         </div>
@@ -455,15 +456,16 @@ export default function AlMl() {
             <div className="wcu-waber-1">
               <img src="/new/wcu-13.svg" alt="" />
               <p>
-                Seamless integration with AI/ML frameworks for operational
-                intelligence.
+                {t("Seamless integration with AI/ML frameworks for operational intelligence.")}
               </p>
             </div>
           </div>
           <div className="col-sm-3 col-6">
             <div className="wcu-waber-1">
               <img src="/new/wcu-11.svg" alt="" />
-              <p>End-to-end services: design, build, migrate, and optimise.</p>
+              <p>
+                {t("End-to-end services: design, build, migrate, and optimise.")}
+              </p>
             </div>
           </div>
         </div>
@@ -484,17 +486,13 @@ export default function AlMl() {
                   className="text-anime-style-2 text-center"
                   data-cursor="-opaque"
                 >
-                  Proven in Action – Sembcorp
+                  {t("Proven in Action – Sembcorp")}
                 </h2>
                 <p className="text-center">
-                  For Sembcorp Industries, we built a Power Plant Analytics
-                  (PPA) system that consolidated data from SAP, IoT devices, and
-                  grid meters into a single platform.
+                  {t("For Sembcorp Industries, we built a Power Plant Analytics (PPA) system that consolidated data from SAP, IoT devices, and grid meters into a single platform.")}
                 </p>
                 <p className="text-center">
-                  With real-time and batch pipelines, the solution enabled
-                  seamless MIS reporting, predictive analytics, and stronger
-                  decision support across global operations.
+                  {t("With real-time and batch pipelines, the solution enabled seamless MIS reporting, predictive analytics, and stronger decision support across global operations.")}
                 </p>
               </div>
             </div>
@@ -851,14 +849,14 @@ export default function AlMl() {
         <div className="firstrow">
           <div className="row">
             <div className="col-sm-8">
-              <h2>Future-Ready Data</h2>
-              <p>Make your data insight-driven and AI-ready.</p>
-              <p>Talk to our experts today.</p>
+              <h2>{t("Future-Ready Data")}</h2>
+              <p>{t("Make your data insight-driven and AI-ready.")}</p>
+              <p>{t("Talk to our experts today.")}</p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <Link href="#" className="animated-svg-link">
-                  Contact Us
+                  {t("Contact Us")}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg

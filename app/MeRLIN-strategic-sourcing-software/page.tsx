@@ -1485,10 +1485,13 @@ export default function EnterpriseSolutions() {
         </div>
       </div>
     </div>
-    <div className="marline-bg-video">
-      <video autoPlay={true} muted={true} loop={true} id="myVideo" height="" width="auto">
+    <div className="marline-bg-video merlinimgnew">
+      {/* <video autoPlay={true} muted={true} loop={true} id="myVideo" height="" width="auto">
         <source src="/videos/benefits.mp4" type="video/mp4" />
-      </video>
+      </video> */}
+      
+      <img src="/images/whymerlin.jpg" className="mob-none" alt="" />
+      <img src="/images/whymerlin.jpg" className="system-none" alt="" />
     </div>
   </div>
   <div className=" retail-baner1 sscr-4 retail-baner-11 merlinbenefit kineticsec1 approachh pd60">

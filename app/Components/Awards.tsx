@@ -10,7 +10,7 @@ const Awards = () => {
                         <div className="col-lg-12">
                             <div className="section-title text-center m-auto headingss">
                                 <h2
-                                    className="text-anime-style-2 text-dark text-center"
+                                    className="text-anime-style-21 text-dark text-center"
                                     data-cursor="-opaque"
                                 >
                                     Awards
