@@ -336,7 +336,7 @@ export default function Home() {
                       <div className="service-item-body">
                         <h3>{t("Integrate")}</h3>
                         <p>
-                          {t("Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals – implementing and integrating ERP and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability.")}
+                          {t("Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals, implementing and integrating ERP and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability.")}
                         </p>
                         {/*<div class="ser-btn1">*/}
                         {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
@@ -547,7 +547,7 @@ export default function Home() {
                           <div className="service-item-body">
                             <h3>{t("Integrate")}</h3>
                         <p>
-                          {t("Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals – implementing and integrating ERP and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability.")}
+                          {t("Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals, implementing and integrating ERP and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability.")}
                         </p>
                             {/*<div class="ser-btn1">*/}
                             {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
@@ -884,10 +884,10 @@ export default function Home() {
                     <div className="about-agency-item wow fadeInUp">
                       <div className="agency-item-content">
                         <p>
-                          {t("At RheinBrücke, we believe transformation is not just about technology -it’s about unlocking new business models, new ways of working, and new value for your customers.")}
+                          {t("At RheinBrücke, we believe transformation is not just about technology, it’s about unlocking new business models, new ways of working, and new value for your customers.")}
                         </p>
                         <p>
-                          {t("We help enterprises go beyond incremental change. Whether you’re scaling operations, modernizing your ERP landscape, or launching entirely new services, we enable rapid, meaningful transformation across your organisation -powered by enterprise technology, real-world insight, and strategic execution.")}
+                          {t("We help enterprises go beyond incremental change. Whether you are scaling operations, modernizing your ERP landscape, or launching entirely new services, we enable rapid, meaningful transformation across your organisation -powered by enterprise technology, real-world insight, and strategic execution.")}
                         </p>
                         <div className="ser-btn2">
                           <Link href="/about-us/overview"
@@ -1064,10 +1064,10 @@ export default function Home() {
                     <div className="about-agency-item wow fadeInUp">
                       <div className="agency-item-content">
                         <p>
-                          {t("At RheinBrücke, we believe transformation is not just about technology -it’s about unlocking new business models, new ways of working, and new value for your customers.")}
+                          {t("At RheinBrücke, we believe transformation is not just about technology, it’s about unlocking new business models, new ways of working, and new value for your customers.")}
                         </p>
                         <p>
-                          {t("We help enterprises go beyond incremental change. Whether you’re scaling operations, modernizing your ERP landscape, or launching entirely new services, we enable rapid, meaningful transformation across your organisation -powered by enterprise technology, real-world insight, and strategic execution.")}
+                          {t("We help enterprises go beyond incremental change. Whether you are scaling operations, modernizing your ERP landscape, or launching entirely new services, we enable rapid, meaningful transformation across your organisation -powered by enterprise technology, real-world insight, and strategic execution.")}
                         </p>
                         <div className="ser-btn2">
                           <Link href="/about-us/overview"
@@ -3147,7 +3147,7 @@ export default function Home() {
                       {t("Partnering with Business Worldwide")}
                     </h2>
                     <p>{t("We partner with businesses in over 40 countries to deliver high-impact transformation across key sectors including brand owners and vertical retailers, the retail industry, distribution and supply chain, discrete and process manufacturing, the automotive industry, engineering, procurement and construction as well as the private equity and funding backed ventures.")}</p>
-                    <p>{t("Whether you are mid-sized and scaling, or enterprise-level and rethinking your model -we help you unlock growth.")}</p>
+                    <p>{t("Whether you are mid-sized and scaling, or enterprise-level and rethinking your model, we help you unlock growth.")}</p>
                     <div className="ser-btn2 mt-4">
                       <Link href="/solutions/erp-enterprise-solutions-and-services/erp" className="animated-svg-link1 btn-style-3">
                         {t("Know more")}

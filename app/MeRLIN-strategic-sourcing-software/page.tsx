@@ -1577,9 +1577,7 @@ export default function EnterpriseSolutions() {
             <div className="col-sm-8">
               <h2>Discover the Best Strategic Sourcing Software</h2>
               <p>
-                The best strategic sourcing software to cut costs, reduce risk,
-                and gain real-time visibility—automated in one intelligent
-                platform.
+                The best strategic sourcing software to cut costs, reduce risk, and gain real-time visibility, all automated in one intelligent platform.
               </p>
             </div>
             <div className="col-sm-4">

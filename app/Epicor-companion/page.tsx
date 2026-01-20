@@ -19,7 +19,7 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-6">
           <div className="section-title wow fadeInUp">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              {t("Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&amp;A, IP&amp;O, WMS, Data Analytics, and more")}
+              {t("Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more")}
             </h2>
             <p>
               {t("Epicor Companion Products enhance your core ERP system, enabling end-to-end operational control and insights. They are designed to integrate seamlessly with Epicor ERP for complete business management.")}
@@ -457,7 +457,7 @@ export default function EnterpriseSolutions() {
   </div>
   {/* Hero Section End*/}
   {/* Our Testimonial Section Start */}
-  <div className="our-testimonial epiccompanion pd30">
+  <div className="our-testimonial epiccompanion  pd30">
     <div className="container">
       <div className="row section-row align-items-center">
         <div className="col-lg-6">
@@ -475,7 +475,7 @@ export default function EnterpriseSolutions() {
       <div className="row align-items-center">
         <div className="col-lg-12">
           {/* Testimonial Slider Start */}
-          <div className="testimonial-slider enterslide epiccomp">
+          <div className="testimonial-slider enterslide epiccomp epichgt">
             <div className="swiper">
               <div className="swiper-wrapper">
                 {/* Testimonial Slide Start */}
@@ -569,7 +569,7 @@ export default function EnterpriseSolutions() {
                           </div>
                         </div>
                         <div className="service-item-body oa-para-waber">
-                          <h3>{t("FP&A (Financial Planning &amp; Analysis)")}</h3>
+                          <h3>{t("FP&A (Financial Planning & Analysis)")}</h3>
 
                           <p className="oa-para">
                             {t("Improve budgeting, forecasting, and reporting.")}

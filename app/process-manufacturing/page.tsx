@@ -173,7 +173,7 @@ export default function EnterpriseSolutions() {
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Rising ESG, traceability, and sustainability mandates — particularly in chemicals and oil sectors")}
+                {t("Rising ESG, traceability, and sustainability mandates, particularly in chemicals and oil sectors")}
               </p>
             </div>
             <div className="challenge-point-waber">
@@ -328,7 +328,7 @@ export default function EnterpriseSolutions() {
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {t("L’Oréal and Unilever use AI-driven R&amp;D and lean digital PLM to cut time-to-market by over 40% — we apply the same principles for mid-tier personal care and contract manufacturers")}
+                    {t("L’Oréal and Unilever use AI-driven R&D and lean digital PLM to cut time-to-market by over 40% - we apply the same principles for mid-tier personal care and contract manufacturers")}
                   </p>
                 </div>
                 <div className="bf-content">

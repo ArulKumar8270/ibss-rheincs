@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function EnterpriseSolutions() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
 <>
@@ -20,16 +22,13 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-5">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Fluent Commerce Solutions &amp; Services
+              {t("Fluent Commerce Solutions & Services")}
             </h2>
             <p>
-              Unlock faster, smarter, and more reliable order orchestration with
-              Fluent Commerce.{" "}
+              {t("Unlock faster, smarter, and more reliable order orchestration with Fluent Commerce.")}
             </p>
             <p>
-              At RheinBrücke, we help businesses gain real-time inventory
-              visibility and optimise fulfilment strategies with Fluent
-              Commerce’s cloud-native Distributed Order Management System (OMS).
+              {t("At RheinBrücke, we help businesses gain real-time inventory visibility and optimise fulfilment strategies with Fluent Commerce’s cloud-native Distributed Order Management System (OMS).")}
             </p>
           </div>
         </div>
@@ -56,7 +55,7 @@ export default function EnterpriseSolutions() {
                   className="text-anime-style-2 text-center"
                   data-cursor="-opaque"
                 >
-                  Why Fluent Commerce
+                  {t("Why Fluent Commerce")}
                 </h2>
               </div>
             </div>
@@ -68,7 +67,7 @@ export default function EnterpriseSolutions() {
           <div className="dynamics-advantage-waber">
             <img src="/new/g501.svg" alt="" />
             <p>
-              Real-time inventory visibility across all locations and channels
+              {t("Real-time inventory visibility across all locations and channels")}
             </p>
           </div>
         </div>
@@ -76,8 +75,7 @@ export default function EnterpriseSolutions() {
           <div className="dynamics-advantage-waber">
             <img src="/new/ad2.svg" alt="" />
             <p>
-              Intelligent order routing based on stock, location, SLAs, and
-              priorities
+              {t("Intelligent order routing based on stock, location, SLAs, and priorities")}
             </p>
           </div>
         </div>
@@ -85,21 +83,24 @@ export default function EnterpriseSolutions() {
           <div className="dynamics-advantage-waber">
             <img src="/new/ad3.svg" alt="" />
             <p>
-              Full support for ship-from-store, click &amp; collect, and split
-              orders
+              {t("Full support for ship-from-store, click & collect, and split orders")}
             </p>
           </div>
         </div>
         <div className="col-sm-4 col-12">
           <div className="dynamics-advantage-waber">
             <img src="/new/ad4.svg" alt="" />
-            <p>Seamless API-first integration with eCommerce, ERP, WMS, CRM</p>
+            <p>
+              {t("Seamless API-first integration with eCommerce, ERP, WMS, CRM")}
+            </p>
           </div>
         </div>
         <div className="col-sm-4 col-12">
           <div className="dynamics-advantage-waber">
             <img src="/new/ad5.svg" alt="" />
-            <p>Scalable, MACH-compatible architecture with robust uptime</p>
+            <p>
+              {t("Scalable, MACH-compatible architecture with robust uptime")}
+            </p>
           </div>
         </div>
       </div>
@@ -112,7 +113,7 @@ export default function EnterpriseSolutions() {
         <div className="section-title ">
           <div className="hero-video-content1 wow fadeInUp mt-4">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Our Fluent Commerce Expertise
+              {t("Our Fluent Commerce Expertise")}
             </h2>
           </div>
         </div>
@@ -128,7 +129,9 @@ export default function EnterpriseSolutions() {
               <div className="valueslide">
                 <img src="/images/implementation.svg" alt="" />
                 {/* <h6> Dynamics 365 ERP & CRM Solutions</h6> */}
-                <p>Fluent Commerce Implementation &amp; Configuration</p>
+                <p>
+                  {t("Fluent Commerce Implementation & Configuration")}
+                </p>
               </div>
             </div>
             {/* Testimonial Slide End */}
@@ -136,7 +139,9 @@ export default function EnterpriseSolutions() {
             <div className="swiper-slide">
               <div className="valueslide">
                 <img src="/images/end-t-end-order-management.svg" alt="" />
-                <p>End-to-end Order Management Design &amp; Rollout</p>
+                <p>
+                  {t("End-to-end Order Management Design & Rollout")}
+                </p>
               </div>
             </div>
             {/* Testimonial Slide End */}
@@ -145,7 +150,7 @@ export default function EnterpriseSolutions() {
               <div className="valueslide">
                 <img src="/images/system-integration.svg" alt="" />
                 <p>
-                  System Integration with ERP, WMS, CRM, and eCommerce platforms
+                  {t("System Integration with ERP, WMS, CRM, and eCommerce platforms")}
                 </p>
               </div>
             </div>
@@ -154,7 +159,9 @@ export default function EnterpriseSolutions() {
             <div className="swiper-slide">
               <div className="valueslide">
                 <img src="/images/inventory-visibility.svg" alt="" />
-                <p>Inventory Visibility &amp; Fulfilment Optimisation</p>
+                <p>
+                  {t("Inventory Visibility & Fulfilment Optimisation")}
+                </p>
               </div>
             </div>
             {/* Testimonial Slide End */}
@@ -162,7 +169,9 @@ export default function EnterpriseSolutions() {
             <div className="swiper-slide">
               <div className="valueslide">
                 <img src="/images/ship-to-store.svg" alt="" />
-                <p>Enablement for Ship-from-Store and Click &amp; Collect</p>
+                <p>
+                  {t("Enablement for Ship-from-Store and Click & Collect")}
+                </p>
               </div>
             </div>
             {/* Testimonial Slide End */}
@@ -170,7 +179,9 @@ export default function EnterpriseSolutions() {
             <div className="swiper-slide">
               <div className="valueslide">
                 <img src="/images/custom-workflow.svg" alt="" />
-                <p>Custom Workflows &amp; API Development</p>
+                <p>
+                  {t("Custom Workflows & API Development")}
+                </p>
               </div>
             </div>
             {/* Testimonial Slide End */}
@@ -178,7 +189,9 @@ export default function EnterpriseSolutions() {
             <div className="swiper-slide">
               <div className="valueslide">
                 <img src="/images/oms-support.svg" alt="" />
-                <p>Managed OMS Support &amp; Monitoring</p>
+                <p>
+                  {t("Managed OMS Support & Monitoring")}
+                </p>
               </div>
             </div>
             {/* Testimonial Slide End */}
@@ -419,7 +432,7 @@ export default function EnterpriseSolutions() {
                   className="text-anime-style-2 text-dark"
                   data-cursor="-opaque"
                 >
-                  Why RheinBrücke
+                  {t("Why RheinBrücke")}
                 </h2>
               </div>
             </div>
@@ -427,20 +440,26 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-12">
                 <div className="challenge-point-waber self-service">
                   <img src="/images/ss1.svg" alt="" />
-                  <p>Composable commerce integration with MACH expertise</p>
+                  <p>
+                    {t("Composable commerce integration with MACH expertise")}
+                  </p>
                 </div>
                 <div className="challenge-point-waber self-service">
                   <img src="/images/ss2.svg" alt="" />
-                  <p>Deep domain knowledge in retail, B2B, and distribution</p>
+                  <p>
+                    {t("Deep domain knowledge in retail, B2B, and distribution")}
+                  </p>
                 </div>
                 <div className="challenge-point-waber self-service">
                   <img src="/images/ss3.svg" alt="" />
-                  <p>Global scale delivery with agile, phased rollouts</p>
+                  <p>
+                    {t("Global scale delivery with agile, phased rollouts")}
+                  </p>
                 </div>
                 <div className="challenge-point-waber self-service">
                   <img src="/images/ss4.svg" alt="" />
                   <p>
-                    Deployments focused on speed, CX, and fulfilment efficiency
+                    {t("Deployments focused on speed, CX, and fulfilment efficiency")}
                   </p>
                 </div>
               </div>
@@ -464,13 +483,17 @@ export default function EnterpriseSolutions() {
         <div className="firstrow">
           <div className="row">
             <div className="col-sm-8">
-              <h2>Modernise fulfilment and inventory operations </h2>
-              <p>Speak to our Fluent Commerce specialists today.</p>
+              <h2>
+                {t("Modernise fulfilment and inventory operations")}
+              </h2>
+              <p>
+                {t("Speak to our Fluent Commerce specialists today.")}
+              </p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <Link href="/contact-us" className="animated-svg-link">
-                  Contact Us
+                  {t("Contact Us")}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg

@@ -1,7 +1,10 @@
+"use client";
 import React from 'react'
 import CommomLayout from '../Components/CommomLayout'
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 const page = () => {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
            <>
@@ -18,17 +21,13 @@ const page = () => {
         <div className="col-sm-5">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              User Experience (UX/UI)
+              {t("User Experience (UX/UI)")}
             </h2>
             <p>
-              In today’s digital-first world, great design is more than
-              looks—it’s about creating seamless, intuitive experiences that
-              drive engagement, satisfaction, and loyalty.{" "}
+              {t("In today’s digital-first world, great design is more than looks-it’s about creating seamless, intuitive experiences that drive engagement, satisfaction, and loyalty.")}
             </p>
             <p>
-              We design responsive, accessible, and future-ready interfaces that
-              empower users and deliver exceptional experiences across web,
-              mobile, and immersive platforms.
+              {t("We design responsive, accessible, and future-ready interfaces that empower users and deliver exceptional experiences across web, mobile, and immersive platforms.")}
             </p>
           </div>
         </div>
@@ -55,7 +54,7 @@ const page = () => {
                   className="text-anime-style-2 text-center"
                   data-cursor="-opaque"
                 >
-                  Why Choose Us?{" "}
+                  {t("Why Choose Us?")}
                 </h2>
               </div>
             </div>
@@ -67,8 +66,7 @@ const page = () => {
           <div className="dynamics-advantage-waber">
             <img src="/new/g501.svg" alt="" />
             <p>
-              Human-Centred Design – clarity, simplicity, and impact at the
-              core.
+              {t("Human-Centred Design – clarity, simplicity, and impact at the core.")}
             </p>
           </div>
         </div>
@@ -76,8 +74,7 @@ const page = () => {
           <div className="dynamics-advantage-waber">
             <img src="/new/ad2.svg" alt="" />
             <p>
-              Experience across industries delivering modern, digital-first
-              interfaces.
+              {t("Experience across industries delivering modern, digital-first interfaces.")}
             </p>
           </div>
         </div>
@@ -85,8 +82,7 @@ const page = () => {
           <div className="dynamics-advantage-waber">
             <img src="/new/ad3.svg" alt="" />
             <p>
-              Proven ability to blend creativity with technology for scalable
-              solutions.
+              {t("Proven ability to blend creativity with technology for scalable solutions.")}
             </p>
           </div>
         </div>
@@ -94,8 +90,7 @@ const page = () => {
           <div className="dynamics-advantage-waber">
             <img src="/new/ad4.svg" alt="" />
             <p>
-              A track record of future-ready, engaging, and accessible designs
-              that deliver results.
+              {t("A track record of future-ready, engaging, and accessible designs that deliver results.")}
             </p>
           </div>
         </div>
@@ -123,7 +118,7 @@ const page = () => {
                   className="text-anime-style-2 text-dark"
                   data-cursor="-opaque"
                 >
-                  Our Capabilities
+                  {t("Our Capabilities")}
                 </h2>
               </div>
             </div>
@@ -132,36 +127,31 @@ const page = () => {
                 <div className="challenge-point-waber self-service">
                   <img src="/images/ss1.svg" alt="" />
                   <p>
-                    <b>UX/UI Design</b> – crafted with industry-leading tools
-                    like Figma, Webflow, Anima, and Adobe XD.
+                    <b>{t("UX/UI Design")}</b> – {t("crafted with industry-leading tools like Figma, Webflow, Anima, and Adobe XD.")}
                   </p>
                 </div>
                 <div className="challenge-point-waber self-service">
                   <img src="/images/ss2.svg" alt="" />
                   <p>
-                    <b>Responsive &amp; Inclusive Design</b> – accessible
-                    experiences for all platforms and users.
+                    <b>{t("Responsive & Inclusive Design")}</b> – {t("accessible experiences for all platforms and users.")}
                   </p>
                 </div>
                 <div className="challenge-point-waber self-service">
                   <img src="/images/ss3.svg" alt="" />
                   <p>
-                    <b>Immersive Experiences</b> – AR/VR-enabled journeys for
-                    next-generation engagement.
+                    <b>{t("Immersive Experiences")}</b> – {t("AR/VR-enabled journeys for next-generation engagement.")}
                   </p>
                 </div>
                 <div className="challenge-point-waber self-service">
                   <img src="/images/ss4.svg" alt="" />
                   <p>
-                    <b>Design Systems &amp; Prototyping</b> – accelerating
-                    time-to-market and consistency.
+                    <b>{t("Design Systems & Prototyping")}</b> – {t("accelerating time-to-market and consistency.")}
                   </p>
                 </div>
                 <div className="challenge-point-waber self-service">
                   <img src="/images/ss5.svg" alt="" />
                   <p>
-                    <b>Continuous Optimisation</b> – improving engagement,
-                    conversion, and user satisfaction.
+                    <b>{t("Continuous Optimisation")}</b> – {t("improving engagement, conversion, and user satisfaction.")}
                   </p>
                 </div>
               </div>
@@ -185,16 +175,18 @@ const page = () => {
         <div className="firstrow">
           <div className="row">
             <div className="col-sm-8">
-              <h2>Design Experiences Users Love </h2>
+              <h2>{t("Design Experiences Users Love")}</h2>
               <p>
-                Ready to create interfaces that connect, engage, and inspire?{" "}
+                {t("Ready to create interfaces that connect, engage, and inspire?")}
               </p>
-              <p>Talk to our UX experts today. </p>
+              <p>
+                {t("Talk to our UX experts today.")}
+              </p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <Link href="/contact-us" className="animated-svg-link">
-                  Contact Us
+                  {t("Contact Us")}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg

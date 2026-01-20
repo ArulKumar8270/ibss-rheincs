@@ -1518,7 +1518,7 @@ export default function digitalsolution() {
             <p>
               Ensure operational resilience, security, and continuous
               performance improvement. We help you protect, monitor, and refine
-              your environment — so your business stays ahead, always.
+              your environment - so your business stays ahead, always.
             </p>
             <h5>Managed Services &amp; Security Governance</h5>
             <p>

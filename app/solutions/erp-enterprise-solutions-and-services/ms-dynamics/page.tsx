@@ -3087,6 +3087,7 @@ export default function EnterpriseSolutions() {
                         <img src="/new/msc2.svg" alt="" />
                         <p>
                           {t("Leverage our expertise as a Microsoft Solutions Partner to deliver integrated, enterprise-grade solutions.")}
+
                         </p>
                         <div className="ser-btn1">
                           <Link href="/rheinbrucke-a-microsoft-partner"
@@ -3445,7 +3446,7 @@ export default function EnterpriseSolutions() {
                       {t("Explore our enterprise platform capabilities")}
                     </h2>
                   </div>
-                  <div className="row">
+                  <div className="row ">
                     {/* Testimonial Slider Start */}
                     <div className="testimonial-slider3 projectslider mobilecapab">
                       <div className="swiper">
@@ -4387,6 +4388,9 @@ export default function EnterpriseSolutions() {
           </div>
         </div>
         <TestimonialandAward />
+
+
+
 
   {/* Page Faqs Start */}
         <div className="page-faqs bggray pd60">

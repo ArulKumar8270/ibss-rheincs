@@ -1038,7 +1038,7 @@ export default function EnterpriseSolutions() {
 
                       </p>
                       <p>
-                        {t("The methodology’s five key stages—Prepare, Plan, Design, Validate, and Deploy—enable structured execution.")}
+                        {t("The methodology’s five key stages-Prepare, Plan, Design, Validate, and Deploy-enable structured execution.")}
                       </p>
                       <p>
                         {t("It integrates the best practices of Waterfall and Agile practices to optimize performance and delivery outcomes")}
@@ -2034,7 +2034,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("Epicor Companion Products")}</h3>
                                 <p>
-                                {t("Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&amp;A, IP&amp;O, WMS, Data Analytics, and more.")}
+                                {t("Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more.")}
 
                                 </p>
                                 <div className="ser-btn1">
@@ -2320,7 +2320,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("Industry Verticals Solutions for Epicor ERP")}</h3>
                                 <p>
-                                  {t("Manufacturing, Oil &amp; Gas, EPC &amp; Construction, Architecture and Interior Design, Retail, and Distribution. Each solution addresses the unique workflows and compliance needs of its industry.")}
+                                  {t("Manufacturing, Oil & Gas, EPC & Construction, Architecture and Interior Design, Retail, and Distribution. Each solution addresses the unique workflows and compliance needs of its industry.")}
                                 </p>
                                 <div className="ser-btn1">
                                   <Link href="/Epicor-epicpay"
@@ -3354,7 +3354,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("Epicor Companion Products")}</h3>
                                 <p>
-                                    {t("Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&amp;A, IP&amp;O, WMS, Data Analytics, and more.")}
+                                    {t("Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more.")}
                                 </p>
                                 <div className="ser-btn1">
                                   <Link href="#"
@@ -3639,7 +3639,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("Industry Verticals Solutions for Epicor ERP")}</h3>
                                 <p>
-                                    {t("Manufacturing, Oil &amp; Gas, EPC &amp; Construction, Architecture and Interior Design, Retail, and Distribution. Each solution addresses the unique workflows and compliance needs of its industry.")}
+                                    {t("Manufacturing, Oil & Gas, EPC & Construction, Architecture and Interior Design, Retail, and Distribution. Each solution addresses the unique workflows and compliance needs of its industry.")}
                                 </p>
                                 <div className="ser-btn1">
                                   <Link href="#"
@@ -4016,7 +4016,7 @@ export default function EnterpriseSolutions() {
                     <div className="pill-cont">
                       {/* <h5>Project Management</h5> */}
                       <p>
-                         {t("The methodology’s five key stages - Prepare, Plan, Design,Validate, and Deploy – enable structured execution.")}
+                         {t("The methodology’s five key stages - Prepare, Plan, Design,Validate, and Deploy - enable structured execution.")}
                       </p>
                     </div>
                   </div>
@@ -4068,7 +4068,7 @@ export default function EnterpriseSolutions() {
                       {/* <h5>Project Management</h5> */}
                       <p>
                         {" "}
-                        {t("The methodology’s five key stages - Prepare, Plan, Design,Validate, and Deploy – enable structured execution.")}
+                        {t("The methodology’s five key stages - Prepare, Plan, Design,Validate, and Deploy - enable structured execution.")}
                       </p>
                     </div>
                   </div>
@@ -4133,7 +4133,7 @@ export default function EnterpriseSolutions() {
                     <div className="service-item-body1 epicright">
                       {/* <h3>Mobile Accessibility</h3> */}
                       <h3>
-                        {t("Industry-specific knowledge in manufacturing, oil &amp; gas, retail, construction, and more")}
+                        {t("Industry-specific knowledge in manufacturing, oil & gas, retail, construction, and more")}
                       </h3>
                       <div className="text-center">
                         <img src="/images/advant4.svg" alt="" />
@@ -4582,7 +4582,7 @@ export default function EnterpriseSolutions() {
                         />
                       </svg>
                       <p>
-                        ERP Consulting &amp; Advisory aligned with business priorities
+                        ERP Consulting & Advisory aligned with business priorities
                       </p>
                     </div>
                   </div>

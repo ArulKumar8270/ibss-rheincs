@@ -1383,7 +1383,7 @@ export default function AlMl() {
             <div className="col-sm-8">
               <h2>{t("Built for Today, Ready for What’s Next")}</h2>
               <p>
-                {t("Every engagement is designed for measurable value — modernising systems, activating data, transforming user experiences, and safeguarding operations.")}
+                {t("Every engagement is designed for measurable value - modernising systems, activating data, transforming user experiences, and safeguarding operations.")}
               </p>
               <p>{t("Let’s operationalise your digital future.")}</p>
             </div>

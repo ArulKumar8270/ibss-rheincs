@@ -7269,7 +7269,7 @@ body:has(.offcanvas) {
 .testimonial-slider .flip-card-inner h3 {
 	color: #000 !important;
 	/* height: 65px; */
-	margin-bottom: 24px;
+	margin-bottom: 10px;
 	line-height: 25px;
 }
 
@@ -18194,7 +18194,15 @@ body.no-scroll {
 }
 
 .epiccomp h3 {
+	height: 50px !important;
+}
+
+.epiccomp h3 {
 	height: 70px !important;
+}
+.epiccompanion .epichgt h3{
+	height: 40px !important;
+
 }
 
 .epiccomp p {

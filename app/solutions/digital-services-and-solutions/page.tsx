@@ -1310,7 +1310,7 @@ export default function digitalsolution() {
             <div className="section-title">
               <div className="hero-video-content wow fadeInUp mt-4">
                 <h2 className="text-anime-style-2" data-cursor="-opaque">
-                  Digital Solutions – Innovating Business, One Solution at a
+                  Digital Solutions - Innovating Business, One Solution at a
                   Time
                 </h2>
                 <p>
@@ -1727,7 +1727,7 @@ export default function digitalsolution() {
                         {/* <i class="bi bi-pie-chart-fill"></i> */}
                       </div>
                       <h3>
-                        ERP-CRM Integrations &amp; Cloud-Native Solutions:
+                        ERP-CRM Integrations & Cloud-Native Solutions:
                       </h3>
                       <ul>
                         <li>
@@ -2102,7 +2102,7 @@ export default function digitalsolution() {
                       {/*<img src="/images/ss6.svg" alt="">*/}
                       {/* <i class="bi bi-pie-chart-fill"></i> */}
                     </div>
-                    <h3>ERP-CRM Integrations &amp; Cloud-Native Solutions:</h3>
+                    <h3>ERP-CRM Integrations & Cloud-Native Solutions:</h3>
                     <ul>
                       <li>
                         Unify business processes with scalable, cloud-native app
@@ -2367,7 +2367,7 @@ export default function digitalsolution() {
             <div className="challenge-point-waber self-service">
               <img src="/images/app2.svg" alt="" />
               <div className="pill-cont">
-                <h5>AI/ML &amp; Data Analytics:</h5>
+                <h5>AI/ML & Data Analytics:</h5>
                 <p>
                   {" "}
                   Deploy AI solutions using Azure Machine Learning and Large
@@ -2535,7 +2535,7 @@ export default function digitalsolution() {
             <div className="challenge-point-waber self-service">
               <img src="/images/app2.svg" alt="" />
               <div className="pill-cont">
-                <h5>AI/ML &amp; Data Analytics:</h5>
+                <h5>AI/ML & Data Analytics:</h5>
                 <p>
                   {" "}
                   Deploy AI solutions using Azure Machine Learning and Large
@@ -2684,7 +2684,7 @@ export default function digitalsolution() {
               Empower Users and Enhance Digital Experiences
             </h2>
             <p>
-              Transformation isn’t just about systems, — it’s about people. We
+              Transformation isn’t just about systems, it’s about people. We
               deliver modern, intuitive digital experiences and empower users
               with tools that accelerate productivity and decision-making.
             </p>
@@ -9713,9 +9713,9 @@ export default function digitalsolution() {
             <p>
               Ensure operational resilience, security, and continuous
               performance improvement. We help you protect, monitor, and refine
-              your environment — so your business stays ahead, always.
+              your environment - so your business stays ahead, always.
             </p>
-            <h5>Managed Services &amp; Security Governance</h5>
+            <h5>Managed Services & Security Governance</h5>
             <p>
               Deliver managed security services with Microsoft Entra, Defender,
               and Azure Sentinel. Monitor infrastructure health, operational

@@ -368,7 +368,7 @@ export default function AlMl() {
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    {t("Commercially focused — committed to profitability protection, operational agility, and delivery performance")}
+                                                    {t("Commercially focused - committed to profitability protection, operational agility, and delivery performance")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
