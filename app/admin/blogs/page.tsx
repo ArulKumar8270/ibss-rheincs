@@ -486,9 +486,99 @@ export default function AdminBlogsPage() {
   const isTypingRef = useRef<boolean>(false)
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
+  // Function to convert YouTube URLs to iframes
+  const convertYouTubeUrlsToIframes = useCallback((html: string): string => {
+    if (!html) return html
+    
+    // Extract video ID from various YouTube URL formats
+    const extractVideoId = (url: string): string | null => {
+      // Match embed URLs: youtube.com/embed/VIDEO_ID
+      let match = url.match(/youtube\.com\/embed\/([a-zA-Z0-9_-]+)/i)
+      if (match) return match[1]
+      
+      // Match watch URLs: youtube.com/watch?v=VIDEO_ID
+      match = url.match(/youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)/i)
+      if (match) return match[1]
+      
+      // Match short URLs: youtu.be/VIDEO_ID
+      match = url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/i)
+      if (match) return match[1]
+      
+      return null
+    }
+    
+    let processed = html
+    
+    // Skip if content already has iframes (to avoid double processing)
+    if (processed.includes('<iframe')) {
+      // Only process if there are YouTube URLs outside of iframes
+      const hasYouTubeUrl = /https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9_-]+)/i.test(processed)
+      if (!hasYouTubeUrl) {
+        return processed
+      }
+    }
+    
+    // Pattern to match YouTube URLs
+    const youtubeUrlPattern = /(https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9_-]+)(?:\?[^"'\s<>]*)?)/gi
+    
+    // Replace YouTube URLs that are not inside iframe or link tags
+    processed = processed.replace(youtubeUrlPattern, (match) => {
+      // Check if this match is already inside an iframe or link
+      const matchIndex = processed.indexOf(match)
+      const beforeMatch = processed.substring(0, matchIndex)
+      const afterMatch = processed.substring(matchIndex + match.length)
+      
+      // Check if inside an iframe tag
+      const lastIframeOpen = beforeMatch.lastIndexOf('<iframe')
+      const lastIframeClose = beforeMatch.lastIndexOf('</iframe>')
+      if (lastIframeOpen > lastIframeClose && lastIframeOpen !== -1) {
+        return match // Already in iframe
+      }
+      
+      // Check if inside a link tag
+      const lastLinkOpen = beforeMatch.lastIndexOf('<a')
+      const lastLinkClose = beforeMatch.lastIndexOf('</a>')
+      if (lastLinkOpen > lastLinkClose && lastLinkOpen !== -1) {
+        return match // Inside a link
+      }
+      
+      // Extract video ID
+      const videoId = extractVideoId(match)
+      if (!videoId) return match
+      
+      // Create iframe
+      const embedUrl = `https://www.youtube.com/embed/${videoId}`
+      return `<iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; max-width: 560px; height: 315px; display: block; margin: 20px auto;"></iframe>`
+    })
+    
+    // Handle URLs in paragraph tags (replace the entire paragraph with iframe)
+    processed = processed.replace(/<p[^>]*>([^<]*https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9_-]+)[^<]*)<\/p>/gi, (match, content) => {
+      // Skip if already contains iframe
+      if (content.includes('<iframe')) {
+        return match
+      }
+      
+      // Extract URL and video ID
+      const urlMatch = content.match(/(https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9_-]+)(?:\?[^"'\s<>]*)?)/i)
+      if (urlMatch) {
+        const videoId = extractVideoId(urlMatch[0])
+        if (videoId) {
+          const embedUrl = `https://www.youtube.com/embed/${videoId}`
+          return `<p style="text-align: center;"><iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; max-width: 560px; height: 315px; display: block; margin: 20px auto;"></iframe></p>`
+        }
+      }
+      return match
+    })
+    
+    return processed
+  }, [])
+
   const handleContentChange = useCallback((value: string) => {
+    // Convert YouTube URLs to iframes
+    const processedValue = convertYouTubeUrlsToIframes(value)
+    
     // Store content in ref immediately
-    contentRef.current = value
+    contentRef.current = processedValue
     isTypingRef.current = true
     
     // Clear existing timeout
@@ -506,16 +596,20 @@ export default function AdminBlogsPage() {
         return prev
       })
     }, 500) // Update state 500ms after last keystroke
-  }, [])
+  }, [convertYouTubeUrlsToIframes])
 
   const handleEdit = (blog: Blog) => {
     setEditingBlog(blog)
     // Convert ISO date to datetime-local format
     const createdDate = blog.created_at ? new Date(blog.created_at).toISOString().slice(0, 16) : ''
+    
+    // Convert YouTube URLs to iframes when loading content for editing
+    const processedContent = convertYouTubeUrlsToIframes(blog.content)
+    
       setFormData({
         title: blog.title,
         slug: blog.slug,
-        content: blog.content,
+        content: processedContent,
         excerpt: blog.excerpt || '',
         author: blog.author || '',
         author_linkedin: blog.author_linkedin || '',
@@ -526,7 +620,7 @@ export default function AdminBlogsPage() {
         industries: blog.industries || []
       })
     // Sync ref with initial content
-    contentRef.current = blog.content
+    contentRef.current = processedContent
     isTypingRef.current = false
     if (typingTimeoutRef.current) {
       clearTimeout(typingTimeoutRef.current)
@@ -849,22 +943,16 @@ export default function AdminBlogsPage() {
                 <style jsx global>{`
                   .ql-container {
                     min-height: 400px;
+                    height: max-content;
+                  }
+                  .ql-editor {
+                    min-height: 400px;
+                    height: max-content;
                     font-size: 14px;
                     position: relative;
                     isolation: isolate;
                     contain: layout style paint;
-                  }
-                  .ql-editor {
-                    min-height: 400px;
-                    overflow-anchor: none !important;
-                    scroll-behavior: auto !important;
-                    overscroll-behavior: contain !important;
-                    -webkit-overflow-scrolling: touch;
-                    contain: strict !important;
-                    content-visibility: auto;
-                    transform: translate3d(0, 0, 0);
-                    backface-visibility: hidden;
-                    perspective: 1000px;
+                    
                   }
                   .ql-editor:focus {
                     outline: none;
@@ -975,6 +1063,19 @@ export default function AdminBlogsPage() {
                     visibility: visible !important;
                     opacity: 1 !important;
                     cursor: default !important;
+                  }
+                  .ql-editor iframe {
+                    width: 100% !important;
+                    max-width: 560px !important;
+                    height: 315px !important;
+                    display: block !important;
+                    margin: 20px auto !important;
+                    border: none !important;
+                    border-radius: 8px !important;
+                  }
+                  .ql-editor p:has(iframe) {
+                    text-align: center !important;
+                    margin: 20px 0 !important;
                   }
                 `}</style>
               </div>
