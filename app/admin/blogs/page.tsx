@@ -486,99 +486,103 @@ export default function AdminBlogsPage() {
   const isTypingRef = useRef<boolean>(false)
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  // Function to convert YouTube URLs to iframes
+  // Function to convert YouTube URLs to iframes (only when needed, very conservative)
   const convertYouTubeUrlsToIframes = useCallback((html: string): string => {
-    if (!html) return html
+    if (!html || typeof html !== 'string') return html
     
-    // Extract video ID from various YouTube URL formats
-    const extractVideoId = (url: string): string | null => {
-      // Match embed URLs: youtube.com/embed/VIDEO_ID
-      let match = url.match(/youtube\.com\/embed\/([a-zA-Z0-9_-]+)/i)
-      if (match) return match[1]
+    try {
+      // Extract video ID from various YouTube URL formats
+      const extractVideoId = (url: string): string | null => {
+        if (!url || typeof url !== 'string') return null
+        
+        // Match embed URLs: youtube.com/embed/VIDEO_ID
+        let match = url.match(/youtube\.com\/embed\/([a-zA-Z0-9_-]+)/i)
+        if (match && match[1]) return match[1]
+        
+        // Match watch URLs: youtube.com/watch?v=VIDEO_ID
+        match = url.match(/youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)/i)
+        if (match && match[1]) return match[1]
+        
+        // Match short URLs: youtu.be/VIDEO_ID
+        match = url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/i)
+        if (match && match[1]) return match[1]
+        
+        return null
+      }
       
-      // Match watch URLs: youtube.com/watch?v=VIDEO_ID
-      match = url.match(/youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)/i)
-      if (match) return match[1]
-      
-      // Match short URLs: youtu.be/VIDEO_ID
-      match = url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/i)
-      if (match) return match[1]
-      
-      return null
-    }
-    
-    let processed = html
-    
-    // Skip if content already has iframes (to avoid double processing)
-    if (processed.includes('<iframe')) {
-      // Only process if there are YouTube URLs outside of iframes
-      const hasYouTubeUrl = /https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9_-]+)/i.test(processed)
+      // Quick check: if no YouTube URLs at all, return immediately
+      const hasYouTubeUrl = /https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9_-]+)/i.test(html)
       if (!hasYouTubeUrl) {
-        return processed
-      }
-    }
-    
-    // Pattern to match YouTube URLs
-    const youtubeUrlPattern = /(https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9_-]+)(?:\?[^"'\s<>]*)?)/gi
-    
-    // Replace YouTube URLs that are not inside iframe or link tags
-    processed = processed.replace(youtubeUrlPattern, (match) => {
-      // Check if this match is already inside an iframe or link
-      const matchIndex = processed.indexOf(match)
-      const beforeMatch = processed.substring(0, matchIndex)
-      const afterMatch = processed.substring(matchIndex + match.length)
-      
-      // Check if inside an iframe tag
-      const lastIframeOpen = beforeMatch.lastIndexOf('<iframe')
-      const lastIframeClose = beforeMatch.lastIndexOf('</iframe>')
-      if (lastIframeOpen > lastIframeClose && lastIframeOpen !== -1) {
-        return match // Already in iframe
+        return html // No YouTube URLs, return as is
       }
       
-      // Check if inside a link tag
-      const lastLinkOpen = beforeMatch.lastIndexOf('<a')
-      const lastLinkClose = beforeMatch.lastIndexOf('</a>')
-      if (lastLinkOpen > lastLinkClose && lastLinkOpen !== -1) {
-        return match // Inside a link
-      }
+      let processed = html
+      let changed = false
       
-      // Extract video ID
-      const videoId = extractVideoId(match)
-      if (!videoId) return match
+      // More precise pattern - only match complete YouTube URLs
+      const youtubeUrlPattern = /\b(https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9_-]+)(?:\?[^"'\s<>]*)?)\b/gi
       
-      // Create iframe
-      const embedUrl = `https://www.youtube.com/embed/${videoId}`
-      return `<iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; max-width: 560px; height: 315px; display: block; margin: 20px auto;"></iframe>`
-    })
-    
-    // Handle URLs in paragraph tags (replace the entire paragraph with iframe)
-    processed = processed.replace(/<p[^>]*>([^<]*https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9_-]+)[^<]*)<\/p>/gi, (match, content) => {
-      // Skip if already contains iframe
-      if (content.includes('<iframe')) {
-        return match
-      }
-      
-      // Extract URL and video ID
-      const urlMatch = content.match(/(https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9_-]+)(?:\?[^"'\s<>]*)?)/i)
-      if (urlMatch) {
-        const videoId = extractVideoId(urlMatch[0])
+      // Find all matches first to avoid index issues
+      const matches: Array<{ index: number; url: string; videoId: string | null }> = []
+      let match
+      while ((match = youtubeUrlPattern.exec(html)) !== null) {
+        const videoId = extractVideoId(match[0])
         if (videoId) {
-          const embedUrl = `https://www.youtube.com/embed/${videoId}`
-          return `<p style="text-align: center;"><iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; max-width: 560px; height: 315px; display: block; margin: 20px auto;"></iframe></p>`
+          matches.push({
+            index: match.index,
+            url: match[0],
+            videoId
+          })
         }
       }
-      return match
-    })
-    
-    return processed
+      
+      // Process matches in reverse order to maintain indices
+      for (let i = matches.length - 1; i >= 0; i--) {
+        const { index, url, videoId } = matches[i]
+        const beforeMatch = processed.substring(0, index)
+        
+        // Skip if already inside an iframe
+        const lastIframeOpen = beforeMatch.lastIndexOf('<iframe')
+        const lastIframeClose = beforeMatch.lastIndexOf('</iframe>')
+        if (lastIframeOpen > lastIframeClose && lastIframeOpen !== -1) {
+          continue // Already in iframe
+        }
+        
+        // Skip if inside a link tag
+        const lastLinkOpen = beforeMatch.lastIndexOf('<a')
+        const lastLinkClose = beforeMatch.lastIndexOf('</a>')
+        if (lastLinkOpen > lastLinkClose && lastLinkOpen !== -1) {
+          continue // Inside a link
+        }
+        
+        // Skip if inside src attribute
+        const lastSrc = beforeMatch.lastIndexOf('src=')
+        if (lastSrc !== -1) {
+          const afterSrc = processed.substring(lastSrc, index + url.length)
+          if (afterSrc.includes('"') || afterSrc.includes("'")) {
+            continue // Inside src attribute
+          }
+        }
+        
+        // Convert to iframe
+        if (videoId) {
+          const embedUrl = `https://www.youtube.com/embed/${videoId}`
+          const iframeHtml = `<iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; max-width: 560px; height: 315px; display: block; margin: 20px auto;"></iframe>`
+          processed = processed.substring(0, index) + iframeHtml + processed.substring(index + url.length)
+          changed = true
+        }
+      }
+      
+      return changed ? processed : html
+    } catch (error) {
+      console.error('Error converting YouTube URLs:', error)
+      return html // Return original on error
+    }
   }, [])
 
   const handleContentChange = useCallback((value: string) => {
-    // Convert YouTube URLs to iframes
-    const processedValue = convertYouTubeUrlsToIframes(value)
-    
-    // Store content in ref immediately
-    contentRef.current = processedValue
+    // Store content in ref immediately (no processing during typing)
+    contentRef.current = value
     isTypingRef.current = true
     
     // Clear existing timeout
@@ -589,14 +593,48 @@ export default function AdminBlogsPage() {
     // Update state after user stops typing (debounced)
     typingTimeoutRef.current = setTimeout(() => {
       isTypingRef.current = false
+      
+      // Only check for YouTube URLs if content contains YouTube URL patterns
+      // This prevents unnecessary processing
+      const hasYouTubeUrl = /https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9_-]+)/i.test(contentRef.current)
+      
+      if (hasYouTubeUrl) {
+        // Only convert YouTube URLs when user stops typing
+        const processedValue = convertYouTubeUrlsToIframes(contentRef.current)
+        
+        // Only update if conversion actually changed something
+        if (processedValue !== contentRef.current) {
+          contentRef.current = processedValue
+          
+          // Update Quill editor content if it changed
+          if (quillRef.current || quillEditor) {
+            const quill = quillRef.current || quillEditor
+            if (quill) {
+              const currentContent = quill.root.innerHTML
+              // Only update if different to avoid unnecessary re-renders
+              if (currentContent !== processedValue) {
+                const selection = quill.getSelection(true)
+                const savedIndex = selection ? selection.index : quill.getLength()
+                quill.clipboard.dangerouslyPasteHTML(0, processedValue, 'silent')
+                try {
+                  quill.setSelection(savedIndex, 'silent')
+                } catch (e) {
+                  quill.setSelection(quill.getLength(), 'silent')
+                }
+              }
+            }
+          }
+        }
+      }
+      
       setFormData(prev => {
         if (prev.content !== contentRef.current) {
           return { ...prev, content: contentRef.current }
         }
         return prev
       })
-    }, 500) // Update state 500ms after last keystroke
-  }, [convertYouTubeUrlsToIframes])
+    }, 15000) // Debounce delay
+  }, [convertYouTubeUrlsToIframes, quillEditor])
 
   const handleEdit = (blog: Blog) => {
     setEditingBlog(blog)
