@@ -14594,7 +14594,7 @@ header.boxshadow {
 @media (min-width:1700px) {
 	.hero {
 		position: relative;
-		padding: 0px 0 0px;
+		padding: 60px 0 60px;
 		/*z-index: 1;*/
 		min-height: 900px;
 	}
