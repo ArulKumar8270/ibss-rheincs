@@ -82,7 +82,7 @@ export default function SwiperInit() {
             const realTotalSlides = testimonialSliderEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
             const swiperInstance = new Swiper(testimonialSliderEl, {
               spaceBetween: 15,
-              loop: false,
+              loop: true,
               speed: 800,
               autoplay: {
                 delay: 3000,
@@ -129,7 +129,7 @@ export default function SwiperInit() {
             new Swiper(marqueeSliderEl, {
               slidesPerView: 5,
               spaceBetween: 15,
-              loop: false,
+              loop: true,
               speed: 800,
               autoplay: true,
               navigation: {
@@ -220,7 +220,7 @@ export default function SwiperInit() {
             new Swiper(slider77El, {
               slidesPerView: 1,
               spaceBetween: 30,
-              loop: false,
+              loop: true,
               speed: 800,
               autoplay: true,
               navigation: {
@@ -259,7 +259,7 @@ export default function SwiperInit() {
             new Swiper(sliders1El, {
               slidesPerView: 3,
               spaceBetween: 15,
-              loop: false,
+              loop: true,
               speed: 800,
               autoplay: true,
               navigation: {
@@ -324,7 +324,7 @@ export default function SwiperInit() {
             new Swiper(slider59El, {
               slidesPerView: 6,
               spaceBetween: 30,
-              loop: false,
+              loop: true,
               speed: 800,
               centeredSlides: true,
               autoplay: true,
@@ -363,7 +363,7 @@ export default function SwiperInit() {
             const realTotalSlides = industriesEl.querySelectorAll('.industries .swiper-slide').length;
             const swiperInstance = new Swiper(industriesEl, {
               spaceBetween: 15,
-                loop: false,
+                loop: true,
               speed: 800,
               autoplay: {
                 delay: 3000,
@@ -409,7 +409,7 @@ export default function SwiperInit() {
             const realTotalSlides = slider1El.querySelectorAll('.swiper-wrapper .swiper-slide').length;
             const swiperInstance = new Swiper(slider1El, {
               spaceBetween: 20,
-              loop: false,
+              loop: true,
               speed: 1000,
               autoplay: {
                 delay: 3000,
@@ -469,7 +469,7 @@ export default function SwiperInit() {
             new Swiper(slider11El, {
               slidesPerView: 5,
               spaceBetween: 15,
-              loop: false,
+              loop: true,
               speed: 800,
               centeredSlides: true,
               autoplay: true,
@@ -505,7 +505,7 @@ export default function SwiperInit() {
               new Swiper(slider3El, {
                 slidesPerView: 1.3,
                 spaceBetween: 15,
-                loop: false,
+                loop: true,
                 speed: 800,
                 breakpoints: {
                   420: { slidesPerView: 1, spaceBetween: 10 },
@@ -549,7 +549,7 @@ export default function SwiperInit() {
               new Swiper(slider33El, {
                 slidesPerView: 1.3,
                 spaceBetween: 15,
-                loop: false,
+                loop: true,
                 speed: 800,
                 breakpoints: {
                   420: { slidesPerView: 1.2, spaceBetween: 10 },
@@ -596,7 +596,7 @@ export default function SwiperInit() {
             new Swiper(slider5El, {
               slidesPerView: 5,
               spaceBetween: 15,
-              loop: false,
+              loop: true,
               speed: 800,
               autoplay: true,
               navigation: {
@@ -633,7 +633,7 @@ export default function SwiperInit() {
             new Swiper(awardsEl, {
               slidesPerView: 5,
               spaceBetween: 30,
-              loop: false,
+              loop: true,
               speed: 800,
               autoplay: true,
               navigation: {
@@ -670,7 +670,7 @@ export default function SwiperInit() {
             new Swiper(slider7El, {
               slidesPerView: 5,
               spaceBetween: 15,
-              loop: false,
+              loop: true,
               speed: 800,
               autoplay: false,
               navigation: {
@@ -708,7 +708,7 @@ export default function SwiperInit() {
             new Swiper(slideragency, {
               slidesPerView: 5,
               spaceBetween: 15,
-              loop: false,
+              loop: true,
               speed: 800,
               autoplay: false,
               navigation: {
