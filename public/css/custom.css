@@ -22208,3 +22208,10 @@ color:#000 !important;
 		height: 100%;
 		object-fit: cover;
 	}
+
+
+
+	.contect-call a:hover{
+		color: #008080;
+		transition: all .5s ease-in-out;
+	}
