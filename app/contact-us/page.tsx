@@ -337,6 +337,35 @@ export default function Contact() {
         setStatus('error');
         setStatusMessage(errorMessage);
       } else {
+        // Send emails via SendGrid
+        try {
+          const emailResponse = await fetch('/api/contact/send-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              fullName,
+              email,
+              phone,
+              countryCode: countryCode || '+91',
+              companyName,
+              selection: selection || null,
+              message: message || null,
+            }),
+          });
+
+          const emailResult = await emailResponse.json();
+          
+          if (!emailResult.success) {
+            console.warn('Email sending failed:', emailResult.error);
+            // Still show success since form was saved to database
+          }
+        } catch (emailError: any) {
+          console.error('Email sending error:', emailError);
+          // Still show success since form was saved to database
+        }
+
         setStatus('success');
         setStatusMessage('Thank you! Your inquiry has been submitted successfully. We will contact you shortly.');
         // Reset form

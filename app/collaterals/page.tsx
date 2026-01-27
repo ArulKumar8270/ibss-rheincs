@@ -207,6 +207,35 @@ export default function Collaterals() {
                 setStatus('error');
                 setStatusMessage(errorMessage);
             } else {
+                // Send emails via SendGrid
+                try {
+                    const emailResponse = await fetch('/api/collaterals/send-email', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            fullName,
+                            email,
+                            phone,
+                            countryCode: countryCode || '+91',
+                            companyName,
+                            selection: 'Collaterals Request',
+                            message: null,
+                        }),
+                    });
+
+                    const emailResult = await emailResponse.json();
+                    
+                    if (!emailResult.success) {
+                        console.warn('Email sending failed:', emailResult.error);
+                        // Still show success since form was saved to database
+                    }
+                } catch (emailError: any) {
+                    console.error('Email sending error:', emailError);
+                    // Still show success since form was saved to database
+                }
+
                 setStatus('success');
                 setStatusMessage('Thank you for downloading our collateral. If you require any additional information or assistance, please do not hesitate to reach out to <a href="mailto:info@rheincs.com" class="text-blue-600 hover:underline">info@rheincs.com</a>');
                 // Reset form

@@ -626,6 +626,35 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                     setStatusMessage('Failed to submit application. Please try again.')
                 }
             } else {
+                // Send emails via SendGrid
+                try {
+                    const emailResponse = await fetch('/api/job-application/send-email', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            fullName,
+                            email: email.toLowerCase().trim(),
+                            phone,
+                            countryCode: formData.countryCode || '+91',
+                            jobTitle: selection,
+                            resumeUrl: resumeUrl || null,
+                            coveringLetter: formData.message || null,
+                        }),
+                    });
+
+                    const emailResult = await emailResponse.json();
+                    
+                    if (!emailResult.success) {
+                        console.warn('Email sending failed:', emailResult.error);
+                        // Still show success since application was saved to database
+                    }
+                } catch (emailError: any) {
+                    console.error('Email sending error:', emailError);
+                    // Still show success since application was saved to database
+                }
+
                 setStatus('success')
                 setStatusMessage('Thank you! Your application has been submitted successfully.')
                 setFormData({
