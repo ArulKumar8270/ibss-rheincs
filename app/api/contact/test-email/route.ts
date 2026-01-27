@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY ;
+const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'arulkumar8270@gmail.com';
 const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@rheincs.com';
 const FROM_NAME = process.env.FROM_NAME || 'RheinBrücke';
