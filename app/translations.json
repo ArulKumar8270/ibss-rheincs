@@ -2141,7 +2141,11 @@
     "Delivering Value that Last": "Delivering Value that Last",
     "Our Microsoft technology services are built for operational resilience, faster innovation, and sustained business impact.": "Our Microsoft technology services are built for operational resilience, faster innovation, and sustained business impact.",
     "Ready to get started?": "Ready to get started?",
-    "Let us build your future-ready systems with Microsoft technologies.": "Let us build your future-ready systems with Microsoft technologies."
+    "Let us build your future-ready systems with Microsoft technologies.": "Let us build your future-ready systems with Microsoft technologies.",
+
+      "Analyse": "Analyse",
+    "Integrate": "Integrate",
+    "Transform": "Transform"
 
 
     
@@ -2240,14 +2244,14 @@
     "Digital by Design": "Digital by Design",
     "Cloud-native, mobile-first, AI-ready -every solution is designed for agility and growth.": "Cloud-nativ, Mobile First, AI-fähig – jede Lösung ist auf Agilität und Wachstum ausgelegt.",
     "Deep Execution Capability": "Zuverlässige Umsetzung",
-    "We combine global delivery centres with local expertise to execute transformation programs at speed, and at scale.": "Wir kombinieren Delivery Center mit lokalem Fachwissen, um Transformationsprogramme schnell und in großem Umfang umzusetzen.",
-    "Outcomes-Driven": "Ergebnisorientiert",
+    "We combine global delivery centres with local expertise to execute transformation programs at speed, and at scale.": "Wir kombinieren Delivery Center mit lokalem Fachwissen, um Transformations programme schnell und in großem Umfang umzusetzen.",
+    "Outcomes-Driven": "Ergebnis orientiert",
     "We quantify the impact -from cost savings and operational KPIs to customer lifetime value.": "Wir quantifizieren die Auswirkungen – von Kosteneinsparungen und operativen KPIs bis hin zum Customer Lifetime Value.",
-    "Trusted Enterprise Platforms": "Bewährte Unternehmensplattformen",
-    "Epicor Premium Partner, Microsoft ISV Partner, Microsoft AI Cloud Partner, SAP certified -we bring deep expertise in platforms that run the world’s leading businesses.": "Wir garantieren reibungslose Integration – dank umfassendem Fachwissen und langjähriger Erfahrung mit den wichtigsten Unternehmensplattformen (Epicor Premium Partner, Microsoft ISV Partner, Microsoft AI Cloud Partner, SAP-zertifiziert).",
+    "Trusted Enterprise Platforms": "Bewährte Unternehmens plattformen",
+    "Epicor Premium Partner, Microsoft ISV Partner, Microsoft AI Cloud Partner, SAP certified -we bring deep expertise in platforms that run the world’s leading businesses.": "Wir garantieren reibungslose Integration – dank umfassendem Fachwissen und langjähriger Erfahrung mit den wichtigsten Unternehmens plattformen (Epicor Premium Partner, Microsoft ISV Partner, Microsoft AI Cloud Partner, SAP-zertifiziert).",
     "Know More": "Mehr erfahren",
     "What We Do to Driver Enterprise Transformation": "Unsere Strategie für Ihre Transformation",
-    "We help enterprises modernise systems, build digital capabilities, and unlock growth. From ERP transformation to automation and data strategy , our solution simplify complexity and create future ready enterprise": "Unser Ziel ist die Modernisierung Ihrer Systeme. Erwerben Sie digitale Kompetenzen und erschließen Sie bisher unerkannte Wachstumspotenziale. Unsere Lösung verwandelt komplexe Prozesse in klare Abläufe – effizient, automatisiert, datenbasiert. Wir rüsten Ihr Unternehmen für die Zukunft.",
+    "We help enterprises modernise systems, build digital capabilities, and unlock growth. From ERP transformation to automation and data strategy , our solution simplify complexity and create future ready enterprise": "Unser Ziel ist die Modernisierung Ihrer Systeme. Erwerben Sie digitale Kompetenzen und erschließen Sie bisher unerkannte Wachstums potenziale. Unsere Lösung verwandelt komplexe Prozesse in klare Abläufe – effizient, automatisiert, datenbasiert. Wir rüsten Ihr Unternehmen für die Zukunft.",
     "Business Model Transformation": "Transformation von Geschäftsmodellen",
     "We help businesses rethink their operating models, uncover new revenue streams, and deliver innovative services that drive sustainable growth.": "Wir unterstützen Unternehmen dabei, ihr Geschäftsmodell neu zu denken, Wachstum zu schaffen und Innovationen voranzutreiben.",
     "Read more": "Weiterlesen",
@@ -2259,7 +2263,7 @@
     "We turn data into a strategic asset, with analytics frameworks that deliver actionable insights, improve decision-making and unlock opportunities.": "Wir verwandeln Daten in einen strategischen Vorteil – mit Analyse-Frameworks, die umsetzbare Erkenntnisse liefern, die Entscheidungsfindung verbessern und neue Möglichkeiten erschließen.",
     "Intelligent Automation": "Intelligente Automatisierung",
     "We deploy RPA and AI-driven automation solutions that streamline operations, reduce manual effort and improve accuracy.": "Wir setzen RPA- und KI-gesteuerte Automatisierungslösungen ein, die Abläufe rationalisieren, manuellen Aufwand reduzieren und die Genauigkeit verbessern.",
-    "Cross-Platform Integration": "Plattformübergreifende Integration",
+    "Cross-Platform Integration": "Plattform übergreifende Integration",
     "We integrate diverse enterprise applications into a connected digital ecosystem, ensuring consistent data flow and seamless process execution.": "Wir verbinden Unternehmensanwendungen zu einem digitalen System – für durchgängige Daten und reibungslose Prozesse.",
     "Strategic System Design & Delivery": "Strategisches Systemdesign und -bereitstellung",
     "We design and deliver systems that are built for speed, reliability, and business impact, helping you move from strategy to measurable results.": "Wir entwickeln Systeme, die auf Geschwindigkeit, Zuverlässigkeit und strategischen Unternehmenserfolg ausgerichtet sind.",
@@ -2267,10 +2271,10 @@
     "Proven Methodology (AIT) - Analyse. Integrate. Transform.": "Bewährte Methodik (AIT) – Analysieren. Integrieren. Transformieren.",
     "Achieve measurable transformation across your business.": "Messbare Veränderungen im gesamten Unternehmen",
     "Global Delivery. Local Execution.": "Globale Bereitstellung. Lokale Umsetzung.",
-    "Efficient, rapidly executed cost-effective transformation programs.": "Effiziente, schnell integrierbare und kostengünstige Transformationsprogramme",
-    "Industry Expertise Across Verticals": "Branchenexpertise in verschiedenen Bereichen",
+    "Efficient, rapidly executed cost-effective transformation programs.": "Effiziente, schnell integrierbare und kostengünstige Transformations programme",
+    "Industry Expertise Across Verticals": "Branchen expertise in verschiedenen Bereichen",
     "Deep experience in manufacturing, retail, automotive and private equity.": "Umfassende Erfahrung in den Bereichen Fertigung, Einzelhandel, Automobilindustrie und Private Equity.",
-    "Clear ROI, Quantified Results": "Klarer ROI, quantifizierbare Ergebnisse",
+    "Clear ROI, Quantified Results": "Klarer ROI, quantifizier bare Ergebnisse",
     "Enhanced operational performance and customer value.": "Verbesserte operative Leistung und Kundennutzen",
     "Partnering with Business Worldwide": "Partnerschaften mit Unternehmen weltweit",
     "We partner with businesses in over 40 countries to deliver high-impact transformation across key sectors including brand owners and vertical retailers, the retail industry, distribution and supply chain, discrete and process manufacturing, the automotive industry, engineering, procurement and construction as well as the private equity and funding backed ventures.": "Unsere Kooperation mit Unternehmen in mehr als 40 Ländern unterstützt eine effektive Transformation. Davon profitiert eine Vielzahl wichtiger Branchen. Dazu gehören Markeninhaber und vertikale Einzelhändler, der Einzelhandel, Vertrieb und Lieferkette, die diskrete und prozessorientierte Fertigung, die Automobilindustrie, das Ingenieurwesen, die Beschaffung und das Bauwesen sowie Private Equity- und finanzierungsgestützte Unternehmen.",
@@ -4316,7 +4320,12 @@
     "Delivering Value that Last": "Nachhaltigen Mehrwert schaffen",
     "Our Microsoft technology services are built for operational resilience, faster innovation, and sustained business impact.": "Unsere Microsoft-Technologie-Services stehen für operative Stabilität, schnellere Innovation und nachhaltigen Geschäftserfolg.",
     "Ready to get started?": "Bereit zu starten?",
-    "Let us build your future-ready systems with Microsoft technologies.": "Lassen Sie uns gemeinsam zukunftssichere Systeme mit Microsoft-Technologien aufbauen."
+    "Let us build your future-ready systems with Microsoft technologies.": "Lassen Sie uns gemeinsam zukunftssichere Systeme mit Microsoft-Technologien aufbauen.",
+
+
+    "Analyse": "Analysieren",
+    "Integrate": "Integrieren",
+    "Transform": "Transformieren"
 
 
 

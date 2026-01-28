@@ -12,6 +12,7 @@ export default function Home() {
     <>
       <CommomLayout>
         <>
+      <div  className={`${language === 'German' ? 'bodyindex' : ''}`}>
           {/* Header Start */}
           {/*?php include "navbar.php" ?*/}
           {/* Header End */}
@@ -2943,6 +2944,8 @@ export default function Home() {
                       </div>
                       {/* Benefits Steps Item End */}
                     </div>
+                    </div>
+                  <div className="row">
                     <div className="col-lg-6 col-md-6 ">
                       {/* Benefits Steps Item Start */}
                       <div
@@ -3072,6 +3075,8 @@ export default function Home() {
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
+                      </div>
+                  <div className="col-lg-6 col-md-6 col-6">
                       {/* Benefits Steps Item Start */}
                       <div
                         className="benefits-steps-item wow fadeInUp"
@@ -3103,6 +3108,8 @@ export default function Home() {
                       </div>
                       {/* Benefits Steps Item End */}
                       {/* Benefits Steps Item Start */}
+                      </div>
+                  <div className="col-lg-6 col-md-6 col-6">
                       <div
                         className="benefits-steps-item wow fadeInUp"
                         data-wow-delay="0.6s"
@@ -4807,6 +4814,7 @@ export default function Home() {
               </div>
             </div>
           </footer>
+          </div>
         </>
 
       </CommomLayout>
