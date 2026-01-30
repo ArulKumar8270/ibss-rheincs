@@ -32,13 +32,17 @@ export default function Header() {
         setIsNavigating(false);
     }, [pathname]);
 
-    // Intercept link clicks to show loading
+    // Intercept link clicks to show loading (skip when link opens in new tab)
     useEffect(() => {
         const handleLinkClick = (e) => {
             const target = e.target;
             const link = target.closest('a');
             
             if (link && link.href) {
+                // Don't show loading if link opens in new tab - current page stays
+                if (link.target === '_blank' || link.getAttribute('target') === '_blank') {
+                    return;
+                }
                 const url = new URL(link.href);
                 const currentUrl = new URL(window.location.href);
                 

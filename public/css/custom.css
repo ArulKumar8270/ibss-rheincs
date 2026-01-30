@@ -12174,10 +12174,7 @@ body:has(.offcanvas) {
 		color: #000;
 	}
 
-	.page-nate-waber .active {
-		background: #072327;
-		color: white !important;
-	}
+	
 
 	.page-nate-waber span {
 		font-size: 18px !important;

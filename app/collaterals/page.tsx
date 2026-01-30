@@ -115,6 +115,19 @@ export default function Collaterals() {
         };
         detectCountryCode();
     }, []);
+
+    // Clear thank you message when modal is closed (X or backdrop) so next open is clean
+    useEffect(() => {
+        const modalEl = document.getElementById('myModal');
+        if (!modalEl) return;
+        const onHidden = () => {
+            setStatus('idle');
+            setStatusMessage('');
+        };
+        modalEl.addEventListener('hidden.bs.modal', onHidden);
+        return () => modalEl.removeEventListener('hidden.bs.modal', onHidden);
+    }, []);
+
     const [searchTerm, setSearchTerm] = useState({
         whitePapers: '',
         brochures: '',
@@ -325,7 +338,7 @@ export default function Collaterals() {
 
                 setStatus('success');
                 setStatusMessage('Thank you for downloading our collateral. If you require any additional information or assistance, please do not hesitate to reach out to <a href="mailto:info@rheincs.com" class="text-blue-600 hover:underline">info@rheincs.com</a>');
-                // Reset form
+                // Reset form values
                 setFormData({
                     fullName: '',
                     countryCode: '+91',
@@ -335,9 +348,8 @@ export default function Collaterals() {
                 });
                 setErrors({});
                 setTouched({});
-                // Close modal and redirect after 2 seconds
+                // Close modal after 2 seconds and clear thank you message so next open is clean
                 setTimeout(() => {
-                    // Close Bootstrap modal
                     const modalElement = document.getElementById('myModal');
                     if (modalElement) {
                         const modal = (window as any).bootstrap?.Modal?.getInstance(modalElement);
@@ -345,7 +357,8 @@ export default function Collaterals() {
                             modal.hide();
                         }
                     }
-                    // router.push('/thanks');
+                    setStatus('idle');
+                    setStatusMessage('');
                 }, 2000);
             }
         } catch (error: any) {
