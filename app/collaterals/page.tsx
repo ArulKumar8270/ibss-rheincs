@@ -75,7 +75,7 @@ const COLLATERAL_PDF_MAP: Record<string, string> = {
   "Buyer's guide to choosing the right ERP": '/Collateral/Whitepaper/Buyer\'s Guide to Choosing ERP for Discrete Manufacturing Enterprise.pdf',
   'Choosing your ERP in 2024': '/Collateral/Whitepaper/Choosing your ERP in 2024.pdf',
   'ERP-in-2025-Your-Essential-Guide-to-the-Future': '/Collateral/Whitepaper/ERP Guide 2025 - Your essential guide to future.pdf',
-  'Digital Transformation': '/Collateral/Whitepaper/Digital-Transformation.pdf',
+  'Digital Solutions for Lasting Business Impact': '/Collateral/Whitepaper/Digital-Transformation.pdf',
   // Brochures
   'Corporate Brochure': '/Collateral/Brochure/RIC-Corporate-Brochure-ME.pdf',
   'Epicor ERP Brochure': '/Collateral/Brochure/RIC-Brochure-Epicor-ME.pdf',
@@ -106,23 +106,23 @@ function getPdfPathForTitle(title: string): string | null {
 
 // White paper items (rendered in reverse order: last in array = first on page)
 const WHITEPAPER_ITEMS: { title: string; image: string; category: string }[] = [
-  { title: 'Choosing the right ERP solution for your business', image: '/images/white1.png', category: 'erp' },
+  { title: 'Choosing the right ERP solution for your business', image: '/images/white1.png', category: 'erp cloud' },
   { title: 'Future with Manufacturing Technology', image: '/images/white2.png', category: 'cloud' },
   { title: 'Finding the Perfect Candidate', image: '/images/white3.png', category: 'hcm' },
   { title: 'The Need for Speed and Accurate Data', image: '/images/white4.png', category: 'erp' },
   { title: "Top 6 Technologies Small And Midsize Manufacturers Can't Afford to Ignore", image: '/images/white5.png', category: 'cloud' },
-  { title: 'ERP Guide 2023', image: '/images/white6.jpg', category: 'erp' },
-  { title: 'ERP and Digital transformation Outlook for 2023', image: '/images/white7.jpg', category: 'erp' },
+  { title: 'ERP Guide 2023', image: '/images/white6.jpg', category: 'erp cloud' },
+  { title: 'ERP and Digital transformation Outlook for 2023', image: '/images/white7.jpg', category: 'erp cloud' },
   { title: 'Four Quick Ways to Unlock Hidden Manufacturing Capacity', image: '/images/white8.png', category: 'cloud' },
-  { title: 'The Future of ERP : Predictions and Trends for 2023', image: '/images/white9.jpg', category: 'erp' },
-  { title: 'Choosing the Right ERP Solution to Support a Global Business', image: '/images/white10.png', category: 'erp' },
-  { title: 'Best Practices for ERP Implementation Success', image: '/images/white11.png', category: 'erp' },
-  { title: "Time to Rethink Accounting Software and switch to an ERP?", image: '/images/white12.jpg', category: 'erp' },
+  { title: 'The Future of ERP : Predictions and Trends for 2023', image: '/images/white9.jpg', category: 'erp cloud' },
+  { title: 'Choosing the Right ERP Solution to Support a Global Business', image: '/images/white10.png', category: 'erp cloud' },
+  { title: 'Best Practices for ERP Implementation Success', image: '/images/white11.png', category: 'erp cloud' },
+  { title: "Time to Rethink Accounting Software and switch to an ERP?", image: '/images/white12.jpg', category: 'erp cloud' },
   { title: 'Transforming HR Made Easy', image: '/images/white13.png', category: 'hcm' },
-  { title: "Buyer's guide to choosing the right ERP", image: '/images/white14.jpg', category: 'erp' },
-  { title: 'Choosing your ERP in 2024', image: '/images/white15.png', category: 'erp' },
-  { title: 'ERP-in-2025-Your-Essential-Guide-to-the-Future', image: '/images/white16.png', category: 'erp' },
-  { title: 'Digital Transformation', image: '/images/white16.png', category: 'digital' },
+  { title: "Buyer's guide to choosing the right ERP", image: '/images/white14.jpg', category: 'erp cloud' },
+  { title: 'Choosing your ERP in 2024', image: '/images/white15.png', category: 'erp cloud' },
+  { title: 'ERP-in-2025-Your-Essential-Guide-to-the-Future', image: '/images/white16.png', category: 'erp cloud' },
+  { title: 'Digital Solutions for Lasting Business Impact', image: '/images/newdigital.jpg', category: 'digital' },
 ];
 
 export default function Collaterals() {
