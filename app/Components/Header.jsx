@@ -1828,8 +1828,10 @@ export default function Header() {
                                                                                                 setSearchQuery('');
                                                                                                 setSearchResults([]);
                                                                                                 const searchFull = document.getElementById('searchFull');
-                                                                                                if (searchFull) {
-                                                                                                    searchFull.classList.remove('active');
+                                                                                                const searchBox = document.getElementById('searchBox');
+                                                                                                if (searchFull) searchFull.classList.remove('active');
+                                                                                                if (searchBox) {
+                                                                                                    searchBox.classList.remove('active', 'search-active');
                                                                                                 }
                                                                                             }}
                                                                                         >
@@ -2059,8 +2061,10 @@ export default function Header() {
                                                                         setSearchQuery('');
                                                                         setSearchResults([]);
                                                                         const mobileSearchFull = document.getElementById('mobileSearchFull');
-                                                                        if (mobileSearchFull) {
-                                                                            mobileSearchFull.classList.remove('active');
+                                                                        const mobileSearchBox = document.getElementById('mobileSearchBox');
+                                                                        if (mobileSearchFull) mobileSearchFull.classList.remove('active');
+                                                                        if (mobileSearchBox) {
+                                                                            mobileSearchBox.classList.remove('active', 'search-active');
                                                                         }
                                                                     }}
                                                                 >
