@@ -371,14 +371,19 @@ export default function Header() {
             }, 100);
         };
 
-        // Mobile close button handler
+        // Mobile close button handler (also used by inline onClick for reliability on mobile)
         const handleMobileCloseClick = (e) => {
             e.preventDefault();
+            e.stopPropagation();
             setIsSearchOpen(false);
             setSearchQuery('');
             setSearchResults([]);
             if (mobileSearchFull) {
                 mobileSearchFull.classList.remove('active');
+            }
+            const mobileSearchBox = document.getElementById('mobileSearchBox');
+            if (mobileSearchBox) {
+                mobileSearchBox.classList.remove('active', 'search-active');
             }
         };
 
@@ -413,15 +418,7 @@ export default function Header() {
             mobileSearchBtn.addEventListener('click', handleMobileSearchClick);
         }
         if (mobileSearchClose) {
-            console.log('mobileSearchClose element found:', mobileSearchClose);
             mobileSearchClose.addEventListener('click', handleMobileCloseClick);
-        } else {
-            console.log('mobileSearchClose element NOT found');
-        }
-        if (mobileSearchFull) {
-            console.log('mobileSearchFull element found:', mobileSearchFull);
-        } else {
-            console.log('mobileSearchFull element NOT found');
         }
         document.addEventListener('keydown', handleEscape);
 
@@ -2038,7 +2035,36 @@ export default function Header() {
                                             value={searchQuery}
                                             onChange={(e) => handleSearch(e.target.value)}
                                         />
-                                        <span className="icon-close" id="mobileSearchClose">
+                                        <span
+                                            className="icon-close"
+                                            id="mobileSearchClose"
+                                            role="button"
+                                            tabIndex={0}
+                                            aria-label="Close search"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                setIsSearchOpen(false);
+                                                setSearchQuery('');
+                                                setSearchResults([]);
+                                                const mobileSearchFullEl = document.getElementById('mobileSearchFull');
+                                                const mobileSearchBoxEl = document.getElementById('mobileSearchBox');
+                                                if (mobileSearchFullEl) mobileSearchFullEl.classList.remove('active');
+                                                if (mobileSearchBoxEl) mobileSearchBoxEl.classList.remove('active', 'search-active');
+                                            }}
+                                            onKeyDown={(e) => {
+                                                if (e.key === 'Enter' || e.key === ' ') {
+                                                    e.preventDefault();
+                                                    setIsSearchOpen(false);
+                                                    setSearchQuery('');
+                                                    setSearchResults([]);
+                                                    const mobileSearchFullEl = document.getElementById('mobileSearchFull');
+                                                    const mobileSearchBoxEl = document.getElementById('mobileSearchBox');
+                                                    if (mobileSearchFullEl) mobileSearchFullEl.classList.remove('active');
+                                                    if (mobileSearchBoxEl) mobileSearchBoxEl.classList.remove('active', 'search-active');
+                                                }
+                                            }}
+                                        >
                                             ✕
                                         </span>
                                     </div>

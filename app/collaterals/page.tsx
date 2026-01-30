@@ -53,8 +53,77 @@ const countryToPhoneCode: Record<string, string> = {
   'TM': '+993', 'TC': '+1-649', 'TV': '+688', 'UG': '+256', 'UA': '+380',
   'AE': '+971', 'GB': '+44', 'US': '+1', 'UY': '+598', 'UZ': '+998',
   'VU': '+678', 'VA': '+379', 'VE': '+58', 'VN': '+84', 'VG': '+1-284',
-  'VI': '+1-340', 'WF': '+681', 'YE': '+967', 'ZM': '+260', 'ZW': '+263'
+  'VI': '+1-340', 'WF': '+681', 'YE': '+967',   'ZM': '+260', 'ZW': '+263'
 };
+
+// Map display title (exact match) to PDF path under /Collateral/ for auto-download after form submit
+const COLLATERAL_PDF_MAP: Record<string, string> = {
+  // Whitepapers
+  'Choosing the right ERP solution for your business': '/Collateral/Whitepaper/Choosing your ERP in 2024.pdf',
+  'Future with Manufacturing Technology': '/Collateral/Whitepaper/Future with Manufacturing technology.pdf',
+  'Finding the Perfect Candidate': '/Collateral/Whitepaper/Buyer\'s Guide to Choosing ERP for Discrete Manufacturing Enterprise.pdf',
+  'The Need for Speed and Accurate Data': '/Collateral/Whitepaper/The need for speed and accurate data.pdf',
+  "Top 6 Technologies Small And Midsize Manufacturers Can't Afford to Ignore": '/Collateral/Whitepaper/Future of ERP 2023 trends-Prediction and trends.pdf',
+  'ERP Guide 2023': '/Collateral/Whitepaper/ERP Guide 2023.pdf',
+  'ERP and Digital transformation Outlook for 2023': '/Collateral/Whitepaper/ERP-and-Digital-Transformation-Outlook-for-2023 (1).pdf',
+  'Four Quick Ways to Unlock Hidden Manufacturing Capacity': '/Collateral/Whitepaper/Future with Manufacturing technology.pdf',
+  'The Future of ERP : Predictions and Trends for 2023': '/Collateral/Whitepaper/Future of ERP 2023 trends-Prediction and trends.pdf',
+  'Choosing the Right ERP Solution to Support a Global Business': '/Collateral/Whitepaper/Choosing your ERP in 2024.pdf',
+  'Best Practices for ERP Implementation Success': '/Collateral/Whitepaper/ERP Guide 2023.pdf',
+  'Time to Rethink Accounting Software and switch to an ERP?': '/Collateral/Whitepaper/Time to rethink Accounting Software.pdf',
+  'Transforming HR Made Easy': '/Collateral/Whitepaper/Buyer\'s Guide to Choosing ERP for Discrete Manufacturing Enterprise.pdf',
+  "Buyer's guide to choosing the right ERP": '/Collateral/Whitepaper/Buyer\'s Guide to Choosing ERP for Discrete Manufacturing Enterprise.pdf',
+  'Choosing your ERP in 2024': '/Collateral/Whitepaper/Choosing your ERP in 2024.pdf',
+  'ERP-in-2025-Your-Essential-Guide-to-the-Future': '/Collateral/Whitepaper/ERP Guide 2025 - Your essential guide to future.pdf',
+  'Digital Transformation': '/Collateral/Whitepaper/Digital-Transformation.pdf',
+  // Brochures
+  'Corporate Brochure': '/Collateral/Brochure/RIC-Corporate-Brochure-ME.pdf',
+  'Epicor ERP Brochure': '/Collateral/Brochure/RIC-Brochure-Epicor-ME.pdf',
+  'Epicor for Oil and Gas Brochure': '/Collateral/Brochure/Oil field service brochure.pdf',
+  'Epicor Copy Company Tool Overview': '/Collateral/Brochure/Copy company tool.pdf',
+  'Epicor Payroll MEA Overview': '/Collateral/Brochure/RIC-Brochure-Epicor-Payroll-MEA.pdf',
+  'Epicor HCM Overview': '/Collateral/Brochure/HCM & Epicor Payroll MEA-Case Study.pdf',
+  'Epicor for Manufacturing Brochure': '/Collateral/Brochure/RIC-Brochure-EpicProcess-ME.pdf',
+  'Epicor for EPC and Construction Brochure': '/Collateral/Brochure/RIC-Brochure-EpicBuild-ME.pdf',
+  'Epicor for Distribution Brochure': '/Collateral/Brochure/Epicor - Distribution Industry-Brochure.pdf',
+  'Epicor for Automotive Brochure': '/Collateral/Brochure/RIC-Brochure-Epicor-ME.pdf',
+  "RheinBrücke's Power Plant Analytics Brochure": '/Collateral/Brochure/Power Plant Analysis -Brochure.pdf',
+  'Epicor iScala for Hospitality Overview': '/Collateral/Brochure/Hospitality_Brochure.pdf',
+  'Move to Epicor Cloud': '/Collateral/Brochure/Move to Epicor Cloud.pdf',
+  // Factsheets
+  'Choosing the right ERP Vendor': '/Collateral/Factsheet/Choosing the right erp vendor_Factsheet.pdf',
+  'ROI Analysis Factsheet': '/Collateral/Factsheet/ROI Analysis - Business case for an ERP implementation.pdf',
+  'Oilfield services Factsheet': '/Collateral/Factsheet/RIC-Factsheet-OilServ-ME.pdf',
+  '3 Reasons why ERP software is a must for Financial Management': '/Collateral/Factsheet/RIC-Factsheet-3-Reasons-why-ERP-Software-is-must-for-Financial-Management.pdf',
+  '20 Questions to ask before you choose your cloud ERP': '/Collateral/Factsheet/Factsheet-20 Questions to Ask Before you Choose your Cloud ERP-ME.pdf',
+  'Warning Signs of A Growing business': '/Collateral/Factsheet/RIC-Factsheet-Warning-Signs-Of-A-Growing-Business-That\'s-Outgrown-Its-Legacy-ERP-ME.pdf',
+};
+
+function getPdfPathForTitle(title: string): string | null {
+  const normalized = title.trim();
+  return COLLATERAL_PDF_MAP[normalized] ?? null;
+}
+
+// White paper items (rendered in reverse order: last in array = first on page)
+const WHITEPAPER_ITEMS: { title: string; image: string; category: string }[] = [
+  { title: 'Choosing the right ERP solution for your business', image: '/images/white1.png', category: 'erp' },
+  { title: 'Future with Manufacturing Technology', image: '/images/white2.png', category: 'cloud' },
+  { title: 'Finding the Perfect Candidate', image: '/images/white3.png', category: 'hcm' },
+  { title: 'The Need for Speed and Accurate Data', image: '/images/white4.png', category: 'erp' },
+  { title: "Top 6 Technologies Small And Midsize Manufacturers Can't Afford to Ignore", image: '/images/white5.png', category: 'cloud' },
+  { title: 'ERP Guide 2023', image: '/images/white6.jpg', category: 'erp' },
+  { title: 'ERP and Digital transformation Outlook for 2023', image: '/images/white7.jpg', category: 'erp' },
+  { title: 'Four Quick Ways to Unlock Hidden Manufacturing Capacity', image: '/images/white8.png', category: 'cloud' },
+  { title: 'The Future of ERP : Predictions and Trends for 2023', image: '/images/white9.jpg', category: 'erp' },
+  { title: 'Choosing the Right ERP Solution to Support a Global Business', image: '/images/white10.png', category: 'erp' },
+  { title: 'Best Practices for ERP Implementation Success', image: '/images/white11.png', category: 'erp' },
+  { title: "Time to Rethink Accounting Software and switch to an ERP?", image: '/images/white12.jpg', category: 'erp' },
+  { title: 'Transforming HR Made Easy', image: '/images/white13.png', category: 'hcm' },
+  { title: "Buyer's guide to choosing the right ERP", image: '/images/white14.jpg', category: 'erp' },
+  { title: 'Choosing your ERP in 2024', image: '/images/white15.png', category: 'erp' },
+  { title: 'ERP-in-2025-Your-Essential-Guide-to-the-Future', image: '/images/white16.png', category: 'erp' },
+  { title: 'Digital Transformation', image: '/images/white16.png', category: 'digital' },
+];
 
 export default function Collaterals() {
     const router = useRouter();
@@ -116,6 +185,22 @@ export default function Collaterals() {
         detectCountryCode();
     }, []);
 
+    // When "Read More" is clicked, capture the collateral title from the card's h4 for later PDF download
+    useEffect(() => {
+        const handler = (e: MouseEvent) => {
+            const target = e.target as HTMLElement;
+            const link = target.closest?.('a[data-bs-target="#myModal"]');
+            if (!link) return;
+            const item = link.closest?.('.col-sm-4.mb-4.item');
+            if (!item) return;
+            const h4 = item.querySelector?.('h4');
+            const title = h4?.textContent?.replace(/\s+/g, ' ').trim();
+            if (title) setSelectedCollateral({ title });
+        };
+        document.addEventListener('click', handler, true);
+        return () => document.removeEventListener('click', handler, true);
+    }, []);
+
     // Clear thank you message when modal is closed (X or backdrop) so next open is clean
     useEffect(() => {
         const modalEl = document.getElementById('myModal');
@@ -123,6 +208,7 @@ export default function Collaterals() {
         const onHidden = () => {
             setStatus('idle');
             setStatusMessage('');
+            setSelectedCollateral(null);
         };
         modalEl.addEventListener('hidden.bs.modal', onHidden);
         return () => modalEl.removeEventListener('hidden.bs.modal', onHidden);
@@ -133,6 +219,57 @@ export default function Collaterals() {
         brochures: '',
         factsheets: ''
     });
+
+    const [selectedCollateral, setSelectedCollateral] = useState<{ title: string } | null>(null);
+
+    // Category filter for White Papers and Factsheets: Digital Transformation, ERP, Cloud, HCM
+    const [selectedCategoriesWP, setSelectedCategoriesWP] = useState<string[]>([]);
+    const [selectedCategoriesFS, setSelectedCategoriesFS] = useState<string[]>([]);
+    // Category filter for Brochures (by title)
+    const [selectedCategoriesBrochure, setSelectedCategoriesBrochure] = useState<string[]>([]);
+
+    const CATEGORY_OPTIONS = [
+        { value: 'digital', label: 'Digital Transformation' },
+        { value: 'erp', label: 'ERP' },
+        { value: 'cloud', label: 'Cloud' },
+        { value: 'hcm', label: 'HCM' },
+    ] as const;
+
+    const BROCHURE_CATEGORY_OPTIONS = [
+        { value: 'corporate-brochure', label: 'Corporate Brochure' },
+        { value: 'epicor', label: 'EPICOR' },
+        { value: 'epicor-iscala-hospitality', label: 'Epicor iScala for Hospitality' },
+        { value: 'epicor-hcm', label: 'Epicor HCM' },
+        { value: 'epicor-payroll-mea', label: 'Epicor Payroll MEA' },
+        { value: 'epicor-copy-company-tool', label: 'Epicor Copy Company Tool' },
+        { value: 'power-plant-analytics', label: 'Power Plant Analytics' },
+        { value: 'epicor-manufacturing', label: 'Epicor for Manufacturing' },
+        { value: 'epicor-epc-construction', label: 'Epicor for EPC and Construction' },
+        { value: 'epicor-automotive', label: 'Epicor for Automotive' },
+        { value: 'epicor-distribution', label: 'Epicor for Distribution' },
+    ] as const;
+
+    const toggleCategory = (tab: 'wp' | 'fs' | 'brochure', value: string) => {
+        if (tab === 'wp') {
+            setSelectedCategoriesWP((prev) =>
+                prev.includes(value) ? prev.filter((c) => c !== value) : [...prev, value]
+            );
+        } else if (tab === 'fs') {
+            setSelectedCategoriesFS((prev) =>
+                prev.includes(value) ? prev.filter((c) => c !== value) : [...prev, value]
+            );
+        } else {
+            setSelectedCategoriesBrochure((prev) =>
+                prev.includes(value) ? prev.filter((c) => c !== value) : [...prev, value]
+            );
+        }
+    };
+
+    const showByCategory = (itemCategory: string, selectedCategories: string[]): boolean => {
+        if (selectedCategories.length === 0) return true;
+        const itemCats = itemCategory.trim().split(/\s+/);
+        return itemCats.some((c) => selectedCategories.includes(c));
+    };
 
     const validateField = (name: string, value: string): string => {
         switch (name) {
@@ -338,6 +475,24 @@ export default function Collaterals() {
 
                 setStatus('success');
                 setStatusMessage('Thank you for downloading our collateral. If you require any additional information or assistance, please do not hesitate to reach out to <a href="mailto:info@rheincs.com" class="text-blue-600 hover:underline">info@rheincs.com</a>');
+                // Auto-download PDF matching the selected collateral title
+                if (selectedCollateral?.title) {
+                    const pdfPath = getPdfPathForTitle(selectedCollateral.title);
+                    if (pdfPath) {
+                        try {
+                            const link = document.createElement('a');
+                            link.href = pdfPath;
+                            link.download = pdfPath.split('/').pop() || 'collateral.pdf';
+                            link.target = '_blank';
+                            link.rel = 'noopener noreferrer';
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                        } catch (err) {
+                            console.warn('PDF download failed:', err);
+                        }
+                    }
+                }
                 // Reset form values
                 setFormData({
                     fullName: '',
@@ -527,64 +682,22 @@ export default function Collaterals() {
                                                                 className="collapse content-box collapse show"
                                                             >
                                                                 <div className="col-sm-12 width100">
-                                                                    <h6 className="fome-filter-title">White Papers</h6>
+                                                                    <h6 className="fome-filter-title">Category</h6>
                                                                     <div className="filter-check-box-waber">
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Epicor ERP
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                HCM
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Iscala
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Manufacturing
-                                                                            </label>
-                                                                        </div>
+                                                                        {CATEGORY_OPTIONS.map((opt) => (
+                                                                            <div key={opt.value} className="form-check">
+                                                                                <input
+                                                                                    className="form-check-input"
+                                                                                    type="checkbox"
+                                                                                    checked={selectedCategoriesWP.includes(opt.value)}
+                                                                                    onChange={() => toggleCategory('wp', opt.value)}
+                                                                                    id={`wp-mob-${opt.value}`}
+                                                                                />
+                                                                                <label className="form-check-label" htmlFor={`wp-mob-${opt.value}`}>
+                                                                                    {opt.label}
+                                                                                </label>
+                                                                            </div>
+                                                                        ))}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -596,372 +709,31 @@ export default function Collaterals() {
                                                         </h4>
                                                         <div className="bolg-filter-waber webinarbtn collatfilter brofilter">
                                                             <div className="row">
-                                                                {/* Item 1: Our Solutions & Digital Services */}
-                                                                <div
-                                                                    className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems('Choosing the right ERP solution for your business', searchTerm.whitePapers) ? 'block' : 'none' }}
-                                                                >
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white1.png" alt="" />
-                                                                        </figure>
-                                                                        <h4>
-                                                                            Choosing the right ERP solution for your
-                                                                            business
-                                                                        </h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
+                                                                {[...WHITEPAPER_ITEMS].reverse().map((item) => (
+                                                                    <div
+                                                                        key={item.title}
+                                                                        className="col-sm-4 mb-4 item"
+                                                                        data-category={item.category}
+                                                                        style={{ display: (filterItems(item.title, searchTerm.whitePapers) && showByCategory(item.category, selectedCategoriesWP)) ? 'block' : 'none' }}
+                                                                    >
+                                                                        <div className="video-gallery-image ">
+                                                                            <figure>
+                                                                                <img src={item.image} alt="" />
+                                                                            </figure>
+                                                                            <h4>{item.title}</h4>
+                                                                            <div className="ser-btn">
+                                                                                <Link className="animated-svg-link"
+                                                                                    href="#!"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#myModal"
+                                                                                >
+                                                                                    Read More
+                                                                                    <NavArrowRight />
+                                                                                </Link>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                                {/* Item 2: Enterprise Solutions & Digital Services */}
-                                                                <div
-                                                                    className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems('Future with Manufacturing Technology', searchTerm.whitePapers) ? 'block' : 'none' }}
-                                                                >
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white2.png" alt="" />
-                                                                        </figure>
-                                                                        <h4>Future with Manufacturing Technology</h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                {/* Item 3: Digital Solutions */}
-                                                                <div
-                                                                    className="col-sm-4 mb-4 item"
-                                                                    data-category="1 2"
-                                                                    style={{ display: filterItems('Finding the Perfect Candidate', searchTerm.whitePapers) ? 'block' : 'none' }}
-                                                                >
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white3.png" alt="" />
-                                                                        </figure>
-                                                                        <h4>Finding the Perfect Candidate</h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                {/* Item 4: Our Solutions & Digital Solutions */}
-                                                                <div
-                                                                    className="col-sm-4 mb-4 item"
-                                                                    data-category="3  4"
-                                                                    style={{ display: filterItems('The Need for Speed and Accurate Data', searchTerm.whitePapers) ? 'block' : 'none' }}
-                                                                >
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white4.png" alt="" />
-                                                                        </figure>
-                                                                        <h4>The Need for Speed and Accurate Data</h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                {/* Item 5: Enterprise Solutions (Takes full width if only 5 items in col-sm-3) */}
-                                                                <div className="col-sm-4 mb-4 item" data-category={2} style={{ display: filterItems("Top 6 Technologies Small And Midsize Manufacturers Can't Afford to Ignore", searchTerm.whitePapers) ? 'block' : 'none' }}>
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white5.png" alt="" />
-                                                                        </figure>
-                                                                        <h4>
-                                                                            Top 6 Technologies Small And Midsize
-                                                                            Manufacturers Can't Afford to Ignore
-                                                                        </h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                {/* Item 3: Digital Solutions */}
-                                                                <div className="col-sm-4 mb-4 item" data-category={3} style={{ display: filterItems('ERP Guide 2023', searchTerm.whitePapers) ? 'block' : 'none' }}>
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white6.jpg" alt="" />
-                                                                        </figure>
-                                                                        <h4>ERP Guide 2023</h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-sm-4 mb-4 item" data-category={3} style={{ display: filterItems('ERP and Digital transfornation Outlook for 2023', searchTerm.whitePapers) ? 'block' : 'none' }}>
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white7.jpg" alt="" />
-                                                                        </figure>
-                                                                        <h4>
-                                                                            ERP and Digital transfornation Outlook for 2023
-                                                                        </h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    className="col-sm-4 mb-4 item"
-                                                                    data-category="solution popular"
-                                                                    style={{ display: filterItems('Four Quick Ways to Unlock Hidden Manufacturing Capacity', searchTerm.whitePapers) ? 'block' : 'none' }}
-                                                                >
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white8.png" alt="" />
-                                                                        </figure>
-                                                                        <h4>
-                                                                            Four Quick Ways to Unlock Hidden Manufacturing
-                                                                            Capacity
-                                                                        </h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems('The Future of ERP : Predictions and Trends for 2023', searchTerm.whitePapers) ? 'block' : 'none' }}
-                                                                >
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white9.jpg" alt="" />
-                                                                        </figure>
-                                                                        <h4>
-                                                                            The Future of ERP : Predictions and Trends for
-                                                                            2023
-                                                                        </h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-sm-4 mb-4 item" data-category={3} style={{ display: filterItems('Choosing the Right ERP Solution to Support a Global Business', searchTerm.whitePapers) ? 'block' : 'none' }}>
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white10.png" alt="" />
-                                                                        </figure>
-                                                                        <h4>
-                                                                            Choosing the Right ERP Solution to Support a
-                                                                            Global Business
-                                                                        </h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems('Best Practices for ERP Implementation Success', searchTerm.whitePapers) ? 'block' : 'none' }}
-                                                                >
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white11.png" alt="" />
-                                                                        </figure>
-                                                                        <h4>
-                                                                            Best Practices for ERP Implementation Success
-                                                                        </h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems("Time to Rethink Accounting Software and switch to an ERP?", searchTerm.whitePapers) ? 'block' : 'none' }}
-                                                                >
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white12.jpg" alt="" />
-                                                                        </figure>
-                                                                        <h4>
-                                                                            Time to Rethink Accounting Software and switch
-                                                                            to an ERP?
-                                                                        </h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems('Transforming HR Made Easy', searchTerm.whitePapers) ? 'block' : 'none' }}
-                                                                >
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white13.png" alt="" />
-                                                                        </figure>
-                                                                        <h4>Transforming HR Made Easy</h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems("Buyer's guide to choosing the right ERP", searchTerm.whitePapers) ? 'block' : 'none' }}
-                                                                >
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white14.jpg" alt="" />
-                                                                        </figure>
-                                                                        <h4>Buyer's guide to choosing the right ERP</h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems('Choosing your ERP in 2024', searchTerm.whitePapers) ? 'block' : 'none' }}
-                                                                >
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white15.png" alt="" />
-                                                                        </figure>
-                                                                        <h4>Choosing your ERP in 2024</h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems('ERP-in-2025-Your-Essential-Guide-to-the-Future', searchTerm.whitePapers) ? 'block' : 'none' }}
-                                                                >
-                                                                    <div className="video-gallery-image ">
-                                                                        <figure>
-                                                                            <img src="/images/white16.png" alt="" />
-                                                                        </figure>
-                                                                        <h4>
-                                                                            ERP-in-2025-Your-Essential-Guide-to-the-Future
-                                                                        </h4>
-                                                                        <div className="ser-btn">
-                                                                            <Link className="animated-svg-link"
-                                                                                href="#!"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#myModal"
-                                                                            >
-                                                                                Read More
-                                                                                <NavArrowRight />
-                                                                            </Link>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                                ))}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -980,64 +752,22 @@ export default function Collaterals() {
                                                             </button>
                                                         </div>
                                                     </form>
-                                                    <h6 className="fome-filter-title">White Papers</h6>
+                                                    <h6 className="fome-filter-title">Category</h6>
                                                     <div className="filter-check-box-waber">
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Epicor ERP
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                HCM
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Iscala
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Manufacturing
-                                                            </label>
-                                                        </div>
+                                                        {CATEGORY_OPTIONS.map((opt) => (
+                                                            <div key={opt.value} className="form-check">
+                                                                <input
+                                                                    className="form-check-input"
+                                                                    type="checkbox"
+                                                                    checked={selectedCategoriesWP.includes(opt.value)}
+                                                                    onChange={() => toggleCategory('wp', opt.value)}
+                                                                    id={`wp-desk-${opt.value}`}
+                                                                />
+                                                                <label className="form-check-label" htmlFor={`wp-desk-${opt.value}`}>
+                                                                    {opt.label}
+                                                                </label>
+                                                            </div>
+                                                        ))}
                                                     </div>
                                                 </div>
                                             </div>
@@ -1093,162 +823,22 @@ export default function Collaterals() {
                                                                 className="collapse content-box collapse show"
                                                             >
                                                                 <div className="col-sm-12 width100">
-                                                                    <h6 className="fome-filter-title">Brochures</h6>
+                                                                    <h6 className="fome-filter-title">Category</h6>
                                                                     <div className="filter-check-box-waber">
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Corporate Brochure
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                EPICOR
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Epicor iScala for Hospitality
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Epicor HCM
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Epicor Payroll MEA
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Epicor Copy Company Tool
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Power Plant Analytics
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Epicor for Manufacturing
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Epicor for EPC and Construction
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Epicor for Automotive
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Epicor for Distribution
-                                                                            </label>
-                                                                        </div>
+                                                                        {BROCHURE_CATEGORY_OPTIONS.map((opt) => (
+                                                                            <div key={opt.value} className="form-check">
+                                                                                <input
+                                                                                    className="form-check-input"
+                                                                                    type="checkbox"
+                                                                                    checked={selectedCategoriesBrochure.includes(opt.value)}
+                                                                                    onChange={() => toggleCategory('brochure', opt.value)}
+                                                                                    id={`bro-mob-${opt.value}`}
+                                                                                />
+                                                                                <label className="form-check-label" htmlFor={`bro-mob-${opt.value}`}>
+                                                                                    {opt.label}
+                                                                                </label>
+                                                                            </div>
+                                                                        ))}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1260,11 +850,11 @@ export default function Collaterals() {
                                                         </h4>
                                                         <div className="bolg-filter-waber webinarbtn collatfilter brofilter">
                                                             <div className="row">
-                                                                {/* Item 1: Our Solutions & Digital Services */}
+                                                                {/* Item 1: Corporate Brochure */}
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems('Corporate Brochure', searchTerm.brochures) ? 'block' : 'none' }}
+                                                                    data-category="corporate-brochure"
+                                                                    style={{ display: (filterItems('Corporate Brochure', searchTerm.brochures) && showByCategory('corporate-brochure', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1283,11 +873,11 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                {/* Item 2: Enterprise Solutions & Digital Services */}
+                                                                {/* Item 2: EPICOR */}
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems('Epicor ERP Brochure', searchTerm.brochures) ? 'block' : 'none' }}
+                                                                    data-category="epicor"
+                                                                    style={{ display: (filterItems('Epicor ERP Brochure', searchTerm.brochures) && showByCategory('epicor', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1306,11 +896,11 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                {/* Item 3: Digital Solutions */}
+                                                                {/* Item 3: EPICOR (Oil and Gas) */}
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
-                                                                    data-category="1 2"
-                                                                    style={{ display: filterItems('Epicor for Oil and Gas Brochure', searchTerm.brochures) ? 'block' : 'none' }}
+                                                                    data-category="epicor"
+                                                                    style={{ display: (filterItems('Epicor for Oil and Gas Brochure', searchTerm.brochures) && showByCategory('epicor', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1329,11 +919,11 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                {/* Item 4: Our Solutions & Digital Solutions */}
+                                                                {/* Item 4: Epicor Copy Company Tool */}
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
-                                                                    data-category="3  4"
-                                                                    style={{ display: filterItems('Epicor Copy Company Tool Overview', searchTerm.brochures) ? 'block' : 'none' }}
+                                                                    data-category="epicor-copy-company-tool"
+                                                                    style={{ display: (filterItems('Epicor Copy Company Tool Overview', searchTerm.brochures) && showByCategory('epicor-copy-company-tool', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1352,8 +942,8 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                {/* Item 5: Enterprise Solutions (Takes full width if only 5 items in col-sm-3) */}
-                                                                <div className="col-sm-4 mb-4 item" data-category={2} style={{ display: filterItems('Epicor Payroll MEA Overview', searchTerm.brochures) ? 'block' : 'none' }}>
+                                                                {/* Item 5: Epicor Payroll MEA */}
+                                                                <div className="col-sm-4 mb-4 item" data-category="epicor-payroll-mea" style={{ display: (filterItems('Epicor Payroll MEA Overview', searchTerm.brochures) && showByCategory('epicor-payroll-mea', selectedCategoriesBrochure)) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
                                                                             <img src="/images/bro5.png" alt="" />
@@ -1371,8 +961,8 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                {/* Item 3: Digital Solutions */}
-                                                                <div className="col-sm-4 mb-4 item" data-category={3} style={{ display: filterItems('Epicor HCM Overview', searchTerm.brochures) ? 'block' : 'none' }}>
+                                                                {/* Item 6: Epicor HCM */}
+                                                                <div className="col-sm-4 mb-4 item" data-category="epicor-hcm" style={{ display: (filterItems('Epicor HCM Overview', searchTerm.brochures) && showByCategory('epicor-hcm', selectedCategoriesBrochure)) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
                                                                             <img src="/images/bro6.png" alt="" />
@@ -1390,7 +980,7 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div className="col-sm-4 mb-4 item" data-category={3} style={{ display: filterItems('Epicor for Manufacturing Brochure', searchTerm.brochures) ? 'block' : 'none' }}>
+                                                                <div className="col-sm-4 mb-4 item" data-category="epicor-manufacturing" style={{ display: (filterItems('Epicor for Manufacturing Brochure', searchTerm.brochures) && showByCategory('epicor-manufacturing', selectedCategoriesBrochure)) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
                                                                             <img src="/images/bro7.png" alt="" />
@@ -1410,8 +1000,8 @@ export default function Collaterals() {
                                                                 </div>
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
-                                                                    data-category="solution popular"
-                                                                    style={{ display: filterItems('Epicor for EPC and Construction Brochure', searchTerm.brochures) ? 'block' : 'none' }}
+                                                                    data-category="epicor-epc-construction"
+                                                                    style={{ display: (filterItems('Epicor for EPC and Construction Brochure', searchTerm.brochures) && showByCategory('epicor-epc-construction', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1432,8 +1022,8 @@ export default function Collaterals() {
                                                                 </div>
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems('Epicor for Distribution Brochure', searchTerm.brochures) ? 'block' : 'none' }}
+                                                                    data-category="epicor-distribution"
+                                                                    style={{ display: (filterItems('Epicor for Distribution Brochure', searchTerm.brochures) && showByCategory('epicor-distribution', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1452,7 +1042,7 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div className="col-sm-4 mb-4 item" data-category={3} style={{ display: filterItems('Epicor for Automotive Brochure', searchTerm.brochures) ? 'block' : 'none' }}>
+                                                                <div className="col-sm-4 mb-4 item" data-category="epicor-automotive" style={{ display: (filterItems('Epicor for Automotive Brochure', searchTerm.brochures) && showByCategory('epicor-automotive', selectedCategoriesBrochure)) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
                                                                             <img src="/images/bro10.png" alt="" />
@@ -1472,8 +1062,8 @@ export default function Collaterals() {
                                                                 </div>
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems("RheinBrücke's Power Plant Analytics Brochure", searchTerm.brochures) ? 'block' : 'none' }}
+                                                                    data-category="power-plant-analytics"
+                                                                    style={{ display: (filterItems("RheinBrücke's Power Plant Analytics Brochure", searchTerm.brochures) && showByCategory('power-plant-analytics', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1496,8 +1086,8 @@ export default function Collaterals() {
                                                                 </div>
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems('Epicor iScala for Hospitality Overview', searchTerm.brochures) ? 'block' : 'none' }}
+                                                                    data-category="epicor-iscala-hospitality"
+                                                                    style={{ display: (filterItems('Epicor iScala for Hospitality Overview', searchTerm.brochures) && showByCategory('epicor-iscala-hospitality', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1518,12 +1108,14 @@ export default function Collaterals() {
                                                                 </div>
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
+                                                                    data-category="epicor"
+                                                                    style={{ display: (filterItems('Move to Epicor Cloud', searchTerm.brochures) && showByCategory('epicor', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
                                                                             <img src="/images/bro13.jpg" alt="" />
                                                                         </figure>
+                                                                        <h4>Move to Epicor Cloud</h4>
                                                                         <div className="ser-btn">
                                                                             <Link className="animated-svg-link"
                                                                                 href="#!"
@@ -1554,162 +1146,22 @@ export default function Collaterals() {
                                                             </button>
                                                         </div>
                                                     </form>
-                                                    <h6 className="fome-filter-title">Brochures</h6>
+                                                    <h6 className="fome-filter-title">Category</h6>
                                                     <div className="filter-check-box-waber">
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Corporate Brochure
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                EPICOR
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Epicor iScala for Hospitality
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Epicor HCM
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Epicor Payroll MEA
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Epicor Copy Company Tool
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Power Plant Analytics
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Epicor for Manufacturing
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Epicor for EPC and Construction
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Epicor for Automotive
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Epicor for Distribution
-                                                            </label>
-                                                        </div>
+                                                        {BROCHURE_CATEGORY_OPTIONS.map((opt) => (
+                                                            <div key={opt.value} className="form-check">
+                                                                <input
+                                                                    className="form-check-input"
+                                                                    type="checkbox"
+                                                                    checked={selectedCategoriesBrochure.includes(opt.value)}
+                                                                    onChange={() => toggleCategory('brochure', opt.value)}
+                                                                    id={`bro-desk-${opt.value}`}
+                                                                />
+                                                                <label className="form-check-label" htmlFor={`bro-desk-${opt.value}`}>
+                                                                    {opt.label}
+                                                                </label>
+                                                            </div>
+                                                        ))}
                                                     </div>
                                                 </div>
                                             </div>
@@ -1765,64 +1217,22 @@ export default function Collaterals() {
                                                                 className="collapse content-box collapse show"
                                                             >
                                                                 <div className="col-sm-12 width100">
-                                                                    <h6 className="fome-filter-title">Factsheets</h6>
+                                                                    <h6 className="fome-filter-title">Category</h6>
                                                                     <div className="filter-check-box-waber">
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Epicor ERP
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                HCM
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Iscala
-                                                                            </label>
-                                                                        </div>
-                                                                        <div className="form-check">
-                                                                            <input
-                                                                                className="form-check-input"
-                                                                                type="checkbox"
-                                                                                defaultValue=""
-                                                                                id="flexCheckDefault"
-                                                                            />
-                                                                            <label
-                                                                                className="form-check-label"
-                                                                                htmlFor="flexCheckDefault"
-                                                                            >
-                                                                                Manufacturing
-                                                                            </label>
-                                                                        </div>
+                                                                        {CATEGORY_OPTIONS.map((opt) => (
+                                                                            <div key={opt.value} className="form-check">
+                                                                                <input
+                                                                                    className="form-check-input"
+                                                                                    type="checkbox"
+                                                                                    checked={selectedCategoriesFS.includes(opt.value)}
+                                                                                    onChange={() => toggleCategory('fs', opt.value)}
+                                                                                    id={`fs-mob-${opt.value}`}
+                                                                                />
+                                                                                <label className="form-check-label" htmlFor={`fs-mob-${opt.value}`}>
+                                                                                    {opt.label}
+                                                                                </label>
+                                                                            </div>
+                                                                        ))}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1836,8 +1246,8 @@ export default function Collaterals() {
                                                             <div className="row">
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems('Choosing the right ERP Vendor', searchTerm.factsheets) ? 'block' : 'none' }}
+                                                                    data-category="erp"
+                                                                    style={{ display: (filterItems('Choosing the right ERP Vendor', searchTerm.factsheets) && showByCategory('erp', selectedCategoriesFS)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1856,11 +1266,11 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                {/* Item 2: Enterprise Solutions & Digital Services */}
+                                                                {/* Item 2: ERP */}
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
-                                                                    data-category="product popular"
-                                                                    style={{ display: filterItems('ROI Analysis Factsheet', searchTerm.factsheets) ? 'block' : 'none' }}
+                                                                    data-category="erp"
+                                                                    style={{ display: (filterItems('ROI Analysis Factsheet', searchTerm.factsheets) && showByCategory('erp', selectedCategoriesFS)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1879,11 +1289,11 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                {/* Item 3: Digital Solutions */}
+                                                                {/* Item 3: ERP */}
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
-                                                                    data-category="1 2"
-                                                                    style={{ display: filterItems('Oilfield services Factsheet', searchTerm.factsheets) ? 'block' : 'none' }}
+                                                                    data-category="erp"
+                                                                    style={{ display: (filterItems('Oilfield services Factsheet', searchTerm.factsheets) && showByCategory('erp', selectedCategoriesFS)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1902,11 +1312,11 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                {/* Item 4: Our Solutions & Digital Solutions */}
+                                                                {/* Item 4: ERP */}
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
-                                                                    data-category="3  4"
-                                                                    style={{ display: filterItems('3 Reasons why ERP software is a must for Financial Management', searchTerm.factsheets) ? 'block' : 'none' }}
+                                                                    data-category="erp"
+                                                                    style={{ display: (filterItems('3 Reasons why ERP software is a must for Financial Management', searchTerm.factsheets) && showByCategory('erp', selectedCategoriesFS)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1929,7 +1339,7 @@ export default function Collaterals() {
                                                                     </div>
                                                                 </div>
                                                                 {/* Item 5: Enterprise Solutions (Takes full width if only 5 items in col-sm-3) */}
-                                                                <div className="col-sm-4 mb-4 item" data-category={2} style={{ display: filterItems('20 Questions to ask before you choose your cloud ERP', searchTerm.factsheets) ? 'block' : 'none' }}>
+                                                                <div className="col-sm-4 mb-4 item" data-category="erp cloud" style={{ display: (filterItems('20 Questions to ask before you choose your cloud ERP', searchTerm.factsheets) && showByCategory('erp cloud', selectedCategoriesFS)) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
                                                                             <img src="/images/fact5.jpg" alt="" />
@@ -1951,7 +1361,7 @@ export default function Collaterals() {
                                                                     </div>
                                                                 </div>
                                                                 {/* Item 3: Digital Solutions */}
-                                                                <div className="col-sm-4 mb-4 item" data-category={3} style={{ display: filterItems('Warning Signs of A Growing business', searchTerm.factsheets) ? 'block' : 'none' }}>
+                                                                <div className="col-sm-4 mb-4 item" data-category="erp cloud" style={{ display: (filterItems('Warning Signs of A Growing business', searchTerm.factsheets) && showByCategory('erp cloud', selectedCategoriesFS)) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
                                                                             <img src="/images/fact6.png" alt="" />
@@ -1987,64 +1397,22 @@ export default function Collaterals() {
                                                             </button>
                                                         </div>
                                                     </form>
-                                                    <h6 className="fome-filter-title">Factsheets</h6>
+                                                    <h6 className="fome-filter-title">Category</h6>
                                                     <div className="filter-check-box-waber">
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Epicor ERP
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                HCM
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Iscala
-                                                            </label>
-                                                        </div>
-                                                        <div className="form-check">
-                                                            <input
-                                                                className="form-check-input"
-                                                                type="checkbox"
-                                                                defaultValue=""
-                                                                id="flexCheckDefault"
-                                                            />
-                                                            <label
-                                                                className="form-check-label"
-                                                                htmlFor="flexCheckDefault"
-                                                            >
-                                                                Manufacturing
-                                                            </label>
-                                                        </div>
+                                                        {CATEGORY_OPTIONS.map((opt) => (
+                                                            <div key={opt.value} className="form-check">
+                                                                <input
+                                                                    className="form-check-input"
+                                                                    type="checkbox"
+                                                                    checked={selectedCategoriesFS.includes(opt.value)}
+                                                                    onChange={() => toggleCategory('fs', opt.value)}
+                                                                    id={`fs-desk-${opt.value}`}
+                                                                />
+                                                                <label className="form-check-label" htmlFor={`fs-desk-${opt.value}`}>
+                                                                    {opt.label}
+                                                                </label>
+                                                            </div>
+                                                        ))}
                                                     </div>
                                                 </div>
                                             </div>
