@@ -626,14 +626,12 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                     setStatusMessage('Failed to submit application. Please try again.')
                 }
             } else {
-                // Send emails via SendGrid
+                // Send emails via Supabase Edge Function (SendGrid)
                 try {
-                    const emailResponse = await fetch('/api/job-application/send-email', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
+                    const supabase = createClient()
+                    const { data: emailResult, error: emailError } = await supabase.functions.invoke('send-contact-email', {
+                        body: {
+                            channel: 'job-application',
                             fullName,
                             email: email.toLowerCase().trim(),
                             phone,
@@ -641,18 +639,16 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                             jobTitle: selection,
                             resumeUrl: resumeUrl || null,
                             coveringLetter: formData.message || null,
-                        }),
-                    });
+                        },
+                    })
 
-                    const emailResult = await emailResponse.json();
-                    
-                    if (!emailResult.success) {
-                        console.warn('Email sending failed:', emailResult.error);
-                        // Still show success since application was saved to database
+                    if (emailError) {
+                        console.warn('Email sending failed:', emailError.message)
+                    } else if (emailResult && !emailResult.success) {
+                        console.warn('Email sending failed:', emailResult.error)
                     }
                 } catch (emailError: any) {
-                    console.error('Email sending error:', emailError);
-                    // Still show success since application was saved to database
+                    console.error('Email sending error:', emailError)
                 }
 
                 setStatus('success')

@@ -5,11 +5,14 @@
 Create a file named `.env.local` in the root of your project with the following content:
 
 ```env
-# Supabase Configuration
-NEXT_PUBLIC_SUPABASE_URL=https://zanyplwqnhqtpulywvgm.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InphbnlwbHdxbmhxdHB1bHl3dmdtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ5MzIwMzAsImV4cCI6MjA4MDUwODAzMH0.zug8eqoIlw6C9U014ag_vvBrwK9oXjQ8ki_c6JrKgZA
-SUPABASE_SERVICE_ROLE_KEY=sb_secret_Hde6vXYQVOMDanaPA0q6Xw_JAdlV-9i
+# Supabase Configuration (use your project URL and keys from Supabase Dashboard)
+NEXT_PUBLIC_SUPABASE_URL=https://fltdymhjpiwnwltazqse.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<your-anon-key-from-dashboard>
+SUPABASE_SERVICE_ROLE_KEY=<your-service-role-key-from-dashboard>
 ```
+
+The app and Edge Function `send-contact-email` use this URL; the function is invoked at:
+`https://fltdymhjpiwnwltazqse.supabase.co/functions/v1/send-contact-email`
 
 **IMPORTANT:** Make sure `.env.local` is in your `.gitignore` file!
 
@@ -94,6 +97,36 @@ export async function GET() {
 }
 ```
 
+## 📧 Email via Supabase Edge Function (send-contact-email)
+
+Contact, collaterals, and job-application forms send email via the **Supabase Edge Function** `send-contact-email`, which uses SendGrid. The app calls `supabase.functions.invoke('send-contact-email', { body: { channel, ... } })`.
+
+### Deploy the function
+
+```bash
+supabase functions deploy send-contact-email
+```
+
+### Set Edge Function secrets (Supabase Dashboard → Edge Functions → send-contact-email → Secrets)
+
+| Secret | Description |
+|--------|-------------|
+| `SENDGRID_API_KEY` | SendGrid API key (required) |
+| `FROM_EMAIL` | Sender email (default: noreply@rheincs.com) |
+| `FROM_NAME` | Sender name (default: RheinBrücke) |
+| `ADMIN_EMAIL` | Contact form admin (default: marketing@rheincs.com) |
+| `COLLATERALS_ADMIN_EMAIL` | Collaterals admin (optional; falls back to ADMIN_EMAIL) |
+| `JOB_APPLICATION_ADMIN_EMAIL` | Job applications admin (optional; default: careers@rheincs.com) |
+
+### Request body (channel)
+
+- **contact** – `{ channel: 'contact', fullName, email, phone, countryCode?, companyName, selection?, message? }`
+- **collaterals** – `{ channel: 'collaterals', fullName, email, phone, countryCode?, companyName, selection?, message? }`
+- **job-application** – `{ channel: 'job-application', fullName, email, phone, countryCode?, jobTitle, resumeUrl?, coveringLetter? }`
+- **test** – `{ channel: 'test', testEmail }`
+
+No `.env.local` SendGrid vars are needed for the app; secrets live in Supabase.
+
 ## 🔐 Security Notes
 
 1. **NEVER** commit `.env.local` to git
@@ -112,6 +145,6 @@ export async function GET() {
 
 ## 🔗 Useful Links
 
-- Supabase Dashboard: https://zanyplwqnhqtpulywvgm.supabase.co
+- Supabase Dashboard: https://fltdymhjpiwnwltazqse.supabase.co
 - Supabase Docs: https://supabase.com/docs
 - Next.js Integration: https://supabase.com/docs/guides/getting-started/quickstarts/nextjs

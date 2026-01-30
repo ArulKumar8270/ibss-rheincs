@@ -85,14 +85,12 @@ export default function Corushr() {
                 setStatus('error');
                 setStatusMessage(errorMessage);
             } else {
-                // Send emails via SendGrid
+                // Send emails via Supabase Edge Function (SendGrid)
                 try {
-                    const emailResponse = await fetch('/api/contact/send-email', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
+                    const supabase = createClient();
+                    const { data: emailResult, error: emailError } = await supabase.functions.invoke('send-contact-email', {
+                        body: {
+                            channel: 'contact',
                             fullName,
                             email,
                             phone,
@@ -100,18 +98,16 @@ export default function Corushr() {
                             companyName,
                             selection: 'CorusHR Brochure Request',
                             message: null,
-                        }),
+                        },
                     });
 
-                    const emailResult = await emailResponse.json();
-                    
-                    if (!emailResult.success) {
+                    if (emailError) {
+                        console.warn('Email sending failed:', emailError.message);
+                    } else if (emailResult && !emailResult.success) {
                         console.warn('Email sending failed:', emailResult.error);
-                        // Still show success since form was saved to database
                     }
                 } catch (emailError: any) {
                     console.error('Email sending error:', emailError);
-                    // Still show success since form was saved to database
                 }
 
                 setStatus('success');
