@@ -408,7 +408,7 @@ export default function Contact() {
                     className="text-anime-style-21 text-white "
                     data-cursor="-opaque"
                   >
-                    Talk to Our Experts
+                    {t("Talk to Our Experts")}
                   </h2>
                   <p className="">
                     {" "}
@@ -468,19 +468,19 @@ export default function Contact() {
                     }}
                   >
                     <img src="/new/chat-btn.svg" alt="" />
-                    <p>Chat With Us</p>
+                    <p>{t("Chat With Us")}</p>
                   </div>
                   <Link href="https://outlook.office365.com/book/RheinBruckeITConsulting@rheincs.com/?ismsaljsauthenabled=true" target="_blank" className="chat-btn-1">
                     <img src="/new/chat-3.svg" alt="" />
-                    <p>Book a Meeting</p>
+                    <p>{t("Book a Meeting")}</p>
                   </Link>
                 </div>
               </div>
               <div className="col-sm-6">
                 <div className="contect-enq-waber">
-                  <h2> Let's Connect With Us</h2>
+                  <h2> {t("Let's Connect With Us")}</h2>
                   <p className="text-dark">
-                  Submit your details and our team will get in touch with you shortly.
+                    {t("Submit your details and our team will get in touch with you shortly.")}
                   </p>
 
                   {/* Status Message */}
@@ -509,7 +509,7 @@ export default function Contact() {
                         type="text"
                         className={`form-control custom-form-control ${touched.fullName && errors.fullName ? 'is-invalid' : ''}`}
                         name="fullName"
-                        placeholder="Enter Your Full Name*"
+                        placeholder={t("Enter your full name")}
                         value={formData.fullName}
                         onChange={handleInputChange}
                         onBlur={handleBlur}
@@ -791,7 +791,7 @@ export default function Contact() {
                           type="tel"
                           className={`form-control ${touched.phone && errors.phone ? 'is-invalid' : ''}`}
                           name="phone"
-                          placeholder="Enter Your Phone No*"
+                          placeholder={t("Enter your phone number")}
                           value={formData.phone}
                           onChange={handleInputChange}
                           onBlur={handleBlur}
@@ -818,7 +818,7 @@ export default function Contact() {
                         type="email"
                         className={`form-control custom-form-control ${touched.email && errors.email ? 'is-invalid' : ''}`}
                         name="email"
-                        placeholder="Enter Your Email Address*"
+                        placeholder={t("Enter your email address")}
                         value={formData.email}
                         onChange={handleInputChange}
                         onBlur={handleBlur}
@@ -837,7 +837,7 @@ export default function Contact() {
                         type="text"
                         className={`form-control custom-form-control ${touched.companyName && errors.companyName ? 'is-invalid' : ''}`}
                         name="companyName"
-                        placeholder="Enter Your Company Name*"
+                        placeholder={t("Enter your company name")}
                         value={formData.companyName}
                         onChange={handleInputChange}
                         onBlur={handleBlur}
@@ -861,15 +861,15 @@ export default function Contact() {
                         disabled={status === 'loading'}
                       >
                         <option value="" disabled>
-                          Select Any One
+                          {t("Select Any One")}
                         </option>
-                        <option value="SAP Solutions">SAP Solutions</option>
-                        <option value="Digital Transformation">Digital Transformation</option>
-                        <option value="Cloud Services">Cloud Services</option>
-                        <option value="AI & ML">AI & ML</option>
-                        <option value="Enterprise Solutions">Enterprise Solutions</option>
-                        <option value="Consulting">Consulting</option>
-                        <option value="Other">Other</option>
+                        <option value="SAP Solutions">{t("SAP Solution")}</option>
+                        <option value="Digital Transformation">{t("Digital transformation")}</option>
+                        <option value="Cloud Services">{t("Cloud services")}</option>
+                        <option value="AI & ML">{t("AI / ML")}</option>
+                        <option value="Enterprise Solutions">{t("Enterprise solution")}</option>
+                        <option value="Consulting">{t("Consulting")}</option>
+                        <option value="Other">{t("Other")}</option>
                       </select>
                     </div>
                     {/* Message */}
@@ -877,7 +877,7 @@ export default function Contact() {
                       <textarea
                         className={`form-control custom-form-control ${touched.message && errors.message ? 'is-invalid' : ''}`}
                         name="message"
-                        placeholder="Message"
+                        placeholder={t("Message")}
                         rows={5}
                         value={formData.message}
                         onChange={handleInputChange}
@@ -1026,7 +1026,7 @@ export default function Contact() {
                 className="text-anime-style-2 text-center text-dark "
                 data-cursor="-opaque"
               >
-                Talk to Our Experts
+                {t("Talk to Our Experts")}
               </h2>
               <ul className="contres-15">
                 <li> Netherlands</li>
@@ -1181,16 +1181,15 @@ Germany<br>
               <div className="firstrow">
                 <div className="row">
                   <div className="col-sm-8">
-                    <h2>Ready to accelerate value creation across your portfolio?</h2>
+                    <h2>{t("Ready to accelerate value creation across your portfolio?")}</h2>
                     <p>
-                      Contact us today to learn how we can help modernise operations,
-                      de-risk integrations, and improve commercial outcomes.
+                      {t("Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.")}
                     </p>
                   </div>
                   <div className="col-sm-4">
                     <div className="ser-btn text-right">
                       <Link href="/contact" className="animated-svg-link">
-                        Contact Us
+                        {t("Contact Us")}
                         <span className="svg-container ">
                           <span className=" right">
                             <svg

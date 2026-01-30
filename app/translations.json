@@ -1502,7 +1502,33 @@
     "Read more": "Read more",
 
 
-    "Thank you for your interest in RheinBrücke. Please contact us by either visiting our office at the locations provided or write to us for more information on how RheinBrücke can help you stay ahead of competition. For additional information on our IT consulting services, solutions or industry expertise, please visit the relevant pages on our website.": "Thank you for your interest in RheinBrücke. Please contact us by either visiting our office at the locations provided or write to us for more information on how RheinBrücke can help you stay ahead of competition. For additional information on our IT consulting services, solutions or industry expertise, please visit the relevant pages on our website.",
+
+    "Talk to Our Experts": "Talk to Our Experts",
+    "Thank you for your interest in RheinBrücke. Please contact us by either visiting our office at the locations provided or write to us for more information on how RheinBrücke can help you stay ahead of competition. For additional information on our IT consulting services, solutions or industry expertise, please visit the relevant pages on our website.":
+    "Thank you for your interest in RheinBrücke. Please contact us by either visiting our office at the locations provided or write to us for more information on how RheinBrücke can help you stay ahead of competition. For additional information on our IT consulting services, solutions or industry expertise, please visit the relevant pages on our website.",
+    
+    "Let’s Connect With Us": "Let’s Connect With Us",
+    "Submit your details and our team will get in touch with you shortly.": "Submit your details and our team will get in touch with you shortly.",
+
+    "Enter your full name": "Enter your full name",
+    "Enter your phone number": "Enter your phone number",
+    "Enter your company name": "Enter your company name",
+    "Message": "Message",
+    "Submit": "Submit",
+    "Book a Meeting": "Book a Meeting",
+    "Chat With Us": "Chat With Us",
+    "Select any one": "Select any one",
+    "SAP Solution": "SAP Solution",
+    "Digital transformation": "Digital transformation",
+    "Cloud services": "Cloud services",
+    "AI / ML": "AI / ML",
+    "Enterprise solution": "Enterprise solution",
+    "Consulting": "Consulting",
+    "Other": "Other",
+    
+    "Ready to accelerate value creation across your portfolio?": "Ready to accelerate value creation across your portfolio?",
+    "Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.":
+    "Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.",
 
 
 
@@ -2145,7 +2171,49 @@
 
       "Analyse": "Analyse",
     "Integrate": "Integrate",
-    "Transform": "Transform"
+    "Transform": "Transform",
+
+
+
+
+
+
+    "Ecommerce Solutions": "Ecommerce Solutions",
+    "Deliver seamless digital commerce experiences with platforms built for scale, speed, and personalisation.": "Deliver seamless digital commerce experiences with platforms built for scale, speed, and personalisation.",
+    "Our headless, cloud-native solutions modernise legacy systems, unify channels, and optimise order management, helping you boost revenue, delight customers, and stay ahead in a competitive market.": "Our headless, cloud-native solutions modernise legacy systems, unify channels, and optimise order management, helping you boost revenue, delight customers, and stay ahead in a competitive market.",
+
+    "Why Choose Us?": "Why Choose Us?",
+    "Proven track record in modernising complex commerce systems.": "Proven track record in modernising complex commerce systems.",
+    "Deep expertise in omnichannel, order management, and product data synchronisation.": "Deep expertise in omnichannel, order management, and product data synchronisation.",
+    "Strong partnerships with Fluent Commerce and commercetools for next-gen commerce.": "Strong partnerships with Fluent Commerce and commercetools for next-gen commerce.",
+    "End-to-end delivery - from strategy and design to deployment and ongoing support.": "End-to-end delivery - from strategy and design to deployment and ongoing support.",
+    "Relentless focus on faster time-to-market, higher revenue, and stronger customer loyalty.": "Relentless focus on faster time-to-market, higher revenue, and stronger customer loyalty.",
+
+    "Our Capabilities": "Our Capabilities",
+    "Cloud-Native, API Driven platform": "Cloud-Native, API Driven platform",
+    "Designed with microservices for flexibility": "Designed with microservices for flexibility",
+    "Seamless Integration": "Seamless Integration",
+    "ERP, CRM, OMS and third party systems working as one": "ERP, CRM, OMS and third party systems working as one",
+    "Personalised Storefronts": "Personalised Storefronts",
+    "Advanced content, search, and AI-driven recommendations.": "Advanced content, search, and AI-driven recommendations.",
+    "Headless Commerce Architecture": "Headless Commerce Architecture",
+    "Agility and scalability for future-ready commerce.": "Agility and scalability for future-ready commerce.",
+    "Unified Omnichannel Experience": "Unified Omnichannel Experience",
+    "Consistent engagement across web, mobile, and in-store.": "Consistent engagement across web, mobile, and in-store.",
+    "Performance Optimisation & Innovation": "Performance Optimisation & Innovation",
+    "Continuous improvement to keep you ahead.": "Continuous improvement to keep you ahead.",
+
+    "Our Technology Partners": "Our Technology Partners",
+    "Fluent Commerce – a distributed Order Management System (OMS) that optimises inventory, orders, and fulfilment at scale.": "Fluent Commerce – a distributed Order Management System (OMS) that optimises inventory, orders, and fulfilment at scale.",
+    "commercetools – a headless commerce platform built on MACH principles, delivering speed, flexibility, and personalisation.": "commercetools – a headless commerce platform built on MACH principles, delivering speed, flexibility, and personalisation.",
+    "Algolia – advanced AI-powered search and discovery, delivering lightning-fast, personalised results.": "Algolia – advanced AI-powered search and discovery, delivering lightning-fast, personalised results.",
+    "Contentstack – an enterprise-grade headless CMS for flexible, scalable, and omnichannel content delivery.": "Contentstack – an enterprise-grade headless CMS for flexible, scalable, and omnichannel content delivery.",
+    "Amplience – a powerful content and experience management platform for rich media, dynamic content, and personalised digital experiences.": "Amplience – a powerful content and experience management platform for rich media, dynamic content, and personalised digital experiences.",
+
+    "Reimagine eCommerce": "Reimagine eCommerce",
+    "Ready to modernise, scale, and unlock new growth?": "Ready to modernise, scale, and unlock new growth?",
+    "Talk to our experts today.": "Talk to our experts today.",
+    "Contact us": "Contact us"
 
 
     
@@ -3661,7 +3729,35 @@
 
 
 
-    "Thank you for your interest in RheinBrücke. Please contact us by either visiting our office at the locations provided or write to us for more information on how RheinBrücke can help you stay ahead of competition. For additional information on our IT consulting services, solutions or industry expertise, please visit the relevant pages on our website.":"Vielen Dank für Ihr Interesse an RheinBrücke. Besuchen Sie uns gerne an einem unserer Standorte oder schreiben Sie uns, um mehr darüber zu erfahren, wie RheinBrücke Ihnen helfen kann, Ihrer Konkurrenz einen Schritt voraus zu bleiben. Für weitere Informationen zu unseren IT-Beratungsleistungen, Lösungen oder Branchenkompetenzen besuchen Sie bitte die entsprechenden Seiten auf unserer Website.",
+    "Talk to Our Experts": "Kontaktieren Sie unsere Experten",
+    "Thank you for your interest in RheinBrücke. Please contact us by either visiting our office at the locations provided or write to us for more information on how RheinBrücke can help you stay ahead of competition. For additional information on our IT consulting services, solutions or industry expertise, please visit the relevant pages on our website.":
+    "Vielen Dank für Ihr Interesse an RheinBrücke. Nehmen Sie Kontakt mit uns auf oder besuchen Sie einen unserer Standorte, um zu erfahren, wie wir Sie nachhaltig im Wettbewerb unterstützen. Weitere Informationen zu unseren IT-Services, Lösungen und Branchenexpertise finden Sie auf unserer Website.",
+    
+    "Let’s Connect With Us": "Kontakt aufnehmen",
+    "Submit your details and our team will get in touch with you shortly.":
+    "Übermitteln Sie Ihre Daten - unser Team setzt sich zeitnah mit Ihnen in Verbindung.",
+
+    "Enter your full name": "Vollständiger Name",
+    "Enter your phone number": "Telefonnummer",
+    "Enter your company name": "Unternehmen",
+    "Message": "Nachricht",
+    "Submit": "Absenden",
+    "Book a Meeting": "Termin vereinbaren",
+    "Chat With Us": "Chat mit uns",
+    "Select any one": "Wobei können wir Sie unterstützen?",
+    "SAP Solution": "SAP-Lösungen",
+    "Digital transformation": "Digitale Transformation",
+    "Cloud services": "Cloud-Services",
+    "AI / ML": "KI / Machine Learning",
+    "Enterprise solution": "Enterprise-Lösungen",
+    "Consulting": "Beratung",
+    "Other": "Sonstiges",
+    
+    "Ready to accelerate value creation across your portfolio?":
+    "Möchten Sie den Mehrwert Ihres Portfolios steigern?",
+    
+    "Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.":
+    "Kontaktieren Sie uns noch heute, um zu erfahren, wie wir Sie bei der Modernisierung Ihrer Abläufe, der Risikominimierung bei Integrationen und der Verbesserung Ihrer Geschäftsergebnisse unterstützen können.",
 
 
 
@@ -4325,7 +4421,56 @@
 
     "Analyse": "Analysieren",
     "Integrate": "Integrieren",
-    "Transform": "Transformieren"
+    "Transform": "Transformieren",
+
+
+
+
+    "Ecommerce Solutions": "E-Commerce-Lösungen",
+    "Deliver seamless digital commerce experiences with platforms built for scale, speed, and personalisation.": "Skalierbare, performante und personalisierte Commerce-Plattformen für nachhaltiges Wachstum.",
+    "Our headless, cloud-native solutions modernise legacy systems, unify channels, and optimise order management, helping you boost revenue, delight customers, and stay ahead in a competitive market.": "Wir modernisieren Legacy-Systeme, integrieren alle Kanäle und optimieren Ihr Order Management – für mehr Umsatz und überzeugende Kundenerlebnisse.",
+
+    "Why Choose Us?": "Warum wir?",
+    "Proven track record in modernising complex commerce systems.": "Nachgewiesene Erfahrung in der Modernisierung komplexer Commerce-Systeme",
+    "Deep expertise in omnichannel, order management, and product data synchronisation.": "Umfassende Expertise in Omnichannel, Order Management und Produktdaten-Synchronisation",
+    "Strong partnerships with Fluent Commerce and commercetools for next-gen commerce.": "Starke Partnerschaften mit Fluent Commerce und commercetools für zukunftssicheren Digital Commerce",
+    "End-to-end delivery - from strategy and design to deployment and ongoing support.": "End-to-End-Umsetzung – von Strategie und Design bis Betrieb und Support",
+    "Relentless focus on faster time-to-market, higher revenue, and stronger customer loyalty.": "Klarer Fokus auf schnelle Markteinführung, Umsatzsteigerung und langfristige Kundenbindung",
+
+    "Our Capabilities": "Unsere Kompetenzen",
+    "Cloud-Native, API Driven platform": "Cloud-native, API-getriebene Plattformen",
+    "Designed with microservices for flexibility": "Microservices-Architektur für maximale Flexibilität",
+    "Seamless Integration": "Nahtlose Integration",
+    "ERP, CRM, OMS and third party systems working as one": "ERP, CRM, OMS und Drittsysteme perfekt vernetzt",
+    "Personalised Storefronts": "Personalisierte Storefronts",
+    "Advanced content, search, and AI-driven recommendations.": "Intelligente Inhalte, Suche und KI-gestützte Empfehlungen",
+    "Headless Commerce Architecture": "Headless-Commerce-Architektur",
+    "Agility and scalability for future-ready commerce.": "Agil, skalierbar und zukunftssicher",
+    "Unified Omnichannel Experience": "Einheitliches Omnichannel-Erlebnis",
+    "Consistent engagement across web, mobile, and in-store.": "Konsistente Customer Journeys über Web, Mobile und Store hinweg",
+    "Performance Optimisation & Innovation": "Performance-Optimierung & Innovation",
+    "Continuous improvement to keep you ahead.": "Kontinuierliche Weiterentwicklung für nachhaltigen Vorsprung",
+
+
+
+    
+
+    "Our Technology Partners": "Unsere Technologiepartner",
+    "Fluent Commerce": "Fluent Commerce",
+    "A distributed Order Management System (OMS) that optimises inventory, orders, and fulfilment at scale.": "Verteiltes Order-Management-System (OMS) zur skalierbaren Optimierung von Beständen, Bestellungen und Fulfillment",
+    "Commercetools": "Commercetools",
+    "A headless commerce platform built on MACH principles, delivering speed, flexibility, and personalisation.": "Headless-Commerce-Plattform auf MACH-Prinzipien für maximale Geschwindigkeit, Flexibilität und Personalisierung",
+    "Algolia": "Algolia",
+    "advanced AI-powered search and discovery, delivering lightning-fast, personalised results.": "KI-gestützte Suche und Discovery für extrem schnelle, personalisierte Ergebnisse",
+    "Contentstack": "Contentstack",
+    "An enterprise-grade headless CMS for flexible, scalable, and omnichannel content delivery.": "Enterprise-taugliches Headless CMS für flexible, skalierbare und kanalübergreifende Content-Ausspielung",
+    "Amplience": "Amplience",
+    "A powerful content and experience management platform for rich media, dynamic content, and personalised digital experiences.": "Leistungsstarke Plattform für Content- und Experience-Management mit Rich Media und personalisierten Erlebnissen",
+
+    "Reimagine eCommerce": "E-Commerce neu denken",
+    "Ready to modernise, scale, and unlock new growth?": "Bereit, Ihre Commerce-Plattform zu modernisieren, zu skalieren und neues Wachstum zu erschließen?",
+    "Talk to our experts today.": "Sprechen Sie noch heute mit unseren Experten.",
+    "Contact us": "Kontakt aufnehmen"
 
 
 
