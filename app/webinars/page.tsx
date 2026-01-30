@@ -263,15 +263,9 @@ const page = () => {
       );
     }
 
-    // Apply recent filter (last 2 years)
-    if (filters.recent) {
-      const twoYearsAgo = new Date();
-      twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
-      result = result.filter(webinar => webinar.dateObj >= twoYearsAgo);
-    }
-
-    // Sort by date if enabled
-    if (sortByDate) {
+    // "Recent" = sort by date (newest first), don't hide older webinars
+    // Sort by date when either "Recent" or "Sort by Release Date" is checked
+    if (sortByDate || filters.recent) {
       result.sort((a, b) => b.dateObj.getTime() - a.dateObj.getTime());
     }
 

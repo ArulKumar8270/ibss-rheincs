@@ -12171,6 +12171,12 @@ body:has(.offcanvas) {
 		gap: 5px !important;
 		margin-top: 0px !important;
 		margin-bottom: 15px !important;
+		color: #000;
+	}
+
+	.page-nate-waber .active {
+		background: #072327;
+		color: white !important;
 	}
 
 	.page-nate-waber span {
