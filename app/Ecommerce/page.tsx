@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function digitalsolution() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
             <>
@@ -20,17 +22,13 @@ export default function digitalsolution() {
                             <div className="col-sm-5">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-21" data-cursor="-opaque">
-                                        eCommerce Solutions
+                                        {t("Ecommerce Solutions")}
                                     </h2>
                                     <p>
-                                        Deliver seamless digital commerce experiences with platforms built
-                                        for scale, speed, and personalisation.
+                                        {t("Deliver seamless digital commerce experiences with platforms built for scale, speed, and personalisation.")}
                                     </p>
                                     <p>
-                                        Our headless, cloud-native solutions modernise legacy systems,
-                                        unify channels, and optimise order management, helping you boost
-                                        revenue, delight customers, and stay ahead in a competitive
-                                        market.{" "}
+                                        {t("Our headless, cloud-native solutions modernise legacy systems, unify channels, and optimise order management, helping you boost revenue, delight customers, and stay ahead in a competitive market.")}
                                     </p>
                                 </div>
                             </div>
@@ -57,7 +55,7 @@ export default function digitalsolution() {
                                                 className="text-anime-style-2 text-center"
                                                 data-cursor="-opaque"
                                             >
-                                                Why Choose Us?
+                                                {t("Why Choose Us?")}
                                             </h2>
                                         </div>
                                     </div>
@@ -68,15 +66,14 @@ export default function digitalsolution() {
                             <div className="col-sm-4 col-6">
                                 <div className="dynamics-advantage-waber">
                                     <img src="/new/g501.svg" alt="" />
-                                    <p>Proven track record in modernising complex commerce systems.</p>
+                                    <p>{t("Proven track record in modernising complex commerce systems.")}</p>
                                 </div>
                             </div>
                             <div className="col-sm-4 col-6">
                                 <div className="dynamics-advantage-waber">
                                     <img src="/new/ad2.svg" alt="" />
                                     <p>
-                                        Deep expertise in omnichannel, order management, and product data
-                                        synchronisation.
+                                        {t("Deep expertise in omnichannel, order management, and product data synchronisation.")}
                                     </p>
                                 </div>
                             </div>
@@ -84,8 +81,7 @@ export default function digitalsolution() {
                                 <div className="dynamics-advantage-waber">
                                     <img src="/new/ad3.svg" alt="" />
                                     <p>
-                                        Strong partnerships with Fluent Commerce and commercetools for
-                                        next-gen commerce.
+                                        {t("Strong partnerships with Fluent Commerce and commercetools for next-gen commerce.")}
                                     </p>
                                 </div>
                             </div>
@@ -93,8 +89,7 @@ export default function digitalsolution() {
                                 <div className="dynamics-advantage-waber">
                                     <img src="/new/ad4.svg" alt="" />
                                     <p>
-                                        End-to-end delivery - from strategy and design to deployment and
-                                        ongoing support.
+                                        {t("End-to-end delivery - from strategy and design to deployment and ongoing support.")}
                                     </p>
                                 </div>
                             </div>
@@ -102,8 +97,7 @@ export default function digitalsolution() {
                                 <div className="dynamics-advantage-waber">
                                     <img src="/new/ad5.svg" alt="" />
                                     <p>
-                                        Relentless focus on faster time-to-market, higher revenue, and
-                                        stronger customer loyalty.
+                                        {t("Relentless focus on faster time-to-market, higher revenue, and stronger customer loyalty.")}
                                     </p>
                                 </div>
                             </div>
@@ -117,7 +111,7 @@ export default function digitalsolution() {
                             <div className="section-title ">
                                 <div className="hero-video-content1 wow fadeInUp mt-4">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Our Capabilities
+                                        {t("Our Capabilities")}
                                     </h2>
                                 </div>
                             </div>
@@ -132,8 +126,8 @@ export default function digitalsolution() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/new/ds1.svg" alt="" />
-                                            <h6> Headless Commerce Architecture</h6>
-                                            <p>Agility and scalability for future-ready commerce.</p>
+                                            <h6> {t("Headless Commerce Architecture")}</h6>
+                                            <p>{t("Agility and scalability for future-ready commerce.")}</p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -141,8 +135,8 @@ export default function digitalsolution() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/new/ds2.svg" alt="" />
-                                            <h6> Cloud-Native, API-Driven Platforms </h6>
-                                            <p>Designed with microservices for flexibility.</p>
+                                            <h6> {t("Cloud-Native, API Driven platform")} </h6>
+                                            <p>{t("Designed with microservices for flexibility")}</p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -150,8 +144,8 @@ export default function digitalsolution() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/new/ds3.svg" alt="" />
-                                            <h6> Seamless Integration </h6>
-                                            <p>ERP, CRM, OMS, and third-party systems working as one.</p>
+                                            <h6> {t("Seamless Integration")} </h6>
+                                            <p>{t("ERP, CRM, OMS and third party systems working as one")}</p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -159,8 +153,8 @@ export default function digitalsolution() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/new/ds4.svg" alt="" />
-                                            <h6> Personalised Storefronts</h6>
-                                            <p>Advanced content, search, and AI-driven recommendations.</p>
+                                            <h6> {t("Personalised Storefronts")}</h6>
+                                            <p>{t("Advanced content, search, and AI-driven recommendations.")}</p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -168,8 +162,8 @@ export default function digitalsolution() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/new/ds5.svg" alt="" />
-                                            <h6> Unified Omnichannel Experiences</h6>
-                                            <p>Consistent engagement across web, mobile, and in-store.</p>
+                                            <h6> {t("Unified Omnichannel Experiences")}</h6>
+                                            <p>{t("Consistent engagement across web, mobile, and in-store.")}</p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -177,8 +171,8 @@ export default function digitalsolution() {
                                     <div className="swiper-slide">
                                         <div className="mds-waber">
                                             <img src="/new/ds3.svg" alt="" />
-                                            <h6> Performance Optimisation &amp; Innovation </h6>
-                                            <p>Continuous improvement to keep you ahead.</p>
+                                            <h6> {t("Performance Optimisation & Innovation")} </h6>
+                                            <p>{t("Continuous improvement to keep you ahead.")}</p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -406,7 +400,7 @@ export default function digitalsolution() {
                             <div className="col-lg-6">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Our Technology Partners
+                                        {t("Our Technology Partners")}
                                     </h2>
                                 </div>
                             </div>
@@ -432,17 +426,16 @@ export default function digitalsolution() {
                                                                 </div>
                                                             </div>
                                                             <div className="service-item-body  oa-para-waber">
-                                                                <h3>Fluent Commerce</h3>
+                                                                <h3> {t("Fluent Commerce")} </h3>
                                                                 <p className="oa-para">
                                                                     {" "}
-                                                                    A distributed Order Management System (OMS) that
-                                                                    optimises inventory, orders, and fulfilment at scale
+                                                                    {t("A distributed Order Management System (OMS) that optimises inventory, orders, and fulfilment at scale")}
                                                                 </p>
                                                                 <div className="ser-btn serbtn1">
                                                                     <Link href="/fluent-commerce"
                                                                         className="animated-svg-link1 animated-svg-link12"
                                                                     >
-                                                                        Read More
+                                                                        {t("Read More")}
                                                                         <span className="svg-container ">
                                                                             <span className=" left">
                                                                                 <svg
@@ -564,17 +557,15 @@ export default function digitalsolution() {
                                                                 </div>
                                                             </div>
                                                             <div className="service-item-body oa-para-waber">
-                                                                <h3>Commercetools </h3>
+                                                                <h3> {t("Commercetools")} </h3>
                                                                 <p className="oa-para">
-                                                                    A headless commerce platform built on MACH
-                                                                    principles, delivering speed, flexibility, and
-                                                                    personalisation.{" "}
+                                                                    {t("A headless commerce platform built on MACH principles, delivering speed, flexibility, and personalisation.")}
                                                                 </p>
                                                                 <div className="ser-btn serbtn1">
                                                                     <Link href="/Commercetools"
                                                                         className="animated-svg-link1 animated-svg-link12"
                                                                     >
-                                                                        Read More
+                                                                        {t("Read More")}
                                                                         <span className="svg-container ">
                                                                             <span className=" left">
                                                                                 <svg
@@ -696,47 +687,12 @@ export default function digitalsolution() {
                                                                 </div>
                                                             </div>
                                                             <div className="service-item-body oa-para-waber">
-                                                                <h3>Algolia </h3>
+                                                                <h3> {t("Algolia")} </h3>
                                                                 <p className="oa-para">
                                                                     {" "}
-                                                                    Advanced AI-powered search and discovery, delivering
-                                                                    lightning-fast, personalised results.
+                                                                    {t("Advanced AI-powered search and discovery, delivering lightning-fast, personalised results.")}
                                                                 </p>
-                                                                {/*<div class="ser-btn serbtn1">*/}
-                                                                {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                                                {/*        class="animated-svg-link1 animated-svg-link12">*/}
-                                                                {/*        Read More*/}
-                                                                {/*        <span class="svg-container ">*/}
-                                                                {/*            <span class=" left">*/}
-                                                                {/*                <svg width="24" height="23" viewBox="0 0 24 23"*/}
-                                                                {/*                    fill="none" xmlns="http://www.w3.org/2000/svg">*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                                                {/*                        cy="4.79995" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                                                {/*                        cy="1.6" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="22.4008"*/}
-                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="1.6"*/}
-                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="6.40078"*/}
-                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="11.1996"*/}
-                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                                                {/*                        cy="14.4" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                                                {/*                        cy="17.6" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                                                {/*                        cy="20.8" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                                                {/*                        cy="8.00002" r="1.6" fill="#535353" />*/}
-                                                                {/*                </svg>*/}
-                                                                {/*            </span>*/}
-                                                                {/*        </span>*/}
-                                                                {/*    </Link>*/}
-                                                                {/*</div>*/}
+                                                                
                                                             </div>
                                                         </div>
                                                     </div>
@@ -756,46 +712,11 @@ export default function digitalsolution() {
                                                                 </div>
                                                             </div>
                                                             <div className="service-item-body oa-para-waber">
-                                                                <h3>Contentstack </h3>
+                                                                <h3> {t("Contentstack")} </h3>
                                                                 <p className="oa-para">
-                                                                    An enterprise-grade headless CMS for flexible,
-                                                                    scalable, and omnichannel content delivery.{" "}
+                                                                     {t("An enterprise-grade headless CMS for flexible, scalable, and omnichannel content delivery.")}
                                                                 </p>
-                                                                {/*<div class="ser-btn serbtn1">*/}
-                                                                {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                                                {/*        class="animated-svg-link1 animated-svg-link12">*/}
-                                                                {/*        Read More*/}
-                                                                {/*        <span class="svg-container ">*/}
-                                                                {/*            <span class=" left">*/}
-                                                                {/*                <svg width="24" height="23" viewBox="0 0 24 23"*/}
-                                                                {/*                    fill="none" xmlns="http://www.w3.org/2000/svg">*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                                                {/*                        cy="4.79995" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                                                {/*                        cy="1.6" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="22.4008"*/}
-                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="1.6"*/}
-                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="6.40078"*/}
-                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="11.1996"*/}
-                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                                                {/*                        cy="14.4" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                                                {/*                        cy="17.6" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                                                {/*                        cy="20.8" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                                                {/*                        cy="8.00002" r="1.6" fill="#535353" />*/}
-                                                                {/*                </svg>*/}
-                                                                {/*            </span>*/}
-                                                                {/*        </span>*/}
-                                                                {/*    </Link>*/}
-                                                                {/*</div>*/}
+                                                                
                                                             </div>
                                                         </div>
                                                     </div>
@@ -815,47 +736,11 @@ export default function digitalsolution() {
                                                                 </div>
                                                             </div>
                                                             <div className="service-item-body oa-para-waber">
-                                                                <h3>Amplience </h3>
+                                                                <h3> {t("Amplience")} </h3>
                                                                 <p className="oa-para">
-                                                                    A powerful content and experience management
-                                                                    platform for rich media, dynamic content, and
-                                                                    personalised digital experiences.{" "}
+                                                                     {t("A powerful content and experience management platform for rich media, dynamic content, and personalised digital experiences.")}
                                                                 </p>
-                                                                {/*<div class="ser-btn serbtn1">*/}
-                                                                {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                                                {/*        class="animated-svg-link1 animated-svg-link12">*/}
-                                                                {/*        Read More*/}
-                                                                {/*        <span class="svg-container ">*/}
-                                                                {/*            <span class=" left">*/}
-                                                                {/*                <svg width="24" height="23" viewBox="0 0 24 23"*/}
-                                                                {/*                    fill="none" xmlns="http://www.w3.org/2000/svg">*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                                                {/*                        cy="4.79995" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                                                {/*                        cy="1.6" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="22.4008"*/}
-                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="1.6"*/}
-                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="6.40078"*/}
-                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="11.1996"*/}
-                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                                                {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                                                {/*                        cy="14.4" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                                                {/*                        cy="17.6" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                                                {/*                        cy="20.8" r="1.6" fill="#535353" />*/}
-                                                                {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                                                {/*                        cy="8.00002" r="1.6" fill="#535353" />*/}
-                                                                {/*                </svg>*/}
-                                                                {/*            </span>*/}
-                                                                {/*        </span>*/}
-                                                                {/*    </Link>*/}
-                                                                {/*</div>*/}
+                                                                
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1106,14 +991,14 @@ export default function digitalsolution() {
                             <div className="firstrow">
                                 <div className="row">
                                     <div className="col-sm-8">
-                                        <h2>Reimagine eCommerce</h2>
-                                        <p>Ready to modernise, scale, and unlock new growth?</p>
-                                        <p>Talk to our experts today.</p>
+                                        <h2> {t("Reimagine eCommerce")} </h2>
+                                        <p className="oa-para"> {t("Ready to modernise, scale, and unlock new growth?")} </p>
+                                        <p className="oa-para"> {t("Talk to our experts today.")} </p>
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
                                             <Link href="/contact-us" className="animated-svg-link">
-                                                Contact Us
+                                                {t("Contact Us")}
                                                 <span className="svg-container ">
                                                     <span className=" right">
                                                         <svg
