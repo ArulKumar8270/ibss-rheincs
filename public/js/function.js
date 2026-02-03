@@ -1203,6 +1203,13 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
 
     const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
 
+    if (realTotalSlides === 9) {
+      const testimonialBtnAwards = document.querySelector('.systemview .testimonial-btn-awards');
+      if (testimonialBtnAwards) {
+        testimonialBtnAwards.style.display = 'none';
+      }
+    }
+
     const testimonial_slider = new Swiper(swiperEl, {
       spaceBetween: 15,
       loop: true,
@@ -1889,9 +1896,9 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     const testimonial_slider = new Swiper(swiperEl, {
       slidesPerView: 5,
       spaceBetween: 30,
-      loop: true,
       speed: 800,
-      autoplay: true,
+      loop: false,
+      autoplay: false,
       // navigation: {
       //   nextEl: '.testimonial-slider-awards .testimonial-button-next',
       //   prevEl: '.testimonial-slider-awards .testimonial-button-prev',
@@ -1899,10 +1906,14 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       breakpoints: {
         0: {
           slidesPerView: 2,
-          centeredSlides: true,
-          spaceBetween: 15
+          // centeredSlides: true,
+          spaceBetween: 15,
+      loop: true,
+      autoplay: true,
         },
-        768: { slidesPerView: 3, spaceBetween: 15 },
+        768: { slidesPerView: 3, spaceBetween: 15,
+      loop: true,
+      autoplay: true, },
         991: { slidesPerView: 9, spaceBetween: 15, },
       },
       // on: {

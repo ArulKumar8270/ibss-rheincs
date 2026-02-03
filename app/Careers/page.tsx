@@ -1903,14 +1903,14 @@ export default function AlMl() {
                             <div className="firstrow">
                                 <div className="row">
                                     <div className="col-sm-8">
-                                        <h2>Future-Ready Data</h2>
-                                        <p>Make your data insight-driven and AI-ready.</p>
-                                        <p>Talk to our experts today.</p>
+                                        <h2>{t("Future-Ready Data")}</h2>
+                                        <p>{t("Make your data insight-driven and AI-ready.")}</p>
+                                        <p>{t("Talk to our experts today.")}</p>
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
                                             <Link href="/contact-us" className="animated-svg-link">
-                                                Contact Us
+                                                {t("Contact Us")}
                                                 <span className="svg-container ">
                                                     <span className=" right">
                                                         <svg

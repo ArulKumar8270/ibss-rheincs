@@ -1893,14 +1893,14 @@ export default function EnterpriseSolutions() {
                     </div>
                     <div className="container-fluid">
                         {/* Testimonial Slider Start */}
-                        <div className="overview-slider ">
+                        <div className="overview-slider overviewhgtchange">
                             <div className="swiper">
                                 <div className="swiper-wrapper">
                                     {/* Testimonial Slide Start */}
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/value1.svg" alt="" />
-                                            {/* <h6> Dynamics 365 ERP & CRM Solutions</h6> */}
+                                            <h6> Client Priority</h6>
                                             <p>
                                                 Put our client’s interest ahead of our own We are constantly
                                                 striving to deliver more value than our client’s expectations
@@ -1915,6 +1915,7 @@ export default function EnterpriseSolutions() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/value2.svg" alt="" />
+                                            <h6>Professional Discipline</h6>
                                             <p>
                                                 Behave as professionals RheinBrücke upholds absolute
                                                 integrity. We promise only what can be delivered. We show the
@@ -1928,6 +1929,7 @@ export default function EnterpriseSolutions() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/value3.svg" alt="" />
+                                            <h6>Information Discretion</h6>
                                             <p>
                                                 Keep our client information confidential RheinBrücke is
                                                 focused on making our clients successful. We don’t reveal
@@ -1941,6 +1943,7 @@ export default function EnterpriseSolutions() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/value4.svg" alt="" />
+                                            <h6> Independent Clarity</h6>
                                             <p>
                                                 Tell the truth as we see it RheinBrücke strives to stay
                                                 independent and remains able to disagree, regardless of the
@@ -1955,6 +1958,7 @@ export default function EnterpriseSolutions() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/value5.svg" alt="" />
+                                            <h6> Firm Alignment</h6>
                                             <p>
                                                 Operate as one, united firm Despite our many geographical
                                                 locations, RheinBrücke maintains a consistently high standard
@@ -1996,6 +2000,7 @@ export default function EnterpriseSolutions() {
                                                     fillRule="evenodd"
                                                 />
                                             </svg>
+                                            <h6>Personal Ownership in that order</h6>
                                             <p>
                                                 Deliver the best of our firm to every client as cost
                                                 effectively as we can RheinBrücke expects people either

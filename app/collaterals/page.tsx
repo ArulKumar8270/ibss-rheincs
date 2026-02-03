@@ -61,9 +61,9 @@ const COLLATERAL_PDF_MAP: Record<string, string> = {
   // Whitepapers
   'Choosing the right ERP solution for your business': '/Collateral/Whitepaper/Choosing your ERP in 2024.pdf',
   'Future with Manufacturing Technology': '/Collateral/Whitepaper/Future with Manufacturing technology.pdf',
-  'Finding the Perfect Candidate': '/Collateral/Whitepaper/Buyer\'s Guide to Choosing ERP for Discrete Manufacturing Enterprise.pdf',
+  'Finding the Perfect Candidate': '/Collateral/Whitepaper/Finding the perfect candidate.pdf',
   'The Need for Speed and Accurate Data': '/Collateral/Whitepaper/The need for speed and accurate data.pdf',
-  "Top 6 Technologies Small And Midsize Manufacturers Can't Afford to Ignore": '/Collateral/Whitepaper/Future of ERP 2023 trends-Prediction and trends.pdf',
+  "Top 6 Technologies Small And Midsize Manufacturers Can't Afford to Ignore": '/Collateral/Whitepaper/Top-6-Technologies-Small-and-Midsize-Manufacturers-Can’t-Afford-to-Ignor....pdf',
   'ERP Guide 2023': '/Collateral/Whitepaper/ERP Guide 2023.pdf',
   'ERP and Digital transformation Outlook for 2023': '/Collateral/Whitepaper/ERP-and-Digital-Transformation-Outlook-for-2023 (1).pdf',
   'Four Quick Ways to Unlock Hidden Manufacturing Capacity': '/Collateral/Whitepaper/Future with Manufacturing technology.pdf',
@@ -96,7 +96,7 @@ const COLLATERAL_PDF_MAP: Record<string, string> = {
   'Oilfield services Factsheet': '/Collateral/Factsheet/RIC-Factsheet-OilServ-ME.pdf',
   '3 Reasons why ERP software is a must for Financial Management': '/Collateral/Factsheet/RIC-Factsheet-3-Reasons-why-ERP-Software-is-must-for-Financial-Management.pdf',
   '20 Questions to ask before you choose your cloud ERP': '/Collateral/Factsheet/Factsheet-20 Questions to Ask Before you Choose your Cloud ERP-ME.pdf',
-  'Warning Signs of A Growing business': '/Collateral/Factsheet/RIC-Factsheet-Warning-Signs-Of-A-Growing-Business-That\'s-Outgrown-Its-Legacy-ERP-ME.pdf',
+  'Warning Signs of A Growing business': '/Collateral/Factsheet/RIC-Factsheet-Warning-Signs-Of-A-Growing-Business-Thats-Outgrown-Its-Legacy-ERP-ME.pdf',
 };
 
 function getPdfPathForTitle(title: string): string | null {

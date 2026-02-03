@@ -127,7 +127,7 @@ const Awards = () => {
                                 </div> */}
                                 {/* Testimonial Slide End */}
                             </div>
-                            <div className="testimonial-btn-awards mt-10 awrdstest">
+                            <div className="testimonial-btn-awards mt-10 awrdstest1 mobileview">
                                 <div className="testimonial-button-prev">
                                     <div className="animated-svg-link">
                                         <span className="svg-container ">
@@ -232,7 +232,7 @@ const Awards = () => {
                                         </span>
                                     </div>
                                 </div>
-                                <span className="testspace " style={{ color: "#000" }}>
+                                <span className="testspace  mobileview" style={{ color: "#000" }}>
                                    
                                 </span>
                                 <div className="testimonial-button-next">

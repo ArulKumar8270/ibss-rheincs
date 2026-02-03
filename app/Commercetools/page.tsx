@@ -25,14 +25,10 @@ export default function AlMl() {
               {t("Commercetools Solutions & Services")}
             </h2>
             <p>
-              Deliver agile, composable, and future-proof digital commerce
-              experiences with commercetools.{" "}
+              {t("Deliver agile, composable, and future-proof digital commerce experiences with commercetools.")}
             </p>
             <p>
-              At RheinBrücke, we empower enterprises to transform their commerce
-              architecture using commercetools’ MACH-based, cloud-native
-              platform. We build scalable, headless commerce solutions designed
-              for omnichannel success - across every customer touchpoint.{" "}
+              {t("At RheinBrücke, we empower enterprises to transform their commerce architecture using commercetools’ MACH-based, cloud-native platform. We build scalable, headless commerce solutions designed for omnichannel success - across every customer touchpoint.")}
             </p>
           </div>
         </div>

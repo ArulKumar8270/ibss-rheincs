@@ -657,7 +657,7 @@ export default function Blog() {
                                         <div id="demo3" className="collapse content-box collapse show">
                                             <div className="col-sm-12 width100">
                                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
-                                                    <h6 className="fome-filter-title" style={{ margin: 0 }}>Industries</h6>
+                                                    <h6 className="fome-filter-title" style={{ margin: 0 }}>Categories</h6>
                                                     {(selectedIndustries.length > 0 || selectedCategory !== 'all' || searchTerm) && (
                                                         <button
                                                             onClick={clearFilters}

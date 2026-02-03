@@ -1736,15 +1736,15 @@ export default function AlMl() {
                             <div className="firstrow">
                                 <div className="row">
                                     <div className="col-sm-8">
-                                        <h2>Ready to accelerate value creation across your portfolio?</h2>
+                                        <h2>{t("Ready to accelerate value creation across your portfolio?")}</h2>
                                         <p>
-                                            Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.
+                                            {t("Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.")}
                                         </p>
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
                                             <Link href="/contact-us" className="animated-svg-link">
-                                                Contact Us
+                                                {t("Contact Us")}
                                                 <span className="svg-container ">
                                                     <span className=" right">
                                                         <svg

@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function EnterpriseSolutions() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
 <>
@@ -16,15 +18,10 @@ export default function EnterpriseSolutions() {
         <div className="col-md-5">
           <div className="merlin-baner-text-waber">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              MeRLIN Sourcing: Powering Strategic Direct Procurement
+              {t("MeRLIN Sourcing: Powering Strategic Direct Procurement")}
             </h2>
             <p>
-              {" "}
-              MeRLIN is a Strategic Direct Sourcing Solution that offers
-              seamlessly integrated sourcing process automation along with
-              Supplier Relationship Management, Category Management, Contract
-              Management, Audits, and eProcurement functions augmented by
-              Advanced Analytics.
+              {t("MeRLIN is a Strategic Direct Sourcing Solution that offers zseamlessly integrated sourcing process automation along with Supplier Relationship Management, Category Management, Contract Management, Audits, and eProcurement functions augmented by Advanced Analytics.")}
             </p>
           </div>
         </div>
@@ -43,13 +40,11 @@ export default function EnterpriseSolutions() {
           <div className="section-title testidescriptio">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
               {" "}
-              What are MeRLIN’s features?
+              {t("What are MeRLIN’s features?")}
             </h2>
             <p className="mer-para-gap">
               {" "}
-              MeRLIN is modular, flexible, configurable, and easy to deploy. It
-              is powered by the Microsoft Technology stack and can be deployed
-              On-Premise or on Cloud.{" "}
+              {t("MeRLIN is modular, flexible, configurable, and easy to deploy. It is powered by the Microsoft Technology stack and can be deployed On-Premise or on Cloud.")}
             </p>
           </div>
         </div>
@@ -181,22 +176,19 @@ export default function EnterpriseSolutions() {
                       </svg>
                       {/* <i class="bi bi-people-fill"></i> */}
                     </div>
-                    <h3>Category Management</h3>
+                    <h3>{t("Category Management")}</h3>
                     <ul>
                       <li>
                         {" "}
-                        Build and maintain strategic category plans with spend,
-                        supplier, and risk visibility.
+                        {t("Build and maintain strategic category plans with spend, supplier, and risk visibility.")}
                       </li>
                       <li>
                         {" "}
-                        Analyse category performance and identify consolidation
-                        or optimisation opportunities.
+                        {t("Analyse category performance and identify consolidation or optimisation opportunities.")}
                       </li>
                       <li>
                         {" "}
-                        Enable category-specific sourcing strategies and
-                        supplier segmentation.
+                        {t("Enable category-specific sourcing strategies and supplier segmentation.")}
                       </li>
                     </ul>
                   </div>
@@ -333,22 +325,18 @@ export default function EnterpriseSolutions() {
                       {/*<img src="/images/ss5.svg" alt="">*/}
                       {/* <i class="bi bi-cart-check-fill"></i> */}
                     </div>
-                    <h3>Supplier Relationship Management</h3>
+                    <h3>{t("Supplier Relationship Management")}</h3>
                     <ul>
                       <li>
-                        Manage the entire supplier lifecycle with configurable
-                        onboarding, compliance, and performance workflows.
+                        {t("Manage the supplier lifecycle with configurable onboarding, compliance, and performance.")}
                       </li>
                       <li>
                         {" "}
-                        Maintain a complete Supplier 360° view with scorecards,
-                        audits, KPIs, and partnerconfigured fields.
+                        {t("Maintain a complete Supplier 360° view with scorecards, audits, KPIs, and partner-configured fields.")}
                       </li>
                       <li>
                         {" "}
-                        Allow controlled supplier updates, mandatory document
-                        setup, and secure editing rights for buyers and vendor
-                        masters.
+                        {t("Manage controlled supplier updates & document setup and secure editing rights for buyers & vendor masters.")}
                       </li>
                     </ul>
                   </div>
@@ -433,22 +421,19 @@ export default function EnterpriseSolutions() {
                       {/*<img src="/images/ss6.svg" alt="">*/}
                       {/* <i class="bi bi-pie-chart-fill"></i> */}
                     </div>
-                    <h3>Sourcing &amp; eProcurement</h3>
+                    <h3>{t("Sourcing & eProcurement")}</h3>
                     <ul>
                       <li>
                         {" "}
-                        Discover prices, match similar items, and launch online
-                        RFQs across global supplier bases.
+                        {t("Discover prices, match similar items, and launch online RFQs across global supplier bases.")}
                       </li>
                       <li>
                         {" "}
-                        Compare bids, manage engineering or price-change RFQs,
-                        and run multi-round negotiations with audit trails.
+                        {t("Compare bids, manage engineering or price-change RFQs, and run multi-round negotiations with audit trails.")}
                       </li>
                       <li>
                         {" "}
-                        Support BoM-level sourcing with visibility into
-                        rolled-up cost impacts.
+                        {t("Support BoM-level sourcing with visibility into rolled-up cost impacts.")}
                       </li>
                     </ul>
                   </div>
@@ -528,22 +513,19 @@ export default function EnterpriseSolutions() {
                       {/*<img src="/images/ss1.svg" alt="">*/}
                       {/* <i class="bi bi-database-fill-gear"></i> */}
                     </div>
-                    <h3>eAuctions</h3>
+                    <h3>{t("eAuctions")}</h3>
                     <ul>
                       <li>
                         {" "}
-                        Run reverse, forward, multi-parameter, rank-based, or
-                        sealed-bid auctions.
+                        {t("Run reverse, forward, multi-parameter, rank-based, or sealed-bid auctions.")}
                       </li>
                       <li>
                         {" "}
-                        Use auto-extensions, visibility controls, proxy bids,
-                        and real-time ranking.
+                        {t("Use auto-extensions, visibility controls, proxy bids, and real-time ranking.")}
                       </li>
                       <li>
                         {" "}
-                        Analyse outcomes, measure savings, and finalise awards
-                        with integrated analytics.
+                        {t("Analyse outcomes, measure savings, and finalise awards with integrated analytics.")}
                       </li>
                     </ul>
                   </div>
@@ -691,19 +673,16 @@ export default function EnterpriseSolutions() {
                       {/*<img src="/images/ss3.svg" alt="">*/}
                       {/* <i class="bi bi-shield-check"></i> */}
                     </div>
-                    <h3>Contract Management</h3>
+                    <h3>{t("Contract Management")}</h3>
                     <ul>
                       <li>
-                        Maintain a central contract repository with version
-                        control and approval workflows.
+                        {t("Maintain a central contract repository with version control and approval workflows.")}
                       </li>
                       <li>
-                        Track expiries, renewals, and compliance through
-                        automated alerts.
+                        {t("Track expiries, renewals, and compliance through automated alerts.")}
                       </li>
                       <li>
-                        Link contracts to sourcing events for seamless execution
-                        and governance.
+                        {t("Link contracts to sourcing events for seamless execution and governance.")}
                       </li>
                     </ul>
                   </div>
@@ -830,22 +809,16 @@ export default function EnterpriseSolutions() {
                       {/*<img src="/images/ss3.svg" alt="">*/}
                       {/* <i class="bi bi-shield-check"></i> */}
                     </div>
-                    <h3>Analytics </h3>
+                    <h3>{t("Analytics")}</h3>
                     <ul>
                       <li>
-                        {" "}
-                        Access PPV, supplier performance, category insights, and
-                        lifecycle analytics out of the box.
+                        {t("Access PPV, supplier performance, category insights, and lifecycle analytics out of the box.")}
                       </li>
                       <li>
-                        {" "}
-                        Use standard dashboards or drill down by commodity,
-                        supplier, item, or region.
+                        {t("Use standard dashboards or drill down by commodity, supplier, item, or region.")}
                       </li>
                       <li>
-                        {" "}
-                        Create custom reports, run what-if analyses, and explore
-                        data through self-service tools.
+                        {t("Create custom reports, run what-if analyses, and explore data through self-service tools.")}
                       </li>
                     </ul>
                   </div>
@@ -982,22 +955,16 @@ export default function EnterpriseSolutions() {
                       {/*<img src="/images/ss3.svg" alt="">*/}
                       {/* <i class="bi bi-shield-check"></i> */}
                     </div>
-                    <h3> Budgeting &amp; Planning</h3>
+                    <h3>{t("Budgeting & Planning")}</h3>
                     <ul>
                       <li>
-                        {" "}
-                        Maintain budgets across regions, categories, and
-                        business units.
+                        {t("Maintain budgets across regions, categories, and business units.")}
                       </li>
                       <li>
-                        {" "}
-                        Compare Budget vs Actuals to identify optimisation and
-                        sourcing priorities.
+                        {t("Compare Budget vs Actuals to identify optimisation and sourcing priorities.")}
                       </li>
                       <li>
-                        {" "}
-                        Manage standard costs in base currency for accurate
-                        planning and reporting.
+                        {t("Manage standard costs in base currency for accurate planning and reporting.")}  
                       </li>
                     </ul>
                   </div>
@@ -1081,22 +1048,16 @@ export default function EnterpriseSolutions() {
                       {/*<img src="/images/ss3.svg" alt="">*/}
                       {/* <i class="bi bi-shield-check"></i> */}
                     </div>
-                    <h3>Data Handling </h3>
+                    <h3>{t("Data Handling")}</h3>
                     <ul>
                       <li>
-                        {" "}
-                        Consolidate supplier, item, and price data into a single
-                        global source of truth.
+                        {t("Consolidate supplier, item, and price data into a single global source of truth.")}
                       </li>
                       <li>
-                        {" "}
-                        Standardise attributes, commodity structures, and
-                        classifications across the enterprise.
+                        {t("Standardise attributes, commodity structures, and classifications across the enterprise.")}
                       </li>
                       <li>
-                        {" "}
-                        Automate data updates with configurable ERP, PLM, and
-                        finance integrations.
+                        {t("Automate data updates with configurable ERP, PLM, and finance integrations.")}
                       </li>
                     </ul>
                   </div>
@@ -1176,22 +1137,18 @@ export default function EnterpriseSolutions() {
                       {/*<img src="/images/ss3.svg" alt="">*/}
                       {/* <i class="bi bi-shield-check"></i> */}
                     </div>
-                    <h3>Compliance &amp; Auditing </h3>
+                    <h3>{t("Compliance & Auditing")}</h3>
                     <ul>
                       <li>
-                        {" "}
-                        Track all changes with audit trails and manage roles and
-                        permissions securely.
+                        {t("Track all changes with audit trails and manage roles and permissions securely.")}
                       </li>
                       <li>
                         {" "}
-                        Enable supplier audits with templates, scoring, NCR
-                        tracking, and follow-ups.
+                        {t("Enable supplier audits with templates, scoring, NCR tracking, and follow-ups.")}
                       </li>
                       <li>
                         {" "}
-                        Generate audit reports and delegate tasks to improve
-                        turnaround time.
+                        {t("Generate audit reports and delegate tasks to improve turnaround time.")}
                       </li>
                     </ul>
                   </div>
@@ -1427,58 +1384,47 @@ export default function EnterpriseSolutions() {
             <div className="">
               <h2 className="mb-3" data-cursor="-opaque">
                 {" "}
-                Why MeRLIN?
+                {t("Why MeRLIN?")}
               </h2>
               <p>
                 {" "}
-                MeRLIN provides a strategic platform that enables value
-                optimization through advanced automation, global data
-                aggregation, category insights, contract governance, eAuctions,
-                and analytical tools, empowering sourcing teams to move from
-                transactional procurement to value-driven strategic sourcing.
+                {t("MeRLIN provides a strategic platform that enables value optimization through advanced automation, global data aggregation, category insights, contract governance, eAuctions, and analytical tools, empowering sourcing teams to move from transactional procurement to value-driven strategic sourcing.")}
               </p>
             </div>
             <div className="">
               <h4 className="mer-secont-3" data-cursor="-opaque">
                 {" "}
-                Who will benefit from MeRLIN?
+                {t("Who will benefit from MeRLIN?")}
               </h4>
             </div>
             <div className=" ">
-              <h3>Fast-Paced Product Development Teams</h3>
+              <h3> {t("Fast-Paced Product Development Teams")}</h3>
               <p>
-                Organisations where R&amp;D, engineering, and procurement must
-                work together to accelerate NPD/NPI cycles.
+                {t("Organisations where R&D, engineering, and procurement must work together to accelerate NPD/NPI cycles.")}
               </p>
             </div>
             <div className="">
-              <h3>Companies Focused on Cost Reduction</h3>
+              <h3> {t("Companies Focused on Cost Reduction")}</h3>
               <p>
-                Manufacturers aiming to optimise costs across the product
-                lifecycle using analytics, part similarity, and BoM insights.
+                {t("Manufacturers aiming to optimise costs across the product lifecycle using analytics, part similarity, and BoM insights.")}
               </p>
             </div>
             <div className="">
-              <h3>Manufacturers with Complex Direct Material Sourcing</h3>
+              <h3> {t("Manufacturers with Complex Direct Material Sourcing")}</h3>
               <p>
-                Enterprises managing multi-plant, multi-currency, and BoM-heavy
-                sourcing operations.
+                {t("Enterprises managing multi-plant, multi-currency, and BoM-heavy sourcing operations.")}
               </p>
             </div>
             <div className="">
-              <h3>Teams Struggling with Manual Supplier Management</h3>
+              <h3> {t("Teams Struggling with Manual Supplier Management")}</h3>
               <p>
-                Procurement functions still dependent on Excel, emails, and
-                fragmented tools for supplier onboarding, compliance, and
-                audits.
+                {t("Procurement functions still dependent on Excel, emails, and fragmented tools for supplier onboarding, compliance, and audits.")}
               </p>
             </div>
             <div className="">
-              <h3>Data-Driven Sourcing Leaders</h3>
+              <h3> {t("Data-Driven Sourcing Leaders")}</h3>
               <p>
-                Organisations needing real-time insights and integrated data
-                from ERP, MRP, PLM, and risk systems to make faster, more
-                informed decisions.
+                {t("Organisations needing real-time insights and integrated data from ERP, MRP, PLM, and risk systems to make faster, more informed decisions.")}
               </p>
             </div>
           </div>
@@ -1500,61 +1446,59 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              What are the tangible benefits?
+              {t("What are the tangible benefits?")}
             </h2>
           </div>
           <div>
-            <h5 className="bb-title"> Faster Sourcing Cycles</h5>
+            <h5 className="bb-title"> {t("Faster Sourcing Cycles")}</h5>
             <p>
-              Accelerate RFIs, RFQs, and price discovery through digital
-              eSourcing, part similarity checks, and multi-level BoM sourcing.
+              {t("Accelerate RFIs, RFQs, and price discovery through digital eSourcing, part similarity checks, and multi-level BoM sourcing.")}
             </p>
           </div>
           <div>
-            <h5 className="bb-title">Proven Cost Optimisation</h5>
+            <h5 className="bb-title"> {t("Proven Cost Optimisation")}</h5>
             <p>
-              Identify savings across the product lifecycle using Spend
-              Analytics, PPV insights, supplier rationalisation, and BoM variant
-              analysis.{" "}
+              {t("Identify savings across the product lifecycle using Spend Analytics, PPV insights, supplier rationalisation, and BoM variant analysis.")}
             </p>
           </div>
           <div>
             <h5 className="bb-title">
-              Simplified Global Direct Material Sourcing
+                {t("Simplified Global Direct Material Sourcing")} 
             </h5>
             <p>
-              Standardise sourcing across plants and geographies with
-              multi-currency support, global data aggregation, and integrated
-              category insights.
+              {t("Standardise sourcing across plants and geographies with multi-currency support, global data aggregation, and integrated category insights.")}
             </p>
           </div>
           <div>
-            <h5 className="bb-title">Unified Supplier Lifecycle Management</h5>
+            <h5 className="bb-title">
+                {t("Unified Supplier Lifecycle Management")} 
+            </h5>
             <p>
-              Automate onboarding, registrations, audits, and compliance
-              tracking while consolidating all supplier intelligence in a single
-              360° scorecard
+              {t("Automate onboarding, registrations, audits, and compliance tracking while consolidating all supplier intelligence in a single 360° scorecard")}
             </p>
           </div>
           <div>
-            <h5 className="bb-title">Better, Data-Driven Decisions</h5>
+            <h5 className="bb-title">
+                {t("Better, Data-Driven Decisions")} 
+            </h5>
             <p>
-              Make confident sourcing choices with real-time insights enriched
-              by ERP, MRP, PLM, and third-party risk integrations.
+              {t("Make confident sourcing choices with real-time insights enriched by ERP, MRP, PLM, and third-party risk integrations.")}
             </p>
           </div>
           <div>
-            <h5 className="bb-title">Reduced Risk Exposure</h5>
+            <h5 className="bb-title">
+                {t("Reduced Risk Exposure")} 
+            </h5>
             <p>
-              Evaluate supplier and commodity risks using performance metrics,
-              compliance alerts, audit status, and category-level risk signals.
+              {t("Evaluate supplier and commodity risks using performance metrics, compliance alerts, audit status, and category-level risk signals.")}
             </p>
           </div>
           <div>
-            <h5 className="bb-title">Faster Time to Value</h5>
+            <h5 className="bb-title">
+                {t("Faster Time to Value")} 
+            </h5>
             <p>
-              Benefit from quick deployment, out-of-the-box capabilities, and
-              automation that reduces manual workload and delivers faster ROI.
+              {t("Benefit from quick deployment, out-of-the-box capabilities, and automation that reduces manual workload and delivers faster ROI.")}
             </p>
           </div>
         </div>
@@ -1575,15 +1519,15 @@ export default function EnterpriseSolutions() {
         <div className="firstrow">
           <div className="row">
             <div className="col-sm-8">
-              <h2>Discover the Best Strategic Sourcing Software</h2>
+              <h2> {t("Discover the Best Strategic Sourcing Software")}</h2>
               <p>
-                The best strategic sourcing software to cut costs, reduce risk, and gain real-time visibility, all automated in one intelligent platform.
+                {t("The best strategic sourcing software to cut costs, reduce risk, and gain real-time visibility, all automated in one intelligent platform.")}
               </p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <Link href="/contact-us" className="animated-svg-link">
-                  Contact Us
+                  {t("Contact Us")}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg

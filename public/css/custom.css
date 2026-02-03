@@ -3403,7 +3403,7 @@ body:has(.offcanvas) {
 	.testimonial-btn {
 		position: absolute;
 		bottom: 0px;
-		left: 0px !important;
+		/* left: 0px ; */
 	}
 
 }
@@ -5676,7 +5676,9 @@ body:has(.offcanvas) {
 		width: 45px;
 		height: 45px;
 	}
-
+.indexwhatdo .testimonial-button-next {
+    right: 0px !important;
+}
 	.testimonial-benefits-box {
 		gap: 30px;
 		padding: 30px 20px;
@@ -12475,7 +12477,7 @@ body:has(.offcanvas) {
 
 	.indexwhatdo .testimonial-btn {
 		bottom: 30px !important;
-		left: -15px !important;
+		left: 55px !important;
 	}
 
 	.success-company img {
@@ -15586,7 +15588,7 @@ header.boxshadow {
 	width: 100vw;
 	background: #fff;
 	padding: 0px 0;
-	z-index: 999;
+	z-index: 1050;
 	-webkit-box-shadow: 0px 24px 44px 20px #499A9A36;
 	box-shadow: 0px 24px 44px 20px #499A9A36;
 	-webkit-box-shadow: 0px -8px 34px 0px #499A9A52;
@@ -17376,7 +17378,6 @@ header.boxshadow {
 	display: grid;
 	-ms-grid-columns: 1fr;
 	grid-template-columns: 1fr;
-	-ms-grid-rows: ;
 	grid-template-rows: repeat(var(--numcards), var(--card-height));
 	gap: var(--card-margin);
 	padding-bottom: calc(var(--numcards) * var(--card-top-offset));
@@ -19515,7 +19516,8 @@ body.no-scroll {
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.85);
-	z-index: 999999;
+	z-index: 999;
+	
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
@@ -20216,8 +20218,12 @@ body.popup-open .main-header {
 	.mobile-nav {
 		display: block;
 		position: sticky;
-		z-index: 9;
+		z-index: 2;
 		top: 0;
+	}
+
+	body.popup-open .mobile-nav {
+		z-index: -1;
 	}
 
 	.video-popup iframe {
@@ -22575,3 +22581,6 @@ screen and (max-height: 300px) {
 
 
 
+    .overviewhgtchange .valueslide {
+        min-height: 495px !important;
+    }
