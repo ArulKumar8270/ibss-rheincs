@@ -1104,7 +1104,7 @@ export default function AdminCaseStudiesPage() {
               </div>
 
               <div style={{ marginBottom: '15px' }}>
-                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Benefits</label>
+                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Business Impact</label>
                 <div style={{ background: 'white', borderRadius: '6px' }}>
                   <ReactQuill
                     theme="snow"
@@ -1118,7 +1118,7 @@ export default function AdminCaseStudiesPage() {
                 </div>
               </div>
 
-              <div style={{ marginBottom: '15px' }}>
+              {/* <div style={{ marginBottom: '15px' }}>
                 <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Implementation</label>
                 <div style={{ background: 'white', borderRadius: '6px' }}>
                   <ReactQuill
@@ -1131,7 +1131,7 @@ export default function AdminCaseStudiesPage() {
                     style={{ minHeight: '200px' }}
                   />
                 </div>
-              </div>
+              </div> */}
 
               <div style={{ marginBottom: '15px' }}>
                 <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Download URL</label>

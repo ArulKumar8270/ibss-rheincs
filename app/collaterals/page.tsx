@@ -271,6 +271,14 @@ export default function Collaterals() {
         return itemCats.some((c) => selectedCategories.includes(c));
     };
 
+    // Brochure filter: when "epicor" is selected, show all EPICOR work (epicor + epicor-*)
+    const showByCategoryBrochure = (itemCategory: string, selectedCategories: string[]): boolean => {
+        if (selectedCategories.length === 0) return true;
+        if (selectedCategories.includes(itemCategory)) return true;
+        if (selectedCategories.includes('epicor') && (itemCategory === 'epicor' || itemCategory.startsWith('epicor-'))) return true;
+        return false;
+    };
+
     const validateField = (name: string, value: string): string => {
         switch (name) {
             case 'fullName':
@@ -854,7 +862,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="corporate-brochure"
-                                                                    style={{ display: (filterItems('Corporate Brochure', searchTerm.brochures) && showByCategory('corporate-brochure', selectedCategoriesBrochure)) ? 'block' : 'none' }}
+                                                                    style={{ display: (filterItems('Corporate Brochure', searchTerm.brochures) && showByCategoryBrochure('corporate-brochure', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -877,7 +885,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="epicor"
-                                                                    style={{ display: (filterItems('Epicor ERP Brochure', searchTerm.brochures) && showByCategory('epicor', selectedCategoriesBrochure)) ? 'block' : 'none' }}
+                                                                    style={{ display: (filterItems('Epicor ERP Brochure', searchTerm.brochures) && showByCategoryBrochure('epicor', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -900,7 +908,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="epicor"
-                                                                    style={{ display: (filterItems('Epicor for Oil and Gas Brochure', searchTerm.brochures) && showByCategory('epicor', selectedCategoriesBrochure)) ? 'block' : 'none' }}
+                                                                    style={{ display: (filterItems('Epicor for Oil and Gas Brochure', searchTerm.brochures) && showByCategoryBrochure('epicor', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -923,7 +931,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="epicor-copy-company-tool"
-                                                                    style={{ display: (filterItems('Epicor Copy Company Tool Overview', searchTerm.brochures) && showByCategory('epicor-copy-company-tool', selectedCategoriesBrochure)) ? 'block' : 'none' }}
+                                                                    style={{ display: (filterItems('Epicor Copy Company Tool Overview', searchTerm.brochures) && showByCategoryBrochure('epicor-copy-company-tool', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -943,7 +951,7 @@ export default function Collaterals() {
                                                                     </div>
                                                                 </div>
                                                                 {/* Item 5: Epicor Payroll MEA */}
-                                                                <div className="col-sm-4 mb-4 item" data-category="epicor-payroll-mea" style={{ display: (filterItems('Epicor Payroll MEA Overview', searchTerm.brochures) && showByCategory('epicor-payroll-mea', selectedCategoriesBrochure)) ? 'block' : 'none' }}>
+                                                                <div className="col-sm-4 mb-4 item" data-category="epicor-payroll-mea" style={{ display: (filterItems('Epicor Payroll MEA Overview', searchTerm.brochures) && showByCategoryBrochure('epicor-payroll-mea', selectedCategoriesBrochure)) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
                                                                             <img src="/images/bro5.png" alt="" />
@@ -962,7 +970,7 @@ export default function Collaterals() {
                                                                     </div>
                                                                 </div>
                                                                 {/* Item 6: Epicor HCM */}
-                                                                <div className="col-sm-4 mb-4 item" data-category="epicor-hcm" style={{ display: (filterItems('Epicor HCM Overview', searchTerm.brochures) && showByCategory('epicor-hcm', selectedCategoriesBrochure)) ? 'block' : 'none' }}>
+                                                                <div className="col-sm-4 mb-4 item" data-category="epicor-hcm" style={{ display: (filterItems('Epicor HCM Overview', searchTerm.brochures) && showByCategoryBrochure('epicor-hcm', selectedCategoriesBrochure)) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
                                                                             <img src="/images/bro6.png" alt="" />
@@ -980,7 +988,7 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div className="col-sm-4 mb-4 item" data-category="epicor-manufacturing" style={{ display: (filterItems('Epicor for Manufacturing Brochure', searchTerm.brochures) && showByCategory('epicor-manufacturing', selectedCategoriesBrochure)) ? 'block' : 'none' }}>
+                                                                <div className="col-sm-4 mb-4 item" data-category="epicor-manufacturing" style={{ display: (filterItems('Epicor for Manufacturing Brochure', searchTerm.brochures) && showByCategoryBrochure('epicor-manufacturing', selectedCategoriesBrochure)) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
                                                                             <img src="/images/bro7.png" alt="" />
@@ -1001,7 +1009,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="epicor-epc-construction"
-                                                                    style={{ display: (filterItems('Epicor for EPC and Construction Brochure', searchTerm.brochures) && showByCategory('epicor-epc-construction', selectedCategoriesBrochure)) ? 'block' : 'none' }}
+                                                                    style={{ display: (filterItems('Epicor for EPC and Construction Brochure', searchTerm.brochures) && showByCategoryBrochure('epicor-epc-construction', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1023,7 +1031,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="epicor-distribution"
-                                                                    style={{ display: (filterItems('Epicor for Distribution Brochure', searchTerm.brochures) && showByCategory('epicor-distribution', selectedCategoriesBrochure)) ? 'block' : 'none' }}
+                                                                    style={{ display: (filterItems('Epicor for Distribution Brochure', searchTerm.brochures) && showByCategoryBrochure('epicor-distribution', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1042,7 +1050,7 @@ export default function Collaterals() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div className="col-sm-4 mb-4 item" data-category="epicor-automotive" style={{ display: (filterItems('Epicor for Automotive Brochure', searchTerm.brochures) && showByCategory('epicor-automotive', selectedCategoriesBrochure)) ? 'block' : 'none' }}>
+                                                                <div className="col-sm-4 mb-4 item" data-category="epicor-automotive" style={{ display: (filterItems('Epicor for Automotive Brochure', searchTerm.brochures) && showByCategoryBrochure('epicor-automotive', selectedCategoriesBrochure)) ? 'block' : 'none' }}>
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
                                                                             <img src="/images/bro10.png" alt="" />
@@ -1063,7 +1071,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="power-plant-analytics"
-                                                                    style={{ display: (filterItems("RheinBrücke's Power Plant Analytics Brochure", searchTerm.brochures) && showByCategory('power-plant-analytics', selectedCategoriesBrochure)) ? 'block' : 'none' }}
+                                                                    style={{ display: (filterItems("RheinBrücke's Power Plant Analytics Brochure", searchTerm.brochures) && showByCategoryBrochure('power-plant-analytics', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1087,7 +1095,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="epicor-iscala-hospitality"
-                                                                    style={{ display: (filterItems('Epicor iScala for Hospitality Overview', searchTerm.brochures) && showByCategory('epicor-iscala-hospitality', selectedCategoriesBrochure)) ? 'block' : 'none' }}
+                                                                    style={{ display: (filterItems('Epicor iScala for Hospitality Overview', searchTerm.brochures) && showByCategoryBrochure('epicor-iscala-hospitality', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>
@@ -1109,7 +1117,7 @@ export default function Collaterals() {
                                                                 <div
                                                                     className="col-sm-4 mb-4 item"
                                                                     data-category="epicor"
-                                                                    style={{ display: (filterItems('Move to Epicor Cloud', searchTerm.brochures) && showByCategory('epicor', selectedCategoriesBrochure)) ? 'block' : 'none' }}
+                                                                    style={{ display: (filterItems('Move to Epicor Cloud', searchTerm.brochures) && showByCategoryBrochure('epicor', selectedCategoriesBrochure)) ? 'block' : 'none' }}
                                                                 >
                                                                     <div className="video-gallery-image ">
                                                                         <figure>

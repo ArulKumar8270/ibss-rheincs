@@ -440,11 +440,11 @@ export default function CaseStudyDetailsClient({
                             }
                           }}
                         >
-                          Benefits
+                          Business Impact
                         </Link>
                       </li>
                     )}
-                    {caseStudy.implementation && (
+                    {/* {caseStudy.implementation && (
                       <li className="nav-item" role="presentation">
                         <Link 
                           className={`nav-link ${activeSection === 'implementation-section' ? 'active' : ''}`} 
@@ -460,7 +460,7 @@ export default function CaseStudyDetailsClient({
                           Implementation
                         </Link>
                       </li>
-                    )}
+                    )} */}
                   </ul>
                 </div>
                 <div className="content-wrapper">
@@ -579,7 +579,7 @@ export default function CaseStudyDetailsClient({
                       <div className="row">
                         <div className="col-sm-12">
                           <div className="stu-tap-content">
-                            <h6 className="stu-sub-title">Benefits</h6>
+                            <h6 className="stu-sub-title">Business Impact</h6>
                             <p
                               dangerouslySetInnerHTML={{ __html: processContent(caseStudy.benefits) }}
                               style={{
@@ -593,7 +593,7 @@ export default function CaseStudyDetailsClient({
                       </div>
                     </div>
                   )}
-                  {caseStudy.implementation && (
+                  {/* {caseStudy.implementation && (
                     <div id="implementation-section" className="content-section">
                       <div className="row">
                         <div className="col-sm-12">
@@ -611,7 +611,7 @@ export default function CaseStudyDetailsClient({
                         </div>
                       </div>
                     </div>
-                  )}
+                  )} */}
                 </div>
                 {caseStudy.download_url && (
                   <div className="ser-btn2">
