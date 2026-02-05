@@ -1902,7 +1902,7 @@ export default function EnterpriseSolutions() {
                                             <img src="/images/value1.svg" alt="" />
                                             <h6> Client Priority</h6>
                                             <p>
-                                                Put our client’s interest ahead of our own We are constantly
+                                                We always put our client’s interest ahead of our own We are constantly
                                                 striving to deliver more value than our client’s expectations
                                                 by looking at every project and process to find the most
                                                 effective solution and not just fulfilling our client’s basic
@@ -1917,7 +1917,7 @@ export default function EnterpriseSolutions() {
                                             <img src="/images/value2.svg" alt="" />
                                             <h6>Professional Discipline</h6>
                                             <p>
-                                                Behave as professionals RheinBrücke upholds absolute
+                                                We always behave as professionals RheinBrücke upholds absolute
                                                 integrity. We promise only what can be delivered. We show the
                                                 utmost respect to local customs and culture, as long as we
                                                 don’t compromise our integrity.
@@ -1931,7 +1931,7 @@ export default function EnterpriseSolutions() {
                                             <img src="/images/value3.svg" alt="" />
                                             <h6>Information Discretion</h6>
                                             <p>
-                                                Keep our client information confidential RheinBrücke is
+                                                We always keep our client information confidential RheinBrücke is
                                                 focused on making our clients successful. We don’t reveal
                                                 sensitive information. We do not promote our own good work if
                                                 it is at the cost of client confidentiality.
@@ -1945,7 +1945,7 @@ export default function EnterpriseSolutions() {
                                             <img src="/images/value4.svg" alt="" />
                                             <h6> Independent Clarity</h6>
                                             <p>
-                                                Tell the truth as we see it RheinBrücke strives to stay
+                                                We always tell the truth as we see it RheinBrücke strives to stay
                                                 independent and remains able to disagree, regardless of the
                                                 popularity of our views. Always saying what we see as the
                                                 truth helps to build internal support, get to the real issues,
@@ -1960,7 +1960,7 @@ export default function EnterpriseSolutions() {
                                             <img src="/images/value5.svg" alt="" />
                                             <h6> Firm Alignment</h6>
                                             <p>
-                                                Operate as one, united firm Despite our many geographical
+                                                We always operate as one, united firm Despite our many geographical
                                                 locations, RheinBrücke maintains a consistently high standard
                                                 of service and the people to deliver these services. This
                                                 indicates that we bring the best team of minds from around the
@@ -2002,7 +2002,7 @@ export default function EnterpriseSolutions() {
                                             </svg>
                                             <h6>Personal Ownership in that order</h6>
                                             <p>
-                                                Deliver the best of our firm to every client as cost
+                                                We always deliver the best of our firm to every client as cost
                                                 effectively as we can RheinBrücke expects people either
                                                 employees or partners to spend our client’s and firm’s
                                                 resources as if their own resources were at stake.
