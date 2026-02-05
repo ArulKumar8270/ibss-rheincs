@@ -21174,8 +21174,9 @@ body.popup-open .main-header {
 }
 
 .epicicn1 svg {
-	height: 90px;
+	height: 75px;
 	width: auto;
+	margin-bottom: 5px;
 }
 
 .epicicn1 {
