@@ -1833,7 +1833,7 @@ export default function Header() {
                                                                                             }}
                                                                                         >
                                                                                             <div className="result-title">{result.title}</div>
-                                                                                            <div className="result-url">{result.url}</div>
+                                                                                            {/* <div className="result-url">{result.url}</div>/ */}
                                                                                         </Link>
                                                                                     </li>
                                                                                 ))}
