@@ -34,7 +34,7 @@ export default function Home() {
                       </h1>
                       <div className="hero-video-content wow fadeInUp mt-3">
                         <p>
-                          {t("Empowering businesses to operate smart, adapt faster, and unlock new opportunity in a technology - driven economy  ")}
+                          {t("Empowering businesses to operate smart, adapt faster, and unlock new opportunity through enterprise systems in a technology - driven economy  ")}
                         </p>
                       </div>
                     </div>
@@ -124,7 +124,7 @@ export default function Home() {
                       {t("The Path to Transformation")}
                     </h2>
                     <p>
-                      {t("Every successful transformation starts with clarity and ends with measurable impact. Our approach is built to take you from insights to execution, helping your business unlock real value at every single stage of journey")}
+                      {t("Every successful ERP transformation starts with clarity and ends with measurable impact. Our approach takes you from insights to execution, unlocking real value at every stage of your digital journey.")}
                     </p>
                     <div className="ser-btn">
                       <Link href="/solutions/erp-enterprise-solutions-and-services/erp" className="animated-svg-link">
@@ -249,6 +249,8 @@ export default function Home() {
                             height={100}
                             viewBox="0 0 100 100"
                             fill="none"
+  role="img"
+  aria-label="Digital analytics icon"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <g clipPath="url(#clip0_1699_18121)">
@@ -322,6 +324,8 @@ export default function Home() {
                             height={100}
                             viewBox="0 0 100 100"
                             fill="none"
+  role="img"
+  aria-label="ERP and digital platform integration icon"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -337,7 +341,7 @@ export default function Home() {
                       <div className="service-item-body">
                         <h3>{t("Integrate")}</h3>
                         <p>
-                          {t("Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals, implementing and integrating ERP and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability.")}
+                          {t("Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals – implementing and integrating ERP software and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability")}
                         </p>
                         {/*<div class="ser-btn1">*/}
                         {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
@@ -389,6 +393,8 @@ export default function Home() {
                             height={100}
                             viewBox="0 0 100 100"
                             fill="none"
+  role="img"
+  aria-label="Digital transformation Icon"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -432,7 +438,7 @@ export default function Home() {
                       <div className="service-item-body">
                         <h3>{t("Transform")}</h3>
                         <p>
-                          {t("This is where change becomes reality. From digitised supply chains to intelligent forecasting, we help you deploy solutions that move the needle - unlocking new revenue, simplifying complexity, and accelerating time-to-value.")}
+                          {t("Digital transformation becomes reality. From digitised supply chains to intelligent forecasting and AI-enabled ERP solutions, we deploy systems that unlock new revenue, simplify complexity, and accelerate time-to-value.")}
                         </p>
                         {/*<div class="ser-btn1">*/}
                         {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
@@ -489,7 +495,7 @@ export default function Home() {
                         <div className="service-item ">
                           <div className="service-item-header">
                             <div className="icon-box">
-                              <img src="/images/a1.svg" alt="" />
+                              <img src="/images/a1.svg" alt="Digital analytics icon" />
                             </div>
                           </div>
                           <div className="service-item-body">
@@ -539,7 +545,7 @@ export default function Home() {
                           {/* Your current service content */}
                           <div className="service-item-header">
                             <div className="icon-box">
-                              <img src="/images/i1.svg" alt="" />
+                              <img src="/images/i1.svg" alt="ERP and digital platform integration icon" />
                             </div>
                             {/* <div class="service-arrow">
                                   <Link href="#!"><img src="/images/arrow-accent.svg" alt=""></Link>
@@ -548,7 +554,7 @@ export default function Home() {
                           <div className="service-item-body">
                             <h3>{t("Integrate")}</h3>
                         <p>
-                          {t("Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals, implementing and integrating ERP and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability.")}
+                          {t("Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals – implementing and integrating ERP software and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability")}
                         </p>
                             {/*<div class="ser-btn1">*/}
                             {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
@@ -594,7 +600,7 @@ export default function Home() {
                           {/* Your current service content */}
                           <div className="service-item-header">
                             <div className="icon-box">
-                              <img src="/images/t1.svg" alt="" />
+                              <img src="/images/t1.svg" alt="Digital analytics icon" />
                             </div>
                             {/* <div class="service-arrow">
                                   <Link href="#!"><img src="/images/arrow-accent.svg" alt=""></Link>
@@ -603,7 +609,7 @@ export default function Home() {
                           <div className="service-item-body">
                             <h3>{t("Transform")}</h3>
                             <p>
-                              {t("This is where change becomes reality. From digitised supply chains to intelligent forecasting, we help you deploy solutions that move the needle - unlocking new revenue, simplifying complexity, and accelerating time-to-value.")}
+                              {t("Digital transformation becomes reality. From digitised supply chains to intelligent forecasting and AI-enabled ERP solutions, we deploy systems that unlock new revenue, simplify complexity, and accelerate time-to-value.")}
                             </p>
                             {/*<div class="ser-btn1">*/}
                             {/*    <Link href="#" class="animated-svg-link1 btn-style-3">*/}
@@ -875,7 +881,7 @@ export default function Home() {
                   <div className="about-agency-content">
                     <div className="section-title">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        {t("Powering Enterprise Growth Through Digital-Enabled Transformation")}
+                        {t("Powering Enterprise Growth Through Digital Transformation")}
                       </h2>
                     </div>
                   </div>
@@ -888,7 +894,7 @@ export default function Home() {
                           {t("At RheinBrücke, we believe transformation is not just about technology, it’s about unlocking new business models, new ways of working, and new value for your customers.")}
                         </p>
                         <p>
-                          {t("We help enterprises go beyond incremental change. Whether you are scaling operations, modernizing your ERP landscape, or launching entirely new services, we enable rapid, meaningful transformation across your organisation -powered by enterprise technology, real-world insight, and strategic execution.")}
+                          {t("We help enterprises go beyond incremental change. Whether you’re modernizing your ERP landscape or seeking a certified ERP implementation partner, we enable rapid, meaningful transformation across your organization -powered by enterprise technology, real-world insight, and strategic execution.")}
                         </p>
                         <div className="ser-btn2">
                           <Link href="/about-us/overview"
@@ -1055,7 +1061,7 @@ export default function Home() {
                   <div className="about-agency-content">
                     <div className="section-title">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        {t("Powering Enterprise Growth Through Digital-Enabled Transformation")}
+                        {t("Powering Enterprise Growth Through Digital Transformation")}
                       </h2>
                     </div>
                   </div>
@@ -1068,7 +1074,7 @@ export default function Home() {
                           {t("At RheinBrücke, we believe transformation is not just about technology, it’s about unlocking new business models, new ways of working, and new value for your customers.")}
                         </p>
                         <p>
-                          {t("We help enterprises go beyond incremental change. Whether you are scaling operations, modernizing your ERP landscape, or launching entirely new services, we enable rapid, meaningful transformation across your organisation -powered by enterprise technology, real-world insight, and strategic execution.")}
+                          {t("We help enterprises go beyond incremental change. Whether you’re modernizing your ERP landscape or seeking a certified ERP implementation partner, we enable rapid, meaningful transformation across your organization -powered by enterprise technology, real-world insight, and strategic execution.")}
                         </p>
                         <div className="ser-btn2">
                           <Link href="/about-us/overview"

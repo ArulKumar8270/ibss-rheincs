@@ -554,7 +554,7 @@ const page = () => {
                       <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
-                          <h3> 13. Global Rollout Services </h3>
+                          <h3>Global Rollout Services </h3>
                           <p>
                             RheinBrücke enables seamless SAP rollouts across geographies, ensuring standardisation while accommodating local regulatory and business requirements.
                           </p>
