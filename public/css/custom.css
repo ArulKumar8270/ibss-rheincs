@@ -13269,7 +13269,7 @@ header.boxshadow {
 
 .buildsecont .section-title h2 {
 	color: #000;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 .buildsecont .hero-video-content {
@@ -22585,3 +22585,8 @@ screen and (max-height: 300px) {
     .overviewhgtchange .valueslide {
         min-height: 495px !important;
     }
+
+	.mt15{
+		margin-top:15px;
+		line-height: 24px;
+	}

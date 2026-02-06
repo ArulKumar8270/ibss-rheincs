@@ -12,7 +12,7 @@ const page = () => {
           <div className="container">
             <div className="animesan-waber llo">
               <div className="sap-title sap-paner-text">
-                <h2 className="text-anime-style-2" data-cursor="-opaque">
+                <h2 className="text-anime-style-21" data-cursor="-opaque">
                   Build Resilient, Connected, Scalable and Future-Ready Enterprises with SAP
                 </h2>
                 {/* <p className="mt-3 mb-0">
@@ -144,7 +144,7 @@ const page = () => {
                         className="text-anime-style-2 text-center"
                         data-cursor="-opaque"
                       >
-                        Why SAP
+                        Business Transformation with SAP
                       </h2>
                       <p className="text-center">
                         SAP’s intelligent cloud ERP and business technology platforms
@@ -196,7 +196,7 @@ const page = () => {
               <div className="col-md-6">
                 <div className="sap-advantage-waber">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    The SAP Advantage
+                    SAP is More Than ERP…
                   </h2>
                   <p>Today, SAP is more than an ERP. It is a platform for:</p>
                   <div className="advantage-sap">
@@ -257,9 +257,9 @@ const page = () => {
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
                     Our SAP Services
                   </h2>
+                  <h6 className='text-black mt15'>Unlock business value through a comprehensive portfolio of SAP services and proven transformation methodologies.</h6>
                   <p>
-                    Designed for organisations moving from “systems that run the
-                    business” to “systems that shape the business".{" "}
+                    From strategy to execution and continuous optimisation, we help organisations accelerate innovation, improve agility, and achieve measurable business outcomes across their SAP landscape.
                   </p>
                 </div>
               </div>
@@ -276,26 +276,21 @@ const page = () => {
                       <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
-                          <h3>SAP S/4HANA Modernisation </h3>
+                          <h3>SAP Implementation Services </h3>
                           <p>
-                            Move to S/4HANA with a clear roadmap, clean core
-                            principles, and a migration approach tailored to your
-                            current landscape.{" "}
+                            We deliver end-to-end SAP implementations aligned with industry best practices and clean-core principles. Our structured delivery approach ensures predictable outcomes, faster go-lives, and scalable architectures.
                           </p>
-                          <h5>What we deliver:</h5>
+                          <h5>Key capabilities:</h5>
                           <ul>
-                            <li>
-                              {" "}
-                              S/4HANA Public & Private Cloud implementations
+                            <li>SAP S/4HANA implementations (Greenfield / Brownfield / Selective)
                             </li>
-                            <li>ECC to S/4HANA conversions</li>
-                            <li>Selective data transitions</li>
-                            <li> Embedded analytics setup</li>
-                            <li> Post-go-live stabilisation & optimisation</li>
+                            <li>Fit-to-standard and best-practice-driven design</li>
+                            <li>Process harmonisation and simplification</li>
+                            <li>Data migration, testing, and cutover management</li>
+                            {/* <li> Post-go-live stabilisation & optimisation</li> */}
                           </ul>
                           <p>
-                            Our team focuses on speed, stability, and adoption, not
-                            long projects that drag on.
+                           Reduced implementation risk, controlled scope, and a future-proof SAP landscape.
                           </p>
                         </div>
                       </div>
@@ -306,22 +301,19 @@ const page = () => {
                         <div className="sap-service-waber">
                           <h3>RISE with SAP Transformation </h3>
                           <p>
-                            RISE with SAP is more than a technical migration - it’s an
-                            opportunity to redesign your operating model.{" "}
+                            As a RISE with SAP® Validated Partner, RheinBrücke simplifies the journey from ECC to SAP S/4HANA with minimal disruption and maximum value realisation.
                           </p>
-                          <h5>We support you with:</h5>
+                          <h5>Key capabilities:</h5>
                           <ul>
                             <li>
-                              Readiness assessment and business-case development
+                              System conversion, landscape transformation, and selective migration
                             </li>
-                            <li>Signavio-driven process harmonisation</li>
-                            <li>Cloud migration execution</li>
-                            <li>Integration, security, and governance setup</li>
-                            <li>Post-migration optimisation</li>
+                            <li>Custom code remediation and clean-core alignment</li>
+                            <li>Data volume management and archiving</li>
+                            <li>SAP Readiness Check, Simplification Item handling, and CVI</li>
                           </ul>
                           <p>
-                            A modern RISE journey means clean processes, integrated
-                            systems, predictable costs, and continuous innovation
+                            A modern RISE journey means clean processes, integrated systems, predictable costs, and continuous innovation.
                           </p>
                         </div>
                       </div>
@@ -332,18 +324,14 @@ const page = () => {
                         <div className="sap-service-waber">
                           <h3>SAP Business Technology Platform (BTP) </h3>
                           <p>
-                            Turn SAP into a connected, extensible platform instead of
-                            a closed ERP{" "}
+                            RheinBrücke unlocks innovation and extensibility using the SAP Business Technology Platform (SAP BTP).
                           </p>
-                          <h5>Our BTP services include:</h5>
+                          <h5>Key capabilities:</h5>
                           <ul>
-                            <li>
-                              Integrations across ERP, MES, CRM, eCommerce, HR, WMS
-                            </li>
-                            <li> Workflow automation and event-driven processes</li>
-                            <li>Low-code / custom extensions</li>
-                            <li>AI & ML enablement</li>
-                            <li>API management and security</li>
+                            <li>Application development and extensions</li>
+<li>Integration Suite, Workflow, and Automation</li>
+<li>AI, RPA, and event-driven architectures</li>
+<li>Clean-core compliant innovations</li>
                           </ul>
                           <p>
                             BTP is where enterprises unlock real agility, we help you
@@ -380,30 +368,48 @@ const page = () => {
                       {/* Testimonial Slide End */}
                       {/* Testimonial Slide Start */}
                       <div className="swiper-slide ">
+                        <div className="sap-service-waber">
+                          <h3> SAP EWM Implementation </h3>
+                          <p>
+                            We help organisations modernise warehouse operations
+                            using SAP Extended Warehouse Management (EWM) to
+                            improve inventory accuracy, throughput, and operational
+                            efficiency.
+                          </p>
+                          <h5>Key capabilities:</h5>
+                          <ul>
+                            <li>SAP EWM embedded and decentralised implementations</li>
+                            <li>Warehouse process optimisation and automation</li>
+                            <li>Integration with S/4HANA, TM, and third-party systems</li>
+                            <li>RF, Fiori, and automation enablement</li>
+                          </ul>
+                          <p>
+                            Real-time warehouse control with measurable gains in
+                            inventory accuracy and throughput.
+                          </p>
+                        </div>
+                      </div>
+                      {/* Testimonial Slide End */}
+                      {/* Testimonial Slide Start */}
+                      <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
                           <h3>
                             {" "}
-                            SAP Analytics Cloud (SAC) & Enterprise Insights{" "}
+                            SAP Analytics Cloud (SAC) Implementation{" "}
                           </h3>
                           <p>
-                            Move beyond reports, give your teams real-time,
-                            self-service intelligence{" "}
+                            We enable real-time insights and predictive analytics using SAP Analytics Cloud to support smarter, faster decision-making.{" "}
                           </p>
-                          <h5>Our expertise covers:</h5>
+                          <h5>Key capabilities:</h5>
                           <ul>
-                            <li>SAC dashboards & storyboards</li>
-                            <li>Predictive planning & forecasting</li>
-                            <li>
-                              Consolidated reporting for finance, supply chain, and
-                              operations
-                            </li>
-                            <li>Embedded analytics in S/4HANA</li>
-                            <li>Data modelling, integration & governance</li>
+                            <li>SAC planning, analytics, and predictive scenarios</li>
+                            <li>Integration with S/4HANA, BW, and non-SAP sources</li>
+                            <li>Executive dashboards and self-service analytics</li>
+                            <li>Financial and operational planning models</li>
                           </ul>
                           <p>
-                            We help organisations shift from data-rich to
-                            insight-driven.
+                            We help organisations shift from data-rich to insight-driven.
                           </p>
                         </div>
                       </div>
@@ -418,51 +424,154 @@ const page = () => {
                           </h3>
                           <p>
                             {" "}
-                            A modern support model that blends operations,
-                            enhancements, and continuous improvement.
+                            RheinBrücke provides reliable SAP AMS services that ensure business continuity, system stability, and continuous improvement.
                           </p>
-                          <h5>We offer:</h5>
+                          <h5>Key capabilities:</h5>
                           <ul>
-                            <li> Functional & technical support</li>
-                            <li> Change request management</li>
-                            <li> Performance optimisation</li>
-                            <li> Basis & security administration</li>
-                            <li> Monitoring, automation, and root-cause analysis</li>
-                            <li> Mini-projects and enhancements</li>
+                            <li>Functional and technical support (L2/L3)</li>
+                            <li>Proactive monitoring and incident management</li>
+                            <li>Enhancement, optimisation, and minor developments</li>
+                            <li>SLA-driven offshore-onsite delivery model</li>
                           </ul>
                           <p>
-                            AMS+ ensures your SAP landscape is reliable, optimised,
-                            and always evolving.
+                            AMS services ensure your SAP landscape is reliable, optimised, and always evolving.
                           </p>
                         </div>
                       </div>
                       {/* Testimonial Slide End */}
+                      
+                      {/* Testimonial Slide Start */}
+                      <div className="swiper-slide ">
+                        {/* Your current service content */}
+                        <div className="sap-service-waber">
+                          <h3> SAP SuccessFactors Implementation </h3>
+                          <p>
+                            RheinBrücke helps organisations transform HR operations with SAP SuccessFactors, enabling improved employee experience and data-driven workforce management.
+                          </p>
+                          <h5>Key capabilities:</h5>
+                          <ul>
+                            <li>Core HR, Talent, Learning, and Performance modules</li>
+                            <li>Global HR standardisation and localisation</li>
+                            <li>Integration with S/4HANA and third-party payroll systems</li>
+                            <li>Data migration and change management</li>
+                          </ul>
+                          <p>
+                            SuccessFactors implemented with clean data, controlled change, and minimal disruption.
+                          </p>
+                        </div>
+                      </div>
+                      {/* Testimonial Slide End */}
+
+                      {/* Testimonial Slide Start */}
+                      <div className="swiper-slide ">
+                        {/* Your current service content */}
+                        <div className="sap-service-waber">
+                          <h3> SAP Ariba Services </h3>
+                          <p>
+                            We modernise procurement and supplier collaboration using SAP Ariba to deliver transparency, control, and cost efficiency.
+                          </p>
+                          <h5>Key capabilities:</h5>
+                          <ul>
+                            <li>Ariba Buying, Invoicing, and Sourcing implementations</li>
+                            <li>Supplier onboarding and enablement</li>
+                            <li>Integration with SAP S/4HANA and ECC</li>
+                            <li>Spend visibility and compliance optimisation</li>
+                          </ul>
+                          <p>
+                            Ariba embedded as a governed procurement platform—not another disconnected tool.
+                          </p>
+                        </div>
+                      </div>
+                      {/* Testimonial Slide End */}
+
+                      {/* Testimonial Slide Start */}
+                      <div className="swiper-slide ">
+                        {/* Your current service content */}
+                        <div className="sap-service-waber">
+                          <h3> EDI & SAP CPI Integration Services </h3>
+                          <p>
+                            We enable seamless system-to-system and business partner integrations using SAP Integration Suite (CPI) and EDI platforms.
+                          </p>
+                          <h5>Key capabilities:</h5>
+                          <ul>
+                            <li>EDI integrations with customers, suppliers, and logistics partners</li>
+                            <li>SAP CPI-based cloud and hybrid integrations</li>
+                            <li>API management and message mapping</li>
+                            <li>Monitoring, error handling, and optimisation</li>
+                          </ul>
+                          <p>
+                            Integrations designed for failure handling, visibility, and long-term stability.
+                          </p>
+                        </div>
+                      </div>
+                      {/* Testimonial Slide End */}
+
+                      {/* Testimonial Slide Start */}
+                      <div className="swiper-slide ">
+                        {/* Your current service content */}
+                        <div className="sap-service-waber">
+                          <h3> Merlin Sourcing – SAP-Integrated Strategic Sourcing </h3>
+                          <p>
+                            Merlin Sourcing enables governed, SAP-integrated strategic sourcing, extending SAP procurement with structured sourcing, supplier collaboration, and decision control, without breaking clean-core principles.
+                          </p>
+                          <h5>Key capabilities:</h5>
+                          <ul>
+                            <li>SAP-integrated sourcing aligned to S/4HANA and ECC</li>
+                            <li>Structured sourcing workflows and event management</li>
+                            <li>Configurable for scale without customisation debt</li>
+                            <li>Delivered and supported by RheinBrücke’s SAP consulting and AMS teams</li>
+                          </ul>
+                          <p>
+                            SAP procurement investments extended into strategic sourcing without platform sprawl or governance loss.
+                          </p>
+                        </div>
+                      </div>
+                      {/* Testimonial Slide End */}
+                      
                       {/* Testimonial Slide Start */}
                       <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
                           <h3> Custom Development & Technical Services </h3>
                           <p>
-                            {" "}
-                            Extend SAP responsibly with a clean-core-aligned
-                            development approach.
+                            We design and develop SAP extensions that enhance business capabilities while preserving a clean core.
                           </p>
-                          <h5>Services include:</h5>
+                          <h5>Key capabilities:</h5>
                           <ul>
-                            <li> ABAP development & enhancements</li>
-                            <li> RAP-based developments on BTP</li>
-                            <li> API services and integration layers</li>
-                            <li> Fiori / UI5 apps</li>
-                            <li> Core interface design & automation</li>
-                            <li> BASIS support</li>
+                            <li> ABAP and RAP-based developments</li>
+                            <li> SAP Fiori and UX enhancements</li>
+                            <li> Custom reports, interfaces, forms, and workflows</li>
+                            <li> Side-by-side extensions using SAP BTP</li>
                           </ul>
                           <p>
-                            We build only what adds value and ensure everything stays
-                            upgrade-friendly
+                            We build only what adds value and ensure everything stays upgrade-friendly.
                           </p>
                         </div>
                       </div>
                       {/* Testimonial Slide End */}
+
+                      {/* Testimonial Slide Start */}
+                      <div className="swiper-slide ">
+                        {/* Your current service content */}
+                        <div className="sap-service-waber">
+                          <h3> 13. Global Rollout Services </h3>
+                          <p>
+                            RheinBrücke enables seamless SAP rollouts across geographies, ensuring standardisation while accommodating local regulatory and business requirements.
+                          </p>
+                          <h5>Key capabilities:</h5>
+                          <ul>
+                            <li> Template-based global rollouts</li>
+                            <li> Localisation and compliance management</li>
+                            <li> Multi-country data and process harmonisation</li>
+                            <li> Central governance with regional flexibility</li>
+                          </ul>
+                          <p>
+                            Consistent global execution with local compliance assured from day one.
+                          </p>
+                        </div>
+                      </div>
+                      {/* Testimonial Slide End */}
+
                     </div>
                     <div className="testimonial-btn sap-ser-1 rtyElement">
                       <div className="testimonial-button-prev">
