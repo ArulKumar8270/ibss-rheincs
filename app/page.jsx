@@ -1246,7 +1246,7 @@ export default function Home() {
                       {t("Built for Enterprises that Want to Scale")}
                     </h2>
                     <p className="brin-p-tag m-0">
-                      {t("Scaling successfully means balancing agility with execution. We design solutions that are digital at the core, powered by trusted platforms, and tailored for enterprise growth. Every engagement is focused on measurable outcomes that drive lasting business value.")}
+                      {t("Scaling successfully means balancing agility with execution. We design solutions that are digital at the core, powered by trusted platforms, and tailored for growth. Every digital engagement or cloud ERP solution is focused on measurable outcomes with lasting business value.")}
                     </p>
                     <div className="ser-btn m-0">
                       <Link href="/digital-services-and-solutions"
@@ -1367,6 +1367,7 @@ export default function Home() {
                             height={80}
                             viewBox="0 0 80 80"
                             fill="none"
+                            role="img" aria-label="Cloud native digital transformation icon"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <g clipPath="url(#clip0_1699_19219)">
@@ -1388,7 +1389,7 @@ export default function Home() {
                         </div>
                         <div className="benefits-steps-content">
                           <h3>{t("Digital by Design")}</h3>
-                          <p>{t("Cloud-native, mobile-first, AI-ready -every solution is designed for agility and growth.")}</p>
+                          <p>{t("Cloud native, mobile first, AI-ready ERP solutions for agility and growth.")}</p>
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
@@ -1406,6 +1407,7 @@ export default function Home() {
                             height={80}
                             viewBox="0 0 80 80"
                             fill="none"
+                            role="img" aria-label="ERP system ROI icon"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -1460,7 +1462,7 @@ export default function Home() {
                         </div>
                         <div className="benefits-steps-content">
                           <h3>{t("Outcomes-Driven")}</h3>
-                          <p>{t("We quantify the impact -from cost savings and operational KPIs to customer lifetime value.")}</p>
+                          <p>{t("Quantified cost savings across ERP systems, operational KPIs & customer lifetime value.")}</p>
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
@@ -1478,6 +1480,7 @@ export default function Home() {
                             height={80}
                             viewBox="0 0 80 80"
                             fill="none"
+                            role="img" aria-label="Epicor ERP, SAP and Microsoft partner icon"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <g clipPath="url(#clip0_1699_19228)">
@@ -1518,6 +1521,7 @@ export default function Home() {
                             height={80}
                             viewBox="0 0 80 80"
                             fill="none"
+                            role="img" aria-label="Global ERP transformation icon"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <g clipPath="url(#clip0_1699_19211)">
@@ -1539,7 +1543,7 @@ export default function Home() {
                         </div>
                         <div className="benefits-steps-content">
                           <h3>{t("Deep Execution Capability")}</h3>
-                          <p>{t("We combine global delivery centres with local expertise to execute transformation programs at speed, and at scale.")}</p>
+                          <p>{t("Global delivery with local expertise to execute ERP implementation and digital transformation programs at speed and scale.")}</p>
                         </div>
                       </div>
                       {/* Benefits Steps Item End */}
@@ -1569,9 +1573,9 @@ export default function Home() {
                 <div className="col-lg-6">
                   <div className="section-title testidescription">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      {t("What We Do to Driver Enterprise Transformation")}
+                      {t("ERP & Digital Solutions to Drive Enterprise Transformation")}
                     </h2>
-                    <p>{t("We help enterprises modernise systems, build digital capabilities, and unlock growth. From ERP transformation to automation and data strategy , our solution simplify complexity and create future ready enterprise")}</p>
+                    <p>{t("We help enterprises modernise systems, build digital capabilities, and unlock growth. From ERP transformation to automation and data strategy, our solutions simplify complexity and create future-ready enterprises with cross-platform system integration.")}</p>
                     <div className="ser-btn2">
                       <Link href="/solutions/erp-enterprise-solutions-and-services/erp" className="animated-svg-link1 btn-style-3">
                         {t("Read more")}
@@ -1705,6 +1709,7 @@ export default function Home() {
                                         height={121}
                                         viewBox="0 0 252 121"
                                         fill="none"
+                                        role="img" aria-label="Business Model Transformation icon"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <path
@@ -1812,6 +1817,7 @@ export default function Home() {
                                         height={121}
                                         viewBox="0 0 252 121"
                                         fill="none"
+                                        role="img" aria-label="ERP Modernisation icon"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <line
@@ -1956,6 +1962,7 @@ export default function Home() {
                                         height={121}
                                         viewBox="0 0 252 121"
                                         fill="none"
+                                        role="img" aria-label="Digital Supply Chain implement icon"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <line
@@ -2170,6 +2177,7 @@ export default function Home() {
                                         height={121}
                                         viewBox="0 0 252 121"
                                         fill="none"
+                                        role="img" aria-label="ERP Data Analytics icon"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <line
@@ -2292,6 +2300,7 @@ export default function Home() {
                                         height={121}
                                         viewBox="0 0 252 121"
                                         fill="none"
+                                        role="img" aria-label="AI ERP implementation icon"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <line
@@ -2414,6 +2423,7 @@ export default function Home() {
                                         height={121}
                                         viewBox="0 0 252 121"
                                         fill="none"
+                                        role="img" aria-label="Cross-Platform Integration icon"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <line
@@ -2534,6 +2544,7 @@ export default function Home() {
                                         height={121}
                                         viewBox="0 0 252 121"
                                         fill="none"
+                                        role="img" aria-label="ERP and digital transformation design and delivery icon"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <line
@@ -2600,11 +2611,9 @@ export default function Home() {
                                   </div>
                                 </div>
                                 <div className="service-item-body">
-                                  <h3>Strategic System Design &amp; Delivery</h3>
+                                  <h3>{t("Strategic System Design & Delivery")}</h3>
                                   <p>
-                                    We design and deliver systems that are built for
-                                    speed, reliability, and business impact, helping you
-                                    move from strategy to measurable results.
+                                    {t("We design and deliver systems that are built for speed, reliability, and business impact, helping you move from strategy to measurable results.")}
                                   </p>
                                   {/*<div class="ser-btn serbtn1">*/}
                                   {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
@@ -2906,6 +2915,7 @@ export default function Home() {
                             height={80}
                             viewBox="0 0 80 80"
                             fill="none"
+                            role="img" aria-label="Analyse Integrate Transform methodology icon"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -2935,6 +2945,7 @@ export default function Home() {
                             height={80}
                             viewBox="0 0 80 80"
                             fill="none"
+                            role="img" aria-label="ERP in manufacturing icon"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -2965,6 +2976,7 @@ export default function Home() {
                             height={80}
                             viewBox="0 0 80 80"
                             fill="none"
+                            role="img" aria-label="Global ERP delivery icon"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -3009,6 +3021,7 @@ export default function Home() {
                             height={80}
                             viewBox="0 0 80 80"
                             fill="none"
+                            role="img" aria-label="ERP ROI icon"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
@@ -3160,7 +3173,7 @@ export default function Home() {
                       {t("Partnering with Business Worldwide")}
                     </h2>
                     <p>{t("We partner with businesses in over 40 countries to deliver high-impact transformation across key sectors including brand owners and vertical retailers, the retail industry, distribution and supply chain, discrete and process manufacturing, the automotive industry, engineering, procurement and construction as well as the private equity and funding backed ventures.")}</p>
-                    <p>{t("Whether you are mid-sized and scaling, or enterprise-level and rethinking your model, we help you unlock growth.")}</p>
+                    <p>{t("Whether you are mid-sized and scaling, or enterprise-level and rethinking your model, we help you unlock growth with Cloud ERP and Digital solutions.")}</p>
                     <div className="ser-btn2 mt-4">
                       <Link href="/solutions/erp-enterprise-solutions-and-services/erp" className="animated-svg-link1 btn-style-3">
                         {t("Know more")}
