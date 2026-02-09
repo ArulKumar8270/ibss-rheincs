@@ -99,24 +99,22 @@ export async function GET() {
 
 ## 📧 Email via Supabase Edge Function (send-contact-email)
 
-Contact, collaterals, and job-application forms send email via the **Supabase Edge Function** `send-contact-email`, which uses SendGrid. The app calls `supabase.functions.invoke('send-contact-email', { body: { channel, ... } })`.
+Contact, collaterals, and job-application forms send email via the **Supabase Edge Function** `send-contact-email`, which uses **Microsoft Graph API** (OAuth2 client credentials + certificate). The app calls `supabase.functions.invoke('send-contact-email', { body: { channel, ... } })`.
+
+### Migrate to Supabase: secrets live in the Dashboard
+
+Email is fully handled by Supabase Edge Functions. **Do not** put Graph/Azure secrets only in `.env`—deployed functions cannot read `.env`. Set them in **Supabase**:
+
+1. **Supabase Dashboard** → your project → **Edge Functions** → **send-contact-email** → **Secrets**.
+2. Add: `CLIENT_ID`, `TENANT_ID`, `PRIVATE_KEY` (PEM), and optionally `FROM_USER`, `FROM_NAME`, `ADMIN_EMAIL`, `COLLATERALS_ADMIN_EMAIL`, `JOB_APPLICATION_ADMIN_EMAIL`.
+
+See **`supabase/functions/README.md`** for the full list and Azure app registration steps.
 
 ### Deploy the function
 
 ```bash
-supabase functions deploy send-contact-email
+supabase functions deploy send-contact-email --project-ref fltdymhjpiwnwltazqse
 ```
-
-### Set Edge Function secrets (Supabase Dashboard → Edge Functions → send-contact-email → Secrets)
-
-| Secret | Description |
-|--------|-------------|
-| `SENDGRID_API_KEY` | SendGrid API key (required) |
-| `FROM_EMAIL` | Sender email (default: noreply@rheincs.com) |
-| `FROM_NAME` | Sender name (default: RheinBrücke) |
-| `ADMIN_EMAIL` | Contact form admin (default: marketing@rheincs.com) |
-| `COLLATERALS_ADMIN_EMAIL` | Collaterals admin (optional; falls back to ADMIN_EMAIL) |
-| `JOB_APPLICATION_ADMIN_EMAIL` | Job applications admin (optional; default: careers@rheincs.com) |
 
 ### Request body (channel)
 
@@ -125,7 +123,7 @@ supabase functions deploy send-contact-email
 - **job-application** – `{ channel: 'job-application', fullName, email, phone, countryCode?, jobTitle, resumeUrl?, coveringLetter? }`
 - **test** – `{ channel: 'test', testEmail }`
 
-No `.env.local` SendGrid vars are needed for the app; secrets live in Supabase.
+No email-related env vars are required in `.env.local` for sending; all secrets are in Supabase.
 
 ## 🔐 Security Notes
 

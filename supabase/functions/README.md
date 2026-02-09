@@ -4,58 +4,88 @@
 
 **URL (this project):** `https://fltdymhjpiwnwltazqse.supabase.co/functions/v1/send-contact-email`
 
-The app must use the **same** Supabase project: set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in `.env.local` so `supabase.functions.invoke('send-contact-email', ...)` calls this URL with the correct `Authorization: Bearer <anon_key>` header.
+Sends email via **Microsoft Graph API** (OAuth2 client credentials + certificate). The app calls `supabase.functions.invoke('send-contact-email', { body: { channel, ... } })`.
 
-Sends email via SendGrid for:
+Channels:
 
 - **contact** – Contact form (user + admin)
 - **collaterals** – Collaterals request (user + admin)
 - **job-application** – Job application (applicant + admin)
 - **test** – Test email to a single address
 
-### Deploy to live project (fltdymhjpiwnwltazqse)
+### Deploy to Supabase
 
-The app uses the **live** Supabase project. Deploy the function there:
+Deploy to your linked project (or specify `--project-ref`):
 
 ```bash
 supabase functions deploy send-contact-email --project-ref fltdymhjpiwnwltazqse
 ```
 
-You will be prompted for your database password (or use `SUPABASE_ACCESS_TOKEN`).  
-Set function secrets in the **live** project dashboard: https://supabase.com/dashboard/project/fltdymhjpiwnwltazqse/functions/send-contact-email/settings
+You may be prompted for your database password, or use `SUPABASE_ACCESS_TOKEN`.
 
-### Secrets (required to fix "Email service not configured")
+### Secrets: set in Supabase (required)
 
-The function reads `SENDGRID_API_KEY` from **Supabase Edge Function secrets** (not from your app’s `.env`). Set them on the **live** project.
+The function reads secrets from **Supabase Edge Function secrets only** (not from your app’s `.env`). Set them in the Dashboard for the project that runs the function.
 
-**Option A – Dashboard (recommended)**
+**Dashboard**
 
-1. Open: **https://supabase.com/dashboard/project/fltdymhjpiwnwltazqse/functions/send-contact-email/settings**
-2. Go to **Edge Function Secrets** (or **Secrets**).
-3. Add:
-   - **Name:** `SENDGRID_API_KEY`  
-     **Value:** your SendGrid API key (starts with `SG.`)
-4. (Optional) Add: `FROM_EMAIL`, `FROM_NAME`, `ADMIN_EMAIL`, `COLLATERALS_ADMIN_EMAIL`, `JOB_APPLICATION_ADMIN_EMAIL`.
-5. Save. New invocations will use the new secrets.
+1. Open: **Supabase Dashboard** → your project → **Edge Functions** → **send-contact-email** → **Secrets** (or **Settings**).
+2. Add each secret below. For `PRIVATE_KEY`, paste the full PEM (including `-----BEGIN PRIVATE KEY-----` / `-----END PRIVATE KEY-----`); newlines can be real or `\n`.
 
-**Option B – CLI**
+**If your key is in a .pfx file**
+
+The function needs the **private key in PEM format**, not the .pfx file. Extract it with OpenSSL (you will be prompted for the .pfx password):
 
 ```bash
-supabase secrets set SENDGRID_API_KEY=SG.your_actual_key_here --project-ref fltdymhjpiwnwltazqse
+openssl pkcs12 -in "path/to/your.pfx" -nocerts -nodes -out private-key.pem
 ```
 
-**All supported secrets**
+Then open `private-key.pem`, copy the entire contents (including `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----`), and paste into the `PRIVATE_KEY` secret in Supabase. Do **not** put the .pfx file in `public/` or commit it—add `*.pfx` to `.gitignore` and store the file outside the repo.
 
-| Secret | Required | Default |
-|--------|----------|---------|
-| `SENDGRID_API_KEY` | Yes | — |
-| `FROM_EMAIL` | No | noreply@rheincs.com |
-| `FROM_NAME` | No | RheinBrücke |
-| `ADMIN_EMAIL` | No | marketing@rheincs.com |
-| `COLLATERALS_ADMIN_EMAIL` | No | same as ADMIN_EMAIL |
-| `JOB_APPLICATION_ADMIN_EMAIL` | No | careers@rheincs.com |
+**CLI**
+
+```bash
+# Example (replace with your values)
+supabase secrets set CLIENT_ID=your-azure-app-client-id --project-ref fltdymhjpiwnwltazqse
+supabase secrets set TENANT_ID=your-azure-tenant-id --project-ref fltdymhjpiwnwltazqse
+supabase secrets set PRIVATE_KEY="-----BEGIN PRIVATE KEY-----
+MIIEvgIBA...
+-----END PRIVATE KEY-----" --project-ref fltdymhjpiwnwltazqse
+```
+
+**Secrets reference**
+
+| Secret | Required | Description |
+|--------|----------|-------------|
+| `CLIENT_ID` | Yes | Azure AD app (client) ID |
+| `TENANT_ID` | Yes | Azure AD tenant ID |
+| `PRIVATE_KEY` | Yes | PEM private key (certificate auth for Graph) |
+| `CERT_THUMBPRINT` | No | Certificate thumbprint (optional; not used by current flow—only PRIVATE_KEY is used) |
+| `FROM_USER` | No | Mailbox to send as (default: `noreply@rheincs.com`); must have SendAs in Exchange |
+| `FROM_NAME` | No | Sender display name (default: RheinBrücke) |
+| `ADMIN_EMAIL` | No | Contact form admin (default: marketing@rheincs.com) |
+| `COLLATERALS_ADMIN_EMAIL` | No | Collaterals admin (default: same as ADMIN_EMAIL) |
+| `JOB_APPLICATION_ADMIN_EMAIL` | No | Job applications admin (default: careers@rheincs.com) |
+
+**Where to see the certificate thumbprint**
+
+- **Azure Portal**: [Azure AD](https://portal.azure.com) → **App registrations** → your app → **Certificates & secrets**. After you upload a certificate, the **Thumbprint** column shows it (hex string, no colons).
+- **From your .pfx locally** (SHA-1 fingerprint; remove colons to match Azure):
+  ```bash
+  openssl pkcs12 -in "path/to/your.pfx" -clcerts -nokeys -out cert.pem
+  openssl x509 -in cert.pem -fingerprint -sha1 -noout
+  ```
+  Example output: `SHA1 Fingerprint=AA:BB:CC:...` → use `AABBCC...` (no colons) in Azure or as `CERT_THUMBPRINT` if needed.
+
+**Azure setup**
+
+- App registration with a **certificate** (upload the public key or .cer from your .pfx).
+- **API permissions**: Microsoft Graph → Application → `Mail.Send` (admin consent).
+- The mailbox in `FROM_USER` must have **SendAs** permission in Exchange Online for the app.
 
 ### Invoke from the app
+
+The app already uses the same Supabase project (`NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY`), so `supabase.functions.invoke` hits this function:
 
 ```ts
 const supabase = createClient()
@@ -63,3 +93,5 @@ const { data, error } = await supabase.functions.invoke('send-contact-email', {
   body: { channel: 'contact', fullName, email, phone, countryCode, companyName, selection, message },
 })
 ```
+
+No email-related env vars are needed in the Next.js app for sending; all secrets live in Supabase.

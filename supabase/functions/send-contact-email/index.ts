@@ -1,13 +1,19 @@
 // Supabase Edge Function: send-contact-email
 // Handles: contact, collaterals, job-application, test
-// Set secrets in Supabase Dashboard: SENDGRID_API_KEY, FROM_EMAIL, FROM_NAME, ADMIN_EMAIL, COLLATERALS_ADMIN_EMAIL, JOB_APPLICATION_ADMIN_EMAIL
+// Sends email via Microsoft Graph (MSAL client credentials + certificate).
+// Set secrets in Supabase: CLIENT_ID, TENANT_ID, CERT_THUMBPRINT, PRIVATE_KEY (PEM),
+//   FROM_NAME, ADMIN_EMAIL, COLLATERALS_ADMIN_EMAIL, JOB_APPLICATION_ADMIN_EMAIL
 
 /// <reference types="deno" />
 
-// @ts-ignore - Deno requires .ts extension in imports
-import { corsHeaders, corsHeadersForRequest } from '../_shared/cors.ts'
+// @ts-ignore - Deno requires .ts extension for local imports
+import { corsHeadersForRequest } from '../_shared/cors.ts'
+// @ts-ignore - Deno npm specifier
+import { SignJWT, importPKCS8 } from 'npm:jose@5.2.0'
 
-const SENDGRID_URL = 'https://api.sendgrid.com/v3/mail/send'
+// Mailbox to send as (must have SendAs permission in Exchange). Default: noreply@rheincs.com
+const FROM_USER = Deno.env.get('FROM_USER') ?? 'noreply@rheincs.com'
+const GRAPH_SCOPE = 'https://graph.microsoft.com/.default'
 
 function escapeHtml(text: string): string {
   if (!text) return ''
@@ -20,37 +26,148 @@ function escapeHtml(text: string): string {
 }
 
 function getConfig() {
-  const apiKey = Deno.env.get('SENDGRID_API_KEY') ?? ''
-  const fromEmail = Deno.env.get('FROM_EMAIL') ?? 'noreply@rheincs.com'
+  const clientId = Deno.env.get('CLIENT_ID') ?? 'fd935dfb-6d1a-4568-8f2d-c50375c930a4'
+  const tenantId = Deno.env.get('TENANT_ID') ?? 'f45c3768-a091-47aa-a5c4-28f9d04ce0df'
+  const thumbprint = Deno.env.get('CERT_THUMBPRINT') ?? ''
+  const privateKeyRaw = Deno.env.get('PRIVATE_KEY') ?? `MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC6vnKV81rxkexb
+VwwmK6hLh+nkWtca+zTxVPeJThaut4gkuyMXS4gdpo+6HzFMqKP4XHXj92sC36LI
+1CQL8cMfVKpDozYjgUZaE0wcfC7sjZdFE6jhgEq40K11f/WPvc5IZrZqK0F6s6e3
+8p0Ip+iFOjjNMZKTchfun1QChMiSU0A1m2wZlckurbPGQ7rebXTyb0pGiE/fhKgY
+QruJngXqwVZQSC1ITi3yfRBMNmkjmEMVHaiIT75pwU59Ivy3yjKm9gETMHAA9SQi
+IP4rGrOiI6kWAFhjUxtNWEEGZzkx+eFpzcAijsHMJC+gFNJ9jYLKR8WRJGMn6vJj
+FZBlgYIxAgMBAAECggEBAKPyyeTOFzzYkPqMDLWCRKmzNGvwOMOOYieyIfSg4xcX
+OGaPCTrNbD4j2jFca0rTD8nfWvz+XivSrTbF0LPP2C+shCMHqmM3fs1b/clQWV4C
+3RifLvhzSqbBRlhPNAaza+RykJnbSgxwp8G+NZHA4En/GJlFeVsLoukzZm0jqHeV
+MS1pxI+vv/Ze656njJuW68Gwiv8huzBw4bYXnJ/dA5wGo1IDqfW63Q9wzKvfnSU6
+qPGzTwVP4xexJMm3N7aReYjWXZwzXKukobIiVI09WxDDYsiC5XWh+m61+c2Ccvn2
+nwLZNJDkxUw2WR8rcTkqKLm6XSbcsAVaSApgglnWAvUCgYEA4vKgc/jDhyLP8vKl
+NuwPNzuTo7uIiMrNr1wAXbSE4eVVsjowX6nXCSA4fQ0iJZfwj/r/U2Nxclcuk40+
+/SgJpFomhcCxXGI4XmXFzh9/vJlg86M7JEtTqdn6ljIk/i0mm1/0mvbUj6ptBw1l
+g9jXuoy5IvkEu46Lar20SkYbCXMCgYEA0qZKCb7WU4OJEKmahfGhszIUkUpBBDfX
+e2hFyhBx2VW5mIYqr6ocK3HtdQl7Qsfr/uqrf0NMLzdYfbXyfN90z3IJzkXOnPPV
+ZLTL9PS5EnWRBDXiB9xcnIe/Eb+ZdQXOUTH8B8hdIzxIq/V2IJqKrYFLB0SNjsEF
+BlHFQW557MsCgYAgkYsfOXrt4LwQ9GtrR1MjrQQSAi6k2t3LpZtT1z0eoee7bQhW
+Iix+3cXdhE37MSPPtciAcgvsycAgYqvAbsd7c4iFt1J8nIfUXCyX2QNe0HAOZsVs
+/vZhsKt6dHXEmDwrHgkfV/7HI0EEOxLvaeYDmoBTGYNpWxp81f6Sjh8BKwKBgQDJ
+W3dudWN+lT+SE+3Hl8BQANE0SNx5Yb+zEWuUyb9qVs2AhM+M93jR9qdbtuKCZYSr
+OjsQ/Y13nNoT4LaYsyl/mqzQ5l2oHlSfXUuRLdUzVfp3IeKcTQKiBgiYuKPB/vjH
+GJaoAdk180wsRAjVBaUGUY8ctWTzToK1FbkO4MHfnQKBgQDVXpVgME1DjDz/hqnC
+fDwfrDySFk2oCO3QRsrijWPBwrjHMnvm3bNPdhGP7wkgm+Ss5gZUHbQEFU1aZfLf
+qXrrEpa55+kcjLsvPVkYs+dbxiKyzRmdi4QsAvKO156iyM0dW3YswXNz4vSf67jT
+p70PboPLwKDG15TgYJeQnDPyuw==`
   const fromName = Deno.env.get('FROM_NAME') ?? 'RheinBrücke'
   const adminEmail = Deno.env.get('ADMIN_EMAIL') ?? 'marketing@rheincs.com'
   const collateralsAdmin = Deno.env.get('COLLATERALS_ADMIN_EMAIL') ?? adminEmail
   const jobAdmin = Deno.env.get('JOB_APPLICATION_ADMIN_EMAIL') ?? 'careers@rheincs.com'
-  return { apiKey, fromEmail, fromName, adminEmail, collateralsAdmin, jobAdmin }
+  return {
+    clientId,
+    tenantId,
+    thumbprint,
+    privateKeyRaw,
+    fromUser: FROM_USER,
+    fromEmail: FROM_USER,
+    fromName,
+    adminEmail,
+    collateralsAdmin,
+    jobAdmin,
+  }
 }
 
-async function sendSendGrid(apiKey: string, payload: unknown): Promise<{ ok: boolean; error?: string }> {
-  if (!apiKey?.trim()) return { ok: false, error: 'SendGrid API key not configured' }
-  const res = await fetch(SENDGRID_URL, {
+/** Get Azure AD token for Graph using client credentials + JWT client assertion (certificate). */
+async function getGraphToken(config: ReturnType<typeof getConfig>): Promise<string> {
+  const { clientId, tenantId, privateKeyRaw } = config
+  if (!clientId || !tenantId || !privateKeyRaw?.trim()) {
+    throw new Error('Graph not configured: CLIENT_ID, TENANT_ID, PRIVATE_KEY required')
+  }
+  const pem = privateKeyRaw.includes('-----') ? privateKeyRaw : `-----BEGIN PRIVATE KEY-----\n${privateKeyRaw}\n-----END PRIVATE KEY-----`
+  const privateKey = await importPKCS8(pem, 'RS256')
+  const aud = `https://login.microsoftonline.com/${tenantId}/v2.0`
+  const now = Math.floor(Date.now() / 1000)
+  const jwt = await new SignJWT({})
+    .setProtectedHeader({ alg: 'RS256', typ: 'JWT' })
+    .setIssuer(clientId)
+    .setSubject(clientId)
+    .setAudience(aud)
+    .setJti(crypto.randomUUID())
+    .setIssuedAt(now)
+    .setExpirationTime(now + 600)
+    .sign(privateKey)
+
+  const body = new URLSearchParams({
+    grant_type: 'client_credentials',
+    client_id: clientId,
+    client_assertion_type: 'urn:ietf:params:oauth:client-assertion-type:jwt-bearer',
+    client_assertion: jwt,
+    scope: GRAPH_SCOPE,
+  })
+  const res = await fetch(`https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/token`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: body.toString(),
+  })
+  const data = await res.json()
+  if (!res.ok) {
+    const msg = data?.error_description ?? data?.error ?? `HTTP ${res.status}`
+    throw new Error(`Failed to obtain Graph token: ${msg}`)
+  }
+  const accessToken = data?.access_token
+  if (!accessToken) throw new Error('No access_token in Graph token response')
+  return accessToken
+}
+
+/** Send one email via Microsoft Graph (user must have SendAs for FROM_USER). */
+async function sendGraphMail(
+  token: string,
+  fromUser: string,
+  to: string,
+  toName: string | undefined,
+  subject: string,
+  htmlBody: string
+): Promise<{ ok: boolean; error?: string }> {
+  const url = `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(fromUser)}/sendMail`
+  const payload = {
+    message: {
+      subject,
+      body: { contentType: 'HTML' as const, content: htmlBody },
+      toRecipients: [{ emailAddress: { address: to, name: toName ?? undefined } }],
+    },
+    saveToSentItems: true,
+  }
+  const res = await fetch(url, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${apiKey}`,
+      Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(payload),
   })
+  if (res.ok) return { ok: true }
   const text = await res.text()
-  let err: { message?: string; errors?: Array<{ message?: string }> } = {}
+  let errMsg = `HTTP ${res.status}`
   try {
-    err = JSON.parse(text)
+    const err = JSON.parse(text)
+    errMsg = err?.error?.message ?? err?.message ?? errMsg
   } catch {
-    err = { message: text }
+    if (text) errMsg = text
   }
-  if (!res.ok) {
-    const msg = (Array.isArray(err.errors) && err.errors[0]?.message) || err.message || `HTTP ${res.status}`
-    return { ok: false, error: msg }
+  return { ok: false, error: errMsg }
+}
+
+/** SendGrid-shaped payload (personalizations[0].to, subject, content). We send via Graph using HTML part. */
+async function sendOneEmailViaGraph(
+  token: string,
+  fromUser: string,
+  payload: {
+    personalizations: Array<{ to: Array<{ email: string; name?: string }>; subject: string }>
+    content: Array<{ type: string; value: string }>
   }
-  return { ok: true }
+): Promise<{ ok: boolean; error?: string }> {
+  const to = payload.personalizations?.[0]?.to?.[0]
+  if (!to?.email) return { ok: false, error: 'Missing recipient' }
+  const subject = payload.personalizations[0].subject ?? ''
+  const htmlPart = payload.content?.find((c) => c.type === 'text/html')
+  const htmlBody = htmlPart?.value ?? payload.content?.[0]?.value ?? ''
+  return sendGraphMail(token, fromUser, to.email, to.name, subject, htmlBody)
 }
 
 // ——— Contact ———
@@ -244,8 +361,8 @@ Deno.serve(async (req) => {
   }
 
   const config = getConfig()
-  if (!config.apiKey?.trim()) {
-    return jsonResponse({ success: false, error: 'Email service not configured', emailSent: false }, 500, cors)
+  if (!config.clientId?.trim() || !config.tenantId?.trim() || !config.privateKeyRaw?.trim()) {
+    return jsonResponse({ success: false, error: 'Email service not configured (set CLIENT_ID, TENANT_ID, PRIVATE_KEY)', emailSent: false }, 500, cors)
   }
 
   let body: Record<string, unknown>
@@ -265,8 +382,9 @@ Deno.serve(async (req) => {
     if (!testEmail?.trim()) {
       return jsonResponse({ success: false, error: 'testEmail is required' }, 400, cors)
     }
+    const token = await getGraphToken(config)
     const payload = buildTestPayload(testEmail.trim(), config)
-    const result = await sendSendGrid(config.apiKey, payload)
+    const result = await sendOneEmailViaGraph(token, config.fromUser, payload)
     if (!result.ok) {
       return jsonResponse({ success: false, error: result.error, emailSent: false }, 500, cors)
     }
@@ -285,12 +403,13 @@ Deno.serve(async (req) => {
       return jsonResponse({ success: false, error: 'Invalid email format' }, 400, cors)
     }
 
+    const token = await getGraphToken(config)
     const userPayload = channel === 'contact' ? buildContactUserPayload(body, config) : buildCollateralsUserPayload(body, config)
     const adminPayload = channel === 'contact' ? buildContactAdminPayload(body, config) : buildCollateralsAdminPayload(body, config)
 
     const [userResult, adminResult] = await Promise.all([
-      sendSendGrid(config.apiKey, userPayload),
-      sendSendGrid(config.apiKey, adminPayload),
+      sendOneEmailViaGraph(token, config.fromUser, userPayload),
+      sendOneEmailViaGraph(token, config.fromUser, adminPayload),
     ])
 
     const userEmailSent = userResult.ok
@@ -318,12 +437,13 @@ Deno.serve(async (req) => {
       return jsonResponse({ success: false, error: 'Invalid email format' }, 400, cors)
     }
 
+    const token = await getGraphToken(config)
     const userPayload = buildJobApplicantPayload(body, config)
     const adminPayload = buildJobAdminPayload(body, config)
 
     const [userResult, adminResult] = await Promise.all([
-      sendSendGrid(config.apiKey, userPayload),
-      sendSendGrid(config.apiKey, adminPayload),
+      sendOneEmailViaGraph(token, config.fromUser, userPayload),
+      sendOneEmailViaGraph(token, config.fromUser, adminPayload),
     ])
 
     const applicantEmailSent = userResult.ok
