@@ -18,8 +18,8 @@ import React from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Rheincs - Enterprise Solutions',
-  description: 'Empowering businesses to operate smarter, adapt faster, and unlock new opportunities',
+  title: 'Enterprise Digital Transformation & ERP Solutions | RheinBrücke',
+  description: 'Driving Digital Innovation with Integrated Business Platforms',
 }
 
 export default function RootLayout({
