@@ -689,7 +689,7 @@ export default function Header() {
                                                         </svg>
                                                     </span>
                                                 </Link>
-                                                <div className="mega-menu-content full-width">
+                                                <div className={`mega-menu-content full-width ${language === 'German' ? 'germegamenu' : ''}`}>
                                                     <div className="container">
                                                         {/* <h1>About Us</h1> */}
                                                         <div className="row">

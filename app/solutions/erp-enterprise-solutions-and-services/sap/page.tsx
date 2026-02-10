@@ -572,6 +572,28 @@ const page = () => {
                       </div>
                       {/* Testimonial Slide End */}
 
+                      {/* Testimonial Slide Start */}
+                      <div className="swiper-slide ">
+                        {/* Your current service content */}
+                        <div className="sap-service-waber">
+                          <h3> 14. SAP S/4HANA Conversion & Migration </h3>
+                          <p>
+                            RheinBrücke helps businesses transition to SAP S/4HANA seamlessly, leveraging our proprietary tools and methodologies for a smooth, efficient, and risk-averse migration.
+                          </p>
+                          <h5>Key capabilities:</h5>
+                          <ul>
+                            <li> Brownfield, Greenfield, and Selective Data Transition approaches</li>
+                            <li> Pre-conversion analysis and readiness assessment</li>
+                            <li> Data migration and validation</li>
+                            <li> Post-conversion support and optimisation</li>
+                          </ul>
+                          <p>
+                            Accelerate your journey to an intelligent enterprise with minimal disruption.
+                          </p>
+                        </div>
+                      </div>
+                      {/* Testimonial Slide End */}
+
                     </div>
                     <div className="testimonial-btn sap-ser-1 rtyElement">
                       <div className="testimonial-button-prev">

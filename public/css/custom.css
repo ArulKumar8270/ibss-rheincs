@@ -22600,3 +22600,7 @@ screen and (max-height: 300px) {
 .geranim .testianimdot h3{
 	height:70px !important;
 }
+
+.germegamenu .service-item-body h3>span{
+	font-size:10px;
+}
