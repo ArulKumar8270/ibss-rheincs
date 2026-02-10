@@ -38,7 +38,6 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
       ? createClient(supabaseUrl, supabaseServiceKey)
       : createClient(supabaseUrl, supabaseAnonKey || '')
     
-    console.log(`[generateStaticParams] Using ${supabaseServiceKey ? 'service role key' : 'anon key'}`)
     
     // Generate params for ALL blogs (published and unpublished)
     // Service role key bypasses RLS, allowing us to fetch draft blogs
@@ -75,7 +74,6 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
       }
       
       fallbackParams.push({ slug: 'placeholder' })
-      console.log(`[generateStaticParams] Generated ${fallbackParams.length} fallback params (published only)`)
       return fallbackParams
     }
 
@@ -84,7 +82,6 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
       return [{ slug: 'placeholder' }]
     }
 
-    console.log(`[generateStaticParams] Found ${blogs.length} blogs (including drafts)`)
     
     // Filter out invalid slugs and ensure they're strings
     const validBlogs = blogs.filter((blog: any) => 
@@ -98,10 +95,6 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
       return [{ slug: 'placeholder' }]
     }
     
-    // Log each blog's slug and published status for debugging
-    validBlogs.forEach((blog: any) => {
-      console.log(`  - Slug: "${blog.slug}", Published: ${blog.published}`)
-    })
     
     const params = validBlogs.map((blog: any) => ({
       slug: blog.slug.trim(),
@@ -110,9 +103,6 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
     // Always include placeholder for fallback
     const allParams = [...params, { slug: 'placeholder' }]
 
-    console.log(`[generateStaticParams] Generated ${allParams.length} static params`)
-    console.log(`[generateStaticParams] All slugs:`, allParams.map(p => `"${p.slug}"`).join(', '))
-    
     return allParams
   } catch (error) {
     console.error('[generateStaticParams] Error in generateStaticParams:', error)
@@ -128,7 +118,6 @@ export default async function BlogDetailsPage({ params }: { params: Promise<{ sl
   const normalizedSlug = slug?.replace(/\/$/, '') || ''
   
   // Debug: Log the requested slug
-  console.log(`[BlogDetailsPage] Requested slug: "${normalizedSlug}"`)
   
   // ALWAYS pass null for initialBlog to force client-side fetch
   // This ensures new content created after build is always fetched from database

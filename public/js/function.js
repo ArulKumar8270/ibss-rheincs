@@ -1,10 +1,8 @@
-console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
 
 // Immediately register carousel functions BEFORE the IIFE
 (function() {
   "use strict";
   
-  console.log('📜 function.js IIFE executing');
 
   // Registry to store initialization functions for re-running on route changes
   window.swiperInitRegistry = window.swiperInitRegistry || [];
@@ -182,17 +180,13 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
   // --- Read More/Read Less Toggle ---
   // Clean implementation with multiple strategies to ensure clicks work
   function initReadMoreToggles() {
-    console.log('🔄 Initializing Read More Toggles...');
-    console.log('Function called from:', new Error().stack);
-    
+  
     const toggleButtons = document.querySelectorAll('[id="toggleReadMore"]');
     
     if (toggleButtons.length === 0) {
-      console.log('⚠️ No toggle buttons found');
       return;
     }
     
-    console.log('✓ Found', toggleButtons.length, 'toggle buttons');
     
     toggleButtons.forEach(function(originalBtn, index) {
       // Clone the button to remove ALL old event listeners
@@ -201,7 +195,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         originalBtn.parentNode.replaceChild(toggleBtn, originalBtn);
       }
       
-      console.log('Setting up button', index);
       
       // Find the #more element using multiple strategies
       let moreText = null;
@@ -287,7 +280,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         return;
       }
       
-      console.log('✓ Found #more for button', index, moreText);
       
       // Get label and icon elements
       const btnLabel = toggleBtn.querySelector('.label');
@@ -300,13 +292,11 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
           e.stopPropagation();
         }
         
-        console.log('👆 TOGGLE CLICKED:', index);
         
         // Toggle the hidden class
         const wasHidden = moreText.classList.contains('hidden');
         moreText.classList.toggle('hidden');
         
-        console.log('State changed:', wasHidden ? 'hidden → visible' : 'visible → hidden');
         
         // Update UI
         const isNowHidden = moreText.classList.contains('hidden');
@@ -328,25 +318,21 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       
       // Method 1: Direct onclick (most reliable)
       toggleBtn.onclick = function(e) {
-        console.log('Method 1: onclick fired');
         handleClick(e);
       };
       
       // Method 2: addEventListener with capture
       toggleBtn.addEventListener('click', function(e) {
-        console.log('Method 2: addEventListener fired');
         handleClick(e);
       }, true);
       
       // Method 3: addEventListener without capture
       toggleBtn.addEventListener('click', function(e) {
-        console.log('Method 3: addEventListener (bubble) fired');
         handleClick(e);
       }, false);
       
       // Method 4: mousedown as backup
       toggleBtn.addEventListener('mousedown', function(e) {
-        console.log('Method 4: mousedown fired');
         handleClick(e);
       });
       
@@ -377,7 +363,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       toggleBtn.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          console.log('Keyboard trigger');
           handleClick(e);
         }
       });
@@ -386,10 +371,8 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       toggleBtn.setAttribute('data-readmore-init', 'true');
       toggleBtn.setAttribute('data-index', index);
       
-      console.log('✅ Button', index, 'fully initialized');
     });
     
-    console.log('✅ Toggle initialization complete');
   }
   
   // Global click delegation as ultimate fallback
@@ -401,7 +384,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     // Walk up the DOM tree to find toggleReadMore
     while (target && depth < 10) {
       if (target.id === 'toggleReadMore') {
-        console.log('🌐 Global delegation caught click on toggleReadMore');
         
         // Find the #more element
         let moreText = null;
@@ -440,7 +422,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
             }
           }
           
-          console.log('✓ Global delegation toggle complete');
         }
         
         break;
@@ -464,9 +445,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       
       // Test function to manually trigger from console
       window.testToggle = function() {
-        console.log('=== MANUAL TEST TRIGGERED ===');
-        console.log('Buttons found:', document.querySelectorAll('[id="toggleReadMore"]').length);
-        console.log('More texts found:', document.querySelectorAll('[id="more"]').length);
         if (typeof window.initReadMoreToggles === 'function') {
           window.initReadMoreToggles();
         } else {
@@ -474,16 +452,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         }
       };
       
-      console.log('✅ initReadMoreToggles function registered on window (immediate)');
-      console.log('💡 To test manually, run: window.testToggle() or window.initReadMoreToggles()');
-      
-      // Verify it's accessible
-      if (typeof window.initReadMoreToggles === 'function') {
-        console.log('✅ Verification: window.initReadMoreToggles is accessible');
-        console.log('Function type:', typeof window.initReadMoreToggles);
-      } else {
-        console.error('❌ ERROR: window.initReadMoreToggles is NOT accessible!');
-      }
       
       // Also set up a polling mechanism to ensure it stays available
       let pollCount = 0;
@@ -506,9 +474,7 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
 
   // Initialize IMMEDIATELY if DOM is already loaded
   if (document.readyState === 'loading') {
-    console.log('⏳ DOM still loading, waiting...');
     document.addEventListener('DOMContentLoaded', function() {
-      console.log('✅ DOMContentLoaded fired, initializing toggles');
       initReadMoreToggles();
       // Try again after delays (for Next.js client-side rendering)
       setTimeout(initReadMoreToggles, 500);
@@ -516,32 +482,26 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       setTimeout(initReadMoreToggles, 2000);
     });
   } else {
-    console.log('✅ DOM already loaded, initializing toggles now');
     initReadMoreToggles();
     // Try again after delays (for Next.js client-side rendering)
     setTimeout(function() {
-      console.log('Retry after 500ms');
       initReadMoreToggles();
     }, 500);
     setTimeout(function() {
-      console.log('Retry after 1000ms');
       initReadMoreToggles();
     }, 1000);
     setTimeout(function() {
-      console.log('Retry after 2000ms');
       initReadMoreToggles();
     }, 2000);
   }
 
   // Also use whenReady as backup
   whenReady(function() {
-    console.log('✅ whenReady fired, initializing toggles');
     initReadMoreToggles();
   });
 
   // Listen for custom reinit event (from ScriptReinit fallback)
   window.addEventListener('reinitReadMoreToggles', function() {
-    console.log('🔄 reinitReadMoreToggles custom event received');
     // Remove markers
     document.querySelectorAll('[data-readmore-init]').forEach(function(el) {
       el.removeAttribute('data-readmore-init');
@@ -553,7 +513,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
   
   // Re-initialize on route changes
   window.addEventListener('routeChange', function() {
-    console.log('🔄 Route change detected, re-initializing toggles...');
     
     // Remove ALL initialization markers to allow complete re-initialization
     document.querySelectorAll('[data-readmore-init]').forEach(function(el) {
@@ -566,27 +525,22 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       requestAnimationFrame(function() {
         // Re-initialize with multiple delays to ensure DOM is ready
         setTimeout(function() {
-          console.log('🔄 Re-init attempt 1 (100ms)');
           initReadMoreToggles();
         }, 100);
         
         setTimeout(function() {
-          console.log('🔄 Re-init attempt 2 (400ms)');
           initReadMoreToggles();
         }, 400);
         
         setTimeout(function() {
-          console.log('🔄 Re-init attempt 3 (800ms)');
           initReadMoreToggles();
         }, 800);
         
         setTimeout(function() {
-          console.log('🔄 Re-init attempt 4 (1500ms)');
           initReadMoreToggles();
         }, 1500);
         
         setTimeout(function() {
-          console.log('🔄 Re-init attempt 5 (2500ms) - final attempt');
           initReadMoreToggles();
         }, 2500);
       });
@@ -598,7 +552,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
   if (typeof window !== 'undefined' && window.next && window.next.router && window.next.router.events && typeof window.next.router.events.on === 'function') {
     try {
     window.next.router.events.on('routeChangeComplete', function() {
-      console.log('🔄 Next.js route change complete, re-initializing toggles...');
       // Remove markers
       document.querySelectorAll('[data-readmore-init]').forEach(function(el) {
         el.removeAttribute('data-readmore-init');
@@ -619,7 +572,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
   // For static export, listen to custom route change events
   if (typeof window !== 'undefined') {
     window.addEventListener('routeChange', function() {
-      console.log('🔄 Route change event detected, re-initializing toggles...');
       setTimeout(initReadMoreToggles, 200);
       setTimeout(initReadMoreToggles, 600);
       setTimeout(initReadMoreToggles, 1200);
@@ -628,7 +580,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
   
   // Listen for popstate (browser back/forward)
   window.addEventListener('popstate', function() {
-    console.log('🔄 Popstate detected, re-initializing toggles...');
     document.querySelectorAll('[data-readmore-init]').forEach(function(el) {
       el.removeAttribute('data-readmore-init');
       el.removeAttribute('data-index');
@@ -654,7 +605,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       });
       
       if (shouldReinit) {
-        console.log('🔄 MutationObserver detected new toggle buttons, re-initializing...');
         // Remove markers for new elements
         document.querySelectorAll('[id="toggleReadMore"]:not([data-readmore-init])').forEach(function(el) {
           // New elements don't have markers yet, so we can initialize them
@@ -670,7 +620,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         childList: true,
         subtree: true
       });
-      console.log('✅ MutationObserver started for toggle buttons');
     } else {
       // Wait for body to be available
       document.addEventListener('DOMContentLoaded', function() {
@@ -679,7 +628,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
             childList: true,
             subtree: true
           });
-          console.log('✅ MutationObserver started for toggle buttons (after DOMContentLoaded)');
         }
       });
     }
@@ -688,7 +636,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
   // --- Main Mobile Menu (Hamburger) Logic ---
   // Extract mobile menu initialization into a reusable function
   function initMobileMenu() {
-    console.log('🔄 Initializing mobile menu...');
     
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const closeBtn = document.getElementById('close-btn');
@@ -709,12 +656,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       return;
     }
 
-    console.log('✅ Found mobile menu elements:', {
-      hamburgerBtn: !!hamburgerBtn,
-      closeBtn: !!closeBtn,
-      mobileNavPanel: !!mobileNavPanel,
-      menuOverlay: !!menuOverlay
-    });
 
     // Function to open the main menu
     const openMenu = (e) => {
@@ -722,10 +663,8 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         e.preventDefault();
         e.stopPropagation();
       }
-      console.log('🍔 Opening mobile menu');
       if (mobileNavPanel) {
         mobileNavPanel.classList.add('open');
-        console.log('✅ Added "open" class to mobileNavPanel');
       }
       if (menuOverlay) {
         menuOverlay.classList.add('open');
@@ -739,10 +678,8 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         e.preventDefault();
         e.stopPropagation();
       }
-      console.log('❌ Closing mobile menu');
       if (mobileNavPanel) {
         mobileNavPanel.classList.remove('open');
-        console.log('✅ Removed "open" class from mobileNavPanel');
       }
       if (menuOverlay) {
         menuOverlay.classList.remove('open');
@@ -776,7 +713,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     hamburgerBtn.setAttribute('data-mobile-menu-init', 'true');
     closeBtn.setAttribute('data-mobile-menu-init', 'true');
     
-    console.log('✅ Mobile menu event listeners attached');
 
     // --- Submenu Accordion Logic ---
     // Remove old listeners by re-querying and re-initializing
@@ -874,7 +810,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     setupSearch('searchBox', 'searchBtn', 'searchClose');
     setupSearch('mobileSearchBox', 'mobileSearchBtn', 'mobileSearchClose');
 
-    console.log('✅ Mobile menu initialized');
   }
 
   // Register function globally for re-initialization
@@ -3167,14 +3102,11 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
   
   // Function to initialize Counter - Standalone Implementation
   window.initCounter = function() {
-    console.log('🔢 [initCounter] Starting counter initialization...');
     
     var counters = document.querySelectorAll('.counter');
     
-    console.log(`🔢 [initCounter] Found ${counters.length} counter elements`);
     
     if (counters.length === 0) {
-      console.log('ℹ️ [initCounter] No counter elements found on this page');
       return;
     }
     
@@ -3182,7 +3114,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     function animateCounter(element) {
       // Skip if already animated
       if (element.hasAttribute('data-counted')) {
-        console.log('🔢 [initCounter] Counter already animated, skipping');
         return;
       }
       
@@ -3193,7 +3124,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         return;
       }
       
-      console.log(`🔢 [initCounter] Animating counter to ${target}`);
       
       var current = 0;
       var increment = target / 100; // 100 steps
@@ -3208,7 +3138,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         if (current >= target) {
           element.textContent = target;
           clearInterval(timer);
-          console.log(`✅ [initCounter] Counter animated to ${target}`);
         } else {
           element.textContent = Math.floor(current);
         }
@@ -3225,7 +3154,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
-            console.log('🔢 [initCounter] Counter entered viewport');
             animateCounter(entry.target);
             observer.unobserve(entry.target);
           }
@@ -3236,10 +3164,8 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
         observer.observe(counter);
       });
       
-      console.log('✅ [initCounter] Intersection Observer initialized');
     } else {
       // Fallback for browsers without Intersection Observer
-      console.log('🔢 [initCounter] Using fallback (no Intersection Observer)');
       counters.forEach(function(counter) {
         animateCounter(counter);
       });
@@ -3247,7 +3173,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     
     // Try jQuery method as backup if available
     if (typeof window.$ !== 'undefined' && window.$.fn && typeof window.$.fn.counterUp !== 'undefined') {
-      console.log('🔢 [initCounter] Also trying jQuery counterUp as backup...');
       try {
         window.$('.counter').counterUp({ delay: 10, time: 2000 });
       } catch (e) {
@@ -3356,7 +3281,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
 
     // Wait for owlCarousel plugin to be available
     function initSkewCarousel() {
-      console.log('🦉 [initSkewCarousel] Starting initialization...');
       
       if (typeof window === 'undefined' || typeof window.$ === 'undefined' || !window.$.fn) {
         console.warn('⚠️ [initSkewCarousel] jQuery not ready, retrying...');
@@ -3373,19 +3297,16 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       }
       
       var carouselElements = $('.skew-carousel');
-      console.log(`🦉 [initSkewCarousel] Found ${carouselElements.length} .skew-carousel elements`);
       
       if (carouselElements.length > 0) {
         try {
           // Destroy existing instance if it exists
           var existingCarousel = carouselElements.data('owl.carousel');
           if (existingCarousel) {
-            console.log('🦉 [initSkewCarousel] Destroying existing carousel instance...');
             carouselElements.trigger('destroy.owl.carousel').removeClass('owl-carousel owl-loaded');
             carouselElements.find('.owl-stage-outer').children().unwrap();
           }
           
-          console.log('🦉 [initSkewCarousel] Initializing carousel...');
           carouselElements.owlCarousel({
             loop: false,
             margin: 10,
@@ -3398,7 +3319,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
             touchDrag: false,
             pullDrag: false
           });
-          console.log('✅ [initSkewCarousel] Carousel initialized successfully!');
         } catch (e) {
           console.error('❌ [initSkewCarousel] Error initializing skew-carousel:', e);
         }
@@ -3409,7 +3329,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     
     // Make globally available for route change re-initialization
     window.initSkewCarousel = initSkewCarousel;
-    console.log('✅ window.initSkewCarousel registered:', typeof window.initSkewCarousel);
 
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function() {
@@ -3421,7 +3340,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     
     if (typeof window !== 'undefined') {
       window.addEventListener('owlCarouselLoaded', function() {
-        console.log('🦉 [initSkewCarousel] owlCarouselLoaded event received');
         setTimeout(initSkewCarousel, 100);
       });
       
@@ -3437,7 +3355,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     }
 
     function initSkewCarousel1() {
-      console.log('🦉 [initSkewCarousel1] Starting initialization...');
       
       if (typeof window === 'undefined' || typeof window.$ === 'undefined' || !window.$.fn) {
         console.warn('⚠️ [initSkewCarousel1] jQuery not ready, retrying...');
@@ -3454,19 +3371,16 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       }
       
           let owl1 = $('.skew-carousel1');
-      console.log(`🦉 [initSkewCarousel1] Found ${owl1.length} .skew-carousel1 elements`);
       
       if (owl1.length > 0) {
         try {
           // Destroy existing instance if it exists
           var existingCarousel = owl1.data('owl.carousel');
           if (existingCarousel) {
-            console.log('🦉 [initSkewCarousel1] Destroying existing carousel instance...');
             owl1.trigger('destroy.owl.carousel').removeClass('owl-carousel owl-loaded');
             owl1.find('.owl-stage-outer').children().unwrap();
           }
 
-          console.log('🦉 [initSkewCarousel1] Initializing carousel...');
           owl1.owlCarousel({
             loop: false,
             margin: 15,
@@ -3495,7 +3409,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
           owl1.on("changed.owl.carousel", setActiveSlide);
           owl1.on("translated.owl.carousel", setActiveSlide);
           
-          console.log('✅ [initSkewCarousel1] Carousel initialized successfully!');
         } catch (e) {
           console.error('❌ [initSkewCarousel1] Error initializing skew-carousel1:', e);
         }
@@ -3506,7 +3419,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     
     // Make globally available for route change re-initialization
     window.initSkewCarousel1 = initSkewCarousel1;
-    console.log('✅ window.initSkewCarousel1 registered:', typeof window.initSkewCarousel1);
 
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function() {
@@ -3518,7 +3430,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     
     if (typeof window !== 'undefined') {
       window.addEventListener('owlCarouselLoaded', function() {
-        console.log('🦉 [initSkewCarousel1] owlCarouselLoaded event received');
         setTimeout(initSkewCarousel1, 100);
       });
       
@@ -3928,13 +3839,11 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
   // --- Additional Search Box Functionality ---
   // Extract into reusable function
   function initSearchBoxFunctionality() {
-    console.log('🔄 [function.js] Initializing search box functionality...');
     
     const searchBoxes = document.querySelectorAll('.search-box');
     const searchBtns = document.querySelectorAll('.btn-search');
     const searchInputs = document.querySelectorAll('.input-search');
 
-    console.log(`🔍 [function.js] Found ${searchBoxes.length} search boxes, ${searchBtns.length} search buttons`);
 
     // Handle generic search box toggle
     searchBtns.forEach((searchBtn, index) => {
@@ -3950,12 +3859,10 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
       const handleSearchToggle = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        console.log(`🔍 [function.js] Toggling search box ${index}`);
         
         searchBox.classList.toggle('active');
         
         if (searchBox.classList.contains('active')) {
-          console.log('✅ [function.js] Search box opened');
           // Focus on input if it exists
           if (searchInput) {
             setTimeout(() => {
@@ -3982,19 +3889,16 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
     document.querySelectorAll('.animated-svg-link12').forEach((btn, index) => {
       const handleMouseEnter = () => {
         btn.classList.add('btn-style-3');
-        console.log(`🎨 [function.js] Added btn-style-3 to link ${index}`);
       };
       
       const handleMouseLeave = () => {
         btn.classList.remove('btn-style-3');
-        console.log(`🎨 [function.js] Removed btn-style-3 from link ${index}`);
       };
       
       btn.addEventListener('mouseenter', handleMouseEnter);
       btn.addEventListener('mouseleave', handleMouseLeave);
     });
 
-    console.log('✅ [function.js] Search box functionality initialized');
   }
 
   // Register globally for re-initialization
@@ -4331,7 +4235,6 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
   
   // Mark that function.js has fully loaded and all functions are available
   window.functionJsLoaded = true;
-  console.log('✅✅✅ function.js IIFE COMPLETE!');
   
   // Dispatch event to notify other components
   if (typeof window !== 'undefined' && window.dispatchEvent) {
@@ -4341,17 +4244,14 @@ console.log('🔥🔥🔥 START OF function.js FILE 🔥🔥🔥');
 })();
 
 // ABSOLUTE FALLBACK: Register carousel functions OUTSIDE IIFE to ensure they're available
-console.log('🔥 Registering OwlCarousel functions as FINAL fallback...');
 if (typeof window !== 'undefined') {
   // If functions weren't registered inside IIFE, create simple versions
   if (typeof window.initSkewCarousel !== 'function') {
     console.warn('⚠️ initSkewCarousel was not registered in IIFE, creating fallback');
     window.initSkewCarousel = function() {
-      console.log('🦉 [FALLBACK] initSkewCarousel called');
       if (typeof $ !== 'undefined' && $.fn && $.fn.owlCarousel) {
         var $carousel = $('.skew-carousel');
         if ($carousel.length > 0) {
-          console.log('🦉 [FALLBACK] Found', $carousel.length, 'carousels');
           $carousel.each(function() {
             var $this = $(this);
             if ($this.data('owl.carousel')) {
@@ -4381,11 +4281,9 @@ if (typeof window !== 'undefined') {
   if (typeof window.initSkewCarousel1 !== 'function') {
     console.warn('⚠️ initSkewCarousel1 was not registered in IIFE, creating fallback');
     window.initSkewCarousel1 = function() {
-      console.log('🦉 [FALLBACK] initSkewCarousel1 called');
       if (typeof $ !== 'undefined' && $.fn && $.fn.owlCarousel) {
         var $carousel = $('.skew-carousel1');
         if ($carousel.length > 0) {
-          console.log('🦉 [FALLBACK] Found', $carousel.length, 'carousel1 elements');
           $carousel.each(function() {
             var $this = $(this);
             if ($this.data('owl.carousel')) {
@@ -4423,16 +4321,9 @@ if (typeof window !== 'undefined') {
     };
   }
   
-  console.log('✅ Final check - Functions registered:', {
-    initSkewCarousel: typeof window.initSkewCarousel,
-    initSkewCarousel1: typeof window.initSkewCarousel1
-  });
   
   window.functionJsLoaded = true;
 }
-
-console.log('🔥🔥🔥 END OF function.js FILE 🔥🔥🔥');
-
 
 $(document).ready(function() {
 	$('.popup-youtube').magnificPopup({

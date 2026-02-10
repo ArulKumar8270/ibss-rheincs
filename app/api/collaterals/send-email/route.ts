@@ -262,7 +262,6 @@ Submitted on: ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`
 
       if (userEmailResponse.ok) {
         userEmailSent = true;
-        console.log('User email sent successfully to:', email);
       } else {
         const userErrorText = await userEmailResponse.text();
         let userErrorJson;
@@ -301,7 +300,6 @@ Submitted on: ${new Date().toLocaleString('en-US', { timeZone: 'UTC' })} UTC`
 
       if (adminEmailResponse.ok) {
         adminEmailSent = true;
-        console.log('Admin email sent successfully to:', ADMIN_EMAIL);
       } else {
         const adminErrorText = await adminEmailResponse.text();
         let adminErrorJson;

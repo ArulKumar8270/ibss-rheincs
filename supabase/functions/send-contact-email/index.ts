@@ -350,114 +350,119 @@ function jsonResponse(data: object, status: number, headers: Record<string, stri
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 Deno.serve(async (req) => {
-  // Handle CORS preflight first - browser blocks actual request until OPTIONS succeeds
   const cors = corsHeadersForRequest(req)
+
   if (req.method === 'OPTIONS') {
-    return new Response('ok', { status: 200, headers: cors })
+    return new Response(null, { status: 204, headers: cors })
   }
 
   if (req.method !== 'POST') {
     return jsonResponse({ success: false, error: 'Method not allowed' }, 405, cors)
   }
 
-  const config = getConfig()
-  if (!config.clientId?.trim() || !config.tenantId?.trim() || !config.privateKeyRaw?.trim()) {
-    return jsonResponse({ success: false, error: 'Email service not configured (set CLIENT_ID, TENANT_ID, PRIVATE_KEY)', emailSent: false }, 500, cors)
-  }
-
-  let body: Record<string, unknown>
   try {
-    body = await req.json()
-  } catch {
-    return jsonResponse({ success: false, error: 'Invalid JSON body' }, 400, cors)
+    const config = getConfig()
+    if (!config.clientId?.trim() || !config.tenantId?.trim() || !config.privateKeyRaw?.trim()) {
+      return jsonResponse({ success: false, error: 'Email service not configured (set CLIENT_ID, TENANT_ID, PRIVATE_KEY)', emailSent: false }, 500, cors)
+    }
+
+    let body: Record<string, unknown>
+    try {
+      body = await req.json()
+    } catch {
+      return jsonResponse({ success: false, error: 'Invalid JSON body' }, 400, cors)
+    }
+
+    const channel = body.channel as string
+    if (!channel) {
+      return jsonResponse({ success: false, error: 'Missing channel: contact | collaterals | job-application | test' }, 400, cors)
+    }
+
+    if (channel === 'test') {
+      const testEmail = body.testEmail as string
+      if (!testEmail?.trim()) {
+        return jsonResponse({ success: false, error: 'testEmail is required' }, 400, cors)
+      }
+      const token = await getGraphToken(config)
+      const payload = buildTestPayload(testEmail.trim(), config)
+      const result = await sendOneEmailViaGraph(token, config.fromUser, payload)
+      if (!result.ok) {
+        return jsonResponse({ success: false, error: result.error, emailSent: false }, 500, cors)
+      }
+      return jsonResponse({ success: true, message: 'Test email sent successfully!', emailSent: true }, 200, cors)
+    }
+
+    if (channel === 'contact' || channel === 'collaterals') {
+      const fullName = body.fullName as string
+      const email = (body.email as string)?.trim()
+      const phone = body.phone
+      const companyName = body.companyName as string
+      if (!fullName || !email || !phone || !companyName) {
+        return jsonResponse({ success: false, error: 'Missing required fields: fullName, email, phone, companyName' }, 400, cors)
+      }
+      if (!emailRegex.test(email)) {
+        return jsonResponse({ success: false, error: 'Invalid email format' }, 400, cors)
+      }
+
+      const token = await getGraphToken(config)
+      const userPayload = channel === 'contact' ? buildContactUserPayload(body, config) : buildCollateralsUserPayload(body, config)
+      const adminPayload = channel === 'contact' ? buildContactAdminPayload(body, config) : buildCollateralsAdminPayload(body, config)
+
+      const [userResult, adminResult] = await Promise.all([
+        sendOneEmailViaGraph(token, config.fromUser, userPayload),
+        sendOneEmailViaGraph(token, config.fromUser, adminPayload),
+      ])
+
+      const userEmailSent = userResult.ok
+      const adminEmailSent = adminResult.ok
+      const success = userEmailSent || adminEmailSent
+      return jsonResponse({
+        success: true,
+        message: success ? 'Emails sent successfully' : 'Form submitted but email notification failed',
+        emailSent: userEmailSent && adminEmailSent,
+        userEmailSent,
+        adminEmailSent,
+        error: !success ? (userResult.error ?? adminResult.error) : undefined,
+      }, 200, cors)
+    }
+
+    if (channel === 'job-application') {
+      const fullName = body.fullName as string
+      const email = (body.email as string)?.trim()
+      const phone = body.phone
+      const jobTitle = body.jobTitle as string
+      if (!fullName || !email || !phone || !jobTitle) {
+        return jsonResponse({ success: false, error: 'Missing required fields: fullName, email, phone, jobTitle' }, 400, cors)
+      }
+      if (!emailRegex.test(email)) {
+        return jsonResponse({ success: false, error: 'Invalid email format' }, 400, cors)
+      }
+
+      const token = await getGraphToken(config)
+      const userPayload = buildJobApplicantPayload(body, config)
+      const adminPayload = buildJobAdminPayload(body, config)
+
+      const [userResult, adminResult] = await Promise.all([
+        sendOneEmailViaGraph(token, config.fromUser, userPayload),
+        sendOneEmailViaGraph(token, config.fromUser, adminPayload),
+      ])
+
+      const applicantEmailSent = userResult.ok
+      const adminEmailSent = adminResult.ok
+      const success = applicantEmailSent || adminEmailSent
+      return jsonResponse({
+        success: true,
+        message: success ? 'Emails sent successfully' : 'Application submitted but email notification failed',
+        emailSent: applicantEmailSent && adminEmailSent,
+        userEmailSent: applicantEmailSent,
+        adminEmailSent,
+        error: !success ? (userResult.error ?? adminResult.error) : undefined,
+      }, 200, cors)
+    }
+
+    return jsonResponse({ success: false, error: `Unknown channel: ${channel}` }, 400, cors)
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err)
+    return jsonResponse({ success: false, error: message, emailSent: false }, 500, cors)
   }
-
-  const channel = body.channel as string
-  if (!channel) {
-    return jsonResponse({ success: false, error: 'Missing channel: contact | collaterals | job-application | test' }, 400, cors)
-  }
-
-  if (channel === 'test') {
-    const testEmail = body.testEmail as string
-    if (!testEmail?.trim()) {
-      return jsonResponse({ success: false, error: 'testEmail is required' }, 400, cors)
-    }
-    const token = await getGraphToken(config)
-    const payload = buildTestPayload(testEmail.trim(), config)
-    const result = await sendOneEmailViaGraph(token, config.fromUser, payload)
-    if (!result.ok) {
-      return jsonResponse({ success: false, error: result.error, emailSent: false }, 500, cors)
-    }
-    return jsonResponse({ success: true, message: 'Test email sent successfully!', emailSent: true }, 200, cors)
-  }
-
-  if (channel === 'contact' || channel === 'collaterals') {
-    const fullName = body.fullName as string
-    const email = (body.email as string)?.trim()
-    const phone = body.phone
-    const companyName = body.companyName as string
-    if (!fullName || !email || !phone || !companyName) {
-      return jsonResponse({ success: false, error: 'Missing required fields: fullName, email, phone, companyName' }, 400, cors)
-    }
-    if (!emailRegex.test(email)) {
-      return jsonResponse({ success: false, error: 'Invalid email format' }, 400, cors)
-    }
-
-    const token = await getGraphToken(config)
-    const userPayload = channel === 'contact' ? buildContactUserPayload(body, config) : buildCollateralsUserPayload(body, config)
-    const adminPayload = channel === 'contact' ? buildContactAdminPayload(body, config) : buildCollateralsAdminPayload(body, config)
-
-    const [userResult, adminResult] = await Promise.all([
-      sendOneEmailViaGraph(token, config.fromUser, userPayload),
-      sendOneEmailViaGraph(token, config.fromUser, adminPayload),
-    ])
-
-    const userEmailSent = userResult.ok
-    const adminEmailSent = adminResult.ok
-    const success = userEmailSent || adminEmailSent
-    return jsonResponse({
-      success: true,
-      message: success ? 'Emails sent successfully' : 'Form submitted but email notification failed',
-      emailSent: userEmailSent && adminEmailSent,
-      userEmailSent,
-      adminEmailSent,
-      error: !success ? (userResult.error ?? adminResult.error) : undefined,
-    }, 200, cors)
-  }
-
-  if (channel === 'job-application') {
-    const fullName = body.fullName as string
-    const email = (body.email as string)?.trim()
-    const phone = body.phone
-    const jobTitle = body.jobTitle as string
-    if (!fullName || !email || !phone || !jobTitle) {
-      return jsonResponse({ success: false, error: 'Missing required fields: fullName, email, phone, jobTitle' }, 400, cors)
-    }
-    if (!emailRegex.test(email)) {
-      return jsonResponse({ success: false, error: 'Invalid email format' }, 400, cors)
-    }
-
-    const token = await getGraphToken(config)
-    const userPayload = buildJobApplicantPayload(body, config)
-    const adminPayload = buildJobAdminPayload(body, config)
-
-    const [userResult, adminResult] = await Promise.all([
-      sendOneEmailViaGraph(token, config.fromUser, userPayload),
-      sendOneEmailViaGraph(token, config.fromUser, adminPayload),
-    ])
-
-    const applicantEmailSent = userResult.ok
-    const adminEmailSent = adminResult.ok
-    const success = applicantEmailSent || adminEmailSent
-    return jsonResponse({
-      success: true,
-      message: success ? 'Emails sent successfully' : 'Application submitted but email notification failed',
-      emailSent: applicantEmailSent && adminEmailSent,
-      userEmailSent: applicantEmailSent,
-      adminEmailSent,
-      error: !success ? (userResult.error ?? adminResult.error) : undefined,
-    }, 200, cors)
-  }
-
-  return jsonResponse({ success: false, error: `Unknown channel: ${channel}` }, 400, cors)
 })

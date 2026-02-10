@@ -17,7 +17,6 @@ export default function NotFound() {
     if (typeof window !== 'undefined') {
       const urlPath = window.location.pathname;
       setCurrentPath(urlPath);
-      console.log(`[NotFound] Current URL path: "${urlPath}"`);
     }
   }, []);
 
@@ -34,7 +33,6 @@ export default function NotFound() {
   // If this is a detail page route, render the appropriate client component
   if (blogMatch && blogMatch[1]) {
     const slug = blogMatch[1].replace(/\/$/, '');
-    console.log(`[NotFound] Rendering blog details for slug: "${slug}"`);
     return (
       <BlogDetailsClient 
         initialBlog={null}
@@ -46,7 +44,6 @@ export default function NotFound() {
 
   if (caseStudyMatch && caseStudyMatch[1]) {
     const id = caseStudyMatch[1].replace(/\/$/, '');
-    console.log(`[NotFound] Rendering case study details for ID: "${id}"`);
     return (
       <CaseStudyDetailsClient 
         initialCaseStudy={null}
@@ -58,7 +55,6 @@ export default function NotFound() {
 
   if (newsEventMatch && newsEventMatch[1]) {
     const slug = newsEventMatch[1].replace(/\/$/, '');
-    console.log(`[NotFound] Rendering news/event details for slug: "${slug}"`);
     return (
       <NewsEventDetailsClient 
         initialItem={null}
@@ -69,7 +65,6 @@ export default function NotFound() {
 
   if (jobMatch && jobMatch[1]) {
     const id = jobMatch[1].replace(/\/$/, '');
-    console.log(`[NotFound] Rendering job details for ID: "${id}"`);
     return (
       <JobDetailClient 
         jobId={id}

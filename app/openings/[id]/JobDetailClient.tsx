@@ -162,14 +162,11 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
         // ALWAYS fetch from database - never rely on initialJob
         // This ensures new content created after build is always accessible
         if (jobId && jobId !== 'placeholder') {
-            console.log(`[JobDetailClient] Fetching job for ID: "${jobId}"`);
             fetchJob()
         } else if (jobId === 'placeholder') {
-            console.log(`[JobDetailClient] Placeholder ID detected, redirecting`);
             router.push('/careers')
             return
         } else {
-            console.log(`[JobDetailClient] No ID provided, redirecting`);
             router.push('/careers')
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -177,7 +174,6 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
 
     const fetchJob = async () => {
         try {
-            console.log(`[JobDetailClient] Starting fetch for ID: "${jobId}"`);
             setLoading(true);
 
             // Check admin status
@@ -185,7 +181,6 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
 
             // ALWAYS fetch from database - never use cached/initial data
             // This ensures new content created after build is always accessible
-            console.log(`[JobDetailClient] Querying Supabase for ID: "${jobId}"`);
             const { data, error } = await supabase
                 .from('careers')
                 .select('*')
@@ -196,7 +191,6 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                 console.error(`[JobDetailClient] Supabase error:`, error);
                 // If job not found, redirect to careers list
                 if (error.code === 'PGRST116') {
-                    console.log(`[JobDetailClient] Job not found, redirecting to careers list`);
                     router.push('/careers');
                     return;
                 }
@@ -204,19 +198,16 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
             }
 
             if (!data) {
-                console.log(`[JobDetailClient] No job data returned, redirecting`);
                 router.push('/careers');
                 return;
             }
 
-            console.log(`[JobDetailClient] Job found: "${data.title}" (Published: ${data.published})`);
 
             // Check if job is published or user is admin
             const { data: { user } } = await supabase.auth.getUser();
             const userIsAdmin = !!user;
 
             if (!data.published && !userIsAdmin) {
-                console.log(`[JobDetailClient] Job not published and user is not admin, redirecting`);
                 router.push('/careers');
                 return;
             }
@@ -231,10 +222,8 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                     ? JSON.parse(data.qualifications || '[]')
                     : data.qualifications || []
             }
-            console.log(`[JobDetailClient] Setting job data`);
             setJob(parsedJob)
             setFormData(prev => ({ ...prev, selection: data.title }))
-            console.log(`[JobDetailClient] Fetch completed successfully`);
         } catch (err: any) {
             console.error('[JobDetailClient] Error fetching job:', err);
             // Always redirect on error - never show stale data

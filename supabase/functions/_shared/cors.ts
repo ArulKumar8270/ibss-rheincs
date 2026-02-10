@@ -7,11 +7,11 @@ export const corsHeaders = {
   'Vary': 'Origin',
 }
 
-/** Build CORS headers, reflecting request Origin (required for browser to accept response). */
+/** Build CORS headers for every response. Reflects request Origin so browser accepts the response. */
 export function corsHeadersForRequest(req: Request): Record<string, string> {
-  const origin = req.headers.get('origin') || '*'
+  const origin = req.headers.get('origin')
   return {
     ...corsHeaders,
-    'Access-Control-Allow-Origin': origin,
+    'Access-Control-Allow-Origin': origin && /^https?:\/\//.test(origin) ? origin : '*',
   }
 }

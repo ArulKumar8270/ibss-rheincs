@@ -52,7 +52,6 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
             ? createClient(supabaseUrl, supabaseServiceKey)
             : createClient(supabaseUrl, supabaseAnonKey || '')
         
-        console.log(`[generateStaticParams] Using ${supabaseServiceKey ? 'service role key' : 'anon key'}`)
         
         // Generate params for ALL case studies (published and unpublished)
         // Service role key bypasses RLS, allowing us to fetch draft case studies
@@ -89,7 +88,6 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
             }
             
             fallbackParams.push({ id: 'placeholder' })
-            console.log(`[generateStaticParams] Generated ${fallbackParams.length} fallback params (published only)`)
             return fallbackParams
         }
 
@@ -98,7 +96,6 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
             return [{ id: 'placeholder' }]
         }
 
-        console.log(`[generateStaticParams] Found ${caseStudies.length} case studies (including drafts)`)
         
         // Filter out invalid IDs and ensure they're strings
         const validCaseStudies = caseStudies.filter((cs: any) => 
@@ -119,7 +116,6 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
         // Always include placeholder for fallback
         const allParams = [...params, { id: 'placeholder' }]
         
-        console.log(`[generateStaticParams] Generated ${allParams.length} static params`)
         
         return allParams
     } catch (error) {

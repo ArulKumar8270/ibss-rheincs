@@ -25,7 +25,6 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
             ? createClient(supabaseUrl, supabaseServiceKey)
             : createClient(supabaseUrl, supabaseAnonKey || '')
         
-        console.log(`[generateStaticParams] Using ${supabaseServiceKey ? 'service role key' : 'anon key'}`)
         
         // Generate params for ALL jobs (published and unpublished)
         // Service role key bypasses RLS, allowing us to fetch draft jobs
@@ -62,7 +61,6 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
             }
             
             fallbackParams.push({ id: 'placeholder' })
-            console.log(`[generateStaticParams] Generated ${fallbackParams.length} fallback params (published only)`)
             return fallbackParams
         }
 
@@ -110,7 +108,6 @@ export default async function JobDetailPage({ params }: { params: Promise<{ id: 
     const normalizedId = id?.replace(/\/$/, '') || ''
     
     // Debug: Log the requested ID
-    console.log(`[JobDetailPage] Requested ID: "${normalizedId}"`)
     
     // ALWAYS pass null for initialJob to force client-side fetch
     // This ensures new content created after build is always fetched from database

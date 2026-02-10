@@ -136,7 +136,6 @@ export default function Header() {
 
     // Initialize mega menu on mount and route change
     useEffect(() => {
-        console.log('🔄 [Header] Initializing mega-menu for pathname:', pathname);
 
         // Ensure first tab is active by default
         const initializeTabs = () => {
@@ -205,7 +204,6 @@ export default function Header() {
         const timeoutId = setTimeout(() => {
             initializeTabs();
             ensureMegaMenuHover();
-            console.log('✅ [Header] Mega-menu initialized successfully');
         }, 100);
 
         return () => {
@@ -689,7 +687,7 @@ export default function Header() {
                                                         </svg>
                                                     </span>
                                                 </Link>
-                                                <div className={`mega-menu-content full-width ${language === 'German' ? 'germegamenu' : ''}`}>
+                                                <div className={`mega-menu-content full-width ${currentLanguage === 'German' ? 'germegamenu' : ''}`}>
                                                     <div className="container">
                                                         {/* <h1>About Us</h1> */}
                                                         <div className="row">

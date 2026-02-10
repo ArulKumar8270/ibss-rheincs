@@ -85,7 +85,6 @@ export default function CaseStudyDetailsClient({
   // Define fetchCaseStudy before using it in useEffect
   const fetchCaseStudy = useCallback(async () => {
     try {
-      console.log(`[CaseStudyDetailsClient] Starting fetch for ID: "${caseStudyId}"`);
       setLoading(true);
       
       // Check admin status first
@@ -93,7 +92,6 @@ export default function CaseStudyDetailsClient({
       
       // ALWAYS fetch from database - never use cached/initial data
       // This ensures new content created after build is always accessible
-      console.log(`[CaseStudyDetailsClient] Querying Supabase for ID: "${caseStudyId}"`);
       const { data: caseStudyData, error: caseStudyError } = await supabase
         .from('case_studies')
         .select('*')
@@ -104,7 +102,6 @@ export default function CaseStudyDetailsClient({
         console.error(`[CaseStudyDetailsClient] Supabase error:`, caseStudyError);
         // If case study not found, redirect to case studies list
         if (caseStudyError.code === 'PGRST116') {
-          console.log(`[CaseStudyDetailsClient] Case study not found, redirecting to case studies list`);
           router.push('/Case-study');
           return;
         }
@@ -112,25 +109,21 @@ export default function CaseStudyDetailsClient({
       }
       
       if (!caseStudyData) {
-        console.log(`[CaseStudyDetailsClient] No case study data returned, redirecting`);
         router.push('/Case-study');
         return;
       }
 
-      console.log(`[CaseStudyDetailsClient] Case study found: "${caseStudyData.title}" (Published: ${caseStudyData.published})`);
       
       // Check if case study is published or user is admin
       const { data: { user } } = await supabase.auth.getUser();
       const userIsAdmin = !!user;
       
       if (!caseStudyData.published && !userIsAdmin) {
-        console.log(`[CaseStudyDetailsClient] Case study not published and user is not admin, redirecting`);
         router.push('/Case-study');
         return;
       }
       
       // Always update with fresh data from database
-      console.log(`[CaseStudyDetailsClient] Setting case study data`);
       setCaseStudy(caseStudyData);
 
       // Fetch related case studies with fresh data

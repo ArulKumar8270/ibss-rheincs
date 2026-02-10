@@ -39,7 +39,6 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
       ? createClient(supabaseUrl, supabaseServiceKey)
       : createClient(supabaseUrl, supabaseAnonKey || '')
     
-    console.log(`[generateStaticParams] Using ${supabaseServiceKey ? 'service role key' : 'anon key'}`)
     
     // Generate params for ALL news/events (published and unpublished)
     // Service role key bypasses RLS, allowing us to fetch draft items
@@ -76,7 +75,6 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
       }
       
       fallbackParams.push({ slug: 'placeholder' })
-      console.log(`[generateStaticParams] Generated ${fallbackParams.length} fallback params (published only)`)
       return fallbackParams
     }
 
@@ -85,7 +83,6 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
       return [{ slug: 'placeholder' }]
     }
 
-    console.log(`[generateStaticParams] Found ${items.length} news/events (including drafts)`)
     
     // Filter out invalid slugs and ensure they're strings
     const validItems = items.filter((item: any) => 
@@ -99,10 +96,6 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
       return [{ slug: 'placeholder' }]
     }
     
-    // Log each item's slug and published status for debugging
-    validItems.forEach((item: any) => {
-      console.log(`  - Slug: "${item.slug}", Published: ${item.published}`)
-    })
     
     // Use slug as requested by user
     const params = validItems.map((item: any) => ({
@@ -112,7 +105,6 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
     // Always include placeholder for fallback
     const allParams = [...params, { slug: 'placeholder' }]
 
-    console.log(`[generateStaticParams] Generated ${allParams.length} static params`)
     
     return allParams
   } catch (error) {
@@ -127,9 +119,6 @@ export default async function NewsEventDetailsPage({ params }: { params: Promise
   
   // Normalize slug - remove trailing slash if present (since trailingSlash is true in config)
   const normalizedSlug = slug?.replace(/\/$/, '') || ''
-  
-  // Debug: Log the requested slug
-  console.log(`[NewsEventDetailsPage] Requested slug: "${normalizedSlug}"`)
   
   // ALWAYS pass null for initialItem to force client-side fetch
   // This ensures new content created after build is always fetched from database

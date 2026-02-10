@@ -55,7 +55,6 @@ export default function AdminBlogsPage() {
 
   // Handle image upload in editor
   const handleEditorImageUpload = async () => {
-    console.log('handleEditorImageUpload triggered (static URL test)');
     const staticImageUrl = 'https://via.placeholder.com/300x200.png?text=Test+Image'; // A static placeholder image
 
     const editorElement = document.querySelector('.ql-editor') as any
@@ -64,7 +63,6 @@ export default function AdminBlogsPage() {
       const range = quill.getSelection(true)
       quill.insertEmbed(range ? range.index : 0, 'image', staticImageUrl)
       quill.setSelection((range ? range.index : 0) + 1)
-      console.log('Static image URL inserted:', staticImageUrl);
     } else {
       console.log('Quill editor instance not found.');
     }

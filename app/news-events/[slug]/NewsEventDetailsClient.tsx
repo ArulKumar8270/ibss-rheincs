@@ -46,21 +46,17 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
     // ALWAYS fetch from database - never rely on initialItem
     // This ensures new content created after build is always accessible
     if (slug && slug !== 'placeholder') {
-      console.log(`[NewsEventDetailsClient] Fetching news/event for slug: "${slug}"`);
       fetchItem();
     } else if (slug === 'placeholder') {
-      console.log(`[NewsEventDetailsClient] Placeholder slug detected, redirecting`);
       router.push('/news-events');
       return;
     } else {
-      console.log(`[NewsEventDetailsClient] No slug provided, redirecting`);
       router.push('/news-events');
     }
   }, [slug]);
 
   const fetchItem = async () => {
     try {
-      console.log(`[NewsEventDetailsClient] Starting fetch for slug: "${slug}"`);
       setLoading(true);
       
       // Check admin status
@@ -68,7 +64,6 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
        
       // ALWAYS fetch from database - never use cached/initial data
       // This ensures new content created after build is always accessible
-      console.log(`[NewsEventDetailsClient] Querying Supabase for slug: "${slug}"`);
       const { data: itemData, error: itemError } = await supabase
         .from('news_events')
         .select('*')
@@ -79,7 +74,6 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
         console.error(`[NewsEventDetailsClient] Supabase error:`, itemError);
         // If item not found, redirect to news-events list
         if (itemError.code === 'PGRST116') {
-          console.log(`[NewsEventDetailsClient] News/event not found, redirecting to news-events list`);
           router.push('/news-events');
           return;
         }
@@ -87,29 +81,23 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
       }
       
       if (!itemData) {
-        console.log(`[NewsEventDetailsClient] No item data returned, redirecting`);
         router.push('/news-events');
         return;
       }
 
-      console.log(`[NewsEventDetailsClient] Item found: "${itemData.title}" (Published: ${itemData.published})`);
 
       // Check if item is published or user is admin
       const { data: { user } } = await supabase.auth.getUser();
       const userIsAdmin = !!user;
       
       if (!itemData.published && !userIsAdmin) {
-        console.log(`[NewsEventDetailsClient] Item not published and user is not admin, redirecting`);
         router.push('/news-events');
         return;
       }
 
       // Always update with fresh data from database
-      console.log(`[NewsEventDetailsClient] Setting item data`);
       setItem(itemData);
-      console.log(`[NewsEventDetailsClient] Fetch completed successfully`);
     } catch (err) {
-      console.error('[NewsEventDetailsClient] Error fetching news/event:', err);
       // Always redirect on error - never show stale data
       router.push('/news-events');
     } finally {

@@ -131,7 +131,6 @@
         }
       });
       
-      console.log('Popup Video: Initialized successfully');
     } catch (e) {
       console.error('Popup Video: Error initializing popup video:', e);
     }
