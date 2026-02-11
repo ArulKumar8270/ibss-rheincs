@@ -597,7 +597,7 @@ export default function Header() {
                     </div>
                 </div>
             </div>
-            <div className="desktop-nav">
+            <div className={`desktop-nav ${currentLanguage === 'German' ? 'gerdesktopnav' : ''}`}>
                 <header className={`main-header boxshadow ${isSticky ? 'is-sticky' : ''}`} id="mainHeader">
                     <div className="header-sticky">
                         <nav className="navbar navbar-expand-lg">

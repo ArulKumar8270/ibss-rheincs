@@ -19933,6 +19933,10 @@ body.popup-open .main-header {
 
 		gap: 50px !important;
 
+	}.gerdesktopnav .main-menu .nav-menu-wrapper>ul {
+
+		gap: 40px !important;
+
 	}
 
 	.navbar-expand-lg .navbar-collapse {
