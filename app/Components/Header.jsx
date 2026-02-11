@@ -993,7 +993,7 @@ export default function Header() {
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body">
                                                                                                 <h3>
-                                                                                                    <span>News and events</span>
+                                                                                                    <span>{t("News and events")}</span>
                                                                                                 </h3>
                                                                                                 <p>
                                                                                                     RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
@@ -1121,7 +1121,7 @@ export default function Header() {
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body">
                                                                                                 <h3>
-                                                                                                    <span>News and events</span>
+                                                                                                    <span>{t("News and events")}</span>
                                                                                                 </h3>
                                                                                                 <p>
                                                                                                     RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption
@@ -1262,7 +1262,7 @@ export default function Header() {
                                                                                         <div className="col-lg-6 col-md-6">
                                                                                             <div className="service-item-body">
                                                                                                 <h3>
-                                                                                                    <span>News and events</span>
+                                                                                                    <span>{t("News and events")}</span>
                                                                                                 </h3>
                                                                                                 <p>
                                                                                                     RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption

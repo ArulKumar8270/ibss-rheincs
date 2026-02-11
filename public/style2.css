@@ -2662,7 +2662,11 @@
     /* Focus時の青い光を消す */
     border: none;
 }
-
+.custom-form-control:focus {
+    background-color: #e9e9e900;
+    box-shadow: none;
+    border: 1px solid #f2f2f2;
+}
 .custom-form-control::placeholder {
     color: #888;
 }

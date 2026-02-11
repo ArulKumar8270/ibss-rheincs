@@ -60,27 +60,27 @@ export default function EnterpriseSolutions() {
 </h3>
                                             <ul>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    <img src="/images/socilapoint.svg" alt="" /> &nbsp;
                                                     {t("Automates the entire hire-to-retire cycle from recruitment to exit.")}
 
                                                 </li>
                                                 <li>
-                                        <img src="/images/socilapoint.svg" alt="" /> 
+                                        <img src="/images/socilapoint.svg" alt="" /> &nbsp;
 
                                         {t("Simplifies onboarding, probation, and employee lifecycle tracking.")}
                                                 </li>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    <img src="/images/socilapoint.svg" alt="" /> &nbsp;
                                                     {t("Integrates attendance, leave, payroll, and compliance management.")}
 
                                                 </li>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    <img src="/images/socilapoint.svg" alt="" /> &nbsp;
                                                     {t("Streamlines performance reviews and goal tracking.")}
 
                                                 </li>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    <img src="/images/socilapoint.svg" alt="" /> &nbsp;
 
                                                     {t("Offers self-service portals for employees and managers.")}
 
@@ -206,27 +206,27 @@ export default function EnterpriseSolutions() {
                                             </h3>
                                             <ul>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    <img src="/images/socilapoint.svg" alt="" /> &nbsp;
                                                     {t("Advanced Supplier Relationship Management (SRM) and eSourcing solution.")}
 
                                                 </li>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    <img src="/images/socilapoint.svg" alt="" /> &nbsp;
                                                     {t("Facilitates strategic procurement and collaborative supplier management.")}
 
                                                 </li>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    <img src="/images/socilapoint.svg" alt="" /> &nbsp;
                                                     {t("Optimises costs while mitigating supply chain risks.")}
 
                                                 </li>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    <img src="/images/socilapoint.svg" alt="" /> &nbsp;
                                                     {t("Provides AI-driven analytics for data-backed sourcing decisions.")}
 
                                                 </li>
                                                 <li>
-                                                    <img src="/images/socilapoint.svg" alt="" /> 
+                                                    <img src="/images/socilapoint.svg" alt="" /> &nbsp;
                                                     {t("Encourages innovation through supplier partnerships.")}
 
                                                 </li>

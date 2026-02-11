@@ -121,7 +121,7 @@ export default function Home() {
                   {/* Section Title Start */}
                   <div className="section-title text-center">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      {t("The Path to Transformation")}
+                      {t("The Path to Enterprise Transformation")}
                     </h2>
                     <p>
                       {t("Every successful ERP transformation starts with clarity and ends with measurable impact. Our approach takes you from insights to execution, unlocking real value at every stage of your digital journey.")}

@@ -439,7 +439,7 @@ export default function Corushr() {
                                             <img src="/images/fe1.svg" alt="" />
                                             <h6> {t('Recruitment and Onboarding')}  </h6>
                                             <p>
-                                                {t('Make better hiring decisions through structured and configurable workflows')}
+                                                {t('Make better hiring decisions through structured and configurable workflows.')}
 
                                             </p>
                                         </div>
@@ -452,7 +452,7 @@ export default function Corushr() {
                                             <h6> {t('Probation')}  </h6>
 
                                             <p>
-                                        {t('Automated probation evaluations with workflows')}
+                                        {t('Automated probation evaluations with workflows.')}
                                         </p>
 
                                         </div>
@@ -464,7 +464,7 @@ export default function Corushr() {
                                             <img src="/images/fe3.svg" alt="" />
                                             <h6> {t('Time and Attendance')}  </h6>
                                             <p>
-                                                 {t('Capture daily attendance and work times and process them to reflect in the Employee dashboard')}
+                                                 {t('Capture daily attendance and work times and process them to reflect in the Employee dashboard.')}
                                             </p>
                                         </div>
                                     </div>
@@ -475,7 +475,7 @@ export default function Corushr() {
                                             <img src="/images/fe4.svg" alt="" />
                                             <h6> {t('Performance Management')}  </h6>
                                             <p>
-                                                 {t('Inspire your team to reach their full potential, sync their efforts with company goals, and foster a thriving, positive workplace')}
+                                                 {t('Inspire your team to reach their full potential, sync their efforts with company goals, and foster a thriving, positive workplace .')}
                                             </p>
                                         </div>
                                     </div>
@@ -486,7 +486,7 @@ export default function Corushr() {
                                             <img src="/images/fe5.svg" alt="" />
                                             <h6> {t('Training Management')}  </h6>
                                             <p>
-                                                 {t('Ensure employees have necessary skills and knowledge to perform their jobs effectively and efficiently')}
+                                                 {t('Ensure employees have necessary skills and knowledge to perform their jobs effectively and efficiently.')}
                                             </p>
                                         </div>
                                     </div>
@@ -610,7 +610,7 @@ export default function Corushr() {
                                             </svg>
                                         <h6> {t('Shift Roster')}  </h6>
 
-                                            <p> {t('Operate 24/7 with round-the-clock business support')} </p>
+                                            <p> {t('Operate 24/7 with round-the-clock business support.')} </p>
                                         </div>
                                     </div>
                                     {/* Testimonial Slide End */}
@@ -700,7 +700,7 @@ export default function Corushr() {
                                             </svg>
                                         <h6> {t('Leadership Development')}  </h6>
                                             <p>
-                                                 {t('Identify and nurture employees for leadership roles in the organisation')}
+                                                 {t('Identify and nurture employees for leadership roles in the organisation.')}
                                             </p>
                                         </div>
                                     </div>
@@ -819,7 +819,7 @@ export default function Corushr() {
                                             </svg>
                                         <h6> {t('Employee Engagement Surveys')}  </h6>
                                             <p>
-                                                {t('Manage organisational engagement effectively through surveys')}
+                                                {t('Manage organisational engagement effectively through survey.')}
                                             </p>
                                         </div>
                                     </div>
@@ -876,9 +876,9 @@ export default function Corushr() {
                                                     strokeLinejoin="round"
                                                 />
                                             </svg>
-                                        <h6> {t('Exit Initiation &amp; Approval Process')}  </h6>
+                                        <h6> {t('Exit Initiation & Approval Process')}  </h6>
                                             <p>
-                                            {t('Gather feedback through exit interview and identify areas for improvement and help with the final settlement')}
+                                            {t('Gather feedback through exit interview and identify areas for improvement and help with the final settlement.')}
 
                                             </p>
                                         </div>
@@ -1525,7 +1525,7 @@ export default function Corushr() {
                                                 type="text"
                                                 className="form-control custom-form-control"
                                                 name="fullName"
-                                                placeholder="Enter Your Full Name*"
+                                                placeholder={t("Enter your full name")}
                                                 value={formData.fullName}
                                                 onChange={handleInputChange}
                                                 required={true}
@@ -1772,7 +1772,7 @@ export default function Corushr() {
                                                 <input
                                                     type="tel"
                                                     name="phone"
-                                                    placeholder="Enter Your Phone Number*"
+                                                    placeholder={t("Enter your phone number")}
                                                     value={formData.phone}
                                                     onChange={handleInputChange}
                                                     onKeyDown={(e) => {
@@ -1792,7 +1792,7 @@ export default function Corushr() {
                                                 type="email"
                                                 className="form-control custom-form-control"
                                                 name="email"
-                                                placeholder="Enter Your Email Address*"
+                                                placeholder={t("Enter your email address")}
                                                 value={formData.email}
                                                 onChange={handleInputChange}
                                                 required={true}
@@ -1804,7 +1804,7 @@ export default function Corushr() {
                                                 type="text"
                                                 className="form-control custom-form-control"
                                                 name="companyName"
-                                                placeholder="Enter Your Company Name*"
+                                                placeholder={t("Enter your company name")}
                                                 value={formData.companyName}
                                                 onChange={handleInputChange}
                                                 required={true}
