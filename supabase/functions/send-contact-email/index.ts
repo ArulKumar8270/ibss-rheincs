@@ -1,8 +1,9 @@
 // Supabase Edge Function: send-contact-email
 // Handles: contact, collaterals, job-application, test
-// Sends email via Microsoft Graph (MSAL client credentials + certificate).
+// Sends email via Microsoft Graph with certificate auth (same flow as Node MSAL:
+//   ConfidentialClientApplication with clientCertificate -> acquireTokenByClientCredential -> users/{sender}/sendMail).
 // Set secrets in Supabase: CLIENT_ID, TENANT_ID, CERT_THUMBPRINT, PRIVATE_KEY (PEM),
-//   FROM_NAME, ADMIN_EMAIL, COLLATERALS_ADMIN_EMAIL, JOB_APPLICATION_ADMIN_EMAIL
+//   FROM_USER, FROM_NAME, ADMIN_EMAIL, COLLATERALS_ADMIN_EMAIL, JOB_APPLICATION_ADMIN_EMAIL
 
 /// <reference types="deno" />
 
@@ -28,7 +29,7 @@ function escapeHtml(text: string): string {
 function getConfig() {
   const clientId = Deno.env.get('CLIENT_ID') ?? 'fd935dfb-6d1a-4568-8f2d-c50375c930a4'
   const tenantId = Deno.env.get('TENANT_ID') ?? 'f45c3768-a091-47aa-a5c4-28f9d04ce0df'
-  const thumbprint = Deno.env.get('CERT_THUMBPRINT') ?? ''
+  const thumbprint = (Deno.env.get('CERT_THUMBPRINT') ?? 'AE4FBD29AE91BFCFEEF61181E9EB506E4E7391F9').replace(/\s/g, '')
   const privateKeyRaw = Deno.env.get('PRIVATE_KEY') ?? `MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC6vnKV81rxkexb
 VwwmK6hLh+nkWtca+zTxVPeJThaut4gkuyMXS4gdpo+6HzFMqKP4XHXj92sC36LI
 1CQL8cMfVKpDozYjgUZaE0wcfC7sjZdFE6jhgEq40K11f/WPvc5IZrZqK0F6s6e3
@@ -73,9 +74,22 @@ p70PboPLwKDG15TgYJeQnDPyuw==`
   }
 }
 
-/** Get Azure AD token for Graph using client credentials + JWT client assertion (certificate). */
+/** Hex thumbprint to base64url (for JWT x5t header, matches MSAL clientCertificate.thumbprint). */
+function thumbprintToX5t(hex: string): string {
+  const hexClean = hex.replace(/\s/g, '').toLowerCase()
+  if (hexClean.length % 2) throw new Error('Invalid thumbprint hex length')
+  const bytes = new Uint8Array(hexClean.length / 2)
+  for (let i = 0; i < bytes.length; i++) {
+    bytes[i] = parseInt(hexClean.slice(i * 2, i * 2 + 2), 16)
+  }
+  const b64 = btoa(String.fromCharCode(...bytes))
+  return b64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
+}
+
+/** Get Azure AD token for Graph using client credentials + JWT client assertion (certificate).
+ *  Same flow as Node: ConfidentialClientApplication(clientCertificate) -> acquireTokenByClientCredential -> scope graph.microsoft.com/.default */
 async function getGraphToken(config: ReturnType<typeof getConfig>): Promise<string> {
-  const { clientId, tenantId, privateKeyRaw } = config
+  const { clientId, tenantId, thumbprint, privateKeyRaw } = config
   if (!clientId || !tenantId || !privateKeyRaw?.trim()) {
     throw new Error('Graph not configured: CLIENT_ID, TENANT_ID, PRIVATE_KEY required')
   }
@@ -83,8 +97,16 @@ async function getGraphToken(config: ReturnType<typeof getConfig>): Promise<stri
   const privateKey = await importPKCS8(pem, 'RS256')
   const aud = `https://login.microsoftonline.com/${tenantId}/v2.0`
   const now = Math.floor(Date.now() / 1000)
+  const header: Record<string, string> = { alg: 'RS256', typ: 'JWT' }
+  if (thumbprint && /^[0-9a-fA-F]{40}$/.test(thumbprint)) {
+    try {
+      header.x5t = thumbprintToX5t(thumbprint)
+    } catch {
+      // omit x5t if conversion fails
+    }
+  }
   const jwt = await new SignJWT({})
-    .setProtectedHeader({ alg: 'RS256', typ: 'JWT' })
+    .setProtectedHeader(header)
     .setIssuer(clientId)
     .setSubject(clientId)
     .setAudience(aud)
