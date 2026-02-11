@@ -60,7 +60,7 @@ MIIEvgIBA...
 | `CLIENT_ID` | Yes | Azure AD app (client) ID |
 | `TENANT_ID` | Yes | Azure AD tenant ID |
 | `PRIVATE_KEY` | Yes | PEM private key (certificate auth for Graph) |
-| `CERT_THUMBPRINT` | No | Certificate thumbprint (optional; not used by current flow—only PRIVATE_KEY is used) |
+| `CERT_THUMBPRINT` | No | Certificate thumbprint (hex, 40 chars). When set, added to JWT as `x5t` to match MSAL clientCertificate.thumbprint. |
 | `FROM_USER` | No | Mailbox to send as (default: `noreply@rheincs.com`); must have SendAs in Exchange |
 | `FROM_NAME` | No | Sender display name (default: RheinBrücke) |
 | `ADMIN_EMAIL` | No | Contact form admin (default: marketing@rheincs.com) |

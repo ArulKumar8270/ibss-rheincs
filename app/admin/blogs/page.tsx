@@ -484,9 +484,18 @@ export default function AdminBlogsPage() {
   const isTypingRef = useRef<boolean>(false)
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
+  // Normalize broken iframe src (e.g. missing closing quote, semicolon instead of ")
+  const normalizeIframeSrc = useCallback((html: string): string => {
+    if (!html || !html.includes('<iframe')) return html
+    return html
+      .replace(/\ssrc=["']([\s\S]*?);\s*(["'>\s])/gi, (_, url, after) => ` src="${url.trim()}" ${after}`)
+      .replace(/\ssrc=(["']?)([^"'\s>]+)\s*;/gi, (_, _q, url) => ` src="${url.trim()}" `)
+  }, [])
+
   // Function to convert YouTube URLs to iframes (only when needed, very conservative)
   const convertYouTubeUrlsToIframes = useCallback((html: string): string => {
     if (!html || typeof html !== 'string') return html
+    let htmlNorm = normalizeIframeSrc(html)
     
     try {
       // Extract video ID from various YouTube URL formats
@@ -510,11 +519,11 @@ export default function AdminBlogsPage() {
       
       // Quick check: if no YouTube URLs at all, return immediately
       const hasYouTubeUrl = /https?:\/\/(?:www\.)?(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9_-]+)/i.test(html)
-      if (!hasYouTubeUrl) {
-        return html // No YouTube URLs, return as is
+      if (!hasYouTubeUrl && htmlNorm === html) {
+        return htmlNorm
       }
       
-      let processed = html
+      let processed = htmlNorm
       let changed = false
       
       // More precise pattern - only match complete YouTube URLs
@@ -523,7 +532,7 @@ export default function AdminBlogsPage() {
       // Find all matches first to avoid index issues
       const matches: Array<{ index: number; url: string; videoId: string | null }> = []
       let match
-      while ((match = youtubeUrlPattern.exec(html)) !== null) {
+      while ((match = youtubeUrlPattern.exec(processed)) !== null) {
         const videoId = extractVideoId(match[0])
         if (videoId) {
           matches.push({
@@ -562,21 +571,21 @@ export default function AdminBlogsPage() {
           }
         }
         
-        // Convert to iframe
+        // Convert to iframe wrapped in Quill's video container so editor preserves it
         if (videoId) {
           const embedUrl = `https://www.youtube.com/embed/${videoId}`
-          const iframeHtml = `<iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; max-width: 560px; height: 315px; display: block; margin: 20px auto;"></iframe>`
+          const iframeHtml = `<span class="ql-video"><iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>`
           processed = processed.substring(0, index) + iframeHtml + processed.substring(index + url.length)
           changed = true
         }
       }
       
-      return changed ? processed : html
+      return changed ? processed : htmlNorm
     } catch (error) {
       console.error('Error converting YouTube URLs:', error)
-      return html // Return original on error
+      return html
     }
-  }, [])
+  }, [normalizeIframeSrc])
 
   const handleContentChange = useCallback((value: string) => {
     // Store content in ref immediately (no processing during typing)
