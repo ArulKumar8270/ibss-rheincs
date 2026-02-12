@@ -16,6 +16,22 @@ interface NewsEvent {
   updated_at: string;
 }
 
+const FETCH_TIMEOUT_MS = 30000
+const FETCH_RETRIES = 2
+
+/** Fetch with timeout to avoid ConnectTimeoutError during build (e.g. 10s default is too short). */
+function fetchWithTimeout(
+  input: RequestInfo | URL,
+  init?: RequestInit
+): Promise<Response> {
+  const controller = new AbortController()
+  const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS)
+  return fetch(input, {
+    ...init,
+    signal: init?.signal ?? controller.signal,
+  }).finally(() => clearTimeout(timeoutId))
+}
+
 // Note: With static export, we cannot use dynamicParams = true
 // All routes must be pre-generated at build time via generateStaticParams
 // For new content created after build, the page will still render the client component
@@ -24,7 +40,6 @@ interface NewsEvent {
 export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  // Use service role key if available (bypasses RLS for build-time fetching)
   const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
   if (!supabaseUrl) {
@@ -32,86 +47,75 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
     return [{ slug: 'placeholder' }]
   }
 
-  try {
-    // Use service role key if available to bypass RLS and fetch all news/events including drafts
-    // This is safe because generateStaticParams only runs at build time, not at runtime
-    const supabase = supabaseServiceKey 
-      ? createClient(supabaseUrl, supabaseServiceKey)
-      : createClient(supabaseUrl, supabaseAnonKey || '')
-    
-    
-    // Generate params for ALL news/events (published and unpublished)
-    // Service role key bypasses RLS, allowing us to fetch draft items
+  const supabase = createClient(supabaseUrl, supabaseServiceKey || supabaseAnonKey || '', {
+    global: { fetch: fetchWithTimeout },
+  })
+
+  const fetchSlugs = async (): Promise<{ slug: string }[]> => {
     const { data: items, error } = await supabase
       .from('news_events')
-      .select('slug, published')
+      .select('id, slug, published')
       .order('created_at', { ascending: false })
       .limit(1000)
 
     if (error) {
       console.error('[generateStaticParams] Error fetching news/events:', error)
-      console.error('[generateStaticParams] This might be due to RLS policies blocking unpublished items')
-      // Try fetching only published items as fallback
       const { data: publishedItems, error: publishedError } = await supabase
         .from('news_events')
-        .select('slug')
+        .select('id, slug')
         .eq('published', true)
         .limit(1000)
-      
       if (publishedError) {
-        console.error('[generateStaticParams] Error fetching published news/events:', publishedError)
-        return [{ slug: 'placeholder' }]
+        throw publishedError
       }
-      
-      const fallbackParams = (publishedItems || [])
-        .filter((item: any) => item.slug && typeof item.slug === 'string')
-        .map((item: any) => ({
-          slug: item.slug.trim(),
-        }))
-      
-      if (fallbackParams.length === 0) {
-        console.warn('[generateStaticParams] No published news/events found, returning placeholder')
-        return [{ slug: 'placeholder' }]
-      }
-      
-      fallbackParams.push({ slug: 'placeholder' })
-      return fallbackParams
+      const list = (publishedItems || []).filter((item: any) => (item.slug && typeof item.slug === 'string') || (item.id && typeof item.id === 'string'))
+      return list.flatMap((item: any) => {
+        const params: { slug: string }[] = []
+        if (item.id && typeof item.id === 'string' && item.id.trim()) params.push({ slug: item.id.trim() })
+        if (item.slug && typeof item.slug === 'string' && item.slug.trim()) params.push({ slug: item.slug.trim() })
+        return params
+      })
     }
 
     if (!items || items.length === 0) {
-      console.warn('[generateStaticParams] No news/events found')
-      return [{ slug: 'placeholder' }]
+      return []
     }
 
-    
-    // Filter out invalid slugs and ensure they're strings
-    const validItems = items.filter((item: any) => 
-      item.slug && 
-      typeof item.slug === 'string' && 
-      item.slug.trim().length > 0
-    )
-    
-    if (validItems.length === 0) {
-      console.warn('[generateStaticParams] No valid news/event slugs found')
-      return [{ slug: 'placeholder' }]
+    const seen = new Set<string>()
+    const params: { slug: string }[] = []
+    for (const item of items) {
+      if (item.id && typeof item.id === 'string' && item.id.trim() && !seen.has(item.id.trim())) {
+        seen.add(item.id.trim())
+        params.push({ slug: item.id.trim() })
+      }
+      if (item.slug && typeof item.slug === 'string' && item.slug.trim() && !seen.has(item.slug.trim())) {
+        seen.add(item.slug.trim())
+        params.push({ slug: item.slug.trim() })
+      }
     }
-    
-    
-    // Use slug as requested by user
-    const params = validItems.map((item: any) => ({
-      slug: item.slug.trim(),
-    }))
-
-    // Always include placeholder for fallback
-    const allParams = [...params, { slug: 'placeholder' }]
-
-    
-    return allParams
-  } catch (error) {
-    console.error('[generateStaticParams] Error in generateStaticParams:', error)
-    // Return a placeholder to satisfy static export requirement
-    return [{ slug: 'placeholder' }]
+    return params
   }
+
+  for (let attempt = 1; attempt <= FETCH_RETRIES; attempt++) {
+    try {
+      const params = await fetchSlugs()
+      if (params.length === 0) {
+        console.warn('[generateStaticParams] No news/events found')
+        return [{ slug: 'placeholder' }]
+      }
+      return [...params, { slug: 'placeholder' }]
+    } catch (error) {
+      const isLast = attempt === FETCH_RETRIES
+      console.error(`[generateStaticParams] Attempt ${attempt}/${FETCH_RETRIES} failed:`, error)
+      if (isLast) {
+        console.warn('[generateStaticParams] All retries failed; returning placeholder. Build may have network/timeout issues.')
+        return [{ slug: 'placeholder' }]
+      }
+      await new Promise((r) => setTimeout(r, 2000))
+    }
+  }
+
+  return [{ slug: 'placeholder' }]
 }
 
 export default async function NewsEventDetailsPage({ params }: { params: Promise<{ slug: string }> }) {

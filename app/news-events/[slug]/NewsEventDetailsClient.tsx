@@ -63,28 +63,22 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
       await checkAdminStatus();
        
       // ALWAYS fetch from database - never use cached/initial data
-      // This ensures new content created after build is always accessible
+      // URL segment can be either id (from listing links) or slug
       const { data: itemData, error: itemError } = await supabase
         .from('news_events')
         .select('*')
-        .eq('slug', slug)
-        .single();
+        .or(`slug.eq.${slug},id.eq.${slug}`)
+        .maybeSingle();
 
       if (itemError) {
         console.error(`[NewsEventDetailsClient] Supabase error:`, itemError);
-        // If item not found, redirect to news-events list
-        if (itemError.code === 'PGRST116') {
-          router.push('/news-events');
-          return;
-        }
         throw itemError;
       }
-      
+
       if (!itemData) {
         router.push('/news-events');
         return;
       }
-
 
       // Check if item is published or user is admin
       const { data: { user } } = await supabase.auth.getUser();
