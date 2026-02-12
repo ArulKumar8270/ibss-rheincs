@@ -26,6 +26,11 @@ interface Blog {
 }
 
 export default function AdminBlogsPage() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   const [blogs, setBlogs] = useState<Blog[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
@@ -574,7 +579,7 @@ export default function AdminBlogsPage() {
         // Convert to iframe wrapped in Quill's video container so editor preserves it
         if (videoId) {
           const embedUrl = `https://www.youtube.com/embed/${videoId}`
-          const iframeHtml = `<span class="ql-video"><iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>`
+          const iframeHtml = `<span className="ql-video"><iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>`
           processed = processed.substring(0, index) + iframeHtml + processed.substring(index + url.length)
           changed = true
         }

@@ -855,7 +855,7 @@ export default function AlMl() {
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
-                <Link href="#" className="animated-svg-link">
+                <Link href="/contact-us" className="animated-svg-link">
                   {t("Contact Us")}
                   <span className="svg-container ">
                     <span className=" right">
