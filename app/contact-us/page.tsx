@@ -909,7 +909,7 @@ export default function Contact() {
                             width: '100%'
                           }}
                         >
-                          {status === 'loading' ? 'Submitting...' : 'Submit'}
+                          {status === 'loading' ? t('Submitting...') : t('Submit')}
                           <span className="svg-container ">
                             <span className=" left">
                               <svg

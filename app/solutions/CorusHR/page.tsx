@@ -1827,7 +1827,7 @@ export default function Corushr() {
                                                         padding: 0
                                                     }}
                                                 >
-                                                    {status === 'loading' ? 'Submitting...' : 'Submit'}
+                                                    {status === 'loading' ? t('Submitting...') : t('Submit')}
                                                     <span className="svg-container ">
                                                         <span className=" right">
                                                             <svg
