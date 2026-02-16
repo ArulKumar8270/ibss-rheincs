@@ -489,14 +489,23 @@ export default function AdminBlogsPage() {
   const isTypingRef = useRef<boolean>(false)
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  // Normalize broken iframe src (e.g. missing closing quote, semicolon instead of ")
-  const normalizeIframeSrc = useCallback((html: string): string => {
-    if (!html || !html.includes('<iframe')) return html
-    return html
-      .replace(/\ssrc=["']([\s\S]*?);\s*(["'>\s])/gi, (_, url, after) => ` src="${url.trim()}" ${after}`)
-      .replace(/\ssrc=(["']?)([^"'\s>]+)\s*;/gi, (_, _q, url) => ` src="${url.trim()}" `)
-  }, [])
-
+  // Normalize broken iframe src (e.g. missing closing quote, semicolon, URL on new line)
+  const normalizeIframeSrc = (html: string): string => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, "text/html");
+  
+    const iframes = doc.querySelectorAll("iframe");
+  
+    iframes.forEach((iframe) => {
+      const src = iframe.getAttribute("src");
+      if (src) {
+        iframe.setAttribute("src", src.replace(/;|\s+/g, "").trim());
+      }
+    });
+  
+    return doc.body.innerHTML;
+  };
+  
   // Function to convert YouTube URLs to iframes (only when needed, very conservative)
   const convertYouTubeUrlsToIframes = useCallback((html: string): string => {
     if (!html || typeof html !== 'string') return html
@@ -576,10 +585,10 @@ export default function AdminBlogsPage() {
           }
         }
         
-        // Convert to iframe wrapped in Quill's video container so editor preserves it
+        // Convert to iframe wrapped in Quill's video container so editor preserves it (use class= for HTML, not className)
         if (videoId) {
           const embedUrl = `https://www.youtube.com/embed/${videoId}`
-          const iframeHtml = `<span className="ql-video"><iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>`
+          const iframeHtml = `<span class="ql-video"><iframe src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>`
           processed = processed.substring(0, index) + iframeHtml + processed.substring(index + url.length)
           changed = true
         }
