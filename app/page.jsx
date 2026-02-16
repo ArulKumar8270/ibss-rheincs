@@ -1249,7 +1249,7 @@ export default function Home() {
                       {t("Scaling successfully means balancing agility with execution. We design solutions that are digital at the core, powered by trusted platforms, and tailored for growth. Every digital engagement or cloud ERP solution is focused on measurable outcomes with lasting business value.")}
                     </p>
                     <div className="ser-btn m-0">
-                      <Link href="/digital-services-and-solutions"
+                      <Link href="/solutions/digital-services-and-solutions"
                         className="animated-svg-link"
                       >
                         {t("Know More")}
@@ -1760,41 +1760,6 @@ export default function Home() {
                               <div className="service-item-body">
                                 <h3>{t("Business Model Transformation")}</h3>
                                 <p>{t("We help businesses rethink their operating models, uncover new revenue streams, and deliver innovative services that drive sustainable growth.")}</p>
-                                {/*<div class="ser-btn serbtn1">*/}
-                                {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                {/*        class="animated-svg-link1 animated-svg-link12">*/}
-                                {/*        Read More*/}
-                                {/*        <span class="svg-container ">*/}
-                                  {/*            <span class=" left">*/}
-                                  {/*                <svg width="24" height="23" viewBox="0 0 24 23"*/}
-                                  {/*                    fill="none" xmlns="http://www.w3.org/2000/svg">*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="4.79995" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                  {/*                        cy="1.6" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="22.4008"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="1.6" cy="11.2"*/}
-                                  {/*                        r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="6.40078"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="11.1996"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                  {/*                        cy="14.4" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="17.6" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                  {/*                        cy="20.8" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                  {/*                        cy="8.00002" r="1.6" fill="#535353" />*/}
-                                  {/*                </svg>*/}
-                                  {/*            </span>*/}
-                                  {/*        </span>*/}
-                                  {/*    </Link>*/}
-                                  {/*</div>*/}
                                 </div>
                               </div>
                             </div>
@@ -1905,41 +1870,6 @@ export default function Home() {
                               <div className="service-item-body">
                                 <h3>{t("ERP Modernisation")}</h3>
                                 <p>{t("We modernise legacy ERP systems to unlock agility, reduce complexity, supporting faster decisions and scalable operations.")}</p>
-                                {/*<div class="ser-btn serbtn1">*/}
-                                {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                {/*        class="animated-svg-link1 animated-svg-link12">*/}
-                                {/*        Read More*/}
-                                {/*        <span class="svg-container ">*/}
-                                  {/*            <span class=" left">*/}
-                                  {/*                <svg width="24" height="23" viewBox="0 0 24 23"*/}
-                                  {/*                    fill="none" xmlns="http://www.w3.org/2000/svg">*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="4.79995" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                  {/*                        cy="1.6" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="22.4008"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="1.6" cy="11.2"*/}
-                                  {/*                        r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="6.40078"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="11.1996"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                  {/*                        cy="14.4" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="17.6" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                  {/*                        cy="20.8" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                  {/*                        cy="8.00002" r="1.6" fill="#535353" />*/}
-                                  {/*                </svg>*/}
-                                  {/*            </span>*/}
-                                  {/*        </span>*/}
-                                  {/*    </Link>*/}
-                                  {/*</div>*/}
                                 </div>
                               </div>
                             </div>
@@ -2120,41 +2050,6 @@ export default function Home() {
                                 <div className="service-item-body">
                                   <h3>{t("Digital Supply Chain Enablement")}</h3>
                                   <p>{t("We connect your supply chain through cloud and analytics solutions, providing real-time visibility and seamless collaboration with partners.")}</p>
-                                  {/*<div class="ser-btn serbtn1">*/}
-                                  {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                  {/*        class="animated-svg-link1 animated-svg-link12">*/}
-                                  {/*        Read More*/}
-                                  {/*        <span class="svg-container ">*/}
-                                  {/*            <span class=" left">*/}
-                                  {/*                <svg width="24" height="23" viewBox="0 0 24 23"*/}
-                                  {/*                    fill="none" xmlns="http://www.w3.org/2000/svg">*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="4.79995" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                  {/*                        cy="1.6" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="22.4008"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="1.6" cy="11.2"*/}
-                                  {/*                        r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="6.40078"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="11.1996"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                  {/*                        cy="14.4" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="17.6" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                  {/*                        cy="20.8" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                  {/*                        cy="8.00002" r="1.6" fill="#535353" />*/}
-                                  {/*                </svg>*/}
-                                  {/*            </span>*/}
-                                  {/*        </span>*/}
-                                  {/*    </Link>*/}
-                                  {/*</div>*/}
                                 </div>
                               </div>
                             </div>
@@ -2243,41 +2138,6 @@ export default function Home() {
                               <div className="service-item-body">
                                 <h3>{t("Data & Analytics Strategy")}</h3>
                                 <p>{t("We turn data into a strategic asset, with analytics frameworks that deliver actionable insights, improve decision-making and unlock opportunities.")}</p>
-                                {/*<div class="ser-btn serbtn1">*/}
-                                {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                {/*        class="animated-svg-link1 animated-svg-link12">*/}
-                                {/*        Read More*/}
-                                {/*        <span class="svg-container ">*/}
-                                  {/*            <span class=" left">*/}
-                                  {/*                <svg width="24" height="23" viewBox="0 0 24 23"*/}
-                                  {/*                    fill="none" xmlns="http://www.w3.org/2000/svg">*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="4.79995" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                  {/*                        cy="1.6" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="22.4008"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="1.6" cy="11.2"*/}
-                                  {/*                        r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="6.40078"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="11.1996"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                  {/*                        cy="14.4" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="17.6" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                  {/*                        cy="20.8" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                  {/*                        cy="8.00002" r="1.6" fill="#535353" />*/}
-                                  {/*                </svg>*/}
-                                  {/*            </span>*/}
-                                  {/*        </span>*/}
-                                  {/*    </Link>*/}
-                                  {/*</div>*/}
                                 </div>
                               </div>
                             </div>
@@ -2366,41 +2226,6 @@ export default function Home() {
                               <div className="service-item-body">
                                 <h3>{t("Intelligent Automation")}</h3>
                                 <p>{t("We deploy RPA and AI-driven automation solutions that streamline operations, reduce manual effort and improve accuracy.")}</p>
-                                {/*<div class="ser-btn serbtn1">*/}
-                                {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                {/*        class="animated-svg-link1 animated-svg-link12">*/}
-                                {/*        Read More*/}
-                                {/*        <span class="svg-container ">*/}
-                                  {/*            <span class=" left">*/}
-                                  {/*                <svg width="24" height="23" viewBox="0 0 24 23"*/}
-                                  {/*                    fill="none" xmlns="http://www.w3.org/2000/svg">*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="4.79995" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                  {/*                        cy="1.6" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="22.4008"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="1.6" cy="11.2"*/}
-                                  {/*                        r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="6.40078"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="11.1996"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                  {/*                        cy="14.4" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="17.6" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                  {/*                        cy="20.8" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                  {/*                        cy="8.00002" r="1.6" fill="#535353" />*/}
-                                  {/*                </svg>*/}
-                                  {/*            </span>*/}
-                                  {/*        </span>*/}
-                                  {/*    </Link>*/}
-                                  {/*</div>*/}
                                 </div>
                               </div>
                             </div>
@@ -2487,41 +2312,6 @@ export default function Home() {
                               <div className="service-item-body">
                                 <h3>{t("Cross-Platform Integration")}</h3>
                                 <p>{t("We integrate diverse enterprise applications into a connected digital ecosystem, ensuring consistent data flow and seamless process execution.")}</p>
-                                {/*<div class="ser-btn serbtn1">*/}
-                                {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                {/*        class="animated-svg-link1 animated-svg-link12">*/}
-                                {/*        Read More*/}
-                                {/*        <span class="svg-container ">*/}
-                                  {/*            <span class=" left">*/}
-                                  {/*                <svg width="24" height="23" viewBox="0 0 24 23"*/}
-                                  {/*                    fill="none" xmlns="http://www.w3.org/2000/svg">*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="4.79995" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                  {/*                        cy="1.6" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="22.4008"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="1.6" cy="11.2"*/}
-                                  {/*                        r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="6.40078"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="11.1996"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                  {/*                        cy="14.4" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="17.6" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                  {/*                        cy="20.8" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                  {/*                        cy="8.00002" r="1.6" fill="#535353" />*/}
-                                  {/*                </svg>*/}
-                                  {/*            </span>*/}
-                                  {/*        </span>*/}
-                                  {/*    </Link>*/}
-                                  {/*</div>*/}
                                 </div>
                               </div>
                             </div>
@@ -2615,41 +2405,6 @@ export default function Home() {
                                   <p>
                                     {t("We design and deliver systems that are built for speed, reliability, and business impact, helping you move from strategy to measurable results.")}
                                   </p>
-                                  {/*<div class="ser-btn serbtn1">*/}
-                                  {/*    <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                  {/*        class="animated-svg-link1 animated-svg-link12">*/}
-                                  {/*        Read More*/}
-                                  {/*        <span class="svg-container ">*/}
-                                  {/*            <span class=" left">*/}
-                                  {/*                <svg width="24" height="23" viewBox="0 0 24 23"*/}
-                                  {/*                    fill="none" xmlns="http://www.w3.org/2000/svg">*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="4.79995" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                  {/*                        cy="1.6" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="22.4008"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="1.6" cy="11.2"*/}
-                                  {/*                        r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="6.40078"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="11.1996"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="11.2" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                  {/*                        cy="14.4" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="16.0004"*/}
-                                  {/*                        cy="17.6" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="12.7992"*/}
-                                  {/*                        cy="20.8" r="1.6" fill="#535353" />*/}
-                                  {/*                    <circle class="dot" opacity="0.5" cx="19.1996"*/}
-                                  {/*                        cy="8.00002" r="1.6" fill="#535353" />*/}
-                                  {/*                </svg>*/}
-                                  {/*            </span>*/}
-                                  {/*        </span>*/}
-                                  {/*    </Link>*/}
-                                  {/*</div>*/}
                                 </div>
                               </div>
                             </div>
@@ -3460,7 +3215,7 @@ export default function Home() {
                       {t("How an Engineering Procurement Construction Company overcame their challenge by implementing Epicor ERP?")}
                     </p>
                     <div className="ser-btn1">
-                      <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"
+                      <Link href="#!"
                         className="animated-svg-link1 btn-style-3"
                       >
                         
@@ -3579,7 +3334,7 @@ export default function Home() {
                       Functionality
                     </p>
                     <div className="ser-btn1">
-                      <Link href="https://casestudy.rheincs.com/casestudies/welding-equipment-manufacturer-implements-epicor-country-specific-functionality/"
+                      <Link href="#!"
                         className="animated-svg-link1 btn-style-3"
                       >
                        {t("Read More")}
@@ -4053,7 +3808,7 @@ export default function Home() {
                             {t("How an Engineering Procurement Construction Company overcame their challenge by implementing Epicor ERP?")}
                           </p>
                           <div className="ser-btn1">
-                            <Link href="/case-studies" className="animated-svg-link1">
+                            <Link href="/Case-study" className="animated-svg-link1">
                               {t("Read More")}
                               <svg
                                 width={24}
@@ -4165,7 +3920,7 @@ export default function Home() {
                             Specific Functionality
                           </p>
                           <div className="ser-btn1">
-                            <Link href="/case-studies" className="animated-svg-link1">
+                            <Link href="/Case-study" className="animated-svg-link1">
                               {t("Read More")}
                               <svg
                                 width={24}
@@ -4274,7 +4029,7 @@ export default function Home() {
                           </h3>
                           <p>7 Game Changing Benefits of AI and Automation in ERP</p>
                           <div className="ser-btn1">
-                            <Link href="/blogs" className="animated-svg-link1">
+                            <Link href="/Blog" className="animated-svg-link1">
                               {t("Read More")}
                               <svg
                                 width={24}

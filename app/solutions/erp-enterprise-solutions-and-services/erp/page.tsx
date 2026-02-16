@@ -6679,7 +6679,7 @@ export default function EnterpriseSolutions() {
                       {t("RheinBrücke helps enterprises modernise systems, automate processes, and harness real-time insights to drive faster innovation and measurable business outcomes.")}
                     </p>
                     <div className="ser-btn">
-                      <Link    href="/digital-services-and-solutions"
+                      <Link    href="/solutions/digital-services-and-solutions"
                         className="animated-svg-link"
                       >
                         {t("Know More")}

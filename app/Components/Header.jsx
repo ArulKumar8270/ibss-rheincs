@@ -751,7 +751,7 @@ export default function Header() {
                                                                                                 <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
-                                                                                                    Read More
+                                                                                                    {t("Read More")}
                                                                                                     <NavArrowLeft />
                                                                                                 </Link>
                                                                                             </div>
@@ -769,7 +769,7 @@ export default function Header() {
                                                                                                 <Link href="/news-events/0aa57254-d987-4474-a229-0bd66716acb6"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
-                                                                                                    Read More
+                                                                                                    {t("Read More")}
                                                                                                     <NavArrowLeft />
                                                                                                 </Link>
                                                                                             </div>
@@ -787,7 +787,7 @@ export default function Header() {
                                                                                                 <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
-                                                                                                    Read More
+                                                                                                    {t("Read More")}
                                                                                                     <NavArrowLeft />
                                                                                                 </Link>
                                                                                             </div>
@@ -2236,56 +2236,6 @@ export default function Header() {
                                 <li>
                                     <Link href="/careers">{t("Careers")}</Link>
                                 </li>
-                                {/* Card Slider for About Us */}
-                                {/*<li class="submenu-card-item">*/}
-                                {/*    <div class="swiper submenu-swiper">*/}
-                                {/*        <div class="swiper-wrapper">*/}
-                                {/*            <div class="swiper-slide">*/}
-                                {/*                <div class="service-item-body">*/}
-                                {/*                    <div class="nave-bar-card-waber">*/}
-                                {/*                        <div class="nave-bar-card-content-waber">*/}
-                                {/*                            <div>*/}
-                                {/*                                <span>Case Study</span>*/}
-                                {/*                            </div>*/}
-                                {/*                            <p>10 Must-Have Features in a Modern ERP System</p>*/}
-                                {/*                            <div class="ser-btn1">*/}
-                                {/*                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                {/*                                    class="animated-svg-link1 btn-style-3">*/}
-                                {/*                                    Read*/}
-                                {/*                                    More*/}
-                                {/*                                    <?php include "navarrowleft.php" ?>*/}
-                                {/*                                </Link>*/}
-                                {/*                            </div>*/}
-                                {/*                        </div>*/}
-                                {/*                        <img src="/images/pr1.jpg" alt="">*/}
-                                {/*                    </div>*/}
-                                {/*                </div>*/}
-                                {/*            </div>*/}
-                                {/*            <div class="swiper-slide">*/}
-                                {/*                <div class="service-item-body">*/}
-                                {/*                    <div class="nave-bar-card-waber">*/}
-                                {/*                        <div class="nave-bar-card-content-waber">*/}
-                                {/*                            <div>*/}
-                                {/*                                <span>Case Study</span>*/}
-                                {/*                            </div>*/}
-                                {/*                            <p>10 Must-Have Features in a Modern ERP System</p>*/}
-                                {/*                            <div class="ser-btn1">*/}
-                                {/*                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                {/*                                    class="animated-svg-link1 btn-style-3">*/}
-                                {/*                                    Read*/}
-                                {/*                                    More*/}
-                                {/*                                    <?php include "navarrowleft.php" ?>*/}
-                                {/*                                </Link>*/}
-                                {/*                            </div>*/}
-                                {/*                        </div>*/}
-                                {/*                        <img src="/images/pr1.jpg" alt="">*/}
-                                {/*                    </div>*/}
-                                {/*                </div>*/}
-                                {/*            </div>*/}
-                                {/*        </div>*/}
-                                {/*        <div class="swiper-pagination"></div>*/}
-                                {/*    </div>*/}
-                                {/*</li>*/}
                             </ul>
                         </li>
                         {/* Solutions & Services */}
@@ -2450,55 +2400,6 @@ export default function Header() {
                                         <li>
                                             <Link href="/MeRLIN-strategic-sourcing-software">MeRLIN Sourcing</Link>
                                         </li>
-                                        {/*<li class="submenu-card-item">*/}
-                                        {/*    <div class="swiper submenu-swiper">*/}
-                                        {/*        <div class="swiper-wrapper">*/}
-                                        {/*            <div class="swiper-slide">*/}
-                                        {/*                <div class="service-item-body">*/}
-                                        {/*                    <div class="nave-bar-card-waber">*/}
-                                        {/*                        <div class="nave-bar-card-content-waber">*/}
-                                        {/*                            <div>*/}
-                                        {/*                                <span>Case Study</span>*/}
-                                        {/*                            </div>*/}
-                                        {/*                            <p>10 Must-Have Features in a Modern ERP System</p>*/}
-                                        {/*                            <div class="ser-btn1">*/}
-                                        {/*                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                        {/*                                    class="animated-svg-link1 btn-style-3">*/}
-                                        {/*                                    Read*/}
-                                        {/*                                    More*/}
-                                        {/*                                    <?php include "navarrowleft.php" ?>*/}
-                                        {/*                                </Link>*/}
-                                        {/*                            </div>*/}
-                                        {/*                        </div>*/}
-                                        {/*                        <img src="/images/pr1.jpg" alt="">*/}
-                                        {/*                    </div>*/}
-                                        {/*                </div>*/}
-                                        {/*            </div>*/}
-                                        {/*            <div class="swiper-slide">*/}
-                                        {/*                <div class="service-item-body">*/}
-                                        {/*                    <div class="nave-bar-card-waber">*/}
-                                        {/*                        <div class="nave-bar-card-content-waber">*/}
-                                        {/*                            <div>*/}
-                                        {/*                                <span>Case Study</span>*/}
-                                        {/*                            </div>*/}
-                                        {/*                            <p>10 Must-Have Features in a Modern ERP System</p>*/}
-                                        {/*                            <div class="ser-btn1">*/}
-                                        {/*                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                        {/*                                    class="animated-svg-link1 btn-style-3">*/}
-                                        {/*                                    Read*/}
-                                        {/*                                    More*/}
-                                        {/*                                    <?php include "navarrowleft.php" ?>*/}
-                                        {/*                                </Link>*/}
-                                        {/*                            </div>*/}
-                                        {/*                        </div>*/}
-                                        {/*                        <img src="/images/pr1.jpg" alt="">*/}
-                                        {/*                    </div>*/}
-                                        {/*                </div>*/}
-                                        {/*            </div>*/}
-                                        {/*        </div>*/}
-                                        {/*        <div class="swiper-pagination"></div>*/}
-                                        {/*    </div>*/}
-                                        {/*</li>*/}
                                     </ul>
                                 </li>
                                 {/* Enterprise Solutions & Services (Tab 2) */}
@@ -2684,55 +2585,6 @@ export default function Header() {
                                                 ERP Customer Excellence
                                             </Link>
                                         </li>
-                                        {/*<li class="submenu-card-item">*/}
-                                        {/*    <div class="swiper submenu-swiper">*/}
-                                        {/*        <div class="swiper-wrapper">*/}
-                                        {/*            <div class="swiper-slide">*/}
-                                        {/*                <div class="service-item-body">*/}
-                                        {/*                    <div class="nave-bar-card-waber">*/}
-                                        {/*                        <div class="nave-bar-card-content-waber">*/}
-                                        {/*                            <div>*/}
-                                        {/*                                <span>Case Study</span>*/}
-                                        {/*                            </div>*/}
-                                        {/*                            <p>10 Must-Have Features in a Modern ERP System</p>*/}
-                                        {/*                            <div class="ser-btn1">*/}
-                                        {/*                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                        {/*                                    class="animated-svg-link1 btn-style-3">*/}
-                                        {/*                                    Read*/}
-                                        {/*                                    More*/}
-                                        {/*                                    <?php include "navarrowleft.php" ?>*/}
-                                        {/*                                </Link>*/}
-                                        {/*                            </div>*/}
-                                        {/*                        </div>*/}
-                                        {/*                        <img src="/images/pr1.jpg" alt="">*/}
-                                        {/*                    </div>*/}
-                                        {/*                </div>*/}
-                                        {/*            </div>*/}
-                                        {/*            <div class="swiper-slide">*/}
-                                        {/*                <div class="service-item-body">*/}
-                                        {/*                    <div class="nave-bar-card-waber">*/}
-                                        {/*                        <div class="nave-bar-card-content-waber">*/}
-                                        {/*                            <div>*/}
-                                        {/*                                <span>Case Study</span>*/}
-                                        {/*                            </div>*/}
-                                        {/*                            <p>10 Must-Have Features in a Modern ERP System</p>*/}
-                                        {/*                            <div class="ser-btn1">*/}
-                                        {/*                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                        {/*                                    class="animated-svg-link1 btn-style-3">*/}
-                                        {/*                                    Read*/}
-                                        {/*                                    More*/}
-                                        {/*                                    <?php include "navarrowleft.php" ?>*/}
-                                        {/*                                </Link>*/}
-                                        {/*                            </div>*/}
-                                        {/*                        </div>*/}
-                                        {/*                        <img src="/images/pr1.jpg" alt="">*/}
-                                        {/*                    </div>*/}
-                                        {/*                </div>*/}
-                                        {/*            </div>*/}
-                                        {/*        </div>*/}
-                                        {/*        <div class="swiper-pagination"></div>*/}
-                                        {/*    </div>*/}
-                                        {/*</li>*/}
                                     </ul>
                                 </li>
                                 {/* Digital Solutions & Services (Tab 3) */}
@@ -3011,55 +2863,6 @@ export default function Header() {
                                                 </li>
                                             </ul>
                                         </li>
-                                        {/*<li class="submenu-card-item">*/}
-                                        {/*    <div class="swiper submenu-swiper">*/}
-                                        {/*        <div class="swiper-wrapper">*/}
-                                        {/*            <div class="swiper-slide">*/}
-                                        {/*                <div class="service-item-body">*/}
-                                        {/*                    <div class="nave-bar-card-waber">*/}
-                                        {/*                        <div class="nave-bar-card-content-waber">*/}
-                                        {/*                            <div>*/}
-                                        {/*                                <span>Case Study</span>*/}
-                                        {/*                            </div>*/}
-                                        {/*                            <p>10 Must-Have Features in a Modern ERP System</p>*/}
-                                        {/*                            <div class="ser-btn1">*/}
-                                        {/*                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                        {/*                                    class="animated-svg-link1 btn-style-3">*/}
-                                        {/*                                    Read*/}
-                                        {/*                                    More*/}
-                                        {/*                                    <?php include "navarrowleft.php" ?>*/}
-                                        {/*                                </Link>*/}
-                                        {/*                            </div>*/}
-                                        {/*                        </div>*/}
-                                        {/*                        <img src="/images/pr1.jpg" alt="">*/}
-                                        {/*                    </div>*/}
-                                        {/*                </div>*/}
-                                        {/*            </div>*/}
-                                        {/*            <div class="swiper-slide">*/}
-                                        {/*                <div class="service-item-body">*/}
-                                        {/*                    <div class="nave-bar-card-waber">*/}
-                                        {/*                        <div class="nave-bar-card-content-waber">*/}
-                                        {/*                            <div>*/}
-                                        {/*                                <span>Case Study</span>*/}
-                                        {/*                            </div>*/}
-                                        {/*                            <p>10 Must-Have Features in a Modern ERP System</p>*/}
-                                        {/*                            <div class="ser-btn1">*/}
-                                        {/*                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                        {/*                                    class="animated-svg-link1 btn-style-3">*/}
-                                        {/*                                    Read*/}
-                                        {/*                                    More*/}
-                                        {/*                                    <?php include "navarrowleft.php" ?>*/}
-                                        {/*                                </Link>*/}
-                                        {/*                            </div>*/}
-                                        {/*                        </div>*/}
-                                        {/*                        <img src="/images/pr1.jpg" alt="">*/}
-                                        {/*                    </div>*/}
-                                        {/*                </div>*/}
-                                        {/*            </div>*/}
-                                        {/*        </div>*/}
-                                        {/*        <div class="swiper-pagination"></div>*/}
-                                        {/*    </div>*/}
-                                        {/*</li>*/}
                                     </ul>
                                 </li>
                             </ul>
@@ -3176,56 +2979,6 @@ export default function Header() {
                                 <li>
                                     <Link href="/interior-design">Interior Design</Link>
                                 </li>
-                                {/* Card Slider for Industries */}
-                                {/*<li class="submenu-card-item">*/}
-                                {/*    <div class="swiper submenu-swiper">*/}
-                                {/*        <div class="swiper-wrapper">*/}
-                                {/*            <div class="swiper-slide">*/}
-                                {/*                <div class="service-item-body">*/}
-                                {/*                    <div class="nave-bar-card-waber">*/}
-                                {/*                        <div class="nave-bar-card-content-waber">*/}
-                                {/*                            <div>*/}
-                                {/*                                <span>Case Study</span>*/}
-                                {/*                            </div>*/}
-                                {/*                            <p>10 Must-Have Features in a Modern ERP System</p>*/}
-                                {/*                            <div class="ser-btn1">*/}
-                                {/*                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                {/*                                    class="animated-svg-link1 btn-style-3">*/}
-                                {/*                                    Read*/}
-                                {/*                                    More*/}
-                                {/*                                    <?php include "navarrowleft.php" ?>*/}
-                                {/*                                </Link>*/}
-                                {/*                            </div>*/}
-                                {/*                        </div>*/}
-                                {/*                        <img src="/images/pr1.jpg" alt="">*/}
-                                {/*                    </div>*/}
-                                {/*                </div>*/}
-                                {/*            </div>*/}
-                                {/*            <div class="swiper-slide">*/}
-                                {/*                <div class="service-item-body">*/}
-                                {/*                    <div class="nave-bar-card-waber">*/}
-                                {/*                        <div class="nave-bar-card-content-waber">*/}
-                                {/*                            <div>*/}
-                                {/*                                <span>Case Study</span>*/}
-                                {/*                            </div>*/}
-                                {/*                            <p>10 Must-Have Features in a Modern ERP System</p>*/}
-                                {/*                            <div class="ser-btn1">*/}
-                                {/*                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                {/*                                    class="animated-svg-link1 btn-style-3">*/}
-                                {/*                                    Read*/}
-                                {/*                                    More*/}
-                                {/*                                    <?php include "navarrowleft.php" ?>*/}
-                                {/*                                </Link>*/}
-                                {/*                            </div>*/}
-                                {/*                        </div>*/}
-                                {/*                        <img src="/images/pr1.jpg" alt="">*/}
-                                {/*                    </div>*/}
-                                {/*                </div>*/}
-                                {/*            </div>*/}
-                                {/*        </div>*/}
-                                {/*        <div class="swiper-pagination"></div>*/}
-                                {/*    </div>*/}
-                                {/*</li>*/}
                             </ul>
                         </li>
                         {/* Resources */}
@@ -3324,56 +3077,6 @@ export default function Header() {
                                 <li>
                                     <Link href="/news-events">{t("News and Events")}</Link>
                                 </li>
-                                {/* Card Slider for Resources */}
-                                {/*<li class="submenu-card-item">*/}
-                                {/*    <div class="swiper submenu-swiper">*/}
-                                {/*        <div class="swiper-wrapper">*/}
-                                {/*            <div class="swiper-slide">*/}
-                                {/*                <div class="service-item-body">*/}
-                                {/*                    <div class="nave-bar-card-waber">*/}
-                                {/*                        <div class="nave-bar-card-content-waber">*/}
-                                {/*                            <div>*/}
-                                {/*                                <span>Case Study</span>*/}
-                                {/*                            </div>*/}
-                                {/*                            <p>10 Must-Have Features in a Modern ERP System</p>*/}
-                                {/*                            <div class="ser-btn1">*/}
-                                {/*                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                {/*                                    class="animated-svg-link1 btn-style-3">*/}
-                                {/*                                    Read*/}
-                                {/*                                    More*/}
-                                {/*                                    <?php include "navarrowleft.php" ?>*/}
-                                {/*                                </Link>*/}
-                                {/*                            </div>*/}
-                                {/*                        </div>*/}
-                                {/*                        <img src="/images/pr1.jpg" alt="">*/}
-                                {/*                    </div>*/}
-                                {/*                </div>*/}
-                                {/*            </div>*/}
-                                {/*            <div class="swiper-slide">*/}
-                                {/*                <div class="service-item-body">*/}
-                                {/*                    <div class="nave-bar-card-waber">*/}
-                                {/*                        <div class="nave-bar-card-content-waber">*/}
-                                {/*                            <div>*/}
-                                {/*                                <span>Case Study</span>*/}
-                                {/*                            </div>*/}
-                                {/*                            <p>10 Must-Have Features in a Modern ERP System</p>*/}
-                                {/*                            <div class="ser-btn1">*/}
-                                {/*                                <Link href="https://casestudy.rheincs.com/casestudies/how-an-engineering-procurement/"*/}
-                                {/*                                    class="animated-svg-link1 btn-style-3">*/}
-                                {/*                                    Read*/}
-                                {/*                                    More*/}
-                                {/*                                    <?php include "navarrowleft.php" ?>*/}
-                                {/*                                </Link>*/}
-                                {/*                            </div>*/}
-                                {/*                        </div>*/}
-                                {/*                        <img src="/images/pr1.jpg" alt="">*/}
-                                {/*                    </div>*/}
-                                {/*                </div>*/}
-                                {/*            </div>*/}
-                                {/*        </div>*/}
-                                {/*        <div class="swiper-pagination"></div>*/}
-                                {/*    </div>*/}
-                                {/*</li>*/}
                             </ul>
                         </li>
                         {/* Contact Us */}
