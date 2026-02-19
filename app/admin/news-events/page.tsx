@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { createClient } from '@/lib/supabase-browser'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
@@ -17,7 +17,7 @@ interface NewsEvent {
   excerpt: string
   type: 'news' | 'event'
   event_date: string | null
-  location: string | null
+  location: string | null 
   featured_image: string | null
   published: boolean
   created_at: string
@@ -45,6 +45,14 @@ export default function AdminNewsEventsPage() {
     published: false
   })
   const supabase = createClient()
+  const formSectionRef = useRef<HTMLDivElement>(null)
+
+  // Scroll to form when opening create/edit
+  useEffect(() => {
+    if (showForm && formSectionRef.current) {
+      formSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [showForm, editingItem])
 
   // Handle image upload in editor
   const handleEditorImageUpload = async () => {
@@ -410,7 +418,7 @@ export default function AdminNewsEventsPage() {
         .from('news-event-images')
         .getPublicUrl(filePath)
 
-      setFormData({ ...formData, featured_image: publicUrl })
+      setFormData(prev => ({ ...prev, featured_image: publicUrl }))
       setUploadProgress(100)
       alert('Image uploaded successfully!')
     } catch (error: any) {
@@ -438,15 +446,16 @@ export default function AdminNewsEventsPage() {
 
   const handleEdit = (item: NewsEvent) => {
     setEditingItem(item)
-    // Convert ISO date to datetime-local format
+    // Convert ISO dates to datetime-local format (YYYY-MM-DDTHH:mm)
     const createdDate = item.created_at ? new Date(item.created_at).toISOString().slice(0, 16) : ''
+    const eventDate = item.event_date ? new Date(item.event_date).toISOString().slice(0, 16) : ''
     setFormData({
       title: item.title,
       slug: item.slug,
       content: item.content,
       excerpt: item.excerpt,
       type: item.type,
-      event_date: item.event_date || '',
+      event_date: eventDate,
       location: item.location || '',
       featured_image: item.featured_image || '',
       created_at: createdDate,
@@ -690,20 +699,23 @@ export default function AdminNewsEventsPage() {
       </div>
 
       {showForm && (
-        <div style={{
-          background: '#fff',
-          borderRadius: '12px',
-          padding: '25px',
-          marginBottom: '30px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-        }}>
+        <div
+          ref={formSectionRef}
+          style={{
+            background: '#fff',
+            borderRadius: '12px',
+            padding: '25px',
+            marginBottom: '30px',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+          }}
+        >
           <h2 style={{ marginBottom: '20px', color: '#333', fontWeight: 'bold' }}>{editingItem ? 'Edit' : 'Create'} {formData.type === 'news' ? 'News' : 'Event'}</h2>
           <form onSubmit={handleSubmit}>
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Type *</label>
               <select
                 value={formData.type}
-                onChange={(e) => setFormData({ ...formData, type: e.target.value as 'news' | 'event' })}
+                onChange={(e) => setFormData(prev => ({ ...prev, type: e.target.value as 'news' | 'event' }))}
                 required
                 style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px', background: '#fff' }}
               >
@@ -731,7 +743,7 @@ export default function AdminNewsEventsPage() {
               <input
                 type="text"
                 value={formData.slug}
-                onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
+                onChange={(e) => setFormData(prev => ({ ...prev, slug: e.target.value }))}
                 required
                 placeholder="URL-friendly identifier"
                 style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
@@ -744,7 +756,7 @@ export default function AdminNewsEventsPage() {
                   <input
                     type="datetime-local"
                     value={formData.event_date}
-                    onChange={(e) => setFormData({ ...formData, event_date: e.target.value })}
+                    onChange={(e) => setFormData(prev => ({ ...prev, event_date: e.target.value }))}
                     style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
                   />
                 </div>
@@ -753,7 +765,7 @@ export default function AdminNewsEventsPage() {
                   <input
                     type="text"
                     value={formData.location}
-                    onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                    onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
                     style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
                   />
                 </div>
@@ -765,7 +777,7 @@ export default function AdminNewsEventsPage() {
                 <ReactQuill
                   theme="snow"
                   value={formData.excerpt}
-                  onChange={(value: string) => setFormData({ ...formData, excerpt: value })}
+                  onChange={(value: string) => setFormData(prev => ({ ...prev, excerpt: value }))}
                   modules={quillModules}
                   formats={quillFormats}
                   placeholder="Short excerpt/summary"
@@ -779,7 +791,7 @@ export default function AdminNewsEventsPage() {
                 <ReactQuill
                   theme="snow"
                   value={formData.content}
-                  onChange={(value: string) => setFormData({ ...formData, content: value })}
+                  onChange={(value: string) => setFormData(prev => ({ ...prev, content: value }))}
                   modules={quillModules}
                   formats={quillFormats}
                   placeholder="Main content"
@@ -868,7 +880,7 @@ export default function AdminNewsEventsPage() {
                 <input
                   type="url"
                   value={formData.featured_image}
-                  onChange={(e) => setFormData({ ...formData, featured_image: e.target.value })}
+                  onChange={(e) => setFormData(prev => ({ ...prev, featured_image: e.target.value }))}
                   placeholder="Or enter image URL: https://example.com/image.jpg"
                   style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
                 />
@@ -897,7 +909,7 @@ export default function AdminNewsEventsPage() {
                 <input
                   type="checkbox"
                   checked={formData.published}
-                  onChange={(e) => setFormData({ ...formData, published: e.target.checked })}
+                  onChange={(e) => setFormData(prev => ({ ...prev, published: e.target.checked }))}
                   style={{ cursor: 'pointer' }}
                 />
                 Published

@@ -15,6 +15,7 @@ interface Blog {
   author: string;
   featured_image: string | null;
   category: string;
+  language: string | null;
   published: boolean;
   created_at: string;
   updated_at: string;
@@ -52,26 +53,28 @@ export default function Blog() {
 
   useEffect(() => {
     checkAdminStatus();
-    fetchBlogs();
     fetchIndustries();
-    
-    // Refetch blogs when window gains focus (user returns to tab)
+  }, []);
+
+  // Fetch blogs when language (or focus/interval) changes – show blogs for current language only
+  useEffect(() => {
+    fetchBlogs();
+
     const handleFocus = () => {
       fetchBlogs();
     };
-    
-    // Refetch blogs periodically (every 30 seconds) to catch new records
+
     const intervalId = setInterval(() => {
       fetchBlogs();
     }, 30000);
-    
+
     window.addEventListener('focus', handleFocus);
-    
+
     return () => {
       window.removeEventListener('focus', handleFocus);
       clearInterval(intervalId);
     };
-  }, []);
+  }, [language]);
 
   const checkAdminStatus = async () => {
     try {
@@ -101,25 +104,31 @@ export default function Blog() {
 
   const fetchBlogs = async () => {
     try {
+      setLoading(true);
       // Check if user is admin
       const { data: { user } } = await supabase.auth.getUser();
       const userIsAdmin = !!user;
       setIsAdmin(userIsAdmin);
 
-      // Add cache-busting: use timestamp to ensure fresh data
-      const timestamp = Date.now();
       let query = supabase
         .from('blogs')
         .select('*')
         .order('created_at', { ascending: false });
 
+      // Filter by current language: show only blogs for English or German
+      const currentLang = language === 'German' ? 'German' : 'English';
+      if (currentLang === 'German') {
+        query = query.eq('language', 'German');
+      } else {
+        // English: include rows where language is 'English' or null (legacy)
+        query = query.or('language.eq.English,language.is.null');
+      }
+
       // If not admin, only fetch published blogs
       if (!userIsAdmin) {
         query = query.eq('published', true);
       }
-      // If admin, fetch all blogs (published and unpublished)
 
-      // Add cache-busting header to bypass any caching
       const { data, error } = await query;
 
       if (error) throw error;
@@ -176,10 +185,10 @@ export default function Blog() {
   const endIndex = startIndex + itemsPerPage;
   const gridBlogs = filteredBlogs.slice(startIndex, endIndex);
 
-  // Reset to page 1 when filters change
+  // Reset to page 1 when filters or language change
   useEffect(() => {
     setCurrentPage(1);
-  }, [selectedCategory, selectedIndustries, searchTerm]);
+  }, [selectedCategory, selectedIndustries, searchTerm, language]);
 
   // Handle industry checkbox change
   const handleIndustryChange = (industrySlug: string) => {

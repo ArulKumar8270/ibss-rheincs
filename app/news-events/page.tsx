@@ -97,6 +97,20 @@ export default function EnterpriseSolutions() {
     }
     return 'fas fa-newspaper';
   };
+
+  /** Strip HTML tags and decode entities so excerpt displays as plain text. */
+  const plainExcerpt = (html: string) => {
+    if (!html || typeof html !== 'string') return '';
+    const decoded = html
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;|&apos;/g, "'");
+    return decoded.replace(/<[^>]*>/g, '').trim();
+  };
+
   return (
     <CommomLayout>
       <>
@@ -184,9 +198,9 @@ export default function EnterpriseSolutions() {
                               />
                             )}
                             {item.excerpt && (
-                              <p className="mt-3">{item.excerpt}</p>
+                              <p className="mt-3">{plainExcerpt(item.excerpt)}</p>
                             )}
-                            {index < 3 && (
+                            
                               <Link href={`/news-events/${item.id}`} className="animated-svg-link hr-link">
                                 Read More
                                 <span className="svg-container ">
@@ -290,7 +304,7 @@ export default function EnterpriseSolutions() {
                                   </span>
                                 </span>
                               </Link>
-                            )}
+                            
                           </div>
                         </div>
                       </div>

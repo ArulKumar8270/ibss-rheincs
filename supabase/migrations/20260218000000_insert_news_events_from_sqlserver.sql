@@ -1,0 +1,46 @@
+-- ============================================
+-- NewsEvents: SQL Server [dbo].[NewsEvents] → Supabase news_events
+-- ============================================
+-- Your dbscript.sql had only CREATE TABLE for [dbo].[NewsEvents]; no INSERT data.
+-- Use this migration after you have the data (e.g. export from SQL Server to CSV
+-- and run: node scripts/import-news-events-to-supabase.js < path/to/NewsEvents.csv)
+--
+-- Column mapping (SQL Server → Supabase):
+--   NewsAndEventsID  → (omitted; Supabase uses id UUID default gen_random_uuid())
+--   Title            → title
+--   Description      → content
+--   ThumbnailImage   → featured_image (or NewsImage if ThumbnailImage empty)
+--   NewsImage        → (alternative for featured_image)
+--   MetaTagDescription → excerpt
+--   NewsEventsDate   → event_date
+--   Status           → published
+--   CreatedOn        → created_at
+--   slug             → derived from title (required, unique)
+--   type             → 'news' (default)
+--   location         → NULL (no source column)
+-- ============================================
+
+-- Example: single row insert (run in Supabase SQL Editor after replacing values)
+-- INSERT INTO public.news_events (title, slug, content, excerpt, type, event_date, featured_image, published, created_at)
+-- VALUES (
+--   'Your Title',
+--   'your-title',
+--   'Your description/content.',
+--   'Meta description or NULL',
+--   'news',
+--   '2024-01-15 00:00:00+00',
+--   NULL,
+--   true,
+--   NOW()
+-- )
+-- ON CONFLICT (slug) DO UPDATE SET
+--   title = EXCLUDED.title,
+--   content = EXCLUDED.content,
+--   excerpt = EXCLUDED.excerpt,
+--   event_date = EXCLUDED.event_date,
+--   featured_image = EXCLUDED.featured_image,
+--   published = EXCLUDED.published,
+--   updated_at = NOW();
+
+-- No automatic inserts here (no source data in dbscript.sql).
+-- Use scripts/import-news-events-to-supabase.js with a CSV export of NewsEvents.

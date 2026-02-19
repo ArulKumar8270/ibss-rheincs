@@ -108,12 +108,21 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
     });
   };
 
-  // Replace &nbsp; with regular spaces in HTML content to allow proper word breaking
+  // Decode HTML entities (e.g. &lt; → <) so stored/escaped HTML renders correctly,
+  // then replace &nbsp; with regular spaces for proper word breaking.
   const processContent = (html: string): string => {
     if (!html) return '';
-    // Replace &nbsp; with regular spaces, but preserve HTML structure
-    // This allows words to break naturally at word boundaries
-    return html.replace(/&nbsp;/g, ' ');
+    // Decode common entities so double-escaped content from DB/API renders as HTML
+    // Decode &amp; first so sequences like &amp;lt; correctly become <
+    let out = html
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&apos;/g, "'");
+    // Replace &nbsp; with regular spaces to allow proper word breaking
+    return out.replace(/&nbsp;/g, ' ');
   };
 
   // Only show loading if we don't have initial item data

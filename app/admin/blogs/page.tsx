@@ -19,6 +19,7 @@ interface Blog {
   author_linkedin: string | null
   featured_image: string | null
   category: string
+  language: string | null
   published: boolean
   created_at: string
   updated_at: string
@@ -45,6 +46,7 @@ export default function AdminBlogsPage() {
     author_linkedin: '',
     featured_image: '',
     category: 'all',
+    language: 'English',
     published: false,
     created_at: '',
     industries: [] as string[]
@@ -206,6 +208,7 @@ export default function AdminBlogsPage() {
         content: finalContent,
         author_linkedin: formData.author_linkedin.trim() || null,
         industries: formData.industries.length > 0 ? formData.industries : null,
+        language: formData.language || 'English',
         created_at: formData.created_at ? new Date(formData.created_at).toISOString() : new Date().toISOString(),
         updated_at: new Date().toISOString()
       }
@@ -233,6 +236,7 @@ export default function AdminBlogsPage() {
         author_linkedin: '',
         featured_image: '',
         category: 'all',
+        language: 'English',
         published: false,
         created_at: '',
         industries: []
@@ -298,7 +302,7 @@ export default function AdminBlogsPage() {
         .from('blog-images')
         .getPublicUrl(filePath)
 
-      setFormData({ ...formData, featured_image: publicUrl })
+      setFormData(prev => ({ ...prev, featured_image: publicUrl }))
       setUploadProgress(100)
       alert('Image uploaded successfully!')
     } catch (error: any) {
@@ -674,6 +678,7 @@ export default function AdminBlogsPage() {
         author_linkedin: blog.author_linkedin || '',
         featured_image: blog.featured_image || '',
         category: blog.category || 'all',
+        language: blog.language || 'English',
         published: blog.published,
         created_at: createdDate,
         industries: blog.industries || []
@@ -906,6 +911,7 @@ export default function AdminBlogsPage() {
               author_linkedin: '',
               featured_image: '',
               category: 'all',
+              language: 'English',
               published: false,
               created_at: '',
               industries: []
@@ -1206,7 +1212,7 @@ export default function AdminBlogsPage() {
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Category *</label>
               <select
                 value={formData.category}
-                onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                onChange={(e) => setFormData(prev => ({ ...prev, category: e.target.value }))}
                 required
                 style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px', background: '#fff' }}
               >
@@ -1216,6 +1222,21 @@ export default function AdminBlogsPage() {
                   </option>
                 ))}
               </select>
+            </div>
+            <div style={{ marginBottom: '15px' }}>
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Language *</label>
+              <select
+                value={formData.language}
+                onChange={(e) => setFormData(prev => ({ ...prev, language: e.target.value }))}
+                required
+                style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px', background: '#fff' }}
+              >
+                <option value="English">English</option>
+                <option value="German">German</option>
+              </select>
+              <small style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '5px' }}>
+                Content language (matches site language selector)
+              </small>
             </div>
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>
@@ -1358,6 +1379,7 @@ export default function AdminBlogsPage() {
                   <th style={{ padding: '18px 20px', textAlign: 'left', color: '#475569', fontWeight: '700', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>DATE & TIME</th>
                   <th style={{ padding: '18px 20px', textAlign: 'left', color: '#475569', fontWeight: '700', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>TITLE</th>
                   <th style={{ padding: '18px 20px', textAlign: 'left', color: '#475569', fontWeight: '700', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>CATEGORY</th>
+                  <th style={{ padding: '18px 20px', textAlign: 'left', color: '#475569', fontWeight: '700', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>LANGUAGE</th>
                   <th style={{ padding: '18px 20px', textAlign: 'left', color: '#475569', fontWeight: '700', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>AUTHOR</th>
                   <th style={{ padding: '18px 20px', textAlign: 'left', color: '#475569', fontWeight: '700', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>STATUS</th>
                   <th style={{ padding: '18px 20px', textAlign: 'left', color: '#475569', fontWeight: '700', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>ACTIONS</th>
@@ -1409,6 +1431,9 @@ export default function AdminBlogsPage() {
                       }}>
                         {categories.find(c => c.value === (blog.category || 'all'))?.label || 'All'}
                       </span>
+                    </td>
+                    <td style={{ padding: '18px 20px', color: '#475569', fontSize: '14px' }}>
+                      {blog.language || 'English'}
                     </td>
                     <td style={{ padding: '18px 20px', color: '#475569', fontSize: '14px' }}>
                       {blog.author || <span style={{ color: '#cbd5e1' }}>-</span>}
