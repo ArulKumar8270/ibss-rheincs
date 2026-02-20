@@ -5,7 +5,9 @@ import CommomLayout from "../../Components/CommomLayout";
 import Link from "next/link";
 import TestimonialandAward from "../../Components/TestimonialandAward";
 import Awards from "../../Components/Awards";
+import {useTranslation} from "../../hooks/useTranslation";
 export default function EnterpriseSolutions() {
+  const { t, language } = useTranslation();
     return (
 
         <CommomLayout>
@@ -17,26 +19,20 @@ export default function EnterpriseSolutions() {
                 <div className="hero banner aboutbanner">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-7">
+                            <div className="col-lg-6">
                                 <div className="hero-content ">
                                     <div className="section-title">
                                         <h1 data-cursor="-opaque">
-                                            Driving Business Outcomes Through Technology
+                                            {t("Driving Business Outcomes Through Technology")}
                                         </h1>
                                         <div className="hero-video-content wow fadeInUp mt-3">
                                             <p>
-                                                RheinBrücke powers digital transformation for enterprises to
-                                                modernise, grow, and lead.{" "}
-                                            </p>
-                                            <p>
-                                                With 300+ customers, we deliver ERP modernisation,
-                                                integration, data intelligence, and AI automation for a
-                                                digital and sustainable future.
+                                                {t("RheinBrücke powers digital transformation for enterprises to modernise, grow, and lead.")} {t("With 300+ customers, we deliver ERP modernisation, integration, data intelligence, and AI automation for a digital and sustainable future.")}
                                             </p>
                                         </div>
                                         <div className="ser-btn2 mt-4">
                                             <Link href="/contact-us" className="animated-svg-link1 btn-style-3">
-                                                Contact Us
+                                                {t("Contact Us")}
                                                 <span className="svg-container ">
                                                     <span className=" left">
                                                         <svg
@@ -161,12 +157,10 @@ export default function EnterpriseSolutions() {
                                 {/* Section Title Start */}
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        We Connect People With Technology
+                                        {t("We Connect People With Technology")}
                                     </h2>
                                     <p>
-                                        We help organisations bridge the gap between strategy and
-                                        execution, delivering measurable, technology-enabled outcomes that
-                                        drive competitive advantage.
+                                        {t("We help organisations bridge the gap between strategy and execution, delivering measurable, technology-enabled outcomes that drive competitive advantage.")}
                                     </p>
                                 </div>
                                 {/* Section Title End */}
@@ -341,12 +335,10 @@ export default function EnterpriseSolutions() {
                                 {/* Section Title Start */}
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        We Connect People With Technology
+                                        {t("We Connect People With Technology")}
                                     </h2>
                                     <p>
-                                        We help organisations bridge the gap between strategy and
-                                        execution, delivering measurable, technology-enabled outcomes that
-                                        drive competitive advantage.
+                                        {t("We help organisations bridge the gap between strategy and execution, delivering measurable, technology-enabled outcomes that drive competitive advantage.")}
                                     </p>
                                 </div>
                                 {/* Section Title End */}
@@ -522,16 +514,13 @@ export default function EnterpriseSolutions() {
                                 <div className="mission-left">
                                     <div className="missionhead">
                                         <img src="/images/quotes.svg" alt="" />
-                                        <h5>Our Vision</h5>
+                                        <h5>{t("Our Vision")}</h5>
                                     </div>
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        ‘Analyse, Integrate and Transform’
+                                        '{t("Analyse, Integrate and Transform")}'
                                     </h2>
                                     <p>
-                                        Outlines our brand promise and vision to drive the adoption of
-                                        technology solutions, and empower our associates to deliver
-                                        superior solutions to help our customers and partners achieve
-                                        long-term sustainable growth.
+                                        {t("Outlines our brand promise and vision to drive the adoption of technology solutions, and empower our associates to deliver superior solutions to help our customers and partners achieve long-term sustainable growth.")}
                                     </p>
                                 </div>
                             </div>
@@ -541,12 +530,11 @@ export default function EnterpriseSolutions() {
                                 <div className="mission-left width80 mission-leftpd">
                                     <div className="missionhead">
                                         <img src="/images/quotes.svg" alt="" />
-                                        <h5>Our Mission</h5>
+                                        <h5>{t("Our Mission")}</h5>
                                     </div>
                                     {/* <h2>‘Analyse, Integrate and Transform’</h2> */}
                                     <p>
-                                        To help enterprises achieve strategic growth through pragmatic,
-                                        outcome-driven digital solutions.
+                                        {t("To help enterprises achieve strategic growth through pragmatic, outcome-driven digital solutions.")}
                                     </p>
                                 </div>
                             </div>
@@ -575,7 +563,7 @@ export default function EnterpriseSolutions() {
                                 <div className="section-title">
                                     {/* <h3 class="wow fadeInUp">key benefits</h3> */}
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Why Enterprises Work with Us
+                                        {t("Why Enterprises Work with Us")}
                                     </h2>
                                 </div>
                                 <div className="row mt-5">
@@ -666,10 +654,9 @@ export default function EnterpriseSolutions() {
                                                 </svg>
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Execution - First Mindset</h3>
+                                                <h3>{t("Execution - First Mindset")}</h3>
                                                 <p>
-                                                    We turn strategies into working systems with speed, clarity,
-                                                    and control.
+                                                    {t("We turn strategies into working systems with speed, clarity, and control.")}
                                                 </p>
                                             </div>
                                         </div>
@@ -806,10 +793,9 @@ export default function EnterpriseSolutions() {
                                                 </svg>
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Business-Led, Tech-Enabled</h3>
+                                                <h3>{t("Business-Led, Tech-Enabled")}</h3>
                                                 <p>
-                                                    Every engagement is grounded in business value, not just
-                                                    technology implementation.
+                                                    {t("Every engagement is grounded in business value, not just technology implementation.")}
                                                 </p>
                                             </div>
                                         </div>
@@ -869,10 +855,9 @@ export default function EnterpriseSolutions() {
                                                 </svg>
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Enterprise-Grade Solutions</h3>
+                                                <h3>{t("Enterprise-Grade Solutions")}</h3>
                                                 <p>
-                                                    Scalable, cloud-ready systems designed to meet evolving
-                                                    enterprise needs.
+                                                    {t("Scalable, cloud-ready systems designed to meet evolving enterprise needs.")}
                                                 </p>
                                             </div>
                                         </div>
@@ -970,10 +955,9 @@ export default function EnterpriseSolutions() {
                                                 </svg>
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Global Delivery, Local Touch</h3>
+                                                <h3>{t("Global Delivery, Local Touch")}</h3>
                                                 <p>
-                                                    A hybrid model combining offshore capability with local
-                                                    responsiveness.
+                                                    {t("A hybrid model combining offshore capability with local responsiveness.")}
                                                 </p>
                                             </div>
                                         </div>
@@ -1077,14 +1061,9 @@ export default function EnterpriseSolutions() {
                                                 </svg>
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Industry Focus </h3>
+                                                <h3>{t("Industry Focus")}</h3>
                                                 <p>
-                                                    Deep expertise in manufacturing, retail, EPC, distribution,
-                                                    Brand Owners &amp; Vertical Retailers, Retail Industry,
-                                                    Distribution &amp; Supply Chain, Discrete Manufacturing,
-                                                    Automotive Industry, Engineering, Procurement &amp;
-                                                    Construction, Process Manufacturing, Private Equity &amp;
-                                                    Funding-backed Ventures.
+                                                    {t("Deep expertise in manufacturing, retail, EPC, distribution, Brand Owners & Vertical Retailers, Retail Industry, Distribution & Supply Chain, Discrete Manufacturing, Automotive Industry, Engineering, Procurement & Construction, Process Manufacturing, Private Equity & Funding-backed Ventures.")}
                                                 </p>
                                             </div>
                                         </div>
@@ -1180,10 +1159,9 @@ export default function EnterpriseSolutions() {
                                                 </svg>
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Platform Partnership and Alliances</h3>
+                                                <h3>{t("Platform Partnership and Alliances")}</h3>
                                                 <p>
-                                                    Epicor Premium Partner, Microsoft ISV Partner, Microsoft AI
-                                                    Cloud Partner, Protiviti ME, Moro Hub, SAP and National Technology Enterprises Company and more.
+                                                    {t("Epicor Premium Partner, Microsoft ISV Partner, Microsoft AI Cloud Partner, Protiviti ME, Moro Hub, SAP and National Technology Enterprises Company and more.")}
                                                 </p>
                                             </div>
                                         </div>
@@ -1203,7 +1181,7 @@ export default function EnterpriseSolutions() {
                                 <div className="section-title">
                                     {/* <h3 class="wow fadeInUp">key benefits</h3> */}
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Why Enterprises Work with Us
+                                        {t("Why Enterprises Work with Us")}
                                     </h2>
                                 </div>
                                 <div className="row mt-5">
@@ -1294,10 +1272,9 @@ export default function EnterpriseSolutions() {
                                                 </svg>
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Execution - First Mindset</h3>
+                                                <h3>{t("Execution - First Mindset")}</h3>
                                                 <p>
-                                                    We turn strategies into working systems with speed, clarity,
-                                                    and control.
+                                                    {t("We turn strategies into working systems with speed, clarity, and control.")}
                                                 </p>
                                             </div>
                                         </div>
@@ -1432,10 +1409,9 @@ export default function EnterpriseSolutions() {
                                                 </svg>
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Business-Led, Tech-Enabled</h3>
+                                                <h3>{t("Business-Led, Tech-Enabled")}</h3>
                                                 <p>
-                                                    Every engagement is grounded in business value, not just
-                                                    technology implementation.
+                                                    {t("Every engagement is grounded in business value, not just technology implementation.")}
                                                 </p>
                                             </div>
                                         </div>
@@ -1537,14 +1513,9 @@ export default function EnterpriseSolutions() {
                                                 </svg>
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Industry Focus </h3>
+                                                <h3>{t("Industry Focus")}</h3>
                                                 <p>
-                                                    Deep expertise in manufacturing, retail, EPC, distribution,
-                                                    Brand Owners &amp; Vertical Retailers, Retail Industry,
-                                                    Distribution &amp; Supply Chain, Discrete Manufacturing,
-                                                    Automotive Industry, Engineering, Procurement &amp;
-                                                    Construction, Process Manufacturing, Private Equity &amp;
-                                                    Funding-backed Ventures.
+                                                    {t("Deep expertise in manufacturing, retail, EPC, distribution, Brand Owners & Vertical Retailers, Retail Industry, Distribution & Supply Chain, Discrete Manufacturing, Automotive Industry, Engineering, Procurement & Construction, Process Manufacturing, Private Equity & Funding-backed Ventures.")}
                                                 </p>
                                             </div>
                                         </div>
@@ -1604,10 +1575,9 @@ export default function EnterpriseSolutions() {
                                                 </svg>
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Enterprise-Grade Solutions</h3>
+                                                <h3>{t("Enterprise-Grade Solutions")}</h3>
                                                 <p>
-                                                    Scalable, cloud-ready systems designed to meet evolving
-                                                    enterprise needs.
+                                                    {t("Scalable, cloud-ready systems designed to meet evolving enterprise needs.")}
                                                 </p>
                                             </div>
                                         </div>
@@ -1703,10 +1673,9 @@ export default function EnterpriseSolutions() {
                                                 </svg>
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Global Delivery, Local Touch</h3>
+                                                <h3>{t("Global Delivery, Local Touch")}</h3>
                                                 <p>
-                                                    A hybrid model combining offshore capability with local
-                                                    responsiveness.
+                                                    {t("A hybrid model combining offshore capability with local responsiveness.")}
                                                 </p>
                                             </div>
                                         </div>
@@ -1800,10 +1769,9 @@ export default function EnterpriseSolutions() {
                                                 </svg>
                                             </div>
                                             <div className="benefits-steps-content">
-                                                <h3>Platform Partnerships and Alliances</h3>
+                                                <h3>{t("Platform Partnerships and Alliances")}</h3>
                                                 <p>
-                                                    Epicor Premium Partner, Microsoft ISV Partner, Microsoft AI
-                                                    Cloud Partner, Protiviti ME, Moro Hub, N Tech and more.
+                                                    {t("Epicor Premium Partner, Microsoft ISV Partner, Microsoft AI Cloud Partner, Protiviti ME, Moro Hub, N Tech and more.")}
                                                 </p>
                                             </div>
                                         </div>
@@ -1835,15 +1803,10 @@ export default function EnterpriseSolutions() {
                             <div className="col-sm-5">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Results That Matter
+                                        {t("Results That Matter")}
                                     </h2>
                                     <p>
-                                        Transformation is complex, often triggered by investment,
-                                        restructuring, or market shifts. We bring structure and certainty
-                                        to the process, helping our clients modernise legacy systems,
-                                        unify data, and build digital platforms that scale. Our track
-                                        record includes 100+ customers, 50+ success stories, and a
-                                        consistent focus on delivering real, sustainable impact.
+                                        {t("Transformation is complex, often triggered by investment, restructuring, or market shifts. We bring structure and certainty to the process, helping our clients modernise legacy systems, unify data, and build digital platforms that scale. Our track record includes 100+ customers, 50+ success stories, and a consistent focus on delivering real, sustainable impact.")}
                                     </p>
                                 </div>
                             </div>
@@ -1860,15 +1823,10 @@ export default function EnterpriseSolutions() {
                             <div className="pe-chellange-content-waber1">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Results That Matter
+                                        {t("Results That Matter")}
                                     </h2>
                                     <p>
-                                        Transformation is complex, often triggered by investment,
-                                        restructuring, or market shifts. We bring structure and certainty
-                                        to the process, helping our clients modernise legacy systems,
-                                        unify data, and build digital platforms that scale. Our track
-                                        record includes 100+ customers, 50+ success stories, and a
-                                        consistent focus on delivering real, sustainable impact.
+                                        {t("Transformation is complex, often triggered by investment, restructuring, or market shifts. We bring structure and certainty to the process, helping our clients modernise legacy systems, unify data, and build digital platforms that scale. Our track record includes 100+ customers, 50+ success stories, and a consistent focus on delivering real, sustainable impact.")}
                                     </p>
                                 </div>
                             </div>
@@ -1884,8 +1842,7 @@ export default function EnterpriseSolutions() {
                             <div className="section-title ">
                                 <div className="hero-video-content1 wow fadeInUp mt-4">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Rheinbrücke is a Value Driven Organisation, Which Implies We
-                                        Always
+                                        {t("Rheinbrücke is a Value Driven Organisation, Which Implies We Always")}
                                     </h2>
                                 </div>
                             </div>
@@ -1900,13 +1857,9 @@ export default function EnterpriseSolutions() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/value1.svg" alt="" />
-                                            <h5> Client Priority</h5>
+                                            <h5> {t("Client Priority")}</h5>
                                             <p>
-                                                We always put our client’s interest ahead of our own We are constantly
-                                                striving to deliver more value than our client’s expectations
-                                                by looking at every project and process to find the most
-                                                effective solution and not just fulfilling our client’s basic
-                                                requirements.
+                                                {t("We always put our client’s interest ahead of our own We are constantly striving to deliver more value than our client’s expectations by looking at every project and process to find the most effective solution and not just fulfilling our client’s basic requirements.")}
                                             </p>
                                         </div>
                                     </div>
@@ -1915,12 +1868,9 @@ export default function EnterpriseSolutions() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/value2.svg" alt="" />
-                                            <h5>Professional Discipline</h5>
+                                            <h5> {t("Professional Discipline")}</h5>
                                             <p>
-                                                We always behave as professionals RheinBrücke upholds absolute
-                                                integrity. We promise only what can be delivered. We show the
-                                                utmost respect to local customs and culture, as long as we
-                                                don’t compromise our integrity.
+                                                {t("We always behave as professionals RheinBrücke upholds absolute integrity. We promise only what can be delivered. We show the utmost respect to local customs and culture, as long as we don’t compromise our integrity.")}
                                             </p>
                                         </div>
                                     </div>
@@ -1929,12 +1879,9 @@ export default function EnterpriseSolutions() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/value3.svg" alt="" />
-                                            <h5>Information Discretion</h5>
+                                            <h5> {t("Information Discretion")}</h5>
                                             <p>
-                                                We always keep our client information confidential RheinBrücke is
-                                                focused on making our clients successful. We don’t reveal
-                                                sensitive information. We do not promote our own good work if
-                                                it is at the cost of client confidentiality.
+                                                {t("We always keep our client information confidential RheinBrücke is focused on making our clients successful. We don’t reveal sensitive information. We do not promote our own good work if it is at the cost of client confidentiality.")}
                                             </p>
                                         </div>
                                     </div>
@@ -1943,13 +1890,9 @@ export default function EnterpriseSolutions() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/value4.svg" alt="" />
-                                            <h5> Independent Clarity</h5>
+                                            <h5> {t("Independent Clarity")}</h5>
                                             <p>
-                                                We always tell the truth as we see it RheinBrücke strives to stay
-                                                independent and remains able to disagree, regardless of the
-                                                popularity of our views. Always saying what we see as the
-                                                truth helps to build internal support, get to the real issues,
-                                                and reach practical recommendations.
+                                                {t("We always tell the truth as we see it RheinBrücke strives to stay independent and remains able to disagree, regardless of the popularity of our views. Always saying what we see as the truth helps to build internal support, get to the real issues, and reach practical recommendations.")}
                                             </p>
                                         </div>
                                     </div>
@@ -1958,15 +1901,9 @@ export default function EnterpriseSolutions() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/value5.svg" alt="" />
-                                            <h5> Firm Alignment</h5>
+                                            <h5> {t("Firm Alignment")}</h5>
                                             <p>
-                                                We always operate as one, united firm Despite our many geographical
-                                                locations, RheinBrücke maintains a consistently high standard
-                                                of service and the people to deliver these services. This
-                                                indicates that we bring the best team of minds from around the
-                                                world-with the broadest range of industry and functional
-                                                experience-to deliver world class solutions on every
-                                                engagement.
+                                                {t("We always operate as one, united firm Despite our many geographical locations, RheinBrücke maintains a consistently high standard of service and the people to deliver these services. This indicates that we bring the best team of minds from around the world-with the broadest range of industry and functional experience-to deliver world class solutions on every engagement.")}
                                             </p>
                                         </div>
                                     </div>
@@ -2000,12 +1937,9 @@ export default function EnterpriseSolutions() {
                                                     fillRule="evenodd"
                                                 />
                                             </svg>
-                                            <h5>Personal Ownership in that order</h5>
+                                            <h5> {t("Personal Ownership in that order")}</h5>
                                             <p>
-                                                We always deliver the best of our firm to every client as cost
-                                                effectively as we can RheinBrücke expects people either
-                                                employees or partners to spend our client’s and firm’s
-                                                resources as if their own resources were at stake.
+                                                {t("We always deliver the best of our firm to every client as cost effectively as we can RheinBrücke expects people either employees or partners to spend our client’s and firm’s resources as if their own resources were at stake.")}
                                             </p>
                                         </div>
                                     </div>
@@ -2233,76 +2167,47 @@ export default function EnterpriseSolutions() {
                             <div className="col-sm-6">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2 text-dark" data-cursor="-opaque">
-                                        Social Impact
+                                        {t("Social Impact")}
                                     </h2>
                                 </div>
                                 <div className="socialcont">
                                     <h5>
-                                        "RheinBrücke's support of social impact work is motivated by the
-                                        fact that tomorrow's world will be made up of today's children."
+                                        {t("RheinBrücke's support of social impact work is motivated by the fact that tomorrow's world will be made up of today's children.")}
                                     </h5>
                                     <p>
-                                        Globalization looms over us, but we should be aware of the
-                                        challenges facing us that could stop globalization in its tracks.
-                                        RheinBrücke’s support of social impact work is motivated by
-                                        eye-opening facts such as these. With nearly 1 billion hungry
-                                        people in the world, about 21,000 children under the age of 5 died
-                                        every day in 2010. The highest rates of child mortality are in
-                                        sub-Saharan Africa, a rate more than 17 times the average for
-                                        developed regions. More than 750 million people do not have
-                                        sustainable access to safe drinking water; another 2.5 billion
-                                        lack access to improved sanitation facilities.
+                                        {t("Globalization looms over us, but we should be aware of the challenges facing us that could stop globalization in its tracks. RheinBrücke’s support of social impact work is motivated by eye-opening facts such as these. With nearly 1 billion hungry people in the world, about 21,000 children under the age of 5 died every day in 2010. The highest rates of child mortality are in sub-Saharan Africa, a rate more than 17 times the average for developed regions. More than 750 million people do not have sustainable access to safe drinking water; another 2.5 billion lack access to improved sanitation facilities.")}
                                     </p>
                                     <h5>
-                                        Against this background, the SOS Children’s Villages readily
-                                        handles situations where:
+                                        {t("Against this background, the SOS Children’s Villages readily handles situations where:")}
                                     </h5>
                                     <div className="challenge-point-waber">
                                         <img src="/images/socilapoint.svg" alt="" />
                                         <p>
                                             {" "}
-                                            Children at the risk of losing parental care; when their basic
-                                            material, emotional, health and educational needs are being
-                                            neglected, or they are abused; or in cases where their
-                                            care-givers lack the capacity or commitment to adequately care
-                                            for them.{" "}
+                                            {t("Children at the risk of losing parental care; when their basic material, emotional, health and educational needs are being neglected, or they are abused; or in cases where their care-givers lack the capacity or commitment to adequately care for them.")}
                                         </p>
                                     </div>
                                     <div className="challenge-point-waber">
                                         <img src="/images/socilapoint.svg" alt="" />
                                         <p>
-                                            Children have lost parental care and when they are not living
-                                            with a parental care-giver for whatever reason and under
-                                            whatever circumstances.
+                                            {" "}
+                                            {t("Children have lost parental care and when they are not living with a parental care-giver for whatever reason and under whatever circumstances.")}
                                         </p>
                                     </div>
                                     <p>
-                                        We found that SOS was a perfect remedy for children who lack or
-                                        have lost their parental care and this supported of our primary
-                                        objective to help make a tangible, lasting and prominent
-                                        contribution to the world in which we live. We are firmly
-                                        convinced that together we can achieve more than any of us could
-                                        individually. SOS runs over 2,300 programs catering to more than
-                                        one million children and adults globally.
+                                        {t("We found that SOS was a perfect remedy for children who lack or have lost their parental care and this supported of our primary objective to help make a tangible, lasting and prominent contribution to the world in which we live. We are firmly convinced that together we can achieve more than any of us could individually. SOS runs over 2,300 programs catering to more than one million children and adults globally.")}
                                     </p>
-                                    <h5>Strengthening Families</h5>
+                                    <h5>
+                                        {t("Strengthening Families")}
+                                    </h5>
                                     <p>
-                                        SOS Family Strengthening Programs help keep children in the care
-                                        of their family. Under the auspices of SOS, disadvantaged families
-                                        at risk of separation are encouraged to regain their capacity to
-                                        protect and care for their children.
+                                        {t("SOS Family Strengthening Programs help keep children in the care of their family. Under the auspices of SOS, disadvantaged families at risk of separation are encouraged to regain their capacity to protect and care for their children.")}
                                     </p>
-                                    <h5>Individual Plans for Every Child</h5>
+                                    <h5>
+                                        {t("Individual Plans for Every Child")}
+                                    </h5>
                                     <p>
-                                        Children who cannot be cared for by their biological families are
-                                        supported by family-based caregivers either with foster families
-                                        or within SOS Children’s Villages. SOS families provide
-                                        individualized care to promote the development, education and
-                                        health of each child. They provide over 80,000 children and youth
-                                        with family-based care. In partnership with communities SOS
-                                        develops local infrastructure and run kindergartens, day care
-                                        centres, schools, vocational training centres and medical
-                                        facilities.
+                                        {t("Children who cannot be cared for by their biological families are supported by family-based caregivers either with foster families or within SOS Children’s Villages. SOS families provide individualized care to promote the development, education and health of each child. They provide over 80,000 children and youth with family-based care. In partnership with communities SOS develops local infrastructure and run kindergartens, day care centres, schools, vocational training centres and medical facilities.")}
                                     </p>
                                 </div>
                             </div>
@@ -2321,17 +2226,16 @@ export default function EnterpriseSolutions() {
                                 <div className="row">
                                     <div className="col-sm-8">
                                         <h2>
-                                            Ready to accelerate value creation <br /> across your portfolio?
+                                            {t("Ready to accelerate value creation across your portfolio?")}
                                         </h2>
                                         <p>
-                                            Contact us today to learn how we can help modernise operations,
-                                            de-risk integrations, and improve commercial outcomes.
+                                            {t("Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.")}"
                                         </p>
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
                                             <Link href="/contact-us" className="animated-svg-link">
-                                                Contact Us
+                                                {t("Contact Us")}
                                                 <span className="svg-container ">
                                                     <span className=" right">
                                                         <svg

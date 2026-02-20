@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../hooks/useTranslation";
 export default function digitalsolution() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
            <>
@@ -15,26 +17,18 @@ export default function digitalsolution() {
         <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-21" data-cursor="-opaque">
-              Digital Solutions – Innovating Business, One Solution at a Time
+              {t("Digital Solutions – Innovating Business, One Solution at a Time")}
             </h2>
             <p>
-              We deliver outcome-driven solutions that combine advanced
-              technology, proven frameworks, and scalable architectures to solve
-              complex business challenges. Driven by our
-              Analyse-Integrate-Transform framework, every engagement is built
-              for measurable, sustained impact.
+              {t("We deliver outcome-driven solutions that combine advanced technology, proven frameworks, and scalable architectures to solve complex business challenges. Driven by our Analyse-Integrate-Transform framework, every engagement is built for measurable, sustained impact.")}
             </p>
             <p>
-              Every successful digital transformation starts with a solid
-              foundation of analysis, becomes truly valuable through data and
-              intelligence, delivers tangible outcomes via integration of
-              applications and commerce channels, and endures through resilient
-              operations and governance.
+              {t("Every successful digital transformation starts with a solid foundation of analysis, becomes truly valuable through data and intelligence, delivers tangible outcomes via integration of applications and commerce channels, and endures through resilient operations and governance.")}
             </p>
             
             <div className="ser-btn mt-5">
               <Link href="/contact-us" className="animated-svg-link">
-                Contact Us
+                {t("Contact Us")}
                 <span className="svg-container ">
                   <span className=" right">
                     <svg
@@ -157,19 +151,13 @@ export default function digitalsolution() {
           <div className="section-title testidescription text-center">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
               {" "}
-              Build the Modern Enterprise Foundation
+              {t("Build the Modern Enterprise Foundation")}
             </h2>
             <p>
-              Transformation begins by rethinking and modernising the enterprise
-              core, the platforms, architecture, and integrated systems that
-              drive business operations.
+              {t("Transformation begins by rethinking and modernising the enterprise core, the platforms, architecture, and integrated systems that drive business operations.")}
             </p>
             <p>
-              We help organisations evolve from legacy systems to agile,
-              cloud-native, mobile enabled scalable architecture, enabling
-              faster innovation and operational flexibility. Microservices,
-              API-first, Cloud and Headless or MACH architecture drive agile and
-              scalable transformation.
+              {t("We help organisations evolve from legacy systems to agile, cloud-native, mobile enabled scalable architecture, enabling faster innovation and operational flexibility. Microservices, API-first, Cloud and Headless or MACH architecture drive agile and scalable transformation.")}
             </p>
           </div>
         </div>
@@ -302,13 +290,11 @@ export default function digitalsolution() {
                         </svg>
                         {/* <i class="bi bi-people-fill"></i> */}
                       </div>
-                      <h3>Enterprise Architecture Platform as a Service:</h3>
+                      <h3>{t("Enterprise Architecture Platform as a Service")}</h3>
                       <ul>
                         <li>
                           {" "}
-                          Implement API-first, composable architectures with
-                          scalable infrastructure, integration frameworks, and
-                          governance controls.
+                          {t("Implement API-first, composable architectures with scalable infrastructure, integration frameworks, and governance controls.")}
                         </li>
                       </ul>
                     </div>
@@ -447,13 +433,10 @@ export default function digitalsolution() {
                         {/*<img src="/images/ss5.svg" alt="">*/}
                         {/* <i class="bi bi-cart-check-fill"></i> */}
                       </div>
-                      <h3>Enterprise Software Implementation: </h3>
+                      <h3>{t("Enterprise Software Implementation")}</h3>
                       <ul>
                         <li>
-                          Deliver end-to-end ERP, CRM, and enterprise platform
-                          implementations with agile frameworks for rapid
-                          time-to-value and seamless business-as-usual
-                          transitions.
+                          {t("Deliver end-to-end ERP, CRM, and enterprise platform implementations with agile frameworks for rapid time-to-value and seamless business-as-usual transitions.")}
                         </li>
                       </ul>
                     </div>
@@ -541,14 +524,11 @@ export default function digitalsolution() {
                         {/* <i class="bi bi-pie-chart-fill"></i> */}
                       </div>
                       <h3>
-                        ERP-CRM Integrations &amp; Cloud-Native Solutions:
+                        {t("ERP-CRM Integrations & Cloud-Native Solutions")}
                       </h3>
                       <ul>
                         <li>
-                          Unify business processes with scalable, cloud-native
-                          app suites embedded with analytics and automation for
-                          operational control and continuous performance
-                          refinement.
+                          {t("Unify business processes with scalable, cloud-native app suites embedded with analytics and automation for operational control and continuous performance refinement.")}
                         </li>
                       </ul>
                     </div>
@@ -682,13 +662,11 @@ export default function digitalsolution() {
                       </svg>
                       {/* <i class="bi bi-people-fill"></i> */}
                     </div>
-                    <h3>Enterprise Architecture Platform as a Service:</h3>
+                    <h3>{t("Enterprise Architecture Platform as a Service:")}</h3>
                     <ul>
                       <li>
                         {" "}
-                        Implement API-first, composable architectures with
-                        scalable infrastructure, integration frameworks, and
-                        governance controls.
+                        {t("Implement API-first, composable architectures with scalable infrastructure, integration frameworks, and governance controls.")}
                       </li>
                     </ul>
                   </div>
@@ -826,13 +804,10 @@ export default function digitalsolution() {
                       {/*<img src="/images/ss5.svg" alt="">*/}
                       {/* <i class="bi bi-cart-check-fill"></i> */}
                     </div>
-                    <h3>Enterprise Software Implementation: </h3>
+                    <h3>{t("Enterprise Software Implementation:")}</h3>
                     <ul>
                       <li>
-                        Deliver end-to-end ERP, CRM, and enterprise platform
-                        implementations with agile frameworks for rapid
-                        time-to-value and seamless business-as-usual
-                        transitions.
+                        {t("Deliver end-to-end ERP, CRM, and enterprise platform implementations with agile frameworks for rapid time-to-value and seamless business-as-usual transitions.")}
                       </li>
                     </ul>
                   </div>
@@ -917,13 +892,10 @@ export default function digitalsolution() {
                       {/*<img src="/images/ss6.svg" alt="">*/}
                       {/* <i class="bi bi-pie-chart-fill"></i> */}
                     </div>
-                    <h3>ERP-CRM Integrations &amp; Cloud-Native Solutions:</h3>
+                    <h3>{t("ERP-CRM Integrations & Cloud-Native Solutions:")}</h3>
                     <ul>
                       <li>
-                        Unify business processes with scalable, cloud-native app
-                        suites embedded with analytics and automation for
-                        operational control and continuous performance
-                        refinement.
+                        {t("Unify business processes with scalable, cloud-native app suites embedded with analytics and automation for operational control and continuous performance refinement.")}
                       </li>
                     </ul>
                   </div>
@@ -1157,47 +1129,37 @@ export default function digitalsolution() {
         <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Turn Data into Strategic Advantage
+              {t("Turn Data into Strategic Advantage")}
             </h2>
             <p>
-              Unlock the full potential of enterprise data, consolidating,
-              refining, and transforming it into real-time, actionable
-              intelligence. Operationalise your data estate and AI capabilities
-              to drive faster, smarter decisions.
+              {t("Unlock the full potential of enterprise data, consolidating, refining, and transforming it into real-time, actionable intelligence. Operationalise your data estate and AI capabilities to drive faster, smarter decisions.")}
             </p>
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
               <img src="/images/app1.svg" alt="" />
               <div className="pill-cont">
-                <h5>Data Pipelining, Consolidation and Warehousing:</h5>
+                <h5>{t("Data Pipelining, Consolidation and Warehousing")}</h5>
                 <p>
-                  Design real-time and batch data pipelines, consolidate siloed
-                  sources into data warehouses and data lakes, and support
-                  scalable AI/ML operationalisation.
+                  {t("Design real-time and batch data pipelines, consolidate siloed sources into data warehouses and data lakes, and support scalable AI/ML operationalisation.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
               <img src="/images/app2.svg" alt="" />
               <div className="pill-cont">
-                <h5>AI/ML &amp; Data Analytics:</h5>
+                <h5>{t("AI/ML & Data Analytics")}</h5>
                 <p>
-                  Deploy AI solutions using Azure Machine Learning and Large
-                  Event Models (LEMs) for predictive maintenance, intelligent
-                  automation, and real-time operational insights.
+                  {t("Deploy AI solutions using Azure Machine Learning and Large Event Models (LEMs) for predictive maintenance, intelligent automation, and real-time operational insights.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
               <img src="/images/app3.svg" alt="" />
               <div className="pill-cont">
-                <h5>Data Visualisation :</h5>
+                <h5>{t("Data Visualisation")}</h5>
                 <p>
-                  Create executive-ready, dynamic dashboards and interactive
-                  data stories with Tableau, Power BI and others that enable
-                  business users with self-service analytics and decision-making
-                  at speed.{" "}
+                  {t("Create executive-ready, dynamic dashboards and interactive data stories with Tableau, Power BI and others that enable business users with self-service analytics and decision-making at speed.")}
                 </p>
               </div>
             </div>
@@ -1205,7 +1167,7 @@ export default function digitalsolution() {
               <Link   href="/business-intelligence"
                 className="animated-svg-link1 btn-style-3"
               >
-                Read More
+                {t("Read More")}
                 <span className="svg-container ">
                   <span className=" left">
                     <svg
@@ -1322,54 +1284,41 @@ export default function digitalsolution() {
         <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Activate Data and Intelligence
+              {t("Activate Data and Intelligence")}
             </h2>
             <p>
-              Unlock the full potential of your data to drive smarter, faster
-              business decisions. By connecting, integrating, and activating
-              your data, we turn it into real-time, actionable intelligence that
-              empowers you to make data-driven decisions and optimise
-              performance at scale.
+              {t("Unlock the full potential of your data to drive smarter, faster business decisions. By connecting, integrating, and activating your data, we turn it into real-time, actionable intelligence that empowers you to make data-driven decisions and optimise performance at scale.")}
             </p>
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
               <img src="/images/app1.svg" alt="" />
               <div className="pill-cont">
-                <h5>Integration &amp; Data Services:</h5>
+                <h5>{t("Integration & Data Services")}</h5>
                 <p>
-                  We connect your digital ecosystem with seamless integrations,
-                  real-time insights, and automated workflows using Azure Logic
-                  Apps, API Management, and Cosmos DB. <br /> <b>Tech:</b> SQL
-                  Azure, Data Factory, Real-time Data Services
+                  {t("We connect your digital ecosystem with seamless integrations, real-time insights, and automated workflows using Azure Logic Apps, API Management, and Cosmos DB.  ")}<br />
+                  <b>{t("Tech:")}</b> {t("SQL, Azure, Data Factory, Real-time Data Services")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
               <img src="/images/app2.svg" alt="" />
               <div className="pill-cont">
-                <h5>Data Engineering &amp; Warehousing:</h5>
+                <h5>{t("Data Engineering & Warehousing")}</h5>
                 <p>
-                  Engineer scalable data pipelines and modern cloud warehouses
-                  to unlock enterprise insights. We build and manage secure,
-                  optimised data platforms for advanced analytics using Azure
-                  Data Lake, Synapse Analytics, and Delta Lake architectures.{" "}
-                  <br /> <b>Tech:</b> Azure Data Lake, Synapse Analytics, Delta
-                  Lake, Azure Data Factory
+                  {t("Engineer scalable data pipelines and modern cloud warehouses to unlock enterprise insights. We build and manage secure, optimised data platforms for advanced analytics using Azure Data Lake, Synapse Analytics, and Delta Lake architectures.")}
+                  <br /> <b>{t("Tech:")}</b> {t("Azure Data Lake, Synapse Analytics, Delta Lake, Azure Data Factory")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
               <img src="/images/app3.svg" alt="" />
               <div className="pill-cont">
-                <h5>AI &amp; Analytics:</h5>
+                <h5>{t("AI & Analytics")}</h5>
                 <p>
                   {" "}
-                  We operationalise AI and analytics with Azure Machine
-                  Learning, delivering predictive insights and process
-                  automation. Power BI and Tableau turn data into actionable
-                  intelligence for smarter, faster decisions. <br />{" "}
-                  <b>Tech:</b> Azure Machine Learning, Power BI, Tableau
+                  {t("We operationalise AI and analytics with Azure Machine Learning, delivering predictive insights and process automation. Power BI and Tableau turn data into actionable intelligence for smarter, faster decisions.")} <br />
+                  <b>{t("Tech:")}</b> {t("Azure Machine Learning, Power BI, Tableau")}
                 </p>
               </div>
             </div>
@@ -1390,12 +1339,10 @@ export default function digitalsolution() {
           {/* Section Title Start */}
           <div className="section-title digitalexp">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Empower Users and Enhance Digital Experiences
+              {t("Empower Users and Enhance Digital Experiences")}
             </h2>
             <p>
-              Transformation isn’t just about systems, it’s about people. We
-              deliver modern, intuitive digital experiences and empower users
-              with tools that accelerate productivity and decision-making.
+              {t("Transformation isn’t just about systems, it’s about people. We deliver modern, intuitive digital experiences and empower users with tools that accelerate productivity and decision-making.")}
             </p>
           </div>
           {/* Section Title End */}
@@ -1406,11 +1353,9 @@ export default function digitalsolution() {
           <div className="col-lg-6 col-md-6">
             <div className="service-item firstmobile">
               <div className="service-item-body">
-                <h3>Portal, Application and Dashboard Development:</h3>
+                <h3>{t("Portal, Application and Dashboard Development")}</h3>
                 <p>
-                  Develop enterprise portals, custom applications, and real-time
-                  operational dashboards using modern frameworks and
-                  low-code/no-code tools for accelerated delivery.
+                  {t("Develop enterprise portals, custom applications, and real-time operational dashboards using modern frameworks and low-code/no-code tools for accelerated delivery.")}
                 </p>
                 <img src="/images/digiexp.png" alt="" />
               </div>
@@ -1421,12 +1366,9 @@ export default function digitalsolution() {
             {/* Service Item Start */}
             <div className="service-item secondmobile">
               <div className="service-item-body">
-                <h3>Microsoft 'Power Platform' Solutions:</h3>
+                <h3>{t("Microsoft 'Power Platform' Solutions")}</h3>
                 <p>
-                  Build business apps, automate workflows, and deliver
-                  data-driven dashboards via Power Apps, Power Automate, and
-                  Power BI, enabling business-led development with embedded
-                  governance.
+                  {t("Build business apps, automate workflows, and deliver data-driven dashboards via Power Apps, Power Automate, and Power BI, enabling business-led development with embedded governance.")}
                 </p>
                 <img src="/images/digiexp2.png" alt="" />
               </div>
@@ -1446,11 +1388,10 @@ export default function digitalsolution() {
           {/* Section Title Start */}
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Modernise Commerce and Customer Engagement
+              {t("Modernise Commerce and Customer Engagement")}
             </h2>
             <p>
-              We help businesses transform how they engage customers and deliver
-              digital experiences.
+              {t("We help businesses transform how they engage customers and deliver digital experiences.")}
             </p>
           </div>
           {/* Section Title End */}
@@ -1461,12 +1402,9 @@ export default function digitalsolution() {
           <div className="col-lg-4 col-md-4">
             <div className="service-item ">
               <div className="service-item-body">
-                <h3>eCommerce Modernisation: </h3>
+                <h3>{t("eCommerce Modernisation")}</h3>
                 <p>
-                  Architect composable eCommerce solutions using MACH
-                  principles, integrating omnichannel experiences, scalable
-                  microservices, and operational dashboards for continuous KPI
-                  tracking.
+                  {t("Architect composable eCommerce solutions using MACH principles, integrating omnichannel experiences, scalable microservices, and operational dashboards for continuous KPI tracking.")}
                 </p>
                 <img src="/images/cu1.png" alt="" />
               </div>
@@ -1477,11 +1415,9 @@ export default function digitalsolution() {
             {/* Service Item Start */}
             <div className="service-item ">
               <div className="service-item-body">
-                <h3>UI /UX - User-centric Design: </h3>
+                <h3>{t("UI /UX - User-centric Design")}</h3>
                 <p>
-                  We Deliver intuitive, enterprise-grade interfaces by applying
-                  user-centric principles to create seamless experiences and
-                  accelerate user adoption.
+                  {t("We Deliver intuitive, enterprise-grade interfaces by applying user-centric principles to create seamless experiences and accelerate user adoption.")}
                 </p>
                 <img src="/images/cus2.png" alt="" />
               </div>
@@ -1492,9 +1428,9 @@ export default function digitalsolution() {
             {/* Service Item Start */}
             <div className="service-item ">
               <div className="service-item-body">
-                <h3>User Experience:</h3>
+                <h3>{t("User Experience")}</h3>
                 <p>
-                  We design intuitive, user-centric digital experiences that drive productivity and unlock measurable business value.
+                  {t("We design intuitive, user-centric digital experiences that drive productivity and unlock measurable business value.")}
                 </p>
                 <img src="/images/cus2.png" alt="" />
               </div>
@@ -1513,19 +1449,14 @@ export default function digitalsolution() {
         <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Safeguard Operations and Drive Continuous Optimisation
+              {t("Safeguard Operations and Drive Continuous Optimisation")}
             </h2>
             <p>
-              Ensure operational resilience, security, and continuous
-              performance improvement. We help you protect, monitor, and refine
-              your environment - so your business stays ahead, always.
+              {t("Ensure operational resilience, security, and continuous performance improvement. We help you protect, monitor, and refine your environment - so your business stays ahead, always.")}
             </p>
-            <h5>Managed Services &amp; Security Governance</h5>
+            <h5>{t("Managed Services & Security Governance")}</h5>
             <p>
-              Deliver managed security services with Microsoft Entra, Defender,
-              and Azure Sentinel. Monitor infrastructure health, operational
-              KPIs, and real-time feedback loops, embedding continuous
-              optimisation and business continuity planning.
+              {t("Deliver managed security services with Microsoft Entra, Defender, and Azure Sentinel. Monitor infrastructure health, operational KPIs, and real-time feedback loops, embedding continuous optimisation and business continuity planning.")}
             </p>
           </div>
         </div>
@@ -1550,13 +1481,10 @@ export default function digitalsolution() {
         <div className="col-lg-6">
           <div className="section-title outcomes2">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Delivering Outcomes, Operationalised
+              {t("Delivering Outcomes, Operationalised")}
             </h2>
             <p>
-              But transformation doesn’t stop at deployment. With continuous KPI
-              tracking, real-time performance optimisation, and an agile,
-              outcome-led approach, we help your business stay ahead of change
-              and lead with confidence.
+              {t("But transformation doesn’t stop at deployment. With continuous KPI tracking, real-time performance optimisation, and an agile, outcome-led approach, we help your business stay ahead of change and lead with confidence.")}
             </p>
           </div>
         </div>
@@ -1572,17 +1500,16 @@ export default function digitalsolution() {
         <div className="firstrow">
           <div className="row">
             <div className="col-sm-8">
-              <h2>Ready to operationalise your digital future?</h2>
+              <h2>{t("Ready to operationalise your digital future?")}</h2>
               <p>
                 {" "}
-                Connect with our team for a discovery session and explore how we
-                can deliver measurable value for your business.
+                {t("Connect with our team for a discovery session and explore how we can deliver measurable value for your business.")}
               </p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <Link href="/contact-us" className="animated-svg-link">
-                  Contact Us
+                  {t("Contact Us")}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg

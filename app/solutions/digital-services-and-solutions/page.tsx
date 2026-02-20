@@ -3,7 +3,9 @@
 import React from "react";
 import CommomLayout from "../../Components/CommomLayout";
 import Link from "next/link";
+import {useTranslation} from "../../hooks/useTranslation";
 export default function digitalsolution() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
           <>
@@ -15,15 +17,14 @@ export default function digitalsolution() {
         <div className="col-sm-5">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Transforming <br /> Enterprises With <br />
-              Innovative Digital Services
+              {t("Transforming Enterprises With Innovative Digital Services")}
             </h2>
             <p>
-              Outcome-driven digital transformation powered by advanced technology and proven frameworks.
+              {t("Outcome-driven digital transformation powered by advanced technology and proven frameworks.")}
             </p>
             <div className="ser-btn mt-5">
               <Link href="/contact-us" className="animated-svg-link">
-                Contact Us
+                {t("Contact Us")}
                 <span className="svg-container ">
                   <span className=" right">
                     <svg

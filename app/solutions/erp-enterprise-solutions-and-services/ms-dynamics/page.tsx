@@ -1066,7 +1066,7 @@ export default function EnterpriseSolutions() {
                      {t("Our Approach")}
                   </h2>
                   <p>
-                  {t("We align Microsoft Dynamics capabilities with your strategic objectives using our Analyse–Integrate–Transform (AIT) methodology")}
+                  {t("We align Microsoft Dynamics capabilities with your strategic objectives using our Analyse–Integrate–Transform (AIT) methodology:")}
 
                   </p>
                 </div>

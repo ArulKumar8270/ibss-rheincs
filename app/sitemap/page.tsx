@@ -116,7 +116,7 @@ const page = () => {
                         <a href="/solutions/erp-enterprise-solutions-and-services/sap">SAP</a>
                       </li>
                       <li>
-                        <a href="/ms-dynamics">
+                        <a href="/solutions/erp-enterprise-solutions-and-services/ms-dynamics">
                           MS Dynamics
                         </a>
                       </li>

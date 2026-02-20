@@ -3103,10 +3103,7 @@ export default function EnterpriseSolutions() {
                     {t("Our Enterprise Solutions and Services")}
                   </h2>
                   <p>
-                    We offer a comprehensive portfolio of enterprise solutions and
-                    services built on leading platforms like Epicor, Microsoft
-                    Dynamics 365, and SAP, delivering operational excellence and
-                    business transformation.
+                    {t("We offer a comprehensive portfolio of enterprise solutions and services built on leading platforms like Epicor, Microsoft Dynamics 365, and SAP, delivering operational excellence and business transformation.")}
                   </p>
                   <div className="ser-btn2 mt-4">
                     <Link href="/contact-us" className="animated-svg-link1 btn-style-3">
@@ -3509,7 +3506,7 @@ export default function EnterpriseSolutions() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>{t("CRM & Customer Engagement Platforms")}</h3>
+                                <h3>{t("CRM and Customer Engagement Platforms")}</h3>
                                 <p>
                                  {t("Enhance customer experiences and engagement with intelligent CRM solutions that connect your teams and streamline interactions.")}
                                 </p>
@@ -5152,7 +5149,7 @@ export default function EnterpriseSolutions() {
                       </div>
                       <div className="benefits-steps-content">
                         <p>
-                          {t("Applying our Analyse–Integrate-Transform (AIT) methodology to identify gaps, unify systems, and enable business transformation")}
+                          {t("Applying our Analyse–Integrate–Transform (AIT) methodology to identify gaps, unify systems, and enable business transformation")}
 
                         </p>
                       </div>
@@ -5738,7 +5735,7 @@ export default function EnterpriseSolutions() {
                       </div>
                       <div className="benefits-steps-content">
                         <p>
-                          {t("Enhancing operational resilience through scalable, secure architecture.")}
+                          {t("Enhancing operational resilience through scalable, secure architecture")}
 
                         </p>
                       </div>
@@ -5858,7 +5855,7 @@ export default function EnterpriseSolutions() {
                       </div>
                       <div className="benefits-steps-content">
                         <p>
-                          {t("Building future-ready platforms designed to evolve with your business.")}
+                          {t("Building future-ready platforms designed to evolve with your business")}
                         </p>
                       </div>
                     </div>
@@ -5881,7 +5878,7 @@ export default function EnterpriseSolutions() {
                   <div className="col-lg-6 col-md-6 col-12">
                     <div className="service-item-body1 imgpos">
                       <h3>
-                        {t("Epicor Premium, Microsoft AI Cloud  and Microsoft ISV partner")}
+                        {t("Epicor Premium, Microsoft AI Cloud and Microsoft ISV partner")}
                       </h3>
                       {/*<img src="/images/ad1.png" alt="">*/}
                    <svg width="500" height="300" viewBox="0 0 523 300" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -6019,7 +6016,7 @@ export default function EnterpriseSolutions() {
                   <div className="col-lg-6 col-md-6 col-12">
                     <div className="service-item-body1 imgpos">
                       <h3>
-                        {t("End-to-end platform services from  strategy to support")}
+                        {t("End-to-end platform services from strategy to support")}
                       </h3>
                       <img src="/images/ad2.png" alt="" />
                     </div>
@@ -6447,7 +6444,7 @@ export default function EnterpriseSolutions() {
                           {t("Unify finance, sales, operations, and service on one intelligent cloud platform. Drive agility, efficiency, and connected decision-making.")}
                         </p>
                         <div className="ser-btn1">
-                          <Link        href="/ms-dynamics/"
+                          <Link        href="/solutions/erp-enterprise-solutions-and-services/ms-dynamics"
                             className="animated-svg-link1 btn-style-3"
                           >
                             {t("Know More")}
