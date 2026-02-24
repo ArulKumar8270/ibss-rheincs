@@ -24,7 +24,7 @@ const page = () => {
                 <div className="ser-btn ">
                   <Link href="/contact-us" className="animated-svg-link">
                     Contact Us
-                    <span className="svg-container ">
+                    <span className="svg-container">
                       <span className=" right">
                         <svg
                           width={24}
