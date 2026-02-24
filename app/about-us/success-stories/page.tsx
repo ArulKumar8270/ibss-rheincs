@@ -1,8 +1,12 @@
+"use client";
+
 import CommomLayout from "../../Components/CommomLayout";
 import Link from "next/link";
 import TestimonialandAward from "../../Components/TestimonialandAward";
 import Awards from "../../Components/Awards";
+import {useTranslation} from "../../hooks/useTranslation";
 function SuccessStories() {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
             <>
@@ -12,17 +16,14 @@ function SuccessStories() {
                             <div className="col-lg-5 col-11">
                                 <div className="pe-main-hadding-waber">
                                     <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
-                                        Real Results, <br /> Real Transformation
+                                        {t("Real Results,")} <br />{t("Real Transformation")}
                                     </h2>
                                     <p>
-                                        Explore how we've partnered with industry leaders to overcome
-                                        complex challenges, modernize operations, and drive measurable
-                                        growth. Each story is a testament to our commitment to delivering
-                                        powerful, technology-driven outcomes.
+                                        {t("Explore how we've partnered with industry leaders to overcome complex challenges, modernize operations, and drive measurable growth. Each story is a testament to our commitment to delivering powerful, technology-driven outcomes.")}
                                     </p>
                                     <div className="ser-btn m-0">
                                         <Link href="/contact-us" className="animated-svg-link">
-                                            Contact Us
+                                            {t("Contact Us")}
                                             <span className="svg-container ">
                                                 <span className=" right">
                                                     <svg
@@ -141,7 +142,7 @@ function SuccessStories() {
                             <div className="col-sm-12">
                                 <div className="section-title text-center text-black">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Success Stories
+                                        {t("Success Stories")}
                                     </h2>
                                 </div>
                                 <div className="row mt-5">
@@ -153,88 +154,69 @@ function SuccessStories() {
                                                 </div>
                                                 <div className="flex2">
                                                     <div className="success-company">
-                                                        <h3> Alshaya</h3>
+                                                        <h3> {t("Alshaya")}</h3>
                                                         <img src="/new/ssc-1.jpeg" alt="" />
                                                     </div>
                                                     <p>
                                                         <b>
                                                             {" "}
-                                                            Improving customer fulfilment and reducing waste with
-                                                            Smart Manufacturing Control
+                                                            {t("Improving customer fulfilment and reducing waste with Smart Manufacturing Control")}
                                                         </b>
                                                     </p>
                                                     <p>
-                                                        A multinational retail and franchise powerhouse operating
-                                                        over 70 global brands across food, fashion, and health
-                                                        sectors. This transformation focused on their food
-                                                        manufacturing division, which supplies products to
-                                                        thousands of cafés, restaurants, and outlets across MENA
-                                                        and Europe.
+                                                        {t("A multinational retail and franchise powerhouse operating over 70 global brands across food, fashion, and health sectors. This transformation focused on their food manufacturing division, which supplies products to thousands of cafés, restaurants, and outlets across MENA and Europe.")}
                                                     </p>
                                                     <div id="more" className="more-text hidden">
                                                         <p>
                                                             <b>
                                                                 {" "}
-                                                                Production plans now run on predictive data, not
-                                                                spreadsheets.
+                                                                    {t("Production plans now run on predictive data, not spreadsheets.")}
                                                             </b>
                                                         </p>
                                                         <p>
-                                                            With high SKU counts and complex production schedules,
-                                                            the food division relied on manual processes driven by
-                                                            Excel to manage manufacturing, resulting in
-                                                            overproduction, delayed fulfilment, and wasted
-                                                            inventory. Manual tracking of batch expiry and raw
-                                                            material consumption created significant bottlenecks in
-                                                            a time-sensitive industry.
+                                                                {" "}
+                                                                    {t("With high SKU counts and complex production schedules, the food division relied on manual processes driven by Excel to manage manufacturing, resulting in overproduction, delayed fulfilment, and wasted inventory. Manual tracking of batch expiry and raw material consumption created significant bottlenecks in a time-sensitive industry.")}
                                                         </p>
                                                         <p>
-                                                            We delivered an Epicor MRP solution that unified
-                                                            recipe-based production, quality control, demand
-                                                            forecasting, and inventory planning. The system handled
-                                                            both batch and semi-continuous processes. Shelf-life
-                                                            tracking and FEFO (First Expiry, First Out) logic
-                                                            ensured the right products reached the right stores at
-                                                            the right time, without waste.
+                                                             {" "}
+                                                                    {t("We delivered an Epicor MRP solution that unified recipe-based production, quality control, demand forecasting, and inventory planning. The system handled both batch and semi-continuous processes. Shelf-life tracking and FEFO (First Expiry, First Out) logic ensured the right products reached the right stores at the right time, without waste.")}
                                                         </p>
                                                         <p>
-                                                            <b>The Results</b>
+                                                            <b>
+                                                                {" "}
+                                                                    {t("The Results")}
+                                                            </b>
                                                         </p>
                                                         <ul className="success-point-waber">
                                                             <li>
                                                                 {" "}
-                                                                Data upload time reduced from 32+ hours to ~1 hour per
-                                                                outlet, automating 280,000+ orders
+                                                                {t("Data upload time reduced from 32+ hours to ~1 hour per outlet, automating 280,000+ orders")}
                                                             </li>
                                                             <li>
                                                                 {" "}
-                                                                Only 3 FTEs required for order processing, cutting
-                                                                labor costs dramatically
-                                                            </li>
-                                                            <li>
-                                                                Accurate demand planning prevented shortages and
-                                                                overproduction across 1200+ stores
+                                                                {t("Only 3 FTEs required for order processing, cutting labor costs dramatically")}
                                                             </li>
                                                             <li>
                                                                 {" "}
-                                                                Transportation costs reduced through optimized routing
-                                                                and automated logistics
+                                                                {t("Accurate demand planning prevented shortages and overproduction across 1200+ stores")}
                                                             </li>
                                                             <li>
                                                                 {" "}
-                                                                Enhanced quality control and inventory traceability,
-                                                                ensuring products reach stores fresh and on time
+                                                                {t("Transportation costs reduced through optimized routing and automated logistics")}
                                                             </li>
                                                             <li>
                                                                 {" "}
-                                                                Improved supply chain efficiency, reduced waste, and
-                                                                higher customer satisfaction
+                                                                {t("Enhanced quality control and inventory traceability, ensuring products reach stores fresh and on time")}
+                                                            </li>
+                                                            <li>
+                                                                {" "}
+                                                                {t("Improved supply chain efficiency, reduced waste, and higher customer satisfaction")}
                                                             </li>
                                                         </ul>
                                                     </div>
                                                     <div className="ser-btn leaderbtn readmore">
                                                         <span className="animated-svg-link" id="toggleReadMore">
-                                                            <span className="label">Read More</span>
+                                                            <span className="label">{t("Read More")}</span>
                                                             <span className="svg-container p-0">
                                                                 {/* OLD Circles Removed. NEW Down Arrow Added */}
                                                                 <svg
@@ -330,84 +312,59 @@ function SuccessStories() {
                                                 </div>
                                                 <div className="flex2">
                                                     <div className="success-company">
-                                                        <h3> Sembcorp</h3>
+                                                        <h3> {t("Sembcorp")}</h3>{t("Read More")}
                                                         <img src="/images/clients1/11-sembcorp.png" alt="" />
                                                     </div>
                                                     <p>
-                                                        <b> Powering Real-Time Insight Across Plants</b>
+                                                        <b> {t("Powering Real-Time Insight Across Plants")}</b>
                                                     </p>
                                                     <p>
                                                         <b>
                                                             {" "}
-                                                            What looked like a multi-million dollar initiative was
-                                                            delivered at a fraction of the cost, without compromise.
+                                                            {t("What looked like a multi-million dollar initiative was delivered at a fraction of the cost, without compromise.")}
                                                         </b>
                                                     </p>
                                                     <p>
-                                                        A global utilities and energy company backed by a
-                                                        sovereign investment fund, operating a 14+ GW renewable
-                                                        and conventional power portfolio across Asia. Known for
-                                                        its commitment to sustainability and digitisation of
-                                                        energy operations.
+                                                        {t("A global utilities and energy company backed by a sovereign investment fund, operating a 14+ GW renewable and conventional power portfolio across Asia. Known for its commitment to sustainability and digitisation of energy operations.")}
                                                     </p>
                                                     <div id="more" className="more-text hidden">
                                                         <p>
-                                                            This company needed more than reporting, they needed
-                                                            real-time intelligence from across their power plant
-                                                            ecosystem. Legacy integrations, siloed systems, and
-                                                            disconnected meter data made it impossible to act in the
-                                                            moment.
+                                                            {t("This company needed more than reporting, they needed real-time intelligence from across their power plant ecosystem. Legacy integrations, siloed systems, and disconnected meter data made it impossible to act in the moment.")}
                                                         </p>
                                                         <p>
-                                                            We engineered a Power Plant Analytics system that
-                                                            stitched together SAP, the national grid, ABT meters,
-                                                            and plant IoT, all on a .NET backbone. With predictive
-                                                            analytics, real-time alerts, and MIS reporting, the
-                                                            business moved from lagging indicators to live insights.
+                                                            {t("We engineered a Power Plant Analytics system that stitched together SAP, the national grid, ABT meters, and plant IoT, all on a .NET backbone. With predictive analytics, real-time alerts, and MIS reporting, the business moved from lagging indicators to live insights.")}
                                                         </p>
                                                         <p>
-                                                            <b>The Results</b>
+                                                            <b> {t("The Results")}</b>
                                                         </p>
                                                         <ul className="success-point-waber">
                                                             <li>
                                                                 {" "}
-                                                                Delivered at one-fifth of the original estimated cost,
-                                                                making advanced analytics accessible without
-                                                                compromise
+                                                                {t("Delivered at one-fifth of the original estimated cost, making advanced analytics accessible without compromise")}
                                                             </li>
                                                             <li>
-                                                                Enhanced decision support, with accurate projections
-                                                                for commercial and operational planning
+                                                                {t("Enhanced decision support, with accurate projections for commercial and operational planning")}
                                                             </li>
                                                             <li>
-                                                                Real-time monitoring and alerts enabled timely
-                                                                interventions, boosting operational efficiency
+                                                                {t("Real-time monitoring and alerts enabled timely interventions, boosting operational efficiency")}
                                                             </li>
                                                             <li>
-                                                                Seamless MIS reporting reduced manual effort and
-                                                                improved reporting accuracy
+                                                                {t("Seamless MIS reporting reduced manual effort and improved reporting accuracy")}
                                                             </li>
                                                             <li>
-                                                                Global rollout across all plants, standardising
-                                                                processes and improving efficiency worldwide
+                                                                {t("Global rollout across all plants, standardising processes and improving efficiency worldwide")}
                                                             </li>
                                                             <li>
-                                                                Ongoing support for 6+ years, ensuring stability,
-                                                                upgrades, and continuous alignment with evolving
-                                                                business needs
+                                                                {t("Ongoing support for 6+ years, ensuring stability, upgrades, and continuous alignment with evolving business needs")}
                                                             </li>
                                                         </ul>
                                                         <p>
-                                                            Today, decision-making is powered by integrated
-                                                            intelligence. Operators and managers respond in the
-                                                            moment, sustainability reporting is easier, and the
-                                                            company has built a scalable digital backbone for its
-                                                            next phase of energy growth.
+                                                            {t("Today, decision-making is powered by integrated intelligence. Operators and managers respond in the moment, sustainability reporting is easier, and the company has built a scalable digital backbone for its next phase of energy growth.")}
                                                         </p>
                                                     </div>
                                                     <div className="ser-btn leaderbtn readmore">
                                                         <span className="animated-svg-link" id="toggleReadMore">
-                                                            <span className="label">Read More</span>
+                                                            <span className="label">{t("Read More")}</span>
                                                             <span className="svg-container p-0">
                                                                 {/* OLD Circles Removed. NEW Down Arrow Added */}
                                                                 <svg
@@ -503,90 +460,67 @@ function SuccessStories() {
                                                 </div>
                                                 <div className="flex2">
                                                     <div className="success-company">
-                                                        <h3> FLSmidth</h3>
+                                                        <h3> {t("FLSmidth")}</h3>
                                                         <img src="/new/20-flsmidth.png" alt="" />
                                                     </div>
                                                     <p>
-                                                        <b> Unifying Global Operations with a Two-Tier ERP</b>
+                                                        <b> {t("Unifying Global Operations with a Two-Tier ERP")}</b>
                                                     </p>
                                                     <p>
                                                         <b>
-                                                            60 countries, 21 markets, and a fractured ERP landscape,
-                                                            transformed into a unified global backbone.
+                                                            {t("60 countries, 21 markets, and a fractured ERP landscape, transformed into a unified global backbone.")}
                                                         </b>
                                                     </p>
                                                     <p>
-                                                        A global industrial engineering company operating in over
-                                                        60 countries with 9,000+ employees. Focused on the mining
-                                                        and cement sectors, with strong sustainability commitments
-                                                        through its Mission Zero programme.
+                                                        <b>
+                                                            {t("A global industrial engineering company operating in over 60 countries with 9,000+ employees. Focused on the mining and cement sectors, with strong sustainability commitments through its Mission Zero programme.")}
+                                                        </b>
                                                     </p>
                                                     <div id="more" className="more-text hidden">
                                                         <p>
-                                                            This enterprise had a patchwork of ERPs across its
-                                                            global landscape. Years of M&amp;A left them with too
-                                                            many systems, no global blueprint and disconnected data.
-                                                            We designed a two-tier ERP strategy, defined a global
-                                                            template and deployed it across regions. Mobile apps
-                                                            enabled field productivity, Power BI brought real-time
-                                                            insights, and change management ensured smooth adoption.
-                                                            Select team members were embedded into the internal
-                                                            team, ensuring long-term knowledge retention.
+                                                            {t("This enterprise had a patchwork of ERPs across its global landscape. Years of M&A left them with too many systems, no global blueprint and disconnected data. We designed a two-tier ERP strategy, defined a global template and deployed it across regions. Mobile apps enabled field productivity, Power BI brought real-time insights, and change management ensured smooth adoption. Select team members were embedded into the internal team, ensuring long-term knowledge retention.")}
                                                         </p>
                                                         <p>
-                                                            <b>The Results</b>
+                                                            <b> {t("The Results")}</b>
                                                         </p>
                                                         <ul className="success-point-waber">
                                                             <li>
                                                                 {" "}
-                                                                Global Standardisation at Scale - a harmonised ERP
-                                                                footprint across 21+ countries, reducing complexity
-                                                                from dozens of legacy systems.
+                                                                {t("Global Standardisation at Scale - a harmonised ERP footprint across 21+ countries, reducing complexity from dozens of legacy systems.")}
                                                             </li>
                                                             <li>
                                                                 {" "}
-                                                                Massive Rollout Efficiency - phased deployments
-                                                                delivered with minimal disruption, keeping local
-                                                                operations running smoothly.
-                                                            </li>
-                                                            <li>
-                                                                Seamless Data Integration - HQ and subsidiaries now
-                                                                operate on shared, real-time data for finance,
-                                                                projects, and operations.
+                                                                {t("Massive Rollout Efficiency - phased deployments delivered with minimal disruption, keeping local operations running smoothly.")}
                                                             </li>
                                                             <li>
                                                                 {" "}
-                                                                Actionable Insights - advanced analytics with Power
-                                                                BI, improving visibility into performance across
-                                                                geographies.
-                                                            </li>
-                                                            <li>
-                                                                Mobility Breakthroughs - mobile-enabled processes
-                                                                boosted productivity for remote and field staff.
+                                                                {t("Seamless Data Integration - HQ and subsidiaries now operate on shared, real-time data for finance, projects, and operations.")}
                                                             </li>
                                                             <li>
                                                                 {" "}
-                                                                Operational Stability - 7+ years of sustained ERP
-                                                                support and continuous improvements ensured
-                                                                reliability and ROI.
+                                                                {t("Actionable Insights - advanced analytics with Power BI, improving visibility into performance across geographies.")}
                                                             </li>
                                                             <li>
                                                                 {" "}
-                                                                Sustainable Knowledge Transfer - rebadged employees
-                                                                formed an in-house ERP centre of excellence for
-                                                                long-term independence.
+                                                                {t("Mobility Breakthroughs - mobile-enabled processes boosted productivity for remote and field staff.")}
+                                                            </li>
+                                                            <li>
+                                                                {" "}
+                                                                {t("Operational Stability - 7+ years of sustained ERP support and continuous improvements ensured reliability and ROI.")}
+                                                            </li>
+                                                            <li>
+                                                                {" "}
+                                                                {t("Sustainable Knowledge Transfer - rebadged employees formed an in-house ERP centre of excellence for long-term independence.")}
                                                             </li>
                                                         </ul>
                                                         <p>
-                                                            This wasn’t just an implementation, it was a
-                                                            transformation that gave FLSmidth the agility,
-                                                            resilience, and visibility to pursue its MissionZero
-                                                            ambitions with confidence.
+                                                            {" "}
+                                                            {t("This wasn’t just an implementation, it was a transformation that gave FLSmidth the agility, resilience, and visibility to pursue its MissionZero ambitions with confidence.")}
                                                         </p>
                                                     </div>
                                                     <div className="ser-btn leaderbtn readmore">
                                                         <span className="animated-svg-link" id="toggleReadMore">
-                                                            <span className="label">Read More</span>
+                                                            <span className="label">{t("Read More")}</span>
                                                             <span className="svg-container p-0">
                                                                 {/* OLD Circles Removed. NEW Down Arrow Added */}
                                                                 <svg
@@ -682,80 +616,71 @@ function SuccessStories() {
                                                 </div>
                                                 <div className="flex2">
                                                     <div className="success-company">
-                                                        <h3>American Golf</h3>
+                                                        <h3>{t("American Golf")}</h3>
                                                         <img src="/images/clients1/1-American-golf.png" alt="" />
                                                     </div>
                                                     <p>
                                                         <b>
                                                             {" "}
-                                                            Modernising Retail for Speed, Scale, and Revenue Growth
+                                                            {t("Modernising Retail for Speed, Scale, and Revenue Growth")}
                                                         </b>
                                                     </p>
                                                     <p>
                                                         <b>
-                                                            From disparate legacy systems to a connected,
-                                                            future-ready retail stack, with eCommerce revenue set to
-                                                            jump 7.5%.
+                                                            {" "}
+                                                            {t("From disparate legacy systems to a connected, future-ready retail stack, with eCommerce revenue set to jump 7.5%.")}
                                                         </b>
                                                     </p>
                                                     <p>
-                                                        Europe’s largest golf retailer with 80+ stores across the
-                                                        UK and Ireland, offering a full range of golfing products
-                                                        and apparel, backed by a growing eCommerce presence.
+                                                        <b>
+                                                            {" "}
+                                                            {t("Europe’s largest golf retailer with 80+ stores across the UK and Ireland, offering a full range of golfing products and apparel, backed by a growing eCommerce presence.")}
+                                                        </b>
                                                     </p>
                                                     <div id="more" className="more-text hidden">
                                                         <p>
-                                                            This specialty retailer was hampered by outdated tools,
-                                                            Salesforce and legacy ERP resulting in slower order
-                                                            processing, data sync and scalability challenges. We
-                                                            transformed their tech stack with a microservices-based,
-                                                            headless architecture powered by custom APIs, Commerce
-                                                            Connect, and Fluent. Orders now flow automatically
-                                                            between systems, data stays consistent, and the user
-                                                            experience is seamless. Our 16/7 support model with
-                                                            tiered ticketing keeps ops stable through business hours
-                                                            and beyond.
+                                                            {t("This specialty retailer was hampered by outdated tools, Salesforce and legacy ERP resulting in slower order processing, data sync and scalability challenges. We transformed their tech stack with a microservices-based, headless architecture powered by custom APIs, Commerce Connect, and Fluent. Orders now flow automatically between systems, data stays consistent, and the user experience is seamless. Our 16/7 support model with tiered ticketing keeps ops stable through business hours and beyond.")}
                                                         </p>
                                                         <p>
-                                                            <b>The Results</b>
+                                                            <b>
+                                                                {" "}
+                                                                {t("The Results")}
+                                                            </b>
                                                         </p>
                                                         <ul className="success-point-waber">
                                                             <li>
                                                                 {" "}
-                                                                Optimised Operational Efficiency - Automated order and
-                                                                product data handling reduced manual errors.
+                                                                {t("Optimised Operational Efficiency - Automated order and product data handling reduced manual errors.")}
                                                             </li>
                                                             <li>
                                                                 {" "}
-                                                                Enhanced Data Accuracy - Master product data
-                                                                synchronisation improved reliability and reporting.
+                                                                {t("Enhanced Data Accuracy - Master product data synchronisation improved reliability and reporting.")}
                                                             </li>
                                                             <li>
-                                                                Significant Cost Savings - Retiring Salesforce and
-                                                                streamlining Navision reduced operational overheads.
+                                                                {" "}
+                                                                {t("Significant Cost Savings - Retiring Salesforce and streamlining Navision reduced operational overheads.")}
                                                             </li>
                                                             <li>
-                                                                Revenue Growth - eCommerce integration projected to
-                                                                deliver a 7.5% uplift in online revenue.
+                                                                {" "}
+                                                                {t("Revenue Growth - eCommerce integration projected to deliver a 7.5% uplift in online revenue.")}
                                                             </li>
                                                             <li>
-                                                                Future-Ready Infrastructure - Flexible, scalable
-                                                                architecture supporting ongoing innovation.
+                                                                {" "}
+                                                                {t("Future-Ready Infrastructure - Flexible, scalable architecture supporting ongoing innovation.")}
                                                             </li>
                                                             <li>
-                                                                Business Continuity - Robust, round-the-clock offshore
-                                                                support ensured stability during peak trading.
+                                                                {" "}
+                                                                {t("Business Continuity - Robust, round-the-clock offshore support ensured stability during peak trading.")}
                                                             </li>
                                                         </ul>
                                                         <p>
-                                                            By modernising their retail stack, AG now benefits from
-                                                            faster fulfilment, improved customer experience, and a
-                                                            future-ready platform that supports growth at scale.
+                                                            {" "}
+                                                            {t("By modernising their retail stack, AG now benefits from faster fulfilment, improved customer experience, and a future-ready platform that supports growth at scale.")}
                                                         </p>
                                                     </div>
                                                     <div className="ser-btn leaderbtn readmore">
                                                         <span className="animated-svg-link" id="toggleReadMore">
-                                                            <span className="label">Read More</span>
+                                                            <span className="label">{t("Read More")}</span>
                                                             <span className="svg-container p-0">
                                                                 {/* OLD Circles Removed. NEW Down Arrow Added */}
                                                                 <svg
@@ -851,72 +776,49 @@ function SuccessStories() {
                                                 </div>
                                                 <div className="flex2">
                                                     <div className="success-company">
-                                                        <h3>A-Map</h3>
+                                                        <h3>{t("A-Map")}</h3>
                                                         <img src="/new/scss-a.jpeg" alt="" />
                                                     </div>
                                                     <p>
-                                                        How A-MAP Turned Manual Mayhem into Real-Time Precision:
-                                                        Cutting Processes from Days to Seconds
+                                                        {t("How A-MAP Turned Manual Mayhem into Real-Time Precision: Cutting Processes from Days to Seconds")}
                                                     </p>
                                                     <p>
-                                                        A-MAP’s warehouse used to run on paper and hours of manual
-                                                        checks. Today, a single scan does in seconds what once
-                                                        took days, thanks to our extensive digital transformation.
+                                                        {t("A-MAP’s warehouse used to run on paper and hours of manual checks. Today, a single scan does in seconds what once took days, thanks to our extensive digital transformation.")} 
                                                     </p>
                                                     <div id="more" className="more-text hidden">
                                                         <p>
-                                                            As a high-volume distributor across the Middle East,
-                                                            Africa, and Asia, A-MAP faced mounting challenges:
-                                                            delayed container receipts, inventory mismatches,
-                                                            disconnected systems, and a warranty process drowning in
-                                                            paperwork. In just six weeks, we delivered a full-scale
-                                                            transformation of their warehouse operations.
+                                                            {t("As a high-volume distributor across the Middle East, Africa, and Asia, A-MAP faced mounting challenges: delayed container receipts, inventory mismatches, disconnected systems, and a warranty process drowning in paperwork. In just six weeks, we delivered a full-scale transformation of their warehouse operations.")}
                                                         </p>
                                                         <p>
-                                                            Smart warehousing with mobile picking, intelligent bin
-                                                            allocation, FIFO inventory, and automated transport
-                                                            planning replaced manual chaos. A bespoke warranty app
-                                                            digitized the claim process end-to-end. Real-time
-                                                            dashboards unlocked visibility across sales, warehouse,
-                                                            and last-mile delivery.
+                                                            {t("Smart warehousing with mobile picking, intelligent bin allocation, FIFO inventory, and automated transport planning replaced manual chaos. A bespoke warranty app digitized the claim process end-to-end. Real-time dashboards unlocked visibility across sales, warehouse, and last-mile delivery.")}
                                                         </p>
                                                         <p>
-                                                            <b>The Results</b>
+                                                            <b>{t("The Results")}</b>
                                                         </p>
                                                         <ul className="success-point-waber">
                                                             <li>
-                                                                Container processing time cut from 40 minutes to just
-                                                                3 minutes
+                                                                {t("Container processing time cut from 40 minutes to just 3 minutes")}
                                                             </li>
                                                             <li>
-                                                                {" "}
-                                                                Warranty claim time reduced from 30 hours to under 60
-                                                                seconds
+                                                                {t("Warranty claim time reduced from 30 hours to under 60 seconds")}
                                                             </li>
                                                             <li>
-                                                                15,000+ serials picked within the first few days with
-                                                                full traceability
+                                                                {t("15,000+ serials picked within the first few days with full traceability")}
                                                             </li>
                                                             <li>
-                                                                Paper picking lists eliminated and replaced with
-                                                                mobile-enabled workflows
+                                                                {t("Paper picking lists eliminated and replaced with mobile-enabled workflows")}
                                                             </li>
                                                             <li>
-                                                                Excel-driven planning retired in favour of live,
-                                                                actionable insights
+                                                                {t("Excel-driven planning retired in favour of live, actionable insights")}
                                                             </li>
                                                         </ul>
                                                         <p>
-                                                            Within couple of days after go-live, A-MAP’s fulfilment
-                                                            speed, inventory accuracy, and customer satisfaction
-                                                            began to climb. Today, our solution acts as a digital
-                                                            twin of the warehouse, and A-MAP is scaling faster,
-                                                            smarter, and paper-free.
+                                                            {t("Within couple of days after go-live, A-MAP’s fulfilment speed, inventory accuracy, and customer satisfaction began to climb. Today, our solution acts as a digital twin of the warehouse, and A-MAP is scaling faster, smarter, and paper-free.")}
                                                         </p>
                                                     </div>
                                                     <div className="ser-btn leaderbtn readmore">
                                                         <span className="animated-svg-link" id="toggleReadMore">
-                                                            <span className="label">Read More</span>
+                                                            <span className="label">{t("Read More")}</span>
                                                             <span className="svg-container p-0">
                                                                 {/* OLD Circles Removed. NEW Down Arrow Added */}
                                                                 <svg
@@ -1025,16 +927,15 @@ function SuccessStories() {
                             <div className="firstrow">
                                 <div className="row">
                                     <div className="col-sm-8">
-                                        <h2>Ready to accelerate value creation across your portfolio?</h2>
+                                        <h2>{t("Ready to accelerate value creation across your portfolio?")}</h2>
                                         <p>
-                                            Contact us today to learn how we can help modernise operations,
-                                            de-risk integrations, and improve commercial outcomes.
+                                            {t("Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.")}
                                         </p>
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="ser-btn text-right">
                                             <Link href="/contact-us" className="animated-svg-link">
-                                                Contact Us
+                                                {t("Contact Us")}
                                                 <span className="svg-container ">
                                                     <span className=" right">
                                                         <svg

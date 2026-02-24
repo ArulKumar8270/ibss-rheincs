@@ -302,7 +302,7 @@
         const isNowHidden = moreText.classList.contains('hidden');
         
         if (btnLabel) {
-          btnLabel.textContent = isNowHidden ? "Read More" : "Read Less";
+          btnLabel.textContent = isNowHidden ? t("Read More") : t("Read Less");
         }
         
         if (iconContainer) {
@@ -409,7 +409,7 @@
           // Update label
           const btnLabel = target.querySelector('.label');
           if (btnLabel) {
-            btnLabel.textContent = isHidden ? "Read More" : "Read Less";
+            btnLabel.textContent = isHidden ? t("Read More") : t("Read Less");
           }
           
           // Update icon

@@ -27,11 +27,11 @@ export default function EnterpriseSolutions() {
                     {t("Scalable, industry-specific solutions that empower growth and efficiency.")}
                   </p>
                   <p>
-                    {t("RheinBrücke delivers industry-specific Epicor ERP solutions that streamline business processes, provide real-time insights, and scale with your organisation. From manufacturing to distribution, our approach ensures smoother operations, faster decision-making, and measurable impact across your enterprise.")}
+                    {t("RheinBrücke delivers industry-specific Epicor ERP solutions that streamline business processes, provide real-time insights, and scale with your organisation. From manufacturing to distribution, our proven delivery approach enables smoother operations, faster decision-making, and measurable impact across your enterprise.")}
                   </p>
                   <div className="ser-btn mt-5">
                     <Link href="/contact-us" className="animated-svg-link">
-                      {t("Contact Us")}
+                      {t("Request an Epicor ERP Consultation")}
                       <span className="svg-container ">
                         <span className=" right">
                           <svg
@@ -584,7 +584,7 @@ export default function EnterpriseSolutions() {
                         {t("Epicor Kinetic ERP")}
                       </h2>
                       <p>
-                        {t("Epicor Kinetic ERP delivers industry-focused solutions that simplify complex processes, improve visibility, and drive operational efficiency for manufacturing, distribution, and retail businesses. Built for agility, it supports your digital transformation with scalable, cloud-based technology.")}
+                        {t("Epicor Kinetic ERP delivers industry-focused functionality that simplifies complex processes, improves operational visibility, and drives efficiency across manufacturing, distribution, and retail businesses. Built on a modern, cloud-ready architecture, it enables agility, scalability, and continuous innovation.")}
                       </p>
                       <p>
                         {t("Empower your business with agile, industry-ready ERP from Epicor.")}
@@ -596,7 +596,7 @@ export default function EnterpriseSolutions() {
                         {t("Epicor ERP empowers your business with agile, industry-tailored solutions that streamline operations, reduce costs, and enhance performance. At RheinBrücke, we combine the power of Epicor Kinetic with our SCALE methodology, delivering industry-wide experience, deep domain knowledge across manufacturing, distribution, construction, retail, and more, and a commitment to timely, high-quality project delivery.")}
                       </p>
                       <p>
-                        {t("Our extensive Epicor presence in the EMEA region enables us to support businesses in achieving operational excellence at scale.")}
+                        {t("RheinBrücke’s SCALE methodology delivers predictable outcomes, deep industry alignment, and high-quality project execution across the globe.")}
                       </p>
                     </div>
                   </div>
@@ -625,21 +625,21 @@ export default function EnterpriseSolutions() {
           <div className="skew-carousel owl-carousel systemview">
             <div className="item">
               <div className="inner">
-                <img src="/images/g1.png" alt="" />
+                <img src="/images/g1.png" alt="Automate ERP process icon" />
                 <p>
-                  {t("Streamlined and automated business processes with unified systems")}
+                  {t("Streamlined and automated business processes using a unified ERP platform")}
                 </p>
               </div>
             </div>
             <div className="item">
               <div className="inner">
-                <img src="/images/g2.png" alt="" />
-                <p>{t("Scalable architecture that supports growth and cost efficiency")}</p>
+                <img src="/images/g2.png" alt="ERP support and growth icon" />
+                <p>{t("Scalable architecture to support business growth and cost efficiency")}</p>
               </div>
             </div>
             <div className="item">
               <div className="inner">
-                <img src="/images/g3.png" alt="" />
+                <img src="/images/g3.png" alt="Supply chain and inventory management in ERP icon" />
                 <p>
                   {t("Optimized supply chain and inventory management for better control")}
                 </p>
@@ -647,34 +647,34 @@ export default function EnterpriseSolutions() {
             </div>
             <div className="item">
               <div className="inner">
-                <img src="/images/g4.png" alt="" />
+                <img src="/images/g4.png" alt="ERP support icon" />
                 <p>{t("Built-in compliance and regulatory support across regions")}</p>
               </div>
             </div>
             <div className="item">
               <div className="inner">
-                <img src="/images/g5.png" alt="" />
+                <img src="/images/g5.png" alt="ERP data insights icon" />
                 <p>{t("Real-time insights enabling faster, data-driven decision-making")}</p>
               </div>
             </div>
             {/* Duplicate for seamless marquee */}
             <div className="item">
               <div className="inner">
-                <img src="/images/g1.png" alt="" />
+                <img src="/images/g1.png" alt="Automate ERP process icon" />
                 <p>
-                  {t("Streamlined and automated business processes with unified systems")}
+                  {t("Streamlined and automated business processes using a unified ERP platform")}
                 </p>
               </div>
             </div>
             <div className="item">
               <div className="inner">
-                <img src="/images/g2.png" alt="" />
-                <p>{t("Scalable architecture that supports growth and cost efficiency")}</p>
+                <img src="/images/g2.png" alt="ERP support and growth icon" />
+                <p>{t("Scalable architecture to support business growth and cost efficiency")}</p>
               </div>
             </div>
             <div className="item">
               <div className="inner">
-                <img src="/images/g3.png" alt="" />
+                <img src="/images/g3.png" alt="Supply chain and inventory management in ERP icon" />
                 <p>
                   {t("Optimized supply chain and inventory management for better control")}
                 </p>
@@ -682,13 +682,13 @@ export default function EnterpriseSolutions() {
             </div>
             <div className="item">
               <div className="inner">
-                <img src="/images/g4.png" alt="" />
+                <img src="/images/g4.png" alt="ERP support icon" />
                 <p>{t("Built-in compliance and regulatory support across regions")}</p>
               </div>
             </div>
             <div className="item">
               <div className="inner">
-                <img src="/images/g5.png" alt="" />
+                <img src="/images/g5.png" alt="ERP data insights icon" />
                 <p>{t("Real-time insights enabling faster, data-driven decision-making")}</p>
               </div>
             </div>
@@ -699,10 +699,10 @@ export default function EnterpriseSolutions() {
               <div className="section-title ">
                 <div className="hero-video-content1 wow fadeInUp mt-4">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    {t("Solution")}
+                    {t("Epicor ERP Solutions")}
                   </h2>
                   <p>
-                    {t("Epicor ERP addresses business complexities with modern, cloud-enabled solutions built for industry. With automation, analytics, and deep functionality, Epicor helps you streamline processes, scale globally, and stay competitive.")}
+                    {t("Epicor ERP addresses business complexities with modern, cloud-enabled solutions built for industry. With embedded AI, automation, analytics, and deep functionality, Epicor helps organizations streamline operations, scale globally, and stay competitive")}
                   </p>
                 </div>
               </div>
@@ -716,7 +716,7 @@ export default function EnterpriseSolutions() {
               <div className="section-title">
                 <div className="hero-video-content wow fadeInUp mt-4">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    {t("The Enterprise Advantage")}
+                    {t("The Epicor Advantage")}
                   </h2>
                   <p>
                     {t("Modern enterprises need agile, connected systems to stay competitive, improve productivity, and make data-driven decisions. Many organisations struggle with:")}
@@ -733,9 +733,9 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="MeRLIN-service">
                       <div className="inner">
-                        <img src="/images/g1.png" alt="" />
+                        <img src="/images/g1.png" alt="Automate ERP process icon" />
                         <p>
-                          {t("Streamlined and automated business processes with unified systems")}
+                          {t("Streamlined and automated business processes using a unified ERP platform")}
                         </p>
                       </div>
                     </div>
@@ -745,9 +745,9 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="MeRLIN-service">
                       <div className="inner">
-                        <img src="/images/g2.png" alt="" />
+                        <img src="/images/g2.png" alt="ERP support and growth icon" />
                         <p>
-                          {t("Scalable architecture that supports growth and cost efficiency")}
+                          {t("Scalable architecture to support business growth and cost efficiency")}
                         </p>
                       </div>
                     </div>
@@ -757,7 +757,7 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="MeRLIN-service">
                       <div className="inner">
-                        <img src="/images/g3.png" alt="" />
+                        <img src="/images/g3.png" alt="Supply chain and inventory management in ERP icon" />
                         <p>
                   {t("Optimized supply chain and inventory management for better control")}
                 </p>
@@ -769,7 +769,7 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="MeRLIN-service">
                       <div className="inner">
-                        <img src="/images/g4.png" alt="" />
+                        <img src="/images/g4.png" alt="ERP support icon" />
                         <p>
                           {t("Built-in compliance and regulatory support across regions")}
                         </p>
@@ -781,7 +781,7 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="MeRLIN-service">
                       <div className="inner">
-                        <img src="/images/g5.png" alt="" />
+                        <img src="/images/g5.png" alt="ERP data insights icon" />
                         <p>
                           {t("Real-time insights enabling faster, data-driven decision-making")}
                         </p>
@@ -1009,10 +1009,10 @@ export default function EnterpriseSolutions() {
               <div className="section-title ">
                 <div className="hero-video-content1 wow fadeInUp mt-4">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    {t("Solution")}
+                    {t("Epicor ERP Solutions")}
                   </h2>
                   <p>
-                    {t("Our Solutions address these challenges by modernising core systems, automating processes, integrating enterprise applications, and enabling data-driven operational excellence.")}
+                    {t("Epicor ERP addresses business complexities with modern, cloud-enabled solutions built for industry. With embedded AI, automation, analytics, and deep functionality, Epicor helps organizations streamline operations, scale globally, and stay competitive")}
                   </p>
                 </div>
               </div>
@@ -1031,17 +1031,17 @@ export default function EnterpriseSolutions() {
                         className="text-anime-style-2 text-dark"
                         data-cursor="-opaque"
                       >
-                        {t("SCALE Methodology – The 4 Service Pillars")}
+                        {t("RheinBrücke SCALE Methodology – The 4 Service Pillars")}
                       </h2>
                       <p>
-                      {t("RheinBrücke’s proprietary SCALE methodology helps ensure successful project implementation.")}
+                      {t("RheinBrücke’s proprietary SCALE methodology ensures structured, risk-mitigated Epicor ERP implementations.")}
 
                       </p>
                       <p>
                         {t("The methodology’s five key stages-Prepare, Plan, Design, Validate, and Deploy-enable structured execution.")}
                       </p>
                       <p>
-                        {t("It integrates the best practices of Waterfall and Agile practices to optimize performance and delivery outcomes")}
+                        {t("SCALE integrates the strengths of Waterfall and Agile delivery models to optimize performance, quality, and timelines.")}
                       </p>
                       <p>
                         {t("RheinBrücke delivers Epicor ERP through four key service pillars, ensuring maximum value and successful outcomes")}
@@ -4002,7 +4002,7 @@ export default function EnterpriseSolutions() {
                 </div>
                 <div className="pill-points appro">
                   <div className="challenge-point-waber self-service">
-                    <img src="/images/app1.svg" alt="" />
+                    <img src="/images/app1.svg" alt="Scale methodology icon" />
                     <div className="pill-cont">
                       {/* <h5>Solution Architecture</h5> */}
                       <p>
@@ -4012,7 +4012,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   <div className="challenge-point-waber self-service">
-                    <img src="/images/app2.svg" alt="" />
+                    <img src="/images/app2.svg" alt="ERP five stage methodology icon" />
                     <div className="pill-cont">
                       {/* <h5>Project Management</h5> */}
                       <p>
@@ -4021,7 +4021,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   <div className="challenge-point-waber self-service">
-                    <img src="/images/app3.svg" alt="" />
+                    <img src="/images/app3.svg" alt="ERP best practices icon" />
                     <div className="pill-cont">
                       {/* <h5>Consulting</h5> */}
                       <p>
@@ -4052,7 +4052,7 @@ export default function EnterpriseSolutions() {
                 </div>
                 <div className="pill-points appro">
                   <div className="challenge-point-waber self-service">
-                    <img src="/images/app1.svg" alt="" />
+                    <img src="/images/app1.svg" alt="Scale methodology icon" />
                     <div className="pill-cont">
                       {/* <h5>Solution Architecture</h5> */}
                       <p>
@@ -4063,7 +4063,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   <div className="challenge-point-waber self-service">
-                    <img src="/images/app2.svg" alt="" />
+                    <img src="/images/app2.svg" alt="ERP five stage methodology icon " />
                     <div className="pill-cont">
                       {/* <h5>Project Management</h5> */}
                       <p>
@@ -4073,7 +4073,7 @@ export default function EnterpriseSolutions() {
                     </div>
                   </div>
                   <div className="challenge-point-waber self-service">
-                    <img src="/images/app3.svg" alt="" />
+                    <img src="/images/app3.svg" alt="ERP best practices icon" />
                     <div className="pill-cont">
                       {/* <h5>Consulting</h5> */}
                       <p>
@@ -4107,7 +4107,7 @@ export default function EnterpriseSolutions() {
                         {t("Epicor Premium Partner with 12 years of ERP delivery excellence")}
                       </h3>
                       <div className="text-center">
-                        <img src="/images/advant1.svg" alt="" />
+                        <img src="/images/advant1.svg" alt="Epicor premium partner " />
                       </div>
                     </div>
                   </div>
@@ -4117,26 +4117,26 @@ export default function EnterpriseSolutions() {
                       <h3>
                         {t("One of the largest pools of Epicor certified and trained consultants")}
                       </h3>
-                      <img src="/images/advant2.svg" alt="" />
+                      <img src="/images/advant2.svg" alt="Epicor certified consultant " />
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-12">
                     <div className="service-item-body1 epicright">
                       {/* <h3>Reporting and Analytics</h3> */}
                       <h3>
-                        {t("Expertise in end-to-end ERP lifecycle: implementation, migration, rollouts, optimization, and support.")}
+                        {t("Expertise across the complete ERP lifecycle: implementation, upgrades, migrations, roll-outs, optimization, and managed support")}
                       </h3>
-                      <img src="/images/advant3.svg" alt="" />
+                      <img src="/images/advant3.svg" alt="ERP lifecycle implementation" />
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-12">
                     <div className="service-item-body1 epicright">
                       {/* <h3>Mobile Accessibility</h3> */}
                       <h3>
-                        {t("Industry-specific knowledge in manufacturing, oil & gas, retail, construction, and more")}
+                        {t("Deep industry-specific knowledge in manufacturing, oil & gas, retail, construction, and more")}
                       </h3>
                       <div className="text-center">
-                        <img src="/images/advant4.svg" alt="" />
+                        <img src="/images/advant4.svg" alt="Industry specific ERP solutions" />
                       </div>
                     </div>
                   </div>
@@ -4144,9 +4144,9 @@ export default function EnterpriseSolutions() {
                     <div className="service-item-body1 epicleft">
                       {/* <h3>Effective Data Management</h3> */}
                       <h3>
-                        {t("Outcome-focused delivery ensuring resilience, efficiency, and business growth")}
+                        {t("Outcome-focused delivery ensuring resilience, efficiency, and sustainable business growth")}
                       </h3>
-                      <img src="/images/advant5.svg" alt="" />
+                      <img src="/images/advant5.svg" alt="ERP implementation and delivery services" />
                     </div>
                   </div>
                 </div>
@@ -4488,7 +4488,7 @@ export default function EnterpriseSolutions() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="valueslide">
-                      <img src="/images/cap1.svg" alt="" />
+                      <img src="/images/cap1.svg" alt="Epicor ERP implementation icon" />
                       {/*<h6> Dynamics 365 ERP & CRM Solutions</h6> */}
                       <p>
                         {t("ERP Implementation through onsite, offshore, hybrid model as per project needs")}
@@ -4500,7 +4500,7 @@ export default function EnterpriseSolutions() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="valueslide">
-                      <img src="/images/cap2.svg" alt="" />
+                      <img src="/images/cap2.svg" alt="Epicor ERP customer excellence icon" />
                       <p>
                         {t("Customer Excellence (Support, Premium Support, Training) that enhance ERP adoption and performance")}
 
@@ -4511,7 +4511,7 @@ export default function EnterpriseSolutions() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="valueslide">
-                      <img src="/images/cap3.svg" alt="" />
+                      <img src="/images/cap3.svg" alt="Epicor kinetic icon" />
                       <p>
                         {t("Upgrade legacy Epicor versions to Kinetic UI")}
                       </p>
@@ -4522,9 +4522,9 @@ export default function EnterpriseSolutions() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="valueslide">
-                      <img src="/images/cap4.svg" alt="" />
+                      <img src="/images/cap4.svg" alt="ERP migration services icon" />
                       <p>
-                        {t("Migrate on-prem ERP versions to Kinetic UI version for seamless transition")}
+                        {t("Migrate on-premises ERP versions to Kinetic UI version for seamless transition")}
                       </p>
                     </div>
                   </div>
@@ -4532,7 +4532,7 @@ export default function EnterpriseSolutions() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="valueslide">
-                      <img src="/images/cap5.svg" alt="" />
+                      <img src="/images/cap5.svg" alt="ERP performance enhancement icon" />
                       <p>
                         {t("Performance Optimization to enhance ERP performance and reliability")}
                       </p>
@@ -4547,6 +4547,8 @@ export default function EnterpriseSolutions() {
                         xmlns="http://www.w3.org/2000/svg"
                         id="Icon"
                         viewBox="0 0 74 79"
+                        role="img"
+  aria-label="ERP companion product icon"
                       >
                         <path
                           d="m60.64014 32.45654-4.78271-7.97119c-.14757-.23124-.37926-.39552-.64502-.4624l-12.71735-2.76483c.02704-.0871.065-.17029.0899-.25812h1.41504c1.10303 0 2-.89697 2-2v-2c0-1.10303-.89697-2-2-2h-1.41504c-.23291-.82178-.56104-1.61133-.98145-2.36084l1.00244-1.00293c.77679-.74377.77661-2.08411.00049-2.82861l-1.41406-1.41406c-.78027-.78125-2.05029-.78027-2.82861 0l-1.00293 1.00293c-.74951-.42041-1.53955-.74854-2.36084-.98145v-1.41504c0-1.10303-.89697-2-2-2h-2c-1.10303 0-2 .89697-2 2v1.41504c-.82178.23291-1.61133.56104-2.36084.98145l-1.00293-1.00244c-.75488-.75635-2.07275-.75684-2.82861-.00049l-1.41406 1.41406c-.776.74408-.77618 2.0849 0 2.82812l1.00293 1.00342c-.42041.74951-.74854 1.53906-.98145 2.36084h-1.41504c-1.10303 0-2 .89697-2 2v2c0 1.10303.89697 2 2 2h1.41504c.0249.08789.06281.17114.0899.2583l-12.71735 2.76465c-.26601.06606-.49739.23161-.64502.4624l-4.78271 7.97119c-.96466 1.52264-.2146 3.72156 1.47949 4.33691l3.16064 1.23682v10.60449c0 1.24365.74805 2.34033 1.90674 2.79395l21.729 8.50244c.23438.0918.49414.0918.72852 0l21.72949-8.50244c1.1582-.45361 1.90625-1.55029 1.90625-2.79395v-10.60449l3.16064-1.23682c1.69415-.61536 2.44415-2.81427 1.47949-4.33691zm-40.64014-13.45654v-2h2.20068c.47559 0 .88525-.33496.97998-.80078.22852-1.12598.67041-2.18848 1.31299-3.15869.26221-.39648.20947-.92285-.12695-1.25928l-1.55908-1.55957 1.41406-1.41406 1.55957 1.55908c.33643.33643.86182.38916 1.25928.12695.97021-.64258 2.03271-1.08447 3.15869-1.31299.46582-.09473.80078-.50439.80078-.97998v-2.20068h2v2.20068c0 .47559.33496.88525.80078.97998 1.12598.22852 2.18848.67041 3.15869 1.31299.39795.26221.92334.20947 1.25928-.12695l1.55957-1.55908 1.41406 1.41406-1.55908 1.55957c-.33643.33643-.38916.86279-.12695 1.25928.64258.97021 1.08447 2.03271 1.31299 3.15869.09473.46582.50439.80078.97998.80078h2.20068v2h-2.20068c-.47559 0-.88525.33496-.97998.80078-.22852 1.12598-.67041 2.18848-1.31299 3.15869-.26221.39648-.20947.92285.12695 1.25928l1.55908 1.55957-1.41455 1.41406-1.55908-1.55908c-.33594-.33594-.86133-.38867-1.25928-.12695-.97021.64258-2.03271 1.08447-3.15869 1.31299-.46582.09473-.80078.50439-.80078.97998v2.20068h-2v-2.20068c0-.47559-.33496-.88525-.80078-.97998-1.12598-.22852-2.18848-.67041-3.15869-1.31299-.3949-.26099-.92169-.21075-1.25928.12695l-1.55957 1.55908-1.41406-1.41406 1.55908-1.55957c.33643-.33643.38916-.86279.12695-1.25928-.64258-.97021-1.08447-2.03271-1.31299-3.15869-.09473-.46582-.50439-.80078-.97998-.80078zm2.28662 4.13501c.03937.07416.06873.15247.10986.22583l-1.00244 1.00293c-.77679.74377-.77661 2.08411-.00049 2.82861l1.41406 1.41406c.75586.75635 2.07422.75537 2.82812 0l1.00342-1.00293c.74951.42041 1.53906.74854 2.36084.98145v1.41504c0 1.10303.89697 2 2 2h2c1.10303 0 2-.89697 2-2v-1.41504c.82129-.23291 1.61133-.56104 2.36084-.98145l1.00293 1.00293c.7793.78027 2.04932.78125 2.82861 0l1.41406-1.41406c.776-.74408.77618-2.0849 0-2.82812l-1.00293-1.00342c.0412-.07343.0705-.15179.10992-.22595l9.84125 2.13953-19.55469 7.65186-19.55469-7.65186 9.84131-2.1394zm-17.21191 10.35034 4.34814-7.24609 21.11084 8.26074-4.52148 7.53613c-.25195.41992-.76514.59424-1.22217.41699l-19.22217-7.52197c-.56372-.20355-.81714-.93823-.49316-1.4458zm4.92529 15.14941v-9.82184l14.06152 5.5025c1.3396.53125 2.9082.02014 3.66553-1.25l3.27295-5.45502v19.92456l-20.36426-7.96857c-.38623-.15137-.63574-.51709-.63574-.93164zm44 0c0 .41455-.24951.78027-.63525.93164l-20.36475 7.96857v-19.92456l3.27295 5.45502c.75732 1.27014 2.32593 1.78125 3.66553 1.25l14.06152-5.5025v9.82184zm4.43213-13.70361-19.22217 7.52197c-.45703.17725-.97021.00293-1.22217-.41699l-4.52148-7.53613 21.11084-8.26074 4.34814 7.24609c.32404.50757.07062 1.24225-.49316 1.4458zm-26.43213-10.93115c3.30859 0 6-2.69141 6-6s-2.69141-6-6-6-6 2.69141-6 6 2.69141 6 6 6zm0-10c2.20557 0 4 1.79443 4 4s-1.79443 4-4 4-4-1.79443-4-4 1.79443-4 4-4z"
@@ -4568,6 +4570,8 @@ export default function EnterpriseSolutions() {
                         height="456pt"
                         viewBox="0 0 456 456"
                         width="456pt"
+                        role="img"
+  aria-label="ERP Consulting & Advisory icon"
                       >
                         <path
                           d="m248 129.078125 58.894531-49.078125h77.105469v-80h-192v80h56zm-40-65.078125v-48h160v48h-66.894531l-37.105469 30.921875v-30.921875zm0 0"
@@ -4966,6 +4970,37 @@ export default function EnterpriseSolutions() {
                               monitoring, and technical assistance to ensure
                               continuous ERP performance, reliability, and security
                               compliance.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.6s"
+                      >
+                        <h2 className="accordion-header" id="heading4">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse4"
+                            aria-expanded="false"
+                            aria-controls="collapse4"
+                          >
+                            Can RheinBrücke support global and multi-country Epicor ERP roll-outs?
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse4"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading4"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              Yes. RheinBrücke has extensive experience delivering Epicor ERP roll-outs across 45 countries, supporting multi-currency, multi-language, and region-specific compliance requirements.
                             </p>
                           </div>
                         </div>

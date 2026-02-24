@@ -24,19 +24,17 @@ export default function AlMl() {
                             <div className="col-sm-5">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-21" data-cursor="-opaque">
-                                        AMS–Application Maintenance & Support
+                                        {t("AMS – Application Maintenance & Support")}
                                     </h2>
                                     <p>
-                                        We deliver end-to-end technology services across ERP, software
-                                        development, cloud, support, and data analytics.
+                                        {t("We deliver end-to-end technology services across ERP, software development, cloud, support, and data analytics.")}
                                     </p>
                                     <p>
-                                        With an ITIL-based approach and deep global expertise, we provide
-                                        strategic value and best-in-class services for every enterprise.
+                                        {t("With an ITIL-based approach and deep global expertise, we provide strategic value and best-in-class services for every enterprise.")}
                                     </p>
                                     <div className="ser-btn ">
                                         <Link href="/contact-us" className="animated-svg-link">
-                                            Schedule a Call
+                                            {t("Schedule a Call")}
                                             <span className="svg-container ">
                                                 <span className=" right">
                                                     <svg
@@ -847,7 +845,7 @@ export default function AlMl() {
                         <div className="row align-items-center">
                             <div className="col-sm-6">
                                 <p className="text-white">
-                                    {t("Transform your business with next-generation ERP: discover how modern ERP solutions streamline operations, improve efficiency, and enable data-driven decision-making.")} {t("Watch now to learn why so many companies are embracing cloud-ERP, automation, and predictive workflows.")}
+                                    {t("Transform your business with next-generation ERP: discover how modern ERP solutions streamline operations, improve efficiency, and enable data-driven decision-making. Watch now to learn why so many companies are embracing cloud-ERP, automation, and predictive workflows.")}
                                 </p>
                             </div>
                             <div className="col-sm-6">

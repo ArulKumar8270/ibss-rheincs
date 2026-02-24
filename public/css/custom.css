@@ -1920,12 +1920,12 @@ body:has(.offcanvas) {
 
 .sersec .service-item-body p {
 	margin-bottom: 0;
-	font-size: 15px;
+	font-size: 16px;
 	font-weight: 100 !important;
 }
 
 .thepath .service-item-body p {
-	font-size: 15px;
+	font-size: 16px;
 	font-weight: 100 !important;
 	font-family: 'Helvetica', 'Arial', sans-serif;
 	font-style: normal;
@@ -7873,7 +7873,7 @@ body:has(.offcanvas) {
 	font-size: 24px;
 	line-height: 32px;
 	font-weight: 600;
-	font-family: "Raleway", sans-serif;
+	font-family: "helvetica-neue-lt-pro", sans-serif;
 	padding: 16px 0px;
 	margin-bottom: 0px !important;
 }
@@ -16243,20 +16243,27 @@ header.boxshadow {
 	margin-bottom: 0px;
 }
 
-.aboutbanner .section-title h1 {
+/* .aboutbanner .section-title h1 {
 	font-size: 65px;
 	font-family: "Raleway", sans-serif;
 	line-height: 80px;
 	font-weight: 300;
 	color: #082326;
 	width: 100%;
+} */
+.aboutbanner .section-title h1 {
+	font-size: 40px;
+    font-family: "Raleway", sans-serif;
+	line-height: 48px;
+	font-weight: 600;
+	color: #082326;
+	width: 100%;
 }
-
 .aboutbanner .section-title p {
-	font-size: 24px;
-	line-height: 32px;
-	font-family: 'helvetica-neue-lt-pro';
-	font-weight: 300;
+	font-size: 16px;
+    line-height: 24px;
+    font-family: 'helvetica-neue-lt-pro';
+    font-weight: 400;
 }
 
 .aboutbanner .hero-video-content {
@@ -16407,22 +16414,21 @@ header.boxshadow {
 }
 
 .mission .mission-left p {
-	font-size: 32px;
-	font-family: "Raleway", sans-serif;
+	font-size: 16px;
+    line-height: 24px;
+    font-family: 'helvetica-neue-lt-pro';
+    font-weight: 400;
 	color: #082326;
-	/* white text over video */
-	font-weight: 400;
 	margin-top: 15px;
-	line-height: 48px;
 	margin-bottom: 0px;
 }
 
 .mission .mission-left h2 {
-	font-size: 55px;
-	font-family: "Raleway", sans-serif;
-	color: #082326;
-	font-weight: 400;
-	line-height: 72px;
+	    font-size: 40px;
+    font-family: "Raleway", sans-serif;
+    color: #082326;
+    font-weight: 500;
+    line-height: 48px;
 }
 
 .width80 {
@@ -19415,7 +19421,7 @@ body.no-scroll {
 
 .index-benefit .benefits-steps-content p {
 	padding-right: 10px;
-	font-family: 'Radio Canada';
+	font-family: "helvetica-neue-lt-pro", sans-serif;
 	font-weight: 300;
 }
 
@@ -19475,7 +19481,7 @@ body.no-scroll {
 .footer-copyright .places a {
 	font-size: 16px !important;
 	line-height: 24px;
-	font-family: 'Radio Canada';
+	font-family: "helvetica-neue-lt-pro", sans-serif;
 	font-weight: 400;
 }
 
@@ -21110,11 +21116,11 @@ body.popup-open .main-header {
 
 
 .amslide .valueslide {
-	min-height: 330px;
+	min-height: 290px;
 }
 
 .amslide .valueslide p {
-	font-size: 21px;
+	font-size: 16px;
 	line-height: 32px;
 }
 
@@ -22647,4 +22653,10 @@ screen and (max-height: 300px) {
     font-weight: 400;
     font-size: 16px;
     font-family: 'helvetica-neue-lt-pro';
+}
+.events ul li{
+	    color: #000;
+    line-height: 1;
+    font-family: 'helvetica-neue-lt-pro';
+    font-style: normal !important;
 }

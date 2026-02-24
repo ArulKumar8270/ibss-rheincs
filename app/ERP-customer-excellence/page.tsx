@@ -5,7 +5,9 @@ import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
 import TestimonialandAward from "../Components/TestimonialandAward";
 import Awards from "../Components/Awards";
+import {useTranslation} from "../hooks/useTranslation";
 export default function EnterpriseSolutions() {
+  const { t, language } = useTranslation();
   return (
     <CommomLayout>
       <>
@@ -28,20 +30,17 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-5">
                 <div className="section-title">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    ERP Customer Excellence (CX)
+                    {t("ERP Customer Excellence (CX)")}
                   </h2>
                   <p>
-                    Empower your ERP with RheinBrücke’s Customer Excellence (CX),
-                    responsive support, continuous optimisation and data-driven
-                    insights.{" "}
+                    {t("Empower your ERP with RheinBrücke’s Customer Excellence (CX), responsive support, continuous optimisation and data-driven insights.")}
                   </p>
                   <p>
-                    We partner with you to transform ERP from a system into a
-                    strategic asset that grows with your business.
+                    {t("We partner with you to transform ERP from a system into a strategic asset that grows with your business.")}
                   </p>
                   <div className="ser-btn ">
                     <Link href="/contact-us" className="animated-svg-link">
-                      Contact Us
+                      {t("Contact Us")}
                       <span className="svg-container ">
                         <span className=" right">
                           <svg
@@ -155,16 +154,14 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-5">
                 <div className="section-title">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    ERP Customer Excellence (CX)
+                    {t("ERP Customer Excellence (CX)")}
                   </h2>
                   <p>
-                    Empowering your ERP journey with end-to-end support, including
-                    implementation, rollouts, system upgrades, and ongoing consulting
-                    and advisory services tailored to your business goals.
+                    {t("Empowering your ERP journey with end-to-end support, including implementation, rollouts, system upgrades, and ongoing consulting and advisory services tailored to your business goals.")}
                   </p>
                   <div className="ser-btn mt-5">
                     <Link href="/contact-us" className="animated-svg-link">
-                      Contact Us
+                      {t("Contact Us")}
                       <span className="svg-container ">
                         <span className=" right">
                           <svg
@@ -291,26 +288,13 @@ export default function EnterpriseSolutions() {
               <div className="col-lg-12">
                 <div className="section-title text-center erpabout">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Are you an ERP User facing challenges with your current support
-                    service? Looking for a more reliable and proactive partner?
+                    {t("Are you an ERP User facing challenges with your current support service? Looking for a more reliable and proactive partner?")}
                   </h2>
                   <p className="mt-5">
-                    At RheinBrücke IT Consulting, we are committed to delivering
-                    Customer Excellence by helping you maximize the value of your ERP
-                    investment. Our team of Epicor Certified professional engineers
-                    brings extensive experience, having successfully implemented
-                    complex ERP solutions for businesses worldwide. We focus on
-                    providing expert support to ensure your system is tailored to meet
-                    your unique needs, while streamlining your processes for optimal
-                    efficiency.
+                    {t("At RheinBrücke IT Consulting, we are committed to delivering Customer Excellence by helping you maximize the value of your ERP investment. Our team of Epicor Certified professional engineers brings extensive experience, having successfully implemented complex ERP solutions for businesses worldwide. We focus on providing expert support to ensure your system is tailored to meet your unique needs, while streamlining your processes for optimal efficiency.")}
                   </p>
                   <p>
-                    We help you harness the full potential of ERP with our deep domain
-                    knowledge, industry vertical templates, ERP technical and
-                    functional capabilities, and expertise in implementing companion
-                    products and add-ons. We enable you to manage and optimize your
-                    production processes with real-time insights, automation, and
-                    enhanced visibility.
+                    {t("We help you harness the full potential of ERP with our deep domain knowledge, industry vertical templates, ERP technical and functional capabilities, and expertise in implementing companion products and add-ons. We enable you to manage and optimize your production processes with real-time insights, automation, and enhanced visibility.")}
                   </p>
                   <div className="corimg mt-5">
                     <img src="/images/makescorus.svg" alt="" />
@@ -327,13 +311,10 @@ export default function EnterpriseSolutions() {
               <div className="section-title ">
                 <div className="hero-video-content1 wow fadeInUp mt-4">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    The RheinBrücke Customer Excellence Offering
+                    {t("The RheinBrücke Customer Excellence Offering")}
                   </h2>
                   <p>
-                    At RIC, our Customer Excellence program offers premium, tailored
-                    support designed to optimize your ERP system’s performance. With a
-                    comprehensive suite of services and expert guidance, we ensure
-                    long-term success and maximum value for your business.
+                    {t("At RIC, our Customer Excellence program offers premium, tailored support designed to optimize your ERP system’s performance. With a comprehensive suite of services and expert guidance, we ensure long-term success and maximum value for your business.")}
                   </p>
                 </div>
               </div>
@@ -348,10 +329,9 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="mds-waber">
                       <img src="/images/industry-experts.svg" alt="" />
-                      <h6> Industry Expertise Across 42 Countries </h6>
+                      <h6> {t("Industry Expertise Across 42 Countries")} </h6>
                       <p>
-                        Leverage our deep industry knowledge to optimize business
-                        operations globally.
+                        {t("Leverage our deep industry knowledge to optimize business operations globally.")}
                       </p>
                     </div>
                   </div>
@@ -360,10 +340,9 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="mds-waber">
                       <img src="/images/omni-channel-global-support.svg" alt="" />
-                      <h6>Omni-Channel Global Support for Fast Resolution</h6>
+                      <h6> {t("Omni-Channel Global Support for Fast Resolution")} </h6>
                       <p>
-                        Access a large pool of Epicor-certified experts across
-                        multiple support channels, timezones, anytime anywhere.
+                        {t("Access a large pool of Epicor-certified experts across multiple support channels, timezones, anytime anywhere.")}
                       </p>
                     </div>
                   </div>
@@ -372,11 +351,9 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="mds-waber">
                       <img src="/images/itil.svg" alt="" />
-                      <h6> ITIL-Based Service Model </h6>
+                      <h6> {t("ITIL-Based Service Model")} </h6>
                       <p>
-                        Drive efficiency and best practices with our structured,
-                        ITIL-aligned support framework, while getting priority
-                        assistance for urgent issues.
+                        {t("Drive efficiency and best practices with our structured, ITIL-aligned support framework, while getting priority assistance for urgent issues.")}
                       </p>
                     </div>
                   </div>
@@ -385,10 +362,9 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="mds-waber">
                       <img src="/images/fe4.svg" alt="" />
-                      <h6> Continuous System Optimization </h6>
+                      <h6> {t("Continuous System Optimization")} </h6>
                       <p>
-                        Regular reviews and recommendations to ensure optimal system
-                        performance.
+                        {t("Regular reviews and recommendations to ensure optimal system performance.")}
                       </p>
                     </div>
                   </div>
@@ -397,10 +373,9 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="mds-waber">
                       <img src="/images/optimized solution.svg" alt="" />
-                      <h6> Optimized Solutions &amp; Strategic Guidance </h6>
+                      <h6> {t("Optimized Solutions & Strategic Guidance")} </h6>
                       <p>
-                        Receive personalized advice and solutions based on your unique
-                        business needs.
+                        {t("Receive personalized advice and solutions based on your unique business needs.")}
                       </p>
                     </div>
                   </div>
@@ -409,10 +384,9 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="mds-waber">
                       <img src="/images/fe5.svg" alt="" />
-                      <h6> Comprehensive Training &amp; Knowledge Sharing </h6>
+                      <h6> {t("Comprehensive Training & Knowledge Sharing")} </h6>
                       <p>
-                        Equip your team with the skills to fully utilize Epicor ERP’s
-                        capabilities.
+                        {t("Equip your team with the skills to fully utilize Epicor ERP’s capabilities.")}
                       </p>
                     </div>
                   </div>
@@ -421,10 +395,9 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="mds-waber">
                       <img src="/images/erp-implementation-rollout.svg" alt="" />
-                      <h6> ERP Implementation, Rollouts and Upgrades </h6>
+                      <h6> {t("ERP Implementation, Rollouts and Upgrades")} </h6>
                       <p>
-                        Expertise in deploying Epicor products, add-ons, rollouts,
-                        migrations, and upgrades.
+                        {t("Expertise in deploying Epicor products, add-ons, rollouts, migrations, and upgrades.")}
                       </p>
                     </div>
                   </div>
@@ -653,56 +626,46 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-6">
                 <div className="section-title">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Benefits of Our Customer Excellence
+                    {t("Benefits of Our Customer Excellence")}
                   </h2>
                   <p>
-                    At RIC, our Customer Excellence program offers premium, tailored
-                    support designed to optimize your ERP system’s performance. With a
-                    comprehensive suite of services and expert guidance, we ensure
-                    long-term success and maximum value for your business.
+                    {t("At RIC, our Customer Excellence program offers premium, tailored support designed to optimize your ERP system’s performance. With a comprehensive suite of services and expert guidance, we ensure long-term success and maximum value for your business.")}
                   </p>
                 </div>
                 <div className="pill-points appro">
                   <div className="challenge-point-waber self-service">
                     <img src="/images/app1.svg" alt="" />
                     <div className="pill-cont">
-                      <h5>Value and Service</h5>
+                      <h5>{t("Value and Service")}</h5>
                       <p>
-                        Access specialized ERP support desk teams and top-tier
-                        problem-solving experts, ensuring dedicated attention and
-                        seamless support for all your ERP needs.
+                        {t("Access specialized ERP support desk teams and top-tier problem-solving experts, ensuring dedicated attention and seamless support for all your ERP needs.")}
                       </p>
                     </div>
                   </div>
                   <div className="challenge-point-waber self-service">
                     <img src="/images/app2.svg" alt="" />
                     <div className="pill-cont">
-                      <h5>Faster Issue Resolution</h5>
+                      <h5>{t("Faster Issue Resolution")}</h5>
                       <p>
-                        Our proactive, hyper-responsive support anticipates and
-                        resolves potential issues within your ERP system and across
-                        your technology stack, minimizing downtime and improving
-                        efficiency.
+                        {t("Our proactive, hyper-responsive support anticipates and resolves potential issues within your ERP system and across your technology stack, minimizing downtime and improving efficiency.")}
                       </p>
                     </div>
                   </div>
                   <div className="challenge-point-waber self-service">
                     <img src="/images/app3.svg" alt="" />
                     <div className="pill-cont">
-                      <h5>Seamless Scalability</h5>
+                      <h5>{t("Seamless Scalability")}</h5>
                       <p>
-                        Support for growing businesses with easy scalability of your
-                        ERP system.
+                        {t("Support for growing businesses with easy scalability of your ERP system.")}
                       </p>
                     </div>
                   </div>
                   <div className="challenge-point-waber self-service">
                     <img src="/images/fe3.svg" alt="" />
                     <div className="pill-cont">
-                      <h5>Enhanced Security &amp; Compliance</h5>
+                      <h5>{t("Enhanced Security & Compliance")}</h5>
                       <p>
-                        Safeguard your data with robust security measures and
-                        compliance management.
+                        {t("Safeguard your data with robust security measures and compliance management.")}
                       </p>
                     </div>
                   </div>
@@ -724,13 +687,11 @@ export default function EnterpriseSolutions() {
               <div className="col-lg-12">
                 <div className="section-title text-center">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Elevate Your ERP Experience
+                    {t("Elevate Your ERP Experience")}
                   </h2>
                   <p className="mt-5">
                     {" "}
-                    At RheinBrücke, we go beyond just ERP support. We also specialize
-                    in products that work seamlessly to enhance your ERP capabilities,
-                    supporting your organization’s growing needs:
+                    {t("At RheinBrücke, we go beyond just ERP support. We also specialize in products that work seamlessly to enhance your ERP capabilities, supporting your organization’s growing needs:")}
                   </p>
                 </div>
               </div>
@@ -739,14 +700,14 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-4 col-12">
                 <div className="eslh-waber">
                   <img src="/images/cap1.svg" alt="" />
-                  <h5>SAP</h5>
+                  <h5>{t("SAP")}</h5>
                   <p>
                     {" "}
-                    SAP S/4HANA, SAP ECC, SAP Business ByDesign, SAP Business One.{" "}
+                    {t("SAP S/4HANA, SAP ECC, SAP Business ByDesign, SAP Business One.")}
                   </p>
                   <div className="ser-btn1">
                     <Link href="/solutions/erp-enterprise-solutions-and-services/sap" className="animated-svg-link1 btn-style-3">
-                      Know More
+                      {t("Know More")}
                       <span className="svg-container ">
                         <span className=" left">
                           <svg
@@ -854,14 +815,14 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-4 col-12">
                 <div className="eslh-waber">
                   <img src="/images/cap2.svg" alt="" />
-                  <h5>Epicor</h5>
+                  <h5>{t("Epicor")}</h5>
                   <p>
                     {" "}
-                    Kinetic, Grow, Data Analytics, FP&amp;A, IP&amp;O, ECM and more.{" "}
+                    {t("Kinetic, Grow, Data Analytics, FP & A, IP&O, ECM and more.")}
                   </p>
                   <div className="ser-btn1">
                     <Link href="/solutions/erp-enterprise-solutions-and-services/epicor" className="animated-svg-link1 btn-style-3">
-                      Know More
+                      {t("Know More")}
                       <span className="svg-container ">
                         <span className=" left">
                           <svg
@@ -969,16 +930,16 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-4 col-12">
                 <div className="eslh-waber">
                   <img src="/images/cap3.svg" alt="" />
-                  <h5>Microsoft Dynamics</h5>
+                  <h5>{t("Microsoft Dynamics")}</h5>
                   <p>
                     {" "}
-                    Dynamics 365, Dynamics 365 Business Central, Navision, Axapta.
+                    {t("Dynamics 365, Dynamics 365 Business Central, Navision, Axapta.")}
                   </p>
                   <div className="ser-btn1">
                     <Link href="/solutions/erp-enterprise-solutions-and-services/ms-dynamics"
                       className="animated-svg-link1 btn-style-3"
                     >
-                      Know More
+                      {t("Know More")}
                       <span className="svg-container ">
                         <span className=" left">
                           <svg
@@ -1092,13 +1053,10 @@ export default function EnterpriseSolutions() {
             <div className="section-title text-center">
               <div className="hero-video-content1 wow fadeInUp mt-4">
                 <h2 className="text-anime-style-2" data-cursor="-opaque">
-                  RheinBrücke’s Solutions and Services for Customer Excellence
+                  {t("RheinBrücke’s Solutions and Services for Customer Excellence")}
                 </h2>
                 <p>
-                  At RheinBrücke, our dedication to customer excellence goes beyond
-                  just ERP support. As a Microsoft Gold Partner, we offer a range of
-                  services designed to optimize your business processes and deliver
-                  measurable results.
+                  {t("At RheinBrücke, our dedication to customer excellence goes beyond just ERP support. As a Microsoft Gold Partner, we offer a range of services designed to optimize your business processes and deliver measurable results.")}
                 </p>
               </div>
             </div>
@@ -1115,17 +1073,15 @@ export default function EnterpriseSolutions() {
                                 <div className="Customer-Speak-title">
                                   <img src="/images/exc1.png" alt="" />
                                   <div className="exppara">
-                                    <h4>CorusHR</h4>
+                                    <h4>{t("CorusHR")}</h4>
                                     <p>
-                                      Streamline HR processes and ensure compliance
-                                      while enhancing efficiency and employee
-                                      satisfaction across your organization.
+                                      {t("Streamline HR processes and ensure compliance while enhancing efficiency and employee satisfaction across your organization.")}
                                     </p>
                                     <div className="ser-btn bgnone">
                                       <Link href="/solutions/CorusHR"
                                         className="animated-svg-link"
                                       >
-                                        Read More
+                                        {t("Read More")}
                                         <span className="svg-container ">
                                           <span className=" right">
                                             <svg
@@ -1245,18 +1201,15 @@ export default function EnterpriseSolutions() {
                                 <div className="Customer-Speak-title">
                                   <img src="/images/exc2.png" alt="" />
                                   <div className="exppara">
-                                    <h4>MeRLIN Sourcing</h4>
+                                    <h4>{t("MeRLIN Sourcing")}</h4>
                                     <p>
-                                      Streamlining sourcing operations, MeRLIN is a
-                                      Strategic Direct Sourcing Solution that
-                                      integrates automation, Supplier Relationship
-                                      Management, planning, and Advanced Analytics.
+                                      {t("Streamlining sourcing operations, MeRLIN is a Strategic Direct Sourcing Solution that integrates automation, Supplier Relationship Management, planning, and Advanced Analytics.")}
                                     </p>
                                     <div className="ser-btn bgnone">
                                       <Link href="/MeRLIN-strategic-sourcing-software"
                                         className="animated-svg-link"
                                       >
-                                        Read More
+                                        {t("Read More")}
                                         <span className="svg-container ">
                                           <span className=" right">
                                             <svg
@@ -1376,18 +1329,15 @@ export default function EnterpriseSolutions() {
                                 <div className="Customer-Speak-title">
                                   <img src="/images/exc3.png" alt="" />
                                   <div className="exppara">
-                                    <h4>Epicor Companion Products</h4>
+                                    <h4>{t("Epicor Companion Products")}</h4>
                                     <p>
-                                      At RheinBrücke, we offer more than just Epicor
-                                      ERP support—we also specialize in companion
-                                      products and add-ons that enhance your ERP and
-                                      support your organization’s growth.
+                                      {t("At RheinBrücke, we offer more than just Epicor ERP support—we also specialize in companion products and add-ons that enhance your ERP and support your organization’s growth.")}
                                     </p>
                                     <div className="ser-btn bgnone">
                                       <Link href="/Epicor-companion"
                                         className="animated-svg-link"
                                       >
-                                        Read More
+                                        {t("Read More")}
                                         <span className="svg-container ">
                                           <span className=" right">
                                             <svg
@@ -1507,16 +1457,15 @@ export default function EnterpriseSolutions() {
                                 <div className="Customer-Speak-title">
                                   <img src="/images/exc4.png" alt="" />
                                   <div className="exppara">
-                                    <h4>Digital Solution and Services</h4>
+                                    <h4>{t("Digital Solution and Services")}</h4>
                                     <p>
-                                      Bridging the gap between Technology and
-                                      Business.
+                                      {t("Bridging the gap between Technology and Business.")}
                                     </p>
                                     <div className="ser-btn bgnone">
                                       <Link href="/solutions/digital-services-and-solutions"
                                         className="animated-svg-link"
                                       >
-                                        Read More
+                                        {t("Read More")}
                                         <span className="svg-container ">
                                           <span className=" right">
                                             <svg
@@ -1637,19 +1586,20 @@ export default function EnterpriseSolutions() {
                                   <img src="/images/exc5.png" alt="" />
                                   <div className="exppara">
                                     <h4>
-                                      Application Development Maintenance and Support
-                                      Services
+                                      {t(
+                                        "Application Development Maintenance and Support Services"
+                                      )}
                                     </h4>
                                     <p>
-                                      Empower your organization with robust data
-                                      governance and management, ensuring seamless
-                                      operations and compliance.
+                                      {t(
+                                        "Empower your organization with robust data governance and management, ensuring seamless operations and compliance."
+                                      )}
                                     </p>
                                     <div className="ser-btn bgnone">
                                       <Link href="/AM-S"
                                         className="animated-svg-link"
                                       >
-                                        Read More
+                                        {t("Read More")}
                                         <span className="svg-container ">
                                           <span className=" right">
                                             <svg
@@ -1769,17 +1719,17 @@ export default function EnterpriseSolutions() {
                                 <div className="Customer-Speak-title">
                                   <img src="/images/exc6.png" alt="" />
                                   <div className="exppara">
-                                    <h4>Business Intelligence Services</h4>
+                                    <h4>{t("Business Intelligence Services")}</h4>
                                     <p>
-                                      Leverage data-driven insights to make informed
-                                      decisions, enhance performance, and gain a
-                                      competitive edge.
+                                      {t(
+                                        "Leverage data-driven insights to make informed decisions, enhance performance, and gain a competitive edge."
+                                      )}
                                     </p>
                                     <div className="ser-btn bgnone">
                                       <Link href="/business-intelligence"
                                         className="animated-svg-link"
                                       >
-                                        Read More
+                                        {t("Read More")}
                                         <span className="svg-container ">
                                           <span className=" right">
                                             <svg
@@ -1892,8 +1842,9 @@ export default function EnterpriseSolutions() {
                     </div>
                   </ul>
                   <p>
-                    Our expert teams provide end-to-end support, helping you maximize
-                    value and achieve business excellence.
+                    {t(
+                      "Our expert teams provide end-to-end support, helping you maximize value and achieve business excellence."
+                    )}
                   </p>
                 </div>
               </div>
@@ -1909,23 +1860,21 @@ export default function EnterpriseSolutions() {
               <div className="col-lg-12">
                 <div className="section-title text-center">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Partnering with <br /> Businesses Worldwide
+                    {t("Partnering with Businesses Worldwide")}
                   </h2>
                   <p>
-                    We partner with businesses in over 40 countries to deliver
-                    high-impact transformation across key sectors including brand
-                    owners and vertical retailers, the retail industry, distribution
-                    and supply chain, discrete and process manufacturing, the
-                    automotive industry, engineering, procurement and construction as
-                    well as the private equity and funding backed ventures.{" "}
+                    {t(
+                      "We partner with businesses in over 40 countries to deliver high-impact transformation across key sectors including brand owners and vertical retailers, the retail industry, distribution and supply chain, discrete and process manufacturing, the automotive industry, engineering, procurement and construction as well as the private equity and funding backed ventures."
+                    )}
                   </p>
                   <p>
-                    Whether you are mid-sized and scaling, or enterprise-level and
-                    rethinking your model, we help you unlock growth.
+                    {t(
+                      "Whether you are mid-sized and scaling, or enterprise-level and rethinking your model, we help you unlock growth with Cloud ERP and Digital solutions."
+                    )}
                   </p>
                   <div className="ser-btn2 mt-4">
                     <Link href="#" className="animated-svg-link1 btn-style-3">
-                      Know More
+                      {t("Know More")}
                       <span className="svg-container ">
                         <span className=" left">
                           <svg
@@ -2088,16 +2037,19 @@ export default function EnterpriseSolutions() {
               <div className="firstrow">
                 <div className="row">
                   <div className="col-sm-8">
-                    <h2>Ready to Take Your ERP Experience to the Next Level? </h2>
+                    <h2>
+                      {t("Ready to Take Your ERP Experience to the Next Level?")}
+                    </h2>
                     <p>
-                      Schedule a free consultation today to discover how our services
-                      can help drive your success.
+                      {t(
+                        "Schedule a free consultation today to discover how our services can help drive your success."
+                      )}
                     </p>
                   </div>
                   <div className="col-sm-4">
                     <div className="ser-btn text-right">
                       <Link href="/contact-us" className="animated-svg-link">
-                        Contact Us
+                        {t("Contact Us")}
                         <span className="svg-container ">
                           <span className=" right">
                             <svg

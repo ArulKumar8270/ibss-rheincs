@@ -2184,7 +2184,7 @@ export default function EnterpriseSolutions() {
                                         <img src="/images/socilapoint.svg" alt="" />
                                         <p>
                                             {" "}
-                                            {t("Children at the risk of losing parental care; when their basic material, emotional, health and educational needs are being neglected, or they are abused; or in cases where their care-givers lack the capacity or commitment to adequately care for them.")}
+                                            {t("Children at the risk of losing parental care; when their basic material, emotional, health and educational needs are being neglected, or they are abused or in cases where their care-givers lack the capacity or commitment to adequately care for them.")}
                                         </p>
                                     </div>
                                     <div className="challenge-point-waber">
