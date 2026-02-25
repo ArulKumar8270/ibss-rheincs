@@ -127,8 +127,22 @@ const page = () => {
                   </Link>
                 </div>
               </div>
+              {/* SVG Animation from SVG_Animation Code.html */}
+              <div className="sap-svg-animation-wrap" style={{ width: '100%', margin: '0 auto' }}>
+                <iframe
+                  src="/htmls/SVG_Animation%20Code.html"
+                  title="SAP SVG Animation"
+                  style={{
+                    width: '54%',
+                    height: 340,
+                    border: 'none',
+                    display: 'block',
+                    margin: '0 auto',
+                  }}
+                />
+              </div>
               {/* 3. Create a container div */}
-              <div id="lottie-container" />
+              {/* <div id="lottie-container" /> */}
             </div>
           </div>
         </div>
