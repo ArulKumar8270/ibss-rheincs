@@ -1756,7 +1756,7 @@ export default function AlMl() {
                   >
                     <div className="section-title text-center">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        Wondering Why? We’re Here to Answer
+                        {t("Wondering Why? We’re Here to Answer")}
                       </h2>
                     </div>
                     {/* FAQ Accordion Start */}
@@ -1772,7 +1772,7 @@ export default function AlMl() {
                             aria-expanded="true"
                             aria-controls="collapse1"
                           >
-                            What career opportunities are available at RheinBrücke?
+                            {t("What career opportunities are available at RheinBrücke?")}
                           </button>
                         </h2>
                         <div
@@ -1783,7 +1783,7 @@ export default function AlMl() {
                         >
                           <div className="accordion-body">
                             <p>
-                              RheinBrücke offers diverse global career opportunities, specializing in SAP, Epicor ERP implementation and consulting, Microsoft Dynamics 365, Cloud solutions and Digital Transformation. Roles are available across ERP Functional Consulting, Technical Development (e.g., C#, .NET), AI/Machine Learning Engineers, Data Analytics and Project Management.  
+                              {t("RheinBrücke offers diverse global career opportunities, specializing in SAP, Epicor ERP implementation and consulting, Microsoft Dynamics 365, Cloud solutions and Digital Transformation. Roles are available across ERP Functional Consulting, Technical Development (e.g., C#, .NET), AI/Machine Learning Engineers, Data Analytics and Project Management.")}  
                             </p>
                           </div>
                         </div>
@@ -1803,7 +1803,7 @@ export default function AlMl() {
                             aria-expanded="false"
                             aria-controls="collapse2"
                           >
-                            How does RheinBrücke support employee growth?
+                            {t("How does RheinBrücke support employee growth?")}
                           </button>
                         </h2>
                         <div
@@ -1814,7 +1814,7 @@ export default function AlMl() {
                         >
                           <div className="accordion-body">
                             <p>
-                              RheinBrücke invests heavily in continuous growth. Support includes dedicated mentorship programs, funding for industry-recognized certifications (e.g., Epicor Certified Consultant, Microsoft Azure certifications), and guaranteed exposure to international and GCC-based digital transformation projects. The organisational culture encourages innovation, collaboration, and ownership. 
+                              {t("RheinBrücke invests heavily in continuous growth. Support includes dedicated mentorship programs, funding for industry-recognized certifications (e.g., Epicor Certified Consultant, Microsoft Azure certifications), and guaranteed exposure to international and GCC-based digital transformation projects. The organisational culture encourages innovation, collaboration, and ownership.")}
                             </p>
                           </div>
                         </div>
@@ -1834,7 +1834,7 @@ export default function AlMl() {
                             aria-expanded="false"
                             aria-controls="collapse3"
                           >
-                            Can I apply for remote or hybrid roles?
+                            {t("Can I apply for remote or hybrid roles?")}
                           </button>
                         </h2>
                         <div
@@ -1845,7 +1845,7 @@ export default function AlMl() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Yes. Selected roles offer flexible and hybrid work options based on project scope and client requirements. 
+                              {t("Yes. Selected roles offer flexible and hybrid work options based on project scope and client requirements.")} 
                             </p>
                           </div>
                         </div>
@@ -1865,7 +1865,7 @@ export default function AlMl() {
                             aria-expanded="false"
                             aria-controls="collapse4"
                           >
-                           How can I apply? 
+                           {t("How can I apply?")} 
                           </button>
                         </h2>
                         <div
@@ -1876,7 +1876,7 @@ export default function AlMl() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Applicants can visit the Careers page, explore current openings, and submit applications online. They may also join the Talent Community to be considered for future opportunities in ERP and Digital Consulting. They can also contact our HR team via the email address <a href="mailto:careers@rheincs.com">careers@rheincs.com.</a>
+                              {t("Applicants can visit the Careers page, explore current openings, and submit applications online. They may also join the Talent Community to be considered for future opportunities in ERP and Digital Consulting. They can also contact our HR team via the email address")} <a href="mailto:careers@rheincs.com">careers@rheincs.com</a>.
                             </p>
                           </div>
                         </div>

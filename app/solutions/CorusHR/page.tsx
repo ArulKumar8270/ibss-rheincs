@@ -2070,7 +2070,7 @@ export default function Corushr() {
                   >
                     <div className="section-title text-center">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        Wondering Why? We’re Here to Answer
+                        {t("Wondering Why? We’re Here to Answer")}
                       </h2>
                     </div>
                     {/* FAQ Accordion Start */}
@@ -2086,7 +2086,7 @@ export default function Corushr() {
                             aria-expanded="true"
                             aria-controls="collapse1"
                           >
-                            What is CorusHR? 
+                            {t("What is CorusHR?")}  
                           </button>
                         </h2>
                         <div
@@ -2097,7 +2097,7 @@ export default function Corushr() {
                         >
                           <div className="accordion-body">
                             <p>
-                              CorusHR is RheinBrücke’s comprehensive Human Resource Management Solution (HRMS), a modern Cloud-enabled platform designed to simplify the full employee lifecycle encompassing Employee Self Service (ESS) and Manager Self Service (MSS). It covers core HR operations, including recruitment, time and attendance, payroll management, performance appraisal and compliance reporting.  
+                              {t("CorusHR is RheinBrücke’s comprehensive Human Resource Management Solution (HRMS), a modern Cloud-enabled platform designed to simplify the full employee lifecycle encompassing Employee Self Service (ESS) and Manager Self Service (MSS). It covers core HR operations, including recruitment, time and attendance, payroll management, performance appraisal and compliance reporting.")}   
                             </p>
                           </div>
                         </div>
@@ -2117,7 +2117,7 @@ export default function Corushr() {
                             aria-expanded="false"
                             aria-controls="collapse2"
                           >
-                            Who can use CorusHR? 
+                            {t("Who can use CorusHR?")}  
                           </button>
                         </h2>
                         <div
@@ -2128,7 +2128,7 @@ export default function Corushr() {
                         >
                           <div className="accordion-body">
                             <p>
-                              CorusHR is ideal for medium to large enterprises seeking a flexible, modular, and cloud-enabled HR platform. It is particularly effective for organizations with complex organizational structures or those requiring a multi-country solution and compliance management across the Middle East and globally.  
+                              {t("CorusHR is ideal for medium to large enterprises seeking a flexible, modular, and cloud-enabled HR platform. It is particularly effective for organizations with complex organizational structures or those requiring a multi-country solution and compliance management across the Middle East and globally.")}   
                             </p>
                           </div>
                         </div>
@@ -2148,7 +2148,7 @@ export default function Corushr() {
                             aria-expanded="false"
                             aria-controls="collapse3"
                           >
-                            Does CorusHR integrate with ERP? 
+                            {t("Does CorusHR integrate with ERP?")}  
                           </button>
                         </h2>
                         <div
@@ -2159,7 +2159,7 @@ export default function Corushr() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Yes, CorusHR is built for seamless integration. It integrates directly with leading Enterprise Resource Planning (ERP) systems such as Epicor Kinetic. This ensures real-time data synchronization and establishes a single source of truth for employee data, attendance, and financial reporting across all connected systems.  
+                              {t("Yes, CorusHR is built for seamless integration. It integrates directly with leading Enterprise Resource Planning (ERP) systems such as Epicor Kinetic, SAP, and Microsoft Dynamics 365. This ensures real-time data synchronization and establishes a single source of truth for employee data, attendance, and financial reporting across all connected systems.")}   
                             </p>
                           </div>
                         </div>
@@ -2179,7 +2179,7 @@ export default function Corushr() {
                             aria-expanded="false"
                             aria-controls="collapse4"
                           >
-                           What are the deployment options for Corus HR?  
+                           {t("What are the deployment options for Corus HR?")}   
                           </button>
                         </h2>
                         <div
@@ -2190,7 +2190,7 @@ export default function Corushr() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Corus HR may be deployed either on-premises or on the cloud, providing scalability and easy customisation. 
+                              {t("Corus HR may be deployed either on-premises or on the cloud, providing scalability and easy customisation.")} 
                             </p>
                           </div>
                         </div>
