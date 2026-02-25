@@ -4408,7 +4408,7 @@ export default function EnterpriseSolutions() {
                   >
                     <div className="section-title text-center">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        Wondering Why? We’re Here to Answer
+                        {t("Wondering Why? We’re Here to Answer")}
                       </h2>
                     </div>
                     {/* FAQ Accordion Start */}
@@ -4424,7 +4424,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="true"
                             aria-controls="collapse1"
                           >
-                            What Microsoft Dynamics services are offered by RheinBrücke? 
+                            {t("What Microsoft Dynamics services are offered by RheinBrücke?")} 
                           </button>
                         </h2>
                         <div
@@ -4435,7 +4435,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              RheinBrücke provides comprehensive services for the Microsoft Dynamics 365 platform, including end-to-end implementation and customization for Finance & Supply Chain Management (SCM), Customer Relationship Management (CRM), and the Power Platform (Power BI, Power Apps). We also offer continuous Managed Services and optimization. 
+                              {t("RheinBrücke provides comprehensive services for the Microsoft Dynamics 365 platform, including end-to-end implementation and customization for Finance & Supply Chain Management (SCM), Customer Relationship Management (CRM), and the Power Platform (Power BI, Power Apps). We also offer continuous Managed Services and optimization.")} 
                             </p>
                           </div>
                         </div>
@@ -4455,7 +4455,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="false"
                             aria-controls="collapse2"
                           >
-                            Why choose Dynamics 365 through RheinBrücke? 
+                            {t("Why choose Dynamics 365 through RheinBrücke?")} 
                           </button>
                         </h2>
                         <div
@@ -4466,7 +4466,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              RheinBrücke offers a unique advantage built on deep multi-platform expertise. We combine certified Dynamics 365 domain knowledge with proven project methodologies, specializing in complex system integrations with Epicor, SAP, and legacy ERPs. This ensures a unified data strategy, especially for multi-national organizations.  
+                              {t("RheinBrücke offers a unique advantage built on deep multi-platform expertise. We combine certified Dynamics 365 domain knowledge with proven project methodologies, specializing in complex system integrations with Epicor, SAP, and legacy ERPs. This ensures a unified data strategy, especially for multi-national organizations.")}  
                             </p>
                           </div>
                         </div>
@@ -4486,7 +4486,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="false"
                             aria-controls="collapse3"
                           >
-                            Do you provide cloud migration for legacy Dynamics solutions? 
+                            {t("Do you provide cloud migration for legacy Dynamics solutions?")} 
                           </button>
                         </h2>
                         <div
@@ -4497,7 +4497,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Yes. RheinBrücke specializes in Cloud migration services. We assist organizations with seamless upgrades from legacy systems such as Dynamics AX (Axapta) and Dynamics NAV (Navision) to the modern Dynamics 365 Cloud (SaaS) environment. Our proven approach minimizes disruption and maximizes data integrity. 
+                              {t("Yes. RheinBrücke specializes in Cloud migration services. We assist organizations with seamless upgrades from legacy systems such as Dynamics AX (Axapta) and Dynamics NAV (Navision) to the modern Dynamics 365 Cloud (SaaS) environment. Our proven approach minimizes disruption and maximizes data integrity.")} 
                             </p>
                           </div>
                         </div>
@@ -4517,7 +4517,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="false"
                             aria-controls="collapse4"
                           >
-                           Which industries are supported with Dynamics 365? 
+                           {t("Which industries are supported with Dynamics 365?")} 
                           </button>
                         </h2>
                         <div
@@ -4528,7 +4528,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              We provide specialized support across key industrial verticals. Our Dynamics 365 solutions cater to the complex Supply Chain Management (SCM) needs of Manufacturing, omnichannel Retail and Distribution (e.g., utilizing D365 Commerce), and highly-regulated Professional Services and Project Accounting firms. 
+                              {t("We provide specialized support across key industrial verticals. Our Dynamics 365 solutions cater to the complex Supply Chain Management (SCM) needs of Manufacturing, omnichannel Retail and Distribution (e.g., utilizing D365 Commerce), and highly-regulated Professional Services and Project Accounting firms.")} 
                             </p>
                           </div>
                         </div>

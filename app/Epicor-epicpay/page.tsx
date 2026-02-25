@@ -692,7 +692,7 @@ export default function EnterpriseSolutions() {
                   >
                     <div className="section-title text-center">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        Wondering Why? We’re Here to Answer
+                        {t("Wondering Why? We’re Here to Answer")}
                       </h2>
                     </div>
                     {/* FAQ Accordion Start */}
@@ -708,7 +708,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="true"
                             aria-controls="collapse1"
                           >
-                            What is EpicPay?
+                            {t("What is EpicPay?")}
                           </button>
                         </h2>
                         <div
@@ -719,8 +719,8 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Epicor Payroll MEA or EpicPay is RheinBrücke’s payroll management solution, fully integrated with Epicor ERP to support seamless HR and payroll operations by ensuring a unified data source for all employee, attendance, and financial records. 
-                            </p>
+                              {t("Epicor Payroll MEA or EpicPay is RheinBrücke’s payroll management solution, fully integrated with Epicor ERP to support seamless HR and payroll operations by ensuring a unified data source for all employee, attendance, and financial records.")} 
+                            </p> 
                           </div>
                         </div>
                       </div>
@@ -739,7 +739,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="false"
                             aria-controls="collapse2"
                           >
-                            Which industries can benefit from EpicPay? 
+                            {t("Which industries can benefit from EpicPay?")} 
                           </button>
                         </h2>
                         <div
@@ -750,7 +750,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              EpicPay is particularly suitable for industries with complex payroll requirements, including multi-site manufacturing, project-based construction, high-volume retail, and service-based sectors. It efficiently handles varied shift patterns, project costing, and diverse employee benefits. 
+                              {t("EpicPay is particularly suitable for industries with complex payroll requirements, including multi-site manufacturing, project-based construction, high-volume retail, and service-based sectors. It efficiently handles varied shift patterns, project costing, and diverse employee benefits.")} 
                             </p>
                           </div>
                         </div>
@@ -770,7 +770,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="false"
                             aria-controls="collapse3"
                           >
-                            Does EpicPay support regional compliance? 
+                            {t("Does EpicPay support regional compliance?")} 
                           </button>
                         </h2>
                         <div
@@ -781,7 +781,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Yes, compliance is a core feature. EpicPay is designed to handle local tax, statutory requirements, and complex payroll regulations across multiple geographies. We maintain continuous updates to ensure full compliance with specific regional mandates. 
+                              {t("Yes, compliance is a core feature. EpicPay is designed to handle local tax, statutory requirements, and complex payroll regulations across multiple geographies. We maintain continuous updates to ensure full compliance with specific regional mandates.")} 
                             </p>
                           </div>
                         </div>
@@ -801,7 +801,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="false"
                             aria-controls="collapse4"
                           >
-                           Can EpicPay operate independently of Epicor?
+                           {t("Can EpicPay operate independently of Epicor?")}
                           </button>
                         </h2>
                         <div
@@ -812,7 +812,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              No, EpicPay is designed to work only with Epicor ERP.
+                              {t("No, EpicPay is designed to work only with Epicor ERP.")}
                             </p>
                           </div>
                         </div>

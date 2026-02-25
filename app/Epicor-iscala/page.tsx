@@ -673,7 +673,7 @@ export default function EnterpriseSolutions() {
                   >
                     <div className="section-title text-center">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        Wondering Why? We’re Here to Answer
+                        {t("Wondering Why? We’re Here to Answer")} 
                       </h2>
                     </div>
                     {/* FAQ Accordion Start */}
@@ -689,7 +689,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="true"
                             aria-controls="collapse1"
                           >
-                            What is Epicor iScala used for? 
+                            {t("What is Epicor iScala used for?")}  
                           </button>
                         </h2>
                         <div
@@ -700,7 +700,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                             Epicor iScala is a robust ERP solution ideally designed for international subsidiaries of large corporations and mid-sized organizations with complex requirements. It offers exceptional multi-company financials, sophisticated supply chain management, and strong capabilities for project accounting and inventory control. 
+                             {t("Epicor iScala is a robust ERP solution ideally designed for international subsidiaries of large corporations and mid-sized organizations with complex requirements. It offers exceptional multi-company financials, sophisticated supply chain management, and strong capabilities for project accounting and inventory control.")}  
                             </p>
                           </div>
                         </div>
@@ -720,7 +720,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="false"
                             aria-controls="collapse2"
                           >
-                            How does RheinBrücke support Epicor iScala users? 
+                            {t("How does RheinBrücke support Epicor iScala users?")}  
                           </button>
                         </h2>
                         <div
@@ -731,7 +731,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              RheinBrücke is a dedicated iScala expert, providing comprehensive services including strategic implementation, version upgrades, secure migration services to Epicor Kinetic, and continuous managed support and optimization of existing processes. We specialize in maintaining stability while planning the next-gen evolution. 
+                              {t("RheinBrücke is a dedicated iScala expert, providing comprehensive services including strategic implementation, version upgrades, secure migration services to Epicor Kinetic, and continuous managed support and optimization of existing processes. We specialize in maintaining stability while planning the next-gen evolution.")}  
                             </p>
                           </div>
                         </div>
@@ -751,7 +751,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="false"
                             aria-controls="collapse3"
                           >
-                            Can Epicor iScala integrate with modern digital platforms? 
+                            {t("Can Epicor iScala integrate with modern digital platforms?")}  
                           </button>
                         </h2>
                         <div
@@ -762,7 +762,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Yes. RheinBrücke uses modern middleware and API integration strategies to connect iScala seamlessly with analytics, CRM systems and AI platforms. This extended functionality allows iScala users to gain unified business visibility and leverage new digital tools without losing their core system stability.  
+                              {t("Yes. RheinBrücke uses modern middleware and API integration strategies to connect iScala seamlessly with analytics, CRM systems and AI platforms. This extended functionality allows iScala users to gain unified business visibility and leverage new digital tools without losing their core system stability.")}   
                             </p>
                           </div>
                         </div>
@@ -782,7 +782,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="false"
                             aria-controls="collapse4"
                           >
-                            Is Epicor iScala suitable for multi-country operations? 
+                            {t("Is Epicor iScala suitable for multi-country operations?")}  
                           </button>
                         </h2>
                         <div
@@ -793,7 +793,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Yes, iScala is highly suitable for multi-country operations. It features comprehensive support for multiple languages and currencies, making it the ideal choice for globally distributed enterprises. Furthermore, its structure easily adapts to diverse regional compliance and reporting requirements. 
+                              {t("Yes, iScala is highly suitable for multi-country operations. It features comprehensive support for multiple languages and currencies, making it the ideal choice for globally distributed enterprises. Furthermore, its structure easily adapts to diverse regional compliance and reporting requirements.")} 
                             </p>
                           </div>
                         </div>

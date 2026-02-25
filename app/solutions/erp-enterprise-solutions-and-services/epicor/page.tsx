@@ -4556,8 +4556,7 @@ export default function EnterpriseSolutions() {
                         />
                       </svg>
                       <p>
-                        Companion Products to enhance ERP functionality and business
-                        process efficiency
+                        Companion Products to enhance ERP functionality and business process efficiency
                       </p>
                     </div>
                   </div>
@@ -4824,7 +4823,7 @@ export default function EnterpriseSolutions() {
                   >
                     <div className="section-title text-center">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        Wondering Why? We’re Here to Answer
+                        {t("Wondering Why? We’re Here to Answer")}
                       </h2>
                     </div>
                     {/* FAQ Accordion Start */}
@@ -4840,7 +4839,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="true"
                             aria-controls="collapse1"
                           >
-                            What services does RheinBrücke offer for Epicor ERP?
+                            {t("What services does RheinBrücke offer for Epicor ERP?")}
                           </button>
                         </h2>
                         <div
@@ -4851,13 +4850,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              RheinBrücke offers comprehensive, end-to-end services
-                              for Epicor Kinetic ERP and older platforms. This
-                              includes strategic implementation, Cloud migration
-                              services, customization (e.g., integrations, API
-                              development), version upgrades (e.g., 10.2 to Kinetic),
-                              global roll-outs, and continuous Epicor Managed Services
-                              and support.
+                              {t("RheinBrücke offers comprehensive, end-to-end services for Epicor Kinetic ERP and older platforms. This includes end-to-end implementation, Cloud migration services, customization (e.g., integrations, API development), version upgrades (e.g., 10.2 or lower versions to current Epicor version), Kinetic UI upgrades, global roll-outs, and continuous Epicor Managed Services and support.")}
                             </p>
                           </div>
                         </div>
@@ -4877,7 +4870,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="false"
                             aria-controls="collapse2"
                           >
-                            Why choose Epicor ERP?
+                            {t("Why choose Epicor ERP?")}
                           </button>
                         </h2>
                         <div
@@ -4888,14 +4881,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Epicor Kinetic is the ideal solution for growth and
-                              digital transformation, providing robust,
-                              industry-specific functionality for discrete and process
-                              manufacturing, distribution, and services. It enables
-                              operational excellence, global scalability, and includes
-                              modern features like AI, IoT integration, and a
-                              Cloud-first architecture designed for agile business
-                              management.
+                              {t("Epicor Kinetic is the ideal solution for growth and digital transformation, providing robust, industry-specific functionality for discrete and process manufacturing, distribution, and services. It enables operational excellence, global scalability, and includes modern features like AI, IoT integration, and a Cloud-first architecture designed for agile business management.")}
                             </p>
                           </div>
                         </div>
@@ -4915,7 +4901,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="false"
                             aria-controls="collapse3"
                           >
-                            How does RheinBrücke differentiate its Epicor services?
+                            {t("How does RheinBrücke differentiate its Epicor services?")}
                           </button>
                         </h2>
                         <div
@@ -4926,13 +4912,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Our key differentiators are deep technical and global
-                              implementation expertise. Our certified consultants
-                              bring extensive domain knowledge and have successfully
-                              executed complex Epicor projects across more than 45+
-                              countries, including extensive experience with
-                              multi-company and multi-currency roll-outs. We focus on
-                              achieving maximum, sustainable ROI.
+                              {t("Our key differentiators are deep technical and global implementation expertise. Our certified consultants bring extensive domain knowledge and have successfully executed complex Epicor projects across more than 45+ countries, including extensive experience with multi-company and multi-currency rollouts. We focus on achieving maximum, sustainable ROI. We are a Epicor Premium partner and a two times winner of the Epicor International Partner of the Year award with deep knowledge of Epicor including developing products and templates on top of Epicor.")}
                             </p>
                           </div>
                         </div>
@@ -4952,7 +4932,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="false"
                             aria-controls="collapse4"
                           >
-                            Does RheinBrücke offer post-implementation Epicor support?
+                            {t("Does RheinBrücke offer post-implementation Epicor support?")}
                           </button>
                         </h2>
                         <div
@@ -4963,13 +4943,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Yes. Our dedicated Customer Excellence team provides
-                              flexible post-implementation Epicor support and Managed
-                              Services. We offer customized support plans, including
-                              SLA-driven maintenance, system optimization, 24/7
-                              monitoring, and technical assistance to ensure
-                              continuous ERP performance, reliability, and security
-                              compliance.
+                              {t("Yes. Our dedicated Customer Excellence team provides flexible post-implementation Epicor support and Managed Services. We offer customized support plans, including SLA-driven maintenance, system optimization, 24/7 monitoring, and technical assistance to ensure continuous ERP performance, reliability, and security compliance.")}
                             </p>
                           </div>
                         </div>
@@ -4980,27 +4954,27 @@ export default function EnterpriseSolutions() {
                         className="accordion-item wow fadeInUp"
                         data-wow-delay="0.6s"
                       >
-                        <h2 className="accordion-header" id="heading4">
+                        <h2 className="accordion-header" id="heading5">
                           <button
                             className="accordion-button collapsed"
                             type="button"
                             data-bs-toggle="collapse"
-                            data-bs-target="#collapse4"
+                            data-bs-target="#collapse5"
                             aria-expanded="false"
-                            aria-controls="collapse4"
+                            aria-controls="collapse5"
                           >
-                            Can RheinBrücke support global and multi-country Epicor ERP roll-outs?
+                            {t("Can RheinBrücke support global and multi-country Epicor ERP roll-outs?")}
                           </button>
                         </h2>
                         <div
-                          id="collapse4"
+                          id="collapse5"
                           className="accordion-collapse collapse"
-                          aria-labelledby="heading4"
+                          aria-labelledby="heading5"
                           data-bs-parent="#accordion"
                         >
                           <div className="accordion-body">
                             <p>
-                              Yes. RheinBrücke has extensive experience delivering Epicor ERP roll-outs across 45 countries, supporting multi-currency, multi-language, and region-specific compliance requirements.
+                              {t("Yes. RheinBrücke has extensive experience delivering Epicor ERP roll-outs across 45 countries, supporting multi-currency, multi-language, and region-specific compliance requirements.")}
                             </p>
                           </div>
                         </div>

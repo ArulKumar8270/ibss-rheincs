@@ -8064,7 +8064,7 @@ export default function EnterpriseSolutions() {
                   >
                     <div className="section-title text-center">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        Wondering Why? We’re Here to Answer
+                        {t("Wondering Why? We’re Here to Answer")}
                       </h2>
                     </div>
                     {/* FAQ Accordion Start */}
@@ -8080,7 +8080,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="true"
                             aria-controls="collapse1"
                           >
-                           What does RheinBrücke’s Enterprise Solutions portfolio include?
+                           {t("What does RheinBrücke’s Enterprise Solutions portfolio include?")} 
                           </button>
                         </h2>
                         <div
@@ -8091,7 +8091,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              RheinBrücke’s enterprise offerings encompass ERP, CRM, HCM, Procurement, SCM and digital transformation services for leading Cloud platforms such as Epicor Kinetic, Microsoft Dynamics 365, and SAP. 
+                              {t("RheinBrücke’s enterprise offerings encompass ERP, CRM, HCM, Procurement, SCM and digital transformation services for leading Cloud platforms such as Epicor Kinetic, Microsoft Dynamics 365, and SAP.")}  
                             </p>
                           </div>
                         </div>
@@ -8111,7 +8111,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="false"
                             aria-controls="collapse2"
                           >
-                            Does RheinBrücke provide end-to-end implementation and support? 
+                            {t("Does RheinBrücke provide end-to-end implementation and support?")}  
                           </button>
                         </h2>
                         <div
@@ -8122,7 +8122,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Yes. RheinBrücke provides comprehensive end-to-end lifecycle support. Our service includes initial strategic blueprinting and consulting, full implementation and data migration, custom development and integration, and continuous post-go-live Managed Services and system optimization. We ensure sustained ROI long after the go-live date.  
+                              {t("Yes. RheinBrücke provides comprehensive end-to-end lifecycle support. Our service includes initial strategic blueprinting and consulting, full implementation and data migration, custom development and integration, and continuous post-go-live Managed Services and system optimization. We ensure sustained ROI long after the go-live date.")}   
                             </p>
                           </div>
                         </div>
@@ -8142,7 +8142,7 @@ export default function EnterpriseSolutions() {
                             aria-expanded="false"
                             aria-controls="collapse3"
                           >
-                            Which industries does RheinBrücke specialise in?
+                            {t("Which industries does RheinBrücke specialise in?")} 
                           </button>
                         </h2>
                         <div
@@ -8153,7 +8153,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              RheinBrücke has deep expertise across discrete and process manufacturing ((e.g. Metal Fabrication, Automotive), retail, wholesale distribution, Logistics, construction/Engineering-to-order (ETO), and professional services. We tailor our Epicor and Dynamics 365 solutions to meet the unique challenges of each sector. 
+                              {t("RheinBrücke has deep expertise across discrete and process manufacturing ((e.g. Metal Fabrication, Automotive), retail, wholesale distribution, Logistics, construction/Engineering-to-order (ETO), and professional services. We tailor our Epicor and Dynamics 365 solutions to meet the unique challenges of each sector.")} 
                             </p>
                           </div>
                         </div>

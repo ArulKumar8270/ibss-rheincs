@@ -675,7 +675,7 @@ export default function EpicorKinetic() {
                   >
                     <div className="section-title text-center">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        Wondering Why? We’re Here to Answer
+                        {t("Wondering Why? We’re Here to Answer")} 
                       </h2>
                     </div>
                     {/* FAQ Accordion Start */}
@@ -691,7 +691,7 @@ export default function EpicorKinetic() {
                             aria-expanded="true"
                             aria-controls="collapse1"
                           >
-                            What is Epicor Kinetic? 
+                            {t("What is Epicor Kinetic?")}  
                           </button>
                         </h2>
                         <div
@@ -702,7 +702,7 @@ export default function EpicorKinetic() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Epicor Kinetic is the next-generation, cloud-first ERP solution designed specifically for manufacturers (including Discrete and mixed-mode). It provides an intuitive, highly visual interface, AI-powered advanced automation, and integrated analytics to drive operational excellence across the entire supply chain.  
+                              {t("Epicor Kinetic is the next-generation, cloud-first ERP solution designed specifically for manufacturers (including Discrete and mixed-mode). It provides an intuitive, highly visual interface, AI-powered advanced automation, and integrated analytics to drive operational excellence across the entire supply chain.")}   
                             </p>
                           </div>
                         </div>
@@ -722,7 +722,7 @@ export default function EpicorKinetic() {
                             aria-expanded="false"
                             aria-controls="collapse2"
                           >
-                            How does RheinBrücke assist with Epicor Kinetic adoption?
+                            {t("How does RheinBrücke assist with Epicor Kinetic adoption?")} 
                           </button>
                         </h2>
                         <div
@@ -733,7 +733,7 @@ export default function EpicorKinetic() {
                         >
                           <div className="accordion-body">
                             <p>
-                              RheinBrücke ensures a low-risk, successful transition through comprehensive services, including strategic blueprinting, tailored implementation across the EMEAI region, secure data migration from legacy Epicor versions, customization of the Kinetic platform, and comprehensive user enablement and training to guarantee rapid user adoption and sustained ROI. 
+                              {t("RheinBrücke ensures a low-risk, successful transition through comprehensive services, including strategic blueprinting, tailored implementation across the EMEAI region, secure data migration from legacy Epicor versions, customization of the Kinetic platform, and comprehensive user enablement and training to guarantee rapid user adoption and sustained ROI.")}  
                             </p>
                           </div>
                         </div>
@@ -753,7 +753,7 @@ export default function EpicorKinetic() {
                             aria-expanded="false"
                             aria-controls="collapse3"
                           >
-                           Can Epicor Kinetic be integrated with other business systems? 
+                           {t("Can Epicor Kinetic be integrated with other business systems?")}  
                           </button>
                         </h2>
                         <div
@@ -764,7 +764,7 @@ export default function EpicorKinetic() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Yes. Epicor Kinetic is built on a modern API-first architecture, allowing it to integrate seamlessly with various third-party business systems. This includes CRM platforms (like Dynamics 365), eCommerce storefronts, and advanced analytics platforms, creating a unified business visibility and a connected digital ecosystem. 
+                              {t("Yes. Epicor Kinetic is built on a modern API-first architecture, allowing it to integrate seamlessly with various third-party business systems. This includes CRM platforms (like Dynamics 365), eCommerce storefronts, and advanced analytics platforms, creating a unified business visibility and a connected digital ecosystem.")}  
                             </p>
                           </div>
                         </div>
@@ -784,7 +784,7 @@ export default function EpicorKinetic() {
                             aria-expanded="false"
                             aria-controls="collapse4"
                           >
-                           What are the advantages of moving to Epicor Kinetic?  
+                           {t("What are the advantages of moving to Epicor Kinetic?")}   
                           </button>
                         </h2>
                         <div
@@ -795,7 +795,7 @@ export default function EpicorKinetic() {
                         >
                           <div className="accordion-body">
                             <p>
-                              Moving to Epicor Kinetic delivers powerful competitive advantages. Benefits include a superior user experience (UX), Cloud scalability for rapid growth, real-time insights for data-driven decisions, enhanced system security, and compliance capabilities. This ultimately translates into lower Total Cost of Ownership (TCO) and faster ROI. 
+                              {t("Moving to Epicor Kinetic delivers powerful competitive advantages. Benefits include a superior user experience (UX), Cloud scalability for rapid growth, real-time insights for data-driven decisions, enhanced system security, and compliance capabilities. This ultimately translates into lower Total Cost of Ownership (TCO) and faster ROI.")} 
                             </p>
                           </div>
                         </div>

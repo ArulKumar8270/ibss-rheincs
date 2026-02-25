@@ -1,7 +1,11 @@
+"use client";
+
 import React from 'react'
 import CommomLayout from '../../../Components/CommomLayout'
 import Link from "next/link";
+import {useTranslation} from "../../../hooks/useTranslation";
 const page = () => {
+  const { t, language } = useTranslation();
   return (
     <CommomLayout>
       <>
@@ -1681,7 +1685,7 @@ const page = () => {
                   >
                     <div className="section-title text-center">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        Wondering Why? We’re Here to Answer
+                        {t("Wondering Why? We’re Here to Answer")}
                       </h2>
                     </div>
                     {/* FAQ Accordion Start */}
@@ -1697,7 +1701,7 @@ const page = () => {
                             aria-expanded="true"
                             aria-controls="collapse1"
                           >
-                            What SAP services does RheinBrücke provide? 
+                            {t("What SAP services does RheinBrücke provide?")} 
                           </button>
                         </h2>
                         <div
@@ -1708,7 +1712,7 @@ const page = () => {
                         >
                           <div className="accordion-body">
                             <p>
-                              RheinBrücke provides strategic SAP consulting, end-to-end implementation, system integration, and complex Cloud transformation and migration services. We also offer customization and support for SAP ECC as well as technical support for ABAP and BASIS. Our goal is to modernize your SAP ERP landscape and significantly improve operational efficiency and data integrity.  
+                              {t("RheinBrücke provides strategic SAP consulting, end-to-end implementation, system integration, and complex Cloud transformation and migration services. We also offer customization and support for SAP ECC as well as technical support for ABAP and BASIS. Our goal is to modernize your SAP ERP landscape and significantly improve operational efficiency and data integrity.")}  
                             </p>
                           </div>
                         </div>
@@ -1728,7 +1732,7 @@ const page = () => {
                             aria-expanded="false"
                             aria-controls="collapse2"
                           >
-                             Do you specialise in particular SAP modules? 
+                             {t("Do you specialise in particular SAP modules?")} 
                           </button>
                         </h2>
                         <div
@@ -1739,7 +1743,7 @@ const page = () => {
                         >
                           <div className="accordion-body">
                             <p>
-                              Yes. RheinBrücke specializes in core SAP ERP solutions, with deep expertise in managing large-scale S/4HANA migrations and implementing SAP Business One tailored for mid-sized enterprises and global subsidiaries. We focus particularly on complex financials, Supply Chain Management (SCM), and logistics modules.
+                              {t("Yes. RheinBrücke specializes in core SAP ERP solutions, with deep expertise in managing large-scale S/4HANA migrations and implementing SAP Business One tailored for mid-sized enterprises and global subsidiaries. We focus particularly on complex financials, Supply Chain Management (SCM), and logistics modules.")}
                             </p>
                           </div>
                         </div>
@@ -1759,7 +1763,7 @@ const page = () => {
                             aria-expanded="false"
                             aria-controls="collapse3"
                           >
-                            Can SAP systems integrate with other enterprise applications? 
+                            {t("Can SAP systems integrate with other enterprise applications?")} 
                           </button>
                         </h2>
                         <div
@@ -1770,7 +1774,7 @@ const page = () => {
                         >
                           <div className="accordion-body">
                             <p>
-                              Absolutely. SAP systems are central to the enterprise ecosystem. We leverage modern API and middleware tools to ensure seamless integration with CRM, HR, Business Intelligence (BI), and critical third-party applications. Critically, we specialize in complex interoperability projects involving platforms like Epicor and Microsoft Dynamics 365. 
+                              {t("Absolutely. SAP systems are central to the enterprise ecosystem. We leverage modern API and middleware tools to ensure seamless integration with CRM, HR, Business Intelligence (BI), and critical third-party applications. Critically, we specialize in complex interoperability projects involving platforms like Epicor and Microsoft Dynamics 365.")} 
                             </p>
                           </div>
                         </div>
@@ -1790,7 +1794,7 @@ const page = () => {
                             aria-expanded="false"
                             aria-controls="collapse4"
                           >
-                           Does RheinBrücke provide SAP support and AMS services? 
+                           {t("Does RheinBrücke provide SAP support and AMS services?")} 
                           </button>
                         </h2>
                         <div
@@ -1801,7 +1805,7 @@ const page = () => {
                         >
                           <div className="accordion-body">
                             <p>
-                              Yes. Our dedicated Application Management and Support (AMS) services provide proactive, SLA-based support to maintain system stability, manage regular version upgrades, and ensure continuous optimization of your SAP landscape. We offer flexible models, including 24/7 coverage for global and GCC operations.
+                              {t("Yes. Our dedicated Application Management and Support (AMS) services provide proactive, SLA-based support to maintain system stability, manage regular version upgrades, and ensure continuous optimization of your SAP landscape. We offer flexible models, including 24/7 coverage for global and GCC operations.")}
                             </p>
                           </div>
                         </div>
