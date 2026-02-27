@@ -26,8 +26,8 @@ export default function EnterpriseSolutions() {
                   <p className="epic16">
                     {t("Scalable, industry-specific solutions that empower growth and efficiency.")}
                   </p>
-                  <p>
-                    {t("RheinBrücke delivers industry-specific Epicor ERP solutions that streamline business processes, provide real-time insights, and scale with your organisation. From manufacturing to distribution, our proven delivery approach enables smoother operations, faster decision-making, and measurable impact across your enterprise.")}
+                  <p className="epiclink1">
+                    {t("RheinBrücke delivers industry-specific")} <a href="https://www.epicor.com/en-us/products/" target="_blank">{t("Epicor ERP solutions")}</a> {t("that streamline business processes, provide real-time insights, and scale with your organisation. From manufacturing to distribution, our proven delivery approach enables smoother operations, faster decision-making, and measurable impact across your enterprise.")}
                   </p>
                   <div className="ser-btn mt-5">
                     <Link href="/contact-us" className="animated-svg-link">
@@ -589,8 +589,8 @@ export default function EnterpriseSolutions() {
                       <p>
                         {t("Empower your business with agile, industry-ready ERP from Epicor.")}
                       </p>
-                      <p>
-                        {t("As an Epicor Premium Partner, RheinBrücke brings over a decade of proven expertise in Epicor implementation, migration, rollouts, and support across 45+ countries, with a strong focus on the EMEA region.")}
+                      <p className="epiclink">
+                        {t("As an")} <a href="https://www.epicor.com/en-us/partners/channel-partners/find-a-partner/rheinbrucke-it-consulting-pvt.-ltd" target="_blank">{t("Epicor Premium Partner")}</a>, {t("RheinBrücke brings over a decade of proven expertise in Epicor implementation, migration, rollouts, and support across 45+ countries, with a strong focus on the EMEA region.")}
                       </p>
                       <p>
                         {t("Epicor ERP empowers your business with agile, industry-tailored solutions that streamline operations, reduce costs, and enhance performance. At RheinBrücke, we combine the power of Epicor Kinetic with our SCALE methodology, delivering industry-wide experience, deep domain knowledge across manufacturing, distribution, construction, retail, and more, and a commitment to timely, high-quality project delivery.")}
@@ -1051,7 +1051,7 @@ export default function EnterpriseSolutions() {
                   </div>
                   <div className="pill-points">
                     <div className="challenge-point-waber self-service">
-                      <img src="/images/pill1.svg" alt="" />
+                      <img src="/images/pill1.svg" alt="ERP solution architecture icon" />
                       <div className="pill-cont">
                         <h5>{t("Solution Architecture")}</h5>
 
@@ -1061,7 +1061,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                     <div className="challenge-point-waber self-service">
-                      <img src="/images/pill2.svg" alt="" />
+                      <img src="/images/pill2.svg" alt="Epicor ERP Project Management icon" />
                       <div className="pill-cont">
                         <h5> 
                           {t("Project Management")}</h5>
@@ -1071,7 +1071,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                     <div className="challenge-point-waber self-service">
-                      <img src="/images/pill3.svg" alt="" />
+                      <img src="/images/pill3.svg" alt="Epicor partner consulting icon" />
                       <div className="pill-cont">
                       <h5> 
                         {t("Consulting")}
@@ -1083,7 +1083,7 @@ export default function EnterpriseSolutions() {
                       </div>
                     </div>
                     <div className="challenge-point-waber self-service">
-                      <img src="/images/pill4.svg" alt="" />
+                      <img src="/images/pill4.svg" alt="ERP support and service icon" />
                       <div className="pill-cont">
                         <h5>{t("Customer Excellence")}</h5>
                         <p>{t("Ongoing support, training, and service to ensure adoption, performance, and ROI from your Epicor investment.")}</p>

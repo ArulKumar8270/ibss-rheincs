@@ -137,8 +137,8 @@ const page = () => {
                   src="/htmls/SVG_Animation%20Code.html"
                   title="SAP SVG Animation"
                   style={{
-                    width: '54%',
-                    height: 340,
+                    width: '100%',
+                    height: '650px',
                     border: 'none',
                     display: 'block',
                     margin: '0 auto',
