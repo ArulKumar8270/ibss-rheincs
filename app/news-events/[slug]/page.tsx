@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
+import { slugToUrl } from '@/lib/slug'
 import NewsEventDetailsClient from './NewsEventDetailsClient'
 
 interface NewsEvent {
@@ -69,28 +70,51 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
         throw publishedError
       }
       const list = (publishedItems || []).filter((item: any) => (item.slug && typeof item.slug === 'string') || (item.id && typeof item.id === 'string'))
-      return list.flatMap((item: any) => {
-        const params: { slug: string }[] = []
-        if (item.id && typeof item.id === 'string' && item.id.trim()) params.push({ slug: item.id.trim() })
-        if (item.slug && typeof item.slug === 'string' && item.slug.trim()) params.push({ slug: item.slug.trim() })
-        return params
-      })
+      const seen = new Set<string>()
+      const params: { slug: string }[] = []
+      for (const item of list) {
+        const idVal = item.id && typeof item.id === 'string' ? item.id.trim() : ''
+        if (idVal && !seen.has(idVal)) {
+          seen.add(idVal)
+          params.push({ slug: idVal })
+        }
+        const slugVal = item.slug && typeof item.slug === 'string' ? item.slug.trim() : ''
+        if (slugVal && slugVal !== idVal && !seen.has(slugVal)) {
+          seen.add(slugVal)
+          params.push({ slug: slugVal })
+        }
+        const urlSlug = slugVal ? slugToUrl(slugVal) : ''
+        if (urlSlug && urlSlug !== idVal && !seen.has(urlSlug)) {
+          seen.add(urlSlug)
+          params.push({ slug: urlSlug })
+        }
+      }
+      return params
     }
 
     if (!items || items.length === 0) {
       return []
     }
 
+    // With output: export, every requested path must be pre-generated.
+    // Return id, raw slug, and normalized (hyphen) slug so all URL forms work.
     const seen = new Set<string>()
     const params: { slug: string }[] = []
     for (const item of items) {
-      if (item.id && typeof item.id === 'string' && item.id.trim() && !seen.has(item.id.trim())) {
-        seen.add(item.id.trim())
-        params.push({ slug: item.id.trim() })
+      const idVal = item.id && typeof item.id === 'string' ? item.id.trim() : ''
+      if (idVal && !seen.has(idVal)) {
+        seen.add(idVal)
+        params.push({ slug: idVal })
       }
-      if (item.slug && typeof item.slug === 'string' && item.slug.trim() && !seen.has(item.slug.trim())) {
-        seen.add(item.slug.trim())
-        params.push({ slug: item.slug.trim() })
+      const slugVal = item.slug && typeof item.slug === 'string' ? item.slug.trim() : ''
+      if (slugVal && slugVal !== idVal && !seen.has(slugVal)) {
+        seen.add(slugVal)
+        params.push({ slug: slugVal })
+      }
+      const urlSlug = slugVal ? slugToUrl(slugVal) : ''
+      if (urlSlug && urlSlug !== idVal && !seen.has(urlSlug)) {
+        seen.add(urlSlug)
+        params.push({ slug: urlSlug })
       }
     }
     return params

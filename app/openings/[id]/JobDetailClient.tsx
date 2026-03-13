@@ -8,6 +8,7 @@ import Link from 'next/link'
 
 interface Job {
     id: string
+    slug?: string | null
     title: string
     department: string
     location: string
@@ -180,23 +181,18 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
             await checkAdminStatus();
 
             // ALWAYS fetch from database - never use cached/initial data
-            // This ensures new content created after build is always accessible
+            // URL segment can be slug or id (support both for slug-based and legacy links)
             const { data, error } = await supabase
                 .from('careers')
                 .select('*')
-                .eq('id', jobId)
-                .single()
+                .or(`slug.eq.${jobId},id.eq.${jobId}`)
+                .maybeSingle()
 
             if (error) {
                 console.error(`[JobDetailClient] Supabase error:`, error);
-                // If job not found, redirect to careers list
-                if (error.code === 'PGRST116') {
-                    router.push('/careers');
-                    return;
-                }
-                throw error;
+                router.push('/careers');
+                return;
             }
-
             if (!data) {
                 router.push('/careers');
                 return;
@@ -224,6 +220,13 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
             }
             setJob(parsedJob)
             setFormData(prev => ({ ...prev, selection: data.title }))
+            // If URL used id (UUID) but job has a slug, switch URL to slug for SEO and consistency
+            if (data.slug && jobId === data.id) {
+                const slugPath = `/openings/${data.slug}`
+                if (typeof window !== 'undefined' && window.location.pathname !== slugPath) {
+                    window.history.replaceState(null, '', slugPath)
+                }
+            }
         } catch (err: any) {
             console.error('[JobDetailClient] Error fetching job:', err);
             // Always redirect on error - never show stale data
@@ -669,17 +672,34 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
     }
 
     // Only show loading if we don't have initial job data
-    // This prevents flash of loading state when we have cached data
     if (loading && !job) {
         return (
             <CommomLayout>
+                <style>{`
+                    @keyframes job-detail-spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+                `}</style>
                 <div style={{
                     display: 'flex',
+                    flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    minHeight: '400px'
+                    minHeight: '60vh',
+                    gap: '20px'
                 }}>
-                    <div>Loading job details...</div>
+                    <div style={{
+                        width: '56px',
+                        height: '56px',
+                        border: '4px solid #e2e8f0',
+                        borderTop: '4px solid #499A9A',
+                        borderRadius: '50%',
+                        animation: 'job-detail-spin 0.9s linear infinite'
+                    }} />
+                    <p style={{ margin: 0, fontSize: '16px', color: '#64748b', fontWeight: 500 }}>
+                        Loading job details...
+                    </p>
                 </div>
             </CommomLayout>
         )

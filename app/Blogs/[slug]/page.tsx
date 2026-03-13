@@ -45,7 +45,7 @@ export const generateStaticParams = async (): Promise<{ slug: string }[]> => {
       .from('blogs')
       .select('slug, published')
       .order('created_at', { ascending: false })
-      .limit(200)
+      .limit(1000)
 
     if (error) {
       console.error('[generateStaticParams] Error fetching blogs:', error)

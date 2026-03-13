@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
+import { slugToUrl, slugToUrlWithEnDash, slugToUrlEncodedEnDash } from '@/lib/slug'
 import CaseStudyDetailsClient from './CaseStudyDetailsClient'
 
 interface CaseStudy {
@@ -30,10 +31,6 @@ interface CaseStudy {
 // All routes must be pre-generated at build time via generateStaticParams
 // For new content created after build, the page will still render the client component
 // The client component will fetch data client-side and handle 404s gracefully
-
-// Note: With static export, we should use dynamicParams = true to allow
-// the not-found.tsx workaround to handle pages that weren't pre-generated
-export const dynamicParams = false
 
 export const generateStaticParams = async (): Promise<{ id: string }[]> => {
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -77,17 +74,24 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
                 return [{ id: 'placeholder' }]
             }
             
-            const fallbackParams = (publishedCaseStudies || [])
-                .filter((cs: any) => cs.slug && typeof cs.slug === 'string' && cs.slug.trim().length > 0)
-                .map((cs: any) => ({
-                    id: cs.slug.trim(),
-                }))
-            
+            const seen = new Set<string>()
+            const fallbackParams: { id: string }[] = []
+            for (const cs of publishedCaseStudies || []) {
+                const idVal = cs.id && typeof cs.id === 'string' ? cs.id.trim() : ''
+                const slugVal = cs.slug && typeof cs.slug === 'string' ? cs.slug.trim() : ''
+                if (idVal && !seen.has(idVal)) { seen.add(idVal); fallbackParams.push({ id: idVal }) }
+                if (slugVal && slugVal !== idVal && !seen.has(slugVal)) { seen.add(slugVal); fallbackParams.push({ id: slugVal }) }
+                const urlSlug = slugVal ? slugToUrl(slugVal) : ''
+                if (urlSlug && urlSlug !== idVal && !seen.has(urlSlug)) { seen.add(urlSlug); fallbackParams.push({ id: urlSlug }) }
+                const urlSlugEnDash = slugVal ? slugToUrlWithEnDash(slugVal) : ''
+                if (urlSlugEnDash && urlSlugEnDash !== idVal && !seen.has(urlSlugEnDash)) { seen.add(urlSlugEnDash); fallbackParams.push({ id: urlSlugEnDash }) }
+                const urlSlugEncoded = slugVal ? slugToUrlEncodedEnDash(slugVal) : ''
+                if (urlSlugEncoded && urlSlugEncoded !== idVal && !seen.has(urlSlugEncoded)) { seen.add(urlSlugEncoded); fallbackParams.push({ id: urlSlugEncoded }) }
+            }
             if (fallbackParams.length === 0) {
                 console.warn('[generateStaticParams] No published case studies found, returning placeholder')
                 return [{ id: 'placeholder' }]
             }
-            
             fallbackParams.push({ id: 'placeholder' })
             return fallbackParams
         }
@@ -98,27 +102,31 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
         }
 
         
-        // Filter out invalid IDs and ensure they're strings
-        const validCaseStudies = (caseStudies || []).filter((cs: any) => 
-            cs.slug && 
-            typeof cs.slug === 'string' && 
-            cs.slug.trim().length > 0
+        // With output: export, every requested path must be pre-generated.
+        // Return id, raw slug, and normalized (hyphen) slug for each case study.
+        const validCaseStudies = (caseStudies || []).filter((cs: any) =>
+            (cs.slug && typeof cs.slug === 'string' && cs.slug.trim().length > 0) ||
+            (cs.id && typeof cs.id === 'string' && cs.id.trim().length > 0)
         )
-        
         if (validCaseStudies.length === 0) {
             console.warn('[generateStaticParams] No valid case study IDs found')
             return [{ id: 'placeholder' }]
         }
-        
-        const params = validCaseStudies.map((cs: any) => ({
-            id: cs.slug.trim(),
-        }))
-
-        // Always include placeholder for fallback
-        const allParams = [...params, { id: 'placeholder' }]
-        
-        
-        return allParams
+        const seen = new Set<string>()
+        const params: { id: string }[] = []
+        for (const cs of validCaseStudies) {
+            const idVal = cs.id && typeof cs.id === 'string' ? cs.id.trim() : ''
+            const slugVal = cs.slug && typeof cs.slug === 'string' ? cs.slug.trim() : ''
+            if (idVal && !seen.has(idVal)) { seen.add(idVal); params.push({ id: idVal }) }
+            if (slugVal && slugVal !== idVal && !seen.has(slugVal)) { seen.add(slugVal); params.push({ id: slugVal }) }
+            const urlSlug = slugVal ? slugToUrl(slugVal) : ''
+            if (urlSlug && urlSlug !== idVal && !seen.has(urlSlug)) { seen.add(urlSlug); params.push({ id: urlSlug }) }
+            const urlSlugEnDash = slugVal ? slugToUrlWithEnDash(slugVal) : ''
+            if (urlSlugEnDash && urlSlugEnDash !== idVal && !seen.has(urlSlugEnDash)) { seen.add(urlSlugEnDash); params.push({ id: urlSlugEnDash }) }
+            const urlSlugEncoded = slugVal ? slugToUrlEncodedEnDash(slugVal) : ''
+            if (urlSlugEncoded && urlSlugEncoded !== idVal && !seen.has(urlSlugEncoded)) { seen.add(urlSlugEncoded); params.push({ id: urlSlugEncoded }) }
+        }
+        return [...params, { id: 'placeholder' }]
     } catch (error) {
         console.error('[generateStaticParams] Error in generateStaticParams:', error)
         // Return a placeholder to satisfy static export requirement

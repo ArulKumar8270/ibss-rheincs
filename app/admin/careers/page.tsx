@@ -12,6 +12,7 @@ const ReactQuill = dynamic(() => import('react-quill-new'), { ssr: false })
 interface Career {
   id: string
   title: string
+  slug: string | null
   department: string
   location: string
   type: 'full-time' | 'part-time' | 'contract' | 'internship'
@@ -34,6 +35,7 @@ export default function AdminCareersPage() {
   const [searchTerm, setSearchTerm] = useState('')
   const [formData, setFormData] = useState({
     title: '',
+    slug: '',
     department: '',
     location: '',
     type: 'full-time' as 'full-time' | 'part-time' | 'contract' | 'internship',
@@ -81,6 +83,14 @@ export default function AdminCareersPage() {
     fetchCareers()
   }, [])
 
+  const generateSlug = (title: string) =>
+    title
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/[\s_-]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+
   const fetchCareers = async () => {
     setLoading(true)
     try {
@@ -114,6 +124,7 @@ export default function AdminCareersPage() {
 
       const submitData = {
         title: formData.title,
+        slug: formData.slug.trim() || null,
         department: formData.department,
         location: formData.location,
         type: formData.type,
@@ -142,6 +153,7 @@ export default function AdminCareersPage() {
       setEditingCareer(null)
       setFormData({
         title: '',
+        slug: '',
         department: '',
         location: '',
         type: 'full-time',
@@ -209,6 +221,7 @@ export default function AdminCareersPage() {
     
     setFormData({
       title: career.title,
+      slug: career.slug || '',
       department: career.department,
       location: career.location,
       type: career.type,
@@ -429,6 +442,7 @@ export default function AdminCareersPage() {
             setEditingCareer(null)
             setFormData({
               title: '',
+              slug: '',
               department: '',
               location: '',
               type: 'full-time',
@@ -479,21 +493,52 @@ export default function AdminCareersPage() {
                 <input
                   type="text"
                   value={formData.title}
-                  onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                  onChange={(e) => {
+                    const title = e.target.value
+                    setFormData(prev => ({
+                      ...prev,
+                      title,
+                      slug: editingCareer && prev.slug ? prev.slug : generateSlug(title)
+                    }))
+                  }}
                   required
                   style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
                 />
               </div>
               <div>
+                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Slug (URL)</label>
+                <input
+                  type="text"
+                  value={formData.slug}
+                  onChange={(e) => setFormData(prev => ({ ...prev, slug: e.target.value }))}
+                  placeholder="e.g. senior-erp-consultant"
+                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
+                />
+                <small style={{ color: '#666', fontSize: '12px' }}>URL path for this job (auto from title, can edit)</small>
+              </div>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
+              <div>
                 <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Department *</label>
                 <input
                   type="text"
                   value={formData.department}
-                  onChange={(e) => setFormData({ ...formData, department: e.target.value })}
+                  onChange={(e) => setFormData(prev => ({ ...prev, department: e.target.value }))}
                   required
                   style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
                 />
               </div>
+            </div>
+            <div style={{ marginBottom: '15px' }}>
+              <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Slug (URL)</label>
+              <input
+                type="text"
+                value={formData.slug}
+                onChange={(e) => setFormData(prev => ({ ...prev, slug: e.target.value }))}
+                placeholder="e.g. senior-erp-consultant"
+                style={{ width: '100%', maxWidth: '400px', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
+              />
+              <small style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '4px' }}>URL path for this job (auto from title, can edit)</small>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
               <div>
@@ -710,7 +755,7 @@ export default function AdminCareersPage() {
                     </td>
                     <td style={{ padding: '18px 20px' }}>
                       <Link 
-                        href={`/openings/${career.id}`}
+                        href={`/openings/${career.slug || career.id}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{ 

@@ -15,6 +15,7 @@ import 'swiper/css/pagination';
 
 interface Job {
   id: string;
+  slug?: string | null;
   title: string;
   department: string;
   location: string;
@@ -1013,7 +1014,7 @@ export default function AlMl() {
                                                 <td>
                                                     <div className="ser-btn2">
                                                         <Link
-                                                            href={`/openings/${job.id}`}
+                                                            href={`/openings/${job.slug || job.id}`}
                                                             className="animated-svg-link1  ja-btn btn-style-3"
                                                         >
                                                             Apply Now
@@ -1220,7 +1221,7 @@ export default function AlMl() {
                                                     </span>
                                                 </p>
                                                 <div className="ser-btn2">
-                                                    <Link href={`/openings/${job.id}`} className="animated-svg-link1  ja-btn btn-style-3">
+                                                    <Link href={`/openings/${job.slug || job.id}`} className="animated-svg-link1  ja-btn btn-style-3">
                                                         Apply Now
                                                         <span className="svg-container ">
                                                             <span className=" left">

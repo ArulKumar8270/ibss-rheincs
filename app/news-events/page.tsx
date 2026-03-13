@@ -6,6 +6,7 @@ import Link from "next/link";
 import TestimonialandAward from "../Components/TestimonialandAward";
 import Awards from "../Components/Awards";
 import { createClient } from "@/lib/supabase-browser";
+import { slugToUrl } from "@/lib/slug";
 import {useTranslation} from "../hooks/useTranslation";
 
 interface NewsEvent {
@@ -201,7 +202,7 @@ export default function EnterpriseSolutions() {
                               <p className="mt-3">{plainExcerpt(item.excerpt)}</p>
                             )}
                             
-                              <Link href={`/news-events/${item.id}`} className="animated-svg-link hr-link">
+                              <Link href={`/news-events/${slugToUrl(item.slug) || item.id}`} className="animated-svg-link hr-link">
                                 Read More
                                 <span className="svg-container ">
                                   <span className=" right">

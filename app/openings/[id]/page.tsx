@@ -30,7 +30,7 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
         // Service role key bypasses RLS, allowing us to fetch draft jobs
         const { data: jobs, error } = await supabase
             .from('careers')
-            .select('id, published')
+            .select('id, slug, published')
             .order('created_at', { ascending: false })
             .limit(1000)
 
@@ -71,23 +71,32 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
 
         console.log(`[generateStaticParams] Found ${jobs.length} jobs (including drafts)`)
         
-        // Filter out invalid IDs and ensure they're strings
-        const validJobs = jobs.filter((job: any) => 
-            job.id && 
-            typeof job.id === 'string' && 
-            job.id.trim().length > 0
+        // Filter out invalid IDs
+        const validJobs = jobs.filter((job: any) =>
+            job.id && typeof job.id === 'string' && job.id.trim().length > 0
         )
-        
         if (validJobs.length === 0) {
             console.warn('[generateStaticParams] No valid job IDs found')
             return [{ id: 'placeholder' }]
         }
-        
-        const params = validJobs.map((job: any) => ({
-            id: job.id.trim(),
-        }))
 
-        // Always include placeholder for fallback
+        // With output: export, every requested path must be pre-generated.
+        // Return BOTH slug and id for each job so /openings/slug and /openings/uuid both work.
+        const seen = new Set<string>()
+        const params: { id: string }[] = []
+        for (const job of validJobs) {
+            const idVal = job.id.trim()
+            if (!seen.has(idVal)) {
+                seen.add(idVal)
+                params.push({ id: idVal })
+            }
+            const slugVal = job.slug && typeof job.slug === 'string' && job.slug.trim() ? job.slug.trim() : null
+            if (slugVal && slugVal !== idVal && !seen.has(slugVal)) {
+                seen.add(slugVal)
+                params.push({ id: slugVal })
+            }
+        }
+
         const allParams = [...params, { id: 'placeholder' }]
         
         console.log(`[generateStaticParams] Generated ${allParams.length} static params`)

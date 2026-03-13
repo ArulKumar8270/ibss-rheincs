@@ -83,6 +83,84 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <script dangerouslySetInnerHTML={{
           __html: `window.factors = window.factors || function () { this.q = []; var i = new CustomEvent("FACTORS_QUEUED_EVENT"), n = function (t, e) { this.q.push({ k: t, a: e }), window.dispatchEvent(i) }; return this.track = function (t, e, i) { n("track", arguments) }, this.init = function (t, e, i) { this.TOKEN = t, this.INIT_PARAMS = e, this.INIT_CALLBACK = i, window.dispatchEvent(new CustomEvent("FACTORS_INIT_EVENT")) }, this.reset = function () { n("reset", arguments) }, this.page = function (t, e) { n("page", arguments) }, this.updateEventProperties = function (t, e) { n("updateEventProperties", arguments) }, this.identify = function (t, e) { n("identify", arguments) }, this.addUserProperties = function (t) { n("addUserProperties", arguments) }, this.getUserId = function () { n("getUserId", arguments) }, this.call = function () { var t = { k: "", a: [] }; if (arguments && 1 <= arguments.length) { for (var e = 1; e < arguments.length; e++) t.a.push(arguments[e]); t.k = arguments[0] } this.q.push(t), window.dispatchEvent(i) }, this.init("yyq3qwq23c7r4rq7o5refttcg39ju39m"), this }(), function () { var t = document.createElement("script"); t.type = "text/javascript", t.src = "https://app.factors.ai/assets/v1/factors.js", t.async = !0, d = document.getElementsByTagName("script")[0], d.parentNode.insertBefore(t, d) }();`
         }} />
+
+        {/* LeadSquared Tracking Code */}
+        <Script src="https://web.mxradon.com/t/Tracker.js" strategy="afterInteractive" />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            function saveleadlan() {
+              var $ = window.jQuery || window.$;
+              if (!$) { console.warn('LeadSquared: jQuery required'); return; }
+              var form = document.getElementById('form1');
+              var nameEl = form && (form.querySelector('[id="manufacturing-name"]') || form.querySelector('[name="manufacturing-name"]'));
+              var emailEl = form && (form.querySelector('[id="manufacturing-email"]') || form.querySelector('[name="manufacturing-email"]'));
+              var mobileEl = form && (form.querySelector('[id="manufacturing-mobile"]') || form.querySelector('[name="manufacturing-mobile"]'));
+              var name = nameEl ? nameEl.value : '';
+              var email = emailEl ? emailEl.value : '';
+              var mobile = mobileEl ? mobileEl.value : '';
+              var fieldMapping = {
+                MXHOrgCode: "17537",
+                MXHLandingPageId: "7efef2b9-19bc-11e7-a02b-22000b10e324",
+                MXHAsc: "",
+                FirstName: "manufacturing-name",
+                EmailAddress: "manufacturing-email",
+                Mobile: "manufacturing-mobile",
+                mx_Download_Whitepaper: "whitepaper",
+                mx_Free_20_mins_consulting: "consulting",
+                mx_Request_for_Demo: "demo"
+              };
+              var onSuccess = function (data) {
+                data = $.parseJSON(data);
+                var logData = {
+                  Name: name,
+                  FormPID: data.PId,
+                  Email: email,
+                  Mobile: mobile,
+                  FormStatus: data.Status,
+                  FormMsg: data.Message,
+                  FormAction: data.FormAction,
+                  ServiceType: "Rheincs Landing"
+                };
+                $.ajax({
+                  type: "POST",
+                  url: "/" + "api/Admin/LeadSquaredLog",
+                  data: JSON.stringify(logData),
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  failure: function (response) { alert(response.d); }
+                });
+                console.log(data);
+              };
+              var onError = function (data) {
+                data = $.parseJSON(data);
+                var logData = {
+                  Name: name,
+                  FormPID: data.PId,
+                  Email: email,
+                  Mobile: mobile,
+                  FormStatus: data.Status,
+                  FormMsg: data.Message,
+                  FormAction: data.FormAction,
+                  ServiceType: "Rheincs Landing"
+                };
+                $.ajax({
+                  type: "POST",
+                  url: "/" + "api/Admin/LeadSquaredLog",
+                  data: JSON.stringify(logData),
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  failure: function (response) { alert(response.d); }
+                });
+                console.log(data);
+              };
+              if (typeof LSQForm !== 'undefined') {
+                new LSQForm().captureLead(fieldMapping, "form1", { onSuccess: onSuccess, onError: onError });
+              } else {
+                console.warn('LeadSquared: LSQForm not loaded');
+              }
+            }
+          `
+        }} />
         
         {/* Schema.org JSON-LD */}
         <script

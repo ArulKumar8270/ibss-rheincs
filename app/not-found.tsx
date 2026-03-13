@@ -20,21 +20,25 @@ export default function NotFound() {
     }
   }, []);
 
-  // Use browser pathname if Next.js pathname is not available (404 case)
-  const actualPath = currentPath || pathname || (typeof window !== 'undefined' ? window.location.pathname : '');
+  // Use browser pathname once set (from effect); else pathname (e.g. /404)
+  const actualPath = currentPath || pathname || (typeof window !== 'undefined' ? window.location.pathname : '') || '';
 
-  // Extract slug/id from pathname for different detail pages
-  // Handle both with and without trailing slash
-  const blogMatch = actualPath?.match(/^\/(?:blog-details|Blogs)\/(.+?)\/?$/);
-  const caseStudyMatch = actualPath?.match(/^\/(?:Case-study-details|Casestudy)\/(.+?)\/?$/);
-  const newsEventMatch = actualPath?.match(/^\/news-events\/(.+?)\/?$/);
-  const jobMatch = actualPath?.match(/^\/openings\/(.+?)\/?$/);
+  // Extract slug/id from pathname for different detail pages (greedy capture for full segment)
+  const blogMatch = actualPath?.match(/^\/(?:blog-details|Blogs)\/(.+)\/?$/i);
+  const caseStudyMatch = actualPath?.match(/^\/(?:Case-study-details|Casestudy)\/(.+)\/?$/i);
+  const newsEventMatch = actualPath?.match(/^\/news-events\/(.+)\/?$/);
+  const jobMatch = actualPath?.match(/^\/openings\/(.+)\/?$/);
 
-  // If this is a detail page route, render the appropriate client component
+  // Decode slug/id (URL may have %20, %2B, etc.)
+  const decode = (s: string) => {
+    try { return decodeURIComponent(s.replace(/\/$/, '').trim()); } catch { return s.replace(/\/$/, '').trim(); }
+  };
+
+  // If this is a detail page route, render the appropriate client (new content added after build)
   if (blogMatch && blogMatch[1]) {
-    const slug = blogMatch[1].replace(/\/$/, '');
+    const slug = decode(blogMatch[1]);
     return (
-      <BlogDetailsClient 
+      <BlogDetailsClient
         initialBlog={null}
         initialRelatedBlogs={[]}
         slug={slug}
@@ -43,9 +47,9 @@ export default function NotFound() {
   }
 
   if (caseStudyMatch && caseStudyMatch[1]) {
-    const id = caseStudyMatch[1].replace(/\/$/, '');
+    const id = decode(caseStudyMatch[1]);
     return (
-      <CaseStudyDetailsClient 
+      <CaseStudyDetailsClient
         initialCaseStudy={null}
         initialRelatedCaseStudies={[]}
         caseStudyId={id}
@@ -54,9 +58,9 @@ export default function NotFound() {
   }
 
   if (newsEventMatch && newsEventMatch[1]) {
-    const slug = newsEventMatch[1].replace(/\/$/, '');
+    const slug = decode(newsEventMatch[1]);
     return (
-      <NewsEventDetailsClient 
+      <NewsEventDetailsClient
         initialItem={null}
         slug={slug}
       />
@@ -64,12 +68,21 @@ export default function NotFound() {
   }
 
   if (jobMatch && jobMatch[1]) {
-    const id = jobMatch[1].replace(/\/$/, '');
+    const id = decode(jobMatch[1]);
     return (
-      <JobDetailClient 
+      <JobDetailClient
         jobId={id}
         initialJob={null}
       />
+    );
+  }
+
+  // On client, wait for effect to set currentPath so /Blogs/new-slug etc. resolve correctly (avoid wrong 404 flash)
+  if (typeof window !== 'undefined' && currentPath === '') {
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh' }}>
+        <p style={{ color: '#666' }}>Loading...</p>
+      </div>
     );
   }
 

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import CommomLayout from "../../Components/CommomLayout";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase-browser";
+import { slugToUrl } from "@/lib/slug";
 
 interface NewsEvent {
   id: string;
@@ -63,11 +64,14 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
       await checkAdminStatus();
        
       // ALWAYS fetch from database - never use cached/initial data
-      // URL segment can be either id (from listing links) or slug
+      // URL segment can be id (UUID), raw slug, or normalized slug (spaces → hyphens)
+      // Only include id.eq when param looks like a UUID to avoid 400 from PostgREST
+      const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(slug);
+      const orFilter = isUuid ? `slug.eq.${slug},id.eq.${slug}` : `slug.eq.${slug}`;
       const { data: itemData, error: itemError } = await supabase
         .from('news_events')
         .select('*')
-        .or(`slug.eq.${slug},id.eq.${slug}`)
+        .or(orFilter)
         .maybeSingle();
 
       if (itemError) {
@@ -75,7 +79,19 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
         throw itemError;
       }
 
-      if (!itemData) {
+      let resolvedItem = itemData;
+      if (!resolvedItem) {
+        // URL may be normalized slug (e.g. Rhein-Bruckes-Kinetic-ERP) while DB has spaces
+        const { data: list } = await supabase
+          .from('news_events')
+          .select('*')
+          .order('created_at', { ascending: false })
+          .limit(500);
+        const match = (list || []).find((i: NewsEvent) => slugToUrl(i.slug) === slug);
+        resolvedItem = match || null;
+      }
+
+      if (!resolvedItem) {
         router.push('/news-events');
         return;
       }
@@ -84,13 +100,13 @@ export default function NewsEventDetailsClient({ initialItem, slug }: NewsEventD
       const { data: { user } } = await supabase.auth.getUser();
       const userIsAdmin = !!user;
       
-      if (!itemData.published && !userIsAdmin) {
+      if (!resolvedItem.published && !userIsAdmin) {
         router.push('/news-events');
         return;
       }
 
       // Always update with fresh data from database
-      setItem(itemData);
+      setItem(resolvedItem);
     } catch (err) {
       // Always redirect on error - never show stale data
       router.push('/news-events');

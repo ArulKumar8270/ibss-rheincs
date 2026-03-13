@@ -57,60 +57,37 @@ export const generateStaticParams = async (): Promise<{ id: string }[]> => {
         // Service role key bypasses RLS, allowing us to fetch draft case studies
         const { data: caseStudies, error } = await supabase
             .from('case_studies')
-            .select('id, published')
+            .select('id, slug, published')
             .order('created_at', { ascending: false })
             .limit(1000)
 
         if (error) {
             console.error('[generateStaticParams] Error fetching case studies:', error)
-            console.error('[generateStaticParams] This might be due to RLS policies blocking unpublished case studies')
-            // Try fetching only published case studies as fallback
             const { data: publishedCaseStudies, error: publishedError } = await supabase
                 .from('case_studies')
-                .select('id')
+                .select('id, slug')
                 .eq('published', true)
                 .limit(1000)
-            
-            if (publishedError) {
-                console.error('[generateStaticParams] Error fetching published case studies:', publishedError)
-                return [{ id: 'placeholder' }]
-            }
-            
+            if (publishedError) return [{ id: 'placeholder' }]
             const fallbackParams = (publishedCaseStudies || [])
-                .filter((cs: any) => cs.id && typeof cs.id === 'string')
-                .map((cs: any) => ({
-                    id: cs.id.trim(),
-                }))
-            
-            if (fallbackParams.length === 0) {
-                console.warn('[generateStaticParams] No published case studies found, returning placeholder')
-                return [{ id: 'placeholder' }]
-            }
-            
-            fallbackParams.push({ id: 'placeholder' })
-            return fallbackParams
+                .filter((cs: any) => (cs.slug && typeof cs.slug === 'string') || (cs.id && typeof cs.id === 'string'))
+                .map((cs: any) => ({ id: (cs.slug && cs.slug.trim()) || cs.id.trim() }))
+            if (fallbackParams.length === 0) return [{ id: 'placeholder' }]
+            return [...fallbackParams, { id: 'placeholder' }]
         }
 
         if (!caseStudies || caseStudies.length === 0) {
-            console.warn('[generateStaticParams] No case studies found')
             return [{ id: 'placeholder' }]
         }
 
-        
-        // Filter out invalid IDs and ensure they're strings
-        const validCaseStudies = caseStudies.filter((cs: any) => 
-            cs.id && 
-            typeof cs.id === 'string' && 
-            cs.id.trim().length > 0
+        const validCaseStudies = caseStudies.filter((cs: any) =>
+            (cs.slug && typeof cs.slug === 'string' && cs.slug.trim().length > 0) ||
+            (cs.id && typeof cs.id === 'string' && cs.id.trim().length > 0)
         )
-        
-        if (validCaseStudies.length === 0) {
-            console.warn('[generateStaticParams] No valid case study IDs found')
-            return [{ id: 'placeholder' }]
-        }
-        
+        if (validCaseStudies.length === 0) return [{ id: 'placeholder' }]
+
         const params = validCaseStudies.map((cs: any) => ({
-            id: cs.id.trim(),
+            id: (cs.slug && cs.slug.trim()) || cs.id.trim(),
         }))
 
         // Always include placeholder for fallback

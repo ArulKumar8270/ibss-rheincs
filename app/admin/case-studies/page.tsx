@@ -1387,7 +1387,7 @@ export default function AdminCaseStudiesPage() {
                     </td>
                     <td style={{ padding: '18px 20px' }}>
                       <Link 
-                        href={`/Case-study-details/${cs.id}`}
+                        href={`/Case-study-details/${cs.slug || cs.id}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{ textDecoration: 'none', color: 'inherit' }}

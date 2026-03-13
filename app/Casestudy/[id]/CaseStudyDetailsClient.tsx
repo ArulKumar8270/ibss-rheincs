@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import CommomLayout from "../../Components/CommomLayout";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase-browser";
+import { slugToUrl } from "@/lib/slug";
 
 interface CaseStudy {
   id: string;
@@ -91,27 +92,44 @@ export default function CaseStudyDetailsClient({
       await checkAdminStatus();
       
       // ALWAYS fetch from database - never use cached/initial data
-      // This ensures new content created after build is always accessible
-      // Use ilike for case-insensitive slug matching
-      let { data: caseStudyData, error: caseStudyError } = await supabase
-        .from('case_studies')
-        .select('*')
-        .ilike('slug', caseStudyId)
-        .single()
+      // Use eq (exact match) only; ilike with slugs containing + or % can cause 406 from PostgREST.
+      const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(caseStudyId);
+      let caseStudyData: CaseStudy | null = null;
+      let caseStudyError: any = null;
 
-      if (caseStudyError || !caseStudyData) {
-        const { data: byId, error: byIdError } = await supabase
+      if (isUuid) {
+        const res = await supabase
           .from('case_studies')
           .select('*')
           .eq('id', caseStudyId)
-          .limit(1)
-        caseStudyData = (byId && byId[0]) || null
-        caseStudyError = caseStudyData ? null : byIdError || caseStudyError
+          .limit(1);
+        caseStudyData = (res.data && res.data[0]) || null;
+        caseStudyError = res.error ?? null;
+      } else {
+        const res = await supabase
+          .from('case_studies')
+          .select('*')
+          .eq('slug', caseStudyId)
+          .maybeSingle();
+        caseStudyData = res.data ?? null;
+        caseStudyError = res.error ?? null;
+      }
+
+      if (!caseStudyData && !isUuid) {
+        // Resolve by normalized slug (URL may have hyphens/special chars; DB may differ)
+        const { data: list } = await supabase
+          .from('case_studies')
+          .select('*')
+          .order('created_at', { ascending: false })
+          .limit(500);
+        const normalizedParam = slugToUrl(caseStudyId);
+        const match = (list || []).find((cs: CaseStudy) => slugToUrl(cs.slug) === normalizedParam);
+        caseStudyData = match || null;
+        caseStudyError = caseStudyData ? null : caseStudyError;
       }
 
       if (caseStudyError) {
         console.error(`[CaseStudyDetailsClient] Supabase error:`, caseStudyError);
-        // If case study not found, redirect to case studies list
         if (caseStudyError.code === 'PGRST116') {
           router.push('/Case-study');
           return;

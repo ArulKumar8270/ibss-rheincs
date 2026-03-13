@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import CommomLayout from "../../Components/CommomLayout";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase-browser";
+import { slugToUrl } from "@/lib/slug";
 
 interface CaseStudy {
   id: string;
@@ -91,24 +92,34 @@ export default function CaseStudyDetailsClient({
       await checkAdminStatus();
       
       // ALWAYS fetch from database - never use cached/initial data
-      // This ensures new content created after build is always accessible
+      // URL segment can be slug or id (UUID). Only use id.eq when param looks like UUID to avoid 400.
+      const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(caseStudyId);
+      const orFilter = isUuid ? `slug.eq.${caseStudyId},id.eq.${caseStudyId}` : `slug.eq.${caseStudyId}`;
       const { data: caseStudyData, error: caseStudyError } = await supabase
         .from('case_studies')
         .select('*')
-        .eq('id', caseStudyId)
-        .single()
+        .or(orFilter)
+        .maybeSingle()
 
       if (caseStudyError) {
         console.error(`[CaseStudyDetailsClient] Supabase error:`, caseStudyError);
-        // If case study not found, redirect to case studies list
-        if (caseStudyError.code === 'PGRST116') {
-          router.push('/Case-study');
-          return;
-        }
-        throw caseStudyError;
+        router.push('/Case-study');
+        return;
       }
-      
-      if (!caseStudyData) {
+
+      let resolvedCaseStudy = caseStudyData;
+      if (!resolvedCaseStudy && !isUuid) {
+        // URL may be normalized slug (hyphens) while DB has spaces/special chars
+        const { data: list } = await supabase
+          .from('case_studies')
+          .select('*')
+          .order('created_at', { ascending: false })
+          .limit(500);
+        const normalizedParam = slugToUrl(caseStudyId);
+        const match = (list || []).find((cs: CaseStudy) => slugToUrl(cs.slug) === normalizedParam);
+        resolvedCaseStudy = match || null;
+      }
+      if (!resolvedCaseStudy) {
         router.push('/Case-study');
         return;
       }
@@ -118,21 +129,21 @@ export default function CaseStudyDetailsClient({
       const { data: { user } } = await supabase.auth.getUser();
       const userIsAdmin = !!user;
       
-      if (!caseStudyData.published && !userIsAdmin) {
+      if (!resolvedCaseStudy.published && !userIsAdmin) {
         router.push('/Case-study');
         return;
       }
       
       // Always update with fresh data from database
-      setCaseStudy(caseStudyData);
+      setCaseStudy(resolvedCaseStudy);
 
       // Fetch related case studies with fresh data
       const { data: relatedData } = await supabase
         .from('case_studies')
         .select('*')
         .eq('published', true)
-        .neq('id', caseStudyData.id)
-        .eq('category', caseStudyData.category || 'all')
+        .neq('id', resolvedCaseStudy.id)
+        .eq('category', resolvedCaseStudy.category || 'all')
         .order('created_at', { ascending: false })
         .limit(4)
 
@@ -645,7 +656,7 @@ export default function CaseStudyDetailsClient({
                   relatedCaseStudies.map((related) => (
                     <div key={related.id} className="case-one-waber" style={{ marginBottom: '30px' }}>
                       <div>
-                        <Link href={`/Case-study-details/${related.id}`} className="case-bage">
+                        <Link href={`/Case-study-details/${related.slug || related.id}`} className="case-bage">
                           Case Study
                         </Link>
                       </div>
@@ -654,7 +665,7 @@ export default function CaseStudyDetailsClient({
                       </h6>
                       <div className="ser-btn m-0">
                         <Link
-                          href={`/Case-study-details/${related.id}`}
+                          href={`/Case-study-details/${related.slug || related.id}`}
                           className="animated-svg-link p-0"
                         >
                           Read More
