@@ -2933,7 +2933,7 @@ body:has(.offcanvas) {
 
 .our-testimonial {
 	position: relative;
-	padding: 80px 0;
+	padding: 50px 0;
 }
 
 /*.our-testimonial::before {*/
@@ -13277,10 +13277,12 @@ header.boxshadow {
 }
 
 .buildsecont .section-title p {
-	font-size: 16px !important;
-	line-height: 24px !important;
-	font-weight: 400;
-	margin: 16px 0px !important;
+	    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400;
+    margin: 16px 0px !important;
+    color: #000;
+    font-family: 'helvetica-neue-lt-pro';
 }
 
 .grid-section {
@@ -14802,6 +14804,9 @@ header.boxshadow {
 	.service-item {
 		padding: 25px 36px;
 	}
+	.oursolutionsec .service-item {
+    min-height: 410px !important;
+}
 	.service-item-body p {
 		height: 230px;
 	}
@@ -18118,7 +18123,9 @@ header.boxshadow {
 .capabilities .valueslide {
 	min-height: 250px;
 }
-
+.sapcap .valueslide {
+	min-height: 190px !important;
+}
 
 body.no-scroll {
 	overflow: hidden;
@@ -21259,8 +21266,8 @@ body.popup-open .main-header {
 
 
 .digialserpage .service-item-body img {
-	height: 420px;
-	margin-bottom: -5px;
+	height: 437px;
+    margin-bottom: -25px;
 }
 
 .digiupgradesec .MeRLIN-service {
@@ -21420,7 +21427,7 @@ body.popup-open .main-header {
 }
 
 .merlinicon .MeRLIN-service {
-	height: 450px;
+	height: 470px;
 }
 
 /* FINAL OVERRIDE: Hide all OwlCarousel navigation arrows for skew carousels */
@@ -22615,7 +22622,7 @@ screen and (max-height: 300px) {
 	height: auto !important;
 }
 .oursolutionsec .service-item{
-	min-height: 520px !important;
+	min-height: 470px;
 }
 
 .brouchure input:-webkit-autofill,
@@ -22705,3 +22712,39 @@ position: relative;
     background: #082326;
 }
 }
+
+.sap-service-waber ul li{
+	font-family: 'helvetica-neue-lt-pro';
+}
+
+.coruslogo img{
+	height: 90px !important;
+	margin-bottom: 10px;
+}
+
+.corushrbanner{
+	padding:50px 0px 20px !important
+}
+.accordion-body p{
+	padding:10px 0px 10px;
+}
+
+.awardssect .testimonial-slider-awards .swiper-wrapper{
+	padding: 0px 0px 30px;
+}
+.ric-slider-waber .testimonial-btn{
+	margin-top: 0px !important;
+}
+
+.epicadv{
+	    background: #082326;
+}
+.epicadv h2{
+	color: #fff;
+}
+.digiserpage  img{
+	height: 300px;
+}
+/* .digialserpage img{
+	height: 300px;
+} */

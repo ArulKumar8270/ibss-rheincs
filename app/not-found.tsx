@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import BlogDetailsClient from "./blog-details/[slug]/BlogDetailsClient";
-import CaseStudyDetailsClient from "./Case-study-details/[id]/CaseStudyDetailsClient";
+import BlogDetailsClient from "./Blogs/[slug]/BlogDetailsClient";
+import CaseStudyDetailsClient from "./Casestudy/[id]/CaseStudyDetailsClient";
 import NewsEventDetailsClient from "./news-events/[slug]/NewsEventDetailsClient";
 import JobDetailClient from "./openings/[id]/JobDetailClient";
 
@@ -25,8 +25,8 @@ export default function NotFound() {
 
   // Extract slug/id from pathname for different detail pages
   // Handle both with and without trailing slash
-  const blogMatch = actualPath?.match(/^\/blog-details\/(.+?)\/?$/);
-  const caseStudyMatch = actualPath?.match(/^\/Case-study-details\/(.+?)\/?$/);
+  const blogMatch = actualPath?.match(/^\/(?:blog-details|Blogs)\/(.+?)\/?$/);
+  const caseStudyMatch = actualPath?.match(/^\/(?:Case-study-details|Casestudy)\/(.+?)\/?$/);
   const newsEventMatch = actualPath?.match(/^\/news-events\/(.+?)\/?$/);
   const jobMatch = actualPath?.match(/^\/openings\/(.+?)\/?$/);
 

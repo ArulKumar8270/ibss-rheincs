@@ -22,6 +22,8 @@ interface NewsEvent {
   published: boolean
   created_at: string
   updated_at: string
+  meta_title: string | null
+  meta_description: string | null
 }
 
 export default function AdminNewsEventsPage() {
@@ -42,7 +44,9 @@ export default function AdminNewsEventsPage() {
     location: '',
     featured_image: '',
     created_at: '',
-    published: false
+    published: false,
+    meta_title: '',
+    meta_description: ''
   })
   const supabase = createClient()
   const formSectionRef = useRef<HTMLDivElement>(null)
@@ -344,7 +348,9 @@ export default function AdminNewsEventsPage() {
         ...formData,
         event_date: formData.event_date || null,
         location: formData.location || null,
-        featured_image: formData.featured_image || null
+        featured_image: formData.featured_image || null,
+        meta_title: formData.meta_title.trim() || null,
+        meta_description: formData.meta_description.trim() || null
       }
       if (editingItem) {
         const { error } = await supabase
@@ -370,7 +376,9 @@ export default function AdminNewsEventsPage() {
         location: '',
         featured_image: '',
         created_at: '',
-        published: false
+        published: false,
+        meta_title: '',
+        meta_description: ''
       })
       fetchItems()
     } catch (err: any) {
@@ -459,7 +467,9 @@ export default function AdminNewsEventsPage() {
       location: item.location || '',
       featured_image: item.featured_image || '',
       created_at: createdDate,
-      published: item.published
+      published: item.published,
+      meta_title: item.meta_title || '',
+      meta_description: item.meta_description || ''
     })
     setShowForm(true)
   }
@@ -904,6 +914,31 @@ export default function AdminNewsEventsPage() {
                 </div>
               )}
             </div>
+
+            <div style={{ marginBottom: '15px', padding: '15px', background: '#f9f9f9', borderRadius: '8px', border: '1px solid #eee' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '15px', color: '#333' }}>SEO Meta Tags</h3>
+              <div style={{ marginBottom: '15px' }}>
+                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Meta Title</label>
+                <input
+                  type="text"
+                  value={formData.meta_title}
+                  onChange={(e) => setFormData({ ...formData, meta_title: e.target.value })}
+                  placeholder="Enter SEO title (max 60 chars recommended)"
+                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
+                />
+              </div>
+              <div style={{ marginBottom: '0' }}>
+                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Meta Description</label>
+                <textarea
+                  value={formData.meta_description}
+                  onChange={(e) => setFormData({ ...formData, meta_description: e.target.value })}
+                  rows={2}
+                  placeholder="Enter SEO description (max 160 chars recommended)"
+                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
+                />
+              </div>
+            </div>
+
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: '600', color: '#333', fontSize: '14px', cursor: 'pointer' }}>
                 <input

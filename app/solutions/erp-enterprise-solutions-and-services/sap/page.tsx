@@ -811,7 +811,7 @@ const page = () => {
           </div>
         </div>
         {/* Our Testimonial Section End */}
-        <section className="mds-section capabilities pd50">
+        <section className="mds-section capabilities sapcap pd50">
           <div className="container">
             <div className="content width50">
               <div className="section-title ">

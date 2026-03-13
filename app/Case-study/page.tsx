@@ -147,6 +147,7 @@ export default function CaseStudyPage() {
       day: 'numeric'
     });
   };
+  
 
   // Filter case studies by category, industries, and search term
   const filteredCaseStudies = caseStudies.filter(cs => {
@@ -263,7 +264,7 @@ export default function CaseStudyPage() {
                                   </h2>
                                   <div className="ser-btn m-0">
                                     <Link
-                                      href={`/Case-study-details/${item.id}`}
+                                      href={`/Casestudy/${(item.slug && item.slug.trim()) ? item.slug.trim() : item.id}`}
                                       className="animated-svg-link p-0"
                                     >
                                       Read More
@@ -407,7 +408,7 @@ export default function CaseStudyPage() {
                                 </p>
                                 <div className="ser-btn1">
                                   <Link
-                                    href={`/Case-study-details/${item.id}`}
+                                    href={`/Casestudy/${(item.slug && item.slug.trim()) ? item.slug.trim() : item.id}`}
                                     className="animated-svg-link1 btn-style-3"
                                   >
                                     Read More

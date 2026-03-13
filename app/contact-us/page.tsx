@@ -1053,7 +1053,7 @@ export default function Contact() {
                           RheinBrücke IT Consulting BV, <br>Wim Duisenbergplantsoen 31,<br> 6221 SE Maastricht,
                       </p>
                       <div class="contect-call2">
-                            <img src="/new/contect-call.svg" alt=""> <a href="tel:+4923129295619"> +49 231 292 95619</a>
+                            <img src="/new/contect-call.svg" alt=""> <a href="tel:+31623846081"> +31 623 846 081</a>
                       </div>
                       <div class="contect-call2">
                             <img src="/new/c-mail.svg" alt=""> <a href="mailto:info@rheincs.com"> info@rheincs.com</a>

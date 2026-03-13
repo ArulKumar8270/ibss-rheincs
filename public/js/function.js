@@ -302,7 +302,9 @@
         const isNowHidden = moreText.classList.contains('hidden');
         
         if (btnLabel) {
-          btnLabel.textContent = isNowHidden ? t("Read More") : t("Read Less");
+          var readMoreText = toggleBtn.getAttribute('data-read-more') || 'Read More';
+          var readLessText = toggleBtn.getAttribute('data-read-less') || 'Read Less';
+          btnLabel.textContent = isNowHidden ? readMoreText : readLessText;
         }
         
         if (iconContainer) {
@@ -409,7 +411,9 @@
           // Update label
           const btnLabel = target.querySelector('.label');
           if (btnLabel) {
-            btnLabel.textContent = isHidden ? t("Read More") : t("Read Less");
+            const readMoreText = target.getAttribute('data-read-more') || 'Read More';
+            const readLessText = target.getAttribute('data-read-less') || 'Read Less';
+            btnLabel.textContent = isHidden ? readMoreText : readLessText;
           }
           
           // Update icon
@@ -884,6 +888,50 @@
     }
   }, ['Swiper']);
 
+  // Careers page slider counter (testimonial-slider59)
+  whenReady(function() {
+    const swiperEl = document.querySelector('.testimonial-slider59 .swiper');
+    const counterEl = document.querySelector('.testimonial-slider59 .testspace');
+    if (!swiperEl || !counterEl || typeof Swiper === 'undefined') return;
+    if (swiperEl.swiper && swiperEl.swiper.destroy) {
+      try { swiperEl.swiper.destroy(true, true); } catch (e) {}
+    }
+    const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
+    const instance = new Swiper(swiperEl, {
+      spaceBetween: 10,
+      loop: false,
+      speed: 800,
+      centeredSlides: false,
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: 0,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.testimonial-slider59 .testimonial-button-next',
+        prevEl: '.testimonial-slider59 .testimonial-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 3 },
+        991: { slidesPerView: 4 },
+        1300: { slidesPerView: 5 },
+        1700: { slidesPerView: 5 },
+      },
+      on: {
+        init: function () {
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        slideChange: function () {
+          const current = this.realIndex + 1;
+          counterEl.textContent = `${current}/${realTotalSlides}`;
+        }
+      }
+    });
+  }, ['Swiper']);
+
   // --- jQuery-dependent code ---
   whenReady(function() {
     var $ = window.$;
@@ -1159,11 +1207,11 @@
         prevEl: '.testimonial-slider .testimonial-button-prev',
       },
       breakpoints: {
-        0: { slidesPerView: 1.3 },
+        0: { slidesPerView: 1 },
         768: { slidesPerView: 3 },
         991: { slidesPerView: 4 },
-        1300: { slidesPerView: 5 },
-        1700: { slidesPerView: 5.8 },
+        1300: { slidesPerView: 6 },
+        1700: { slidesPerView: 6 },
       },
       on: {
         init: function () {

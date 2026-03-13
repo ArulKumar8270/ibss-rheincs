@@ -23,7 +23,15 @@ interface Blog {
   published: boolean
   created_at: string
   updated_at: string
+  meta_title: string | null
+  meta_description: string | null
   industries: string[] | null
+}
+
+interface Faq {
+  id?: string
+  question: string
+  answer: string
 }
 
 export default function AdminBlogsPage() {
@@ -49,8 +57,11 @@ export default function AdminBlogsPage() {
     language: 'English',
     published: false,
     created_at: '',
-    industries: [] as string[]
+    industries: [] as string[],
+    meta_title: '',
+    meta_description: ''
   })
+  const [faqs, setFaqs] = useState<Faq[]>([])
   const [uploading, setUploading] = useState(false)
   const [uploadProgress, setUploadProgress] = useState(0)
   const [uploadingImage, setUploadingImage] = useState(false)
@@ -210,9 +221,12 @@ export default function AdminBlogsPage() {
         industries: formData.industries.length > 0 ? formData.industries : null,
         language: formData.language || 'English',
         created_at: formData.created_at ? new Date(formData.created_at).toISOString() : new Date().toISOString(),
-        updated_at: new Date().toISOString()
+        updated_at: new Date().toISOString(),
+        meta_title: formData.meta_title.trim() || null,
+        meta_description: formData.meta_description.trim() || null
       }
       
+      let blogId = editingBlog?.id
       if (editingBlog) {
         const { error } = await supabase
           .from('blogs')
@@ -220,13 +234,45 @@ export default function AdminBlogsPage() {
           .eq('id', editingBlog.id)
         if (error) throw error
       } else {
-        const { error } = await supabase
+        const { data, error } = await supabase
           .from('blogs')
           .insert([submitData])
+          .select()
         if (error) throw error
+        if (data && data.length > 0) {
+          blogId = data[0].id
+        }
+      }
+
+      // Save FAQs
+      if (blogId) {
+        // Delete existing FAQs first
+        await supabase
+          .from('blog_faqs')
+          .delete()
+          .eq('blog_id', blogId)
+        
+        // Insert new FAQs
+        if (faqs.length > 0) {
+          const faqsToInsert = faqs
+            .filter(faq => faq.question.trim() && faq.answer.trim())
+            .map(faq => ({
+              blog_id: blogId,
+              question: faq.question.trim(),
+              answer: faq.answer.trim()
+            }))
+          
+          if (faqsToInsert.length > 0) {
+            const { error: faqError } = await supabase
+              .from('blog_faqs')
+              .insert(faqsToInsert)
+            if (faqError) throw faqError
+          }
+        }
       }
       setShowForm(false)
       setEditingBlog(null)
+      setFaqs([])
       setFormData({
         title: '',
         slug: '',
@@ -239,7 +285,9 @@ export default function AdminBlogsPage() {
         language: 'English',
         published: false,
         created_at: '',
-        industries: []
+        industries: [],
+        meta_title: '',
+        meta_description: ''
       })
       fetchBlogs()
       alert(editingBlog ? 'Blog updated successfully!' : 'Blog created successfully!')
@@ -661,7 +709,7 @@ export default function AdminBlogsPage() {
     }, 15000) // Debounce delay
   }, [convertYouTubeUrlsToIframes, quillEditor])
 
-  const handleEdit = (blog: Blog) => {
+  const handleEdit = async (blog: Blog) => {
     setEditingBlog(blog)
     // Convert ISO date to datetime-local format
     const createdDate = blog.created_at ? new Date(blog.created_at).toISOString().slice(0, 16) : ''
@@ -681,7 +729,9 @@ export default function AdminBlogsPage() {
         language: blog.language || 'English',
         published: blog.published,
         created_at: createdDate,
-        industries: blog.industries || []
+        industries: blog.industries || [],
+        meta_title: blog.meta_title || '',
+        meta_description: blog.meta_description || ''
       })
     // Sync ref with initial content
     contentRef.current = processedContent
@@ -690,6 +740,22 @@ export default function AdminBlogsPage() {
       clearTimeout(typingTimeoutRef.current)
       typingTimeoutRef.current = null
     }
+
+    // Fetch FAQs for this blog
+    try {
+      const { data, error } = await supabase
+        .from('blog_faqs')
+        .select('*')
+        .eq('blog_id', blog.id)
+        .order('created_at', { ascending: true })
+      
+      if (error) throw error
+      setFaqs(data || [])
+    } catch (err) {
+      console.error('Error fetching FAQs:', err)
+      setFaqs([])
+    }
+
     setShowForm(true)
     // Scroll to form container smoothly
     setTimeout(() => {
@@ -914,7 +980,9 @@ export default function AdminBlogsPage() {
               language: 'English',
               published: false,
               created_at: '',
-              industries: []
+              industries: [],
+              meta_title: '',
+              meta_description: ''
             })
           }}
           style={{
@@ -1182,6 +1250,89 @@ export default function AdminBlogsPage() {
                 Date when this blog was created (defaults to current date if not set)
               </small>
             </div>
+
+            <div style={{ marginBottom: '15px', padding: '15px', background: '#f9f9f9', borderRadius: '8px', border: '1px solid #eee' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '15px', color: '#333' }}>SEO Meta Tags</h3>
+              <div style={{ marginBottom: '15px' }}>
+                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Meta Title</label>
+                <input
+                  type="text"
+                  value={formData.meta_title}
+                  onChange={(e) => setFormData({ ...formData, meta_title: e.target.value })}
+                  placeholder="Enter SEO title (max 60 chars recommended)"
+                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
+                />
+              </div>
+              <div style={{ marginBottom: '0' }}>
+                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Meta Description</label>
+                <textarea
+                  value={formData.meta_description}
+                  onChange={(e) => setFormData({ ...formData, meta_description: e.target.value })}
+                  rows={2}
+                  placeholder="Enter SEO description (max 160 chars recommended)"
+                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
+                />
+              </div>
+            </div>
+
+            <div style={{ marginBottom: '25px', padding: '15px', background: '#f9f9f9', borderRadius: '8px', border: '1px solid #eee' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '15px', color: '#333', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                Frequently Asked Questions (FAQs)
+                <button
+                  type="button"
+                  onClick={() => setFaqs([...faqs, { question: '', answer: '' }])}
+                  style={{ padding: '6px 12px', background: '#667eea', color: '#fff', border: 'none', borderRadius: '4px', fontSize: '12px', cursor: 'pointer' }}
+                >
+                  + Add FAQ
+                </button>
+              </h3>
+              
+              {faqs.length === 0 ? (
+                <p style={{ fontSize: '14px', color: '#999', textAlign: 'center', padding: '10px' }}>No FAQs added yet.</p>
+              ) : (
+                faqs.map((faq, index) => (
+                  <div key={index} style={{ marginBottom: '15px', padding: '15px', background: '#fff', border: '1px solid #ddd', borderRadius: '6px', position: 'relative' }}>
+                    <button
+                      type="button"
+                      onClick={() => setFaqs(faqs.filter((_, i) => i !== index))}
+                      style={{ position: 'absolute', top: '5px', right: '5px', background: 'none', border: 'none', color: '#ff4d4d', fontSize: '18px', cursor: 'pointer' }}
+                      title="Remove FAQ"
+                    >
+                      &times;
+                    </button>
+                    <div style={{ marginBottom: '10px' }}>
+                      <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '13px' }}>Question {index + 1}</label>
+                      <input
+                        type="text"
+                        value={faq.question}
+                        onChange={(e) => {
+                          const newFaqs = [...faqs]
+                          newFaqs[index].question = e.target.value
+                          setFaqs(newFaqs)
+                        }}
+                        placeholder="Enter question"
+                        style={{ width: '100%', padding: '8px', border: '1px solid #eee', borderRadius: '4px', color: '#333', fontSize: '14px' }}
+                      />
+                    </div>
+                    <div>
+                      <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '13px' }}>Answer {index + 1}</label>
+                      <textarea
+                        value={faq.answer}
+                        onChange={(e) => {
+                          const newFaqs = [...faqs]
+                          newFaqs[index].answer = e.target.value
+                          setFaqs(newFaqs)
+                        }}
+                        rows={2}
+                        placeholder="Enter answer"
+                        style={{ width: '100%', padding: '8px', border: '1px solid #eee', borderRadius: '4px', color: '#333', fontSize: '14px' }}
+                      />
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+
             <div style={{ marginBottom: '15px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>
                 Industries

@@ -4,6 +4,7 @@ import React from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
 import {useTranslation} from "../hooks/useTranslation";
+import TestimonialandAward from "../Components/TestimonialandAward";
 export default function AlMl() {
   const { t, language } = useTranslation();
     return (
@@ -484,6 +485,8 @@ export default function AlMl() {
                         </div>
                     </div>
                 </div>
+
+                <TestimonialandAward />
                 {/* Footer Start */}
                 <footer className="main-footer pd0">
                     {/* Footer Main Start */}

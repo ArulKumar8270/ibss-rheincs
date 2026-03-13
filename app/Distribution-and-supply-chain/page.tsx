@@ -3,6 +3,7 @@ import React from 'react'
 import CommomLayout from '../Components/CommomLayout'
 import Link from "next/link";
 import {useTranslation} from "../hooks/useTranslation";
+import TestimonialandAward from '../Components/TestimonialandAward';
 const page = () => {
   const { t, language } = useTranslation();
     return (
@@ -367,6 +368,8 @@ const page = () => {
       </div>
     </div>
   </div>
+
+  <TestimonialandAward />
   {/* Footer Start */}
   <footer className="main-footer pd0">
     {/* Footer Main Start */}

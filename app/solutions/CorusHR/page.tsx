@@ -143,8 +143,9 @@ export default function Corushr() {
     </div> */}
                     <div className="container">
                         <div className="row section-row1 align-items-center builtsec">
-                            <div className="col-sm-5">
-                                <div className="section-title">
+                            <div className="col-sm-5"> 
+                                <div className="section-title coruslogo">
+                                    <img src="/images/CorusHR.png" alt="CorusHR" className="logo" />
                                     <h2 className="text-anime-style-21" data-cursor="-opaque">
                                         {t('Revolutionizing HR Management with Smart, Scalable Solutions')}
                                     </h2>

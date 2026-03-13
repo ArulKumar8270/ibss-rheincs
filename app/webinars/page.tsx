@@ -489,7 +489,7 @@ const page = () => {
                         className="col-sm-4 mb-4 item"
                             data-category={webinar.categories.join(' ')}
                       >
-                        <div className="video-gallery-image wow fadeInUp">
+                        <div className="video-gallery-image">
                               <Link
                                 href={webinar.videoUrl}
                                 className="popup-video"
