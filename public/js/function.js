@@ -1210,8 +1210,8 @@
         0: { slidesPerView: 1 },
         768: { slidesPerView: 3 },
         991: { slidesPerView: 4 },
-        1300: { slidesPerView: 6 },
-        1700: { slidesPerView: 6 },
+        1300: { slidesPerView: 5 },
+        1700: { slidesPerView: 5 },
       },
       on: {
         init: function () {
