@@ -38,7 +38,7 @@ const page = () => {
           <div class="col-lg-12">
               <div class="hero-content buildsecont ">
                   <div class="section-title">
-                      <div class="hero-video-content wow fadeInUp mt-4">
+                      <div class="hero-video-content mt-4">
                           <h2 class="text-anime-style-2 text-center" data-cursor="-opaque">CORPORATE VIDEOS </h2>
                       </div>
                   </div>
@@ -49,7 +49,7 @@ const page = () => {
               <div className="col-lg-4 col-md-6">
                 {/* image gallery start */}
                 <div
-                  className="video-gallery-image wow fadeInUp"
+                  className="video-gallery-image"
                   data-wow-delay="1.6s"
                 >
                   <Link href="https://youtu.be/G1M5A1CBpYY" 
@@ -67,7 +67,7 @@ const page = () => {
               <div className="col-lg-4 col-md-6">
                 {/* image gallery start */}
                 <div
-                  className="video-gallery-image wow fadeInUp"
+                  className="video-gallery-image"
                   data-wow-delay="1.6s"
                 >
                   <Link href="https://youtu.be/Y3Kc616jPU0" 
@@ -85,7 +85,7 @@ const page = () => {
               <div className="col-lg-4 col-md-6">
                 {/* image gallery start */}
                 <div
-                  className="video-gallery-image wow fadeInUp"
+                  className="video-gallery-image"
                   data-wow-delay="1.6s"
                 >
                   <Link href="https://youtu.be/s2jmxT8fP5c" 
@@ -103,7 +103,7 @@ const page = () => {
               <div className="col-lg-4 col-md-6">
                 {/* image gallery start */}
                 <div
-                  className="video-gallery-image wow fadeInUp"
+                  className="video-gallery-image"
                   data-wow-delay="0.4s"
                 >
                   <Link href="https://youtu.be/-t5b2gIdhyo" 
@@ -120,7 +120,7 @@ const page = () => {
               </div>
               <div className="col-lg-4 col-md-6">
                 {/* image gallery start */}
-                <div className="video-gallery-image wow fadeInUp">
+                <div className="video-gallery-image">
                   <Link href="https://youtu.be/IDrR7hiizhI"
                     className="popup-video"
                     data-cursor-text="Play"
@@ -136,7 +136,7 @@ const page = () => {
               <div className="col-lg-4 col-md-6">
                 {/* image gallery start */}
                 <div
-                  className="video-gallery-image wow fadeInUp"
+                  className="video-gallery-image"
                   data-wow-delay="0.2s"
                 >
                   <Link href="https://www.youtube.com/watch?app=desktop&v=Fh6P6teEH3c" 
@@ -154,7 +154,7 @@ const page = () => {
               <div className="col-lg-4 col-md-6">
                 {/* image gallery start */}
                 <div
-                  className="video-gallery-image wow fadeInUp"
+                  className="video-gallery-image"
                   data-wow-delay="0.6s"
                 >
                   <Link href="https://youtu.be/B-XFRUeSlUs" 
@@ -172,7 +172,7 @@ const page = () => {
               <div className="col-lg-4 col-md-6">
                 {/* image gallery start */}
                 <div
-                  className="video-gallery-image wow fadeInUp"
+                  className="video-gallery-image"
                   data-wow-delay="0.8s"
                 >
                   <Link href="https://youtu.be/yvtX2yqWxVg" 
@@ -189,7 +189,7 @@ const page = () => {
               </div>
               <div className="col-lg-4 col-md-6">
                 {/* image gallery start */}
-                <div className="video-gallery-image wow fadeInUp" data-wow-delay="1s">
+                <div className="video-gallery-image" data-wow-delay="1s">
                   <Link href="https://youtu.be/MmXOpBXQdZM" 
                     className="popup-video"
                     data-cursor-text="Play"
@@ -205,7 +205,7 @@ const page = () => {
               <div className="col-lg-4 col-md-6">
                 {/* image gallery start */}
                 <div
-                  className="video-gallery-image wow fadeInUp"
+                  className="video-gallery-image"
                   data-wow-delay="1.2s"
                 >
                   <Link href="https://youtu.be/C6sDlZCKIA4"
@@ -223,7 +223,7 @@ const page = () => {
               <div className="col-lg-4 col-md-6">
                 {/* image gallery start */}
                 <div
-                  className="video-gallery-image wow fadeInUp"
+                  className="video-gallery-image"
                   data-wow-delay="1.4s"
                 >
                   <Link href="https://youtu.be/TIIjLQps44U"
