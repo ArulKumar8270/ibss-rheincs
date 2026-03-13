@@ -570,7 +570,7 @@ export default function AlMl() {
                                         {/* Testimonial Slide Start */}
                                         <div className="swiper-slide">
                                             <div className="ric-slider-img">
-                                                <img src="/images/l3.JPG" alt="" />
+                                                <img src="/images/l3.jpg" alt="" />
                                             </div>
                                         </div>
                                         {/* Testimonial Slide End */}
