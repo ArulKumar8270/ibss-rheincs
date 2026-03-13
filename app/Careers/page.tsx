@@ -7,6 +7,12 @@ import { createClient } from '@/lib/supabase-browser';
 import {useTranslation} from "../hooks/useTranslation";
 import Awards from "../Components/Awards";
 
+import Swiper from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 interface Job {
   id: string;
   title: string;
@@ -29,6 +35,44 @@ export default function AlMl() {
     useEffect(() => {
         fetchJobs();
         
+        const swiper = new Swiper('.testimonial-slider59 .swiper', {
+            modules: [Navigation, Pagination, Autoplay],
+            loop: true,
+            slidesPerView: 'auto',
+            spaceBetween: 10,
+            centeredSlides: true,
+            observer: true,
+            observeParents: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.testimonial-button-next',
+                prevEl: '.testimonial-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            on: {
+                init: (s: any) => {
+                    const testspace = document.querySelector('.testimonial-slider59 .testspace');
+                    if (testspace) {
+                        const realSlides = s.slides.filter((slide: any) => !slide.classList.contains('swiper-slide-duplicate')).length;
+                        testspace.textContent = `1/${realSlides}`;
+                    }
+                },
+                slideChange: (s: any) => {
+                    const testspace = document.querySelector('.testimonial-slider59 .testspace');
+                    if (testspace) {
+                        const realSlides = s.slides.filter((slide: any) => !slide.classList.contains('swiper-slide-duplicate')).length;
+                        testspace.textContent = `${s.realIndex + 1}/${realSlides}`;
+                    }
+                },
+            },
+        });
+
         // Refetch jobs when window gains focus (user returns to tab)
         const handleFocus = () => {
             fetchJobs();
@@ -44,6 +88,7 @@ export default function AlMl() {
         return () => {
             window.removeEventListener('focus', handleFocus);
             clearInterval(intervalId);
+            swiper.destroy();
         };
     }, []);
 
@@ -525,7 +570,7 @@ export default function AlMl() {
                                         {/* Testimonial Slide Start */}
                                         <div className="swiper-slide">
                                             <div className="ric-slider-img">
-                                                <img src="/images/l3.jpg" alt="" />
+                                                <img src="/images/l3.JPG" alt="" />
                                             </div>
                                         </div>
                                         {/* Testimonial Slide End */}
@@ -1397,6 +1442,8 @@ export default function AlMl() {
                     <p className="lines" />
                 </div>
                 
+                <div style={{marginTop: "50px"}}></div>
+
              <Awards/>
 
 

@@ -6,6 +6,11 @@ import { useTranslation } from "../hooks/useTranslation";
 import Link from "next/link";
 import { getCache, setCache } from "../utils/cache";
 import { createClient } from "@/lib/supabase-browser";
+import Swiper from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 interface Blog {
   id: string;
@@ -54,6 +59,91 @@ export default function Blog() {
     { value: "digital-solutions", label: "Digital Solutions" },
     { value: "digital-services", label: "Digital Services" },
   ];
+
+  // Filter blogs by category, industries, and search term
+  const filteredBlogs = blogs.filter((blog) => {
+    // Category filter - when "all" is selected, show blogs from ALL categories
+    // This includes: our-solutions, enterprise-solutions, digital-solutions, digital-services, and any other category
+    const categoryMatch =
+      selectedCategory === "all"
+        ? true // Show all blogs regardless of category when "All" is selected
+        : (blog.category || "all") === selectedCategory; // Match specific category
+
+    // Industry filter
+    const industryMatch =
+      selectedIndustries.length === 0 ||
+      (Array.isArray(blog.industries) &&
+        blog.industries.length > 0 &&
+        blog.industries.some((slug) => selectedIndustries.includes(String(slug))));
+
+    // Search filter
+    const searchMatch =
+      searchTerm === "" ||
+      blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (blog.excerpt &&
+        blog.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) ||
+      (blog.content &&
+        blog.content.toLowerCase().includes(searchTerm.toLowerCase()));
+
+    return categoryMatch && industryMatch && searchMatch;
+  });
+
+  // Get featured blogs for slider (latest 4) - from filtered blogs
+  const featuredBlogs = filteredBlogs.slice(0, 4);
+
+  // Initialize Swiper when featuredBlogs changes
+    useEffect(() => {
+      let swiperInstance: Swiper | null = null;
+      
+      if (featuredBlogs.length > 0) {
+        // Destroy existing swiper if any
+        const existingSwiper = (document.querySelector(".testimonial-slider77 .swiper") as any)?.swiper;
+        if (existingSwiper) existingSwiper.destroy();
+ 
+        swiperInstance = new Swiper(".testimonial-slider77 .swiper", {
+          modules: [Navigation, Pagination],
+          loop: featuredBlogs.length > 1,
+          slidesPerView: 1,
+          centeredSlides: true,
+          spaceBetween: 0,
+          navigation: {
+            nextEl: ".testimonial-button-next",
+            prevEl: ".testimonial-button-prev",
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          observer: true,
+          observeParents: true,
+          updateOnWindowResize: true,
+          on: {
+            init: (s: any) => {
+              // Force update on init to ensure correct calculations
+              setTimeout(() => {
+                s.update();
+              }, 100);
+            },
+            slideChange: (s: any) => {
+              const testspace = document.querySelector(".testimonial-slider77 .testspace");
+              if (testspace) {
+                testspace.textContent = `${s.realIndex + 1}/${featuredBlogs.length}`;
+              }
+            },
+          },
+        });
+  
+        // Update counter initially
+        const testspace = document.querySelector(".testimonial-slider77 .testspace");
+        if (testspace) {
+          testspace.textContent = `1/${featuredBlogs.length}`;
+        }
+      }
+ 
+      return () => {
+        if (swiperInstance) swiperInstance.destroy();
+      };
+    }, [featuredBlogs]);
 
   useEffect(() => {
     const cachedData = getCache(language);
@@ -132,37 +222,6 @@ export default function Blog() {
       setLoading(false);
     }
   };
-
-  // Filter blogs by category, industries, and search term
-  const filteredBlogs = blogs.filter((blog) => {
-    // Category filter - when "all" is selected, show blogs from ALL categories
-    // This includes: our-solutions, enterprise-solutions, digital-solutions, digital-services, and any other category
-    const categoryMatch =
-      selectedCategory === "all"
-        ? true // Show all blogs regardless of category when "All" is selected
-        : (blog.category || "all") === selectedCategory; // Match specific category
-
-    // Industry filter
-    const industryMatch =
-      selectedIndustries.length === 0 ||
-      (Array.isArray(blog.industries) &&
-        blog.industries.length > 0 &&
-        blog.industries.some((slug) => selectedIndustries.includes(String(slug))));
-
-    // Search filter
-    const searchMatch =
-      searchTerm === "" ||
-      blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (blog.excerpt &&
-        blog.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (blog.content &&
-        blog.content.toLowerCase().includes(searchTerm.toLowerCase()));
-
-    return categoryMatch && industryMatch && searchMatch;
-  });
-
-  // Get featured blogs for slider (latest 4) - from filtered blogs
-  const featuredBlogs = filteredBlogs.slice(0, 4);
 
   // Calculate pagination based on filtered blogs
   const totalPages = Math.ceil(filteredBlogs.length / itemsPerPage);

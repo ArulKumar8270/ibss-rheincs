@@ -5,13 +5,7 @@ import CommomLayout from "../Components/CommomLayout";
 import { useTranslation } from "../hooks/useTranslation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase-browser";
-import { Metadata } from "next";
 import { getCache, setCache } from "../utils/cache";
-
-export const metadata: Metadata = {
-  title: "Blogs | Enterprise Digital Transformation & ERP Solutions | RheinBrücke",
-  description: "Explore our latest insights, industry trends, and expert opinions on digital transformation, ERP solutions, and enterprise services.",
-};
 
 interface Blog {
   id: string;

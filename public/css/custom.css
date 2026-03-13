@@ -22748,3 +22748,8 @@ position: relative;
 /* .digialserpage img{
 	height: 300px;
 } */
+
+.leadermobile .readmore{
+	position: relative;
+	z-index: 0;
+}

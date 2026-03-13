@@ -1513,15 +1513,19 @@
       }
     }
 
-    const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
+    const slides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide:not(.swiper-slide-duplicate)');
+    const realTotalSlides = slides.length || swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
 
     const testimonial_slider = new Swiper(swiperEl, {
       slidesPerView: 6,
-      spaceBetween: 30,
+      spaceBetween: 10,
       loop: true,
       speed: 800,
       centeredSlides: true,
-      autoplay: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
       navigation: {
         nextEl: '.testimonial-slider59 .testimonial-button-next',
         prevEl: '.testimonial-slider59 .testimonial-button-prev',
@@ -1532,15 +1536,15 @@
         991: { slidesPerView: 5 },
         1200: { slidesPerView: 6 },
       },
-      // on: {
-      //   init: function () {
-      //     counterEl.textContent = `1/${realTotalSlides}`;
-      //   },
-      //   slideChange: function () {
-      //     const currentSlide = this.realIndex + 1;
-      //     counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
-      //   }
-      // }
+      on: {
+        init: function () {
+          counterEl.textContent = `1/${realTotalSlides}`;
+        },
+        slideChange: function () {
+          const currentSlide = this.realIndex + 1;
+          counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
+        }
+      }
     });
   }, ['Swiper']);
 
