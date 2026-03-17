@@ -283,7 +283,7 @@ export default function Header() {
         { url: '/supply-chain', title: 'Supply Chain', keywords: 'supply chain logistics management' },
         { url: '/discrete-manufacturing', title: 'Discrete Manufacturing', keywords: 'discrete manufacturing production' },
         { url: '/Automotive', title: 'Automotive', keywords: 'automotive industry vehicles' },
-        { url: '/Engineering-Procurement-Construction-(EPC)', title: 'EPC', keywords: 'epc engineering procurement construction' },
+        { url: '/Engineering-Procurement-Construction', title: 'EPC', keywords: 'epc engineering procurement construction' },
         { url: '/process-manufacturing', title: 'Process Manufacturing', keywords: 'process manufacturing production' },
         { url: '/Private-Equity-Funding-Backed-Ventures', title: 'Private Equity', keywords: 'private equity investment finance' },
         { url: '/Cable-manufacturing', title: 'Cable Manufacturing', keywords: 'cable manufacturing production' },
@@ -477,7 +477,7 @@ export default function Header() {
                                     </span>
                                     <Link href="mailto:info@rheincs.com"> info@rheincs.com</Link>
                                 </li>
-                                 {/* <li>
+                                 <li>
                                      <div className="custom-select top-icon-gap" style={{ position: 'relative' }} ref={dropdownRef}>
                                         <select
                                             ref={selectRef}
@@ -571,7 +571,7 @@ export default function Header() {
                                             </div>
                                         )}
                                     </div>
-                                </li>  */}
+                                </li> 
                                 {/* <li>
                                     <div id="chcp_font_size" className="input-group">
                                         <span className="input-group-btn font-increase-waber">
@@ -1436,7 +1436,7 @@ export default function Header() {
                                                                                     <div className="col-sm-6 pdl0">
                                                                                         <ul>
                                                                                             <li className="ser-btn">
-                                                                                                <Link href="/Engineering-Procurement-Construction-(EPC)"
+                                                                                                <Link href="/Engineering-Procurement-Construction"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     Engineering Procurement and Construction
@@ -2963,7 +2963,7 @@ export default function Header() {
                                     <Link href="/Automotive">Automotive Industry</Link>
                                 </li>
                                 <li>
-                                    <Link href="/Engineering-Procurement-Construction-(EPC)">Engineering Procurement and Construction</Link>
+                                    <Link href="/Engineering-Procurement-Construction">Engineering Procurement and Construction</Link>
                                 </li>
                                 <li>
                                     <Link href="/process-manufacturing">Process Manufacturing</Link>

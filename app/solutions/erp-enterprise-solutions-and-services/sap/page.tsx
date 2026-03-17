@@ -17,7 +17,7 @@ const page = () => {
             <div className="animesan-waber llo">
               <div className="sap-title sap-paner-text">
                 <h2 className="text-anime-style-21" data-cursor="-opaque">
-                  Build Resilient, Connected, Scalable and Future-Ready Enterprises with SAP
+                  {t("Build Resilient, Connected, Scalable and Future-Ready Enterprises with SAP")}
                 </h2>
                 {/* <p className="mt-3 mb-0">
                   SAP is not just a system. It’s the backbone for building operational
@@ -27,7 +27,7 @@ const page = () => {
                 </p> */}
                 <div className="ser-btn ">
                   <Link href="/contact-us" className="animated-svg-link">
-                    Contact Us
+                    {t("Contact us")}
                     <span className="svg-container">
                       <span className=" right">
                         <svg
@@ -162,11 +162,10 @@ const page = () => {
                         className="text-anime-style-2 text-center"
                         data-cursor="-opaque"
                       >
-                        Business Transformation with SAP
+                        {t("Business Transformation with SAP")}
                       </h2>
                       <p className="text-center">
-                        SAP’s intelligent cloud ERP and business technology platforms
-                        help enterprises:{" "}
+                        {t("SAP’s intelligent cloud ERP and business technology platforms help enterprises")}
                       </p>
                     </div>
                   </div>
@@ -177,31 +176,31 @@ const page = () => {
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/g501.svg" alt="" />
-                  <p>Unify finance, operations, HR, and supply chain</p>
+                  <p>{t("Unify finance, operations, HR, and supply chain")}</p>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/ad2.svg" alt="" />
-                  <p>Boost productivity through AI-driven automation</p>
+                  <p>{t("Boost productivity through AI-driven automation")}</p>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/ad3.svg" alt="" />
-                  <p>Gain real-time operational visibility</p>
+                  <p>{t("Gain real-time operational visibility")}</p>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/ad4.svg" alt="" />
-                  <p>Accelerate cloud transformation with secure, scalable systems</p>
+                  <p>{t("Accelerate cloud transformation with secure, scalable systems")}</p>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/ad5.svg" alt="" />
-                  <p>Optimise processes with continuous innovation</p>
+                  <p>{t("Optimise processes with continuous innovation")}</p>
                 </div>
               </div>
             </div>
@@ -214,48 +213,41 @@ const page = () => {
               <div className="col-md-6">
                 <div className="sap-advantage-waber">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    SAP is More Than ERP…
+                    {t("SAP is More Than ERP…")}
                   </h2>
-                  <p>Today, SAP is more than an ERP. It is a platform for:</p>
+                  <p>{t("Today, SAP is more than an ERP. It is a platform for:")}</p>
                   <div className="advantage-sap">
-                    <h6> Real-time decisions powered by embedded analytics</h6>
+                    <h6> {t("Real-time decisions powered by embedded analytics")}</h6>
                     <p>
-                      S/4HANA and SAP Analytics Cloud enable business users to make
-                      decisions with live data - not spreadsheets or monthly reports.
+                      {t("S/4HANA and SAP Analytics Cloud enable business users to make decisions with live data - not spreadsheets or monthly reports.")}
                     </p>
                   </div>
                   <div className="advantage-sap">
-                    <h6> Continuous innovation through cloud updates</h6>
+                    <h6> {t("Continuous innovation through cloud updates")}</h6>
                     <p>
-                      Public and private cloud editions deliver ongoing enhancements,
-                      AI capabilities, and new best practices.
+                      {t("Public and private cloud editions deliver ongoing enhancements, AI capabilities, and new best practices.")}
                     </p>
                   </div>
                   <div className="advantage-sap">
-                    <h6> End-to-end process clarity with Signavio</h6>
+                    <h6> {t("End-to-end process clarity with Signavio")}</h6>
                     <p>
-                      Organisations worldwide report significant improvements in
-                      process transparency, operational consistency, and cycle-time
-                      reduction
+                      {t("Organisations worldwide report significant improvements in process transparency, operational consistency, and cycle-time reduction")}
                     </p>
                   </div>
                   <div className="advantage-sap">
-                    <h6> Connected ecosystems through SAP BTP</h6>
+                    <h6> {t("Connected ecosystems through SAP BTP")}</h6>
                     <p>
-                      Integrations, extensions, and automations help SAP fit
-                      seamlessly into your broader digital landscape.
+                      {t("Integrations, extensions, and automations help SAP fit seamlessly into your broader digital landscape.")}
                     </p>
                   </div>
                   <div className="advantage-sap">
-                    <h6> Radical simplification of IT operations</h6>
+                    <h6> {t("Radical simplification of IT operations")}</h6>
                     <p>
-                      {" "}
-                      Cloud migrations reduce system complexity, improve resilience,
-                      and free teams to focus on value creation.
+                      {t("Cloud migrations reduce system complexity, improve resilience, and free teams to focus on value creation.")}
                     </p>
                   </div>
                   <p>
-                    This is the future of SAP - agile, modular, analytics-driven, and
+                    {t("This is the future of SAP - agile, modular, analytics-driven, and business-led.")}
                     business-led.
                   </p>
                 </div>
@@ -273,11 +265,11 @@ const page = () => {
               <div className="col-lg-6">
                 <div className="section-title">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Our SAP Services
+                    {t("Our SAP Services")}
                   </h2>
-                  <h6 className='text-black mt15'>Unlock business value through a comprehensive portfolio of SAP services and proven transformation methodologies.</h6>
+                  <h6 className='text-black mt15'>{t("Unlock business value through a comprehensive portfolio of SAP services and proven transformation methodologies.")}</h6>
                   <p>
-                    From strategy to execution and continuous optimisation, we help organisations accelerate innovation, improve agility, and achieve measurable business outcomes across their SAP landscape.
+                    {t("From strategy to execution and continuous optimisation, we help organisations accelerate innovation, improve agility, and achieve measurable business outcomes across their SAP landscape.")}
                   </p>
                 </div>
               </div>
@@ -294,21 +286,21 @@ const page = () => {
                       <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
-                          <h3>SAP Implementation Services </h3>
+                          <h3> {t("SAP Implementation Services")}</h3>
                           <p>
-                            We deliver end-to-end SAP implementations aligned with industry best practices and clean-core principles. Our structured delivery approach ensures predictable outcomes, faster go-lives, and scalable architectures.
+                            {t("We deliver end-to-end SAP implementations aligned with industry best practices and clean-core principles. Our structured delivery approach ensures predictable outcomes, faster go-lives, and scalable architectures.")}
                           </p>
-                          <h5>Key capabilities:</h5>
+                          <h5> {t("Key capabilities:")}</h5>
                           <ul>
-                            <li>SAP S/4HANA implementations (Greenfield / Brownfield / Selective)
+                            <li> {t("SAP S/4HANA implementations (Greenfield / Brownfield / Selective)")}
                             </li>
-                            <li>Fit-to-standard and best-practice-driven design</li>
-                            <li>Process harmonisation and simplification</li>
-                            <li>Data migration, testing, and cutover management</li>
+                            <li> {t("Fit-to-standard and best-practice-driven design")}</li>
+                            <li> {t("Process harmonisation and simplification")}</li>
+                            <li> {t("Data migration, testing, and cutover management")}</li>
                             {/* <li> Post-go-live stabilisation & optimisation</li> */}
                           </ul>
                           <p>
-                           Reduced implementation risk, controlled scope, and a future-proof SAP landscape.
+                            {t("Reduced implementation risk, controlled scope, and a future-proof SAP landscape.")}
                           </p>
                         </div>
                       </div>
@@ -317,21 +309,21 @@ const page = () => {
                       <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
-                          <h3>RISE with SAP Transformation </h3>
+                          <h3> {t("RISE with SAP Transformation")}</h3>
                           <p>
-                            As a RISE with SAP® Validated Partner, RheinBrücke simplifies the journey from ECC to SAP S/4HANA with minimal disruption and maximum value realisation.
+                            {t("As a RISE with SAP® Validated Partner, RheinBrücke simplifies the journey from ECC to SAP S/4HANA with minimal disruption and maximum value realisation.")}
                           </p>
-                          <h5>Key capabilities:</h5>
+                          <h5> {t("Key capabilities:")}</h5>
                           <ul>
                             <li>
-                              System conversion, landscape transformation, and selective migration
+                              {t("System conversion, landscape transformation, and selective migration")}
                             </li>
-                            <li>Custom code remediation and clean-core alignment</li>
-                            <li>Data volume management and archiving</li>
-                            <li>SAP Readiness Check, Simplification Item handling, and CVI</li>
+                            <li> {t("Custom code remediation and clean-core alignment")}</li>
+                            <li> {t("Data volume management and archiving")}</li>
+                            <li> {t("SAP Readiness Check, Simplification Item handling, and CVI")}</li>
                           </ul>
                           <p>
-                            A modern RISE journey means clean processes, integrated systems, predictable costs, and continuous innovation.
+                            {t("A modern RISE journey means clean processes, integrated systems, predictable costs, and continuous innovation.")}
                           </p>
                         </div>
                       </div>
@@ -340,20 +332,19 @@ const page = () => {
                       <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
-                          <h3>SAP Business Technology Platform (BTP) </h3>
+                          <h3> {t("SAP Business Technology Platform (BTP)")}</h3>
                           <p>
-                            RheinBrücke unlocks innovation and extensibility using the SAP Business Technology Platform (SAP BTP).
+                            {t("RheinBrücke unlocks innovation and extensibility using the SAP Business Technology Platform (SAP BTP).")}
                           </p>
-                          <h5>Key capabilities:</h5>
+                          <h5> {t("Key capabilities:")}</h5>
                           <ul>
-                            <li>Application development and extensions</li>
-<li>Integration Suite, Workflow, and Automation</li>
-<li>AI, RPA, and event-driven architectures</li>
-<li>Clean-core compliant innovations</li>
+                            <li> {t("Application development and extensions")}</li>
+                            <li> {t("Integration Suite, Workflow, and Automation")}</li>
+                            <li> {t("AI, RPA, and event-driven architectures")}</li>
+                            <li> {t("Clean-core compliant innovations")}</li>
                           </ul>
                           <p>
-                            BTP is where enterprises unlock real agility, we help you
-                            get there.
+                            {t("BTP is where enterprises unlock real agility, we help you get there.")}
                           </p>
                         </div>
                       </div>
@@ -362,24 +353,22 @@ const page = () => {
                       <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
-                          <h3> SAP Signavio & Process Intelligence </h3>
+                          <h3> {t("SAP Signavio & Process Intelligence")}</h3>
                           <p>
-                            Transform the way your organisation understands and
-                            improves processes.{" "}
+                            {t("Transform the way your organisation understands and improves processes.")}
                           </p>
-                          <h5>We help you:</h5>
+                          <h5> {t("We help you:")}</h5>
                           <ul>
-                            <li>Map, analyse, and benchmark business processes</li>
+                            <li> {t("Map, analyse, and benchmark business processes")}</li>
                             <li>
                               {" "}
-                              Identify bottlenecks, inefficiencies, and compliance
-                              gaps
+                              {t("Identify bottlenecks, inefficiencies, and compliance gaps")}
                             </li>
-                            <li>Build future-state process models</li>
-                            <li> Drive harmonisation across global operations</li>
+                            <li> {t("Build future-state process models")}</li>
+                            <li> {t("Drive harmonisation across global operations")}</li>
                           </ul>
                           <p>
-                            Signavio brings clarity. We turn that clarity into action
+                            {t("Signavio brings clarity. We turn that clarity into action")}
                           </p>
                         </div>
                       </div>
@@ -387,47 +376,19 @@ const page = () => {
                       {/* Testimonial Slide Start */}
                       <div className="swiper-slide ">
                         <div className="sap-service-waber">
-                          <h3> SAP EWM Implementation </h3>
+                          <h3> {t("SAP EWM Implementation")}</h3>
                           <p>
-                            We help organisations modernise warehouse operations
-                            using SAP Extended Warehouse Management (EWM) to
-                            improve inventory accuracy, throughput, and operational
-                            efficiency.
+                            {t("We help organisations modernise warehouse operations using SAP Extended Warehouse Management (EWM) to improve inventory accuracy, throughput, and operational efficiency.")}
                           </p>
-                          <h5>Key capabilities:</h5>
+                          <h5> {t("Key capabilities:")}</h5>
                           <ul>
-                            <li>SAP EWM embedded and decentralised implementations</li>
-                            <li>Warehouse process optimisation and automation</li>
-                            <li>Integration with S/4HANA, TM, and third-party systems</li>
-                            <li>RF, Fiori, and automation enablement</li>
+                            <li> {t("SAP EWM embedded and decentralised implementations")}</li>
+                            <li> {t("Warehouse process optimisation and automation")}</li>
+                            <li> {t("Integration with S/4HANA, TM, and third-party systems")}</li>
+                            <li> {t("RF, Fiori, and automation enablement")}</li>
                           </ul>
                           <p>
-                            Real-time warehouse control with measurable gains in
-                            inventory accuracy and throughput.
-                          </p>
-                        </div>
-                      </div>
-                      {/* Testimonial Slide End */}
-                      {/* Testimonial Slide Start */}
-                      <div className="swiper-slide ">
-                        {/* Your current service content */}
-                        <div className="sap-service-waber">
-                          <h3>
-                            {" "}
-                            SAP Analytics Cloud (SAC) Implementation{" "}
-                          </h3>
-                          <p>
-                            We enable real-time insights and predictive analytics using SAP Analytics Cloud to support smarter, faster decision-making.{" "}
-                          </p>
-                          <h5>Key capabilities:</h5>
-                          <ul>
-                            <li>SAC planning, analytics, and predictive scenarios</li>
-                            <li>Integration with S/4HANA, BW, and non-SAP sources</li>
-                            <li>Executive dashboards and self-service analytics</li>
-                            <li>Financial and operational planning models</li>
-                          </ul>
-                          <p>
-                            We help organisations shift from data-rich to insight-driven.
+                            {t("Real-time warehouse control with measurable gains in inventory accuracy and throughput.")}
                           </p>
                         </div>
                       </div>
@@ -438,21 +399,45 @@ const page = () => {
                         <div className="sap-service-waber">
                           <h3>
                             {" "}
-                            SAP AMS+ (Application Management & Optimisation)
+                            {t("SAP Analytics Cloud (SAC) Implementation")}
+                          </h3>
+                          <p>
+                            {t("We enable real-time insights and predictive analytics using SAP Analytics Cloud to support smarter, faster decision-making.")}
+                          </p>
+                          <h5> {t("Key capabilities:")}</h5>
+                          <ul>
+                            <li> {t("SAC planning, analytics, and predictive scenarios")}</li>
+                            <li> {t("Integration with S/4HANA, BW, and non-SAP sources")}</li>
+                            <li> {t("Executive dashboards and self-service analytics")}</li>
+                            <li> {t("Financial and operational planning models")}</li>
+                          </ul>
+                          <p>
+                            {t("We help organisations shift from data-rich to insight-driven.")}
+                          </p>
+                        </div>
+                      </div>
+                      {/* Testimonial Slide End */}
+                      {/* Testimonial Slide Start */}
+                      <div className="swiper-slide ">
+                        {/* Your current service content */}
+                        <div className="sap-service-waber">
+                          <h3>
+                            {" "}
+                            {t("SAP AMS+ (Application Management & Optimisation)")}
                           </h3>
                           <p>
                             {" "}
-                            RheinBrücke provides reliable SAP AMS services that ensure business continuity, system stability, and continuous improvement.
+                            {t("RheinBrücke provides reliable SAP AMS services that ensure business continuity, system stability, and continuous improvement.")}
                           </p>
-                          <h5>Key capabilities:</h5>
+                          <h5> {t("Key capabilities:")}</h5>
                           <ul>
-                            <li>Functional and technical support (L2/L3)</li>
-                            <li>Proactive monitoring and incident management</li>
-                            <li>Enhancement, optimisation, and minor developments</li>
-                            <li>SLA-driven offshore-onsite delivery model</li>
+                            <li> {t("Functional and technical support (L2/L3)")}</li>
+                            <li> {t("Proactive monitoring and incident management")}</li>
+                            <li> {t("Enhancement, optimisation, and minor developments")}</li>
+                            <li> {t("SLA-driven offshore-onsite delivery model")}</li>
                           </ul>
                           <p>
-                            AMS services ensure your SAP landscape is reliable, optimised, and always evolving.
+                            {t("RheinBrücke's SAP AMS services ensure your SAP landscape is reliable, optimised, and always evolving.")}
                           </p>
                         </div>
                       </div>
@@ -462,19 +447,19 @@ const page = () => {
                       <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
-                          <h3> SAP SuccessFactors Implementation </h3>
+                          <h3> {" "} {t("SAP SuccessFactors Implementation")} </h3>
                           <p>
-                            RheinBrücke helps organisations transform HR operations with SAP SuccessFactors, enabling improved employee experience and data-driven workforce management.
+                            {t("RheinBrücke helps organisations transform HR operations with SAP SuccessFactors, enabling improved employee experience and data-driven workforce management.")}
                           </p>
-                          <h5>Key capabilities:</h5>
+                          <h5> {t("Key capabilities:")}</h5>
                           <ul>
-                            <li>Core HR, Talent, Learning, and Performance modules</li>
-                            <li>Global HR standardisation and localisation</li>
-                            <li>Integration with S/4HANA and third-party payroll systems</li>
-                            <li>Data migration and change management</li>
+                            <li> {t("Core HR, Talent, Learning, and Performance modules")}</li>
+                            <li> {t("Global HR standardisation and localisation")}</li>
+                            <li> {t("Integration with S/4HANA and third-party payroll systems")}</li>
+                            <li> {t("Data migration and change management")}</li>
                           </ul>
                           <p>
-                            SuccessFactors implemented with clean data, controlled change, and minimal disruption.
+                            {t("SuccessFactors implemented with clean data, controlled change, and minimal disruption.")}
                           </p>
                         </div>
                       </div>
@@ -484,19 +469,19 @@ const page = () => {
                       <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
-                          <h3> SAP Ariba Services </h3>
+                          <h3> {" "} {t("SAP Ariba Services")} </h3>
                           <p>
-                            We modernise procurement and supplier collaboration using SAP Ariba to deliver transparency, control, and cost efficiency.
+                            {t("We modernise procurement and supplier collaboration using SAP Ariba to deliver transparency, control, and cost efficiency.")}
                           </p>
-                          <h5>Key capabilities:</h5>
+                          <h5> {t("Key capabilities:")}</h5>
                           <ul>
-                            <li>Ariba Buying, Invoicing, and Sourcing implementations</li>
-                            <li>Supplier onboarding and enablement</li>
-                            <li>Integration with SAP S/4HANA and ECC</li>
-                            <li>Spend visibility and compliance optimisation</li>
+                            <li> {t("Ariba Buying, Invoicing, and Sourcing implementations")}</li>
+                            <li> {t("Supplier onboarding and enablement")}</li>
+                            <li> {t("Integration with SAP S/4HANA and ECC")}</li>
+                            <li> {t("Spend visibility and compliance optimisation")}</li>
                           </ul>
                           <p>
-                            Ariba embedded as a governed procurement platform—not another disconnected tool.
+                            {t("Ariba embedded as a governed procurement platform—not another disconnected tool.")}
                           </p>
                         </div>
                       </div>
@@ -506,19 +491,19 @@ const page = () => {
                       <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
-                          <h3> EDI & SAP CPI Integration Services </h3>
+                          <h3> {" "} {t("EDI & SAP CPI Integration Services")} </h3>
                           <p>
-                            We enable seamless system-to-system and business partner integrations using SAP Integration Suite (CPI) and EDI platforms.
+                            {t("We enable seamless system-to-system and business partner integrations using SAP Integration Suite (CPI) and EDI platforms.")}
                           </p>
-                          <h5>Key capabilities:</h5>
+                          <h5> {t("Key capabilities:")}</h5>
                           <ul>
-                            <li>EDI integrations with customers, suppliers, and logistics partners</li>
-                            <li>SAP CPI-based cloud and hybrid integrations</li>
-                            <li>API management and message mapping</li>
-                            <li>Monitoring, error handling, and optimisation</li>
+                            <li> {t("EDI integrations with customers, suppliers, and logistics partners")}</li>
+                            <li> {t("SAP CPI-based cloud and hybrid integrations")}</li>
+                            <li> {t("API management and message mapping")}</li>
+                            <li> {t("Monitoring, error handling, and optimisation")}</li>
                           </ul>
                           <p>
-                            Integrations designed for failure handling, visibility, and long-term stability.
+                            {t("Integrations designed for failure handling, visibility, and long-term stability.")}
                           </p>
                         </div>
                       </div>
@@ -528,19 +513,19 @@ const page = () => {
                       <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
-                          <h3> Merlin Sourcing – SAP-Integrated Strategic Sourcing </h3>
+                          <h3> {" "} {t("Merlin Sourcing – SAP-Integrated Strategic Sourcing")} </h3>
                           <p>
-                            Merlin Sourcing enables governed, SAP-integrated strategic sourcing, extending SAP procurement with structured sourcing, supplier collaboration, and decision control, without breaking clean-core principles.
+                            {t("Merlin Sourcing enables governed, SAP-integrated strategic sourcing, extending SAP procurement with structured sourcing, supplier collaboration, and decision control, without breaking clean-core principles.")}
                           </p>
-                          <h5>Key capabilities:</h5>
+                          <h5> {t("Key capabilities:")}</h5>
                           <ul>
-                            <li>SAP-integrated sourcing aligned to S/4HANA and ECC</li>
-                            <li>Structured sourcing workflows and event management</li>
-                            <li>Configurable for scale without customisation debt</li>
-                            <li>Delivered and supported by RheinBrücke’s SAP consulting and AMS teams</li>
+                            <li> {t("SAP-integrated sourcing aligned to S/4HANA and ECC")}</li>
+                            <li> {t("Structured sourcing workflows and event management")}</li>
+                            <li> {t("Configurable for scale without customisation debt")}</li>
+                            <li> {t("Delivered and supported by RheinBrücke’s SAP consulting and AMS teams")}</li>
                           </ul>
                           <p>
-                            SAP procurement investments extended into strategic sourcing without platform sprawl or governance loss.
+                            {t("SAP procurement investments extended into strategic sourcing without platform sprawl or governance loss.")}
                           </p>
                         </div>
                       </div>
@@ -550,19 +535,19 @@ const page = () => {
                       <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
-                          <h3> Custom Development & Technical Services </h3>
+                          <h3> {" "} {t("Custom Development & Technical Services")} </h3>
                           <p>
-                            We design and develop SAP extensions that enhance business capabilities while preserving a clean core.
+                            {t("We design and develop SAP extensions that enhance business capabilities while preserving a clean core.")}
                           </p>
-                          <h5>Key capabilities:</h5>
+                          <h5> {t("Key capabilities:")}</h5>
                           <ul>
-                            <li> ABAP and RAP-based developments</li>
-                            <li> SAP Fiori and UX enhancements</li>
-                            <li> Custom reports, interfaces, forms, and workflows</li>
-                            <li> Side-by-side extensions using SAP BTP</li>
+                            <li> {t("ABAP and RAP-based developments")}</li>
+                            <li> {t("SAP Fiori and UX enhancements")}</li>
+                            <li> {t("Custom reports, interfaces, forms, and workflows")}</li>
+                            <li> {t("Side-by-side extensions using SAP BTP")}</li>
                           </ul>
                           <p>
-                            We build only what adds value and ensure everything stays upgrade-friendly.
+                            {t("We build only what adds value and ensure everything stays upgrade-friendly.")}
                           </p>
                         </div>
                       </div>
@@ -572,19 +557,19 @@ const page = () => {
                       <div className="swiper-slide ">
                         {/* Your current service content */}
                         <div className="sap-service-waber">
-                          <h3>Global Rollout Services </h3>
+                          <h3> {" "} {t("Global Rollout Services")} </h3>
                           <p>
-                            RheinBrücke enables seamless SAP rollouts across geographies, ensuring standardisation while accommodating local regulatory and business requirements.
+                            {t("RheinBrücke enables seamless SAP rollouts across geographies, ensuring standardisation while accommodating local regulatory and business requirements.")}
                           </p>
-                          <h5>Key capabilities:</h5>
+                          <h5> {t("Key capabilities:")}</h5>
                           <ul>
-                            <li> Template-based global rollouts</li>
-                            <li> Localisation and compliance management</li>
-                            <li> Multi-country data and process harmonisation</li>
-                            <li> Central governance with regional flexibility</li>
+                            <li> {t("Template-based global rollouts")}</li>
+                            <li> {t("Localisation and compliance management")}</li>
+                            <li> {t("Multi-country data and process harmonisation")}</li>
+                            <li> {t("Central governance with regional flexibility")}</li>
                           </ul>
                           <p>
-                            Consistent global execution with local compliance assured from day one.
+                            {t("Consistent global execution with local compliance assured from day one.")}
                           </p>
                         </div>
                       </div>
@@ -811,15 +796,16 @@ const page = () => {
           </div>
         </div>
         {/* Our Testimonial Section End */}
-        <section className="mds-section capabilities sapcap pd50">
+        <section className={`mds-section capabilities sapcap pd50 ${language === 'German' ? 'germansap' : ''}`}>
           <div className="container">
             <div className="content width50">
               <div className="section-title ">
                 <div className="hero-video-content1 wow fadeInUp mt-4">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Why RheinBrücke
+                    {" "}
+                    {t("Why RheinBrücke")}
                   </h2>
-                  <p> An SAP partner for modern enterprises.</p>
+                  <p> {t("An SAP partner for modern enterprises.")}</p>
                 </div>
               </div>
             </div>
@@ -835,7 +821,7 @@ const page = () => {
                       <img src="/images/cap1.svg" alt="" />
                       {/* <h6> Dynamics 365 ERP & CRM Solutions</h6> */}
                       <p>
-                        Strong S/4HANA, ECC, RISE, BTP, Signavio & SAC expertise
+                        {t("Strong S/4HANA, ECC, RISE, BTP, Signavio & SAC expertise")}
                       </p>
                     </div>
                   </div>
@@ -844,7 +830,7 @@ const page = () => {
                   <div className="swiper-slide">
                     <div className="valueslide">
                       <img src="/images/cap2.svg" alt="" />
-                      <p>Proven migration frameworks and accelerators</p>
+                      <p> {t("Proven migration frameworks and accelerators")}</p>
                     </div>
                   </div>
                   {/* Testimonial Slide End */}
@@ -853,7 +839,7 @@ const page = () => {
                     <div className="valueslide">
                       <img src="/images/cap3.svg" alt="" />
                       <p>
-                        Deep integration capability across ERP and non-ERP systems
+                        {t("Deep integration capability across ERP and non-ERP systems")}
                       </p>
                     </div>
                   </div>
@@ -862,7 +848,7 @@ const page = () => {
                   <div className="swiper-slide">
                     <div className="valueslide">
                       <img src="/images/cap4.svg" alt="" />
-                      <p>Agile delivery with predictable outcomes</p>
+                      <p> {t("Agile delivery with predictable outcomes")}</p>
                     </div>
                   </div>
                   {/* Testimonial Slide End */}
@@ -870,14 +856,15 @@ const page = () => {
                   <div className="swiper-slide">
                     <div className="valueslide">
                       <img src="/images/cap5.svg" alt="" />
-                      <p>A global delivery model that balances cost and quality</p>
+                      <p> {t("A global delivery model that balances cost and quality")}</p>
                     </div>
                   </div>
                   {/* Testimonial Slide End */}
+                  {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="valueslide">
                       <img src="/new/ds2.svg" alt="" />
-                      <p>Long-term AMS+ to keep your SAP evolving</p>
+                      <p> {t("Long-term AMS+ to keep your SAP evolving")}</p>
                     </div>
                   </div>
                 </div>
@@ -1102,7 +1089,7 @@ const page = () => {
                     <div className="valueslide">
                       <img src="/images/cap1.svg" alt="" />
                       {/* <h6> Dynamics 365 ERP & CRM Solutions</h6> */}
-                      <p>Extensive global delivery experience in SAP</p>
+                      <p> {t("Extensive global delivery experience in SAP")}</p>
                     </div>
                   </div>
                   {/* Testimonial Slide End */}
@@ -1111,8 +1098,7 @@ const page = () => {
                     <div className="valueslide">
                       <img src="/images/cap2.svg" alt="" />
                       <p>
-                        Proven expertise in S/4HANA Cloud, RISE with SAP, BTP,
-                        Signavio, and SAC
+                        {t("Proven expertise in S/4HANA Cloud, RISE with SAP, BTP, Signavio, and SAC")}
                       </p>
                     </div>
                   </div>
@@ -1121,7 +1107,7 @@ const page = () => {
                   <div className="swiper-slide">
                     <div className="valueslide">
                       <img src="/images/cap3.svg" alt="" />
-                      <p>Flexible delivery models tailored to business outcomes</p>
+                      <p> {t("Flexible delivery models tailored to business outcomes")}</p>
                     </div>
                   </div>
                   {/* Testimonial Slide End */}
@@ -1129,7 +1115,7 @@ const page = () => {
                   <div className="swiper-slide">
                     <div className="valueslide">
                       <img src="/images/cap4.svg" alt="" />
-                      <p>End-to-end SAP AMS, ABAP, and Basis services</p>
+                      <p> {t("End-to-end SAP AMS, ABAP, and Basis services")}</p>
                     </div>
                   </div>
                   {/* Testimonial Slide End */}
@@ -1137,7 +1123,7 @@ const page = () => {
                   <div className="swiper-slide">
                     <div className="valueslide">
                       <img src="/images/cap5.svg" alt="" />
-                      <p>Focus on operational resilience and accelerated value</p>
+                      <p> {t("Focus on operational resilience and accelerated value")}</p>
                     </div>
                   </div>
                   {/* Testimonial Slide End */}
@@ -1361,8 +1347,7 @@ const page = () => {
             {/* Testimonial Slider End */}
             <p className="mt-3">
               {" "}
-              We don’t just implement SAP - we help you run, optimise, and scale with
-              it.
+              {t("We don’t just implement SAP - we help you run, optimise, and scale with it.")}
             </p>
           </div>
         </section>
@@ -1373,9 +1358,9 @@ const page = () => {
               <div className="col-lg-12">
                 <div className="section-title text-center headingss">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Industries We Support
+                    {t("Industries We Support")}
                   </h2>
-                  <p> Modern SAP solutions tailored for:</p>
+                  <p> {t("Modern SAP solutions tailored for:")}</p>
                 </div>
               </div>
             </div>
@@ -1391,7 +1376,7 @@ const page = () => {
                       <div className="swiper-slide">
                         <div className="service-item-body in4">
                           <h3>
-                            <span> Manufacturing</span>
+                            <span> {t("Manufacturing")}</span>
                           </h3>
                         </div>
                       </div>
@@ -1400,7 +1385,7 @@ const page = () => {
                       <div className="swiper-slide">
                         <div className="service-item-body in5">
                           <h3>
-                            <span>Automotive</span>
+                            <span> {t("Automotive")}</span>
                           </h3>
                         </div>
                       </div>
@@ -1409,7 +1394,7 @@ const page = () => {
                       <div className="swiper-slide">
                         <div className="service-item-body in6">
                           <h3>
-                            <span>Engineering, Procurement & Construction</span>
+                            <span> {t("Engineering, Procurement & Construction")}</span>
                           </h3>
                         </div>
                       </div>
@@ -1418,7 +1403,7 @@ const page = () => {
                       <div className="swiper-slide">
                         <div className="service-item-body in2">
                           <h3>
-                            <span>Distribution & Retail </span>
+                            <span> {t("Distribution & Retail")}</span>
                           </h3>
                         </div>
                       </div>
@@ -1427,7 +1412,7 @@ const page = () => {
                       <div className="swiper-slide">
                         <div className="service-item-body in1">
                           <h3>
-                            <span>Consumer Products</span>
+                            <span> {t("Consumer Products")}</span>
                           </h3>
                         </div>
                       </div>
@@ -1436,7 +1421,7 @@ const page = () => {
                       <div className="swiper-slide">
                         <div className="service-item-body ein5">
                           <h3>
-                            <span>Energy & Utilities</span>
+                            <span> {t("Energy & Utilities")}</span>
                           </h3>
                         </div>
                       </div>
@@ -1675,8 +1660,7 @@ const page = () => {
           </div>
           <div className="container">
             <p className="mt-3 text-center">
-              Each industry has different priorities. We bring the right processes,
-              accelerators, and domain expertise.
+              {t("Each industry has different priorities. We bring the right processes, accelerators, and domain expertise.")}
             </p>
           </div>
         </div>
@@ -1845,16 +1829,15 @@ const page = () => {
               <div className="firstrow">
                 <div className="row">
                   <div className="col-sm-8">
-                    <h2>Ready to Modernise with SAP?</h2>
+                    <h2> {t("Ready to Modernise with SAP?")}</h2>
                     <p>
-                      Talk to our SAP experts to see how we can help optimise your
-                      systems and drive business transformation.
+                      {t("Talk to our SAP experts to see how we can help optimise your systems and drive business transformation.")}
                     </p>
                   </div>
                   <div className="col-sm-4">
                     <div className="ser-btn text-right">
                       <a href="/contact-us" className="animated-svg-link">
-                        Contact Us
+                        {t("Contact us")}
                         <span className="svg-container ">
                           <span className=" right">
                             <svg

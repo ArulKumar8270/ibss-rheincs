@@ -22753,3 +22753,14 @@ position: relative;
 	position: relative;
 	z-index: 0;
 }
+
+.germansap .valueslide {
+    min-height: 220px !important;
+}
+
+.germandigisersol .MeRLIN-service {
+    height: 400px !important;
+}
+.germanbuildsec .service-item-body .uiux{
+	height: 325px !important;
+}

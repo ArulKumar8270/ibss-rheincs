@@ -196,7 +196,7 @@ const page = () => {
                   <div className="col-md-6">
                     <ul className="level-1">
                       <li>
-                        <a href="/Engineering-Procurement-Construction-(EPC)">
+                        <a href="/Engineering-Procurement-Construction">
                           EPC (Engineering & Construction)
                         </a>
                       </li>

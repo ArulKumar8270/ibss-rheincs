@@ -19,10 +19,11 @@ export default function AlMl() {
                             <div className="col-lg-5">
                                 <div className="pe-main-hadding-waber">
                                     <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
-                                        {t("Cable Manufacturing")}
+                                        {t("AI-ready  ERP Cable Manufacturing Operations")}
                                     </h2>
+                                    <p>{t("Solving Operational Complexity to Drive Scalable Growth for Wire rope and Cable industry")}</p>
                                     <p>
-                                        {t("The cable manufacturing industry faces persistent challenges, from rising raw material costs and complex, multi-level production processes to stringent quality mandates and growing demands for customisation. Manufacturers must navigate operational inefficiencies, disconnected systems, and increasing pressure to reduce lead times while maintaining product quality and profitability.")}
+                                        {t("Overcome complex challenges from production to delivery. Modernize your cable manufacturing operations with greater visibility across procurement, production, inventory, and distribution.")}
                                     </p>
                                     <div className="ser-btn m-0">
                                         <Link href="/contact-us" className="animated-svg-link">
@@ -210,31 +211,31 @@ export default function AlMl() {
                         className="main-hadding-1 them-dark-text-color text-center mb-40"
                         data-cursor="-opaque"
                     >
-                        {t("Why It Matters")}
+                        {t("Why It Matters for Cable Manufacturing ")}
                     </h2>
                     <div className="pe-matters-content-waber">
                         <div className="pe-matters-content">
-                            <img src="/new/g501.svg" alt="" />
+                            <img src="/new/g501.svg" alt="Operational risk and system challenges icon" />
                             <p>
-                                {t("Operational inefficiencies and poor system integration lead to higher production costs and delayed deliveries")}
+                                {t("Operational inefficiencies and poor system integration increase production costs and delay delivery performance ")}
                             </p>
                         </div>
                         <div className="pe-matters-content">
-                            <img src="/new/ad2.svg" alt="" />
+                            <img src="/new/ad2.svg" alt="Cloud systems and data handling icons" />
                             <p>
                                 {t("Weak inventory and batch traceability increases quality risks and regulatory non-compliance")}
                             </p>
                         </div>
                         <div className="pe-matters-content">
-                            <img src="/new/ad3.svg" alt="" />
+                            <img src="/new/ad3.svg" alt="Improved operational workflows icon" />
                             <p>
-                                {t("Manual, disconnected reporting delays decision-making and impairs profitability control")}
+                                {t("Manual, disconnected reporting delays decision-making and impairs control over profitability")}
                             </p>
                         </div>
                         <div className="pe-matters-content">
-                            <img src="/new/ad4.svg" alt="" />
+                            <img src="/new/ad4.svg" alt="Financial performance optimization icon" />
                             <p>
-                                {t("Ineffective demand forecasting impacts cash flow, capacity planning, and customer satisfaction")}
+                                {t("Ineffective demand forecasting impacts cash flow stability, production planning, and overall customer satisfaction")}
                             </p>
                         </div>
                     </div>
@@ -249,7 +250,7 @@ export default function AlMl() {
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    {t("Deploy modern ERP solutions tailored for cable manufacturing operations")}
+                                    {t("Deploy modern ERP solutions tailored for cable manufacturing operations, supply chain, and financial workflows")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
@@ -261,25 +262,25 @@ export default function AlMl() {
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    {t("Integrate production, inventory, quality, and finance functions into a single, connected platform")}
+                                    {t("Integrate production planning, inventory management, quality assurance, procurement, and finance into a single connected platform")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    {t("Simplify third-party managed procurement and project operations within the ERP system")}
+                                    {t("Simplify third-party managed procurement and project-based operations through structured ERP workflows")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    {t("Automate multi-level job orders, sub-assemblies, and material issues for streamlined production")}
+                                    {t("Automate multi-level job orders, sub-assemblies, and material issues for streamlined production planning and control")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    {t("Migrate legacy data seamlessly using structured data migration tools and templates")}
+                                    {t("Migrate legacy operational and financial data using structured migration tools and standardized templates")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
@@ -291,7 +292,7 @@ export default function AlMl() {
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    {t("Deliver offshore-enabled, cost-effective transformation programmes")}
+                                    {t("Deliver cost-effective transformation programmes supporting scalable adoption")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
@@ -329,14 +330,14 @@ export default function AlMl() {
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    {t("Faster, data-led operational decision-making and financial reporting")}
+                                                    {t("Faster, data-driven operational decision-making supported by real-time financial reporting visibility")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
                                                     {" "}
-                                                    {t("Enhanced traceability and regulatory compliance through batch tracking")}
+                                                    {t("Enhanced traceability and regulatory compliance through batch-level tracking")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
@@ -350,7 +351,7 @@ export default function AlMl() {
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
                                                     {" "}
-                                                    {t("Stronger collaboration across production, procurement, finance, and sales functions")}
+                                                    {t("Stronger collaboration across production, procurement, finance, and sales teams through shared operational data")}
                                                 </p>
                                             </div>
                                         </div>
@@ -374,7 +375,7 @@ export default function AlMl() {
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    {t("End-to-end traceability using barcode-driven batch management")}
+                                                    {t("End-to-end traceability enabled through barcode-driven batch management processes")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
@@ -405,7 +406,7 @@ export default function AlMl() {
                                             <div className="bf-content">
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
-                                                    {t("Deep domain expertise in cable manufacturing ERP implementations")}
+                                                    {t("Deep domain expertise delivering ERP implementation and operational transformation programmes for cable manufacturers")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
@@ -418,7 +419,7 @@ export default function AlMl() {
                                                 <img src="/new/lp.svg" alt="" />
                                                 <p>
                                                     {" "}
-                                                    {t("Focus on tangible business outcomes and operational value")}
+                                                    {t("Focus on measurable business outcomes, operational efficiency, and long-term value creation")}
                                                 </p>
                                             </div>
                                             <div className="bf-content">
@@ -451,7 +452,7 @@ export default function AlMl() {
                                         </h2>
                                         <p>
                                             {" "}
-                                            {t("Let us future-proof your cable manufacturing business with connected, agile infrastructure, automated production workflows, and real-time operational insights.")}
+                                            {t("Future-proof your cable manufacturing business with connected infrastructure, automated production workflows, and real-time operational insights that support smarter planning, improved quality control, and sustainable profitability.")}
                                         </p>
                                     </div>
                                     <div className="col-sm-4">

@@ -31,8 +31,6 @@ interface CaseStudy {
   benefits: string | null
   implementation: string | null
   download_url: string | null
-  meta_title: string | null
-  meta_description: string | null
   industries: string[] | null
 }
 
@@ -68,9 +66,7 @@ export default function AdminCaseStudiesPage() {
     implementation: '',
     download_url: '',
     created_at: '',
-    industries: [] as string[],
-    meta_title: '',
-    meta_description: ''
+    industries: [] as string[]
   })
   const [faqs, setFaqs] = useState<Faq[]>([])
   const [uploading, setUploading] = useState(false)
@@ -398,9 +394,7 @@ export default function AdminCaseStudiesPage() {
         ...formData,
         industries: formData.industries.length > 0 ? formData.industries : null,
         created_at: formData.created_at ? new Date(formData.created_at).toISOString() : new Date().toISOString(),
-        updated_at: new Date().toISOString(),
-        meta_title: formData.meta_title.trim() || null,
-        meta_description: formData.meta_description.trim() || null
+        updated_at: new Date().toISOString()
       }
       
       let caseStudyId = editingCaseStudy?.id
@@ -480,9 +474,7 @@ export default function AdminCaseStudiesPage() {
       implementation: '',
       download_url: '',
       created_at: '',
-      industries: [],
-      meta_title: '',
-      meta_description: ''
+      industries: []
     })
     setFaqs([])
   }
@@ -614,9 +606,7 @@ export default function AdminCaseStudiesPage() {
       implementation: caseStudy.implementation || '',
       download_url: caseStudy.download_url || '',
       created_at: createdDate,
-      industries: caseStudy.industries || [],
-      meta_title: caseStudy.meta_title || '',
-      meta_description: caseStudy.meta_description || ''
+      industries: caseStudy.industries || []
     })
 
     // Fetch FAQs for this case study
@@ -915,29 +905,6 @@ export default function AdminCaseStudiesPage() {
                 </small>
               </div>
 
-              <div style={{ marginBottom: '15px', padding: '15px', background: '#f9f9f9', borderRadius: '8px', border: '1px solid #eee' }}>
-                <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '15px', color: '#333' }}>SEO Meta Tags</h3>
-                <div style={{ marginBottom: '15px' }}>
-                  <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Meta Title</label>
-                  <input
-                    type="text"
-                    value={formData.meta_title}
-                    onChange={(e) => setFormData({ ...formData, meta_title: e.target.value })}
-                    placeholder="Enter SEO title (max 60 chars recommended)"
-                    style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
-                  />
-                </div>
-                <div style={{ marginBottom: '0' }}>
-                  <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Meta Description</label>
-                  <textarea
-                    value={formData.meta_description}
-                    onChange={(e) => setFormData({ ...formData, meta_description: e.target.value })}
-                    rows={2}
-                    placeholder="Enter SEO description (max 160 chars recommended)"
-                    style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px' }}
-                  />
-                </div>
-              </div>
 
               <div style={{ marginBottom: '25px', padding: '15px', background: '#f9f9f9', borderRadius: '8px', border: '1px solid #eee' }}>
                 <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '15px', color: '#333', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

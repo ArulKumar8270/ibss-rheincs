@@ -263,7 +263,7 @@ export default function Footer() {
                                             <Link href="/Automotive">Automotive Industry</Link>
                                         </li>
                                         <li>
-                                            <Link href="/Engineering-Procurement-Construction-(EPC)">Engineering Procurement and Construction</Link>
+                                            <Link href="/Engineering-Procurement-Construction">Engineering Procurement and Construction</Link>
                                         </li>
                                         <li>
                                             <Link href="/process-manufacturing">Process Manufacturing</Link>
@@ -495,7 +495,7 @@ export default function Footer() {
                                             </div>
                                             <div className=" col-6">
                                                 <li>
-                                                    <Link href="/Engineering-Procurement-Construction-(EPC)">Engineering Procurement and Construction </Link>
+                                                    <Link href="/Engineering-Procurement-Construction">Engineering Procurement and Construction </Link>
                                                 </li>
                                                 <li>
                                                     <Link href="/process-manufacturing">Process Manufacturing </Link>
