@@ -80,87 +80,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <script src='//cdn.freshmarketer.com/195245/632861.js' defer></script>
         
         {/* Factors.ai */}
-        <script dangerouslySetInnerHTML={{
-          __html: `window.factors = window.factors || function () { this.q = []; var i = new CustomEvent("FACTORS_QUEUED_EVENT"), n = function (t, e) { this.q.push({ k: t, a: e }), window.dispatchEvent(i) }; return this.track = function (t, e, i) { n("track", arguments) }, this.init = function (t, e, i) { this.TOKEN = t, this.INIT_PARAMS = e, this.INIT_CALLBACK = i, window.dispatchEvent(new CustomEvent("FACTORS_INIT_EVENT")) }, this.reset = function () { n("reset", arguments) }, this.page = function (t, e) { n("page", arguments) }, this.updateEventProperties = function (t, e) { n("updateEventProperties", arguments) }, this.identify = function (t, e) { n("identify", arguments) }, this.addUserProperties = function (t) { n("addUserProperties", arguments) }, this.getUserId = function () { n("getUserId", arguments) }, this.call = function () { var t = { k: "", a: [] }; if (arguments && 1 <= arguments.length) { for (var e = 1; e < arguments.length; e++) t.a.push(arguments[e]); t.k = arguments[0] } this.q.push(t), window.dispatchEvent(i) }, this.init("yyq3qwq23c7r4rq7o5refttcg39ju39m"), this }(), function () { var t = document.createElement("script"); t.type = "text/javascript", t.src = "https://app.factors.ai/assets/v1/factors.js", t.async = !0, d = document.getElementsByTagName("script")[0], d.parentNode.insertBefore(t, d) }();`
-        }} />
+        <Script src="https://app.factors.ai/assets/v1/factors.js" strategy="afterInteractive" />
+        <Script id="factors-ai-init" strategy="afterInteractive">
+          {`
+            window.factors=window.factors||function(){this.q=[];var i=new CustomEvent("FACTORS_QUEUED_EVENT"),n=function(t,e){this.q.push({k:t,a:e}),window.dispatchEvent(i)};return this.track=function(t,e,i){n("track",arguments)},this.init=function(t,e,i){this.TOKEN=t,this.INIT_PARAMS=e,this.INIT_CALLBACK=i,window.dispatchEvent(new CustomEvent("FACTORS_INIT_EVENT"))},this.reset=function(){n("reset",arguments)},this.page=function(t,e){n("page",arguments)},this.updateEventProperties=function(t,e){n("updateEventProperties",arguments)},this.identify=function(t,e){n("identify",arguments)},this.addUserProperties=function(t){n("addUserProperties",arguments)},this.getUserId=function(){n("getUserId",arguments)},this.call=function(){var t={k:"",a:[]};if(arguments&&1<=arguments.length){for(var e=1;e<arguments.length;e++)t.a.push(arguments[e]);t.k=arguments[0]}this.q.push(t),window.dispatchEvent(i)},this.init("yyq3qwq23c7r4rq7o5refttcg39ju39m"),this}();
+          `}
+        </Script>
 
         {/* LeadSquared Tracking Code */}
         <Script src="https://web.mxradon.com/t/Tracker.js" strategy="afterInteractive" />
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            function saveleadlan() {
-              var $ = window.jQuery || window.$;
-              if (!$) { console.warn('LeadSquared: jQuery required'); return; }
-              var form = document.getElementById('form1');
-              var nameEl = form && (form.querySelector('[id="manufacturing-name"]') || form.querySelector('[name="manufacturing-name"]'));
-              var emailEl = form && (form.querySelector('[id="manufacturing-email"]') || form.querySelector('[name="manufacturing-email"]'));
-              var mobileEl = form && (form.querySelector('[id="manufacturing-mobile"]') || form.querySelector('[name="manufacturing-mobile"]'));
-              var name = nameEl ? nameEl.value : '';
-              var email = emailEl ? emailEl.value : '';
-              var mobile = mobileEl ? mobileEl.value : '';
-              var fieldMapping = {
-                MXHOrgCode: "17537",
-                MXHLandingPageId: "7efef2b9-19bc-11e7-a02b-22000b10e324",
-                MXHAsc: "",
-                FirstName: "manufacturing-name",
-                EmailAddress: "manufacturing-email",
-                Mobile: "manufacturing-mobile",
-                mx_Download_Whitepaper: "whitepaper",
-                mx_Free_20_mins_consulting: "consulting",
-                mx_Request_for_Demo: "demo"
-              };
-              var onSuccess = function (data) {
-                data = $.parseJSON(data);
-                var logData = {
-                  Name: name,
-                  FormPID: data.PId,
-                  Email: email,
-                  Mobile: mobile,
-                  FormStatus: data.Status,
-                  FormMsg: data.Message,
-                  FormAction: data.FormAction,
-                  ServiceType: "Rheincs Landing"
-                };
-                $.ajax({
-                  type: "POST",
-                  url: "/" + "api/Admin/LeadSquaredLog",
-                  data: JSON.stringify(logData),
-                  contentType: "application/json; charset=utf-8",
-                  dataType: "json",
-                  failure: function (response) { alert(response.d); }
-                });
-                console.log(data);
-              };
-              var onError = function (data) {
-                data = $.parseJSON(data);
-                var logData = {
-                  Name: name,
-                  FormPID: data.PId,
-                  Email: email,
-                  Mobile: mobile,
-                  FormStatus: data.Status,
-                  FormMsg: data.Message,
-                  FormAction: data.FormAction,
-                  ServiceType: "Rheincs Landing"
-                };
-                $.ajax({
-                  type: "POST",
-                  url: "/" + "api/Admin/LeadSquaredLog",
-                  data: JSON.stringify(logData),
-                  contentType: "application/json; charset=utf-8",
-                  dataType: "json",
-                  failure: function (response) { alert(response.d); }
-                });
-                console.log(data);
-              };
-              if (typeof LSQForm !== 'undefined') {
-                new LSQForm().captureLead(fieldMapping, "form1", { onSuccess: onSuccess, onError: onError });
-              } else {
-                console.warn('LeadSquared: LSQForm not loaded');
-              }
-            }
-          `
-        }} />
+        <Script id="leadsquared-init" strategy="afterInteractive">
+          {`
+            (function() {
+              var interval = setInterval(function() {
+                if (typeof window.pidTracker === 'function') {
+                  window.pidTracker('17537');
+                  clearInterval(interval);
+                }
+              }, 500);
+              setTimeout(function() { clearInterval(interval); }, 5000);
+            })();
+          `}
+        </Script>
+        <Script src="https://web.mxradon.com/t/FormCapture.js" strategy="afterInteractive" />
         
         {/* Schema.org JSON-LD */}
         <script
@@ -269,6 +211,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
       </head>
       <body className={inter.className}>
+        <Script src="/js/jquery-3.7.1.min.js" strategy="beforeInteractive" />
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHPH6XN"
@@ -297,12 +240,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           __html: `var google_conversion_id = 955726328; var google_custom_params = window.google_tag_params; var google_remarketing_only = true;`
         }} />
         <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js" defer></script>
-        
-        {/* LeadSquared Tracking Code */}
-        <script type="text/javascript" src="https://web.mxradon.com/t/Tracker.js" defer></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `//pidTracker('17537');`
-        }} />
         
         {/* Google Analytics */}
         <script dangerouslySetInnerHTML={{
@@ -387,7 +324,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         __html: `
           (function() {
             var scripts = [
-              '/js/jquery-3.7.1.min.js',
               'https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js',
               '/js/bootstrap.min.js',
               '/js/validator.min.js',

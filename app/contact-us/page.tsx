@@ -447,98 +447,153 @@ export default function Contact() {
     }
   };
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-  // Validate all fields before submission
-  const newErrors: Record<string, string> = {};
-  Object.keys(formData).forEach((key) => {
-    if (key !== "countryCode" && key !== "selection") {
-      const error = validateField(key, (formData as any)[key]);
-      if (error) newErrors[key] = error;
-    }
-  });
-
-  if (Object.keys(newErrors).length > 0) {
-    setErrors(newErrors);
-    const allTouched = Object.keys(formData).reduce(
-      (acc, key) => ({ ...acc, [key]: true }),
-      {},
-    );
-    setTouched(allTouched);
-    return;
-  }
-
-  setStatus("loading");
-
-  try {
-    // Prepare values
-    const fullName = formData.fullName;
-    const email = formData.email;
-    const mobile = formData.countryCode + formData.phone;
-
-    // LeadSquared Field Mapping
-    const fieldMapping = {
-      MXHOrgCode: "17537",
-      MXHLandingPageId: "7efef2b9-19bc-11e7-a02b-22000b10e324",
-
-      FirstName: fullName,
-      EmailAddress: email,
-      Mobile: mobile,
-
-      mx_Company: formData.companyName,
-      mx_Message: formData.message,
-      mx_Service_Interest: formData.selection,
+    // Mark all required fields as touched
+    const allTouched = {
+      fullName: true,
+      email: true,
+      phone: true,
+      companyName: true,
     };
+    setTouched(allTouched);
 
-    // Call LeadSquared
-    if (typeof window !== "undefined" && (window as any).LSQForm) {
-      new (window as any).LSQForm().captureLead(fieldMapping, "form1", {
-        onSuccess: function (data: any) {
-          console.log("LeadSquared Success:", data);
+    // Validate all fields
+    const validationErrors: Record<string, string> = {};
+    validationErrors.fullName = validateField("fullName", formData.fullName);
+    validationErrors.email = validateField("email", formData.email);
+    validationErrors.phone = validateField("phone", formData.phone);
+    validationErrors.companyName = validateField(
+      "companyName",
+      formData.companyName,
+    );
 
-          // OPTIONAL: send to your backend log API
-          fetch("/api/Admin/LeadSquaredLog", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              Name: fullName,
-              Email: email,
-              Mobile: mobile,
-              FormStatus: "Success",
-              ServiceType: "Website Contact Form",
-            }),
-          });
-
-          setStatus("success");
-          setFormData({
-            fullName: "",
-            email: "",
-            phone: "",
-            companyName: "",
-            message: "",
-            selection: "Enterprise Solutions & Services",
-            countryCode: formData.countryCode,
-          });
-          setTouched({});
-        },
-
-        onError: function (error: any) {
-          console.error("LeadSquared Error:", error);
-          setStatus("error");
-        },
-      });
-    } else {
-      console.error("LeadSquared script not loaded");
-      setStatus("error");
+    if (formData.message) {
+      validationErrors.message = validateField("message", formData.message);
     }
-  } catch (err) {
-    console.error(err);
-    setStatus("error");
-  }
-};
+
+    setErrors(validationErrors);
+
+    // Check if there are any errors
+    const hasErrors = Object.values(validationErrors).some(
+      (error) => error !== "",
+    );
+    if (hasErrors) {
+      setStatus("error");
+      setStatusMessage("Please fix the errors in the form before submitting.");
+      return;
+    }
+
+    setStatus("loading");
+    setStatusMessage("Submitting your enquiry...");
+
+    try {
+      // Validate required fields
+      const {
+        fullName,
+        countryCode,
+        phone,
+        email,
+        companyName,
+        selection,
+        message,
+      } = formData;
+
+      if (!fullName || !phone || !email || !companyName) {
+        setStatus("error");
+        setStatusMessage("Please fill in all required fields.");
+        return;
+      }
+
+      // Use client-side Supabase call
+      const supabase = createClient();
+      const { data, error } = await supabase
+        .from("contacts")
+        .insert([
+          {
+            full_name: fullName,
+            country_code: countryCode || "+91",
+            phone: phone,
+            email: email,
+            company_name: companyName,
+            selection: selection || null,
+            message: message || null,
+          },
+        ])
+        .select();
+
+      if (error) {
+        console.error("Supabase error:", error);
+        let errorMessage = "Failed to submit form. Please try again.";
+        if (error.code === "42P01") {
+          errorMessage = "Database table not found. Please contact support.";
+        } else if (error.code === "42501") {
+          errorMessage = "Permission denied. Please contact support.";
+        } else if (error.message) {
+          errorMessage = `Error: ${error.message}`;
+        }
+        setStatus("error");
+        setStatusMessage(errorMessage);
+      } else {
+        // Send emails via Supabase Edge Function (SendGrid)
+        try {
+          const supabase = createClient();
+          const { data: emailResult, error: emailError } =
+            await supabase.functions.invoke("send-contact-email", {
+              body: {
+                channel: "contact",
+                fullName,
+                email,
+                phone,
+                countryCode: countryCode || "+91",
+                companyName,
+                selection: selection || null,
+                message: message || null,
+              },
+            });
+
+          if (emailError) {
+            console.warn("Email sending failed:", emailError.message);
+            // Still show success since form was saved to database
+          } else if (emailResult && !emailResult.success) {
+            console.warn("Email sending failed:", emailResult.error);
+            // Still show success since form was saved to database
+          }
+        } catch (emailError: any) {
+          console.error("Email sending error:", emailError);
+          // Still show success since form was saved to database
+        }
+
+        setStatus("success");
+        setStatusMessage(
+          "Thank you! Your enquiry has been submitted successfully. We will contact you shortly.",
+        );
+        // Reset form
+        setFormData({
+          fullName: "",
+          countryCode: "+91",
+          phone: "",
+          email: "",
+          companyName: "",
+          selection: "",
+          message: "",
+        });
+        setErrors({});
+        setTouched({});
+        router.push("/thanks");
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          setStatus("idle");
+          setStatusMessage("");
+        }, 5000);
+      }
+    } catch (error: any) {
+      console.error("Contact form error:", error);
+      setStatus("error");
+      setStatusMessage(error.message || "An error occurred. Please try again.");
+    }
+  };
 
   return (
     <CommomLayout>
@@ -670,7 +725,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     </div>
                   )}
 
-                  <form id="form1" onSubmit={handleSubmit} className="row g-3 pp-0">
+                  <form onSubmit={handleSubmit} className="row g-3 pp-0">
                     {/* Full Name */}
                     <div className="col-12">
                       <input
