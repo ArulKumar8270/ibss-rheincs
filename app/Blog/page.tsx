@@ -184,7 +184,7 @@ export default function Blog() {
             { count: "exact" }
           )
           .eq("published", true)
-          .in("language", [language, "English"])
+          .eq("language", language)
           .order("created_at", { ascending: false }),
         supabase.from("industries").select("id, name, slug").eq("active", true),
       ]);
