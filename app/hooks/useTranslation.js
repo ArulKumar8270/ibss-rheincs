@@ -2,64 +2,84 @@
 import { useState, useEffect } from 'react';
 import translations from '../translations.json';
 
+// German-speaking countries (ISO 3166-1 alpha-2)
+const GERMAN_COUNTRY_CODES = new Set(['DE', 'AT', 'CH', 'LI', 'LU']);
+
+function getLanguageFromBrowserLocale() {
+  if (typeof navigator === 'undefined') return 'English';
+  const locale = (navigator.language || navigator.userLanguage || '').toLowerCase();
+  return locale.startsWith('de') ? 'German' : 'English';
+}
+
+function fetchWithTimeout(url, ms = 5000) {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), ms);
+  return fetch(url, { signal: controller.signal }).finally(() => clearTimeout(id));
+}
+
+async function getLanguageFromLocation() {
+  try {
+    const res = await fetchWithTimeout('https://ipapi.co/json/');
+    const data = await res.json();
+    const code = data?.country_code;
+    if (code && GERMAN_COUNTRY_CODES.has(String(code).toUpperCase())) return 'German';
+  } catch {
+    try {
+      const fallback = await fetchWithTimeout('https://ip-api.com/json/?fields=countryCode');
+      const fallbackData = await fallback.json();
+      const code = fallbackData?.countryCode;
+      if (code && GERMAN_COUNTRY_CODES.has(String(code).toUpperCase())) return 'German';
+    } catch {
+      // ignore
+    }
+  }
+  return 'English';
+}
+
 export const useTranslation = () => {
-  // Initialize with value from localStorage if available, otherwise default to 'English'
-  // On first visit, ignore localStorage and use default
   const [language, setLanguage] = useState(() => {
     if (typeof window !== 'undefined') {
-      // Check if user has visited before
-      const hasVisitedBefore = localStorage.getItem('hasVisitedBefore');
-      if (hasVisitedBefore) {
-        // Not first visit - use saved preference
-        const saved = localStorage.getItem('preferredLanguage');
-        if (saved && (saved === 'English' || saved === 'German')) {
-          return saved;
-        }
-      }
-      // First visit or no saved preference - use default
+      const saved = localStorage.getItem('preferredLanguage');
+      if (saved && (saved === 'English' || saved === 'German')) return saved;
     }
     return 'English';
   });
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Check if this is the first visit to the domain
-      const hasVisitedBefore = localStorage.getItem('hasVisitedBefore');
-      if (!hasVisitedBefore) {
-        // First time visiting - remove preferredLanguage and set flag
-        localStorage.removeItem('preferredLanguage');
-        localStorage.setItem('hasVisitedBefore', 'true');
-        // Reset to default language
-        setLanguage('English');
-      } else {
-        // Not first visit - load saved preference
-        const saved = localStorage.getItem('preferredLanguage');
-        if (saved && (saved === 'English' || saved === 'German')) {
-          setLanguage(saved);
-        }
-      }
+    if (typeof window === 'undefined') return;
 
-      const handlePreferredLanguageChange = (e) => {
-        const next = e.detail;
-        if (next && (next === 'English' || next === 'German')) {
-          setLanguage(next);
-        }
-      };
-      window.addEventListener('preferredLanguageChange', handlePreferredLanguageChange);
-
-      const handleVisibility = () => {
-        const current = localStorage.getItem('preferredLanguage');
-        if (current && (current === 'English' || current === 'German')) {
-          setLanguage(current);
-        }
-      };
-      document.addEventListener('visibilitychange', handleVisibility);
-
-      return () => {
-        window.removeEventListener('preferredLanguageChange', handlePreferredLanguageChange);
-        document.removeEventListener('visibilitychange', handleVisibility);
-      };
+    // Set language from current location so German is selected when user is in DE/AT/CH/LI/LU
+    function applyDetectedLanguage(detected) {
+      setLanguage(detected);
+      localStorage.setItem('preferredLanguage', detected);
+      try {
+        window.dispatchEvent(new CustomEvent('preferredLanguageChange', { detail: detected }));
+      } catch {}
     }
+
+    getLanguageFromLocation()
+      .then(applyDetectedLanguage)
+      .catch(() => {
+        const fromBrowser = getLanguageFromBrowserLocale();
+        applyDetectedLanguage(fromBrowser);
+      });
+
+    const handlePreferredLanguageChange = (e) => {
+      const next = e.detail;
+      if (next && (next === 'English' || next === 'German')) setLanguage(next);
+    };
+    window.addEventListener('preferredLanguageChange', handlePreferredLanguageChange);
+
+    const handleVisibility = () => {
+      const current = localStorage.getItem('preferredLanguage');
+      if (current && (current === 'English' || current === 'German')) setLanguage(current);
+    };
+    document.addEventListener('visibilitychange', handleVisibility);
+
+    return () => {
+      window.removeEventListener('preferredLanguageChange', handlePreferredLanguageChange);
+      document.removeEventListener('visibilitychange', handleVisibility);
+    };
   }, []);
 
   const changeLanguage = (lang) => {
