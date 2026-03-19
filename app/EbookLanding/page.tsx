@@ -360,9 +360,8 @@ export default function EbookLandingPage() {
       <div className="main-content">
         {/* Book Cover */}
         <div className="book-wrapper">
-          <div className="book-cover">
-            <div className="book-title">Your E-Book Cover Goes Here</div>
-            <div className="book-subtitle">Double click to change</div>
+          <div className="book-cover1">
+            <img src="/images/book.png" alt="E-Book Cover" />
           </div>
         </div>
 

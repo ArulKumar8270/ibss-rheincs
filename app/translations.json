@@ -3115,7 +3115,73 @@
     "Energy & Utilities": "Energy & Utilities",
     "Each industry has different priorities. We bring the right processes, accelerators, and domain expertise.": "Each industry has different priorities. We bring the right processes, accelerators, and domain expertise.",
     "Ready to Modernise with SAP?": "Ready to Modernise with SAP?",
-    "Talk to our SAP experts to see how we can help optimise your systems and drive business transformation": "Talk to our SAP experts to see how we can help optimise your systems and drive business transformation"
+    "Talk to our SAP experts to see how we can help optimise your systems and drive business transformation": "Talk to our SAP experts to see how we can help optimise your systems and drive business transformation",
+
+
+
+
+
+     "Menu": "Menu",
+    "About Us": "About Us",
+    "Overview": "Overview",
+    "Leadership": "Leadership",
+    "Customers Speak": "Customers Speak",
+    "Success Stories": "Success Stories",
+    "Careers": "Careers",
+    "Contact Us": "Contact Us",
+
+    "Solutions & Services": "Solutions & Services",
+    "Our Solutions": "Our Solutions",
+    "CorusHR": "CorusHR",
+    "MeRLIN – Strategic Sourcing Software": "MeRLIN – Strategic Sourcing Software",
+    "Enterprise Solutions & Services": "Enterprise Solutions & Services",
+    "Epicor": "Epicor",
+    "SAP": "SAP",
+    "MS Dynamics": "MS Dynamics",
+    "Sugar CRM": "Sugar CRM",
+    "ERP Customer Excellence": "ERP Customer Excellence",
+
+    "Digital Solutions and Services": "Digital Solutions and Services",
+    "Digital Solutions": "Digital Solutions",
+    "BI & Analytics": "BI & Analytics",
+    "AI/ML": "AI/ML",
+    "eCommerce": "eCommerce",
+    "Digital Services": "Digital Services",
+    "Architecture & App Modernisation": "Architecture & App Modernisation",
+    "Data Engineering and Warehousing": "Data Engineering and Warehousing",
+    "Enterprise Software": "Enterprise Software",
+    "A M & S": "A M & S",
+    "User Experience": "User Experience",
+    "Commercetools": "Commercetools",
+    "Fluent Commerce": "Fluent Commerce",
+    "MS Technologies": "MS Technologies",
+
+    "Industries": "Industries",
+    "Brand Owners and Vertical Retailers": "Brand Owners and Vertical Retailers",
+    "Retail Industry": "Retail Industry",
+    "Distribution and Supply Chain": "Distribution and Supply Chain",
+    "Discrete Manufacturing": "Discrete Manufacturing",
+    "Automotive Industry": "Automotive Industry",
+    "Engineering Procurement and Construction": "Engineering Procurement and Construction",
+    "Process Manufacturing": "Process Manufacturing",
+    "Private Equity & Funding Backed Ventures": "Private Equity & Funding Backed Ventures",
+    "Cable Manufacturing": "Cable Manufacturing",
+    "Interior Design": "Interior Design",
+
+    "Resources": "Resources",
+    "Blog": "Blog",
+    "Case Studies": "Case Studies",
+    "Webinars": "Webinars",
+    "Collaterals": "Collaterals",
+    "Videos": "Videos",
+    "News and Events": "News and Events",
+
+    "How we use cookies and your consent": "How we use cookies and your consent",
+    "Cookies Description": "We use cookies and similar technologies ('Cookies') on our websites to improve them, measure their performance, understand our audience and enhance the user experience. On some sites, we also use Cookies to show ads based on users' browsing activities and interests on the site and other sites. Click 'Manage Cookies' below to learn what Cookies we use on this site and why. You can always change your consent preferences using the 'Manage Cookies' tool at the bottom of the screen. This includes rejecting some or all Cookies, except those that are strictly necessary for the site to work.",
+
+    "Accept all cookies": "Accept all cookies",
+    "Reject all": "Reject all",
+    "Manage cookies": "Manage cookies"
 
 
 
@@ -6267,13 +6333,73 @@
     "Energy & Utilities": "Energie & Versorgung sunternehmen",
     "Each industry has different priorities. We bring the right processes, accelerators, and domain expertise.": "Jede Branche hat unterschiedliche Anforderungen. Wir bringen die passenden Prozesse, Beschleuniger und Branchenexpertise mit.",
     "Ready to Modernise with SAP?": "Sind Sie bereit, Ihre SAP-Landschaft zu modernisieren?",
-    "Talk to our SAP experts to see how we can help optimise your systems and drive business transformation": "Sprechen Sie mit unseren SAP-Experten und erfahren Sie, wie wir Ihre Systeme optimieren und Ihre digitale Transformation voranbringen können."
+    "Talk to our SAP experts to see how we can help optimise your systems and drive business transformation": "Sprechen Sie mit unseren SAP-Experten und erfahren Sie, wie wir Ihre Systeme optimieren und Ihre digitale Transformation voranbringen können.",
+
+
+
+
+    "Menu": "Menü",
+    "About Us": "Über uns",
+    "Overview": "Überblick",
+    "Leadership": "Führungsteam",
+    "Customers Speak": "Kundenstimmen",
+    "Success Stories": "Erfolgsgeschichten",
+    "Careers": "Karriere",
+    "Contact Us": "Kontakt",
+
+    "Solutions & Services": "Lösungen & Dienstleistungen",
+    "Our Solutions": "Unsere Lösungen",
+    "CorusHR": "CorusHR",
+    "MeRLIN – Strategic Sourcing Software": "MeRLIN – Software für strategisches Sourcing",
+    "Enterprise Solutions & Services": "Unternehmenslösungen & Dienstleistungen",
+    "Epicor": "Epicor",
+    "SAP": "SAP",
+    "MS Dynamics": "MS Dynamics",
+    "Sugar CRM": "Sugar CRM",
+    "ERP Customer Excellence": "ERP Customer Excellence",
+
+    "Digital Solutions and Services": "Digitale Lösungen & Dienstleistungen",
+    "Digital Solutions": "Digitale Lösungen",
+    "BI & Analytics": "BI & Analytics",
+    "AI/ML": "KI/ML",
+    "eCommerce": "E-Commerce",
+    "Digital Services": "Digitale Dienstleistungen",
+    "Architecture & App Modernisation": "Architektur & App-Modernisierung",
+    "Data Engineering and Warehousing": "Data Engineering und Data Warehousing",
+    "Enterprise Software": "Unternehmenssoftware",
+    "A M & S": "A M & S",
+    "User Experience": "Benutzererfahrung",
+    "Commercetools": "Commercetools",
+    "Fluent Commerce": "Fluent Commerce",
+    "MS Technologies": "MS-Technologien",
+
+    "Industries": "Branchen",
+    "Brand Owners and Vertical Retailers": "Markenhersteller & vertikale Händler",
+    "Retail Industry": "Einzelhandel",
+    "Distribution and Supply Chain": "Vertrieb und Supply Chain",
+    "Discrete Manufacturing": "Diskrete Fertigung",
+    "Automotive Industry": "Automobilindustrie",
+    "Engineering Procurement and Construction": "Engineering, Beschaffung und Bauwesen",
+    "Process Manufacturing": "Prozessfertigung",
+    "Private Equity & Funding Backed Ventures": "Private-Equity & finanzierte Unternehmen",
+    "Cable Manufacturing": "Kabelherstellung",
+    "Interior Design": "Innenarchitektur",
+
+    "Resources": "Ressourcen",
+    "Blog": "Blog",
+    "Case Studies": "Fallstudien",
+    "Webinars": "Webinare",
+    "Collaterals": "Informationsmaterialien",
+    "Videos": "Videos",
+    "News and Events": "Nachrichten & Veranstaltungen",
+
+    "How we use cookies and your consent": "Wie wir Cookies verwenden und Ihre Einwilligung",
+    "Cookies Description": "Wir verwenden Cookies und ähnliche Technologien („Cookies“) auf unseren Websites, um sie zu verbessern, ihre Leistung zu messen, unsere Zielgruppe besser zu verstehen und das Nutzererlebnis zu optimieren. Auf einigen Websites verwenden wir Cookies auch, um Werbung anzuzeigen, die auf den Surfaktivitäten und Interessen der Nutzer auf dieser sowie anderen Websites basiert. Klicken Sie unten auf „Cookies verwalten“, um zu erfahren, welche Cookies wir auf dieser Website verwenden und warum. Sie können Ihre Einwilligungseinstellungen jederzeit über die Funktion „Cookies verwalten“ am unteren Bildschirmrand ändern. Dazu gehört auch, einige oder alle Cookies abzulehnen, außer denen, die für das Funktionieren der Website unbedingt erforderlich sind.",
+
+    "Accept all cookies": "Alle Cookies akzeptieren",
+    "Reject all": "Alle ablehnen",
+    "Manage cookies": "Cookies verwalten"
   
-
-
-
-
-
   
   
   }
