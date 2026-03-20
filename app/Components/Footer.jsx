@@ -97,17 +97,17 @@ export default function Footer() {
                             <div className="col-sm-8">
                                 <div className="places text-right">
                                     <ul>
-                                        <li>Netherlands</li>
+                                        <li>{t("Netherlands")}</li>
                                         <li>|</li>
-                                        <li>Germany</li>
+                                        <li>{t("Germany")}</li>
                                         <li>|</li>
-                                        <li>USA</li>
+                                        <li>{t("USA")}</li>
                                         <li>|</li>
-                                        <li>India</li>
+                                        <li>{t("India")}</li>
                                         <li>|</li>
-                                        <li>UAE</li>
+                                        <li>{t("UAE")}</li>
                                         <li>|</li>
-                                        <li>KSA</li>
+                                        <li>{t("KSA")}</li>
                                     </ul>
                                     <div className="phone">
                                         <Link href="">
@@ -161,78 +161,78 @@ export default function Footer() {
                                             <div className="col-sm-6">
                                                 <ul>
                                                     <li>
-                                                        <Link href="/our-solution"><span>Our Solutions</span></Link>
+                                                        <Link href="/our-solution"><span>{t("Our Solutions")}</span></Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/solutions/CorusHR">CorusHR</Link>
+                                                        <Link href="/solutions/CorusHR">{t("CorusHR")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/MeRLIN-strategic-sourcing-software">MeRLIN – Strategic Sourcing Software</Link>
+                                                        <Link href="/MeRLIN-strategic-sourcing-software">{t("MeRLIN – Strategic Sourcing Software")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/erp"><span>Enterprise Solutions & Services</span></Link>
+                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/erp"><span>{t("Enterprise Solutions & Services")}</span></Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/epicor">Epicor</Link>
+                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/epicor">{t("Epicor")}</Link>
                                                     </li>
 
                                                     <li>
-                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/sap">SAP</Link>
+                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/sap">{t("SAP")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/ms-dynamics">MS Dynamics</Link>
+                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/ms-dynamics">{t("MS Dynamics")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/sugar-crm">Sugar CRM</Link>
+                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/sugar-crm">{t("Sugar CRM")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/ERP-customer-excellence">ERP Customer Excellence</Link>
+                                                        <Link href="/ERP-customer-excellence">{t("ERP Customer Excellence")}</Link>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div className="col-sm-6">
                                                 <ul>
                                                 <li>
-                                                        <Link href="/solutions/digital-services-and-solutions/"><span>Digital Solutions and Services</span></Link>
+                                                        <Link href="/solutions/digital-services-and-solutions/"><span>{t("Digital Solutions and Services")}</span></Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/digital-solutions">Digital Solutions</Link>
+                                                        <Link href="/digital-solutions">{t("Digital Solutions")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/business-intelligence">BI & Analytics</Link>
+                                                        <Link href="/business-intelligence">{t("BI & Analytics")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/AI-ML">AI/ML</Link>
+                                                        <Link href="/AI-ML">{t("AI/ML")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/Ecommerce">eCommerce</Link>
+                                                        <Link href="/Ecommerce">{t("eCommerce")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/digital-services">Digital Services</Link>
+                                                        <Link href="/digital-services">{t("Digital Services")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/Architecture">Architecture & App Modernisation</Link>
+                                                        <Link href="/Architecture">{t("Architecture & App Modernisation")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/data-engineering-warehousing">Data Engineering and Warehousing</Link>
+                                                        <Link href="/data-engineering-warehousing">{t("Data Engineering and Warehousing")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/erp">Enterprise Software</Link>
+                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/erp">{t("Enterprise Software")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/AM-S">A M & S</Link>
+                                                        <Link href="/AM-S">{t("A M & S")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/user-exprience">User Experience</Link>
+                                                        <Link href="/user-exprience">{t("User Experience")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/Commercetools">Commercetools</Link>
+                                                        <Link href="/Commercetools">{t("Commercetools")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/fluent-commerce">Fluent Commerce</Link>
+                                                        <Link href="/fluent-commerce">{t("Fluent Commerce")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/ms-technology">MS Technologies</Link>
+                                                        <Link href="/ms-technology">{t("MS Technologies")}</Link>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -248,34 +248,34 @@ export default function Footer() {
                                         <h3>{t("Industries")}</h3>
                                     <ul>
                                         <li>
-                                            <Link href="/Brand-owners-and-vertical-retail">Brand Owners and Vertical Retailers</Link>
+                                            <Link href="/Brand-owners-and-vertical-retail">{t("Brand Owners and Vertical Retailers")}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/industries-retail">Retail Industry</Link>
+                                            <Link href="/industries-retail">{t("Retail Industry")}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/Distribution-and-supply-chain">Distribution and Supply Chain</Link>
+                                            <Link href="/Distribution-and-supply-chain">{t("Distribution and Supply Chain")}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/discrete-manufacturing">Discrete Manufacturing</Link>
+                                            <Link href="/discrete-manufacturing">{t("Discrete Manufacturing")}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/Automotive">Automotive Industry</Link>
+                                            <Link href="/Automotive">{t("Automotive Industry")}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/Engineering-Procurement-Construction">Engineering Procurement and Construction</Link>
+                                            <Link href="/Engineering-Procurement-Construction">{t("Engineering Procurement and Construction")}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/process-manufacturing">Process Manufacturing</Link>
+                                            <Link href="/process-manufacturing">{t("Process Manufacturing")}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/Private-Equity-Funding-Backed-Ventures">Private Equity & Funding Backed Ventures</Link>
+                                            <Link href="/Private-Equity-Funding-Backed-Ventures">{t("Private Equity & Funding Backed Ventures")}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/Cable-manufacturing">Cable Manufacturing</Link>
+                                            <Link href="/Cable-manufacturing">{t("Cable Manufacturing")}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/interior-design">Interior Design</Link>
+                                            <Link href="/interior-design">{t("Interior Design")}</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -320,25 +320,25 @@ export default function Footer() {
                                         <div className="about-footer">
                                             {/* Footer Links start */}
                                             <div className="footer-links">
-                                                <h3>About Us</h3>
+                                                <h3>{t("About Us")}</h3>
                                                 <ul>
                                                     <li>
-                                                        <Link href="/about-us/overview">Overview</Link>
+                                                        <Link href="/about-us/overview">{t("Overview")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/about-us/leadership">Leadership</Link>
+                                                        <Link href="/about-us/leadership">{t("Leadership")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/about-us/customer-speak">Customers Speak</Link>
+                                                        <Link href="/about-us/customer-speak">{t("Customers Speak")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/about-us/success-stories">Success Stories</Link>
+                                                        <Link href="/about-us/success-stories">{t("Success Stories")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/careers">Careers</Link>
+                                                        <Link href="/careers">{t("Careers")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/contact-us">Contact Us</Link>
+                                                        <Link href="/contact-us">{t("Contact Us")}</Link>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -349,28 +349,28 @@ export default function Footer() {
                                     <div className=" col-6">
                                         {/* Footer Links start */}
                                         <div className="footer-links">
-                                            <h3>Resources</h3>
+                                            <h3>{t("Resources")}</h3>
                                             <ul>
                                                 <li>
-                                                    <Link href="/Blog">Blog</Link>
+                                                    <Link href="/Blog">{t("Blog")}</Link>
                                                 </li>
                                                 {/* <li>
                                                     <Link href="/case-study-details">Case studies</Link>
                                                 </li> */}
                                                 <li>
-                                                    <Link href="/webinars">Webinars</Link>
+                                                    <Link href="/webinars">{t("Webinars")}</Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/collaterals">Collaterals</Link>
+                                                    <Link href="/collaterals">{t("Collaterals")}</Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/corporate-videos">Videos</Link>
+                                                    <Link href="/corporate-videos">{t("Videos")}</Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/news-events">News and Events</Link>
+                                                    <Link href="/news-events">{t("News and Events")}</Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/Faq">FAQs</Link>
+                                                    <Link href="/Faq">{t("FAQs")}</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -383,82 +383,82 @@ export default function Footer() {
                                 <div className="about-footer">
                                     {/* Footer Links start */}
                                     <div className="footer-links">
-                                        <h3>Solutions &amp; Services</h3>
+                                        <h3>{t("Solutions & Services")}</h3>
                                         <div className="row">
                                             <div className="col-sm-6 col-6">
                                                 <ul>
                                                     <li>
-                                                        <Link href="/our-solution">Our Solutions</Link>
+                                                        <Link href="/our-solution">{t("Our Solutions")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/solutions/CorusHR">CorusHR </Link>
+                                                        <Link href="/solutions/CorusHR">{t("CorusHR")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/MeRLIN-strategic-sourcing-software">MeRLIN – Strategic Sourcing Software</Link>
+                                                        <Link href="/MeRLIN-strategic-sourcing-software">{t("MeRLIN – Strategic Sourcing Software")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/erp">Enterprise Solutions &amp; Services</Link>
+                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/erp">{t("Enterprise Solutions & Services")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/epicor">Epicor</Link>
+                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/epicor">{t("Epicor")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/ms-dynamics">MS Dynamics</Link>
+                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/ms-dynamics">{t("MS Dynamics")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/sap">SAP</Link>
+                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/sap">{t("SAP")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/sugar-crm">Sugar CRM</Link>
+                                                        <Link href="/sugar-crm">{t("Sugar CRM")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/ERP-customer-excellence">ERP Customer Excellence</Link>
+                                                        <Link href="/ERP-customer-excellence">{t("ERP Customer Excellence")}</Link>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div className="col-sm-6 col-6">
                                                 <ul>
                                                     <li>
-                                                        <Link href="/solutions/digital-services-and-solutions/">Digital Solutions and Services</Link>
+                                                        <Link href="/solutions/digital-services-and-solutions/">{t("Digital Solutions and Services")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/digital-solutions">Digital Solutions</Link>
+                                                        <Link href="/digital-solutions">{t("Digital Solutions")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/business-intelligence">BI & Analytics</Link>
+                                                        <Link href="/business-intelligence">{t("BI & Analytics")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/AI-ML">AI/ML </Link>
+                                                        <Link href="/AI-ML">{t("AI/ML")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/Ecommerce">eCommerce</Link>
+                                                        <Link href="/Ecommerce">{t("eCommerce")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/digital-services">Digital Services</Link>
+                                                        <Link href="/digital-services">{t("Digital Services")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/Architecture">Architecture &amp; App Modernisation</Link>
+                                                        <Link href="/Architecture">{t("Architecture & App Modernisation")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/data-engineering-warehousing">Data Engineering and Warehousing</Link>
+                                                        <Link href="/data-engineering-warehousing">{t("Data Engineering and Warehousing")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/erp">Enterprise Software</Link>
+                                                        <Link href="/solutions/erp-enterprise-solutions-and-services/erp">{t("Enterprise Software")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/AM-S">A M &amp; S</Link>
+                                                        <Link href="/AM-S">{t("A M & S")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/user-exprience">User Experience</Link>
+                                                        <Link href="/user-exprience">{t("User Experience")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/Commercetools">Commercetools</Link>
+                                                        <Link href="/Commercetools">{t("Commercetools")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/fluent-commerce">Fluent Commerce</Link>
+                                                        <Link href="/fluent-commerce">{t("Fluent Commerce")}</Link>
                                                     </li>
                                                     <li>
-                                                        <Link href="/ms-technology">MS Technologies </Link>
+                                                        <Link href="/ms-technology">{t("MS Technologies")}</Link>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -477,39 +477,39 @@ export default function Footer() {
                                             <div className=" col-6">
                                                 <li>
                                                     <Link href="/Brand-owners-and-vertical-retail">
-                                                        Brand Owners and Vertical Retailers{" "}
+                                                        {t("Brand Owners and Vertical Retailers")}{" "}
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/industries-retail">Retail Industry </Link>
+                                                    <Link href="/industries-retail">{t("Retail Industry")} </Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/Distribution-and-supply-chain">Distribution and Supply Chain</Link>
+                                                    <Link href="/Distribution-and-supply-chain">{t("Distribution and Supply Chain")}</Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/discrete-manufacturing">Discrete Manufacturing </Link>
+                                                    <Link href="/discrete-manufacturing">{t("Discrete Manufacturing")} </Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/Automotive">Automotive Industry</Link>
+                                                    <Link href="/Automotive">{t("Automotive Industry")}</Link>
                                                 </li>
                                             </div>
                                             <div className=" col-6">
                                                 <li>
-                                                    <Link href="/Engineering-Procurement-Construction">Engineering Procurement and Construction </Link>
+                                                    <Link href="/Engineering-Procurement-Construction">{t("Engineering Procurement and Construction")} </Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/process-manufacturing">Process Manufacturing </Link>
+                                                    <Link href="/process-manufacturing">{t("Process Manufacturing")} </Link>
                                                 </li>
                                                 <li>
                                                     <Link href="/Private-Equity-Funding-Backed-Ventures">
-                                                        Private Equity &amp; Funding Backed Ventures{" "}
+                                                        {t("Private Equity & Funding Backed Ventures")}{" "}
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/Cable-manufacturing">Cable Manufacturing </Link>
+                                                    <Link href="/Cable-manufacturing">{t("Cable Manufacturing")} </Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/interior-design">Interior Design </Link>
+                                                    <Link href="/interior-design">{t("Interior Design")} </Link>
                                                 </li>
                                             </div>
                                         </div>
@@ -524,7 +524,7 @@ export default function Footer() {
                                 <div className="col-lg-6">
                                     {/* Footer Copyright Start */}
                                     <div className="footer-copyright-text">
-                                        <p>© RheinBrücke IT Consulting BV - All Rights Reserved. </p>
+                                        <p>© {t("RheinBrücke IT Consulting BV - All Rights Reserved.")} </p>
                                     </div>
                                     {/* Footer Copyright End */}
                                 </div>
@@ -532,20 +532,20 @@ export default function Footer() {
                                     <div className="places rights text-right">
                                         <ul>
                                             {/* <li>
-                                                <Link href="/sitemap">Sitemap</Link>
+                                                <Link href="/sitemap">{t("Sitemap")}</Link>
                                             </li>
                                             <li>|</li> */}
                                             <li>
-                                                <Link href="/impressum">Impressum</Link>
+                                                <Link href="/impressum">{t("Impressum")}</Link>
                                             </li>
                                             <li>|</li>
                                             <li>
-                                                <Link href="/privacy">Privacy</Link>
+                                                <Link href="/privacy">{t("Privacy")}</Link>
                                             </li>
                                             <li>|</li>
                                             <li>
                                                 {" "}
-                                                <Link href="/terms">Terms</Link>
+                                                <Link href="/terms">{t("Terms")}</Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -558,20 +558,20 @@ export default function Footer() {
                                     <div className="places rights text-right">
                                         <ul>
                                             <li>
-                                                <Link href="/sitemap">Sitemap</Link>
+                                                <Link href="/sitemap">{t("Sitemap")}</Link>
                                             </li>
                                             <li>|</li>
                                             <li>
-                                                <Link href="/impressum">Impressum</Link>
+                                                <Link href="/impressum">{t("Impressum")}</Link>
                                             </li>
                                             <li>|</li>
                                             <li>
-                                                <Link href="/privacy">Privacy</Link>
+                                                <Link href="/privacy">{t("Privacy")}</Link>
                                             </li>
                                             <li>|</li>
                                             <li>
                                                 {" "}
-                                                <Link href="/terms">Terms</Link>
+                                                <Link href="/terms">{t("Terms")}</Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -580,7 +580,7 @@ export default function Footer() {
                                     {/* Footer Copyright Start */}
                                     <div className="footer-copyright-text">
                                         <p>
-                                            © RheinBrücke IT Consulting BV - <br /> All Rights Reserved.{" "}
+                                            © {t("RheinBrücke IT Consulting BV - All Rights Reserved.")}
                                         </p>
                                     </div>
                                     {/* Footer Copyright End */}
@@ -656,7 +656,7 @@ export default function Footer() {
                                 lineHeight: "1.4",
                             }}
                         >
-                            How we use cookies and your consent
+                            {t("How we use cookies and your consent")}
                         </h3>
                         <p
                             style={{
@@ -666,7 +666,7 @@ export default function Footer() {
                                 marginBottom: "24px",
                             }}
                         >
-                            We use cookies and similar technologies ('Cookies') on our websites to improve them, measure their performance, understand our audience and enhance the user experience. On some sites, we also use Cookies to show ads based on users' browsing activities and interests on the site and other sites. Click 'Manage Cookies' below to learn what Cookies we use on this site and why. You can always change your consent preferences using the 'Manage Cookies' tool at the bottom of the screen. This includes rejecting some or all Cookies, except those that are strictly necessary for the site to work.
+                            {t("We use cookies and similar technologies ('Cookies') on our websites to improve them, measure their performance, understand our audience and enhance the user experience. On some sites, we also use Cookies to show ads based on users' browsing activities and interests on the site and other sites. Click 'Manage Cookies' below to learn what Cookies we use on this site and why. You can always change your consent preferences using the 'Manage Cookies' tool at the bottom of the screen. This includes rejecting some or all Cookies, except those that are strictly necessary for the site to work.")}
                         </p>
                         <div
                             style={{
@@ -696,7 +696,7 @@ export default function Footer() {
                                     e.currentTarget.style.transform = "translateY(0)";
                                 }}
                             >
-                                Accept cookies
+                                {t("Accept cookies")}
                             </button>
                             <button
                                 onClick={declineCookies}
@@ -718,7 +718,7 @@ export default function Footer() {
                                     e.currentTarget.style.transform = "translateY(0)";
                                 }}
                             >
-                                Reject all
+                                {t("Reject all")}
                             </button>
                             <button
                                 onClick={manageCookies}
@@ -740,7 +740,7 @@ export default function Footer() {
                                     e.currentTarget.style.transform = "translateY(0)";
                                 }}
                             >
-                                Manage cookies
+                                {t("Manage cookies")}
                             </button>
                         </div>
                     </div>

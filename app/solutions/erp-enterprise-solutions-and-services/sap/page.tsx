@@ -165,7 +165,7 @@ const page = () => {
                         {t("Business Transformation with SAP")}
                       </h2>
                       <p className="text-center">
-                        {t("SAP’s intelligent cloud ERP and business technology platforms help enterprises")}
+                        {t("SAP’s intelligent cloud ERP and business technology platforms help enterprises:")}
                       </p>
                     </div>
                   </div>
@@ -176,7 +176,7 @@ const page = () => {
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/g501.svg" alt="" />
-                  <p>{t("Unify finance, operations, HR, and supply chain")}</p>
+                  <p>{t("Unify finance, operations, HR and supply chain")}</p>
                 </div>
               </div>
               <div className="col-sm-4">
@@ -247,8 +247,7 @@ const page = () => {
                     </p>
                   </div>
                   <p>
-                    {t("This is the future of SAP - agile, modular, analytics-driven, and business-led.")}
-                    business-led.
+                    {t("This is the future of SAP - agile, modular, analytics-driven, and business-led")}
                   </p>
                 </div>
               </div>
@@ -259,7 +258,7 @@ const page = () => {
           </div>
         </div>
         {/* Our Testimonial Section Start */}
-        <div className="our-testimonial saptest pd30">
+        <div className={`our-testimonial saptest pd30 ${language === 'German' ? 'germansapservice' : ''}`}>
           <div className="container">
             <div className="row section-row align-items-center">
               <div className="col-lg-6">
