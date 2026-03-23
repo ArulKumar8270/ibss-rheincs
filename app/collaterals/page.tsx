@@ -379,13 +379,54 @@ export default function Collaterals() {
         }));
     };
 
-    const filterItems = (itemTitle: string, searchValue: string): boolean => {
-        if (!searchValue.trim()) return true;
-        return itemTitle.toLowerCase().includes(searchValue.toLowerCase());
-    };
+	    const filterItems = (itemTitle: string, searchValue: string): boolean => {
+	        if (!searchValue.trim()) return true;
+	        return itemTitle.toLowerCase().includes(searchValue.toLowerCase());
+	    };
+	
+	    const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
+	
+	    const waitFor = async (
+	        predicate: () => boolean,
+	        { timeoutMs, intervalMs }: { timeoutMs: number; intervalMs: number },
+	    ) => {
+	        const start = Date.now();
+	        while (Date.now() - start < timeoutMs) {
+	            if (predicate()) return true;
+	            await sleep(intervalMs);
+	        }
+	        return false;
+	    };
+	
+	    const captureLeadSquared = async () => {
+	        if (typeof window === 'undefined') return;
+	
+	        await waitFor(() => typeof (window as any).saveleadlan === 'function', {
+	            timeoutMs: 1000,
+	            intervalMs: 50,
+	        });
+	
+	        await waitFor(() => typeof (window as any).LSQForm !== 'undefined', {
+	            timeoutMs: 1200,
+	            intervalMs: 100,
+	        });
+	
+	        const saveLead = (window as any).saveleadlan;
+	        if (typeof saveLead !== 'function') {
+	            console.warn('LeadSquared: saveleadlan not available');
+	            return;
+	        }
+	
+	        try {
+	            saveLead();
+	            await sleep(400);
+	        } catch (error) {
+	            console.warn('LeadSquared: capture failed', error);
+	        }
+	    };
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+	    const handleSubmit = async (e: React.FormEvent) => {
+	        e.preventDefault();
 
         // Mark all required fields as touched
         const allTouched = {
@@ -417,6 +458,17 @@ export default function Collaterals() {
         setStatusMessage('Submitting your request...');
 
         try {
+            // Determine collateral category from the PDF path
+            let selection = 'Collaterals Request';
+            if (selectedCollateral?.title) {
+                const pdfPath = getPdfPathForTitle(selectedCollateral.title);
+                if (pdfPath) {
+                    if (pdfPath.includes('/Whitepaper/')) selection = 'Whitepaper - Collaterals Request';
+                    else if (pdfPath.includes('/Brochure/')) selection = 'Brochure - Collaterals Request';
+                    else if (pdfPath.includes('/Factsheet/')) selection = 'Factsheet - Collaterals Request';
+                }
+            }
+
             // Validate required fields
             const { fullName, countryCode, phone, email, companyName } = formData;
 
@@ -437,7 +489,7 @@ export default function Collaterals() {
                         phone: phone,
                         email: email,
                         company_name: companyName,
-                        selection: 'Collaterals Request',
+                        selection: selection,
                         message: null,
                     }
                 ])
@@ -467,7 +519,7 @@ export default function Collaterals() {
                             phone,
                             countryCode: countryCode || '+91',
                             companyName,
-                            selection: 'Collaterals Request',
+                            selection: selection,
                             message: null,
                         },
                     });
@@ -481,12 +533,15 @@ export default function Collaterals() {
                     console.error('Email sending error:', emailError);
                 }
 
-                setStatus('success');
-                setStatusMessage('Thank you for downloading our collateral. If you require any additional information or assistance, please do not hesitate to reach out to <a href="mailto:info@rheincs.com" class="text-blue-600 hover:underline">info@rheincs.com</a>');
-                // Auto-download PDF matching the selected collateral title
-                if (selectedCollateral?.title) {
-                    const pdfPath = getPdfPathForTitle(selectedCollateral.title);
-                    if (pdfPath) {
+	                setStatus('success');
+	                setStatusMessage('Thank you for downloading our collateral. If you require any additional information or assistance, please do not hesitate to reach out to <a href="mailto:info@rheincs.com" class="text-blue-600 hover:underline">info@rheincs.com</a>');
+	
+	                // ✅ LeadSquared (best-effort, before reset/close)
+	                await captureLeadSquared();
+	                // Auto-download PDF matching the selected collateral title
+	                if (selectedCollateral?.title) {
+	                    const pdfPath = getPdfPathForTitle(selectedCollateral.title);
+	                    if (pdfPath) {
                         try {
                             const link = document.createElement('a');
                             link.href = pdfPath;
@@ -1808,7 +1863,7 @@ export default function Collaterals() {
                                                     </div>
                                                 )}
 
-                                                <form onSubmit={handleSubmit} className="row g-3 pp-0">
+	                                                <form onSubmit={handleSubmit} id="form1" className="row g-3 pp-0">
                                                     {/* Full Name */}
                                                     <div className="col-12">
                                                         <input

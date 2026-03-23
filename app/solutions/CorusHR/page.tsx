@@ -24,18 +24,59 @@ export default function Corushr() {
     const [statusMessage, setStatusMessage] = useState('');
     const [isCountryCodeFocused, setIsCountryCodeFocused] = useState(false);
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
-    };
+	    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+	        const { name, value } = e.target;
+	        setFormData(prev => ({
+	            ...prev,
+	            [name]: value
+	        }));
+	    };
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setStatus('loading');
-        setStatusMessage('Submitting your request...');
+	    const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
+	
+	    const waitFor = async (
+	        predicate: () => boolean,
+	        { timeoutMs, intervalMs }: { timeoutMs: number; intervalMs: number },
+	    ) => {
+	        const start = Date.now();
+	        while (Date.now() - start < timeoutMs) {
+	            if (predicate()) return true;
+	            await sleep(intervalMs);
+	        }
+	        return false;
+	    };
+	
+	    const captureLeadSquared = async () => {
+	        if (typeof window === 'undefined') return;
+	
+	        await waitFor(() => typeof (window as any).saveleadlan === 'function', {
+	            timeoutMs: 1000,
+	            intervalMs: 50,
+	        });
+	
+	        await waitFor(() => typeof (window as any).LSQForm !== 'undefined', {
+	            timeoutMs: 1200,
+	            intervalMs: 100,
+	        });
+	
+	        const saveLead = (window as any).saveleadlan;
+	        if (typeof saveLead !== 'function') {
+	            console.warn('LeadSquared: saveleadlan not available');
+	            return;
+	        }
+	
+	        try {
+	            saveLead();
+	            await sleep(400);
+	        } catch (error) {
+	            console.warn('LeadSquared: capture failed', error);
+	        }
+	    };
+
+	    const handleSubmit = async (e: React.FormEvent) => {
+	        e.preventDefault();
+	        setStatus('loading');
+	        setStatusMessage('Submitting your request...');
 
         try {
             // Validate required fields
@@ -109,13 +150,16 @@ export default function Corushr() {
                 } catch (emailError: any) {
                     console.error('Email sending error:', emailError);
                 }
-
-                setStatus('success');
-                setStatusMessage('Thank you! Your request has been submitted successfully. We will contact you shortly.');
-                // Reset form
-                setFormData({
-                    fullName: '',
-                    countryCode: '+91',
+	
+	                setStatus('success');
+	                setStatusMessage('Thank you! Your request has been submitted successfully. We will contact you shortly.');
+	
+	                // ✅ LeadSquared (best-effort, before reset/redirect)
+	                await captureLeadSquared();
+	                // Reset form
+	                setFormData({
+	                    fullName: '',
+	                    countryCode: '+91',
                     phone: '',
                     email: '',
                     companyName: ''
@@ -1520,12 +1564,12 @@ export default function Corushr() {
                                         </div>
                                     )}
 
-                                    <form onSubmit={handleSubmit}>
-                                        <div className="w100">
-                                            <input
-                                                type="text"
-                                                className="form-control custom-form-control"
-                                                name="fullName"
+	                                    <form onSubmit={handleSubmit} id="form1">
+	                                        <div className="w100">
+	                                            <input
+	                                                type="text"
+	                                                className="form-control custom-form-control"
+	                                                name="fullName"
                                                 placeholder={t("Enter your full name")}
                                                 value={formData.fullName}
                                                 onChange={handleInputChange}

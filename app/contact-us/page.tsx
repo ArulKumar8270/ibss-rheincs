@@ -228,7 +228,7 @@ const countryToPhoneCode: Record<string, string> = {
 };
 
 export default function Contact() {
-  const { t, language } = useTranslation();
+  const { t } = useTranslation();
   const router = useRouter();
   const [formData, setFormData] = useState({
     fullName: "",
@@ -447,10 +447,51 @@ export default function Contact() {
     }
   };
 
+  const sleep = (ms: number) =>
+    new Promise<void>((resolve) => setTimeout(resolve, ms));
+
+  const waitFor = async (
+    predicate: () => boolean,
+    { timeoutMs, intervalMs }: { timeoutMs: number; intervalMs: number },
+  ) => {
+    const start = Date.now();
+    while (Date.now() - start < timeoutMs) {
+      if (predicate()) return true;
+      await sleep(intervalMs);
+    }
+    return false;
+  };
+
+  const captureLeadSquared = async () => {
+    if (typeof window === "undefined") return;
+
+    await waitFor(() => typeof (window as any).saveleadlan === "function", {
+      timeoutMs: 1000,
+      intervalMs: 50,
+    });
+
+    await waitFor(() => typeof (window as any).LSQForm !== "undefined", {
+      timeoutMs: 1200,
+      intervalMs: 100,
+    });
+
+    const saveLead = (window as any).saveleadlan;
+    if (typeof saveLead !== "function") {
+      console.warn("LeadSquared: saveleadlan not available");
+      return;
+    }
+
+    try {
+      saveLead();
+      await sleep(400);
+    } catch (error) {
+      console.warn("LeadSquared: capture failed", error);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Mark all required fields as touched
     const allTouched = {
       fullName: true,
       email: true,
@@ -459,7 +500,6 @@ export default function Contact() {
     };
     setTouched(allTouched);
 
-    // Validate all fields
     const validationErrors: Record<string, string> = {};
     validationErrors.fullName = validateField("fullName", formData.fullName);
     validationErrors.email = validateField("email", formData.email);
@@ -475,10 +515,10 @@ export default function Contact() {
 
     setErrors(validationErrors);
 
-    // Check if there are any errors
     const hasErrors = Object.values(validationErrors).some(
       (error) => error !== "",
     );
+
     if (hasErrors) {
       setStatus("error");
       setStatusMessage("Please fix the errors in the form before submitting.");
@@ -489,7 +529,6 @@ export default function Contact() {
     setStatusMessage("Submitting your enquiry...");
 
     try {
-      // Validate required fields
       const {
         fullName,
         countryCode,
@@ -506,9 +545,8 @@ export default function Contact() {
         return;
       }
 
-      // Use client-side Supabase call
       const supabase = createClient();
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from("contacts")
         .insert([
           {
@@ -526,6 +564,7 @@ export default function Contact() {
       if (error) {
         console.error("Supabase error:", error);
         let errorMessage = "Failed to submit form. Please try again.";
+
         if (error.code === "42P01") {
           errorMessage = "Database table not found. Please contact support.";
         } else if (error.code === "42501") {
@@ -533,61 +572,68 @@ export default function Contact() {
         } else if (error.message) {
           errorMessage = `Error: ${error.message}`;
         }
+
         setStatus("error");
         setStatusMessage(errorMessage);
-      } else {
-        // Send emails via Supabase Edge Function (SendGrid)
-        try {
-          const supabase = createClient();
-          const { data: emailResult, error: emailError } =
-            await supabase.functions.invoke("send-contact-email", {
-              body: {
-                channel: "contact",
-                fullName,
-                email,
-                phone,
-                countryCode: countryCode || "+91",
-                companyName,
-                selection: selection || null,
-                message: message || null,
-              },
-            });
-
-          if (emailError) {
-            console.warn("Email sending failed:", emailError.message);
-            // Still show success since form was saved to database
-          } else if (emailResult && !emailResult.success) {
-            console.warn("Email sending failed:", emailResult.error);
-            // Still show success since form was saved to database
-          }
-        } catch (emailError: any) {
-          console.error("Email sending error:", emailError);
-          // Still show success since form was saved to database
-        }
-
-        setStatus("success");
-        setStatusMessage(
-          "Thank you! Your enquiry has been submitted successfully. We will contact you shortly.",
-        );
-        // Reset form
-        setFormData({
-          fullName: "",
-          countryCode: "+91",
-          phone: "",
-          email: "",
-          companyName: "",
-          selection: "",
-          message: "",
-        });
-        setErrors({});
-        setTouched({});
-        router.push("/thanks");
-        // Clear success message after 5 seconds
-        setTimeout(() => {
-          setStatus("idle");
-          setStatusMessage("");
-        }, 5000);
+        return;
       }
+
+      // 📧 Send Email
+      try {
+        const supabase = createClient();
+        const { data: emailResult, error: emailError } =
+          await supabase.functions.invoke("send-contact-email", {
+            body: {
+              channel: "contact",
+              fullName,
+              email,
+              phone,
+              countryCode: countryCode || "+91",
+              companyName,
+              selection: selection || null,
+              message: message || null,
+            },
+          });
+
+        if (emailError) {
+          console.warn("Email sending failed:", emailError.message);
+        } else if (emailResult && !emailResult.success) {
+          console.warn("Email sending failed:", emailResult.error);
+        }
+      } catch (emailError: any) {
+        console.error("Email sending error:", emailError);
+      }
+
+      // ✅ SUCCESS MESSAGE
+      setStatus("success");
+      setStatusMessage(
+        "Thank you! Your enquiry has been submitted successfully. We will contact you shortly.",
+      );
+
+      // ✅ LeadSquared (best-effort, before reset/redirect)
+      await captureLeadSquared();
+
+      // ✅ RESET FORM
+      setFormData({
+        fullName: "",
+        countryCode: "+91",
+        phone: "",
+        email: "",
+        companyName: "",
+        selection: "",
+        message: "",
+      });
+
+      setErrors({});
+      setTouched({});
+
+      // ✅ REDIRECT
+      router.push("/thanks");
+
+      setTimeout(() => {
+        setStatus("idle");
+        setStatusMessage("");
+      }, 5000);
     } catch (error: any) {
       console.error("Contact form error:", error);
       setStatus("error");
@@ -601,6 +647,8 @@ export default function Contact() {
         {/* Header Start */}
         {/*?php include "navbar.php" ?*/}
         {/* Header End */}
+
+
         <div className="contect-waber">
           <div className="container">
             <div className="row">
@@ -725,11 +773,12 @@ export default function Contact() {
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmit} className="row g-3 pp-0">
+                  <form onSubmit={handleSubmit} id="form1" className="row g-3 pp-0">
                     {/* Full Name */}
                     <div className="col-12">
                       <input
                         type="text"
+                        id="manufacturing-name"
                         className={`form-control custom-form-control ${touched.fullName && errors.fullName ? "is-invalid" : ""}`}
                         name="fullName"
                         placeholder={t("Enter your full name")}
@@ -1066,6 +1115,7 @@ export default function Contact() {
                         </div>
                         <input
                           type="tel"
+                          id="manufacturing-mobile"
                           className={`form-control ${touched.phone && errors.phone ? "is-invalid" : ""}`}
                           name="phone"
                           placeholder={t("Enter your phone number")}
@@ -1106,6 +1156,7 @@ export default function Contact() {
                     <div className="col-md-6">
                       <input
                         type="email"
+                        id="manufacturing-email"
                         className={`form-control custom-form-control ${touched.email && errors.email ? "is-invalid" : ""}`}
                         name="email"
                         placeholder={t("Enter your email address")}
@@ -1133,6 +1184,7 @@ export default function Contact() {
                     <div className="col-md-6">
                       <input
                         type="text"
+                        id="manufacturing-companyname"
                         className={`form-control custom-form-control ${touched.companyName && errors.companyName ? "is-invalid" : ""}`}
                         name="companyName"
                         placeholder={t("Enter your company name")}

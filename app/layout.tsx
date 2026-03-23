@@ -1,31 +1,31 @@
-import type { Metadata } from 'next'
-import Script from 'next/script'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import SwiperInit from './Components/SwiperInit'
-import OwlCarouselInit from './Components/OwlCarouselInit'
-import CounterInit from './Components/CounterInit'
-import ScriptReinit from './Components/ScriptReinit'
-import MobileMenuInit from './Components/MobileMenuInit'
-import MobileSearchInit from './Components/MobileSearchInit'
-import SearchBoxInit from './Components/SearchBoxInit'
-import LottieInit from './Components/LottieInit'
-import VideoPopupInit from './Components/VideoPopupInit'
-import PopoverInit from './Components/PopoverInit'
-import LoadingWrapper from './Components/LoadingWrapper'
-import React from 'react'
+import type { Metadata } from "next";
+import Script from "next/script";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import SwiperInit from "./Components/SwiperInit";
+import OwlCarouselInit from "./Components/OwlCarouselInit";
+import CounterInit from "./Components/CounterInit";
+import ScriptReinit from "./Components/ScriptReinit";
+import MobileMenuInit from "./Components/MobileMenuInit";
+import MobileSearchInit from "./Components/MobileSearchInit";
+import SearchBoxInit from "./Components/SearchBoxInit";
+import LottieInit from "./Components/LottieInit";
+import VideoPopupInit from "./Components/VideoPopupInit";
+import PopoverInit from "./Components/PopoverInit";
+import LoadingWrapper from "./Components/LoadingWrapper";
+import React from "react";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Enterprise Digital Transformation & ERP Solutions | RheinBrücke',
-  description: 'Driving Digital Innovation with Integrated Business Platforms',
-}
+  title: "Enterprise Digital Transformation & ERP Solutions | RheinBrücke",
+  description: "Driving Digital Innovation with Integrated Business Platforms",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -33,10 +33,20 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/images/fav.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Radio+Canada:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Parkinsans:wght@300..800&display=swap" rel="stylesheet" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Radio+Canada:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Parkinsans:wght@300..800&display=swap"
+          rel="stylesheet"
+        />
         <link href="https://use.typekit.net/guc8vih.css" rel="stylesheet" />
-        <link href="https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro" rel="stylesheet" />
+        <link
+          href="https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro"
+          rel="stylesheet"
+        />
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/css/slicknav.min.css" />
         <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
@@ -46,64 +56,123 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/mousecursor.css" />
         <link rel="stylesheet" href="/css/owl.carousel.css" />
         <link rel="stylesheet" href="/css/custom.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+        />
         <link rel="stylesheet" href="https://use.typekit.net/guc8vih.css" />
         {/* <link rel="stylesheet" href="./css/enterprise.css" /> */}
         <link rel="stylesheet" href="/style2.css" />
-        
+
         {/* Google Tag Manager */}
-        <script dangerouslySetInnerHTML={{
-          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WHPH6XN');`
-        }} />
-        
-        {/* Google tag (gtag.js) - AW-795585511 */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-795585511" defer></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-795585511');`
-        }} />
-        
-        {/* Google tag (gtag.js) - G-2XTG321QD3 */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XTG321QD3" defer></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-2XTG321QD3');`
-        }} />
-        
-        {/* Freshmarketer */}
-        <script src='//cdn.freshmarketer.com/195245/632861.js' defer></script>
-        
-        {/* Factors.ai */}
-        <Script src="https://app.factors.ai/assets/v1/factors.js" strategy="afterInteractive" />
-        <Script id="factors-ai-init" strategy="afterInteractive">
-          {`
-            window.factors=window.factors||function(){this.q=[];var i=new CustomEvent("FACTORS_QUEUED_EVENT"),n=function(t,e){this.q.push({k:t,a:e}),window.dispatchEvent(i)};return this.track=function(t,e,i){n("track",arguments)},this.init=function(t,e,i){this.TOKEN=t,this.INIT_PARAMS=e,this.INIT_CALLBACK=i,window.dispatchEvent(new CustomEvent("FACTORS_INIT_EVENT"))},this.reset=function(){n("reset",arguments)},this.page=function(t,e){n("page",arguments)},this.updateEventProperties=function(t,e){n("updateEventProperties",arguments)},this.identify=function(t,e){n("identify",arguments)},this.addUserProperties=function(t){n("addUserProperties",arguments)},this.getUserId=function(){n("getUserId",arguments)},this.call=function(){var t={k:"",a:[]};if(arguments&&1<=arguments.length){for(var e=1;e<arguments.length;e++)t.a.push(arguments[e]);t.k=arguments[0]}this.q.push(t),window.dispatchEvent(i)},this.init("yyq3qwq23c7r4rq7o5refttcg39ju39m"),this}();
-          `}
-        </Script>
+})(window,document,'script','dataLayer','GTM-WHPH6XN');`,
+          }}
+        />
 
-        {/* LeadSquared Tracking Code */}
-        <Script src="https://web.mxradon.com/t/Tracker.js" strategy="afterInteractive" />
-        <Script id="leadsquared-init" strategy="afterInteractive">
-          {`
-            (function() {
-              var interval = setInterval(function() {
-                if (typeof window.pidTracker === 'function') {
-                  window.pidTracker('17537');
-                  clearInterval(interval);
-                }
-              }, 500);
-              setTimeout(function() { clearInterval(interval); }, 5000);
-            })();
-          `}
-        </Script>
-        <Script src="https://web.mxradon.com/t/FormCapture.js" strategy="afterInteractive" />
-        
+        {/* Google tag (gtag.js) - AW-795585511 */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-795585511"
+          defer
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-795585511');`,
+          }}
+        />
+
+        {/* Google tag (gtag.js) - G-2XTG321QD3 */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-2XTG321QD3"
+          defer
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-2XTG321QD3');`,
+          }}
+        />
+
+        {/* Freshmarketer */}
+        <script src="//cdn.freshmarketer.com/195245/632861.js" defer></script>
+
+        {/* Factors.ai */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.factors = window.factors || function () { this.q = []; var i = new CustomEvent("FACTORS_QUEUED_EVENT"), n = function (t, e) { this.q.push({ k: t, a: e }), window.dispatchEvent(i) }; return this.track = function (t, e, i) { n("track", arguments) }, this.init = function (t, e, i) { this.TOKEN = t, this.INIT_PARAMS = e, this.INIT_CALLBACK = i, window.dispatchEvent(new CustomEvent("FACTORS_INIT_EVENT")) }, this.reset = function () { n("reset", arguments) }, this.page = function (t, e) { n("page", arguments) }, this.updateEventProperties = function (t, e) { n("updateEventProperties", arguments) }, this.identify = function (t, e) { n("identify", arguments) }, this.addUserProperties = function (t) { n("addUserProperties", arguments) }, this.getUserId = function () { n("getUserId", arguments) }, this.call = function () { var t = { k: "", a: [] }; if (arguments && 1 <= arguments.length) { for (var e = 1; e < arguments.length; e++) t.a.push(arguments[e]); t.k = arguments[0] } this.q.push(t), window.dispatchEvent(i) }, this.init("yyq3qwq23c7r4rq7o5refttcg39ju39m"), this }(), function () { var t = document.createElement("script"); t.type = "text/javascript", t.src = "https://app.factors.ai/assets/v1/factors.js", t.async = !0, d = document.getElementsByTagName("script")[0], d.parentNode.insertBefore(t, d) }();`,
+          }}
+        />
+
+
+
+<Script id="lsq-custom" strategy="afterInteractive">
+{`
+  (function () {
+    function saveleadlan() {
+      var form = document.getElementById("form1");
+      if (!form) {
+        console.warn("LeadSquared: form1 not found");
+        return;
+      }
+
+      var fieldMapping = {
+        MXHOrgCode: "17537",
+        MXHLandingPageId: "7efef2b9-19bc-11e7-a02b-22000b10e324",
+        FirstName: "fullName",
+        EmailAddress: "email",
+        Mobile: "phone",
+        Company: "companyName"
+      };
+
+      var onSuccess = function (data) {
+        console.log("LeadSquared Success", data);
+      };
+
+      var onError = function (data) {
+        console.log("LeadSquared Error", data);
+      };
+
+      if (typeof LSQForm !== "undefined") {
+        try {
+          new LSQForm().captureLead(fieldMapping, "form1", {
+            onSuccess: onSuccess,
+            onError: onError
+          });
+        } catch (e) {
+          console.warn("LeadSquared: captureLead failed", e);
+        }
+      } else {
+        console.warn("LeadSquared: LSQForm not loaded");
+      }
+    }
+
+    window.saveleadlan = saveleadlan;
+  })();
+`}
+</Script>
+
         {/* Schema.org JSON-LD */}
         <script
           type="application/ld+json"
@@ -111,116 +180,138 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Rheinbrücke IT Consulting",
-              "url": "https://en.rheincs.com/",
-              "logo": "https://en.rheincs.com/Assets/images/RheinBr%C3%BCcke-logo.jpg",
-              "sameAs": [
+              name: "Rheinbrücke IT Consulting",
+              url: "https://en.rheincs.com/",
+              logo: "https://en.rheincs.com/Assets/images/RheinBr%C3%BCcke-logo.jpg",
+              sameAs: [
                 "https://www.facebook.com/RheinBrucke",
                 "https://twitter.com/RheinBruckeIT",
                 "https://www.youtube.com/channel/UCuR25ldsvrd7yd5vkzqntAg",
-                "https://www.linkedin.com/company/rheinbr%C3%BCcke-it-consulting"
+                "https://www.linkedin.com/company/rheinbr%C3%BCcke-it-consulting",
               ],
-              "department": [
+              department: [
                 {
                   "@type": "LocalBusiness",
-                  "name": "RheinBrücke IT Consulting BV",
-                  "address": {
+                  name: "RheinBrücke IT Consulting BV",
+                  address: {
                     "@type": "PostalAddress",
-                    "streetAddress": "Stationsplein, 8K NL-6221BT",
-                    "addressLocality": "Maastricht",
-                    "addressRegion": "",
-                    "postalCode": "6221BT",
-                    "addressCountry": "Netherlands"
+                    streetAddress: "Stationsplein, 8K NL-6221BT",
+                    addressLocality: "Maastricht",
+                    addressRegion: "",
+                    postalCode: "6221BT",
+                    addressCountry: "Netherlands",
                   },
-                  "telephone": "+31 (0) 43 799 9102",
-                  "email": "info@rheincs.com"
+                  telephone: "+31 (0) 43 799 9102",
+                  email: "info@rheincs.com",
                 },
                 {
                   "@type": "LocalBusiness",
-                  "name": "RheinBrücke IT Consulting GmbH",
-                  "address": {
+                  name: "RheinBrücke IT Consulting GmbH",
+                  address: {
                     "@type": "PostalAddress",
-                    "streetAddress": "Ruhrallee 9",
-                    "addressLocality": "Dortmund",
-                    "addressRegion": "",
-                    "postalCode": "44139",
-                    "addressCountry": "Germany"
+                    streetAddress: "Ruhrallee 9",
+                    addressLocality: "Dortmund",
+                    addressRegion: "",
+                    postalCode: "44139",
+                    addressCountry: "Germany",
                   },
-                  "telephone": "+49 231 292 95619",
-                  "email": "info@rheincs.com"
+                  telephone: "+49 231 292 95619",
+                  email: "info@rheincs.com",
                 },
                 {
                   "@type": "LocalBusiness",
-                  "name": "RheinBrücke IT Consulting",
-                  "address": {
+                  name: "RheinBrücke IT Consulting",
+                  address: {
                     "@type": "PostalAddress",
-                    "streetAddress": "3815 Chippenham Road",
-                    "addressLocality": "Mechanicsburg",
-                    "addressRegion": "PA",
-                    "postalCode": "17050",
-                    "addressCountry": "United States"
+                    streetAddress: "3815 Chippenham Road",
+                    addressLocality: "Mechanicsburg",
+                    addressRegion: "PA",
+                    postalCode: "17050",
+                    addressCountry: "United States",
                   },
-                  "telephone": "+1 717 265 3937",
-                  "email": "info@rheincs.com"
+                  telephone: "+1 717 265 3937",
+                  email: "info@rheincs.com",
                 },
                 {
                   "@type": "LocalBusiness",
-                  "name": "RheinBrücke IT Consulting Pvt Ltd",
-                  "address": {
+                  name: "RheinBrücke IT Consulting Pvt Ltd",
+                  address: {
                     "@type": "PostalAddress",
-                    "streetAddress": "Bharati Vilas, 1st Floor, 26B Jawaharlal Nehru Salai, Ekkatuthangal, Guindy Industrial Estate",
-                    "addressLocality": "Chennai",
-                    "addressRegion": "Tamil Nadu",
-                    "postalCode": "600032",
-                    "addressCountry": "India"
+                    streetAddress:
+                      "Bharati Vilas, 1st Floor, 26B Jawaharlal Nehru Salai, Ekkatuthangal, Guindy Industrial Estate",
+                    addressLocality: "Chennai",
+                    addressRegion: "Tamil Nadu",
+                    postalCode: "600032",
+                    addressCountry: "India",
                   },
-                  "telephone": "+91 44 6671 7555",
-                  "email": "info@rheincs.com"
+                  telephone: "+91 44 6671 7555",
+                  email: "info@rheincs.com",
                 },
                 {
                   "@type": "LocalBusiness",
-                  "name": "RheinBrücke IT Consulting EMEA FZE",
-                  "address": {
+                  name: "RheinBrücke IT Consulting EMEA FZE",
+                  address: {
                     "@type": "PostalAddress",
-                    "streetAddress": "2-234-235 – Techno Hub 2, Dubai Silicon Oasis",
-                    "addressLocality": "Dubai",
-                    "addressRegion": "",
-                    "postalCode": "342060",
-                    "addressCountry": "United Arab Emirates"
+                    streetAddress:
+                      "2-234-235 – Techno Hub 2, Dubai Silicon Oasis",
+                    addressLocality: "Dubai",
+                    addressRegion: "",
+                    postalCode: "342060",
+                    addressCountry: "United Arab Emirates",
                   },
-                  "telephone": "+971 43 330 366",
-                  "email": "info@rheincs.com"
+                  telephone: "+971 43 330 366",
+                  email: "info@rheincs.com",
                 },
                 {
                   "@type": "LocalBusiness",
-                  "name": "RheinBrücke IT Consulting DMCC",
-                  "address": {
+                  name: "RheinBrücke IT Consulting DMCC",
+                  address: {
                     "@type": "PostalAddress",
-                    "streetAddress": "Unit No. 30-01-949, Floor No. 1, Bldg No. 3, Plot No. 550-554, J&G, DMCC",
-                    "addressLocality": "Dubai",
-                    "addressRegion": "",
-                    "postalCode": "",
-                    "addressCountry": "United Arab Emirates"
+                    streetAddress:
+                      "Unit No. 30-01-949, Floor No. 1, Bldg No. 3, Plot No. 550-554, J&G, DMCC",
+                    addressLocality: "Dubai",
+                    addressRegion: "",
+                    postalCode: "",
+                    addressCountry: "United Arab Emirates",
                   },
-                  "telephone": "+971 50 650 8854",
-                  "email": "info@rheincs.com"
-                }
-              ]
-            })
+                  telephone: "+971 50 650 8854",
+                  email: "info@rheincs.com",
+                },
+              ],
+            }),
           }}
         />
+
+        {/* ✅ jQuery FIRST */}
+        <Script
+          src="https://code.jquery.com/jquery-3.6.0.min.js"
+          strategy="beforeInteractive"
+        />
+
+        {/* ✅ LeadSquared (tracking + form capture) */}
+        <Script
+          src="https://web.mxradon.com/t/Tracker.js"
+          strategy="beforeInteractive"
+        />
+        <Script
+          src="https://web.mxradon.com/t/FormTracker.js"
+          strategy="beforeInteractive"
+        />
+      
+        
       </head>
       <body className={inter.className}>
-        <Script src="/js/jquery-3.7.1.min.js" strategy="beforeInteractive" />
         {/* Google Tag Manager (noscript) */}
         <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHPH6XN"
-            height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WHPH6XN"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
         </noscript>
-        
-        <LoadingWrapper>
-        {children}
-        </LoadingWrapper>
+
+        <LoadingWrapper>{children}</LoadingWrapper>
         <SwiperInit />
         <OwlCarouselInit />
         <CounterInit />
@@ -231,33 +322,52 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <VideoPopupInit />
         <PopoverInit />
         <ScriptReinit />
-        
+
         {/* Google Conversion Tracking */}
-        <script dangerouslySetInnerHTML={{
-          __html: `var google_tag_params = { dynx_itemid: '48550682' };`
-        }} />
-        <script dangerouslySetInnerHTML={{
-          __html: `var google_conversion_id = 955726328; var google_custom_params = window.google_tag_params; var google_remarketing_only = true;`
-        }} />
-        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js" defer></script>
-        
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `var google_tag_params = { dynx_itemid: '48550682' };`,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `var google_conversion_id = 955726328; var google_custom_params = window.google_tag_params; var google_remarketing_only = true;`,
+          }}
+        />
+        <script
+          type="text/javascript"
+          src="//www.googleadservices.com/pagead/conversion.js"
+          defer
+        ></script>
+
         {/* Google Analytics */}
-        <script dangerouslySetInnerHTML={{
-          __html: `(function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-61074754-1', 'auto'); ga('set', 'anonymizeIp', true); ga('send', 'pageview');`
-        }} />
-        
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-61074754-1', 'auto'); ga('set', 'anonymizeIp', true); ga('send', 'pageview');`,
+          }}
+        />
+
         {/* VWO (Visual Website Optimizer) */}
-        <script dangerouslySetInnerHTML={{
-          __html: `var _vwo_code = (function () { var account_id = 292694, settings_tolerance = 2000, library_tolerance = 2500, use_existing_jquery = false, f = false, d = document; return { use_existing_jquery: function () { return use_existing_jquery; }, library_tolerance: function () { return library_tolerance; }, finish: function () { if (!f) { f = true; var a = d.getElementById('_vis_opt_path_hides'); if (a) a.parentNode.removeChild(a); } }, finished: function () { return f; }, load: function (a) { var b = d.createElement('script'); b.src = a; b.type = 'text/javascript'; b.innerText; b.onerror = function () { _vwo_code.finish(); }; d.getElementsByTagName('head')[0].appendChild(b); }, init: function () { settings_timer = setTimeout('_vwo_code.finish()', settings_tolerance); var a = d.createElement('style'), b = 'body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}', h = d.getElementsByTagName('head')[0]; a.setAttribute('id', '_vis_opt_path_hides'); a.setAttribute('type', 'text/css'); if (a.styleSheet) a.styleSheet.cssText = b; else a.appendChild(d.createTextNode(b)); h.appendChild(a); this.load('//dev.visualwebsiteoptimizer.com/j.php?a=' + account_id + '&u=' + encodeURIComponent(d.URL) + '&r=' + Math.random()); return settings_timer; } }; }()); _vwo_settings_timer = _vwo_code.init();`
-        }} />
-        
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `var _vwo_code = (function () { var account_id = 292694, settings_tolerance = 2000, library_tolerance = 2500, use_existing_jquery = false, f = false, d = document; return { use_existing_jquery: function () { return use_existing_jquery; }, library_tolerance: function () { return library_tolerance; }, finish: function () { if (!f) { f = true; var a = d.getElementById('_vis_opt_path_hides'); if (a) a.parentNode.removeChild(a); } }, finished: function () { return f; }, load: function (a) { var b = d.createElement('script'); b.src = a; b.type = 'text/javascript'; b.innerText; b.onerror = function () { _vwo_code.finish(); }; d.getElementsByTagName('head')[0].appendChild(b); }, init: function () { settings_timer = setTimeout('_vwo_code.finish()', settings_tolerance); var a = d.createElement('style'), b = 'body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}', h = d.getElementsByTagName('head')[0]; a.setAttribute('id', '_vis_opt_path_hides'); a.setAttribute('type', 'text/css'); if (a.styleSheet) a.styleSheet.cssText = b; else a.appendChild(d.createTextNode(b)); h.appendChild(a); this.load('//dev.visualwebsiteoptimizer.com/j.php?a=' + account_id + '&u=' + encodeURIComponent(d.URL) + '&r=' + Math.random()); return settings_timer; } }; }()); _vwo_settings_timer = _vwo_code.init();`,
+          }}
+        />
+
         {/* Google Conversion Tracking - noscript */}
         <noscript>
-          <div style={{ display: 'inline' }}>
-            <img height="1" width="1" style={{ borderStyle: 'none' }} alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/955726328/?guid=ON&amp;script=0" loading="lazy" />
+          <div style={{ display: "inline" }}>
+            <img
+              height="1"
+              width="1"
+              style={{ borderStyle: "none" }}
+              alt=""
+              src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/955726328/?guid=ON&amp;script=0"
+              loading="lazy"
+            />
           </div>
         </noscript>
-        
+
         {/* LiveChat Widget (loads only after cookie consent) */}
         <Script id="livechat-init" strategy="afterInteractive">
           {`
@@ -294,36 +404,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             })();
           `}
         </Script>
-        <noscript><a href="https://www.livechat.com/chat-with/14850255/" rel="nofollow">Chat with us</a>, powered by <a href="#" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
-        
-        {/* Google reCAPTCHA */}
-        <script type="text/javascript" dangerouslySetInnerHTML={{
-          __html: `var onloadCallback = function () { grecaptcha.render('g_captcha', { 'sitekey': '6LchLhApAAAAAKh9skbfRiq9ZLwCfCrLZrfcvyCn' }); };`
-        }} />
-        <script src='https://www.google.com/recaptcha/api.js'></script>
-        
-        {/* Google Conversion Functions */}
-        <script dangerouslySetInnerHTML={{
-          __html: `function gtag_report_conversion(url) { var callback = function () { if (typeof (url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-795585511/1tsTCLe_6ZYBEOfXrvsC', 'event_callback': callback }); return false; }`
-        }} />
-        
-        {/* LiveChat API - Google AdWords Tracking */}
-        <script dangerouslySetInnerHTML={{
-          __html: `var LC_API = LC_API || {}; LC_API.on_chat_started = function () { var google_conversion_id, google_conversion_label, img; google_conversion_id = '795585511'; google_conversion_label = 'vNDLCMG5iawaEOfXrvsC'; img = new Image(1, 1); img.src = 'https://www.googleadservices.com/pagead/conversion/' + google_conversion_id + '/?label=' + google_conversion_label + '&script=0'; };`
-        }} />
-        
-        {/* Google Conversion Async */}
-        <script dangerouslySetInnerHTML={{
-          __html: `goog_snippet_vars = function () { var w = window; w.google_conversion_id = 795585511; w.google_conversion_label = "vNDLCMG5iawaEOfXrvsC"; w.google_conversion_value = 13.00; w.google_conversion_currency = "USD"; w.google_remarketing_only = false; } goog_report_conversion = function (url) { goog_snippet_vars(); window.google_conversion_format = "3"; var opt = new Object(); opt.onload_callback = function () { if (typeof (url) != 'undefined') { window.location = url; } } var conv_handler = window['google_trackConversion']; if (typeof (conv_handler) == 'function') { conv_handler(opt); } }`
-        }} />
-        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js"></script>
-      </body>
+        <noscript>
+          <a href="https://www.livechat.com/chat-with/14850255/" rel="nofollow">
+            Chat with us
+          </a>
+          , powered by{" "}
+          <a href="#" rel="noopener nofollow" target="_blank">
+            LiveChat
+          </a>
+        </noscript>
 
-      
-      <script dangerouslySetInnerHTML={{
-        __html: `
+        {/* Google reCAPTCHA */}
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `var onloadCallback = function () { grecaptcha.render('g_captcha', { 'sitekey': '6LchLhApAAAAAKh9skbfRiq9ZLwCfCrLZrfcvyCn' }); };`,
+          }}
+        />
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+
+        {/* Google Conversion Functions */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `function gtag_report_conversion(url) { var callback = function () { if (typeof (url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-795585511/1tsTCLe_6ZYBEOfXrvsC', 'event_callback': callback }); return false; }`,
+          }}
+        />
+
+        {/* LiveChat API - Google AdWords Tracking */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `var LC_API = LC_API || {}; LC_API.on_chat_started = function () { var google_conversion_id, google_conversion_label, img; google_conversion_id = '795585511'; google_conversion_label = 'vNDLCMG5iawaEOfXrvsC'; img = new Image(1, 1); img.src = 'https://www.googleadservices.com/pagead/conversion/' + google_conversion_id + '/?label=' + google_conversion_label + '&script=0'; };`,
+          }}
+        />
+
+        {/* Google Conversion Async */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `goog_snippet_vars = function () { var w = window; w.google_conversion_id = 795585511; w.google_conversion_label = "vNDLCMG5iawaEOfXrvsC"; w.google_conversion_value = 13.00; w.google_conversion_currency = "USD"; w.google_remarketing_only = false; } goog_report_conversion = function (url) { goog_snippet_vars(); window.google_conversion_format = "3"; var opt = new Object(); opt.onload_callback = function () { if (typeof (url) != 'undefined') { window.location = url; } } var conv_handler = window['google_trackConversion']; if (typeof (conv_handler) == 'function') { conv_handler(opt); } }`,
+          }}
+        />
+        <script
+          type="text/javascript"
+          src="//www.googleadservices.com/pagead/conversion_async.js"
+        ></script>
+
+
+
+
+      </body>
+    
+
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
           (function() {
             var scripts = [
+              '/js/jquery-3.7.1.min.js',
               'https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js',
               '/js/bootstrap.min.js',
               '/js/validator.min.js',
@@ -404,14 +540,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
           });
 
-        `
-
-
-        
-
-
-        
-      }} />
+        `,
+        }}
+      />
     </html>
-  )
+  );
 }
