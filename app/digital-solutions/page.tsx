@@ -1381,7 +1381,7 @@ export default function digitalsolution() {
   </div>
   {/* Our Services Section End */}
   {/* Our Services Section Start */}
-  <div className="our-services1 customer digicustomer  pd30">
+  <div className={`our-services1 customer digicustomer  pd30 ${language === 'German' ? 'germodern' : ''}`}>
     <div className="container">
       <div className="row section-row">
         <div className="col-lg-12">

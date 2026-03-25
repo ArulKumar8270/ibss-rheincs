@@ -17,7 +17,7 @@ export default function EnterpriseSolutions() {
       <div className="row">
         <div className="col-md-5">
           <div className="merlin-baner-text-waber">
-            <h2 className="text-anime-style-2" data-cursor="-opaque">
+            <h2 className="text-anime-style-21" data-cursor="-opaque">
               {t("MeRLIN Sourcing: Powering Strategic Direct Procurement")}
             </h2>
             <p>

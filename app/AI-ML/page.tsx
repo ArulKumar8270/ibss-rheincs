@@ -15,8 +15,8 @@ export default function AlMl() {
                     <div className="container">
                         <div className="row section-row align-items-center  digitalsec">
                             <div className="col-sm-5">
-                                <div className="section-title wow fadeInUp">
-                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                <div className="section-title">
+                                    <h2 className="text-anime-style-21" data-cursor="-opaque">
                                         {t("AI/ML & Data Analytics")}
                                     </h2>
                                     <p>

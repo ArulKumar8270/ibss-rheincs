@@ -27,7 +27,7 @@ export default function AlMl() {
                         <div className="row section-row1 align-items-center builtsec">
                             <div className="col-sm-5 col-12">
                                 <div className="section-title">
-                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                    <h2 className="text-anime-style-21" data-cursor="-opaque">
                                         {t("Customer Speak")}
                                     </h2>
                                     <p>

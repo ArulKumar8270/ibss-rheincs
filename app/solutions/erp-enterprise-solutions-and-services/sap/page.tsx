@@ -149,8 +149,8 @@ const page = () => {
                   <div className="container">
                     <div className="row section-row align-items-center  digitalsec">
                       <div className="col-sm-6">
-                        <div className="section-title wow fadeInUp">
-                          <h2 className="text-anime-style-2" data-cursor="-opaque">
+                        <div className="section-title">
+                          <h2 className="text-anime-style-21" data-cursor="-opaque">
                             {t("Transform Your Enterprise with SAP S/4HANA and Cloud Innovation")}
                           </h2>
                           <p className="epic16">
@@ -419,7 +419,7 @@ const page = () => {
 
                 
         {/* Our Testimonial Section Start */}
-        <div className={`our-testimonial merlinicon1 pd30 ${language === 'German' ? 'germanwhysugar1' : ''}`}>
+        {/* <div className={`our-testimonial merlinicon1 pd30 ${language === 'German' ? 'germanwhysugar1' : ''}`}>
           <div className="container">
             <div className="row section-row text-center">
               <div className="col-lg-12">
@@ -437,17 +437,12 @@ const page = () => {
             </div>
             <div className="row align-items-center">
               <div className="col-lg-12">
-                {/* Testimonial Slider Start */}
                 <div className="testimonial-slider-08 testianimdot">
                   <div className="swiper">
                     <div className="swiper-wrapper">
-                      {/* Slide 1: 360-Degree Customer View */}
                       <div className="swiper-slide">
                         <div className="MeRLIN-service">
                           <div className="service-icon1">
-                            {/* Icon changed to represent a customer profile/v-card */}
-                            {/*<i class="bi bi-person-vcard"></i>*/}
-                            {/*<img src="/images/be1.svg" alt="">*/}
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -456,7 +451,7 @@ const page = () => {
                             >
                               <g id="layer6">
                                 <path
-                                  className="icns3"
+                                  className="icns1"
                                   id="path940"
                                   d="m3.9589358 7.8742461c-.015058.000023-.030123.001-.044958.0036-.8516816.172697-1.5311816.388185-2.0195156.644404-.2441669.128109-.4421189.265783-.5896281.42788-.1466571.161161-.2443328.35779-.2454631.570508h-.00103c-.0000096.0013-.0000096.0023 0 .0036v2.6468649c-.0000004.316855.2049375.57872.484725.784966.2797874.206245.6560275.378988 1.1187948.533301.8639448.288087 2.0764777.508604 3.4240803.628901v1.226283c-.0000495.249729.3141411.360902.4707726.166398l2.1171799-2.646852c.07703-.09654.07703-.233153 0-.329694l-2.1171836-2.6447779c-.1560169-.193759-.4689925-.084944-.4707724.1638139v.887284c-.6617502-.060951-1.2898972-.150282-1.8536335-.248562l-.002064-2.5543679c-.0005027-.148483-.1228712-.267412-.2713043-.26355zm-.2578655.594279.00362 2.1120149c-.3218106-.06916-.6239621-.153562-.876435-.237712-.4301792-.143377-.7645519-.305615-.9725504-.4588839-.2079986-.15327-.2676839-.275604-.2676839-.359668-.0000001-.05502.022175-.121072.1090373-.216525.086862-.09545.2356956-.207806.4433838-.316777.3450588-.181045.9301703-.372927 1.5606282-.522449zm-2.1130493 1.8644869c.2760201.195363.6296478.363547 1.0738363.511596.9255546.308489 2.1973444.534476 3.6679931.64854.1537171.01197.2851724-.109368.2852539-.26355v-.418063l1.5120525 1.888773-1.5120525 1.888774v-.713133c-.0000757-.138147-.1061815-.252866-.2439128-.263552-1.4399673-.111658-2.6826159-.338405-3.5429362-.625284-.4301599-.14344-.7645644-.303503-.9725504-.456819-.2079861-.153317-.267684-.275059-.2676839-.359152z"
                                   font-variant-ligatures="normal"
@@ -481,7 +476,7 @@ const page = () => {
                                   fill="#499a9a"
                                 />
                                 <path
-                                  className="icns3"
+                                  className="icns1"
                                   id="path944"
                                   d="m12.941333 7.8742461c-.135345.01356-.238361.127527-.238228.26355l-.0036 2.5548829c-.967508.181185-2.135026.30466-3.4085954.341581l.015499.529166c1.7934724-.05199 3.3859984-.266842 4.5511444-.591694.582573-.162427 1.057672-.349623 1.408182-.574126.0462-.02959.0375-.02251.0801-.05426v1.827279c0 .0962-.08764.247928-.365352.425813-.277715.177886-.712318.358431-1.263489.512114-1.102343.307363-2.666203.521003-4.4260873.572057l.015499.529167c1.7933463-.05203 3.3861003-.266847 4.5511463-.591695.582523-.162424 1.059769-.351699 1.410249-.576191.350478-.224495.607199-.508974.607199-.870748v-2.6468669c0-.214141-.09847-.412027-.24598-.574125-.147508-.162144-.345977-.299772-.590144-.427881-.488333-.256219-1.167834-.471702-2.019515-.644405 0 0-.04292-.0084-.07803-.0036zm.289388.591696c.631468.149633 1.216727.344298 1.562179.525549.207688.108971.356522.220809.443384.31626.08686.09545.109554.161507.109554.216524 0 .09621-.08761.247919-.365352.425814-.277744.1778949-.712267.3579109-1.263489.5115969-.153399.04277-.31781.08351-.488343.122473z"
                                   font-variant-ligatures="normal"
@@ -506,7 +501,7 @@ const page = () => {
                                   fill="#499a9a"
                                 />
                                 <path
-                                  className="icns3"
+                                  className="icns1"
                                   id="path870"
                                   d="m8.4669617 2.6455858c-1.1658688 0-2.1171877.9513189-2.1171874 2.1171873 0 1.165869.9513186 2.117188 2.1171874 2.117188 1.1658685 0 2.1171873-.951319 2.1171873-2.117188 0-1.1658684-.9513188-2.1171873-2.1171873-2.1171873zm0 .5292969c.8798856 0 1.5878913.708005 1.5878913 1.5878904 0 .879886-.7080057 1.587891-1.5878913 1.587891-.8798857 0-1.5878908-.708005-1.5878908-1.587891 0-.8798855.7080051-1.5878904 1.5878908-1.5878904z"
                                   font-variant-ligatures="normal"
@@ -531,7 +526,7 @@ const page = () => {
                                   fill="#499a9a"
                                 />
                                 <path
-                                  className="icns3"
+                                  className="icns1"
                                   id="path872"
                                   d="m8.4669617 1.3233202c-.9832123 0-2.0672936.5601514-2.9375 1.2460937-.4351033.3429712-.8158192.7204142-1.0937499 1.0917969-.2779311.3713827-.4667973.7336528-.466797 1.1015623-.0000003.36791.1888659.73018.466797 1.101563.2779307.371382.6586466.746872 1.0937499 1.089844.8702064.685942 1.9542879 1.248046 2.9375 1.248047.983212-.000001 2.0672933-.562105 2.9375003-1.248047.435103-.342972.813866-.718462 1.091797-1.089844.277931-.371383.46875-.733653.46875-1.101563 0-.3679095-.190819-.7301796-.46875-1.1015623s-.656694-.7488257-1.091797-1.0917969c-.870207-.6859423-1.9542883-1.2460936-2.9375003-1.2460937zm0 .5292969c.7702918 0 1.8012913.4958382 2.6093753 1.1328125.404042.3184871.756213.669039.998047.9921875s.361328.623899.361328.785156-.119494.460055-.361328.783204c-.241834.323148-.594005.6737-.998047.992187-.808084.636974-1.8390835 1.134765-2.6093753 1.134765-.7702921 0-1.8032439-.497791-2.611328-1.134765-.4040423-.318487-.7542599-.669039-.9960938-.992187-.2418342-.323149-.3613283-.621947-.3613283-.783204s.1194941-.4620075.3613283-.785156c.2418339-.3231485.5920515-.6737004.9960938-.9921875.8080841-.6369743 1.8410359-1.1328125 2.611328-1.1328125z"
                                   font-variant-ligatures="normal"
@@ -568,13 +563,9 @@ const page = () => {
                           </ul>
                         </div>
                       </div>
-                      {/* Slide 2: Sales Automation */}
                       <div className="swiper-slide">
                         <div className="MeRLIN-service">
                           <div className="service-icon1">
-                            {/* Icon changed to represent sales growth and pipeline */}
-                            {/*<i class="bi bi-graph-up-arrow"></i>*/}
-                            {/*<img src="/images/be5.svg" alt="">*/}
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               id="Layer_1"
@@ -597,13 +588,9 @@ const page = () => {
                           </ul>
                         </div>
                       </div>
-                      {/* Slide 3: Marketing Campaign Management */}
                       <div className="swiper-slide">
                         <div className="MeRLIN-service">
                           <div className="service-icon1">
-                            {/* Icon changed to represent marketing/announcements */}
-                            {/*<i class="bi bi-megaphone-fill"></i>*/}
-                            {/*<img src="/images/be4.svg" alt="">*/}
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               id="Layer_1"
@@ -624,13 +611,9 @@ const page = () => {
                           </ul>
                         </div>
                       </div>
-                      {/* Slide 4: Customer Support and Service */}
                       <div className="swiper-slide">
                         <div className="MeRLIN-service">
                           <div className="service-icon1">
-                            {/* Icon changed to a headset, a universal symbol for support */}
-                            {/*<i class="bi bi-headset"></i>*/}
-                            {/*<img src="/images/be2.svg" alt="">*/}
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               id="Layer_1"
@@ -669,13 +652,9 @@ const page = () => {
                           </ul>
                         </div>
                       </div>
-                      {/* Slide 5: Sugar as a Platform */}
                       <div className="swiper-slide">
                         <div className="MeRLIN-service">
                           <div className="service-icon1">
-                            {/* Icon changed to represent a software platform/stack */}
-                            {/*<i class="bi bi-hdd-stack-fill"></i>*/}
-                            {/*<img src="/images/be5.svg" alt="">*/}
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               enableBackground="new 0 0 512 512"
@@ -928,16 +907,15 @@ const page = () => {
                     </div>
                   </div>
                 </div>
-                {/* Testimonial Slider End */}
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* Our Testimonial Section End */}
 
 
         {/* Hero Section Start*/}
-        {/* <div className=" buildsection mobilesap2">
+        <div className=" buildsection mobilesap2">
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-7">
@@ -948,50 +926,55 @@ const page = () => {
                         className="text-anime-style-2 text-center"
                         data-cursor="-opaque"
                       >
-                        {t("Business Transformation with SAP")}
+                        {t("The SAP Transformation Journey")}
                       </h2>
                       <p className="text-center">
-                        {t("SAP’s intelligent cloud ERP and business technology platforms help enterprises:")}
+                        {t("RheinBrücke supports enterprises across the full SAP lifecycle, from transformation planning to implementation to continuous optimisation.")}
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="row justify-content-center width80">
+            <div className="row justify-content-center width801">
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/g501.svg" alt="" />
-                  <p>{t("Unify finance, operations, HR and supply chain")}</p>
+                  <h3>{t("SAP S/4HANA Transformation")}</h3>
+                  <p>{t("Accelerate ERP modernisation with SAP S/4HANA through flexible transformation pathways—greenfield, brownfield, or cloud with RISE and GROW—to drive real-time insights, operational efficiency, and scalable growth.")}</p>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/ad2.svg" alt="" />
-                  <p>{t("Boost productivity through AI-driven automation")}</p>
+                  <h3>{t("SAP Cloud Applications")}</h3>
+                  <p>{t("Transform HR, procurement, and expense management with SAP SuccessFactors, Ariba, and Concur, enabling integrated, scalable, and cloud-driven business operations.")}</p>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/ad3.svg" alt="" />
-                  <p>{t("Gain real-time operational visibility")}</p>
+                  <h3>{t("SAP BTP")}</h3>
+                  <p>{t("Integrate SAP with your enterprise ecosystem and build scalable extensions on SAP BTP, enabling innovation while preserving a clean, stable core.")}</p>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/ad4.svg" alt="" />
-                  <p>{t("Accelerate cloud transformation with secure, scalable systems")}</p>
+                  <h3>{t("SAP Analytics")}</h3>
+                  <p>{t("Turn enterprise data into real-time, actionable insights with SAP Analytics Cloud and advanced reporting—enabling faster decisions and improved business performance.")}</p>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/ad5.svg" alt="" />
-                  <p>{t("Optimise processes with continuous innovation")}</p>
+                  <h3>{t("SAP Application Management Services (AMS)")}</h3>
+                  <p>{t("Ensure a stable, secure, and continuously optimised SAP landscape with outcome-led support, proactive monitoring, and ongoing enhancements.")}</p>
                 </div>
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
         {/* Hero Section End*/}
         <div className="sap-advantage-main-waber">
           <div className="container">

@@ -14,7 +14,7 @@ export default function Establishing() {
                             <div className="col-lg-1" />
                             <div className="col-lg-10">
                                 <div className="section-title">
-                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                    <h2 className="text-anime-style-21" data-cursor="-opaque">
                                         Establishing our Saudi presence and launch of AIMS partnership
                                     </h2>
                                     <img src="/new/h3-in.jpg" alt="" />

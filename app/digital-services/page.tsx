@@ -16,7 +16,7 @@ export default function AlMl() {
       <div className="row section-row align-items-center  digitalsec">
         <div className="col-sm-6">
           <div className="section-title">
-            <h2 className="text-anime-style-2" data-cursor="-opaque">
+            <h2 className="text-anime-style-21" data-cursor="-opaque">
               {t("Digital Services – Delivering Scalable, Agile, and Future-Ready Technology Services")}
             </h2>
             <p>

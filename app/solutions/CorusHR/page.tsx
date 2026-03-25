@@ -1565,7 +1565,10 @@ export default function Corushr() {
                                     )}
 
 	                                    <form onSubmit={handleSubmit} id="form1">
-	                                        <div className="w100">
+  	                                        {/* Hidden Fields for LeadSquared Tracking */}
+  	                                        <input type="hidden" name="Search" value="CorusHR Page Form" />
+  	                                        <input type="hidden" name="selection" value="CorusHR Brochure Request" />
+  	                                        <div className="w100">
 	                                            <input
 	                                                type="text"
 	                                                className="form-control custom-form-control"

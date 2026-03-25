@@ -25,7 +25,7 @@ export default function EnterpriseSolutions() {
                                         <h1 data-cursor="-opaque">
                                             {t("Driving Business Outcomes Through Technology")}
                                         </h1>
-                                        <div className="hero-video-content wow fadeInUp mt-3">
+                                        <div className="hero-video-content mt-3">
                                             <p>
                                                 {t("RheinBrücke powers digital transformation for enterprises to modernise, grow, and lead.")} {t("With 300+ customers, we deliver ERP modernisation, integration, data intelligence, and AI automation for a digital and sustainable future.")}
                                             </p>

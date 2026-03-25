@@ -21,7 +21,7 @@ export default function EnterpriseSolutions() {
       <div className="row section-row1 align-items-center builtsec">
         <div className="col-sm-5">
           <div className="section-title">
-            <h2 className="text-anime-style-2" data-cursor="-opaque">
+            <h2 className="text-anime-style-21" data-cursor="-opaque">
               {t("Microsoft Technologies")}
             </h2>
             <p>
@@ -228,7 +228,7 @@ export default function EnterpriseSolutions() {
     <div className="container">
       <div className="content width50">
         <div className="section-title ">
-          <div className="hero-video-content1 wow fadeInUp mt-4">
+          <div className="hero-video-content1 mt-4">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
               {t("Our Approach")}
             </h2>

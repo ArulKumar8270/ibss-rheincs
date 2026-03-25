@@ -8071,8 +8071,8 @@ body:has(.offcanvas) {
 
 
 .footer-links h3 {   
-	font-size: 17px;
-    font-weight: 600 !important;
+	font-size: 19px;
+    font-weight: 800 !important;
 	line-height: 24px;
 	font-family: "Raleway", sans-serif;
 	font-style: normal;
@@ -22756,4 +22756,22 @@ position: relative;
 .germsapproch .valueslide {
     height: 300px;
     padding: 24px !important;
+}
+
+.germodern .cussec .service-item p {
+    color: #000;
+    height: 170px !important;
+    padding: 16px 24px 16px;
+}
+.germodern .cussec .service-item h3 {
+    height: 85px;
+}.germodern .cussec img {
+    height: 200px;
+	margin: auto;
+}
+
+.dynamics-advantage-waber h3{
+	font-size: 20px;
+	color: #000;
+	margin: 20px 0px 15px;
 }

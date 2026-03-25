@@ -22,7 +22,7 @@ export default function EnterpriseSolutions() {
             <div className="row section-row1 align-items-center builtsec collat">
               <div className="col-sm-12">
                 <div className="section-title text-center ">
-                  <h2 className="text-anime-style-2" data-cursor="-opaque">
+                  <h2 className="text-anime-style-21" data-cursor="-opaque">
                     {t("LEADERSHIP")}
                   </h2>
                   {/* <p>In today’s digital-first world, great design is more than looks—it’s about creating seamless, intuitive experiences that drive engagement, satisfaction, and loyalty. </p> */}

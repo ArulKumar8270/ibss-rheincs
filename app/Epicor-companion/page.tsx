@@ -17,8 +17,8 @@ export default function EnterpriseSolutions() {
     <div className="container">
       <div className="row section-row align-items-center  digitalsec">
         <div className="col-sm-6">
-          <div className="section-title wow fadeInUp">
-            <h2 className="text-anime-style-2" data-cursor="-opaque">
+          <div className="section-title">
+            <h2 className="text-anime-style-21" data-cursor="-opaque">
               {t("Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more")}
             </h2>
             <p>

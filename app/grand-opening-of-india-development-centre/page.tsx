@@ -13,7 +13,7 @@ export default function grandopening() {
                             <div className="col-lg-1" />
                             <div className="col-lg-10">
                                 <div className="section-title">
-                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                    <h2 className="text-anime-style-21" data-cursor="-opaque">
                                         Grand Opening of India Development Centre (IDC) in RheinBrücke
                                     </h2>
                                     <p className="mt-5">

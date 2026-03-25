@@ -16,7 +16,7 @@ export default function EnterpriseSolutions() {
                         <div className="row section-row align-items-center  digitalsec">
                             <div className="col-sm-6">
                                 <div className="section-title">
-                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                    <h2 className="text-anime-style-21" data-cursor="-opaque">
                                         {t("Innovative Products to Empower Your Business")}
                                     </h2>
                                     <p>

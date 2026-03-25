@@ -19,10 +19,13 @@ export default function EnterpriseSolutions() {
         <div className="col-lg-5 col-11">
           <div className="pe-main-hadding-waber">
             <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
-              {t("Interior Design")}
+              {t("ERP for Interior Design Companies ")}
             </h2>
             <p>
-              {t("Interior design firms face increasing pressure to manage complex, custom projects while controlling costs, streamlining procurement, and meeting client expectations for faster, high-quality outcomes. Traditional manual processes, disconnected tools, and limited operational visibility make it difficult to scale, optimise profitability, and deliver projects on time.")}
+              {t("ERP and Digital Solutions for Interior Design and Fit-Out Businesses")}
+            </p>
+            <p>
+              {t("Digital solutions powered by ERP help interior design and fit-out companies manage project planning, material procurement, supplier coordination and financial operations within a unified system.")}
             </p>
             <div className="ser-btn m-0">
               <Link href="/contact-us" className="animated-svg-link">
@@ -157,31 +160,31 @@ export default function EnterpriseSolutions() {
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Complex, multi-phase projects requiring detailed planning, procurement, and resource scheduling")}
+                {t("Complex, multi-phase interior design projects requiring detailed project planning, project scheduling, and resource management")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Delayed revenue recognition due to fragmented financial and project data")}
+                {t("Delayed revenue recognition due to fragmented project financials data and poor cost tracking")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Reliance on spreadsheets, manual documentation, and disconnected systems")}
+                {t("Heavy reliance on spreadsheets, manual processes and disconnected project management tools")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Inaccurate time, expense, and resource tracking affecting project delivery")}
+                {t("Inaccurate time tracking, expense management, and resource utilization impacting project delivery timelines")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Limited visibility into real-time project costs, margins, and profitability")}
+                {t("Limited visibility into real-time project costs, margins, and site-level profitability")}
               </p>
             </div>
             <div className="challenge-point-waber">
@@ -193,7 +196,7 @@ export default function EnterpriseSolutions() {
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Inefficient bid, contract, and variation management impacting financial control")}
+                {t("Inefficient bid management, contract administration, and variation control affecting financial performance")}
               </p>
             </div>
           </div>
@@ -214,27 +217,27 @@ export default function EnterpriseSolutions() {
     <div className="container">
     <div className="pe-matters-content-waber">
       <div className="pe-matters-content">
-        <img src="/new/g501.svg" alt="" />
+        <img src="/new/g501.svg" alt="Project management icon" />
         <p>
-          {t("Manual, disconnected processes increase project delays, cost overruns, and profit leakage")}
+          {t("Manual, disconnected project management processes lead to increased project delays, cost overruns, reduced productivity, and significant profit leakage")}
         </p>
       </div>
       <div className="pe-matters-content">
-        <img src="/new/ad2.svg" alt="" />
+        <img src="/new/ad2.svg" alt="Real-time project managing and planning icon" />
         <p>
-          {t("Poor visibility into project costs and schedules weakens financial control and decision-making")}
+          {t("Poor visibility into real‑time project costs, schedules, and performance weakens financial control and slows data‑driven decision‑making")}
         </p>
       </div>
       <div className="pe-matters-content">
-        <img src="/new/ad3.svg" alt="" />
+        <img src="/new/ad3.svg" alt="Project contract management icon" />
         <p>
           {t("Ineffective resource and contract management leads to operational inefficiencies")}
         </p>
       </div>
       <div className="pe-matters-content">
-        <img src="/new/ad4.svg" alt="" />
+        <img src="/new/ad4.svg" alt="Project management limitations icon" />
         <p>
-          {t("Limited operational scalability restricts business growth and multi-location rollouts")}
+          {t("Lack of operational scalability restricts business growth, limits multi‑location expansion, and reduces the ability to standardize processes across teams")}
         </p>
       </div>
     </div>
@@ -249,19 +252,19 @@ export default function EnterpriseSolutions() {
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            {t("Deploy modern ERP solutions tailored for interior design project management")}
+            {t("Deploy modern ERP solutions tailored for interior design project management and project-based operations")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            {t("Provide real-time dashboards, KPIs, and operational trackers for improved project visibility")}
+            {t("Provide real-time dashboards, KPIs, and operational performance trackers to enhance project visibility and support data-driven decision-making")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            {t("Integrate project management, procurement, scheduling, finance, and CRM on a unified platform")}
+            {t("Integrate project management, procurement, scheduling, finance, and CRM workflows into a unified digital platform for seamless end‑to‑end project execution")}
           </p>
         </div>
         <div className="pe-help-content">
@@ -273,7 +276,7 @@ export default function EnterpriseSolutions() {
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            {t("Automate bid, contract, and variation management with full project history and document control")}
+            {t("Automate bid creation, contract management, and variation order tracking with complete project history, audit trails, and document control")}
           </p>
         </div>
         <div className="pe-help-content">
@@ -285,19 +288,19 @@ export default function EnterpriseSolutions() {
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            {t("Enable multi-level work breakdown structures for precise cost tracking and reporting")}
+            {t("Enable multi-level work breakdown structures for precise project cost tracking, budgeting, forecasting, and reporting")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            {t("Support cross-departmental collaboration and multi-location business operations")}
+            {t("Support cross-department collaboration and multi-location business operations through centralized data, standardized processes, and integrated communication")}
           </p>
         </div>
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            {t("Streamline resource planning and scheduling with embedded project operations management")}
+            {t("Streamline resource planning, workforce allocation, and scheduling using embedded project operations and capacity management tools")}
           </p>
         </div>
       </div>
@@ -319,31 +322,31 @@ export default function EnterpriseSolutions() {
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {t("Improved project delivery timelines, cost control, and profitability tracking")}
+                    {t("Improved project delivery timelines, tighter cost control, and enhanced profitability tracking")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {t("Enhanced operational visibility through real-time dashboards and analytics")}
+                    {t("Enhanced operational visibility with real-time dashboards and powerful analytics")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {t("Faster, data-led decision-making and financial closure")}
+                    {t("Data-driven decision-making with real-time cost capture, budget monitoring, and faster financial closure")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {t("Increased business agility and scalability for multi-location and international projects")}
+                    {t("Greater scalability and operational agility to manage multi-project, multi-location interior design operations")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {t("Better client satisfaction through transparent, well-managed project execution")}
+                    {t("Better client satisfaction through transparent project tracking, efficient collaboration, and controlled execution")}
                   </p>
                 </div>
               </div>
@@ -373,13 +376,13 @@ export default function EnterpriseSolutions() {
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {t("Standardised multi-level work breakdown and resource scheduling processes")}
+                    {t("Standardised multi-level Work Breakdown Structures (WBS) with integrated resource planning and scheduling")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {t("Connected data environments for operational agility and informed decision-making")}
+                    {t("Connected data environments ensuring a single source of truth across projects, finance, and procurement")}
                   </p>
                 </div>
               </div>
@@ -405,19 +408,19 @@ export default function EnterpriseSolutions() {
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {t("Proven expertise in modernising project management and operational systems")}
+                    {t("Strong capability in transforming fragmented project management, procurement, and financial workflows into unified digital systems")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {t("Focus on measurable operational improvements and financial outcomes")}
+                    {t("Delivery focused on measurable improvements in project cost control, margin visibility, and operational efficiency")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {t("Offshore-enabled, scalable, cost-effective delivery model")}
+                    {t("Global delivery capability leveraging specialised implementation teams")}
                   </p>
                 </div>
               </div>
@@ -443,13 +446,13 @@ export default function EnterpriseSolutions() {
                 {t("Modernise Your Interior Design Operations?")}
               </h2>
               <p>
-                {t("Future-proof your interior design business with connected, agile ERP infrastructure, automated project management, and real-time operational insights.")}
+                {t("Elevate your interior design operations with one intelligent system that unifies planning, execution, and financial control for consistent, accurate project delivery.")}
               </p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <Link href="/contact-us" className="animated-svg-link">
-                  {t("Contact Us")}
+                  {t("See How")}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg

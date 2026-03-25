@@ -152,7 +152,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         FirstName: "fullName",
         EmailAddress: "email",
         Mobile: "phone",
-        Company: "companyName"
+        Company: "companyName",
+        MXHSearch: "Search", // Form identification
+        Notes: "message",    // Message field
+        JobTitle: "selection" // Subject/Selection field
       };
 
       var onSuccess = function (data) {

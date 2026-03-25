@@ -603,7 +603,7 @@ export default function Collaterals() {
                         <div className="row section-row1 align-items-center builtsec">
                             <div className="col-sm-5">
                                 <div className="section-title">
-                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                                    <h2 className="text-anime-style-21" data-cursor="-opaque">
                                         Collaterals
                                     </h2>
                                 </div>
@@ -1864,6 +1864,9 @@ export default function Collaterals() {
                                                 )}
 
 	                                                <form onSubmit={handleSubmit} id="form1" className="row g-3 pp-0">
+                                                    {/* Hidden Fields for LeadSquared Tracking */}
+                                                    <input type="hidden" name="Search" value="Collaterals Page Form" />
+                                                    <input type="hidden" name="selection" value={selectedCollateral?.title ? `Collateral: ${selectedCollateral.title}` : "Collaterals Request"} />
                                                     {/* Full Name */}
                                                     <div className="col-12">
                                                         <input

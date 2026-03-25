@@ -774,6 +774,8 @@ export default function Contact() {
                   )}
 
                   <form onSubmit={handleSubmit} id="form1" className="row g-3 pp-0">
+                    {/* Hidden Field for LeadSquared Form Identification */}
+                    <input type="hidden" name="Search" value="Contact Us Page Form" />
                     {/* Full Name */}
                     <div className="col-12">
                       <input
@@ -1404,7 +1406,7 @@ export default function Contact() {
           <div className="container">
             <div className="section-title">
               <h2
-                className="text-anime-style-2 text-center text-dark "
+                className="text-anime-style-21 text-center text-dark "
                 data-cursor="-opaque"
               >
                 {t("Talk to Our Experts")}
