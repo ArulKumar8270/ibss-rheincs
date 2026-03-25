@@ -1732,7 +1732,7 @@ export default function Header() {
                                             </li>
                                             <li className={`nav-item ${pathname === '/contact-us' || currentPage === 'contact-us' ? 'active' : ''}`}>
                                                 <Link className="nav-link" href="/contact-us">
-                                                    {t("Contact Us")}
+                                                    {t("Contact us")}
                                                 </Link>
                                             </li>
                                         </ul>
@@ -3092,7 +3092,7 @@ export default function Header() {
                         {/* Contact Us */}
                         <li>
                             <div className="menu-item">
-                                <Link href="/contact-us">{t("Contact Us")}</Link>
+                                <Link href="/contact-us">{t("Contact us")}</Link>
                             </div>
                         </li>
                     </ul>

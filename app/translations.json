@@ -1,5 +1,18 @@
 {
    "English": {
+    "All": "All",
+    "Categories": "Categories",
+    "Clear Filters": "Clear Filters",
+    "No industries available": "No industries available",
+    "Showing": "Showing",
+    "of": "of",
+    "blog": "blog",
+    "Loading blogs...": "Loading blogs...",
+    "No blogs match your current filters.": "No blogs match your current filters.",
+    "Clear All Filters": "Clear All Filters",
+    "No blogs available yet.": "No blogs available yet.",
+    "Active Filters:": "Active Filters:",
+    "Search": "Search",
     "About Us": "About Us",
     "Solutions & Services": "Solutions & Services",
     "Industries": "Industries",
@@ -80,6 +93,7 @@
     "Business Model Transformation": "Business Model Transformation",
     "We help businesses rethink their operating models, uncover new revenue streams, and deliver innovative services that drive sustainable growth.": "We help businesses rethink their operating models, uncover new revenue streams, and deliver innovative services that drive sustainable growth.",
     "Read more": "Read more",
+    "Read Less": "Read Less",
     "ERP Modernisation": "ERP Modernisation",
     "We modernise legacy ERP systems to unlock agility, reduce complexity, supporting faster decisions and scalable operations.": "We modernise legacy ERP systems to unlock agility, reduce complexity, supporting faster decisions and scalable operations.",
     "Digital Supply Chain Enablement": "Digital Supply Chain Enablement",
@@ -222,8 +236,8 @@
     "RheinBrücke brings over a decade of proven expertise in Epicor implementation, migration, rollouts, and support across 45+ countries, with a strong focus on the EMEA region.":
     "RheinBrücke brings over a decade of proven expertise in Epicor implementation, migration, rollouts, and support across 45+ countries, with a strong focus on the EMEA region.",
 
-    "Epicor ERP empowers your business with agile, industry-tailored solutions that streamline operations, reduce costs, and enhance performance.":
-    "Epicor ERP empowers your business with agile, industry-tailored solutions that streamline operations, reduce costs, and enhance performance.",
+    "Epicor ERP empowers your business with agile, industry-tailored solutions that streamline operations, reduce costs, and enhance performance. At RheinBrücke, we combine the power of Epicor Kinetic with our SCALE methodology, delivering industry-wide experience, deep domain knowledge across manufacturing, distribution, construction, retail, and more, and a commitment to timely, high-quality project delivery.":
+    "Epicor ERP empowers your business with agile, industry-tailored solutions that streamline operations, reduce costs, and enhance performance. At RheinBrücke, we combine the power of Epicor Kinetic with our SCALE methodology, delivering industry-wide experience, deep domain knowledge across manufacturing, distribution, construction, retail, and more, and a commitment to timely, high-quality project delivery.",
 
     "Our extensive Epicor presence in the EMEA region enables us to support businesses in achieving operational excellence at scale.":
     "Our extensive Epicor presence in the EMEA region enables us to support businesses in achieving operational excellence at scale.",
@@ -298,6 +312,9 @@
 
     "Epicor Kinetic (Epicor ERP): Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production.":
     "Epicor Kinetic (Epicor ERP): Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production.",
+    
+    "Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production":
+    "Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production",
 
     "Epicor iScala: Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade.":
     "Epicor iScala: Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade.",
@@ -593,7 +610,7 @@
 
 
     "Epicor iScala": "Epicor iScala",
-    "Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade.": "Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade.",
+    "Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade": "Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade",
     "Epicor iScala helps mid-sized businesses manage complex operations with a flexible, configurable ERP platform. It ensures compliance, simplifies financial and operational management, and supports growth across multiple geographies.": "Epicor iScala helps mid-sized businesses manage complex operations with a flexible, configurable ERP platform. It ensures compliance, simplifies financial and operational management, and supports growth across multiple geographies.",
 
     "Our Epicor iScala Capabilities": "Our Epicor iScala Capabilities",
@@ -619,26 +636,58 @@
 
 
     "Epicor Companion Products": "Epicor Companion Products",
-    "Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more.": "Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more.",
+    "Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more": "Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more",
     "Epicor Companion Products enhance your core ERP system, enabling end-to-end operational control and insights. They are designed to integrate seamlessly with Epicor ERP for complete business management.": "Epicor Companion Products enhance your core ERP system, enabling end-to-end operational control and insights. They are designed to integrate seamlessly with Epicor ERP for complete business management.",
 
     "Our Companion Products Capabilities": "Our Companion Products Capabilities",
-    "EpicPay: Simplify payroll management and compliance.": "EpicPay: Simplify payroll management and compliance.",
-    "MES (Manufacturing Execution): Optimize shop-floor operations and production tracking.": "MES (Manufacturing Execution): Optimize shop-floor operations and production tracking.",
-    "ECM (Enterprise Content Management): Centralize documents and workflows.": "ECM (Enterprise Content Management): Centralize documents and workflows.",
-    "FP&A (Financial Planning & Analysis): Improve budgeting, forecasting, and reporting.": "FP&A (Financial Planning & Analysis): Improve budgeting, forecasting, and reporting.",
-    "IP&O (Inventory Planning & Optimization): Maximize inventory efficiency and reduce costs.": "IP&O (Inventory Planning & Optimization): Maximize inventory efficiency and reduce costs.",
-    "WMS (Warehouse Management System): Streamline warehouse operations and logistics.": "WMS (Warehouse Management System): Streamline warehouse operations and logistics.",
-    "Epicor Data Analytics (Phocas) – Drive data-driven decisions with advanced analytics and visualizations.": "Epicor Data Analytics (Phocas) – Drive data-driven decisions with advanced analytics and visualizations.",
-    "Epicor eCommerce – Provide a connected, self-service online storefront for manufacturers, distributors, and wholesalers to drive customer loyalty and profitability.": "Epicor eCommerce – Provide a connected, self-service online storefront for manufacturers, distributors, and wholesalers to drive customer loyalty and profitability.",
-    "Epicor Grow – Cloud-based business intelligence solution to harness data for better decision-making and operational efficiency.": "Epicor Grow – Cloud-based business intelligence solution to harness data for better decision-making and operational efficiency.",
-    "Epicor Data Discovery – Visualize and interact with ERP data through intuitive dashboards and charts.": "Epicor Data Discovery – Visualize and interact with ERP data through intuitive dashboards and charts.",
-    "Epicor Spreadsheet Server – Connect ERP data directly to Excel for real-time reporting, drill-down analysis, and planning.": "Epicor Spreadsheet Server – Connect ERP data directly to Excel for real-time reporting, drill-down analysis, and planning.",
-    "Epicor Kinetic Warehouse – Mobile-first scanning solution to optimize warehouse and shop-floor transactions.": "Epicor Kinetic Warehouse – Mobile-first scanning solution to optimize warehouse and shop-floor transactions.",
-    "Automation Studio – Connect applications and automate workflows with low-code/no-code integration.": "Automation Studio – Connect applications and automate workflows with low-code/no-code integration.",
-    "Service Connect – Simplify system integrations and process automation across Epicor solutions.": "Service Connect – Simplify system integrations and process automation across Epicor solutions.",
-    "QuickShip – Optimize shipping operations with real-time carrier integration and tracking.": "QuickShip – Optimize shipping operations with real-time carrier integration and tracking.",
-    "Epicor BarTender – Barcode labeling solution to create, manage, and print labels across warehouses and manufacturing operations.": "Epicor BarTender – Barcode labeling solution to create, manage, and print labels across warehouses and manufacturing operations.",
+    "EpicPay": "EpicPay",
+    "Simplify payroll management and compliance.": "Simplify payroll management and compliance.",
+
+    "MES (Manufacturing Execution)": "MES (Manufacturing Execution)",
+    "Optimize shop-floor operations and production tracking.": "Optimize shop-floor operations and production tracking.",
+
+    "ECM (Enterprise Content Management)": "ECM (Enterprise Content Management)",
+    "Centralize documents and workflows.": "Centralize documents and workflows.",
+
+    "FP&A (Financial Planning & Analysis)": "FP&A (Financial Planning & Analysis)",
+    "Improve budgeting, forecasting, and reporting.": "Improve budgeting, forecasting, and reporting.",
+
+    "IP&O (Inventory Planning & Optimization)": "IP&O (Inventory Planning & Optimization)",
+    "Maximize inventory efficiency and reduce costs.": "Maximize inventory efficiency and reduce costs.",
+
+    "WMS (Warehouse Management System)": "WMS (Warehouse Management System)",
+    "Streamline warehouse operations and logistics.": "Streamline warehouse operations and logistics.",
+
+    "Epicor Data Analytics (Phocas)": "Epicor Data Analytics (Phocas)",
+    "Drive data-driven decisions with advanced analytics and visualizations.": "Drive data-driven decisions with advanced analytics and visualizations.",
+
+    "Epicor eCommerce": "Epicor eCommerce",
+    "Provide a connected, self-service online storefront for manufacturers, distributors, and wholesalers to drive customer loyalty and profitability.": "Provide a connected, self-service online storefront for manufacturers, distributors, and wholesalers to drive customer loyalty and profitability.",
+
+    "Epicor Grow": "Epicor Grow",
+    "Cloud-based business intelligence solution to harness data for better decision-making and operational efficiency.": "Cloud-based business intelligence solution to harness data for better decision-making and operational efficiency.",
+
+    "Epicor Data Discovery": "Epicor Data Discovery",
+    "Visualize and interact with ERP data through intuitive dashboards and charts.": "Visualize and interact with ERP data through intuitive dashboards and charts.",
+
+    "Epicor Spreadsheet Server": "Epicor Spreadsheet Server",
+    "Connect ERP data directly to Excel for real-time reporting, drill-down analysis, and planning.": "Connect ERP data directly to Excel for real-time reporting, drill-down analysis, and planning.",
+
+    "Epicor Kinetic Warehouse": "Epicor Kinetic Warehouse",
+    "Mobile-first scanning solution to optimize warehouse and shop-floor transactions.": "Mobile-first scanning solution to optimize warehouse and shop-floor transactions.",
+
+    "Automation Studio": "Automation Studio",
+    "Connect applications and automate workflows with low-code/no-code integration.": "Connect applications and automate workflows with low-code/no-code integration.",
+
+    "Service Connect": "Service Connect",
+    "Simplify system integrations and process automation across Epicor solutions.": "Simplify system integrations and process automation across Epicor solutions.",
+
+    "QuickShip": "QuickShip",
+    "Optimize shipping operations with real-time carrier integration and tracking.": "Optimize shipping operations with real-time carrier integration and tracking.",
+
+    "Epicor BarTender": "Epicor BarTender",
+    "Barcode labeling solution to create, manage, and print labels across warehouses and manufacturing operations.": "Barcode labeling solution to create, manage, and print labels across warehouses and manufacturing operations.",
+
     "Integrate smart sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.": "Integrate smart sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.",
 
     "Why Choose Epicor Companion Products?": "Why Choose Epicor Companion Products?",
@@ -762,14 +811,29 @@
     "We help organisations across industries transform data into intelligence-driving smarter decisions, greater efficiency, and measurable business impact.": "We help organisations across industries transform data into intelligence-driving smarter decisions, greater efficiency, and measurable business impact.",
 
     "AI/ML Use Cases by Industry": "AI/ML Use Cases by Industry",
-    "Brand Owners & Vertical Retailers – personalised recommendations, dynamic pricing, inventory optimisation, and loss prevention.": "Brand Owners & Vertical Retailers – personalised recommendations, dynamic pricing, inventory optimisation, and loss prevention.",
-    "Retail Industry – customer segmentation, demand forecasting, fraud detection, and real-time analytics to improve in-store and online performance.": "Retail Industry – customer segmentation, demand forecasting, fraud detection, and real-time analytics to improve in-store and online performance.",
-    "Distribution & Supply Chain – route optimisation, warehouse automation, predictive delivery times, and supply chain risk analytics.": "Distribution & Supply Chain – route optimisation, warehouse automation, predictive delivery times, and supply chain risk analytics.",
-    "Discrete Manufacturing – predictive maintenance, computer vision for quality control, production scheduling, and digital twins.": "Discrete Manufacturing – predictive maintenance, computer vision for quality control, production scheduling, and digital twins.",
-    "Automotive Industry – smart manufacturing, connected vehicle analytics, predictive maintenance, and safety monitoring.": "Automotive Industry – smart manufacturing, connected vehicle analytics, predictive maintenance, and safety monitoring.",
-    "Engineering, Procurement & Construction (EPC) – project cost forecasting, risk modelling, resource optimisation, and contract intelligence.": "Engineering, Procurement & Construction (EPC) – project cost forecasting, risk modelling, resource optimisation, and contract intelligence.",
-    "Process Manufacturing – predictive process control, energy optimisation, waste reduction, and safety analytics.": "Process Manufacturing – predictive process control, energy optimisation, waste reduction, and safety analytics.",
-    "Private Equity & Funding-backed Ventures – portfolio performance analytics, risk scoring, market trend prediction, and value creation tracking.": "Private Equity & Funding-backed Ventures – portfolio performance analytics, risk scoring, market trend prediction, and value creation tracking.",
+    "Brand Owners & Vertical Retailers": "Brand Owners & Vertical Retailers",
+    "personalised recommendations, dynamic pricing, inventory optimisation, and loss prevention.": "personalised recommendations, dynamic pricing, inventory optimisation, and loss prevention.",
+
+    "Retail Industry": "Retail Industry",
+    "customer segmentation, demand forecasting, fraud detection, and real-time analytics to improve in-store and online performance.": "customer segmentation, demand forecasting, fraud detection, and real-time analytics to improve in-store and online performance.",
+
+    "Distribution & Supply Chain": "Distribution & Supply Chain",
+    "route optimisation, warehouse automation, predictive delivery times, and supply chain risk analytics.": "route optimisation, warehouse automation, predictive delivery times, and supply chain risk analytics.",
+
+    "Discrete Manufacturing": "Discrete Manufacturing",
+    "predictive maintenance, computer vision for quality control, production scheduling, and digital twins.": "predictive maintenance, computer vision for quality control, production scheduling, and digital twins.",
+
+    "Automotive Industry": "Automotive Industry",
+    "smart manufacturing, connected vehicle analytics, predictive maintenance, and safety monitoring.": "smart manufacturing, connected vehicle analytics, predictive maintenance, and safety monitoring.",
+
+    "Engineering, Procurement & Construction (EPC)": "Engineering, Procurement & Construction (EPC)",
+    "project cost forecasting, risk modelling, resource optimisation, and contract intelligence.": "project cost forecasting, risk modelling, resource optimisation, and contract intelligence.",
+
+    "Process Manufacturing": "Process Manufacturing",
+    "predictive process control, energy optimisation, waste reduction, and safety analytics.": "predictive process control, energy optimisation, waste reduction, and safety analytics.",
+
+    "Private Equity & Funding-backed Ventures": "Private Equity & Funding-backed Ventures",
+    "portfolio performance analytics, risk scoring, market trend prediction, and value creation tracking.": "portfolio performance analytics, risk scoring, market trend prediction, and value creation tracking.",
 
     "Why Choose Us?": "Why Choose Us?",
     "Proven expertise in Google Cloud AI and Azure-based AI implementations.": "Proven expertise in Google Cloud AI and Azure-based AI implementations.",
@@ -1464,7 +1528,7 @@
     "Your efforts will not just be noticed; they will be celebrated.": "Your efforts will not just be noticed; they will be celebrated.",
 
     "Life at RheinBrücke": "Life at RheinBrücke",
-    "Life at RheinBrücke is about more than work. It is about being part of a family that supports, inspires, and grows together.": "Life at RheinBrücke is about more than work. It is about being part of a family that supports, inspires, and grows together.",
+    "Life at RheinBrücke is about more than work, it is about being part of a family that supports, inspires, and grows together. Our culture blends innovation with inclusivity, giving every associate the space to learn, contribute, and thrive.": "Life at RheinBrücke is about more than work, it is about being part of a family that supports, inspires, and grows together. Our culture blends innovation with inclusivity, giving every associate the space to learn, contribute, and thrive.",
     "Why Join RheinBrücke?": "Why Join RheinBrücke?",
     "Work with world-class clients across industries": "Work with world-class clients across industries",
     "Be part of a diverse, global team": "Be part of a diverse, global team",
@@ -2056,8 +2120,10 @@
     "Dedicated commerce architects from day one":
     "Dedicated commerce architects from day one",
 
-    "Let’s modernise your commerce experience - connect with our commercetools experts today.":
-    "Let’s modernise your commerce experience - connect with our commercetools experts today.",
+    "Let’s modernise your commerce experience":
+    "Let’s modernise your commerce experience",
+    "Connect with our commercetools experts today.":
+    "Connect with our commercetools experts today.",
 
 
 
@@ -2391,7 +2457,7 @@
     "Enterprise Architecture Platform as a Service": "Enterprise Architecture Platform as a Service",
     "Implement API-first, composable architectures with scalable infrastructure, integration frameworks, and governance controls.": "Implement API-first, composable architectures with scalable infrastructure, integration frameworks, and governance controls.",
 
-    "Enterprise Software Implementation": "Enterprise Software Implementation",
+    "Enterprise Software Implementation:": "Enterprise Software Implementation:",
     "Deliver end-to-end ERP, CRM, and enterprise platform implementations with agile frameworks for rapid time-to-value and seamless business-as-usual transitions.": "Deliver end-to-end ERP, CRM, and enterprise platform implementations with agile frameworks for rapid time-to-value and seamless business-as-usual transitions.",
 
     "ERP-CRM Integrations & Cloud-Native Solutions": "ERP-CRM Integrations & Cloud-Native Solutions",
@@ -2616,7 +2682,8 @@
     "The RheinBrücke Customer Excellence Offering": "The RheinBrücke Customer Excellence Offering",
     "At RIC, our Customer Excellence program offers premium, tailored support designed to optimize your ERP system’s performance. With a comprehensive suite of services and expert guidance, we ensure long-term success and maximum value for your business.": "At RIC, our Customer Excellence program offers premium, tailored support designed to optimize your ERP system’s performance. With a comprehensive suite of services and expert guidance, we ensure long-term success and maximum value for your business.",
 
-    "Industry Expertise Across 42 Countries - Leverage our deep industry knowledge to optimize business operations globally.": "Industry Expertise Across 42 Countries - Leverage our deep industry knowledge to optimize business operations globally.",
+    "Industry Expertise Across 42 Countries": "Industry Expertise Across 42 Countries",
+    "Leverage our deep industry knowledge to optimize business operations globally.": "Leverage our deep industry knowledge to optimize business operations globally.",
 
     "Omni-Channel Global Support for Fast Resolution": "Omni-Channel Global Support for Fast Resolution",
     "Access a large pool of Epicor-certified experts across multiple support channels, timezones, anytime anywhere.": "Access a large pool of Epicor-certified experts across multiple support channels, timezones, anytime anywhere.",
@@ -2960,11 +3027,11 @@
     "Build the Modern Enterprise Foundation": "Build the Modern Enterprise Foundation",
     "Transformation begins by rethinking and modernising the enterprise core, the platforms, architecture, and integrated systems that drive business operations.": "Transformation begins by rethinking and modernising the enterprise core, the platforms, architecture, and integrated systems that drive business operations.",
     "We help organisations evolve from legacy systems to agile, cloud-native, mobile enabled scalable architecture, enabling faster innovation and operational flexibility. Microservices, API-first, Cloud and Headless or MACH architecture drive agile and scalable transformation.": "We help organisations evolve from legacy systems to agile, cloud-native, mobile enabled scalable architecture, enabling faster innovation and operational flexibility. Microservices, API-first, Cloud and Headless or MACH architecture drive agile and scalable transformation.",
-    "Enterprise Architecture Platform as a Service": "Enterprise Architecture Platform as a Service",
+    "Enterprise Architecture Platform as a Service:": "Enterprise Architecture Platform as a Service:",
     "Implement API-first, composable architectures with scalable infrastructure, integration frameworks, and governance controls.": "Implement API-first, composable architectures with scalable infrastructure, integration frameworks, and governance controls.",
-    "Enterprise Software Implementation": "Enterprise Software Implementation",
+    "Enterprise Software Implementation:": "Enterprise Software Implementation:",
     "Deliver end-to-end ERP, CRM, and enterprise platform implementations with agile frameworks for rapid time-to-value and seamless business-as-usual transitions.": "Deliver end-to-end ERP, CRM, and enterprise platform implementations with agile frameworks for rapid time-to-value and seamless business-as-usual transitions.",
-    "ERP-CRM Integrations & Cloud-Native Solutions": "ERP-CRM Integrations & Cloud-Native Solutions",
+    "ERP-CRM Integrations & Cloud-Native Solutions:": "ERP-CRM Integrations & Cloud-Native Solutions:",
     "Unify business processes with scalable, cloud-native app suites embedded with analytics and automation for operational control and continuous performance refinement.": "Unify business processes with scalable, cloud-native app suites embedded with analytics and automation for operational control and continuous performance refinement.",
     "Turn Data into Strategic Advantage": "Turn Data into Strategic Advantage",
     "Unlock the full potential of enterprise data, consolidating, refining, and transforming it into real-time, actionable intelligence. Operationalise your data estate and AI capabilities to drive faster, smarter decisions": "Unlock the full potential of enterprise data, consolidating, refining, and transforming it into real-time, actionable intelligence. Operationalise your data estate and AI capabilities to drive faster, smarter decisions",
@@ -3296,15 +3363,135 @@
 
     "Industries We Support": "Industries We Support",
     "Why RheinBrücke": "Why RheinBrücke",
-    "A modern SAP partner for modern enterprises.": "A modern SAP partner for modern enterprises."
+    "A modern SAP partner for modern enterprises.": "A modern SAP partner for modern enterprises.",
 
 
 
 
-    
-  
+
+    "SugarCRM Transform Customer Relationships": "SugarCRM Transform Customer Relationships",
+    "Contact Us": "Contact Us",
+    "In today's dynamic business environment, effective Customer Relationship Management (CRM) is essential for businesses aiming to thrive and grow. CRM systems empower organisations to manage customer interactions, streamline processes, and drive revenue through targeted marketing and improved customer service.": "In today's dynamic business environment, effective Customer Relationship Management (CRM) is essential for businesses aiming to thrive and grow. CRM systems empower organisations to manage customer interactions, streamline processes, and drive revenue through targeted marketing and improved customer service.",
+    "Welcome to SugarCRM, where exceptional customer experiences and business growth converge.": "Welcome to SugarCRM, where exceptional customer experiences and business growth converge.",
+    "As a leading provider of CRM software, SugarCRM is committed to helping organisations of all sizes transform their customer relationships and achieve sustainable success.": "As a leading provider of CRM software, SugarCRM is committed to helping organisations of all sizes transform their customer relationships and achieve sustainable success.",
+    "SugarCRM provides a comprehensive suite of tools to manage sales, marketing, and customer support processes.": "SugarCRM provides a comprehensive suite of tools to manage sales, marketing, and customer support processes.",
+    "With its powerful features and customisable options, SugarCRM enables organisations to streamline sales, marketing, and customer service processes, ultimately driving growth and enhancing customer satisfaction.": "With its powerful features and customisable options, SugarCRM enables organisations to streamline sales, marketing, and customer service processes, ultimately driving growth and enhancing customer satisfaction.",
+    "RheinBrücke leverages our extensive enterprise IT implementation and domain expertise, offering our customers a comprehensive solution to streamline their business processes.": "RheinBrücke leverages our extensive enterprise IT implementation and domain expertise, offering our customers a comprehensive solution to streamline their business processes.",
+    "We also have deep Enterprise Integration expertise that enables optimal use of your existing IT investments, while adopting the best in class capabilities of Sugar CRM.": "We also have deep Enterprise Integration expertise that enables optimal use of your existing IT investments, while adopting the best in class capabilities of Sugar CRM.",
+
+    "Why SugarCRM": "Why SugarCRM",
+    "As organisations strive to deliver personalised experiences and gain actionable insights from customer data, the demand for robust CRM platforms continues to grow. Amidst this evolving landscape, SugarCRM stands out as a leading provider, empowering businesses to optimise sales, marketing, and service operations while adapting seamlessly to diverse business needs and scaling for future growth.": "As organisations strive to deliver personalised experiences and gain actionable insights from customer data, the demand for robust CRM platforms continues to grow. Amidst this evolving landscape, SugarCRM stands out as a leading provider, empowering businesses to optimise sales, marketing, and service operations while adapting seamlessly to diverse business needs and scaling for future growth.",
+
+    "Key features of SugarCRM are:": "Key features of SugarCRM are:",
+    "360-Degree Customer View": "360-Degree Customer View",
+    "SugarCRM provides a comprehensive view of each customer, consolidating interactions, transactions, and communications into a single, centralized platform. This holistic view allows your team to understand customer needs better and deliver personalized experiences.": "SugarCRM provides a comprehensive view of each customer, consolidating interactions, transactions, and communications into a single, centralized platform. This holistic view allows your team to understand customer needs better and deliver personalized experiences.",
+    "Marketing Campaign Management": "Marketing Campaign Management",
+    "Plan, execute, and track marketing campaigns seamlessly with SugarCRM. From email marketing to social media integration and analytics, SugarCRM empowers your marketing team to create targeted campaigns that resonate with your audience.": "Plan, execute, and track marketing campaigns seamlessly with SugarCRM. From email marketing to social media integration and analytics, SugarCRM empowers your marketing team to create targeted campaigns that resonate with your audience.",
+    "Sugar as a Platform": "Sugar as a Platform",
+    "SugarCRM is a versatile platform known for its open architecture, allowing extensive customization and integration capabilities to tailor solutions to specific business needs. It supports seamless integration with third-party applications, offers comprehensive features for sales, marketing, and customer service, and ensures data security and compliance, empowering businesses to enhance customer relationships and drive growth.": "SugarCRM is a versatile platform known for its open architecture, allowing extensive customization and integration capabilities to tailor solutions to specific business needs. It supports seamless integration with third-party applications, offers comprehensive features for sales, marketing, and customer service, and ensures data security and compliance, empowering businesses to enhance customer relationships and drive growth.",
+    "Sales Automation": "Sales Automation",
+    "Automate sales processes with SugarCRM’s workflow management and automation tools. From lead generation to opportunity tracking and closing deals, SugarCRM helps optimize your sales pipeline for improved efficiency and faster conversions.": "Automate sales processes with SugarCRM’s workflow management and automation tools. From lead generation to opportunity tracking and closing deals, SugarCRM helps optimize your sales pipeline for improved efficiency and faster conversions.",
+    "Customer Support and Service": "Customer Support and Service",
+    "Enhance customer service with SugarCRM’s service management tools. Track support tickets, manage customer inquiries, and ensure timely resolution of issues, fostering long-term customer loyalty and satisfaction.": "Enhance customer service with SugarCRM’s service management tools. Track support tickets, manage customer inquiries, and ensure timely resolution of issues, fostering long-term customer loyalty and satisfaction.",
+    "Customization and Flexibility": "Customization and Flexibility",
+    "SugarCRM offers extensive customization options to tailor the CRM system to your specific business needs. Customize fields, workflows, and dashboards without extensive coding knowledge, ensuring the CRM aligns perfectly with your operational requirements.": "SugarCRM offers extensive customization options to tailor the CRM system to your specific business needs. Customize fields, workflows, and dashboards without extensive coding knowledge, ensuring the CRM aligns perfectly with your operational requirements.",
+    "Integration Capabilities": "Integration Capabilities",
+    "Integrate SugarCRM with other essential business applications and systems seamlessly. Whether it’s ERP systems, e-commerce platforms, or third-party analytics tools, SugarCRM’s open architecture supports easy integration to streamline data flow and enhance overall business efficiency.": "Integrate SugarCRM with other essential business applications and systems seamlessly. Whether it’s ERP systems, e-commerce platforms, or third-party analytics tools, SugarCRM’s open architecture supports easy integration to streamline data flow and enhance overall business efficiency.",
+
+    "Core Offerings": "Core Offerings",
+    "SugarCRM's core offerings revolve around its comprehensive Customer Relationship Management (CRM) solutions. These offerings are designed to help businesses manage and optimize their interactions with customers across various stages of the customer lifecycle.": "SugarCRM's core offerings revolve around its comprehensive Customer Relationship Management (CRM) solutions. These offerings are designed to help businesses manage and optimize their interactions with customers across various stages of the customer lifecycle.",
+
+    "Sugar Sell": "Sugar Sell",
+    "Sugar Sell is SugarCRM’s core CRM platform tailored primarily for sales teams. It provides tools and features to manage leads, opportunities, accounts, and contacts effectively.": "Sugar Sell is SugarCRM’s core CRM platform tailored primarily for sales teams. It provides tools and features to manage leads, opportunities, accounts, and contacts effectively.",
+    "Pipeline Management": "Pipeline Management",
+    "Workflow automation": "Workflow automation",
+    "Sales Forecasting": "Sales Forecasting",
+    "Reporting/analytics": "Reporting/analytics",
+    "Email Integration": "Email Integration",
+    "Sugar Sell aims to streamline the sales process, improve team collaboration, and ultimately boost sales performance through data-driven insights and efficient workflows.": "Sugar Sell aims to streamline the sales process, improve team collaboration, and ultimately boost sales performance through data-driven insights and efficient workflows.",
+
+    "Sugar Market": "Sugar Market",
+    "Sugar Market is SugarCRM’s marketing automation solution. It allows businesses to automate marketing campaigns, nurture leads, and measure marketing ROI effectively.": "Sugar Market is SugarCRM’s marketing automation solution. It allows businesses to automate marketing campaigns, nurture leads, and measure marketing ROI effectively.",
+    "Email Marketing": "Email Marketing",
+    "Social Media Integration": "Social Media Integration",
+    "Lead Scoring": "Lead Scoring",
+    "Marketing Analytics": "Marketing Analytics",
+    "Campaign Management": "Campaign Management",
+    "Sugar Market helps businesses attract prospects, engage with customers across multiple channels, and drive revenue growth through targeted marketing strategies.": "Sugar Market helps businesses attract prospects, engage with customers across multiple channels, and drive revenue growth through targeted marketing strategies.",
+
+    "Sugar Serve": "Sugar Serve",
+    "Sugar Serve is SugarCRM’s customer service and support solution, focusing on delivering exceptional customer experiences. It enables businesses to manage customer inquiries, support cases, and service requests efficiently.": "Sugar Serve is SugarCRM’s customer service and support solution, focusing on delivering exceptional customer experiences. It enables businesses to manage customer inquiries, support cases, and service requests efficiently.",
+    "Case Management": "Case Management",
+    "Self-Service Portal": "Self-Service Portal",
+    "Knowledge Base Management": "Knowledge Base Management",
+    "Customer Service Analytics": "Customer Service Analytics",
+    "Service Level Agreement (SLA) Tracking": "Service Level Agreement (SLA) Tracking",
+    "Sugar Serve aims to improve customer satisfaction by empowering service teams with the tools they need to resolve issues promptly and deliver personalized support.": "Sugar Serve aims to improve customer satisfaction by empowering service teams with the tools they need to resolve issues promptly and deliver personalized support.",
+
+    "Benefits of SugarCRM": "Benefits of SugarCRM",
+
+    "Scalability": "Scalability",
+    "SugarCRM is scalable to accommodate growing business needs. Whether you’re a small startup or a large enterprise, SugarCRM can scale with your business, adapting to changing requirements and increasing user demands.": "SugarCRM is scalable to accommodate growing business needs. Whether you’re a small startup or a large enterprise, SugarCRM can scale with your business, adapting to changing requirements and increasing user demands.",
+
+    "User-Friendly Interface": "User-Friendly Interface",
+    "With an intuitive and user-friendly interface, SugarCRM ensures quick adoption and minimal training for your team. Users can navigate the platform effortlessly, maximizing productivity and minimizing downtime.": "With an intuitive and user-friendly interface, SugarCRM ensures quick adoption and minimal training for your team. Users can navigate the platform effortlessly, maximizing productivity and minimizing downtime.",
+
+    "Data Security": "Data Security",
+    "Protect sensitive customer data with SugarCRM’s robust security features. From role-based access controls to data encryption and regular security updates, SugarCRM prioritizes data protection to safeguard your business and customer information.": "Protect sensitive customer data with SugarCRM’s robust security features. From role-based access controls to data encryption and regular security updates, SugarCRM prioritizes data protection to safeguard your business and customer information.",
+
+    "Analytics and Reporting": "Analytics and Reporting",
+    "Gain actionable insights with SugarCRM’s advanced analytics and reporting capabilities. Track key performance indicators, measure campaign effectiveness, and identify trends to make informed business decisions and drive growth.": "Gain actionable insights with SugarCRM’s advanced analytics and reporting capabilities. Track key performance indicators, measure campaign effectiveness, and identify trends to make informed business decisions and drive growth.",
+
+    "Customer Experience Focus": "Customer Experience Focus",
+    "By centralizing customer data and automating processes, SugarCRM enhances the overall customer experience. Deliver personalized interactions, respond to inquiries promptly, and build stronger relationships that foster customer loyalty and retention.": "By centralizing customer data and automating processes, SugarCRM enhances the overall customer experience. Deliver personalized interactions, respond to inquiries promptly, and build stronger relationships that foster customer loyalty and retention.",
+
+    "RheinBrücke Advantage": "RheinBrücke Advantage",
+
+    "At RheinBrücke, we prioritize building lasting partnerships with our clients as your CRM solution provider. Our goal is to serve as your trusted advisor and seamlessly integrate into your team. Through collaborative efforts, we aim to fully understand your unique business goals and address any challenges you face.":
+    "At RheinBrücke, we prioritize building lasting partnerships with our clients as your CRM solution provider. Our goal is to serve as your trusted advisor and seamlessly integrate into your team. Through collaborative efforts, we aim to fully understand your unique business goals and address any challenges you face.",
+
+    "Here are the key advantages of choosing us as your CRM solution provider:":
+    "Here are the key advantages of choosing us as your CRM solution provider:",
+
+    "Expertise in Integration Services": "Expertise in Integration Services",
+    "RheinBrücke excels in integrating complex enterprise software solutions across various platforms and systems. With deep technical knowledge and experience, RheinBrücke ensures seamless connectivity and interoperability between software applications, enabling businesses to streamline workflows, enhance data accuracy, and optimize operational efficiency through integrated solutions.":
+    "RheinBrücke excels in integrating complex enterprise software solutions across various platforms and systems. With deep technical knowledge and experience, RheinBrücke ensures seamless connectivity and interoperability between software applications, enabling businesses to streamline workflows, enhance data accuracy, and optimize operational efficiency through integrated solutions.",
+
+    "Customization Capabilities": "Customization Capabilities",
+    "RheinBrücke specialises in customising software solutions to meet specific business requirements and industry needs. Whether adapting CRM functionalities to align with unique business processes or enhancing ERP systems to support industry-specific workflows, RheinBrücke’s customisation capabilities empower businesses to maximise the value of their software investments.":
+    "RheinBrücke specialises in customising software solutions to meet specific business requirements and industry needs. Whether adapting CRM functionalities to align with unique business processes or enhancing ERP systems to support industry-specific workflows, RheinBrücke’s customisation capabilities empower businesses to maximise the value of their software investments.",
+
+    "Industry-Specific Solutions": "Industry-Specific Solutions",
+    "RheinBrücke offers industry-specific solutions to meet the various challenges and requirements of diverse sectors. By combining domain expertise with technological proficiency, RheinBrücke delivers specialised software configurations and enhancements that address specific industry regulations, operational complexities, and customer expectations.":
+    "RheinBrücke offers industry-specific solutions to meet the various challenges and requirements of diverse sectors. By combining domain expertise with technological proficiency, RheinBrücke delivers specialised software configurations and enhancements that address specific industry regulations, operational complexities, and customer expectations.",
+
+    "Strategic Partnerships and Alliances": "Strategic Partnerships and Alliances",
+    "RheinBrücke cultivates strategic partnerships with leading technology providers, enhancing its ability to deliver comprehensive solutions that integrate seamlessly with best-in-class software platforms. Collaborating with industry leaders like Epicor, Microsoft and SAP expanding RheinBrücke’s solution portfolio and enabling businesses to leverage cutting-edge technologies for competitive advantage.":
+    "RheinBrücke cultivates strategic partnerships with leading technology providers, enhancing its ability to deliver comprehensive solutions that integrate seamlessly with best-in-class software platforms. Collaborating with industry leaders like Epicor, Microsoft and SAP expanding RheinBrücke’s solution portfolio and enabling businesses to leverage cutting-edge technologies for competitive advantage.",
+
+    "Commitment to Customer Success": "Commitment to Customer Success",
+    "By adopting a customer-centric approach, RheinBrücke ensures that solutions are aligned with business objectives, deliver measurable results, and exceed expectations. This commitment to customer success fosters long-term partnerships built on trust, transparency, and mutual growth.":
+    "By adopting a customer-centric approach, RheinBrücke ensures that solutions are aligned with business objectives, deliver measurable results, and exceed expectations. This commitment to customer success fosters long-term partnerships built on trust, transparency, and mutual growth.",
+
+    "Contact Us!": "Contact Us!",
+    "Ready to elevate your customer relationships and drive growth with us?": "Ready to elevate your customer relationships and drive growth with us?",
+    "Contact Us!": "Contact Us!",
+    "Contact us today and discover how our powerful CRM solutions can transform your business.": "Contact us today and discover how our powerful CRM solutions can transform your business."
   },
   "German": {
+    "All": "Alle",
+    "Categories": "Kategorien",
+    "Clear Filters": "Filter löschen",
+    "No industries available": "Keine Branchen verfügbar",
+    "Showing": "Anzeige von",
+    "of": "von",
+    "blog": "Blog",
+    "Loading blogs...": "Blogs werden geladen...",
+    "No blogs match your current filters.": "Keine Blogs entsprechen Ihren aktuellen Filtern.",
+    "Clear All Filters": "Alle Filter löschen",
+    "No blogs available yet.": "Noch keine Blogs verfügbar.",
+    "Active Filters:": "Aktive Filter:",
+    "Search": "Suchen",
     "Case Study": "Fallstudie",
     "How an Engineering Procurement Construction Company overcame their challenge by implementing Epicor ERP?": "Wie ein Engineering Procurement Construction Unternehmen seine Herausforderung durch die Implementierung von Epicor ERP meisterte?",
     "What We Do to Driver Enterprise Transformation": "Was wir tun, um die Unternehmenstransformation voranzutreiben",
@@ -3312,6 +3499,7 @@
     "Business Model Transformation": "Transformation des Geschäftsmodells",
     "We help businesses rethink their operating models, uncover new revenue streams, and deliver innovative services that drive sustainable growth.": "Wir helfen Unternehmen, ihre Betriebsmodelle zu überdenken, neue Einnahmequellen zu erschließen und innovative Dienstleistungen zu erbringen, die nachhaltiges Wachstum fördern.",
     "Read more": "Weiterlesen",
+    "Read Less": "Wenigerlesen",
     "ERP Modernisation": "ERP-Modernisierung",
     "We modernise legacy ERP systems to unlock agility, reduce complexity, supporting faster decisions and scalable operations.": "Wir modernisieren veraltete ERP-Systeme, um Agilität freizusetzen, die Komplexität zu reduzieren und schnellere Entscheidungen und skalierbare Abläufe zu unterstützen.",
     "Data & Analytics Strategy": "Daten- und Analysestrategie",
@@ -3535,8 +3723,8 @@
     "RheinBrücke brings over a decade of proven expertise in Epicor implementation, migration, rollouts, and support across 45+ countries, with a strong focus on the EMEA region.":
     "bringt RheinBrücke über ein Jahrzehnt an Erfahrung in Implementierung, Migration, Rollout und Support von Epicor-Lösungen in über 45 Ländern mit – mit besonderem Fokus auf der EMEA-Region.",
 
-    "Epicor ERP empowers your business with agile, industry-tailored solutions that streamline operations, reduce costs, and enhance performance.":
-    "Epicor ERP unterstützt Unternehmen mit agilen, branchenspezifischen Lösungen zur Optimierung von Abläufen, Kostensenkung und Leistungssteigerung.",
+    "Epicor ERP empowers your business with agile, industry-tailored solutions that streamline operations, reduce costs, and enhance performance. At RheinBrücke, we combine the power of Epicor Kinetic with our SCALE methodology, delivering industry-wide experience, deep domain knowledge across manufacturing, distribution, construction, retail, and more, and a commitment to timely, high-quality project delivery.":
+    "Epicor ERP unterstützt Unternehmen mit agilen, branchenspezifischen Lösungen zur Optimierung von Abläufen, Kostensenkung und Leistungssteigerung. Durch die Kombination von Epicor Kinetic mit unserer bewährten SCALE-Methodik liefern wir fundiertes Branchenwissen in Fertigung, Distribution, Bauwesen, Handel und mehr – mit dem Anspruch, Projekte termingerecht, qualitativ hochwertig und ergebnisorientiert umzusetzen.",
 
     "Our extensive Epicor presence in the EMEA region enables us to support businesses in achieving operational excellence at scale.":
     "Unsere starke Epicor-Präsenz in der EMEA-Region ermöglicht es uns, Unternehmen bei der Erreichung operativer Exzellenz im großen Maßstab zu unterstützen.",
@@ -3612,15 +3800,21 @@
 
     "Epicor Kinetic (Epicor ERP): Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production.":
     "Epicor Kinetic (Epicor ERP): Next-Gen ERP zur Automatisierung von Workflows, Verbesserung der Supply-Chain-Transparenz und Produktionsoptimierung.",
+    "Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production":
+    "Next-Gen ERP zur Automatisierung von Workflows, Verbesserung der Supply-Chain-Transparenz und Produktionsoptimierung.",
 
     "Epicor iScala: Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade.":
     "Epicor iScala: Flexibles ERP für mittelständische Unternehmen in regulierten Branchen wie Pharma, Hotellerie und internationalem Handel.",
 
-    "Epicor Companion Products: Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more.":
-    "Erweiterte Epicor-Lösungen: Integrierte ERP-Erweiterungen für Payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics und mehr.",
+    "Epicor Companion Products:":
+    "Erweiterte Epicor-Lösungen:",
+ "Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more":
+    "Integrierte ERP-Erweiterungen für Payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics und mehr",
 
-    "Industry Verticals Solutions for Epicor ERP: Manufacturing, Oil & Gas, EPC & Construction, Architecture and Interior Design, Retail, and Distribution.":
-    "Branchenspezifische Lösungen für Epicor ERP: Fertigung, Öl & Gas, EPC & Bauwesen, Architektur & Innenausbau, Handel und Distribution.",
+    "Industry Verticals Solutions for Epicor ERP:":
+    "Branchenspezifische Lösungen für Epicor ERP:",
+    "Manufacturing, Oil & Gas, EPC & Construction, Architecture and Interior Design, Retail, and Distribution.":
+    "Fertigung, Öl & Gas, EPC & Bauwesen, Architektur & Innenausbau, Handel und Distribution.",
 
 "Our Approach":
     "Unser Ansatz",
@@ -3776,28 +3970,28 @@
     "Main Features": "Hauptfunktionen",
       "Recruitment and Onboarding": "Recruiting & Onboarding",
       "Make better hiring decisions through structured and configurable workflows.": "Treffen Sie fundierte Einstellungsentscheidungen dank strukturierter, konfigurierbarer Workflows.",
-      "Probation": "Probezeitmanagement",
+      "Probation": "Probezeit management",
       "Automated probation evaluations with workflows.": "Automatisierte Bewertungen mit genehmigten Workflows.",
-      "Time and Attendance": "Zeit- und Anwesenheitsmanagement",
+      "Time and Attendance": "Zeit- und Anwesenheits management",
       "Capture daily attendance and work times and process them to reflect in the Employee dashboard.": "Erfassen Sie Arbeitszeiten und Abwesenheiten – transparent im Mitarbeiter-Dashboard.",
       "Performance Management": "Performance Management",
       "Inspire your team to reach their full potential, sync their efforts with company goals, and foster a thriving, positive workplace .": "Motivieren Sie Ihr Team, Ziele zu erreichen, Leistungen zu steigern und eine positive Unternehmenskultur zu fördern.",
-      "Training Management": "Trainingsmanagement",
+      "Training Management": "Trainings management",
       "Ensure employees have necessary skills and knowledge to perform their jobs effectively and efficiently.": "Sorgen Sie dafür, dass Ihre Mitarbeitenden über die richtigen Kenntnisse und Fähigkeiten verfügen.",
-      "Shift Roster": "Schichtplanung",
+      "Shift Roster": "Schicht planung",
       "Operate 24/7 with round-the-clock business support.": "24/7-Betrieb durch flexible, planbare Schichtmodelle.",
-      "Leadership Development": "Führungskräfteentwicklung",
+      "Leadership Development": "Führungskräfteen twicklung",
       "Identify and nurture employees for leadership roles in the organisation.": "Identifizieren und fördern Sie Talente für zukünftige Führungsaufgaben.",
-      "Employee Engagement Surveys": "Mitarbeiterbefragungen",
+      "Employee Engagement Surveys": "Mitarbeiterbe fragungen",
       "Manage organisational engagement effectively through survey.": "Messen Sie Engagement und Zufriedenheit gezielt über integrierte Umfragetools.",
       "Exit Initiation & Approval Process": "Offboarding & Exit-Prozesse",
       "Gather feedback through exit interview and identify areas for improvement and help with the final settlement.": "Erfassen Sie Feedback, leiten Sie Erkenntnisse ab und unterstützen Sie die reibungslose Abwicklung.",
-      "Employee Self-Service": "Mitarbeiter-Self-Service (ESS)",
+      "Employee Self-Service": "Mitarbeiter- Self- Service (ESS)",
       "Employee Information Management": "Persönliche Datenverwaltung",
-      "Training & Development": "Schulungs- und Weiterbildungsanträge",
+      "Training & Development": "Schulungs- und Weiter bildungsanträge",
       "Travel Requests": "Reiseanträge",
       "Leave Management": "Urlaubsverwaltung",
-      "Work Permit Process": "Arbeitserlaubnisprozesse",
+      "Work Permit Process": "Arbeitser laubnis prozesse",
       "Timesheets & Attendance": "Zeiterfassung & Anwesenheit",
       "Loan Management": "Kredit- und Vorschussverwaltung",
       "Miscellaneous Reimbursement Request": "Spesen- und Kostenerstattung",
@@ -3807,7 +4001,7 @@
       "Additional Features of CorusHR": "Zusätzliche Funktionen von CorusHR",
       "Seamless Integration": "Nahtlose Integration",
       "The seamless integration of CorusHR with Epicor ERP ensures that these two systems operate together in real-time, enabling effective communication, and functioning as a unified platform without any disruptions or complications.": "Die direkte Integration mit Epicor ERP sorgt für einen durchgängigen Informationsfluss in Echtzeit – ohne Systembrüche oder Datenverluste.",
-      "Effective Data Management": "Effizientes Datenmanagement",
+      "Effective Data Management": "Effizientes Daten management",
       "Updating and retrieval of employee data, including personal information, employment history, performance evaluations, and benefits enrolment, reducing data loss and errors and improved data integrity.": "Aktualisieren und verwalten Sie Mitarbeiterdaten zentral – sicher, konsistent und fehlerfrei.",
       "Reporting and Analytics": "Reporting & Analytics",
       "Get insights on regular and overtime hours, transaction, performance assessment, requirements fulfilment, and exit process enabling informed decision-making and planning.": "Gewinnen Sie Einblicke in Arbeitszeiten, Leistungen, Personalbewegungen und Austrittsanalysen – für fundierte Entscheidungen und bessere Planung.",
@@ -3903,7 +4097,7 @@
 
 
     "Epicor iScala": "Epicor iScala",
-    "Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade.": "Flexibles ERP für mittelständische Unternehmen in regulierten Branchen wie Pharma, Hotellerie und internationalem Handel.",
+    "Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade": "Flexibles ERP für mittelständische Unternehmen in regulierten Branchen wie Pharma, Hotellerie und internationalem Handel",
     "Epicor iScala helps mid-sized businesses manage complex operations with a flexible, configurable ERP platform. It ensures compliance, simplifies financial and operational management, and supports growth across multiple geographies.": "Epicor iScala unterstützt mittelständische Unternehmen dabei, komplexe Geschäftsprozesse effizient zu steuern – mit einer flexiblen, konfigurierbaren ERP-Plattform. Die Lösung vereinfacht Finanz- und Betriebsabläufe, stellt Compliance sicher und fördert Wachstum über verschiedene Standorte und Regionen hinweg.",
 
     "Our Epicor iScala Capabilities": "Unsere Epicor iScala Funktionen",
@@ -3928,27 +4122,60 @@
 
 
     "Epicor Companion Products": "Epicor ERP-Erweiterungen",
-    "Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more.": "Erweitern Sie Ihr ERP mit integrierten Business-Lösungen für Payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics und mehr.",
+    "Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more": "Erweitern Sie Ihr ERP mit integrierten Business-Lösungen für Payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics und mehr",
     "Epicor Companion Products enhance your core ERP system, enabling end-to-end operational control and insights. They are designed to integrate seamlessly with Epicor ERP for complete business management.": "Die Epicor Companion Products erweitern Ihr Kern-ERP um durchgängige Steuerungs-, Automatisierungs- und Analysefunktionen und lassen sich nahtlos in Epicor ERP integrieren.",
 
     "Our Companion Products Capabilities": "Unsere ERP-Erweiterungen im Überblick",
-    "EpicPay: Simplify payroll management and compliance.": "EpicPay – Vereinfachte Lohn- und Gehaltsabrechnung mit automatisierter Compliance.",
-    "MES (Manufacturing Execution): Optimize shop-floor operations and production tracking.": "MES (Manufacturing Execution System) – Optimieren Sie Fertigungsprozesse und Produktionsnachverfolgung.",
-    "ECM (Enterprise Content Management): Centralize documents and workflows.": "ECM (Enterprise Content Management) – Zentrale Verwaltung von Dokumenten, Inhalten und Workflows.",
-    "FP&A (Financial Planning & Analysis): Improve budgeting, forecasting, and reporting.": "FP&A (Financial Planning & Analysis) – Verbesserte Budgetierung, Prognosen und Finanzberichterstattung.",
-    "IP&O (Inventory Planning & Optimization): Maximize inventory efficiency and reduce costs.": "IP&O (Inventory Planning & Optimization) – Effiziente Bestandsplanung zur Kostenreduktion.",
-    "WMS (Warehouse Management System): Streamline warehouse operations and logistics.": "WMS (Warehouse Management System) – Schlankere Lagerlogistik und optimierte Materialflüsse.",
-    "Epicor Data Analytics (Phocas) – Drive data-driven decisions with advanced analytics and visualizations.": "Epicor Data Analytics (Phocas) – Fundierte Entscheidungen durch leistungsstarke Analysen und Visualisierungen.",
-    "Epicor eCommerce – Provide a connected, self-service online storefront for manufacturers, distributors, and wholesalers to drive customer loyalty and profitability.": "Epicor eCommerce – Durchgängiges Online-Erlebnis für Hersteller, Distributoren und Großhändler.",
-    "Epicor Grow – Cloud-based business intelligence solution to harness data for better decision-making and operational efficiency.": "Epicor Grow – Cloudbasierte Business-Intelligence-Lösung für datengestützte Entscheidungen.",
-    "Epicor Data Discovery – Visualize and interact with ERP data through intuitive dashboards and charts.": "Epicor Data Discovery – Interaktive Dashboards und Visualisierung von ERP-Daten.",
-    "Epicor Spreadsheet Server – Connect ERP data directly to Excel for real-time reporting, drill-down analysis, and planning.": "Epicor Spreadsheet Server – Direkte ERP-Datenintegration in Excel für Echtzeitberichte und Analysen.",
-    "Epicor Kinetic Warehouse – Mobile-first scanning solution to optimize warehouse and shop-floor transactions.": "Epicor Kinetic Warehouse – Mobile-First-Lösung für effiziente Scan- und Lagerprozesse.",
-    "Automation Studio – Connect applications and automate workflows with low-code/no-code integration.": "Automation Studio – Anwendungen verbinden und Workflows mit Low-Code/No-Code automatisieren.",
-    "Service Connect – Simplify system integrations and process automation across Epicor solutions.": "Service Connect – Vereinfachte Systemintegration und Prozessautomatisierung.",
-    "QuickShip – Optimize shipping operations with real-time carrier integration and tracking.": "QuickShip – Versandoptimierung mit Echtzeit-Carrier-Integration und Tracking.",
-    "Epicor BarTender – Barcode labeling solution to create, manage, and print labels across warehouses and manufacturing operations.": "Epicor BarTender – Intelligente Barcode-Lösung für Etikettierung in Lager und Produktion.",
+    "EpicPay": "EpicPay",
+    "Simplify payroll management and compliance.": "Vereinfachte Lohn- und Gehaltsabrechnung mit automatisierter Compliance.",
+
+    "MES (Manufacturing Execution)": "MES (Manufacturing Execution System)",
+    "Optimize shop-floor operations and production tracking.": "Optimieren Sie Fertigungsprozesse und Produktionsnachverfolgung.",
+
+    "ECM (Enterprise Content Management)": "ECM (Enterprise Content Management)",
+    "Centralize documents and workflows.": "Zentrale Verwaltung von Dokumenten, Inhalten und Workflows.",
+
+    "FP&A (Financial Planning & Analysis)": "FP&A (Financial Planning & Analysis)",
+    "Improve budgeting, forecasting, and reporting.": "Verbesserte Budgetierung, Prognosen und Finanzberichterstattung.",
+
+    "IP&O (Inventory Planning & Optimization)": "IP&O (Inventory Planning & Optimization)",
+    "Maximize inventory efficiency and reduce costs.": "Effiziente Bestandsplanung zur Kostenreduktion.",
+
+    "WMS (Warehouse Management System)": "WMS (Warehouse Management System)",
+    "Streamline warehouse operations and logistics.": "Schlankere Lagerlogistik und optimierte Materialflüsse.",
+
+    "Epicor Data Analytics (Phocas)": "Epicor Data Analytics (Phocas)",
+    "Drive data-driven decisions with advanced analytics and visualizations.": "Fundierte Entscheidungen durch leistungsstarke Analysen und Visualisierungen.",
+
+    "Epicor eCommerce": "Epicor eCommerce",
+    "Provide a connected, self-service online storefront for manufacturers, distributors, and wholesalers to drive customer loyalty and profitability.": "Durchgängiges Online-Erlebnis für Hersteller, Distributoren und Großhändler.",
+
+    "Epicor Grow": "Epicor Grow",
+    "Cloud-based business intelligence solution to harness data for better decision-making and operational efficiency.": "Cloudbasierte Business-Intelligence-Lösung für datengestützte Entscheidungen.",
+
+    "Epicor Data Discovery": "Epicor Data Discovery",
+    "Visualize and interact with ERP data through intuitive dashboards and charts.": "Interaktive Dashboards und Visualisierung von ERP-Daten.",
+
+    "Epicor Spreadsheet Server": "Epicor Spreadsheet Server",
+    "Connect ERP data directly to Excel for real-time reporting, drill-down analysis, and planning.": "Direkte ERP-Datenintegration in Excel für Echtzeitberichte und Analysen.",
+
+    "Epicor Kinetic Warehouse": "Epicor Kinetic Warehouse",
+    "Mobile-first scanning solution to optimize warehouse and shop-floor transactions.": "Mobile-First-Lösung für effiziente Scan- und Lagerprozesse.",
+
+    "Automation Studio": "Automation Studio",
+    "Connect applications and automate workflows with low-code/no-code integration.": "Anwendungen verbinden und Workflows mit Low-Code/No-Code automatisieren.",
+
+    "Service Connect": "Service Connect",
+    "Simplify system integrations and process automation across Epicor solutions.": "Vereinfachte Systemintegration und Prozessautomatisierung.",
+
+    "QuickShip": "QuickShip",
+    "Optimize shipping operations with real-time carrier integration and tracking.": "Versandoptimierung mit Echtzeit-Carrier-Integration und Tracking.",
+
+    "Epicor BarTender": "Epicor BarTender",
+    "Barcode labeling solution to create, manage, and print labels across warehouses and manufacturing operations.": "Intelligente Barcode-Lösung für Etikettierung in Lager und Produktion.",
+
     "Integrate smart sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.": "IoT-Integration – Smarte Sensoren für Echtzeitdaten, vorausschauende Wartung und Prozessoptimierung.",
+  
 
     "Why Choose Epicor Companion Products?": "Ihre Vorteile mit den Epicor ERP-Erweiterungen",
     "Seamless integration with Epicor ERP for a unified platform.": "Nahtlose Integration – Perfekt abgestimmt auf Epicor ERP.",
@@ -4073,14 +4300,29 @@
     "We help organisations across industries transform data into intelligence-driving smarter decisions, greater efficiency, and measurable business impact.": "Wir helfen Unternehmen in verschiedenen Branchen, Daten in Wissen zu verwandeln – für intelligentere Entscheidungen, höhere Effizienz und messbaren Geschäftserfolg.",
 
     "AI/ML Use Cases by Industry": "AI/ML-Anwendungsfälle nach Branche",
-    "Brand Owners & Vertical Retailers – personalised recommendations, dynamic pricing, inventory optimisation, and loss prevention.": "Marken und vertikale Einzelhändler – Personalisierte Empfehlungen, dynamische Preisgestaltung, Bestandsoptimierung und Verlustprävention.",
-    "Retail Industry – customer segmentation, demand forecasting, fraud detection, and real-time analytics to improve in-store and online performance.": "Einzelhandel – Kundensegmentierung, Nachfrageprognosen, Betrugserkennung und Echtzeit-Analysen zur Verbesserung der Performance in Store und Online.",
-    "Distribution & Supply Chain – route optimisation, warehouse automation, predictive delivery times, and supply chain risk analytics.": "Distribution & Supply Chain – Routenoptimierung, Lagerautomatisierung, vorausschauende Lieferzeiten und Risikoanalysen in der Lieferkette.",
-    "Discrete Manufacturing – predictive maintenance, computer vision for quality control, production scheduling, and digital twins.": "Diskrete Fertigung – Predictive Maintenance, Computer Vision für Qualitätskontrolle, Produktionsplanung und digitale Zwillinge.",
-    "Automotive Industry – smart manufacturing, connected vehicle analytics, predictive maintenance, and safety monitoring.": "Automobilindustrie – Smart Manufacturing, vernetzte Fahrzeuganalysen, vorausschauende Wartung und Sicherheitsüberwachung.",
-    "Engineering, Procurement & Construction (EPC) – project cost forecasting, risk modelling, resource optimisation, and contract intelligence.": "Engineering, Procurement & Construction (EPC) – Projektkostenprognosen, Risikomodellierung, Ressourcenoptimierung und Vertragsanalyse.",
-    "Process Manufacturing – predictive process control, energy optimisation, waste reduction, and safety analytics.": "Prozessfertigung – Vorausschauende Prozesssteuerung, Energieoptimierung, Abfallreduktion und Sicherheitsanalysen.",
-    "Private Equity & Funding-backed Ventures – portfolio performance analytics, risk scoring, market trend prediction, and value creation tracking.": "Private Equity & Venture Investments – Portfolio-Performance-Analysen, Risikobewertung, Markttrendprognosen und Wertentwicklungstracking.",
+    "Brand Owners & Vertical Retailers": "Marken und vertikale Einzelhändler",
+    "personalised recommendations, dynamic pricing, inventory optimisation, and loss prevention.": "Personalisierte Empfehlungen, dynamische Preisgestaltung, Bestandsoptimierung und Verlustprävention.",
+
+    "Retail Industry": "Einzelhandel",
+    "customer segmentation, demand forecasting, fraud detection, and real-time analytics to improve in-store and online performance.": "Kundensegmentierung, Nachfrageprognosen, Betrugserkennung und Echtzeit-Analysen zur Verbesserung der Performance in Store und Online.",
+
+    "Distribution & Supply Chain": "Distribution & Supply Chain",
+    "Route optimisation, warehouse automation, predictive delivery times, and supply chain risk analytics.": "Routen optimierung, Lagerautomatisierung, vorausschauende Lieferzeiten und Risikoanalysen in der Lieferkette.",
+
+    "Discrete Manufacturing": "Diskrete Fertigung",
+    "Predictive maintenance, computer vision for quality control, production scheduling, and digital twins.": "Predictive Maintenance, Computer Vision für Qualitätskontrolle, Produktionsplanung und digitale Zwillinge.",
+
+    "Automotive Industry": "Automobilindustrie",
+    "Smart manufacturing, connected vehicle analytics, predictive maintenance, and safety monitoring.": "Smart Manufacturing, vernetzte Fahrzeuganalysen, vorausschauende Wartung und Sicherheitsüberwachung.",
+
+    "Engineering, Procurement & Construction (EPC)": "Engineering, Procurement & Construction (EPC)",
+    "Project cost forecasting, risk modelling, resource optimisation, and contract intelligence.": "Projektkostenprognosen, Risikomodellierung, Ressourcenoptimierung und Vertragsanalyse.",
+
+    "Process Manufacturing": "Prozessfertigung",
+    "Predictive process control, energy optimisation, waste reduction, and safety analytics.": "Vorausschauende Prozesssteuerung, Energieoptimierung, Abfallreduktion und Sicherheitsanalysen.",
+
+    "Private Equity & Funding-backed Ventures": "Private Equity & Venture Investments",
+    "Portfolio performance analytics, risk scoring, market trend prediction, and value creation tracking.": "Portfolio-Performance-Analysen, Risikobewertung, Markttrendprognosen und Wertentwicklungstracking.",
 
     "Why Choose Us?": "Warum wir?",
     "Proven expertise in Google Cloud AI and Azure-based AI implementations.": "Nachweisliche Expertise in Google Cloud AI und Azure-basierten KI-Implementierungen",
@@ -4750,11 +4992,11 @@
     "If you are ready to start your journey, we are ready to walk with you.": "Wenn du bereit bist, deine Reise zu starten – wir begleiten dich auf deinem Weg.",
 
     "Experience Speaks: Lateral Hiring": "Erfahrung zählt: Berufserfahrene bei RheinBrücke",
-    "Bring your expertise, and we’ll help you take it further. As an experienced professional at RheinBrücke, you will:": "Bring dein Know-how ein – wir helfen dir, es weiterzuentwickeln.",
+    "Bring your expertise, and we’ll help you take it further. As an experienced professional at RheinBrücke, you will:": "Bring dein Know-how ein – wir helfen dir, es weiterzuentwickeln.Als erfahrene Fachkraft bei RheinBrücke kannst du:",
     "Lead challenging projects with global impact": "Anspruchsvolle Projekte mit globaler Wirkung leiten",
     "Work alongside talented peers in a collaborative environment": "Mit talentierten Kolleg:innen in einem kollaborativen Umfeld arbeiten",
     "Shape business outcomes while growing your career": "Geschäftsergebnisse aktiv mitgestalten und gleichzeitig deine Karriere ausbauen",
-    "Your experience matters and at RheinBrücke, it creates lasting impact.": "Deine Erfahrung zählt – und bei RheinBrücke hinterlässt sie Wirkung.",
+    "Your experience matters and at RheinBrücke, it creates lasting impact.": "Deine Erfahrung zählt - und bei RheinBrücke hinterlässt sie Wirkung.",
 
     "Return to Work: Restart with Confidence": "Zurück ins Berufsleben: Neustart mit Zuversicht",
     "We believe a career break should never be a barrier. Our Return-to-Work program supports professionals re-entering the workforce with:": "Eine Karrierepause ist kein Hindernis. Unser Return-to-Work-Programm unterstützt dich beim Wiedereinstieg mit:",
@@ -4770,8 +5012,8 @@
     "Global client appreciation": "Wertschätzung durch unsere globalen Kund:innen",
     "Your efforts will not just be noticed; they will be celebrated.": "Dein Einsatz wird nicht nur gesehen – er wird gefeiert.",
 
-    "Life at RheinBrücke": "Leben bei RheinBrücke",
-    "Life at RheinBrücke is about more than work. It is about being part of a family that supports, inspires, and grows together.": "Leben bei RheinBrücke bedeutet mehr als Arbeit. Es geht darum, Teil einer Gemeinschaft zu sein, die sich gegenseitig unterstützt, inspiriert und gemeinsam wächst.",
+    "Life at RIC": "Leben bei RIC",
+    "Life at RheinBrücke is about more than work, it is about being part of a family that supports, inspires, and grows together. Our culture blends innovation with inclusivity, giving every associate the space to learn, contribute, and thrive.": "Leben bei RheinBrücke bedeutet mehr als Arbeit. Es geht darum, Teil einer Gemeinschaft zu sein, die sich gegenseitig unterstützt, inspiriert und gemeinsam wächst. Unsere Kultur verbindet Innovation mit Inklusion – und gibt jedem Menschen den Raum, zu lernen, beizutragen und zu wachsen.",
     "Why Join RheinBrücke?": "Warum RheinBrücke?",
     "Work with world-class clients across industries": "Arbeite mit führenden Unternehmen weltweit",
     "Be part of a diverse, global team": "Werde Teil eines vielfältigen, internationalen Teams",
@@ -5392,8 +5634,10 @@
     "Dedicated commerce architects from day one":
     "Dedizierte Commerce-Architekten von Tag eins an Ihrer Seite",
 
-    "Let’s modernise your commerce experience - connect with our commercetools experts today.":
-    "Modernisieren Sie Ihr Commerce-Erlebnis – sprechen Sie noch heute mit unseren Commercetools-Experten.",
+    "Let’s modernise your commerce experience":
+    "Modernisieren Sie Ihr Commerce-Erlebnis",
+    "Connect with our commercetools experts today.":
+    "Sprechen Sie noch heute mit unseren Commercetools-Experten.",
 
 
 
@@ -5493,8 +5737,8 @@
 
     "Our Approach": "Unser Ansatz",
     "We align Microsoft Technologies with your business objectives using RheinBrücke’s Analyse–Integrate–Transform (AIT) methodology:": "Wir verbinden Microsoft-Technologien gezielt mit Ihren Unternehmenszielen – basierend auf der Analyse–Integrate–Transform (AIT)-Methodik von RheinBrücke:",
-    "Assess technology challenges and system gaps": "Analyse von Systemen und Herausforderungen",
-    "Configure Microsoft solutions to industry-specific requirements": "Konfiguration branchenspezifischer Microsoft-Lösungen",
+    "Assess technology challenges and system gaps": "Analyse von Systemen und Heraus forderungen",
+    "Configure Microsoft solutions to industry-specific requirements": "Konfiguration branchen spezifischer Microsoft- Lösungen",
     "Integrate with existing applications for seamless workflows": "Nahtlose Integration in bestehende Anwendungen",
     "Automate manual processes for efficiency": "Automatisierung manueller Prozesse",
     "Deliver real-time data insights for smarter decisions": "Bereitstellung von Echtzeitdaten für bessere Entscheidungen",
@@ -5566,7 +5810,7 @@
     "Commercetools": "Commercetools",
     "A headless commerce platform built on MACH principles, delivering speed, flexibility, and personalisation.": "Headless-Commerce-Plattform auf MACH-Prinzipien für maximale Geschwindigkeit, Flexibilität und Personalisierung",
     "Algolia": "Algolia",
-    "advanced AI-powered search and discovery, delivering lightning-fast, personalised results.": "KI-gestützte Suche und Discovery für extrem schnelle, personalisierte Ergebnisse",
+    "Advanced AI-powered search and discovery, delivering lightning-fast, personalised results.": "KI-gestützte Suche und Discovery für extrem schnelle, personalisierte Ergebnisse",
     "Contentstack": "Contentstack",
     "An enterprise-grade headless CMS for flexible, scalable, and omnichannel content delivery.": "Enterprise-taugliches Headless CMS für flexible, skalierbare und kanalübergreifende Content-Ausspielung",
     "Amplience": "Amplience",
@@ -5627,7 +5871,7 @@
     "Enable category-specific sourcing strategies and supplier segmentation.": "Kategoriespezifische Sourcing-Strategien und Lieferantensegmentierung ermöglichen.",
     "Analyse category performance and identify consolidation or optimisation opportunities.": "Kategorienleistung analysieren und Konsolidierungs- oder Optimierungspotenziale identifizieren.",
 
-    "Supplier Relationship Management": "Supplier Relationship Management",
+    "Supplier Relationship Management": "Lieferanten management (SRM)",
     "Manage the supplier lifecycle with configurable onboarding, compliance, and performance.": "Lieferantenlebenszyklus verwalten – mit konfigurierbarem Onboarding, Compliance und Performance.",
     "Maintain a complete Supplier 360° view with scorecards, audits, KPIs, and partner-configured fields.": "Vollständige 360°-Sicht auf Lieferanten mit Scorecards, Audits, KPIs und partnerdefinierten Feldern.",
     "Manage controlled supplier updates & document setup and secure editing rights for buyers & vendor masters.": "Kontrollierte Lieferantenaktualisierungen, Dokumentenmanagement sowie gesicherte Bearbeitungsrechte für Einkäufer und Stammdaten.",
@@ -5730,13 +5974,13 @@
     "Transformation begins by rethinking and modernising the enterprise core, the platforms, architecture, and integrated systems that drive business operations.": "Transformation beginnt mit der Modernisierung des Kernunternehmens – der Plattformen, Architekturen und integrierten Systeme, die Ihre Geschäftsabläufe antreiben.",
     "We help organisations evolve from legacy systems to agile, cloud-native, mobile enabled scalable architecture, enabling faster innovation and operational flexibility. Microservices, API-first, Cloud and Headless or MACH architecture drive agile and scalable transformation.": "Wir begleiten Organisationen auf dem Weg von Legacy-Systemen zu agilen, cloud-nativen und mobilfähigen Architekturen, die schnelle Innovation und operative Flexibilität ermöglichen. Microservices, API-first-Ansätze sowie Cloud- und MACH-Architekturen treiben agile und skalierbare Transformation voran.",
 
-    "Enterprise Architecture Platform as a Service": "Enterprise Architecture Platform as a Service",
+    "Enterprise Architecture Platform as a Service:": "Enterprise Architecture Platform as a Service:",
     "Implement API-first, composable architectures with scalable infrastructure, integration frameworks, and governance controls.": "API-first- und modulare Architekturen mit skalierbarer Infrastruktur, Integrationsframeworks und Governance umsetzen.",
 
-    "Enterprise Software Implementation": "Enterprise-Software-Implementierung",
+    "Enterprise Software Implementation:": "Enterprise-Software-Implementierung:",
     "Deliver end-to-end ERP, CRM, and enterprise platform implementations with agile frameworks for rapid time-to-value and seamless business-as-usual transitions.": "End-to-End-Einführung von ERP, CRM und Unternehmensplattformen mit agilen Methoden für schnelle Ergebnisse und reibungslose Übergänge.",
 
-    "ERP-CRM Integrations & Cloud-Native Solutions": "ERP-CRM-Integration & Cloud-native Lösungen",
+    "ERP-CRM Integrations & Cloud-Native Solutions:": "ERP-CRM-Integration & Cloud-native Lösungen:",
     "Unify business processes with scalable, cloud-native app suites embedded with analytics and automation for operational control and continuous performance refinement.": "Einheitliche Geschäftsprozesse durch skalierbare, cloud-native Applikationen mit Analytics und Automatisierung für operative Kontrolle und kontinuierliche Performance-Optimierung.",
 
     "Turn Data into Strategic Advantage": "Daten in strategischen Vorteil verwandeln",
@@ -5957,7 +6201,8 @@
     "The RheinBrücke Customer Excellence Offering": "Das RheinBrücke Customer Excellence-Angebot",
     "At RIC, our Customer Excellence program offers premium, tailored support designed to optimize your ERP system’s performance. With a comprehensive suite of services and expert guidance, we ensure long-term success and maximum value for your business.": "Bei RIC bietet unser Customer Excellence-Programm erstklassigen, maßgeschneiderten Support zur Optimierung der Leistung Ihres ERP-Systems. Mit einem umfassenden Serviceangebot und fachkundiger Beratung sorgen wir für langfristigen Erfolg und maximalen Wert für Ihr Unternehmen.",
 
-    "Industry Expertise Across 42 Countries - Leverage our deep industry knowledge to optimize business operations globally.": "Branchenexpertise in 42 Ländern – Nutzen Sie unser fundiertes Branchenwissen, um Ihre Geschäftsabläufe weltweit zu optimieren.",
+    "Industry Expertise Across 42 Countries": "Nutzen Sie unser fundiertes Branchenwissen, um Ihre Geschäftsabläufe weltweit zu optimieren.",
+    "Leverage our deep industry knowledge to optimize business operations globally.": "Nutzen Sie unser fundiertes Branchenwissen, um Ihre Geschäftsabläufe weltweit zu optimieren.",
 
     "Omni-Channel Global Support for Fast Resolution": "Omni-Channel-Support weltweit für schnelle Problemlösungen",
     "Access a large pool of Epicor-certified experts across multiple support channels, timezones, anytime anywhere.": "Greifen Sie jederzeit und überall auf einen großen Pool von Epicor-zertifizierten Experten über mehrere Supportkanäle und Zeitzonen hinweg zu.",
@@ -6290,18 +6535,17 @@
 
     "Transforming Enterprises With Innovative Digital Services": "Unternehmen transformieren – mit innovativen digitalen Lösungen",
     "Outcome-driven digital transformation powered by advanced technology and proven frameworks.": "Ergebnisorientierte digitale Transformation, unterstützt durch moderne Technologien und bewährte Frameworks.",
-    "Contact": "Kontakt",
     "Digital Solutions - Innovating Business, One Solution at a Time": "Digitale Lösungen – Innovation für Unternehmen",
     "We deliver outcome-driven solutions that combine advanced technology, proven frameworks, and scalable architectures to solve complex business challenges. Driven by our Analyse-Integrate-Transform framework, every engagement is built for measurable, sustained impact.": "Wir entwickeln ergebnisorientierte Lösungen, die moderne Technologien, bewährte Frameworks und skalierbare Architekturen kombinieren, um komplexe geschäftliche Herausforderungen zu lösen. Basierend auf unserem Analyse-Integrations-Transform-Framework ist jedes Projekt auf messbare und nachhaltige Ergebnisse ausgerichtet.",
     "Every successful digital transformation starts with a solid foundation of analysis, becomes truly valuable through data and intelligence, delivers tangible outcomes via integration of applications and commerce channels, and endures through resilient operations and governance.": "Jede erfolgreiche digitale Transformation beginnt mit einer fundierten Analyse, gewinnt durch Daten und intelligente Auswertung an Wert, liefert konkrete Ergebnisse durch die Integration von Anwendungen und Vertriebskanälen und bleibt durch stabile Betriebsmodelle und klare Governance-Strukturen langfristig wirksam.",
     "Build the Modern Enterprise Foundation": "Schaffen Sie die Grundlage für ein modernes Unternehmen",
     "Transformation begins by rethinking and modernising the enterprise core, the platforms, architecture, and integrated systems that drive business operations.": "Transformation beginnt damit, den Unternehmenskern neu zu denken und zu modernisieren – also die Plattformen, Architekturen und integrierten Systeme, die Ihre Geschäftsprozesse antreiben.",
     "We help organisations evolve from legacy systems to agile, cloud-native, mobile enabled scalable architecture, enabling faster innovation and operational flexibility. Microservices, API-first, Cloud and Headless or MACH architecture drive agile and scalable transformation.": "Wir unterstützen Unternehmen dabei, sich von Altsystemen zu lösen und auf agile, Cloud-native, mobilfähige und skalierbare Architekturen umzusteigen – für schnellere Innovation und mehr operative Flexibilität. Microservices, API-First-Ansätze, Cloud-Technologien sowie Headless- oder MACH-Architekturen bilden die Grundlage für eine agile und skalierbare Transformation.",
-    "Enterprise Architecture Platform as a Service": "Enterprise Architecture – Platform as a Service",
+    "Enterprise Architecture Platform as a Service:": "Enterprise Architecture – Platform as a Service:",
     "Implement API-first, composable architectures with scalable infrastructure, integration frameworks, and governance controls.": "Implementierung von API-First- und modularen Architekturen mit skalierbarer Infrastruktur, Integrationsframeworks und klaren Governance-Strukturen.",
-    "Enterprise Software Implementation": "Implementierung von Unternehmenssoftware",
+    "Enterprise Software Implementation:": "Implementierung von Unternehmenssoftware:",
     "Deliver end-to-end ERP, CRM, and enterprise platform implementations with agile frameworks for rapid time-to-value and seamless business-as-usual transitions.": "End-to-End-Implementierung von ERP-, CRM- und Unternehmensplattformen mit agilen Frameworks – für schnellen Mehrwert und einen reibungslosen Übergang in den laufenden Betrieb.",
-    "ERP-CRM Integrations & Cloud-Native Solutions": "ERP-CRM-Integrationen und Cloud-native Lösungen",
+    "ERP-CRM Integrations & Cloud-Native Solutions:": "ERP-CRM-Integrationen und Cloud-native Lösungen:",
     "Unify business processes with scalable, cloud-native app suites embedded with analytics and automation for operational control and continuous performance refinement.": "Integration und Harmonisierung von Geschäftsprozessen mit skalierbaren, Cloud-nativen Anwendungslösungen – ergänzt durch Datenanalysen und Automatisierung für eine bessere Steuerung und kontinuierliche Leistungsoptimierung.",
     "Turn Data into Strategic Advantage": "Daten in strategischen Mehrwert verwandeln",
     "Unlock the full potential of enterprise data, consolidating, refining, and transforming it into real-time, actionable intelligence. Operationalise your data estate and AI capabilities to drive faster, smarter decisions": "Nutzen Sie das volle Potenzial Ihrer Unternehmensdaten, indem Sie diese konsolidieren, aufbereiten und in Echtzeit in umsetzbare Erkenntnisse überführen. Setzen Sie Ihre Datenplattform und KI-Funktionen gezielt ein, um schnellere und fundiertere Entscheidungen zu ermöglichen.",
@@ -6461,7 +6705,7 @@
     "Customers Speak": "Kundenstimmen",
     "Success Stories": "Erfolgsgeschichten",
     "Careers": "Karriere",
-    "Contact Us": "Kontakt",
+    "Contact": "Kontakt",
 
     "Solutions & Services": "Lösungen & Dienstleistungen",
     "Our Solutions": "Unsere Lösungen",
@@ -6550,7 +6794,7 @@
 
     "SAP Business Technology Platform (BTP)": "SAP Business Technology Platform (BTP)",
     "RheinBrücke unlocks innovation and extensibility using the SAP Business Technology Platform (SAP BTP).": "RheinBrücke ermöglicht Innovation und Erweiterbarkeit mithilfe der SAP Business Technology Platform (SAP BTP).",
-    "Application development and extensions": "Anwendungsentwicklung und -erweiterungen",
+    "Application development and extensions": "Anwendungsen twicklung und - erweiterungen",
     "Integration Suite, Workflow, and Automation": "Integration Suite, Workflows und Automatisierung",
     "AI, RPA, and event-driven architectures": "KI, RPA und ereignisgesteuerte Architekturen",
     "Clean-core compliant innovations": "„Clean-Core“-konforme Innovationen",
@@ -6633,7 +6877,117 @@
 
     "Industries We Support": "Branchen, die wir betreuen",
     "Why RheinBrücke": "Warum RheinBrücke",
-    "An SAP partner for modern enterprises.": "Ein moderner SAP-Partner für moderne Unternehmen."
+    "An SAP partner for modern enterprises.": "Ein moderner SAP-Partner für moderne Unternehmen.",
+
+
+
+
+    "SugarCRM Transform Customer Relationships": "SugarCRM Kundenerlebnisse transformieren",
+    "Contact Us": "Kontakt aufnehmen",
+    "In today's dynamic business environment, effective Customer Relationship Management (CRM) is essential for businesses aiming to thrive and grow. CRM systems empower organisations to manage customer interactions, streamline processes, and drive revenue through targeted marketing and improved customer service.": "In der heutigen dynamischen Geschäftswelt ist effektives Customer Relationship Management (CRM) entscheidend für Unternehmen, die wachsen und erfolgreich bleiben wollen. CRM-Systeme ermöglichen es, Kundeninteraktionen zu steuern, Prozesse zu optimieren und Umsätze durch gezieltes Marketing und besseren Service zu steigern.",
+    "Welcome to SugarCRM, where exceptional customer experiences and business growth converge.": "Willkommen bei SugarCRM – der Plattform, auf der außergewöhnliche Kundenerlebnisse und nachhaltiges Wachstum zusammenfinden.",
+    "As a leading provider of CRM software, SugarCRM is committed to helping organisations of all sizes transform their customer relationships and achieve sustainable success.": "Als führender Anbieter von CRM-Software unterstützt SugarCRM Unternehmen jeder Größe dabei, Kundenbeziehungen zu transformieren und langfristigen Erfolg zu sichern.",
+    "SugarCRM provides a comprehensive suite of tools to manage sales, marketing, and customer support processes.": "SugarCRM bietet eine umfassende Suite von Tools zur Verwaltung von Vertrieb, Marketing und Kundenservice.",
+    "With its powerful features and customisable options, SugarCRM enables organisations to streamline sales, marketing, and customer service processes, ultimately driving growth and enhancing customer satisfaction.": "Mit leistungsstarken Funktionen und flexiblen Anpassungsmöglichkeiten lassen sich Prozesse vereinfachen, Wachstum fördern und die Kundenzufriedenheit nachhaltig steigern.",
+    "RheinBrücke leverages our extensive enterprise IT implementation and domain expertise, offering our customers a comprehensive solution to streamline their business processes.": "RheinBrücke kombiniert umfassende IT-Implementierungs- und Branchenerfahrung, um Geschäftsprozesse effizient zu optimieren.",
+    "We also have deep Enterprise Integration expertise that enables optimal use of your existing IT investments, while adopting the best in class capabilities of Sugar CRM.": "Durch tiefes Integrations-Know-how ermöglichen wir die optimale Nutzung bestehender IT-Investitionen und kombinieren diese mit den Best-in-Class-Funktionen von SugarCRM.",
+
+    "Why SugarCRM": "Warum SugarCRM",
+    "As organisations strive to deliver personalised experiences and gain actionable insights from customer data, the demand for robust CRM platforms continues to grow. Amidst this evolving landscape, SugarCRM stands out as a leading provider, empowering businesses to optimise sales, marketing, and service operations while adapting seamlessly to diverse business needs and scaling for future growth.": "Unternehmen möchten heute personalisierte Kundenerlebnisse schaffen und datenbasierte Erkenntnisse gewinnen. Die Nachfrage nach leistungsstarken CRM-Plattformen wächst stetig. In diesem Umfeld hebt sich SugarCRM als führender Anbieter ab – mit Lösungen, die Vertrieb, Marketing und Service optimieren, sich flexibel an Geschäftsanforderungen anpassen und skalierbares Wachstum unterstützen.",
+
+    "Key features of SugarCRM are:": "Zentrale Funktionen von SugarCRM",
+    "360-Degree Customer View": "360°-Kundensicht",
+    "SugarCRM provides a comprehensive view of each customer, consolidating interactions, transactions, and communications into a single, centralized platform. This holistic view allows your team to understand customer needs better and deliver personalized experiences.": "SugarCRM vereint alle Interaktionen, Transaktionen und Kommunikationen auf einer zentralen Plattform. Teams erhalten so ein vollständiges Bild jedes Kunden – für besseres Verständnis und individuellere Betreuung.",
+    "Marketing Campaign Management": "Marketingkampagnen-Management",
+    "Plan, execute, and track marketing campaigns seamlessly with SugarCRM. From email marketing to social media integration and analytics, SugarCRM empowers your marketing team to create targeted campaigns that resonate with your audience.": "Planen, steuern und analysieren Sie Marketingkampagnen mühelos. Von E-Mail-Marketing über Social Media bis hin zu Analytics – SugarCRM ermöglicht gezielte Kampagnen mit messbarer Wirkung.",
+    "Sugar as a Platform": "Sugar als Plattform",
+    "SugarCRM is a versatile platform known for its open architecture, allowing extensive customization and integration capabilities to tailor solutions to specific business needs. It supports seamless integration with third-party applications, offers comprehensive features for sales, marketing, and customer service, and ensures data security and compliance, empowering businesses to enhance customer relationships and drive growth.": "Dank offener Architektur ist SugarCRM besonders flexibel: anpassbar, integrierbar und sicher. Die Plattform lässt sich leicht mit Drittanwendungen verbinden, unterstützt alle Kernbereiche – Vertrieb, Marketing und Service – und gewährleistet Datenintegrität und Compliance.",
+    "Sales Automation": "Sales Automation",
+    "Automate sales processes with SugarCRM’s workflow management and automation tools. From lead generation to opportunity tracking and closing deals, SugarCRM helps optimize your sales pipeline for improved efficiency and faster conversions.": "Automatisieren Sie Vertriebsprozesse von der Lead-Generierung bis zum Abschluss. Mit Workflows, Forecasting und Reporting optimieren Sie Ihre Pipeline und beschleunigen Abschlüsse.",
+    "Enhance customer service with SugarCRM’s service management tools. Track support tickets, manage customer inquiries, and ensure timely resolution of issues, fostering long-term customer loyalty and satisfaction.": "SugarCRM unterstützt Serviceteams bei der effizienten Bearbeitung von Anfragen und Tickets – für schnellere Lösungen, höhere Kundenzufriedenheit und langfristige Loyalität.",
+    "Customization and Flexibility": "Anpassung & Flexibilität",
+    "SugarCRM offers extensive customization options to tailor the CRM system to your specific business needs. Customize fields, workflows, and dashboards without extensive coding knowledge, ensuring the CRM aligns perfectly with your operational requirements.": "Konfigurieren Sie Felder, Workflows und Dashboards individuell – ganz ohne Programmierkenntnisse. SugarCRM lässt sich perfekt an Ihre Geschäftsprozesse anpassen.",
+    "Integration Capabilities": "Integration",
+    "Integrate SugarCRM with other essential business applications and systems seamlessly. Whether it’s ERP systems, e-commerce platforms, or third-party analytics tools, SugarCRM’s open architecture supports easy integration to streamline data flow and enhance overall business efficiency.": "Verbinden Sie SugarCRM nahtlos mit ERP-, eCommerce- oder Analytics-Systemen. Offene Schnittstellen ermöglichen durchgängige Datenflüsse und steigern die Effizienz im gesamten Unternehmen.",
+
+    "Core Offerings": "Kernlösungen",
+    "SugarCRM's core offerings revolve around its comprehensive Customer Relationship Management (CRM) solutions. These offerings are designed to help businesses manage and optimize their interactions with customers across various stages of the customer lifecycle.": "Die Kernlösungen von SugarCRM bieten Unternehmen eine umfassende CRM-Plattform, um Kundenbeziehungen über alle Phasen des Lebenszyklus hinweg zu verwalten, zu optimieren und langfristig zu stärken.",
+
+    "Sugar Sell": "Sugar Sell",
+    "Sugar Sell is SugarCRM’s core CRM platform tailored primarily for sales teams. It provides tools and features to manage leads, opportunities, accounts, and contacts effectively.": "Sugar Sell ist die zentrale CRM-Plattform von SugarCRM, die speziell für Vertriebsteams entwickelt wurde. Sie bietet leistungsstarke Tools, um Leads, Verkaufschancen, Accounts und Kontakte effizient zu verwalten und den gesamten Vertriebsprozess zu optimieren.",
+    "Pipeline Management": "Pipeline-Management",
+    "Workflow automation": "Workflow-Automatisierung",
+    "Sales Forecasting": "Vertriebs prognosen",
+    "Reporting/analytics": "Reporting & Analytics",
+    "Email Integration": "E-Mail-Integration",
+    "Sugar Sell aims to streamline the sales process, improve team collaboration, and ultimately boost sales performance through data-driven insights and efficient workflows.": "Sugar Sell vereinfacht und beschleunigt den Vertriebsprozess, stärkt die Zusammenarbeit im Team und steigert die Verkaufsleistung – durch datengestützte Einblicke und automatisierte Workflows.",
+
+    "Sugar Market": "Sugar Market",
+    "Sugar Market is SugarCRM’s marketing automation solution. It allows businesses to automate marketing campaigns, nurture leads, and measure marketing ROI effectively.": "Sugar Market ist die Marketing-Automation-Lösung von SugarCRM. Sie unterstützt Unternehmen dabei, Marketingkampagnen zu automatisieren, Leads gezielt zu entwickeln und den Marketing-ROI messbar zu machen.",
+    "Email Marketing": "E-Mail-Marketing",
+    "Social Media Integration": "Social-Media-Integration",
+    "Lead Scoring": "Lead Scoring",
+    "Marketing Analytics": "Marketing-Analytics",
+    "Campaign Management": "Kampagnen management",
+    "Sugar Market helps businesses attract prospects, engage with customers across multiple channels, and drive revenue growth through targeted marketing strategies.": "Mit Sugar Market gewinnen Unternehmen neue Interessenten, binden Kunden über verschiedene Kanäle hinweg und steigern ihren Umsatz durch datengetriebene, zielgerichtete Marketingstrategien.",
+
+    "Sugar Serve": "Sugar Serve",
+    "Sugar Serve is SugarCRM’s customer service and support solution, focusing on delivering exceptional customer experiences. It enables businesses to manage customer inquiries, support cases, and service requests efficiently.": "Sugar Serve ist die Service- und Supportlösung von SugarCRM – entwickelt, um herausragende Kundenerlebnisse zu schaffen. Die Plattform ermöglicht Unternehmen, Kundenanfragen, Supportfälle und Serviceanforderungen effizient zu verwalten und schnell zu lösen.",
+    "Case Management": "Case Management",
+    "Self-Service Portal": "Self-Service-Portal",
+    "Knowledge Base Management": "Wissensdatenbank- Management",
+    "Customer Service Analytics": "Customer Service Analytics",
+    "Service Level Agreement (SLA) Tracking": "SLA-Tracking (Service Level Agreements)",
+    "Sugar Serve aims to improve customer satisfaction by empowering service teams with the tools they need to resolve issues promptly and deliver personalized support.": "Mit Sugar Serve steigern Unternehmen die Kundenzufriedenheit, indem sie Serviceteams mit den richtigen Tools ausstatten, um Probleme schnell zu lösen und personalisierten Support zu bieten.",
+
+    "Benefits of SugarCRM": "Vorteile von SugarCRM",
+
+    "Scalability": "Skalierbarkeit",
+    "SugarCRM is scalable to accommodate growing business needs. Whether you’re a small startup or a large enterprise, SugarCRM can scale with your business, adapting to changing requirements and increasing user demands.": "Ob Start-up oder Großunternehmen – SugarCRM wächst mit Ihren Anforderungen und Benutzerzahlen.",
+
+    "User-Friendly Interface": "Benutzerfreundlichkeit",
+    "With an intuitive and user-friendly interface, SugarCRM ensures quick adoption and minimal training for your team. Users can navigate the platform effortlessly, maximizing productivity and minimizing downtime.": "Eine intuitive Oberfläche ermöglicht schnelle Einführung, minimale Schulung und hohe Produktivität.",
+
+    "Data Security": "Datensicherheit",
+    "Protect sensitive customer data with SugarCRM’s robust security features. From role-based access controls to data encryption and regular security updates, SugarCRM prioritizes data protection to safeguard your business and customer information.": "Mit rollenbasierten Zugriffsrechten, Verschlüsselung und regelmäßigen Updates bleibt Ihre Kundendatenbasis geschützt.",
+
+    "Analytics and Reporting": "Analytics & Reporting",
+    "Gain actionable insights with SugarCRM’s advanced analytics and reporting capabilities. Track key performance indicators, measure campaign effectiveness, and identify trends to make informed business decisions and drive growth.": "Liefert umsetzbare Erkenntnisse aus fortschrittlichen Analysen – für präzisere Entscheidungen und gezieltes Wachstum.",
+
+    "Customer Experience Focus": "Kundenerlebnis im Fokus",
+    "By centralizing customer data and automating processes, SugarCRM enhances the overall customer experience. Deliver personalized interactions, respond to inquiries promptly, and build stronger relationships that foster customer loyalty and retention.": "Zentrale Daten und automatisierte Abläufe ermöglichen personalisierte Interaktionen, schnellere Reaktionszeiten und stärkere Kundenbindung.",
+
+    "RheinBrücke Advantage": "Ihr Vorteil mit RheinBrücke",
+
+    "At RheinBrücke, we prioritize building lasting partnerships with our clients as your CRM solution provider. Our goal is to serve as your trusted advisor and seamlessly integrate into your team. Through collaborative efforts, we aim to fully understand your unique business goals and address any challenges you face.":
+    "Bei RheinBrücke steht der Aufbau langfristiger Partnerschaften im Mittelpunkt. Als Ihr CRM-Lösungspartner verstehen wir uns nicht nur als Dienstleister, sondern als vertrauenswürdiger Berater, der sich nahtlos in Ihr Team integriert. Durch enge Zusammenarbeit entwickeln wir ein tiefes Verständnis für Ihre individuellen Geschäftsziele und unterstützen Sie dabei, Herausforderungen gezielt zu meistern.",
+
+    "Here are the key advantages of choosing us as your CRM solution provider:":
+    "Unsere wichtigsten Stärken als CRM-Lösungspartner:",
+
+    "Expertise in Integration Services": "Expertise in Integrationsservices",
+    "RheinBrücke excels in integrating complex enterprise software solutions across various platforms and systems. With deep technical knowledge and experience, RheinBrücke ensures seamless connectivity and interoperability between software applications, enabling businesses to streamline workflows, enhance data accuracy, and optimize operational efficiency through integrated solutions.":
+    "RheinBrücke verfügt über umfassende Erfahrung in der Integration komplexer Unternehmenssoftware über verschiedene Plattformen und Systeme hinweg. Mit fundiertem technischem Know-how sorgen wir für nahtlose Konnektivität und Interoperabilität zwischen Anwendungen – und schaffen so integrierte Lösungen, die Workflows vereinfachen, Datenqualität erhöhen und operative Effizienz nachhaltig verbessern.",
+
+    "Customization Capabilities": "Anpassungs- und Erweiterungsfähigkeit",
+    "RheinBrücke specialises in customising software solutions to meet specific business requirements and industry needs. Whether adapting CRM functionalities to align with unique business processes or enhancing ERP systems to support industry-specific workflows, RheinBrücke’s customisation capabilities empower businesses to maximise the value of their software investments.":
+    "Wir spezialisieren uns auf die individuelle Anpassung von Softwarelösungen an spezifische Geschäftsanforderungen und Branchenbedürfnisse. Ob es darum geht, CRM-Funktionen an unternehmensspezifische Prozesse anzupassen oder ERP-Systeme um branchenspezifische Abläufe zu erweitern – mit unseren Customizing-Kompetenzen helfen wir Unternehmen, den maximalen Nutzen aus ihren Softwareinvestitionen zu ziehen.",
+
+    "Industry-Specific Solutions": "Branchenspezifische Lösungen",
+    "RheinBrücke offers industry-specific solutions to meet the various challenges and requirements of diverse sectors. By combining domain expertise with technological proficiency, RheinBrücke delivers specialised software configurations and enhancements that address specific industry regulations, operational complexities, and customer expectations.":
+    "Unsere branchenspezifischen Lösungen berücksichtigen die besonderen Anforderungen und regulatorischen Rahmenbedingungen verschiedener Industrien. Durch die Kombination aus tiefem Branchenverständnis und technologischer Expertise entwickeln wir maßgeschneiderte Softwarekonfigurationen und Erweiterungen, die betriebliche Komplexität reduzieren und Kundenerwartungen gezielt erfüllen.",
+
+    "Strategic Partnerships and Alliances": "Strategische Partnerschaften und Allianzen",
+    "RheinBrücke cultivates strategic partnerships with leading technology providers, enhancing its ability to deliver comprehensive solutions that integrate seamlessly with best-in-class software platforms. Collaborating with industry leaders like Epicor, Microsoft and SAP expanding RheinBrücke’s solution portfolio and enabling businesses to leverage cutting-edge technologies for competitive advantage.":
+    "RheinBrücke pflegt strategische Partnerschaften mit führenden Technologieanbietern wie Epicor, Microsoft und SAP. Diese Kooperationen erweitern unser Lösungsportfolio und ermöglichen es uns, Best-in-Class-Technologien nahtlos zu integrieren – für leistungsstarke, zukunftssichere Lösungen mit echtem Wettbewerbsvorteil.",
+
+    "Commitment to Customer Success": "Engagement für Kundenerfolg",
+    "By adopting a customer-centric approach, RheinBrücke ensures that solutions are aligned with business objectives, deliver measurable results, and exceed expectations. This commitment to customer success fosters long-term partnerships built on trust, transparency, and mutual growth.":
+    "Unser kundenorientierter Ansatz stellt sicher, dass jede Lösung auf Ihre Geschäftsziele abgestimmt ist, messbare Ergebnisse liefert und Ihre Erwartungen übertrifft. Dieses Engagement für den Kundenerfolg bildet die Grundlage für langfristige Partnerschaften, geprägt von Vertrauen, Transparenz und gemeinsamem Wachstum.",
+
+    "Contact Us!": "Kontaktieren Sie uns!",
+    "Ready to elevate your customer relationships and drive growth with us?": "Bereit, Ihre Kundenbeziehungen zu transformieren?",
+    "Contact us today and discover how our powerful CRM solutions can transform your business.": "Kontaktieren Sie uns und entdecken Sie, wie unsere CRM-Lösungen Ihr Geschäft voranbringen können."
 
   
   

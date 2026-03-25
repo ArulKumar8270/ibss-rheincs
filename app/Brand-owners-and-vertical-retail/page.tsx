@@ -16,7 +16,7 @@ const page = () => {
         <div className="col-lg-5 col-11">
           <div className="pe-main-hadding-waber">
             <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
-                Brand owners and vertical Retailer
+                {t("Brand owners and vertical Retailer")}
             </h2>
             <p>
                 {t("Vertical retail businesses, brand-led organisations controlling product design, manufacturing, and sales through their own physical, ecommerce, and D2C channels, face intensified market pressures. Accelerating product launches, controlling inventory across multiple channels, and delivering consistent, personalised customer experiences are vital for sustainable growth and competitive positioning.")}

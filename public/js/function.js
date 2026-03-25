@@ -285,6 +285,34 @@
       const btnLabel = toggleBtn.querySelector('.label');
       const iconContainer = toggleBtn.querySelector('.svg-container');
       
+      // Function to get translated text
+      const getButtonText = function(isExpanded) {
+        var lang = localStorage.getItem('preferredLanguage') || 'English';
+        var translations = window.translations || {};
+        var langTranslations = translations[lang] || {};
+        
+        if (isExpanded) {
+          return langTranslations['Read Less'] || 'Read Less';
+        } else {
+          // Check both casing for 'Read More'
+          return langTranslations['Read More'] || langTranslations['Read more'] || 'Read More';
+        }
+      };
+
+      // Set initial text
+      if (btnLabel) {
+        const isHidden = moreText.classList.contains('hidden');
+        btnLabel.textContent = getButtonText(!isHidden);
+      }
+
+      // Listen for language changes globally
+      window.addEventListener('preferredLanguageChange', function() {
+        if (btnLabel) {
+          const isHidden = moreText.classList.contains('hidden');
+          btnLabel.textContent = getButtonText(!isHidden);
+        }
+      });
+      
       // Click handler - simple and direct
       const handleClick = function(e) {
         if (e) {
@@ -302,9 +330,7 @@
         const isNowHidden = moreText.classList.contains('hidden');
         
         if (btnLabel) {
-          var readMoreText = toggleBtn.getAttribute('data-read-more') || 'Read More';
-          var readLessText = toggleBtn.getAttribute('data-read-less') || 'Read Less';
-          btnLabel.textContent = isNowHidden ? readMoreText : readLessText;
+          btnLabel.textContent = getButtonText(!isNowHidden);
         }
         
         if (iconContainer) {

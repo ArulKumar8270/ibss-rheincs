@@ -471,7 +471,7 @@ export default function AlMl() {
                         </div>
                     </div>
                     {/* Testimonial Slider Start */}
-                    <div className="testimonial-slideram amslide">
+                    <div className={`testimonial-slideram amslide ${language === 'German' ? 'geramslide' : ''}`}>
                         <div className="container-fluid">
                             <div className="swiper">
                                 <div className="swiper-wrapper">

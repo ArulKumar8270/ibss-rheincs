@@ -1230,7 +1230,7 @@ export default function AlMl() {
                                                 {t("Brand Owners & Vertical Retailers")}
                                                 </h3>
                                             <p className="oa-para">
-                                                {t("Personalised Recommendations, Dynamic pricing, Inventory optimisation, and Loss prevention.")}
+                                                {t("personalised recommendations, dynamic pricing, inventory optimisation, and loss prevention.")}
                                             </p>
                                         </div>
                                     </div>
@@ -1256,7 +1256,7 @@ export default function AlMl() {
 </h3>
                                             <p className="oa-para">
                                     
-                                                {t("Customer segmentation, demand forecasting, fraud detection, and real-time analytics to improve in-store and online performance.")}
+                                                {t("customer segmentation, demand forecasting, fraud detection, and real-time analytics to improve in-store and online performance.")}
                                             </p>
                                         </div>
                                     </div>

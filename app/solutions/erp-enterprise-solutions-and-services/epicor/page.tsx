@@ -4468,7 +4468,7 @@ export default function EnterpriseSolutions() {
           </div>
         </div>
         {/* Our Testimonial Section End */}
-        <section className="mds-section capabilities mobilecabsec pd50">
+        <section className={`mds-section capabilities mobilecabsec pd50 ${language === 'German' ? 'germanerpcab' : ''}`}>
           <div className="container">
             <div className="content width50">
               <div className="section-title ">
@@ -4556,7 +4556,7 @@ export default function EnterpriseSolutions() {
                         />
                       </svg>
                       <p>
-                        Companion Products to enhance ERP functionality and business process efficiency
+                        {t("Companion Products to enhance ERP functionality and business process efficiency")}
                       </p>
                     </div>
                   </div>
@@ -4585,7 +4585,7 @@ export default function EnterpriseSolutions() {
                         />
                       </svg>
                       <p>
-                        ERP Consulting & Advisory aligned with business priorities
+                        {t("ERP Consulting & Advisory aligned with business priorities")}
                       </p>
                     </div>
                   </div>

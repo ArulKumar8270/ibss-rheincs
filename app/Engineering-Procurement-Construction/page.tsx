@@ -22,7 +22,7 @@ export default function EnterpriseSolutions() {
               {t("Engineering, Procurement & Construction (EPC)")}
             </h2>
             <p>
-              The EPC sector operates at the intersection of contract complexity, evolving project scopes, and relentless schedule and cost pressures. Large, capital-intensive projects demand rigorous operational control, integrated data visibility, and the agility to manage risks and changes in real time. As market volatility, compliance demands, and sustainability requirements grow, digital transformation has become essential for EPC firms to protect margins, improve governance, and enhance delivery performance.
+              {t("The EPC sector operates at the intersection of contract complexity, evolving project scopes, and relentless schedule and cost pressures. Large, capital-intensive projects demand rigorous operational control, integrated data visibility, and the agility to manage risks and changes in real time. As market volatility, compliance demands, and sustainability requirements grow, digital transformation has become essential for EPC firms to protect margins, improve governance, and enhance delivery performance.")}
             </p>
             <div className="ser-btn m-0">
               <Link href="/contact-us" className="animated-svg-link">

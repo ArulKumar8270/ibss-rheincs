@@ -21,7 +21,7 @@ export default function EnterpriseSolutions() {
               {t("MeRLIN Sourcing: Powering Strategic Direct Procurement")}
             </h2>
             <p>
-              {t("MeRLIN is a Strategic Direct Sourcing Solution that offers zseamlessly integrated sourcing process automation along with Supplier Relationship Management, Category Management, Contract Management, Audits, and eProcurement functions augmented by Advanced Analytics.")}
+              {t("MeRLIN is a Strategic Direct Sourcing Solution that offers seamlessly integrated sourcing process automation along with Supplier Relationship Management, Category Management, Contract Management, Audits, and eProcurement functions augmented by Advanced Analytics.")}
             </p>
           </div>
         </div>

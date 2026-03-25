@@ -1410,12 +1410,12 @@ export default function Contact() {
                 {t("Talk to Our Experts")}
               </h2>
               <ul className="contres-15">
-                <li> Netherlands</li>
-                <li>Germany</li>
-                <li>USA</li>
-                <li>India</li>
-                <li>UAE</li>
-                <li>KSA</li>
+                <li>{t("Netherlands")}</li>
+                <li>{t("Germany")}</li>
+                <li>{t("USA")}</li>
+                <li>{t("India")}</li>
+                <li>{t("UAE")}</li>
+                <li>{t("KSA")}</li>
               </ul>
             </div>
             <div className="map-img-waber">

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import CommomLayout from "../Components/CommomLayout";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase-browser";
+import {useTranslation} from "../hooks/useTranslation";
 
 interface CaseStudy {
   id: string;
@@ -60,6 +61,7 @@ const ArrowSVG = ({ direction = "right" }: { direction?: "left" | "right" }) => 
 );
 
 export default function CaseStudyPage() {
+  const { t, language } = useTranslation();
   const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([]);
   const [industries, setIndustries] = useState<Industry[]>([]);
   const [loading, setLoading] = useState(true);
@@ -217,7 +219,7 @@ export default function CaseStudyPage() {
             borderRadius: '50%',
             animation: 'spin 1s linear infinite'
           }}></div>
-          <p style={{ color: '#666', fontSize: '18px' }}>Loading case studies...</p>
+          <p style={{ color: '#666', fontSize: '18px' }}>{t("Loading case studies...")}</p>
           <style jsx>{`
             @keyframes spin {
               0% { transform: rotate(0deg); }
@@ -244,7 +246,7 @@ export default function CaseStudyPage() {
         <section className="blog-main-waber">
           <div className="container">
             <h2 className="blog-main-title" data-cursor="-opaque">
-              Latest Case Study
+              {t("Latest Case Study")}
             </h2>
             <div className="blog-waber-one">
               {/* Testimonial Slider Start */}
@@ -258,7 +260,7 @@ export default function CaseStudyPage() {
                             <div className="row">
                               <div className="col-sm-6">
                                 <div className="blog-content-waber">
-                                  <p className="blog-bage">Case Study</p>
+                                  <p className="blog-bage">{t("Case Study")}</p>
                                   <h2 className="blog-baner-title">
                                     {item.title}
                                   </h2>
@@ -267,7 +269,7 @@ export default function CaseStudyPage() {
                                       href={`/Casestudy/${(item.slug && item.slug.trim()) ? item.slug.trim() : item.id}`}
                                       className="animated-svg-link p-0"
                                     >
-                                      Read More
+                                      {t("Read More")}
                                       <span className="svg-container ">
                                         <span className=" right">
                                           <ArrowSVG />
@@ -341,31 +343,31 @@ export default function CaseStudyPage() {
                         className={`filter-btn ${selectedCategory === "all" ? "active" : ""}`}
                         onClick={() => setSelectedCategory("all")}
                       >
-                        All
+                        {t("All")}
                       </button>
                       <button
                         className={`filter-btn ${selectedCategory === "our-solutions" ? "active" : ""}`}
                         onClick={() => setSelectedCategory("our-solutions")}
                       >
-                        Our Solutions
+                        {t("Our Solutions")}
                       </button>
                       <button
                         className={`filter-btn ${selectedCategory === "enterprise-solutions" ? "active" : ""}`}
                         onClick={() => setSelectedCategory("enterprise-solutions")}
                       >
-                        Enterprise Solutions & Services
+                        {t("Enterprise Solutions & Services")}
                       </button>
                       <button
                         className={`filter-btn ${selectedCategory === "digital-solutions" ? "active" : ""}`}
                         onClick={() => setSelectedCategory("digital-solutions")}
                       >
-                        Digital Solutions
+                        {t("Digital Solutions")}
                       </button>
                       <button
                         className={`filter-btn ${selectedCategory === "digital-services" ? "active" : ""}`}
                         onClick={() => setSelectedCategory("digital-services")}
                       >
-                        Digital Services
+                        {t("Digital Services")}
                       </button>
                     </div>
                     {(selectedIndustries.length > 0 || selectedCategory !== 'all' || searchTerm) && (
@@ -399,7 +401,7 @@ export default function CaseStudyPage() {
                                 }}
                               />
                               <div className="blog-content-in-blog-page">
-                                <p className="blag-page-1">Case Study</p>
+                                <p className="blag-page-1">{t("Case Study")}</p>
                                 <h5 className="blog-page-blog-titles">
                                   {item.title}
                                 </h5>
@@ -411,7 +413,7 @@ export default function CaseStudyPage() {
                                     href={`/Casestudy/${(item.slug && item.slug.trim()) ? item.slug.trim() : item.id}`}
                                     className="animated-svg-link1 btn-style-3"
                                   >
-                                    Read More
+                                    {t("Read More")}
                                     <span className="svg-container ">
                                       <span className=" left">
                                         <ArrowSVG direction="left" />
@@ -428,7 +430,7 @@ export default function CaseStudyPage() {
                       <div className="col-sm-12">
                         {(selectedIndustries.length > 0 || selectedCategory !== 'all' || searchTerm) ? (
                           <div style={{ textAlign: 'center', padding: '40px' }}>
-                            <p>No case studies match your current filters.</p>
+                            <p>{t("No case studies match your current filters.")}</p>
                             <button
                               onClick={clearFilters}
                               style={{
@@ -441,12 +443,12 @@ export default function CaseStudyPage() {
                                 marginTop: '10px'
                               }}
                             >
-                              Clear All Filters
+                              {t("Clear All Filters")}
                             </button>
                           </div>
                         ) : (
                           <p style={{ textAlign: 'center', padding: '40px' }}>
-                            No case studies available yet.
+                            {t("No case studies available yet.")}
                           </p>
                         )}
                       </div>
@@ -477,7 +479,7 @@ export default function CaseStudyPage() {
                   <div className="blog-serch">
                     <input 
                       type="text" 
-                      placeholder="Search case studies" 
+                      placeholder={t("Search case studies")} 
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                     />
@@ -487,7 +489,7 @@ export default function CaseStudyPage() {
                   </div>
                 </form>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '20px', marginBottom: '15px' }}>
-                  <h6 className="fome-filter-title" style={{ margin: 0 }}>Industries</h6>
+                  <h6 className="fome-filter-title" style={{ margin: 0 }}>{t("Industries")}</h6>
                   {(selectedIndustries.length > 0 || selectedCategory !== 'all' || searchTerm) && (
                     <button
                       onClick={clearFilters}
@@ -501,13 +503,13 @@ export default function CaseStudyPage() {
                         fontSize: '12px'
                       }}
                     >
-                      Clear Filters
+                      {t("Clear Filters")}
                     </button>
                   )}
                 </div>
                 <div className="filter-check-box-waber">
                   {industries.length === 0 ? (
-                    <p style={{ color: '#666', fontSize: '14px' }}>No industries available</p>
+                    <p style={{ color: '#666', fontSize: '14px' }}>{t("No industries available")}</p>
                   ) : (
                     industries.map((industry) => (
                       <div key={industry.id} className="form-check">
@@ -523,7 +525,7 @@ export default function CaseStudyPage() {
                           htmlFor={`case-study-industry-${industry.slug}`}
                           style={{ cursor: 'pointer' }}
                         >
-                          {industry.name}
+                          {t(industry.name)}
                         </label>
                       </div>
                     ))
@@ -532,7 +534,7 @@ export default function CaseStudyPage() {
                 {/* Show active filters */}
                 {(selectedIndustries.length > 0 || searchTerm) && (
                   <div style={{ marginTop: '20px', padding: '10px', background: '#f5f5f5', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px' }}>Active Filters:</p>
+                    <p style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px' }}>{t("Active Filters:")}</p>
                     {searchTerm && (
                       <span style={{ 
                         display: 'inline-block', 
@@ -543,7 +545,7 @@ export default function CaseStudyPage() {
                         fontSize: '11px',
                         margin: '2px'
                       }}>
-                        Search: {searchTerm}
+                        {t("Search")}: {searchTerm}
                       </span>
                     )}
                     {selectedIndustries.map(slug => {
@@ -558,7 +560,7 @@ export default function CaseStudyPage() {
                           fontSize: '11px',
                           margin: '2px'
                         }}>
-                          {industry.name}
+                          {t(industry.name)}
                         </span>
                       ) : null;
                     })}
@@ -576,16 +578,15 @@ export default function CaseStudyPage() {
               <div className="firstrow">
                 <div className="row">
                   <div className="col-sm-8">
-                    <h2>Ready to accelerate value creation across your portfolio?</h2>
+                    <h2>{t("Ready to accelerate value creation across your portfolio?")}</h2>
                     <p>
-                      Contact us today to learn how we can help modernise operations,
-                      de-risk integrations, and improve commercial outcomes.
+                      {t("Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.")}
                     </p>
                   </div>
                   <div className="col-sm-4">
                     <div className="ser-btn text-right">
                       <Link href="/contact-us" className="animated-svg-link">
-                        Contact Us
+                        {t("Contact Us")}
                         <span className="svg-container ">
                           <span className=" right">
                             <ArrowSVG />

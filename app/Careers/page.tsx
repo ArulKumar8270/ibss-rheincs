@@ -402,7 +402,7 @@ export default function AlMl() {
                                     </h2>
                                     <p className="m-0">
                                         {" "}
-                                        {t('Bring your expertise, and we’ll help you take it further. As an experienced professional at RheinBrücke, you will')}
+                                        {t('Bring your expertise, and we’ll help you take it further. As an experienced professional at RheinBrücke, you will:')}
                                     </p>
                                 </div>
                             </div>
@@ -434,7 +434,7 @@ export default function AlMl() {
                             </div>
                         </div>
                         <p className="eslh-waber-p">
-                                {t('Your experience matters and at RIC, it creates lasting impact.')}
+                                {t('Your experience matters and at RheinBrücke, it creates lasting impact.')}
                         </p>
                     </div>
                 </div>
@@ -450,7 +450,7 @@ export default function AlMl() {
                                             {t('Return to Work: Restart with Confidence')}
                                         </h2>
                                         <p className="m-0">
-                                            {t('We believe a career break should never be a barrier. Our Return-to-Work program supports professionals re-entering the workforce with')}
+                                            {t('We believe a career break should never be a barrier. Our Return-to-Work program supports professionals re-entering the workforce with:')}
                                         </p>
                                     </div>
                                     <div className="campes-3">
@@ -500,7 +500,7 @@ export default function AlMl() {
                                             {t('Recognitions & Awards')}
                                         </h2>
                                         <p className="m-0">
-                                            {t('Success deserves to be celebrated. At RheinBrücke, we honour achievements through')}
+                                            {t('Success deserves to be celebrated. At RheinBrücke, we honour achievements through:')}
                                         </p>
                                     </div>
                                     <div className="awards-list-flex">
@@ -544,7 +544,7 @@ export default function AlMl() {
                                     </h2>
                                     <p className="m-0 text-white hn">
                                         {" "}
-                                        {t('Life at RheinBrücke is about more than work, it is about being part of a family that supports, inspires, and grows together. Our culture blends innovation with inclusivity, giving every associate the space to learn , contribute, and thrive.')}
+                                        {t('Life at RheinBrücke is about more than work, it is about being part of a family that supports, inspires, and grows together. Our culture blends innovation with inclusivity, giving every associate the space to learn, contribute, and thrive.')}
                                     </p>
                                 </div>
                             </div>

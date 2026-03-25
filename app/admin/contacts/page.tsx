@@ -87,6 +87,17 @@ export default function AdminContactsPage() {
     a.click()
   }
 
+  const handleDelete = async (id: string) => {
+    if (window.confirm('Are you sure you want to delete this contact?')) {
+      const { error } = await supabase.from('contacts').delete().match({ id })
+      if (error) {
+        setError('Failed to delete contact: ' + error.message)
+      } else {
+        setContacts(contacts.filter((contact) => contact.id !== id))
+      }
+    }
+  }
+
   if (loading) {
     return (
       <div style={{
@@ -345,6 +356,15 @@ export default function AdminContactsPage() {
                   letterSpacing: '0.5px',
                   color: '#495057'
                 }}>Message</th>
+                <th style={{
+                  padding: '18px 20px',
+                  textAlign: 'left',
+                  fontWeight: '700',
+                  fontSize: '13px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  color: '#495057'
+                }}>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -467,6 +487,21 @@ export default function AdminContactsPage() {
                       ) : (
                         <span style={{ color: '#adb5bd', fontStyle: 'italic' }}>No message</span>
                       )}
+                    </td>
+                    <td style={{ padding: '18px 20px' }}>
+                      <button
+                        onClick={() => handleDelete(contact.id)}
+                        style={{
+                          background: '#2b2b2bff',
+                          color: 'white',
+                          border: 'none',
+                          padding: '0px 5px',
+                          borderRadius: '4px',
+                          cursor: 'pointer'
+                        }}
+                      >
+                        ✖
+                      </button>
                     </td>
                   </tr>
                 ))

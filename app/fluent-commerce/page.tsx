@@ -107,7 +107,7 @@ export default function EnterpriseSolutions() {
     </div>
   </div>
   {/* Hero Section End*/}
-  <section className="mds-section capabilities mobilecommexpert pd50">
+  <section className={`mds-section capabilities mobilecommexpert pd50 ${language === 'German' ? 'gercommexp' : ''}`}>
     <div className="container">
       <div className="content width50">
         <div className="section-title ">

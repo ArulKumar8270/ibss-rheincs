@@ -517,7 +517,7 @@ export default function EnterpriseSolutions() {
                                         <h5>{t("Our Vision")}</h5>
                                     </div>
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        '{t("Analyse, Integrate and Transform")}'
+                                        {t("Analyse, Integrate and Transform")}
                                     </h2>
                                     <p>
                                         {t("Outlines our brand promise and vision to drive the adoption of technology solutions, and empower our associates to deliver superior solutions to help our customers and partners achieve long-term sustainable growth.")}
@@ -1836,7 +1836,7 @@ export default function EnterpriseSolutions() {
                         <img src="/images/overviewresult.png" alt="" />
                     </div>
                 </div>
-                <section className="mds-section pd50">
+                <section className={`mds-section pd50 ${language === 'German' ? 'gerwealways' : ''}`}>
                     <div className="container">
                         <div className="content width50">
                             <div className="section-title ">

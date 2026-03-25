@@ -143,7 +143,7 @@ export default function digitalsolution() {
   </div>
   {/* Hero Section End*/}
   {/* Our Testimonial Section Start */}
-  <div className="our-testimonial digitalservice pd50">
+  <div className={`our-testimonial digitalservice pd50 ${language === 'German' ? 'germandigisol' : ''}`}>
     <div className="container">
       <div className="row section-row align-items-center">
         <div className="col-sm-2" />
@@ -290,7 +290,7 @@ export default function digitalsolution() {
                         </svg>
                         {/* <i class="bi bi-people-fill"></i> */}
                       </div>
-                      <h3>{t("Enterprise Architecture Platform as a Service")}</h3>
+                      <h3>{t("Enterprise Architecture Platform as a Service:")}</h3>
                       <ul>
                         <li>
                           {" "}
@@ -433,7 +433,7 @@ export default function digitalsolution() {
                         {/*<img src="/images/ss5.svg" alt="">*/}
                         {/* <i class="bi bi-cart-check-fill"></i> */}
                       </div>
-                      <h3>{t("Enterprise Software Implementation")}</h3>
+                      <h3>{t("Enterprise Software Implementation:")}</h3>
                       <ul>
                         <li>
                           {t("Deliver end-to-end ERP, CRM, and enterprise platform implementations with agile frameworks for rapid time-to-value and seamless business-as-usual transitions.")}
@@ -524,7 +524,7 @@ export default function digitalsolution() {
                         {/* <i class="bi bi-pie-chart-fill"></i> */}
                       </div>
                       <h3>
-                        {t("ERP-CRM Integrations & Cloud-Native Solutions")}
+                        {t("ERP-CRM Integrations & Cloud-Native Solutions:")}
                       </h3>
                       <ul>
                         <li>

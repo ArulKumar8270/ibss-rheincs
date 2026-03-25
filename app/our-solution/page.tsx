@@ -34,7 +34,7 @@ export default function EnterpriseSolutions() {
                 </div>
                 {/* Hero Section End*/}
                 {/* Our Services Section Start */}
-                <div className="our-services1 customer oursol ptd50">
+                <div className={`our-services1 customer oursol ptd50 ${language === 'German' ? 'germancorus' : ''}`}>
                     <div className="container">
                         <div className="row section-row">
                             <div className="col-lg-6">
@@ -50,7 +50,7 @@ export default function EnterpriseSolutions() {
                                 {/* Section Title End */}
                             </div>
                         </div>
-                        <div className=" cussec oursolutionsec">
+                        <div className="cussec oursolutionsec">
                             <div className="row ">
                                 <div className="col-lg-6 col-md-6">
                                     <div className="service-item ">
@@ -201,7 +201,7 @@ export default function EnterpriseSolutions() {
                                     <div className="service-item ">
                                         <div className="service-item-body">
                                             <h3>
-                                                {t("MeRLIN Sourcing – Driving Strategic Sourcing Excellence")}
+                                                {t("MeRLIN Sourcing – Driving Strategic Sourcing Excellence.")}
 
                                             </h3>
                                             <ul>

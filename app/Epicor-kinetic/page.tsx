@@ -22,7 +22,7 @@ export default function EpicorKinetic() {
               {t("Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production")}
             </h2>
             <p>
-              {t("Epicor Kinetic is a modern, cloud-enabled ERP designed to streamline operations, reduce manual processes, and provide real-time insights across your business. It empowers organizations to scale efficiently while staying compliant and competitive in today’s fast-paced industries.")}
+              {t("Epicor Kinetic is a modern, cloud-enabled ERP designed to streamline operations, reduce manual processes, and provide real-time insights across your business.")} {t("It empowers organizations to scale efficiently while staying compliant and competitive in today’s fast-paced industries.")}
             </p>
           </div>
         </div>

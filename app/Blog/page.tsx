@@ -53,11 +53,11 @@ export default function Blog() {
   const supabase = createClient();
 
   const categories = [
-    { value: "all", label: "All" },
-    { value: "our-solutions", label: "Our Solutions" },
-    { value: "enterprise-solutions", label: "Enterprise Solutions & Services" },
-    { value: "digital-solutions", label: "Digital Solutions" },
-    { value: "digital-services", label: "Digital Services" },
+    { value: "all", label: t("All") },
+    { value: "our-solutions", label: t("Our Solutions") },
+    { value: "enterprise-solutions", label: t("Enterprise Solutions & Services") },
+    { value: "digital-solutions", label: t("Digital Solutions") },
+    { value: "digital-services", label: t("Digital Services") },
   ];
 
   // Filter blogs by category, industries, and search term
@@ -311,7 +311,8 @@ export default function Blog() {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
+    const locale = language === "German" ? "de-DE" : "en-US";
+    return date.toLocaleDateString(locale, {
       year: "numeric",
       month: "long",
       day: "numeric",
@@ -433,7 +434,7 @@ export default function Blog() {
           <div className="container">
             <h2 className="blog-main-title" data-cursor="-opaque">
               {" "}
-              Latest Blog Posts{" "}
+              {t("Latest Blog Posts")}
             </h2>
             <div className="blog-waber-one">
               {/* Testimonial Slider Start */}
@@ -500,7 +501,7 @@ export default function Blog() {
                                       href={`/Blogs/${blog.slug}`}
                                       className="animated-svg-link p-0"
                                     >
-                                      Read More
+                                      {t("Read More")}
                                       <span className="svg-container ">
                                         <span className=" right">
                                           <ArrowSVG />
@@ -757,7 +758,7 @@ export default function Blog() {
                       >
                         <input
                           type="text"
-                          placeholder="Search blogs"
+                          placeholder={t("Search blogs")}
                           className="search-input"
                           value={searchTerm}
                           onChange={(e) => setSearchTerm(e.target.value)}
@@ -836,7 +837,7 @@ export default function Blog() {
                             className="fome-filter-title"
                             style={{ margin: 0 }}
                           >
-                            Categories
+                            {t("Categories")}
                           </h6>
                           {(selectedIndustries.length > 0 ||
                             selectedCategory !== "all" ||
@@ -853,14 +854,14 @@ export default function Blog() {
                                 fontSize: "12px",
                               }}
                             >
-                              Clear Filters
+                              {t("Clear Filters")}
                             </button>
                           )}
                         </div>
                         <div className="filter-check-box-waber">
                           {industries.length === 0 ? (
                             <p style={{ color: "#666", fontSize: "14px" }}>
-                              No industries available
+                              {t("No industries available")}
                             </p>
                           ) : (
                             industries.map((industry) => (
@@ -880,7 +881,7 @@ export default function Blog() {
                                   className="form-check-label"
                                   htmlFor={`mobile-industry-${industry.slug}`}
                                 >
-                                  {industry.name}
+                                  {t(industry.name)}
                                 </label>
                               </div>
                             ))
@@ -922,7 +923,7 @@ export default function Blog() {
                       selectedCategory !== "all" ||
                       searchTerm) && (
                       <div style={{ fontSize: "14px", color: "#666" }}>
-                        Showing {filteredBlogs.length} of {blogs.length} blog
+                        {t("Showing")} {filteredBlogs.length} {t("of")} {blogs.length} {t("blog")}
                         {blogs.length !== 1 ? "s" : ""}
                       </div>
                     )}
@@ -933,7 +934,7 @@ export default function Blog() {
                         className="col-sm-12"
                         style={{ textAlign: "center", padding: "40px" }}
                       >
-                        <p>Loading blogs...</p>
+                        <p>{t("Loading blogs...")}</p>
                       </div>
                     ) : gridBlogs.length === 0 ? (
                       <div
@@ -944,7 +945,7 @@ export default function Blog() {
                         selectedCategory !== "all" ||
                         searchTerm ? (
                           <div>
-                            <p>No blogs match your current filters.</p>
+                            <p>{t("No blogs match your current filters.")}</p>
                             <button
                               onClick={clearFilters}
                               style={{
@@ -957,11 +958,11 @@ export default function Blog() {
                                 marginTop: "10px",
                               }}
                             >
-                              Clear All Filters
+                              {t("Clear All Filters")}
                             </button>
                           </div>
                         ) : (
-                          <p>No blogs available yet.</p>
+                          <p>{t("No blogs available yet.")}</p>
                         )}
                       </div>
                     ) : (
@@ -983,7 +984,7 @@ export default function Blog() {
                             />
                             <div className="blog-content-in-blog-page">
                               <div>
-                                <p className="blag-page-1">Blog</p>
+                                <p className="blag-page-1">{t("Blog")}</p>
                                 {isAdmin && !blog.published && (
                                   <span
                                     style={{
@@ -1012,7 +1013,7 @@ export default function Blog() {
                                   href={`/Blogs/${blog.slug}`}
                                   className="animated-svg-link1 btn-style-3 p-0"
                                 >
-                                  Read More
+                                  {t("Read More")}
                                   <span className="svg-container ">
                                     <span className=" left">
                                       <ArrowSVG />
@@ -1140,7 +1141,7 @@ export default function Blog() {
                   }}
                 >
                   <h6 className="fome-filter-title" style={{ margin: 0 }}>
-                    Industries
+                    {t("Industries")}
                   </h6>
                   {(selectedIndustries.length > 0 ||
                     selectedCategory !== "all" ||
@@ -1157,14 +1158,14 @@ export default function Blog() {
                         fontSize: "12px",
                       }}
                     >
-                      Clear Filters
+                      {t("Clear Filters")}
                     </button>
                   )}
                 </div>
                 <div className="filter-check-box-waber">
                   {industries.length === 0 ? (
                     <p style={{ color: "#666", fontSize: "14px" }}>
-                      No industries available
+                      {t("No industries available")}
                     </p>
                   ) : (
                     industries.map((industry) => (
@@ -1181,7 +1182,7 @@ export default function Blog() {
                           htmlFor={`desktop-industry-${industry.slug}`}
                           style={{ cursor: "pointer" }}
                         >
-                          {industry.name}
+                          {t(industry.name)}
                         </label>
                       </div>
                     ))
@@ -1205,7 +1206,7 @@ export default function Blog() {
                         color: "#000",
                       }}
                     >
-                      Active Filters:
+                      {t("Active Filters:")}
                     </p>
                     {searchTerm && (
                       <span
@@ -1219,7 +1220,7 @@ export default function Blog() {
                           margin: "2px",
                         }}
                       >
-                        Search: {searchTerm}
+                        {t("Search")}: {searchTerm}
                       </span>
                     )}
                     {selectedIndustries.map((slug) => {
@@ -1239,7 +1240,7 @@ export default function Blog() {
                             margin: "2px",
                           }}
                         >
-                          {industry.name}
+                          {t(industry.name)}
                         </span>
                       ) : null;
                     })}
@@ -1258,18 +1259,16 @@ export default function Blog() {
                 <div className="row">
                   <div className="col-sm-8">
                     <h2>
-                      Ready to accelerate value creation across your portfolio?
+                      {t("Ready to accelerate value creation across your portfolio?")}
                     </h2>
                     <p>
-                      Contact us today to learn how we can help modernise
-                      operations, de-risk integrations, and improve commercial
-                      outcomes.
+                      {t("Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.")}
                     </p>
                   </div>
                   <div className="col-sm-4">
                     <div className="ser-btn text-right">
                       <Link href="/contact-us" className="animated-svg-link">
-                        Contact Us
+                        {t("Contact Us")}
                         <span className="svg-container ">
                           <span className=" right">
                             <svg

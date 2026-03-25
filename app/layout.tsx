@@ -15,6 +15,8 @@ import PopoverInit from "./Components/PopoverInit";
 import LoadingWrapper from "./Components/LoadingWrapper";
 import React from "react";
 
+import translations from "./translations.json";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -79,6 +81,13 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/guc8vih.css" />
         {/* <link rel="stylesheet" href="./css/enterprise.css" /> */}
         <link rel="stylesheet" href="/style2.css" />
+
+        {/* Global translations for vanilla JS */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.translations = ${JSON.stringify(translations)};`,
+          }}
+        />
 
         {/* Google Tag Manager */}
         <script
@@ -448,12 +457,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           src="//www.googleadservices.com/pagead/conversion_async.js"
         ></script>
 
-
-
-
-      </body>
-    
-
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -543,6 +546,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         `,
         }}
       />
-    </html>
-  );
+    </body>
+  </html>
+);
 }

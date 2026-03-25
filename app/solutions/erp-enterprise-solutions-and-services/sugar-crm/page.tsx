@@ -1,7 +1,11 @@
+"use client";
+
 import React from 'react'
 import CommomLayout from '../../../Components/CommomLayout'
 import Link from 'next/link';
+import {useTranslation} from "../../../hooks/useTranslation";
 const page = () => {
+  const { t, language } = useTranslation();
   return (
     <CommomLayout>
       <>
@@ -24,44 +28,34 @@ const page = () => {
         {/*    </div>*/}
         {/*</div>*/}
         {/* Hero Section Start*/}
+        
         <div className="hero brainsec bluebg digi1 mobilepd40 pdb0">
           <div className="container">
             <div className="row section-row align-items-center  digitalsec">
               <div className="col-sm-6">
                 <div className="section-title wow fadeInUp">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                Sugar CRM Transform Customer Relationships
+                    {t("Sugar CRM Transform Customer Relationships")}
                   </h2>
                   <p>
                     {" "}
-                    Transform customer experience with SugarCRM, a smart, scalable CRM
-                    for digital-first enterprises.{" "}
+                    {t("Transform customer experience with SugarCRM, a smart, scalable CRM for digital-first enterprises.")}
                   </p>
                   <p>
-                    Automate processes, unify touchpoints, and drive intelligent
-                    growth across sales, marketing, and service.
+                    {t("Automate processes, unify touchpoints, and drive intelligent growth across sales, marketing, and service.")}
                   </p>
                   <p>
-                    SugarCRM provides a comprehensive suite of tools to manage sales,
-                    marketing, and customer support processes. With its powerful
-                    features and customisable options, SugarCRM enables organisations
-                    to streamline sales, marketing, and customer service processes,
-                    ultimately driving growth and enhancing customer satisfaction.
+                    {t("SugarCRM provides a comprehensive suite of tools to manage sales, marketing, and customer support processes. With its powerful features and customisable options, SugarCRM enables organisations to streamline sales, marketing, and customer service processes, ultimately driving growth and enhancing customer satisfaction.")}
                   </p>
                   <p id="more" className="more-text hidden">
-                    RheinBrücke leverages our extensive enterprise IT implementation
-                    and domain expertise, offering our customers a comprehensive
-                    solution to streamline their business processes. We also have deep
-                    Enterprise Integration expertise that enables optimal use of your
-                    existing IT investments, while adopting the best in class
-                    capabilities of Sugar CRM.
+                    {t("RheinBrücke leverages our extensive enterprise IT implementation and domain expertise, offering our customers a comprehensive solution to streamline their business processes. We also have deep Enterprise Integration expertise that enables optimal use of your existing IT investments, while adopting the best in class capabilities of Sugar CRM.")}
                   </p>
                   <div className="ser-btn1 readmore">
                     <span
                       className="animated-svg-link1 btn-style-3"
                       id="toggleReadMore"
                     >
-                      <span className="label">Read More</span>
+                      <span className="label">{t("Read More")}</span>
                       <span className="svg-container">
                         <span className=" left">
                           <svg
@@ -566,29 +560,25 @@ const page = () => {
         </div>
         {/* Hero Section End*/}
         {/* Our Testimonial Section Start */}
-        <div className="our-testimonial merlinicon pd30">
+        <div className={`our-testimonial merlinicon pd30 ${language === 'German' ? 'germanwhysugar' : ''}`}>
           <div className="container">
             <div className="row section-row text-center">
               <div className="col-lg-12">
                 <div className="section-title testidescription">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
                     {" "}
-                    Why SugarCRM
+                    {t("Why SugarCRM")}
                   </h2>
                   <p>
                     {" "}
-                    As organisations strive to deliver personalised experiences and
-                    gain actionable insights from customer data, the demand for robust
-                    CRM platforms continues to grow. Amidst this evolving landscape,
-                    SugarCRM stands out as a leading provider, empowering businesses
-                    to optimise sales, marketing, and service operations while
-                    adapting seamlessly to diverse business needs and scaling for
-                    future growth.
+                    {t("As organisations strive to deliver personalised experiences and gain actionable insights from customer data, the demand for robust CRM platforms continues to grow. Amidst this evolving landscape, SugarCRM stands out as a leading provider, empowering businesses to optimise sales, marketing, and service operations while adapting seamlessly to diverse business needs and scaling for future growth.")}
                   </p>
                 </div>
               </div>
             </div>
-            <h3 className="text-dark text-center">Key features of SugarCRM are</h3>
+            <h3 className="text-dark text-center">
+              {t("Key features of SugarCRM are:")}
+            </h3>
             <br />
             <br />
             <div className="row align-items-center">
@@ -612,7 +602,7 @@ const page = () => {
                             >
                               <g id="layer6">
                                 <path
-                                  className="icns"
+                                  className="icns3"
                                   id="path940"
                                   d="m3.9589358 7.8742461c-.015058.000023-.030123.001-.044958.0036-.8516816.172697-1.5311816.388185-2.0195156.644404-.2441669.128109-.4421189.265783-.5896281.42788-.1466571.161161-.2443328.35779-.2454631.570508h-.00103c-.0000096.0013-.0000096.0023 0 .0036v2.6468649c-.0000004.316855.2049375.57872.484725.784966.2797874.206245.6560275.378988 1.1187948.533301.8639448.288087 2.0764777.508604 3.4240803.628901v1.226283c-.0000495.249729.3141411.360902.4707726.166398l2.1171799-2.646852c.07703-.09654.07703-.233153 0-.329694l-2.1171836-2.6447779c-.1560169-.193759-.4689925-.084944-.4707724.1638139v.887284c-.6617502-.060951-1.2898972-.150282-1.8536335-.248562l-.002064-2.5543679c-.0005027-.148483-.1228712-.267412-.2713043-.26355zm-.2578655.594279.00362 2.1120149c-.3218106-.06916-.6239621-.153562-.876435-.237712-.4301792-.143377-.7645519-.305615-.9725504-.4588839-.2079986-.15327-.2676839-.275604-.2676839-.359668-.0000001-.05502.022175-.121072.1090373-.216525.086862-.09545.2356956-.207806.4433838-.316777.3450588-.181045.9301703-.372927 1.5606282-.522449zm-2.1130493 1.8644869c.2760201.195363.6296478.363547 1.0738363.511596.9255546.308489 2.1973444.534476 3.6679931.64854.1537171.01197.2851724-.109368.2852539-.26355v-.418063l1.5120525 1.888773-1.5120525 1.888774v-.713133c-.0000757-.138147-.1061815-.252866-.2439128-.263552-1.4399673-.111658-2.6826159-.338405-3.5429362-.625284-.4301599-.14344-.7645644-.303503-.9725504-.456819-.2079861-.153317-.267684-.275059-.2676839-.359152z"
                                   font-variant-ligatures="normal"
@@ -630,7 +620,6 @@ const page = () => {
                                   text-orientation="mixed"
                                   white-space="normal"
                                   shape-padding={0}
-                                  isolation="auto"
                                   mix-blend-mode="normal"
                                   solid-color="rgb(0,0,0)"
                                   solid-opacity={1}
@@ -638,7 +627,7 @@ const page = () => {
                                   fill="#499a9a"
                                 />
                                 <path
-                                  className="icns"
+                                  className="icns3"
                                   id="path944"
                                   d="m12.941333 7.8742461c-.135345.01356-.238361.127527-.238228.26355l-.0036 2.5548829c-.967508.181185-2.135026.30466-3.4085954.341581l.015499.529166c1.7934724-.05199 3.3859984-.266842 4.5511444-.591694.582573-.162427 1.057672-.349623 1.408182-.574126.0462-.02959.0375-.02251.0801-.05426v1.827279c0 .0962-.08764.247928-.365352.425813-.277715.177886-.712318.358431-1.263489.512114-1.102343.307363-2.666203.521003-4.4260873.572057l.015499.529167c1.7933463-.05203 3.3861003-.266847 4.5511463-.591695.582523-.162424 1.059769-.351699 1.410249-.576191.350478-.224495.607199-.508974.607199-.870748v-2.6468669c0-.214141-.09847-.412027-.24598-.574125-.147508-.162144-.345977-.299772-.590144-.427881-.488333-.256219-1.167834-.471702-2.019515-.644405 0 0-.04292-.0084-.07803-.0036zm.289388.591696c.631468.149633 1.216727.344298 1.562179.525549.207688.108971.356522.220809.443384.31626.08686.09545.109554.161507.109554.216524 0 .09621-.08761.247919-.365352.425814-.277744.1778949-.712267.3579109-1.263489.5115969-.153399.04277-.31781.08351-.488343.122473z"
                                   font-variant-ligatures="normal"
@@ -656,7 +645,6 @@ const page = () => {
                                   text-orientation="mixed"
                                   white-space="normal"
                                   shape-padding={0}
-                                  isolation="auto"
                                   mix-blend-mode="normal"
                                   solid-color="rgb(0,0,0)"
                                   solid-opacity={1}
@@ -664,7 +652,7 @@ const page = () => {
                                   fill="#499a9a"
                                 />
                                 <path
-                                  className="icns"
+                                  className="icns3"
                                   id="path870"
                                   d="m8.4669617 2.6455858c-1.1658688 0-2.1171877.9513189-2.1171874 2.1171873 0 1.165869.9513186 2.117188 2.1171874 2.117188 1.1658685 0 2.1171873-.951319 2.1171873-2.117188 0-1.1658684-.9513188-2.1171873-2.1171873-2.1171873zm0 .5292969c.8798856 0 1.5878913.708005 1.5878913 1.5878904 0 .879886-.7080057 1.587891-1.5878913 1.587891-.8798857 0-1.5878908-.708005-1.5878908-1.587891 0-.8798855.7080051-1.5878904 1.5878908-1.5878904z"
                                   font-variant-ligatures="normal"
@@ -682,7 +670,6 @@ const page = () => {
                                   text-orientation="mixed"
                                   white-space="normal"
                                   shape-padding={0}
-                                  isolation="auto"
                                   mix-blend-mode="normal"
                                   solid-color="rgb(0,0,0)"
                                   solid-opacity={1}
@@ -690,7 +677,7 @@ const page = () => {
                                   fill="#499a9a"
                                 />
                                 <path
-                                  className="icns"
+                                  className="icns3"
                                   id="path872"
                                   d="m8.4669617 1.3233202c-.9832123 0-2.0672936.5601514-2.9375 1.2460937-.4351033.3429712-.8158192.7204142-1.0937499 1.0917969-.2779311.3713827-.4667973.7336528-.466797 1.1015623-.0000003.36791.1888659.73018.466797 1.101563.2779307.371382.6586466.746872 1.0937499 1.089844.8702064.685942 1.9542879 1.248046 2.9375 1.248047.983212-.000001 2.0672933-.562105 2.9375003-1.248047.435103-.342972.813866-.718462 1.091797-1.089844.277931-.371383.46875-.733653.46875-1.101563 0-.3679095-.190819-.7301796-.46875-1.1015623s-.656694-.7488257-1.091797-1.0917969c-.870207-.6859423-1.9542883-1.2460936-2.9375003-1.2460937zm0 .5292969c.7702918 0 1.8012913.4958382 2.6093753 1.1328125.404042.3184871.756213.669039.998047.9921875s.361328.623899.361328.785156-.119494.460055-.361328.783204c-.241834.323148-.594005.6737-.998047.992187-.808084.636974-1.8390835 1.134765-2.6093753 1.134765-.7702921 0-1.8032439-.497791-2.611328-1.134765-.4040423-.318487-.7542599-.669039-.9960938-.992187-.2418342-.323149-.3613283-.621947-.3613283-.783204s.1194941-.4620075.3613283-.785156c.2418339-.3231485.5920515-.6737004.9960938-.9921875.8080841-.6369743 1.8410359-1.1328125 2.611328-1.1328125z"
                                   font-variant-ligatures="normal"
@@ -708,7 +695,6 @@ const page = () => {
                                   text-orientation="mixed"
                                   white-space="normal"
                                   shape-padding={0}
-                                  isolation="auto"
                                   mix-blend-mode="normal"
                                   solid-color="rgb(0,0,0)"
                                   solid-opacity={1}
@@ -718,14 +704,12 @@ const page = () => {
                               </g>
                             </svg>
                           </div>
-                          <h3>360-Degree Customer View</h3>
+                          <h3>
+                            {t("360-Degree Customer View")}
+                          </h3>
                           <ul>
                             <p>
-                              SugarCRM provides a comprehensive view of each customer,
-                              consolidating interactions, transactions, and
-                              communications into a single, centralized platform. This
-                              holistic view allows your team to understand customer
-                              needs better and deliver personalized experiences.
+                              {t("SugarCRM provides a comprehensive view of each customer, consolidating interactions, transactions, and communications into a single, centralized platform. This holistic view allows your team to understand customer needs better and deliver personalized experiences.")}
                             </p>
                           </ul>
                         </div>
@@ -749,14 +733,12 @@ const page = () => {
                               />
                             </svg>
                           </div>
-                          <h3>Sales Automation</h3>
+                          <h3>
+                            {t("Sales Automation")}
+                          </h3>
                           <ul>
                             <p>
-                              Automate sales processes with SugarCRM’s workflow
-                              management and automation tools. From lead generation to
-                              opportunity tracking and closing deals, SugarCRM helps
-                              optimize your sales pipeline for improved efficiency and
-                              faster conversions.
+                              {t("Automate sales processes with SugarCRM’s workflow management and automation tools. From lead generation to opportunity tracking and closing deals, SugarCRM helps optimize your sales pipeline for improved efficiency and faster conversions.")}
                             </p>
                           </ul>
                         </div>
@@ -780,14 +762,10 @@ const page = () => {
                               />
                             </svg>
                           </div>
-                          <h3>Marketing Campaign Management</h3>
+                          <h3>{t("Marketing Campaign Management")}</h3>
                           <ul>
                             <p>
-                              Plan, execute, and track marketing campaigns seamlessly
-                              with SugarCRM. From email marketing to social media
-                              integration and analytics, SugarCRM empowers your
-                              marketing team to create targeted campaigns that
-                              resonate with your audience.
+                              {t("Plan, execute, and track marketing campaigns seamlessly with SugarCRM. From email marketing to social media integration and analytics, SugarCRM empowers your marketing team to create targeted campaigns that resonate with your audience.")}
                             </p>
                           </ul>
                         </div>
@@ -829,13 +807,10 @@ const page = () => {
                               </g>
                             </svg>
                           </div>
-                          <h3>Customer Support and Service</h3>
+                          <h3>{t("Customer Support and Service")}</h3>
                           <ul>
                             <p>
-                              Enhance customer service with SugarCRM’s service
-                              management tools. Track support tickets, manage customer
-                              inquiries, and ensure timely resolution of issues,
-                              fostering long-term customer loyalty and satisfaction.
+                              {t("Enhance customer service with SugarCRM’s service management tools. Track support tickets, manage customer inquiries, and ensure timely resolution of issues, fostering long-term customer loyalty and satisfaction.")}
                             </p>
                           </ul>
                         </div>
@@ -875,17 +850,10 @@ const page = () => {
                               <g id="Layer_1" />
                             </svg>
                           </div>
-                          <h3>Sugar as a Platform</h3>
+                          <h3>{t("Sugar as a Platform")}</h3>
                           <ul>
                             <p>
-                              SugarCRM is a versatile platform known for its open
-                              architecture, allowing extensive customization and
-                              integration capabilities to tailor solutions to specific
-                              business needs. It supports seamless integration with
-                              third-party applications, offers comprehensive features
-                              for sales, marketing, and customer service, and ensures
-                              data security and compliance, empowering businesses to
-                              enhance customer relationships and drive growth.
+                              {t("SugarCRM is a versatile platform known for its open architecture, allowing extensive customization and integration capabilities to tailor solutions to specific business needs. It supports seamless integration with third-party applications, offers comprehensive features for sales, marketing, and customer service, and ensures data security and compliance, empowering businesses to enhance customer relationships and drive growth.")}
                             </p>
                           </ul>
                         </div>
@@ -945,14 +913,10 @@ const page = () => {
                               </g>
                             </svg>
                           </div>
-                          <h3>Customization and Flexibility</h3>
+                          <h3>{t("Customization and Flexibility")}</h3>
                           <ul>
                             <p>
-                              SugarCRM offers extensive customization options to
-                              tailor the CRM system to your specific business needs.
-                              Customize fields, workflows, and dashboards without
-                              extensive coding knowledge, ensuring the CRM aligns
-                              perfectly with your operational requirements.
+                              {t("SugarCRM offers extensive customization options to tailor the CRM system to your specific business needs. Customize fields, workflows, and dashboards without extensive coding knowledge, ensuring the CRM aligns perfectly with your operational requirements.")}
                             </p>
                           </ul>
                         </div>
@@ -1099,15 +1063,10 @@ const page = () => {
                               </g>
                             </svg>
                           </div>
-                          <h3>Integration Capabilities</h3>
+                          <h3>{t("Integration Capabilities")}</h3>
                           <ul>
                             <p>
-                              Integrate SugarCRM with other essential business
-                              applications and systems seamlessly. Whether it’s ERP
-                              systems, e-commerce platforms, or third-party analytics
-                              tools, SugarCRM’s open architecture supports easy
-                              integration to streamline data flow and enhance overall
-                              business efficiency.
+                              {t("Integrate SugarCRM with other essential business applications and systems seamlessly. Whether it’s ERP systems, e-commerce platforms, or third-party analytics tools, SugarCRM’s open architecture supports easy integration to streamline data flow and enhance overall business efficiency.")}
                             </p>
                           </ul>
                         </div>
@@ -1342,18 +1301,14 @@ const page = () => {
                 <div className="section-title mb-0 coreoffer">
                   {/* <h3 class="wow fadeInUp">key benefits</h3> */}
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Core Offerings
+                    {t("Core Offerings")}
                   </h2>
                   <p className="posrelative mb-1">
                     {" "}
-                    SugarCRM's core offerings revolve around its comprehensive
-                    Customer Relationship Management (CRM) solutions. These offerings
-                    are designed to help businesses manage and optimize their
-                    interactions with customers across various stages of the customer
-                    lifecycle.
+                    {t("SugarCRM's core offerings revolve around its comprehensive Customer Relationship Management (CRM) solutions. These offerings are designed to help businesses manage and optimize their interactions with customers across various stages of the customer lifecycle.")}
                   </p>
                   <div className="tab-7-wabe">
-                    <h5 className="costem-hadding"> The core offerings include:</h5>
+                    <h5 className="costem-hadding"> {t("The core offerings include:")}</h5>
                     <div className="nav nav-tabs" id="nav-tab" role="tablist">
                       <button
                         className="nav-link active"
@@ -1365,7 +1320,7 @@ const page = () => {
                         aria-controls="nav-home"
                         aria-selected="true"
                       >
-                        Sugar Sell{" "}
+                        {t("Sugar Sell")}{" "}
                       </button>
                       <button
                         className="nav-link"
@@ -1377,7 +1332,7 @@ const page = () => {
                         aria-controls="nav-profile"
                         aria-selected="false"
                       >
-                        Sugar Market
+                        {t("Sugar Market")}
                       </button>
                       <button
                         className="nav-link"
@@ -1389,7 +1344,7 @@ const page = () => {
                         aria-controls="nav-contact"
                         aria-selected="false"
                       >
-                        Sugar Serve
+                        {t("Sugar Serve")}
                       </button>
                     </div>
                     <div className="tab-content" id="nav-tabContent">
@@ -1400,12 +1355,9 @@ const page = () => {
                         aria-labelledby="nav-home-tab"
                       >
                         <p className="text-white">
-                          Sugar Sell is SugarCRM’s core CRM platform tailored
-                          primarily for sales teams. It provides tools and features to
-                          manage leads, opportunities, accounts, and contacts
-                          effectively.
+                          {t("Sugar Sell is SugarCRM’s core CRM platform tailored primarily for sales teams. It provides tools and features to manage leads, opportunities, accounts, and contacts effectively.")}
                         </p>
-                        <h5 className="costem-hadding">Key features include</h5>
+                        <h5 className="costem-hadding">{t("Key features include")}</h5>
                         <div className="row">
                           <div className="col-sm-9">
                         <div className="d-sm-flex">
@@ -1417,7 +1369,7 @@ const page = () => {
                                 className="point-icon"
                                 alt=""
                               />{" "}
-                              Pipeline Management
+                              {t("Pipeline Management")}
                             </li>
                             <li>
                               <img
@@ -1425,7 +1377,7 @@ const page = () => {
                                 className="point-icon"
                                 alt=""
                               />
-                              Workflow automation
+                              {t("Workflow automation")}
                             </li>
                             <li>
                               <img
@@ -1433,7 +1385,7 @@ const page = () => {
                                 className="point-icon"
                                 alt=""
                               />{" "}
-                              Sales Forecasting
+                              {t("Sales Forecasting")}
                             </li>
                           </ul>
                           <ul className="import-and-point">
@@ -1443,7 +1395,7 @@ const page = () => {
                                 className="point-icon"
                                 alt=""
                               />
-                              Reporting / analytics
+                              {t("Reporting / analytics")}
                             </li>
                             <li>
                               {" "}
@@ -1452,7 +1404,7 @@ const page = () => {
                                 className="point-icon"
                                 alt=""
                               />{" "}
-                              Email Integration
+                              {t("Email Integration")}
                             </li>
                           </ul>
                         </div>
@@ -1464,9 +1416,7 @@ const page = () => {
                           </div>
                         </div>
                         <p className="text-white mb-2 mb-sm-0">
-                          Sugar Sell aims to streamline the sales process, improve
-                          team collaboration, and ultimately boost sales performance
-                          through data-driven insights and efficient workflows.
+                          {t("Sugar Sell aims to streamline the sales process, improve team collaboration, and ultimately boost sales performance through data-driven insights and efficient workflows.")}
                         </p>
                       </div>
                       <div
@@ -1476,12 +1426,10 @@ const page = () => {
                         aria-labelledby="nav-profile-tab"
                       >
                         <p className="text-white">
-                          Sugar Market is SugarCRM’s marketing automation solution. It
-                          allows businesses to automate marketing campaigns, nurture
-                          leads, and measure marketing ROI effectively.
+                          {t("Sugar Market is SugarCRM’s marketing automation solution. It allows businesses to automate marketing campaigns, nurture leads, and measure marketing ROI effectively.")}
                         </p>
                         <h5 className="costem-hadding">
-                          Key features of Sugar Market include
+                          {t("Key features of Sugar Market include")}
                         </h5>
                         <div className="row">
                           <div className="col-sm-9">
@@ -1494,7 +1442,7 @@ const page = () => {
                                 className="point-icon"
                                 alt=""
                               />{" "}
-                              Email Marketing
+                              {t("Email Marketing")}
                             </li>
                             <li>
                               <img
@@ -1502,7 +1450,7 @@ const page = () => {
                                 className="point-icon"
                                 alt=""
                               />
-                              Lead Scoring
+                              {t("Lead Scoring")}
                             </li>
                             <li>
                               <img
@@ -1510,7 +1458,7 @@ const page = () => {
                                 className="point-icon"
                                 alt=""
                               />{" "}
-                              Campaign Management
+                              {t("Campaign Management")}
                             </li>
                           </ul>
                           <ul className="import-and-point">
@@ -1520,7 +1468,7 @@ const page = () => {
                                 className="point-icon"
                                 alt=""
                               />
-                              Social Media Integration
+                              {t("Social Media Integration")}
                             </li>
                             <li>
                               {" "}
@@ -1529,7 +1477,7 @@ const page = () => {
                                 className="point-icon"
                                 alt=""
                               />{" "}
-                              Marketing Analytics
+                              {t("Marketing Analytics")}
                             </li>
                           </ul>
                         </div>
@@ -1541,9 +1489,7 @@ const page = () => {
                           </div>
                         </div>
                         <p className="text-white mb-2 mb-sm-0">
-                          Sugar Market helps businesses attract prospects, engage with
-                          customers across multiple channels, and drive revenue growth
-                          through targeted marketing strategies.
+                          {t("Sugar Market helps businesses attract prospects, engage with customers across multiple channels, and drive revenue growth through targeted marketing strategies.")}
                         </p>
                       </div>
                       <div
@@ -1553,13 +1499,10 @@ const page = () => {
                         aria-labelledby="nav-contact-tab"
                       >
                         <p className="text-white">
-                          Sugar Serve is SugarCRM’s customer service and support
-                          solution, focusing on delivering exceptional customer
-                          experiences. It enables businesses to manage customer
-                          inquiries, support cases, and service requests efficiently.
+                          {t("Sugar Serve is SugarCRM’s customer service and support solution, focusing on delivering exceptional customer experiences. It enables businesses to manage customer inquiries, support cases, and service requests efficiently.")}
                         </p>
                         <h5 className="costem-hadding">
-                          Key features of Sugar Market include
+                          {t("Key features of Sugar Market include")}
                         </h5>
                         <div className="row">
                           <div className="col-sm-9">
@@ -1572,7 +1515,7 @@ const page = () => {
                                 className="point-icon"
                                 alt=""
                               />{" "}
-                              Case Management
+                              {t("Case Management")}
                             </li>
                             <li>
                               <img
@@ -1580,7 +1523,7 @@ const page = () => {
                                 className="point-icon"
                                 alt=""
                               />
-                              Knowledge Base Management
+                              {t("Knowledge Base Management")}
                             </li>
                             <li>
                               <img
@@ -1588,7 +1531,7 @@ const page = () => {
                                 className="point-icon"
                                 alt=""
                               />{" "}
-                              Service Level Agreement (SLA) Tracking
+                              {t("Service Level Agreement (SLA) Tracking")}
                             </li>
                           </ul>
                           <ul className="import-and-point">
@@ -1598,7 +1541,7 @@ const page = () => {
                                 className="point-icon"
                                 alt=""
                               />
-                              Self-Service Portals
+                              {t("Self-Service Portals")}
                             </li>
                             <li>
                               {" "}
@@ -1607,7 +1550,7 @@ const page = () => {
                                 className="point-icon"
                                 alt=""
                               />{" "}
-                              Customer Service Analytics
+                              {t("Customer Service Analytics")}
                             </li>
                           </ul>
                         </div>
@@ -1619,9 +1562,7 @@ const page = () => {
                           </div>
                         </div>
                         <p className="text-white mb-2 mb-sm-0">
-                          Sugar Serve aims to improve customer satisfaction by
-                          empowering service teams with the tools they need to resolve
-                          issues promptly and deliver personalized support.
+                          {t("Sugar Serve aims to improve customer satisfaction by empowering service teams with the tools they need to resolve issues promptly and deliver personalized support.")}
                         </p>
                       </div>
                     </div>
@@ -1642,52 +1583,37 @@ const page = () => {
               <div className="col-sm-7">
                 <div className="section-title">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Benefits of SugarCRM
+                    {t("Benefits of SugarCRM")}
                   </h2>
                 </div>
                 <div>
-                  <h5 className="bb-title"> Scalability</h5>
+                  <h5 className="bb-title"> {t("Scalability")}</h5>
                   <p>
-                    SugarCRM is scalable to accommodate growing business needs.
-                    Whether you’re a small startup or a large enterprise, SugarCRM can
-                    scale with your business, adapting to changing requirements and
-                    increasing user demands.
+                    {t("SugarCRM is scalable to accommodate growing business needs. Whether you’re a small startup or a large enterprise, SugarCRM can scale with your business, adapting to changing requirements and increasing user demands.")}
                   </p>
                 </div>
                 <div>
-                  <h5 className="bb-title">User-Friendly Interface</h5>
+                  <h5 className="bb-title">{t("User-Friendly Interface")}</h5>
                   <p>
-                    With an intuitive and user-friendly interface, SugarCRM ensures
-                    quick adoption and minimal training for your team. Users can
-                    navigate the platform effortlessly, maximizing productivity and
-                    minimizing downtime.
+                    {t("With an intuitive and user-friendly interface, SugarCRM ensures quick adoption and minimal training for your team. Users can navigate the platform effortlessly, maximizing productivity and minimizing downtime.")}
                   </p>
                 </div>
                 <div>
-                  <h5 className="bb-title">Data Security</h5>
+                  <h5 className="bb-title">{t("Data Security")}</h5>
                   <p>
-                    Protect sensitive customer data with SugarCRM’s robust security
-                    features. From role-based access controls to data encryption and
-                    regular security updates, SugarCRM prioritizes data protection to
-                    safeguard your business and customer information.
+                    {t("Protect sensitive customer data with SugarCRM’s robust security features. From role-based access controls to data encryption and regular security updates, SugarCRM prioritizes data protection to safeguard your business and customer information.")}
                   </p>
                 </div>
                 <div>
-                  <h5 className="bb-title">Analytics and Reporting</h5>
+                  <h5 className="bb-title">{t("Analytics and Reporting")}</h5>
                   <p>
-                    Gain actionable insights with SugarCRM’s advanced analytics and
-                    reporting capabilities. Track key performance indicators, measure
-                    campaign effectiveness, and identify trends to make informed
-                    business decisions and drive growth.
+                    {t("Gain actionable insights with SugarCRM’s advanced analytics and reporting capabilities. Track key performance indicators, measure campaign effectiveness, and identify trends to make informed business decisions and drive growth.")}
                   </p>
                 </div>
                 <div>
-                  <h5 className="bb-title">Customer Experience Focus</h5>
+                  <h5 className="bb-title">{t("Customer Experience Focus")}</h5>
                   <p>
-                    By centralizing customer data and automating processes, SugarCRM
-                    enhances the overall customer experience. Deliver personalized
-                    interactions, respond to inquiries promptly, and build stronger
-                    relationships that foster customer loyalty and retention.
+                    {t("By centralizing customer data and automating processes, SugarCRM enhances the overall customer experience. Deliver personalized interactions, respond to inquiries promptly, and build stronger relationships that foster customer loyalty and retention.")}
                   </p>
                 </div>
               </div>
@@ -1701,26 +1627,21 @@ const page = () => {
           </div>
         </div>
         {/* Our Testimonial Section Start */}
-        <div className="our-testimonial bgchange pd30">
+        <div className={`our-testimonial bgchange pd30 ${language === 'German' ? 'gersugaradv' : ''}`}>
           <div className="container">
             <div className="row section-row align-items-center">
               <div className="col-lg-12">
                 <div className="section-title text-center headingss">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    RheinBrücke Advantage
+                    {t("RheinBrücke Advantage")}
                   </h2>
                   <p>
                     {" "}
-                    At RheinBrücke, we prioritize building lasting partnerships with
-                    our clients as your CRM solution provider. Our goal is to serve as
-                    your trusted advisor and seamlessly integrate into your team.
-                    Through collaborative efforts, we aim to fully understand your
-                    unique business goals and address any challenges you face.
+                    {t("At RheinBrücke, we prioritize building lasting partnerships with our clients as your CRM solution provider. Our goal is to serve as your trusted advisor and seamlessly integrate into your team. Through collaborative efforts, we aim to fully understand your unique business goals and address any challenges you face.")}
                   </p>
                   <h5 className="text-dark mb-3">
                     {" "}
-                    Here are the key advantages of choosing us as your CRM solution
-                    provider:
+                    {t("Here are the key advantages of choosing us as your CRM solution provider:")}
                   </h5>
                 </div>
               </div>
@@ -1728,67 +1649,41 @@ const page = () => {
             <div className="row align-items-center justify-content-center">
               <div className="col-sm-4">
                 <div className="su-ad-waber">
-                  <h3>Expertise in Integration Services</h3>
+                  <h3>{t("Expertise in Integration Services")}</h3>
                   <p className="desc">
-                    RheinBrücke excels in integrating complex enterprise software
-                    solutions across various platforms and systems. With deep
-                    technical knowledge and experience, RheinBrücke ensures seamless
-                    connectivity and interoperability between software applications,
-                    enabling businesses to streamline workflows, enhance data
-                    accuracy, and optimize operational efficiency through integrated
-                    solutions.
+                    {t("RheinBrücke excels in integrating complex enterprise software solutions across various platforms and systems. With deep technical knowledge and experience, RheinBrücke ensures seamless connectivity and interoperability between software applications, enabling businesses to streamline workflows, enhance data accuracy, and optimize operational efficiency through integrated solutions.")}
                   </p>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="su-ad-waber">
-                  <h3>Customization Capabilities</h3>
+                  <h3>{t("Customization Capabilities")}</h3>
                   <p className="desc">
-                    RheinBrücke specialises in customising software solutions to meet
-                    specific business requirements and industry needs. Whether
-                    adapting CRM functionalities to align with unique business
-                    processes or enhancing ERP systems to support industry-specific
-                    workflows, RheinBrücke’s customisation capabilities empower
-                    businesses to maximise the value of their software investments.{" "}
+                    {t("RheinBrücke specialises in customising software solutions to meet specific business requirements and industry needs. Whether adapting CRM functionalities to align with unique business processes or enhancing ERP systems to support industry-specific workflows, RheinBrücke’s customisation capabilities empower businesses to maximise the value of their software investments.")}{" "}
                   </p>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="su-ad-waber">
-                  <h3>Industry-Specific Solutions</h3>
+                  <h3>{t("Industry-Specific Solutions")}</h3>
                   <p className="desc">
-                    RheinBrücke offers industry-specific solutions to meet the various
-                    challenges and requirements of diverse sectors. By combining
-                    domain expertise with technological proficiency, RheinBrücke
-                    delivers specialised software configurations and enhancements that
-                    address specific industry regulations, operational complexities,
-                    and customer expectations.
+                    {t("RheinBrücke offers industry-specific solutions to meet the various challenges and requirements of diverse sectors. By combining domain expertise with technological proficiency, RheinBrücke delivers specialised software configurations and enhancements that address specific industry regulations, operational complexities, and customer expectations.")}
                   </p>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="su-ad-waber">
-                  <h3>Strategic Partnerships and Alliances</h3>
+                  <h3>{t("Strategic Partnerships and Alliances")}</h3>
                   <p className="desc">
-                    RheinBrücke cultivates strategic partnerships with leading
-                    technology providers, enhancing its ability to deliver
-                    comprehensive solutions that integrate seamlessly with
-                    best-in-class software platforms. Collaborating with industry
-                    leaders like Epicor, Microsoft and SAP expanding RheinBrücke’s
-                    solution portfolio and enabling businesses to leverage
-                    cutting-edge technologies for competitive advantage.{" "}
+                    {t("RheinBrücke cultivates strategic partnerships with leading technology providers, enhancing its ability to deliver comprehensive solutions that integrate seamlessly with best-in-class software platforms. Collaborating with industry leaders like Epicor, Microsoft and SAP expanding RheinBrücke’s solution portfolio and enabling businesses to leverage cutting-edge technologies for competitive advantage.")}{" "}
                   </p>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="su-ad-waber">
-                  <h3>Commitment to Customer Success</h3>
+                  <h3>{t("Commitment to Customer Success")}</h3>
                   <p className="desc">
-                    By adopting a customer-centric approach, RheinBrücke ensures that
-                    solutions are aligned with business objectives, deliver measurable
-                    results, and exceed expectations. This commitment to customer
-                    success fosters long-term partnerships built on trust,
-                    transparency, and mutual growth.
+                    {t("By adopting a customer-centric approach, RheinBrücke ensures that solutions are aligned with business objectives, deliver measurable results, and exceed expectations. This commitment to customer success fosters long-term partnerships built on trust, transparency, and mutual growth.")}
                   </p>
                 </div>
               </div>
@@ -1805,18 +1700,16 @@ const page = () => {
                 <div className="row">
                   <div className="col-sm-8">
                     <h2>
-                      Ready to elevate your customer relationships and drive growth
-                      with us?{" "}
+                      {t("Ready to elevate your customer relationships and drive growth with us?")}{" "}
                     </h2>
                     <p>
-                      Contact us today and discover how our powerful CRM solutions can
-                      transform your business.
+                      {t("Contact us today and discover how our powerful CRM solutions can transform your business.")}
                     </p>
                   </div>
                   <div className="col-sm-4">
                     <div className="ser-btn text-right">
                       <Link href="/contact-us" className="animated-svg-link">
-                        Contact Us
+                        {t("Contact Us")}
                         <span className="svg-container ">
                           <span className=" right">
                             <svg

@@ -52,13 +52,13 @@ export default function EnterpriseSolutions() {
               {t("The Microsoft Technologies Advantage")}
             </h2>
             <p>
-              {t("Modern enterprises face challenges such as: ")}
+              {t("Modern enterprises face challenges such as:")}
             </p>  
           </div>
         </div>
       </div>
       {/* Testimonial Slider Start */}
-      <div className="digital-features-item agency-supports mstechadv">
+      <div className={`digital-features-item agency-supports mstechadv ${language === 'German' ? 'germstech' : ''}`}>
         <div className="agency-supports-slider slidebefore">
           <div className="swiper">
             <div className="swiper-wrapper">
@@ -224,7 +224,7 @@ export default function EnterpriseSolutions() {
       {/* Testimonial Slider End */}
     </div>
   </section>
-  <section className="mds-section capabilities msmobilecap pd50">
+  <section className={`mds-section capabilities msmobilecap pd50 ${language === 'German' ? 'germsapproch' : ''}`}>
     <div className="container">
       <div className="content width50">
         <div className="section-title ">

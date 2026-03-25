@@ -5890,7 +5890,7 @@ h2.section-title {
     border: 1px solid #08232680;
     border-radius: 8px;
     padding: 20px;
-    min-height: 635px;
+    min-height: 605px;
     margin-bottom: 10px;
 
 }
@@ -6051,4 +6051,8 @@ h2.section-title {
 
 .youtube-bg iframe {
     pointer-events: none;
+}
+
+.gersugaradv .su-ad-waber {
+    min-height: 410px !important;
 }

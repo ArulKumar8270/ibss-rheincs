@@ -705,7 +705,7 @@ export default function EnterpriseSolutions() {
                         {t("The Microsoft Dynamics Advantage")}
                       </h2>
                       <p className="text-center">
-                      {t("Modern businesses face increasing complexity, competitive pressures, and evolving customer expectations. Common challenges include")}
+                      {t("Modern businesses face increasing complexity, competitive pressures, and evolving customer expectations. Common challenges include:")}
                       </p>
                     </div>
                   </div>
@@ -2432,8 +2432,7 @@ export default function EnterpriseSolutions() {
                   <div className="col-lg-4 col-md-4 col-12">
                     <div className="service-item-body1 imgpos3">
                       <h3>
-                        {t("Outcome-focused delivery ensuring operational resilience and")} <br />
-                    {t("business value")}
+                        {t("Outcome-focused delivery ensuring operational resilience and business value")}
                       </h3>
                       <img src="/images/advant5.svg" alt="" />
                     </div>

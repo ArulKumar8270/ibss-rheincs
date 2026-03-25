@@ -19,7 +19,7 @@ export default function EnterpriseSolutions() {
         <div className="col-lg-5">
           <div className="pe-main-hadding-waber">
             <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
-              Retail Industry
+              {t("Retail Industry")}
             </h2>
             <p>
               {t("The retail sector is under relentless pressure from fast-changing consumer behaviour, fragmented omnichannel sales, rising operational costs, and legacy systems that hinder agility. Multi-brand, multi-format, and franchise-based retailers must address these challenges by reimagining store operations, omnichannel fulfilment, and customer engagement through connected digital infrastructure.")}

@@ -65,46 +65,10 @@
 
 @font-face {
 	font-family: 'helvetica-neue-lt-pro';
-	src: url('../webfonts/HelveticaNeue-BlackItalic.woff2') format('woff2'),
-		url('../webfonts/HelveticaNeue-BlackItalic.woff') format('woff');
-	font-weight: 400;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'helvetica-neue-lt-pro';
-	src: url('../webfonts/HelveticaNeue-BoldItalic.woff2') format('woff2'),
-		url('../webfonts/HelveticaNeue-BoldItalic.woff') format('woff');
-	font-weight: 100;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'helvetica-neue-lt-pro';
 	src: url('../webfonts/HelveticaNeue-Heavy.woff2') format('woff2'),
 		url('../webfonts/HelveticaNeue-Heavy.woff') format('woff');
 	font-weight: 400;
 	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'helvetica-neue-lt-pro';
-	src: url('../webfonts/HelveticaNeue-HeavyItalic.woff2') format('woff2'),
-		url('../webfonts/HelveticaNeue-HeavyItalic.woff') format('woff');
-	font-weight: 400;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'helvetica-neue-lt-pro';
-	src: url('../webfonts/HelveticaNeue-Italic.woff2') format('woff2'),
-		url('../webfonts/HelveticaNeue-Italic.woff') format('woff');
-	font-weight: normal;
-	font-style: italic;
 	font-display: swap;
 }
 
@@ -117,14 +81,6 @@
 	font-display: swap;
 }
 
-@font-face {
-	font-family: 'helvetica-neue-lt-pro';
-	src: url('../webfonts/HelveticaNeue-LightItalic.woff2') format('woff2'),
-		url('../webfonts/HelveticaNeue-LightItalic.woff') format('woff');
-	font-weight: 300;
-	font-style: italic;
-	font-display: swap;
-}
 
 @font-face {
 	font-family: 'helvetica-neue-lt-pro';
@@ -135,23 +91,6 @@
 	font-display: swap;
 }
 
-@font-face {
-	font-family: 'helvetica-neue-lt-pro';
-	src: url('../webfonts/HelveticaNeue-MediumItalic.woff2') format('woff2'),
-		url('../webfonts/HelveticaNeue-MediumItalic.woff') format('woff');
-	font-weight: 500;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'helvetica-neue-lt-pro';
-	src: url('../webfonts/HelveticaNeue-ThinItalic.woff2') format('woff2'),
-		url('../webfonts/HelveticaNeue-ThinItalic.woff') format('woff');
-	font-weight: 100;
-	font-style: italic;
-	font-display: swap;
-}
 
 @font-face {
 	font-family: 'helvetica-neue-lt-pro';
@@ -177,15 +116,6 @@
 		url('../webfonts/HelveticaNeue-UltraLight.woff') format('woff');
 	font-weight: 200;
 	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'helvetica-neue-lt-pro';
-	src: url('../webfonts/HelveticaNeue-UltraLightItalic.woff2') format('woff2'),
-		url('../webfonts/HelveticaNeue-UltraLightItalic.woff') format('woff');
-	font-weight: 200;
-	font-style: italic;
 	font-display: swap;
 }
 
@@ -255,6 +185,10 @@ body {
 
 .ql-editor {
 	color: initial;
+}
+.ql-editor img {
+  max-width: 100%;
+  height: auto;
 }
 
 button {}
@@ -8138,14 +8072,14 @@ body:has(.offcanvas) {
 
 .footer-links h3 {   
 	font-size: 17px;
-    font-weight: 500 !important;
+    font-weight: 600 !important;
 	line-height: 24px;
 	font-family: "Raleway", sans-serif;
 	font-style: normal;
 }
 
 .footer-links ul li a {
-	font-weight: 300 !important;
+	font-weight: 30 !important;
 	font-family: 'helvetica-neue-lt-pro';
 	font-style: normal;
 	font-size: 16px;
@@ -8154,7 +8088,7 @@ body:has(.offcanvas) {
 }
 
 .footer-links ul li span {
-	font-weight: 500 !important;
+	font-weight: 400 !important;
 	font-family: 'helvetica-neue-lt-pro';
 	font-style: normal;
 	font-size: 16px;
@@ -21275,7 +21209,7 @@ body.popup-open .main-header {
 }
 
 .digitalservice .MeRLIN-service {
-	height: 350px !important;
+	height: 350px;
 }
 
 .oursolutionsec .service-item-body ul li {
@@ -22472,13 +22406,13 @@ screen and (max-height: 300px) {
 	color: #fff !important;
 }
 
-.corusmainpage h6 {
+/* .corusmainpage h6 {
 	font-size: 17px !important;
-}
+} */
 
 
 .germanaiml .flip-card {
-	height: 380px !important;
+	height: 415px !important;
 }
 
 .indexwhatdo .testimonial-btn {
@@ -22759,11 +22693,67 @@ position: relative;
 }
 
 .germandigisersol .MeRLIN-service {
-    height: 400px !important;
+    height: 435px !important;
+}
+.germandigisol .MeRLIN-service {
+    height: 435px !important;
 }
 .germanbuildsec .service-item-body .uiux{
 	height: 325px !important;
 }
 .germansapservice .sap-service-waber{
- 	min-height: 700px;
+ 	min-height: 680px;
+}
+
+.germanwhysugar .MeRLIN-service {
+    min-height: 380px !important;
+    height: 380px !important;
+}
+.merlinicon1 .MeRLIN-service {
+    height: 370px;
+}
+.merlinicon1 .MeRLIN-service svg{
+	height: 80px;
+}
+.merlinicon1 .MeRLIN-service h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.mt-15{
+	margin-top:30px !important;
+}
+
+.gerwealways .overviewhgtchange .valueslide {
+    min-height: 350px !important;
+}
+.germancorus .oursolutionsec .service-item {
+    min-height: 510px;
+}
+.germanerpcab .epicsecslide .valueslide {
+    min-height: 290px;
+    max-height: auto;
+    width: 100%;
+    padding: 24px !important;
+}
+.gercompcab .epichgt h3 {
+    height: 55px !important;
+}
+.gercompcab .epiccomp .flip-card {
+    height: 325px !important;
+}
+
+.geramslide .valueslide {
+    min-height: 260px;
+}
+.gercommexp .valueslide
+ {
+    min-height: 200px;
+}
+
+.germstech .agency-supports-logo {
+    height: 275px !important;
+}
+.germsapproch .valueslide {
+    height: 300px;
+    padding: 24px !important;
 }

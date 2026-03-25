@@ -429,7 +429,7 @@ export default function digitalsolution() {
                                                                 <h3> {t("Fluent Commerce")} </h3>
                                                                 <p className="oa-para">
                                                                     {" "}
-                                                                    {t("A distributed Order Management System (OMS) that optimises inventory, orders, and fulfilment at scale")}
+                                                                    {t("A distributed Order Management System (OMS) that optimises inventory, orders, and fulfilment at scale.")}
                                                                 </p>
                                                                 <div className="ser-btn serbtn1">
                                                                     <Link href="/fluent-commerce"
