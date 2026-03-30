@@ -166,6 +166,12 @@ export default function EnterpriseSolutions() {
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
+                {t("Inaccurate time tracking, expense management, and resource utilization impacting project delivery timelines")}
+              </p>
+            </div>
+            <div className="challenge-point-waber">
+              <img src="/new/qs-2.svg" alt="" />
+              <p>
                 {t("Delayed revenue recognition due to fragmented project financials data and poor cost tracking")}
               </p>
             </div>
@@ -178,25 +184,19 @@ export default function EnterpriseSolutions() {
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Inaccurate time tracking, expense management, and resource utilization impacting project delivery timelines")}
-              </p>
-            </div>
-            <div className="challenge-point-waber">
-              <img src="/new/qs-2.svg" alt="" />
-              <p>
                 {t("Limited visibility into real-time project costs, margins, and site-level profitability")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Difficulty scaling business operations and managing multi-location projects")}
+                {t("Inefficient bid management, contract administration, and variation control affecting financial performance")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Inefficient bid management, contract administration, and variation control affecting financial performance")}
+                {t("Difficulty scaling business operations and managing multi-location projects")}
               </p>
             </div>
           </div>
@@ -258,7 +258,13 @@ export default function EnterpriseSolutions() {
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            {t("Provide real-time dashboards, KPIs, and operational performance trackers to enhance project visibility and support data-driven decision-making")}
+            {t("Enable multi-level work breakdown structures for precise project cost tracking, budgeting, forecasting, and reporting")}
+          </p>
+        </div>
+        <div className="pe-help-content">
+          <img src="/new/Headset.svg" alt="" />
+          <p>
+            {t("Support cross-department collaboration and multi-location business operations through centralized data, standardized processes, and integrated communication")}
           </p>
         </div>
         <div className="pe-help-content">
@@ -270,7 +276,7 @@ export default function EnterpriseSolutions() {
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            {t("Capture time, expenses, and project costs accurately for reliable financial reporting")}
+            {t("Provide real-time dashboards, KPIs, and operational performance trackers to enhance project visibility and support data-driven decision-making")}
           </p>
         </div>
         <div className="pe-help-content">
@@ -282,19 +288,13 @@ export default function EnterpriseSolutions() {
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
+            {t("Capture time, expenses, and project costs accurately for reliable financial reporting")}
+          </p>
+        </div>
+        <div className="pe-help-content">
+          <img src="/new/Headset.svg" alt="" />
+          <p>
             {t("Automate revenue recognition processes in line with policy and compliance requirements")}
-          </p>
-        </div>
-        <div className="pe-help-content">
-          <img src="/new/Headset.svg" alt="" />
-          <p>
-            {t("Enable multi-level work breakdown structures for precise project cost tracking, budgeting, forecasting, and reporting")}
-          </p>
-        </div>
-        <div className="pe-help-content">
-          <img src="/new/Headset.svg" alt="" />
-          <p>
-            {t("Support cross-department collaboration and multi-location business operations through centralized data, standardized processes, and integrated communication")}
           </p>
         </div>
         <div className="pe-help-content">
@@ -315,7 +315,7 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-6">
           <div className="benifet-content-waber">
             <div className="benifet-content benifet-content-2 ind-b-h">
-              <div>
+              <div className="tangcontent">
                 <h4 className="benifit-title">
                   {t("Tangible Outcomes")}
                 </h4>

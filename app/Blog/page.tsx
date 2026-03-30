@@ -1122,7 +1122,7 @@ export default function Blog() {
                   <div className="blog-serch">
                     <input
                       type="text"
-                      placeholder="Search blogs"
+                      placeholder={t("Search blogs")}
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                     />

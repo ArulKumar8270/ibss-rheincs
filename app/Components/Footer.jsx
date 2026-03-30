@@ -524,7 +524,7 @@ export default function Footer() {
                                 <div className="col-lg-6">
                                     {/* Footer Copyright Start */}
                                     <div className="footer-copyright-text">
-                                        <p>© {t("RheinBrücke IT Consulting BV - All Rights Reserved.")} </p>
+                                        <p>{t("© RheinBrücke IT Consulting BV - All Rights Reserved.")} </p>
                                     </div>
                                     {/* Footer Copyright End */}
                                 </div>

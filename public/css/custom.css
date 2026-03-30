@@ -18369,8 +18369,9 @@ body.no-scroll {
 }
 
 .ullist li {
-	color: #082326;
+	color: #000;
 	line-height: 1.5;
+	font-family:'helvetica-neue-lt-pro', Helvetica;
 }
 
 .mstechsolutions p {
@@ -21205,7 +21206,7 @@ body.popup-open .main-header {
 }
 
 .digiupgradesec .MeRLIN-service {
-	height: 450px !important;
+	height: 420px !important;
 }
 
 .digitalservice .MeRLIN-service {
@@ -22774,4 +22775,16 @@ position: relative;
 	font-size: 20px;
 	color: #000;
 	margin: 20px 0px 15px;
+}
+
+.gerdigisermodern .MeRLIN-service {
+    height: 485px !important;
+}
+
+.tangcontent{
+	height: 340px;
+}
+
+.germstechadv .agency-supports-slider2 .agency-supports-logo {
+    height: 320px !important;
 }

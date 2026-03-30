@@ -247,6 +247,59 @@ export default function Contact() {
   const [isCountryCodeFocused, setIsCountryCodeFocused] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [leadSquaredPageName, setLeadSquaredPageName] = useState(
+    "Contact Us Page Form",
+  );
+
+  const titleize = (value: string) =>
+    value
+      .trim()
+      .replace(/\s+/g, " ")
+      .split(" ")
+      .filter(Boolean)
+      .map((word) =>
+        word.length <= 3 && /^[a-z]+$/i.test(word)
+          ? word.toUpperCase()
+          : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(),
+      )
+      .join(" ");
+
+  const derivePageNameFromPath = (pathOrUrl: string) => {
+    try {
+      const url =
+        pathOrUrl.startsWith("http://") || pathOrUrl.startsWith("https://")
+          ? new URL(pathOrUrl)
+          : new URL(pathOrUrl, window.location.origin);
+
+      const segments = url.pathname.split("/").filter(Boolean);
+      if (segments.length === 0) return "Home";
+
+      const last = decodeURIComponent(segments[segments.length - 1] ?? "");
+      if (!last || last === "contact-us") return null;
+
+      return titleize(last.replace(/[-_]+/g, " "));
+    } catch {
+      return null;
+    }
+  };
+
+  // Capture previous page for LeadSquared "Page Name" (SPA-safe)
+  useEffect(() => {
+    try {
+      const prevPath = sessionStorage.getItem("rb_prev_path") ?? "";
+      const fromPrevPath = prevPath ? derivePageNameFromPath(prevPath) : null;
+      if (fromPrevPath) {
+        setLeadSquaredPageName(fromPrevPath);
+        return;
+      }
+
+      const ref = document.referrer ?? "";
+      const fromRef = ref ? derivePageNameFromPath(ref) : null;
+      if (fromRef) setLeadSquaredPageName(fromRef);
+    } catch {
+      // ignore
+    }
+  }, []);
 
   // Auto-detect country code based on user's location
   useEffect(() => {
@@ -466,12 +519,12 @@ export default function Contact() {
     if (typeof window === "undefined") return;
 
     await waitFor(() => typeof (window as any).saveleadlan === "function", {
-      timeoutMs: 1000,
+      timeoutMs: 5000,
       intervalMs: 50,
     });
 
     await waitFor(() => typeof (window as any).LSQForm !== "undefined", {
-      timeoutMs: 1200,
+      timeoutMs: 6000,
       intervalMs: 100,
     });
 
@@ -773,9 +826,17 @@ export default function Contact() {
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmit} id="form1" className="row g-3 pp-0">
+                  <form
+                    onSubmit={handleSubmit}
+                    id="form1"
+                    className="row g-3 pp-0"
+                  >
                     {/* Hidden Field for LeadSquared Form Identification */}
-                    <input type="hidden" name="Search" value="Contact Us Page Form" />
+                    <input
+                      type="hidden"
+                      name="Search"
+                      value={leadSquaredPageName}
+                    />
                     {/* Full Name */}
                     <div className="col-12">
                       <input

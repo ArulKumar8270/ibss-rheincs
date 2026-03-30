@@ -2032,7 +2032,7 @@ export default function EnterpriseSolutions() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>{t("Epicor Companion Products")}</h3>
+                                <h3>{t("Epicor Companion Products:")}</h3>
                                 <p>
                                 {t("Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more.")}
 
@@ -2318,7 +2318,7 @@ export default function EnterpriseSolutions() {
                                 </div>
                               </div>
                               <div className="service-item-body">
-                                <h3>{t("Industry Verticals Solutions for Epicor ERP")}</h3>
+                                <h3>{t("Industry Verticals Solutions for Epicor ERP:")}</h3>
                                 <p>
                                   {t("Manufacturing, Oil & Gas, EPC & Construction, Architecture and Interior Design, Retail, and Distribution. Each solution addresses the unique workflows and compliance needs of its industry.")}
                                 </p>

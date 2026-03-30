@@ -1857,7 +1857,7 @@ export default function EnterpriseSolutions() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/value1.svg" alt="" />
-                                            <h5> {t("Client Priority")}</h5>
+                                            <h5> {t("Client priority")}</h5>
                                             <p>
                                                 {t("We always put our client’s interest ahead of our own We are constantly striving to deliver more value than our client’s expectations by looking at every project and process to find the most effective solution and not just fulfilling our client’s basic requirements.")}
                                             </p>
@@ -1868,7 +1868,7 @@ export default function EnterpriseSolutions() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/value2.svg" alt="" />
-                                            <h5> {t("Professional Discipline")}</h5>
+                                            <h5> {t("Professional discipline")}</h5>
                                             <p>
                                                 {t("We always behave as professionals RheinBrücke upholds absolute integrity. We promise only what can be delivered. We show the utmost respect to local customs and culture, as long as we don’t compromise our integrity.")}
                                             </p>
@@ -1879,7 +1879,7 @@ export default function EnterpriseSolutions() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/value3.svg" alt="" />
-                                            <h5> {t("Information Discretion")}</h5>
+                                            <h5> {t("Information discretion")}</h5>
                                             <p>
                                                 {t("We always keep our client information confidential RheinBrücke is focused on making our clients successful. We don’t reveal sensitive information. We do not promote our own good work if it is at the cost of client confidentiality.")}
                                             </p>
@@ -1890,7 +1890,7 @@ export default function EnterpriseSolutions() {
                                     <div className="swiper-slide">
                                         <div className="valueslide">
                                             <img src="/images/value4.svg" alt="" />
-                                            <h5> {t("Independent Clarity")}</h5>
+                                            <h5> {t("Independent clarity")}</h5>
                                             <p>
                                                 {t("We always tell the truth as we see it RheinBrücke strives to stay independent and remains able to disagree, regardless of the popularity of our views. Always saying what we see as the truth helps to build internal support, get to the real issues, and reach practical recommendations.")}
                                             </p>
@@ -1937,7 +1937,7 @@ export default function EnterpriseSolutions() {
                                                     fillRule="evenodd"
                                                 />
                                             </svg>
-                                            <h5> {t("Personal Ownership in that order")}</h5>
+                                            <h5> {t("Personal ownership in that order")}</h5>
                                             <p>
                                                 {t("We always deliver the best of our firm to every client as cost effectively as we can RheinBrücke expects people either employees or partners to spend our client’s and firm’s resources as if their own resources were at stake.")}
                                             </p>

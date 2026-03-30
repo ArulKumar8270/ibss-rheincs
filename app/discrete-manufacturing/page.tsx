@@ -280,7 +280,7 @@ export default function AlMl() {
                             <div className="pe-help-content">
                                 <img src="/new/Headset.svg" alt="" />
                                 <p>
-                                    {t("Integrate inventory management, procurement, and mobile warehouse management for seamless operational control")}
+                                    {t("Integrate inventory management, procurement, and production scheduling for seamless operational control")}
                                 </p>
                             </div>
                             <div className="pe-help-content">
@@ -436,7 +436,7 @@ export default function AlMl() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("We specialize in digital transformation for Make-to-Order (MTO), Make-to-Stock (MTS), and complex Mixed-Mode manufacturing environments. Our deep specialization lies in Epicor ERP implementation, which is natively designed to handle the variable processes, complex Bills of Material (BOMs), and detailed tracking required by discrete manufacturers.RheinBrücke specialises in Epicor ERP implementations for Make-to-Order (MTO), Make-to-Stock (MTS), and mixed-mode manufacturing.")}  
+                              {t("We specialize in digital transformation for Make-to-Order (MTO), Make-to-Stock (MTS), and complex Mixed-Mode manufacturing environments. Our deep specialization lies in Epicor ERP implementation, which is natively designed to handle the variable processes, complex Bills of Material (BOMs), and detailed tracking required by discrete manufacturers. RheinBrücke specialises in Epicor ERP implementations for Make-to-Order (MTO), Make-to-Stock (MTS), and mixed-mode manufacturing.")}  
                             </p>
                           </div>
                         </div>

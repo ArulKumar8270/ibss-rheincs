@@ -140,7 +140,7 @@ export default function AlMl() {
   </div>
   {/* Hero Section End*/}
   {/* Our Testimonial Section Start */}
-  <div className="our-testimonial digiupgradesec pd50">
+  <div className={`our-testimonial digiupgradesec pd50 ${language === 'German' ? 'gerdigisermodern' : ''}`}>
     <div className="container">
       <div className="row section-row align-items-center">
         <div className="col-sm-2" />

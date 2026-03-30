@@ -152,7 +152,7 @@ export default function EnterpriseSolutions() {
           {t("Microsoft Technologies address these challenges with enterprise-ready platforms that provide:")}
         </p>
       </div>
-      <div className="digital-features-item agency-supports mstechadv">
+      <div className={`digital-features-item agency-supports mstechadv ${language === 'German' ? 'germstechadv' : ''}`}>
         <div className="agency-supports-slider2">
           <div className="swiper">
             <div className="swiper-wrapper">
