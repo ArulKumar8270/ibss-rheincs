@@ -229,15 +229,15 @@ export default function EnterpriseSolutions() {
         </p>
       </div>
       <div className="pe-matters-content">
-        <img src="/new/ad3.svg" alt="Project contract management icon" />
-        <p>
-          {t("Ineffective resource and contract management leads to operational inefficiencies")}
-        </p>
-      </div>
-      <div className="pe-matters-content">
         <img src="/new/ad4.svg" alt="Project management limitations icon" />
         <p>
           {t("Lack of operational scalability restricts business growth, limits multi‑location expansion, and reduces the ability to standardize processes across teams")}
+        </p>
+      </div>
+      <div className="pe-matters-content">
+        <img src="/new/ad3.svg" alt="Project contract management icon" />
+        <p>
+          {t("Ineffective resource and contract management leads to operational inefficiencies")}
         </p>
       </div>
     </div>

@@ -5,8 +5,12 @@ import { useEffect, useMemo } from "react";
 
 export default function RouteTracker() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const search = useMemo(() => searchParams?.toString() ?? "", [searchParams]);
+  const searchParams = useSearchParams(); // ✅ FIXED
+
+  const search = useMemo(
+    () => searchParams?.toString() ?? "",
+    [searchParams]
+  );
 
   useEffect(() => {
     try {
@@ -23,10 +27,9 @@ export default function RouteTracker() {
         sessionStorage.setItem("rb_entry_path", current);
       }
     } catch {
-      // ignore (SSR/disabled storage)
+      // ignore
     }
   }, [pathname, search]);
 
   return null;
 }
-

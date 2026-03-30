@@ -10,6 +10,171 @@ export default function Home() {
   const { t, language } = useTranslation();
   return (
     <>
+
+     <Script
+        id="org-website-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://www.rheincs.com/#organization",
+                name: "RheinBrücke IT Consulting",
+                alternateName: ["RheinCS", "RheinBrucke"],
+                url: "https://www.rheincs.com/",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://www.rheincs.com/images/rlogo.png",
+                  width: 200,
+                  height: 60,
+                },
+                description:
+                  "RheinBrücke IT Consulting is a global enterprise digital transformation and ERP solutions partner serving 45+ countries.",
+                foundingDate: "2013",
+                slogan: "Analyse. Integrate. Transform.",
+                email: "info@rheincs.com",
+                telephone: "+49 231 292 95619",
+                contactPoint: [
+                  {
+                    "@type": "ContactPoint",
+                    telephone: "+49 231 292 95619",
+                    contactType: "customer service",
+                    areaServed: ["DE", "NL", "UAE", "SA", "IN", "US", "GB"],
+                    availableLanguage: ["English", "German", "Arabic"],
+                  },
+                ],
+                address: {
+                  "@type": "PostalAddress",
+                  addressCountry: "NL",
+                  addressLocality: "Netherlands",
+                  name: "RheinBrücke IT Consulting BV - Headquarters",
+                },
+                sameAs: [
+                  "https://www.linkedin.com/company/rheinbrucke-it-consulting",
+                  "https://twitter.com/rheinbrucke",
+                  "https://www.facebook.com/RheinBruckeIT",
+                  "https://www.youtube.com/c/RheinBrucke",
+                ],
+                award: [
+                  "Epicor Partner of the Year 2016 & 2018",
+                  "Stevie - Fastest Growing Company in Europe 2015 & 2016",
+                  "Stevie Company of the Year 2015 & 2017",
+                ],
+                areaServed: [
+                  "UAE","SA","QA","KW","BH","OM","DE","NL","GB","FR","IN","US"
+                ],
+                knowsAbout: [
+                  "Enterprise Resource Planning",
+                  "Digital Transformation",
+                  "Epicor Kinetic",
+                  "SAP ERP",
+                  "Microsoft Dynamics",
+                  "Business Intelligence",
+                  "Supply Chain Management",
+                  "AI and Machine Learning",
+                  "Cloud ERP",
+                ],
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "4.9",
+                  bestRating: "5",
+                  worstRating: "1",
+                  ratingCount: "87",
+                  reviewCount: "87",
+                },
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://www.rheincs.com/#website",
+                url: "https://www.rheincs.com/",
+                name: "RheinBrücke IT Consulting",
+                publisher: {
+                  "@id": "https://www.rheincs.com/#organization",
+                },
+                potentialAction: {
+                  "@type": "SearchAction",
+                  target: {
+                    "@type": "EntryPoint",
+                    urlTemplate:
+                      "https://www.rheincs.com/?s={search_term_string}",
+                  },
+                  "query-input": "required name=search_term_string",
+                },
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://www.rheincs.com/#webpage",
+                url: "https://www.rheincs.com/",
+                name:
+                  "Enterprise Digital Transformation & ERP Solutions | RheinBrücke",
+                isPartOf: {
+                  "@id": "https://www.rheincs.com/#website",
+                },
+                about: {
+                  "@id": "https://www.rheincs.com/#organization",
+                },
+                description:
+                  "ERP implementation & digital transformation for 45+ countries.",
+                inLanguage: "en-US",
+              },
+            ],
+          }),
+        }}
+      />
+
+      {/* Local Business */}
+      <Script
+        id="local-business-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(YOUR_LOCAL_BUSINESS_JSON_HERE),
+        }}
+      />
+
+      {/* Services */}
+      <Script
+        id="services-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(YOUR_SERVICES_JSON_HERE),
+        }}
+      />
+
+      {/* FAQ */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(YOUR_FAQ_JSON_HERE),
+        }}
+      />
+
+      {/* Reviews */}
+      <Script
+        id="reviews-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(YOUR_REVIEWS_JSON_HERE),
+        }}
+      />
+
+      {/* Navigation */}
+      <Script
+        id="navigation-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(YOUR_NAVIGATION_JSON_HERE),
+        }}
+      />
+      
       <CommomLayout>
         <>
       <div  className={`${language === 'German' ? 'bodyindex' : ''}`}>
