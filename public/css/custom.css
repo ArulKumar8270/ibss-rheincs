@@ -3339,6 +3339,9 @@ body:has(.offcanvas) {
 		bottom: 0px;
 		/* left: 0px ; */
 	}
+	.bolg-filter-waber .item>div {
+    min-height: 449px !important;
+}
 
 }
 
@@ -7729,8 +7732,8 @@ body:has(.offcanvas) {
 }
 
 .projects .service-item-body {
-	background: url(../images/pr1.jpg);
-	background-position: 99% 5%;
+	background: url(../images/fl.jpeg);
+	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
@@ -7741,8 +7744,8 @@ body:has(.offcanvas) {
 }
 
 .projects .secondser {
-	background: url(../images/pr2.jpg);
-	background-position: 99% 5%;
+	background: url(../images/fiber.jpg);
+	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;

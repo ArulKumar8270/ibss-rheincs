@@ -477,7 +477,7 @@ export default function Header() {
                                     </span>
                                     <Link href="mailto:info@rheincs.com"> info@rheincs.com</Link>
                                 </li>
-                                 <li>
+                                 {/* <li>
                                      <div className="custom-select top-icon-gap" style={{ position: 'relative' }} ref={dropdownRef}>
                                         <select
                                             ref={selectRef}
@@ -571,7 +571,7 @@ export default function Header() {
                                             </div>
                                         )}
                                     </div>
-                                </li> 
+                                </li>  */}
                                 {/* <li>
                                     <div id="chcp_font_size" className="input-group">
                                         <span className="input-group-btn font-increase-waber">
@@ -748,7 +748,7 @@ export default function Header() {
                                                                                                 {t("RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption")}
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
+                                                                                                <Link href="/news-events/RheinBrckes-Kinetic-ERP-MEA-Cloud-Receives-Green-Certificate-from-Moro-Hub-for-Sustainable-Cloud-Adoption/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     {t("Read More")}
@@ -766,7 +766,7 @@ export default function Header() {
                                                                                                 {t("Grand Opening of India Development Centre (IDC) in RheinBrücke")}
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="/news-events/0aa57254-d987-4474-a229-0bd66716acb6"
+                                                                                                <Link href="/news-events/Grand-Opening-of-India-Development-Centre-IDC-in-RheinBrcke/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     {t("Read More")}
@@ -784,7 +784,7 @@ export default function Header() {
                                                                                                 {t("How to Build a Future-Ready Digital Strategy")}
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                <Link href="/Blogs/how-to-build-a-future-ready-digital-strategy/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     {t("Read More")}
@@ -999,7 +999,7 @@ export default function Header() {
                                                                                                     {t("RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption")}
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                    <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
+                                                                                                    <Link href="/news-events/RheinBrckes-Kinetic-ERP-MEA-Cloud-Receives-Green-Certificate-from-Moro-Hub-for-Sustainable-Cloud-Adoption/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         {t("Read More")}
@@ -1017,7 +1017,7 @@ export default function Header() {
                                                                                                     {t("How to Build a Future-Ready Digital Strategy")}
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                    <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                    <Link href="/Blogs/how-to-build-a-future-ready-digital-strategy/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         {t("Read More")}
@@ -1127,7 +1127,7 @@ export default function Header() {
                                                                                                     {t("RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption")}
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                    <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
+                                                                                                    <Link href="/news-events/RheinBrckes-Kinetic-ERP-MEA-Cloud-Receives-Green-Certificate-from-Moro-Hub-for-Sustainable-Cloud-Adoption/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         {t("Read More")}
@@ -1145,7 +1145,7 @@ export default function Header() {
                                                                                                     {t("How to Build a Future-Ready Digital Strategy")}
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                    <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                    <Link href="/Blogs/how-to-build-a-future-ready-digital-strategy/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         {t("Read More")}
@@ -1268,7 +1268,7 @@ export default function Header() {
                                                                                                     {t("RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption")}
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                    <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
+                                                                                                    <Link href="/news-events/RheinBrckes-Kinetic-ERP-MEA-Cloud-Receives-Green-Certificate-from-Moro-Hub-for-Sustainable-Cloud-Adoption/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         {t("Read More")}
@@ -1286,7 +1286,7 @@ export default function Header() {
                                                                                                     {t("How to Build a Future-Ready Digital Strategy")}
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                    <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                    <Link href="/Blogs/how-to-build-a-future-ready-digital-strategy/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         {t("Read More")}
@@ -1487,7 +1487,7 @@ export default function Header() {
                                                                                                 {t("RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption")}
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
+                                                                                                <Link href="/news-events/RheinBrckes-Kinetic-ERP-MEA-Cloud-Receives-Green-Certificate-from-Moro-Hub-for-Sustainable-Cloud-Adoption/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     {t("Read More")}
@@ -1505,7 +1505,7 @@ export default function Header() {
                                                                                                 {t("How to Build a Future-Ready Digital Strategy")}
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                <Link href="/Blogs/how-to-build-a-future-ready-digital-strategy/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     {t("Read More")}
@@ -1674,7 +1674,7 @@ export default function Header() {
                                                                                                 {t("RheinBrücke’s Kinetic ERP MEA Cloud Receives Green Certificate from Moro Hub for Sustainable Cloud Adoption")}
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="/news-events/867965e8-5dc5-4419-bf84-b7877b7036f1"
+                                                                                                <Link href="/news-events/RheinBrckes-Kinetic-ERP-MEA-Cloud-Receives-Green-Certificate-from-Moro-Hub-for-Sustainable-Cloud-Adoption/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     {t("Read More")}
@@ -1692,7 +1692,7 @@ export default function Header() {
                                                                                                 {t("Grand Opening of India Development Centre (IDC) in RheinBrücke")}
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="/news-events/0aa57254-d987-4474-a229-0bd66716acb6"
+                                                                                                <Link href="/news-events/Grand-Opening-of-India-Development-Centre-IDC-in-RheinBrcke/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     {t("Read More")}
@@ -1710,7 +1710,7 @@ export default function Header() {
                                                                                                 {t("How to Build a Future-Ready Digital Strategy")}
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="/blog-details/how-to-build-a-future-ready-digital-strategy"
+                                                                                                <Link href="/Blogs/how-to-build-a-future-ready-digital-strategy/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     {t("Read More")}
@@ -3072,9 +3072,9 @@ export default function Header() {
                                 <li>
                                     <Link href="/Blog">{t("Blog")}</Link>
                                 </li>
-                                {/* <li>
+                                <li>
                                     <Link href="/Case-study">{t("Case Studies")}</Link>
-                                </li> */}
+                                </li>
                                 <li>
                                     <Link href="/webinars">{t("Webinars")}</Link>
                                 </li>

@@ -177,6 +177,17 @@ export default function CaseStudyPage() {
   // Get latest 4 case studies for the carousel - from filtered results
   const carouselItems = filteredCaseStudies.slice(0, 4);
 
+  // Re-initialize Swiper whenever carousel items change (e.g., after filtering)
+  useEffect(() => {
+    if (carouselItems.length > 0 && typeof window !== 'undefined') {
+      // Small delay to ensure React has updated the DOM
+      const timer = setTimeout(() => {
+        window.dispatchEvent(new CustomEvent('swiperReinit', { detail: { pathname: '/Case-study' } }));
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [carouselItems.length, selectedCategory, selectedIndustries, searchTerm]);
+
   // Handle industry checkbox change
   const handleIndustryChange = (industrySlug: string) => {
     setSelectedIndustries(prev => {
