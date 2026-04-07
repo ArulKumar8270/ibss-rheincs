@@ -3988,7 +3988,7 @@ h2.section-title {
 .d-g24 {
     display: flex;
 
-    gap: 24px;
+    gap: 16px;
 }
 
 .pe-chellange-waber .challenge-point-waber {
@@ -4117,7 +4117,7 @@ h2.section-title {
 
 .pe-bf-content-waber {
     display: flex;
-    gap: 24px;
+    gap: 16px;
     flex-direction: column;
 }
 
@@ -6077,3 +6077,6 @@ h2.section-title {
     }
 }
 
+.gerautotang .auto-b-h {
+    min-height: 950px !important;
+}

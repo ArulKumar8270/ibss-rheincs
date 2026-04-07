@@ -2410,7 +2410,7 @@
 
     const realTotalSlides = swiperEl.querySelectorAll('.swiper-wrapper .swiper-slide').length;
 
-    const testimonial_slider = new Swiper(swiperEl, {
+    const baseConfig = {
       spaceBetween: 15,
       loop: true,
       speed: 800,
@@ -2428,8 +2428,9 @@
         768: { slidesPerView: 3 },
         991: { slidesPerView: 4 },
         1300: { slidesPerView: 5 },
-        1700: { slidesPerView: 5 },
+        1700: { slidesPerView: 4 },
       },
+      centerInsufficientSlides: true,
       on: {
         init: function () {
           // applyOffset(this);
@@ -2443,7 +2444,30 @@
           counterEl.textContent = `${currentSlide}/${realTotalSlides}`;
         }
       }
-    });
+    };
+
+    let lastShouldLock = null;
+    function initEcommers8() {
+      const state = buildSwiperConfigWithOverflowLock(swiperEl, baseConfig);
+
+      if (lastShouldLock === null || lastShouldLock !== state.shouldLock) {
+        if (swiperEl.swiper && swiperEl.swiper.destroy) {
+          try { swiperEl.swiper.destroy(true, true); } catch (e) {}
+        }
+        new Swiper(swiperEl, state.config);
+        lastShouldLock = state.shouldLock;
+      } else if (swiperEl.swiper && swiperEl.swiper.update) {
+        swiperEl.swiper.update();
+      }
+    }
+
+    initEcommers8();
+
+    if (swiperEl.__overflowLockResizeHandler) {
+      window.removeEventListener('resize', swiperEl.__overflowLockResizeHandler);
+    }
+    swiperEl.__overflowLockResizeHandler = debounce(initEcommers8, 200);
+    window.addEventListener('resize', swiperEl.__overflowLockResizeHandler);
 
     function applyOffset(swiperInstance) {
       const offset = getDynamicOffset();

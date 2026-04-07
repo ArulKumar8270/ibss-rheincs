@@ -1050,7 +1050,7 @@ export default function EnterpriseSolutions() {
           </div>
         </div>
         {/* Our Testimonial Section Start */}
-        <div className="our-testimonial partner corussecond cusexp mobilecusexp pd-50">
+        <div className={`our-testimonial partner corussecond cusexp mobilecusexp pd-50 ${language === 'German' ? 'gercusexcellence' : ''}`}>
           <div className="container">
             <div className="section-title text-center">
               <div className="hero-video-content1 wow fadeInUp mt-4">

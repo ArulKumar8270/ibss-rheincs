@@ -1,7 +1,11 @@
+"use client";
 import React from 'react'
-import CommomLayout from '../Components/CommomLayout'
+import CommomLayout from '../Components/CommomLayout';
+import {useTranslation} from "../hooks/useTranslation";
 
 const page = () => {
+  const { t, language } = useTranslation();
+
     return (
         <CommomLayout>
            <>
@@ -23,7 +27,7 @@ const page = () => {
         <div className="col-sm-12">
           <div className="section-title text-center ">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              Rheincs's Privacy Policy
+              {t("Rheincs's Privacy Policy")}
             </h2>
             {/* <p>In today’s digital-first world, great design is more than looks—it’s about creating seamless, intuitive experiences that drive engagement, satisfaction, and loyalty. </p> */}
           </div>
@@ -35,467 +39,367 @@ const page = () => {
     <div className="container" id="container-top">
       <div className="wrappernew main-container">
         {/* H4 Heading added */}
-        <h4 className="text-dark">Privacy and Cookies</h4>
-        <p>
-          Please read this privacy policy, which describes the collection, use,
-          disclosure, retention and protection of your personal information
-          carefully.{" "}
-        </p>
-        <p>
-          This website is administered by RheinBrücke IT Consulting B.V. As
-          administrator of this website RheinBrücke IT Consulting B.V. gathers,
-          analyses and processes information regarding the visitors and usage of
-          this website for its general business purposes and for the development
-          of web statistics as described below.
-        </p>
-        <p>
-          This Privacy Policy applies to all websites, applications and services
-          referred to in this Privacy Policy. If you provide us with your
-          personal information as described in the section "How we obtain
-          information", you agree that we: (a) fulfil our contractual
-          obligations to you; (b) in accordance with our legitimate interests
-          (e.g. for internal administrative purposes, data analysis, back-up and
-          benchmarking (see the section "How we use your information" for more
-          details), direct marketing or for the purpose of clarifying or
-          preventing crime) or (c) in accordance with your consent, which you
-          may revoke, collect, store and use at any time as described in this
-          Privacy Policy.
-        </p>
-        <h4 className="text-dark">Who we are</h4>
-        <p>
-          This Privacy Policy applies to all products, applications and services
-          offered by RheinBrücke IT Consulting B.V. (Sales tax identification
-          number DE293866616 and registered office in Stationsplein 8K
-          NL-6221BT, Maastricht, Netherlands), and excludes all product
-          applications or services that are subject to separate privacy policies
-          that are independent of this Privacy Policy.
-        </p>
-        <h4 className="text-dark">How we obtain information</h4>
-        <p>
-          To the extent permitted under applicable law, we collect information
-          about you and any other party about whom you provide us with
-          information as soon as you:
-        </p>
+        <h4 className="text-dark">{t("Privacy and Cookies")}</h4>
+        <p>{t("Please read this privacy policy, which describes the collection, use, disclosure, retention and protection of your personal information carefully.")}</p>
+        <p>{t("This website is administered by RheinBrücke IT Consulting B.V. As administrator of this website RheinBrücke IT Consulting B.V. gathers, analyses and processes information regarding the visitors and usage of this website for its general business purposes and for the development of web statistics as described below.")}</p>
+        <p>{t('This Privacy Policy applies to all websites, applications and services referred to in this Privacy Policy. If you provide us with your personal information as described in the section \"How we obtain information\", you agree that we: (a) fulfil our contractual obligations to you; (b) in accordance with our legitimate interests (e.g. for internal administrative purposes, data analysis, back-up and benchmarking, direct marketing or for the purpose of clarifying or preventing crime) or (c) in accordance with your consent, which you may revoke, collect, store and use at any time as described in this Privacy Policy.')}</p>
+        <h4 className="text-dark">{t("Who we are")}</h4>
+        <p>{t("This Privacy Policy applies to all products, applications and services offered by RheinBrücke IT Consulting B.V. (Sales tax identification number DE293866616 and registered office in Stationsplein 8K NL-6221BT, Maastricht, Netherlands), and excludes all product applications or services that are subject to separate privacy policies that are independent of this Privacy Policy.")}</p>
+        <h4 className="text-dark">{t("How we obtain information")}</h4>
+        <p>{t("To the extent permitted under applicable law, we collect information about you and any other party about whom you provide us with information as soon as you:")}</p>
         {/* Lists Consolidated for cleaner HTML */}
         <ul>
           <li>
             <div className="redBullets-epicor" />
             <p className="bulletContent-epicor-black">
-              Register to use our websites, applications or services (including
-              free trial versions); this may include your name (including your
-              company name), your address, e-mail address and telephone number.
-              We may ask you to provide additional information about your
-              business and preferences;
+              {t("Register to use our websites, applications or services (including free trial versions); this may include your name (including your company name), your address, e-mail address and telephone number. We may ask you to provide additional information about your business and preferences;")}
             </p>
           </li>
           <li>
             <div className="redBullets-epicor" />
             <p className="bulletContent-epicor-black">
-              Fill out online forms , post on our message boards, post to any
-              blog, download information (e.g. white papers or other
-              publications), or in other interactive areas of our websites or
-              within our applications or services;
+              {t("Fill out online forms, post on our message boards, post to any blog, download information (e.g. white papers or other publications), or in other interactive areas of our websites or within our applications or services;")}
+            </p>
+          </li>
+          <li>
+            <div className="redBullets-epicor" />
+            <p className="bulletContent-epicor-black">{t("Interact with us through social media;")}</p>
+          </li>
+          <li>
+            <div className="redBullets-epicor" />
+            <p className="bulletContent-epicor-black">
+              {t("Provide us with your contact information while you register to use or access all the websites, applications or services that we provide, or when you update this information;")}
             </p>
           </li>
           <li>
             <div className="redBullets-epicor" />
             <p className="bulletContent-epicor-black">
-              Interact with us through social media;
-            </p>
-          </li>
-          <li>
-            <div className="redBullets-epicor" />
-            <p className="bulletContent-epicor-black">
-              Provide us with your contact information while you register to use
-              or access all the websites, applications or services that we
-              provide, or when you update this information; and
-            </p>
-          </li>
-          <li>
-            <div className="redBullets-epicor" />
-            <p className="bulletContent-epicor-black">
-              Contact us offline, e.g. B. by phone, fax, SMS, e-mail or by mail.
+              {t("Contact us offline, e.g. by phone, fax, SMS, e-mail or by mail.")}
             </p>
           </li>
         </ul>
-        <p>
-          We also collect information about your devices (including mobile
-          devices) and applications that you or your users use to access our
-          websites, applications or services...
-        </p>
-        <p>
-          We may supplement the personal information obtained about you with
-          information obtained from third parties entitled to disclose it...
-        </p>
+        <p>{t("We also collect information about your devices (including mobile devices) and applications that you or your users use to access our websites, applications or services.")}</p>
+        <p>{t("We may supplement the personal information obtained about you with information obtained from third parties entitled to disclose it.")}</p>
         <h4 className="text-dark">
-          Provide personal information about others to us
+          {t("Provide personal information about others to us")}
         </h4>
-        <p>
-          If you provide us with personal information about others, you are
-          responsible for ensuring that you comply with all applicable duties
-          and regulations...
-        </p>
-        <h4 className="text-dark">How we use your information</h4>
-        <p>We use your information in accordance with applicable law to:</p>
+        <p>{t("If you provide us with personal information about others, you are responsible for ensuring that you comply with all applicable duties and regulations...")}</p>
+        <h4 className="text-dark">{t("How we use your information")}</h4>
+        <p>{t("We use your information in accordance with applicable law to:")}</p>
         <ul>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              Provide information and services or applications or services that
-              you have requested or shown interest;
+              {t("Provide information and services or applications or services that you have requested or shown interest;")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              To check information for accuracy and to compare / verify this
-              information with third parties;
+              {t("To check information for accuracy and to compare / verify this information with third parties;")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              To provide, manage, protect and improve the applications,
-              products, services and information you have requested from us;
+              {t("To provide, manage, protect and improve the applications, products, services and information you have requested from us;")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              Manage your use of the applications, products and services you
-              wish to receive from us;
+              {t("Manage your use of the applications, products and services you wish to receive from us;")}
             </p>
           </li>
           {/* Simplified listing for brevity, add all items here */}
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              Manage our business relationship with you (e.g. for customer
-              service and support activities);
+              {t("Manage our business relationship with you (e.g. for customer service and support activities);")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              Monitor, measure, improve and protect our content, websites,
-              applications and services...
+              {t("Monitor, measure, improve and protect our content, websites, applications and services...")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              To internally test our website, applications, systems and
-              services...
+              {t("To internally test our website, applications, systems and services...")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              To provide you with all the information we need to send you...
+              {t("To provide you with all the information we need to send you...")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              Detect, prevent, investigate or combat criminal, unlawful or
-              unauthorized activities...
+              {t("Detect, prevent, investigate or combat criminal, unlawful or unauthorized activities...")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
             <div className="d-block">
               <p className="bulletContent mb-2">
-                You can manage your privacy settings in your browser or within
-                our applications...
+                {t("You can manage your privacy settings in your browser or within our applications...")}
               </p>
               <p className="bulletContent">
-                In addition to the purposes described in this section...
+                {t("In addition to the purposes described in this section...")}
               </p>
             </div>
           </li>
         </ul>
-        <h4 className="text-dark">Data analysis and benchmarking</h4>
-        <p>
-          We use information generated and stored during your use of our
-          services for legitimate business purposes...
-        </p>
+        <h4 className="text-dark">{t("Data analysis and benchmarking")}</h4>
+        <p>{t("We use information generated and stored during your use of our services for legitimate business purposes...")}</p>
         <ul>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              Communicating advertising, marketing content...
+              {t("Communicating advertising, marketing content...")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              Conducting research and development activities...
+              {t("Conducting research and development activities...")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              Developing and providing new and existing functionalities...
+              {t("Developing and providing new and existing functionalities...")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
             <div className="d-block">
               <p className="bulletContent mb-2">
-                Provide location-based services...
+                {t("Provide location-based services...")}
               </p>
               <p className="bulletContent">
-                When using your information for legitimate business purposes...
+                {t("When using your information for legitimate business purposes...")}
               </p>
             </div>
           </li>
         </ul>
-        <h4 className="text-dark">Sharing your information</h4>
-        <p>We share your information: </p>
+        <h4 className="text-dark">{t("Sharing your information")}</h4>
+        <p>{t("We share your information:")}</p>
         <ul>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              Within the company for purposes set forth in this Privacy
-              Policy...
+              {t("Within the company for purposes set forth in this Privacy Policy...")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
-            <p className="bulletContent">Our service providers and agents...</p>
+            <p className="bulletContent">{t("Our service providers and agents...")}</p>
           </li>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              Partners, including system implementation partners...
-            </p>
-          </li>
-          <li>
-            <div className="redBullets" />
-            <p className="bulletContent">
-              Third parties that we engage to process payment transactions...
+              {t("Partners, including system implementation partners...")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              Third parties for marketing purposes...
+              {t("Third parties that we engage to process payment transactions...")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
-            <p className="bulletContent">Credit rating agencies...</p>
+            <p className="bulletContent">
+              {t("Third parties for marketing purposes...")}
+            </p>
           </li>
           <li>
             <div className="redBullets" />
-            <p className="bulletContent">Regulators...</p>
+            <p className="bulletContent">{t("Credit rating agencies...")}</p>
           </li>
           <li>
             <div className="redBullets" />
-            <p className="bulletContent">Law enforcement agencies...</p>
+            <p className="bulletContent">{t("Regulators...")}</p>
+          </li>
+          <li>
+            <div className="redBullets" />
+            <p className="bulletContent">{t("Law enforcement agencies...")}</p>
           </li>
         </ul>
-        <h4 className="text-dark">Marketing</h4>
-        <p>From time to time we will use your information to contact you...</p>
-        <p>
-          We may also share the information we collect about you with carefully
-          selected companies...
-        </p>
-        <h4 className="text-dark">Third-party advertising platforms</h4>
-        <p>
-          When you reply to posts posted on third-party platforms (such as
-          Facebook, Google, and Twitter)...
-        </p>
-        <h4 className="text-dark">Your information and your rights</h4>
-        <p>
-          If you are a resident of the EEA or any other jurisdiction with
-          similar privacy laws...
-        </p>
+        <h4 className="text-dark">{t("Marketing")}</h4>
+        <p>{t("From time to time we will use your information to contact you...")}</p>
+        <p>{t("We may also share the information we collect about you with carefully selected companies...")}</p>
+        <h4 className="text-dark">{t("Third-party advertising platforms")}</h4>
+        <p>{t("When you reply to posts posted on third-party platforms (such as Facebook, Google, and Twitter)...")}</p>
+        <h4 className="text-dark">{t("Your information and your rights")}</h4>
+        <p>{t("If you are a resident of the EEA or any other jurisdiction with similar privacy laws...")}</p>
         <ul>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              The right to know how we use and obtain your information;
+              {t("The right to know how we use and obtain your information;")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              The right to request us to correct or delete your information...
+              {t("The right to request us to correct or delete your information...")}
             </p>
           </li>
           <li>
             <div className="redBullets" />
             <p className="bulletContent">
-              The right to oppose the processing of your data...
+              {t("The right to oppose the processing of your data...")}
             </p>
           </li>
         </ul>
-        <h4 className="text-dark">Modification of this Privacy Policy</h4>
-        <p>We may update this privacy policy from time to time...</p>
-        <h4 className="text-dark">Backup and storage of information</h4>
-        <p>
-          Your information is safe as we take reasonable technical and
-          organizational measures...
-        </p>
+        <h4 className="text-dark">{t("Modification of this Privacy Policy")}</h4>
+        <p>{t("We may update this privacy policy from time to time...")}</p>
+        <h4 className="text-dark">{t("Backup and storage of information")}</h4>
+        <p>{t("Your information is safe as we take reasonable technical and organizational measures...")}</p>
         <h4 className="text-dark">
-          Transfers outside the European Economic Area
+          {t("Transfers outside the European Economic Area")}
         </h4>
+        <p>{t("Personal data in the European Union are protected by data protection laws...")}</p>
+        <h4 className="text-dark">{t("Other websites and social media")}</h4>
+        <p>{t("If you follow a link from our website, our application or our service...")}</p>
+        <h4 className="text-dark">{t("Cookies, analysis and data traffic")}</h4>
+        <p>{t("Cookies are small text files that are transmitted by our websites...")}</p>
+        <p>{t("If you allow us to use cookies through your browser settings or consent, the following cookies may be used on our websites:")}</p>
         <p>
-          Personal data in the European Union are protected by data protection
-          laws...
-        </p>
-        <h4 className="text-dark">Other websites and social media</h4>
-        <p>
-          If you follow a link from our website, our application or our
-          service...
-        </p>
-        <h4 className="text-dark">Cookies, analysis and data traffic</h4>
-        <p>
-          Cookies are small text files that are transmitted by our websites...
-        </p>
-        <p>
-          If you allow us to use cookies through your browser settings or
-          consent, the following cookies may be used on our websites:
-        </p>
-        <p>
-          <strong>Necessary Cookies: 6</strong>
+          <strong>{t("Necessary Cookies: 6")}</strong>
         </p>
         <table className="cookies">
           <tbody>
             <tr>
-              <th>Name</th>
-              <th>Purpose</th>
-              <th>Expiry Date</th>
+              <th>{t("Name")}</th>
+              <th>{t("Purpose")}</th>
+              <th>{t("Expiry Date")}</th>
             </tr>
             <tr>
               <td>__cfduid [x2]</td>
-              <td>Used by the content network, Cloudflare...</td>
-              <td>1 year</td>
+              <td>{t("Used by the content network, Cloudflare...")}</td>
+              <td>{t("1 year")}</td>
             </tr>
             <tr>
               <td>ASP.NET_SessionId (x2)</td>
-              <td>This cookie preserves the visitor’s session...</td>
-              <td>end session</td>
+              <td>{t("This cookie preserves the visitor’s session...")}</td>
+              <td>{t("end session")}</td>
             </tr>
             <tr>
               <td>_RequestVerificationToken</td>
-              <td>Helps prevent Cross-Site Request Forgery...</td>
-              <td>end session</td>
+              <td>{t("Helps prevent Cross-Site Request Forgery...")}</td>
+              <td>{t("end session")}</td>
             </tr>
             <tr>
               <td>ASPXAUTH</td>
-              <td>Identifies the user and allows authentication...</td>
-              <td>end session</td>
+              <td>{t("Identifies the user and allows authentication...")}</td>
+              <td>{t("end session")}</td>
             </tr>
             <tr>
               <td>CookieConsent</td>
-              <td>Stores the user's cookie consent state...</td>
-              <td>1 year</td>
+              <td>{t("Stores the user's cookie consent state...")}</td>
+              <td>{t("1 year")}</td>
             </tr>
             <tr>
               <td>ZD-suid</td>
-              <td>Unique id that identifies the user’s session.</td>
-              <td>Persistent</td>
+              <td>{t("Unique id that identifies the user’s session.")}</td>
+              <td>{t("Persistent")}</td>
             </tr>
           </tbody>
         </table>
         <p>
-          <strong>Preferences: 3</strong>
+          <strong>{t("Preferences: 3")}</strong>
         </p>
         <table className="cookies">
           <tbody>
             <tr>
-              <th>Name</th>
-              <th>Purpose</th>
-              <th>Expiry Date</th>
+              <th>{t("Name")}</th>
+              <th>{t("Purpose")}</th>
+              <th>{t("Expiry Date")}</th>
             </tr>
             <tr>
               <td>userlang</td>
-              <td>Remembers the user's selected language...</td>
-              <td>1 year</td>
+              <td>{t("Remembers the user's selected language...")}</td>
+              <td>{t("1 year")}</td>
             </tr>
             <tr>
               <td>ZD-settings</td>
-              <td>Arbitrary and anonymous settings...</td>
-              <td>Persistent</td>
+              <td>{t("Arbitrary and anonymous settings...")}</td>
+              <td>{t("Persistent")}</td>
             </tr>
             <tr>
               <td>ZD-store</td>
-              <td>Registers whether the self-service assistant...</td>
-              <td>Persistent</td>
+              <td>{t("Registers whether the self-service assistant...")}</td>
+              <td>{t("Persistent")}</td>
             </tr>
           </tbody>
         </table>
         <p>
-          <strong>Statistics: 5</strong>
+          <strong>{t("Statistics: 5")}</strong>
         </p>
         <table className="cookies">
           <tbody>
             <tr>
-              <th>Name</th>
-              <th>Purpose</th>
-              <th>Expiry Date</th>
+              <th>{t("Name")}</th>
+              <th>{t("Purpose")}</th>
+              <th>{t("Expiry Date")}</th>
             </tr>
             <tr>
               <td>_ga</td>
-              <td>Registers a unique ID...</td>
-              <td>2 year</td>
+              <td>{t("Registers a unique ID...")}</td>
+              <td>{t("2 year")}</td>
             </tr>
             <tr>
               <td>_gid</td>
-              <td>Registers a unique ID...</td>
-              <td>end session</td>
+              <td>{t("Registers a unique ID...")}</td>
+              <td>{t("end session")}</td>
             </tr>
             <tr>
               <td>collect</td>
-              <td>Used to send data to Google Analytics...</td>
-              <td>end session</td>
+              <td>{t("Used to send data to Google Analytics...")}</td>
+              <td>{t("end session")}</td>
             </tr>
           </tbody>
         </table>
-        <h4 className="text-dark">Web beacons and parameter tracking</h4>
-        <p>We use cookies and similar software known as web beacons...</p>
-        <h4 className="text-dark">IP address and traffic data</h4>
+        <h4 className="text-dark">{t("Web beacons and parameter tracking")}</h4>
+        <p>{t("We use cookies and similar software known as web beacons...")}</p>
+        <h4 className="text-dark">{t("IP address and traffic data")}</h4>
+        <p>{t("We retain a record of traffic data automatically logged by our servers...")}</p>
+        <h4 className="text-dark">{t("Tools")}</h4>
         <p>
-          We retain a record of traffic data automatically logged by our
-          servers...
+          <u>{t("We use the following tools that use cookies on our website:")}</u>
         </p>
-        <h4 className="text-dark">Tools</h4>
-        <p>
-          <u>We use the following tools that use cookies on our website:</u>
-        </p>
-        <h4 className="text-dark">Google Analytics</h4>
-        <p>Google Analytics uses "cookies" to see how users' websites...</p>
-        <h4 className="text-dark">Google Tag Manager</h4>
-        <p>This website uses Google Tag Manager...</p>
-        <h4 className="text-dark">Facebook plugins (like button)</h4>
-        <p>Facebook, provider Facebook Inc., 1 Hacker Way, Menlo Park...</p>
-        <h4 className="text-dark">Twitter</h4>
-        <p>These features are available through Twitter Inc...</p>
-        <h4 className="text-dark">LinkedIn</h4>
-        <p>The provider is LinkedIn Corporation...</p>
-        <h4 className="text-dark">XING</h4>
-        <p>The provider is the XING AG...</p>
-        <h4 className="text-dark">LeadSquared</h4>
-        <p>We use LeadSquared to design our landing pages...</p>
-        <h4 className="text-dark">FactorsAI</h4>
-        <p>FactorsAI is a website visitor tracking software...</p>
-        <h4 className="text-dark">How to disable cookies</h4>
-        <p>You may be able to configure your browser...</p>
-        <h4 className="text-dark">Deleting cookies</h4>
-        <p>You can use your browser settings to delete individual cookies...</p>
-        <h4 className="text-dark">Further information</h4>
-        <p>
-          The Legal basis: The legal basis for these processing is your
-          consent...
-        </p>
-        <h4 className="text-dark">Which data protection rights do you have?</h4>
-        <p>16 DSGVO, the right to cancellation under Art. 17 GDPR...</p>
-        <p>
-          If you have any questions about how we should handle your
-          information...
-        </p>
+        <h4 className="text-dark">{t("Google Analytics")}</h4>
+        <p>{t('Google Analytics uses "cookies" to see how users\' websites...')}</p>
+        <h4 className="text-dark">{t("Google Tag Manager")}</h4>
+        <p>{t("This website uses Google Tag Manager...")}</p>
+        <h4 className="text-dark">{t("Facebook plugins (like button)")}</h4>
+        <p>{t("Facebook, provider Facebook Inc., 1 Hacker Way, Menlo Park...")}</p>
+        <h4 className="text-dark">{t("Twitter")}</h4>
+        <p>{t("These features are available through Twitter Inc...")}</p>
+        <h4 className="text-dark">{t("LinkedIn")}</h4>
+        <p>{t("The provider is LinkedIn Corporation...")}</p>
+        <h4 className="text-dark">{t("XING")}</h4>
+        <p>{t("The provider is the XING AG...")}</p>
+        <h4 className="text-dark">{t("LeadSquared")}</h4>
+        <p>{t("We use LeadSquared to design our landing pages...")}</p>
+        <h4 className="text-dark">{t("FactorsAI")}</h4>
+        <p>{t("FactorsAI is a website visitor tracking software...")}</p>
+        <h4 className="text-dark">{t("How to disable cookies")}</h4>
+        <p>{t("You may be able to configure your browser...")}</p>
+        <h4 className="text-dark">{t("Deleting cookies")}</h4>
+        <p>{t("You can use your browser settings to delete individual cookies...")}</p>
+        <h4 className="text-dark">{t("Further information")}</h4>
+        <p>{t("The Legal basis: The legal basis for these processing is your consent...")}</p>
+        <h4 className="text-dark">{t("Which data protection rights do you have?")}</h4>
+        <p>{t("16 DSGVO, the right to cancellation under Art. 17 GDPR...")}</p>
+        <p>{t("If you have any questions about how we should handle your information...")}</p>
       </div>
     </div>
   </section>
@@ -507,16 +411,15 @@ const page = () => {
         <div className="firstrow">
           <div className="row">
             <div className="col-sm-8">
-              <h2>Ready to accelerate value creation across your portfolio?</h2>
+              <h2>{t("Ready to accelerate value creation across your portfolio?")}</h2>
               <p>
-                Contact us today to learn how we can help modernise operations,
-                de-risk integrations, and improve commercial outcomes.
+                {t("Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.")}
               </p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
                 <a href="#" className="animated-svg-link">
-                  Contact Us
+                  {t("Contact Us")}
                   <span className="svg-container ">
                     <span className=" right">
                       <svg

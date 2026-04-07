@@ -177,7 +177,7 @@ export default function digitalsolution() {
                                     </div>
                                     {/* Testimonial Slide End */}
                                 </div>
-                                <div className="testimonial-btn rtyElement">
+                                <div className="testimonial-btn rtyElement ecommbtnn">
                                     <div className="testimonial-button-prev">
                                         <div className="animated-svg-link1 btn-style-3">
                                             <span className="svg-container ">

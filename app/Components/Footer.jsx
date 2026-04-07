@@ -58,7 +58,7 @@ export default function Footer() {
                     <div className="container">
                         <hr className="firsthr" />
                         <div className="row pd60 align-items-center secondrow">
-                            <div className="col-sm-4">
+                            <div className="col-sm-3">
                                 <div className="about-footer">
                                     <div className="footer-logo">
                                         <img src="/images/rlogo.png" alt="" />
@@ -94,7 +94,7 @@ export default function Footer() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-sm-8">
+                            <div className="col-sm-9">
                                 <div className="places text-right">
                                     <ul>
                                         <li>{t("Netherlands")}</li>

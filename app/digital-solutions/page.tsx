@@ -150,7 +150,6 @@ export default function digitalsolution() {
         <div className="col-lg-8">
           <div className="section-title testidescription text-center">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              {" "}
               {t("Build the Modern Enterprise Foundation")}
             </h2>
             <p>

@@ -283,7 +283,7 @@ export default function AlMl() {
                         </svg>
                         {/* <i class="bi bi-people-fill"></i> */}
                       </div>
-                      <h3>{t("Architecture Services: ")} </h3>
+                      <h3>{t("Architecture Services:")} </h3>
                       <ul>
                         <li>
                           {t("Our cloud-native architectures on Microsoft Azure integrate microservices and event-driven frameworks, allowing your business to adapt quickly and innovate continuously. We also help migrate legacy systems, optimising workflows to support growth.")}

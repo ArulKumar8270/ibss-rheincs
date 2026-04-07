@@ -387,7 +387,7 @@ export default function AlMl() {
                         <video src="/new/gt1.mp4" autoPlay={true} loop={true} muted={true} playsInline={true} />
                     </div>
                 </section>
-                <div className="benifites-waber">
+                <div className={`benifites-waber ${language === 'German' ? 'gerautotang' : ''}`}>
                     <div className="container">
                         <div className="row">
                             <div className="col-sm-6">

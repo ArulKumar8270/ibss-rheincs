@@ -1796,7 +1796,7 @@ export default function Header() {
                                                                 </span>
                                                                 <input
                                                                     type="text"
-                                                                    placeholder="What are you looking for ?"
+                                                                    placeholder={t("What are you looking for ?")}
                                                                     value={searchQuery}
                                                                     onChange={(e) => handleSearch(e.target.value)}
                                                                 />

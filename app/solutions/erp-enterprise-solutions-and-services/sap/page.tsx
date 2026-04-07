@@ -1423,7 +1423,7 @@ const page = () => {
                       {/* 8. Global Rollout Services */}
                       <div className="swiper-slide">
                         <div className="sap-service-waber">
-                          <h3>{t("Global Rollout Services")}</h3>
+                          <h3>{t("Implementation & Global Rollout Services")}</h3>
                           <p>
                             {t("RheinBrücke enables seamless SAP rollouts across geographies, ensuring standardisation while accommodating local regulatory and business requirements.")}
                           </p>

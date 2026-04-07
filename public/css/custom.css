@@ -356,10 +356,12 @@ body {
     min-height: 280px;
 }.epicsecslide .valueslide {
     height: 290px;
+}.gercusexcellence .stackimg .excelimg li {
+    min-height: 305px !important;
 }
 }
 
-@media (min-width:1140px) and (max-width: 1299px){
+@media (min-width:1100px) and (max-width: 1299px){
 	.sap-service-waber {
     min-height: 480px !important;
 }.germansapservice .sap-service-waber {
@@ -368,7 +370,13 @@ body {
     height: 505px !important;
 }.digiupgradesec .MeRLIN-service {
     height: 439px !important;
-}
+}.germancorus .oursolutionsec .service-item {
+    min-height: 570px !important;
+}    .germerlin .testimonial-slider-08 .MeRLIN-service {
+        height: 530px !important;
+    }.germanerpcab .epicsecslide .valueslide {
+    min-height: 270px !important;
+	}
 }
 
 
@@ -398,6 +406,8 @@ body {
     height: 505px !important;
 }.digiupgradesec .MeRLIN-service {
     height: 439px !important;
+}.germancorus .oursolutionsec .service-item {
+    height: 570px;
 }
 }
 
@@ -412,6 +422,13 @@ body {
     min-height: 555px !important;
 } .sap-service-waber {
     min-height: 530px !important;
+}.gercusexcellence .stackimg .excelimg li {
+    min-height: 280px !important;
+}.ecommbtnn{
+	display: none !important;
+}
+.swiper-wrapper {
+    justify-content: center;
 }
 }
 
@@ -3024,7 +3041,7 @@ body:has(.offcanvas) {
 }
 
 .testimonial-slider {
-	margin-left: 0px;
+	margin-left: 1px;
 }
 
 .testimonial-slider .swiper-wrapper {
@@ -7371,6 +7388,7 @@ body:has(.offcanvas) {
 	margin-top: 20px;
 	gap: 20px;
 }
+
 
 .swiper-button-prev,
 .swiper-button-next {
@@ -14008,8 +14026,8 @@ header.boxshadow {
 	height: 100%;
 	width: 100%;
 	background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 35, 38, 0)), color-stop(87.81%, #16808B));
-	background: -o-linear-gradient(top, rgba(8, 35, 38, 0) 0%, #16808B 87.81%);
-	background: linear-gradient(180deg, rgba(8, 35, 38, 0) 0%, #16808B 87.81%);
+	background: -o-linear-gradient(top, rgba(8, 35, 38, 0) 60%, #16808B 87.81%);
+	background: linear-gradient(180deg, rgba(8, 35, 38, 0) 60%, #16808B 87.81%);
 	border-radius: 8px;
 
 }
@@ -14255,7 +14273,7 @@ header.boxshadow {
 
 .digiexperience .service-item-body p {
 	height: auto !important;
-	padding: 0px 0px 0px 24px;
+	padding: 0px 10px 0px 24px;
 	font-family: 'helvetica-neue-lt-pro' !important;
 }
 
@@ -14697,7 +14715,7 @@ header.boxshadow {
 	}
 
 	.benifithght {
-		min-height: 315px !important;
+		min-height: 367px !important;
 	}
 
 	.auto-b-h1 {
@@ -22534,6 +22552,8 @@ screen and (max-height: 300px) {
 	font-weight: 600;
 }
 
+
+
 .ecommers-8 .ecom {
 	margin: 0px auto !important;
 }
@@ -22895,3 +22915,40 @@ position: relative;
 .gerdigisecure .identifyimg img {
     height: 347px !important;
 }
+
+.gerwealways .overviewhgtchange .valueslide h5 {
+	margin: 15px 0px;
+}
+
+.gercusexcellence .stackimg .excelimg li {
+    min-height: 330px !important;
+}
+
+
+
+
+.wrappernew ul li p{
+	  line-height: 24px;
+    font-family: 'helvetica-neue-lt-pro';
+    font-style: normal;
+    font-weight: 400;
+	font-size: .95rem;
+	color:#212529;
+}  
+
+.termssec ul li{
+	  line-height: 24px;
+    font-family: 'helvetica-neue-lt-pro';
+    font-style: normal;
+    font-weight: 400;
+	font-size: .95rem;
+	color:#212529;
+}  
+.termssec ul li p{
+	  line-height: 24px;
+    font-family: 'helvetica-neue-lt-pro';
+    font-style: normal;
+    font-weight: 400;
+	font-size: .95rem;
+	color:#212529;
+}  

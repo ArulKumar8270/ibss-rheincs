@@ -120,7 +120,7 @@
     "Whether you are mid-sized and scaling, or enterprise-level and rethinking your model, we help you unlock growth with Cloud ERP and Digital solutions.": "Whether you are mid-sized and scaling, or enterprise-level and rethinking your model, we help you unlock growth with Cloud ERP and Digital solutions.",
     "Know more": "Know more",
     "Projects that made a difference.": "Projects that made a difference.",
-    "At Rheinbrucke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.": "At Rheinbrucke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.",
+    "At RheinBrucke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.": "At RheinBrucke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.",
     "Explore more": "Explore more",
     "Trusted by Enterprise Worldwide": "Trusted by Enterprise Worldwide",
     "View All": "View All",
@@ -1448,7 +1448,7 @@
     "Delivery focused on measurable improvements in project cost control, margin visibility, and operational efficiency": "Delivery focused on measurable improvements in project cost control, margin visibility, and operational efficiency",
     "Global delivery capability leveraging specialised implementation teams": "Global delivery capability leveraging specialised implementation teams",
 
-    "Modernise Your Interior Design Operations": "Modernise Your Interior Design Operations",
+    "Modernise Your Interior Design Operations?": "Modernise Your Interior Design Operations?",
     "Elevate your interior design operations with one intelligent system that unifies planning, execution, and financial control for consistent, accurate project delivery.": "Elevate your interior design operations with one intelligent system that unifies planning, execution, and financial control for consistent, accurate project delivery.",
 
 
@@ -1623,7 +1623,7 @@
     "Modernise and Upgrade Your Enterprise Core": "Modernise and Upgrade Your Enterprise Core",
     "To stay competitive, businesses must evolve their core systems to be agile, scalable, and cloud-ready. Our enterprise modernisation services help you move beyond legacy systems with cutting-edge platforms, architectures, and applications, enabling faster innovation and operational flexibility.": "To stay competitive, businesses must evolve their core systems to be agile, scalable, and cloud-ready. Our enterprise modernisation services help you move beyond legacy systems with cutting-edge platforms, architectures, and applications, enabling faster innovation and operational flexibility.",
 
-    "Architecture Services": "Architecture Services",
+    "Architecture Services:": "Architecture Services:",
     "Our cloud-native architectures on Microsoft Azure integrate microservices and event-driven frameworks, allowing your business to adapt quickly and innovate continuously. We also help migrate legacy systems, optimising workflows to support growth.": "Our cloud-native architectures on Microsoft Azure integrate microservices and event-driven frameworks, allowing your business to adapt quickly and innovate continuously. We also help migrate legacy systems, optimising workflows to support growth.",
     "MACH, SOA, Microsoft Azure, Event-driven Frameworks": "MACH, SOA, Microsoft Azure, Event-driven Frameworks",
 
@@ -2481,7 +2481,7 @@
     "Portal, Application and Dashboard Development": "Portal, Application and Dashboard Development",
     "Develop enterprise portals, custom applications, and real-time operational dashboards using modern frameworks and low-code/no-code tools for accelerated delivery.": "Develop enterprise portals, custom applications, and real-time operational dashboards using modern frameworks and low-code/no-code tools for accelerated delivery.",
 
-    "Microsoft Power Platform Solutions": "Microsoft Power Platform Solutions",
+    "Microsoft 'Power Platform' Solutions": "Microsoft 'Power Platform' Solutions",
     "Build business apps, automate workflows, and deliver data-driven dashboards via Power Apps, Power Automate, and Power BI, enabling business-led development with embedded governance.": "Build business apps, automate workflows, and deliver data-driven dashboards via Power Apps, Power Automate, and Power BI, enabling business-led development with embedded governance.",
 
     "Modernise Commerce and Customer Engagement": "Modernise Commerce and Customer Engagement",
@@ -3023,7 +3023,6 @@
     "Digital Solutions - Innovating Business, One Solution at a Time": "Digital Solutions - Innovating Business, One Solution at a Time",
     "We deliver outcome-driven solutions that combine advanced technology, proven frameworks, and scalable architectures to solve complex business challenges. Driven by our Analyse-Integrate-Transform framework, every engagement is built for measurable, sustained impact.": "We deliver outcome-driven solutions that combine advanced technology, proven frameworks, and scalable architectures to solve complex business challenges. Driven by our Analyse-Integrate-Transform framework, every engagement is built for measurable, sustained impact.",
     "Every successful digital transformation starts with a solid foundation of analysis, becomes truly valuable through data and intelligence, delivers tangible outcomes via integration of applications and commerce channels, and endures through resilient operations and governance.": "Every successful digital transformation starts with a solid foundation of analysis, becomes truly valuable through data and intelligence, delivers tangible outcomes via integration of applications and commerce channels, and endures through resilient operations and governance.",
-    "Build the Modern Enterprise Foundation": "Build the Modern Enterprise Foundation",
     "Transformation begins by rethinking and modernising the enterprise core, the platforms, architecture, and integrated systems that drive business operations.": "Transformation begins by rethinking and modernising the enterprise core, the platforms, architecture, and integrated systems that drive business operations.",
     "We help organisations evolve from legacy systems to agile, cloud-native, mobile enabled scalable architecture, enabling faster innovation and operational flexibility. Microservices, API-first, Cloud and Headless or MACH architecture drive agile and scalable transformation.": "We help organisations evolve from legacy systems to agile, cloud-native, mobile enabled scalable architecture, enabling faster innovation and operational flexibility. Microservices, API-first, Cloud and Headless or MACH architecture drive agile and scalable transformation.",
     "Enterprise Architecture Platform as a Service:": "Enterprise Architecture Platform as a Service:",
@@ -3125,7 +3124,7 @@
     "AI & ML enablement": "AI & ML enablement",
     "API management and security": "API management and security",
     "BTP is where enterprises unlock real agility, we help you get there.": "BTP is where enterprises unlock real agility, we help you get there.",
-    "SAP Signavio & Process Intelligence – Check with Ramesh": "SAP Signavio & Process Intelligence – Check with Ramesh",
+    "SAP Signavio & Process Intelligence": "SAP Signavio & Process Intelligence",
     "Transform the way your organisation understands and improves processes.": "Transform the way your organisation understands and improves processes.",
     "We help you:": "We help you:",
     "Map, analyse, and benchmark business processes": "Map, analyse, and benchmark business processes",
@@ -3663,7 +3662,215 @@
     "Turn enterprise data into real-time, actionable insights with SAP Analytics Cloud and advanced reporting—enabling faster decisions and improved business performance.": "Turn enterprise data into real-time, actionable insights with SAP Analytics Cloud and advanced reporting—enabling faster decisions and improved business performance.",
     "SAP Application Management Services (AMS)": "SAP Application Management Services (AMS)",
     "Ensure a stable, secure, and continuously optimised SAP landscape with outcome-led support, proactive monitoring, and ongoing enhancements.": "Ensure a stable, secure, and continuously optimised SAP landscape with outcome-led support, proactive monitoring, and ongoing enhancements.",
-    "Read more": "Read more"
+    "Read more": "Read more",
+
+
+    
+   "SAP today goes beyond traditional ERP—it is a unified platform powering intelligent, connected, and data-driven enterprises:": "SAP today goes beyond traditional ERP—it is a unified platform powering intelligent, connected, and data-driven enterprises:",
+   
+  "Expert driven delivery capability ensuring scalable, high-quality, cost-effective project execution": "Expert driven delivery capability ensuring scalable, high-quality, cost-effective project execution",
+
+
+
+  "Privacy and Cookies": "Privacy and Cookies",
+    "Please read this privacy policy, which describes the collection, use, disclosure, retention and protection of your personal information carefully.": "Please read this privacy policy, which describes the collection, use, disclosure, retention and protection of your personal information carefully.",
+    "This website is administered by RheinBrücke IT Consulting B.V. As administrator of this website RheinBrücke IT Consulting B.V. gathers, analyses and processes information regarding the visitors and usage of this website for its general business purposes and for the development of web statistics as described below.": "This website is administered by RheinBrücke IT Consulting B.V. As administrator of this website RheinBrücke IT Consulting B.V. gathers, analyses and processes information regarding the visitors and usage of this website for its general business purposes and for the development of web statistics as described below.",
+    "This Privacy Policy applies to all websites, applications and services referred to in this Privacy Policy. If you provide us with your personal information as described in the section \"How we obtain information\", you agree that we: (a) fulfil our contractual obligations to you; (b) in accordance with our legitimate interests (e.g. for internal administrative purposes, data analysis, back-up and benchmarking, direct marketing or for the purpose of clarifying or preventing crime) or (c) in accordance with your consent, which you may revoke, collect, store and use at any time as described in this Privacy Policy.": "This Privacy Policy applies to all websites, applications and services referred to in this Privacy Policy. If you provide us with your personal information as described in the section \"How we obtain information\", you agree that we: (a) fulfil our contractual obligations to you; (b) in accordance with our legitimate interests (e.g. for internal administrative purposes, data analysis, back-up and benchmarking, direct marketing or for the purpose of clarifying or preventing crime) or (c) in accordance with your consent, which you may revoke, collect, store and use at any time as described in this Privacy Policy.",
+    "Who we are": "Who we are",
+    "This Privacy Policy applies to all products, applications and services offered by RheinBrücke IT Consulting B.V. (Sales tax identification number DE293866616 and registered office in Stationsplein 8K NL-6221BT, Maastricht, Netherlands), and excludes all product applications or services that are subject to separate privacy policies that are independent of this Privacy Policy.": "This Privacy Policy applies to all products, applications and services offered by RheinBrücke IT Consulting B.V. (Sales tax identification number DE293866616 and registered office in Stationsplein 8K NL-6221BT, Maastricht, Netherlands), and excludes all product applications or services that are subject to separate privacy policies that are independent of this Privacy Policy.",
+    "How we obtain information": "How we obtain information",
+    
+
+    "To the extent permitted under applicable law, we collect information about you and any other party about whom you provide us with information as soon as you:": "To the extent permitted under applicable law, we collect information about you and any other party about whom you provide us with information as soon as you:",
+
+    "Register to use our websites, applications or services (including free trial versions); this may include your name (including your company name), your address, e-mail address and telephone number. We may ask you to provide additional information about your business and preferences;": "Register to use our websites, applications or services (including free trial versions); this may include your name (including your company name), your address, e-mail address and telephone number. We may ask you to provide additional information about your business and preferences;",
+
+    "Fill out online forms, post on our message boards, post to any blog, download information (e.g. white papers or other publications), or in other interactive areas of our websites or within our applications or services;": "Fill out online forms, post on our message boards, post to any blog, download information (e.g. white papers or other publications), or in other interactive areas of our websites or within our applications or services;",
+
+    "Interact with us through social media;": "Interact with us through social media;",
+
+    "Provide us with your contact information while you register to use or access all the websites, applications or services that we provide, or when you update this information;": "Provide us with your contact information while you register to use or access all the websites, applications or services that we provide, or when you update this information;",
+
+    "Contact us offline, e.g. by phone, fax, SMS, e-mail or by mail.": "Contact us offline, e.g. by phone, fax, SMS, e-mail or by mail.",
+
+    "We also collect information about your devices (including mobile devices) and applications that you or your users use to access our websites, applications or services.": "We also collect information about your devices (including mobile devices) and applications that you or your users use to access our websites, applications or services.",
+    "We may supplement the personal information obtained about you with information obtained from third parties entitled to disclose it.": "We may supplement the personal information obtained about you with information obtained from third parties entitled to disclose it.",
+    "Provide personal information about others to us": "Provide personal information about others to us",
+    "If you provide us with personal information about others, you are responsible for ensuring that you comply with all applicable duties and regulations...": "If you provide us with personal information about others, you are responsible for ensuring that you comply with all applicable duties and regulations...",
+
+
+    "How we use your information": "How we use your information",
+    "We use your information in accordance with applicable law to:": "We use your information in accordance with applicable law to:",
+    "Provide information and services or applications or services that you have requested or shown interest;": "Provide information and services or applications or services that you have requested or shown interest;",
+    "To check information for accuracy and to compare / verify this information with third parties;": "To check information for accuracy and to compare / verify this information with third parties;",
+    "To provide, manage, protect and improve the applications, products, services and information you have requested from us;": "To provide, manage, protect and improve the applications, products, services and information you have requested from us;",
+    "Manage your use of the applications, products and services you wish to receive from us;": "Manage your use of the applications, products and services you wish to receive from us;",
+    "Manage our business relationship with you (e.g. for customer service and support activities);": "Manage our business relationship with you (e.g. for customer service and support activities);",
+    "Monitor, measure, improve and protect our content, websites, applications and services...": "Monitor, measure, improve and protect our content, websites, applications and services...",
+    "To internally test our website, applications, systems and services...": "To internally test our website, applications, systems and services...",
+    "To provide you with all the information we need to send you...": "To provide you with all the information we need to send you...",
+    "Detect, prevent, investigate or combat criminal, unlawful or unauthorized activities...": "Detect, prevent, investigate or combat criminal, unlawful or unauthorized activities...",
+    "You can manage your privacy settings in your browser or within our applications...": "You can manage your privacy settings in your browser or within our applications...",
+    "In addition to the purposes described in this section...": "In addition to the purposes described in this section...",
+    "Data analysis and benchmarking": "Data analysis and benchmarking",
+    "We use information generated and stored during your use of our services for legitimate business purposes...": "We use information generated and stored during your use of our services for legitimate business purposes...",
+    "Communicating advertising, marketing content...": "Communicating advertising, marketing content...",
+    "Conducting research and development activities...": "Conducting research and development activities...",
+    "Developing and providing new and existing functionalities...": "Developing and providing new and existing functionalities...",
+    "Provide location-based services...": "Provide location-based services...",
+    "When using your information for legitimate business purposes...": "When using your information for legitimate business purposes...",
+    "Sharing your information": "Sharing your information",
+    "We share your information:": "We share your information:",
+    "Within the company for purposes set forth in this Privacy Policy...": "Within the company for purposes set forth in this Privacy Policy...",
+    "Our service providers and agents...": "Our service providers and agents...",
+    "Partners, including system implementation partners...": "Partners, including system implementation partners...",
+    "Third parties that we engage to process payment transactions...": "Third parties that we engage to process payment transactions...",
+    "Third parties for marketing purposes...": "Third parties for marketing purposes...",
+    "Credit rating agencies...": "Credit rating agencies...",
+    "Regulators...": "Regulators...",
+    "Law enforcement agencies...": "Law enforcement agencies...",
+    "Marketing": "Marketing",
+    "From time to time we will use your information to contact you...": "From time to time we will use your information to contact you...",
+    "We may also share the information we collect about you with carefully selected companies...": "We may also share the information we collect about you with carefully selected companies...",
+
+
+    "Third-party advertising platforms": "Third-party advertising platforms",
+    "When you reply to posts posted on third-party platforms (such as Facebook, Google, and Twitter)...": "When you reply to posts posted on third-party platforms (such as Facebook, Google, and Twitter)...",
+    "Your information and your rights": "Your information and your rights",
+    "If you are a resident of the EEA or any other jurisdiction with similar privacy laws...": "If you are a resident of the EEA or any other jurisdiction with similar privacy laws...",
+    "The right to know how we use and obtain your information;": "The right to know how we use and obtain your information;",
+    "The right to request us to correct or delete your information...": "The right to request us to correct or delete your information...",
+    "The right to oppose the processing of your data...": "The right to oppose the processing of your data...",
+    "Modification of this Privacy Policy": "Modification of this Privacy Policy",
+    "We may update this privacy policy from time to time...": "We may update this privacy policy from time to time...",
+    "Backup and storage of information": "Backup and storage of information",
+    "Your information is safe as we take reasonable technical and organizational measures...": "Your information is safe as we take reasonable technical and organizational measures...",
+    "Transfers outside the European Economic Area": "Transfers outside the European Economic Area",
+    "Personal data in the European Union are protected by data protection laws...": "Personal data in the European Union are protected by data protection laws...",
+    "Other websites and social media": "Other websites and social media",
+    "If you follow a link from our website, our application or our service...": "If you follow a link from our website, our application or our service...",
+    "Cookies, analysis and data traffic": "Cookies, analysis and data traffic",
+    "Cookies are small text files that are transmitted by our websites...": "Cookies are small text files that are transmitted by our websites...",
+    "If you allow us to use cookies through your browser settings or consent, the following cookies may be used on our websites:": "If you allow us to use cookies through your browser settings or consent, the following cookies may be used on our websites:",
+
+
+
+    "Necessary Cookies: 6": "Necessary Cookies: 6",
+    "Purpose": "Purpose",
+    "Used by the content network, Cloudflare...": "Used by the content network, Cloudflare...",
+    "This cookie preserves the visitor’s session...": "This cookie preserves the visitor’s session...",
+    "Helps prevent Cross-Site Request Forgery...": "Helps prevent Cross-Site Request Forgery...",
+    "Identifies the user and allows authentication...": "Identifies the user and allows authentication...",
+    "Stores the user's cookie consent state...": "Stores the user's cookie consent state...",
+    "Unique id that identifies the user’s session.": "Unique id that identifies the user’s session.",
+    "Expiry Date": "Expiry Date",
+    "1 year": "1 year",
+    "end session": "end session",
+    "Persistent": "Persistent",
+    "Preferences: 3": "Preferences: 3",
+    "Remembers the user's selected language...": "Remembers the user's selected language...",
+    "Arbitrary and anonymous settings...": "Arbitrary and anonymous settings...",
+    "Registers whether the self-service assistant...": "Registers whether the self-service assistant...",
+    "Statistics: 5": "Statistics: 5",
+    "Registers a unique ID..": "Registers a unique ID..",
+    "Registers a unique ID...": "Registers a unique ID...",
+    "Used to send data to Google Analytics...": "Used to send data to Google Analytics...",
+    "2 year": "2 year",
+    "Web beacons and parameter tracking": "Web beacons and parameter tracking",
+    "We use cookies and similar software known as web beacons...": "We use cookies and similar software known as web beacons...",
+    "IP address and traffic data": "IP address and traffic data",
+    "We retain a record of traffic data automatically logged by our servers...": "We retain a record of traffic data automatically logged by our servers...",
+    "Tools": "Tools",
+    "We use the following tools that use cookies on our website:": "We use the following tools that use cookies on our website:",
+    "Google Analytics": "Google Analytics",
+    "Google Analytics uses \"cookies\" to see how users' websites...": "Google Analytics uses \"cookies\" to see how users' websites...",
+    "Google Tag Manager": "Google Tag Manager",
+    "This website uses Google Tag Manager...": "This website uses Google Tag Manager...",
+    "Facebook plugins (like button)": "Facebook plugins (like button)",
+    "Facebook, provider Facebook Inc., 1 Hacker Way, Menlo Park...": "Facebook, provider Facebook Inc., 1 Hacker Way, Menlo Park...",
+    "Twitter": "Twitter",
+    "These features are available through Twitter Inc...": "These features are available through Twitter Inc...",
+    "LinkedIn": "LinkedIn",
+    "The provider is LinkedIn Corporation...": "The provider is LinkedIn Corporation...",
+    "XING": "XING",
+    "The provider is the XING AG...": "The provider is the XING AG...",
+    "LeadSquared": "LeadSquared",
+    "We use LeadSquared to design our landing pages...": "We use LeadSquared to design our landing pages...",
+    "FactorsAI": "FactorsAI",
+    "FactorsAI is a website visitor tracking software...": "FactorsAI is a website visitor tracking software...",
+    "How to disable cookies": "How to disable cookies",
+    "You may be able to configure your browser...": "You may be able to configure your browser...",
+    "Deleting cookies": "Deleting cookies",
+    "You can use your browser settings to delete individual cookies...": "You can use your browser settings to delete individual cookies...",
+    "Further information": "Further information",
+    "The Legal basis: The legal basis for these processing is your consent...": "The Legal basis: The legal basis for these processing is your consent...",
+    "Which data protection rights do you have?": "Which data protection rights do you have?",
+    "16 DSGVO, the right to cancellation under Art. 17 GDPR...": "16 DSGVO, the right to cancellation under Art. 17 GDPR...",
+    "If you have any questions about how we should handle your information...": "If you have any questions about how we should handle your information...",
+    "Ready to accelerate value creation across your portfolio?": "Ready to accelerate value creation across your portfolio?",
+    "Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.": "Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.",
+    "Contact us": "Contact us",
+
+
+    "Understanding Our Terms of Use": "Understanding Our Terms of Use",
+    "RheinBrücke IT Consulting B.V. (“RheinBrücke”) operates each website (“Site”) that links to these Terms of Use to provide online access to information about RheinBrücke and the products, services, and opportunities we provide.": "RheinBrücke IT Consulting B.V. (“RheinBrücke”) operates each website (“Site”) that links to these Terms of Use to provide online access to information about RheinBrücke and the products, services, and opportunities we provide.",
+    "By accessing and using the Site, you agree to these Terms of Use.": "By accessing and using the Site, you agree to these Terms of Use.",
+    "RheinBrücke reserves the right to modify these Terms of Use at any time without giving you prior notice. Your use of the Site following any such modification constitutes your agreement to follow and be bound by these Terms of Use as modified. The last date these Terms of Use were revised is set forth below.": "RheinBrücke reserves the right to modify these Terms of Use at any time without giving you prior notice. Your use of the Site following any such modification constitutes your agreement to follow and be bound by these Terms of Use as modified. The last date these Terms of Use were revised is set forth below.",
+    
+    "1. Permitted Use of the Site": "1. Permitted Use of the Site",
+    
+    "2. Prohibited Use of the Site": "2. Prohibited Use of the Site",
+    "By accessing the Site, you agree that you will not:": "By accessing the Site, you agree that you will not:",
+    "Use the Site in violation of these Terms of Use": "Use the Site in violation of these Terms of Use",
+    "Modify, create a derivative work from, reverse engineer or reverse assemble the Site, or otherwise attempt to discover any source code, or allow any third party to do so": "Modify, create a derivative work from, reverse engineer or reverse assemble the Site, or otherwise attempt to discover any source code, or allow any third party to do so",
+    "Sell, assign, sublicense, distribute, commercially exploit, grant a security interest in or otherwise transfer any right in, or make available to a third party, the Content or Service in any way": "Sell, assign, sublicense, distribute, commercially exploit, grant a security interest in or otherwise transfer any right in, or make available to a third party, the Content or Service in any way",
+    "Use or launch any automated system, including without limitation, “robots,” “spiders,” or “offline readers,” that accesses the Site in a manner that sends more request messages to the RheinBrücke servers in a given period of time than a human can reasonably produce in the same period by using a conventional on-line web browser": "Use or launch any automated system, including without limitation, “robots,” “spiders,” or “offline readers,” that accesses the Site in a manner that sends more request messages to the RheinBrücke servers in a given period of time than a human can reasonably produce in the same period by using a conventional on-line web browser",
+    "Mirror or frame the Site or any part of it on any other web site or web page": "Mirror or frame the Site or any part of it on any other web site or web page",
+    "Attempt to gain unauthorized access to the Site": "Attempt to gain unauthorized access to the Site",
+    "Access the Site by any means other than through the interface that is provided by RheinBrücke for use in accessing the Site": "Access the Site by any means other than through the interface that is provided by RheinBrücke for use in accessing the Site",
+    "Use the Site for any purpose or in any manner that is unlawful or prohibited by this Agreement": "Use the Site for any purpose or in any manner that is unlawful or prohibited by this Agreement",
+    "Any unauthorized use of any Content or the Site may violate patent, copyright, trademark, and other laws.": "Any unauthorized use of any Content or the Site may violate patent, copyright, trademark, and other laws.",
+    
+    "3. Copyrights and Trademarks": "3. Copyrights and Trademarks",
+    "The Site is based upon proprietary RheinBrücke technology and includes the Content. The Site is protected by applicable intellectual property and other laws, including trademark and copyright laws. The Site, including all intellectual property rights in the Site, belongs to and is the property of RheinBrücke or its licensors (if any). RheinBrücke owns and retains all copyrights in the Content. Except as specifically permitted on the Site as to certain Content, the Content may not be copied, reproduced, modified, published, uploaded, posted, transmitted, performed, or distributed in any way, and you agree not to modify, rent, lease, loan, sell, distribute, transmit, broadcast, or create derivative works based on the Content or the Site, in whole or in part, by any means. RheinBrücke, the RheinBrücke logos, and other marks used by RheinBrücke from time to time are trademarks and the property of RheinBrücke. The appearance, layout, color scheme, and design of the RheinBrücke.com site are protected trade dress. Customer does not receive any right or license to use the foregoing. RheinBrücke may use and incorporate into the Site or the RheinBrücke Service any suggestions or other feedback you provide, without payment or condition.": "The Site is based upon proprietary RheinBrücke technology and includes the Content. The Site is protected by applicable intellectual property and other laws, including trademark and copyright laws. The Site, including all intellectual property rights in the Site, belongs to and is the property of RheinBrücke or its licensors (if any). RheinBrücke owns and retains all copyrights in the Content. Except as specifically permitted on the Site as to certain Content, the Content may not be copied, reproduced, modified, published, uploaded, posted, transmitted, performed, or distributed in any way, and you agree not to modify, rent, lease, loan, sell, distribute, transmit, broadcast, or create derivative works based on the Content or the Site, in whole or in part, by any means. RheinBrücke, the RheinBrücke logos, and other marks used by RheinBrücke from time to time are trademarks and the property of RheinBrücke. The appearance, layout, color scheme, and design of the RheinBrücke.com site are protected trade dress. Customer does not receive any right or license to use the foregoing. RheinBrücke may use and incorporate into the Site or the RheinBrücke Service any suggestions or other feedback you provide, without payment or condition.",
+
+    "4. Information and Materials You Post or Provide": "4. Information and Materials You Post or Provide",
+    "You represent that you have all right, title, and interest to materials you post on the Site or provide to RheinBrücke (“Materials”), including but not limited to any consent, authorization, release, clearance or license from any third party (such as, but not limited to, any release related to rights of privacy or publicity) necessary for you to provide, post, upload, input or submit the Materials, and that posting such Materials does not violate or constitute the infringement of any patent, copyright, trademark, trade secret, right of privacy, right of publicity, moral rights, or other intellectual property right recognized by any applicable jurisdiction of any person or entity, or otherwise constitute the breach of any agreement with any other person or entity. You further represent and warrant that you are who you say you are, that you have not submitted fictitious, false or inaccurate information about yourself, and that all information contained in the posted Materials is true and your own work or work you are authorized to submit, and that the posted Materials do not contain any threatening, harassing, libelous, false, defamatory, offensive, obscene, or pornographic, material, or other material that would violate any other applicable law or regulation. You agree that you will not knowingly and with intent to defraud provide material and misleading information. You represent and warrant that the Materials you supply do not violate these Terms of Use": "You represent that you have all right, title, and interest to materials you post on the Site or provide to RheinBrücke (“Materials”), including but not limited to any consent, authorization, release, clearance or license from any third party (such as, but not limited to, any release related to rights of privacy or publicity) necessary for you to provide, post, upload, input or submit the Materials, and that posting such Materials does not violate or constitute the infringement of any patent, copyright, trademark, trade secret, right of privacy, right of publicity, moral rights, or other intellectual property right recognized by any applicable jurisdiction of any person or entity, or otherwise constitute the breach of any agreement with any other person or entity. You further represent and warrant that you are who you say you are, that you have not submitted fictitious, false or inaccurate information about yourself, and that all information contained in the posted Materials is true and your own work or work you are authorized to submit, and that the posted Materials do not contain any threatening, harassing, libelous, false, defamatory, offensive, obscene, or pornographic, material, or other material that would violate any other applicable law or regulation. You agree that you will not knowingly and with intent to defraud provide material and misleading information. You represent and warrant that the Materials you supply do not violate these Terms of Use",
+
+
+
+    "5. Links to Third-Party Web Sites": "5. Links to Third-Party Web Sites",
+    "Links on the Site to third party web sites or information are provided solely as a convenience to you. If you use these links, you will leave the Site. Such links do not constitute or imply an endorsement, sponsorship, or recommendation by RheinBrücke of the third party, the third-party web site, or the information there. RheinBrücke is not responsible for the availability of any such web sites. RheinBrücke is not responsible or liable for any such web sites or the content thereon. If you use the links to the web sites of RheinBrücke affiliates or service providers, you will leave the Site and will be subject to the terms of use and privacy policy applicable to those web sites.": "Links on the Site to third party web sites or information are provided solely as a convenience to you. If you use these links, you will leave the Site. Such links do not constitute or imply an endorsement, sponsorship, or recommendation by RheinBrücke of the third party, the third-party web site, or the information there. RheinBrücke is not responsible for the availability of any such web sites. RheinBrücke is not responsible or liable for any such web sites or the content thereon. If you use the links to the web sites of RheinBrücke affiliates or service providers, you will leave the Site and will be subject to the terms of use and privacy policy applicable to those web sites.",
+
+    "6. Downloading Files": "6. Downloading Files",
+    "RheinBrücke cannot and does not guarantee or warrant that files available for downloading through the Site will be free of infection by software viruses or other harmful computer code, files or programs.": "RheinBrücke cannot and does not guarantee or warrant that files available for downloading through the Site will be free of infection by software viruses or other harmful computer code, files or programs.",
+
+    "7. Disclaimers; Limitations of Liability": "7. Disclaimers; Limitations of Liability",
+    "RheinBrücke and its service providers, licensors and suppliers make no representations about the suitability, reliability, availability, timeliness, security or accuracy of the site or the content for any purpose. To the maximum extent permitted by applicable law, all such information, software, products, service and related graphics are provided “as is” without warranty or condition of any kind. RheinBrücke and its service providers, licensors and suppliers hereby disclaim all warranties and conditions of any kind with regard to the site and the content, including all implied warranties or conditions of merchantability, fitness for a particular purpose, title and non-infringement. No statement or information, whether oral or written, obtained from RheinBrücke in any means or fashion shall create any warranty not expressly and explicitly set forth in this agreement. The content may include inaccuracies or typographical errors.": "RheinBrücke and its service providers, licensors and suppliers make no representations about the suitability, reliability, availability, timeliness, security or accuracy of the site or the content for any purpose. To the maximum extent permitted by applicable law, all such information, software, products, service and related graphics are provided “as is” without warranty or condition of any kind. RheinBrücke and its service providers, licensors and suppliers hereby disclaim all warranties and conditions of any kind with regard to the site and the content, including all implied warranties or conditions of merchantability, fitness for a particular purpose, title and non-infringement. No statement or information, whether oral or written, obtained from RheinBrücke in any means or fashion shall create any warranty not expressly and explicitly set forth in this agreement. The content may include inaccuracies or typographical errors.",
+
+    "To the maximum extent permitted by applicable law, in no event shall RheinBrücke and its service providers, licensors or suppliers be liable for any direct, indirect, punitive, incidental, special, consequential, exemplary or other type of damages, including without limitation damages for cover or loss of use, data, revenue or profits, arising out of or in any way connected with the use or performance of the site, with the delay or inability to use the site, or for any content, or otherwise arising out of the use of the site, whether based on contract, tort, negligence, strict liability, the failure of any limited remedy to achieve its essential purpose, or otherwise, even if RheinBrücke or any of RheinBrücke’s suppliers has been advised of the possibility of damages. Because some states/jurisdictions do not allow the exclusion or limitation of liability for consequential or incidental damages, the above limitation may not apply to you.": "To the maximum extent permitted by applicable law, in no event shall RheinBrücke and its service providers, licensors or suppliers be liable for any direct, indirect, punitive, incidental, special, consequential, exemplary or other type of damages, including without limitation damages for cover or loss of use, data, revenue or profits, arising out of or in any way connected with the use or performance of the site, with the delay or inability to use the site, or for any content, or otherwise arising out of the use of the site, whether based on contract, tort, negligence, strict liability, the failure of any limited remedy to achieve its essential purpose, or otherwise, even if RheinBrücke or any of RheinBrücke’s suppliers has been advised of the possibility of damages. Because some states/jurisdictions do not allow the exclusion or limitation of liability for consequential or incidental damages, the above limitation may not apply to you.",
+
+    "If, notwithstanding the other terms of this agreement, RheinBrücke is determined to have any liability to you or any third party for any loss, harm or damage, you agree that the aggregate liability of RheinBrücke and its officers, directors, managers, employees, affiliates, agents, contractors, service providers, licensors or suppliers shall in all cases be limited to One Hundred Euros.": "If, notwithstanding the other terms of this agreement, RheinBrücke is determined to have any liability to you or any third party for any loss, harm or damage, you agree that the aggregate liability of RheinBrücke and its officers, directors, managers, employees, affiliates, agents, contractors, service providers, licensors or suppliers shall in all cases be limited to One Hundred Euros.",
+
+
+    "8. Indemnification": "8. Indemnification",
+    "You understand and agree that you are personally responsible for your behavior on the Site. You agree to indemnify, defend and hold harmless RheinBrücke, its parent companies, subsidiaries, affiliated companies, joint ventures, business partners, licensors, employees, agents, and any third-party information providers from and against all claims, losses, expenses, damages and costs (including, but not limited to, direct, incidental, consequential, exemplary and indirect damages), and reasonable attorneys’ fees, resulting from or arising out of your use, misuse, or inability to use the Site or the Content, or any violation by you of these Terms of Use.": "You understand and agree that you are personally responsible for your behavior on the Site. You agree to indemnify, defend and hold harmless RheinBrücke, its parent companies, subsidiaries, affiliated companies, joint ventures, business partners, licensors, employees, agents, and any third-party information providers from and against all claims, losses, expenses, damages and costs (including, but not limited to, direct, incidental, consequential, exemplary and indirect damages), and reasonable attorneys’ fees, resulting from or arising out of your use, misuse, or inability to use the Site or the Content, or any violation by you of these Terms of Use.",
+
+    "9. Privacy": "9. Privacy",
+    "Your use of the Site is subject to RheinBrücke’s Privacy Policy, available at www.rheincs.com": "Your use of the Site is subject to RheinBrücke’s Privacy Policy, available at www.rheincs.com",
+
+    "10. General Provisions": "10. General Provisions",
+    "a. Entire Agreement/No Waiver. These Terms of Use constitute the entire agreement of the parties with respect to the subject matter hereof. No waiver by RheinBrücke of any breach or default hereunder shall be deemed to be a waiver of any preceding or subsequent breach or default.": "a. Entire Agreement/No Waiver. These Terms of Use constitute the entire agreement of the parties with respect to the subject matter hereof. No waiver by RheinBrücke of any breach or default hereunder shall be deemed to be a waiver of any preceding or subsequent breach or default.",
+
+    "b. Correction of Errors and Inaccuracies. The Content may contain typographical errors or other errors or inaccuracies and may not be complete or current. RheinBrücke therefore reserves the right to correct any errors, inaccuracies or omissions and to change or update the Content at any time without prior notice. RheinBrücke does not, however, guarantee that any errors, inaccuracies or omissions will be corrected.": "b. Correction of Errors and Inaccuracies. The Content may contain typographical errors or other errors or inaccuracies and may not be complete or current. RheinBrücke therefore reserves the right to correct any errors, inaccuracies or omissions and to change or update the Content at any time without prior notice. RheinBrücke does not, however, guarantee that any errors, inaccuracies or omissions will be corrected.",
+
+    "c. Enforcement/ Choice of Law/ Choice of Forum. If any part of these Terms of Use is determined by a court of competent jurisdiction to be invalid or unenforceable, it will not impact any other provision of these Terms of Use, all of which will remain in full force and effect. Any and all disputes relating to these Terms of Use, RheinBrücke’s Privacy Policy, your use of the Site, any other RheinBrücke web site or the Content are governed by, and will be interpreted in accordance with, Indian laws, without regard to any conflict of laws provisions. You agree to the sole and exclusive jurisdiction and venue of the courts in Chennai, India in the event of any dispute of any kind arising from or relating to these Terms of Use, RheinBrücke’s Privacy Policy, your use of the Site, any other RheinBrücke web site or the Content.": "c. Enforcement/ Choice of Law/ Choice of Forum. If any part of these Terms of Use is determined by a court of competent jurisdiction to be invalid or unenforceable, it will not impact any other provision of these Terms of Use, all of which will remain in full force and effect. Any and all disputes relating to these Terms of Use, RheinBrücke’s Privacy Policy, your use of the Site, any other RheinBrücke web site or the Content are governed by, and will be interpreted in accordance with, Indian laws, without regard to any conflict of laws provisions. You agree to the sole and exclusive jurisdiction and venue of the courts in Chennai, India in the event of any dispute of any kind arising from or relating to these Terms of Use, RheinBrücke’s Privacy Policy, your use of the Site, any other RheinBrücke web site or the Content.",
+
+    "Last Revised: May 7, 2014": "Last Revised: May 7, 2014",
+    "Copyright 2014 RheinBrücke. All rights reserved": "Copyright 2014 RheinBrücke. All rights reserved",
+    "Ready to accelerate value creation across your portfolio?": "Ready to accelerate value creation across your portfolio?",
+    "Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.": "Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.",
+    "Contact us": "Contact us"
 
 
 
@@ -3771,6 +3978,7 @@
     "Engineering Procurement and Construction": "Engineering Beschaffung & Konstruktion",
     "Engineering Procurement & Construction": "Engineering Beschaffung & Konstruktion",
     "Engineering, Procurement & Construction": "Engineering, Beschaffung & Konstruktion",
+    "Engineering, Procurement & Construction (EPC)": "Engineering, Beschaffung & Konstruktion",
     "Process Manufacturing": "Prozessfertigung",
     "Private Equity & Funding Backed Ventures": "Private Equity & finanzierte Unternehmen",
     "Cable Manufacturing": "Kabelherstellung",
@@ -3815,7 +4023,7 @@
     "Whether you are mid-sized and scaling, or enterprise-level and rethinking your model, we help you unlock growth with Cloud ERP and Digital solutions.": "Unser Angebot richtet sich gleichermaßen an mittelständische Unternehmen, die expandieren wollen, und Großunternehmen, die eine Neuausrichtung ihres Geschäftskonzepts anstreben. Mit uns erschließen Sie neue Wachstumspotenziale.",
     "Know more": "Mehr erfahren",
     "Projects that made a difference.": "Projekte mit echtem Impact",
-    "At Rheinbrucke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.": "Bei Rheinbrücke entsteht jedes Projekt durch echte Zusammenarbeit – getrieben von Innovation und ausgerichtet auf messbare Ergebnisse. Ob bei der Optimierung von Automatisierungssystemen oder der Beschleunigung der Embedded-Entwicklung: Unsere Lösungen reduzieren Komplexität, steigern Effizienz und ermöglichen Wachstum mit Zuversicht. So wird Wandel erfolgreich.",
+    "At RheinBrucke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.": "Bei Rheinbrücke entsteht jedes Projekt durch echte Zusammenarbeit – getrieben von Innovation und ausgerichtet auf messbare Ergebnisse. Ob bei der Optimierung von Automatisierungssystemen oder der Beschleunigung der Embedded-Entwicklung: Unsere Lösungen reduzieren Komplexität, steigern Effizienz und ermöglichen Wachstum mit Zuversicht. So wird Wandel erfolgreich.",
     "Explore more": "Mehr erfahren",
     "Trusted by Enterprise Worldwide": "Weltweit bewährt. Von Unternehmen geschätzt.",
     "View All": "Alle anzeigen",
@@ -4499,7 +4707,6 @@
     "Retail Industry": "Einzelhandel",
     "customer segmentation, demand forecasting, fraud detection, and real-time analytics to improve in-store and online performance.": "Kundensegmentierung, Nachfrageprognosen, Betrugserkennung und Echtzeit-Analysen zur Verbesserung der Performance in Store und Online.",
 
-    "Distribution & Supply Chain": "Distribution & Supply Chain",
     "Route optimisation, warehouse automation, predictive delivery times, and supply chain risk analytics.": "Routen optimierung, Lagerautomatisierung, vorausschauende Lieferzeiten und Risikoanalysen in der Lieferkette.",
 
     "Discrete Manufacturing": "Diskrete Fertigung",
@@ -4508,7 +4715,7 @@
     "Automotive Industry": "Automobilindustrie",
     "Smart manufacturing, connected vehicle analytics, predictive maintenance, and safety monitoring.": "Smart Manufacturing, vernetzte Fahrzeuganalysen, vorausschauende Wartung und Sicherheitsüberwachung.",
 
-    "Engineering, Procurement & Construction (EPC)": "Engineering, Procurement & Construction (EPC)",
+    
     "Project cost forecasting, risk modelling, resource optimisation, and contract intelligence.": "Projektkostenprognosen, Risikomodellierung, Ressourcenoptimierung und Vertragsanalyse.",
 
     "Process Manufacturing": "Prozessfertigung",
@@ -4645,10 +4852,9 @@
 
 
 
-    "Distribution & Supply Chain": "Distribution & Supply Chain",
     "Distribution businesses operate at the frontline of supply chain complexity. Balancing supply reliability, service level commitments, and operational costs in increasingly volatile markets requires agility, visibility, and intelligent decision-making. Fragmented systems, unpredictable demand, and rising logistics costs put further pressure on margins, making operational efficiency and digital integration essential for survival.": "Distributionsunternehmen agieren an vorderster Front der komplexen Lieferkette. Die sich schnell verändernden Märkte stellen Unternehmen vor die Herausforderung, eine Balance zwischen Lieferzuverlässigkeit, Service-Level-Verpflichtungen und Betriebskosten zu finden. Fragmentierte Systeme, unvorhersehbare Nachfrage und steigende Logistikkosten erhöhen den Margendruck – operative Effizienz und digitale Integration sind entscheidend, um wettbewerbsfähig zu bleiben.",
 
-    "Challenges in Distribution & Supply Chain": "Die Herausforderungen in Distribution & Supply Chain",
+    "Challenges in Distribution & Supply Chain": "Die Herausforderungen in Vertrieb und Lieferkette",
     "Unpredictable demand patterns and supply disruptions affecting inventory and delivery performance": "Unvorhersehbare Nachfragemuster und Lieferunterbrechungen beeinträchtigen Bestände und Lieferperformance",
     "Stock imbalances and fulfilment delays impacting customer service and increasing working capital lock-up": "Bestandsungleichgewichte und Fulfilment-Verzögerungen beeinträchtigen den Kundenservice und binden Betriebskapital",
     "Fragmented systems and siloed data across warehousing, transport, order management, and ERP platforms": "Fragmentierte Systeme und Datensilos in Lagerhaltung, Transport, Auftragsmanagement und ERP-Plattformen",
@@ -4722,10 +4928,10 @@
     "Tangible Outcomes": "Konkrete Ergebnisse",
     "Faster production cycles and improved on-time delivery rates through optimised scheduling and operational control": "Schnellere Produktionszyklen und verbesserte Termintreue durch optimierte Planung und Betriebssteuerung",
     "Reduced operational costs and working capital requirements via better inventory, procurement, and production alignment": "Reduzierte Betriebskosten und geringerer Working-Capital-Bedarf durch bessere Abstimmung von Lager, Beschaffung und Produktion",
-    "Enhanced product quality and traceability through integrated quality management and reporting frameworks": "Verbesserte Produktqualität und Rückverfolgbarkeit durch integrierte Qualitätsmanagement- und Reporting-Strukturen",
+    "Enhanced product quality, compliance, and traceability through integrated quality management and reporting frameworks": "Verbesserte Produktqualität und Rückverfolgbarkeit durch integrierte Qualitätsmanagement- und Reporting-Strukturen",
     "Greater operational agility and responsiveness to urgent demand, engineering changes, and supply chain disruptions": "Höhere operative Agilität und Reaktionsfähigkeit bei dringender Nachfrage, technischen Änderungen und Lieferkettenstörungen",
-    "Improved resource utilisation and downtime reduction through real-time shop-floor performance insights": "Verbesserte Ressourcennutzung und reduzierte Ausfallzeiten durch Echtzeit-Einblicke in die Shopfloor-Performance",
-    "Lower operational overhead and accelerated transformation delivery via scalable, offshore-supported models": "Geringere Betriebskosten und beschleunigte Transformation durch skalierbare, offshore-gestützte Modelle",
+    "Improved resource utilisation and reduced downtime through real-time shop-floor performance insights": "Verbesserte Ressourcennutzung und reduzierte Ausfallzeiten durch Echtzeit-Einblicke in die Shopfloor-Performance",
+    "Lower transformation risk and overhead through scalable delivery models driven by manufacturing industry experts": "Geringere Betriebskosten und beschleunigte Transformation durch skalierbare, offshore-gestützte Modelle",
 
     "Why Choose Us": "Warum wir?",
     "Deep expertise in discrete manufacturing operational transformation across industrial, automotive, machinery, and electronics sectors": "Tiefgehende Expertise in der operativen Transformation der diskreten Fertigung – über Industrie, Automotive, Maschinenbau und Elektronik hinweg",
@@ -4793,7 +4999,7 @@
 
 
 
-    "Engineering, Procurement & Construction (EPC)": "EPC – Engineering, Procurement & Construction",
+    
     "The EPC sector operates at the intersection of contract complexity, evolving project scopes, and relentless schedule and cost pressures. Large, capital-intensive projects demand rigorous operational control, integrated data visibility, and the agility to manage risks and changes in real time. As market volatility, compliance demands, and sustainability requirements grow, digital transformation has become essential for EPC firms to protect margins, improve governance, and enhance delivery performance.": "EPC-Unternehmen sind auf die Abwicklung komplexer Projekte spezialisiert. Die Herausforderungen reichen von vielschichtigen Vertragsverhandlungen über sich ändernde Projektumfänge bis hin zu hohem Zeit- und Kostendruck. Große, kapitalintensive Projekte erfordern strenge operative Kontrolle, integrierte Datentransparenz und die Fähigkeit, Risiken und Änderungen in Echtzeit zu bewältigen. Angesichts zunehmender Marktvolatilität, Compliance-Anforderungen und Nachhaltigkeitsvorgaben ist die digitale Transformation unverzichtbar geworden, um Margen zu sichern, Governance zu stärken und die Projektleistung zu verbessern.",
 
     "Challenges in EPC Operations": "Die Herausforderungen im EPC-Betrieb",
@@ -5127,7 +5333,7 @@
     "Delivery focused on measurable improvements in project cost control, margin visibility, and operational efficiency": "Fokus auf messbare operative Verbesserungen und finanzielle Ergebnisse",
     "Global delivery capability leveraging specialised implementation teams": "Offshore-fähiges, skalierbares und kosteneffizientes Bereitstellungsmodell",
 
-    "Modernise Your Interior Design Operations": "Modernisieren Sie Ihre Innenarchitektur-Abläufe",
+    "Modernise Your Interior Design Operations?": "Modernisieren Sie Ihre Innenarchitektur-Abläufe",
     "Elevate your interior design operations with one intelligent system that unifies planning, execution, and financial control for consistent, accurate project delivery.": "Machen Sie Ihr Innenarchitekturunternehmen zukunftssicher – mit vernetzter, agiler ERP-Infrastruktur, automatisiertem Projektmanagement und Echtzeit-Einblicken in Ihre Betriebsabläufe.",
 
 
@@ -5314,7 +5520,7 @@
     "Modernise and Upgrade Your Enterprise Core": "Modernisieren und Upgraden Sie Ihr Enterprise Core",
     "To stay competitive, businesses must evolve their core systems to be agile, scalable, and cloud-ready. Our enterprise modernisation services help you move beyond legacy systems with cutting-edge platforms, architectures, and applications, enabling faster innovation and operational flexibility.": "Um wettbewerbsfähig zu bleiben, müssen Unternehmen ihre Kernsysteme kontinuierlich modernisieren und upgraden – hin zu agilen, skalierbaren und cloud-fähigen Lösungen. Unsere Enterprise-Modernisierungs-Services helfen Ihnen, veraltete Legacy-Systeme abzulösen und durch moderne Plattformen, Architekturen und Anwendungen zu ersetzen. So schaffen Sie die Basis für schnellere Innovationen und maximale operative Flexibilität.",
 
-    "Architecture Services": "Architektur leistungen:",
+    "Architecture Services:": "Architektur leistungen:",
     "Our cloud-native architectures on Microsoft Azure integrate microservices and event-driven frameworks, allowing your business to adapt quickly and innovate continuously. We also help migrate legacy systems, optimising workflows to support growth.": "Unsere cloud-nativen Architekturen auf Microsoft Azure integrieren Microservices und eventgesteuerte Frameworks, sodass sich Ihr Unternehmen schnell anpassen und kontinuierlich Innovationen vorantreiben kann. Zudem unterstützen wir die Migration von Legacy-Systemen und optimieren Workflows gezielt für Wachstum.",
     "MACH, SOA, Microsoft Azure, Event-driven Frameworks": "MACH, SOA, Microsoft Azure, Event-driven Frameworks",
 
@@ -6062,7 +6268,7 @@
     "MeRLIN Sourcing: Powering Strategic Direct Procurement": "MeRLIN Sourcing – Strategische Direktbeschaffung neu gedacht",
     "MeRLIN is a Strategic Direct Sourcing Solution that offers seamlessly integrated sourcing process automation along with Supplier Relationship Management, Category Management, Contract Management, Audits, and eProcurement functions augmented by Advanced Analytics.": "MeRLIN ist eine integrierte Lösung für Strategic Direct Sourcing, die den gesamten Beschaffungsprozess automatisiert und zentral steuert. Von Supplier Relationship Management, Category- und Contract Management über Audits bis hin zu eProcurement – MeRLIN vereint alle Kernfunktionen in einer Plattform und nutzt Advanced Analytics.",
 
-    "What are MeRLIN’s features?": "MeRLIN Features",
+    "What are MeRLIN’s features?": "Welche Funktionen bietet MeRLIN?",
     "MeRLIN is modular, flexible, configurable, and easy to deploy. It is powered by the Microsoft Technology stack and can be deployed On-Premise or on Cloud.": "MeRLIN ist modular, flexibel, konfigurierbar und einfach zu implementieren. Betrieben auf dem Microsoft-Technologiestack, kann es On-Premise oder in der Cloud eingesetzt werden.",
 
     "Category Management": "Kategorie management",
@@ -6165,11 +6371,10 @@
 
 
 
-    "Digital Solutions – Innovating Business, One Solution at a Time": "Digital Solutions – Innovation für Ihr Business",
+    "Digital Solutions – Innovating Business, One Solution at a Time": "Digital Solutions – Innovation für Ihr Unternehmen",
     "We deliver outcome-driven solutions that combine advanced technology, proven frameworks, and scalable architectures to solve complex business challenges. Driven by our Analyse-Integrate-Transform framework, every engagement is built for measurable, sustained impact.": "Wir liefern ergebnisorientierte Lösungen, die modernste Technologien, bewährte Frameworks und skalierbare Architekturen vereinen, um komplexe Geschäftsherausforderungen zu meistern. Mit unserem Analyse–Integrate–Transform-Ansatz schaffen wir fundierte Insights, nahtlose Integration und greifbare Ergebnisse – für nachhaltige, messbare Transformation.",
     "Every successful digital transformation starts with a solid foundation of analysis, becomes truly valuable through data and intelligence, delivers tangible outcomes via integration of applications and commerce channels, and endures through resilient operations and governance.": "Jede erfolgreiche digitale Transformation beginnt mit einer fundierten Analyse, gewinnt durch Daten und Intelligenz an Wert, liefert durch Integration von Anwendungen und Commerce-Kanälen greifbare Ergebnisse und bleibt durch resiliente Prozesse und Governance nachhaltig wirksam.",
 
-    "Build the Modern Enterprise Foundation": "Die moderne Unternehmensbasis aufbauen",
     "Transformation begins by rethinking and modernising the enterprise core, the platforms, architecture, and integrated systems that drive business operations.": "Transformation beginnt mit der Modernisierung des Kernunternehmens – der Plattformen, Architekturen und integrierten Systeme, die Ihre Geschäftsabläufe antreiben.",
     "We help organisations evolve from legacy systems to agile, cloud-native, mobile enabled scalable architecture, enabling faster innovation and operational flexibility. Microservices, API-first, Cloud and Headless or MACH architecture drive agile and scalable transformation.": "Wir begleiten Organisationen auf dem Weg von Legacy-Systemen zu agilen, cloud-nativen und mobilfähigen Architekturen, die schnelle Innovation und operative Flexibilität ermöglichen. Microservices, API-first-Ansätze sowie Cloud- und MACH-Architekturen treiben agile und skalierbare Transformation voran.",
 
@@ -6740,7 +6945,7 @@
     "Build the Modern Enterprise Foundation": "Schaffen Sie die Grundlage für ein modernes Unternehmen",
     "Transformation begins by rethinking and modernising the enterprise core, the platforms, architecture, and integrated systems that drive business operations.": "Transformation beginnt damit, den Unternehmenskern neu zu denken und zu modernisieren – also die Plattformen, Architekturen und integrierten Systeme, die Ihre Geschäftsprozesse antreiben.",
     "We help organisations evolve from legacy systems to agile, cloud-native, mobile enabled scalable architecture, enabling faster innovation and operational flexibility. Microservices, API-first, Cloud and Headless or MACH architecture drive agile and scalable transformation.": "Wir unterstützen Unternehmen dabei, sich von Altsystemen zu lösen und auf agile, Cloud-native, mobilfähige und skalierbare Architekturen umzusteigen – für schnellere Innovation und mehr operative Flexibilität. Microservices, API-First-Ansätze, Cloud-Technologien sowie Headless- oder MACH-Architekturen bilden die Grundlage für eine agile und skalierbare Transformation.",
-    "Enterprise Architecture Platform as a Service:": "Enterprise Architecture – Platform as a Service:",
+    "Enterprise Architecture Platform as a Service:": "Unternehmens architektur Plattform als Service:",
     "Implement API-first, composable architectures with scalable infrastructure, integration frameworks, and governance controls.": "Implementierung von API-First- und modularen Architekturen mit skalierbarer Infrastruktur, Integrationsframeworks und klaren Governance-Strukturen.",
     "Enterprise Software Implementation:": "Implementierung von Unternehmenssoftware:",
     "Deliver end-to-end ERP, CRM, and enterprise platform implementations with agile frameworks for rapid time-to-value and seamless business-as-usual transitions.": "End-to-End-Implementierung von ERP-, CRM- und Unternehmensplattformen mit agilen Frameworks – für schnellen Mehrwert und einen reibungslosen Übergang in den laufenden Betrieb.",
@@ -6759,7 +6964,7 @@
     "Transformation isn’t just about systems, it’s about people. We deliver modern, intuitive digital experiences and empower users with tools that accelerate productivity and decision-making.": "Transformation betrifft nicht nur Systeme, sondern vor allem Menschen. Wir schaffen moderne, intuitive digitale Lösungen und statten Nutzer mit Werkzeugen aus, die Produktivität und Entscheidungsfähigkeit deutlich steigern.",
     "Portal, Application and Dashboard Development": "Entwicklung von Portalen, Anwendungen und Dashboards",
     "Develop enterprise portals, custom applications, and real-time operational dashboards using modern frameworks and low-code/no-code tools for accelerated delivery.": "Entwicklung von Unternehmensportalen, individuellen Anwendungen und Echtzeit-Dashboards für operative Prozesse, Einsatz moderner Frameworks sowie Low-Code-/No-Code-Plattformen für eine schnelle und effiziente Umsetzung.",
-    "Microsoft Power Platform Solutions": "Microsoft „Power Platform”-Lösungen",
+    "Microsoft 'Power Platform' Solutions": "Microsoft 'Power Platform'-Lösungen",
     "Build business apps, automate workflows, and deliver data-driven dashboards via Power Apps, Power Automate, and Power BI, enabling business-led development with embedded governance.": "Entwicklung von Geschäftsanwendungen, Automatisierung von Workflows und Erstellung datenbasierter Dashboards mit Power Apps, Power Automate und Power BI, Ermöglichung von fachbereichsgetriebener Entwicklung bei gleichzeitig klar definierten Governance-Strukturen.",
     "Modernise Commerce and Customer Engagement": "Modernisierung von E-Commerce und Kundeninteraktion",
     "We help businesses transform how they engage customers and deliver digital experiences": "Wir unterstützen Unternehmen dabei, die Art und Weise zu modernisieren, wie sie mit ihren Kunden interagieren und digitale Kundenerlebnisse gestalten.",
@@ -6782,7 +6987,7 @@
     "scenario planning": "Szenarioplanung",
     "Safeguard Operations and Drive Continuous Optimisation": "Betrieb sichern und kontinuierliche Optimierung vorantreiben",
     "Ensure operational resilience, security, and continuous performance improvement. We help you protect, monitor, and refine your environment - so your business stays ahead, always.": "Sorgen Sie für Stabilität, Sicherheit und eine kontinuierliche Verbesserung der Systemleistung. Wir unterstützen Sie dabei, Ihre IT-Umgebung zu schützen, zu überwachen und laufend zu optimieren – damit Ihr Unternehmen jederzeit einen Schritt voraus bleibt.",
-    "Managed Services & Security Governance": "Managed Services und Sicherheits-Governance",
+    "Managed Services & Security Governance": "Verwaltete Dienste und Sicherheits-Regierungsführung",
     "Deliver managed security services with Microsoft Entra, Defender, and Azure Sentinel. Monitor infrastructure health, operational KPIs, and real-time feedback loops, embedding continuous optimisation and business continuity planning.": "Bereitstellung von Managed Security Services mit Microsoft Entra, Defender und Azure Sentinel, Überwachung des Systemzustands, zentraler Betriebskennzahlen (KPIs) und Echtzeit-Feedbackschleifen, Integration kontinuierlicher Optimierungsprozesse und Business-Continuity-Planung.",
     "Delivering Outcomes, Operationalised": "Messbare Ergebnisse – nachhaltig umgesetzt",
     "From modernising enterprise platforms and activating AI-driven insights to transforming digital commerce and securing operations, our solutions deliver measurable, scalable outcomes — built for today and ready for what’s next.": "Von der Modernisierung von Unternehmensplattformen über die Nutzung KI-gestützter Erkenntnisse bis hin zur Transformation digitaler Geschäftsmodelle und der Absicherung des Betriebs: Unsere Lösungen schaffen messbare und skalierbare Ergebnisse – entwickelt für die Anforderungen von heute und vorbereitet auf die Herausforderungen von morgen.",
@@ -6797,16 +7002,16 @@
     "The SAP Advantage": "Die Vorteile von SAP",
     "Today, SAP is more than an ERP. It is a platform for:": "Heute ist SAP weit mehr als nur ein ERP-System. Es ist eine Plattform für:",
     "Real-time decisions powered by embedded analytics": "Echtzeitentscheidungen dank integrierter Analysen",
-    "S/4HANA and SAP Analytics Cloud enable business users to make decisions with live data - not spreadsheets or monthly reports.": "Mit S/4HANA und der SAP Analytics Cloud können Fachanwender Entscheidungen auf Basis von Echtzeitdaten treffen – statt sich auf Tabellen oder monatliche Reports zu verlassen.",
+    "S/4HANA and SAP Analytics Cloud enable business users to make decisions with live data - not spreadsheets or monthly reports.": "S/4HANA und SAP Analytics Cloud ermöglichen es Geschäftsanwendern, Entscheidungen auf Basis von Live-Daten zu treffen – statt anhand von Tabellenkalkulationen oder Monatsberichten.",
     "Continuous innovation through cloud updates": "Kontinuierliche Innovation durch Cloud-Updates",
-    "Public and private cloud editions deliver ongoing enhancements, AI capabilities, and new best practices.": "Public- und Private-Cloud-Lösungen bieten laufende Verbesserungen, KI-Funktionen und neue Best Practices.",
+    "Public and private cloud editions deliver ongoing enhancements, AI capabilities, and new best practices.": "Public- und Private-Cloud-Editionen bieten fortlaufende Verbesserungen, KI-Funktionen und neue Best Practices.",
     "End-to-end process clarity with Signavio": "Durchgängige Prozesstransparenz mit Signavio",
-    "Organisations worldwide report significant improvements in process transparency, operational consistency, and cycle-time reduction": "Unternehmen weltweit berichten von deutlich mehr Transparenz in ihren Prozessen, höherer operativer Konsistenz und kürzeren Durchlaufzeiten.",
+    "Organisations worldwide report significant improvements in process transparency, operational consistency, and cycle-time reduction": "Unternehmen weltweit berichten von erheblichen Verbesserungen bei der Prozesstransparenz, der operativen Konsistenz und der Verkürzung von Durchlaufzeiten.",
     "Connected ecosystems through SAP BTP": "Vernetzte Ökosysteme mit SAP BTP",
-    "Integrations, extensions, and automations help SAP fit seamlessly into your broader digital landscape.": "Integrationen, Erweiterungen und Automatisierungen sorgen dafür, dass sich SAP nahtlos in Ihre gesamte digitale Landschaft einfügt.",
+    "Integrations, extensions, and automations help SAP fit seamlessly into your broader digital landscape.": "Integrationen, Erweiterungen und Automatisierungen helfen dabei, SAP nahtlos in Ihre gesamte digitale Landschaft einzubinden.",
     "Radical simplification of IT operations": "Radikale Vereinfachung des IT-Betriebs",
-    "Cloud migrations reduce system complexity, improve resilience, and free teams to focus on value creation.": "Cloud-Migrationen reduzieren die Systemkomplexität, erhöhen die Resilienz und ermöglichen es Teams, sich stärker auf Wertschöpfung zu konzentrieren.",
-    "This is the future of SAP - agile, modular, analytics-driven, and business-led.": "Das ist die Zukunft von SAP: Agil, modular, datengetrieben und vom Business geführt.",
+    "Cloud migrations reduce system complexity, improve resilience, and free teams to focus on value creation.": "Cloud-Migrationen reduzieren die Systemkomplexität, verbessern die Ausfallsicherheit und geben Teams die Freiheit, sich auf die Wertschöpfung zu konzentrieren.",
+    "This is the future of SAP - agile, modular, analytics-driven, and business-led.": "Das ist die Zukunft von SAP – agil, modular, datengetrieben und geschäftsorientiert.",
     "Our SAP Service": "Unser SAP-Service",
     "Designed for organisations moving from “systems that run the business” to “systems that shape the business.”": "Entwickelt für Unternehmen, die den Schritt von Systemen, die das Geschäft unterstützen, hin zu Systemen gehen möchten, die das Geschäft aktiv mitgestalten.",
     "SAP S/4HANA Modernisation": "SAP S/4HANA-Modernisierung",
@@ -6836,14 +7041,14 @@
     "AI & ML enablement": "Einführung von KI- und ML-Anwendungen",
     "API management and security": "API-Management und Sicherheitskonzepte",
     "BTP is where enterprises unlock real agility, we help you get there.": "Mit BTP schaffen Unternehmen echte Agilität – wir unterstützen Sie dabei, dieses Potenzial zu realisieren.",
-    "SAP Signavio & Process Intelligence – Check with Ramesh": "SAP Signavio & Process Intelligence – Fragen Sie Ramesh",
+    "SAP Signavio & Process Intelligence": "SAP Signavio & Process Intelligence",
     "Transform the way your organisation understands and improves processes.": "Verändern Sie die Art und Weise, wie Ihr Unternehmen Prozesse versteht und verbessert.",
     "We help you:": "Wir unterstützen Sie dabei:",
-    "Map, analyse, and benchmark business processes": "Geschäftsprozesse zu modellieren, analysieren und zu vergleichen",
-    "Identify bottlenecks, inefficiencies, and compliance gaps": "Engpässe, Ineffizienzen und Compliance-Lücken zu identifizieren",
-    "Build future-state process models": "Zielprozessmodelle (Future-State) zu entwickeln",
-    "Drive harmonisation across global operations": "Harmonisierung über globale Organisationseinheiten hinweg voranzutreiben",
-    "Signavio brings clarity. We turn that clarity into action.": "SAP Signavio schafft Transparenz. Wir sorgen dafür, dass daraus konkrete Verbesserungen entstehen.",
+    "Map, analyse, and benchmark business processes": "Geschäftsprozesse abzubilden, zu analysieren, zu vergleichen und zu bewerten",
+    "Identify bottlenecks, inefficiencies, and compliance gaps": "EEngpässe, Ineffizienzen und Compliance-Lücken zu identifizieren",
+    "Build future-state process models": "Prozessmodelle für den zukünftigen Zustand zu erstellen",
+    "Drive harmonisation across global operations": "die Harmonisierung Ihrer globalen Abläufe voranzutreiben",
+    "Signavio brings clarity. We turn that clarity into action.": "Signavio sorgt für Klarheit. Wir setzen diese Klarheit in die Tat um.",
 "SAP Analytics Cloud (SAC) & Enterprise Insights": "SAP Analytics Cloud (SAC) & Enterprise Insights",
     "Move beyond reports, give your teams real-time, self-service intelligence.": "Gehen Sie über klassische Reports hinaus – und geben Sie Ihren Teams Echtzeit-Insights zur selbstständigen Analyse.",
     "Our expertise covers:": "Unsere Expertise umfasst:",
@@ -6874,25 +7079,25 @@
     "BASIS support": "BASIS-Support",
     "We build only what adds value and ensure everything stays upgrade-friendly.": "Wir entwickeln nur dort, wo echter Mehrwert entsteht – und stellen sicher, dass alle Lösungen auch bei zukünftigen Updates problemlos weiter genutzt werden können.",
     "Why RheinBrücke": "Warum RheinBrücke",
-    "A modern SAP partner for modern enterprises.": "Ein moderner SAP-Partner für moderne Unternehmen.",
-    "Strong S/4HANA, ECC, RISE, BTP, Signavio & SAC expertise": "Fundierte Expertise in den Bereichen S/4HANA, ECC, RISE, BTP, Signavio und SAC",
-    "Proven migration frameworks and accelerators": "Bewährte Migrationsframeworks und Beschleuniger",
-    "Deep integration capability across ERP and non-ERP systems": "Tiefgehende Integrationskompetenz für ERP- und Non-ERP-Systeme",
-    "Agile delivery with predictable outcomes": "Agile Umsetzung mit planbaren Ergebnissen",
-    "A global delivery model that balances cost and quality": "Globales Liefermodell mit optimaler Balance aus Kosten und Qualität",
-    "Long-term AMS+ to keep your SAP evolving": "Langfristiges AMS+ für die kontinuierliche Weiterentwicklung Ihrer SAP-Systemlandschaft",
-    "We don’t just implement SAP - we help you run, optimise, and scale with it.": "Wir implementieren SAP nicht nur – wir helfen Ihnen dabei, Ihre Systeme effizient zu betreiben, kontinuierlich zu optimieren und nachhaltig zu skalieren.",
+    "An modern SAP partner for modern enterprises.": "Ein moderner SAP-Partner für moderne Unternehmen.",
+    "Strong S/4HANA, ECC, RISE, BTP, Signavio & SAC expertise": "Fundierte Expertise in S/4HANA, ECC, RISE, BTP, Signavio und SAC",
+    "Proven migration frameworks and accelerators": "Bewährte Migrations-Frameworks und Beschleuniger",
+    "Deep integration capability across ERP and non-ERP systems": "Umfassende Integrationsfähigkeit zwischen ERP- und Nicht-ERP-Systemen",
+    "Agile delivery with predictable outcomes": "Agile Umsetzung mit vorhersehbaren Ergebnissen",
+    "A global delivery model that balances cost and quality": "Ein globales Bereitstellungsmodell, das Kosten und Qualität in Einklang bringt",
+    "Long-term AMS+ to keep your SAP evolving": "Langfristiges AMS+, damit sich Ihr SAP-System weiterentwickelt",
+    "We don’t just implement SAP - we help you run, optimise, and scale with it.": "Wir implementieren nicht nur SAP – wir helfen Ihnen, damit zu arbeiten, es zu optimieren und zu skalieren.",
     "Industries We Support": "Branchen, die wir unterstützen",
     "Modern SAP solutions tailored for:": "Moderne SAP-Lösungen, maßgeschneidert für:",
-    "Manufacturing": "Fertigungsindustrie",
+    "Manufacturing": "Fertigung",
     "Automotive": "Automobilindustrie",
     "EPC & Engineering": "EPC & Engineering",
     "Distribution & Retail": "Vertrieb & Einzelhandel",
-    "Consumer Products": "Konsumgüterindustrie",
-    "Energy & Utilities": "Energie & Versorgung sunternehmen",
-    "Each industry has different priorities. We bring the right processes, accelerators, and domain expertise.": "Jede Branche hat unterschiedliche Anforderungen. Wir bringen die passenden Prozesse, Beschleuniger und Branchenexpertise mit.",
-    "Ready to Modernise with SAP?": "Sind Sie bereit, Ihre SAP-Landschaft zu modernisieren?",
-    "Talk to our SAP experts to see how we can help optimise your systems and drive business transformation": "Sprechen Sie mit unseren SAP-Experten und erfahren Sie, wie wir Ihre Systeme optimieren und Ihre digitale Transformation voranbringen können.",
+    "Consumer Products": "Konsumgüter",
+    "Energy & Utilities": "Energie & Versorgungswirtschaft",
+    "Each industry has different priorities. We bring the right processes, accelerators, and domain expertise.": "Jede Branche hat ihre eigenen Prioritäten. Wir bringen die richtigen Prozesse, Beschleuniger und Branchenexpertise mit.",
+    "Ready to Modernise with SAP?": "Sind Sie bereit für die Modernisierung mit SAP? ",
+    "Talk to our SAP experts to see how we can help optimise your systems and drive business transformation": "Sprechen Sie mit unseren SAP-Experten, um zu erfahren, wie wir Ihnen helfen können, Ihre Systeme zu optimieren und die Transformation Ihres Unternehmens voranzutreiben.",
 
 
 
@@ -6969,9 +7174,9 @@
     "Accelerate cloud transformation with secure, scalable systems": "die Cloud-Transformation mit sicheren, skalierbaren Systemen zu beschleunigen",
     "Optimise processes with continuous innovation": "Prozesse durch kontinuierliche Innovation zu optimieren",
 
-    "SAP is More Than ERP…": "SAP ist mehr als ERP…",
-    "Our SAP Services": "Unsere SAP-Dienstleistungen",
-    "Unlock business value through a comprehensive portfolio of SAP services and proven transformation methodologies.": "Schöpfen Sie geschäftlichen Mehrwert aus einem umfassenden Portfolio an SAP-Dienstleistungen und bewährten Transformationsmethoden.",
+    "SAP is More Than ERP…": "SAP ist mehr als nur ERP…",
+    "Our SAP Capabilities": "Unsere SAP-Kompetenzen",
+    "Unlock business value through a comprehensive portfolio of SAP services and proven transformation methodologies.": "Schaffen Sie echten Mehrwert mit einem umfassenden Portfolio an SAP-Dienstleistungen und bewährten Transformationsmethoden.",
     "From strategy to execution and continuous optimisation, we help organisations accelerate innovation, improve agility, and achieve measurable business outcomes across their SAP landscape.": "Von der Strategie über die Umsetzung bis hin zur kontinuierlichen Optimierung unterstützen wir Unternehmen dabei, Innovationen voranzutreiben, ihre Agilität zu steigern und messbare Geschäftsergebnisse in ihrer gesamten SAP-Landschaft zu erzielen.",
 
     "SAP Implementation Services": "SAP-Implementierung",
@@ -6999,10 +7204,10 @@
     "Clean-core compliant innovations": "„Clean-Core“-konforme Innovationen",
     "BTP is where enterprises unlock real agility, we help you get there.": "Mit BTP realisieren Unternehmen echte Agilität – wir helfen Ihnen dabei.",
 
- "SAP EWM Implementation": "SAP-EWM-Implementierung",
-    "We help organisations modernise warehouse operations using SAP Extended Warehouse Management (EWM) to improve inventory accuracy, throughput, and operational efficiency.": "Wir unterstützen Unternehmen bei der Modernisierung ihrer Lagerabläufe mithilfe von SAP Extended Warehouse Management (EWM), um die Bestandsgenauigkeit, den Durchsatz und die betriebliche Effizienz zu verbessern.",
+ "SAP EWM Implementation": "SAP EWM-Implementierung",
+    "We help organisations modernise warehouse operations using SAP Extended Warehouse Management (EWM) to improve inventory accuracy, throughput, and operational efficiency.": "Wir unterstützen Unternehmen bei der Modernisierung ihrer Lagerabläufe mit SAP Extended Warehouse Management (EWM), um Bestandsgenauigkeit, Durchsatz und betriebliche Effizienz zu verbessern.",
     "Key capabilities:": "Kernkompetenzen:",
-    "SAP EWM embedded and decentralised implementations": "Integrierte und dezentrale SAP-EWM-Implementierungen",
+    "SAP EWM embedded and decentralised implementations": "Integrierte und dezentrale SAP EWM-Implementierungen",
     "Warehouse process optimisation and automation": "Optimierung und Automatisierung von Lagerprozessen",
     "Integration with S/4HANA, TM, and third-party systems": "Integration mit S/4HANA, TM und Systemen von Drittanbietern",
     "RF, Fiori, and automation enablement": "RF-, Fiori- und Automatisierungsunterstützung",
@@ -7026,57 +7231,57 @@
     "AMS services ensure your SAP landscape is reliable, optimised, and always evolving.": "AMS-Services sorgen dafür, dass Ihre SAP-Landschaft zuverlässig, optimiert und stets auf dem neuesten Stand ist.",
 
     "SAP SuccessFactors Implementation": "SAP SuccessFactors-Implementierung",
-    "RheinBrücke helps organisations transform HR operations with SAP SuccessFactors, enabling improved employee experience and data-driven workforce management.": "RheinBrücke unterstützt Unternehmen bei der Transformation ihrer HR-Abläufe mit SAP SuccessFactors und ermöglicht so eine verbesserte Mitarbeitererfahrung sowie ein datengestütztes Personalmanagement.",
+    "RheinBrücke helps organisations transform HR operations with SAP SuccessFactors, enabling improved employee experience and data-driven workforce management.": "RheinBrücke unterstützt Unternehmen bei der Transformation ihrer HR-Abläufe mit SAP SuccessFactors und ermöglicht so eine verbesserte Mitarbeitererfahrung sowie ein datengesteuertes Personalmanagement.",
     "Core HR, Talent, Learning, and Performance modules": "Kernmodule für Personalwesen, Talentmanagement, Weiterbildung und Leistungsbewertung",
     "Global HR standardisation and localisation": "Globale Standardisierung und Lokalisierung des Personalwesens",
     "Integration with S/4HANA and third-party payroll systems": "Integration mit S/4HANA und externen Lohnabrechnungssystemen",
     "Data migration and change management": "Datenmigration und Änderungsmanagement",
-    "SuccessFactors implemented with clean data, controlled change, and minimal disruption.": "Implementierung von SuccessFactors mit sauberen Daten, kontrollierten Änderungen und minimalen Betriebsunterbrechungen.",
+    "SuccessFactors implemented with clean data, controlled change, and minimal disruption.": "Implementierung von SuccessFactors mit sauberen Daten, kontrollierten Änderungen und minimalen Unterbrechungen.",
 
     "SAP Ariba Services": "SAP Ariba-Dienstleistungen",
     "We modernise procurement and supplier collaboration using SAP Ariba to deliver transparency, control, and cost efficiency.": "Wir modernisieren die Beschaffung und die Zusammenarbeit mit Lieferanten mithilfe von SAP Ariba, um Transparenz, Kontrolle und Kosteneffizienz zu gewährleisten.",
     "Ariba Buying, Invoicing, and Sourcing implementations": "Implementierung von Ariba Buying, Invoicing und Sourcing",
-    "Supplier onboarding and enablement": "Onboarding von Lieferanten",
+    "Supplier onboarding and enablement": "Onboarding und Onboarding von Lieferanten",
     "Integration with SAP S/4HANA and ECC": "Integration mit SAP S/4HANA und ECC",
-    "Spend visibility and compliance optimisation": "Transparenz über Ausgaben und Optimierung der Compliance",
+    "Spend visibility and compliance optimisation": "Ausgabentransparenz und Optimierung der Compliance",
     "Ariba embedded as a governed procurement platform—not another disconnected tool.": "Ariba ist als geregelte Beschaffungsplattform integriert – und nicht nur ein weiteres isoliertes Tool.",
 
     "EDI & SAP CPI Integration Services": "EDI- und SAP-CPI-Integrationsdienste",
-    "We enable seamless system-to-system and business partner integrations using SAP Integration Suite (CPI) and EDI platforms.": "Wir ermöglichen nahtlose System-zu-System-Integrationen und Integrationen mit Geschäftspartnern mithilfe der SAP Integration Suite (CPI) und EDI-Plattformen.",
+    "We enable seamless system-to-system and business partner integrations using SAP Integration Suite (CPI) and EDI platforms.": "Wir ermöglichen nahtlose System-zu-System- und Integrationen mit Geschäftspartnern mithilfe der SAP Integration Suite (CPI) und EDI-Plattformen.",
     "EDI integrations with customers, suppliers, and logistics partners": "EDI-Integrationen mit Kunden, Lieferanten und Logistikpartnern",
-    "SAP CPI-based cloud and hybrid integrations": "SAP CPI-basierte Cloud- und Hybrid-Integrationen",
+    "SAP CPI-based cloud and hybrid integrations": "SAP-CPI-basierte Cloud- und Hybrid-Integrationen",
     "API management and message mapping": "API-Management und Message-Mapping",
     "Monitoring, error handling, and optimisation": "Überwachung, Fehlerbehandlung und Optimierung",
     "Integrations designed for failure handling, visibility, and long-term stability.": "Integrationen, die auf Fehlerbehandlung, Transparenz und langfristige Stabilität ausgelegt sind.",
 
 "Merlin Sourcing – SAP-Integrated Strategic Sourcing": "Merlin Sourcing – SAP-integriertes strategisches Sourcing",
-    "Merlin Sourcing enables governed, SAP-integrated strategic sourcing, extending SAP procurement with structured sourcing, supplier collaboration, and decision control, without breaking clean-core principles.": "Merlin Sourcing ermöglicht ein geregeltes, SAP-integriertes strategisches Sourcing und erweitert die SAP-Beschaffung um strukturiertes Sourcing, Lieferantenkooperation und Entscheidungskontrolle, ohne die Clean-Core-Prinzipien zu verletzen.",
+    "Merlin Sourcing enables governed, SAP-integrated strategic sourcing, extending SAP procurement with structured sourcing, supplier collaboration, and decision control, without breaking clean-core principles.": "Merlin Sourcing ermöglicht ein strukturiertes, SAP-integriertes strategisches Sourcing und erweitert die SAP-Beschaffung um strukturiertes Sourcing, Lieferantenkooperation und Entscheidungskontrolle, ohne die Clean-Core-Prinzipien zu verletzen.",
     "Key capabilities:": "Wichtige Funktionen:",
-    "SAP-integrated sourcing aligned to S/4HANA and ECC": "SAP-integriertes Sourcing, abgestimmt auf S/4HANA und ECC",
-    "Structured sourcing workflows and event management": "Strukturierte Sourcing-Workflows und Ereignismanagement",
-    "Configurable for scale without customisation debt": "Skalierbar konfigurierbar ohne Customizing-Aufwand",
-    "Delivered and supported by RheinBrücke’s SAP consulting and AMS teams": "Bereitgestellt und unterstützt durch die SAP-Beratungs- und AMS-Teams von RheinBrücke",
+    "SAP-integrated sourcing aligned to S/4HANA and ECC": "SAP-integrierte Sourcing-Lösung, abgestimmt auf S/4HANA und ECC",
+    "Structured sourcing workflows and event management": "Sourcing-Lösung auf Basis von Direktmaterialien und Stücklisten",
+    "Configurable for scale without customisation debt": "Skalierbar konfigurierbar ohne Customizing-Schulden",
+    "Delivered and supported by RheinBrücke’s SAP consulting and AMS teams": "Bereitgestellt und unterstützt durch die Supply-Chain-Beratungsteams von RheinBrücke",
     "SAP procurement investments extended into strategic sourcing without platform sprawl or governance loss.": "SAP-Beschaffungsinvestitionen werden auf strategisches Sourcing ausgeweitet, ohne dass es zu einer Plattformausbreitung oder einem Verlust der Governance kommt.",
 
-    "Custom Development & Technical Services": "Maßgeschneiderte Entwicklung und technische Dienstleistungen",
-    "We design and develop SAP extensions that enhance business capabilities while preserving a clean core.": "Wir entwerfen und entwickeln SAP-Erweiterungen, die die Geschäftsfunktionen verbessern und gleichzeitig einen Clean Core erhalten.",
+    "Custom Development & Technical Services": "Maßgeschneiderte Entwicklung & Technische Dienstleistungen",
+    "We design and develop SAP extensions that enhance business capabilities while preserving a clean core.": "Wir entwerfen und entwickeln SAP-Erweiterungen, die die Geschäftsfunktionen verbessern und gleichzeitig einen sauberen Kern bewahren.",
     "ABAP and RAP-based developments": "ABAP- und RAP-basierte Entwicklungen",
     "SAP Fiori and UX enhancements": "SAP-Fiori- und UX-Erweiterungen",
-    "Custom reports, interfaces, forms, and workflows": "Maßgeschneiderte Berichte, Schnittstellen, Formulare und Workflows",
+    "Custom reports, interfaces, forms, and workflows": "Individuelle Berichte, Schnittstellen, Formulare und Workflows",
     "Side-by-side extensions using SAP BTP": "Side-by-Side-Erweiterungen unter Verwendung von SAP BTP",
-    "We build only what adds value and ensure everything stays upgrade-friendly.": "Wir entwickeln nur das, was einen Mehrwert schafft, und stellen sicher, dass alles upgrade-fähig bleibt.",
+    "We build only what adds value and ensure everything stays upgrade-friendly.": "Wir entwickeln nur das, was einen Mehrwert schafft, und stellen sicher, dass alles upgrade-freundlich bleibt.",
 
-    "Global Rollout Services": "Globale Rollout-Dienstleistungen",
-    "RheinBrücke enables seamless SAP rollouts across geographies, ensuring standardisation while accommodating local regulatory and business requirements.": "RheinBrücke ermöglicht nahtlose SAP-Rollouts über verschiedene Regionen hinweg und gewährleistet dabei die Standardisierung unter Berücksichtigung lokaler regulatorischer und geschäftlicher Anforderungen.",
+    "Implementation & Global Rollout Services": "Implementierungs- und globale Rollout-Dienstleistungen",
+    "RheinBrücke enables seamless SAP rollouts across geographies, ensuring standardisation while accommodating local regulatory and business requirements.": "RheinBrücke ermöglicht nahtlose SAP-Rollouts über mehrere Länder hinweg und gewährleistet dabei Standardisierung unter Berücksichtigung lokaler regulatorischer und geschäftlicher Anforderungen.",
     "Template-based global rollouts": "Vorlagenbasierte globale Rollouts",
     "Localisation and compliance management": "Lokalisierungs- und Compliance-Management",
     "Multi-country data and process harmonisation": "Harmonisierung von Daten und Prozessen über mehrere Länder hinweg",
     "Central governance with regional flexibility": "Zentrale Steuerung mit regionaler Flexibilität",
     "Consistent global execution with local compliance assured from day one.": "Konsistente globale Umsetzung mit garantierter lokaler Compliance vom ersten Tag an.",
 
-    "Industries We Support": "Branchen, die wir betreuen",
+    "Industries We Support": "Branchen, die wir unterstützen",
     "Why RheinBrücke": "Warum RheinBrücke",
-    "An SAP partner for modern enterprises.": "Ein moderner SAP-Partner für moderne Unternehmen.",
+    "An SAP partner for modern enterprises.": "Moderne SAP-Lösungen, maßgeschneidert für:",
 
 
 
@@ -7302,7 +7507,7 @@
     "Can digital solutions reduce manufacturing costs?": "Können digitale Lösungen die Produktionskosten senken?",
     "Yes. By improving planning, inventory management, and workflow efficiency, manufacturers can cut waste and lower production costs.": "Ja. Durch die Verbesserung der Planung, der Bestandsverwaltung und der Effizienz der Arbeitsabläufe können Hersteller Verschwendung vermeiden und die Produktionskosten senken.",
 
-    "Engineering, Procurement & Construction (EPC)": "Engineering, Procurement & Construction (EPC)",
+    
     "The EPC sector operates at the intersection of contract complexity, evolving project scopes, and relentless schedule and cost pressures. Large, capital-intensive projects demand rigorous operational control, integrated data visibility, and the agility to manage risks and changes in real time. As market volatility, compliance demands, and sustainability requirements grow, digital transformation has become essential for EPC firms to protect margins, improve governance, and enhance delivery performance.": "Der EPC-Sektor bewegt sich an der Schnittstelle zwischen komplexer Vertragsgestaltung, sich wandelnden Projektumfängen sowie unerbittlichem Zeit- und Kostendruck. Große, kapitalintensive Projekte erfordern eine strenge operative Kontrolle, durchgängige Datentransparenz und die Flexibilität, Risiken und Änderungen in Echtzeit zu bewältigen. Angesichts zunehmender Marktvolatilität, steigender Compliance-Anforderungen und wachsender Nachhaltigkeitsvorgaben ist die digitale Transformation für EPC-Unternehmen unverzichtbar geworden, um Margen zu sichern, die Unternehmensführung zu verbessern und die Leistungsfähigkeit bei der Projektabwicklung zu steigern.",
 
     "AI-ready ERP Cable Manufacturing Operations": "KI-fähige ERP-Lösungen für die Kabelherstellung",
@@ -7374,28 +7579,238 @@
     "Why it Matters for Cable Manufacturing":
     "Warum dies für die Kabelherstellung von Bedeutung ist",
 
-        "ERP for Interior Design Companies": "ERP für Innenarchitekturunternehmen",
+        "ERP for Interior Design Companies": "ERP für Innenarchitektur unternehmen",
     "ERP and Digital Solutions for Interior Design and Fit-Out Businesses": "ERP- und digitale Lösungen für Innenarchitektur- und Ausstattungsunternehmen",
     "Digital solutions powered by ERP help interior design and fit-out companies manage project planning, material procurement, supplier coordination and financial operations within a unified system.": "Digitale Lösungen auf ERP-Basis helfen Innenarchitektur- und Ausstattungsunternehmen dabei, Projektplanung, Materialbeschaffung, Lieferantenkoordination und Finanzabläufe in einem einheitlichen System zu verwalten.",
 
      "Transform Your Enterprise with SAP S/4HANA and Cloud Innovation": "Transformieren Sie Ihr Unternehmen mit SAP S/4HANA und Cloud-Innovationen",
-    "Drive real-time decision-making, simplify operations, and accelerate growth with RheinBrücke’s end-to-end SAP transformation services.": "Fördern Sie die Entscheidungsfindung in Echtzeit, vereinfachen Sie Ihre Abläufe und beschleunigen Sie Ihr Wachstum mit den umfassenden SAP-Transformationsdienstleistungen von RheinBrücke.",
+    "Drive real-time decision-making, simplify operations, and accelerate growth with RheinBrücke’s end-to-end SAP transformation services.": "Treffen Sie Entscheidungen in Echtzeit, vereinfachen Sie Ihre Abläufe und beschleunigen Sie Ihr Wachstum mit den umfassenden Dienstleistungen für Ihre SAP-Transformation von RheinBrücke.",
     "Request a SAP ERP Consultation": "Fordern Sie eine SAP-ERP-Beratung an",
     "The SAP Transformation Journey": "Der Weg zur SAP-Transformation",
     "Talk to our SAP experts to see how we can help optimise your systems and drive business transformation.": "Sprechen Sie mit unseren SAP-Experten, um zu erfahren, wie wir Sie bei der Optimierung Ihrer Systeme und der Umsetzung Ihrer Geschäftstransformation unterstützen können.",
     "RheinBrücke supports enterprises across the full SAP lifecycle, from transformation planning to implementation to continuous optimisation.": "RheinBrücke unterstützt Unternehmen über den gesamten SAP-Lebenszyklus hinweg – von der Transformationsplanung über die Implementierung bis hin zur kontinuierlichen Optimierung.",
     "SAP S/4HANA Transformation": "SAP S/4HANA-Transformation",
-    "Accelerate ERP modernisation with SAP S/4HANA through flexible transformation pathways—greenfield, brownfield, or cloud with RISE and GROW—to drive real-time insights, operational efficiency, and scalable growth.": "Beschleunigen Sie die ERP-Modernisierung mit SAP S/4HANA durch flexible Transformationspfade – Greenfield, Brownfield oder Cloud mit RISE und GROW –, um Echtzeit-Einblicke, betriebliche Effizienz und skalierbares Wachstum zu fördern.",
+    "Accelerate ERP modernisation with SAP S/4HANA through flexible transformation pathways—greenfield, brownfield, or cloud with RISE and GROW—to drive real-time insights, operational efficiency, and scalable growth.": "Beschleunigen Sie die ERP-Modernisierung mit SAP S/4HANA durch flexible Transformationspfade – Greenfield, Brownfield oder Cloud mit RISE und GROW –, um Echtzeit-Einblicke, betriebliche Effizienz und skalierbares Wachstum zu ermöglichen.",
     "SAP Cloud Applications": "SAP-Cloud-Anwendungen",
-    "Transform HR, procurement, and expense management with SAP SuccessFactors, Ariba, and Concur, enabling integrated, scalable, and cloud-driven business operations.": "Transformieren Sie Personalwesen, Beschaffung und Spesenmanagement mit SAP SuccessFactors, Ariba und Concur und ermöglichen Sie so integrierte, skalierbare und cloudbasierte Geschäftsabläufe.",
+    "Transform HR, procurement, and expense management with SAP SuccessFactors, Ariba, and Concur, enabling integrated, scalable, and cloud-driven business operations.": "Transformieren Sie Personalwesen, Beschaffung und Reisekostenmanagement mit SAP SuccessFactors, Ariba und Concur und ermöglichen Sie so integrierte, skalierbare und cloudbasierte Geschäftsabläufe.",
     "SAP BTP": "SAP BTP",
     "Integrate SAP with your enterprise ecosystem and build scalable extensions on SAP BTP, enabling innovation while preserving a clean, stable core.": "Integrieren Sie SAP in Ihr Unternehmensökosystem und entwickeln Sie skalierbare Erweiterungen auf SAP BTP, um Innovationen zu ermöglichen und gleichzeitig einen sauberen, stabilen Kern zu bewahren.",
     "SAP Analytics": "SAP Analytics",
-    "Turn enterprise data into real-time, actionable insights with SAP Analytics Cloud and advanced reporting—enabling faster decisions and improved business performance.": "Verwandeln Sie Unternehmensdaten mit SAP Analytics Cloud und fortschrittlichem Reporting in umsetzbare Echtzeit-Erkenntnisse – für schnellere Entscheidungen und eine verbesserte Geschäftsleistung.",
+    "Turn enterprise data into real-time, actionable insights with SAP Analytics Cloud and advanced reporting—enabling faster decisions and improved business performance.": "Verwandeln Sie Unternehmensdaten mit SAP Analytics Cloud und fortschrittlichem Reporting in Echtzeit-Einblicke, die direkt umsetzbar sind – für schnellere Entscheidungen und eine verbesserte Geschäftsleistung.",
     "SAP Application Management Services (AMS)": "SAP-Anwendungs management dienste",
-    "Ensure a stable, secure, and continuously optimised SAP landscape with outcome-led support, proactive monitoring, and ongoing enhancements.": "Sorgen Sie für eine stabile, sichere und kontinuierlich optimierte SAP-Landschaft durch ergebnisorientierten Support, proaktive Überwachung und fortlaufende Verbesserungen.",
+    "Ensure a stable, secure, and continuously optimised SAP landscape with outcome-led support, proactive monitoring, and ongoing enhancements.": "Sorgen Sie für eine stabile, sichere und kontinuierlich optimierte SAP-Landschaft durch zielorientierten Support, proaktive Überwachung und fortlaufende Verbesserungen.",
     "Read more": "Weiterlesen",
-    "SQL, Azure, Data Factory, Real-time Data Services":"SQL, Azure, Data Factory, Echtzeit-Datendienste"
+    "SQL, Azure, Data Factory, Real-time Data Services":"SQL, Azure, Data Factory, Echtzeit-Datendienste",
+
+   "SAP today goes beyond traditional ERP—it is a unified platform powering intelligent, connected, and data-driven enterprises:": "SAP geht heute über das traditionelle ERP hinaus – es ist eine einheitliche Plattform, die intelligente, vernetzte und datengesteuerte Unternehmen unterstützt:",
+
+  "Expert driven delivery capability ensuring scalable, high-quality, cost-effective project execution": "Kompetente Umsetzung, die eine skalierbare, qualitativ hochwertige und kosteneffiziente Projektdurchführung gewährleistet",
+
+
+
+  "Privacy and Cookies": "Datenschutz und Cookies",
+    "Please read this privacy policy, which describes the collection, use, disclosure, retention and protection of your personal information carefully.": "Bitte lesen Sie diese Datenschutzerklärung, in der die Erhebung, Nutzung, Weitergabe, Speicherung und der Schutz Ihrer personenbezogenen Daten sorgfältig beschrieben werden, aufmerksam durch.",
+    "This website is administered by RheinBrücke IT Consulting B.V. As administrator of this website RheinBrücke IT Consulting B.V. gathers, analyses and processes information regarding the visitors and usage of this website for its general business purposes and for the development of web statistics as described below.": "Diese Website wird von RheinBrücke IT Consulting B.V. betrieben. Als Betreiber dieser Website erhebt, analysiert und verarbeitet RheinBrücke IT Consulting B.V. Informationen über die Besucher und die Nutzung dieser Website für allgemeine geschäftliche Zwecke sowie zur Erstellung von Webstatistiken, wie nachstehend beschrieben.",
+    "This Privacy Policy applies to all websites, applications and services referred to in this Privacy Policy. If you provide us with your personal information as described in the section \"How we obtain information\", you agree that we: (a) fulfil our contractual obligations to you; (b) in accordance with our legitimate interests (e.g. for internal administrative purposes, data analysis, back-up and benchmarking, direct marketing or for the purpose of clarifying or preventing crime) or (c) in accordance with your consent, which you may revoke, collect, store and use at any time as described in this Privacy Policy.": "Diese Datenschutzerklärung gilt für alle Websites, Anwendungen und Dienste, auf die in dieser Datenschutzerklärung Bezug genommen wird. Wenn Sie uns Ihre personenbezogenen Daten wie im Abschnitt „Wie wir Informationen erheben“ beschrieben zur Verfügung stellen, erklären Sie sich damit einverstanden, dass wir: (a) unsere vertraglichen Verpflichtungen Ihnen gegenüber erfüllen; (b) in Übereinstimmung mit unseren berechtigten Interessen (z. B. für interne Verwaltungszwecke, Datenanalyse, Datensicherung und Benchmarking, Direktmarketing oder zum Zwecke der Aufklärung oder Verhinderung von Straftaten) oder (c) in Übereinstimmung mit Ihrer Einwilligung, die Sie jederzeit widerrufen können, diese Daten wie in dieser Datenschutzerklärung beschrieben erheben, speichern und verwenden.",
+    "Who we are": "Über uns",
+    "This Privacy Policy applies to all products, applications and services offered by RheinBrücke IT Consulting B.V. (Sales tax identification number DE293866616 and registered office in Stationsplein 8K NL-6221BT, Maastricht, Netherlands), and excludes all product applications or services that are subject to separate privacy policies that are independent of this Privacy Policy.": "Diese Datenschutzerklärung gilt für alle Produkte, Anwendungen und Dienste, die von RheinBrücke IT Consulting B.V. (Umsatzsteuer-Identifikationsnummer DE293866616 und Sitz in Stationsplein 8K, NL-6221BT, Maastricht, Niederlande) angeboten werden, und schließt alle Produktanwendungen oder Dienste aus, für die separate, von dieser Datenschutzerklärung unabhängige Datenschutzerklärungen gelten.",
+    "How we obtain information": "Wie wir Informationen erheben",
+
+     "This Privacy Policy applies to all products, applications and services offered by RheinBrücke IT Consulting B.V. (Sales tax identification number DE293866616 and registered office in Stationsplein 8K NL-6221BT, Maastricht, Netherlands), and excludes all product applications or services that are subject to separate privacy policies that are independent of this Privacy Policy.": "Diese Datenschutzerklärung gilt für alle Produkte, Anwendungen und Dienste, die von RheinBrücke IT Consulting B.V. (Umsatzsteuer-Identifikationsnummer DE293866616 und Sitz in Stationsplein 8K, NL-6221BT, Maastricht, Niederlande) angeboten werden, und schließt alle Produktanwendungen oder Dienste aus, für die separate, von dieser Datenschutzerklärung unabhängige Datenschutzerklärungen gelten.",
+
+    "To the extent permitted under applicable law, we collect information about you and any other party about whom you provide us with information as soon as you:": "Soweit dies nach geltendem Recht zulässig ist, erheben wir Informationen über Sie und jede andere Partei, über die Sie uns Informationen zur Verfügung stellen, sobald Sie:",
+
+    "Register to use our websites, applications or services (including free trial versions); this may include your name (including your company name), your address, e-mail address and telephone number. We may ask you to provide additional information about your business and preferences;": "sich registrieren, um unsere Websites, Anwendungen oder Dienste (einschließlich kostenloser Testversionen) zu nutzen; dies kann Ihren Namen (einschließlich Ihres Firmennamens), Ihre Adresse, E-Mail-Adresse und Telefonnummer umfassen. Wir bitten Sie möglicherweise um zusätzliche Informationen zu Ihrem Unternehmen und Ihren Präferenzen;",
+
+    "Fill out online forms, post on our message boards, post to any blog, download information (e.g. white papers or other publications), or in other interactive areas of our websites or within our applications or services;": "Online-Formulare ausfüllen, Beiträge in unseren Foren verfassen, Beiträge in einem Blog veröffentlichen, Informationen herunterladen (z. B. Whitepaper oder andere Publikationen) oder in anderen interaktiven Bereichen unserer Websites oder innerhalb unserer Anwendungen oder Dienste;",
+
+    "Interact with us through social media;": "über soziale Medien mit uns interagieren;",
+
+    "Provide us with your contact information while you register to use or access all the websites, applications or services that we provide, or when you update this information;": "uns Ihre Kontaktdaten zur Verfügung stellen, während Sie sich registrieren, um alle von uns angebotenen Websites, Anwendungen oder Dienste zu nutzen oder darauf zuzugreifen, oder wenn Sie diese Daten aktualisieren;",
+
+    "Contact us offline, e.g. by phone, fax, SMS, e-mail or by mail.": "uns offline kontaktieren, z. B. per Telefon, Fax, SMS, E-Mail oder Post.",
+
+    "We also collect information about your devices (including mobile devices) and applications that you or your users use to access our websites, applications or services.": "Wir erfassen außerdem Informationen über Ihre Geräte (einschließlich mobiler Geräte) und Anwendungen, die Sie oder Ihre Nutzer verwenden, um auf unsere Websites, Anwendungen oder Dienste zuzugreifen.",
+    "We may supplement the personal information obtained about you with information obtained from third parties entitled to disclose it.": "Wir können die über Sie erhobenen personenbezogenen Daten durch Informationen ergänzen, die wir von Dritten erhalten, die zur Weitergabe dieser Daten berechtigt sind.",
+    "Provide personal information about others to us": "Übermittlung personenbezogener Daten anderer Personen an uns",
+    "If you provide us with personal information about others, you are responsible for ensuring that you comply with all applicable duties and regulations...": "Wenn Sie uns personenbezogene Daten anderer Personen übermitteln, sind Sie dafür verantwortlich, sicherzustellen, dass Sie alle geltenden Pflichten und Vorschriften einhalten...",
+
+
+    "How we use your information": "Wie wir Ihre Daten verwenden",
+    "We use your information in accordance with applicable law to:": "Wir verwenden Ihre Daten in Übereinstimmung mit den geltenden Gesetzen, um:",
+    "Provide information and services or applications or services that you have requested or shown interest;": "Ihnen Informationen, Dienste, Anwendungen oder Services bereitzustellen, die Sie angefordert oder an denen Sie Interesse bekundet haben;",
+    "To check information for accuracy and to compare / verify this information with third parties;": "Informationen auf ihre Richtigkeit zu überprüfen und diese Informationen mit Dritten abzugleichen bzw. zu verifizieren;",
+    "To provide, manage, protect and improve the applications, products, services and information you have requested from us;": "die von Ihnen angeforderten Anwendungen, Produkte, Dienste und Informationen bereitzustellen, zu verwalten, zu schützen und zu verbessern;",
+    "Manage your use of the applications, products and services you wish to receive from us;": "Ihre Nutzung der Anwendungen, Produkte und Dienste zu verwalten, die Sie von uns erhalten möchten;",
+    "Manage our business relationship with you (e.g. for customer service and support activities);": "unsere Geschäftsbeziehung mit Ihnen zu verwalten (z. B. für Kundendienst- und Supportaktivitäten);",
+    "Monitor, measure, improve and protect our content, websites, applications and services...": "unsere Inhalte, Websites, Anwendungen und Dienste zu überwachen, zu messen, zu verbessern und zu schützen...",
+    "To internally test our website, applications, systems and services...": "unsere Website, Anwendungen, Systeme und Dienste intern zu testen...",
+    "To provide you with all the information we need to send you...": "Ihnen alle Informationen zur Verfügung zu stellen, die wir benötigen, um Ihnen...",
+    "Detect, prevent, investigate or combat criminal, unlawful or unauthorized activities...": "kriminelle, rechtswidrige oder unbefugte Aktivitäten aufzudecken, zu verhindern, zu untersuchen oder zu bekämpfen...",
+    "You can manage your privacy settings in your browser or within our applications...": "Sie können Ihre Datenschutzeinstellungen in Ihrem Browser oder innerhalb unserer Anwendungen verwalten...",
+    "In addition to the purposes described in this section...": "Zusätzlich zu den in diesem Abschnitt beschriebenen Zwecken...",
+    "Data analysis and benchmarking": "Datenanalyse und Benchmarking",
+    "We use information generated and stored during your use of our services for legitimate business purposes...": "Wir verwenden Informationen, die während Ihrer Nutzung unserer Dienste generiert und gespeichert werden, für berechtigte geschäftliche Zwecke...",
+    "Communicating advertising, marketing content...": "Zur Übermittlung von Werbe- und Marketinginhalten...",
+    "Conducting research and development activities...": "Zur Durchführung von Forschungs- und Entwicklungsaktivitäten...",
+    "Developing and providing new and existing functionalities...": "Zur Entwicklung und Bereitstellung neuer und bestehender Funktionen...",
+    "Provide location-based services...": "Zur Bereitstellung standortbezogener Dienste...",
+    "When using your information for legitimate business purposes...": "Bei der Nutzung Ihrer Daten für legitime geschäftliche Zwecke...",
+    "Sharing your information": "Weitergabe Ihrer Daten",
+    "We share your information:": "Wir geben Ihre Daten weiter:",
+    "Within the company for purposes set forth in this Privacy Policy...": "innerhalb des Unternehmens für die in dieser Datenschutzerklärung genannten Zwecke...",
+    "Our service providers and agents...": "an unsere Dienstleister und Vertreter...",
+    "Partners, including system implementation partners...": "an Partner, einschließlich Systemimplementierungspartner...",
+    "Third parties that we engage to process payment transactions...": "Dritte, die wir mit der Abwicklung von Zahlungsvorgängen beauftragen...",
+    "Third parties for marketing purposes...": "Dritte zu Marketingzwecken...",
+    "Credit rating agencies...": "Kreditauskunfteien...",
+    "Regulators...": "Aufsichtsbehörden...",
+    "Law enforcement agencies...": "Strafverfolgungsbehörden...",
+    "Marketing": "Marketing",
+    "From time to time we will use your information to contact you...": "Von Zeit zu Zeit werden wir Ihre Daten verwenden, um Sie zu kontaktieren...",
+    "We may also share the information we collect about you with carefully selected companies...": "Wir können die über Sie gesammelten Daten auch an sorgfältig ausgewählte Unternehmen weitergeben...",
+
+
+    "Third-party advertising platforms": "Werbeplattformen von Drittanbietern",
+    "When you reply to posts posted on third-party platforms (such as Facebook, Google, and Twitter)...": "Wenn Sie auf Beiträge reagieren, die auf Plattformen von Drittanbietern (wie Facebook, Google und Twitter) veröffentlicht wurden...",
+    "Your information and your rights": "Ihre Daten und Ihre Rechte",
+    "If you are a resident of the EEA or any other jurisdiction with similar privacy laws...": "Wenn Sie im EWR oder in einem anderen Rechtsraum mit ähnlichen Datenschutzgesetzen ansässig sind...",
+    "The right to know how we use and obtain your information;": "Das Recht zu erfahren, wie wir Ihre Daten verwenden und erheben;",
+    "The right to request us to correct or delete your information...": "Das Recht, von uns die Berichtigung oder Löschung Ihrer Daten zu verlangen...",
+    "The right to oppose the processing of your data...": "Das Recht, der Verarbeitung Ihrer Daten zu widersprechen...",
+    "Modification of this Privacy Policy": "Änderung dieser Datenschutzerklärung",
+    "We may update this privacy policy from time to time...": "Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren...",
+    "Backup and storage of information": "Sicherung und Speicherung von Daten",
+    "Your information is safe as we take reasonable technical and organizational measures...": "Ihre Daten sind sicher, da wir angemessene technische und organisatorische Maßnahmen ergreifen...",
+    "Transfers outside the European Economic Area": "Übermittlung außerhalb des Europäischen Wirtschaftsraums",
+    "Personal data in the European Union are protected by data protection laws...": "Personenbezogene Daten in der Europäischen Union sind durch Datenschutzgesetze geschützt...",
+    "Other websites and social media": "Andere Websites und soziale Medien",
+    "If you follow a link from our website, our application or our service...": "Wenn Sie einem Link von unserer Website, unserer Anwendung oder unserem Dienst folgen...",
+    "Cookies, analysis and data traffic": "Cookies, Analyse und Datenverkehr",
+    "Cookies are small text files that are transmitted by our websites...": "Cookies sind kleine Textdateien, die von unseren Websites übertragen werden...",
+    "If you allow us to use cookies through your browser settings or consent, the following cookies may be used on our websites:": "Wenn Sie uns über Ihre Browsereinstellungen oder durch Ihre Einwilligung die Verwendung von Cookies gestatten, können auf unseren Websites folgende Cookies verwendet werden:",
+
+
+    "Necessary Cookies: 6": "Notwendige Cookies: 6",
+    "Purpose": "Zweck",
+    "Used by the content network, Cloudflare...": "Wird vom Content-Netzwerk Cloudflare verwendet...",
+    "This cookie preserves the visitor’s session...": "Dieses Cookie bewahrt die Sitzung des Besuchers auf...",
+    "Helps prevent Cross-Site Request Forgery...": "Hilft dabei, Cross-Site Request Forgery zu verhindern...",
+    "Identifies the user and allows authentication...": "Identifiziert den Benutzer und ermöglicht die Authentifizierung...",
+    "Stores the user's cookie consent state...": "Speichert den Status der Cookie-Zustimmung des Benutzers...",
+    "Unique id that identifies the user’s session.": "Eindeutige ID, die die Sitzung des Benutzers identifiziert.",
+    "Expiry Date": "Ablaufdatum",
+    "1 year": "1 Jahr",
+    "end session": "Ende der Sitzung",
+    "Persistent": "Persistent",
+    "Preferences: 3": "Einstellungen: 3",
+    "Remembers the user's selected language...": "Speichert die vom Benutzer gewählte Sprache...",
+    "Arbitrary and anonymous settings...": "Beliebige und anonyme Einstellungen...",
+    "Registers whether the self-service assistant...": "Erfasst, ob der Self-Service-Assistent...",
+    "Statistics: 5": "Statistiken: 5",
+    "Registers a unique ID..": "Erfasst eine eindeutige ID..",
+    "Registers a unique ID...": "Erfasst eine eindeutige ID...",
+    "Used to send data to Google Analytics...": "Wird verwendet, um Daten an Google Analytics zu senden...",
+    "2 year": "2 Jahre",
+    "Web beacons and parameter tracking": "Web-Beacons und Parameter-Tracking",
+    "We use cookies and similar software known as web beacons...": "Wir verwenden Cookies und ähnliche Technologien, sogenannte Web-Beacons...",
+    "IP address and traffic data": "IP-Adresse und Verkehrsdaten",
+    "We retain a record of traffic data automatically logged by our servers...": "Wir speichern Verkehrsdaten, die automatisch von unseren Servern protokolliert werden...",
+    "Tools": "Tools",
+    "We use the following tools that use cookies on our website:": "Wir nutzen auf unserer Website die folgenden Tools, die Cookies verwenden:",
+    "Google Analytics": "Google Analytics",
+    "Google Analytics uses \"cookies\" to see how users' websites...": "Google Analytics verwendet „Cookies“, um zu erfassen, wie Nutzer die Website nutzen...",
+    "Google Tag Manager": "Google Tag Manager",
+    "This website uses Google Tag Manager...": "Diese Website nutzt Google Tag Manager...",
+    "Facebook plugins (like button)": "Facebook-Plugins (Like-Button)",
+    "Facebook, provider Facebook Inc., 1 Hacker Way, Menlo Park...": "Facebook, Anbieter Facebook Inc., 1 Hacker Way, Menlo Park...",
+    "Twitter": "Twitter",
+    "These features are available through Twitter Inc...": "Diese Funktionen werden von Twitter Inc. bereitgestellt...",
+    "LinkedIn": "LinkedIn",
+    "The provider is LinkedIn Corporation...": "Der Anbieter ist die LinkedIn Corporation...",
+    "XING": "XING",
+    "The provider is the XING AG...": "Der Anbieter ist die XING AG...",
+    "LeadSquared": "LeadSquared",
+    "We use LeadSquared to design our landing pages...": "Wir nutzen LeadSquared zur Gestaltung unserer Landingpages...",
+    "FactorsAI": "FactorsAI",
+    "FactorsAI is a website visitor tracking software...": "FactorsAI ist eine Software zur Nachverfolgung von Website-Besuchern...",
+    "How to disable cookies": "So deaktivieren Sie Cookies",
+    "You may be able to configure your browser...": "Möglicherweise können Sie Ihren Browser so konfigurieren...",
+    "Deleting cookies": "Löschen von Cookies",
+    "You can use your browser settings to delete individual cookies...": "Sie können einzelne Cookies über Ihre Browsereinstellungen löschen...",
+    "Further information": "Weitere Informationen",
+    "The Legal basis: The legal basis for these processing is your consent...": "Rechtsgrundlage: Die Rechtsgrundlage für diese Verarbeitung ist Ihre Einwilligung...",
+    "Which data protection rights do you have?": "Welche Datenschutzrechte haben Sie?",
+    "16 DSGVO, the right to cancellation under Art. 17 GDPR...": "Art. 16 DSGVO, das Recht auf Löschung gemäß Art. 17 DSGVO...",
+    "If you have any questions about how we should handle your information...": "Wenn Sie Fragen dazu haben, wie wir mit Ihren Daten umgehen...",
+    "Ready to accelerate value creation across your portfolio?": "Sind Sie bereit, die Wertschöpfung in Ihrem gesamten Portfolio zu beschleunigen?",
+    "Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.": "Kontaktieren Sie uns noch heute, um zu erfahren, wie wir Ihnen helfen können, Abläufe zu modernisieren, Integrationsrisiken zu minimieren und geschäftliche Ergebnisse zu verbessern.",
+    "Contact us": "Kontaktieren Sie uns",
+
+
+    "Understanding Our Terms of Use": "Informationen zu unseren Nutzungsbedingungen",
+    "RheinBrücke IT Consulting B.V. (“RheinBrücke”) operates each website (“Site”) that links to these Terms of Use to provide online access to information about RheinBrücke and the products, services, and opportunities we provide.": "RheinBrücke IT Consulting B.V. („RheinBrücke“) betreibt jede Website („Website“), die auf diese Nutzungsbedingungen verweist, um online Zugang zu Informationen über RheinBrücke und die von uns angebotenen Produkte, Dienstleistungen und Möglichkeiten bereitzustellen.",
+    "By accessing and using the Site, you agree to these Terms of Use.": "Durch den Zugriff auf die Website und deren Nutzung erklären Sie sich mit diesen Nutzungsbedingungen einverstanden.",
+    "RheinBrücke reserves the right to modify these Terms of Use at any time without giving you prior notice. Your use of the Site following any such modification constitutes your agreement to follow and be bound by these Terms of Use as modified. The last date these Terms of Use were revised is set forth below.": "RheinBrücke behält sich das Recht vor, diese Nutzungsbedingungen jederzeit ohne vorherige Ankündigung zu ändern. Ihre Nutzung der Website nach einer solchen Änderung gilt als Ihre Zustimmung, die geänderten Nutzungsbedingungen zu befolgen und an sie gebunden zu sein. Das Datum der letzten Überarbeitung dieser Nutzungsbedingungen ist unten angegeben.",
+
+    "1. Permitted Use of the Site": "1. Zulässige Nutzung der Website",
+
+    "2. Prohibited Use of the Site": "2. Verbotene Nutzung der Website",
+    "By accessing the Site, you agree that you will not:": "Mit dem Zugriff auf die Website erklären Sie sich damit einverstanden, dass Sie Folgendes unterlassen:",
+    "Use the Site in violation of these Terms of Use": "Die Website unter Verstoß gegen diese Nutzungsbedingungen zu nutzen",
+    "Modify, create a derivative work from, reverse engineer or reverse assemble the Site, or otherwise attempt to discover any source code, or allow any third party to do so": "Die Website zu verändern, davon abgeleitete Werke zu erstellen, sie zurückzuentwickeln oder zurückzudisassemblieren oder auf andere Weise zu versuchen, den Quellcode zu ermitteln, oder Dritten dies zu gestatten",
+    "Sell, assign, sublicense, distribute, commercially exploit, grant a security interest in or otherwise transfer any right in, or make available to a third party, the Content or Service in any way": "Die Inhalte oder Dienste in irgendeiner Weise zu verkaufen, abzutreten, unterzulizenzieren, zu verbreiten, kommerziell zu verwerten, mit einem Sicherungsrecht zu belasten oder anderweitig Rechte daran zu übertragen oder Dritten zugänglich zu machen",
+    "Use or launch any automated system, including without limitation, “robots,” “spiders,” or “offline readers,” that accesses the Site in a manner that sends more request messages to the RheinBrücke servers in a given period of time than a human can reasonably produce in the same period by using a conventional on-line web browser": "Automatisierte Systeme, einschließlich, aber nicht beschränkt auf „Robots“, „Spiders“ oder „Offline-Reader“, zu verwenden oder zu starten, die auf die Website in einer Weise zugreifen, die in einem bestimmten Zeitraum mehr Anfragen an die RheinBrücke-Server sendet, als ein Mensch in derselben Zeitspanne unter Verwendung eines herkömmlichen Online-Webbrowsers vernünftigerweise erzeugen kann",
+    "Mirror or frame the Site or any part of it on any other web site or web page": "Die Website oder Teile davon auf einer anderen Website oder Webseite zu spiegeln oder einzubinden",
+    "Attempt to gain unauthorized access to the Site": "Zu versuchen, sich unbefugten Zugang zur Website zu verschaffen",
+    "Access the Site by any means other than through the interface that is provided by RheinBrücke for use in accessing the Site": "Auf die Website auf andere Weise als über die von RheinBrücke bereitgestellte Schnittstelle zuzugreifen",
+    "Use the Site for any purpose or in any manner that is unlawful or prohibited by this Agreement": "Die Website für Zwecke oder in einer Weise zu nutzen, die rechtswidrig oder durch diese Vereinbarung untersagt ist",
+    "Any unauthorized use of any Content or the Site may violate patent, copyright, trademark, and other laws.": "Jede unbefugte Nutzung von Inhalten oder der Website kann gegen Patent-, Urheber-, Marken- und andere Gesetze verstoßen.",
+
+        "3. Copyrights and Trademarks": "3. Urheberrechte und Marken",
+    "The Site is based upon proprietary RheinBrücke technology and includes the Content. The Site is protected by applicable intellectual property and other laws, including trademark and copyright laws. The Site, including all intellectual property rights in the Site, belongs to and is the property of RheinBrücke or its licensors (if any). RheinBrücke owns and retains all copyrights in the Content. Except as specifically permitted on the Site as to certain Content, the Content may not be copied, reproduced, modified, published, uploaded, posted, transmitted, performed, or distributed in any way, and you agree not to modify, rent, lease, loan, sell, distribute, transmit, broadcast, or create derivative works based on the Content or the Site, in whole or in part, by any means. RheinBrücke, the RheinBrücke logos, and other marks used by RheinBrücke from time to time are trademarks and the property of RheinBrücke. The appearance, layout, color scheme, and design of the RheinBrücke.com site are protected trade dress. Customer does not receive any right or license to use the foregoing. RheinBrücke may use and incorporate into the Site or the RheinBrücke Service any suggestions or other feedback you provide, without payment or condition.": "Die Website basiert auf proprietärer Technologie von RheinBrücke und umfasst die Inhalte. Die Website ist durch geltende Gesetze zum Schutz geistigen Eigentums und andere Gesetze, einschließlich Marken- und Urheberrechtsgesetze, geschützt. Die Website, einschließlich aller geistigen Eigentumsrechte an der Website, gehört RheinBrücke oder ihren Lizenzgebern (sofern vorhanden) und ist deren Eigentum. RheinBrücke besitzt und behält alle Urheberrechte an den Inhalten. Sofern auf der Website für bestimmte Inhalte nicht ausdrücklich gestattet, dürfen die Inhalte in keiner Weise kopiert, vervielfältigt, verändert, veröffentlicht, hochgeladen, gepostet, übertragen, vorgeführt oder verbreitet werden, und Sie erklären sich damit einverstanden, die Inhalte oder die Website weder ganz noch teilweise in irgendeiner Weise zu verändern, zu vermieten, zu verleasen, zu verleihen, zu verkaufen, zu verbreiten, zu übertragen, auszustrahlen oder davon abgeleitete Werke zu erstellen. RheinBrücke, die RheinBrücke-Logos und andere von RheinBrücke von Zeit zu Zeit verwendete Marken sind Markenzeichen und Eigentum von RheinBrücke. Das Erscheinungsbild, das Layout, das Farbschema und das Design der Website RheinBrücke.com sind als Handelsaufmachung geschützt. Der Kunde erhält keinerlei Recht oder Lizenz zur Nutzung des Vorstehenden. RheinBrücke ist berechtigt, alle von Ihnen gemachten Vorschläge oder sonstigen Rückmeldungen ohne Vergütung oder Auflagen zu nutzen und in die Website oder den RheinBrücke-Dienst zu integrieren.",
+
+    "4. Information and Materials You Post or Provide": "4. Von Ihnen veröffentlichte oder bereitgestellte Informationen und Materialien",
+    "You represent that you have all right, title, and interest to materials you post on the Site or provide to RheinBrücke (“Materials”), including but not limited to any consent, authorization, release, clearance or license from any third party (such as, but not limited to, any release related to rights of privacy or publicity) necessary for you to provide, post, upload, input or submit the Materials, and that posting such Materials does not violate or constitute the infringement of any patent, copyright, trademark, trade secret, right of privacy, right of publicity, moral rights, or other intellectual property right recognized by any applicable jurisdiction of any person or entity, or otherwise constitute the breach of any agreement with any other person or entity. You further represent and warrant that you are who you say you are, that you have not submitted fictitious, false or inaccurate information about yourself, and that all information contained in the posted Materials is true and your own work or work you are authorized to submit, and that the posted Materials do not contain any threatening, harassing, libelous, false, defamatory, offensive, obscene, or pornographic, material, or other material that would violate any other applicable law or regulation. You agree that you will not knowingly and with intent to defraud provide material and misleading information. You represent and warrant that the Materials you supply do not violate these Terms of Use.": "Sie versichern, dass Sie über alle Rechte, Titel und Ansprüche an den Materialien verfügen, die Sie auf der Website veröffentlichen oder RheinBrücke zur Verfügung stellen („Materialien“), einschließlich, aber nicht beschränkt auf alle Zustimmungen, Genehmigungen, Freigaben, Freistellungen oder Lizenzen von Dritten (wie beispielsweise, aber nicht beschränkt auf Freigaben im Zusammenhang mit Persönlichkeits- oder Publizitätsrechten), die erforderlich sind, damit Sie die Materialien bereitstellen, veröffentlichen, hochladen, eingeben oder einreichen können, und dass die Veröffentlichung solcher Materialien keine Verletzung von Patenten, Urheberrechten, Marken, Geschäftsgeheimnissen, Persönlichkeitsrechten, Publizitätsrechten, moralischen Rechten oder anderen Rechten des geistigen Eigentums darstellt, die von einer anwendbaren Rechtsordnung einer Person oder Organisation anerkannt werden, oder anderweitig einen Verstoß gegen eine Vereinbarung mit einer anderen Person oder Organisation darstellt. Sie versichern und gewährleisten ferner, dass Sie die Person sind, für die Sie sich ausgeben, dass Sie keine fiktiven, falschen oder ungenauen Angaben zu Ihrer Person gemacht haben und dass alle in den veröffentlichten Materialien enthaltenen Informationen wahr sind und es sich um Ihr eigenes Werk oder um ein Werk handelt, zu dessen Einreichung Sie berechtigt sind, sowie dass die veröffentlichten Materialien keine bedrohlichen, belästigenden, verleumderischen, falschen, diffamierenden, beleidigenden, obszönen oder pornografischen Inhalte oder sonstige Materialien enthalten, die gegen geltende Gesetze oder Vorschriften verstoßen würden. Sie erklären sich damit einverstanden, dass Sie nicht wissentlich und in betrügerischer Absicht wesentliche und irreführende Informationen bereitstellen. Sie versichern und garantieren, dass die von Ihnen bereitgestellten Materialien nicht gegen diese Nutzungsbedingungen verstoßen.",
+
+    "Rheincs's Privacy Policy": "Datenschutzerklärung von Rheincs",
+
+
+    "5. Links to Third-Party Web Sites": "5. Links zu Websites Dritter",
+    "Links on the Site to third party web sites or information are provided solely as a convenience to you. If you use these links, you will leave the Site. Such links do not constitute or imply an endorsement, sponsorship, or recommendation by RheinBrücke of the third party, the third-party web site, or the information there. RheinBrücke is not responsible for the availability of any such web sites. RheinBrücke is not responsible or liable for any such web sites or the content thereon. If you use the links to the web sites of RheinBrücke affiliates or service providers, you will leave the Site and will be subject to the terms of use and privacy policy applicable to those web sites.": "Links auf dieser Website zu Websites oder Informationen Dritter werden ausschließlich zu Ihrer Bequemlichkeit bereitgestellt. Wenn Sie diese Links nutzen, verlassen Sie diese Website. Solche Links stellen keine Billigung, Förderung oder Empfehlung seitens RheinBrücke hinsichtlich des Dritten, der Website des Dritten oder der dortigen Informationen dar und implizieren diese auch nicht. RheinBrücke ist nicht für die Verfügbarkeit solcher Websites verantwortlich. RheinBrücke übernimmt keine Verantwortung oder Haftung für solche Websites oder deren Inhalte. Wenn Sie die Links zu den Websites von verbundenen Unternehmen oder Dienstleistern von RheinBrücke nutzen, verlassen Sie die Website und unterliegen den für diese Websites geltenden Nutzungsbedingungen und Datenschutzrichtlinien.",
+
+    "6. Downloading Files": "6. Herunterladen von Dateien",
+    "RheinBrücke cannot and does not guarantee or warrant that files available for downloading through the Site will be free of infection by software viruses or other harmful computer code, files or programs.": "RheinBrücke kann und wird nicht garantieren oder gewährleisten, dass die über die Website zum Herunterladen bereitgestellten Dateien frei von Softwareviren oder anderen schädlichen Computercodes, Dateien oder Programmen sind.",
+
+    "7. Disclaimers; Limitations of Liability": "7. Haftungsausschluss; Haftungsbeschränkung",
+    "RheinBrücke and its service providers, licensors and suppliers make no representations about the suitability, reliability, availability, timeliness, security or accuracy of the site or the content for any purpose. To the maximum extent permitted by applicable law, all such information, software, products, service and related graphics are provided “as is” without warranty or condition of any kind. RheinBrücke and its service providers, licensors and suppliers hereby disclaim all warranties and conditions of any kind with regard to the site and the content, including all implied warranties or conditions of merchantability, fitness for a particular purpose, title and non-infringement. No statement or information, whether oral or written, obtained from RheinBrücke in any means or fashion shall create any warranty not expressly and explicitly set forth in this agreement. The content may include inaccuracies or typographical errors.": "RheinBrücke und ihre Dienstleister, Lizenzgeber und Lieferanten geben keinerlei Zusicherungen hinsichtlich der Eignung, Zuverlässigkeit, Verfügbarkeit, Aktualität, Sicherheit oder Genauigkeit der Website oder der Inhalte für irgendeinen Zweck ab. Soweit dies nach geltendem Recht zulässig ist, werden alle derartigen Informationen, Software, Produkte, Dienstleistungen und zugehörigen Grafiken „wie besehen“ ohne jegliche Gewährleistung oder Zusicherung bereitgestellt. RheinBrücke und ihre Dienstleister, Lizenzgeber und Lieferanten lehnen hiermit jegliche Gewährleistungen und Bedingungen jeglicher Art in Bezug auf die Website und deren Inhalte ab, einschließlich aller stillschweigenden Gewährleistungen oder Bedingungen hinsichtlich der Marktgängigkeit, der Eignung für einen bestimmten Zweck, des Eigentumsrechts und der Nichtverletzung von Rechten Dritter. Keine Erklärung oder Information, ob mündlich oder schriftlich, die auf irgendeine Weise von RheinBrücke erhalten wurde, begründet eine Gewährleistung, die nicht ausdrücklich und ausdrücklich in dieser Vereinbarung festgelegt ist. Die Inhalte können Ungenauigkeiten oder typografische Fehler enthalten.",
+
+    "To the maximum extent permitted by applicable law, in no event shall RheinBrücke and its service providers, licensors or suppliers be liable for any direct, indirect, punitive, incidental, special, consequential, exemplary or other type of damages, including without limitation damages for cover or loss of use, data, revenue or profits, arising out of or in any way connected with the use or performance of the site, with the delay or inability to use the site, or for any content, or otherwise arising out of the use of the site, whether based on contract, tort, negligence, strict liability, the failure of any limited remedy to achieve its essential purpose, or otherwise, even if RheinBrücke or any of RheinBrücke’s suppliers has been advised of the possibility of damages. Because some states/jurisdictions do not allow the exclusion or limitation of liability for consequential or incidental damages, the above limitation may not apply to you.": "Soweit dies nach geltendem Recht zulässig ist, haften RheinBrücke und ihre Dienstleister, Lizenzgeber oder Lieferanten in keinem Fall für direkte, indirekte, Strafschadensersatzansprüche, Neben- oder Folgeschäden, besondere oder sonstige Schäden, einschließlich, aber nicht beschränkt auf Schäden aufgrund von Ersatzmaßnahmen oder Nutzungsausfall, Datenverlust, Einnahmen- oder Gewinnverluste, die sich aus der Nutzung oder dem Betrieb der Website, aus der Verzögerung oder Unmöglichkeit der Nutzung der Website, aus Inhalten oder anderweitig aus der Nutzung der Website ergeben oder in irgendeiner Weise damit zusammenhängen, sei es aufgrund eines Vertrags, einer unerlaubten Handlung, Fahrlässigkeit, verschuldensunabhängiger Haftung oder aus anderen Gründen, selbst wenn RheinBrücke oder einer ihrer Lieferanten auf die Möglichkeit solcher Schäden hingewiesen wurde. Da einige Staaten/Gerichtsbarkeiten den Ausschluss oder die Beschränkung der Haftung für Folgeschäden oder zufällige Schäden nicht zulassen, gilt die vorstehende Beschränkung möglicherweise nicht für Sie.",
+
+    "If, notwithstanding the other terms of this agreement, RheinBrücke is determined to have any liability to you or any third party for any loss, harm or damage, you agree that the aggregate liability of RheinBrücke and its officers, directors, managers, employees, affiliates, agents, contractors, service providers, licensors or suppliers shall in all cases be limited to One Hundred Euros.": "Sollte ungeachtet der übrigen Bestimmungen dieser Vereinbarung festgestellt werden, dass RheinBrücke Ihnen oder Dritten gegenüber für Verluste, Schäden oder Beeinträchtigungen haftet, erklären Sie sich damit einverstanden, dass die Gesamthaftung von RheinBrücke und seinen Führungskräften, Direktoren, Managern, Mitarbeitern, verbundenen Unternehmen, Beauftragten, Auftragnehmern, Dienstleistern, Lizenzgebern oder Lieferanten in allen Fällen auf einhundert Euro begrenzt ist.",
+
+
+
+    "8. Indemnification": "8. Freistellung",
+    "You understand and agree that you are personally responsible for your behavior on the Site. You agree to indemnify, defend and hold harmless RheinBrücke, its parent companies, subsidiaries, affiliated companies, joint ventures, business partners, licensors, employees, agents, and any third-party information providers from and against all claims, losses, expenses, damages and costs (including, but not limited to, direct, incidental, consequential, exemplary and indirect damages), and reasonable attorneys’ fees, resulting from or arising out of your use, misuse, or inability to use the Site or the Content, or any violation by you of these Terms of Use.": "Sie nehmen zur Kenntnis und erklären sich damit einverstanden, dass Sie persönlich für Ihr Verhalten auf der Website verantwortlich sind. Sie verpflichten sich, RheinBrücke, ihre Muttergesellschaften, Tochtergesellschaften, verbundenen Unternehmen, Joint Ventures, Geschäftspartner, Lizenzgeber, Mitarbeiter, Beauftragte und alle Drittanbieter von Informationen von allen Ansprüchen, Verlusten, Aufwendungen, Schäden und Kosten (einschließlich, aber nicht beschränkt auf direkte, zufällige, Folge-, exemplarische und indirekte Schäden) sowie angemessenen Anwaltskosten freizustellen, zu verteidigen und schadlos zu halten, die sich aus Ihrer Nutzung, Ihrem Missbrauch oder Ihrer Unfähigkeit zur Nutzung der Website oder der Inhalte oder aus einem Verstoß Ihrerseits gegen diese Nutzungsbedingungen ergeben oder daraus entstehen.",
+
+    "9. Privacy": "9. Datenschutz",
+    "Your use of the Site is subject to RheinBrücke’s Privacy Policy, available at www.rheincs.com": "Ihre Nutzung der Website unterliegt der Datenschutzerklärung von RheinBrücke, die unter www.rheincs.com abrufbar ist.",
+
+    "10. General Provisions": "10. Allgemeine Bestimmungen",
+    "a. Entire Agreement/No Waiver. These Terms of Use constitute the entire agreement of the parties with respect to the subject matter hereof. No waiver by RheinBrücke of any breach or default hereunder shall be deemed to be a waiver of any preceding or subsequent breach or default.": "a. Gesamte Vereinbarung/Verzichtserklärung. Diese Nutzungsbedingungen stellen die gesamte Vereinbarung zwischen den Parteien in Bezug auf den Gegenstand dieser Vereinbarung dar. Ein Verzicht von RheinBrücke auf die Geltendmachung eines Verstoßes oder einer Nichterfüllung im Rahmen dieser Vereinbarung gilt nicht als Verzicht auf die Geltendmachung eines vorherigen oder nachfolgenden Verstoßes oder einer Nichterfüllung.",
+
+    "b. Correction of Errors and Inaccuracies. The Content may contain typographical errors or other errors or inaccuracies and may not be complete or current. RheinBrücke therefore reserves the right to correct any errors, inaccuracies or omissions and to change or update the Content at any time without prior notice. RheinBrücke does not, however, guarantee that any errors, inaccuracies or omissions will be corrected.": "b. Korrektur von Fehlern und Ungenauigkeiten. Die Inhalte können Tippfehler oder andere Fehler oder Ungenauigkeiten enthalten und sind möglicherweise nicht vollständig oder aktuell. RheinBrücke behält sich daher das Recht vor, Fehler, Ungenauigkeiten oder Auslassungen zu korrigieren und die Inhalte jederzeit ohne vorherige Ankündigung zu ändern oder zu aktualisieren. RheinBrücke garantiert jedoch nicht, dass Fehler, Ungenauigkeiten oder Auslassungen korrigiert werden.",
+
+    "c. Enforcement/ Choice of Law/ Choice of Forum. If any part of these Terms of Use is determined by a court of competent jurisdiction to be invalid or unenforceable, it will not impact any other provision of these Terms of Use, all of which will remain in full force and effect. Any and all disputes relating to these Terms of Use, RheinBrücke’s Privacy Policy, your use of the Site, any other RheinBrücke web site or the Content are governed by, and will be interpreted in accordance with, Indian laws, without regard to any conflict of laws provisions. You agree to the sole and exclusive jurisdiction and venue of the courts in Chennai, India in the event of any dispute of any kind arising from or relating to these Terms of Use, RheinBrücke’s Privacy Policy, your use of the Site, any other RheinBrücke web site or the Content.": "c. Durchsetzung/Rechtswahl/Gerichtsstand. Sollte ein Teil dieser Nutzungsbedingungen von einem zuständigen Gericht für ungültig oder nicht durchsetzbar befunden werden, hat dies keine Auswirkungen auf die übrigen Bestimmungen dieser Nutzungsbedingungen, die alle in vollem Umfang in Kraft bleiben. Alle Streitigkeiten im Zusammenhang mit diesen Nutzungsbedingungen, der Datenschutzerklärung von RheinBrücke, Ihrer Nutzung der Website, jeder anderen Website von RheinBrücke oder den Inhalten unterliegen indischem Recht und werden in Übereinstimmung mit diesem ausgelegt, ungeachtet etwaiger Kollisionsnormen. Sie erklären sich damit einverstanden, dass für alle Streitigkeiten jeglicher Art, die sich aus oder im Zusammenhang mit diesen Nutzungsbedingungen, der Datenschutzerklärung von RheinBrücke, Ihrer Nutzung der Website, einer anderen Website von RheinBrücke oder den Inhalten ergeben, ausschließlich die Gerichte in Chennai, Indien, zuständig sind und der Gerichtsstand dort liegt.",
+
+    "Last Revised: May 7, 2014": "Letzte Überarbeitung: 7. Mai 2014",
+    "Copyright 2014 RheinBrücke. All rights reserved": "Copyright 2014 RheinBrücke. Alle Rechte vorbehalten",
+    "Ready to accelerate value creation across your portfolio?": "Sind Sie bereit, die Wertschöpfung in Ihrem gesamten Portfolio zu beschleunigen?",
+    "Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.": "Kontaktieren Sie uns noch heute, um zu erfahren, wie wir Ihnen helfen können, Ihre Betriebsabläufe zu modernisieren, Integrationsrisiken zu minimieren und Ihre geschäftlichen Ergebnisse zu verbessern.",
+    "Contact us": "Kontaktieren Sie uns",
+
+    "What are you looking for ?":"Wonach suchst du ?"
 
   
   
