@@ -19,7 +19,7 @@ export default function AlMl() {
                             <div className="col-lg-5">
                                 <div className="pe-main-hadding-waber">
                                     <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
-                                        {t("AI-ready  ERP Cable Manufacturing Operations")}
+                                        {t("AI-ready ERP Cable Manufacturing Operations")}
                                     </h2>
                                     <p>{t("Solving Operational Complexity to Drive Scalable Growth for Wire rope and Cable industry")}</p>
                                     <p>
@@ -211,13 +211,13 @@ export default function AlMl() {
                         className="main-hadding-1 them-dark-text-color text-center mb-40"
                         data-cursor="-opaque"
                     >
-                        {t("Why It Matters for Cable Manufacturing ")}
+                        {t("Why it Matters for Cable Manufacturing")}
                     </h2>
                     <div className="pe-matters-content-waber">
                         <div className="pe-matters-content">
                             <img src="/new/g501.svg" alt="Operational risk and system challenges icon" />
                             <p>
-                                {t("Operational inefficiencies and poor system integration increase production costs and delay delivery performance ")}
+                                {t("Operational inefficiencies and poor system integration increase production costs and delay delivery performance")}
                             </p>
                         </div>
                         <div className="pe-matters-content">

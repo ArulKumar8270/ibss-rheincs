@@ -4007,7 +4007,7 @@ export default function EnterpriseSolutions() {
                       {/* <h5>Solution Architecture</h5> */}
                       <p>
                         {" "}
-                        {t("RheinBruke’s proprietary SCALE methodology helps ensure successful project implementation.")}
+                        {t("RheinBrücke’s proprietary SCALE methodology helps ensure successful project implementation.")}
                       </p>
                     </div>
                   </div>
@@ -4016,7 +4016,7 @@ export default function EnterpriseSolutions() {
                     <div className="pill-cont">
                       {/* <h5>Project Management</h5> */}
                       <p>
-                         {t("The methodology’s five key stages - Prepare, Plan, Design,Validate, and Deploy - enable structured execution.")}
+                         {t("The methodology’s five key stages - Prepare, Plan, Design, Validate, and Deploy - enable structured execution.")}
                       </p>
                     </div>
                   </div>
@@ -4104,7 +4104,7 @@ export default function EnterpriseSolutions() {
                     <div className="service-item-body1 firstmobilebox w80">
                       {/* <h3>Seamless Integration</h3> */}
                       <h3>
-                        {t("Epicor Premium Partner with 12 years of ERP delivery excellence")}
+                        {t("Epicor Premium Partner with over 12 years of ERP delivery excellence")}
                       </h3>
                       <div className="text-center">
                         <img src="/images/advant1.svg" alt="Epicor premium partner " />

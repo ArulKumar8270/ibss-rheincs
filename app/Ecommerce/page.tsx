@@ -748,7 +748,7 @@ export default function digitalsolution() {
                                             </div>
                                             {/* Testimonial Slide End */}
                                         </div>
-                                        <div className="testimonial-btn ecom rtyElement systemview">
+                                        <div className="testimonial-btn ecom rtyElement mobileview">
                                             <div
                                                 className="testimonial-button-prev swiper-button-disabled"
                                                 tabIndex={-1}

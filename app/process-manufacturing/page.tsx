@@ -245,7 +245,7 @@ export default function EnterpriseSolutions() {
         <div className="pe-help-content">
           <img src="/new/Headset.svg" alt="" />
           <p>
-            {t("Implement ESG-aligned traceability and compliance reporting ")}
+            {t("Implement ESG-aligned traceability and compliance reporting")}
           </p>
         </div>
         <div className="pe-help-content">

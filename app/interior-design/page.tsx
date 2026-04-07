@@ -19,7 +19,7 @@ export default function EnterpriseSolutions() {
         <div className="col-lg-5 col-11">
           <div className="pe-main-hadding-waber">
             <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
-              {t("ERP for Interior Design Companies ")}
+              {t("ERP for Interior Design Companies")}
             </h2>
             <p>
               {t("ERP and Digital Solutions for Interior Design and Fit-Out Businesses")}

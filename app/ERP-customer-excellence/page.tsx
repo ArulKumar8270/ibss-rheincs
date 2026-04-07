@@ -351,7 +351,7 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="mds-waber">
                       <img src="/images/itil.svg" alt="" />
-                      <h6> {t("ITIL-Based Service Model")} </h6>
+                      <h6> {t("ITIL - Based Service Model")} </h6>
                       <p>
                         {t("Drive efficiency and best practices with our structured, ITIL-aligned support framework, while getting priority assistance for urgent issues.")}
                       </p>
@@ -395,7 +395,7 @@ export default function EnterpriseSolutions() {
                   <div className="swiper-slide">
                     <div className="mds-waber">
                       <img src="/images/erp-implementation-rollout.svg" alt="" />
-                      <h6> {t("ERP Implementation, Rollouts and Upgrades")} </h6>
+                      <h6> {t("ERP implementation rollouts and updates")} </h6>
                       <p>
                         {t("Expertise in deploying Epicor products, add-ons, rollouts, migrations, and upgrades.")}
                       </p>
@@ -696,7 +696,8 @@ export default function EnterpriseSolutions() {
                 </div>
               </div>
             </div>
-            <div className="row erpexp">
+            <div className="erpexp">
+            <div className="row">
               <div className="col-sm-4 col-12">
                 <div className="eslh-waber">
                   <img src="/images/cap1.svg" alt="" />
@@ -1043,6 +1044,7 @@ export default function EnterpriseSolutions() {
                     </Link>
                   </div>
                 </div>
+              </div>
               </div>
             </div>
           </div>
@@ -1860,7 +1862,7 @@ export default function EnterpriseSolutions() {
               <div className="col-lg-12">
                 <div className="section-title text-center">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    {t("Partnering with Businesses Worldwide")}
+                    {t("Partnering with Business Worldwide")}
                   </h2>
                   <p>
                     {t(

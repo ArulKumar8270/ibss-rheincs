@@ -147,7 +147,6 @@ export default function AlMl() {
         <div className="col-lg-8">
           <div className="section-title testidescription text-center">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              {" "}
               {t("Modernise and Upgrade Your Enterprise Core")}
             </h2>
             <p>
@@ -1253,11 +1252,7 @@ export default function AlMl() {
               {t("Enhance Digital Experiences")}
             </h2>
             <p>
-              {t("In a digital-first world, creating seamless and intuitive user")}
-              {t(" experiences is key to driving engagement and satisfaction. We")}
-              {t(" design modern, responsive, and accessible digital interfaces that")}
-              {t(" empower your users and deliver exceptional experiences across all")}
-              {t(" platforms.")}
+              {t("In a digital-first world, creating seamless and intuitive user experiences is key to driving engagement and satisfaction. We design modern, responsive, and accessible digital interfaces that empower your users and deliver exceptional experiences across all platforms.")}
             </p>
           </div>
           {/* Section Title End */}
@@ -1270,13 +1265,10 @@ export default function AlMl() {
               <div className="service-item-body">
                 <h3>{t("UX/UI Services")}</h3>
                 <p>
-                  {t("We design intuitive, user-friendly interfaces using tools like")}
-                  {t(" Figma, Webflow, and Adobe XD, blending AR/VR and inclusive")}
-                  {t(" design. Every experience is clear, responsive, engaging, and")}
-                  {t(" future-ready.")}
+                  {t("We design intuitive, user-friendly interfaces using tools like Figma, Webflow, and Adobe XD, blending AR/VR and inclusive design. Every experience is clear, responsive, engaging, and future-ready.")}
                 </p>
                 <p>
-                  <b>{t("Tech:")}</b> 
+                  <b>{t("Tech :")} </b> 
                   {t("Figma, Webflow, Anima, AR/VR Design, Adobe XD")}
                 </p>
                 <img src="/images/digiexp.png" alt="" />
@@ -1290,13 +1282,10 @@ export default function AlMl() {
               <div className="service-item-body">
                 <h3>{t("Mobile Applications")}</h3>
                 <p>
-                  {t("We build high-performance, scalable mobile apps using React")}
-                  {t(" Native, Flutter, and native SDKs. Integrated with Azure, our")}
-                  {t(" solutions deliver reliable, engaging experiences for")}
-                  {t(" standalone and hybrid deployments.")}
+                  {t("We build high-performance, scalable mobile apps using React Native, Flutter, and native SDKs. Integrated with Azure, our solutions deliver reliable, engaging experiences for standalone and hybrid deployments.")}
                 </p>
                 <p>
-                  <b>{t("Tech:")}</b> 
+                  <b>{t("Tech :")} </b> 
                   {t("React Native, Flutter, iOS SDK, Android SDK, Microsoft Azure, Hybrid Apps, Standalone Apps")}
                 </p>
                 <img src="/images/digiexp2.png" alt="" />
@@ -1310,7 +1299,7 @@ export default function AlMl() {
   </div>
   {/* Our Services Section End */}
   {/* Our Services Section Start */}
-  <div className="our-services1 customer digiserpage pd30">
+  <div className={`our-services1 customer digiserpage digisecureimg pd30 ${language === 'German' ? 'gerdigisecure' : ''}`}>
     <div className="container">
       <div className="row section-row">
         <div className="col-lg-6">
@@ -1320,11 +1309,7 @@ export default function AlMl() {
               {t("Secure and Optimise Operations")}
             </h2>
             <p>
-              {t("Building a secure and resilient IT environment is crucial for")}
-              {t(" sustaining operations and ensuring business continuity. We offer a")}
-              {t(" range of services to safeguard your infrastructure, optimise")}
-              {t(" performance, and enable continuous, proactive management of your")}
-              {t(" technology environment.")}
+              {t("Building a secure and resilient IT environment is crucial for sustaining operations and ensuring business continuity. We offer a range of services to safeguard your infrastructure, optimise performance, and enable continuous, proactive management of your technology environment.")}
             </p>
           </div>
           {/* Section Title End */}
@@ -1341,7 +1326,7 @@ export default function AlMl() {
                   {t("We deliver 24/7 monitoring, proactive support, and optimisation to keep your IT environment secure and resilient. Using Azure Sentinel and Defender, we protect against threats and enhance performance.")}
                 </p>
                 <p>
-                  <b>{t("Tech:")}</b> 
+                  <b>{t("Tech :")} </b> 
                   {t("Azure Sentinel, Azure Defender, Proactive Security Management")}
                 </p>
                 <img src="/images/cu1.png" alt="" />
@@ -1358,7 +1343,7 @@ export default function AlMl() {
                   {t("We secure access with Zero Trust architectures and Microsoft Entra for identity management and MFA, ensuring protected, compliant operations.")}
                 </p>
                 <p>
-                  <b>{t("Tech:")}</b> 
+                  <b>{t("Tech :")} </b> 
                   {t("Microsoft Entra, Zero Trust, MFA")}
                 </p>
                 <div className="text-center">

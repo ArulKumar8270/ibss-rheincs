@@ -12,6 +12,27 @@ import {useTranslation} from "../../hooks/useTranslation";
 export default function Corushr() {
   const { t, language } = useTranslation();
     const router = useRouter();
+    const leadSquaredPageName = (() => {
+        try {
+            if (typeof window === 'undefined') return 'CorusHR';
+            const segments = window.location.pathname.split('/').filter(Boolean);
+            const raw = segments.length ? segments[segments.length - 1] : 'Home';
+            return decodeURIComponent(raw)
+                .replace(/[-_]+/g, ' ')
+                .trim()
+                .replace(/\s+/g, ' ')
+                .split(' ')
+                .filter(Boolean)
+                .map((word) =>
+                    word.length <= 3 && /^[a-z]+$/i.test(word)
+                        ? word.toUpperCase()
+                        : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+                )
+                .join(' ');
+        } catch {
+            return 'CorusHR';
+        }
+    })();
     const [formData, setFormData] = useState({
         fullName: '',
         countryCode: '+91',
@@ -66,7 +87,24 @@ export default function Corushr() {
 	        }
 	
 	        try {
+	            const form = document.getElementById('form1') as HTMLFormElement | null;
+	            let messageField = form?.querySelector('[name="message"]') as HTMLInputElement | HTMLTextAreaElement | null;
+	            let createdMessageField = false;
+	
+	            if (form && !messageField) {
+	                const input = document.createElement('input');
+	                input.type = 'hidden';
+	                input.name = 'message';
+	                form.appendChild(input);
+	                messageField = input;
+	                createdMessageField = true;
+	            }
+
 	            saveLead();
+	
+	            if (createdMessageField && messageField) {
+	                messageField.remove();
+	            }
 	            await sleep(400);
 	        } catch (error) {
 	            console.warn('LeadSquared: capture failed', error);
@@ -1566,8 +1604,14 @@ export default function Corushr() {
 
 	                                    <form onSubmit={handleSubmit} id="form1">
   	                                        {/* Hidden Fields for LeadSquared Tracking */}
-  	                                        <input type="hidden" name="Search" value="CorusHR Page Form" />
-  	                                        <input type="hidden" name="selection" value="CorusHR Brochure Request" />
+  	                                        {/* <input type="hidden" name="Search" value={leadSquaredPageName} />
+  	                                        <input type="hidden" name="lsqNotes" value="Selection: CorusHR Brochure Request" /> */}
+                                            <input type="hidden" name="pageName" value="CorusHR Brochure Request" />
+<input
+  type="hidden"
+  name="Page_URL"
+  value={typeof window !== "undefined" ? window.location.href : ""}
+/>
   	                                        <div className="w100">
 	                                            <input
 	                                                type="text"

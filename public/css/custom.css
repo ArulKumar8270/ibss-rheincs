@@ -293,7 +293,7 @@ body {
 	}
 
 	.section-title h2 {
-		font-size: 31px !important;
+		font-size: 40px !important;
 	}
 
 	.digiexperience .service-item img {
@@ -303,7 +303,7 @@ body {
 	}
 
 	.section-title p {
-		font-size: 14px !important;
+		font-size: 16px !important;
 		font-weight: 400;
 	}
 }
@@ -341,15 +341,79 @@ body {
 	}
 
 	.epc-b-h {
-		min-height: 800px !important;
+		min-height: 725px !important;
 	}
 
 }
 
 
+@media (max-width:1140px){
+	.germancorus .oursolutionsec .service-item {
+    min-height: 570px !important;
+}.merlinfeature .testimonial-slider-08 .MeRLIN-service {
+        height: 490px !important;
+    }.germanerpcab .epicsecslide .valueslide {
+    min-height: 280px;
+}.epicsecslide .valueslide {
+    height: 290px;
+}
+}
+
+@media (min-width:1140px) and (max-width: 1299px){
+	.sap-service-waber {
+    min-height: 480px !important;
+}.germansapservice .sap-service-waber {
+    height: 500px !important;
+}.gerdigisermodern .MeRLIN-service {
+    height: 505px !important;
+}.digiupgradesec .MeRLIN-service {
+    height: 439px !important;
+}
+}
 
 
+@media (min-width:1300px) and (max-width: 1365px){
+	.sap-service-waber {
+    min-height: 555px !important;
+}.gerdigisermodern .MeRLIN-service {
+    height: 505px !important;
+}.digiupgradesec .MeRLIN-service {
+    height: 439px !important;
+}
+}
 
+@media (min-width: 800px) and (max-width: 1139px) {
+	.merlinfeature .testimonial-slider-08 .MeRLIN-service {
+		height: 490px !important;
+	}
+.germerlin .testimonial-slider-08 .MeRLIN-service {
+		height: 530px !important;
+	}.germanerpcab .epicsecslide .valueslide {
+    min-height:280px !important;
+}.epicsecslide .valueslide {
+    min-height: 270px;
+}.germansapservice .sap-service-waber {
+    height: 480px !important;
+}.gerdigisermodern .MeRLIN-service {
+    height: 505px !important;
+}.digiupgradesec .MeRLIN-service {
+    height: 439px !important;
+}
+}
+
+@media (min-width:1700px){
+	.merlinfeature .testimonial-slider-08 .MeRLIN-service {
+        height: 420px !important;
+    }.germerlin .testimonial-slider-08 .MeRLIN-service {
+		height: 460px !important;
+	}.epicsecslide .valueslide {
+    height: 335px;
+}.germansapservice .sap-service-waber {
+    min-height: 555px !important;
+} .sap-service-waber {
+    min-height: 530px !important;
+}
+}
 
 
 .container,
@@ -7131,7 +7195,7 @@ body:has(.offcanvas) {
 
 .countingss .success-counter-box1 h2 {
 	height: 225px;
-	font-family: "Inter", sans-serif;
+	font-family: "Raleway", sans-serif;
 	font-size: 60px;
 }
 
@@ -12578,7 +12642,7 @@ body:has(.offcanvas) {
 
 	.countingss .success-counter-box1 h2 {
 		height: 105px;
-		font-family: "Inter", sans-serif;
+		font-family: "Raleway", sans-serif;
 		font-size: 40px;
 		line-height: 48px;
 	}
@@ -14192,7 +14256,7 @@ header.boxshadow {
 .digiexperience .service-item-body p {
 	height: auto !important;
 	padding: 0px 0px 0px 24px;
-	font-family: 'Raleway' !important;
+	font-family: 'helvetica-neue-lt-pro' !important;
 }
 
 .digisec .digitalexp {
@@ -14633,7 +14697,7 @@ header.boxshadow {
 	}
 
 	.benifithght {
-		min-height: 300px !important;
+		min-height: 315px !important;
 	}
 
 	.auto-b-h1 {
@@ -14743,6 +14807,9 @@ header.boxshadow {
 	}
 	.oursolutionsec .service-item {
     min-height: 410px !important;
+}
+.germancorus .oursolutionsec .service-item {
+    min-height: 490px !important;
 }
 	.service-item-body p {
 		height: 230px;
@@ -14854,7 +14921,7 @@ header.boxshadow {
 
 	.countingss .success-counter-box1 h2 {
 		height: 180px;
-		font-family: "Inter", sans-serif;
+		font-family: "Raleway", sans-serif;
 		font-size: 80px;
 		font-weight: 600;
 	}
@@ -16254,37 +16321,32 @@ header.boxshadow {
 }
 
 .blink-bg {
-	-webkit-animation: bgBlink 1.2s infinite ease-in-out;
-	animation: bgBlink 1.2s infinite ease-in-out;
+	-webkit-animation: blinkShadow 2s infinite ease-in-out;
+	animation: blinkShadow 2s infinite ease-in-out;
+	will-change: box-shadow;
 }
 
-@-webkit-keyframes bgBlink {
+@-webkit-keyframes blinkShadow {
 
 	0%,
 	100% {
-		fill: white;
-		opacity: 0.78;
+		box-shadow: 0 0 5px #6ccccc;
 	}
 
 	50% {
-		fill: white;
-		/* light transparent shade */
-		opacity: 0.5;
+		box-shadow: 0 0 15px 10px #6ccccc;
 	}
 }
 
-@keyframes bgBlink {
+@keyframes blinkShadow {
 
 	0%,
 	100% {
-		fill: white;
-		opacity: 0.78;
+		box-shadow: 0 0 5px #6ccccc;
 	}
 
 	50% {
-		fill: white;
-		/* light transparent shade */
-		opacity: 0.5;
+		box-shadow: 0 0 15px 10px #6ccccc;
 	}
 }
 
@@ -16293,12 +16355,33 @@ header.boxshadow {
 	animation: bgBlink 2s infinite ease-in-out;
 }
 
+@media (prefers-reduced-motion: reduce) {
+	.blink-bg {
+		-webkit-animation: none;
+		animation: none;
+	}
+}
+
+@-webkit-keyframes bgBlink {
+
+	0%,
+	100% {
+		fill: white;
+		opacity: 0.5;
+	}
+
+	50% {
+		fill: white;
+		opacity: 0.78;
+	}
+}
+
 @keyframes bgBlink {
 
 	0%,
 	100% {
 		fill: white;
-		opacity: .5;
+		opacity: 0.5;
 	}
 
 	50% {
@@ -16386,7 +16469,7 @@ header.boxshadow {
 }
 
 .aboutwork .benefits-steps-content h3 {
-	font-family: "Parkinsans", sans-serif !important;
+	font-family: "Raleway", sans-serif !important;
 	line-height: 32px;
 	font-weight: 600;
 }
@@ -20095,7 +20178,7 @@ body.popup-open .main-header {
 }
 
 .epicsecslide .valueslide {
-	min-height: 344px;
+	min-height: 320px;
 	max-height: auto;
 	width: 100%;
 	padding: 24px !important;
@@ -20849,8 +20932,11 @@ body.popup-open .main-header {
 	}
 
 	.MeRLIN-service {
-		height: 530px !important;
+		height: 530px;
 	}
+	.merlinfeature .testimonial-slider-08 .MeRLIN-service {
+        height: 490px;
+    }
 
 	.retail-help-bg-img {
 		position: absolute;
@@ -22294,7 +22380,7 @@ screen and (max-height: 300px) {
 }
 
 .benifithght {
-	min-height: 390px;
+	min-height: 385px;
 }
 
 .benifet-content-2 .text-center img {
@@ -22595,15 +22681,16 @@ screen and (max-height: 300px) {
 
 .blog-details-waber ol li, .blog-details-waber ul li{
 	    color: #000 !important;
+       font-size: 16px;
     font-weight: 400;
-    font-size: 16px;
     font-family: 'helvetica-neue-lt-pro';
 }
 .events ul li{
 	    color: #000;
-    line-height: 1;
+    line-height: 1.7;    
+	font-size: 16px;
+    font-weight: 400;
     font-family: 'helvetica-neue-lt-pro';
-    font-style: normal !important;
 }
 
 .epiclink1 a{
@@ -22734,10 +22821,10 @@ position: relative;
     min-height: 510px;
 }
 .germanerpcab .epicsecslide .valueslide {
-    min-height: 290px;
+    min-height: 320px;
     max-height: auto;
     width: 100%;
-    padding: 24px !important;
+    padding: 15px !important;
 }
 .gercompcab .epichgt h3 {
     height: 55px !important;
@@ -22790,4 +22877,21 @@ position: relative;
 
 .germstechadv .agency-supports-slider2 .agency-supports-logo {
     height: 320px !important;
+}
+
+.gerbenef .global .text-center img {
+    height: 318px;
+}
+.tangilewaber .tangileimg img{
+	height: 290px;
+}
+
+.digisecureimg .service-item-body{
+	min-height: 615px !important;
+}
+.digisecureimg .service-item-body img {
+    height: 300px;
+}
+.gerdigisecure .identifyimg img {
+    height: 347px !important;
 }

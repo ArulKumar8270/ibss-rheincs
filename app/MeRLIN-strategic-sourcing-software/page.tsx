@@ -33,7 +33,7 @@ export default function EnterpriseSolutions() {
     </div>
   </div>
   {/* Our Testimonial Section Start */}
-  <div className="our-testimonial pd30">
+  <div className={`our-testimonial merlinfeature pd30 ${language === 'German' ? 'germerlin' : ''}`}>
     <div className="container">
       <div className="row section-row align-items-center">
         <div className="col-lg-6">
@@ -1474,7 +1474,7 @@ export default function EnterpriseSolutions() {
                 {t("Unified Supplier Lifecycle Management")} 
             </h5>
             <p>
-              {t("Automate onboarding, registrations, audits, and compliance tracking while consolidating all supplier intelligence in a single 360° scorecard")}
+              {t("Automate onboarding, registrations, audits, and compliance tracking while consolidating all supplier intelligence in a single 360° scorecard.")}
             </p>
           </div>
           <div>

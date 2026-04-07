@@ -3729,7 +3729,9 @@ h2.section-title {
         height: 400px !important;
         padding: 16px !important;
     }
-
+.tangcontent {
+    height: 300px !important;
+}
     .sap-paner-text {
         position: absolute;
         z-index: 10;
@@ -3843,7 +3845,7 @@ h2.section-title {
 
     .eslh-waber {
         gap: 33px;
-        width: 389px;
+        width: auto;
         display: flex;
         border: 1px solid rgba(0, 0, 0, 1);
         border-radius: 8px;
@@ -4321,7 +4323,7 @@ h2.section-title {
     min-height: 860px;
 }
 .epc-b-h {
-    min-height: 760px;
+    min-height: 745px;
 }
 
 .pm-b-h {
@@ -4329,7 +4331,7 @@ h2.section-title {
 }
 
 .ind-b-h {
-    min-height: 675px;
+    min-height: 735px;
 }
 
 .commen-help-bg-img {
@@ -6035,7 +6037,7 @@ h2.section-title {
 .sap-advantage-main-waber::after {
     position: absolute;
     background: #ffffff;
-    background: linear-gradient(270deg, rgba(255, 255, 255, 1) 54%, rgba(255, 255, 255, 0.34) 67%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(270deg, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.34) 60%, rgba(255, 255, 255, 0) 100%);
     z-index: -1;
     content: "";
     width: 100%;
@@ -6056,3 +6058,22 @@ h2.section-title {
 .gersugaradv .su-ad-waber {
     min-height: 410px !important;
 }
+
+
+@media (max-width:1140px){
+	.gerbenefits .epc-b-h {
+		min-height: 745px !important;
+	}
+}
+
+.MeRLIN-service ul li{
+    font-family: "helvetica-neue-lt-pro", sans-serif !important;
+}
+
+
+@media (min-width:1366px) and (max-width: 1699px) {
+    .germerlin .testimonial-slider-08 .MeRLIN-service {
+        height: 500px !important;
+    }
+}
+

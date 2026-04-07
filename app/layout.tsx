@@ -154,9 +154,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         EmailAddress: "email",
         Mobile: "phone",
         Company: "companyName",
-        MXHSearch: "Search", // Form identification
-        Notes: "message",    // Message field
-        JobTitle: "selection" // Subject/Selection field
+        JobTitle: "selection",
+        // Used by LeadSquared activity templates to show the landing page/form name
+        Page_Name: "pageName",
+        // Lead details "Notes" (what you want visible in the lead/activity panel)
+        Notes: "lsqNotes"
       };
 
       var onSuccess = function (data) {

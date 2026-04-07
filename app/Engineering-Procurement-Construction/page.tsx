@@ -300,12 +300,12 @@ export default function EnterpriseSolutions() {
       <video src="/new/epc-01.mov" autoPlay={true} loop={true} muted={true} playsInline={true} />
     </div>
   </section>
-  <div className="benifites-waber">
+  <div className={`benifites-waber tangilewaber ${language === 'German' ? 'gerbenefits' : ''}`}>
     <div className="container">
       <div className="row">
         <div className="col-sm-6">
           <div className="benifet-content-waber">
-            <div className="benifet-content benifet-content-2  epc-b-h">
+            <div className="benifet-content benifet-content-2  epc-b-h tangile">
               <div>
                 <h4 className="benifit-title"> {t("Tangible Outcomes")}</h4>
                 <div className="bf-content">
@@ -345,7 +345,9 @@ export default function EnterpriseSolutions() {
                   </p>
                 </div>
               </div>
+              <div className="tangileimg">
               <img src="/new/pf-6.svg" alt="" />
+              </div>
             </div>
           </div>
         </div>

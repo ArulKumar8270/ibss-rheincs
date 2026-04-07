@@ -217,7 +217,7 @@ export default function AlMl() {
                             <div className="pe-matters-content">
                                 <img src="/new/met-2.svg" alt="Poor production planning and scheduling icon" />
                                 <p>
-                                    {t("Poor flexibility in production planning and  scheduling restricts the ability to respond to market fluctuations or urgent demand")}
+                                    {t("Poor flexibility in production planning and scheduling restricts the ability to respond to market fluctuations or urgent demand")}
                                 </p>
                             </div>
                             <div className="pe-matters-content">

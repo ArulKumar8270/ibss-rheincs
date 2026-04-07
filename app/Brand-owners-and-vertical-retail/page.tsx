@@ -325,7 +325,7 @@ const page = () => {
       <video src="/new/vr778.mp4" autoPlay={true} loop={true} muted={true} playsInline={true} />
     </div>
   </section>
-  <div className="benifites-waber">
+  <div className={`benifites-waber ${language === 'German' ? 'gerbenef' : ''}`}>
     <div className="container">
       <div className="row">
         <div className="col-sm-6">
@@ -382,7 +382,7 @@ const page = () => {
         </div>
         <div className="col-sm-6">
           <div className="benifet-content-waber">
-            <div className="benifet-content benifet-content-2 vr-b-h1">
+            <div className="benifet-content benifet-content-2 vr-b-h1 global">
               <div className="benifithght">
                 <h4 className="benifit-title">
                   {t("Global Best Practices We Apply")}
