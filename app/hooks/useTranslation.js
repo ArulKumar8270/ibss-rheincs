@@ -19,7 +19,7 @@ function fetchWithTimeout(url, ms = 5000) {
 
 async function getLanguageFromLocation() {
   let fromIp = 'English';
-  try {
+  try { 
     const res = await fetchWithTimeout('https://ipapi.co/json/');
     const data = await res.json();
     const code = data?.country_code;
@@ -30,7 +30,7 @@ async function getLanguageFromLocation() {
       const fallbackData = await fallback.json();
       const code = fallbackData?.countryCode;
       if (code && GERMAN_COUNTRY_CODES.has(String(code).toUpperCase())) fromIp = 'German';
-    } catch {
+    } catch { 
       // ignore
     }
   }
