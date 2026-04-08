@@ -215,13 +215,13 @@ export default function AlMl() {
                                                             </div>
                                                             <div className="service-item-body">
                                                                 {/* <h3>ERP Modernisation</h3> */}
-                                                                <p>{t("RheinBrucke IT Consulting's technical expertise makes me feel invincible.")}</p>
+                                                                <p>{t("RheinBrücke IT Consulting's technical expertise makes me feel invincible.")}</p>
                                                                 <p>
                                                     {t("CCT has a talented pool of internal IT resources but sometimes that's not enough.  Working with RB has taken a lot of weight off our shoulders; both the sheer volume of what we can handle together as well as the high level of technical expertise they bring to the table have greatly advanced CCT's abilities to adapt and evolve with our expanding global market.  Nithish and Rajagopol are easy to work with and always have great ideas on how to solve our technical and business process issues plus they're just nice guys.")}
                                                                 </p>
                                                                 
                                                                 <p>
-                                                                    {t("I recently moved internationally, I was nervous about being so far out of sync but this had zero impact on our work relationship, it was seamless.  I highly recommend RheinBrucke IT Consulting to anyone in need of serious in-depth expertise and around-the-clock support.")}
+                                                                    {t("I recently moved internationally, I was nervous about being so far out of sync but this had zero impact on our work relationship, it was seamless.  I highly recommend RheinBrücke IT Consulting to anyone in need of serious in-depth expertise and around-the-clock support.")}
                                                                 </p>
                                                                 <p>
                                                                     {t("My favorite thing is when I spend half my day trying to solve a complicated issue then I give up, assign it to RB at the end of my workday and come in the next morning to find a solution ready for testing!")}

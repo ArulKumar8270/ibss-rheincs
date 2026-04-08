@@ -26,7 +26,7 @@ export default function Home() {
             "@type": "Organization",
             "@id": "https://www.rheincs.com/#organization",
             "name": "RheinBrücke IT Consulting",
-            "alternateName": ["RheinCS", "RheinBrucke"],
+            "alternateName": ["RheinCS", "RheinBrücke"],
             "url": "https://www.rheincs.com/",
             "logo": {
               "@type": "ImageObject",
@@ -3604,7 +3604,7 @@ export default function Home() {
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
                       {t("Projects that made a difference.")}
                     </h2>
-                    <p>{t("At RheinBrucke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.")}</p>
+                    <p>{t("At RheinBrücke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.")}</p>
                     <div className="ser-btn">
                       <Link href="/about-us/success-stories" className="animated-svg-link">
                         {t("Explore more")}
@@ -4195,7 +4195,7 @@ export default function Home() {
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
                       {t("Projects that made a difference.")}
                     </h2>
-                    <p>{t("At RheinBrucke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.")}</p>
+                    <p>{t("At RheinBrücke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.")}</p>
                     <div className="ser-btn">
                       <Link href="/about-us/success-stories" className="animated-svg-link">
                         {t("Explore more")}

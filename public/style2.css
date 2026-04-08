@@ -2142,20 +2142,21 @@
 }
 
 .import-and-point {
-    margin-right: 30px;
+    margin-right: 10px;
     list-style: none;
 }
-
+.import-and-point li{
+    margin-bottom: 8px;
+}
 .point-icon {
-    width: 18px;
-    margin-right: 20px;
+    width: 14px;
+    margin-right: 8px;
     display: inline-block;
 }
 
 .bb-title {
     font-size: 24px;
     color: #082326;
-    ;
     margin: 15px 0px;
     /* text-decoration: underline; */
 }

@@ -4374,7 +4374,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("Regulatory Compliance Solutions")}</h3>
                                 <p>
-                                  {t("Stay ahead of regulations with solutions that ensure  compliance, mitigate risk, and support governance frameworks.")}
+                                  {t("Stay ahead of regulations with solutions that ensure compliance, mitigate risk, and support governance frameworks.")}
                                 </p>
                               </div>
                             </div>

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import SwiperInit from "./Components/SwiperInit";
 import OwlCarouselInit from "./Components/OwlCarouselInit";
 import CounterInit from "./Components/CounterInit";

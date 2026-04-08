@@ -566,11 +566,9 @@ const page = () => {
               <div className="col-lg-12">
                 <div className="section-title testidescription">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    {" "}
                     {t("Why SugarCRM")}
                   </h2>
                   <p>
-                    {" "}
                     {t("As organisations strive to deliver personalised experiences and gain actionable insights from customer data, the demand for robust CRM platforms continues to grow. Amidst this evolving landscape, SugarCRM stands out as a leading provider, empowering businesses to optimise sales, marketing, and service operations while adapting seamlessly to diverse business needs and scaling for future growth.")}
                   </p>
                 </div>

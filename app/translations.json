@@ -2101,8 +2101,6 @@
     "Ongoing Managed Services & Optimisation":
     "Ongoing Managed Services & Optimisation",
 
-    "Why RheinBrücke":
-    "Why RheinBrücke",
 
     "Certified commercetools and MACH specialists":
     "Certified commercetools and MACH specialists",
@@ -3161,7 +3159,6 @@
     "Core interface design & automation": "Core interface design & automation",
     "BASIS support": "BASIS support",
     "We build only what adds value and ensure everything stays upgrade-friendly.": "We build only what adds value and ensure everything stays upgrade-friendly.",
-    "Why RheinBrücke": "Why RheinBrücke",
     "An SAP partner for modern enterprises.": "An SAP partner for modern enterprises.",
     "Strong S/4HANA, ECC, RISE, BTP, Signavio & SAC expertise": "Strong S/4HANA, ECC, RISE, BTP, Signavio & SAC expertise",
     "Proven migration frameworks and accelerators": "Proven migration frameworks and accelerators",
@@ -4052,7 +4049,7 @@
     "Manual processes slowing down innovation and scalability": "Manuelle Prozesse, die Innovation und Skalierbarkeit bremsen",
     "Our Solutions address these challenges by modernising core systems, automating processes, integrating enterprise applications, and enabling data-driven operational excellence.": "Unsere Enterprise-Lösungen begegnen diesen Herausforderungen, indem sie Kernsysteme modernisieren, Prozesse automatisieren, Anwendungen integrieren und datengetriebene operative Exzellenz ermöglichen.",
 
-    "Our Enterprise Solutions and Services": "Unsere Enterprise Solutions & Services",
+    "Our Enterprise Solutions and Services": "Unsere Unternehmenslösungen & Dienstleistungen",
     "ERP Implementation & Support Services": "ERP-Implementierung & Support",
     "Deploy ERP systems confidently with end-to-end implementation and ongoing support for sustainable success.": "End-to-End-Einführung von ERP-Systemen mit kontinuierlichem Support für nachhaltigen Erfolg.",
 
@@ -6067,7 +6064,6 @@
     "Custom Workflows & API Development": "Entwicklung individueller Workflows und APIs",
     "Managed OMS Support & Monitoring": "Managed OMS Support und Monitoring",
 
-    "Why RheinBrücke": "Warum RheinBrücke",
     "Composable commerce integration with MACH expertise": "Modulare Commerce-Integration mit MACH-Know-how",
     "Deep domain knowledge in retail, B2B, and distribution": "Umfassende Branchenexpertise in Handel, B2B und Distribution",
     "Global scale delivery with agile, phased rollouts": "Globale Projekterfahrung mit agilen, phasenweisen Rollouts",
@@ -7322,7 +7318,7 @@
     "Pipeline Management": "Pipeline-Management",
     "Workflow automation": "Workflow-Automatisierung",
     "Sales Forecasting": "Vertriebs prognosen",
-    "Reporting/analytics": "Reporting & Analytics",
+    "Reporting & Analytics": "Reporting & Analytics",
     "Email Integration": "E-Mail-Integration",
     "Sugar Sell aims to streamline the sales process, improve team collaboration, and ultimately boost sales performance through data-driven insights and efficient workflows.": "Sugar Sell vereinfacht und beschleunigt den Vertriebsprozess, stärkt die Zusammenarbeit im Team und steigert die Verkaufsleistung – durch datengestützte Einblicke und automatisierte Workflows.",
 
@@ -7810,9 +7806,11 @@
     "Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.": "Kontaktieren Sie uns noch heute, um zu erfahren, wie wir Ihnen helfen können, Ihre Betriebsabläufe zu modernisieren, Integrationsrisiken zu minimieren und Ihre geschäftlichen Ergebnisse zu verbessern.",
     "Contact us": "Kontaktieren Sie uns",
 
-    "What are you looking for ?":"Wonach suchst du ?"
+    "What are you looking for ?":"Wonach suchst du ?",
 
-  
+    "Customer Support and Service": "Kundensupport und Service",
+
+    "Sales Automation": "Verkaufs automatisierung"
   
   
   }
