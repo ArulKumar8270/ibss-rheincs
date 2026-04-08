@@ -48,7 +48,9 @@ export const useTranslation = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Set language from current location so German is selected when user is in DE/AT/CH/LI/LU
+    const saved = localStorage.getItem('preferredLanguage');
+    const hasSavedPreference = saved === 'English' || saved === 'German';
+
     function applyDetectedLanguage(detected) {
       setLanguage(detected);
       localStorage.setItem('preferredLanguage', detected);
@@ -57,12 +59,17 @@ export const useTranslation = () => {
       } catch {}
     }
 
-    getLanguageFromLocation()
-      .then(applyDetectedLanguage)
-      .catch(() => {
-        const fromBrowser = getLanguageFromBrowserLocale();
-        applyDetectedLanguage(fromBrowser);
-      });
+    // Respect explicit choice: once stored, do not overwrite with geo/browser on navigation or reload
+    if (hasSavedPreference) {
+      setLanguage(saved);
+    } else {
+      getLanguageFromLocation()
+        .then(applyDetectedLanguage)
+        .catch(() => {
+          const fromBrowser = getLanguageFromBrowserLocale();
+          applyDetectedLanguage(fromBrowser);
+        });
+    }
 
     const handlePreferredLanguageChange = (e) => {
       const next = e.detail;
