@@ -18,28 +18,34 @@ function fetchWithTimeout(url, ms = 5000) {
 }
 
 async function getLanguageFromLocation() {
+  let fromIp = 'English';
   try {
     const res = await fetchWithTimeout('https://ipapi.co/json/');
     const data = await res.json();
     const code = data?.country_code;
-    if (code && GERMAN_COUNTRY_CODES.has(String(code).toUpperCase())) return 'German';
+    if (code && GERMAN_COUNTRY_CODES.has(String(code).toUpperCase())) fromIp = 'German';
   } catch {
     try {
       const fallback = await fetchWithTimeout('https://ip-api.com/json/?fields=countryCode');
       const fallbackData = await fallback.json();
       const code = fallbackData?.countryCode;
-      if (code && GERMAN_COUNTRY_CODES.has(String(code).toUpperCase())) return 'German';
+      if (code && GERMAN_COUNTRY_CODES.has(String(code).toUpperCase())) fromIp = 'German';
     } catch {
       // ignore
     }
   }
+  // Browser locale: German abroad or non-DE IP with de-* system language → German
+  const fromBrowser = getLanguageFromBrowserLocale();
+  if (fromIp === 'German' || fromBrowser === 'German') return 'German';
   return 'English';
 }
+
+const STORAGE_LANG = 'preferredLanguage';
 
 export const useTranslation = () => {
   const [language, setLanguage] = useState(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('preferredLanguage');
+      const saved = localStorage.getItem(STORAGE_LANG);
       if (saved && (saved === 'English' || saved === 'German')) return saved;
     }
     return 'English';
@@ -48,26 +54,25 @@ export const useTranslation = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const saved = localStorage.getItem('preferredLanguage');
-    const hasSavedPreference = saved === 'English' || saved === 'German';
+    const saved = localStorage.getItem(STORAGE_LANG);
+    const hasValidSaved = saved === 'English' || saved === 'German';
 
     function applyDetectedLanguage(detected) {
       setLanguage(detected);
-      localStorage.setItem('preferredLanguage', detected);
+      localStorage.setItem(STORAGE_LANG, detected);
       try {
         window.dispatchEvent(new CustomEvent('preferredLanguageChange', { detail: detected }));
       } catch {}
     }
 
-    // Respect explicit choice: once stored, do not overwrite with geo/browser on navigation or reload
-    if (hasSavedPreference) {
+    // First visit (no stored preference): pick language from IP region + browser locale
+    if (hasValidSaved) {
       setLanguage(saved);
     } else {
       getLanguageFromLocation()
         .then(applyDetectedLanguage)
         .catch(() => {
-          const fromBrowser = getLanguageFromBrowserLocale();
-          applyDetectedLanguage(fromBrowser);
+          applyDetectedLanguage(getLanguageFromBrowserLocale());
         });
     }
 
@@ -78,7 +83,7 @@ export const useTranslation = () => {
     window.addEventListener('preferredLanguageChange', handlePreferredLanguageChange);
 
     const handleVisibility = () => {
-      const current = localStorage.getItem('preferredLanguage');
+      const current = localStorage.getItem(STORAGE_LANG);
       if (current && (current === 'English' || current === 'German')) setLanguage(current);
     };
     document.addEventListener('visibilitychange', handleVisibility);
@@ -92,7 +97,7 @@ export const useTranslation = () => {
   const changeLanguage = (lang) => {
     setLanguage(lang);
     if (typeof window !== 'undefined') {
-      localStorage.setItem('preferredLanguage', lang);
+      localStorage.setItem(STORAGE_LANG, lang);
       try {
         window.dispatchEvent(new CustomEvent('preferredLanguageChange', { detail: lang }));
       } catch {}
