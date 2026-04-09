@@ -5,6 +5,7 @@ import CommomLayout from '../Components/CommomLayout'
 import Link from "next/link";
 import TestimonialandAward from '../Components/TestimonialandAward';
 import Awards from '../Components/Awards';
+import {useTranslation} from "../hooks/useTranslation";
 
 interface Webinar {
   id: number;
@@ -17,6 +18,7 @@ interface Webinar {
 }
 
 const page = () => {
+  const { t, language } = useTranslation();
   // Webinar data
   const allWebinars: Webinar[] = [
     {
@@ -309,7 +311,7 @@ const page = () => {
               <div className="col-sm-5">
                 <div className="section-title">
                   <h2 className="text-anime-style-21" data-cursor="-opaque">
-                    Webinars
+                    {t("Webinars")}
                   </h2>
                 </div>
               </div>
@@ -328,7 +330,7 @@ const page = () => {
               <div className="col-sm-5">
                 <div className="section-title">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    Webinars
+                    {t("Webinars")}
                   </h2>
                 </div>
               </div>
@@ -628,10 +630,9 @@ const page = () => {
               <div className="firstrow">
                 <div className="row">
                   <div className="col-sm-8">
-                    <h2>Ready to accelerate value creation across your portfolio?</h2>
+                    <h2>{t("Ready to accelerate value creation across your portfolio?")}</h2>
                     <p>
-                      Contact us today to learn how we can help modernise operations,
-                      de-risk integrations, and improve commercial outcomes.
+                      {t("Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.")}
                     </p>
                   </div>
                   <div className="col-sm-4">

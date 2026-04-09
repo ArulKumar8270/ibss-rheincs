@@ -4018,7 +4018,7 @@
     "Whether you are mid-sized and scaling, or enterprise-level and rethinking your model, we help you unlock growth with Cloud ERP and Digital solutions.": "Unser Angebot richtet sich gleichermaßen an mittelständische Unternehmen, die expandieren wollen, und Großunternehmen, die eine Neuausrichtung ihres Geschäftskonzepts anstreben. Mit uns erschließen Sie neue Wachstumspotenziale.",
     "Know more": "Mehr erfahren",
     "Projects that made a difference.": "Projekte mit echtem Impact",
-    "At RheinBrucke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.": "Bei Rheinbrücke entsteht jedes Projekt durch echte Zusammenarbeit – getrieben von Innovation und ausgerichtet auf messbare Ergebnisse. Ob bei der Optimierung von Automatisierungssystemen oder der Beschleunigung der Embedded-Entwicklung: Unsere Lösungen reduzieren Komplexität, steigern Effizienz und ermöglichen Wachstum mit Zuversicht. So wird Wandel erfolgreich.",
+    "At RheinBrücke, every project is a purposeful collaboration – driven by innovation, and focused on real-world impact. From streamlining automation system to accelerating embedded development, our solutions have helped the businesses overcome complexity , improve efficiency, and scale with confidence.These are the projects that truly made a difference.": "Bei Rheinbrücke entsteht jedes Projekt durch echte Zusammenarbeit – getrieben von Innovation und ausgerichtet auf messbare Ergebnisse. Ob bei der Optimierung von Automatisierungssystemen oder der Beschleunigung der Embedded-Entwicklung: Unsere Lösungen reduzieren Komplexität, steigern Effizienz und ermöglichen Wachstum mit Zuversicht. So wird Wandel erfolgreich.",
     "Explore more": "Mehr erfahren",
     "Trusted by Enterprise Worldwide": "Weltweit bewährt. Von Unternehmen geschätzt.",
     "View All": "Alle anzeigen",
@@ -4371,7 +4371,7 @@
       "Capture daily attendance and work times and process them to reflect in the Employee dashboard.": "Erfassen Sie Arbeitszeiten und Abwesenheiten – transparent im Mitarbeiter-Dashboard.",
       "Performance Management": "Performance Management",
       "Inspire your team to reach their full potential, sync their efforts with company goals, and foster a thriving, positive workplace .": "Motivieren Sie Ihr Team, Ziele zu erreichen, Leistungen zu steigern und eine positive Unternehmenskultur zu fördern.",
-      "Training Management": "Trainings management",
+      "Training Management": "Schulungen Management",
       "Ensure employees have necessary skills and knowledge to perform their jobs effectively and efficiently.": "Sorgen Sie dafür, dass Ihre Mitarbeitenden über die richtigen Kenntnisse und Fähigkeiten verfügen.",
       "Shift Roster": "Schicht planung",
       "Operate 24/7 with round-the-clock business support.": "24/7-Betrieb durch flexible, planbare Schichtmodelle.",
@@ -4427,7 +4427,7 @@
     "Download Our Brochure now to know more about our SAP Solution!": "Laden Sie jetzt unsere Broschüre herunter und entdecken Sie, wie SAP Ihr Personalmanagement transformiert.",
       "Revolutionizing HR Management with Smart, Scalable Solutions": "HR-Management neu gedacht – intelligent und skalierbar",
       "Ready to elevate your global workforce experience with an intuitive HRMS?": "Bereit, Ihre globale Workforce mit einem intuitiven HRMS zu stärken?",
-      "CorusHR provides powerful self-service and end-to-end HR coverage, keeping your teams supported from recruitment to retirement on any device.": "CorusHR bietet leistungsstarken Self‑Service und End‑to‑End‑HR‑Abdeckung – vom Recruiting bis zur Rente, auf jedem Gerät.",
+      "CorusHR provides powerful self-service and end-to-end HR coverage, keeping your teams supported from recruitment to retirement on any device.":"CorusHR bietet leistungsstarke Self-Service-Funktionen und durchgängige Lösungen HR‑Abdeckung – vom Recruiting bis zur Rente, auf jedem Gerät.",
       "What Makes CorusHR Stand Out": "Das macht CorusHR besonders",
       "We provide a holistic approach to streamlining and automating various aspects of Human Resource Management, that is integrated with your ERP. CorusHR addresses key challenges faced by businesses, including time-consuming manual onboarding processes, lengthy HR solution implementation timelines, complex and difficult-to-use systems, limited region-specific functionality, and poor integration with existing ERP platforms.": "Wir verfolgen einen ganzheitlichen Ansatz zur Optimierung und Automatisierung zentraler HR‑Prozesse – integriert in Ihr ERP. CorusHR adressiert typische Herausforderungen wie zeitaufwendiges manuelles Onboarding, lange Implementierungszeiten, komplizierte und schwer bedienbare Systeme, begrenzte länderspezifische Funktionen sowie mangelnde Integration mit bestehenden ERP‑Plattformen.",
       "Are you looking for an intuitive and streamlined Human Resource Management Solution (HRMS) designed to enhance global workforce management? CorusHR offers you an intuitive, user-friendly self-service portal for organisation-wide collaboration offering HR services, Employee Self Service and Manager Self Service. From recruitment to retirement, we have comprehensive functional coverage that is available on mobile and desktop.": "Suchen Sie eine intuitive, schlanke HRMS‑Lösung zur Verbesserung des globalen Personalmanagements? CorusHR bietet ein benutzerfreundliches Self‑Service‑Portal für unternehmensweite Zusammenarbeit – mit HR‑Services, Employee Self Service und Manager Self Service. Von Recruiting bis Offboarding: umfassende Funktionen für Mobil‑ und Desktop‑Nutzung.",
@@ -5508,7 +5508,7 @@
 
 
 
-    "Digital Services – Delivering Scalable, Agile, and Future-Ready Technology Services": "Digital Services – Skalierbare, agile und zukunftssichere Technologie-Services",
+    "Digital Services – Delivering Scalable, Agile, and Future-Ready Technology Services": "Digitale Dienstleistungen – Skalierbare, agile und zukunftssichere Technologie-Services",
 
     "Our Digital Services empower your business with the tools, technologies, and expertise needed to drive transformation and sustain growth. Through our Analyse-Integrate-Transform framework, we ensure every engagement delivers measurable, long-term value, with solutions that are scalable, agile, and future-ready.": "Unsere Digital Services stärken Ihr Unternehmen mit den richtigen Tools, Technologien und der Expertise, um Transformation voranzutreiben und nachhaltiges Wachstum zu sichern. Mit unserem Analyse-Integrate-Transform-Framework stellen wir sicher, dass jedes Projekt messbaren, langfristigen Mehrwert liefert – durch skalierbare, agile und zukunftssichere Lösungen.",
 
@@ -5722,6 +5722,7 @@
 
 
 
+    "Data Engineering & Warehousing:": "Datenengineering & Data Warehousing:",
     "Data Engineering & Warehousing": "Datenengineering & Data Warehousing",
     "Unlock the full potential of your data by consolidating siloed sources into scalable warehouses and lakes.": "Nutzen Sie das volle Potenzial Ihrer Daten, indem Sie isolierte Systeme und Quellen in skalierbaren Data Warehouses und Data Lakes zusammenführen.",
     "We design real-time and batch pipelines that ensure seamless data flow, fuel advanced analytics, and enable AI/ML at scale.": "Wir entwickeln Echtzeit- und Batch-Pipelines, die einen nahtlosen Datenfluss ermöglichen – als Basis für Analytics, KI und Machine Learning im großen Maßstab.",
@@ -6365,7 +6366,7 @@
 
 
 
-    "Digital Solutions – Innovating Business, One Solution at a Time": "Digital Solutions – Innovation für Ihr Unternehmen",
+    "Digital Solutions – Innovating Business, One Solution at a Time": "Digitale Lösungen – Innovation für Ihr Unternehmen",
     "We deliver outcome-driven solutions that combine advanced technology, proven frameworks, and scalable architectures to solve complex business challenges. Driven by our Analyse-Integrate-Transform framework, every engagement is built for measurable, sustained impact.": "Wir liefern ergebnisorientierte Lösungen, die modernste Technologien, bewährte Frameworks und skalierbare Architekturen vereinen, um komplexe Geschäftsherausforderungen zu meistern. Mit unserem Analyse–Integrate–Transform-Ansatz schaffen wir fundierte Insights, nahtlose Integration und greifbare Ergebnisse – für nachhaltige, messbare Transformation.",
     "Every successful digital transformation starts with a solid foundation of analysis, becomes truly valuable through data and intelligence, delivers tangible outcomes via integration of applications and commerce channels, and endures through resilient operations and governance.": "Jede erfolgreiche digitale Transformation beginnt mit einer fundierten Analyse, gewinnt durch Daten und Intelligenz an Wert, liefert durch Integration von Anwendungen und Commerce-Kanälen greifbare Ergebnisse und bleibt durch resiliente Prozesse und Governance nachhaltig wirksam.",
 
@@ -6384,10 +6385,10 @@
     "Turn Data into Strategic Advantage": "Daten in strategischen Vorteil verwandeln",
     "Unlock the full potential of enterprise data, consolidating, refining, and transforming it into real-time, actionable intelligence. Operationalise your data estate and AI capabilities to drive faster, smarter decisions.": "Nutzen Sie das volle Potenzial Ihrer Unternehmensdaten, indem Sie sie konsolidieren, veredeln und in Echtzeit-Insights verwandeln. Operationalisieren Sie Ihre Datenlandschaft und KI-Fähigkeiten, um schnellere und intelligentere Entscheidungen zu treffen.",
 
-    "Data Pipelining, Consolidation and Warehousing": "Daten-Pipelining, Konsolidierung und Data Warehousing",
+    "Data Pipelining, Consolidation and Warehousing:": "Daten-Pipelining, Konsolidierung und Data Warehousing:",
     "Design real-time and batch data pipelines, consolidate siloed sources into data warehouses and data lakes, and support scalable AI/ML operationalisation.": "Echtzeit- und Batch-Datenpipelines entwickeln, isolierte Datenquellen in Data Lakes und Data Warehouses konsolidieren und skalierbare AI/ML-Operationalisierung unterstützen.",
 
-    "AI/ML & Data Analytics": "AI/ML & Datenanalyse",
+    "AI/ML & Data Analytics:": "AI/ML & Datenanalyse:",
     "Deploy AI solutions using Azure Machine Learning and Large Event Models (LEMs) for predictive maintenance, intelligent automation, and real-time operational insights.": "Einsatz von KI-Lösungen mit Azure Machine Learning und Large Event Models (LEMs) für Predictive Maintenance, intelligente Automatisierung und Echtzeit-Operational-Insights.",
 
     "Data Visualisation": "Datenvisualisierung",
@@ -6650,7 +6651,7 @@
 
     "CorusHR": "CorusHR",
     "Streamline HR processes and ensure compliance while enhancing efficiency and employee satisfaction across your organization.": "Optimieren Sie Ihre HR-Prozesse, stellen Sie Compliance sicher und steigern Sie Effizienz sowie Mitarbeiterzufriedenheit in Ihrem gesamten Unternehmen.",
-    "LEARN MORE – (CorusHR page)": "MEHR ERFAHREN – (CorusHR-Seite)",
+    "LEARN MORE": "MEHR ERFAHREN",
 
     "MeRLIN Sourcing": "MeRLIN Sourcing",
     "Streamlining sourcing operations, MeRLIN is a Strategic Direct Sourcing Solution that integrates automation, Supplier Relationship Management, planning, and Advanced Analytics.": "MeRLIN ist eine strategische Direktbeschaffungslösung, die Automatisierung, Lieferantenbeziehungsmanagement, Planung und erweiterte Analysen integriert und so die Beschaffungsabläufe optimiert.",
@@ -6661,14 +6662,13 @@
 
     "Digital Solution and Services": "Digitale Lösungen und Dienstleistungen",
     "Bridging the gap between Technology and Business.": "Wir schließen die Lücke zwischen Technologie und Wirtschaft.",
-    "LEARN MORE – Digital solution Page": "MEHR ERFAHREN – Seite „Digitale Lösungen“",
+    "LEARN MORE": "MEHR ERFAHREN",
 
     "Application Development Maintenance and Support Services": "Anwendungsentwicklung, Wartung und Support",
     "Empower your organization with robust data governance and management, ensuring seamless operations and compliance.": "Stärken Sie Ihr Unternehmen mit einer robusten Daten-Governance und -Verwaltung, um reibungslose Abläufe und Compliance sicherzustellen.",
 
     "Business Intelligence Services": "Business-Intelligence-Dienste",
     "Leverage data-driven insights to make informed decisions, enhance performance, and gain a competitive edge.": "Nutzen Sie datengestützte Erkenntnisse, um fundierte Entscheidungen zu treffen, die Leistung zu steigern und sich einen Wettbewerbsvorteil zu verschaffen.",
-    "LEARN MORE – Business Intelligence Services page": "MEHR ERFAHREN – Seite „Business Intelligence Services“",
 
     "Our expert teams provide end-to-end support, helping you maximize value and achieve business excellence.": "Unsere Expertenteams bieten Ihnen umfassende Unterstützung, damit Sie Ihren Wert maximieren und geschäftliche Spitzenleistungen erzielen können.",
 
@@ -6951,8 +6951,9 @@
     "Data Pipelining, Consolidation and Warehousing": "Datenpipelines, Konsolidierung und Datenhaltung",
     "Design real-time and batch data pipelines, consolidate siloed sources into data warehouses and data lakes, and support scalable AI/ML operationalisation.": "Aufbau von Echtzeit- und Batch-Datenpipelines, Zusammenführung verteilter Datenquellen in Data Warehouses und Data Lakes, Unterstützung der skalierbaren Nutzung von KI- und ML-Anwendungen.",
     "AI/ML & Data Analytics": "KI/ML und Datenanalyse",
+    "AI/ML & Data Analytics:": "KI/ML und Datenanalyse:",
     "Deploy AI solutions using Azure Machine Learning and Large Event Models (LEMs) for predictive maintenance, intelligent automation, and real-time operational insights.": "Einsatz von KI-Lösungen mit Azure Machine Learning und Large Event Models (LEMs) für vorausschauende Wartung, intelligente Automatisierung und Echtzeit-Einblicke in operative Prozesse.",
-    "Data Visualisation": "Datenvisualisierung",
+    "Data Visualisation:": "Datenvisualisierung:",
     "Create executive-ready, dynamic dashboards and interactive data stories with Tableau, Power BI and others that enable business users with self-service analytics and decision-making at speed.": "Erstellung dynamischer Dashboards und interaktiver Datenanalysen mit Tableau, Power BI und weiteren Tools, Bereitstellung übersichtlicher Auswertungen für Führungskräfte sowie Self-Service-Analysen für Fachanwender, um Entscheidungen schneller treffen zu können.",
     "Read More": "Weiterlesen",
 "Empower Users and Enhance Digital Experiences": "Benutzer stärken und digitale Erlebnisse verbessern",
@@ -7078,6 +7079,10 @@
     "Strong S/4HANA, ECC, RISE, BTP, Signavio & SAC expertise": "Fundierte Expertise in S/4HANA, ECC, RISE, BTP, Signavio und SAC",
     "Proven migration frameworks and accelerators": "Bewährte Migrations-Frameworks und Beschleuniger",
     "Deep integration capability across ERP and non-ERP systems": "Umfassende Integrationsfähigkeit zwischen ERP- und Nicht-ERP-Systemen",
+
+    
+    "Proven migration frameworks and accelerators with deep integration capability across ERP and non-ERP systems": "Bewährte Migrations-Frameworks und Beschleuniger mit umfassender Integrationsfähigkeit zwischen ERP- und Nicht-ERP-Systemen",
+
     "Agile delivery with predictable outcomes": "Agile Umsetzung mit vorhersehbaren Ergebnissen",
     "A global delivery model that balances cost and quality": "Ein globales Bereitstellungsmodell, das Kosten und Qualität in Einklang bringt",
     "Long-term AMS+ to keep your SAP evolving": "Langfristiges AMS+, damit sich Ihr SAP-System weiterentwickelt",
@@ -7817,7 +7822,11 @@
   
     "Unlock actionable insights and visualise your business data in real time with Power BI.": "Entsperren Sie einsetzbare Erkenntnisse und visualisieren Sie Ihre Geschäftsdaten in Echtzeit mit Power BI.",
 
-    "Leverage our expertise as a Microsoft Solutions Partner to deliver integrated, enterprise-grade solutions.": "Nutzen Sie unsere Expertise als Microsoft Solutions Partner, um integrierte, unternehmensgerechte Lösungen bereitzustellen."
+    "Leverage our expertise as a Microsoft Solutions Partner to deliver integrated, enterprise-grade solutions.": "Nutzen Sie unsere Expertise als Microsoft Solutions Partner, um integrierte, unternehmensgerechte Lösungen bereitzustellen.",
+
+    "CRM and Customer Engagement Platforms":"CRM- und Customer-Engagement-Plattformen"
+
+
 
 
     

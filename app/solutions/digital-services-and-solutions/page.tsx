@@ -1475,7 +1475,7 @@ export default function digitalsolution() {
                         </svg>
                         {/* <i class="bi bi-people-fill"></i> */}
                       </div>
-                      <h3>{t("Enterprise Architecture Platform as a Service: ")} </h3>
+                      <h3>{t("Enterprise Architecture Platform as a Service:")} </h3>
                       <ul>
                         <li>
                           {t("Implement API-first, composable architectures with scalable infrastructure, integration frameworks, and governance controls.")}
@@ -2366,10 +2366,9 @@ export default function digitalsolution() {
                   {t("Data Visualisation:")}
                 </h5>
                 <p>
-                  {" "}
                   {t(
                     "Create executive-ready, dynamic dashboards and interactive data stories with Tableau, Power BI and others that enable business users with self-service analytics and decision-making at speed."
-                  )}{" "}
+                  )}
                 </p>
               </div>
             </div>

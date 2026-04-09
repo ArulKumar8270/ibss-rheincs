@@ -1224,58 +1224,58 @@ const page = () => {
                 <div className="sap-service enterslide">
                   <div className="swiper">
                     <div className="swiper-wrapper">
-                      {/* 1. SAP Signavio & Process Intelligence */}
+                      {/* 8. Global Rollout Services */}
                       <div className="swiper-slide">
                         <div className="sap-service-waber">
-                          <h3>{t("SAP Signavio & Process Intelligence")}</h3>
+                          <h3>{t("Implementation & Global Rollout Services")}</h3>
                           <p>
-                            {t("Transform the way your organisation understands and improves processes.")}
-                          </p>
-                          <h5>{t("We help you:")}</h5>
-                          <ul>
-                            <li>
-                              {t("Map, analyse, and benchmark business processes")}
-                            </li>
-                            <li>
-                              {t("Identify bottlenecks, inefficiencies, and compliance gaps")}
-                            </li>
-                            <li>
-                              {t("Build future-state process models")}
-                            </li>
-                            <li>
-                              {t("Drive harmonisation across global operations")}
-                            </li>
-                          </ul>
-                          <p>
-                            {t("Signavio brings clarity. We turn that clarity into action.")}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* 2. SAP EWM Implementation */}
-                      <div className="swiper-slide">
-                        <div className="sap-service-waber">
-                          <h3>{t("SAP EWM Implementation")}</h3>
-                          <p>
-                            {t("We help organisations modernise warehouse operations using SAP Extended Warehouse Management (EWM) to improve inventory accuracy, throughput, and operational efficiency.")}
+                            {t("RheinBrücke enables seamless SAP rollouts across geographies, ensuring standardisation while accommodating local regulatory and business requirements.")}
                           </p>
                           <h5>{t("Key capabilities:")}</h5>
                           <ul>
                             <li>
-                              {t("SAP EWM embedded and decentralised implementations")}
+                              {t("Template-based global rollouts")}
                             </li>
                             <li>
-                              {t("Warehouse process optimisation and automation")}
+                              {t("Localisation and compliance management")}
                             </li>
                             <li>
-                              {t("Integration with S/4HANA, TM, and third-party systems")}
+                              {t("Multi-country data and process harmonisation")}
                             </li>
                             <li>
-                              {t("RF, Fiori, and automation enablement")}
+                              {t("Central governance with regional flexibility")}
                             </li>
                           </ul>
                           <p>
-                            {t("Real-time warehouse control with measurable gains in inventory accuracy and throughput.")}
+                            {t("Consistent global execution with local compliance assured from day one.")}
+                          </p>
+                        </div>
+                      </div>
+                 
+                      {/* 7. Custom Development & Technical Services */}
+                      <div className="swiper-slide">
+                        <div className="sap-service-waber">
+                          <h3>{t("Custom Development & Technical Services")}</h3>
+                          <p>
+                            {t("We design and develop SAP extensions that enhance business capabilities while preserving a clean core.")}
+                          </p>
+                          <h5>{t("Key capabilities:")}</h5>
+                          <ul>
+                            <li>
+                              {t("ABAP and RAP-based developments")}
+                            </li>
+                            <li>
+                              {t("SAP Fiori and UX enhancements")}
+                            </li>
+                            <li>
+                              {t("Custom reports, interfaces, forms, and workflows")}
+                            </li>
+                            <li>
+                              {t("Side-by-side extensions using SAP BTP")}
+                            </li>
+                          </ul>
+                          <p>
+                            {t("We build only what adds value and ensure everything stays upgrade-friendly.")}
                           </p>
                         </div>
                       </div>
@@ -1307,7 +1307,7 @@ const page = () => {
                           </p>
                         </div>
                       </div>
-
+                      
                       {/* 4. SAP Ariba Services */}
                       <div className="swiper-slide">
                         <div className="sap-service-waber">
@@ -1336,6 +1336,36 @@ const page = () => {
                         </div>
                       </div>
 
+                      
+                      {/* 2. SAP EWM Implementation */}
+                      <div className="swiper-slide">
+                        <div className="sap-service-waber">
+                          <h3>{t("SAP EWM Implementation")}</h3>
+                          <p>
+                            {t("We help organisations modernise warehouse operations using SAP Extended Warehouse Management (EWM) to improve inventory accuracy, throughput, and operational efficiency.")}
+                          </p>
+                          <h5>{t("Key capabilities:")}</h5>
+                          <ul>
+                            <li>
+                              {t("SAP EWM embedded and decentralised implementations")}
+                            </li>
+                            <li>
+                              {t("Warehouse process optimisation and automation")}
+                            </li>
+                            <li>
+                              {t("Integration with S/4HANA, TM, and third-party systems")}
+                            </li>
+                            <li>
+                              {t("RF, Fiori, and automation enablement")}
+                            </li>
+                          </ul>
+                          <p>
+                            {t("Real-time warehouse control with measurable gains in inventory accuracy and throughput.")}
+                          </p>
+                        </div>
+                      </div>
+
+                      
                       {/* 5. EDI & SAP CPI Integration Services */}
                       <div className="swiper-slide">
                         <div className="sap-service-waber">
@@ -1364,10 +1394,39 @@ const page = () => {
                         </div>
                       </div>
 
+                      {/* 1. SAP Signavio & Process Intelligence */}
+                      <div className="swiper-slide">
+                        <div className="sap-service-waber">
+                          <h3>{t("SAP Signavio & Process Intelligence")}</h3>
+                          <p>
+                            {t("Transform the way your organisation understands and improves processes.")}
+                          </p>
+                          <h5>{t("We help you:")}</h5>
+                          <ul>
+                            <li>
+                              {t("Map, analyse, and benchmark business processes")}
+                            </li>
+                            <li>
+                              {t("Identify bottlenecks, inefficiencies, and compliance gaps")}
+                            </li>
+                            <li>
+                              {t("Build future-state process models")}
+                            </li>
+                            <li>
+                              {t("Drive harmonisation across global operations")}
+                            </li>
+                          </ul>
+                          <p>
+                            {t("Signavio brings clarity. We turn that clarity into action.")}
+                          </p>
+                        </div>
+                      </div>
+
+
                       {/* 6. Merlin Sourcing – SAP-Integrated Strategic Sourcing */}
                       <div className="swiper-slide">
                         <div className="sap-service-waber">
-                          <h3>{t("Merlin Sourcing – SAP Integrated Strategic Sourcing")}</h3>
+                          <h3>{t("Merlin Sourcing – SAP-Integrated Strategic Sourcing")}</h3>
                           <p>
                             {t("Merlin Sourcing enables governed, SAP-integrated strategic sourcing, extending SAP procurement with structured sourcing, supplier collaboration, and decision control, without breaking clean-core principles.")}
                           </p>
@@ -1392,61 +1451,6 @@ const page = () => {
                         </div>
                       </div>
 
-                      {/* 7. Custom Development & Technical Services */}
-                      <div className="swiper-slide">
-                        <div className="sap-service-waber">
-                          <h3>{t("Custom Development & Technical Services")}</h3>
-                          <p>
-                            {t("We design and develop SAP extensions that enhance business capabilities while preserving a clean core.")}
-                          </p>
-                          <h5>{t("Key capabilities:")}</h5>
-                          <ul>
-                            <li>
-                              {t("ABAP and RAP-based developments")}
-                            </li>
-                            <li>
-                              {t("SAP Fiori and UX enhancements")}
-                            </li>
-                            <li>
-                              {t("Custom reports, interfaces, forms, and workflows")}
-                            </li>
-                            <li>
-                              {t("Side-by-side extensions using SAP BTP")}
-                            </li>
-                          </ul>
-                          <p>
-                            {t("We build only what adds value and ensure everything stays upgrade-friendly.")}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* 8. Global Rollout Services */}
-                      <div className="swiper-slide">
-                        <div className="sap-service-waber">
-                          <h3>{t("Implementation & Global Rollout Services")}</h3>
-                          <p>
-                            {t("RheinBrücke enables seamless SAP rollouts across geographies, ensuring standardisation while accommodating local regulatory and business requirements.")}
-                          </p>
-                          <h5>{t("Key capabilities:")}</h5>
-                          <ul>
-                            <li>
-                              {t("Template-based global rollouts")}
-                            </li>
-                            <li>
-                              {t("Localisation and compliance management")}
-                            </li>
-                            <li>
-                              {t("Multi-country data and process harmonisation")}
-                            </li>
-                            <li>
-                              {t("Central governance with regional flexibility")}
-                            </li>
-                          </ul>
-                          <p>
-                            {t("Consistent global execution with local compliance assured from day one.")}
-                          </p>
-                        </div>
-                      </div>
                     </div>
                     <div className="testimonial-btn sap-ser-1 rtyElement">
                       <div className="testimonial-button-prev">
@@ -1669,561 +1673,79 @@ const page = () => {
           </div>
         </div>
         {/* Our Testimonial Section End */}
-        <section className={`mds-section capabilities sapcap pd50 ${language === 'German' ? 'germansap' : ''}`}>
+
+
+        <div className="advantage additional1 bluebg1 epicadv2  pd50 pt50">
           <div className="container">
-            <div className="content width50">
-              <div className="section-title ">
-                <div className="hero-video-content1 wow fadeInUp mt-4">
+            <div className="row section-row1 align-items-center">
+              <div className="col-sm-12">
+                <div className="section-title text-center text-black">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    {" "}
-                    {t("Why RheinBrücke")}
+                    {t("The RheinBrücke Advantage")}
                   </h2>
-                  <p> {t("An SAP partner for modern enterprises.")}</p>
+                  <p className='text-white'> {t("An SAP partner for modern enterprises.")}</p>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="container">
-            {/* Testimonial Slider Start */}
-            <div className="sap systemview">
-              <div className="swiper">
-                <div className="swiper-wrapper">
-                  {/* Testimonial Slide Start */}
-                  <div className="swiper-slide">
-                    <div className="valueslide">
-                      <img src="/images/cap1.svg" alt="" />
-                      {/* <h6> Dynamics 365 ERP & CRM Solutions</h6> */}
-                      <p>
+                <div className="row mt-5">
+                  <div className="col-lg-6 col-md-6 col-12">
+                    <div className="service-item-body1 firstmobilebox sap1 w80">
+                      {/* <h3>Seamless Integration</h3> */}
+                      <h3>
                         {t("Strong S/4HANA, ECC, RISE, BTP, Signavio & SAC expertise")}
-                      </p>
+                      </h3>
+                      <div className="text-center">
+                        <img src="/images/sap1.svg" alt="Epicor premium partner " />
+                      </div>
                     </div>
                   </div>
-                  {/* Testimonial Slide End */}
-                  {/* Testimonial Slide Start */}
-                  <div className="swiper-slide">
-                    <div className="valueslide">
-                      <img src="/images/cap2.svg" alt="" />
-                      <p> {t("Proven migration frameworks and accelerators")}</p>
+                  <div className="col-lg-6 col-md-6 col-12">
+                    <div className="service-item-body1 epicright1  w80">
+                      {/* <h3>Configurable</h3> */}
+                      <h3>
+                        {t("Proven migration frameworks and accelerators with deep integration capability across ERP and non-ERP systems")}
+                      </h3>
+                      <img src="/images/sap2.svg" alt="Epicor certified consultant " />
                     </div>
                   </div>
-                  {/* Testimonial Slide End */}
-                  {/* Testimonial Slide Start */}
-                  <div className="swiper-slide">
-                    <div className="valueslide">
-                      <img src="/images/cap3.svg" alt="" />
-                      <p>
-                        {t("Deep integration capability across ERP and non-ERP systems")}
-                      </p>
+                  <div className="col-lg-4 col-md-4 col-12">
+                    <div className="service-item-body1 epicright sap3">
+                      {/* <h3>Reporting and Analytics</h3> */}
+                      <h3>
+                        {t("Agile delivery with predictable outcomes")}
+                      </h3>
+                      <img src="/images/sap3.svg" alt="ERP lifecycle implementation" />
                     </div>
                   </div>
-                  {/* Testimonial Slide End */}
-                  {/* Testimonial Slide Start */}
-                  <div className="swiper-slide">
-                    <div className="valueslide">
-                      <img src="/images/cap4.svg" alt="" />
-                      <p> {t("Agile delivery with predictable outcomes")}</p>
+                  <div className="col-lg-4 col-md-4 col-12">
+                    <div className="service-item-body1 epicright">
+                      {/* <h3>Mobile Accessibility</h3> */}
+                      <h3>
+                        {t("A global delivery model that balances cost and quality")}
+                      </h3>
+                      <div className="text-center">
+                        <img src="/images/advant4.svg" alt="Industry specific ERP solutions" />
+                      </div>
                     </div>
                   </div>
-                  {/* Testimonial Slide End */}
-                  {/* Testimonial Slide Start */}
-                  <div className="swiper-slide">
-                    <div className="valueslide">
-                      <img src="/images/cap5.svg" alt="" />
-                      <p> {t("A global delivery model that balances cost and quality")}</p>
-                    </div>
-                  </div>
-                  {/* Testimonial Slide End */}
-                  {/* Testimonial Slide Start */}
-                  <div className="swiper-slide">
-                    <div className="valueslide">
-                      <img src="/new/ds2.svg" alt="" />
-                      <p> {t("Long-term AMS+ to keep your SAP evolving")}</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="testimonial-btn  rtyElement">
-                  <div className="testimonial-button-prev">
-                    <div className="animated-svg-link1 btn-style-3">
-                      <span className="svg-container ">
-                        <span className=" left">
-                          <svg
-                            width={24}
-                            height={23}
-                            viewBox="0 0 24 23"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="16.0004"
-                              cy="4.79995"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="12.7992"
-                              cy="1.6"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="22.4008"
-                              cy="11.2"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="1.6"
-                              cy="11.2"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="6.40078"
-                              cy="11.2"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="11.1996"
-                              cy="11.2"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="16.0004"
-                              cy="11.2"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="19.1996"
-                              cy="14.4"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="16.0004"
-                              cy="17.6"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="12.7992"
-                              cy="20.8"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="19.1996"
-                              cy="8.00002"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                          </svg>
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                  <span className="testspace">1/6</span>
-                  <div className="testimonial-button-next">
-                    <div className="animated-svg-link1 btn-style-3">
-                      <span className="svg-container ">
-                        <span className=" left">
-                          <svg
-                            width={24}
-                            height={23}
-                            viewBox="0 0 24 23"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="16.0004"
-                              cy="4.79995"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="12.7992"
-                              cy="1.6"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="22.4008"
-                              cy="11.2"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="1.6"
-                              cy="11.2"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="6.40078"
-                              cy="11.2"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="11.1996"
-                              cy="11.2"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="16.0004"
-                              cy="11.2"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="19.1996"
-                              cy="14.4"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="16.0004"
-                              cy="17.6"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="12.7992"
-                              cy="20.8"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                            <circle
-                              className="dot"
-                              opacity="0.5"
-                              cx="19.1996"
-                              cy="8.00002"
-                              r="1.6"
-                              fill="#535353"
-                            />
-                          </svg>
-                        </span>
-                      </span>
+                  <div className="col-lg-4 col-md-4 col-12">
+                    <div className="service-item-body1 epicleft">
+                      {/* <h3>Effective Data Management</h3> */}
+                      <h3>
+                        {t("Long-term AMS+ to keep your SAP evolving")}
+                      </h3>
+                      <img src="/images/advant5.svg" alt="ERP implementation and delivery services" />
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="testimonial-slider1  mobile mobileview">
-              <div className="swiper">
-                <div className="swiper-wrapper">
-                  {/* Testimonial Slide Start */}
-                  <div className="swiper-slide">
-                    <div className="valueslide">
-                      <img src="/images/cap1.svg" alt="" />
-                      {/* <h6> Dynamics 365 ERP & CRM Solutions</h6> */}
-                      <p> {t("Extensive global delivery experience in SAP")}</p>
-                    </div>
-                  </div>
-                  {/* Testimonial Slide End */}
-                  {/* Testimonial Slide Start */}
-                  <div className="swiper-slide">
-                    <div className="valueslide">
-                      <img src="/images/cap2.svg" alt="" />
-                      <p>
-                        {t("Proven expertise in S/4HANA Cloud, RISE with SAP, BTP, Signavio, and SAC")}
-                      </p>
-                    </div>
-                  </div>
-                  {/* Testimonial Slide End */}
-                  {/* Testimonial Slide Start */}
-                  <div className="swiper-slide">
-                    <div className="valueslide">
-                      <img src="/images/cap3.svg" alt="" />
-                      <p> {t("Flexible delivery models tailored to business outcomes")}</p>
-                    </div>
-                  </div>
-                  {/* Testimonial Slide End */}
-                  {/* Testimonial Slide Start */}
-                  <div className="swiper-slide">
-                    <div className="valueslide">
-                      <img src="/images/cap4.svg" alt="" />
-                      <p> {t("End-to-end SAP AMS, ABAP, and Basis services")}</p>
-                    </div>
-                  </div>
-                  {/* Testimonial Slide End */}
-                  {/* Testimonial Slide Start */}
-                  <div className="swiper-slide">
-                    <div className="valueslide">
-                      <img src="/images/cap5.svg" alt="" />
-                      <p> {t("Focus on operational resilience and accelerated value")}</p>
-                    </div>
-                  </div>
-                  {/* Testimonial Slide End */}
-                </div>
-              </div>
-              <div className="testimonial-btn ">
-                <div className="testimonial-button-prev">
-                  <div className="animated-svg-link1 btn-style-3">
-                    <span className="svg-container">
-                      <span className="left">
-                        {/* Prev SVG */}
-                        <svg
-                          width={24}
-                          height={23}
-                          viewBox="0 0 24 23"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="16.0004"
-                            cy="4.79995"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="12.7992"
-                            cy="1.6"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="22.4008"
-                            cy="11.2"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="1.6"
-                            cy="11.2"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="6.40078"
-                            cy="11.2"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="11.1996"
-                            cy="11.2"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="16.0004"
-                            cy="11.2"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="19.1996"
-                            cy="14.4"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="16.0004"
-                            cy="17.6"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="12.7992"
-                            cy="20.8"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="19.1996"
-                            cy="8.00002"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                        </svg>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-                {/* Slide counter */}
-                <span className="testspace">3/3</span>
-                <div className="testimonial-button-next">
-                  <div className="animated-svg-link1 btn-style-3">
-                    <span className="svg-container">
-                      <span className="left">
-                        {/* Next SVG */}
-                        <svg
-                          width={24}
-                          height={23}
-                          viewBox="0 0 24 23"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="16.0004"
-                            cy="4.79995"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="12.7992"
-                            cy="1.6"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="22.4008"
-                            cy="11.2"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="1.6"
-                            cy="11.2"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="6.40078"
-                            cy="11.2"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="11.1996"
-                            cy="11.2"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="16.0004"
-                            cy="11.2"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="19.1996"
-                            cy="14.4"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="16.0004"
-                            cy="17.6"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="12.7992"
-                            cy="20.8"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                          <circle
-                            className="dot"
-                            opacity="0.5"
-                            cx="19.1996"
-                            cy="8.00002"
-                            r="1.6"
-                            fill="#535353"
-                          ></circle>
-                        </svg>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Testimonial Slider End */}
+                
             <p className="mt-3">
-              {" "}
               {t("We don’t just implement SAP - we help you run, optimise, and scale with it.")}
             </p>
+              </div>
+            </div>
           </div>
-        </section>
+        </div>
+
+
         {/* Our Testimonial Section Start */}
         <div className="our-testimonial pd30">
           <div className="container">

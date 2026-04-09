@@ -7,6 +7,7 @@ import TestimonialandAward from "../Components/TestimonialandAward";
 import Awards from "../Components/Awards";
 import { createClient } from "@/lib/supabase-browser";
 import { useRouter } from "next/navigation";
+import {useTranslation} from "../hooks/useTranslation";
 import { NavArrowRight } from "../icons";
 
 // Mapping of country codes (ISO 3166-1 alpha-2) to phone codes for location-based default
@@ -126,6 +127,7 @@ const WHITEPAPER_ITEMS: { title: string; image: string; category: string }[] = [
 ];
 
 export default function Collaterals() {
+  const { t, language } = useTranslation();
     const router = useRouter();
     const leadSquaredPageName = (() => {
         try {
@@ -642,7 +644,7 @@ export default function Collaterals() {
                             <div className="col-sm-5">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-21" data-cursor="-opaque">
-                                        Collaterals
+                                        {t("Collaterals")}
                                     </h2>
                                 </div>
                             </div>
@@ -661,7 +663,7 @@ export default function Collaterals() {
                             <div className="col-sm-5">
                                 <div className="section-title">
                                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        Collaterals
+                                        {t("Collaterals")}
                                     </h2>
                                 </div>
                             </div>
@@ -1752,10 +1754,9 @@ export default function Collaterals() {
                             <div className="firstrow">
                                 <div className="row">
                                     <div className="col-sm-8">
-                                        <h2>Ready to accelerate value creation across your portfolio?</h2>
+                                        <h2>{t("Ready to accelerate value creation across your portfolio?")}</h2>
                                         <p>
-                                            Contact us today to learn how we can help modernise operations,
-                                            de-risk integrations, and improve commercial outcomes.
+                                            {t("Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.")}
                                         </p>
                                     </div>
                                     <div className="col-sm-4">
