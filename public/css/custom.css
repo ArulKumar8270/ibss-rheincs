@@ -256,7 +256,9 @@ img {
 a {
 	text-decoration: none;
 }
-
+.text-dark{
+	color:black !important;
+}
 a:hover {
 	text-decoration: none;
 	outline: 0;
@@ -20204,7 +20206,7 @@ body.popup-open .main-header {
 
 .entersolser .enterslide h3 {
 	height: 90px !important;
-	margin-bottom: 32px;
+	margin-bottom: 20px;
 }
 
 .mds-section1 .section-title h2 {
@@ -22952,3 +22954,11 @@ position: relative;
 	font-size: .95rem;
 	color:#212529;
 }  
+
+
+.gerenterprice .testimonial-slider .service-item {
+	min-height: 500px;
+}
+.places.rights li{
+	padding: 0px 10px 0px !important;
+}

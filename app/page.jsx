@@ -15,508 +15,172 @@ export default function Home() {
   return (
     <>
 
-  <Script
-    id="schema-organization"
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "@id": "https://www.rheincs.com/#organization",
-            "name": "RheinBrücke IT Consulting",
-            "alternateName": ["RheinCS", "RheinBrücke"],
-            "url": "https://www.rheincs.com/",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://www.rheincs.com/images/rlogo.png",
-              "width": 200,
-              "height": 60
-            },
-            "description": "RheinBrücke IT Consulting is a global enterprise digital transformation and ERP solutions partner serving 45+ countries.",
-            "foundingDate": "2013",
-            "slogan": "Analyse. Integrate. Transform.",
-            "email": "info@rheincs.com",
-            "telephone": "+49 231 292 95619",
-            "contactPoint": [
+      <Script
+        id="schema-ldjson"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
               {
-                "@type": "ContactPoint",
-                "telephone": "+49 231 292 95619",
-                "contactType": "customer service",
-                "areaServed": ["DE","NL","UAE","SA","IN","US","GB"],
-                "availableLanguage": ["English","German","Arabic"]
-              }
-            ],
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "NL",
-              "addressLocality": "Netherlands",
-              "name": "RheinBrücke IT Consulting BV - Headquarters"
-            },
-            "sameAs": [
-              "https://www.linkedin.com/company/rheinbrucke-it-consulting",
-              "https://twitter.com/rheinbrucke",
-              "https://www.facebook.com/RheinBruckeIT",
-              "https://www.youtube.com/c/RheinBrucke"
-            ],
-            "award": [
-              "Epicor Partner of the Year 2016 & 2018",
-              "Stevie - Fastest Growing Company in Europe 2015 & 2016",
-              "Stevie Company of the Year 2015 & 2017"
-            ],
-            "areaServed": ["UAE","SA","QA","KW","BH","OM","DE","NL","GB","FR","IN","US"],
-            "knowsAbout": [
-              "Enterprise Resource Planning", "Digital Transformation",
-              "Epicor Kinetic", "SAP ERP", "Microsoft Dynamics",
-              "Business Intelligence", "Supply Chain Management",
-              "AI and Machine Learning", "Cloud ERP"
-            ],
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "bestRating": "5",
-              "worstRating": "1",
-              "ratingCount": "87",
-              "reviewCount": "87"
-            }
-          },
-          {
-            "@type": "WebSite",
-            "@id": "https://www.rheincs.com/#website",
-            "url": "https://www.rheincs.com/",
-            "name": "RheinBrücke IT Consulting",
-            "publisher": { "@id": "https://www.rheincs.com/#organization" },
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://www.rheincs.com/?s={search_term_string}"
-              },
-              "query-input": "required name=search_term_string"
-            }
-          },
-          {
-            "@type": "WebPage",
-            "@id": "https://www.rheincs.com/#webpage",
-            "url": "https://www.rheincs.com/",
-            "name": "Enterprise Digital Transformation & ERP Solutions | RheinBrücke",
-            "isPartOf": { "@id": "https://www.rheincs.com/#website" },
-            "about": { "@id": "https://www.rheincs.com/#organization" },
-            "description": "ERP implementation & digital transformation for 45+ countries.",
-            "inLanguage": "en-US",
-            "keywords": [
-              "ERP implementation UAE", "ERP implementation Saudi Arabia",
-              "Epicor partner Middle East", "digital transformation Germany",
-              "SAP implementation Europe", "Microsoft Dynamics partner UAE",
-              "cloud ERP solutions"
-            ]
-          }
-        ]
-      })
-    }}
-  />
-  {/* Local Business / Office Locations Schema */}
-  <Script
-    id="schema-offices"
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "RheinBrücke IT Consulting - Global Offices",
-        "itemListElement": [
-          {
-            "@type": "ListItem", "position": 1,
-            "item": {
-              "@type": "ProfessionalService",
-              "@id": "https://www.rheincs.com/#office-uae",
-              "name": "RheinBrücke IT Consulting - UAE",
-              "url": "https://www.rheincs.com/contact-us/",
-              "description": "Enterprise ERP and digital transformation in UAE.",
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "AE",
-                "addressLocality": "Dubai"
-              },
-              "email": "info@rheincs.com",
-              "areaServed": ["UAE","SA","QA","KW","BH","OM"],
-              "priceRange": "$$$$",
-              "currenciesAccepted": "AED, USD",
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Sunday"],
-                "opens": "09:00", "closes": "18:00"
-              },
-              "geo": { "@type": "GeoCoordinates",
-                "latitude": 25.2048, "longitude": 55.2708 },
-              "parentOrganization": {
-                "@id": "https://www.rheincs.com/#organization" }
-            }
-          },
-          {
-            "@type": "ListItem", "position": 2,
-            "item": {
-              "@type": "ProfessionalService",
-              "@id": "https://www.rheincs.com/#office-ksa",
-              "name": "RheinBrücke IT Consulting - Saudi Arabia",
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "SA", "addressLocality": "Riyadh"
-              },
-              "email": "info@rheincs.com",
-              "areaServed": ["SA"],
-              "geo": { "@type": "GeoCoordinates",
-                "latitude": 24.7136, "longitude": 46.6753 },
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Sunday"],
-                "opens": "09:00", "closes": "18:00"
-              },
-              "parentOrganization": {
-                "@id": "https://www.rheincs.com/#organization" }
-            }
-          },
-          {
-            "@type": "ListItem", "position": 3,
-            "item": {
-              "@type": "ProfessionalService",
-              "@id": "https://www.rheincs.com/#office-germany",
-              "name": "RheinBrücke IT Consulting - Germany",
-              "telephone": "+49 231 292 95619",
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "DE", "addressLocality": "Dortmund",
-                "addressRegion": "North Rhine-Westphalia"
-              },
-              "geo": { "@type": "GeoCoordinates",
-                "latitude": 51.5136, "longitude": 7.4653 },
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-                "opens": "09:00", "closes": "18:00"
-              },
-              "parentOrganization": {
-                "@id": "https://www.rheincs.com/#organization" }
-            }
-          },
-          {
-            "@type": "ListItem", "position": 4,
-            "item": {
-              "@type": "ProfessionalService",
-              "@id": "https://www.rheincs.com/#office-netherlands",
-              "name": "RheinBrücke IT Consulting BV - Netherlands (HQ)",
-              "telephone": "+49 231 292 95619",
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "NL", "addressLocality": "Netherlands"
-              },
-              "parentOrganization": {
-                "@id": "https://www.rheincs.com/#organization" }
-            }
-          },
-          {
-            "@type": "ListItem", "position": 5,
-            "item": {
-              "@type": "ProfessionalService",
-              "@id": "https://www.rheincs.com/#office-india",
-              "name": "RheinBrücke - India Development Centre (IDC), Chennai",
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "IN", "addressLocality": "Chennai",
-                "addressRegion": "Tamil Nadu"
-              },
-              "email": "info@rheincs.com",
-              "parentOrganization": {
-                "@id": "https://www.rheincs.com/#organization" }
-            }
-          }
-        ]
-      })
-    }}
-  />
-  {/* Services Schema */}
-  <Script
-    id="schema-services"
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "RheinBrücke IT Consulting - Enterprise Services",
-        "itemListElement": [
-          { "@type":"ListItem","position":1,
-            "item":{
-              "@type":"Service",
-              "name":"Epicor ERP Implementation",
-              "url":"https://www.rheincs.com/Epicor-kinetic/",
-              "description":"Certified Epicor Premium Partner for end-to-end Epicor Kinetic ERP implementation in Middle East & Europe.",
-              "provider":{"@id":"https://www.rheincs.com/#organization"},
-              "areaServed":["AE","SA","QA","DE","NL","GB","US","IN"],
-              "serviceType":"ERP Implementation"
-            }
-          },
-          { "@type":"ListItem","position":2,
-            "item":{
-              "@type":"Service",
-              "name":"SAP ERP Implementation & Support",
-              "url":"https://www.rheincs.com/solutions/.../sap/",
-              "description":"SAP certified partner for enterprise ERP in ME & Europe.",
-              "provider":{"@id":"https://www.rheincs.com/#organization"},
-              "areaServed":["AE","SA","DE","NL","GB"],
-              "serviceType":"ERP Implementation"
-            }
-          },
-          { "@type":"ListItem","position":3,
-            "item":{
-              "@type":"Service",
-              "name":"Microsoft Dynamics 365 ERP",
-              "url":"https://www.rheincs.com/solutions/.../ms-dynamics/",
-              "description":"Microsoft ISV Partner delivering Dynamics 365 ERP. Microsoft AI Cloud Partner.",
-              "provider":{"@id":"https://www.rheincs.com/#organization"},
-              "areaServed":["UAE","SA","DE","NL","GB","FR"],
-              "serviceType":"ERP Implementation"
-            }
-          },
-          { "@type":"ListItem","position":4,
-            "item":{
-              "@type":"Service",
-              "name":"Digital Transformation Consulting",
-              "url":"https://www.rheincs.com/solutions/digital-services-and-solutions/",
-              "description":"AI/ML, BI analytics, eCommerce, data engineering, intelligent automation and cloud architecture.",
-              "provider":{"@id":"https://www.rheincs.com/#organization"},
-              "areaServed":["AE","SA","QA","DE","NL","GB","IN","US"],
-              "serviceType":"Digital Transformation"
-            }
-          },
-          { "@type":"ListItem","position":5,
-            "item":{
-              "@type":"Service",
-              "name":"Corus HR - Human Resource Management Software",
-              "url":"https://www.rheincs.com/solutions/CorusHR/",
-              "description":"Proprietary HR management software for enterprises in the Middle East.",
-              "provider":{"@id":"https://www.rheincs.com/#organization"},
-              "areaServed":["AE","SA","QA","IN"],
-              "serviceType":"HR Software"
-            }
-          },
-          { "@type":"ListItem","position":6,
-            "item":{
-              "@type":"Service",
-              "name":"MeRLIN - Strategic Sourcing & Procurement Software",
-              "url":"https://www.rheincs.com/MeRLIN-strategic-sourcing-software/",
-              "description":"Digitise and optimise procurement processes with MeRLIN end-to-end sourcing management.",
-              "provider":{"@id":"https://www.rheincs.com/#organization"},
-              "areaServed":["AE","SA","DE","NL","IN"],
-              "serviceType":"Procurement Software"
-            }
-          }
-        ]
-      })
-    }}
-  />
-  {/* FAQ Schema */}
-  <Script
-    id="schema-faq"
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What ERP systems does RheinBrücke implement?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "RheinBrücke implements Epicor Kinetic, Epicor iScala, SAP, Microsoft Dynamics 365 and Sugar CRM. As Epicor Premium Partner, Microsoft ISV Partner and SAP certified firm, we offer deep multi-platform ERP expertise tailored to each industry."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does RheinBrücke offer ERP services in the Middle East?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. RheinBrücke has dedicated offices in UAE and Saudi Arabia and has delivered ERP projects across UAE, KSA, Qatar, Kuwait, Bahrain and Oman. Over 10 years of regional expertise."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Which industries does RheinBrücke specialise in?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "8+ industries: discrete manufacturing, process manufacturing, automotive, retail, distribution & supply chain, brand owners, EPC, cable manufacturing, interior design, private equity ventures."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How many countries has RheinBrücke delivered projects in?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "300+ ERP and digital transformation projects across 45+ countries. Offices in Netherlands, Germany, UAE, Saudi Arabia, India and USA."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the AIT methodology used by RheinBrücke?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "AIT = Analyse, Integrate, Transform. Analyse: data-led business diagnostics. Integrate: ERP and digital platform implementation. Transform: AI, automation and analytics to unlock growth and efficiency."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is RheinBrücke an official Epicor partner?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. RheinBrücke is an Epicor Premium Partner and won Epicor Partner of the Year in 2016 and 2018. One of the most accredited Epicor Kinetic partners in Middle East & Europe."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does RheinBrücke offer cloud ERP solutions?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Kinetic ERP MEA Cloud received a Green Certificate from Moro Hub. We offer cloud-native, AI-ready ERP on Epicor, Microsoft Dynamics 365 and SAP cloud platforms."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I contact RheinBrücke to start an ERP project?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Email info@rheincs.com, call +49 231 292 95619, or visit https://www.rheincs.com/contact-us/. Our team will schedule a discovery call to propose the right solution for your business."
-            }
-          }
-        ]
-      })
-    }}
-  />
-  {/* Reviews + Aggregate Rating Schema */}
-  <Script
-    id="schema-reviews"
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "@id": "https://www.rheincs.com/#organization",
-        "name": "RheinBrücke IT Consulting",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "bestRating": "5",
-          "worstRating": "1",
-          "ratingCount": "87",
-          "reviewCount": "87"
-        },
-        "review": [
-          {
-            "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "Darius Jonason",
-              "jobTitle": "Business Process Analyst/Solutions Architect",
-              "worksFor": { "@type": "Organization", "name": "Cold Chain Technologies" }
-            },
-            "reviewBody": "RheinBrücke IT Consulting's technical expertise has greatly advanced our abilities to adapt and evolve.",
-            "reviewRating": { "@type":"Rating","ratingValue":"5","bestRating":"5" }
-          },
-          {
-            "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "Craig Stephens",
-              "jobTitle": "VP International Consulting",
-              "worksFor": { "@type": "Organization", "name": "Epicor Software", "addressCountry": "GB" }
-            },
-            "reviewBody": "I appreciate their depth of technical and functional knowledge and commitment to end customers needs.",
-            "reviewRating": { "@type":"Rating","ratingValue":"5","bestRating":"5" }
-          },
-          {
-            "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "Massimiliano A. Milani",
-              "jobTitle": "Director Europe & Africas",
-              "worksFor": { "@type": "Organization", "name": "Federal Mogul", "addressCountry": "BE" }
-            },
-            "reviewBody": "Technical and Project management expertise was evident. Flexible, transparent dealing with the team.",
-            "reviewRating": { "@type":"Rating","ratingValue":"5","bestRating":"5" }
-          },
-          {
-            "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "Rizwanulla Khan",
-              "jobTitle": "Executive President",
-              "worksFor": {
                 "@type": "Organization",
-                "name": "Emirates Glass Saudi American & Lumi Glass"
-              }
-            },
-            "reviewBody": "Fantastic turnaround of our ERP project. Transparent and efficient dealings.",
-            "reviewRating": { "@type":"Rating","ratingValue":"5","bestRating":"5" }
-          },
-          {
-            "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "Simon Owers",
-              "jobTitle": "CFO",
-              "worksFor": { "@type": "Organization", "name": "American Golf" }
-            },
-            "reviewBody": "Launch of IDC Chennai marks a pivotal step forward. Enhancing our operational efficiency and growth potential.",
-            "reviewRating": { "@type":"Rating","ratingValue":"5","bestRating":"5" }
-          }
-        ]
-      })
-    }}
-  />
-  {/* Site Navigation Schema */}
-  <Script
-    id="schema-navigation"
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "RheinBrücke Website Navigation",
-        "itemListElement": [
-          { "@type":"ListItem","position":1,
-            "name":"About Us",
-            "url":"https://www.rheincs.com/about-us/overview/" },
-          { "@type":"ListItem","position":2,
-            "name":"ERP Solutions",
-            "url":"https://www.rheincs.com/solutions/erp-enterprise-solutions-and-services/erp/" },
-          { "@type":"ListItem","position":3,
-            "name":"Epicor ERP",
-            "url":"https://www.rheincs.com/Epicor-kinetic/" },
-          { "@type":"ListItem","position":4,
-            "name":"SAP Implementation",
-            "url":"https://www.rheincs.com/solutions/erp-enterprise-solutions-and-services/sap/" },
-          { "@type":"ListItem","position":5,
-            "name":"Microsoft Dynamics",
-            "url":"https://www.rheincs.com/solutions/erp-enterprise-solutions-and-services/ms-dynamics/" },
-          { "@type":"ListItem","position":6,
-            "name":"Digital Solutions",
-            "url":"https://www.rheincs.com/solutions/digital-services-and-solutions/" },
-          { "@type":"ListItem","position":7,
-            "name":"Manufacturing ERP",
-            "url":"https://www.rheincs.com/discrete-manufacturing/" },
-          { "@type":"ListItem","position":8,
-            "name":"Retail Industry",
-            "url":"https://www.rheincs.com/industries-retail/" },
-          { "@type":"ListItem","position":9,
-            "name":"Case Studies",
-            "url":"https://www.rheincs.com/Case-study/" },
-          { "@type":"ListItem","position":10,
-            "name":"Contact Us",
-            "url":"https://www.rheincs.com/contact-us/" }
-        ]
-      })
-    }}
-  />
+                "@id": "https://www.rheincs.com/#organization",
+                name: "RheinBrücke IT Consulting",
+                alternateName: ["RheinCS", "RheinBrucke"],
+                url: "https://www.rheincs.com/",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://www.rheincs.com/images/rlogo.png",
+                  width: 200,
+                  height: 60,
+                },
+                description:
+                  "RheinBrücke IT Consulting is a global enterprise digital transformation and ERP solutions partner serving 45+ countries.",
+                foundingDate: "2013",
+                slogan: "Analyse. Integrate. Transform.",
+                email: "info@rheincs.com",
+                telephone: "+49 231 292 95619",
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "4.9",
+                  bestRating: "5",
+                  ratingCount: "87",
+                },
+                contactPoint: {
+                  "@type": "ContactPoint",
+                  telephone: "+49 231 292 95619",
+                  contactType: "customer service",
+                  areaServed: ["DE", "NL", "UAE", "SA", "IN", "US", "GB"],
+                  availableLanguage: ["English", "German", "Arabic"],
+                },
+                sameAs: [
+                  "https://www.linkedin.com/company/rheinbrucke-it-consulting",
+                  "https://twitter.com/rheinbrucke",
+                  "https://www.facebook.com/RheinBruckeIT",
+                  "https://www.youtube.com/c/RheinBrucke",
+                ],
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://www.rheincs.com/#website",
+                url: "https://www.rheincs.com/",
+                name: "RheinBrücke IT Consulting",
+                publisher: { "@id": "https://www.rheincs.com/#organization" },
+                potentialAction: {
+                  "@type": "SearchAction",
+                  target: "https://www.rheincs.com/?s={search_term_string}",
+                  "query-input": "required name=search_term_string",
+                },
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://www.rheincs.com/#webpage",
+                url: "https://www.rheincs.com/",
+                name: "Enterprise Digital Transformation & ERP Solutions | RheinBrücke",
+                isPartOf: { "@id": "https://www.rheincs.com/#website" },
+                about: { "@id": "https://www.rheincs.com/#organization" },
+                description:
+                  "ERP implementation & digital transformation services across 45+ countries.",
+                inLanguage: "en",
+              },
+              {
+                "@type": "ItemList",
+                name: "RheinBrücke IT Consulting Global Offices",
+                itemListOrder: "https://schema.org/ItemListOrderAscending",
+                numberOfItems: 4,
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    item: {
+                      "@type": "ProfessionalService",
+                      name: "RheinBrücke IT Consulting - UAE",
+                      url: "https://www.rheincs.com/contact-us/#uae",
+                      image: "https://www.rheincs.com/images/rlogo.png",
+                      priceRange: "$$$",
+                      address: {
+                        "@type": "PostalAddress",
+                        addressLocality: "Dubai",
+                        addressCountry: "AE",
+                      },
+                    },
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    item: {
+                      "@type": "ProfessionalService",
+                      name: "RheinBrücke IT Consulting - Saudi Arabia",
+                      url: "https://www.rheincs.com/contact-us/#saudi",
+                      image: "https://www.rheincs.com/images/rlogo.png",
+                      priceRange: "$$$",
+                      address: {
+                        "@type": "PostalAddress",
+                        addressLocality: "Riyadh",
+                        addressCountry: "SA",
+                      },
+                    },
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 3,
+                    item: {
+                      "@type": "ProfessionalService",
+                      name: "RheinBrücke IT Consulting - Germany",
+                      url: "https://www.rheincs.com/contact-us/#germany",
+                      image: "https://www.rheincs.com/images/rlogo.png",
+                      priceRange: "$$$",
+                      address: {
+                        "@type": "PostalAddress",
+                        addressLocality: "Dortmund",
+                        addressCountry: "DE",
+                      },
+                    },
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 4,
+                    item: {
+                      "@type": "ProfessionalService",
+                      name: "RheinBrücke IT Consulting - India Development Centre",
+                      url: "https://www.rheincs.com/contact-us/#india",
+                      image: "https://www.rheincs.com/images/rlogo.png",
+                      priceRange: "$$$",
+                      address: {
+                        "@type": "PostalAddress",
+                        addressLocality: "Chennai",
+                        addressRegion: "Tamil Nadu",
+                        addressCountry: "IN",
+                      },
+                    },
+                  },
+                ],
+              },
+              {
+                "@type": "FAQPage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: "What ERP systems does RheinBrücke implement?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "RheinBrücke implements Epicor Kinetic, SAP and Microsoft Dynamics ERP solutions.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Does RheinBrücke offer ERP services in the Middle East?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. RheinBrücke delivers ERP projects across UAE, Saudi Arabia, Qatar, Kuwait, Bahrain and Oman.",
+                    },
+                  },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
 
 
       <CommomLayout>

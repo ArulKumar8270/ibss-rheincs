@@ -740,7 +740,7 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-3 col-6">
                 <div className="dynamics-advantage-waber">
                   <img src="/new/ad5.svg" alt="" />
-                  <p>{t("Limited real-time visibility fordecision-making")}</p>
+                  <p>{t("Limited real-time visibility for decision-making")}</p>
                 </div>
               </div>
               <div className="col-sm-3 col-6">
@@ -2397,8 +2397,7 @@ export default function EnterpriseSolutions() {
                   <div className="col-lg-6 col-md-6 col-12">
                     <div className="service-item-body1 imgpos w80">
                       <h3>
-                        {t("Microsoft AI Cloud and ISV Partner")} <br />
-                        {t("with deep ERP expertise")}
+                        {t("Microsoft AI Cloud and ISV Partner with deep ERP expertise")}
                       </h3>
                       <img src="/new/adv1.svg" alt="" />
                     </div>

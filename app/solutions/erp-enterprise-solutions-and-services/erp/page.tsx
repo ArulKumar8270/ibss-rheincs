@@ -3094,7 +3094,7 @@ export default function EnterpriseSolutions() {
           </div>
         </section>
         {/* Our Testimonial Section Start */}
-        <div className="our-testimonial entersolser pd30">
+        <div className={`our-testimonial entersolser pd30 ${language === 'German' ? 'gerenterprice' : ''}`}>
           <div className="container">
             <div className="row section-row align-items-center">
               <div className="col-lg-6">

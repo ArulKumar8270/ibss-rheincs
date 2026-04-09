@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import CommomLayout from "../../Components/CommomLayout";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase-browser";
+import {useTranslation} from "../../hooks/useTranslation";
 
 interface Blog {
   id: string;
@@ -39,6 +40,7 @@ export default function BlogDetailsClient({
   initialRelatedBlogs,
   slug,
 }: BlogDetailsClientProps) {
+  const { t, language } = useTranslation();
   const router = useRouter();
   const [blog, setBlog] = useState<Blog | null>(initialBlog);
   const [relatedBlogs, setRelatedBlogs] = useState<Blog[]>(initialRelatedBlogs);
@@ -809,7 +811,7 @@ export default function BlogDetailsClient({
               </div>
               <div className="col-sm-1"></div>
               <div className="col-sm-3">
-                <h6 className="stu-sub-title"> Related Blog Posts</h6>
+                <h6 className="stu-sub-title"> {t("Related Blog Posts")}</h6>
                 {relatedBlogs.length === 0 ? (
                   <div
                     style={{
