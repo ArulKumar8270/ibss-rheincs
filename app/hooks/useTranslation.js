@@ -18,29 +18,43 @@ function fetchWithTimeout(url, ms = 5000) {
 }
 
 async function getLanguageFromLocation() {
-  let fromIp = 'English';
-  try { 
-    const res = await fetchWithTimeout('https://ipapi.co/json/');
+  // Client-side geo detection (static export has no API routes).
+  // Prefer providers that allow browser CORS and work with VPN.
+  const tryCountryCode = async (url, getCode) => {
+    const res = await fetchWithTimeout(url, 4500);
     const data = await res.json();
-    const code = data?.country_code;
-    if (code && GERMAN_COUNTRY_CODES.has(String(code).toUpperCase())) fromIp = 'German';
-  } catch {
-    try {
-      const fallback = await fetchWithTimeout('https://ip-api.com/json/?fields=countryCode');
-      const fallbackData = await fallback.json();
-      const code = fallbackData?.countryCode;
-      if (code && GERMAN_COUNTRY_CODES.has(String(code).toUpperCase())) fromIp = 'German';
-    } catch { 
-      // ignore
-    }
-  }
-  // Browser locale: German abroad or non-DE IP with de-* system language → German
-  const fromBrowser = getLanguageFromBrowserLocale();
-  if (fromIp === 'German' || fromBrowser === 'German') return 'German';
-  return 'English';
+    const code = getCode(data);
+    return code ? String(code).toUpperCase() : '';
+  };
+
+  try {
+    const code = await tryCountryCode(
+      'https://ipwho.is/?fields=country_code',
+      (d) => d?.country_code
+    );
+    if (code && GERMAN_COUNTRY_CODES.has(code)) return 'German';
+  } catch {}
+
+  // Fallbacks (may be blocked by some adblockers)
+  try {
+    const code = await tryCountryCode('https://ipapi.co/json/', (d) => d?.country_code);
+    if (code && GERMAN_COUNTRY_CODES.has(code)) return 'German';
+  } catch {}
+
+  try {
+    const code = await tryCountryCode(
+      'https://ip-api.com/json/?fields=countryCode',
+      (d) => d?.countryCode
+    );
+    if (code && GERMAN_COUNTRY_CODES.has(code)) return 'German';
+  } catch {}
+
+  // Final fallback: browser locale
+  return getLanguageFromBrowserLocale();
 }
 
 const STORAGE_LANG = 'preferredLanguage';
+const STORAGE_LOCKED = 'preferredLanguageLocked'; // '1' means user explicitly selected
 
 export const useTranslation = () => {
   const [language, setLanguage] = useState(() => {
@@ -56,6 +70,7 @@ export const useTranslation = () => {
 
     const saved = localStorage.getItem(STORAGE_LANG);
     const hasValidSaved = saved === 'English' || saved === 'German';
+    const isLocked = localStorage.getItem(STORAGE_LOCKED) === '1';
 
     function applyDetectedLanguage(detected) {
       setLanguage(detected);
@@ -65,8 +80,8 @@ export const useTranslation = () => {
       } catch {}
     }
 
-    // First visit (no stored preference): pick language from IP region + browser locale
-    if (hasValidSaved) {
+    // If user explicitly chose a language, never overwrite it with auto-detection.
+    if (isLocked && hasValidSaved) {
       setLanguage(saved);
     } else {
       getLanguageFromLocation()
@@ -98,6 +113,7 @@ export const useTranslation = () => {
     setLanguage(lang);
     if (typeof window !== 'undefined') {
       localStorage.setItem(STORAGE_LANG, lang);
+      localStorage.setItem(STORAGE_LOCKED, '1');
       try {
         window.dispatchEvent(new CustomEvent('preferredLanguageChange', { detail: lang }));
       } catch {}
