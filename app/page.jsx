@@ -12,6 +12,7 @@ import Script from "next/script";
 
 export default function Home() {
   const { t, language } = useTranslation();
+   if (!language) return null;
   return (
     <>
 

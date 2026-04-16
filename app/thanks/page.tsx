@@ -1,7 +1,9 @@
 import React from 'react'
 import CommomLayout from '../Components/CommomLayout'
+import { useTranslation } from "../hooks/useTranslation";
 
 const page = () => {
+  const { t, language } = useTranslation();
     return (
         <CommomLayout>
             <>
@@ -20,10 +22,9 @@ const page = () => {
                         <div className="check-icon">
                             <i className="fa-solid fa-check" />
                         </div>
-                        <h1>Thank you!</h1>
+                        <h1>{t("Thank you!")}</h1>
                         <p>
-                            Your request has been received and the email has been sent successfully.
-                            Please check your inbox for further details.
+                            {t("Your request has been received and the email has been sent successfully. Please check your inbox for further details.")}
                         </p>
                     </div>
                 </div>

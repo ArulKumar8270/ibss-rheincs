@@ -17,13 +17,14 @@ export default function digitalsolution() {
         <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-21" data-cursor="-opaque">
-              {t("Digital Solutions – Innovating Business, One Solution at a Time")}
+              {t("Digital Solutions & Enterprise Transformation Services")}
             </h2>
+            <p>{t("Innovating Business, One Solution at a Time")}</p>
             <p>
-              {t("We deliver outcome-driven solutions that combine advanced technology, proven frameworks, and scalable architectures to solve complex business challenges. Driven by our Analyse-Integrate-Transform framework, every engagement is built for measurable, sustained impact.")}
+              {t("We deliver outcome-driven digital solutions that combine advanced technology, proven frameworks, and scalable cloud-native architectures to solve complex business challenges. Driven by our Analyse–Integrate–Transform framework, every engagement is built for measurable, sustained business impact.")}
             </p>
             <p>
-              {t("Every successful digital transformation starts with a solid foundation of analysis, becomes truly valuable through data and intelligence, delivers tangible outcomes via integration of applications and commerce channels, and endures through resilient operations and governance.")}
+              {t("Every successful digital transformation starts with a strong foundation of analysis, becomes powerful through data and AI-driven intelligence, delivers outcomes via seamless application and system integration, and endures through resilient operations, security, and governance.")}
             </p>
             
             <div className="ser-btn mt-5">
@@ -177,6 +178,8 @@ export default function digitalsolution() {
                           height={80}
                           viewBox="0 0 80 80"
                           fill="none"
+  role="img" 
+  aria-label="Digital solutions enterprise architecture icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <mask
@@ -293,7 +296,7 @@ export default function digitalsolution() {
                       <ul>
                         <li>
                           {" "}
-                          {t("Implement API-first, composable architectures with scalable infrastructure, integration frameworks, and governance controls.")}
+                          {t("Implement API-first, composable enterprise architectures with scalable infrastructure, integration frameworks, and governance controls for long-term agility.")}
                         </li>
                       </ul>
                     </div>
@@ -309,6 +312,8 @@ export default function digitalsolution() {
                           height={80}
                           viewBox="0 0 80 80"
                           fill="none"
+  role="img" 
+  aria-label="Digital solutions implementation icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -435,7 +440,7 @@ export default function digitalsolution() {
                       <h3>{t("Enterprise Software Implementation:")}</h3>
                       <ul>
                         <li>
-                          {t("Deliver end-to-end ERP, CRM, and enterprise platform implementations with agile frameworks for rapid time-to-value and seamless business-as-usual transitions.")}
+                          {t("Deliver end-to-end ERP and CRM implementation services using agile methodologies for faster time-to-value and seamless transition into business-as-usual operations.")}
                         </li>
                       </ul>
                     </div>
@@ -452,6 +457,8 @@ export default function digitalsolution() {
                           height={79}
                           viewBox="0 0 73 79"
                           fill="none"
+  role="img" 
+  aria-label="ERP and CRM implementation icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -527,7 +534,7 @@ export default function digitalsolution() {
                       </h3>
                       <ul>
                         <li>
-                          {t("Unify business processes with scalable, cloud-native app suites embedded with analytics and automation for operational control and continuous performance refinement.")}
+                          {t("Unify business processes with cloud-native enterprise applications, integrating ERP and CRM systems with embedded analytics and automation for continuous performance optimisation.")}
                         </li>
                       </ul>
                     </div>
@@ -549,6 +556,8 @@ export default function digitalsolution() {
                         height={80}
                         viewBox="0 0 80 80"
                         fill="none"
+  role="img" 
+  aria-label="Digital solutions enterprise architecture icon"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <mask
@@ -665,7 +674,7 @@ export default function digitalsolution() {
                     <ul>
                       <li>
                         {" "}
-                        {t("Implement API-first, composable architectures with scalable infrastructure, integration frameworks, and governance controls.")}
+                        {t("Implement API-first, composable enterprise architectures with scalable infrastructure, integration frameworks, and governance controls for long-term agility.")}
                       </li>
                     </ul>
                   </div>
@@ -680,6 +689,8 @@ export default function digitalsolution() {
                         height={80}
                         viewBox="0 0 80 80"
                         fill="none"
+  role="img" 
+  aria-label="Digital solutions implementation icon"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -806,7 +817,7 @@ export default function digitalsolution() {
                     <h3>{t("Enterprise Software Implementation:")}</h3>
                     <ul>
                       <li>
-                        {t("Deliver end-to-end ERP, CRM, and enterprise platform implementations with agile frameworks for rapid time-to-value and seamless business-as-usual transitions.")}
+                        {t("Deliver end-to-end ERP and CRM implementation services using agile methodologies for faster time-to-value and seamless transition into business-as-usual operations.")}
                       </li>
                     </ul>
                   </div>
@@ -821,6 +832,8 @@ export default function digitalsolution() {
                         height={79}
                         viewBox="0 0 73 79"
                         fill="none"
+  role="img" 
+  aria-label="ERP and CRM implementation icon"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -894,7 +907,7 @@ export default function digitalsolution() {
                     <h3>{t("ERP-CRM Integrations & Cloud-Native Solutions:")}</h3>
                     <ul>
                       <li>
-                        {t("Unify business processes with scalable, cloud-native app suites embedded with analytics and automation for operational control and continuous performance refinement.")}
+                        {t("Unify business processes with cloud-native enterprise applications, integrating ERP and CRM systems with embedded analytics and automation for continuous performance optimisation.")}
                       </li>
                     </ul>
                   </div>
@@ -1147,18 +1160,18 @@ export default function digitalsolution() {
             <div className="challenge-point-waber self-service">
               <img src="/images/app2.svg" alt="" />
               <div className="pill-cont">
-                <h5>{t("AI/ML & Data Analytics")}</h5>
+                <h5>{t("AI/ML Solutions & Advanced Analytics")}</h5>
                 <p>
-                  {t("Deploy AI solutions using Azure Machine Learning and Large Event Models (LEMs) for predictive maintenance, intelligent automation, and real-time operational insights.")}
+                  {t("Deploy AI solutions using Azure Machine Learning and Large Event Models (LEMs) for predictive maintenance, anomaly detection, intelligent automation, and real-time operational insights using enterprise-grade platforms.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
               <img src="/images/app3.svg" alt="" />
               <div className="pill-cont">
-                <h5>{t("Data Visualisation")}</h5>
+                <h5>{t("Business Intelligence & Data Visualisation")}</h5>
                 <p>
-                  {t("Create executive-ready, dynamic dashboards and interactive data stories with Tableau, Power BI and others that enable business users with self-service analytics and decision-making at speed.")}
+                  {t("Create executive-ready, interactive dashboards and interactive data stories with Tableau, Power BI and others that enable business users with self-service analytics and decision-making at speed.")}
                 </p>
               </div>
             </div>
@@ -1283,41 +1296,37 @@ export default function digitalsolution() {
         <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              {t("Activate Data and Intelligence")}
+              {t("Turn Data into Strategic Advantage")}
             </h2>
             <p>
-              {t("Unlock the full potential of your data to drive smarter, faster business decisions. By connecting, integrating, and activating your data, we turn it into real-time, actionable intelligence that empowers you to make data-driven decisions and optimise performance at scale.")}
+              {t("Unlock the full potential of enterprise data, consolidating, refining, and transforming it into real-time, actionable intelligence. Operationalise your data estate and AI capabilities to drive faster, smarter decisions.")}
             </p>
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
               <img src="/images/app1.svg" alt="" />
               <div className="pill-cont">
-                <h5>{t("Integration & Data Services")}</h5>
+                <h5>{t("Data Pipelining, Consolidation and Warehousing")}</h5>
                 <p>
-                  {t("We connect your digital ecosystem with seamless integrations, real-time insights, and automated workflows using Azure Logic Apps, API Management, and Cosmos DB.  ")}<br />
-                  <b>{t("Tech:")}</b> {t("SQL, Azure, Data Factory, Real-time Data Services")}
+                  {t("Design real-time and batch data pipelines, consolidate siloed sources into data warehouses and data lakes, and support scalable AI/ML operationalisation.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
               <img src="/images/app2.svg" alt="" />
               <div className="pill-cont">
-                <h5>{t("Data Engineering & Warehousing")}</h5>
+                <h5>{t("AI/ML Solutions & Advanced Analytics")}</h5>
                 <p>
-                  {t("Engineer scalable data pipelines and modern cloud warehouses to unlock enterprise insights. We build and manage secure, optimised data platforms for advanced analytics using Azure Data Lake, Synapse Analytics, and Delta Lake architectures.")}
-                  <br /> <b>{t("Tech:")}</b> {t("Azure Data Lake, Synapse Analytics, Delta Lake, Azure Data Factory")}
+                  {t("Deploy AI solutions using Azure Machine Learning and Large Event Models (LEMs) for predictive maintenance, anomaly detection, intelligent automation, and real-time operational insights using enterprise-grade platforms.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
               <img src="/images/app3.svg" alt="" />
               <div className="pill-cont">
-                <h5>{t("AI & Analytics")}</h5>
+                <h5>{t("Business Intelligence & Data Visualisation")}</h5>
                 <p>
-                  {" "}
-                  {t("We operationalise AI and analytics with Azure Machine Learning, delivering predictive insights and process automation. Power BI and Tableau turn data into actionable intelligence for smarter, faster decisions.")} <br />
-                  <b>{t("Tech:")}</b> {t("Azure Machine Learning, Power BI, Tableau")}
+                  {t("Create executive-ready, interactive dashboards and interactive data stories with Tableau, Power BI and others that enable business users with self-service analytics and decision-making at speed.")}
                 </p>
               </div>
             </div>
@@ -1341,7 +1350,7 @@ export default function digitalsolution() {
               {t("Empower Users and Enhance Digital Experiences")}
             </h2>
             <p>
-              {t("Transformation isn’t just about systems, it’s about people. We deliver modern, intuitive digital experiences and empower users with tools that accelerate productivity and decision-making.")}
+              {t("Digital transformation succeeds when users are empowered. We build intuitive applications, enterprise portals, and digital experiences that improve productivity and adoption.")}
             </p>
           </div>
           {/* Section Title End */}
@@ -1352,9 +1361,9 @@ export default function digitalsolution() {
           <div className="col-lg-6 col-md-6">
             <div className="service-item firstmobile">
               <div className="service-item-body">
-                <h3>{t("Portal, Application and Dashboard Development")}</h3>
+                <h3>{t("Enterprise Applications & Portal Development")}</h3>
                 <p>
-                  {t("Develop enterprise portals, custom applications, and real-time operational dashboards using modern frameworks and low-code/no-code tools for accelerated delivery.")}
+                  {t("Develop custom enterprise applications, portals, and real-time operational dashboards using modern frameworks and low-code/no-code platforms for rapid, scalable delivery.")}
                 </p>
                 <img src="/images/digiexp.png" alt="" />
               </div>
@@ -1367,7 +1376,7 @@ export default function digitalsolution() {
               <div className="service-item-body">
                 <h3>{t("Microsoft 'Power Platform' Solutions")}</h3>
                 <p>
-                  {t("Build business apps, automate workflows, and deliver data-driven dashboards via Power Apps, Power Automate, and Power BI, enabling business-led development with embedded governance.")}
+                  {t("Build on low-code/no-code, business-led innovation using Power Apps, Power Automate, and Power BI to deliver workflow automation, application development, and data insights with governance.")}
                 </p>
                 <img src="/images/digiexp2.png" alt="" />
               </div>
@@ -1401,11 +1410,11 @@ export default function digitalsolution() {
           <div className="col-lg-4 col-md-4">
             <div className="service-item ">
               <div className="service-item-body">
-                <h3>{t("eCommerce Modernisation")}</h3>
+                <h3>{t("Composable eCommerce Architecture")}</h3>
                 <p>
                   {t("Architect composable eCommerce solutions using MACH principles, integrating omnichannel experiences, scalable microservices, and operational dashboards for continuous KPI tracking.")}
                 </p>
-                <img src="/images/cu1.png" alt="" />
+                <img src="/images/cu1.png" alt="Composable eCommerce Architecture image" />
               </div>
             </div>
             {/* Service Item End */}
@@ -1418,7 +1427,7 @@ export default function digitalsolution() {
                 <p>
                   {t("We Deliver intuitive, enterprise-grade interfaces by applying user-centric principles to create seamless experiences and accelerate user adoption.")}
                 </p>
-                <img src="/images/cus2.png" alt="" />
+                <img src="/images/cus2.png" alt="UI/UX ERP intelligent dashboards image" />
               </div>
             </div>
             {/* Service Item End */}
@@ -1431,7 +1440,7 @@ export default function digitalsolution() {
                 <p>
                   {t("We design intuitive, user-centric digital experiences that drive productivity and unlock measurable business value.")}
                 </p>
-                <img src="/images/cus2.png" alt="" />
+                <img src="/images/cus2.png" alt="Digital services User Experience image" />
               </div>
             </div>
             {/* Service Item End */}
@@ -1448,10 +1457,10 @@ export default function digitalsolution() {
         <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              {t("Safeguard Operations and Drive Continuous Optimisation")}
+              {t("Ensure Security, Reliability & Continuous Optimisation")}
             </h2>
             <p>
-              {t("Ensure operational resilience, security, and continuous performance improvement. We help you protect, monitor, and refine your environment - so your business stays ahead, always.")}
+              {t("Maintain business continuity and ensure operational resilience, security, and continuous performance improvement. We help you protect, monitor, and refine your environment - so your business stays ahead, always.")}
             </p>
             <h5>{t("Managed Services & Security Governance")}</h5>
             <p>
@@ -1480,10 +1489,10 @@ export default function digitalsolution() {
         <div className="col-lg-6">
           <div className="section-title outcomes2">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              {t("Delivering Outcomes, Operationalised")}
+              {t("Delivering Measurable Outcomes")}
             </h2>
             <p>
-              {t("But transformation doesn’t stop at deployment. With continuous KPI tracking, real-time performance optimisation, and an agile, outcome-led approach, we help your business stay ahead of change and lead with confidence.")}
+              {t("We go beyond implementation, as transformation doesn’t stop at deployment. With continuous KPI tracking, real-time performance optimisation, and an agile, outcome-led approach, we help your business stay ahead of change and lead with confidence.")}
             </p>
           </div>
         </div>
@@ -1491,6 +1500,159 @@ export default function digitalsolution() {
     </div>
   </div>
   {/* Our Services Section End */}
+
+
+  
+        {/* Page Faqs Start */}
+        <div className="page-faqs bggray pd60">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-2" />
+              <div className="col-lg-8">
+                {/* Page FAQs Category Start */}
+                <div className="page-faqs-catagery">
+                  {/* FAQs section start */}
+                  <div
+                    className="our-faq-section page-faq-accordion"
+                    id="general_information"
+                  >
+                    <div className="section-title text-center">
+                      <h2 className="text-anime-style-2" data-cursor="-opaque">
+                        {t("Wondering Why? We’re Here to Answer")}
+                      </h2>
+                    </div>
+                    {/* FAQ Accordion Start */}
+                    <div className="faq-accordion" id="accordion">
+                      {/* FAQ Item Start */}
+                      <div className="accordion-item wow fadeInUp">
+                        <h2 className="accordion-header" id="heading1">
+                          <button
+                            className="accordion-button collapsein"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse1"
+                            aria-expanded="true"
+                            aria-controls="collapse1"
+                          >
+                            {t("What types of business solutions does RheinBrücke provide?")} 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse1"
+                          className="accordion-collapse collapse show"
+                          aria-labelledby="heading1"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("RheinBrücke offers a comprehensive suite of end-to-end business solutions across ERP, CRM, Human Resource Management (HR), and Digital Transformation domains. Each solution is tailored to industry-specific requirements, helping organizations enhance operational efficiency, data visibility, and customer engagement.")}  
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.2s"
+                      >
+                        <h2 className="accordion-header" id="heading2">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse2"
+                            aria-expanded="false"
+                            aria-controls="collapse2"
+                          >
+                             {t("How are RheinBrücke’s solutions differentiated?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse2"
+                          className="accordion-collapse collapse "
+                          aria-labelledby="heading2"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>{t("RheinBrücke’s solutions stand out through a unique blend of deep domain expertise, technology excellence, and proven implementation methodologies. We combine industry best practices with agile delivery frameworks to ensure faster time-to-value, minimal disruption, and measurable business outcomes for our clients.")}</p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.4s"
+                      >
+                        <h2 className="accordion-header" id="heading3">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse3"
+                            aria-expanded="false"
+                            aria-controls="collapse3"
+                          >
+                            {t("Do you offer custom solution development?")} 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse3"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading3"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("Yes. RheinBrücke provides custom software development services to address unique business processes, integration requirements, or specialized functionalities not covered by standard ERP or CRM systems. Our team designs, builds, and deploys scalable, secure, and high-performance applications tailored to your enterprise ecosystem.")} 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.6s"
+                      >
+                        <h2 className="accordion-header" id="heading4">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse4"
+                            aria-expanded="false"
+                            aria-controls="collapse4"
+                          >
+                          {t("Are these solutions cloud-ready?")} 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse4"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading4"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>{t("Absolutely. All RheinBrücke solutions can be deployed on-premises, in the cloud, or in hybrid environments—depending on your organization’s IT strategy and scalability goals. We work with major cloud platforms to ensure flexibility, cost efficiency, and performance optimization.")}</p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                    </div>
+                    {/* FAQ Accordion End */}
+                  </div>
+                  {/* FAQs section End */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Page Faq End */}
+
+
+
   {/* Footer Start */}
   <footer className="main-footer pd0">
     {/* Footer Main Start */}
@@ -1499,7 +1661,7 @@ export default function digitalsolution() {
         <div className="firstrow">
           <div className="row">
             <div className="col-sm-8">
-              <h2>{t("Ready to operationalise your digital future?")}</h2>
+              <h2>{t("Start Your Digital Transformation Journey Today")}</h2>
               <p>
                 {" "}
                 {t("Connect with our team for a discovery session and explore how we can deliver measurable value for your business.")}

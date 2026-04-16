@@ -17,8 +17,9 @@ export default function AlMl() {
         <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-21" data-cursor="-opaque">
-              {t("Digital Services – Delivering Scalable, Agile, and Future-Ready Technology Services")}
+              {t("Digital Services for Scalable, Agile, and Future-Ready Business Growth")}
             </h2>
+            <p>{t("MACH Architecture, Data Intelligence, and AI Built to Perform")}</p>
             <p>
               {t("Our Digital Services empower your business with the tools, technologies, and expertise needed to drive transformation and sustain growth. Through our Analyse-Integrate-Transform framework, we ensure every engagement delivers measurable, long-term value, with solutions that are scalable, agile, and future-ready.")}
             </p>
@@ -150,7 +151,7 @@ export default function AlMl() {
               {t("Modernise and Upgrade Your Enterprise Core")}
             </h2>
             <p>
-              {t("To stay competitive, businesses must evolve their core systems to be agile, scalable, and cloud-ready. Our enterprise modernisation services help you move beyond legacy systems with cutting-edge platforms, architectures, and applications, enabling faster innovation and operational flexibility.")}
+              {t("To stay competitive, businesses must evolve their core systems to be agile, scalable, and cloud-native. Our enterprise modernisation services help you replace legacy systems with high-performance platforms, architectures, and applications, enabling faster innovation and operational resilience.")}
             </p>
           </div>
         </div>
@@ -171,6 +172,8 @@ export default function AlMl() {
                           height={80}
                           viewBox="0 0 80 80"
                           fill="none"
+  role="img" 
+  aria-label="Cloud native architectural services icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <mask
@@ -286,7 +289,7 @@ export default function AlMl() {
                       <h3>{t("Architecture Services:")} </h3>
                       <ul>
                         <li>
-                          {t("Our cloud-native architectures on Microsoft Azure integrate microservices and event-driven frameworks, allowing your business to adapt quickly and innovate continuously. We also help migrate legacy systems, optimising workflows to support growth.")}
+                          {t("We design and implement MACH architecture on Microsoft Azure, leveraging Microservices, APIs, Cloud-Native and Headless principles, and event-driven systems. Our solutions ensure high availability, scalability, and faster innovation cycles, while modernising legacy infrastructure.")}
                         </li>
                         <li>
                           <b>{t("Tech:")}</b> {t("MACH, SOA, Microsoft Azure, Event-driven Frameworks")}
@@ -305,6 +308,8 @@ export default function AlMl() {
                           height={80}
                           viewBox="0 0 80 80"
                           fill="none"
+  role="img" 
+  aria-label="Digital services App modernization icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -432,7 +437,7 @@ export default function AlMl() {
                       <ul>
                         <li>
                           {" "}
-                          {t("We modernise legacy applications into scalable, secure, cloud-ready platforms using modern frameworks, cloud-native infrastructure, and tools like Algolia, Amplience, and Metapack.")}
+                          {t("We transform outdated systems into modern, cloud-native applications using composable architectures and scalable frameworks. Improved performance and security through tools like Algolia, Amplience, and Metapack.")}
                         </li>
                         <li>
                           <b>{t("Tech:")}</b> {t("Microservices, Serverless Computing, Emarsys")}
@@ -452,6 +457,8 @@ export default function AlMl() {
                           height={79}
                           viewBox="0 0 73 79"
                           fill="none"
+  role="img" 
+  aria-label="Digital services app development icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -525,7 +532,7 @@ export default function AlMl() {
                       <h3>{t("Application Development:")}</h3>
                       <ul>
                       <li>
-                          {t("From custom designs to cloud migrations, we develop tailored enterprise applications that evolve with your needs. We ensure a seamless application lifecycle, from concept to delivery and beyond.")}
+                          {t("We build enterprise-grade, custom designed applications tailored to your business processes. From development to deployment, we ensure our solutions are high-performance, integration-ready, and lifecycle optimised.")}
                         </li>
                         <li>
                           <b>{t("Tech:")}</b> {t(".NET, C#, VB.NET, Angular, React, Blazor, Azure DevOps.")}
@@ -545,127 +552,129 @@ export default function AlMl() {
                 <div className="swiper-slide">
                   <div className="MeRLIN-service">
                     <div className="service-icon1">
-                      <svg
-                        width={80}
-                        height={80}
-                        viewBox="0 0 80 80"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <mask
-                          id="mask0_3813_38813"
-                          style={{ maskType: "luminance" }}
-                          maskUnits="userSpaceOnUse"
-                          x={0}
-                          y={0}
+                        <svg
                           width={80}
                           height={80}
+                          viewBox="0 0 80 80"
+                          fill="none"
+  role="img" 
+  aria-label="Cloud native architectural services icon"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <path
-                            d="M0 7.62939e-06H80V80H0V7.62939e-06Z"
-                            fill="white"
-                          />
-                        </mask>
-                        <g mask="url(#mask0_3813_38813)">
-                          <path
-                            className="icns"
-                            d="M40 30.4688C32.2455 30.4688 25.9375 24.1608 25.9375 16.4062C25.9375 8.65172 32.2455 2.34375 40 2.34375C47.7545 2.34375 54.0625 8.65172 54.0625 16.4062C54.0625 24.1608 47.7545 30.4688 40 30.4688Z"
-                            stroke="#499A9A"
-                            strokeWidth={2}
-                            strokeMiterlimit={10}
-                          />
-                          <path
-                            className="icns"
-                            d="M35.0273 11.4344L44.9711 21.3782"
-                            stroke="#499A9A"
-                            strokeWidth={2}
-                            strokeMiterlimit={10}
-                          />
-                          <path
-                            className="icns"
-                            d="M35.0273 21.3781L44.9711 11.4343"
-                            stroke="#499A9A"
-                            strokeWidth={2}
-                            strokeMiterlimit={10}
-                          />
-                          <path
-                            className="icns"
-                            d="M11.7188 16.4062C11.7188 18.995 9.62 21.0938 7.03125 21.0938C4.4425 21.0938 2.34375 18.995 2.34375 16.4062C2.34375 13.8175 4.4425 11.7188 7.03125 11.7188C9.62 11.7188 11.7188 13.8175 11.7188 16.4062Z"
-                            stroke="#499A9A"
-                            strokeWidth={2}
-                            strokeMiterlimit={10}
-                          />
-                          <path
-                            className="icns"
-                            d="M77.6562 16.4062C77.6562 18.995 75.5575 21.0938 72.9688 21.0938C70.38 21.0938 68.2812 18.995 68.2812 16.4062C68.2812 13.8175 70.38 11.7188 72.9688 11.7188C75.5575 11.7188 77.6562 13.8175 77.6562 16.4062Z"
-                            stroke="#499A9A"
-                            strokeWidth={2}
-                            strokeMiterlimit={10}
-                          />
-                          <path
-                            className="icns"
-                            d="M68.125 68.2812H11.875C11.875 73.4589 16.0723 77.6562 21.25 77.6562H58.75C63.9277 77.6562 68.125 73.4589 68.125 68.2812Z"
-                            stroke="#499A9A"
-                            strokeWidth={2}
-                            strokeMiterlimit={10}
-                          />
-                          <path
-                            className="icns"
-                            d="M63.4375 68.2812V39.8438H16.5625V68.2812"
-                            stroke="#499A9A"
-                            strokeWidth={2}
-                            strokeMiterlimit={10}
-                          />
-                          <path
-                            className="icns"
-                            d="M40 39.8438V30.4688"
-                            stroke="#499A9A"
-                            strokeWidth={2}
-                            strokeMiterlimit={10}
-                          />
-                          <path
-                            className="icns"
-                            d="M11.7188 16.4062H25.9375"
-                            stroke="#499A9A"
-                            strokeWidth={2}
-                            strokeMiterlimit={10}
-                          />
-                          <path
-                            className="icns"
-                            d="M68.2812 16.4062H54.0625"
-                            stroke="#499A9A"
-                            strokeWidth={2}
-                            strokeMiterlimit={10}
-                          />
-                          <path
-                            className="icns"
-                            d="M30.625 56.5625V51.875"
-                            stroke="#499A9A"
-                            strokeWidth={2}
-                            strokeMiterlimit={10}
-                          />
-                          <path
-                            className="icns"
-                            d="M40 56.5625V51.875"
-                            stroke="#499A9A"
-                            strokeWidth={2}
-                            strokeMiterlimit={10}
-                          />
-                          <path
-                            className="icns"
-                            d="M49.375 56.5625V51.875"
-                            stroke="#499A9A"
-                            strokeWidth={2}
-                            strokeMiterlimit={10}
-                          />
-                        </g>
-                      </svg>
+                          <mask
+                            id="mask0_3813_38813"
+                            style={{ maskType: "luminance" }}
+                            maskUnits="userSpaceOnUse"
+                            x={0}
+                            y={0}
+                            width={80}
+                            height={80}
+                          >
+                            <path
+                              d="M0 7.62939e-06H80V80H0V7.62939e-06Z"
+                              fill="white"
+                            />
+                          </mask>
+                          <g mask="url(#mask0_3813_38813)">
+                            <path
+                              className="icns"
+                              d="M40 30.4688C32.2455 30.4688 25.9375 24.1608 25.9375 16.4062C25.9375 8.65172 32.2455 2.34375 40 2.34375C47.7545 2.34375 54.0625 8.65172 54.0625 16.4062C54.0625 24.1608 47.7545 30.4688 40 30.4688Z"
+                              stroke="#499A9A"
+                              strokeWidth={2}
+                              strokeMiterlimit={10}
+                            />
+                            <path
+                              className="icns"
+                              d="M35.0273 11.4344L44.9711 21.3782"
+                              stroke="#499A9A"
+                              strokeWidth={2}
+                              strokeMiterlimit={10}
+                            />
+                            <path
+                              className="icns"
+                              d="M35.0273 21.3781L44.9711 11.4343"
+                              stroke="#499A9A"
+                              strokeWidth={2}
+                              strokeMiterlimit={10}
+                            />
+                            <path
+                              className="icns"
+                              d="M11.7188 16.4062C11.7188 18.995 9.62 21.0938 7.03125 21.0938C4.4425 21.0938 2.34375 18.995 2.34375 16.4062C2.34375 13.8175 4.4425 11.7188 7.03125 11.7188C9.62 11.7188 11.7188 13.8175 11.7188 16.4062Z"
+                              stroke="#499A9A"
+                              strokeWidth={2}
+                              strokeMiterlimit={10}
+                            />
+                            <path
+                              className="icns"
+                              d="M77.6562 16.4062C77.6562 18.995 75.5575 21.0938 72.9688 21.0938C70.38 21.0938 68.2812 18.995 68.2812 16.4062C68.2812 13.8175 70.38 11.7188 72.9688 11.7188C75.5575 11.7188 77.6562 13.8175 77.6562 16.4062Z"
+                              stroke="#499A9A"
+                              strokeWidth={2}
+                              strokeMiterlimit={10}
+                            />
+                            <path
+                              className="icns"
+                              d="M68.125 68.2812H11.875C11.875 73.4589 16.0723 77.6562 21.25 77.6562H58.75C63.9277 77.6562 68.125 73.4589 68.125 68.2812Z"
+                              stroke="#499A9A"
+                              strokeWidth={2}
+                              strokeMiterlimit={10}
+                            />
+                            <path
+                              className="icns"
+                              d="M63.4375 68.2812V39.8438H16.5625V68.2812"
+                              stroke="#499A9A"
+                              strokeWidth={2}
+                              strokeMiterlimit={10}
+                            />
+                            <path
+                              className="icns"
+                              d="M40 39.8438V30.4688"
+                              stroke="#499A9A"
+                              strokeWidth={2}
+                              strokeMiterlimit={10}
+                            />
+                            <path
+                              className="icns"
+                              d="M11.7188 16.4062H25.9375"
+                              stroke="#499A9A"
+                              strokeWidth={2}
+                              strokeMiterlimit={10}
+                            />
+                            <path
+                              className="icns"
+                              d="M68.2812 16.4062H54.0625"
+                              stroke="#499A9A"
+                              strokeWidth={2}
+                              strokeMiterlimit={10}
+                            />
+                            <path
+                              className="icns"
+                              d="M30.625 56.5625V51.875"
+                              stroke="#499A9A"
+                              strokeWidth={2}
+                              strokeMiterlimit={10}
+                            />
+                            <path
+                              className="icns"
+                              d="M40 56.5625V51.875"
+                              stroke="#499A9A"
+                              strokeWidth={2}
+                              strokeMiterlimit={10}
+                            />
+                            <path
+                              className="icns"
+                              d="M49.375 56.5625V51.875"
+                              stroke="#499A9A"
+                              strokeWidth={2}
+                              strokeMiterlimit={10}
+                            />
+                          </g>
+                        </svg>
                       {/* <i class="bi bi-people-fill"></i> */}
                     </div>
                     <h3>{t("Architecture Services:")}</h3>
                     <ul>
                       <li>
-                        {t("Our cloud-native architectures on Microsoft Azure integrate microservices and event-driven frameworks, allowing your business to adapt quickly and innovate continuously. We also help migrate legacy systems, optimising workflows to support growth.")}
+                        {t("We design and implement MACH architecture on Microsoft Azure, leveraging Microservices, APIs, Cloud-Native and Headless principles, and event-driven systems. Our solutions ensure high availability, scalability, and faster innovation cycles, while modernising legacy infrastructure.")}
                       </li>
                       <li>
                         <b>{t("Tech:")}</b> {t("MACH, SOA, Microsoft Azure, Event-driven Frameworks")}
@@ -683,6 +692,8 @@ export default function AlMl() {
                         height={80}
                         viewBox="0 0 80 80"
                         fill="none"
+  role="img" 
+  aria-label="Digital services App modernization icon"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -810,7 +821,7 @@ export default function AlMl() {
                     <ul>
                       <li>
                         {" "}
-                        {t("We modernise legacy applications into scalable, secure, cloud-ready platforms using modern frameworks, cloud-native infrastructure, and tools like Algolia, Amplience, and Metapack.")}
+                        {t("We transform outdated systems into modern, cloud-native applications using composable architectures and scalable frameworks. Improved performance and security through tools like Algolia, Amplience, and Metapack.")}
                       </li>
                       <li>
                         <b>{t("Tech:")}</b> {t("Microservices, Serverless Computing, Emarsys")}
@@ -828,6 +839,8 @@ export default function AlMl() {
                         height={79}
                         viewBox="0 0 73 79"
                         fill="none"
+  role="img" 
+  aria-label="Digital services app development icon"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -901,7 +914,7 @@ export default function AlMl() {
                     <h3>{t("Application Development:")}</h3>
                     <ul>
                       <li>
-                        {t("From custom designs to cloud migrations, we develop tailored enterprise applications that evolve with your needs. We ensure a seamless application lifecycle, from concept to delivery and beyond.")}
+                        {t("We build enterprise-grade, custom designed applications tailored to your business processes. From development to deployment, we ensure our solutions are high-performance, integration-ready, and lifecycle optimised.")}
                       </li>
                       <li>
                         <b>{t("Tech:")}</b> {t(".NET, C#, VB.NET, Angular, React, Blazor, Azure DevOps.")}
@@ -1146,17 +1159,17 @@ export default function AlMl() {
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
-              <img src="/images/app1.svg" alt="" />
+              <img src="/images/app1.svg" alt="Digital services integration and services icon" />
               <div className="pill-cont">
                 <h5>{t("Integration & Data Services:")}</h5>
                 <p>
-                  {t("We connect your digital ecosystem with seamless integrations, real-time insights, and automated workflows using Azure Logic Apps, API Management, and Cosmos DB.")} <br /> <b>{t("Tech:")}</b> 
+                  {t("We enable Microservices and API-led integration and real-time data connectivity across your digital ecosystem. Get real-time insights, and automated workflows using Azure Logic Apps, API Management, and Cosmos DB.")} <br /> <b>{t("Tech:")}</b> 
                   {t("SQL, Azure, Data Factory, Real-time Data Services")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/app2.svg" alt="" />
+              <img src="/images/app2.svg" alt="Data engineering in digital services icon" />
               <div className="pill-cont">
                 <h5>{t("Data Engineering & Warehousing:")}</h5>
                 <p>
@@ -1167,12 +1180,12 @@ export default function AlMl() {
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/app3.svg" alt="" />
+              <img src="/images/app3.svg" alt="AI and Analytics icon" />
               <div className="pill-cont">
                 <h5>{t("AI & Analytics:")}</h5>
                 <p>
                   {" "}
-                  {t("We operationalise AI and analytics with Azure Machine Learning, delivering predictive insights and process automation. Power BI and Tableau turn data into actionable intelligence for smarter, faster decisions.")} <br />{" "}
+                  {t("We deploy AI and Azure Machine Learning solutions to deliver predictive analytics, intelligent automation, and business insights. Our Power BI and Tableau solutions enable real-time dashboards and data visualisation for decision intelligence.")} <br />{" "}
                   <b>{t("Tech:")}</b> 
                   {t("Azure Machine Learning, Power BI, Tableau")}
                 </p>
@@ -1200,17 +1213,17 @@ export default function AlMl() {
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
-              <img src="/images/app1.svg" alt="" />
+              <img src="/images/app1.svg" alt="Digital services integration and services icon" />
               <div className="pill-cont">
                 <h5>{t("Integration & Data Services:")}</h5>
                 <p>
-                  {t("We connect your digital ecosystem with seamless integrations, real-time insights, and automated workflows using Azure Logic Apps, API Management, and Cosmos DB.")} <br /> <b>{t("Tech:")}</b> 
+                  {t("We enable Microservices and API-led integration and real-time data connectivity across your digital ecosystem. Get real-time insights, and automated workflows using Azure Logic Apps, API Management, and Cosmos DB.")} <br /> <b>{t("Tech:")}</b> 
                   {t("SQL, Azure, Data Factory, Real-time Data Services")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/app2.svg" alt="" />
+              <img src="/images/app2.svg" alt="Data engineering in digital services icon" />
               <div className="pill-cont">
                 <h5>{t("Data Engineering & Warehousing:")}</h5>
                 <p>
@@ -1221,12 +1234,12 @@ export default function AlMl() {
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/app3.svg" alt="" />
+              <img src="/images/app3.svg" alt="AI and Analytics icon" />
               <div className="pill-cont">
                 <h5>{t("AI & Analytics:")}</h5>
                 <p>
                   {" "}
-                  {t("We operationalise AI and analytics with Azure Machine Learning, delivering predictive insights and process automation. Power BI and Tableau turn data into actionable intelligence for smarter, faster decisions.")}<br />{" "}
+                  {t("We deploy AI and Azure Machine Learning solutions to deliver predictive analytics, intelligent automation, and business insights. Our Power BI and Tableau solutions enable real-time dashboards and data visualisation for decision intelligence.")}<br />
                   <b>{t("Tech:")}</b> 
                   {t("Azure Machine Learning, Power BI, Tableau")}
                 </p>
@@ -1252,7 +1265,7 @@ export default function AlMl() {
               {t("Enhance Digital Experiences")}
             </h2>
             <p>
-              {t("In a digital-first world, creating seamless and intuitive user experiences is key to driving engagement and satisfaction. We design modern, responsive, and accessible digital interfaces that empower your users and deliver exceptional experiences across all platforms.")}
+              {t("Deliver seamless, intuitive, and high-performing digital experiences that improve user engagement, retention, and conversions. We design modern, responsive, and accessible digital interfaces that empower your users and deliver exceptional experiences across all platforms.")}
             </p>
           </div>
           {/* Section Title End */}
@@ -1265,13 +1278,13 @@ export default function AlMl() {
               <div className="service-item-body">
                 <h3>{t("UX/UI Services")}</h3>
                 <p>
-                  {t("We design intuitive, user-friendly interfaces using tools like Figma, Webflow, and Adobe XD, blending AR/VR and inclusive design. Every experience is clear, responsive, engaging, and future-ready.")}
+                  {t("We design intuitive, user-centric interfaces using tools like Figma, Webflow, and Adobe XD, blending AR/VR and inclusive design. Our approach ensures clear navigation, responsive design, and enhanced user journeys.")}
                 </p>
                 <p>
                   <b>{t("Tech :")} </b> 
                   {t("Figma, Webflow, Anima, AR/VR Design, Adobe XD")}
                 </p>
-                <img src="/images/digiexp.png" alt="" />
+                <img src="/images/digiexp.png" alt="Advanced UI UX development services image" />
               </div>
             </div>
             {/* Service Item End */}
@@ -1282,13 +1295,13 @@ export default function AlMl() {
               <div className="service-item-body">
                 <h3>{t("Mobile Applications")}</h3>
                 <p>
-                  {t("We build high-performance, scalable mobile apps using React Native, Flutter, and native SDKs. Integrated with Azure, our solutions deliver reliable, engaging experiences for standalone and hybrid deployments.")}
+                  {t("We build scalable, high-performance mobile applications for iOS and Android using cross-platform and native technologies using React Native, Flutter, and native SDKs. Integrated with Azure, our solutions deliver reliable, engaging experiences for standalone and hybrid deployments.")}
                 </p>
                 <p>
                   <b>{t("Tech :")} </b> 
                   {t("React Native, Flutter, iOS SDK, Android SDK, Microsoft Azure, Hybrid Apps, Standalone Apps")}
                 </p>
-                <img src="/images/digiexp2.png" alt="" />
+                <img src="/images/digiexp2.png" alt="Mobile app development image" />
               </div>
             </div>
           </div>
@@ -1306,7 +1319,7 @@ export default function AlMl() {
           {/* Section Title Start */}
           <div className="section-title">
             <h2 className="text-anime-style-21" data-cursor="-opaque">
-              {t("Secure and Optimise Operations")}
+              {t("Cloud Security, Managed Services & IT Operations")}
             </h2>
             <p>
               {t("Building a secure and resilient IT environment is crucial for sustaining operations and ensuring business continuity. We offer a range of services to safeguard your infrastructure, optimise performance, and enable continuous, proactive management of your technology environment.")}
@@ -1329,7 +1342,7 @@ export default function AlMl() {
                   <b>{t("Tech :")} </b> 
                   {t("Azure Sentinel, Azure Defender, Proactive Security Management")}
                 </p>
-                <img src="/images/cu1.png" alt="" />
+                <img src="/images/cu1.png" alt="Secure KPI driven managed services image" />
               </div>
             </div>
             {/* Service Item End */}
@@ -1340,14 +1353,14 @@ export default function AlMl() {
               <div className="service-item-body identifyimg">
                 <h3>{t("Identity Solutions")}</h3>
                 <p>
-                  {t("We secure access with Zero Trust architectures and Microsoft Entra for identity management and MFA, ensuring protected, compliant operations.")}
+                  {t("We implement Zero Trust security architectures and Microsoft Entra for identity management and MFA, ensuring protected, compliant operations. Our approach ensures secure access, compliance, and risk mitigation.")}
                 </p>
                 <p>
                   <b>{t("Tech :")} </b> 
                   {t("Microsoft Entra, Zero Trust, MFA")}
                 </p>
                 <div className="text-center">
-                <img src="/images/cus2.png" alt="" />
+                <img src="/images/cus2.png" alt="Identity management solutions image" />
                 </div>
               </div>
             </div>
@@ -1358,6 +1371,220 @@ export default function AlMl() {
     </div>
   </div>
   {/* Our Services Section End */}
+
+
+
+  
+        {/* Page Faqs Start */}
+        <div className="page-faqs bggray pd60">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-2" />
+              <div className="col-lg-8">
+                {/* Page FAQs Category Start */}
+                <div className="page-faqs-catagery">
+                  {/* FAQs section start */}
+                  <div
+                    className="our-faq-section page-faq-accordion"
+                    id="general_information"
+                  >
+                    <div className="section-title text-center">
+                      <h2 className="text-anime-style-2" data-cursor="-opaque">
+                        {t("Wondering Why? We’re Here to Answer")}
+                      </h2>
+                    </div>
+                    {/* FAQ Accordion Start */}
+                    <div className="faq-accordion" id="accordion">
+                      {/* FAQ Item Start */}
+                      <div className="accordion-item wow fadeInUp">
+                        <h2 className="accordion-header" id="heading1">
+                          <button
+                            className="accordion-button collapsein"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse1"
+                            aria-expanded="true"
+                            aria-controls="collapse1"
+                          >
+                            {t("What services does RheinBrücke provide?")} 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse1"
+                          className="accordion-collapse collapse show"
+                          aria-labelledby="heading1"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("RheinBrücke offers comprehensive services including ERP implementation, upgrades, global rollouts, application support and maintenance, digital transformation consulting, and custom software development tailored to specific business needs.")}  
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.2s"
+                      >
+                        <h2 className="accordion-header" id="heading2">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse2"
+                            aria-expanded="false"
+                            aria-controls="collapse2"
+                          >
+                             {t("Is consulting provided prior to implementation?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse2"
+                          className="accordion-collapse collapse "
+                          aria-labelledby="heading2"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>{t("Yes. RheinBrücke’s expert consultants conduct detailed readiness assessments and develop customized roadmaps to align ERP projects with organizational goals, ensuring smooth transitions and successful outcomes.")}</p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.4s"
+                      >
+                        <h2 className="accordion-header" id="heading3">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse3"
+                            aria-expanded="false"
+                            aria-controls="collapse3"
+                          >
+                            {t("How does RheinBrücke ensure project success?")} 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse3"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading3"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("Projects follow proven methodologies and industry best practices, utilizing standardized templates and emphasizing user adoption, change management, and clear ROI measurement to maximize business value from ERP investments.")} 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.6s"
+                      >
+                        <h2 className="accordion-header" id="heading4">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse4"
+                            aria-expanded="false"
+                            aria-controls="collapse4"
+                          >
+                          {t("Are 24x7 support options available?")} 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse4"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading4"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>{t("Yes. RheinBrücke offers 24x7 global support across multiple time zones, providing continuous system monitoring, issue resolution, and proactive maintenance to keep ERP systems running optimally.")}</p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      
+                      {/* FAQ Item Start */}
+                      <div className="accordion-item wow fadeInUp">
+                        <h2 className="accordion-header" id="heading5">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse5"
+                            aria-expanded="true"
+                            aria-controls="collapse5"
+                          >
+                            {t("How do you implement MACH architecture in your digital solutions?")} 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse5"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading5"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("We implement MACH architecture using a practical, engineering-led approach rather than a theoretical model. Systems are broken down into microservices, exposed through API-first layers, and deployed on cloud-native infrastructure, primarily Microsoft Azure. Headless components are introduced where flexibility across web, mobile, and commerce platforms is required.")}  
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      
+                      {/* FAQ Item Start */}
+                      <div className="accordion-item wow fadeInUp">
+                        <h2 className="accordion-header" id="heading6">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse6"
+                            aria-expanded="true"
+                            aria-controls="collapse6"
+                          >
+                            {t("What tools and technologies do you support?")} 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse6"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading6"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("We work across a wide enterprise stack covering cloud, application development, data engineering, integration, and experience layers. This includes Microsoft Azure services, .NET and modern frontend frameworks, API management and integration services, data platforms like Azure Data Lake and Synapse, and analytics tools such as Power BI.")}  
+                            </p>
+                            <p>
+                              {t("The focus is not on pushing a fixed stack but aligning the right technologies to the use case, whether it is application modernisation, data platform build, or cloud migration. This is typically relevant for organisations operating in markets like the UAE where scalability, security, and integration with existing enterprise systems are critical.")}  
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                    </div>
+                    {/* FAQ Accordion End */}
+                  </div>
+                  {/* FAQs section End */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Page Faq End */}
+
+
   {/* Footer Start */}
   <footer className="main-footer pd0">
     {/* Footer Main Start */}
@@ -1366,11 +1593,11 @@ export default function AlMl() {
         <div className="firstrow">
           <div className="row">
             <div className="col-sm-8">
-              <h2>{t("Built for Today, Ready for What’s Next")}</h2>
+              <h2>{t("Built for Scale. Designed for Impact.")}</h2>
               <p>
-                {t("Every engagement is designed for measurable value - modernising systems, activating data, transforming user experiences, and safeguarding operations.")}
+                {t("Every engagement is designed for measurable value. We help enterprises modernise applications, unlock data value, enhance digital experiences, and secure operations, all aligned to measurable business outcomes.")}
               </p>
-              <p>{t("Let’s operationalise your digital future.")}</p>
+              <p>{t("Let’s accelerate your digital transformation journey.")}</p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">
