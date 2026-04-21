@@ -521,7 +521,7 @@ export default function AlMl() {
                             <div className="firstrow">
                                 <div className="row">
                                     <div className="col-sm-8">
-                                        <h2> {t("Future-Proof Your Business ")} </h2>
+                                        <h2> {t("Future-Proof Your Business")} </h2>
                                         <p>
                                             {t("Ready to modernise your applications and accelerate growth?")}
                                         </p>

@@ -632,7 +632,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicright">
                 {/* <h3>Mobile Accessibility</h3> */}
                 <h3>
-                  {t("End-to-end support from consulting and implementation to\n                  training.")}
+                  {t("End-to-end support from consulting and implementation to training.")}
                 </h3>
                 <div className="text-center">
                   <img src="/images/advant4.svg" alt="" />
@@ -643,7 +643,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicleft">
                 {/* <h3>Effective Data Management</h3> */}
                 <h3>
-                  {t("Focused on operational efficiency, growth, and compliance\n                  assurance.")}
+                  {t("Focused on operational efficiency, growth, and compliance assurance.")}
                 </h3>
                 <img src="/images/advant5.svg" alt="" />
               </div>

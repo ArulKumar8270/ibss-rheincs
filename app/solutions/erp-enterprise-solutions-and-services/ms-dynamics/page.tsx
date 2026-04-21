@@ -1077,7 +1077,7 @@ export default function EnterpriseSolutions() {
             <div className="row align-items-center">
               <div className="col-lg-12">
                 {/* Testimonial Slider Start */}
-                <div className="testimonial-slider enterslide mobileapprochslide">
+                <div className="testimonial-slider enterslide mobileapprochslide h2height">
                   <div className="swiper">
                     <div className="swiper-wrapper">
                       {/* Testimonial Slide Start */}

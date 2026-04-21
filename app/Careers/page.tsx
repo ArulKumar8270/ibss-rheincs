@@ -979,28 +979,28 @@ export default function AlMl() {
                                                 <div className="job-table-hadding">
                                                     {" "}
                                                     <img src="/new/jt-1.svg" alt="" />
-                                                    <p> Job title</p>
+                                                    <p> {t("Job title")}</p>
                                                 </div>
                                             </th>
                                             <th>
                                                 <div className="job-table-hadding">
                                                     {" "}
                                                     <img src="/new/jt-2.svg" alt="" />
-                                                    <p>Location </p>
+                                                    <p>{t("Location")} </p>
                                                 </div>
                                             </th>
                                             <th>
                                                 <div className="job-table-hadding">
                                                     {" "}
                                                     <img src="/new/jt-3.svg" alt="" />
-                                                    <p> Experience</p>
+                                                    <p> {t("Experience")}</p>
                                                 </div>
                                             </th>
                                             <th>
                                                 <div className="job-table-hadding">
                                                     {" "}
                                                     <img src="/new/jt-4.svg" alt="" />
-                                                    <p>Department </p>
+                                                    <p>{t("Department")} </p>
                                                 </div>
                                             </th>
                                             <th> </th>
@@ -1017,7 +1017,7 @@ export default function AlMl() {
                                                             href={`/openings/${job.slug || job.id}`}
                                                             className="animated-svg-link1  ja-btn btn-style-3"
                                                         >
-                                                            Apply Now
+                                                            {t("Apply Now")}
                                                             <span className="svg-container ">
                                                         <span className=" left">
                                                             <svg
@@ -1222,7 +1222,7 @@ export default function AlMl() {
                                                 </p>
                                                 <div className="ser-btn2">
                                                     <Link href={`/openings/${job.slug || job.id}`} className="animated-svg-link1  ja-btn btn-style-3">
-                                                        Apply Now
+                                                        {t("Apply Now")}
                                                         <span className="svg-container ">
                                                             <span className=" left">
                                                                 <svg

@@ -1279,7 +1279,7 @@ export default function AlMl() {
                 <h3>{t("UX/UI Services")}</h3>
                 <p>
                   {t("We design intuitive, user-centric interfaces using tools like Figma, Webflow, and Adobe XD, blending AR/VR and inclusive design. Our approach ensures clear navigation, responsive design, and enhanced user journeys.")}
-                </p>
+                </p><br/>
                 <p>
                   <b>{t("Tech :")} </b> 
                   {t("Figma, Webflow, Anima, AR/VR Design, Adobe XD")}
@@ -1296,7 +1296,7 @@ export default function AlMl() {
                 <h3>{t("Mobile Applications")}</h3>
                 <p>
                   {t("We build scalable, high-performance mobile applications for iOS and Android using cross-platform and native technologies using React Native, Flutter, and native SDKs. Integrated with Azure, our solutions deliver reliable, engaging experiences for standalone and hybrid deployments.")}
-                </p>
+                </p><br/>
                 <p>
                   <b>{t("Tech :")} </b> 
                   {t("React Native, Flutter, iOS SDK, Android SDK, Microsoft Azure, Hybrid Apps, Standalone Apps")}

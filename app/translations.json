@@ -1621,7 +1621,7 @@
     "Our Digital Services empower your business with the tools, technologies, and expertise needed to drive transformation and sustain growth. Through our Analyse-Integrate-Transform framework, we ensure every engagement delivers measurable, long-term value, with solutions that are scalable, agile, and future-ready.": "Our Digital Services empower your business with the tools, technologies, and expertise needed to drive transformation and sustain growth. Through our Analyse-Integrate-Transform framework, we ensure every engagement delivers measurable, long-term value, with solutions that are scalable, agile, and future-ready.",
 
     "Modernise and Upgrade Your Enterprise Core": "Modernise and Upgrade Your Enterprise Core",
-    "To stay competitive, businesses must evolve their core systems to be agile, scalable, and cloud-native. Our enterprise modernisation services help you replace legacy systems with high-performance platforms, architectures, and applications, enabling faster innovation and operational resilience. ": "To stay competitive, businesses must evolve their core systems to be agile, scalable, and cloud-native. Our enterprise modernisation services help you replace legacy systems with high-performance platforms, architectures, and applications, enabling faster innovation and operational resilience. ",
+    "To stay competitive, businesses must evolve their core systems to be agile, scalable, and cloud-native. Our enterprise modernisation services help you replace legacy systems with high-performance platforms, architectures, and applications, enabling faster innovation and operational resilience.": "To stay competitive, businesses must evolve their core systems to be agile, scalable, and cloud-native. Our enterprise modernisation services help you replace legacy systems with high-performance platforms, architectures, and applications, enabling faster innovation and operational resilience.",
 
     "Architecture Services:": "Architecture Services:",
     "Our cloud-native architectures on Microsoft Azure integrate microservices and event-driven frameworks, allowing your business to adapt quickly and innovate continuously. We also help migrate legacy systems, optimising workflows to support growth.": "Our cloud-native architectures on Microsoft Azure integrate microservices and event-driven frameworks, allowing your business to adapt quickly and innovate continuously. We also help migrate legacy systems, optimising workflows to support growth.",
@@ -1773,7 +1773,7 @@
     "Unlike traditional ERP suites, PPA excelled in critical areas such as billing, revenue calculations, power generation scheduling, and management of power purchase agreements.": "Unlike traditional ERP suites, PPA excelled in critical areas such as billing, revenue calculations, power generation scheduling, and management of power purchase agreements.",
     "With advanced features providing real-time access to comprehensive operational, financial, and market data, PPA empowered decision-makers to gain deep insights into plant operations and market profitability.": "With advanced features providing real-time access to comprehensive operational, financial, and market data, PPA empowered decision-makers to gain deep insights into plant operations and market profitability.",
     "The tool's analytical dashboards and self-service reporting capabilities enabled users to foresee opportunities, detect risks, and make informed decisions swiftly.": "The tool's analytical dashboards and self-service reporting capabilities enabled users to foresee opportunities, detect risks, and make informed decisions swiftly.",
-    "PPA enhanced decision-making through historical trend analysis and \"What-If\" scenario evaluations, assessing the impacts of operational metrics and potential disruptions.": "PPA enhanced decision-making through historical trend analysis and \"What-If\" scenario evaluations, assessing the impacts of operational metrics and potential disruptions.",
+    "PPA enhanced decision-making through historical trend analysis and What-If scenario evaluations, assessing the impacts of operational metrics and potential disruptions.": "PPA enhanced decision-making through historical trend analysis and What-If scenario evaluations, assessing the impacts of operational metrics and potential disruptions.",
     "Field officers benefited from real-time data access via smartphones for proactive maintenance, while standard BI reports and dashboards facilitated comprehensive analysis.": "Field officers benefited from real-time data access via smartphones for proactive maintenance, while standard BI reports and dashboards facilitated comprehensive analysis.",
     "The seamless interface for MIS reporting minimized manual intervention, enhancing reporting accuracy and efficiency.": "The seamless interface for MIS reporting minimized manual intervention, enhancing reporting accuracy and efficiency.",
     "PPA's modular design included functionalities for billing, scheduling, revenue management, and budget forecasting, ensuring streamlined operations and efficient resource management.": "PPA's modular design included functionalities for billing, scheduling, revenue management, and budget forecasting, ensuring streamlined operations and efficient resource management.",
@@ -3865,7 +3865,51 @@
     "Copyright 2014 RheinBrücke. All rights reserved": "Copyright 2014 RheinBrücke. All rights reserved",
     "Ready to accelerate value creation across your portfolio?": "Ready to accelerate value creation across your portfolio?",
     "Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.": "Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.",
-    "Contact us": "Contact us"
+    "Contact us": "Contact us",
+
+
+
+    "Digital Solutions & Enterprise Transformation Services": "Digital Solutions & Enterprise Transformation Services",
+    "Innovating Business, One Solution at a Time": "Innovating Business, One Solution at a Time",
+    "We deliver outcome-driven digital solutions that combine advanced technology, proven frameworks, and scalable cloud-native architectures to solve complex business challenges. Driven by our Analyse–Integrate–Transform framework, every engagement is built for measurable, sustained business impact.": "We deliver outcome-driven digital solutions that combine advanced technology, proven frameworks, and scalable cloud-native architectures to solve complex business challenges. Driven by our Analyse–Integrate–Transform framework, every engagement is built for measurable, sustained business impact.",
+    "Every successful digital transformation starts with a strong foundation of analysis, becomes powerful through data and AI-driven intelligence, delivers outcomes via seamless application and system integration, and endures through resilient operations, security, and governance.": "Every successful digital transformation starts with a strong foundation of analysis, becomes powerful through data and AI-driven intelligence, delivers outcomes via seamless application and system integration, and endures through resilient operations, security, and governance.",
+    "Implement API-first, composable enterprise architectures with scalable infrastructure, integration frameworks, and governance controls for long-term agility.": "Implement API-first, composable enterprise architectures with scalable infrastructure, integration frameworks, and governance controls for long-term agility.",
+    "Deliver end-to-end ERP and CRM implementation services using agile methodologies for faster time-to-value and seamless transition into business-as-usual operations.": "Deliver end-to-end ERP and CRM implementation services using agile methodologies for faster time-to-value and seamless transition into business-as-usual operations.",
+    "Unify business processes with cloud-native enterprise applications, integrating ERP and CRM systems with embedded analytics and automation for continuous performance optimisation.": "Unify business processes with cloud-native enterprise applications, integrating ERP and CRM systems with embedded analytics and automation for continuous performance optimisation.",
+    "AI/ML Solutions & Advanced Analytics": "AI/ML Solutions & Advanced Analytics",
+    "Deploy AI solutions using Azure Machine Learning and Large Event Models (LEMs) for predictive maintenance, anomaly detection, intelligent automation, and real-time operational insights using enterprise-grade platforms.": "Deploy AI solutions using Azure Machine Learning and Large Event Models (LEMs) for predictive maintenance, anomaly detection, intelligent automation, and real-time operational insights using enterprise-grade platforms.",
+    "Create executive-ready, interactive dashboards and interactive data stories with Tableau, Power BI and others that enable business users with self-service analytics and decision-making at speed.": "Create executive-ready, interactive dashboards and interactive data stories with Tableau, Power BI and others that enable business users with self-service analytics and decision-making at speed.",
+    "Digital transformation succeeds when users are empowered. We build intuitive applications, enterprise portals, and digital experiences that improve productivity and adoption.": "Digital transformation succeeds when users are empowered. We build intuitive applications, enterprise portals, and digital experiences that improve productivity and adoption.",
+    "Enterprise Applications & Portal Development": "Enterprise Applications & Portal Development",
+    "Develop custom enterprise applications, portals, and real-time operational dashboards using modern frameworks and low-code/no-code platforms for rapid, scalable delivery.": "Develop custom enterprise applications, portals, and real-time operational dashboards using modern frameworks and low-code/no-code platforms for rapid, scalable delivery.",
+    "Build on low-code/no-code, business-led innovation using Power Apps, Power Automate, and Power BI to deliver workflow automation, application development, and data insights with governance.": "Build on low-code/no-code, business-led innovation using Power Apps, Power Automate, and Power BI to deliver workflow automation, application development, and data insights with governance.",
+    "Composable eCommerce Architecture": "Composable eCommerce Architecture",
+    "Ensure Security, Reliability & Continuous Optimisation": "Ensure Security, Reliability & Continuous Optimisation",
+    "Maintain business continuity and ensure operational resilience, security, and continuous performance improvement.": "Maintain business continuity and ensure operational resilience, security, and continuous performance improvement.",
+    "Delivering Measurable Outcomes": "Delivering Measurable Outcomes",
+    "We go beyond implementation, as transformation doesn’t stop at deployment.": "We go beyond implementation, as transformation doesn’t stop at deployment.",
+    "Start Your Digital Transformation Journey Today": "Start Your Digital Transformation Journey Today",
+
+       "Digital Solutions & Enterprise Transformation Services": "Digital Solutions & Enterprise Transformation Services",
+    "Innovating Business, One Solution at a Time": "Innovating Business, One Solution at a Time",
+    "We deliver outcome-driven digital solutions that combine advanced technology, proven frameworks, and scalable cloud-native architectures to solve complex business challenges. Driven by our Analyse–Integrate–Transform framework, every engagement is built for measurable, sustained business impact.": "We deliver outcome-driven digital solutions that combine advanced technology, proven frameworks, and scalable cloud-native architectures to solve complex business challenges. Driven by our Analyse–Integrate–Transform framework, every engagement is built for measurable, sustained business impact.",
+    "Every successful digital transformation starts with a strong foundation of analysis, becomes powerful through data and AI-driven intelligence, delivers outcomes via seamless application and system integration, and endures through resilient operations, security, and governance.": "Every successful digital transformation starts with a strong foundation of analysis, becomes powerful through data and AI-driven intelligence, delivers outcomes via seamless application and system integration, and endures through resilient operations, security, and governance.",
+    "Implement API-first, composable enterprise architectures with scalable infrastructure, integration frameworks, and governance controls for long-term agility.": "Implement API-first, composable enterprise architectures with scalable infrastructure, integration frameworks, and governance controls for long-term agility.",
+    "Deliver end-to-end ERP and CRM implementation services using agile methodologies for faster time-to-value and seamless transition into business-as-usual operations.": "Deliver end-to-end ERP and CRM implementation services using agile methodologies for faster time-to-value and seamless transition into business-as-usual operations.",
+    "Unify business processes with cloud-native enterprise applications, integrating ERP and CRM systems with embedded analytics and automation for continuous performance optimisation.": "Unify business processes with cloud-native enterprise applications, integrating ERP and CRM systems with embedded analytics and automation for continuous performance optimisation.",
+    "AI/ML Solutions & Advanced Analytics": "AI/ML Solutions & Advanced Analytics",
+    "Deploy AI solutions using Azure Machine Learning and Large Event Models (LEMs) for predictive maintenance, anomaly detection, intelligent automation, and real-time operational insights using enterprise-grade platforms.": "Deploy AI solutions using Azure Machine Learning and Large Event Models (LEMs) for predictive maintenance, anomaly detection, intelligent automation, and real-time operational insights using enterprise-grade platforms.",
+    "Create executive-ready, interactive dashboards and interactive data stories with Tableau, Power BI and others that enable business users with self-service analytics and decision-making at speed.": "Create executive-ready, interactive dashboards and interactive data stories with Tableau, Power BI and others that enable business users with self-service analytics and decision-making at speed.",
+    "Digital transformation succeeds when users are empowered. We build intuitive applications, enterprise portals, and digital experiences that improve productivity and adoption.": "Digital transformation succeeds when users are empowered. We build intuitive applications, enterprise portals, and digital experiences that improve productivity and adoption.",
+    "Enterprise Applications & Portal Development": "Enterprise Applications & Portal Development",
+    "Develop custom enterprise applications, portals, and real-time operational dashboards using modern frameworks and low-code/no-code platforms for rapid, scalable delivery.": "Develop custom enterprise applications, portals, and real-time operational dashboards using modern frameworks and low-code/no-code platforms for rapid, scalable delivery.",
+    "Build on low-code/no-code, business-led innovation using Power Apps, Power Automate, and Power BI to deliver workflow automation, application development, and data insights with governance.": "Build on low-code/no-code, business-led innovation using Power Apps, Power Automate, and Power BI to deliver workflow automation, application development, and data insights with governance.",
+    "Composable eCommerce Architecture": "Composable eCommerce Architecture",
+    "Ensure Security, Reliability & Continuous Optimisation": "Ensure Security, Reliability & Continuous Optimisation",
+    "Maintain business continuity and ensure operational resilience, security, and continuous performance improvement.": "Maintain business continuity and ensure operational resilience, security, and continuous performance improvement.",
+    "Delivering Measurable Outcomes": "Delivering Measurable Outcomes",
+    "We go beyond implementation, as transformation doesn’t stop at deployment.": "We go beyond implementation, as transformation doesn’t stop at deployment.",
+    "Start Your Digital Transformation Journey Today": "Start Your Digital Transformation Journey Today"
 
 
 
@@ -4033,44 +4077,45 @@
   
 
   "Enterprise Solutions and Services": "Enterprise Solutions & Services",
-    "Build resilient, connected, and future-ready enterprises with intelligent platforms and scalable solutions.": "Bauen Sie widerstandsfähige, vernetzte und zukunftsorientierte Unternehmen auf – mit intelligenten Plattformen und skalierbaren Lösungen.",
+    "Build resilient, connected, and future-ready enterprises with intelligent ERP platforms and digital transformation.": "Bauen Sie widerstandsfähige, vernetzte und zukunftsorientierte Unternehmen auf – mit intelligenten Plattformen und skalierbaren Lösungen.",
     "At RheinBrücke, we help organisations modernise operations, unify business processes, and improve decision-making through enterprise-grade solutions. From ERP and CRM to cloud-native platforms and business process automation, we deliver scalable, integrated systems that drive operational agility and business growth.": "Bei RheinBrücke unterstützen wir Unternehmen dabei, ihre Betriebsabläufe zu modernisieren, Geschäftsprozesse zu harmonisieren und bessere Entscheidungen zu treffen – durch Enterprise-Lösungen auf höchstem Niveau. Von ERP- und CRM-Systemen bis hin zu Cloud-Plattformen und automatisierten Geschäftsprozessen liefern wir integrierte, skalierbare Systeme, die operative Agilität fördern und nachhaltiges Wachstum ermöglichen.",
 
-    "The Enterprise Advantage": "Ihr Unternehmensvorteil",
-    "Modern enterprises need agile, connected systems to stay competitive, improve productivity, and make data-driven decisions. Many organisations struggle with:": "Moderne Unternehmen benötigen agile und vernetzte Systeme, um wettbewerbsfähig zu bleiben, die Produktivität zu steigern und datenbasierte Entscheidungen zu treffen. Viele Organisationen stehen dabei vor Herausforderungen wie:",
-    "Disconnected legacy systems limiting operational agility": "Unverbundene Altsysteme, die die operative Agilität einschränken",
-    "Siloed data and processes restricting enterprise-wide visibility": "Datensilos und isolierte Prozesse ohne unternehmensweite Transparenz",
-    "Rising operational costs and inefficiencies across business functions": "Steigende Betriebskosten und Ineffizienzen in verschiedenen Geschäftsbereichen",
-    "Inability to adapt quickly to market shifts, customer expectations, and compliance demands": "Eingeschränkte Anpassungsfähigkeit an Marktveränderungen, Kundenanforderungen und regulatorische Vorgaben",
-    "Lack of real-time insights for fast, informed decision-making": "Fehlende Echtzeit-Einblicke für schnelle, fundierte Entscheidungen",
-    "Complex, fragmented business application landscapes": "Komplexe, fragmentierte Anwendungslandschaften",
-    "Manual processes slowing down innovation and scalability": "Manuelle Prozesse, die Innovation und Skalierbarkeit bremsen",
-    "Our Solutions address these challenges by modernising core systems, automating processes, integrating enterprise applications, and enabling data-driven operational excellence.": "Unsere Enterprise-Lösungen begegnen diesen Herausforderungen, indem sie Kernsysteme modernisieren, Prozesse automatisieren, Anwendungen integrieren und datengetriebene operative Exzellenz ermöglichen.",
+    "ERP Implementation Challenges: Why Legacy Systems Hold You Back": "Ihr Unternehmensvorteil",
+    "Modern enterprises need flexible, agile ERP systems to stay competitive, accelerate digital transformation, and make real-time data-driven decisions. Many organisations struggle with:": "Moderne Unternehmen benötigen agile und vernetzte Systeme, um wettbewerbsfähig zu bleiben, die Produktivität zu steigern und datenbasierte Entscheidungen zu treffen. Viele Organisationen stehen dabei vor Herausforderungen wie:",
+    "Legacy ERP systems and disconnected applications limiting operational agility": "Unverbundene Altsysteme, die die operative Agilität einschränken",
+    "Siloed data and business processes restricting enterprise-wide visibility": "Datensilos und isolierte Prozesse ohne unternehmensweite Transparenz",
+    "Rising operational costs and inefficiencies in finance, HR, procurement, and inventory management": "Steigende Betriebskosten und Ineffizienzen in verschiedenen Geschäftsbereichen",
+    "Slow time-to-market & delayed reactions to market demands, customer expectations & compliance needs": "Eingeschränkte Anpassungsfähigkeit an Marktveränderungen, Kundenanforderungen und regulatorische Vorgaben",
+    "Lack of real-time business insights and analytics for fast, informed decision-making": "Fehlende Echtzeit-Einblicke für schnelle, fundierte Entscheidungen",
+    "Complex, fragmented ERP landscape and poor data governance": "Komplexe, fragmentierte Anwendungslandschaften",
+    "Manual, repetitive business processes slowing down innovation and delaying product time-to-market": "Manuelle Prozesse, die Innovation und Skalierbarkeit bremsen",
+    "Our comprehensive ERP solutions and enterprise software suite address these challenges by modernising core systems, automating processes, integrating enterprise applications, and enabling data-driven operational excellence.": "Unsere Enterprise-Lösungen begegnen diesen Herausforderungen, indem sie Kernsysteme modernisieren, Prozesse automatisieren, Anwendungen integrieren und datengetriebene operative Exzellenz ermöglichen.",
 
     "Our Enterprise Solutions and Services": "Unsere Unternehmenslösungen & Dienstleistungen",
+    "Complete ERP Implementation & Enterprise Digital Transformation Services":"Unsere Unternehmenslösungen & Dienstleistungen",
     "ERP Implementation & Support Services": "ERP-Implementierung & Support",
-    "Deploy ERP systems confidently with end-to-end implementation and ongoing support for sustainable success.": "End-to-End-Einführung von ERP-Systemen mit kontinuierlichem Support für nachhaltigen Erfolg.",
+    "Deploy mission-critical ERP systems confidently with end-to-end implementation and ongoing support for sustainable success.": "Umfassende-Einführung von ERP-Systemen mit kontinuierlichem Support für nachhaltigen Erfolg.",
 
     "Industry-Specific ERP Solutions": "Branchenspezifische ERP-Lösungen",
-    "Benefit from ERP solutions designed for your industry, addressing unique operational challenges and optimising performance.": "ERP-Systeme, zugeschnitten auf branchenspezifische Anforderungen, zur Optimierung von Prozessen und Leistung.",
+    "Benefit from ERP solutions designed for Manufacturing, Automotive, Retail, Distribution, EPC, Interior Design and Oil & Gas industries.": "ERP-Systeme, zugeschnitten auf branchenspezifische Anforderungen, zur Optimierung von Prozessen und Leistung.",
 
     "ERP Modernisation & Upgrades": "ERP-Modernisierung & Upgrades",
-    "Modernise your ERP systems with minimal disruption and maximum impact, ensuring your organisation stays agile and future-ready.": "ERP-Systeme modernisieren mit minimaler Unterbrechung und maximaler Wirkung, um Agilität und Zukunftsfähigkeit zu sichern.",
+    "Upgrade legacy ERP systems to cloud-native platforms with zero downtime. Our ERP modernisation services reduce costs, eliminate technical debt, and enable future-ready technology.": "ERP-Systeme modernisieren mit minimaler Unterbrechung und maximaler Wirkung, um Agilität und Zukunftsfähigkeit zu sichern.",
 
     "CRM & Customer Engagement Platforms": "CRM & Kundenbindungsplattformen",
-    "Enhance customer experiences and engagement with intelligent CRM solutions that connect your teams and streamline interactions.": "Intelligente CRM-Lösungen zur Verbesserung von Kundenerlebnissen und zur Optimierung von Interaktionen.",
+    "Deploy intelligent, 360-degree customer visibility CRM solutions that unify customer data, automate sales processes, and deliver personalised customer experiences.": "Intelligente CRM-Lösungen zur Verbesserung von Kundenerlebnissen und zur Optimierung von Interaktionen.",
 
     "Procurement & Strategic Sourcing Solutions": "Beschaffungs- & Strategische Sourcing-Lösungen",
-    "Optimise procurement operations and strategic sourcing to reduce costs, manage risk, and improve supplier collaboration.": "Prozesse in Einkauf und strategischem Sourcing optimieren, Kosten senken, Risiken steuern und Lieferantenbeziehungen stärken.",
+    "Optimise procurement operations, streamline supplier management and collaboration, and reduce procurement costs through strategic sourcing automation.": "Prozesse in Einkauf und strategischem Sourcing optimieren, Kosten senken, Risiken steuern und Lieferantenbeziehungen stärken.",
 
     "Digital Transformation Solutions": "Digitale Transformation slösungen",
     "Leverage digital technologies to transform processes, improve efficiency, and drive innovation across your enterprise.": "Digitale Technologien nutzen, um Prozesse zu transformieren, Effizienz zu steigern und Innovation voranzutreiben.",
 
     "HCM and Payroll Solutions": "HCM- & Payroll-Lösungen",
-    "Simplify human capital management and payroll processes, ensuring compliance and empowering your workforce.": "Human-Capital-Management und Gehaltsabrechnung vereinfachen, Compliance sichern und Mitarbeitende stärken.",
+    "Streamline human capital management (HCM), payroll processing, and employee engagement with cloud-based HCM solutions.": "Human-Capital-Management und Gehaltsabrechnung vereinfachen, Compliance sichern und Mitarbeitende stärken.",
 
     "Cloud Migrations & Managed Services": "Cloud-Migration & Managed Services",
-    "Move to the cloud seamlessly with secure, scalable, and fully managed services tailored to your business needs.": "Sichere, skalierbare Cloud-Migration mit vollständig verwalteten Services, angepasst an Unternehmensanforderungen.",
+    "Execute secure, risk-free cloud ERP migrations with our managed cloud services and ongoing technical support and 24/7 monitoring.": "Sichere, skalierbare Cloud-Migration mit vollständig verwalteten Services, angepasst an Unternehmensanforderungen.",
 
     "Regulatory Compliance Solutions": "Regulatorische Compliance-Lösungen",
     "Stay ahead of regulations with solutions that ensure compliance, mitigate risk, and support governance frameworks.": "Seien Sie den gesetzlichen Vorschriften immer einen Schritt voraus – mit Lösungen, die die Einhaltung von Vorschriften gewährleisten, Risiken mindern und Governance-Rahmenwerke unterstützen.",
@@ -4083,11 +4128,11 @@
     "Digitising core business functions across finance, operations, HR, supply chain, and customer engagement": "Digitalisierung zentraler Geschäftsbereiche – Finanzen, Betrieb, HR, Lieferkette und Kundenmanagement",
     "Delivering real-time data visibility for faster, smarter decision-making": "Echtzeit-Transparenz für schnellere und präzisere Entscheidungen",
     "Enhancing operational resilience through scalable, secure architecture": "Skalierbare und sichere Architekturen zur Stärkung der betrieblichen Resilienz",
-    "Building future-ready platforms designed to evolve with your business": "Aufbau zukunftsfähiger Plattformen, die mit dem Unternehmen wachsen",
+    "Building future-ready modular digital platforms designed to evolve with your business": "Aufbau zukunftsfähiger Plattformen, die mit dem Unternehmen wachsen",
 
     "The RheinBrücke Advantage": "Der RheinBrücke-Vorteil",
     "SAP, Epicor Premium, Microsoft AI Cloud and Microsoft ISV partner": "SAP, Epicor Premium-, Microsoft AI Cloud- und Microsoft ISV-Partner",
-    "End-to-end platform services from strategy to support": "End-to-End-Services – von Strategie über Implementierung bis Support",
+    "End-to-end platform services from strategy to support": "Umfassende-Services – von Strategie über Implementierung bis Support",
     "Proven global rollout and localisation capabilities": "Erprobte internationale Rollout- und Lokalisierungskompetenz",
     "Accelerated cloud-native development and integrations": "Beschleunigte Cloud-native Entwicklung & Integration",
     "Outcome-driven delivery with a focus on operational resilience and sustained business value": "Ergebnisorientierte Umsetzung mit Fokus auf operative Stabilität und nachhaltigen Geschäftswert",
@@ -4191,7 +4236,7 @@
     "Unsere Epicor-Service angebote",
 
     "We provide end-to-end Epicor ERP services to maximize your investment and transform your operations.":
-    "Wir bieten End-to-End-Services rund um Epicor ERP, um Ihr Investment zu maximieren und Ihre Abläufe zu transformieren.",
+    "Wir bieten Umfassende-Services rund um Epicor ERP, um Ihr Investment zu maximieren und Ihre Abläufe zu transformieren.",
 
     "Epicor Kinetic (Epicor ERP): Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production.":
     "Epicor Kinetic (Epicor ERP): Next-Gen ERP zur Automatisierung von Workflows, Verbesserung der Supply-Chain-Transparenz und Produktionsoptimierung.",
@@ -4236,7 +4281,7 @@
     "Eines der größten Teams aus zertifizierten Epicor-Consultants weltweit",
 
     "Expertise across the complete ERP lifecycle: implementation, upgrades, migrations, roll-outs, optimization, and managed support":
-    "End-to-End-Kompetenz: Implementierung, Migration, Rollout, Optimierung und Support",
+    "Umfassende-Kompetenz: Implementierung, Migration, Rollout, Optimierung und Support",
 
     "Deep industry-specific knowledge in manufacturing, oil & gas, retail, construction, and more":
     "Tiefes Branchenwissen in Fertigung, Öl & Gas, Bau, Handel und Distribution",
@@ -4340,7 +4385,7 @@
     "The RheinBrücke Advantage": "Die Vorteile von RheinBrücke",
     "Microsoft AI Cloud and ISV Partner with deep ERP expertise": "Microsoft AI Cloud und ISV-Partner mit fundierter ERP-Expertise",
     "Proven global rollouts with localisation capabilities": "Bewährte globale Rollouts mit Lokalisierungsfunktionen",
-    "End-to-end services from strategy to support": "End-to-End-Services von der Strategie bis zum Support",
+    "End-to-end services from strategy to support": "Komplettlösungen von der Strategie bis zum Support",
     "Smooth migrations from legacy systems (NAV, AX)": "Reibungslose Migrationen von Altsystemen (NAV, AX)",
     "Outcome-focused delivery ensuring operational resilience and business value": "Ergebnisorientierte Umsetzung, die operative Ausfallsicherheit und geschäftlichen Mehrwert gewährleistet",
 
@@ -4415,7 +4460,7 @@
       "Comprehensive Reporting": "Aussagekräftige Berichte",
       "Robust reporting capabilities": "Umfassende Analysefunktionen",
       "Seamless Integration (Benefits)": "Epicor-Integration",
-      "Out-of-the-box Epicor integration": "Out-of-the-box Anbindung",
+      "Out-of-the-box Epicor integration": "Sofort einsatzbereite Anbindung",
       "Multisite Capabilities": "Multi-Site-Fähigkeit",
       "Manage multiple locations": "Mehrere Standorte zentral verwalten",
       "Mobile Interface": "Mobil nutzbar",
@@ -4425,7 +4470,7 @@
     "Download Our Brochure": "Broschüre herunterladen",
     "Download Our Brochure now to know more about our CorusHR Solution!": "Laden Sie jetzt unsere Broschüre herunter und entdecken Sie, wie CorusHR Ihr Personalmanagement transformiert.",
     "Download Our Brochure now to know more about our SAP Solution!": "Laden Sie jetzt unsere Broschüre herunter und entdecken Sie, wie SAP Ihr Personalmanagement transformiert.",
-      "Revolutionizing HR Management with Smart, Scalable Solutions": "HR-Management neu gedacht – intelligent und skalierbar",
+      "Revolutionizing HR Management with Smart, Scalable Solutions": "Personalmanagement neu gedacht – intelligent und skalierbar",
       "Ready to elevate your global workforce experience with an intuitive HRMS?": "Bereit, Ihre globale Workforce mit einem intuitiven HRMS zu stärken?",
       "CorusHR provides powerful self-service and end-to-end HR coverage, keeping your teams supported from recruitment to retirement on any device.":"CorusHR bietet leistungsstarke Self-Service-Funktionen und durchgängige Lösungen HR‑Abdeckung – vom Recruiting bis zur Rente, auf jedem Gerät.",
       "What Makes CorusHR Stand Out": "Das macht CorusHR besonders",
@@ -4478,7 +4523,7 @@
     "Skalierbare Implementierung, die mit Ihrem Unternehmen mitwächst",
 
     "End-to-end support from design to implementation and optimization.":
-    "End-to-End-Unterstützung – von der Konzeption bis zur Optimierung",
+    "Umfassende-Unterstützung – von der Konzeption bis zur Optimierung",
 
     "Focus on measurable business outcomes, including efficiency, cost savings, and compliance.":
     "Fokus auf messbare Geschäftsergebnisse wie Effizienzsteigerung, Kostensenkung und Compliance",
@@ -4658,10 +4703,10 @@
 
 
     "RheinBrücke IT Consulting - Stevie Awards 2015 German":
-    "RheinBrücke IT Consulting – Stevie Awards 2015 (Deutsch)",
+    "RheinBrücke IT Consulting – Stevie Auszeichnungen 2015 (Deutsch)",
 
     "RheinBrücke – Pinnacle Awards of Excellence 2016":
-    "RheinBrücke – Pinnacle Awards of Excellence 2016",
+    "RheinBrücke – Pinnacle Auszeichnungen of Excellence 2016",
 
     "RheinBrücke – Customer Reference by Martin Peters":
     "RheinBrücke – Kundenreferenz von Martin Peters",
@@ -4679,7 +4724,7 @@
     "RheinBrücke – Eröffnung des India Development Centre (IDC)",
 
     "RheinBrucke – Stevie Awards 2016 German":
-    "RheinBrücke – Stevie Awards 2016 (Deutsch)",
+    "RheinBrücke – Stevie Auszeichnungen 2016 (Deutsch)",
 
     "RheinBrucke – FLSmidth Testimonial | Mads Madsbjerg Hansen":
     "RheinBrücke – FLSmidth Erfahrungsbericht | Mads Madsbjerg Hansen",
@@ -4722,7 +4767,7 @@
     "Why Choose Us?": "Warum wir?",
     "Proven expertise in Google Cloud AI and Azure-based AI implementations.": "Nachweisliche Expertise in Google Cloud AI und Azure-basierten KI-Implementierungen",
     "Seamless integration with ERP, CRM, and custom applications.": "Nahtlose Integration mit ERP-, CRM- und Individualanwendungen",
-    "End-to-end support - from design to deployment and optimisation.": "End-to-End-Support – von Design über Implementierung bis zur Optimierung",
+    "End-to-end support - from design to deployment and optimisation.": "Umfassende-Support – von Design über Implementierung bis zur Optimierung",
     "Relentless focus on measurable outcomes.": "Klare Fokussierung auf messbare Ergebnisse",
     "Your data is more than numbers-it’s your next competitive edge.": "Ihre Daten sind mehr als Zahlen – sie sind Ihr nächster Wettbewerbsvorteil.",
     "Talk to our AI experts today.": "Sprechen Sie noch heute mit unseren AI-Experten.",
@@ -4743,7 +4788,7 @@
     "Limited real-time sales and inventory visibility for brand managers and planners": "Begrenzte Echtzeit-Transparenz über Verkäufe und Bestände für Markenmanager und Planer",
     "Static category, merchandising, and pricing decisions disconnected from live sales trends": "Statische Entscheidungen zu Kategorien, Merchandising und Preisgestaltung ohne Bezug zu aktuellen Verkaufstrends",
     "Complex promotions and markdowns eroding profit margins": "Komplexe Promotions und Preisnachlässe schmälern die Gewinnspanne",
-    "Fragmented customer engagement and loyalty programmes weakening brand affinity": "Fragmentierte Kundenbindungs- und Loyalty-Programme schwächen die Markenbindung",
+    "Fragmented customer engagement and loyalty programmes weakening brand affinity": "Fragmentierte Kundenbindungs- und Loyalty-Programm schwächen die Markenbindung",
     "Slow product launches and weak design-to-shelf agility limiting market responsiveness": "Langsame Produkteinführungen und geringe Design-to-Shelf-Agilität schränken die Marktreaktionsfähigkeit ein",
     "Insights without operational execution leaving valuable product and customer data unused": "Erkenntnisse ohne operative Umsetzung lassen wertvolle Produkt- und Kundendaten ungenutzt",
 
@@ -4962,7 +5007,7 @@
     "How We Help": "Unser Lösungsansatz",
     "Deploy integrated ERP, MES, and supply chain management systems supporting serialised, batch, and variant production": "Integrierte ERP-, MES- und Supply-Chain-Systeme einsetzen, die Serien-, Chargen- und Variantenfertigung unterstützen",
     "Enable real-time production monitoring, downtime analytics, and plant performance dashboards": "Echtzeit-Produktionsüberwachung, Stillstandsanalysen und Performance-Dashboards ermöglichen",
-    "Build end-to-end material, batch, and finished product traceability frameworks": "End-to-End-Rückverfolgbarkeit von Materialien, Chargen und Endprodukten aufbauen",
+    "Build end-to-end material, batch, and finished product traceability frameworks": "Umfassende-Rückverfolgbarkeit von Materialien, Chargen und Endprodukten aufbauen",
     "Implement predictive maintenance and operational analytics through IoT and connected shop-floor data capture": "Predictive Maintenance und Betriebsanalysen durch IoT und vernetzte Shopfloor-Datenerfassung implementieren",
     "Integrate simulation, telemetry, and sensor data into central analytics platforms for engineering, maintenance, and motorsport teams": "Simulationen, Telemetrie- und Sensordaten in zentrale Analyseplattformen für Engineering-, Wartungs- und Motorsport-Teams integrieren",
     "Apply AI and machine learning for failure prediction, inventory optimisation, and demand sensing": "KI und Machine Learning für Ausfallprognosen, Bestandsoptimierung und Demand Sensing einsetzen",
@@ -5033,7 +5078,7 @@
 
     "Why Choose Us": "Warum wir?",
     "Deep expertise in operational transformation for EPC and capital project delivery businesses": "Umfassende Expertise in der operativen Transformation von EPC- und Capital-Project-Unternehmen",
-    "Proven capability implementing project, cost, asset, and risk control frameworks for complex, multi-year, multi-location projects": "Nachweisliche Kompetenz in der Implementierung von Projekt-, Kosten-, Asset- und Risikosteuerungs-Frameworks für komplexe Multi-Location-Projekte",
+    "Proven capability implementing project, cost, asset, and risk control frameworks for complex, multi-year, multi-location projects": "Nachweisliche Kompetenz in der Implementierung von Projekt-, Kosten-, Asset- und Risikosteuerungs-Frameworks für komplexe Multi-Standort-Projekte",
     "Commercially focused approach, driven by operational outcomes, profitability protection, and governance enhancement": "Klarer Business-Fokus auf operative Ergebnisse, Profitabilitätssicherung und verbesserte Governance",
     "Offshore-enabled delivery model ensuring scalable, cost-efficient, high-quality project execution without global consultancy overhead": "Offshore-fähiges Liefermodell für skalierbare, kosteneffiziente und hochwertige Projektausführung ohne den Overhead globaler Beratungen",
 
@@ -5402,9 +5447,10 @@
     "It is never too late to restart, and we are here to make it possible.": "Es ist nie zu spät für einen Neustart – und wir machen ihn möglich.",
 
     "Recognitions & Awards": "Anerkennung & Auszeichnungen",
+    "Awards": "Auszeichnungen",
     "Success deserves to be celebrated. At RheinBrücke, we honour achievements through:": "Erfolg gehört gefeiert. Bei RheinBrücke würdigen wir Leistung durch:",
     "Company-wide recognition programs": "Unternehmensweite Anerkennungsprogramme",
-    "Performance and innovation awards": "Awards für Leistung und Innovation",
+    "Performance and innovation awards": "Auszeichnungen für Leistung und Innovation",
     "Global client appreciation": "Wertschätzung durch unsere globalen Kund:innen",
     "Your efforts will not just be noticed; they will be celebrated.": "Dein Einsatz wird nicht nur gesehen – er wird gefeiert.",
 
@@ -5445,19 +5491,19 @@
     "RheinBrücke Pinnacle Award of Excellence": "RheinBrücke Pinnacle Award of Excellence",
     "Launch of Epicor Cloud Solution": "Einführung der Epicor Cloud Solution",
     "Launch of RheinBrücke Middle East Infrastructure LLC in Dubai": "Gründung der RheinBrücke Middle East Infrastructure LLC in Dubai",
-    "RheinBrücke IT consulting awarded Top 10 Best IT Companies to Work for in 2019 at Catalyst Awards 2019": "RheinBrücke IT Consulting unter den „Top 10 Best IT Companies to Work for 2019“ bei den Catalyst Awards",
+    "RheinBrücke IT consulting awarded Top 10 Best IT Companies to Work for in 2019 at Catalyst Awards 2019": "RheinBrücke IT Consulting unter den „Top 10 Best IT Companies to Work for 2019“ bei den Catalyst Auszeichnungen",
     "RheinBrücke IT Consulting Recognized as Epicor International Partner of the Year": "RheinBrücke IT Consulting als Epicor International Partner of the Year ausgezeichnet",
     "RheinBrücke IT Consulting and EPICOR at Gitex 2017": "RheinBrücke IT Consulting und EPICOR auf der GITEX 2017",
     "Epicor and RheinBrücke Join Forces with SmartWorld to Deliver Epicor ERP Solutions to Businesses in Dubai South": "Epicor und RheinBrücke kooperieren mit SmartWorld zur Bereitstellung von Epicor ERP-Lösungen für Unternehmen in Dubai South",
     "Kenneth Taormina joins RheinBrücke as the Board Member": "Kenneth Taormina wird Mitglied des RheinBrücke-Vorstands",
-    "RheinBrücke IT Consulting GmbH continues to shine at German Stevie Awards 2017": "RheinBrücke IT Consulting GmbH glänzt erneut bei den German Stevie Awards 2017",
-    "RheinBrücke IT Consulting continues to shine at the Stevies International Business Awards": "RheinBrücke IT Consulting überzeugt bei den Stevie International Business Awards",
-    "RheinBrücke is honoured with three German Stevie awards 2016": "RheinBrücke erhält drei German Stevie Awards 2016",
+    "RheinBrücke IT Consulting GmbH continues to shine at German Stevie Awards 2017": "RheinBrücke IT Consulting GmbH glänzt erneut bei den German Stevie Auszeichnungen 2017",
+    "RheinBrücke IT Consulting continues to shine at the Stevies International Business Awards": "RheinBrücke IT Consulting überzeugt bei den Stevie International Business Auszeichnungen",
+    "RheinBrücke is honoured with three German Stevie awards 2016": "RheinBrücke erhält drei German Stevie Auszeichnungen 2016",
     "RheinBrücke relaunches the Indian Development Center": "RheinBrücke eröffnet das Indian Development Center neu",
-    "RheinBrücke IT Consulting Continues Its Winning Streak at the Stevie Awards": "RheinBrücke IT Consulting setzt Erfolgskurs bei den Stevie Awards fort",
+    "RheinBrücke IT Consulting Continues Its Winning Streak at the Stevie Awards": "RheinBrücke IT Consulting setzt Erfolgskurs bei den Stevie Auszeichnungen fort",
     "FLSmidth selects RheinBrücke IT Consulting for the global template implementation and rollout of Epicor ERP 10": "FLSmidth beauftragt RheinBrücke IT Consulting mit globaler ERP-10-Implementierung und Rollout",
     "RheinBrücke IT Consulting launches EpicPay a payroll processing software at the Epicor EMEA Insights 2015": "RheinBrücke IT Consulting präsentiert EpicPay – eine Payroll-Software – auf der Epicor EMEA Insights 2015",
-    "RheinBrücke IT Consulting GmbH wins Stevie® Awards for Company of the Year.": "RheinBrücke IT Consulting GmbH gewinnt Stevie® Award als „Company of the Year“",
+    "RheinBrücke IT Consulting GmbH wins Stevie® Awards for Company of the Year.": "RheinBrücke IT Consulting GmbH gewinnt Stevie® Auszeichnungen als „Company of the Year“",
     "RheinBrücke IT Consulting Recognized as ‘Top Consultant’ for the year 2014- 2015": "RheinBrücke IT Consulting als „Top Consultant 2014–2015“ ausgezeichnet",
     "RheinBrücke achieves the Microsoft Gold Competency Partner status": "RheinBrücke erreicht Microsoft Gold Competency Partner Status",
     "Inauguration of the India Development Centre in Chennai on July 30th.": "Eröffnung des India Development Centre in Chennai am 30. Juli",
@@ -5513,7 +5559,7 @@
     "Our Digital Services empower your business with the tools, technologies, and expertise needed to drive transformation and sustain growth. Through our Analyse-Integrate-Transform framework, we ensure every engagement delivers measurable, long-term value, with solutions that are scalable, agile, and future-ready.": "Unsere Digital Services stärken Ihr Unternehmen mit den richtigen Tools, Technologien und der Expertise, um Transformation voranzutreiben und nachhaltiges Wachstum zu sichern. Mit unserem Analyse-Integrate-Transform-Framework stellen wir sicher, dass jedes Projekt messbaren, langfristigen Mehrwert liefert – durch skalierbare, agile und zukunftssichere Lösungen.",
 
     "Modernise and Upgrade Your Enterprise Core": "Modernisieren und Upgraden Sie Ihr Enterprise Core",
-    "To stay competitive, businesses must evolve their core systems to be agile, scalable, and cloud-native. Our enterprise modernisation services help you replace legacy systems with high-performance platforms, architectures, and applications, enabling faster innovation and operational resilience. ": "Um wettbewerbsfähig zu bleiben, müssen Unternehmen ihre Kernsysteme kontinuierlich modernisieren und upgraden – hin zu agilen, skalierbaren und cloud-fähigen Lösungen. Unsere Enterprise-Modernisierungs-Services helfen Ihnen, veraltete Legacy-Systeme abzulösen und durch moderne Plattformen, Architekturen und Anwendungen zu ersetzen. So schaffen Sie die Basis für schnellere Innovationen und maximale operative Flexibilität.",
+    "To stay competitive, businesses must evolve their core systems to be agile, scalable, and cloud-native. Our enterprise modernisation services help you replace legacy systems with high-performance platforms, architectures, and applications, enabling faster innovation and operational resilience.": "Um wettbewerbsfähig zu bleiben, müssen Unternehmen ihre Kernsysteme kontinuierlich modernisieren und upgraden – hin zu agilen, skalierbaren und cloud-fähigen Lösungen. Unsere Enterprise-Modernisierungs-Services helfen Ihnen, veraltete Legacy-Systeme abzulösen und durch moderne Plattformen, Architekturen und Anwendungen zu ersetzen. So schaffen Sie die Basis für schnellere Innovationen und maximale operative Flexibilität.",
 
     "Architecture Services:": "Architektur leistungen:",
     "Our cloud-native architectures on Microsoft Azure integrate microservices and event-driven frameworks, allowing your business to adapt quickly and innovate continuously. We also help migrate legacy systems, optimising workflows to support growth.": "Unsere cloud-nativen Architekturen auf Microsoft Azure integrieren Microservices und eventgesteuerte Frameworks, sodass sich Ihr Unternehmen schnell anpassen und kontinuierlich Innovationen vorantreiben kann. Zudem unterstützen wir die Migration von Legacy-Systemen und optimieren Workflows gezielt für Wachstum.",
@@ -5543,10 +5589,10 @@
     "Azure Machine Learning, Power BI, Tableau": "Azure Machine Learning, Power BI, Tableau",
 
     "Enhance Digital Experiences": "Digitale Erlebnisse verbessern",
-    "In a digital-first world, creating seamless and intuitive user experiences is key to driving engagement and satisfaction. We design modern, responsive, and accessible digital interfaces that empower your users and deliver exceptional experiences across all platforms.": "In einer digital-first Welt sind nahtlose und intuitive User Experiences der Schlüssel zu höherem Engagement und Kundenzufriedenheit. Wir gestalten moderne, reaktionsschnelle und barrierefreie digitale Interfaces, die Nutzer stärken und auf allen Plattformen herausragende Erlebnisse bieten.",
+    "Deliver seamless, intuitive, and high-performing digital experiences that improve user engagement, retention, and conversions. We design modern, responsive, and accessible digital interfaces that empower your users and deliver exceptional experiences across all platforms.": "Bieten Sie nahtlose, intuitive und leistungsstarke digitale Erlebnisse, die Nutzerinteraktion, Kundenbindung und Conversion-Raten verbessern. Wir gestalten moderne, reaktionsschnelle und barrierefreie digitale Interfaces, die Nutzer stärken und auf allen Plattformen herausragende Erlebnisse bieten.",
 
     "UX/UI Services": "UX/UI-Dienstleistungen",
-    "We design intuitive, user-friendly interfaces using tools like Figma, Webflow, and Adobe XD, blending AR/VR and inclusive design. Every experience is clear, responsive, engaging, and future-ready.": "Wir entwickeln intuitive, benutzerfreundliche Interfaces mit Tools wie Figma, Webflow und Adobe XD – unter Einbindung von AR/VR-Elementen und inklusivem Design. So entstehen klare, reaktionsschnelle, fesselnde und zukunftssichere Nutzererlebnisse.",
+    "We design intuitive, user-centric interfaces using tools like Figma, Webflow, and Adobe XD, blending AR/VR and inclusive design. Our approach ensures clear navigation, responsive design, and enhanced user journeys.": "Wir entwickeln intuitive, benutzerfreundliche Interfaces mit Tools wie Figma, Webflow und Adobe XD – unter Einbindung von AR/VR-Elementen und inklusivem Design. Unser Ansatz gewährleistet eine übersichtliche Navigation, responsives Design und optimierte Nutzererlebnisse.",
     "Figma, Webflow, Anima, AR/VR Design, Adobe XD": "Figma, Webflow, Anima, AR/VR Design, Adobe XD",
     "Tech:":"Technologien:",
     "Tech :":"Technologien :",
@@ -5627,7 +5673,7 @@
     "It encompasses tools such as Azure Data Factory for ETL processes, Power BI for intuitive visualization, and Azure Analysis Services for advanced analytics, enabling organizations to extract actionable insights from data for informed decision-making and strategic planning.": "Unsere BI-Lösungen umfassen leistungsstarke Tools wie Azure Data Factory für automatisierte ETL-Prozesse, Power BI für intuitive Visualisierungen und Azure Analysis Services für fortgeschrittene Analysen – zur Unterstützung datenbasierter Entscheidungen und strategischer Planung.",
 
     "Microsoft Fabric": "Microsoft Fabric",
-    "Microsoft Fabric is a comprehensive platform designed to streamline data management and analytics across its entire lifecycle.": "Microsoft Fabric ist eine End-to-End-Data-Analytics-Plattform, die das gesamte Datenmanagement und die Analyse über den gesamten Lebenszyklus hinweg vereinfacht.",
+    "Microsoft Fabric is a comprehensive platform designed to streamline data management and analytics across its entire lifecycle.": "Microsoft Fabric ist eine Umfassende-Daten-Analytics-Plattform, die das gesamte Datenmanagement und die Analyse über den gesamten Lebenszyklus hinweg vereinfacht.",
     "By integrating key components such as data engineering, data science, real-time analytics, data warehousing, and visualization, it offers a unified approach to handling data efficiently.": "Durch die Integration von Data Engineering, Data Science, Echtzeitanalysen, Data Warehousing und Visualisierung bietet Microsoft Fabric einen einheitlichen und effizienten Ansatz zur Datenverarbeitung.",
     "Data Engineering is powered by Azure Data Factory, which orchestrates and automates data workflows and ETL operations.": "Das Data Engineering wird durch Azure Data Factory unterstützt, die Daten-Workflows sowie ETL-Prozesse orchestriert und automatisiert.",
     "In Data Science, Azure Machine Learning enables the creation and deployment of machine learning models for actionable insights.": "Im Bereich Data Science ermöglicht Azure Machine Learning die Erstellung und Bereitstellung von Machine-Learning-Modellen für umsetzbare Erkenntnisse.",
@@ -5660,7 +5706,7 @@
     "Customized Solutions": "Maßgeschneiderte Lösungen",
     "Implement bespoke data models and solutions tailored precisely to your unique business requirements.": "Wir entwickeln individuelle Datenmodelle und BI-Lösungen, die genau auf Ihre Geschäftsanforderungen zugeschnitten sind.",
 
-    "End-to-End Support": "End-to-End Unterstützung",
+    "End-to-End Support": "Umfassende Unterstützung",
     "Rely on our comprehensive services for seamless support throughout your entire data journey.": "Von der Beratung über Implementierung bis zum laufenden Support – Sie erhalten alles aus einer Hand.",
 
     "Industry Expertise": "Branchenexpertise",
@@ -5671,7 +5717,7 @@
     "Unlike traditional ERP suites, PPA excelled in critical areas such as billing, revenue calculations, power generation scheduling, and management of power purchase agreements.": "Anders als herkömmliche ERP-Systeme überzeugte PPA in besonders kritischen Bereichen wie Abrechnung, Umsatzberechnung, Produktionsplanung und Verwaltung von Stromlieferverträgen.",
     "With advanced features providing real-time access to comprehensive operational, financial, and market data, PPA empowered decision-makers to gain deep insights into plant operations and market profitability.": "Dank fortschrittlicher Funktionen mit Echtzeitzugriff auf operative, finanzielle und Marktdaten erhalten Entscheidungsträger umfassende Einblicke in den Kraftwerksbetrieb und die wirtschaftliche Performance des Marktes.",
     "The tool's analytical dashboards and self-service reporting capabilities enabled users to foresee opportunities, detect risks, and make informed decisions swiftly.": "Die analytischen Dashboards und Self-Service-Reporting-Funktionen ermöglichen es Anwendern, Chancen frühzeitig zu erkennen, Risiken zu identifizieren und fundierte Entscheidungen schnell zu treffen.",
-    "PPA enhanced decision-making through historical trend analysis and \"What-If\" scenario evaluations, assessing the impacts of operational metrics and potential disruptions.": "Die Entscheidungsfindung wird durch historische Trendanalysen und „What-If“-Szenarien unterstützt, um Auswirkungen von Betriebskennzahlen und möglichen Störungen zu bewerten.",
+    "PPA enhanced decision-making through historical trend analysis and What-If scenario evaluations, assessing the impacts of operational metrics and potential disruptions.": "PPA verbessert die Entscheidungsfindung durch die Analyse historischer Trends sowie die Bewertung von Was-wäre-wenn-Szenarien und deren Auswirkungen auf operative Kennzahlen und potenzielle Störungen.",
     "Field officers benefited from real-time data access via smartphones for proactive maintenance, while standard BI reports and dashboards facilitated comprehensive analysis.": "Außendienstmitarbeiter profitieren von Echtzeitzugriff auf Daten über Smartphones für proaktive Wartung, während standardisierte BI-Berichte und Dashboards umfassende Analysen ermöglichen.",
     "The seamless interface for MIS reporting minimized manual intervention, enhancing reporting accuracy and efficiency.": "Die nahtlose Schnittstelle für Management-Reporting reduziert manuelle Eingriffe und steigert die Genauigkeit sowie Effizienz der Berichterstattung.",
     "PPA's modular design included functionalities for billing, scheduling, revenue management, and budget forecasting, ensuring streamlined operations and efficient resource management.": "Das modulare Design von PPA umfasst Funktionen für Abrechnung, Produktionsplanung, Umsatzmanagement und Budgetprognosen und gewährleistet optimierte Abläufe sowie effizientes Ressourcenmanagement.",
@@ -5704,14 +5750,14 @@
     "Why Choose Us?": "Warum wir?",
     "Proven track record in re-architecting complex enterprise systems.": "Nachweisliche Erfolge bei der Modernisierung komplexer Unternehmenssysteme",
     "Deep expertise in Microsoft Azure and multi-cloud modernisation.": "Tiefes Know-how in Microsoft Azure und Multi-Cloud-Architekturen",
-    "End-to-end delivery from assessment to deployment and continuous optimisation.": "End-to-End Delivery – von der Analyse bis zur Implementierung und kontinuierlichen Optimierung",
+    "End-to-end delivery from assessment to deployment and continuous optimisation.": "Umfassende Delivery – von der Analyse bis zur Implementierung und kontinuierlichen Optimierung",
     "Focus on lowering costs, improving agility, and scaling with confidence.": "Fokus auf Kostenreduktion, höhere Agilität und skalierbares Wachstum",
 
     "Proven in Action American Golf": "Erfolg in der Praxis – American Golf",
     "For American Golf, Europe’s largest golf retailer, we modernised legacy Salesforce and Navision systems by implementing a headless, microservices-based architecture.": "Für American Golf, Europas größten Golfhändler, haben wir Legacy-Systeme wie Salesforce und Navision mit einer Headless- und Microservices-basierten Architektur modernisiert.",
     "Through API-driven integrations and a scalable, cloud-ready design, the solution improved operational efficiency, ensured data consistency, and laid the foundation for digital growth.": "Durch API-gesteuerte Integrationen und ein skalierbares, cloudfähiges Design konnten die operative Effizienz gesteigert, die Datenkonsistenz sichergestellt und die Grundlage für weiteres digitales Wachstum geschaffen werden.",
 
-    "Future-Proof Your Business": "Gestalten Sie die Zukunft Ihres Unternehmens",
+    "Future-Proof Your Business": "Machen Sie Ihr Unternehmen zukunftssicher",
     "Ready to modernise your applications and accelerate growth?": "Bereit, Ihre Anwendungen zu modernisieren und Wachstum zu beschleunigen?",
     "Talk to our experts today.": "Sprechen Sie mit unseren Experten.",
 
@@ -5743,13 +5789,15 @@
     "Proven expertise in modern data architectures and Azure Synapse solutions.": "Nachgewiesene Expertise in modernen Datenarchitekturen und Azure-Synapse-Lösungen",
     "Success with complex, enterprise-scale data challenges.": "Erfolgreiche Umsetzung komplexer Enterprise-Data-Herausforderungen",
     "Seamless integration with AI/ML frameworks for operational intelligence.": "Nahtlose Integration mit KI- und ML-Frameworks für operative Intelligenz",
-    "End-to-end services: design, build, migrate, and optimise.": "End-to-End-Services: Design, Aufbau, Migration und Optimierung",
+    "End-to-end services: design, build, migrate, and optimise.": "Komplettlösungen: Design, Aufbau, Migration und Optimierung",
 
     "Proven in Action – Sembcorp": "Erfolg in der Praxis – Sembcorp",
     "For Sembcorp Industries, we built a Power Plant Analytics (PPA) system that consolidated data from SAP, IoT devices, and grid meters into a single platform.": "Für Sembcorp Industries entwickelten wir ein Power Plant Analytics (PPA)-System, das Daten aus SAP, IoT-Geräten und Netzwerkmessungen in einer zentralen Plattform vereint.",
     "With real-time and batch pipelines, the solution enabled seamless MIS reporting, predictive analytics, and stronger decision support across global operations.": "Mit Echtzeit- und Batch-Pipelines ermöglicht die Lösung automatisiertes Reporting, prädiktive Analysen und datenbasierte Entscheidungen über globale Standorte hinweg.",
 
     "Future-Ready Data": "Bereit für die Zukunft",
+    "Stronger decision support": "Fundierte Entscheidungsunterstützung",
+    "seamless MIS reporting": "Nahtloses MIS-Reporting",
     "Make your data insight-driven and AI-ready.": "Machen Sie Ihre Daten insight-driven und AI-ready.",
     "Talk to our experts today.": "Sprechen Sie mit unseren Experten – weil Zukunft mit Daten beginnt.",
 
@@ -5933,7 +5981,7 @@
 
 
 
-    "User Experience (UX/UI)": "User Experience (UX/UI)",
+    "User Experience (UX/UI)": "Benutzer Berufserfahrung (UX/UI)",
     "In today’s digital-first world, great design is more than looks-it’s about creating seamless, intuitive experiences that drive engagement, satisfaction, and loyalty.": "In einer digitalen Welt zählt nicht nur das Design – sondern das Erlebnis.",
     "We design responsive, accessible, and future-ready interfaces that empower users and deliver exceptional experiences across web, mobile, and immersive platforms.": "Großartiges Design verbindet Menschen mit Marken. Es schafft nahtlose, intuitive Erlebnisse, die Begeisterung, Zufriedenheit und Loyalität fördern. Wir gestalten responsive, barrierefreie und zukunftssichere Benutzeroberflächen, die Nutzer:innen begeistern – über Web, Mobile und immersive Plattformen hinweg.",
 
@@ -5942,7 +5990,7 @@
     "crafted with industry-leading tools like Figma, Webflow, Anima, and Adobe XD.": "entwickelt mit führenden Tools wie Figma, Webflow, Anima und Adobe XD.",
     "Responsive & Inclusive Design": "Responsives & inklusives Design",
     "accessible experiences for all platforms and users.": "barrierefreie Erlebnisse auf allen Geräten und Plattformen.",
-    "Immersive Experiences": "Immersive Experiences",
+    "Immersive Experiences": "Immersive Erfahrungen",
     "AR/VR-enabled journeys for next-generation engagement.": "AR/VR-gestützte Nutzerreisen für die nächste Generation digitaler Interaktion.",
     "Design Systems & Prototyping": "für schnellere Markteinführung und visuelle Konsistenz.",
     "accelerating time-to-market and consistency.": "für schnellere Markteinführung und visuelle Konsistenz.",
@@ -6056,7 +6104,7 @@
 
     "Our Fluent Commerce Expertise": "Unsere Fluent Commerce Expertise",
     "Fluent Commerce Implementation & Configuration": "Implementierung und Konfiguration von Fluent Commerce",
-    "End-to-end Order Management Design & Rollout": "End-to-End Design und Rollout Ihrer Order-Management-Prozesse",
+    "End-to-end Order Management Design & Rollout": "Umfassende Design und Rollout Ihrer Order-Management-Prozesse",
     "System Integration with ERP, WMS, CRM, and eCommerce platforms": "Systemintegration mit ERP-, WMS-, CRM- und E-Commerce-Plattformen",
     "Inventory Visibility & Fulfilment Optimisation": "Echtzeit-Bestandsübersicht und Fulfilment-Optimierung",
     "Enablement for Ship-from-Store and Click & Collect": "Aktivierung für Ship-from-Store und Click & Collect",
@@ -6094,7 +6142,7 @@
     "Enterprise-grade security, governance, and compliance tools": "Unternehmensweite Sicherheit, Governance und Compliance",
     "Intelligent, cloud-based business applications with Microsoft Power Platform, enhanced by Copilot, enabling faster automation, integration, and innovation": "Intelligente, cloudbasierte Business-Anwendungen mit Microsoft Power Platform – unterstützt durch Copilot für schnellere Automatisierung, Integration und Innovation",
 "Our Microsoft Technology Solutions": "Unsere Microsoft-Technologie-Lösungen",
-    "We deliver end-to-end Microsoft services to help you modernise, integrate, and optimise your enterprise:": "Wir bieten End-to-End-Services rund um Microsoft-Technologien – für die Modernisierung, Integration und Optimierung Ihrer Systeme.",
+    "We deliver end-to-end Microsoft services to help you modernise, integrate, and optimise your enterprise:": "Wir bieten Umfassende-Services rund um Microsoft-Technologien – für die Modernisierung, Integration und Optimierung Ihrer Systeme.",
 
     "Application Development and Modernisation": "Anwendungsen twicklung & Modernisierung",
     "Azure-native application development and cloud hosting": "Azure-native App-Entwicklung und Cloud-Hosting",
@@ -6145,7 +6193,7 @@
     "Ensure scalability, security, and governance for future growth": "Sicherstellung von Skalierbarkeit, Sicherheit und Governance",
 "The RheinBrücke Advantage": "Ihr Vorteil mit RheinBrücke",
     "Microsoft ISV Partner and AI Cloud Partner with proven expertise": "Microsoft ISV- & AI Cloud Partner mit nachgewiesener Expertise",
-    "End-to-end project delivery from strategy to support": "End-to-End-Projektumsetzung – von der Strategie bis zum Support",
+    "End-to-end project delivery from strategy to support": "Umfassende-Projektumsetzung – von der Strategie bis zum Support",
     "Accelerated adoption of cloud-native development and DevOps practices": "Beschleunigte Einführung von Cloud-nativer Entwicklung & DevOps",
     "Continuous security, governance, and platform management": "Kontinuierliche Sicherheit, Governance & Plattformmanagement",
     "Outcome-focused delivery ensuring resilience and business value": "Ergebnisorientierte Umsetzung mit Fokus auf Resilienz & Geschäftsnutzen",
@@ -6183,7 +6231,7 @@
     "Proven track record in modernising complex commerce systems.": "Nachgewiesene Erfahrung in der Modernisierung komplexer Commerce-Systeme",
     "Deep expertise in omnichannel, order management, and product data synchronisation.": "Umfassende Expertise in Omnichannel, Order Management und Produktdaten-Synchronisation",
     "Strong partnerships with Fluent Commerce and commercetools for next-gen commerce.": "Starke Partnerschaften mit Fluent Commerce und commercetools für zukunftssicheren Digital Commerce",
-    "End-to-end delivery - from strategy and design to deployment and ongoing support.": "End-to-End-Umsetzung – von Strategie und Design bis Betrieb und Support",
+    "End-to-end delivery - from strategy and design to deployment and ongoing support.": "Umfassende-Umsetzung – von Strategie und Design bis Betrieb und Support",
     "Relentless focus on faster time-to-market, higher revenue, and stronger customer loyalty.": "Klarer Fokus auf schnelle Markteinführung, Umsatzsteigerung und langfristige Kundenbindung",
 
     "Our Capabilities": "Unsere Kompetenzen",
@@ -6214,7 +6262,7 @@
     "Contentstack": "Contentstack",
     "An enterprise-grade headless CMS for flexible, scalable, and omnichannel content delivery.": "Enterprise-taugliches Headless CMS für flexible, skalierbare und kanalübergreifende Content-Ausspielung",
     "Amplience": "Amplience",
-    "A powerful content and experience management platform for rich media, dynamic content, and personalised digital experiences.": "Leistungsstarke Plattform für Content- und Experience-Management mit Rich Media und personalisierten Erlebnissen",
+    "A powerful content and experience management platform for rich media, dynamic content, and personalised digital experiences.": "Leistungsstarke Plattform für Content- und Berufserfahrung-Management mit Rich Media und personalisierten Erlebnissen",
 
     "Reimagine eCommerce": "E-Commerce neu denken",
     "Ready to modernise, scale, and unlock new growth?": "Bereit, Ihre Commerce-Plattform zu modernisieren, zu skalieren und neues Wachstum zu erschließen?",
@@ -6231,6 +6279,7 @@
     "Modernise fulfilment and inventory operations": "Fulfillment- und Bestandsprozesse modernisieren",
     "Speak to our Fluent Commerce specialists today.": "Sprechen Sie noch heute mit unseren Fluent-Commerce-Experten.",
     "Contact us": "Jetzt Kontakt aufnehmen",
+    "Contact Our ERP Experts": "Jetzt Kontakt aufnehmen",
 
     "Transforming Enterprises With Innovative Digital Services": "Unternehmen durch innovative digitale Services transformieren",
     "At RheinBrücke, we help enterprises reimagine their digital future by combining technology, strategy, and industry expertise. With scalable solutions and a business-first approach, we ensure your transformation drives measurable results and long-term growth.": "Bei RheinBrücke helfen wir Unternehmen, ihre digitale Zukunft neu zu gestalten – durch die Kombination von Technologie, Strategie und Branchenexpertise. Mit skalierbaren Lösungen und einem geschäftsorientierten Ansatz sorgen wir dafür, dass Ihre Transformation messbare Ergebnisse liefert und langfristiges Wachstum sichert.",
@@ -6377,7 +6426,7 @@
     "Implement API-first, composable enterprise architectures with scalable infrastructure, integration frameworks, and governance controls for long-term agility.": "API-first- und modulare Architekturen mit skalierbarer Infrastruktur, Integrationsframeworks und Governance umsetzen.",
 
     "Enterprise Software Implementation:": "Enterprise-Software-Implementierung:",
-    "Deliver end-to-end ERP and CRM implementation services using agile methodologies for faster time-to-value and seamless transition into business-as-usual operations.": "End-to-End-Einführung von ERP, CRM und Unternehmensplattformen mit agilen Methoden für schnelle Ergebnisse und reibungslose Übergänge.",
+    "Deliver end-to-end ERP and CRM implementation services using agile methodologies for faster time-to-value and seamless transition into business-as-usual operations.": "Umfassende-Einführung von ERP, CRM und Unternehmensplattformen mit agilen Methoden für schnelle Ergebnisse und reibungslose Übergänge.",
 
     "ERP-CRM Integrations & Cloud-Native Solutions:": "ERP-CRM-Integration & Cloud-native Lösungen:",
     "Unify business processes with scalable, cloud-native app suites embedded with analytics and automation for operational control and continuous performance refinement.": "Einheitliche Geschäftsprozesse durch skalierbare, cloud-native Applikationen mit Analytics und Automatisierung für operative Kontrolle und kontinuierliche Performance-Optimierung.",
@@ -6394,7 +6443,8 @@
     "Data Visualisation": "Datenvisualisierung",
     "Create executive-ready, interactive dashboards and interactive data stories with Tableau, Power BI and others that enable business users with self-service analytics and decision-making at speed.": "Dynamische Dashboards und interaktive Data Stories mit Tableau, Power BI & Co. für Self-Service-Analysen und schnelle, fundierte Entscheidungen erstellen.",
 
-    "CTA – Know More": "Mehr erfahren",
+    "Know More": "Mehr erfahren",
+    "Get Free ERP Assessment": "Mehr erfahren",
 "Empower Users and Enhance Digital Experiences": "Nutzer befähigen und digitale Erlebnisse verbessern",
     "Transformation isn’t just about systems, it’s about people. We deliver modern, intuitive digital experiences and empower users with tools that accelerate productivity and decision-making.": "Transformation dreht sich nicht nur um Systeme – sie dreht sich um Menschen. Wir schaffen moderne, intuitive digitale Erlebnisse und statten Anwender mit Tools aus, die Produktivität und schnelle Entscheidungen fördern.",
 
@@ -6413,18 +6463,18 @@
     "UI /UX - User-centric Design": "UI/UX – Nutzerzentriertes Design",
     "We Deliver intuitive, enterprise-grade interfaces by applying user-centric principles to create seamless experiences and accelerate user adoption.": "Intuitive, unternehmensgerechte Oberflächen, die reibungslose Nutzung und schnelle Akzeptanz fördern.",
 
-    "User Experience": "User Experience",
+    "User Experience": "User Berufserfahrung",
     "We design intuitive, user-centric digital experiences that drive productivity and unlock measurable business value.": "Gestaltung nutzerzentrierter digitaler Erlebnisse, die Produktivität steigern und messbaren Geschäftswert liefern.",
 
     "Safeguard Operations and Drive Continuous Optimisation": "Betriebsabläufe absichern und kontinuierlich optimieren",
-    "Ensure operational resilience, security, and continuous performance improvement. We help you protect, monitor, and refine your environment - so your business stays ahead, always.": "Sichern Sie die Resilienz, Sicherheit und kontinuierliche Leistungssteigerung Ihrer Geschäftsprozesse. Wir helfen Ihnen, Ihre IT-Umgebung zu schützen, zu überwachen und laufend zu optimieren - damit Ihr Unternehmen immer einen Schritt voraus ist.",
+    "Maintain business continuity and ensure operational resilience, security, and continuous performance improvement. We help you protect, monitor, and refine your environment - so your business stays ahead, always.": "Sichern Sie die Resilienz, Sicherheit und kontinuierliche Leistungssteigerung Ihrer Geschäftsprozesse. Wir helfen Ihnen, Ihre IT-Umgebung zu schützen, zu überwachen und laufend zu optimieren - damit Ihr Unternehmen immer einen Schritt voraus ist.",
 
     "Managed Services & Security Governance": "Managed Services & Security Governance",
     "Deliver managed security services with Microsoft Entra, Defender, and Azure Sentinel. Monitor infrastructure health, operational KPIs, and real-time feedback loops, embedding continuous optimisation and business continuity planning.": "Bereitstellung von Managed-Security-Services mit Microsoft Entra, Defender und Azure Sentinel. Überwachung der Infrastruktur, operativer KPIs und Echtzeit-Feedbackschleifen, mit kontinuierlicher Optimierung und Business-Continuity-Planung.",
 
     "Delivering Outcomes, Operationalised": "Ergebnisse liefern – operationalisiert",
     "From modernising enterprise platforms and activating AI-driven insights to transforming digital commerce and securing operations, our solutions deliver measurable, scalable outcomes — built for today and ready for what’s next.": "Von der Modernisierung von Unternehmensplattformen über KI-gestützte Insights bis hin zur Transformation von digitalem Commerce und der Absicherung von Betriebsabläufen: Unsere Lösungen liefern messbare, skalierbare Ergebnisse – bereit für heute und die Herausforderungen von morgen.",
-    "But transformation doesn’t stop at deployment. With continuous KPI tracking, real-time performance optimisation, and an agile, outcome-led approach, we help your business stay ahead of change and lead with confidence.": "Transformation endet nicht mit der Implementierung. Durch kontinuierliches KPI-Tracking, Echtzeit-Performance-Optimierung und einen agilen, ergebnisorientierten Ansatz unterstützen wir Ihr Unternehmen dabei, Veränderungen voraus zu sein und selbstbewusst zu führen.",
+    "We go beyond implementation, as transformation doesn’t stop at deployment. With continuous KPI tracking, real-time performance optimisation, and an agile, outcome-led approach, we help your business stay ahead of change and lead with confidence.": "Transformation endet nicht mit der Implementierung. Durch kontinuierliches KPI-Tracking, Echtzeit-Performance-Optimierung und einen agilen, ergebnisorientierten Ansatz unterstützen wir Ihr Unternehmen dabei, Veränderungen voraus zu sein und selbstbewusst zu führen.",
     "Ready to operationalise your digital future?": "Bereit, Ihre digitale Zukunft operational zu gestalten?",
     "Connect with our team for a discovery session and explore how we can deliver measurable value for your business.": "Kontaktieren Sie unser Team für eine Discovery-Session und entdecken Sie, wie wir messbaren Mehrwert für Ihr Unternehmen schaffen.",
 
@@ -6538,10 +6588,10 @@
 
     "Unify finance, sales, operations, and service on an intelligent Microsoft Dynamics 365 platform. Drive agility, efficiency, and connected decision-making.": "Vernetzen Sie Finanzen, Vertrieb, Betrieb und Service auf einer intelligenten Microsoft Dynamics 365 Plattform. Mehr Agilität. Mehr Effizienz. Fundierte Entscheidungen in Echtzeit.",
 
-    "Transform your enterprise with intelligent, integrated systems powered by SAP’s digital core. Simplify processes and accelerate end-to-end digital transformation.": "Transformieren Sie Ihr Unternehmen mit intelligenten, integrierten Systemen. Vereinfachen Sie Prozesse und beschleunigen Sie Ihre digitale End-to-End-Transformation.",
+    "Transform your enterprise with intelligent, integrated systems powered by SAP’s digital core. Simplify processes and accelerate end-to-end digital transformation.": "Transformieren Sie Ihr Unternehmen mit intelligenten, integrierten Systemen. Vereinfachen Sie Prozesse und beschleunigen Sie Ihre digitale Umfassende-Transformation.",
 
     "Digital Solutions and Services": "Digital Solutions & Services",
-    "RheinBrücke helps enterprises modernise systems, automate processes, and harness real-time insights to drive faster innovation and measurable business outcomes.": "RheinBrücke modernisiert Ihre Systeme, automatisiert Prozesse und schafft Echtzeit-Transparenz. Für schnellere Innovation, höhere Effizienz und messbare Geschäftserfolge.",
+    "RheinBrücke helps enterprises modernise legacy systems, automate complex business processes through digital transformation and harness real-time business intelligence and predictive analytics to drive innovation, improve margins, and achieve measurable business outcomes. Our digital solutions portfolio includes advanced analytics, AI/ML automation, modern eCommerce platforms, and cloud data engineering.": "RheinBrücke modernisiert Ihre Systeme, automatisiert Prozesse und schafft Echtzeit-Transparenz. Für schnellere Innovation, höhere Effizienz und messbare Geschäftserfolge.",
 
 
 
@@ -6549,7 +6599,7 @@
     "Real Results,": "Echte Ergebnisse,",
     "Real Transformation": "Echte Transformation",
     "Explore how we've partnered with industry leaders to overcome complex challenges, modernize operations, and drive measurable growth. Each story is a testament to our commitment to delivering powerful, technology-driven outcomes.": "Erfahren Sie, wie wir gemeinsam mit führenden Unternehmen komplexe Herausforderungen meistern, Prozesse modernisieren und messbares Wachstum realisieren. Praxisnah. Wirkungsvoll. Technologiegetrieben.",
-    "Contact us": "Kontakt aufnehmen",
+    "Contact us": "Kontaktieren Sie uns",
 
     "Alshaya": "Alshaya",
     "Improving customer fulfilment and reducing waste with Smart Manufacturing Control": "Manuelle Prozesse ade – Smart Manufacturing im Einsatz",
@@ -6596,7 +6646,7 @@
     "Are you an ERP User facing challenges with your current support service? Looking for a more reliable and proactive partner?": "Sind Sie ein ERP-Anwender, der mit seinem aktuellen Support-Service Probleme hat? Suchen Sie einen zuverlässigeren und proaktiveren Partner?",
     "At RheinBrücke IT Consulting, we are committed to delivering Customer Excellence by helping you maximize the value of your ERP investment. Our team of Epicor Certified professional engineers brings extensive experience, having successfully implemented complex ERP solutions for businesses worldwide. We focus on providing expert support to ensure your system is tailored to meet your unique needs, while streamlining your processes for optimal efficiency.": "Bei RheinBrücke IT Consulting haben wir uns dazu verpflichtet, Ihnen einen hervorragenden Kundenservice zu bieten, indem wir Ihnen dabei helfen, den Wert Ihrer ERP-Investition zu maximieren. Unser Team aus Epicor-zertifizierten Fachingenieuren verfügt über umfangreiche Erfahrung und hat bereits komplexe ERP-Lösungen für Unternehmen weltweit erfolgreich implementiert. Wir konzentrieren uns darauf, Ihnen kompetenten Support zu bieten, um sicherzustellen, dass Ihr System auf Ihre individuellen Bedürfnisse zugeschnitten ist, und gleichzeitig Ihre Prozesse für optimale Effizienz zu optimieren.",
     "We help you harness the full potential of ERP with our deep domain knowledge, industry vertical templates, ERP technical and functional capabilities, and expertise in implementing companion products and add-ons. We enable you to manage and optimize your production processes with real-time insights, automation, and enhanced visibility.": "Wir helfen Ihnen dabei, das volle Potenzial von ERP auszuschöpfen – mit unserem fundierten Fachwissen, branchenspezifischen Vorlagen, technischen und funktionalen ERP-Fähigkeiten sowie unserer Expertise bei der Implementierung von Begleitprodukten und Add-ons. Wir ermöglichen Ihnen die Verwaltung und Optimierung Ihrer Produktionsprozesse mit Echtzeit-Einblicken, Automatisierung und verbesserter Transparenz.",
-    "Empowering your ERP journey with end-to-end support, including implementation, rollouts, system upgrades, and ongoing consulting and advisory services tailored to your business goals.": "Wir unterstützen Ihre ERP-Reise mit End-to-End-Services, einschließlich Implementierung, Rollouts, System-Upgrades sowie kontinuierlicher Beratung und strategischer Unterstützung – abgestimmt auf Ihre Geschäftsziele.",
+    "Empowering your ERP journey with end-to-end support, including implementation, rollouts, system upgrades, and ongoing consulting and advisory services tailored to your business goals.": "Wir unterstützen Ihre ERP-Reise mit Umfassende-Services, einschließlich Implementierung, Rollouts, System-Upgrades sowie kontinuierlicher Beratung und strategischer Unterstützung – abgestimmt auf Ihre Geschäftsziele.",
     "Click Here To Access Our Support Desk": "Hier klicken, um auf unseren Support-Desk zuzugreifen",
 
     "The RheinBrücke Customer Excellence Offering": "Das RheinBrücke Customer Excellence-Angebot",
@@ -6774,9 +6824,13 @@
     "Carlos A. Alvarenga is the Founder and CEO of Katalyst Networks. He was earlier the Executive Director of World 50 Labs, the member innovation team at World 50, Inc. World 50, Inc. is the premier global CXO network, with over 1,400 C-suite executives across every corporate function. At World 50, Carlos oversees custom innovation and insight programs and content development. Previous to World 50, Carlos was a Principal in EY’s Consulting Practice where he helped launch the operational risk practice.": "Carlos A. Alvarenga ist Vorstand bei RheinBrücke und Gründer sowie CEO von Katalyst Networks. Zuvor war er Executive Director von World 50 Labs, dem Innovationsteam von World 50, Inc., einem globalen Netzwerk mit über 1.400 Führungskräften auf C-Level. Dort leitete er maßgeschneiderte Innovationsprogramme, Insights und Content-Entwicklung. Vor World 50 war Carlos Principal bei EY Consulting, wo er den Bereich Operational Risk mit aufbaute.",
     "Before joining EY, Carlos was the Managing Director of Accenture’s Supply Chain and Procurement BPO business, which he helped launch in 2009 and which is now a $1B+ global business for Accenture. In addition to his P&L role, Carlos worked closely with Accenture’s M&A team on several strategic acquisitions in support of the overall BPO growth strategy.": "Davor leitete er als Managing Director Accenture’s Supply Chain- und Procurement-BPO-Geschäft, das er 2009 startete und zu einem globalen Milliarden-Dollar-Unternehmen entwickelte. In dieser Rolle arbeitete er eng mit dem M&A-Team zusammen und begleitete mehrere strategische Übernahmen.",
     "Prior to his role at Accenture, Carlos was a VP at Mahindra-Satyam, where he focused on growing their supply chain technology and services business globally. This role included leading the selection and acquisition of S&V Management Consulting in Belgium. Carlos led the acquisition due diligence, negotiations and post-acquisition integration.": "Zuvor war er VP bei Mahindra-Satyam und verantwortlich für den globalen Ausbau von Supply-Chain-Technologien und -Services, einschließlich der erfolgreichen Akquisition von S&V Management Consulting in Belgien. Carlos leitete Due Diligence, Verhandlungen und Post-Merger-Integration.",
-    "Prior to his role at Mahindra-Satyam, Carlos was partner at KPMG Consulting where he led global strategy operational transformation projects for companies such as Nissan, GE, Alcatel and Motorola. In addition to his corporate leadership roles, Carlos holds the position of Senior Research Fellow and Adjunct Professor in the Logistics, Business and Public Policy Department at the University of Maryland’s Robert E. Smith School of Business.": "Zudem war er Partner bei KPMG Consulting und leitete weltweite Strategie- und Transformationsprojekte für Unternehmen wie Nissan, GE, Alcatel und Motorola. Neben seinen Unternehmensrollen ist Carlos Senior Research Fellow und Adjunct Professor am Department of Logistics, Business and Public Policy der Robert E. Smith School of Business, University of Maryland.",
+    "Prior to his role at Mahindra-Satyam, Carlos was partner at KPMG Consulting where he led global strategy operational transformation projects for companies such as Nissan, GE, Alcatel and Motorola. In addition to his corporate leadership roles, Carlos holds the position of Senior Research Fellow and Adjunct Professor in the Logistics, Business and Public Policy Department at the University of Maryland’s Robert E. Smith School of Business.": "Zudem war er Partner bei KPMG Consulting und leitete weltweite Strategie- und Transformationsprojekte für Unternehmen wie Nissan, GE, Alcatel und Motorola. Neben seinen Unternehmensrollen ist Carlos Senior Research Fellow und Adjunct Professor am Abteilung of Logistics, Business and Public Policy der Robert E. Smith School of Business, University of Maryland.",
 
-
+    "Apply now":"Jetzt bewerben",
+    "Apply Now":"Jetzt bewerben",
+    "Experience":"Berufserfahrung",
+    "Department":"Abteilung",
+    "Location":"Standort",
     "Customer Speak": "Was unsere Kunden sagen",
     "We are constantly striving to deliver more value than our client’s expectations and this is reflected in what our customers are saying about us.": "Wir wollen die Erwartungen unserer Kunden nicht nur erfüllen, sondern übertreffen. Das positive Feedback bestätigt unseren Anspruch.",
 
@@ -6849,20 +6903,20 @@
     "What does RheinBrücke’s Enterprise Solutions portfolio include?": "Was umfasst das Enterprise-Solutions-Portfolio von RheinBrücke?",
     "RheinBrücke’s enterprise offerings encompass ERP, CRM, HCM, Procurement, SCM and digital transformation services for leading Cloud platforms such as Epicor Kinetic, Microsoft Dynamics 365, and SAP.": "RheinBrücke bietet umfassende Unternehmenslösungen in den Bereichen ERP, CRM, HCM, Beschaffung (Procurement), Supply Chain Management (SCM) sowie digitale Transformationsservices. Die Lösungen basieren auf führenden Cloud-Plattformen wie Epicor Kinetic, Microsoft Dynamics 365 und SAP.",
 
-    "Does RheinBrücke provide end-to-end implementation and support?": "Bietet RheinBrücke End-to-End-Implementierung und Support?",
+    "Does RheinBrücke provide end-to-end implementation and support?": "Bietet RheinBrücke Umfassende-Implementierung und Support?",
     "Yes. RheinBrücke provides comprehensive end-to-end lifecycle support. Our service includes initial strategic blueprinting and consulting, full implementation and data migration, custom development and integration, and continuous post-go-live Managed Services and system optimization. We ensure sustained ROI long after the go-live date.": "Ja. RheinBrücke begleitet den gesamten Lebenszyklus – von strategischer Beratung und Blueprinting über vollständige Implementierung, Datenmigration, individuelle Entwicklung und Integration bis hin zu Managed Services und kontinuierlicher Systemoptimierung nach dem Go-live. So wird sichergestellt, dass der Return on Investment langfristig erhalten bleibt.",
 
     "Which industries does RheinBrücke specialise in?": "Auf welche Branchen ist RheinBrücke spezialisiert?",
     "RheinBrücke has deep expertise across discrete and process manufacturing ((e.g. Metal Fabrication, Automotive), retail, wholesale distribution, Logistics, construction/Engineering-to-order (ETO), and professional services. We tailor our Epicor and Dynamics 365 solutions to meet the unique challenges of each sector.": "RheinBrücke verfügt über umfassende Expertise in der diskreten und Prozessfertigung (z. B. Metallverarbeitung, Automobilindustrie), im Handel und Großhandel, in der Logistik, im Bauwesen/Engineering-to-Order (ETO) sowie im Bereich Professional Services. Die Lösungen für Epicor und Dynamics 365 werden gezielt auf die spezifischen Anforderungen jeder Branche zugeschnitten.",
 
 "What services does RheinBrücke offer for Epicor ERP?": "Welche Services bietet RheinBrücke für Epicor ERP?",
-    "RheinBrücke offers comprehensive, end-to-end services for Epicor Kinetic ERP and older platforms. This includes end-to-end implementation, Cloud migration services, customization (e.g., integrations, API development), version upgrades (e.g., 10.2 or lower versions to current Epicor version), Kinetic UI upgrades, global roll-outs, and continuous Epicor Managed Services and support.": "RheinBrücke bietet umfassende End-to-End-Services für Epicor Kinetic ERP und ältere Plattformen. Dazu zählen vollständige Implementierungen, Cloud-Migrationen, individuelle Anpassungen wie Integrationen und API-Entwicklung, Versionsupgrades (z. B. von Version 10.2 oder älter auf die aktuelle Epicor-Version), Kinetic-UI-Upgrades, globale Roll-outs sowie fortlaufende Managed Services und Support für Epicor.",
+    "RheinBrücke offers comprehensive, end-to-end services for Epicor Kinetic ERP and older platforms. This includes end-to-end implementation, Cloud migration services, customization (e.g., integrations, API development), version upgrades (e.g., 10.2 or lower versions to current Epicor version), Kinetic UI upgrades, global roll-outs, and continuous Epicor Managed Services and support.": "RheinBrücke bietet umfassende Umfassende-Services für Epicor Kinetic ERP und ältere Plattformen. Dazu zählen vollständige Implementierungen, Cloud-Migrationen, individuelle Anpassungen wie Integrationen und API-Entwicklung, Versionsupgrades (z. B. von Version 10.2 oder älter auf die aktuelle Epicor-Version), Kinetic-UI-Upgrades, globale Roll-outs sowie fortlaufende Managed Services und Support für Epicor.",
 
     "Why choose Epicor ERP?": "Warum Epicor ERP wählen?",
     "Epicor Kinetic is the ideal solution for growth and digital transformation, providing robust, industry-specific functionality for discrete and process manufacturing, distribution, and services. It enables operational excellence, global scalability, and includes modern features like AI, IoT integration, and a Cloud-first architecture designed for agile business management.": "Epicor Kinetic ist die ideale Lösung für Wachstum und digitale Transformation. Die Software bietet branchenspezifische Funktionen für diskrete und Prozessfertigung, Distribution und Dienstleistungen, unterstützt operative Exzellenz, globale Skalierbarkeit und moderne Features wie KI, IoT-Integration und eine Cloud-first-Architektur, die agiles Geschäftsmanagement ermöglicht.",
 
     "How does RheinBrücke differentiate its Epicor services?": "Wodurch heben sich RheinBrückes Epicor-Services ab?",
-    "Our key differentiators are deep technical and global implementation expertise. Our certified consultants bring extensive domain knowledge and have successfully executed complex Epicor projects across more than 45+ countries, including extensive experience with multi-company and multi-currency rollouts. We focus on achieving maximum, sustainable ROI. We are a Epicor Premium partner and a two times winner of the Epicor International Partner of the Year award with deep knowledge of Epicor including developing products and templates on top of Epicor.": "RheinBrücke zeichnet sich durch tiefgehende technische Expertise und globale Implementierungserfahrung aus. Unsere zertifizierten Berater verfügen über umfangreiches Fachwissen und haben komplexe Epicor-Projekte in über 45 Ländern erfolgreich umgesetzt, einschließlich Multi-Company- und Multi-Currency-Rollouts. Der Fokus liegt stets auf einem maximalen, nachhaltigen Return on Investment. RheinBrücke ist Epicor Premium Partner und zweifacher Gewinner des Epicor International Partner of the Year Awards. Zudem entwickeln wir Produkte und Templates direkt auf Basis von Epicor.",
+    "Our key differentiators are deep technical and global implementation expertise. Our certified consultants bring extensive domain knowledge and have successfully executed complex Epicor projects across more than 45+ countries, including extensive experience with multi-company and multi-currency rollouts. We focus on achieving maximum, sustainable ROI. We are a Epicor Premium partner and a two times winner of the Epicor International Partner of the Year award with deep knowledge of Epicor including developing products and templates on top of Epicor.": "RheinBrücke zeichnet sich durch tiefgehende technische Expertise und globale Implementierungserfahrung aus. Unsere zertifizierten Berater verfügen über umfangreiches Fachwissen und haben komplexe Epicor-Projekte in über 45 Ländern erfolgreich umgesetzt, einschließlich Multi-Company- und Multi-Currency-Rollouts. Der Fokus liegt stets auf einem maximalen, nachhaltigen Return on Investment. RheinBrücke ist Epicor Premium Partner und zweifacher Gewinner des Epicor International Partner of the Year Auszeichnungen. Zudem entwickeln wir Produkte und Templates direkt auf Basis von Epicor.",
 
     "Does RheinBrücke offer post-implementation Epicor support?": "Bietet RheinBrücke auch Support nach der Implementierung?",
     "Yes. Our dedicated Customer Excellence team provides flexible post-implementation Epicor support and Managed Services. We offer customized support plans, including SLA-driven maintenance, system optimization, 24/7 monitoring, and technical assistance to ensure continuous ERP performance, reliability, and security compliance.": "Ja. Unser engagiertes Customer Excellence Team stellt flexiblen Post-Implementation-Support und Managed Services bereit. Wir bieten maßgeschneiderte Supportpläne, einschließlich SLA-gesteuerter Wartung, Systemoptimierung, 24/7-Monitoring und technischer Unterstützung, um kontinuierliche ERP-Leistung, Zuverlässigkeit und Compliance sicherzustellen.",
@@ -6911,7 +6965,7 @@
 
 "MS DYNAMICS": "Microsoft Dynamics 365",
     "What Microsoft Dynamics services are offered by RheinBrücke?": "Welche Microsoft-Dynamics-Services bietet RheinBrücke?",
-    "RheinBrücke provides comprehensive services for the Microsoft Dynamics 365 platform, including end-to-end implementation and customization for Finance & Supply Chain Management (SCM), Customer Relationship Management (CRM), and the Power Platform (Power BI, Power Apps). We also offer continuous Managed Services and optimization.": "RheinBrücke bietet umfassende Leistungen rund um Microsoft Dynamics 365, von End-to-End-Implementierung und individueller Anpassung bis hin zu Managed Services und kontinuierlicher Optimierung. Der Fokus liegt auf Finance & Supply Chain Management (SCM), Customer Relationship Management (CRM) sowie der Power Platform mit Power BI und Power Apps.",
+    "RheinBrücke provides comprehensive services for the Microsoft Dynamics 365 platform, including end-to-end implementation and customization for Finance & Supply Chain Management (SCM), Customer Relationship Management (CRM), and the Power Platform (Power BI, Power Apps). We also offer continuous Managed Services and optimization.": "RheinBrücke bietet umfassende Leistungen rund um Microsoft Dynamics 365, von Umfassende-Implementierung und individueller Anpassung bis hin zu Managed Services und kontinuierlicher Optimierung. Der Fokus liegt auf Finance & Supply Chain Management (SCM), Customer Relationship Management (CRM) sowie der Power Platform mit Power BI und Power Apps.",
     "Why choose Dynamics 365 through RheinBrücke?": "Warum Dynamics 365 mit RheinBrücke?",
     "RheinBrücke offers a unique advantage built on deep multi-platform expertise. We combine certified Dynamics 365 domain knowledge with proven project methodologies, specializing in complex system integrations with Epicor, SAP, and legacy ERPs. This ensures a unified data strategy, especially for multi-national organizations.": "RheinBrücke verbindet zertifizierte Dynamics-365-Expertise mit tiefgreifendem Multi-Plattform-Know-how. Wir realisieren komplexe Integrationen mit Epicor, SAP und bestehenden Altsystemen und schaffen so eine durchgängige Datenstrategie – insbesondere für international aufgestellte Unternehmen.",
     "Do you provide cloud migration for legacy Dynamics solutions?": "Bieten Sie Cloud-Migrationen für ältere Dynamics-Versionen an?",
@@ -6920,7 +6974,7 @@
     "We provide specialized support across key industrial verticals. Our Dynamics 365 solutions cater to the complex Supply Chain Management (SCM) needs of Manufacturing, omnichannel Retail and Distribution (e.g., utilizing D365 Commerce), and highly-regulated Professional Services and Project Accounting firms.": "RheinBrücke betreut Unternehmen aus Fertigung, Omnichannel-Handel und Distribution – etwa mit Dynamics 365 Commerce – sowie aus regulierten Professional-Services- und projektorientierten Organisationen. Die Lösungen sind gezielt auf komplexe Supply-Chain- und Finanzanforderungen ausgerichtet.",
     "SAP": "SAP",
     "What SAP services does RheinBrücke provide?": "Welche SAP-Services bietet RheinBrücke?",
-    "RheinBrücke provides strategic SAP consulting, end-to-end implementation, system integration, and complex Cloud transformation and migration services. We also offer customization and support for SAP ECC as well as technical support for ABAP and BASIS. Our goal is to modernize your SAP ERP landscape and significantly improve operational efficiency and data integrity.": "RheinBrücke bietet strategische SAP-Beratung, End-to-End-Implementierungen, Systemintegration sowie komplexe Cloud-Transformationen und Migrationen. Darüber hinaus unterstützen wir SAP ECC, bieten kundenspezifische Anpassungen sowie technischen Support in ABAP und BASIS. Ziel ist die Modernisierung Ihrer SAP-Systemlandschaft und eine nachhaltige Steigerung von Effizienz und Datenqualität.",
+    "RheinBrücke provides strategic SAP consulting, end-to-end implementation, system integration, and complex Cloud transformation and migration services. We also offer customization and support for SAP ECC as well as technical support for ABAP and BASIS. Our goal is to modernize your SAP ERP landscape and significantly improve operational efficiency and data integrity.": "RheinBrücke bietet strategische SAP-Beratung, Umfassende-Implementierungen, Systemintegration sowie komplexe Cloud-Transformationen und Migrationen. Darüber hinaus unterstützen wir SAP ECC, bieten kundenspezifische Anpassungen sowie technischen Support in ABAP und BASIS. Ziel ist die Modernisierung Ihrer SAP-Systemlandschaft und eine nachhaltige Steigerung von Effizienz und Datenqualität.",
     "Do you specialise in particular SAP modules?": "Spezialisieren Sie sich auf bestimmte SAP-Module?",
     "Yes. RheinBrücke specializes in core SAP ERP solutions, with deep expertise in managing large-scale S/4HANA migrations and implementing SAP Business One tailored for mid-sized enterprises and global subsidiaries. We focus particularly on complex financials, Supply Chain Management (SCM), and logistics modules.": "Ja. RheinBrücke verfügt über umfassende Expertise in zentralen SAP-ERP-Lösungen, insbesondere bei groß angelegten S/4HANA-Migrationen sowie bei der Einführung von SAP Business One für mittelständische Unternehmen und internationale Tochtergesellschaften. Schwerpunkte liegen in den Bereichen Finanzwesen, Supply Chain Management (SCM) und Logistik.",
     "Can SAP systems integrate with other enterprise applications?": "Lassen sich SAP-Systeme mit anderen Unternehmensanwendungen integrieren?",
@@ -6943,7 +6997,7 @@
     "Enterprise Architecture Platform as a Service:": "Unternehmens architektur Plattform als Service:",
     "Implement API-first, composable enterprise architectures with scalable infrastructure, integration frameworks, and governance controls for long-term agility.": "Implementierung von API-First- und modularen Architekturen mit skalierbarer Infrastruktur, Integrationsframeworks und klaren Governance-Strukturen.",
     "Enterprise Software Implementation:": "Implementierung von Unternehmenssoftware:",
-    "Deliver end-to-end ERP and CRM implementation services using agile methodologies for faster time-to-value and seamless transition into business-as-usual operations.": "End-to-End-Implementierung von ERP-, CRM- und Unternehmensplattformen mit agilen Frameworks – für schnellen Mehrwert und einen reibungslosen Übergang in den laufenden Betrieb.",
+    "Deliver end-to-end ERP and CRM implementation services using agile methodologies for faster time-to-value and seamless transition into business-as-usual operations.": "Umfassende-Implementierung von ERP-, CRM- und Unternehmensplattformen mit agilen Frameworks – für schnellen Mehrwert und einen reibungslosen Übergang in den laufenden Betrieb.",
     "ERP-CRM Integrations & Cloud-Native Solutions:": "ERP-CRM-Integrationen und Cloud-native Lösungen:",
     "Unify business processes with scalable, cloud-native app suites embedded with analytics and automation for operational control and continuous performance refinement.": "Integration und Harmonisierung von Geschäftsprozessen mit skalierbaren, Cloud-nativen Anwendungslösungen – ergänzt durch Datenanalysen und Automatisierung für eine bessere Steuerung und kontinuierliche Leistungsoptimierung.",
     "Turn Data into Strategic Advantage": "Daten in strategischen Mehrwert verwandeln",
@@ -7038,13 +7092,13 @@
     "API management and security": "API-Management und Sicherheitskonzepte",
     "BTP is where enterprises unlock real agility, we help you get there.": "Mit BTP schaffen Unternehmen echte Agilität – wir unterstützen Sie dabei, dieses Potenzial zu realisieren.",
     "SAP Signavio & Process Intelligence": "SAP Signavio & Process Intelligence",
-    "Transform the way your organisation understands and improves processes.": "Verändern Sie die Art und Weise, wie Ihr Unternehmen Prozesse versteht und verbessert.",
+    "Transform how your organisation analyses and optimises business processes with SAP Signavio.": "Verändern Sie die Art und Weise, wie Ihr Unternehmen Prozesse versteht und verbessert.",
     "We help you:": "Wir unterstützen Sie dabei:",
     "Map, analyse, and benchmark business processes": "Geschäftsprozesse abzubilden, zu analysieren, zu vergleichen und zu bewerten",
     "Identify bottlenecks, inefficiencies, and compliance gaps": "EEngpässe, Ineffizienzen und Compliance-Lücken zu identifizieren",
-    "Build future-state process models": "Prozessmodelle für den zukünftigen Zustand zu erstellen",
-    "Drive harmonisation across global operations": "die Harmonisierung Ihrer globalen Abläufe voranzutreiben",
-    "Signavio brings clarity. We turn that clarity into action.": "Signavio sorgt für Klarheit. Wir setzen diese Klarheit in die Tat um.",
+    "Design future-state process models": "Prozessmodelle für den zukünftigen Zustand zu erstellen",
+    "Drive process harmonisation across global operations": "die Harmonisierung Ihrer globalen Abläufe voranzutreiben",
+    "Signavio delivers process visibility—we turn it into measurable transformation outcomes.": "Signavio sorgt für Klarheit. Wir setzen diese Klarheit in die Tat um.",
 "SAP Analytics Cloud (SAC) & Enterprise Insights": "SAP Analytics Cloud (SAC) & Enterprise Insights",
     "Move beyond reports, give your teams real-time, self-service intelligence.": "Gehen Sie über klassische Reports hinaus – und geben Sie Ihren Teams Echtzeit-Insights zur selbstständigen Analyse.",
     "Our expertise covers:": "Unsere Expertise umfasst:",
@@ -7076,16 +7130,16 @@
     "We build only what adds value and ensure everything stays upgrade-friendly.": "Wir entwickeln nur dort, wo echter Mehrwert entsteht – und stellen sicher, dass alle Lösungen auch bei zukünftigen Updates problemlos weiter genutzt werden können.",
     "Why RheinBrücke": "Warum RheinBrücke",
     "An modern SAP partner for modern enterprises.": "Ein moderner SAP-Partner für moderne Unternehmen.",
-    "Strong S/4HANA, ECC, RISE, BTP, Signavio & SAC expertise": "Fundierte Expertise in S/4HANA, ECC, RISE, BTP, Signavio und SAC",
-    "Proven migration frameworks and accelerators": "Bewährte Migrations-Frameworks und Beschleuniger",
+    "Strong SAP S/4HANA, ECC, RISE with SAP, BTP, Signavio, and SAC expertise": "Fundierte Expertise in S/4HANA, ECC, RISE, BTP, Signavio und SAC",
+    "Proven SAP migration frameworks and accelerators": "Bewährte Migrations-Frameworks und Beschleuniger",
     "Deep integration capability across ERP and non-ERP systems": "Umfassende Integrationsfähigkeit zwischen ERP- und Nicht-ERP-Systemen",
 
     
-    "Proven migration frameworks and accelerators with deep integration capability across ERP and non-ERP systems": "Bewährte Migrations-Frameworks und Beschleuniger mit umfassender Integrationsfähigkeit zwischen ERP- und Nicht-ERP-Systemen",
+    "Proven SAP migration frameworks and accelerators with deep SAP integration capability across ERP and non-ERP systems": "Bewährte Migrations-Frameworks und Beschleuniger mit umfassender Integrationsfähigkeit zwischen ERP- und Nicht-ERP-Systemen",
 
-    "Agile delivery with predictable outcomes": "Agile Umsetzung mit vorhersehbaren Ergebnissen",
-    "A global delivery model that balances cost and quality": "Ein globales Bereitstellungsmodell, das Kosten und Qualität in Einklang bringt",
-    "Long-term AMS+ to keep your SAP evolving": "Langfristiges AMS+, damit sich Ihr SAP-System weiterentwickelt",
+    "Agile SAP project delivery with predictable outcomes": "Agile Umsetzung mit vorhersehbaren Ergebnissen",
+    "A global SAP delivery model that balances cost and quality": "Ein globales Bereitstellungsmodell, das Kosten und Qualität in Einklang bringt",
+    "Long-term SAP AMS+ services to keep your SAP evolving": "Langfristiges AMS+, damit sich Ihr SAP-System weiterentwickelt",
     "We don’t just implement SAP - we help you run, optimise, and scale with it.": "Wir implementieren nicht nur SAP – wir helfen Ihnen, damit zu arbeiten, es zu optimieren und zu skalieren.",
     "Industries We Support": "Branchen, die wir unterstützen",
     "Modern SAP solutions tailored for:": "Moderne SAP-Lösungen, maßgeschneidert für:",
@@ -7176,8 +7230,8 @@
 
     "SAP is More Than ERP…": "SAP ist mehr als nur ERP…",
     "Our SAP Capabilities": "Unsere SAP-Kompetenzen",
-    "Unlock business value through a comprehensive portfolio of SAP services and proven transformation methodologies.": "Schaffen Sie echten Mehrwert mit einem umfassenden Portfolio an SAP-Dienstleistungen und bewährten Transformationsmethoden.",
-    "From strategy to execution and continuous optimisation, we help organisations accelerate innovation, improve agility, and achieve measurable business outcomes across their SAP landscape.": "Von der Strategie über die Umsetzung bis hin zur kontinuierlichen Optimierung unterstützen wir Unternehmen dabei, Innovationen voranzutreiben, ihre Agilität zu steigern und messbare Geschäftsergebnisse in ihrer gesamten SAP-Landschaft zu erzielen.",
+    "Unlock business value with a comprehensive portfolio of SAP services and proven transformation methodologies.": "Schaffen Sie echten Mehrwert mit einem umfassenden Portfolio an SAP-Dienstleistungen und bewährten Transformationsmethoden.",
+    "From strategy and implementation to continuous optimisation, we help organisations accelerate digital transformation, enhance business agility, and achieve measurable outcomes across their SAP ecosystem.": "Von der Strategie über die Umsetzung bis hin zur kontinuierlichen Optimierung unterstützen wir Unternehmen dabei, Innovationen voranzutreiben, ihre Agilität zu steigern und messbare Geschäftsergebnisse in ihrer gesamten SAP-Landschaft zu erzielen.",
 
     "SAP Implementation Services": "SAP-Implementierung",
     "We deliver end-to-end SAP implementations aligned with industry best practices and clean-core principles. Our structured delivery approach ensures predictable outcomes, faster go-lives, and scalable architectures.": "Wir bieten durchgängige SAP-Implementierungen, die sich an branchenüblichen Best Practices und den „Clean-Core“-Prinzipien orientieren. Unser strukturierter Umsetzungsansatz gewährleistet vorhersehbare Ergebnisse, schnellere Go-Lives und skalierbare Architekturen.",
@@ -7205,12 +7259,12 @@
     "BTP is where enterprises unlock real agility, we help you get there.": "Mit BTP realisieren Unternehmen echte Agilität – wir helfen Ihnen dabei.",
 
  "SAP EWM Implementation": "SAP EWM-Implementierung",
-    "We help organisations modernise warehouse operations using SAP Extended Warehouse Management (EWM) to improve inventory accuracy, throughput, and operational efficiency.": "Wir unterstützen Unternehmen bei der Modernisierung ihrer Lagerabläufe mit SAP Extended Warehouse Management (EWM), um Bestandsgenauigkeit, Durchsatz und betriebliche Effizienz zu verbessern.",
+    "We modernise warehouse operations using SAP Extended Warehouse Management (EWM) to improve inventory accuracy, throughput, and operational efficiency.": "Wir unterstützen Unternehmen bei der Modernisierung ihrer Lagerabläufe mit SAP Extended Warehouse Management (EWM), um Bestandsgenauigkeit, Durchsatz und betriebliche Effizienz zu verbessern.",
     "Key capabilities:": "Kernkompetenzen:",
-    "SAP EWM embedded and decentralised implementations": "Integrierte und dezentrale SAP EWM-Implementierungen",
+    "Embedded and decentralised SAP EWM implementations": "Integrierte und dezentrale SAP EWM-Implementierungen",
     "Warehouse process optimisation and automation": "Optimierung und Automatisierung von Lagerprozessen",
-    "Integration with S/4HANA, TM, and third-party systems": "Integration mit S/4HANA, TM und Systemen von Drittanbietern",
-    "RF, Fiori, and automation enablement": "RF-, Fiori- und Automatisierungsunterstützung",
+    "Integration with SAP S/4HANA, TM, and third-party systems": "Integration mit S/4HANA, TM und Systemen von Drittanbietern",
+    "RF, SAP Fiori, and warehouse automation enablement": "RF-, Fiori- und Automatisierungsunterstützung",
     "Real-time warehouse control with measurable gains in inventory accuracy and throughput.": "Lagersteuerung in Echtzeit mit messbaren Verbesserungen bei Bestandsgenauigkeit und Durchsatz.",
 
     "SAP Analytics Cloud (SAC) Implementation": "Implementierung der SAP Analytics Cloud (SAC)",
@@ -7240,27 +7294,27 @@
 
     "SAP Ariba Services": "SAP Ariba-Dienstleistungen",
     "We modernise procurement and supplier collaboration using SAP Ariba to deliver transparency, control, and cost efficiency.": "Wir modernisieren die Beschaffung und die Zusammenarbeit mit Lieferanten mithilfe von SAP Ariba, um Transparenz, Kontrolle und Kosteneffizienz zu gewährleisten.",
-    "Ariba Buying, Invoicing, and Sourcing implementations": "Implementierung von Ariba Buying, Invoicing und Sourcing",
+    "Ariba Buying, Invoicing, and Strategic Sourcing solution": "Implementierung von Ariba Buying, Invoicing und Sourcing",
     "Supplier onboarding and enablement": "Onboarding und Onboarding von Lieferanten",
     "Integration with SAP S/4HANA and ECC": "Integration mit SAP S/4HANA und ECC",
     "Spend visibility and compliance optimisation": "Ausgabentransparenz und Optimierung der Compliance",
-    "Ariba embedded as a governed procurement platform—not another disconnected tool.": "Ariba ist als geregelte Beschaffungsplattform integriert – und nicht nur ein weiteres isoliertes Tool.",
+    "Ariba deployed as a governed procurement platform—not a disconnected tool.": "Ariba ist als geregelte Beschaffungsplattform integriert – und nicht nur ein weiteres isoliertes Tool.",
 
     "EDI & SAP CPI Integration Services": "EDI- und SAP-CPI-Integrationsdienste",
     "We enable seamless system-to-system and business partner integrations using SAP Integration Suite (CPI) and EDI platforms.": "Wir ermöglichen nahtlose System-zu-System- und Integrationen mit Geschäftspartnern mithilfe der SAP Integration Suite (CPI) und EDI-Plattformen.",
     "EDI integrations with customers, suppliers, and logistics partners": "EDI-Integrationen mit Kunden, Lieferanten und Logistikpartnern",
     "SAP CPI-based cloud and hybrid integrations": "SAP-CPI-basierte Cloud- und Hybrid-Integrationen",
     "API management and message mapping": "API-Management und Message-Mapping",
-    "Monitoring, error handling, and optimisation": "Überwachung, Fehlerbehandlung und Optimierung",
-    "Integrations designed for failure handling, visibility, and long-term stability.": "Integrationen, die auf Fehlerbehandlung, Transparenz und langfristige Stabilität ausgelegt sind.",
+    "Implementation monitoring, error handling, and optimisation": "Überwachung, Fehlerbehandlung und Optimierung",
+    "Integrations designed for resilience, visibility, and long-term scalability.": "Integrationen, die auf Fehlerbehandlung, Transparenz und langfristige Stabilität ausgelegt sind.",
 
 "Merlin Sourcing – SAP-Integrated Strategic Sourcing": "Merlin Sourcing – SAP-integriertes strategisches Sourcing",
     "Merlin Sourcing enables governed, SAP-integrated strategic sourcing, extending SAP procurement with structured sourcing, supplier collaboration, and decision control, without breaking clean-core principles.": "Merlin Sourcing ermöglicht ein strukturiertes, SAP-integriertes strategisches Sourcing und erweitert die SAP-Beschaffung um strukturiertes Sourcing, Lieferantenkooperation und Entscheidungskontrolle, ohne die Clean-Core-Prinzipien zu verletzen.",
     "Key capabilities:": "Wichtige Funktionen:",
-    "SAP-integrated sourcing aligned to S/4HANA and ECC": "SAP-integrierte Sourcing-Lösung, abgestimmt auf S/4HANA und ECC",
-    "Structured sourcing workflows and event management": "Sourcing-Lösung auf Basis von Direktmaterialien und Stücklisten",
+    "SAP-integrated sourcing solutions aligned to S/4HANA and ECC": "SAP-integrierte Sourcing-Lösung, abgestimmt auf S/4HANA und ECC",
+    "Direct materials and BoM-based sourcing tools": "Sourcing-Lösung auf Basis von Direktmaterialien und Stücklisten",
     "Configurable for scale without customisation debt": "Skalierbar konfigurierbar ohne Customizing-Schulden",
-    "Delivered and supported by RheinBrücke’s SAP consulting and AMS teams": "Bereitgestellt und unterstützt durch die Supply-Chain-Beratungsteams von RheinBrücke",
+    "Delivered and powered by RheinBrücke’s supply chain consulting experts": "Bereitgestellt und unterstützt durch die Supply-Chain-Beratungsteams von RheinBrücke",
     "SAP procurement investments extended into strategic sourcing without platform sprawl or governance loss.": "SAP-Beschaffungsinvestitionen werden auf strategisches Sourcing ausgeweitet, ohne dass es zu einer Plattformausbreitung oder einem Verlust der Governance kommt.",
 
     "Custom Development & Technical Services": "Maßgeschneiderte Entwicklung & Technische Dienstleistungen",
@@ -7272,16 +7326,16 @@
     "We build only what adds value and ensure everything stays upgrade-friendly.": "Wir entwickeln nur das, was einen Mehrwert schafft, und stellen sicher, dass alles upgrade-freundlich bleibt.",
 
     "Implementation & Global Rollout Services": "Implementierungs- und globale Rollout-Dienstleistungen",
-    "RheinBrücke enables seamless SAP rollouts across geographies, ensuring standardisation while accommodating local regulatory and business requirements.": "RheinBrücke ermöglicht nahtlose SAP-Rollouts über mehrere Länder hinweg und gewährleistet dabei Standardisierung unter Berücksichtigung lokaler regulatorischer und geschäftlicher Anforderungen.",
-    "Template-based global rollouts": "Vorlagenbasierte globale Rollouts",
-    "Localisation and compliance management": "Lokalisierungs- und Compliance-Management",
+    "RheinBrücke enables seamless SAP implementation and global rollouts across geographies, ensuring standardisation while accommodating local regulatory and business requirements.": "RheinBrücke ermöglicht nahtlose SAP-Rollouts über mehrere Länder hinweg und gewährleistet dabei Standardisierung unter Berücksichtigung lokaler regulatorischer und geschäftlicher Anforderungen.",
+    "Template-based global SAP rollouts": "Vorlagenbasierte globale Rollouts",
+    "Localisation and regulatory compliance management": "Lokalisierungs- und Compliance-Management",
     "Multi-country data and process harmonisation": "Harmonisierung von Daten und Prozessen über mehrere Länder hinweg",
     "Central governance with regional flexibility": "Zentrale Steuerung mit regionaler Flexibilität",
-    "Consistent global execution with local compliance assured from day one.": "Konsistente globale Umsetzung mit garantierter lokaler Compliance vom ersten Tag an.",
+    "Consistent global SAP deployment with local compliance assured from day one.": "Konsistente globale Umsetzung mit garantierter lokaler Compliance vom ersten Tag an.",
 
     "Industries We Support": "Branchen, die wir unterstützen",
     "Why RheinBrücke": "Warum RheinBrücke",
-    "An SAP partner for modern enterprises.": "Moderne SAP-Lösungen, maßgeschneidert für:",
+    "An SAP Partner Built for Modern and Global Enterprises.": "Moderne SAP-Lösungen, maßgeschneidert für:",
 
 
 
@@ -7516,14 +7570,14 @@
 
     "CorusHR is a complete Human Capital Management (HCM) solution that handles many aspects of talent management. Here are some of its main features:": "CorusHR ist eine umfassende Lösung für das Personalmanagement (HCM), die zahlreiche Aspekte des Talentmanagements abdeckt. Hier sind einige der wichtigsten Funktionen:",
 
-    "Powering enterprise agility through intelligent systems": "Intelligente Systeme für mehr Agilität im Unternehmen",
-    "From ERP to integration, we design solutions that adapt as you grow.": "Von ERP bis Integration entwickeln wir Lösungen, die mit Ihrem Unternehmen wachsen.",
+    "Powering Enterprise Agility with Intelligent ERP Solutions and Digital Transformation": "Intelligente Systeme für mehr Agilität im Unternehmen",
+    "From ERP systems and enterprise integration to scalable ERP services, we design adaptive solutions that grow with your business.": "Von ERP bis Integration entwickeln wir Lösungen, die mit Ihrem Unternehmen wachsen.",
 
     "Request an Epicor ERP Consultation": "Fordern Sie eine Epicor-ERP-Beratung an",
     "Epicor Kinetic ERP section - last para": "Abschnitt Epicor Kinetic ERP – letzter Absatz",
     "Epicor ERP Solutions": "Epicor-ERP-Lösungen",
     "RheinBrücke delivers Epicor ERP through four key service pillars, ensuring maximum value and successful outcomes": "RheinBrücke bietet Epicor ERP über vier zentrale Service-Säulen für maximalen Nutzen",
-    "We provide end-to-end Epicor ERP services to maximize your investment and transform your operations": "Wir bieten End-to-End Epicor-ERP-Services zur Optimierung Ihrer Investitionen",
+    "We provide end-to-end Epicor ERP services to maximize your investment and transform your operations": "Wir bieten Umfassende Epicor-ERP-Dienstleistungen zur Optimierung Ihrer Investitionen",
 
     "We deliver end-to-end Microsoft Dynamics services to help you modernise, integrate, and optimise your business:": "Wir bieten umfassende Microsoft Dynamics Dienstleistungen zur Modernisierung und Optimierung Ihres Unternehmens",
 
@@ -7572,6 +7626,8 @@
     "45 countries":"45 Ländern",
     "Locations":"Standorte",
     "LEADERSHIP":"FÜHRUNG",
+    "Job title":"Stellenbezeichnung",
+    "Job Title":"Stellenbezeichnung",
     
     "Poor flexibility in production planning and scheduling restricts the ability to respond to market fluctuations or urgent demand": "Eine mangelnde Flexibilität bei der Produktionsplanung und -steuerung schränkt die Fähigkeit ein, auf Marktschwankungen oder dringende Nachfrage zu reagieren",
 
@@ -7584,21 +7640,21 @@
     "Digital solutions powered by ERP help interior design and fit-out companies manage project planning, material procurement, supplier coordination and financial operations within a unified system.": "Digitale Lösungen auf ERP-Basis helfen Innenarchitektur- und Ausstattungsunternehmen dabei, Projektplanung, Materialbeschaffung, Lieferantenkoordination und Finanzabläufe in einem einheitlichen System zu verwalten.",
 
      "Transform Your Enterprise with SAP S/4HANA and Cloud Innovation": "Transformieren Sie Ihr Unternehmen mit SAP S/4HANA und Cloud-Innovationen",
-    "Drive real-time decision-making, simplify operations, and accelerate growth with RheinBrücke’s end-to-end SAP transformation services.": "Treffen Sie Entscheidungen in Echtzeit, vereinfachen Sie Ihre Abläufe und beschleunigen Sie Ihr Wachstum mit den umfassenden Dienstleistungen für Ihre SAP-Transformation von RheinBrücke.",
+    "Enable real-time decision-making, streamline operations, and accelerate growth with RheinBrücke’s end-to-end SAP S/4HANA and cloud transformation services.": "Treffen Sie Entscheidungen in Echtzeit, vereinfachen Sie Ihre Abläufe und beschleunigen Sie Ihr Wachstum mit den umfassenden Dienstleistungen für Ihre SAP-Transformation von RheinBrücke.",
     "Request a SAP ERP Consultation": "Fordern Sie eine SAP-ERP-Beratung an",
     "The SAP Transformation Journey": "Der Weg zur SAP-Transformation",
     "Talk to our SAP experts to see how we can help optimise your systems and drive business transformation.": "Sprechen Sie mit unseren SAP-Experten, um zu erfahren, wie wir Sie bei der Optimierung Ihrer Systeme und der Umsetzung Ihrer Geschäftstransformation unterstützen können.",
     "RheinBrücke supports enterprises across the full SAP lifecycle, from transformation planning to implementation to continuous optimisation.": "RheinBrücke unterstützt Unternehmen über den gesamten SAP-Lebenszyklus hinweg – von der Transformationsplanung über die Implementierung bis hin zur kontinuierlichen Optimierung.",
     "SAP S/4HANA Transformation": "SAP S/4HANA-Transformation",
-    "Accelerate ERP modernisation with SAP S/4HANA through flexible transformation pathways—greenfield, brownfield, or cloud with RISE and GROW—to drive real-time insights, operational efficiency, and scalable growth.": "Beschleunigen Sie die ERP-Modernisierung mit SAP S/4HANA durch flexible Transformationspfade – Greenfield, Brownfield oder Cloud mit RISE und GROW –, um Echtzeit-Einblicke, betriebliche Effizienz und skalierbares Wachstum zu ermöglichen.",
+    "Accelerate ERP modernization with SAP S/4HANA through flexible transformation pathways—greenfield, brownfield, or cloud with RISE and GROW—to drive real-time analytics, operational efficiency, and scalable digital growth.": "Beschleunigen Sie die ERP-Modernisierung mit SAP S/4HANA durch flexible Transformationspfade – Greenfield, Brownfield oder Cloud mit RISE und GROW –, um Echtzeit-Einblicke, betriebliche Effizienz und skalierbares Wachstum zu ermöglichen.",
     "SAP Cloud Applications": "SAP-Cloud-Anwendungen",
     "Transform HR, procurement, and expense management with SAP SuccessFactors, Ariba, and Concur, enabling integrated, scalable, and cloud-driven business operations.": "Transformieren Sie Personalwesen, Beschaffung und Reisekostenmanagement mit SAP SuccessFactors, Ariba und Concur und ermöglichen Sie so integrierte, skalierbare und cloudbasierte Geschäftsabläufe.",
     "SAP BTP": "SAP BTP",
-    "Integrate SAP with your enterprise ecosystem and build scalable extensions on SAP BTP, enabling innovation while preserving a clean, stable core.": "Integrieren Sie SAP in Ihr Unternehmensökosystem und entwickeln Sie skalierbare Erweiterungen auf SAP BTP, um Innovationen zu ermöglichen und gleichzeitig einen sauberen, stabilen Kern zu bewahren.",
+    "Integrate SAP with your enterprise ecosystem and build scalable extensions on SAP Business Technology Platform (BTP), enabling innovation while maintaining a clean core architecture.": "Integrieren Sie SAP in Ihr Unternehmensökosystem und entwickeln Sie skalierbare Erweiterungen auf SAP BTP, um Innovationen zu ermöglichen und gleichzeitig einen sauberen, stabilen Kern zu bewahren.",
     "SAP Analytics": "SAP Analytics",
-    "Turn enterprise data into real-time, actionable insights with SAP Analytics Cloud and advanced reporting—enabling faster decisions and improved business performance.": "Verwandeln Sie Unternehmensdaten mit SAP Analytics Cloud und fortschrittlichem Reporting in Echtzeit-Einblicke, die direkt umsetzbar sind – für schnellere Entscheidungen und eine verbesserte Geschäftsleistung.",
+    "Turn enterprise data into real-time, actionable insights with SAP Analytics Cloud and advanced business intelligence tools—enabling faster, data-driven decisions and improved performance.": "Verwandeln Sie Unternehmensdaten mit SAP Analytics Cloud und fortschrittlichem Reporting in Echtzeit-Einblicke, die direkt umsetzbar sind – für schnellere Entscheidungen und eine verbesserte Geschäftsleistung.",
     "SAP Application Management Services (AMS)": "SAP-Anwendungs management dienste",
-    "Ensure a stable, secure, and continuously optimised SAP landscape with outcome-led support, proactive monitoring, and ongoing enhancements.": "Sorgen Sie für eine stabile, sichere und kontinuierlich optimierte SAP-Landschaft durch zielorientierten Support, proaktive Überwachung und fortlaufende Verbesserungen.",
+    "Ensure a stable, secure, and continuously optimized SAP landscape with outcome-driven AMS support, proactive monitoring, and continuous improvement services.": "Sorgen Sie für eine stabile, sichere und kontinuierlich optimierte SAP-Landschaft durch zielorientierten Support, proaktive Überwachung und fortlaufende Verbesserungen.",
     "Read more": "Weiterlesen",
     "SQL, Azure, Data Factory, Real-time Data Services":"SQL, Azure, Data Factory, Echtzeit-Datendienste",
 
@@ -7817,7 +7873,7 @@
     "Sales Automation": "Verkaufs automatisierung",
     "Solution":"Lösung",
 
-  "Digitsing core business functions across finance, operations, HR, supply chain, and customer engagement":"Digitalisierung zentraler Geschäftsprozesse in den Bereichen Finanzen, Betrieb, HR, Lieferkette und Kundeninteraktion.",
+  "Digitising core business functions with cloud-based ERP systems, across finance":"Digitalisierung zentraler Geschäftsprozesse in den Bereichen Finanzen, Betrieb, HR, Lieferkette und Kundeninteraktion.",
   "Related Blog Posts":"Verwandte Blogbeiträge",
   
     "Unlock actionable insights and visualise your business data in real time with Power BI.": "Entsperren Sie einsetzbare Erkenntnisse und visualisieren Sie Ihre Geschäftsdaten in Echtzeit mit Power BI.",
@@ -7826,7 +7882,111 @@
 
     "CRM and Customer Engagement Platforms":"CRM- und Customer-Engagement-Plattformen",
 "Thank you!":"Vielen Dank!",
-"Your request has been received and the email has been sent successfully. Please check your inbox for further details.":"Ihre Anfrage wurde erfolgreich übermittelt. Bitte prüfen Sie Ihren Posteingang für weitere Details."
+"Your request has been received and the email has been sent successfully. Please check your inbox for further details.":"Ihre Anfrage wurde erfolgreich übermittelt. Bitte prüfen Sie Ihren Posteingang für weitere Details.",
+
+
+"Digital Services for Scalable, Agile, and Future-Ready Business Growth": "Digitale Services für skalierbares, agiles und zukunftsfähiges Wachstum",
+"MACH Architecture, Data Intelligence, and AI Built to Perform": "MACH-Architektur, Data Intelligence und KI für maximale Performance",
+
+"Our enterprise modernisation services help you replace legacy systems with high-performance platforms, architectures, and applications, enabling faster innovation and operational resilience.": "Unsere Dienstleistungen zur Unternehmensmodernisierung helfen Ihnen dabei, Altsysteme durch leistungsstarke Plattformen, Architekturen und Anwendungen zu ersetzen und ermöglichen schnellere Innovation sowie höhere operative Resilienz.",
+
+"We design and implement MACH architecture on Microsoft Azure, leveraging Microservices, APIs, Cloud-Native and Headless principles, and event-driven systems. Our solutions ensure high availability, scalability, and faster innovation cycles, while modernising legacy infrastructure.": "Wir entwerfen und implementieren MACH-Architekturen auf Microsoft Azure unter Einsatz von Microservices, APIs sowie Cloud-nativen und Headless-Prinzipien und ereignisgesteuerten Systemen. Unsere Lösungen gewährleisten hohe Verfügbarkeit, Skalierbarkeit und schnellere Innovationszyklen bei gleichzeitiger Modernisierung bestehender Systeme.",
+
+"We transform outdated systems into modern, cloud-native applications using composable architectures and scalable frameworks. Improved performance and security through tools like Algolia, Amplience, and Metapack.": "Wir wandeln veraltete Systeme mithilfe modularer Architekturen und skalierbarer Frameworks in moderne, cloudnative Anwendungen um und verbessern gleichzeitig Leistung und Sicherheit durch Tools wie Algolia, Amplience und Metapack.",
+
+"We build enterprise-grade, custom designed applications tailored to your business processes. From development to deployment, we ensure our solutions are high-performance, integration-ready, and lifecycle optimised.": "Wir entwickeln maßgeschneiderte Enterprise-Anwendungen, die genau auf Ihre Geschäftsprozesse zugeschnitten sind. Von der Entwicklung bis zur Bereitstellung stellen wir sicher, dass unsere Lösungen leistungsstark, integrationsfähig und für den gesamten Lebenszyklus optimiert sind.",
+
+"We enable Microservices and API-led integration and real-time data connectivity across your digital ecosystem. Get real-time insights, and automated workflows using Azure Logic Apps, API Management, and Cosmos DB.": "Wir ermöglichen Microservices, API-gesteuerte Integration und Echtzeit-Datenintegration in Ihrem gesamten digitalen Ökosystem. Gewinnen Sie Echtzeit-Einblicke und automatisierte Workflows mithilfe von Azure Logic Apps, API Management und Cosmos DB.",
+
+"We deploy AI and Azure Machine Learning solutions to deliver predictive analytics, intelligent automation, and business insights. Our Power BI and Tableau solutions enable real-time dashboards and data visualisation for decision intelligence.": "Wir setzen KI- und Azure Machine Learning-Lösungen ein, um prädiktive Analysen, intelligente Automatisierung und Business Insights zu liefern. Unsere Power BI- und Tableau-Lösungen ermöglichen Echtzeit-Dashboards und Datenvisualisierung für fundierte Entscheidungen.",
+
+"Deliver seamless, intuitive, and high-performing digital experiences that improve user engagement, retention, and conversions.": "Bieten Sie nahtlose, intuitive und leistungsstarke digitale Erlebnisse, die Nutzerinteraktion, Kundenbindung und Conversion-Raten verbessern.",
+
+"Our approach ensures clear navigation, responsive design, and enhanced user journeys.": "Unser Ansatz gewährleistet eine übersichtliche Navigation, responsives Design und optimierte Nutzererlebnisse.",
+
+"We build scalable, high-performance mobile applications for iOS and Android using cross-platform and native technologies using React Native, Flutter, and native SDKs. Integrated with Azure, our solutions deliver reliable, engaging experiences for standalone and hybrid deployments.": "Wir entwickeln skalierbare, leistungsstarke mobile Anwendungen für iOS und Android mit plattformübergreifenden und nativen Technologien wie React Native, Flutter und nativen SDKs. Durch die Integration mit Azure bieten unsere Lösungen zuverlässige, ansprechende Erlebnisse für eigenständige und hybride Anwendungen.",
+
+"Cloud Security, Managed Services & IT Operations": "Cloud-Sicherheit, Managed Services und IT-Betrieb",
+
+"We implement Zero Trust security architectures and Microsoft Entra for identity management and MFA, ensuring protected, compliant operations. Our approach ensures secure access, compliance, and risk mitigation.": "Wir implementieren Zero-Trust-Sicherheitsarchitekturen und Microsoft Entra für Identitätsmanagement und MFA, um einen geschützten, konformen Betrieb zu gewährleisten. Unser Ansatz sorgt für sicheren Zugriff, Compliance und Risikominderung.",
+
+"Built for Scale. Designed for Impact.": "Für Skalierung gebaut. Für Wirkung entwickelt.",
+
+"Every engagement is designed for measurable value. We help enterprises modernise applications, unlock data value, enhance digital experiences, and secure operations, all aligned to measurable business outcomes.": "Jede Zusammenarbeit ist auf messbaren Mehrwert ausgerichtet. Wir helfen Unternehmen dabei, Anwendungen zu modernisieren, Datenpotenziale zu erschließen, digitale Erlebnisse zu verbessern und den Betrieb zu sichern – alles im Einklang mit messbaren Geschäftsergebnissen.",
+
+"Let’s accelerate your digital transformation journey.": "Lassen Sie uns Ihre digitale Transformation vorantreiben.",
+
+"How do you implement MACH architecture in your digital solutions?": "Wie setzen Sie die MACH-Architektur in Ihren digitalen Lösungen um?",
+
+"We implement MACH architecture using a practical, engineering-led approach rather than a theoretical model. Systems are broken down into microservices, exposed through API-first layers, and deployed on cloud-native infrastructure, primarily Microsoft Azure. Headless components are introduced where flexibility across web, mobile, and commerce platforms is required.": "Wir setzen die MACH-Architektur nicht als theoretisches Modell, sondern anhand eines technischen, praxisorientierten Ansatzes um. Die Systeme werden in Microservices unterteilt, über API-First-Schichten bereitgestellt und auf einer Cloud-nativen Infrastruktur – vor allem Microsoft Azure – umgesetzt. Headless-Komponenten kommen dort zum Einsatz, wo Flexibilität über Web-, Mobil- und E-Commerce-Plattformen hinweg erforderlich ist.",
+
+"What tools and technologies do you support?": "Welche Tools und Technologien unterstützen Sie?",
+
+"We work across a wide enterprise stack covering cloud, application development, data engineering, integration, and experience layers. This includes Microsoft Azure services, .NET and modern frontend frameworks, API management and integration services, data platforms like Azure Data Lake and Synapse, and analytics tools such as Power BI.": "Wir arbeiten mit einem breiten Technologie-Stack, der Cloud, Anwendungsentwicklung, Data Engineering, Integration und Berufserfahrung-Layer abdeckt. Dazu gehören Microsoft Azure-Dienste, .NET und moderne Frontend-Frameworks, API-Management- und Integrationsdienste, Datenplattformen wie Azure Data Lake und Synapse sowie Analysetools wie Power BI.",
+
+"The focus is not on pushing a fixed stack but aligning the right technologies to the use case, whether it is application modernisation, data platform build, or cloud migration. This is typically relevant for organisations operating in markets like the UAE where scalability, security, and integration with existing enterprise systems are critical.": "Der Fokus liegt nicht darauf, einen festen Stack vorzugeben, sondern die richtigen Technologien auf den jeweiligen Anwendungsfall abzustimmen, sei es Anwendungsmodernisierung, Aufbau einer Datenplattform oder Cloud-Migration. Dies ist typischerweise für Unternehmen relevant, die in Märkten wie den Vereinigten Arabischen Emiraten tätig sind, wo Skalierbarkeit, Sicherheit und die Integration mit bestehenden Unternehmenssystemen entscheidend sind.",
+
+    "Digital Solutions & Enterprise Transformation Services": "Digitale Lösungen & Dienstleistungen zur Unternehmenstransformation",
+    "Innovating Business, One Solution at a Time": "Innovation im Geschäftsleben – Schritt für Schritt",
+    "We deliver outcome-driven digital solutions that combine advanced technology, proven frameworks, and scalable cloud-native architectures to solve complex business challenges. Driven by our Analyse–Integrate–Transform framework, every engagement is built for measurable, sustained business impact.": "Wir liefern ergebnisorientierte digitale Lösungen, die fortschrittliche Technologie, bewährte Rahmenkonzepte und skalierbare, cloudnative Architekturen kombinieren, um komplexe geschäftliche Herausforderungen zu meistern. Auf der Grundlage unseres „Analyse–Integration–Transformation“-Rahmenkonzepts ist jedes Projekt darauf ausgerichtet, messbare und nachhaltige geschäftliche Ergebnisse zu erzielen.",
+    "Every successful digital transformation starts with a strong foundation of analysis, becomes powerful through data and AI-driven intelligence, delivers outcomes via seamless application and system integration, and endures through resilient operations, security, and governance.": "Jede erfolgreiche digitale Transformation beginnt mit einer soliden Analysegrundlage, wird durch daten- und KI-gestützte Intelligenz gestärkt, liefert Ergebnisse durch nahtlose Anwendungs- und Systemintegration und wird durch robuste Betriebsabläufe, Sicherheit und Governance gesichert.",
+    "Implement API-first, composable enterprise architectures with scalable infrastructure, integration frameworks, and governance controls for long-term agility.": "Implementieren Sie API-first-basierte, komponierbare Unternehmensarchitekturen mit skalierbarer Infrastruktur, Integrationsframeworks und Governance-Kontrollen für langfristige Agilität.",
+    "Deliver end-to-end ERP and CRM implementation services using agile methodologies for faster time-to-value and seamless transition into business-as-usual operations.": "Bieten Sie Umfassende-Implementierungsservices für ERP und CRM unter Verwendung agiler Methoden an, um eine schnellere Time-to-Value und einen nahtlosen Übergang zum laufenden Geschäftsbetrieb zu gewährleisten.",
+    "Unify business processes with cloud-native enterprise applications, integrating ERP and CRM systems with embedded analytics and automation for continuous performance optimisation.": "Vereinheitlichen Sie Ihre Geschäftsprozesse mit Cloud-nativen Unternehmensanwendungen und integrieren Sie ERP- und CRM-Systeme mit eingebetteten Analysen und Automatisierung für eine kontinuierliche Leistungsoptimierung.",
+    "AI/ML Solutions & Advanced Analytics": "KI-/ML-Lösungen und erweiterte Analysen",
+    "Deploy AI solutions using Azure Machine Learning and Large Event Models (LEMs) for predictive maintenance, anomaly detection, intelligent automation, and real-time operational insights using enterprise-grade platforms.": "Implementieren Sie KI-Lösungen mithilfe von Azure Machine Learning und Large Event Models (LEMs) für vorausschauende Wartung, Anomalieerkennung, intelligente Automatisierung und operative Echtzeit-Einblicke auf Plattformen der Enterprise-Klasse.",
+    "Create executive-ready, interactive dashboards and interactive data stories with Tableau, Power BI and others that enable business users with self-service analytics and decision-making at speed.": "Erstellen Sie mit Tableau, Power BI und anderen Tools interaktive Dashboards und Datenberichte für Führungskräfte, die Geschäftsanwendern Self-Service-Analysen und schnelle Entscheidungsfindung ermöglichen.",
+    "Digital transformation succeeds when users are empowered. We build intuitive applications, enterprise portals, and digital experiences that improve productivity and adoption.": "Digitale Transformation ist dann erfolgreich, wenn Anwender befähigt werden. Wir entwickeln intuitive Anwendungen, Unternehmensportale und digitale Erlebnisse, die die Produktivität und Nutzerakzeptanz steigern.",
+    "Enterprise Applications & Portal Development": "Unternehmensanwendungen & Portalentwicklung",
+    "Develop custom enterprise applications, portals, and real-time operational dashboards using modern frameworks and low-code/no-code platforms for rapid, scalable delivery.": "Entwickeln Sie maßgeschneiderte Unternehmensanwendungen, Portale und Echtzeit-Dashboards mithilfe moderner Frameworks und Low-Code-/No-Code-Plattformen für eine schnelle und skalierbare Bereitstellung.",
+    "Build on low-code/no-code, business-led innovation using Power Apps, Power Automate, and Power BI to deliver workflow automation, application development, and data insights with governance.": "Bauen Sie auf Low-Code-/No-Code-basierten, geschäftsorientierten Innovationen mit Power Apps, Power Automate und Power BI auf, um Workflow-Automatisierung, Anwendungsentwicklung und Dateneinblicke unter Einhaltung von Governance-Vorgaben zu realisieren.",
+    "Composable eCommerce Architecture": "Modulare E-Commerce-Architektur",
+    "Ensure Security, Reliability & Continuous Optimisation": "Sicherheit, Zuverlässigkeit und kontinuierliche Optimierung gewährleisten",
+    "Maintain business continuity and ensure operational resilience, security, and continuous performance improvement.": "Sichern Sie Geschäftskontinuität und gewährleisten Sie operative Ausfallsicherheit, Sicherheit und kontinuierliche Leistungsverbesserung.",
+    "Delivering Measurable Outcomes": "Messbare Ergebnisse liefern",
+    "We go beyond implementation, as transformation doesn’t stop at deployment": "Wir gehen über die reine Implementierung hinaus, denn Transformation endet nicht mit der Bereitstellung.",
+    "Start Your Digital Transformation Journey Today": "Starten Sie noch heute Ihre digitale Transformation",
+
+
+    "Are these solutions cloud-ready?": "Sind diese Lösungen cloudfähig?",
+"Absolutely. All RheinBrücke solutions can be deployed on-premises, in the cloud, or in hybrid environments—depending on your organization’s IT strategy and scalability goals. We work with major cloud platforms to ensure flexibility, cost efficiency, and performance optimization.": "Auf jeden Fall. Alle Lösungen von RheinBrücke können vor Ort, in der Cloud oder in hybriden Umgebungen bereitgestellt werden – abhängig von der IT-Strategie und den Skalierungszielen Ihres Unternehmens. Wir arbeiten mit den wichtigsten Cloud-Plattformen zusammen, um Flexibilität, Kosteneffizienz und Leistungsoptimierung zu gewährleisten.",
+
+"Do you offer custom solution development?": "Bieten Sie die Entwicklung individueller Lösungen an?",
+"Yes. RheinBrücke provides custom software development services to address unique business processes, integration requirements, or specialized functionalities not covered by standard ERP or CRM systems. Our team designs, builds, and deploys scalable, secure, and high-performance applications tailored to your enterprise ecosystem.": "Ja. RheinBrücke bietet individuelle Softwareentwicklungsleistungen an, um spezifische Geschäftsprozesse, Integrationsanforderungen oder spezielle Funktionen abzudecken, die von Standard-ERP- oder CRM-Systemen nicht abgedeckt werden. Unser Team konzipiert, entwickelt und implementiert skalierbare, sichere und leistungsstarke Anwendungen, die auf Ihr Unternehmensökosystem zugeschnitten sind.",
+
+"How are RheinBrücke’s solutions differentiated?": "Was zeichnet die Lösungen von RheinBrücke aus?",
+"RheinBrücke’s solutions stand out through a unique blend of deep domain expertise, technology excellence, and proven implementation methodologies. We combine industry best practices with agile delivery frameworks to ensure faster time-to-value, minimal disruption, and measurable business outcomes for our clients.": "Die Lösungen von RheinBrücke zeichnen sich durch eine einzigartige Kombination aus fundiertem Fachwissen, technologischer Exzellenz und bewährten Implementierungsansätzen aus. Wir verbinden bewährte Branchenpraktiken mit agilen Umsetzungsmodellen, um unseren Kunden einen schnelleren Time-to-Value, minimale Unterbrechungen und messbare Geschäftsergebnisse zu gewährleisten.",
+
+"What types of business solutions does RheinBrücke provide?": "Welche Arten von Unternehmenslösungen bietet RheinBrücke an?",
+"RheinBrücke offers a comprehensive suite of end-to-end business solutions across ERP, CRM, Human Resource Management (HR), and Digital Transformation domains. Each solution is tailored to industry-specific requirements, helping organizations enhance operational efficiency, data visibility, and customer engagement.": "RheinBrücke bietet ein umfassendes Portfolio an umfassenden Unternehmenslösungen in den Bereichen ERP, CRM, Personalmanagement (HR) und digitale Transformation. Jede Lösung ist auf branchenspezifische Anforderungen zugeschnitten und unterstützt Unternehmen dabei, ihre betriebliche Effizienz, Datentransparenz und Kundenbindung zu verbessern.",
+
+"What services does RheinBrücke provide?": "Welche Dienstleistungen bietet RheinBrücke an?",
+"RheinBrücke offers comprehensive services including ERP implementation, upgrades, global rollouts, application support and maintenance, digital transformation consulting, and custom software development tailored to specific business needs.": "RheinBrücke bietet umfassende Dienstleistungen an, darunter ERP-Implementierung, Upgrades, globale Rollouts, Anwendungs-Support und Wartung, Beratung zur digitalen Transformation sowie maßgeschneiderte Softwareentwicklung, die auf spezifische Geschäftsanforderungen zugeschnitten ist.",
+
+"Is consulting provided prior to implementation?": "Bieten Sie vor der Implementierung auch Beratung an?",
+"Yes. RheinBrücke’s expert consultants conduct detailed readiness assessments and develop customized roadmaps to align ERP projects with organizational goals, ensuring smooth transitions and successful outcomes.": "Ja. Die erfahrenen Berater von RheinBrücke führen detaillierte Readiness Assessments durch und entwickeln maßgeschneiderte Roadmaps, um ERP-Projekte auf die Unternehmensziele abzustimmen und so reibungslose Übergänge und erfolgreiche Ergebnisse zu gewährleisten.",
+
+"How does RheinBrücke ensure project success?": "Wie stellt RheinBrücke den Projekterfolg sicher?",
+"Projects follow proven methodologies and industry best practices, utilizing standardized templates and emphasizing user adoption, change management, and clear ROI measurement to maximize business value from ERP investments.": "Unsere Projekte folgen bewährten Methoden und Best Practices der Branche, nutzen standardisierte Vorlagen und legen den Schwerpunkt auf Nutzerakzeptanz, Change Management und eine klare ROI-Messung, um den geschäftlichen Nutzen aus ERP-Investitionen zu maximieren.",
+
+"Are 24x7 support options available?": "Bieten Sie Support rund um die Uhr an?",
+"Yes. RheinBrücke offers 24x7 global support across multiple time zones, providing continuous system monitoring, issue resolution, and proactive maintenance to keep ERP systems running optimally.": "Ja. RheinBrücke bietet weltweiten 24/7-Support über mehrere Zeitzonen hinweg und sorgt durch kontinuierliche Systemüberwachung, Störungsbehebung und proaktive Wartung dafür, dass ERP-Systeme optimal laufen.",
+
+"Get A Free ERP Assessment": "Sichern Sie sich eine kostenlose ERP-Analyse",
+"Download Our Brochure now to know more about our Digital Solution!": "Laden Sie jetzt unsere Broschüre herunter und erfahren Sie mehr über unsere digitalen Lösungen!",
+
+"How does SAP ERP help manufacturing businesses scale?": "Wie unterstützt SAP ERP Fertigungsunternehmen bei der Skalierung?",
+"SAP provides a flexible and scalable platform that allows manufacturing companies to expand operations, add new facilities, and integrate additional processes without replacing their core system.": "SAP bietet eine flexible und skalierbare Plattform, die es Fertigungsunternehmen ermöglicht, ihre Geschäftstätigkeit auszuweiten, neue Standorte hinzuzufügen und zusätzliche Prozesse zu integrieren, ohne ihr Kernsystem ersetzen zu müssen.",
+
+"What should manufacturing companies expect during SAP implementation?": "Was können Fertigungsunternehmen bei einer SAP-Implementierung erwarten?",
+"Manufacturing companies can expect a structured process that includes requirement analysis, system design, configuration, testing, and deployment. The involvement of an experienced SAP partner ensures minimal disruption to operations.": "Fertigungsunternehmen können einen strukturierten Prozess erwarten, der eine Anforderungsanalyse, Systemkonzeption, Konfiguration, Tests und Go-Live umfasst. Die Einbindung eines erfahrenen SAP-Partners gewährleistet, dass der laufende Betrieb so wenig wie möglich beeinträchtigt wird.",
+
+"End-to-end support from consulting and implementation to training.":"Umfassende Unterstützung – von der Beratung über die Implementierung bis hin zur Schulung.",
+"Focused on operational efficiency, growth and compliance assurance.":"Mit Fokus auf operative Effizienz, Wachstum und Compliance.",
+"Ready to simplify payroll and stay compliant with Epic Pay?":"Sind Sie bereit, die Lohnabrechnung zu vereinfachen und mit Epic Pay die gesetzlichen Vorschriften einzuhalten?",
+"Discover how our Digital and ERP-led discrete manufacturing solutions can improve production performance, quality, and operational resilience.":"Erfahren Sie, wie unsere digitalen und ERP-gestützten Lösungen für die diskrete Fertigung, Produktionsleistung, Qualität und operative Ausfallsicherheit verbessern können.",
+"End-to-End":"Umfassende",
+"Future-proof your cable manufacturing business with connected infrastructure, automated production workflows, and real-time operational insights that support smarter planning, improved quality control, and sustainable profitability.":"Machen Sie Ihr Kabelherstellungsunternehmen zukunftssicher – mit vernetzter Infrastruktur, automatisierten Produktionsabläufen und betrieblichen Einblicken in Echtzeit, die eine intelligentere Planung, eine verbesserte Qualitätskontrolle und nachhaltige Profitabilität ermöglichen."
 
     
   

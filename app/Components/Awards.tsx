@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { useTranslation } from "../hooks/useTranslation";
 
 const Awards = () => {
+  const { t } = useTranslation();
   return (
     <>
     {/* Our Awards Section Start */}
@@ -13,7 +15,7 @@ const Awards = () => {
                                     className="text-anime-style-21 text-dark text-center"
                                     data-cursor="-opaque"
                                 >
-                                    Awards
+                                    {t("Awards")}
                                 </h2>
                             </div>
                         </div>

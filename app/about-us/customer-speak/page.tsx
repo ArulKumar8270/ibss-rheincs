@@ -121,7 +121,7 @@ export default function AlMl() {
                                                                             {t("Massimiliano A. Milani")}
                                                                         </h3>
                                                                         <p>
-                                                                            {t("Product &amp; Pricing Director Europe &amp; Africa at Federal Mogul Corporation Antwerp, Belgium")}
+                                                                            {t("Product & Pricing Director Europe & Africa at Federal Mogul Corporation Antwerp, Belgium")}
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -135,27 +135,23 @@ export default function AlMl() {
                                                             {/* Your current service content */}
                                                             <div className="service-item-header ">
                                                                 <div className="icon-box">
-                                                                    <img src="/images/testimonials/Epicor.png" alt="" />
+                                                                    <img src="/images/testimonials/RAY.png" alt="" />
                                                                 </div>
                                                             </div>
                                                             <div className="service-item-body">
                                                                 {/* <h3>ERP Modernisation</h3> */}
                                                                 <p>
-                                            {t("I had been using RheinBrücke team as my extended arm for sometime now and I have really come to appreciate their depth of technical and functional knowledge of the product and their commitment to our end customers needs. They react quickly to new challenges and are always there for me to rely on.")}
+                                                                    {t("Our challenges made us to embark on our ERP journey and after lots of analysis, we choose Epicor ERP for RAY Group. We also faced initial hiccup and challenges during the implementations. This is where we came across the German based Rheinbrücke IT consulting and took their support. We leveraged their services for past 12 months and from this experience, I can definitely say that they did a fantastic turnaround of the project. I enjoyed the open, transparent and efficient dealing with them and came to appreciate their work. I understand that they recently started their Middle east and Africas operations, I wish them good luck and every success.")}
                                                                 </p>
                                                                 <div className="testimonial-body">
                                                                     <div className="author-image">
                                                                         <figure className="image-anime">
-                                                                            <img src="/new/cs-2.gif" alt="" />
+                                                                            <img src="/new/cs-5.gif" alt="" />
                                                                         </figure>
                                                                     </div>
                                                                     <div className="author-content">
-                                                                        <h3>
-                                                                            {t("Craig Stephens")}
-                                                                        </h3>
-                                                                        <p>
-                                                                            {t("Vice President-International Consulting at Epicor Software")}
-                                                                        </p>
+                                                                        <h3>{t("Vinit Agarwal")}</h3>
+                                                                        <p>{t("CEO at RAY International, Sultanate of Oman")}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -285,23 +281,27 @@ export default function AlMl() {
                                                             {/* Your current service content */}
                                                             <div className="service-item-header ">
                                                                 <div className="icon-box">
-                                                                    <img src="/images/1-American.png" alt="" />
+                                                                    <img src="/images/OFO.png" alt="" />
                                                                 </div>
                                                             </div>
                                                             <div className="service-item-body">
                                                                 {/* <h3>ERP Modernisation</h3> */}
                                                                 <p>
-                                                                    {t("The launch of the IDC in Chennai marks a pivotal step forward in our collaboration with RheinBrücke. This new centre will enhance our operational efficiency and growth potential and I would like to extend my thanks to everyone involved for their hard work in making this a reality.")}
+                                                                        {t("For over 10 years, RheinBrücke IT Consulting has been our trusted partner, consistently delivering quality and a satisfying experience. In our recent Epicor Kinetic upgrade, what stood out was their collaborative approach, commitment, and strong technical expertise. The upgrade to Epicor Kinetic UI has given us a modern platform to align with our future goals, enable integrations, and extend Epicor Kinetic functionality.")}
                                                                 </p>
                                                                 <div className="testimonial-body">
                                                                     <div className="author-image">
                                                                         <figure className="image-anime">
-                                                                            <img src="/images/simon.png" alt="" />
+                                                                            <img src="/images/OFO.png" alt="" />
                                                                         </figure>
                                                                     </div>
                                                                     <div className="author-content">
-                                                                        <h3>{t("Simon Owers")}</h3>
-                                                                        <p>{t("CFO of American Golf")}</p>
+                                                                        <h3>
+                                                                            {t("Mohamed Al Sinaidy")}
+                                                                        </h3>
+                                                                        <p>
+                                                                            {t("CEO, Oman Fiber Optic")}
+                                                                        </p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -313,36 +313,6 @@ export default function AlMl() {
                                             {/* Testimonial Slide End */}
                                             {/* Testimonial Slide Start */}
                                             <div className="col-sm-4">
-                                                <div className="service-item flip-card">
-                                                    <div className="flip-card-inner">
-                                                        <div className="flip-card-front">
-                                                            {/* Your current service content */}
-                                                            <div className="service-item-header ">
-                                                                <div className="icon-box">
-                                                                    <img src="/images/testimonials/RAY.png" alt="" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="service-item-body">
-                                                                {/* <h3>ERP Modernisation</h3> */}
-                                                                <p>
-                                                                    {t("Our challenges made us to embark on our ERP journey and after lots of analysis, we choose Epicor ERP for RAY Group. We also faced initial hiccup and challenges during the implementations. This is where we came across the German based Rheinbrücke IT consulting and took their support. We leveraged their services for past 12 months and from this experience, I can definitely say that they did a fantastic turnaround of the project. I enjoyed the open, transparent and efficient dealing with them and came to appreciate their work. I understand that they recently started their Middle east and Africas operations, I wish them good luck and every success.")}
-                                                                </p>
-                                                                <div className="testimonial-body">
-                                                                    <div className="author-image">
-                                                                        <figure className="image-anime">
-                                                                            <img src="/new/cs-5.gif" alt="" />
-                                                                        </figure>
-                                                                    </div>
-                                                                    <div className="author-content">
-                                                                        <h3>{t("Vinit Agarwal")}</h3>
-                                                                        <p>{t("CEO at RAY International, Sultanate of Oman")}</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        {/* Front Side */}
-                                                    </div>
-                                                </div>
                                                 <div className="service-item flip-card">
                                                     <div className="flip-card-inner">
                                                         <div className="flip-card-front">
@@ -384,6 +354,40 @@ export default function AlMl() {
                                                             {/* Your current service content */}
                                                             <div className="service-item-header ">
                                                                 <div className="icon-box">
+                                                                    <img src="/images/testimonials/Epicor.png" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="service-item-body">
+                                                                {/* <h3>ERP Modernisation</h3> */}
+                                                                <p>
+                                            {t("I had been using RheinBrücke team as my extended arm for sometime now and I have really come to appreciate their depth of technical and functional knowledge of the product and their commitment to our end customers needs. They react quickly to new challenges and are always there for me to rely on.")}
+                                                                </p>
+                                                                <div className="testimonial-body">
+                                                                    <div className="author-image">
+                                                                        <figure className="image-anime">
+                                                                            <img src="/new/cs-2.gif" alt="" />
+                                                                        </figure>
+                                                                    </div>
+                                                                    <div className="author-content">
+                                                                        <h3>
+                                                                            {t("Craig Stephens")}
+                                                                        </h3>
+                                                                        <p>
+                                                                            {t("Vice President-International Consulting at Epicor Software")}
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {/* Front Side */}
+                                                    </div>
+                                                </div>
+                                                <div className="service-item flip-card">
+                                                    <div className="flip-card-inner">
+                                                        <div className="flip-card-front">
+                                                            {/* Your current service content */}
+                                                            <div className="service-item-header ">
+                                                                <div className="icon-box">
                                                                     <img src="/images/testimonials/a-map.png" alt="" />
                                                                 </div>
                                                             </div>
@@ -403,6 +407,36 @@ export default function AlMl() {
                                                                         <p>
                                                                             {t("Head of R&D and QC/AL-MUQARRAM AUTO PARTS")}
                                                                         </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {/* Front Side */}
+                                                    </div>
+                                                </div>
+                                                <div className="service-item flip-card">
+                                                    <div className="flip-card-inner">
+                                                        <div className="flip-card-front">
+                                                            {/* Your current service content */}
+                                                            <div className="service-item-header ">
+                                                                <div className="icon-box">
+                                                                    <img src="/images/1-American.png" alt="" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="service-item-body">
+                                                                {/* <h3>ERP Modernisation</h3> */}
+                                                                <p>
+                                                                    {t("The launch of the IDC in Chennai marks a pivotal step forward in our collaboration with RheinBrücke. This new centre will enhance our operational efficiency and growth potential and I would like to extend my thanks to everyone involved for their hard work in making this a reality.")}
+                                                                </p>
+                                                                <div className="testimonial-body">
+                                                                    <div className="author-image">
+                                                                        <figure className="image-anime">
+                                                                            <img src="/images/simon.png" alt="" />
+                                                                        </figure>
+                                                                    </div>
+                                                                    <div className="author-content">
+                                                                        <h3>{t("Simon Owers")}</h3>
+                                                                        <p>{t("CFO of American Golf")}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>

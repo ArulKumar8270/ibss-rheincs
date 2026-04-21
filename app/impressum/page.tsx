@@ -49,7 +49,7 @@ const page = () => {
             <strong>Ansprechpartner</strong><br />
             Dirk Meinker<br />
             Telefon: <a href="tel:+4923129295619">+49 231 292 95619</a><br />
-            Mobil: <a href="tel:+491738816765">+49 173 88 16 765</a><br />
+            {/* Mobil: <a href="tel:+491738816765">+49 173 88 16 765</a><br /> */}
             Mail: <a href="mailto:info@rheincs.com">info@rheincs.com</a>
           </p>
 
@@ -108,7 +108,7 @@ const page = () => {
             <strong>Contact Person</strong><br />
             Dirk Meinker<br />
             Phone: <a href="tel:+4923129295619">+49 231 292 95619</a><br />
-            Mobile: <a href="tel:+491738816765">+49 173 88 16 765</a><br />
+            {/* Mobile: <a href="tel:+491738816765">+49 173 88 16 765</a><br /> */}
             Email: <a href="mailto:info@rheincs.com">info@rheincs.com</a>
           </p>
 

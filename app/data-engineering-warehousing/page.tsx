@@ -499,7 +499,7 @@ export default function AlMl() {
           </div>
         </div>
       </div>
-      <div className="dew-arrow-animet">
+      <div className={`dew-arrow-animet ${language === 'German' ? 'warehousegerman' : ''}`}>
         <svg
           width={1221}
           height={392}
@@ -573,7 +573,7 @@ export default function AlMl() {
             fontSize={16}
             fill="#333"
           >
-            Power Plant Analytics (PPA)
+            {t("Power Plant Analytics (PPA)")}
           </text>
           <rect
             x="487.254"
@@ -586,13 +586,13 @@ export default function AlMl() {
             strokeWidth="1.50709"
           />
           <text
-            x={515}
+            x={490}
             y={254}
             fontFamily="Arial, sans-serif"
             fontSize={16}
             fill="#333"
           >
-            Stronger decision support
+            {t("Stronger decision support")}
           </text>
           <rect
             x="910.754"
@@ -611,7 +611,7 @@ export default function AlMl() {
             fontSize={16}
             fill="#333"
           >
-            seamless MIS reporting
+            {t("seamless MIS reporting")}
           </text>
           <rect
             x="492.754"
@@ -630,7 +630,7 @@ export default function AlMl() {
             fontSize={16}
             fill="#333"
           >
-            Predictive analytics
+            {t("Predictive analytics")}
           </text>
           {/* All Static Lines (now perfectly aligned) */}
           <use

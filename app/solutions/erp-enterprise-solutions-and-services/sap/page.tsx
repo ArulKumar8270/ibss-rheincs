@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from 'react'
-import CommomLayout from '../../../Components/CommomLayout'
+import React, { useState } from "react";
+import CommomLayout from "../../../Components/CommomLayout";
 import Link from "next/link";
 import { useTranslation } from "../../../hooks/useTranslation";
 import { createClient } from "@/lib/supabase-browser";
 import { useRouter } from "next/navigation";
+import { NavArrowLeft } from "@/app/icons";
 
 const page = () => {
   const { t, language } = useTranslation();
@@ -40,9 +41,9 @@ const page = () => {
     companyName: "",
   });
 
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
-    "idle",
-  );
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
   const [statusMessage, setStatusMessage] = useState("");
   const [isCountryCodeFocused, setIsCountryCodeFocused] = useState(false);
 
@@ -302,282 +303,615 @@ const page = () => {
           </div>
         </div> */}
 
-
-        
-                {/* Hero Section Start*/}
-                <div className="hero brainsec bluebg digi1 mobilepd40 pdb0">
-                  <div className="container">
-                    <div className="row section-row align-items-center  digitalsec">
-                      <div className="col-sm-6">
-                        <div className="section-title">
-                          <h2 className="text-anime-style-21" data-cursor="-opaque">
-                            {t("Transform Your Enterprise with SAP S/4HANA and Cloud Innovation")}
-                          </h2>
-                          <p className="epic16">
-                            {t("Drive real-time decision-making, simplify operations, and accelerate growth with RheinBrücke’s end-to-end SAP transformation services.")}
-                          </p>
-                          <div className="ser-btn mt-15">
-                            <Link href="/contact-us" className="animated-svg-link">
-                              {t("Request a SAP ERP Consultation")}
-                              <span className="svg-container ">
-                                <span className=" right">
-                                  <svg
-                                    width={24}
-                                    height={23}
-                                    viewBox="0 0 24 23"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="16.0004"
-                                      cy="4.79995"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="12.7992"
-                                      cy="1.6"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="22.4008"
-                                      cy="11.2"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="1.6"
-                                      cy="11.2"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="6.40078"
-                                      cy="11.2"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="11.1996"
-                                      cy="11.2"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="16.0004"
-                                      cy="11.2"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="19.1996"
-                                      cy="14.4"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="16.0004"
-                                      cy="17.6"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="12.7992"
-                                      cy="20.8"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                    <circle
-                                      className="dot"
-                                      opacity="0.5"
-                                      cx="19.1996"
-                                      cy="8.00002"
-                                      r="1.6"
-                                      fill="#535353"
-                                    />
-                                  </svg>
-                                </span>
-                              </span>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-sm-6">
-                        <div className="digiban text-center">
-                          {/*<img src="/images/digitalban.png" alt="">*/}
-                        <svg width="300" height="597" viewBox="0 0 300 597" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_7_6)">
-<circle cx="150" cy="477.191" r="150" fill="url(#paint0_linear_7_6)"/>
-<path d="M71.3243 471.847H82.4163C86.0059 471.847 87.3089 474.36 87.3089 476.672C87.3089 478.984 86.2556 480.507 84.2982 481.141V481.192C85.8781 481.422 86.8074 482.919 86.9081 485.052C87.0591 488.43 87.1598 489.269 87.7619 489.98H84.9507C84.5228 489.472 84.5228 488.71 84.3989 486.526C84.2227 483.275 83.1443 482.284 80.9352 482.284H73.9845V489.978H71.3243V471.845V471.847ZM81.4134 479.948C84.0233 479.948 84.6506 478.35 84.6506 477.078C84.6506 475.352 83.6225 474.182 81.4889 474.182H73.9845V479.946H81.4134V479.948Z" fill="white"/>
-<path d="M89.8716 471.696H92.3809V478.679H92.4312C93.6103 476.825 95.6936 476.216 97.5755 476.216C100.737 476.216 103.097 477.587 103.097 480.914V489.98H100.588V481.422C100.588 479.466 99.3838 478.35 96.6984 478.35C94.4157 478.35 92.3828 479.696 92.3828 482.311V489.98H89.8736V471.696H89.8716Z" fill="white"/>
-<path d="M108.243 484.088C108.444 486.831 110.853 488.305 113.085 488.305C114.516 488.305 116.473 487.823 117.327 485.944H119.987C118.733 489.143 115.796 490.438 113.211 490.438C108.092 490.438 105.583 487.162 105.583 483.328C105.583 479.494 108.092 476.218 113.211 476.218C116.675 476.218 120.338 478.25 120.338 483.761V484.092H108.241L108.243 484.088ZM117.678 482.107C117.302 479.696 115.443 478.35 113.085 478.35C110.727 478.35 108.694 479.721 108.316 482.107H117.678Z" fill="white"/>
-<path d="M122.898 471.696H125.408V474.49H122.898V471.696ZM122.898 476.672H125.408V489.98H122.898V476.672Z" fill="white"/>
-<path d="M128.468 476.672H130.978V478.679H131.028C132.207 476.825 134.29 476.216 136.172 476.216C139.334 476.216 141.694 477.587 141.694 480.914V489.98H139.185V481.422C139.185 479.466 137.981 478.35 135.295 478.35C133.013 478.35 130.98 479.696 130.98 482.311V489.98H128.47V476.672H128.468Z" fill="white"/>
-<path d="M144.733 471.847H154.395C157.833 471.847 159.614 473.473 159.614 476.316C159.614 478.093 158.811 479.897 156.1 480.481V480.532C159.589 480.889 160.216 483.453 160.216 485.001C160.216 486.957 159.163 489.978 154.218 489.978H144.733V471.845V471.847ZM145.887 480.076H153.868C154.795 480.076 158.46 480.076 158.46 476.394C158.46 472.713 155.601 472.864 153.692 472.864H145.887V480.076ZM145.887 488.965H153.969C154.871 488.965 159.063 488.965 159.063 484.901C159.063 481.093 155.649 481.093 153.667 481.093H145.887V488.965Z" fill="white"/>
-<path d="M162.753 476.978H163.909V480.05H163.959C164.813 477.764 166.77 476.571 169.279 476.571C169.63 476.571 169.882 476.621 170.232 476.723V477.891C169.957 477.789 169.63 477.738 168.902 477.738C165.564 477.738 163.909 480.303 163.909 482.944V489.978H162.753V476.976V476.978Z" fill="white"/>
-<path d="M184.107 489.98H182.953V487.39H182.903C182.099 488.939 180.419 490.385 177.482 490.385C171.584 490.385 171.584 486.577 171.584 485.001V476.976H172.74V484.95C172.74 487.591 173.72 489.368 177.509 489.368C181.298 489.368 182.955 486.982 182.955 484.568V476.974H184.109V489.976L184.107 489.98ZM174.624 472.101H175.778V474.793H174.624V472.101ZM179.942 472.101H181.096V474.793H179.942V472.101Z" fill="white"/>
-<path d="M198.869 481.067C198.718 479.415 196.511 477.587 193.423 477.587C189.357 477.587 187.324 480.509 187.324 483.606C187.324 485.714 188.78 489.37 193.423 489.37C196.007 489.37 198.466 488.126 199.045 485.434H200.199C199.521 488.838 196.66 490.385 193.424 490.385C189.21 490.385 186.172 487.642 186.172 483.604C186.172 479.033 189.484 476.571 193.424 476.571C197.364 476.571 199.874 478.855 200.025 481.065H198.869V481.067Z" fill="white"/>
-<path d="M202.255 471.847H203.411V483.885L212.57 476.976H214.276L207.775 481.878L214.878 489.98H213.296L206.872 482.615L203.409 485.205V489.98H202.253V471.847H202.255Z" fill="white"/>
-<path d="M216.612 483.732C216.687 486.982 218.869 489.368 222.734 489.368C226.598 489.368 227.754 486.829 228.205 485.662H229.359C228.281 488.937 226.021 490.385 222.608 490.385C218.217 490.385 215.456 487.693 215.456 483.377C215.456 480.66 217.162 476.571 222.633 476.571C227.1 476.571 229.659 479.566 229.71 483.732H216.61H216.612ZM228.407 482.717C227.928 479.161 225.469 477.587 222.509 477.587C219.196 477.587 217.113 479.619 216.612 482.717H228.407Z" fill="white"/>
-<path d="M118.147 437.007C118.147 440.114 115.659 442.632 112.588 442.632C109.518 442.632 107.03 440.114 107.03 437.007C107.03 433.9 109.518 431.384 112.588 431.384C115.659 431.384 118.147 433.902 118.147 437.007Z" fill="white"/>
-<path d="M140.378 437.007C140.378 440.114 137.89 442.632 134.819 442.632C131.748 442.632 129.261 440.114 129.261 437.007C129.261 433.9 131.748 431.384 134.819 431.384C137.89 431.384 140.378 433.902 140.378 437.007Z" fill="white"/>
-<path d="M162.609 437.007C162.609 440.114 160.122 442.632 157.053 442.632C153.984 442.632 151.494 440.114 151.494 437.007C151.494 433.9 153.982 431.384 157.053 431.384C160.123 431.384 162.609 433.902 162.609 437.007Z" fill="white"/>
-<path d="M184.843 437.007C184.843 440.114 182.355 442.632 179.284 442.632C176.214 442.632 173.728 440.114 173.728 437.007C173.728 433.9 176.215 431.384 179.284 431.384C182.353 431.384 184.843 433.902 184.843 437.007Z" fill="white"/>
-<path d="M129.261 453.88C129.261 456.988 126.773 459.505 123.703 459.505C120.632 459.505 118.144 456.988 118.144 453.88C118.144 450.773 120.632 448.257 123.703 448.257C126.773 448.257 129.261 450.775 129.261 453.88Z" fill="white"/>
-<path d="M151.495 453.88C151.495 456.988 149.007 459.505 145.936 459.505C142.866 459.505 140.38 456.988 140.38 453.88C140.38 450.773 142.868 448.257 145.936 448.257C149.005 448.257 151.495 450.775 151.495 453.88Z" fill="white"/>
-<path d="M173.728 453.88C173.728 456.988 171.24 459.505 168.169 459.505C165.098 459.505 162.61 456.988 162.61 453.88C162.61 450.773 165.1 448.257 168.169 448.257C171.238 448.257 173.728 450.775 173.728 453.88Z" fill="white"/>
-</g>
-<path id="path_center_sap" d="M150 0.19143V342.191" stroke="url(#paint1_linear_7_6)" stroke-width="1.5"/>
-<path id="path_left_outer_sap" d="M89.5106 0.19143L90.6705 4.58523C98.3955 33.8483 102.307 63.987 102.307 94.2525V342.191" stroke="url(#paint2_linear_7_6)" stroke-width="1.5"/>
-{/* Animated Dots */}
-<circle r="2.32653" fill="#28B67E">
-  <animateMotion dur="4.5s" repeatCount="indefinite" begin="0.2s">
-    <mpath href="#path_left_outer_sap" />
-  </animateMotion>
-  <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="4.5s" repeatCount="indefinite" begin="0.2s" />
-</circle>
-<circle r="2.32653" fill="#28B67E">
-  <animateMotion dur="4s" repeatCount="indefinite" begin="1.2s" keyPoints="1;0" keyTimes="0;1">
-    <mpath href="#path_left_mid_sap" />
-  </animateMotion>
-  <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="4s" repeatCount="indefinite" begin="1.2s" />
-</circle>
-<circle r="2.32653" fill="#28B67E">
-  <animateMotion dur="3.5s" repeatCount="indefinite" begin="0.5s" keyPoints="1;0" keyTimes="0;1">
-    <mpath href="#path_left_inner_sap" />
-  </animateMotion>
-  <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="3.5s" repeatCount="indefinite" begin="0.5s" />
-</circle>
-<circle r="2.32653" fill="#28B67E">
-  <animateMotion dur="3s" repeatCount="indefinite" begin="0s">
-    <mpath href="#path_center_sap" />
-  </animateMotion>
-  <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="3s" repeatCount="indefinite" begin="0s" />
-</circle>
-<circle r="2.32653" fill="#28B67E">
-  <animateMotion dur="3.6s" repeatCount="indefinite" begin="0.7s">
-    <mpath href="#path_right_inner_sap" />
-  </animateMotion>
-  <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="3.6s" repeatCount="indefinite" begin="0.7s" />
-</circle>
-<circle r="2.32653" fill="#28B67E">
-  <animateMotion dur="4.1s" repeatCount="indefinite" begin="1.5s" keyPoints="1;0" keyTimes="0;1">
-    <mpath href="#path_right_mid_sap" />
-  </animateMotion>
-  <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="4.1s" repeatCount="indefinite" begin="1.5s" />
-</circle>
-<circle r="2.32653" fill="#28B67E">
-  <animateMotion dur="4.6s" repeatCount="indefinite" begin="0.3s">
-    <mpath href="#path_right_outer_sap" />
-  </animateMotion>
-  <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.5;1" dur="4.6s" repeatCount="indefinite" begin="0.3s" />
-</circle>
-<path id="path_right_outer_sap" d="M210.49 0.19143L209.33 4.58523C201.605 33.8483 197.694 63.987 197.694 94.2525V342.191" stroke="url(#paint3_linear_7_6)" stroke-width="1.5"/>
-<path id="path_left_mid_sap" d="M104.633 0.19143L105.793 4.58523C113.518 33.8483 117.429 63.987 117.429 94.2525V342.191" stroke="url(#paint4_linear_7_6)" stroke-width="1.5"/>
-<path id="path_right_mid_sap" d="M195.367 0.19143L194.207 4.58523C186.482 33.8483 182.571 63.987 182.571 94.2525V342.191" stroke="url(#paint5_linear_7_6)" stroke-width="1.5"/>
-<path id="path_left_inner_sap" d="M119.755 0.19143L120.915 4.58523C128.64 33.8483 132.551 63.987 132.551 94.2525V342.191" stroke="url(#paint6_linear_7_6)" stroke-width="1.5"/>
-<path id="path_right_inner_sap" d="M180.245 0.19143L179.085 4.58523C171.36 33.8483 167.449 63.987 167.449 94.2525V342.191" stroke="url(#paint7_linear_7_6)" stroke-width="1.5"/>
-<g filter="url(#filter0_d_7_6)">
-<circle cx="150" cy="167.191" r="75" fill="white"/>
-<circle cx="150" cy="167.191" r="74.0625" stroke="#499A9A" stroke-width="1.875"/>
-</g>
-<g clip-path="url(#clip1_7_6)">
-<path d="M201 148.191H106V194.191H154.022" fill="url(#paint8_linear_7_6)"/>
-<path d="M152.978 157.391V179.063L144.835 157.391H136.692L129.802 175.383C128.967 170.885 124.165 169.249 120.407 168.023C117.901 167.205 115.187 166.183 115.187 164.751C115.187 163.729 116.648 162.707 119.363 162.911C121.242 163.116 122.912 163.116 126.253 164.751L129.593 159.231C126.462 157.596 122.286 156.778 118.945 156.778C114.978 156.778 111.637 158.005 109.549 160.049C108.088 161.48 107.462 163.32 107.253 165.365C107.253 168.227 108.297 170.271 110.593 171.907C112.473 173.134 114.769 173.951 116.857 174.565C119.571 175.383 121.659 176.2 121.659 177.631C121.451 179.471 119.363 179.88 117.901 179.88C115.396 180.085 113.308 179.676 110.176 177.836L107.253 183.356C110.385 185.196 113.725 186.014 117.692 186.014C120.407 186.014 124.582 185.196 126.879 183.151L126.462 184.991H134.396L135.857 181.516C138.989 182.334 142.538 182.538 145.67 181.516L146.714 184.991H160.912V176.814H163.835C171.143 176.814 175.527 173.338 175.527 167.205C175.527 160.254 171.352 157.391 162.374 157.391H152.978ZM137.736 175.383L140.659 166.183H140.868L143.791 175.383C141.703 175.996 139.615 175.996 137.736 175.383ZM160.912 170.68V163.32H163C165.714 163.32 167.802 164.138 167.802 166.796C167.802 169.658 165.714 170.68 163 170.68H160.912Z" fill="white"/>
-</g>
-<defs>
-<filter id="filter0_d_7_6" x="20.625" y="37.8164" width="258.75" height="258.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feMorphology radius="9.375" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_7_6"/>
-<feOffset/>
-<feGaussianBlur stdDeviation="22.5"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.286275 0 0 0 0 0.603922 0 0 0 0 0.603922 0 0 0 0.78 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_7_6"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_7_6" result="shape"/>
-</filter>
-<linearGradient id="paint0_linear_7_6" x1="150" y1="327.191" x2="150" y2="627.191" gradientUnits="userSpaceOnUse">
-<stop stop-color="#008080"/>
-<stop offset="0.67478" stop-color="#082326" stop-opacity="0"/>
-</linearGradient>
-<linearGradient id="paint1_linear_7_6" x1="150.5" y1="0.19143" x2="150.5" y2="342.191" gradientUnits="userSpaceOnUse">
-<stop stop-color="#499A9A" stop-opacity="0"/>
-<stop offset="0.5" stop-color="#499A9A"/>
-<stop offset="1" stop-color="#499A9A" stop-opacity="0"/>
-</linearGradient>
-<linearGradient id="paint2_linear_7_6" x1="95.9086" y1="0.19143" x2="95.9086" y2="342.191" gradientUnits="userSpaceOnUse">
-<stop stop-color="#499A9A" stop-opacity="0"/>
-<stop offset="0.5" stop-color="#499A9A"/>
-<stop offset="1" stop-color="#499A9A" stop-opacity="0"/>
-</linearGradient>
-<linearGradient id="paint3_linear_7_6" x1="204.092" y1="0.19143" x2="204.092" y2="342.191" gradientUnits="userSpaceOnUse">
-<stop stop-color="#499A9A" stop-opacity="0"/>
-<stop offset="0.5" stop-color="#499A9A"/>
-<stop offset="1" stop-color="#499A9A" stop-opacity="0"/>
-</linearGradient>
-<linearGradient id="paint4_linear_7_6" x1="111.031" y1="0.19143" x2="111.031" y2="342.191" gradientUnits="userSpaceOnUse">
-<stop stop-color="#499A9A" stop-opacity="0"/>
-<stop offset="0.5" stop-color="#499A9A"/>
-<stop offset="1" stop-color="#499A9A" stop-opacity="0"/>
-</linearGradient>
-<linearGradient id="paint5_linear_7_6" x1="188.969" y1="0.19143" x2="188.969" y2="342.191" gradientUnits="userSpaceOnUse">
-<stop stop-color="#499A9A" stop-opacity="0"/>
-<stop offset="0.5" stop-color="#499A9A"/>
-<stop offset="1" stop-color="#499A9A" stop-opacity="0"/>
-</linearGradient>
-<linearGradient id="paint6_linear_7_6" x1="126.153" y1="0.19143" x2="126.153" y2="342.191" gradientUnits="userSpaceOnUse">
-<stop stop-color="#499A9A" stop-opacity="0"/>
-<stop offset="0.5" stop-color="#499A9A"/>
-<stop offset="1" stop-color="#499A9A" stop-opacity="0"/>
-</linearGradient>
-<linearGradient id="paint7_linear_7_6" x1="173.847" y1="0.19143" x2="173.847" y2="342.191" gradientUnits="userSpaceOnUse">
-<stop stop-color="#499A9A" stop-opacity="0"/>
-<stop offset="0.5" stop-color="#499A9A"/>
-<stop offset="1" stop-color="#499A9A" stop-opacity="0"/>
-</linearGradient>
-<linearGradient id="paint8_linear_7_6" x1="106" y1="148.191" x2="106" y2="194.191" gradientUnits="userSpaceOnUse">
-<stop stop-color="#00AAEE"/>
-<stop offset="1" stop-color="#0055AA"/>
-</linearGradient>
-<clipPath id="clip0_7_6">
-<rect width="300" height="269" fill="white" transform="translate(0 327.191)"/>
-</clipPath>
-<clipPath id="clip1_7_6">
-<rect width="95" height="46" fill="white" transform="translate(106 148.191)"/>
-</clipPath>
-</defs>
-</svg>
-                        </div>
-                      </div>
-                    </div>
+        {/* Hero Section Start*/}
+        <div className="hero brainsec bluebg digi1 mobilepd40 pdb0">
+          <div className="container">
+            <div className="row section-row align-items-center  digitalsec">
+              <div className="col-sm-6">
+                <div className="section-title">
+                  <h2 className="text-anime-style-21" data-cursor="-opaque">
+                    {t(
+                      "Transform Your Enterprise with SAP S/4HANA and Cloud Innovation",
+                    )}
+                  </h2>
+                  <p className="epic16">
+                    {t(
+                      "Enable real-time decision-making, streamline operations, and accelerate growth with RheinBrücke’s end-to-end SAP S/4HANA and cloud transformation services.",
+                    )}
+                  </p>
+                  <div className="ser-btn mt-15">
+                    <Link href="/contact-us" className="animated-svg-link">
+                      {t("Request a SAP ERP Consultation")}
+                      <span className="svg-container ">
+                        <span className=" right">
+                          <svg
+                            width={24}
+                            height={23}
+                            viewBox="0 0 24 23"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="4.79995"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="12.7992"
+                              cy="1.6"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="22.4008"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="1.6"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="6.40078"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="11.1996"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="19.1996"
+                              cy="14.4"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="17.6"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="12.7992"
+                              cy="20.8"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="19.1996"
+                              cy="8.00002"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </Link>
                   </div>
                 </div>
-                {/* Hero Section End*/}
+              </div>
+              <div className="col-sm-6">
+                <div className="digiban text-center">
+                  {/*<img src="/images/digitalban.png" alt="">*/}
+                  <svg
+                    width="300"
+                    height="597"
+                    viewBox="0 0 300 597"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_7_6)">
+                      <circle
+                        cx="150"
+                        cy="477.191"
+                        r="150"
+                        fill="url(#paint0_linear_7_6)"
+                      />
+                      <path
+                        d="M71.3243 471.847H82.4163C86.0059 471.847 87.3089 474.36 87.3089 476.672C87.3089 478.984 86.2556 480.507 84.2982 481.141V481.192C85.8781 481.422 86.8074 482.919 86.9081 485.052C87.0591 488.43 87.1598 489.269 87.7619 489.98H84.9507C84.5228 489.472 84.5228 488.71 84.3989 486.526C84.2227 483.275 83.1443 482.284 80.9352 482.284H73.9845V489.978H71.3243V471.845V471.847ZM81.4134 479.948C84.0233 479.948 84.6506 478.35 84.6506 477.078C84.6506 475.352 83.6225 474.182 81.4889 474.182H73.9845V479.946H81.4134V479.948Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M89.8716 471.696H92.3809V478.679H92.4312C93.6103 476.825 95.6936 476.216 97.5755 476.216C100.737 476.216 103.097 477.587 103.097 480.914V489.98H100.588V481.422C100.588 479.466 99.3838 478.35 96.6984 478.35C94.4157 478.35 92.3828 479.696 92.3828 482.311V489.98H89.8736V471.696H89.8716Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M108.243 484.088C108.444 486.831 110.853 488.305 113.085 488.305C114.516 488.305 116.473 487.823 117.327 485.944H119.987C118.733 489.143 115.796 490.438 113.211 490.438C108.092 490.438 105.583 487.162 105.583 483.328C105.583 479.494 108.092 476.218 113.211 476.218C116.675 476.218 120.338 478.25 120.338 483.761V484.092H108.241L108.243 484.088ZM117.678 482.107C117.302 479.696 115.443 478.35 113.085 478.35C110.727 478.35 108.694 479.721 108.316 482.107H117.678Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M122.898 471.696H125.408V474.49H122.898V471.696ZM122.898 476.672H125.408V489.98H122.898V476.672Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M128.468 476.672H130.978V478.679H131.028C132.207 476.825 134.29 476.216 136.172 476.216C139.334 476.216 141.694 477.587 141.694 480.914V489.98H139.185V481.422C139.185 479.466 137.981 478.35 135.295 478.35C133.013 478.35 130.98 479.696 130.98 482.311V489.98H128.47V476.672H128.468Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M144.733 471.847H154.395C157.833 471.847 159.614 473.473 159.614 476.316C159.614 478.093 158.811 479.897 156.1 480.481V480.532C159.589 480.889 160.216 483.453 160.216 485.001C160.216 486.957 159.163 489.978 154.218 489.978H144.733V471.845V471.847ZM145.887 480.076H153.868C154.795 480.076 158.46 480.076 158.46 476.394C158.46 472.713 155.601 472.864 153.692 472.864H145.887V480.076ZM145.887 488.965H153.969C154.871 488.965 159.063 488.965 159.063 484.901C159.063 481.093 155.649 481.093 153.667 481.093H145.887V488.965Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M162.753 476.978H163.909V480.05H163.959C164.813 477.764 166.77 476.571 169.279 476.571C169.63 476.571 169.882 476.621 170.232 476.723V477.891C169.957 477.789 169.63 477.738 168.902 477.738C165.564 477.738 163.909 480.303 163.909 482.944V489.978H162.753V476.976V476.978Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M184.107 489.98H182.953V487.39H182.903C182.099 488.939 180.419 490.385 177.482 490.385C171.584 490.385 171.584 486.577 171.584 485.001V476.976H172.74V484.95C172.74 487.591 173.72 489.368 177.509 489.368C181.298 489.368 182.955 486.982 182.955 484.568V476.974H184.109V489.976L184.107 489.98ZM174.624 472.101H175.778V474.793H174.624V472.101ZM179.942 472.101H181.096V474.793H179.942V472.101Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M198.869 481.067C198.718 479.415 196.511 477.587 193.423 477.587C189.357 477.587 187.324 480.509 187.324 483.606C187.324 485.714 188.78 489.37 193.423 489.37C196.007 489.37 198.466 488.126 199.045 485.434H200.199C199.521 488.838 196.66 490.385 193.424 490.385C189.21 490.385 186.172 487.642 186.172 483.604C186.172 479.033 189.484 476.571 193.424 476.571C197.364 476.571 199.874 478.855 200.025 481.065H198.869V481.067Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M202.255 471.847H203.411V483.885L212.57 476.976H214.276L207.775 481.878L214.878 489.98H213.296L206.872 482.615L203.409 485.205V489.98H202.253V471.847H202.255Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M216.612 483.732C216.687 486.982 218.869 489.368 222.734 489.368C226.598 489.368 227.754 486.829 228.205 485.662H229.359C228.281 488.937 226.021 490.385 222.608 490.385C218.217 490.385 215.456 487.693 215.456 483.377C215.456 480.66 217.162 476.571 222.633 476.571C227.1 476.571 229.659 479.566 229.71 483.732H216.61H216.612ZM228.407 482.717C227.928 479.161 225.469 477.587 222.509 477.587C219.196 477.587 217.113 479.619 216.612 482.717H228.407Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M118.147 437.007C118.147 440.114 115.659 442.632 112.588 442.632C109.518 442.632 107.03 440.114 107.03 437.007C107.03 433.9 109.518 431.384 112.588 431.384C115.659 431.384 118.147 433.902 118.147 437.007Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M140.378 437.007C140.378 440.114 137.89 442.632 134.819 442.632C131.748 442.632 129.261 440.114 129.261 437.007C129.261 433.9 131.748 431.384 134.819 431.384C137.89 431.384 140.378 433.902 140.378 437.007Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M162.609 437.007C162.609 440.114 160.122 442.632 157.053 442.632C153.984 442.632 151.494 440.114 151.494 437.007C151.494 433.9 153.982 431.384 157.053 431.384C160.123 431.384 162.609 433.902 162.609 437.007Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M184.843 437.007C184.843 440.114 182.355 442.632 179.284 442.632C176.214 442.632 173.728 440.114 173.728 437.007C173.728 433.9 176.215 431.384 179.284 431.384C182.353 431.384 184.843 433.902 184.843 437.007Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M129.261 453.88C129.261 456.988 126.773 459.505 123.703 459.505C120.632 459.505 118.144 456.988 118.144 453.88C118.144 450.773 120.632 448.257 123.703 448.257C126.773 448.257 129.261 450.775 129.261 453.88Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M151.495 453.88C151.495 456.988 149.007 459.505 145.936 459.505C142.866 459.505 140.38 456.988 140.38 453.88C140.38 450.773 142.868 448.257 145.936 448.257C149.005 448.257 151.495 450.775 151.495 453.88Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M173.728 453.88C173.728 456.988 171.24 459.505 168.169 459.505C165.098 459.505 162.61 456.988 162.61 453.88C162.61 450.773 165.1 448.257 168.169 448.257C171.238 448.257 173.728 450.775 173.728 453.88Z"
+                        fill="white"
+                      />
+                    </g>
+                    <path
+                      id="path_center_sap"
+                      d="M150 0.19143V342.191"
+                      stroke="url(#paint1_linear_7_6)"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      id="path_left_outer_sap"
+                      d="M89.5106 0.19143L90.6705 4.58523C98.3955 33.8483 102.307 63.987 102.307 94.2525V342.191"
+                      stroke="url(#paint2_linear_7_6)"
+                      stroke-width="1.5"
+                    />
+                    {/* Animated Dots */}
+                    <circle r="2.32653" fill="#28B67E">
+                      <animateMotion
+                        dur="4.5s"
+                        repeatCount="indefinite"
+                        begin="0.2s"
+                      >
+                        <mpath href="#path_left_outer_sap" />
+                      </animateMotion>
+                      <animate
+                        attributeName="opacity"
+                        values="0;1;0"
+                        keyTimes="0;0.5;1"
+                        dur="4.5s"
+                        repeatCount="indefinite"
+                        begin="0.2s"
+                      />
+                    </circle>
+                    <circle r="2.32653" fill="#28B67E">
+                      <animateMotion
+                        dur="4s"
+                        repeatCount="indefinite"
+                        begin="1.2s"
+                        keyPoints="1;0"
+                        keyTimes="0;1"
+                      >
+                        <mpath href="#path_left_mid_sap" />
+                      </animateMotion>
+                      <animate
+                        attributeName="opacity"
+                        values="0;1;0"
+                        keyTimes="0;0.5;1"
+                        dur="4s"
+                        repeatCount="indefinite"
+                        begin="1.2s"
+                      />
+                    </circle>
+                    <circle r="2.32653" fill="#28B67E">
+                      <animateMotion
+                        dur="3.5s"
+                        repeatCount="indefinite"
+                        begin="0.5s"
+                        keyPoints="1;0"
+                        keyTimes="0;1"
+                      >
+                        <mpath href="#path_left_inner_sap" />
+                      </animateMotion>
+                      <animate
+                        attributeName="opacity"
+                        values="0;1;0"
+                        keyTimes="0;0.5;1"
+                        dur="3.5s"
+                        repeatCount="indefinite"
+                        begin="0.5s"
+                      />
+                    </circle>
+                    <circle r="2.32653" fill="#28B67E">
+                      <animateMotion
+                        dur="3s"
+                        repeatCount="indefinite"
+                        begin="0s"
+                      >
+                        <mpath href="#path_center_sap" />
+                      </animateMotion>
+                      <animate
+                        attributeName="opacity"
+                        values="0;1;0"
+                        keyTimes="0;0.5;1"
+                        dur="3s"
+                        repeatCount="indefinite"
+                        begin="0s"
+                      />
+                    </circle>
+                    <circle r="2.32653" fill="#28B67E">
+                      <animateMotion
+                        dur="3.6s"
+                        repeatCount="indefinite"
+                        begin="0.7s"
+                      >
+                        <mpath href="#path_right_inner_sap" />
+                      </animateMotion>
+                      <animate
+                        attributeName="opacity"
+                        values="0;1;0"
+                        keyTimes="0;0.5;1"
+                        dur="3.6s"
+                        repeatCount="indefinite"
+                        begin="0.7s"
+                      />
+                    </circle>
+                    <circle r="2.32653" fill="#28B67E">
+                      <animateMotion
+                        dur="4.1s"
+                        repeatCount="indefinite"
+                        begin="1.5s"
+                        keyPoints="1;0"
+                        keyTimes="0;1"
+                      >
+                        <mpath href="#path_right_mid_sap" />
+                      </animateMotion>
+                      <animate
+                        attributeName="opacity"
+                        values="0;1;0"
+                        keyTimes="0;0.5;1"
+                        dur="4.1s"
+                        repeatCount="indefinite"
+                        begin="1.5s"
+                      />
+                    </circle>
+                    <circle r="2.32653" fill="#28B67E">
+                      <animateMotion
+                        dur="4.6s"
+                        repeatCount="indefinite"
+                        begin="0.3s"
+                      >
+                        <mpath href="#path_right_outer_sap" />
+                      </animateMotion>
+                      <animate
+                        attributeName="opacity"
+                        values="0;1;0"
+                        keyTimes="0;0.5;1"
+                        dur="4.6s"
+                        repeatCount="indefinite"
+                        begin="0.3s"
+                      />
+                    </circle>
+                    <path
+                      id="path_right_outer_sap"
+                      d="M210.49 0.19143L209.33 4.58523C201.605 33.8483 197.694 63.987 197.694 94.2525V342.191"
+                      stroke="url(#paint3_linear_7_6)"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      id="path_left_mid_sap"
+                      d="M104.633 0.19143L105.793 4.58523C113.518 33.8483 117.429 63.987 117.429 94.2525V342.191"
+                      stroke="url(#paint4_linear_7_6)"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      id="path_right_mid_sap"
+                      d="M195.367 0.19143L194.207 4.58523C186.482 33.8483 182.571 63.987 182.571 94.2525V342.191"
+                      stroke="url(#paint5_linear_7_6)"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      id="path_left_inner_sap"
+                      d="M119.755 0.19143L120.915 4.58523C128.64 33.8483 132.551 63.987 132.551 94.2525V342.191"
+                      stroke="url(#paint6_linear_7_6)"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      id="path_right_inner_sap"
+                      d="M180.245 0.19143L179.085 4.58523C171.36 33.8483 167.449 63.987 167.449 94.2525V342.191"
+                      stroke="url(#paint7_linear_7_6)"
+                      stroke-width="1.5"
+                    />
+                    <g filter="url(#filter0_d_7_6)">
+                      <circle cx="150" cy="167.191" r="75" fill="white" />
+                      <circle
+                        cx="150"
+                        cy="167.191"
+                        r="74.0625"
+                        stroke="#499A9A"
+                        stroke-width="1.875"
+                      />
+                    </g>
+                    <g clip-path="url(#clip1_7_6)">
+                      <path
+                        d="M201 148.191H106V194.191H154.022"
+                        fill="url(#paint8_linear_7_6)"
+                      />
+                      <path
+                        d="M152.978 157.391V179.063L144.835 157.391H136.692L129.802 175.383C128.967 170.885 124.165 169.249 120.407 168.023C117.901 167.205 115.187 166.183 115.187 164.751C115.187 163.729 116.648 162.707 119.363 162.911C121.242 163.116 122.912 163.116 126.253 164.751L129.593 159.231C126.462 157.596 122.286 156.778 118.945 156.778C114.978 156.778 111.637 158.005 109.549 160.049C108.088 161.48 107.462 163.32 107.253 165.365C107.253 168.227 108.297 170.271 110.593 171.907C112.473 173.134 114.769 173.951 116.857 174.565C119.571 175.383 121.659 176.2 121.659 177.631C121.451 179.471 119.363 179.88 117.901 179.88C115.396 180.085 113.308 179.676 110.176 177.836L107.253 183.356C110.385 185.196 113.725 186.014 117.692 186.014C120.407 186.014 124.582 185.196 126.879 183.151L126.462 184.991H134.396L135.857 181.516C138.989 182.334 142.538 182.538 145.67 181.516L146.714 184.991H160.912V176.814H163.835C171.143 176.814 175.527 173.338 175.527 167.205C175.527 160.254 171.352 157.391 162.374 157.391H152.978ZM137.736 175.383L140.659 166.183H140.868L143.791 175.383C141.703 175.996 139.615 175.996 137.736 175.383ZM160.912 170.68V163.32H163C165.714 163.32 167.802 164.138 167.802 166.796C167.802 169.658 165.714 170.68 163 170.68H160.912Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <filter
+                        id="filter0_d_7_6"
+                        x="20.625"
+                        y="37.8164"
+                        width="258.75"
+                        height="258.75"
+                        filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB"
+                      >
+                        <feFlood
+                          flood-opacity="0"
+                          result="BackgroundImageFix"
+                        />
+                        <feColorMatrix
+                          in="SourceAlpha"
+                          type="matrix"
+                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha"
+                        />
+                        <feMorphology
+                          radius="9.375"
+                          operator="dilate"
+                          in="SourceAlpha"
+                          result="effect1_dropShadow_7_6"
+                        />
+                        <feOffset />
+                        <feGaussianBlur stdDeviation="22.5" />
+                        <feComposite in2="hardAlpha" operator="out" />
+                        <feColorMatrix
+                          type="matrix"
+                          values="0 0 0 0 0.286275 0 0 0 0 0.603922 0 0 0 0 0.603922 0 0 0 0.78 0"
+                        />
+                        <feBlend
+                          mode="normal"
+                          in2="BackgroundImageFix"
+                          result="effect1_dropShadow_7_6"
+                        />
+                        <feBlend
+                          mode="normal"
+                          in="SourceGraphic"
+                          in2="effect1_dropShadow_7_6"
+                          result="shape"
+                        />
+                      </filter>
+                      <linearGradient
+                        id="paint0_linear_7_6"
+                        x1="150"
+                        y1="327.191"
+                        x2="150"
+                        y2="627.191"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#008080" />
+                        <stop
+                          offset="0.67478"
+                          stop-color="#082326"
+                          stop-opacity="0"
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="paint1_linear_7_6"
+                        x1="150.5"
+                        y1="0.19143"
+                        x2="150.5"
+                        y2="342.191"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#499A9A" stop-opacity="0" />
+                        <stop offset="0.5" stop-color="#499A9A" />
+                        <stop
+                          offset="1"
+                          stop-color="#499A9A"
+                          stop-opacity="0"
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="paint2_linear_7_6"
+                        x1="95.9086"
+                        y1="0.19143"
+                        x2="95.9086"
+                        y2="342.191"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#499A9A" stop-opacity="0" />
+                        <stop offset="0.5" stop-color="#499A9A" />
+                        <stop
+                          offset="1"
+                          stop-color="#499A9A"
+                          stop-opacity="0"
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="paint3_linear_7_6"
+                        x1="204.092"
+                        y1="0.19143"
+                        x2="204.092"
+                        y2="342.191"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#499A9A" stop-opacity="0" />
+                        <stop offset="0.5" stop-color="#499A9A" />
+                        <stop
+                          offset="1"
+                          stop-color="#499A9A"
+                          stop-opacity="0"
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="paint4_linear_7_6"
+                        x1="111.031"
+                        y1="0.19143"
+                        x2="111.031"
+                        y2="342.191"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#499A9A" stop-opacity="0" />
+                        <stop offset="0.5" stop-color="#499A9A" />
+                        <stop
+                          offset="1"
+                          stop-color="#499A9A"
+                          stop-opacity="0"
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="paint5_linear_7_6"
+                        x1="188.969"
+                        y1="0.19143"
+                        x2="188.969"
+                        y2="342.191"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#499A9A" stop-opacity="0" />
+                        <stop offset="0.5" stop-color="#499A9A" />
+                        <stop
+                          offset="1"
+                          stop-color="#499A9A"
+                          stop-opacity="0"
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="paint6_linear_7_6"
+                        x1="126.153"
+                        y1="0.19143"
+                        x2="126.153"
+                        y2="342.191"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#499A9A" stop-opacity="0" />
+                        <stop offset="0.5" stop-color="#499A9A" />
+                        <stop
+                          offset="1"
+                          stop-color="#499A9A"
+                          stop-opacity="0"
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="paint7_linear_7_6"
+                        x1="173.847"
+                        y1="0.19143"
+                        x2="173.847"
+                        y2="342.191"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#499A9A" stop-opacity="0" />
+                        <stop offset="0.5" stop-color="#499A9A" />
+                        <stop
+                          offset="1"
+                          stop-color="#499A9A"
+                          stop-opacity="0"
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="paint8_linear_7_6"
+                        x1="106"
+                        y1="148.191"
+                        x2="106"
+                        y2="194.191"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#00AAEE" />
+                        <stop offset="1" stop-color="#0055AA" />
+                      </linearGradient>
+                      <clipPath id="clip0_7_6">
+                        <rect
+                          width="300"
+                          height="269"
+                          fill="white"
+                          transform="translate(0 327.191)"
+                        />
+                      </clipPath>
+                      <clipPath id="clip1_7_6">
+                        <rect
+                          width="95"
+                          height="46"
+                          fill="white"
+                          transform="translate(106 148.191)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Hero Section End*/}
 
-
-                
         {/* Our Testimonial Section Start */}
         {/* <div className={`our-testimonial merlinicon1 pd30 ${language === 'German' ? 'germanwhysugar1' : ''}`}>
           <div className="container">
@@ -1073,7 +1407,6 @@ const page = () => {
         </div> */}
         {/* Our Testimonial Section End */}
 
-
         {/* Hero Section Start*/}
         <div className=" buildsection mobilesap2">
           <div className="container">
@@ -1089,7 +1422,9 @@ const page = () => {
                         {t("The SAP Transformation Journey")}
                       </h2>
                       <p className="text-center">
-                        {t("RheinBrücke supports enterprises across the full SAP lifecycle, from transformation planning to implementation to continuous optimisation.")}
+                        {t(
+                          "RheinBrücke supports enterprises across the full SAP lifecycle, from transformation planning to implementation to continuous optimisation.",
+                        )}
                       </p>
                     </div>
                   </div>
@@ -1099,37 +1434,598 @@ const page = () => {
             <div className="row justify-content-center width801">
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
-                  <img src="/new/g501.svg" alt="" />
+                  <img src="/new/g501.svg" alt="SAP S/4HANA ERP transformation and cloud migration services icon" />
                   <h3>{t("SAP S/4HANA Transformation")}</h3>
-                  <p>{t("Accelerate ERP modernisation with SAP S/4HANA through flexible transformation pathways—greenfield, brownfield, or cloud with RISE and GROW—to drive real-time insights, operational efficiency, and scalable growth.")}</p>
+                  <p>
+                    {t(
+                      "Accelerate ERP modernization with SAP S/4HANA through flexible transformation pathways—greenfield, brownfield, or cloud with RISE and GROW—to drive real-time analytics, operational efficiency, and scalable digital growth.",
+                    )}
+                  </p>
+
+                  <div className="ser-btn serbtn1">
+                    <Link
+                      href="/solutions/erp-enterprise-solutions-and-services/sap/sap-transformation/"
+                      className="animated-svg-link1 animated-svg-link12"
+                    >
+                      {t("Read More")}
+                      <span className="svg-container ">
+                        <span className=" left">
+                          <svg
+                            width={24}
+                            height={23}
+                            viewBox="0 0 24 23"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="4.79995"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="12.7992"
+                              cy="1.6"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="22.4008"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="1.6"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="6.40078"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="11.1996"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="19.1996"
+                              cy="14.4"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="17.6"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="12.7992"
+                              cy="20.8"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="19.1996"
+                              cy="8.00002"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </Link>
+                  </div>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
-                  <img src="/new/ad2.svg" alt="" />
+                  <img src="/new/ad2.svg" alt="SAP cloud applications for HR, procurement, and expense management icon" />
                   <h3>{t("SAP Cloud Applications")}</h3>
-                  <p>{t("Transform HR, procurement, and expense management with SAP SuccessFactors, Ariba, and Concur, enabling integrated, scalable, and cloud-driven business operations.")}</p>
+                  <p>
+                    {t(
+                      "Transform HR, procurement, and expense management with SAP SuccessFactors, Ariba, and Concur, enabling integrated, scalable, and cloud-driven business operations.",
+                    )}
+                  </p>
+                  <div className="ser-btn serbtn1">
+                    <Link
+                      href="/solutions/erp-enterprise-solutions-and-services/sap/sap-cloud-applications/"
+                      className="animated-svg-link1 animated-svg-link12"
+                    >
+                      {t("Read More")}
+                      <span className="svg-container ">
+                        <span className=" left">
+                          <svg
+                            width={24}
+                            height={23}
+                            viewBox="0 0 24 23"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="4.79995"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="12.7992"
+                              cy="1.6"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="22.4008"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="1.6"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="6.40078"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="11.1996"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="19.1996"
+                              cy="14.4"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="17.6"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="12.7992"
+                              cy="20.8"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="19.1996"
+                              cy="8.00002"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </Link>
+                  </div>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
-                  <img src="/new/ad3.svg" alt="" />
+                  <img src="/new/ad3.svg" alt="SAP Business Technology Platform integration and extension services icon" />
                   <h3>{t("SAP BTP")}</h3>
-                  <p>{t("Integrate SAP with your enterprise ecosystem and build scalable extensions on SAP BTP, enabling innovation while preserving a clean, stable core.")}</p>
+                  <p>
+                    {t(
+                      "Integrate SAP with your enterprise ecosystem and build scalable extensions on SAP Business Technology Platform (BTP), enabling innovation while maintaining a clean core architecture.",
+                    )}
+                  </p>
+                  <div className="ser-btn serbtn1">
+                    <Link
+                      href="/solutions/erp-enterprise-solutions-and-services/sap/sap-btp/"
+                      className="animated-svg-link1 animated-svg-link12"
+                    >
+                      {t("Read More")}
+                      <span className="svg-container ">
+                        <span className=" left">
+                          <svg
+                            width={24}
+                            height={23}
+                            viewBox="0 0 24 23"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="4.79995"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="12.7992"
+                              cy="1.6"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="22.4008"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="1.6"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="6.40078"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="11.1996"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="19.1996"
+                              cy="14.4"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="17.6"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="12.7992"
+                              cy="20.8"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="19.1996"
+                              cy="8.00002"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </Link>
+                  </div>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
-                  <img src="/new/ad4.svg" alt="" />
+                  <img src="/new/ad4.svg" alt="SAP Analytics Cloud dashboard and real-time business intelligence icon" />
                   <h3>{t("SAP Analytics")}</h3>
-                  <p>{t("Turn enterprise data into real-time, actionable insights with SAP Analytics Cloud and advanced reporting—enabling faster decisions and improved business performance.")}</p>
+                  <p>
+                    {t(
+                      "Turn enterprise data into real-time, actionable insights with SAP Analytics Cloud and advanced business intelligence tools—enabling faster, data-driven decisions and improved performance.",
+                    )}
+                  </p>
+                  <div className="ser-btn serbtn1">
+                    <Link
+                      href="/solutions/erp-enterprise-solutions-and-services/sap/sap-analytics/"
+                      className="animated-svg-link1 animated-svg-link12"
+                    >
+                      {t("Read More")}
+                      <span className="svg-container ">
+                        <span className=" left">
+                          <svg
+                            width={24}
+                            height={23}
+                            viewBox="0 0 24 23"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="4.79995"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="12.7992"
+                              cy="1.6"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="22.4008"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="1.6"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="6.40078"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="11.1996"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="19.1996"
+                              cy="14.4"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="17.6"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="12.7992"
+                              cy="20.8"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="19.1996"
+                              cy="8.00002"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </Link>
+                  </div>
                 </div>
               </div>
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
-                  <img src="/new/ad5.svg" alt="" />
+                  <img src="/new/ad5.svg" alt="SAP AMS support services with monitoring and optimization icon" />
                   <h3>{t("SAP Application Management Services (AMS)")}</h3>
-                  <p>{t("Ensure a stable, secure, and continuously optimised SAP landscape with outcome-led support, proactive monitoring, and ongoing enhancements.")}</p>
+                  <p>
+                    {t(
+                      "Ensure a stable, secure, and continuously optimized SAP landscape with outcome-driven AMS support, proactive monitoring, and continuous improvement services.",
+                    )}
+                  </p>
+                  <div className="ser-btn serbtn1">
+                    <Link
+                      href="/solutions/erp-enterprise-solutions-and-services/sap/sap-ams/"
+                      className="animated-svg-link1 animated-svg-link12"
+                    >
+                      {t("Read More")}
+                      <span className="svg-container ">
+                        <span className=" left">
+                          <svg
+                            width={24}
+                            height={23}
+                            viewBox="0 0 24 23"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="4.79995"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="12.7992"
+                              cy="1.6"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="22.4008"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="1.6"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="6.40078"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="11.1996"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="11.2"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="19.1996"
+                              cy="14.4"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="16.0004"
+                              cy="17.6"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="12.7992"
+                              cy="20.8"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                            <circle
+                              className="dot"
+                              opacity="0.5"
+                              cx="19.1996"
+                              cy="8.00002"
+                              r="1.6"
+                              fill="#535353"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1145,50 +2041,56 @@ const page = () => {
                     {t("SAP is More Than ERP…")}
                   </h2>
                   <p>
-                    {t("SAP today goes beyond traditional ERP—it is a unified platform powering intelligent, connected, and data-driven enterprises:")}
+                    {t(
+                      "SAP today goes beyond traditional ERP—it is a unified platform powering intelligent, connected, and data-driven enterprises:",
+                    )}
                   </p>
                   <div className="advantage-sap">
                     <h6>
                       {t("Real-time decisions powered by embedded analytics")}
                     </h6>
                     <p>
-                      {t("S/4HANA and SAP Analytics Cloud enable business users to make decisions with live data - not spreadsheets or monthly reports.")}
+                      {t(
+                        "S/4HANA and SAP Analytics Cloud enable business users to make decisions with live data - not spreadsheets or monthly reports.",
+                      )}
                     </p>
                   </div>
                   <div className="advantage-sap">
-                    <h6>
-                      {t("Continuous innovation through cloud updates")}
-                    </h6>
+                    <h6>{t("Continuous innovation through cloud updates")}</h6>
                     <p>
-                      {t("Public and private cloud editions deliver ongoing enhancements, AI capabilities, and new best practices.")}
+                      {t(
+                        "Public and private cloud editions deliver ongoing enhancements, AI capabilities, and new best practices.",
+                      )}
                     </p>
                   </div>
                   <div className="advantage-sap">
-                    <h6>
-                      {t("End-to-end process clarity with Signavio")}
-                    </h6>
+                    <h6>{t("End-to-end process clarity with Signavio")}</h6>
                     <p>
-                      {t("Organisations worldwide report significant improvements in process transparency, operational consistency, and cycle-time reduction")}
+                      {t(
+                        "Organisations worldwide report significant improvements in process transparency, operational consistency, and cycle-time reduction",
+                      )}
                     </p>
                   </div>
                   <div className="advantage-sap">
-                    <h6>
-                      {t("Connected ecosystems through SAP BTP")}
-                    </h6>
+                    <h6>{t("Connected ecosystems through SAP BTP")}</h6>
                     <p>
-                      {t("Integrations, extensions, and automations help SAP fit seamlessly into your broader digital landscape.")}
+                      {t(
+                        "Integrations, extensions, and automations help SAP fit seamlessly into your broader digital landscape.",
+                      )}
                     </p>
                   </div>
                   <div className="advantage-sap">
-                    <h6>
-                      {t("Radical simplification of IT operations")}
-                    </h6>
+                    <h6>{t("Radical simplification of IT operations")}</h6>
                     <p>
-                      {t("Cloud migrations reduce system complexity, improve resilience, and free teams to focus on value creation.")}
+                      {t(
+                        "Cloud migrations reduce system complexity, improve resilience, and free teams to focus on value creation.",
+                      )}
                     </p>
                   </div>
                   <p>
-                    {t("This is the future of SAP - agile, modular, analytics-driven, and business-led.")}
+                    {t(
+                      "This is the future of SAP - agile, modular, analytics-driven, and business-led.",
+                    )}
                   </p>
                 </div>
               </div>
@@ -1199,7 +2101,9 @@ const page = () => {
           </div>
         </div>
         {/* Our Testimonial Section Start */}
-        <div className={`our-testimonial saptest pd30 ${language === 'German' ? 'germansapservice' : ''}`}>
+        <div
+          className={`our-testimonial saptest pd30 ${language === "German" ? "germansapservice" : ""}`}
+        >
           <div className="container">
             <div className="row section-row align-items-center">
               <div className="col-lg-12">
@@ -1208,10 +2112,14 @@ const page = () => {
                     {t("Our SAP Capabilities")}
                   </h2>
                   <h6 className="text-black mt15">
-                    {t("Unlock business value through a comprehensive portfolio of SAP services and proven transformation methodologies.")}
+                    {t(
+                      "Unlock business value with a comprehensive portfolio of SAP services and proven transformation methodologies.",
+                    )}
                   </h6>
                   <p>
-                    {t("From strategy to execution and continuous optimisation, we help organisations accelerate innovation, improve agility, and achieve measurable business outcomes across their SAP landscape.")}
+                    {t(
+                      "From strategy and implementation to continuous optimisation, we help organisations accelerate digital transformation, enhance business agility, and achieve measurable outcomes across their SAP ecosystem.",
+                    )}
                   </p>
                 </div>
               </div>
@@ -1227,55 +2135,67 @@ const page = () => {
                       {/* 8. Global Rollout Services */}
                       <div className="swiper-slide">
                         <div className="sap-service-waber">
-                          <h3>{t("Implementation & Global Rollout Services")}</h3>
+                          <h3>
+                            {t("Implementation & Global Rollout Services")}
+                          </h3>
                           <p>
-                            {t("RheinBrücke enables seamless SAP rollouts across geographies, ensuring standardisation while accommodating local regulatory and business requirements.")}
+                            {t(
+                              "RheinBrücke enables seamless SAP implementation and global rollouts across geographies, ensuring standardisation while accommodating local regulatory and business requirements.",
+                            )}
                           </p>
                           <h5>{t("Key capabilities:")}</h5>
                           <ul>
+                            <li>{t("Template-based global SAP rollouts")}</li>
                             <li>
-                              {t("Template-based global rollouts")}
+                              {t("Localisation and regulatory compliance management")}
                             </li>
                             <li>
-                              {t("Localisation and compliance management")}
+                              {t(
+                                "Multi-country data and process harmonisation",
+                              )}
                             </li>
                             <li>
-                              {t("Multi-country data and process harmonisation")}
-                            </li>
-                            <li>
-                              {t("Central governance with regional flexibility")}
+                              {t(
+                                "Central governance with regional flexibility",
+                              )}
                             </li>
                           </ul>
                           <p>
-                            {t("Consistent global execution with local compliance assured from day one.")}
+                            {t(
+                              "Consistent global SAP deployment with local compliance assured from day one.",
+                            )}
                           </p>
                         </div>
                       </div>
-                 
+
                       {/* 7. Custom Development & Technical Services */}
                       <div className="swiper-slide">
                         <div className="sap-service-waber">
-                          <h3>{t("Custom Development & Technical Services")}</h3>
+                          <h3>
+                            {t("Custom Development & Technical Services")}
+                          </h3>
                           <p>
-                            {t("We design and develop SAP extensions that enhance business capabilities while preserving a clean core.")}
+                            {t(
+                              "We design and develop SAP extensions that enhance business capabilities while preserving a clean core.",
+                            )}
                           </p>
                           <h5>{t("Key capabilities:")}</h5>
                           <ul>
+                            <li>{t("ABAP and RAP-based developments")}</li>
+                            <li>{t("SAP Fiori and UX enhancements")}</li>
                             <li>
-                              {t("ABAP and RAP-based developments")}
-                            </li>
-                            <li>
-                              {t("SAP Fiori and UX enhancements")}
-                            </li>
-                            <li>
-                              {t("Custom reports, interfaces, forms, and workflows")}
+                              {t(
+                                "Custom reports, interfaces, forms, and workflows",
+                              )}
                             </li>
                             <li>
                               {t("Side-by-side extensions using SAP BTP")}
                             </li>
                           </ul>
                           <p>
-                            {t("We build only what adds value and ensure everything stays upgrade-friendly.")}
+                            {t(
+                              "We build only what adds value and ensure everything stays upgrade-friendly.",
+                            )}
                           </p>
                         </div>
                       </div>
@@ -1285,111 +2205,133 @@ const page = () => {
                         <div className="sap-service-waber">
                           <h3>{t("SAP SuccessFactors Implementation")}</h3>
                           <p>
-                            {t("RheinBrücke helps organisations transform HR operations with SAP SuccessFactors, enabling improved employee experience and data-driven workforce management.")}
+                            {t(
+                              "RheinBrücke helps organisations transform HR operations with SAP SuccessFactors, enabling improved employee experience and data-driven workforce management.",
+                            )}
                           </p>
                           <h5>{t("Key capabilities:")}</h5>
                           <ul>
                             <li>
-                              {t("Core HR, Talent, Learning, and Performance modules")}
+                              {t(
+                                "Core HR, Talent, Learning, and Performance modules",
+                              )}
                             </li>
                             <li>
                               {t("Global HR standardisation and localisation")}
                             </li>
                             <li>
-                              {t("Integration with S/4HANA and third-party payroll systems")}
+                              {t(
+                                "Integration with S/4HANA and third-party payroll systems",
+                              )}
                             </li>
-                            <li>
-                              {t("Data migration and change management")}
-                            </li>
+                            <li>{t("Data migration and change management")}</li>
                           </ul>
                           <p>
-                            {t("SuccessFactors implemented with clean data, controlled change, and minimal disruption.")}
+                            {t(
+                              "SuccessFactors implemented with clean data, controlled change, and minimal disruption.",
+                            )}
                           </p>
                         </div>
                       </div>
-                      
+
                       {/* 4. SAP Ariba Services */}
                       <div className="swiper-slide">
                         <div className="sap-service-waber">
                           <h3>{t("SAP Ariba Services")}</h3>
                           <p>
-                            {t("We modernise procurement and supplier collaboration using SAP Ariba to deliver transparency, control, and cost efficiency.")}
+                            {t(
+                              "We modernise procurement and supplier collaboration using SAP Ariba to deliver transparency, control, and cost efficiency.",
+                            )}
                           </p>
                           <h5>{t("Key capabilities:")}</h5>
                           <ul>
                             <li>
-                              {t("Ariba Buying, Invoicing, and Sourcing implementations")}
+                              {t(
+                                "Ariba Buying, Invoicing, and Strategic Sourcing solution",
+                              )}
                             </li>
+                            <li>{t("Supplier onboarding and enablement")}</li>
+                            <li>{t("Integration with SAP S/4HANA and ECC")}</li>
                             <li>
-                              {t("Supplier onboarding and enablement")}
-                            </li>
-                            <li>
-                              {t("Integration with SAP S/4HANA and ECC")}
-                            </li>
-                            <li>
-                              {t("Spend visibility and compliance optimisation")}
+                              {t(
+                                "Spend visibility and compliance optimisation",
+                              )}
                             </li>
                           </ul>
                           <p>
-                            {t("Ariba embedded as a governed procurement platform—not another disconnected tool.")}
+                            {t(
+                              "Ariba deployed as a governed procurement platform—not a disconnected tool.",
+                            )}
                           </p>
                         </div>
                       </div>
 
-                      
                       {/* 2. SAP EWM Implementation */}
                       <div className="swiper-slide">
                         <div className="sap-service-waber">
                           <h3>{t("SAP EWM Implementation")}</h3>
                           <p>
-                            {t("We help organisations modernise warehouse operations using SAP Extended Warehouse Management (EWM) to improve inventory accuracy, throughput, and operational efficiency.")}
+                            {t(
+                              "We modernise warehouse operations using SAP Extended Warehouse Management (EWM) to improve inventory accuracy, throughput, and operational efficiency.",
+                            )}
                           </p>
                           <h5>{t("Key capabilities:")}</h5>
                           <ul>
                             <li>
-                              {t("SAP EWM embedded and decentralised implementations")}
+                              {t(
+                                "Embedded and decentralised SAP EWM implementations",
+                              )}
                             </li>
                             <li>
-                              {t("Warehouse process optimisation and automation")}
+                              {t(
+                                "Warehouse process optimisation and automation",
+                              )}
                             </li>
                             <li>
-                              {t("Integration with S/4HANA, TM, and third-party systems")}
+                              {t(
+                                "Integration with SAP S/4HANA, TM, and third-party systems",
+                              )}
                             </li>
-                            <li>
-                              {t("RF, Fiori, and automation enablement")}
-                            </li>
+                            <li>{t("RF, SAP Fiori, and warehouse automation enablement")}</li>
                           </ul>
                           <p>
-                            {t("Real-time warehouse control with measurable gains in inventory accuracy and throughput.")}
+                            {t(
+                              "Real-time warehouse control with measurable gains in inventory accuracy and throughput.",
+                            )}
                           </p>
                         </div>
                       </div>
 
-                      
                       {/* 5. EDI & SAP CPI Integration Services */}
                       <div className="swiper-slide">
                         <div className="sap-service-waber">
                           <h3>{t("EDI & SAP CPI Integration Services")}</h3>
                           <p>
-                            {t("We enable seamless system-to-system and business partner integrations using SAP Integration Suite (CPI) and EDI platforms.")}
+                            {t(
+                              "We enable seamless system-to-system and business partner integrations using SAP Integration Suite (CPI) and EDI platforms.",
+                            )}
                           </p>
                           <h5>{t("Key capabilities:")}</h5>
                           <ul>
                             <li>
-                              {t("EDI integrations with customers, suppliers, and logistics partners")}
+                              {t(
+                                "EDI integrations with customers, suppliers, and logistics partners",
+                              )}
                             </li>
                             <li>
                               {t("SAP CPI-based cloud and hybrid integrations")}
                             </li>
+                            <li>{t("API management and message mapping")}</li>
                             <li>
-                              {t("API management and message mapping")}
-                            </li>
-                            <li>
-                              {t("Monitoring, error handling, and optimisation")}
+                              {t(
+                                "Implementation monitoring, error handling, and optimisation",
+                              )}
                             </li>
                           </ul>
                           <p>
-                            {t("Integrations designed for failure handling, visibility, and long-term stability.")}
+                            {t(
+                              "Integrations designed for resilience, visibility, and long-term scalability.",
+                            )}
                           </p>
                         </div>
                       </div>
@@ -1399,58 +2341,80 @@ const page = () => {
                         <div className="sap-service-waber">
                           <h3>{t("SAP Signavio & Process Intelligence")}</h3>
                           <p>
-                            {t("Transform the way your organisation understands and improves processes.")}
+                            {t(
+                              "Transform how your organisation analyses and optimises business processes with SAP Signavio.",
+                            )}
                           </p>
                           <h5>{t("We help you:")}</h5>
                           <ul>
                             <li>
-                              {t("Map, analyse, and benchmark business processes")}
+                              {t(
+                                "Map, analyse, and benchmark business processes",
+                              )}
                             </li>
                             <li>
-                              {t("Identify bottlenecks, inefficiencies, and compliance gaps")}
+                              {t(
+                                "Identify bottlenecks, inefficiencies, and compliance gaps",
+                              )}
                             </li>
+                            <li>{t("Design future-state process models")}</li>
                             <li>
-                              {t("Build future-state process models")}
-                            </li>
-                            <li>
-                              {t("Drive harmonisation across global operations")}
+                              {t(
+                                "Drive process harmonisation across global operations",
+                              )}
                             </li>
                           </ul>
                           <p>
-                            {t("Signavio brings clarity. We turn that clarity into action.")}
+                            {t(
+                              "Signavio delivers process visibility—we turn it into measurable transformation outcomes.",
+                            )}
                           </p>
                         </div>
                       </div>
-
 
                       {/* 6. Merlin Sourcing – SAP-Integrated Strategic Sourcing */}
                       <div className="swiper-slide">
                         <div className="sap-service-waber">
-                          <h3>{t("Merlin Sourcing – SAP-Integrated Strategic Sourcing")}</h3>
+                          <h3>
+                            {t(
+                              "Merlin Sourcing – SAP-Integrated Strategic Sourcing",
+                            )}
+                          </h3>
                           <p>
-                            {t("Merlin Sourcing enables governed, SAP-integrated strategic sourcing, extending SAP procurement with structured sourcing, supplier collaboration, and decision control, without breaking clean-core principles.")}
+                            {t(
+                              "Merlin Sourcing enables governed, SAP-integrated strategic sourcing, extending SAP procurement with structured sourcing, supplier collaboration, and decision control, without breaking clean-core principles.",
+                            )}
                           </p>
                           <h5>{t("Key capabilities:")}</h5>
                           <ul>
                             <li>
-                              {t("SAP-integrated sourcing solution aligned to S/4HANA and ECC")}
+                              {t(
+                                "SAP-integrated sourcing solutions aligned to S/4HANA and ECC",
+                              )}
                             </li>
                             <li>
-                              {t("Direct materials and BoM based sourcing solution")}
+                              {t(
+                                "Direct materials and BoM-based sourcing tools",
+                              )}
                             </li>
                             <li>
-                              {t("Configurable for scale without customisation debt")}
+                              {t(
+                                "Configurable for scale without customisation debt",
+                              )}
                             </li>
                             <li>
-                              {t("Delivered and supported by RheinBrücke’s supply chain consulting teams")}
+                              {t(
+                                "Delivered and powered by RheinBrücke’s supply chain consulting experts",
+                              )}
                             </li>
                           </ul>
                           <p>
-                            {t("SAP procurement investments extended into strategic sourcing without platform sprawl or governance loss.")}
+                            {t(
+                              "Extend SAP procurement into strategic sourcing without platform sprawl or governance loss.",
+                            )}
                           </p>
                         </div>
                       </div>
-
                     </div>
                     <div className="testimonial-btn sap-ser-1 rtyElement">
                       <div className="testimonial-button-prev">
@@ -1674,7 +2638,6 @@ const page = () => {
         </div>
         {/* Our Testimonial Section End */}
 
-
         <div className="advantage additional1 bluebg1 epicadv2  pd50 pt50">
           <div className="container">
             <div className="row section-row1 align-items-center">
@@ -1683,17 +2646,25 @@ const page = () => {
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
                     {t("The RheinBrücke Advantage")}
                   </h2>
-                  <p className='text-white'> {t("An SAP partner for modern enterprises.")}</p>
+                  <p className="text-white">
+                    {" "}
+                    {t("An SAP Partner Built for Modern and Global Enterprises.")}
+                  </p>
                 </div>
                 <div className="row mt-5">
                   <div className="col-lg-6 col-md-6 col-12">
                     <div className="service-item-body1 firstmobilebox sap1 w80">
                       {/* <h3>Seamless Integration</h3> */}
                       <h3>
-                        {t("Strong S/4HANA, ECC, RISE, BTP, Signavio & SAC expertise")}
+                        {t(
+                          "Strong SAP S/4HANA, ECC, RISE with SAP, BTP, Signavio, and SAC expertise",
+                        )}
                       </h3>
                       <div className="text-center">
-                        <img src="/images/sap1.svg" alt="Epicor premium partner " />
+                        <img
+                          src="/images/sap1.svg"
+                          alt="SAP Partner icon"
+                        />
                       </div>
                     </div>
                   </div>
@@ -1701,50 +2672,63 @@ const page = () => {
                     <div className="service-item-body1 epicright1  w80">
                       {/* <h3>Configurable</h3> */}
                       <h3>
-                        {t("Proven migration frameworks and accelerators with deep integration capability across ERP and non-ERP systems")}
+                        {t(
+                          "Proven SAP migration frameworks and accelerators with deep SAP integration capability across ERP and non-ERP systems",
+                        )}
                       </h3>
-                      <img src="/images/sap2.svg" alt="Epicor certified consultant " />
+                      <img
+                        src="/images/sap2.svg"
+                        alt="SAP migration icon"
+                      />
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-12">
                     <div className="service-item-body1 epicright sap3">
                       {/* <h3>Reporting and Analytics</h3> */}
-                      <h3>
-                        {t("Agile delivery with predictable outcomes")}
-                      </h3>
-                      <img src="/images/sap3.svg" alt="ERP lifecycle implementation" />
+                      <h3>{t("Agile SAP project delivery with predictable outcomes")}</h3>
+                      <img
+                        src="/images/sap3.svg"
+                        alt="Agile projects icon"
+                      />
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-12">
                     <div className="service-item-body1 epicright">
                       {/* <h3>Mobile Accessibility</h3> */}
                       <h3>
-                        {t("A global delivery model that balances cost and quality")}
+                        {t(
+                          "A global SAP delivery model that balances cost and quality",
+                        )}
                       </h3>
                       <div className="text-center">
-                        <img src="/images/advant4.svg" alt="Industry specific ERP solutions" />
+                        <img
+                          src="/images/advant4.svg"
+                          alt="Worldwide SAP delivery icon"
+                        />
                       </div>
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-12">
                     <div className="service-item-body1 epicleft">
                       {/* <h3>Effective Data Management</h3> */}
-                      <h3>
-                        {t("Long-term AMS+ to keep your SAP evolving")}
-                      </h3>
-                      <img src="/images/advant5.svg" alt="ERP implementation and delivery services" />
+                      <h3>{t("Long-term SAP AMS+ services to keep your SAP evolving")}</h3>
+                      <img
+                        src="/images/advant5.svg"
+                        alt="SAP and AMS services icon"
+                      />
                     </div>
                   </div>
                 </div>
-                
-            <p className="mt-3">
-              {t("We don’t just implement SAP - we help you run, optimise, and scale with it.")}
-            </p>
+
+                <p className="mt-3">
+                  {t(
+                    "We don’t just implement SAP - we help you run, optimise, and scale with it.",
+                  )}
+                </p>
               </div>
             </div>
           </div>
         </div>
-
 
         {/* Our Testimonial Section Start */}
         <div className="our-testimonial pd30">
@@ -1789,7 +2773,10 @@ const page = () => {
                       <div className="swiper-slide">
                         <div className="service-item-body in6">
                           <h3>
-                            <span> {t("Engineering, Procurement & Construction")}</span>
+                            <span>
+                              {" "}
+                              {t("Engineering, Procurement & Construction")}
+                            </span>
                           </h3>
                         </div>
                       </div>
@@ -2055,584 +3042,664 @@ const page = () => {
           </div>
           <div className="container">
             <p className="mt-3 text-center">
-              {t("Each industry has different priorities. We bring the right processes, accelerators, and domain expertise.")}
+              {t(
+                "Each industry has different priorities. We bring the right processes, accelerators, and domain expertise.",
+              )}
             </p>
           </div>
         </div>
         {/* Our Testimonial Section End */}
 
+        {/* Hero Section Start*/}
+        <div className=" bluebg brouchure">
+          <div className="container">
+            <div className="row section-row align-items-center builtsec">
+              <div className="col-sm-6">
+                <div className="section-title">
+                  <h2 className="text-anime-style-2" data-cursor="-opaque">
+                    {t("Download Our Brochure")}
+                  </h2>
+                  <p>
+                    {t(
+                      "Download Our Brochure now to know more about our SAP Solution!",
+                    )}
+                  </p>
 
-
-
-        
-                {/* Hero Section Start*/}
-                <div className=" bluebg brouchure">
-                    <div className="container">
-                        <div className="row section-row align-items-center builtsec">
-                            <div className="col-sm-6">
-                                <div className="section-title">
-                                    <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                        {t('Download Our Brochure')}
-                                    </h2>
-                                    <p>
-                                        {t('Download Our Brochure now to know more about our SAP Solution!')}
-                                    </p>
-
-  	                                    <form onSubmit={handleSubmit} id="form1">
-  	                                        {/* Hidden Fields for LeadSquared Tracking */}
-  	                                        {/* <input type="hidden" name="Search" value={leadSquaredPageName} />
+                  <form onSubmit={handleSubmit} id="form1">
+                    {/* Hidden Fields for LeadSquared Tracking */}
+                    {/* <input type="hidden" name="Search" value={leadSquaredPageName} />
   	                                        <input type="hidden" name="lsqNotes" value="Selection: SAP Brochure Request | Message: Requested SAP Brochure download" />
   	                                        <input type="hidden" name="message" value="Requested SAP Brochure download" /> */}
 
-                                             <input type="hidden" name="pageName" value="SAP Brochure Request" />
-<input
-  type="hidden"
-  name="Page_URL"
-  value={typeof window !== "undefined" ? window.location.href : ""}
-  />
-  	                                        <div className="w100">
-	                                            <input
-	                                                type="text"
-	                                                className="form-control custom-form-control"
-	                                                name="fullName"
-                                                placeholder={t("Enter your full name")}
-                                                value={formData.fullName}
-                                                onChange={handleInputChange}
-                                                required={true}
-                                                disabled={status === 'loading'}
-                                            />
-                                        </div>
-                                        <div className="w100">
-                                            <div className="phone-input">
-                                                <div className="country-code codeSelect" style={{ position: 'relative' }}>
-                                                    <select
-                                                        className="form-select"
-                                                        name="countryCode"
-                                                        value={formData.countryCode}
-                                                        onChange={handleInputChange}
-                                                        onFocus={() => setIsCountryCodeFocused(true)}
-                                                        onBlur={() => setIsCountryCodeFocused(false)}
-                                                        required={true}
-                                                        disabled={status === 'loading'}
-                                                        style={{
-                                                            appearance: 'none',
-                                                            paddingRight: '35px',
-                                                            color: 'transparent'
-                                                        }}
-                                                    >
-                                                        <option value="+93">Afghanistan (+93)</option>
-                                                        <option value="+355">Albania (+355)</option>
-                                                        <option value="+213">Algeria (+213)</option>
-                                                        <option value="+376">Andorra (+376)</option>
-                                                        <option value="+244">Angola (+244)</option>
-                                                        <option value="+1-268">Antigua and Barbuda (+1-268)</option>
-                                                        <option value="+54">Argentina (+54)</option>
-                                                        <option value="+374">Armenia (+374)</option>
-                                                        <option value="+61">Australia (+61)</option>
-                                                        <option value="+43">Austria (+43)</option>
-                                                        <option value="+994">Azerbaijan (+994)</option>
-                                                        <option value="+1-242">Bahamas (+1-242)</option>
-                                                        <option value="+973">Bahrain (+973)</option>
-                                                        <option value="+880">Bangladesh (+880)</option>
-                                                        <option value="+1-246">Barbados (+1-246)</option>
-                                                        <option value="+375">Belarus (+375)</option>
-                                                        <option value="+32">Belgium (+32)</option>
-                                                        <option value="+501">Belize (+501)</option>
-                                                        <option value="+229">Benin (+229)</option>
-                                                        <option value="+1-441">Bermuda (+1-441)</option>
-                                                        <option value="+975">Bhutan (+975)</option>
-                                                        <option value="+591">Bolivia (+591)</option>
-                                                        <option value="+387">Bosnia and Herzegovina (+387)</option>
-                                                        <option value="+267">Botswana (+267)</option>
-                                                        <option value="+55">Brazil (+55)</option>
-                                                        <option value="+673">Brunei (+673)</option>
-                                                        <option value="+359">Bulgaria (+359)</option>
-                                                        <option value="+226">Burkina Faso (+226)</option>
-                                                        <option value="+257">Burundi (+257)</option>
-                                                        <option value="+855">Cambodia (+855)</option>
-                                                        <option value="+237">Cameroon (+237)</option>
-                                                        <option value="+1">Canada/USA (+1)</option>
-                                                        <option value="+238">Cape Verde (+238)</option>
-                                                        <option value="+1-345">Cayman Islands (+1-345)</option>
-                                                        <option value="+236">Central African Republic (+236)</option>
-                                                        <option value="+235">Chad (+235)</option>
-                                                        <option value="+56">Chile (+56)</option>
-                                                        <option value="+86">China (+86)</option>
-                                                        <option value="+57">Colombia (+57)</option>
-                                                        <option value="+269">Comoros (+269)</option>
-                                                        <option value="+242">Congo (+242)</option>
-                                                        <option value="+506">Costa Rica (+506)</option>
-                                                        <option value="+385">Croatia (+385)</option>
-                                                        <option value="+53">Cuba (+53)</option>
-                                                        <option value="+357">Cyprus (+357)</option>
-                                                        <option value="+420">Czech Republic (+420)</option>
-                                                        <option value="+45">Denmark (+45)</option>
-                                                        <option value="+253">Djibouti (+253)</option>
-                                                        <option value="+1-767">Dominica (+1-767)</option>
-                                                        <option value="+1-809">Dominican Republic (+1-809)</option>
-                                                        <option value="+593">Ecuador (+593)</option>
-                                                        <option value="+20">Egypt (+20)</option>
-                                                        <option value="+503">El Salvador (+503)</option>
-                                                        <option value="+240">Equatorial Guinea (+240)</option>
-                                                        <option value="+291">Eritrea (+291)</option>
-                                                        <option value="+372">Estonia (+372)</option>
-                                                        <option value="+251">Ethiopia (+251)</option>
-                                                        <option value="+500">Falkland Islands (+500)</option>
-                                                        <option value="+298">Faroe Islands (+298)</option>
-                                                        <option value="+679">Fiji (+679)</option>
-                                                        <option value="+358">Finland (+358)</option>
-                                                        <option value="+33">France (+33)</option>
-                                                        <option value="+594">French Guiana (+594)</option>
-                                                        <option value="+689">French Polynesia (+689)</option>
-                                                        <option value="+241">Gabon (+241)</option>
-                                                        <option value="+220">Gambia (+220)</option>
-                                                        <option value="+995">Georgia (+995)</option>
-                                                        <option value="+49">Germany (+49)</option>
-                                                        <option value="+233">Ghana (+233)</option>
-                                                        <option value="+350">Gibraltar (+350)</option>
-                                                        <option value="+30">Greece (+30)</option>
-                                                        <option value="+299">Greenland (+299)</option>
-                                                        <option value="+1-473">Grenada (+1-473)</option>
-                                                        <option value="+590">Guadeloupe (+590)</option>
-                                                        <option value="+1-671">Guam (+1-671)</option>
-                                                        <option value="+502">Guatemala (+502)</option>
-                                                        <option value="+224">Guinea (+224)</option>
-                                                        <option value="+245">Guinea-Bissau (+245)</option>
-                                                        <option value="+592">Guyana (+592)</option>
-                                                        <option value="+509">Haiti (+509)</option>
-                                                        <option value="+504">Honduras (+504)</option>
-                                                        <option value="+852">Hong Kong (+852)</option>
-                                                        <option value="+36">Hungary (+36)</option>
-                                                        <option value="+354">Iceland (+354)</option>
-                                                        <option value="+91">India (+91)</option>
-                                                        <option value="+62">Indonesia (+62)</option>
-                                                        <option value="+98">Iran (+98)</option>
-                                                        <option value="+964">Iraq (+964)</option>
-                                                        <option value="+353">Ireland (+353)</option>
-                                                        <option value="+972">Israel (+972)</option>
-                                                        <option value="+39">Italy (+39)</option>
-                                                        <option value="+1-876">Jamaica (+1-876)</option>
-                                                        <option value="+81">Japan (+81)</option>
-                                                        <option value="+962">Jordan (+962)</option>
-                                                        <option value="+7">Kazakhstan (+7)</option>
-                                                        <option value="+254">Kenya (+254)</option>
-                                                        <option value="+686">Kiribati (+686)</option>
-                                                        <option value="+965">Kuwait (+965)</option>
-                                                        <option value="+996">Kyrgyzstan (+996)</option>
-                                                        <option value="+856">Laos (+856)</option>
-                                                        <option value="+371">Latvia (+371)</option>
-                                                        <option value="+961">Lebanon (+961)</option>
-                                                        <option value="+266">Lesotho (+266)</option>
-                                                        <option value="+231">Liberia (+231)</option>
-                                                        <option value="+218">Libya (+218)</option>
-                                                        <option value="+423">Liechtenstein (+423)</option>
-                                                        <option value="+370">Lithuania (+370)</option>
-                                                        <option value="+352">Luxembourg (+352)</option>
-                                                        <option value="+853">Macau (+853)</option>
-                                                        <option value="+389">North Macedonia (+389)</option>
-                                                        <option value="+261">Madagascar (+261)</option>
-                                                        <option value="+265">Malawi (+265)</option>
-                                                        <option value="+60">Malaysia (+60)</option>
-                                                        <option value="+960">Maldives (+960)</option>
-                                                        <option value="+223">Mali (+223)</option>
-                                                        <option value="+356">Malta (+356)</option>
-                                                        <option value="+692">Marshall Islands (+692)</option>
-                                                        <option value="+596">Martinique (+596)</option>
-                                                        <option value="+222">Mauritania (+222)</option>
-                                                        <option value="+230">Mauritius (+230)</option>
-                                                        <option value="+52">Mexico (+52)</option>
-                                                        <option value="+691">Micronesia (+691)</option>
-                                                        <option value="+373">Moldova (+373)</option>
-                                                        <option value="+377">Monaco (+377)</option>
-                                                        <option value="+976">Mongolia (+976)</option>
-                                                        <option value="+382">Montenegro (+382)</option>
-                                                        <option value="+1-664">Montserrat (+1-664)</option>
-                                                        <option value="+212">Morocco (+212)</option>
-                                                        <option value="+258">Mozambique (+258)</option>
-                                                        <option value="+95">Myanmar (+95)</option>
-                                                        <option value="+264">Namibia (+264)</option>
-                                                        <option value="+674">Nauru (+674)</option>
-                                                        <option value="+977">Nepal (+977)</option>
-                                                        <option value="+31">Netherlands (+31)</option>
-                                                        <option value="+687">New Caledonia (+687)</option>
-                                                        <option value="+64">New Zealand (+64)</option>
-                                                        <option value="+505">Nicaragua (+505)</option>
-                                                        <option value="+227">Niger (+227)</option>
-                                                        <option value="+234">Nigeria (+234)</option>
-                                                        <option value="+850">North Korea (+850)</option>
-                                                        <option value="+47">Norway (+47)</option>
-                                                        <option value="+968">Oman (+968)</option>
-                                                        <option value="+92">Pakistan (+92)</option>
-                                                        <option value="+680">Palau (+680)</option>
-                                                        <option value="+970">Palestine (+970)</option>
-                                                        <option value="+507">Panama (+507)</option>
-                                                        <option value="+675">Papua New Guinea (+675)</option>
-                                                        <option value="+595">Paraguay (+595)</option>
-                                                        <option value="+51">Peru (+51)</option>
-                                                        <option value="+63">Philippines (+63)</option>
-                                                        <option value="+48">Poland (+48)</option>
-                                                        <option value="+351">Portugal (+351)</option>
-                                                        <option value="+1-787">Puerto Rico (+1-787)</option>
-                                                        <option value="+974">Qatar (+974)</option>
-                                                        <option value="+262">Réunion (+262)</option>
-                                                        <option value="+40">Romania (+40)</option>
-                                                        <option value="+7">Russia (+7)</option>
-                                                        <option value="+250">Rwanda (+250)</option>
-                                                        <option value="+1-869">Saint Kitts and Nevis (+1-869)</option>
-                                                        <option value="+1-758">Saint Lucia (+1-758)</option>
-                                                        <option value="+1-784">Saint Vincent (+1-784)</option>
-                                                        <option value="+685">Samoa (+685)</option>
-                                                        <option value="+378">San Marino (+378)</option>
-                                                        <option value="+239">São Tomé and Príncipe (+239)</option>
-                                                        <option value="+966">Saudi Arabia (+966)</option>
-                                                        <option value="+221">Senegal (+221)</option>
-                                                        <option value="+381">Serbia (+381)</option>
-                                                        <option value="+248">Seychelles (+248)</option>
-                                                        <option value="+232">Sierra Leone (+232)</option>
-                                                        <option value="+65">Singapore (+65)</option>
-                                                        <option value="+421">Slovakia (+421)</option>
-                                                        <option value="+386">Slovenia (+386)</option>
-                                                        <option value="+677">Solomon Islands (+677)</option>
-                                                        <option value="+252">Somalia (+252)</option>
-                                                        <option value="+27">South Africa (+27)</option>
-                                                        <option value="+82">South Korea (+82)</option>
-                                                        <option value="+211">South Sudan (+211)</option>
-                                                        <option value="+34">Spain (+34)</option>
-                                                        <option value="+94">Sri Lanka (+94)</option>
-                                                        <option value="+249">Sudan (+249)</option>
-                                                        <option value="+597">Suriname (+597)</option>
-                                                        <option value="+268">Eswatini (+268)</option>
-                                                        <option value="+46">Sweden (+46)</option>
-                                                        <option value="+41">Switzerland (+41)</option>
-                                                        <option value="+963">Syria (+963)</option>
-                                                        <option value="+886">Taiwan (+886)</option>
-                                                        <option value="+992">Tajikistan (+992)</option>
-                                                        <option value="+255">Tanzania (+255)</option>
-                                                        <option value="+66">Thailand (+66)</option>
-                                                        <option value="+228">Togo (+228)</option>
-                                                        <option value="+676">Tonga (+676)</option>
-                                                        <option value="+1-868">Trinidad and Tobago (+1-868)</option>
-                                                        <option value="+216">Tunisia (+216)</option>
-                                                        <option value="+90">Turkey (+90)</option>
-                                                        <option value="+993">Turkmenistan (+993)</option>
-                                                        <option value="+1-649">Turks and Caicos (+1-649)</option>
-                                                        <option value="+688">Tuvalu (+688)</option>
-                                                        <option value="+256">Uganda (+256)</option>
-                                                        <option value="+380">Ukraine (+380)</option>
-                                                        <option value="+971">United Arab Emirates (+971)</option>
-                                                        <option value="+44">United Kingdom (+44)</option>
-                                                        <option value="+1">United States (+1)</option>
-                                                        <option value="+598">Uruguay (+598)</option>
-                                                        <option value="+998">Uzbekistan (+998)</option>
-                                                        <option value="+678">Vanuatu (+678)</option>
-                                                        <option value="+379">Vatican City (+379)</option>
-                                                        <option value="+58">Venezuela (+58)</option>
-                                                        <option value="+84">Vietnam (+84)</option>
-                                                        <option value="+1-284">British Virgin Islands (+1-284)</option>
-                                                        <option value="+1-340">US Virgin Islands (+1-340)</option>
-                                                        <option value="+681">Wallis and Futuna (+681)</option>
-                                                        <option value="+967">Yemen (+967)</option>
-                                                        <option value="+260">Zambia (+260)</option>
-                                                        <option value="+263">Zimbabwe (+263)</option>
-                                                    </select>
-                                                    <span className="arrow">
-                                                        <i className="fa fa-angle-down" />
-                                                    </span>
-                                                </div>
-                                                <input
-                                                    type="tel"
-                                                    name="phone"
-                                                    placeholder={t("Enter your phone number")}
-                                                    value={formData.phone}
-                                                    onChange={handleInputChange}
-                                                    onKeyDown={(e) => {
-                                                        // Prevent minus, plus, and 'e' keys (scientific notation)
-                                                        if (e.key === '-' || e.key === '+' || e.key === 'e' || e.key === 'E') {
-                                                          e.preventDefault();
-                                                        }
-                                                      }}
-                                                      min="0"
-                                                    required={true}
-                                                    disabled={status === 'loading'}
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="w100">
-                                            <input
-                                                type="email"
-                                                className="form-control custom-form-control"
-                                                name="email"
-                                                placeholder={t("Enter your email address")}
-                                                value={formData.email}
-                                                onChange={handleInputChange}
-                                                required={true}
-                                                disabled={status === 'loading'}
-                                            />
-                                        </div>
-                                        <div className="w100">
-                                            <input
-                                                type="text"
-                                                className="form-control custom-form-control"
-                                                name="companyName"
-                                                placeholder={t("Enter your company name")}
-                                                value={formData.companyName}
-                                                onChange={handleInputChange}
-                                                required={true}
-                                                disabled={status === 'loading'}
-                                            />
-                                        </div>
-                                        <div className="ser-btn mt-3">
-                                            <a>
-                                                <button
-                                                    type="submit"
-                                                    className="animated-svg-link"
-                                                    disabled={status === 'loading'}
-                                                    style={{
-                                                        opacity: status === 'loading' ? 0.6 : 1,
-                                                        cursor: status === 'loading' ? 'not-allowed' : 'pointer',
-                                                        background: 'transparent',
-                                                        border: 'none',
-                                                        width: '100%',
-                                                        textAlign: 'left',
-                                                        padding: 0
-                                                    }}
-                                                >
-                                                    {status === 'loading' ? t('Submitting...') : t('Submit')}
-                                                    <span className="svg-container ">
-                                                        <span className=" right">
-                                                            <svg
-                                                                width={24}
-                                                                height={23}
-                                                                viewBox="0 0 24 23"
-                                                                fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                            >
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="16.0004"
-                                                                    cy="4.79995"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="12.7992"
-                                                                    cy="1.6"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="22.4008"
-                                                                    cy="11.2"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="1.6"
-                                                                    cy="11.2"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="6.40078"
-                                                                    cy="11.2"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="11.1996"
-                                                                    cy="11.2"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="16.0004"
-                                                                    cy="11.2"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="19.1996"
-                                                                    cy="14.4"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="16.0004"
-                                                                    cy="17.6"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="12.7992"
-                                                                    cy="20.8"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                                <circle
-                                                                    className="dot"
-                                                                    opacity="0.5"
-                                                                    cx="19.1996"
-                                                                    cy="8.00002"
-                                                                    r="1.6"
-                                                                    fill="#535353"
-                                                                />
-                                                            </svg>
-                                                        </span>
-                                                    </span>
-                                                </button>
-                                            </a>
-                                        </div>
-                                        {statusMessage && (
-                                             <div
-                                                 className={`mt-2 ${status === 'success' ? 'text-success' : status === 'error' ? 'text-danger' : 'text-info'}`}
-                                                 style={{ fontSize: '14px', fontWeight: '500' }}
-                                             >
-                                                 {status === 'success' && '✅ '}
-                                                 {status === 'error' && '❌ '}
-                                                 {statusMessage}
-                                             </div>
-                                         )}
-                                     </form>
-                                </div>
-                            </div>
-                            <div className="col-sm-6">
-                                <div className="parentban mtt50">
-                                    <svg
-                                        width="100%"
-                                        height="100%"
-                                        viewBox="0 0 886 754"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <circle
-                                            cx="442.75"
-                                            cy="444.75"
-                                            r={252}
-                                            fill="url(#paint0_linear_1699_17987)"
-                                        />
-                                        <ellipse
-                                            opacity="0.6"
-                                            cx="442.75"
-                                            cy="442.25"
-                                            rx={295}
-                                            ry="294.5"
-                                            stroke="url(#paint1_linear_1699_17987)"
-                                            strokeWidth="1.5"
-                                        />
-                                        <ellipse
-                                            opacity="0.3"
-                                            cx="442.75"
-                                            cy="442.25"
-                                            rx={345}
-                                            ry="344.5"
-                                            stroke="url(#paint2_linear_1699_17987)"
-                                            strokeWidth="1.5"
-                                        />
-                                        <ellipse
-                                            opacity="0.2"
-                                            cx="442.75"
-                                            cy="442.25"
-                                            rx={392}
-                                            ry="392.5"
-                                            stroke="url(#paint3_linear_1699_17987)"
-                                            strokeWidth="1.5"
-                                        />
-                                        <circle
-                                            opacity="0.1"
-                                            cx="442.75"
-                                            cy="442.75"
-                                            r={442}
-                                            stroke="url(#paint4_linear_1699_17987)"
-                                            strokeWidth="1.5"
-                                        />
-                                        <defs>
-                                            <linearGradient
-                                                id="paint0_linear_1699_17987"
-                                                x1="442.75"
-                                                y1="192.75"
-                                                x2="442.75"
-                                                y2="696.75"
-                                                gradientUnits="userSpaceOnUse"
-                                            >
-                                                <stop stopColor="#008080" />
-                                                <stop offset="0.67478" stopColor="#082326" stopOpacity={0} />
-                                            </linearGradient>
-                                            <linearGradient
-                                                id="paint1_linear_1699_17987"
-                                                x1="442.75"
-                                                y1="147.75"
-                                                x2="442.75"
-                                                y2="736.75"
-                                                gradientUnits="userSpaceOnUse"
-                                            >
-                                                <stop stopColor="#499A9A" />
-                                                <stop offset="0.74249" stopColor="#499A9A" stopOpacity={0} />
-                                            </linearGradient>
-                                            <linearGradient
-                                                id="paint2_linear_1699_17987"
-                                                x1="442.75"
-                                                y1="97.75"
-                                                x2="442.75"
-                                                y2="786.75"
-                                                gradientUnits="userSpaceOnUse"
-                                            >
-                                                <stop stopColor="#499A9A" />
-                                                <stop offset="0.74249" stopColor="#499A9A" stopOpacity={0} />
-                                            </linearGradient>
-                                            <linearGradient
-                                                id="paint3_linear_1699_17987"
-                                                x1="442.75"
-                                                y1="49.75"
-                                                x2="442.75"
-                                                y2="834.75"
-                                                gradientUnits="userSpaceOnUse"
-                                            >
-                                                <stop stopColor="#499A9A" />
-                                                <stop offset="0.74249" stopColor="#499A9A" stopOpacity={0} />
-                                            </linearGradient>
-                                            <linearGradient
-                                                id="paint4_linear_1699_17987"
-                                                x1="442.75"
-                                                y1="0.75"
-                                                x2="442.75"
-                                                y2="884.75"
-                                                gradientUnits="userSpaceOnUse"
-                                            >
-                                                <stop stopColor="#499A9A" />
-                                                <stop offset="0.74249" stopColor="#499A9A" stopOpacity={0} />
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                    <img src="/images/sapforrm.png" width={379} height={542} alt="" />
-                                </div>
-                            </div>
-                        </div>
+                    <input
+                      type="hidden"
+                      name="pageName"
+                      value="SAP Brochure Request"
+                    />
+                    <input
+                      type="hidden"
+                      name="Page_URL"
+                      value={
+                        typeof window !== "undefined"
+                          ? window.location.href
+                          : ""
+                      }
+                    />
+                    <div className="w100">
+                      <input
+                        type="text"
+                        className="form-control custom-form-control"
+                        name="fullName"
+                        placeholder={t("Enter your full name")}
+                        value={formData.fullName}
+                        onChange={handleInputChange}
+                        required={true}
+                        disabled={status === "loading"}
+                      />
                     </div>
+                    <div className="w100">
+                      <div className="phone-input">
+                        <div
+                          className="country-code codeSelect"
+                          style={{ position: "relative" }}
+                        >
+                          <select
+                            className="form-select"
+                            name="countryCode"
+                            value={formData.countryCode}
+                            onChange={handleInputChange}
+                            onFocus={() => setIsCountryCodeFocused(true)}
+                            onBlur={() => setIsCountryCodeFocused(false)}
+                            required={true}
+                            disabled={status === "loading"}
+                            style={{
+                              appearance: "none",
+                              paddingRight: "35px",
+                              color: "transparent",
+                            }}
+                          >
+                            <option value="+93">Afghanistan (+93)</option>
+                            <option value="+355">Albania (+355)</option>
+                            <option value="+213">Algeria (+213)</option>
+                            <option value="+376">Andorra (+376)</option>
+                            <option value="+244">Angola (+244)</option>
+                            <option value="+1-268">
+                              Antigua and Barbuda (+1-268)
+                            </option>
+                            <option value="+54">Argentina (+54)</option>
+                            <option value="+374">Armenia (+374)</option>
+                            <option value="+61">Australia (+61)</option>
+                            <option value="+43">Austria (+43)</option>
+                            <option value="+994">Azerbaijan (+994)</option>
+                            <option value="+1-242">Bahamas (+1-242)</option>
+                            <option value="+973">Bahrain (+973)</option>
+                            <option value="+880">Bangladesh (+880)</option>
+                            <option value="+1-246">Barbados (+1-246)</option>
+                            <option value="+375">Belarus (+375)</option>
+                            <option value="+32">Belgium (+32)</option>
+                            <option value="+501">Belize (+501)</option>
+                            <option value="+229">Benin (+229)</option>
+                            <option value="+1-441">Bermuda (+1-441)</option>
+                            <option value="+975">Bhutan (+975)</option>
+                            <option value="+591">Bolivia (+591)</option>
+                            <option value="+387">
+                              Bosnia and Herzegovina (+387)
+                            </option>
+                            <option value="+267">Botswana (+267)</option>
+                            <option value="+55">Brazil (+55)</option>
+                            <option value="+673">Brunei (+673)</option>
+                            <option value="+359">Bulgaria (+359)</option>
+                            <option value="+226">Burkina Faso (+226)</option>
+                            <option value="+257">Burundi (+257)</option>
+                            <option value="+855">Cambodia (+855)</option>
+                            <option value="+237">Cameroon (+237)</option>
+                            <option value="+1">Canada/USA (+1)</option>
+                            <option value="+238">Cape Verde (+238)</option>
+                            <option value="+1-345">
+                              Cayman Islands (+1-345)
+                            </option>
+                            <option value="+236">
+                              Central African Republic (+236)
+                            </option>
+                            <option value="+235">Chad (+235)</option>
+                            <option value="+56">Chile (+56)</option>
+                            <option value="+86">China (+86)</option>
+                            <option value="+57">Colombia (+57)</option>
+                            <option value="+269">Comoros (+269)</option>
+                            <option value="+242">Congo (+242)</option>
+                            <option value="+506">Costa Rica (+506)</option>
+                            <option value="+385">Croatia (+385)</option>
+                            <option value="+53">Cuba (+53)</option>
+                            <option value="+357">Cyprus (+357)</option>
+                            <option value="+420">Czech Republic (+420)</option>
+                            <option value="+45">Denmark (+45)</option>
+                            <option value="+253">Djibouti (+253)</option>
+                            <option value="+1-767">Dominica (+1-767)</option>
+                            <option value="+1-809">
+                              Dominican Republic (+1-809)
+                            </option>
+                            <option value="+593">Ecuador (+593)</option>
+                            <option value="+20">Egypt (+20)</option>
+                            <option value="+503">El Salvador (+503)</option>
+                            <option value="+240">
+                              Equatorial Guinea (+240)
+                            </option>
+                            <option value="+291">Eritrea (+291)</option>
+                            <option value="+372">Estonia (+372)</option>
+                            <option value="+251">Ethiopia (+251)</option>
+                            <option value="+500">
+                              Falkland Islands (+500)
+                            </option>
+                            <option value="+298">Faroe Islands (+298)</option>
+                            <option value="+679">Fiji (+679)</option>
+                            <option value="+358">Finland (+358)</option>
+                            <option value="+33">France (+33)</option>
+                            <option value="+594">French Guiana (+594)</option>
+                            <option value="+689">
+                              French Polynesia (+689)
+                            </option>
+                            <option value="+241">Gabon (+241)</option>
+                            <option value="+220">Gambia (+220)</option>
+                            <option value="+995">Georgia (+995)</option>
+                            <option value="+49">Germany (+49)</option>
+                            <option value="+233">Ghana (+233)</option>
+                            <option value="+350">Gibraltar (+350)</option>
+                            <option value="+30">Greece (+30)</option>
+                            <option value="+299">Greenland (+299)</option>
+                            <option value="+1-473">Grenada (+1-473)</option>
+                            <option value="+590">Guadeloupe (+590)</option>
+                            <option value="+1-671">Guam (+1-671)</option>
+                            <option value="+502">Guatemala (+502)</option>
+                            <option value="+224">Guinea (+224)</option>
+                            <option value="+245">Guinea-Bissau (+245)</option>
+                            <option value="+592">Guyana (+592)</option>
+                            <option value="+509">Haiti (+509)</option>
+                            <option value="+504">Honduras (+504)</option>
+                            <option value="+852">Hong Kong (+852)</option>
+                            <option value="+36">Hungary (+36)</option>
+                            <option value="+354">Iceland (+354)</option>
+                            <option value="+91">India (+91)</option>
+                            <option value="+62">Indonesia (+62)</option>
+                            <option value="+98">Iran (+98)</option>
+                            <option value="+964">Iraq (+964)</option>
+                            <option value="+353">Ireland (+353)</option>
+                            <option value="+972">Israel (+972)</option>
+                            <option value="+39">Italy (+39)</option>
+                            <option value="+1-876">Jamaica (+1-876)</option>
+                            <option value="+81">Japan (+81)</option>
+                            <option value="+962">Jordan (+962)</option>
+                            <option value="+7">Kazakhstan (+7)</option>
+                            <option value="+254">Kenya (+254)</option>
+                            <option value="+686">Kiribati (+686)</option>
+                            <option value="+965">Kuwait (+965)</option>
+                            <option value="+996">Kyrgyzstan (+996)</option>
+                            <option value="+856">Laos (+856)</option>
+                            <option value="+371">Latvia (+371)</option>
+                            <option value="+961">Lebanon (+961)</option>
+                            <option value="+266">Lesotho (+266)</option>
+                            <option value="+231">Liberia (+231)</option>
+                            <option value="+218">Libya (+218)</option>
+                            <option value="+423">Liechtenstein (+423)</option>
+                            <option value="+370">Lithuania (+370)</option>
+                            <option value="+352">Luxembourg (+352)</option>
+                            <option value="+853">Macau (+853)</option>
+                            <option value="+389">North Macedonia (+389)</option>
+                            <option value="+261">Madagascar (+261)</option>
+                            <option value="+265">Malawi (+265)</option>
+                            <option value="+60">Malaysia (+60)</option>
+                            <option value="+960">Maldives (+960)</option>
+                            <option value="+223">Mali (+223)</option>
+                            <option value="+356">Malta (+356)</option>
+                            <option value="+692">
+                              Marshall Islands (+692)
+                            </option>
+                            <option value="+596">Martinique (+596)</option>
+                            <option value="+222">Mauritania (+222)</option>
+                            <option value="+230">Mauritius (+230)</option>
+                            <option value="+52">Mexico (+52)</option>
+                            <option value="+691">Micronesia (+691)</option>
+                            <option value="+373">Moldova (+373)</option>
+                            <option value="+377">Monaco (+377)</option>
+                            <option value="+976">Mongolia (+976)</option>
+                            <option value="+382">Montenegro (+382)</option>
+                            <option value="+1-664">Montserrat (+1-664)</option>
+                            <option value="+212">Morocco (+212)</option>
+                            <option value="+258">Mozambique (+258)</option>
+                            <option value="+95">Myanmar (+95)</option>
+                            <option value="+264">Namibia (+264)</option>
+                            <option value="+674">Nauru (+674)</option>
+                            <option value="+977">Nepal (+977)</option>
+                            <option value="+31">Netherlands (+31)</option>
+                            <option value="+687">New Caledonia (+687)</option>
+                            <option value="+64">New Zealand (+64)</option>
+                            <option value="+505">Nicaragua (+505)</option>
+                            <option value="+227">Niger (+227)</option>
+                            <option value="+234">Nigeria (+234)</option>
+                            <option value="+850">North Korea (+850)</option>
+                            <option value="+47">Norway (+47)</option>
+                            <option value="+968">Oman (+968)</option>
+                            <option value="+92">Pakistan (+92)</option>
+                            <option value="+680">Palau (+680)</option>
+                            <option value="+970">Palestine (+970)</option>
+                            <option value="+507">Panama (+507)</option>
+                            <option value="+675">
+                              Papua New Guinea (+675)
+                            </option>
+                            <option value="+595">Paraguay (+595)</option>
+                            <option value="+51">Peru (+51)</option>
+                            <option value="+63">Philippines (+63)</option>
+                            <option value="+48">Poland (+48)</option>
+                            <option value="+351">Portugal (+351)</option>
+                            <option value="+1-787">Puerto Rico (+1-787)</option>
+                            <option value="+974">Qatar (+974)</option>
+                            <option value="+262">Réunion (+262)</option>
+                            <option value="+40">Romania (+40)</option>
+                            <option value="+7">Russia (+7)</option>
+                            <option value="+250">Rwanda (+250)</option>
+                            <option value="+1-869">
+                              Saint Kitts and Nevis (+1-869)
+                            </option>
+                            <option value="+1-758">Saint Lucia (+1-758)</option>
+                            <option value="+1-784">
+                              Saint Vincent (+1-784)
+                            </option>
+                            <option value="+685">Samoa (+685)</option>
+                            <option value="+378">San Marino (+378)</option>
+                            <option value="+239">
+                              São Tomé and Príncipe (+239)
+                            </option>
+                            <option value="+966">Saudi Arabia (+966)</option>
+                            <option value="+221">Senegal (+221)</option>
+                            <option value="+381">Serbia (+381)</option>
+                            <option value="+248">Seychelles (+248)</option>
+                            <option value="+232">Sierra Leone (+232)</option>
+                            <option value="+65">Singapore (+65)</option>
+                            <option value="+421">Slovakia (+421)</option>
+                            <option value="+386">Slovenia (+386)</option>
+                            <option value="+677">Solomon Islands (+677)</option>
+                            <option value="+252">Somalia (+252)</option>
+                            <option value="+27">South Africa (+27)</option>
+                            <option value="+82">South Korea (+82)</option>
+                            <option value="+211">South Sudan (+211)</option>
+                            <option value="+34">Spain (+34)</option>
+                            <option value="+94">Sri Lanka (+94)</option>
+                            <option value="+249">Sudan (+249)</option>
+                            <option value="+597">Suriname (+597)</option>
+                            <option value="+268">Eswatini (+268)</option>
+                            <option value="+46">Sweden (+46)</option>
+                            <option value="+41">Switzerland (+41)</option>
+                            <option value="+963">Syria (+963)</option>
+                            <option value="+886">Taiwan (+886)</option>
+                            <option value="+992">Tajikistan (+992)</option>
+                            <option value="+255">Tanzania (+255)</option>
+                            <option value="+66">Thailand (+66)</option>
+                            <option value="+228">Togo (+228)</option>
+                            <option value="+676">Tonga (+676)</option>
+                            <option value="+1-868">
+                              Trinidad and Tobago (+1-868)
+                            </option>
+                            <option value="+216">Tunisia (+216)</option>
+                            <option value="+90">Turkey (+90)</option>
+                            <option value="+993">Turkmenistan (+993)</option>
+                            <option value="+1-649">
+                              Turks and Caicos (+1-649)
+                            </option>
+                            <option value="+688">Tuvalu (+688)</option>
+                            <option value="+256">Uganda (+256)</option>
+                            <option value="+380">Ukraine (+380)</option>
+                            <option value="+971">
+                              United Arab Emirates (+971)
+                            </option>
+                            <option value="+44">United Kingdom (+44)</option>
+                            <option value="+1">United States (+1)</option>
+                            <option value="+598">Uruguay (+598)</option>
+                            <option value="+998">Uzbekistan (+998)</option>
+                            <option value="+678">Vanuatu (+678)</option>
+                            <option value="+379">Vatican City (+379)</option>
+                            <option value="+58">Venezuela (+58)</option>
+                            <option value="+84">Vietnam (+84)</option>
+                            <option value="+1-284">
+                              British Virgin Islands (+1-284)
+                            </option>
+                            <option value="+1-340">
+                              US Virgin Islands (+1-340)
+                            </option>
+                            <option value="+681">
+                              Wallis and Futuna (+681)
+                            </option>
+                            <option value="+967">Yemen (+967)</option>
+                            <option value="+260">Zambia (+260)</option>
+                            <option value="+263">Zimbabwe (+263)</option>
+                          </select>
+                          <span className="arrow">
+                            <i className="fa fa-angle-down" />
+                          </span>
+                        </div>
+                        <input
+                          type="tel"
+                          name="phone"
+                          placeholder={t("Enter your phone number")}
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          onKeyDown={(e) => {
+                            // Prevent minus, plus, and 'e' keys (scientific notation)
+                            if (
+                              e.key === "-" ||
+                              e.key === "+" ||
+                              e.key === "e" ||
+                              e.key === "E"
+                            ) {
+                              e.preventDefault();
+                            }
+                          }}
+                          min="0"
+                          required={true}
+                          disabled={status === "loading"}
+                        />
+                      </div>
+                    </div>
+                    <div className="w100">
+                      <input
+                        type="email"
+                        className="form-control custom-form-control"
+                        name="email"
+                        placeholder={t("Enter your email address")}
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required={true}
+                        disabled={status === "loading"}
+                      />
+                    </div>
+                    <div className="w100">
+                      <input
+                        type="text"
+                        className="form-control custom-form-control"
+                        name="companyName"
+                        placeholder={t("Enter your company name")}
+                        value={formData.companyName}
+                        onChange={handleInputChange}
+                        required={true}
+                        disabled={status === "loading"}
+                      />
+                    </div>
+                    <div className="ser-btn mt-3">
+                      <a>
+                        <button
+                          type="submit"
+                          className="animated-svg-link"
+                          disabled={status === "loading"}
+                          style={{
+                            opacity: status === "loading" ? 0.6 : 1,
+                            cursor:
+                              status === "loading" ? "not-allowed" : "pointer",
+                            background: "transparent",
+                            border: "none",
+                            width: "100%",
+                            textAlign: "left",
+                            padding: 0,
+                          }}
+                        >
+                          {status === "loading"
+                            ? t("Submitting...")
+                            : t("Submit")}
+                          <span className="svg-container ">
+                            <span className=" right">
+                              <svg
+                                width={24}
+                                height={23}
+                                viewBox="0 0 24 23"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="16.0004"
+                                  cy="4.79995"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="12.7992"
+                                  cy="1.6"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="22.4008"
+                                  cy="11.2"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="1.6"
+                                  cy="11.2"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="6.40078"
+                                  cy="11.2"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="11.1996"
+                                  cy="11.2"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="16.0004"
+                                  cy="11.2"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="19.1996"
+                                  cy="14.4"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="16.0004"
+                                  cy="17.6"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="12.7992"
+                                  cy="20.8"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                                <circle
+                                  className="dot"
+                                  opacity="0.5"
+                                  cx="19.1996"
+                                  cy="8.00002"
+                                  r="1.6"
+                                  fill="#535353"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </button>
+                      </a>
+                    </div>
+                    {statusMessage && (
+                      <div
+                        className={`mt-2 ${status === "success" ? "text-success" : status === "error" ? "text-danger" : "text-info"}`}
+                        style={{ fontSize: "14px", fontWeight: "500" }}
+                      >
+                        {status === "success" && "✅ "}
+                        {status === "error" && "❌ "}
+                        {statusMessage}
+                      </div>
+                    )}
+                  </form>
                 </div>
-                {/* Hero Section End*/}
+              </div>
+              <div className="col-sm-6">
+                <div className="parentban mtt50">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 886 754"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="442.75"
+                      cy="444.75"
+                      r={252}
+                      fill="url(#paint0_linear_1699_17987)"
+                    />
+                    <ellipse
+                      opacity="0.6"
+                      cx="442.75"
+                      cy="442.25"
+                      rx={295}
+                      ry="294.5"
+                      stroke="url(#paint1_linear_1699_17987)"
+                      strokeWidth="1.5"
+                    />
+                    <ellipse
+                      opacity="0.3"
+                      cx="442.75"
+                      cy="442.25"
+                      rx={345}
+                      ry="344.5"
+                      stroke="url(#paint2_linear_1699_17987)"
+                      strokeWidth="1.5"
+                    />
+                    <ellipse
+                      opacity="0.2"
+                      cx="442.75"
+                      cy="442.25"
+                      rx={392}
+                      ry="392.5"
+                      stroke="url(#paint3_linear_1699_17987)"
+                      strokeWidth="1.5"
+                    />
+                    <circle
+                      opacity="0.1"
+                      cx="442.75"
+                      cy="442.75"
+                      r={442}
+                      stroke="url(#paint4_linear_1699_17987)"
+                      strokeWidth="1.5"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_1699_17987"
+                        x1="442.75"
+                        y1="192.75"
+                        x2="442.75"
+                        y2="696.75"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stopColor="#008080" />
+                        <stop
+                          offset="0.67478"
+                          stopColor="#082326"
+                          stopOpacity={0}
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="paint1_linear_1699_17987"
+                        x1="442.75"
+                        y1="147.75"
+                        x2="442.75"
+                        y2="736.75"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stopColor="#499A9A" />
+                        <stop
+                          offset="0.74249"
+                          stopColor="#499A9A"
+                          stopOpacity={0}
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="paint2_linear_1699_17987"
+                        x1="442.75"
+                        y1="97.75"
+                        x2="442.75"
+                        y2="786.75"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stopColor="#499A9A" />
+                        <stop
+                          offset="0.74249"
+                          stopColor="#499A9A"
+                          stopOpacity={0}
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="paint3_linear_1699_17987"
+                        x1="442.75"
+                        y1="49.75"
+                        x2="442.75"
+                        y2="834.75"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stopColor="#499A9A" />
+                        <stop
+                          offset="0.74249"
+                          stopColor="#499A9A"
+                          stopOpacity={0}
+                        />
+                      </linearGradient>
+                      <linearGradient
+                        id="paint4_linear_1699_17987"
+                        x1="442.75"
+                        y1="0.75"
+                        x2="442.75"
+                        y2="884.75"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stopColor="#499A9A" />
+                        <stop
+                          offset="0.74249"
+                          stopColor="#499A9A"
+                          stopOpacity={0}
+                        />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <img
+                    src="/images/sapforrm.png"
+                    width={379}
+                    height={542}
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Hero Section End*/}
 
-
-
-  {/* Page Faqs Start */}
+        {/* Page Faqs Start */}
         <div className="page-faqs bggray pd60">
           <div className="container">
             <div className="row">
@@ -2663,7 +3730,7 @@ const page = () => {
                             aria-expanded="true"
                             aria-controls="collapse1"
                           >
-                            {t("What SAP services does RheinBrücke provide?")} 
+                            {t("What SAP services does RheinBrücke provide?")}
                           </button>
                         </h2>
                         <div
@@ -2674,7 +3741,9 @@ const page = () => {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("RheinBrücke provides strategic SAP consulting, end-to-end implementation, system integration, and complex Cloud transformation and migration services. We also offer customization and support for SAP ECC as well as technical support for ABAP and BASIS. Our goal is to modernize your SAP ERP landscape and significantly improve operational efficiency and data integrity.")}  
+                              {t(
+                                "RheinBrücke provides strategic SAP consulting, end-to-end implementation, system integration, and complex Cloud transformation and migration services. We also offer customization and support for SAP ECC as well as technical support for ABAP and BASIS. Our goal is to modernize your SAP ERP landscape and significantly improve operational efficiency and data integrity.",
+                              )}
                             </p>
                           </div>
                         </div>
@@ -2694,7 +3763,7 @@ const page = () => {
                             aria-expanded="false"
                             aria-controls="collapse2"
                           >
-                             {t("Do you specialise in particular SAP modules?")} 
+                            {t("Do you specialise in particular SAP modules?")}
                           </button>
                         </h2>
                         <div
@@ -2705,7 +3774,9 @@ const page = () => {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("Yes. RheinBrücke specializes in core SAP ERP solutions, with deep expertise in managing large-scale S/4HANA migrations and implementing SAP Business One tailored for mid-sized enterprises and global subsidiaries. We focus particularly on complex financials, Supply Chain Management (SCM), and logistics modules.")}
+                              {t(
+                                "Yes. RheinBrücke specializes in core SAP ERP solutions, with deep expertise in managing large-scale S/4HANA migrations and implementing SAP Business One tailored for mid-sized enterprises and global subsidiaries. We focus particularly on complex financials, Supply Chain Management (SCM), and logistics modules.",
+                              )}
                             </p>
                           </div>
                         </div>
@@ -2725,7 +3796,9 @@ const page = () => {
                             aria-expanded="false"
                             aria-controls="collapse3"
                           >
-                            {t("Can SAP systems integrate with other enterprise applications?")} 
+                            {t(
+                              "Can SAP systems integrate with other enterprise applications?",
+                            )}
                           </button>
                         </h2>
                         <div
@@ -2736,7 +3809,9 @@ const page = () => {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("Absolutely. SAP systems are central to the enterprise ecosystem. We leverage modern API and middleware tools to ensure seamless integration with CRM, HR, Business Intelligence (BI), and critical third-party applications. Critically, we specialize in complex interoperability projects involving platforms like Epicor and Microsoft Dynamics 365.")} 
+                              {t(
+                                "Absolutely. SAP systems are central to the enterprise ecosystem. We leverage modern API and middleware tools to ensure seamless integration with CRM, HR, Business Intelligence (BI), and critical third-party applications. Critically, we specialize in complex interoperability projects involving platforms like Epicor and Microsoft Dynamics 365.",
+                              )}
                             </p>
                           </div>
                         </div>
@@ -2756,7 +3831,9 @@ const page = () => {
                             aria-expanded="false"
                             aria-controls="collapse4"
                           >
-                           {t("Does RheinBrücke provide SAP support and AMS services?")} 
+                            {t(
+                              "Does RheinBrücke provide SAP support and AMS services?",
+                            )}
                           </button>
                         </h2>
                         <div
@@ -2767,7 +3844,84 @@ const page = () => {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("Yes. Our dedicated Application Management and Support (AMS) services provide proactive, SLA-based support to maintain system stability, manage regular version upgrades, and ensure continuous optimization of your SAP landscape. We offer flexible models, including 24/7 coverage for global and GCC operations.")}
+                              {t(
+                                "Yes. Our dedicated Application Management and Support (AMS) services provide proactive, SLA-based support to maintain system stability, manage regular version upgrades, and ensure continuous optimization of your SAP landscape. We offer flexible models, including 24/7 coverage for global and GCC operations.",
+                              )}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.8s"
+                      >
+                        <h2 className="accordion-header" id="heading5">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse5"
+                            aria-expanded="false"
+                            aria-controls="collapse5"
+                          >
+                            {t(
+                              "Does RheinBrücke provide SAP implementation and support services in India and the UAE?",
+                            )}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse5"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading5"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t(
+                                "Yes. RheinBrücke is a trusted SAP implementation partner in India, Middle East and Africa delivering end-to-end SAP implementation services tailored to global and regional business requirements.",
+                              )}
+                            </p>
+                            <p>
+                              {t(
+                                "As a best SAP implementation partner for modern enterprises, we combine proven methodologies with deep domain expertise to ensure successful project delivery—from initial design and deployment to ongoing Application Management and Support (AMS). Our services include proactive, SLA-based support, system upgrades, and continuous optimisation, with flexible engagement models and 24/7 coverage for global and GCC operations.",
+                              )}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="1.0s"
+                      >
+                        <h2 className="accordion-header" id="heading6">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse6"
+                            aria-expanded="false"
+                            aria-controls="collapse6"
+                          >
+                            {t(
+                              "How can RheinBrücke support SAP S/4HANA migration from SAP ECC or SAP R/3?",
+                            )}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse6"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading6"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t(
+                                "RheinBrücke delivers end-to-end SAP S/4HANA migration services for organisations transitioning from SAP ECC or legacy SAP R/3 systems. As a trusted SAP implementation partner, we assess your current landscape and recommend the right approach, greenfield, brownfield, or system conversion.",
+                              )}
                             </p>
                           </div>
                         </div>
@@ -2784,7 +3938,6 @@ const page = () => {
         </div>
         {/* Page Faq End */}
 
-
         {/* Footer Start */}
         <footer className="main-footer pd0">
           {/* Footer Main Start */}
@@ -2795,7 +3948,9 @@ const page = () => {
                   <div className="col-sm-8">
                     <h2> {t("Ready to Modernise with SAP?")}</h2>
                     <p>
-                      {t("Talk to our SAP experts to see how we can help optimise your systems and drive business transformation.")}
+                      {t(
+                        "Talk to our SAP experts to see how we can help optimise your systems and drive business transformation.",
+                      )}
                     </p>
                   </div>
                   <div className="col-sm-4">
@@ -2912,9 +4067,8 @@ const page = () => {
           </div>
         </footer>
       </>
-
     </CommomLayout>
-  )
-}
+  );
+};
 
-export default page
+export default page;

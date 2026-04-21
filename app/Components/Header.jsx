@@ -278,6 +278,7 @@ export default function Header() {
         { url: '/digital-services', title: 'Digital Services', keywords: 'digital services technology consulting' },
 
         // Industries
+        { url: '/aerospace-defence-manufacturing', title: 'Aerospace Defence Manufacturing', keywords: 'aerospace defence manufacturing industry' },
         { url: '/vertical-retail', title: 'Vertical Retail', keywords: 'retail vertical industry solutions' },
         { url: '/industries-retail', title: 'Industries Retail', keywords: 'retail industry solutions' },
         { url: '/supply-chain', title: 'Supply Chain', keywords: 'supply chain logistics management' },
@@ -611,7 +612,7 @@ export default function Header() {
                                 <div className="collapse navbar-collapse main-menu">
                                     <div className="nav-menu-wrapper">
                                         <ul className="navbar-nav mr-auto" id="menu">
-                                            <li class="nav-item submenu1"><Link class="nav-link" href="/"><i class="fa fa-home"></i></Link> </li>
+                                            <li className="nav-item submenu1"><Link className="nav-link" href="/"><i className="fa fa-home"></i></Link> </li>
                                             <li className={`nav-item submenu mega-menu ${isPageInArray(aboutPages) ? 'active' : ''}`}>
                                                 <Link className="nav-link drop-1" href="#">
                                                     <span> {t("About Us")}</span>
@@ -950,7 +951,7 @@ export default function Header() {
                                                                     >
                                                                         {t("Digital Solutions & Services")}
                                                                     </button>
-                                                                    {/*<button class="tab-link" data-tab="tab4">Digital*/}
+                                                                    {/*<button className="tab-link" data-tab="tab4">Digital*/}
                                                                     {/*    Services</button>*/}
                                                                 </div>
                                                             </div>
@@ -1430,6 +1431,12 @@ export default function Header() {
                                                                                                 >
                                                                                                     {t("Automotive Industry")}
                                                                                                 </Link>
+                                                                                            </li>  <li className="ser-btn">
+                                                                                                <Link href="/aerospace-defence-manufacturing"
+                                                                                                    className="animated-svg-link"
+                                                                                                >
+                                                                                                    {t("Aerospace Defence Manufacturing")}
+                                                                                                </Link>
                                                                                             </li>
                                                                                         </ul>
                                                                                     </div>
@@ -1654,8 +1661,8 @@ export default function Header() {
                                                                                             {t("News and Events")}
                                                                                         </Link>
                                                                                     </li>
-                                                                                    {/*<li class="ser-btn">*/}
-                                                                                    {/*    <Link href="faq.php" class="animated-svg-link">*/}
+                                                                                    {/*<li className="ser-btn">*/}
+                                                                                    {/*    <Link href="faq.php" className="animated-svg-link">*/}
                                                                                     {/*        FAQs*/}
                                                                                     {/*    </Link>*/}
                                                                                     {/*</li>*/}

@@ -16619,9 +16619,9 @@ header.boxshadow {
 	-ms-flex-direction: column;
 	flex-direction: column;
 	min-height: 460px;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	/* justify-content: space-between; */
+	/* -webkit-box-pack: justify;
+	-ms-flex-pack: justify; */
+	justify-content: start;
 	border-radius: 8px;
 	border: 1px solid white;
 }
@@ -16642,7 +16642,7 @@ header.boxshadow {
 .valueslide img {
 	margin-bottom: 15px;
 	width: 70px;
-	/* height: 80px; */
+	height: 80px;
 }
 
 .testimonial-slider5 {
@@ -20223,8 +20223,11 @@ body.popup-open .main-header {
 
 .mds-section1 .dynamics-advantage-waber p {
 	color: #000;
+	text-align: left;
 }
-
+.mds-section1 .dynamics-advantage-waber img{
+	text-align: left !important;
+}
 .mds-section1 .dynamics-advantage-waber {
 	margin-bottom: 10px;
 	box-shadow: none !important;
@@ -22965,4 +22968,22 @@ position: relative;
 
 .sap1 img{
 	height: 310px !important;
+}
+
+.sapsub1 img{
+	height: 280px !important;
+}
+.warehousegerman text{
+	font-size: 14px !important;
+}
+.warehousegerman .strongdecise{
+	transform: translate(490px, 254px) !important;
+}
+
+.h2height h3{
+	height:65px !important;
+}
+
+.ind-b-h1 {
+    min-height: 666px !important;
 }
