@@ -57,7 +57,13 @@ const STORAGE_LANG = 'preferredLanguage';
 const STORAGE_LOCKED = 'preferredLanguageLocked'; // '1' means user explicitly selected
 
 export const useTranslation = () => {
-  const [language, setLanguage] = useState('English');
+  const [language, setLanguage] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem(STORAGE_LANG);
+      if (saved && (saved === 'English' || saved === 'German')) return saved;
+    }
+    return 'English';
+  });
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -74,17 +80,14 @@ export const useTranslation = () => {
       } catch {}
     }
 
-    // Initial language setup on client
-    if (hasValidSaved) {
+    // If user explicitly chose a language, never overwrite it with auto-detection.
+    if (isLocked && hasValidSaved) {
       setLanguage(saved);
     } else {
-      const browserLang = getLanguageFromBrowserLocale();
-      setLanguage(browserLang);
-      
       getLanguageFromLocation()
         .then(applyDetectedLanguage)
         .catch(() => {
-          applyDetectedLanguage(browserLang);
+          applyDetectedLanguage(getLanguageFromBrowserLocale());
         });
     }
 

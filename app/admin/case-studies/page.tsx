@@ -32,6 +32,7 @@ interface CaseStudy {
   implementation: string | null
   download_url: string | null
   industries: string[] | null
+  language: string | null
 }
 
 interface Faq {
@@ -66,7 +67,8 @@ export default function AdminCaseStudiesPage() {
     implementation: '',
     download_url: '',
     created_at: '',
-    industries: [] as string[]
+    industries: [] as string[],
+    language: 'English' as 'English' | 'German'
   })
   const [faqs, setFaqs] = useState<Faq[]>([])
   const [uploading, setUploading] = useState(false)
@@ -393,6 +395,7 @@ export default function AdminCaseStudiesPage() {
       const submitData = {
         ...formData,
         industries: formData.industries.length > 0 ? formData.industries : null,
+        language: formData.language === 'German' ? 'German' : 'English',
         created_at: formData.created_at ? new Date(formData.created_at).toISOString() : new Date().toISOString(),
         updated_at: new Date().toISOString()
       }
@@ -474,7 +477,8 @@ export default function AdminCaseStudiesPage() {
       implementation: '',
       download_url: '',
       created_at: '',
-      industries: []
+      industries: [],
+      language: 'English'
     })
     setFaqs([])
   }
@@ -606,7 +610,8 @@ export default function AdminCaseStudiesPage() {
       implementation: caseStudy.implementation || '',
       download_url: caseStudy.download_url || '',
       created_at: createdDate,
-      industries: caseStudy.industries || []
+      industries: caseStudy.industries || [],
+      language: (caseStudy.language === 'German' ? 'German' : 'English') as 'English' | 'German'
     })
 
     // Fetch FAQs for this case study
@@ -980,6 +985,27 @@ export default function AdminCaseStudiesPage() {
                 </select>
               </div>
 
+              <div style={{ marginBottom: '15px' }}>
+                <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>Language *</label>
+                <select
+                  value={formData.language}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      language: e.target.value === 'German' ? 'German' : 'English',
+                    }))
+                  }
+                  required
+                  style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '6px', color: '#333', fontSize: '14px', background: '#fff' }}
+                >
+                  <option value="English">English</option>
+                  <option value="German">German</option>
+                </select>
+                <small style={{ color: '#666', fontSize: '12px', display: 'block', marginTop: '5px' }}>
+                  Content language (matches site language selector and home page featured case studies)
+                </small>
+              </div>
+
               <div style={{ marginBottom: '15px' }} className="text-black">
                 <label style={{ display: 'block', marginBottom: '5px', fontWeight: '600', color: '#333', fontSize: '14px' }}>
                   Industries
@@ -1339,6 +1365,7 @@ export default function AdminCaseStudiesPage() {
                   <th style={{ padding: '18px 20px', textAlign: 'left', color: '#475569', fontWeight: '700', fontSize: '12px', textTransform: 'uppercase' }}>TITLE</th>
                   <th style={{ padding: '18px 20px', textAlign: 'left', color: '#475569', fontWeight: '700', fontSize: '12px', textTransform: 'uppercase' }}>CLIENT</th>
                   <th style={{ padding: '18px 20px', textAlign: 'left', color: '#475569', fontWeight: '700', fontSize: '12px', textTransform: 'uppercase' }}>CATEGORY</th>
+                  <th style={{ padding: '18px 20px', textAlign: 'left', color: '#475569', fontWeight: '700', fontSize: '12px', textTransform: 'uppercase' }}>LANGUAGE</th>
                   <th style={{ padding: '18px 20px', textAlign: 'left', color: '#475569', fontWeight: '700', fontSize: '12px', textTransform: 'uppercase' }}>STATUS</th>
                   <th style={{ padding: '18px 20px', textAlign: 'left', color: '#475569', fontWeight: '700', fontSize: '12px', textTransform: 'uppercase' }}>ACTIONS</th>
                 </tr>
@@ -1384,6 +1411,9 @@ export default function AdminCaseStudiesPage() {
                       }}>
                         {categories.find(c => c.value === (cs.category || 'all'))?.label || 'All'}
                       </span>
+                    </td>
+                    <td style={{ padding: '18px 20px', color: '#475569', fontSize: '14px' }}>
+                      {cs.language === 'German' ? 'German' : 'English'}
                     </td>
                     <td style={{ padding: '18px 20px' }}>
                       <span style={{
