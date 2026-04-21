@@ -17,44 +17,75 @@ function fetchWithTimeout(url, ms = 5000) {
   return fetch(url, { signal: controller.signal }).finally(() => clearTimeout(id));
 }
 
-async function getLanguageFromLocation() {
-  // Client-side geo detection (static export has no API routes).
-  // Prefer providers that allow browser CORS and work with VPN.
-  const tryCountryCode = async (url, getCode) => {
+function normalizeCountryCode(raw) {
+  if (!raw) return '';
+  const c = String(raw).trim().toUpperCase();
+  if (c.length === 2 && /^[A-Z]{2}$/.test(c)) return c;
+  return '';
+}
+
+/** One probe: returns ISO2 country or '' */
+async function probeCountryJson(url, pickCode) {
+  try {
     const res = await fetchWithTimeout(url, 4500);
+    if (!res.ok) return '';
     const data = await res.json();
-    const code = getCode(data);
-    return code ? String(code).toUpperCase() : '';
-  };
+    return normalizeCountryCode(pickCode(data));
+  } catch {
+    return '';
+  }
+}
 
+/** Cloudflare trace: loc=DE (often matches VPN exit IP) */
+async function probeCloudflareTrace() {
   try {
-    const code = await tryCountryCode(
-      'https://ipwho.is/?fields=country_code',
-      (d) => d?.country_code
-    );
-    if (code && GERMAN_COUNTRY_CODES.has(code)) return 'German';
-  } catch {}
+    const res = await fetchWithTimeout('https://www.cloudflare.com/cdn-cgi/trace', 4500);
+    if (!res.ok) return '';
+    const text = await res.text();
+    const line = text.split('\n').find((l) => l.startsWith('loc='));
+    if (!line) return '';
+    return normalizeCountryCode(line.slice(4).trim());
+  } catch {
+    return '';
+  }
+}
 
-  // Fallbacks (may be blocked by some adblockers)
-  try {
-    const code = await tryCountryCode('https://ipapi.co/json/', (d) => d?.country_code);
-    if (code && GERMAN_COUNTRY_CODES.has(code)) return 'German';
-  } catch {}
+async function getLanguageFromLocation() {
+  // Run several geo sources in parallel — VPN / adblock often breaks some endpoints;
+  // if ANY reports a DACH+ country, prefer German before falling back to browser locale.
+  const codes = await Promise.all([
+    probeCountryJson('https://ipwho.is/?fields=success,country_code', (d) => {
+      if (d && Object.prototype.hasOwnProperty.call(d, 'success') && d.success === false) return '';
+      return d?.country_code;
+    }),
+    probeCountryJson('https://get.geojs.io/v1/ip/country.json', (d) => d?.country),
+    probeCountryJson('https://ipapi.co/json/', (d) => d?.country_code),
+    probeCountryJson('https://ip-api.com/json/?fields=countryCode', (d) => d?.countryCode),
+    probeCloudflareTrace(),
+  ]);
 
-  try {
-    const code = await tryCountryCode(
-      'https://ip-api.com/json/?fields=countryCode',
-      (d) => d?.countryCode
-    );
-    if (code && GERMAN_COUNTRY_CODES.has(code)) return 'German';
-  } catch {}
+  if (codes.some((c) => c && GERMAN_COUNTRY_CODES.has(c))) {
+    return 'German';
+  }
 
-  // Final fallback: browser locale
   return getLanguageFromBrowserLocale();
 }
 
 const STORAGE_LANG = 'preferredLanguage';
 const STORAGE_LOCKED = 'preferredLanguageLocked'; // '1' means user explicitly selected
+
+// One geo/IP detection per page load — multiple useTranslation() mounts share the same result
+// so parallel fetches cannot finish out of order and overwrite German with English.
+let sharedLanguageDetectionPromise = null;
+
+function getOrRunLanguageDetection() {
+  if (!sharedLanguageDetectionPromise) {
+    sharedLanguageDetectionPromise = getLanguageFromLocation().catch(() =>
+      getLanguageFromBrowserLocale()
+    );
+  }
+  return sharedLanguageDetectionPromise;
+}
 
 export const useTranslation = () => {
   const [language, setLanguage] = useState(() => {
@@ -80,17 +111,6 @@ export const useTranslation = () => {
       } catch {}
     }
 
-    // If user explicitly chose a language, never overwrite it with auto-detection.
-    if (isLocked && hasValidSaved) {
-      setLanguage(saved);
-    } else {
-      getLanguageFromLocation()
-        .then(applyDetectedLanguage)
-        .catch(() => {
-          applyDetectedLanguage(getLanguageFromBrowserLocale());
-        });
-    }
-
     const handlePreferredLanguageChange = (e) => {
       const next = e.detail;
       if (next && (next === 'English' || next === 'German')) setLanguage(next);
@@ -103,7 +123,24 @@ export const useTranslation = () => {
     };
     document.addEventListener('visibilitychange', handleVisibility);
 
+    let cancelled = false;
+
+    if (isLocked && hasValidSaved) {
+      setLanguage(saved);
+    } else {
+      getOrRunLanguageDetection().then((detected) => {
+        if (cancelled) return;
+        if (localStorage.getItem(STORAGE_LOCKED) === '1') {
+          const lockedLang = localStorage.getItem(STORAGE_LANG);
+          if (lockedLang === 'English' || lockedLang === 'German') setLanguage(lockedLang);
+          return;
+        }
+        applyDetectedLanguage(detected);
+      });
+    }
+
     return () => {
+      cancelled = true;
       window.removeEventListener('preferredLanguageChange', handlePreferredLanguageChange);
       document.removeEventListener('visibilitychange', handleVisibility);
     };
