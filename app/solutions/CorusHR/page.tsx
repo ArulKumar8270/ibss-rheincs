@@ -2027,8 +2027,8 @@ export default function Corushr() {
                                 </div>
                             </div>
                             <div className="col-sm-6">
-                                <div className="parentban mtt50">
-                                    <svg
+                                <div className="parentban ">
+                                    {/* <svg
                                         width="100%"
                                         height="100%"
                                         viewBox="0 0 886 754"
@@ -2133,7 +2133,7 @@ export default function Corushr() {
                                                 <stop offset="0.74249" stopColor="#499A9A" stopOpacity={0} />
                                             </linearGradient>
                                         </defs>
-                                    </svg>
+                                    </svg> */}
                                     <img src="/images/broch.png" width={379} height={542} alt="" />
                                 </div>
                             </div>

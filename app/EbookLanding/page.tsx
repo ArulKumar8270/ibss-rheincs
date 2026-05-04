@@ -1,15 +1,122 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { createClient } from "@/lib/supabase-browser";
+
+interface EbookLandingData {
+  id: string;
+  slug: string;
+  title: string;
+  headline: string | null;
+  subheadline: string | null;
+  logo_text: string | null;
+  logo_image_url: string | null;
+  book_image_url: string | null;
+  learning_title: string | null;
+  learning_description: string | null;
+  benefits: string[];
+  form_title: string | null;
+  author_heading: string | null;
+  author_name: string | null;
+  author_role: string | null;
+  author_bio: string | null;
+  author_avatar_url: string | null;
+  author_avatar_svg: string | null;
+  footer_color: string | null;
+}
 
 export default function EbookLandingPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [pageData, setPageData] = useState<EbookLandingData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const supabase = createClient();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert(`Thank you, ${name}! Check ${email} for your download link.`);
+  useEffect(() => {
+    fetchPageData();
+  }, []);
+
+  const fetchPageData = async () => {
+    try {
+      const { data, error } = await supabase
+        .from("ebook_landing_pages")
+        .select("*")
+        .eq("slug", "default")
+        .single();
+
+      if (error) {
+        console.warn("Could not fetch ebook landing page data, using defaults:", error.message);
+      } else {
+        setPageData(data);
+      }
+    } catch (err) {
+      console.error("Error fetching ebook landing page:", err);
+    } finally {
+      setLoading(false);
+    }
   };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    try {
+      // Save contact to database
+      const { error } = await supabase.from("contacts").insert([
+        {
+          full_name: name,
+          email: email,
+          selection: `E-Book Download: ${pageData?.title || "Headline of your E-Book"}`,
+          message: "Requested E-book download from landing page",
+        },
+      ]);
+
+      if (error) throw error;
+
+      alert(`Thank you, ${name}! Your download link has been sent to ${email}.`);
+      setName("");
+      setEmail("");
+    } catch (err: any) {
+      console.error("Error submitting form:", err);
+      alert("Error: " + err.message);
+    }
+  };
+
+  // Fallback defaults if no data is found in database
+  const defaults: EbookLandingData = {
+    id: "",
+    slug: "default",
+    title: "E-Book",
+    logo_text: "Logo",
+    logo_image_url: null,
+    headline: "Headline of your E-Book goes here",
+    subheadline: "The supporting subheadline goes here",
+    book_image_url: "/images/book.png",
+    learning_title: "What will you learn from this E-Book?",
+    learning_description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi",
+    benefits: [
+      "Your benefit number one goes here",
+      "Your benefit number two goes here",
+      "Your benefit number three goes here",
+    ],
+    form_title: "Don't miss this freebie!",
+    author_heading: "About the Author",
+    author_name: "Author's Name",
+    author_role: "Designation, Company",
+    author_bio: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+    author_avatar_url: null,
+    author_avatar_svg: null,
+    footer_color: "#3aaee0"
+  };
+
+  const data = pageData || defaults;
+
+  if (loading) {
+    return (
+      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#f2f2f2" }}>
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div id="ebook-landing-root">
@@ -43,7 +150,7 @@ export default function EbookLandingPage() {
           width: 64px;
           height: 64px;
           border-radius: 50%;
-          background: #3aaee0;
+          background: ${data.logo_image_url ? 'transparent' : (data.footer_color || "#3aaee0")};
           display: flex;
           align-items: center;
           justify-content: center;
@@ -52,9 +159,16 @@ export default function EbookLandingPage() {
           font-size: 15px;
           font-weight: 700;
           letter-spacing: 0.5px;
+          overflow: hidden;
         }
 
-        #ebook-landing-root .hero h1 {
+        #ebook-landing-root .logo-circle img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+
+        #ebook-landing-root .hero1 h1 {
           font-size: 36px;
           font-weight: 300;
           color: #444;
@@ -88,10 +202,10 @@ export default function EbookLandingPage() {
           align-items: center;
         }
 
-        #ebook-landing-root .book-cover {
+        #ebook-landing-root .book-cover1 {
           width: 260px;
           height: 370px;
-          background: linear-gradient(135deg, #2d3e50 0%, #1a2a3a 60%, #263445 100%);
+          /* background: linear-gradient(135deg, #2d3e50 0%, #1a2a3a 60%, #263445 100%); */
           border-radius: 3px 8px 8px 3px;
           display: flex;
           flex-direction: column;
@@ -103,56 +217,14 @@ export default function EbookLandingPage() {
             inset 3px 0 6px rgba(255,255,255,0.04);
           position: relative;
           text-align: center;
-          padding: 30px 24px;
+          /* padding: 30px 24px; */
         }
-
-        /* Book spine effect */
-        #ebook-landing-root .book-cover::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 0;
-          bottom: 0;
-          width: 14px;
-          background: linear-gradient(to right, #111a24, #1e2e3e);
-          border-radius: 3px 0 0 3px;
-        }
-
-        /* Subtle horizontal line decorations */
-        #ebook-landing-root .book-cover::after {
-          content: '';
-          position: absolute;
-          top: 30px;
-          left: 14px;
-          right: 0;
-          height: 1px;
-          background: rgba(255,255,255,0.06);
-          box-shadow: 0 310px 0 rgba(255,255,255,0.06);
-        }
-
-        #ebook-landing-root .book-title {
-          color: #fff;
-          font-size: 21px;
-          font-weight: 900;
-          text-transform: uppercase;
-          letter-spacing: 1.5px;
-          line-height: 1.35;
-          margin-bottom: 80px;
-          position: relative;
-          z-index: 1;
-        }
-
-        #ebook-landing-root .book-subtitle {
-          color: rgba(255,255,255,0.55);
-          font-size: 11px;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          position: absolute;
-          bottom: 30px;
-          left: 50%;
-          transform: translateX(-50%);
-          white-space: nowrap;
-          font-weight: 400;
+        
+        #ebook-landing-root .book-cover1 img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 3px 8px 8px 3px;
         }
 
         /* ── RIGHT PANEL ── */
@@ -194,7 +266,7 @@ export default function EbookLandingPage() {
           width: 28px;
           height: 28px;
           border-radius: 50%;
-          background: #3aaee0;
+          background: ${data.footer_color || "#3aaee0"};
           color: #fff;
           font-size: 13px;
           font-weight: 700;
@@ -234,7 +306,7 @@ export default function EbookLandingPage() {
         }
 
         #ebook-landing-root .form-input:focus {
-          border-color: #3aaee0;
+          border-color: ${data.footer_color || "#3aaee0"};
         }
 
         #ebook-landing-root .submit-btn {
@@ -293,6 +365,12 @@ export default function EbookLandingPage() {
           justify-content: center;
         }
 
+        #ebook-landing-root .author-avatar img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
         /* SVG placeholder avatar that matches the screenshot */
         #ebook-landing-root .avatar-svg {
           width: 100%;
@@ -323,7 +401,7 @@ export default function EbookLandingPage() {
 
         /* ── FOOTER BAR ── */
         #ebook-landing-root .footer-bar {
-          background: #3aaee0;
+          background: ${data.footer_color || "#3aaee0"};
           height: 8px;
         }
 
@@ -334,11 +412,11 @@ export default function EbookLandingPage() {
             gap: 36px;
           }
 
-          #ebook-landing-root .hero h1 {
+          #ebook-landing-root .hero1 h1 {
             font-size: 26px;
           }
 
-          #ebook-landing-root .book-cover {
+          #ebook-landing-root .book-cover1 {
             width: 220px;
             height: 310px;
           }
@@ -351,9 +429,15 @@ export default function EbookLandingPage() {
 
       {/* ── HERO ── */}
       <section className="hero1">
-        <div className="logo-circle">Logo</div>
-        <h1>Headline of your E-Book goes here</h1>
-        <p>The supporting subheadline goes here</p>
+        <div className="logo-circle">
+          {data.logo_image_url ? (
+            <img src={data.logo_image_url} alt="Logo" />
+          ) : (
+            data.logo_text
+          )}
+        </div>
+        <h1>{data.headline}</h1>
+        <p>{data.subheadline}</p>
       </section>
 
       {/* ── MAIN CONTENT ── */}
@@ -361,25 +445,19 @@ export default function EbookLandingPage() {
         {/* Book Cover */}
         <div className="book-wrapper">
           <div className="book-cover1">
-            <img src="/images/book.png" alt="E-Book Cover" />
+            <img src={data.book_image_url || "/images/book.png"} alt="E-Book Cover" />
           </div>
         </div>
 
         {/* Right Panel */}
         <div className="right-panel">
-          <h2 className="section-title">What will you learn from this E-Book?</h2>
+          <h2 className="section-title">{data.learning_title}</h2>
           <p className="description">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-            veritatis et quasi
+            {data.learning_description}
           </p>
 
           <ul className="benefits">
-            {[
-              "Your benefit number one goes here",
-              "Your benefit number two goes here",
-              "Your benefit number three goes here",
-            ].map((benefit, i) => (
+            {(data.benefits || []).map((benefit, i) => (
               <li className="benefit-item" key={i}>
                 <span className="benefit-num">{i + 1}</span>
                 {benefit}
@@ -387,7 +465,7 @@ export default function EbookLandingPage() {
             ))}
           </ul>
 
-          <h3 className="form-title">Don&apos;t miss this freebie!</h3>
+          <h3 className="form-title">{data.form_title}</h3>
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
@@ -419,44 +497,47 @@ export default function EbookLandingPage() {
 
       {/* ── AUTHOR SECTION ── */}
       <section className="author-section">
-        <h2 className="author-heading">About the Author</h2>
+        <h2 className="author-heading">{data.author_heading}</h2>
 
         <div className="author-avatar">
-          {/* Avatar matching the screenshot illustration style */}
-          <svg className="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            {/* Background */}
-            <rect width="100" height="100" fill="#5b7fa6"/>
-            {/* Body / shoulders */}
-            <ellipse cx="50" cy="115" rx="38" ry="30" fill="#3d5a7a"/>
-            {/* Neck */}
-            <rect x="40" y="68" width="20" height="18" rx="4" fill="#e8b89a"/>
-            {/* Head */}
-            <ellipse cx="50" cy="52" rx="26" ry="30" fill="#e8b89a"/>
-            {/* Hair - back / sides */}
-            <ellipse cx="50" cy="38" rx="27" ry="22" fill="#8B3A2A"/>
-            {/* Hair flowing over shoulders */}
-            <ellipse cx="24" cy="62" rx="10" ry="22" fill="#8B3A2A"/>
-            <ellipse cx="76" cy="62" rx="10" ry="22" fill="#8B3A2A"/>
-            {/* Face over hair */}
-            <ellipse cx="50" cy="54" rx="19" ry="24" fill="#e8b89a"/>
-            {/* Eyes */}
-            <ellipse cx="42" cy="50" rx="2.5" ry="3" fill="#5a3010"/>
-            <ellipse cx="58" cy="50" rx="2.5" ry="3" fill="#5a3010"/>
-            {/* Nose */}
-            <ellipse cx="50" cy="57" rx="2" ry="1.5" fill="#d4956a"/>
-            {/* Mouth */}
-            <path d="M44 63 Q50 67 56 63" stroke="#c47a5a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            {/* Hair top */}
-            <ellipse cx="50" cy="30" rx="19" ry="14" fill="#8B3A2A"/>
-          </svg>
+          {data.author_avatar_url ? (
+            <img src={data.author_avatar_url} alt={data.author_name || "Author"} />
+          ) : data.author_avatar_svg ? (
+            <div dangerouslySetInnerHTML={{ __html: data.author_avatar_svg }} className="avatar-svg" />
+          ) : (
+            <svg className="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              {/* Background */}
+              <rect width="100" height="100" fill="#5b7fa6"/>
+              {/* Body / shoulders */}
+              <ellipse cx="50" cy="115" rx="38" ry="30" fill="#3d5a7a"/>
+              {/* Neck */}
+              <rect x="40" y="68" width="20" height="18" rx="4" fill="#e8b89a"/>
+              {/* Head */}
+              <ellipse cx="50" cy="52" rx="26" ry="30" fill="#e8b89a"/>
+              {/* Hair - back / sides */}
+              <ellipse cx="50" cy="38" rx="27" ry="22" fill="#8B3A2A"/>
+              {/* Hair flowing over shoulders */}
+              <ellipse cx="24" cy="62" rx="10" ry="22" fill="#8B3A2A"/>
+              <ellipse cx="76" cy="62" rx="10" ry="22" fill="#8B3A2A"/>
+              {/* Face over hair */}
+              <ellipse cx="50" cy="54" rx="19" ry="24" fill="#e8b89a"/>
+              {/* Eyes */}
+              <ellipse cx="42" cy="50" rx="2.5" ry="3" fill="#5a3010"/>
+              <ellipse cx="58" cy="50" rx="2.5" ry="3" fill="#5a3010"/>
+              {/* Nose */}
+              <ellipse cx="50" cy="57" rx="2" ry="1.5" fill="#d4956a"/>
+              {/* Mouth */}
+              <path d="M44 63 Q50 67 56 63" stroke="#c47a5a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              {/* Hair top */}
+              <ellipse cx="50" cy="30" rx="19" ry="14" fill="#8B3A2A"/>
+            </svg>
+          )}
         </div>
 
-        <h3 className="author-name">Author&apos;s Name</h3>
-        <p className="author-role">Designation, Company</p>
+        <h3 className="author-name">{data.author_name}</h3>
+        <p className="author-role">{data.author_role}</p>
         <p className="author-bio">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-          laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-          architecto beatae vitae dicta sunt explicabo.
+          {data.author_bio}
         </p>
       </section>
 

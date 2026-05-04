@@ -78,7 +78,16 @@
     /* margin-bottom: 30px; */
     margin: 10px;
 }
-
+.sap2sec .dynamics-advantage-waber {
+    /* margin-bottom: 30px; */
+    margin: 0px !important;
+}
+.sap2sec .dynamics-advantage-waber .ser-btn {
+    margin-bottom: 0px !important;
+}
+.sap2sec{
+    padding: 20px 0px !important;
+}
 .ddrt .service-item-body {
     min-height: 472px;
 }

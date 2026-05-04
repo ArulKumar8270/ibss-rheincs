@@ -89,6 +89,7 @@ export default function AdminLayout({
     { href: '/admin/careers', label: 'Careers', icon: '💼' },
     { href: '/admin/job-applications', label: 'Job Applications', icon: '💼' },
     { href: '/admin/industries', label: 'Industries', icon: '🔍' },
+    { href: '/admin/ebook-landing', label: 'E-Book Landing', icon: '📖' },
   ]
 
   return (

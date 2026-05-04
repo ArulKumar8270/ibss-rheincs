@@ -316,7 +316,7 @@ const page = () => {
                   </h2>
                   <p className="epic16">
                     {t(
-                      "Enable real-time decision-making, streamline operations, and accelerate growth with RheinBrücke’s end-to-end SAP S/4HANA and cloud transformation services.",
+                      "Enable real-time decision-making, streamline operations and accelerate growth with RheinBrücke’s end-to-end SAP S/4HANA and cloud transformation services.",
                     )}
                   </p>
                   <div className="ser-btn mt-15">
@@ -1052,7 +1052,7 @@ const page = () => {
                           </h3>
                           <ul>
                             <p>
-                              {t("Accelerate ERP modernisation with SAP S/4HANA through flexible transformation pathways—greenfield, brownfield, or cloud with RISE and GROW—to drive real-time insights, operational efficiency, and scalable growth.")}
+                              {t("Accelerate ERP modernisation with SAP S/4HANA through flexible transformation pathways-greenfield, brownfield, or cloud with RISE and GROW-to drive real-time insights, operational efficiency, and scalable growth.")}
                             </p>
                           </ul>
                         </div>
@@ -1141,7 +1141,7 @@ const page = () => {
                           <h3>{t("SAP Analytics")}</h3>
                           <ul>
                             <p>
-                              {t("Turn enterprise data into real-time, actionable insights with SAP Analytics Cloud and advanced reporting—enabling faster decisions and improved business performance.")}
+                              {t("Turn enterprise data into real-time, actionable insights with SAP Analytics Cloud and advanced reporting-enabling faster decisions and improved business performance.")}
                             </p>
                           </ul>
                         </div>
@@ -1408,10 +1408,10 @@ const page = () => {
         {/* Our Testimonial Section End */}
 
         {/* Hero Section Start*/}
-        <div className=" buildsection mobilesap2">
+        <div className=" buildsection mobilesap2 sap2sec">
           <div className="container">
             <div className="row justify-content-center">
-              <div className="col-lg-7">
+              <div className="col-lg-8">
                 <div className="hero-content buildsecont ">
                   <div className="section-title">
                     <div className="hero-video-content wow fadeInUp mt-4">
@@ -1438,7 +1438,7 @@ const page = () => {
                   <h3>{t("SAP S/4HANA Transformation")}</h3>
                   <p>
                     {t(
-                      "Accelerate ERP modernization with SAP S/4HANA through flexible transformation pathways—greenfield, brownfield, or cloud with RISE and GROW—to drive real-time analytics, operational efficiency, and scalable digital growth.",
+                      "Accelerate ERP modernization with SAP S/4HANA through flexible transformation pathways, greenfield, brownfield, or cloud with RISE and GROW, to drive real-time analytics, operational efficiency and scalable digital growth.",
                     )}
                   </p>
 
@@ -1554,11 +1554,11 @@ const page = () => {
               </div>
               <div className="col-sm-4">
                 <div className="dynamics-advantage-waber">
-                  <img src="/new/ad2.svg" alt="SAP cloud applications for HR, procurement, and expense management icon" />
+                  <img src="/new/ad2.svg" alt="SAP cloud applications for HR, procurement and expense management icon" />
                   <h3>{t("SAP Cloud Applications")}</h3>
                   <p>
                     {t(
-                      "Transform HR, procurement, and expense management with SAP SuccessFactors, Ariba, and Concur, enabling integrated, scalable, and cloud-driven business operations.",
+                      "Transform HR, procurement and expense management with SAP SuccessFactors, Ariba and Concur, enabling integrated, scalable and cloud-driven business operations.",
                     )}
                   </p>
                   <div className="ser-btn serbtn1">
@@ -1796,7 +1796,7 @@ const page = () => {
                   <h3>{t("SAP Analytics")}</h3>
                   <p>
                     {t(
-                      "Turn enterprise data into real-time, actionable insights with SAP Analytics Cloud and advanced business intelligence tools—enabling faster, data-driven decisions and improved performance.",
+                      "Turn enterprise data into real-time, actionable insights with SAP Analytics Cloud and advanced business intelligence tools, enabling faster, data-driven decisions and improved performance.",
                     )}
                   </p>
                   <div className="ser-btn serbtn1">
@@ -1915,7 +1915,7 @@ const page = () => {
                   <h3>{t("SAP Application Management Services (AMS)")}</h3>
                   <p>
                     {t(
-                      "Ensure a stable, secure, and continuously optimized SAP landscape with outcome-driven AMS support, proactive monitoring, and continuous improvement services.",
+                      "Ensure a stable, secure and continuously optimized SAP landscape with outcome-driven AMS support, proactive monitoring and continuous improvement services.",
                     )}
                   </p>
                   <div className="ser-btn serbtn1">
@@ -2042,7 +2042,7 @@ const page = () => {
                   </h2>
                   <p>
                     {t(
-                      "SAP today goes beyond traditional ERP—it is a unified platform powering intelligent, connected, and data-driven enterprises:",
+                      "SAP today goes beyond traditional ERP, it is a unified platform powering intelligent, connected and data-driven enterprises:",
                     )}
                   </p>
                   <div className="advantage-sap">
@@ -2051,7 +2051,7 @@ const page = () => {
                     </h6>
                     <p>
                       {t(
-                        "S/4HANA and SAP Analytics Cloud enable business users to make decisions with live data - not spreadsheets or monthly reports.",
+                        "S/4HANA and SAP Analytics Cloud enable business users to make decisions with live data not spreadsheets or monthly reports.",
                       )}
                     </p>
                   </div>
@@ -2059,7 +2059,7 @@ const page = () => {
                     <h6>{t("Continuous innovation through cloud updates")}</h6>
                     <p>
                       {t(
-                        "Public and private cloud editions deliver ongoing enhancements, AI capabilities, and new best practices.",
+                        "Public and private cloud editions deliver ongoing enhancements, AI capabilities and new best practices.",
                       )}
                     </p>
                   </div>
@@ -2067,7 +2067,7 @@ const page = () => {
                     <h6>{t("End-to-end process clarity with Signavio")}</h6>
                     <p>
                       {t(
-                        "Organisations worldwide report significant improvements in process transparency, operational consistency, and cycle-time reduction",
+                        "Organisations worldwide report significant improvements in process transparency, operational consistency and cycle-time reduction",
                       )}
                     </p>
                   </div>
@@ -2075,7 +2075,7 @@ const page = () => {
                     <h6>{t("Connected ecosystems through SAP BTP")}</h6>
                     <p>
                       {t(
-                        "Integrations, extensions, and automations help SAP fit seamlessly into your broader digital landscape.",
+                        "Integrations, extensions and automations help SAP fit seamlessly into your broader digital landscape.",
                       )}
                     </p>
                   </div>
@@ -2083,13 +2083,13 @@ const page = () => {
                     <h6>{t("Radical simplification of IT operations")}</h6>
                     <p>
                       {t(
-                        "Cloud migrations reduce system complexity, improve resilience, and free teams to focus on value creation.",
+                        "Cloud migrations reduce system complexity, improve resilience and free teams to focus on value creation.",
                       )}
                     </p>
                   </div>
                   <p>
                     {t(
-                      "This is the future of SAP - agile, modular, analytics-driven, and business-led.",
+                      "This is the future of SAP - agile, modular, analytics-driven and business-led.",
                     )}
                   </p>
                 </div>
@@ -2111,14 +2111,14 @@ const page = () => {
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
                     {t("Our SAP Capabilities")}
                   </h2>
-                  <h6 className="text-black mt15">
+                  <p className="mt15">
                     {t(
                       "Unlock business value with a comprehensive portfolio of SAP services and proven transformation methodologies.",
                     )}
-                  </h6>
+                  </p>
                   <p>
                     {t(
-                      "From strategy and implementation to continuous optimisation, we help organisations accelerate digital transformation, enhance business agility, and achieve measurable outcomes across their SAP ecosystem.",
+                      "From strategy and implementation to continuous optimisation, we help organisations accelerate digital transformation, enhance business agility and achieve measurable outcomes across their SAP ecosystem.",
                     )}
                   </p>
                 </div>
@@ -2145,7 +2145,7 @@ const page = () => {
                           </p>
                           <h5>{t("Key capabilities:")}</h5>
                           <ul>
-                            <li>{t("Template-based global SAP rollouts")}</li>
+                            <li>{t("Template based global SAP rollouts")}</li>
                             <li>
                               {t("Localisation and regulatory compliance management")}
                             </li>
@@ -2181,11 +2181,11 @@ const page = () => {
                           </p>
                           <h5>{t("Key capabilities:")}</h5>
                           <ul>
-                            <li>{t("ABAP and RAP-based developments")}</li>
+                            <li>{t("ABAP and RAP based developments")}</li>
                             <li>{t("SAP Fiori and UX enhancements")}</li>
                             <li>
                               {t(
-                                "Custom reports, interfaces, forms, and workflows",
+                                "Custom reports, interfaces, forms and workflows",
                               )}
                             </li>
                             <li>
@@ -2194,7 +2194,7 @@ const page = () => {
                           </ul>
                           <p>
                             {t(
-                              "We build only what adds value and ensure everything stays upgrade-friendly.",
+                              "We build only what adds value and ensure everything stays upgrade friendly.",
                             )}
                           </p>
                         </div>
@@ -2213,7 +2213,7 @@ const page = () => {
                           <ul>
                             <li>
                               {t(
-                                "Core HR, Talent, Learning, and Performance modules",
+                                "Core HR, Talent, Learning and Performance modules",
                               )}
                             </li>
                             <li>
@@ -2228,7 +2228,7 @@ const page = () => {
                           </ul>
                           <p>
                             {t(
-                              "SuccessFactors implemented with clean data, controlled change, and minimal disruption.",
+                              "SuccessFactors implemented with clean data, controlled change and minimal disruption.",
                             )}
                           </p>
                         </div>
@@ -2240,14 +2240,14 @@ const page = () => {
                           <h3>{t("SAP Ariba Services")}</h3>
                           <p>
                             {t(
-                              "We modernise procurement and supplier collaboration using SAP Ariba to deliver transparency, control, and cost efficiency.",
+                              "We modernise procurement and supplier collaboration using SAP Ariba to deliver transparency, control and cost efficiency.",
                             )}
                           </p>
                           <h5>{t("Key capabilities:")}</h5>
                           <ul>
                             <li>
                               {t(
-                                "Ariba Buying, Invoicing, and Strategic Sourcing solution",
+                                "Ariba Buying, Invoicing and Strategic Sourcing solution",
                               )}
                             </li>
                             <li>{t("Supplier onboarding and enablement")}</li>
@@ -2260,7 +2260,7 @@ const page = () => {
                           </ul>
                           <p>
                             {t(
-                              "Ariba deployed as a governed procurement platform—not a disconnected tool.",
+                              "Ariba deployed as a governed procurement platform not a disconnected tool.",
                             )}
                           </p>
                         </div>
@@ -2272,12 +2272,12 @@ const page = () => {
                           <h3>{t("SAP EWM Implementation")}</h3>
                           <p>
                             {t(
-                              "We modernise warehouse operations using SAP Extended Warehouse Management (EWM) to improve inventory accuracy, throughput, and operational efficiency.",
+                              "We modernise warehouse operations using SAP Extended Warehouse Management (EWM) to improve inventory accuracy, throughput and operational efficiency.",
                             )}
                           </p>
                           <h5>{t("Key capabilities:")}</h5>
                           <ul>
-                            <li>
+                            <li> 
                               {t(
                                 "Embedded and decentralised SAP EWM implementations",
                               )}
@@ -2289,10 +2289,10 @@ const page = () => {
                             </li>
                             <li>
                               {t(
-                                "Integration with SAP S/4HANA, TM, and third-party systems",
+                                "Integration with SAP S/4HANA, TM and third-party systems",
                               )}
                             </li>
-                            <li>{t("RF, SAP Fiori, and warehouse automation enablement")}</li>
+                            <li>{t("RF, SAP Fiori and warehouse automation enablement")}</li>
                           </ul>
                           <p>
                             {t(
@@ -2315,7 +2315,7 @@ const page = () => {
                           <ul>
                             <li>
                               {t(
-                                "EDI integrations with customers, suppliers, and logistics partners",
+                                "EDI integrations with customers, suppliers and logistics partners",
                               )}
                             </li>
                             <li>
@@ -2324,13 +2324,13 @@ const page = () => {
                             <li>{t("API management and message mapping")}</li>
                             <li>
                               {t(
-                                "Implementation monitoring, error handling, and optimisation",
+                                "Implementation monitoring, error handling and optimisation",
                               )}
                             </li>
                           </ul>
                           <p>
                             {t(
-                              "Integrations designed for resilience, visibility, and long-term scalability.",
+                              "Integrations designed for resilience, visibility and long-term scalability.",
                             )}
                           </p>
                         </div>
@@ -2349,12 +2349,12 @@ const page = () => {
                           <ul>
                             <li>
                               {t(
-                                "Map, analyse, and benchmark business processes",
+                                "Map, analyse and benchmark business processes",
                               )}
                             </li>
                             <li>
                               {t(
-                                "Identify bottlenecks, inefficiencies, and compliance gaps",
+                                "Identify bottlenecks, inefficiencies and compliance gaps",
                               )}
                             </li>
                             <li>{t("Design future-state process models")}</li>
@@ -2366,7 +2366,7 @@ const page = () => {
                           </ul>
                           <p>
                             {t(
-                              "Signavio delivers process visibility—we turn it into measurable transformation outcomes.",
+                              "Signavio delivers process visibility, we turn it into measurable transformation outcomes.",
                             )}
                           </p>
                         </div>
@@ -2377,12 +2377,12 @@ const page = () => {
                         <div className="sap-service-waber">
                           <h3>
                             {t(
-                              "Merlin Sourcing – SAP-Integrated Strategic Sourcing",
+                              "Merlin Sourcing - SAP-Integrated Strategic Sourcing",
                             )}
                           </h3>
                           <p>
                             {t(
-                              "Merlin Sourcing enables governed, SAP-integrated strategic sourcing, extending SAP procurement with structured sourcing, supplier collaboration, and decision control, without breaking clean-core principles.",
+                              "Merlin Sourcing enables governed, SAP-integrated strategic sourcing, extending SAP procurement with structured sourcing, supplier collaboration and decision control, without breaking clean-core principles.",
                             )}
                           </p>
                           <h5>{t("Key capabilities:")}</h5>
@@ -2657,7 +2657,7 @@ const page = () => {
                       {/* <h3>Seamless Integration</h3> */}
                       <h3>
                         {t(
-                          "Strong SAP S/4HANA, ECC, RISE with SAP, BTP, Signavio, and SAC expertise",
+                          "Strong SAP S/4HANA, ECC, RISE with SAP, BTP, Signavio and SAC expertise",
                         )}
                       </h3>
                       <div className="text-center">
@@ -2678,7 +2678,7 @@ const page = () => {
                       </h3>
                       <img
                         src="/images/sap2.svg"
-                        alt="SAP migration icon"
+                        alt="SAP Migration and ERP integration icon"
                       />
                     </div>
                   </div>
@@ -2722,7 +2722,7 @@ const page = () => {
 
                 <p className="mt-3">
                   {t(
-                    "We don’t just implement SAP - we help you run, optimise, and scale with it.",
+                    "We don’t just implement SAP - we help you run, optimise and scale with it.",
                   )}
                 </p>
               </div>
@@ -3043,7 +3043,7 @@ const page = () => {
           <div className="container">
             <p className="mt-3 text-center">
               {t(
-                "Each industry has different priorities. We bring the right processes, accelerators, and domain expertise.",
+                "Each industry has different priorities. We bring the right processes, accelerators and domain expertise.",
               )}
             </p>
           </div>
@@ -3559,8 +3559,8 @@ const page = () => {
                 </div>
               </div>
               <div className="col-sm-6">
-                <div className="parentban mtt50">
-                  <svg
+                <div className="parentban mtt501">
+                  {/* <svg
                     width="100%"
                     height="100%"
                     viewBox="0 0 886 754"
@@ -3685,7 +3685,7 @@ const page = () => {
                         />
                       </linearGradient>
                     </defs>
-                  </svg>
+                  </svg> */}
                   <img
                     src="/images/sapforrm.png"
                     width={379}
@@ -3742,7 +3742,7 @@ const page = () => {
                           <div className="accordion-body">
                             <p>
                               {t(
-                                "RheinBrücke provides strategic SAP consulting, end-to-end implementation, system integration, and complex Cloud transformation and migration services. We also offer customization and support for SAP ECC as well as technical support for ABAP and BASIS. Our goal is to modernize your SAP ERP landscape and significantly improve operational efficiency and data integrity.",
+                                "RheinBrücke provides strategic SAP consulting, end-to-end implementation, system integration and complex Cloud transformation and migration services. We also offer customization and support for SAP ECC as well as technical support for ABAP and BASIS. Our goal is to modernize your SAP ERP landscape and significantly improve operational efficiency and data integrity.",
                               )}
                             </p>
                           </div>
@@ -3775,7 +3775,7 @@ const page = () => {
                           <div className="accordion-body">
                             <p>
                               {t(
-                                "Yes. RheinBrücke specializes in core SAP ERP solutions, with deep expertise in managing large-scale S/4HANA migrations and implementing SAP Business One tailored for mid-sized enterprises and global subsidiaries. We focus particularly on complex financials, Supply Chain Management (SCM), and logistics modules.",
+                                "Yes. RheinBrücke specializes in core SAP ERP solutions, with deep expertise in managing large-scale S/4HANA migrations and implementing SAP Business One tailored for mid-sized enterprises and global subsidiaries. We focus particularly on complex financials, Supply Chain Management (SCM) and logistics modules.",
                               )}
                             </p>
                           </div>
@@ -3810,7 +3810,7 @@ const page = () => {
                           <div className="accordion-body">
                             <p>
                               {t(
-                                "Absolutely. SAP systems are central to the enterprise ecosystem. We leverage modern API and middleware tools to ensure seamless integration with CRM, HR, Business Intelligence (BI), and critical third-party applications. Critically, we specialize in complex interoperability projects involving platforms like Epicor and Microsoft Dynamics 365.",
+                                "Absolutely. SAP systems are central to the enterprise ecosystem. We leverage modern API and middleware tools to ensure seamless integration with CRM, HR, Business Intelligence (BI) and critical third-party applications. Critically, we specialize in complex interoperability projects involving platforms like Epicor and Microsoft Dynamics 365.",
                               )}
                             </p>
                           </div>
@@ -3845,7 +3845,7 @@ const page = () => {
                           <div className="accordion-body">
                             <p>
                               {t(
-                                "Yes. Our dedicated Application Management and Support (AMS) services provide proactive, SLA-based support to maintain system stability, manage regular version upgrades, and ensure continuous optimization of your SAP landscape. We offer flexible models, including 24/7 coverage for global and GCC operations.",
+                                "Yes. Our dedicated Application Management and Support (AMS) services provide proactive, SLA-based support to maintain system stability, manage regular version upgrades and ensure continuous optimization of your SAP landscape. We offer flexible models, including 24/7 coverage for global and GCC operations.",
                               )}
                             </p>
                           </div>
@@ -3885,7 +3885,7 @@ const page = () => {
                             </p>
                             <p>
                               {t(
-                                "As a best SAP implementation partner for modern enterprises, we combine proven methodologies with deep domain expertise to ensure successful project delivery—from initial design and deployment to ongoing Application Management and Support (AMS). Our services include proactive, SLA-based support, system upgrades, and continuous optimisation, with flexible engagement models and 24/7 coverage for global and GCC operations.",
+                                "As a best SAP implementation partner for modern enterprises, we combine proven methodologies with deep domain expertise to ensure successful project delivery from initial design and deployment to ongoing Application Management and Support (AMS). Our services include proactive, SLA-based support, system upgrades and continuous optimisation, with flexible engagement models and 24/7 coverage for global and GCC operations.",
                               )}
                             </p>
                           </div>

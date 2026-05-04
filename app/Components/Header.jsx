@@ -1089,10 +1089,57 @@ export default function Header() {
                                                                                             </div>
                                                                                         </li>
                                                                                         <li className="ser-btn">
+                                                                                            <div className="menu-item">
+                                                                                                <Link href="/solutions/erp-enterprise-solutions-and-services/sap"
+                                                                                                    className="animated-svg-link"
+                                                                                                >
+                                                                                                    {t("SAP")}
+                                                                                                </Link>
+                                                                                                <button
+                                                                                                    type="button"
+                                                                                                    onClick={(e) => {
+                                                                                                        e.preventDefault();
+                                                                                                        setEpicorCollapsed(!epicorCollapsed);
+                                                                                                    }}
+                                                                                                    className="arrow-toggle animated-svg-link"
+                                                                                                    style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+                                                                                                >
+                                                                                                    <NavArrowRight />
+                                                                                                </button>
+                                                                                            </div>
+                                                                                            <div
+                                                                                                id="demo3"
+                                                                                                className={`${epicorCollapsed ? 'show' : 'collapse'} content-box`}
+                                                                                                style={{ display: epicorCollapsed ? 'block' : 'none' }}
+                                                                                            >
+                                                                                                <Link href="/Epicor-kinetic">
+                                                                                                    {" "}
+                                                                                                    {t("SAP S/4HANA Transformation")}
+                                                                                                </Link>
+                                                                                                <Link href="/Epicor-iscala">
+                                                                                                    {" "}
+                                                                                                    {t("SAP Cloud Applications")}
+                                                                                                </Link>
+                                                                                                <Link href="/Epicor-companion">
+                                                                                                    {" "}
+                                                                                                    {t("SAP BTP")}
+                                                                                                </Link>
+                                                                                                <Link href="/Epicor-epicpay">
+                                                                                                    {" "}
+                                                                                                    {t("SAP Analytics")}
+                                                                                                </Link>
+                                                                                                <Link href="/Epicor-epicpay">
+                                                                                                    {" "}
+                                                                                                    {t("SAP Application Management Services (AMS)")}
+                                                                                                </Link>
+
+                                                                                            </div>
+                                                                                        </li>
+                                                                                        {/* <li className="ser-btn">
                                                                                             <Link href="/solutions/erp-enterprise-solutions-and-services/sap" className="">
                                                                                                 {t("SAP")}
                                                                                             </Link>
-                                                                                        </li>
+                                                                                        </li> */}
                                                                                         <li className="ser-btn">
                                                                                             <Link href="/solutions/erp-enterprise-solutions-and-services/ms-dynamics"
                                                                                                 className=""
@@ -1431,7 +1478,8 @@ export default function Header() {
                                                                                                 >
                                                                                                     {t("Automotive Industry")}
                                                                                                 </Link>
-                                                                                            </li>  <li className="ser-btn">
+                                                                                            </li>  
+                                                                                            <li className="ser-btn">
                                                                                                 <Link href="/aerospace-defence-manufacturing"
                                                                                                     className="animated-svg-link"
                                                                                                 >

@@ -11085,7 +11085,7 @@ body:has(.offcanvas) {
 	}
 
 	.mobilesap2 .dynamics-advantage-waber {
-		display: flex !important;
+		/* display: flex !important; */
 		gap: 20px !important;
 		align-items: stretch;
 		margin-bottom: 15px !important;
@@ -16506,7 +16506,7 @@ header.boxshadow {
 .retail-baner-11::before {
 	position: absolute;
 	content: "";
-	width: 50%;
+	width: 70%;
 	background-image: url('../images/aboutretail.jpg');
 	background-position: right;
 	background-size: cover;
@@ -16527,7 +16527,7 @@ header.boxshadow {
 	z-index: -1;
 	background: -webkit-gradient(linear, left top, right top, from(#ffffff), color-stop(50%, rgb(255 255 255 / 100%)), color-stop(65%, rgb(0 0 0 / 0%)));
 	background: -o-linear-gradient(left, #ffffff, rgb(255 255 255 / 100%) 50%, rgb(0 0 0 / 0%) 65%);
-	background: linear-gradient(90deg, #ffffff, rgb(255 255 255 / 100%) 50%, rgb(0 0 0 / 0%) 65%);
+	background: linear-gradient(90deg, #ffffff, rgb(255 255 255 / 100%) 45%, rgb(0 0 0 / 0%) 51%);
 }
 
 .aboutretail h2 {
@@ -16557,7 +16557,7 @@ header.boxshadow {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	padding: 100px 0px;
+	padding: 80px 0px;
 }
 
 .aboutretail .section-title {
@@ -16869,7 +16869,7 @@ header.boxshadow {
 	height: 100%;
 	background: -webkit-gradient(linear, left top, right top, color-stop(35%, rgba(8, 35, 38, 1)), color-stop(2%, rgba(8, 35, 38, 1)), color-stop(44%, rgba(8, 35, 38, 0.81)), color-stop(60%, rgb(10 83 91 / 10%)), color-stop(84%, rgba(255, 255, 255, 0)));
 	background: -o-linear-gradient(left, rgba(8, 35, 38, 1) 35%, rgba(8, 35, 38, 1) 2%, rgba(8, 35, 38, 0.81) 44%, rgb(10 83 91 / 10%) 60%, rgba(255, 255, 255, 0) 84%);
-	background: linear-gradient(90deg, rgba(8, 35, 38, 1) 40%, rgba(8, 35, 38, 1) 2%, rgba(8, 35, 38, 0.81) 48%, rgb(10 83 91 / 10%) 64%, rgba(255, 255, 255, 0) 84%);
+	background: linear-gradient(90deg, rgba(8, 35, 38, 1) 40%, rgba(8, 35, 38, 1) 0%, rgba(8, 35, 38, 0.81) 42%, rgb(10 83 91 / 10%) 46%, rgba(255, 255, 255, 0) 63%);
 	/* background: linear-gradient(270deg, #133FA4 25.85%, rgba(13, 44, 115, 0.21) 44.99%, rgba(7, 24, 62, 0) 54.91%); */
 	z-index: 2;
 	pointer-events: none;
@@ -17012,6 +17012,15 @@ header.boxshadow {
 	z-index: 0;
 	background-position: 130% !important;
 }
+.corushrbanner1 {
+	background: none !important;
+	position: relative;
+	background: url(../images/aerohero.jpg) !important;
+	background-size: contain !important;
+	background-repeat: no-repeat !important;
+	z-index: 0;
+	background-position: 155% !important;
+}
 
 .additional1 .imgadd img {
 	position: absolute;
@@ -17094,12 +17103,21 @@ header.boxshadow {
 	position: relative;
 }
 
-.parentban img {
+/* .parentban img {
 	position: absolute;
 	bottom: 1%;
 	left: 5%;
 	height: 450px;
 	width: auto;
+} */
+
+.parentban{
+	margin: auto;
+    text-align: center;
+}
+.parentban img{
+	width: 350px;
+	height: auto;
 }
 
 .brouchure .w100 {
@@ -18377,6 +18395,20 @@ body.no-scroll {
 	background-position: right top;
 }
 
+.sapcloud::before {
+	background-attachment: fixed !important;
+	background: url(../images/sap-cloud.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.sapbtp::before {
+	background-attachment: fixed !important;
+	background: url(../images/sap-btp.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: right top;
+}
 .iscalasec::before {
 	background-attachment: fixed !important;
 	background: url(../images/iScala.jpg);
@@ -19822,7 +19854,7 @@ body.popup-open .main-header {
 }
 
 .epicadv .w80 h3 {
-	width: 80% !important;
+	width: 90% !important;
 
 }
 
@@ -22967,7 +22999,7 @@ position: relative;
 }
 
 .sap1 img{
-	height: 310px !important;
+	height: 290px !important;
 }
 
 .sapsub1 img{
@@ -22986,4 +23018,43 @@ position: relative;
 
 .ind-b-h1 {
     min-height: 666px !important;
+}
+
+
+
+.d-g24 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.sap-advantage-main-waber .challenge-point-waber {
+  width: calc(50% - 8px); /* 2 columns */
+  display: flex;
+}
+.sap-advantage-main-waber .challenge-point-waber img{
+  margin-right: 10px;
+}
+
+@media(max-width:768px){
+	.country-code {
+    width: 50% !important;
+	}
+}
+
+.aeroimgg img
+ {
+    height: 370px;
+    overflow: hidden;
+}
+
+.aeroimgg img {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    /* height: 450px; */
+    width: auto;
+}
+.mb-20 h2{
+	margin-bottom: 20px;
 }

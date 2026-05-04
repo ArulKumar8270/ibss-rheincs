@@ -759,16 +759,17 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                         <div className="row">
                             <div className="col-sm-7">
                                 <h4 className='mb-3 text-black'>Purpose of the Role</h4>
-                                <p
+                                <div
                                     className='text-black'
                                     style={{
                                         wordBreak: 'normal',
-                                        overflowWrap: 'break-word',
-                                        whiteSpace: 'normal'
+                                        overflowWrap: 'normal',
+                                        whiteSpace: 'normal',
+                                        display: 'block'
                                     }}
                                 >
-                                    {processContent(job.description)}
-                                </p>
+                                    <div dangerouslySetInnerHTML={{ __html: processContent(job.description) }} />
+                                </div>
                                 <div className="bolg-filter-waber collatpage">
                                     <ul
                                         className="nav nav-tabs filter-controls"
@@ -838,7 +839,7 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                                                                         <img src="/images/socilapoint.svg" alt="" />
                                                                         <p style={{
                                                                             wordBreak: 'normal',
-                                                                            overflowWrap: 'break-word',
+                                                                            overflowWrap: 'normal',
                                                                             whiteSpace: 'normal'
                                                                         }}>
                                                                             {processContent(resp)}
@@ -848,13 +849,14 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                                                             ) : (
                                                                 <div className="challenge-point-waber">
                                                                     <img src="/images/socilapoint.svg" alt="" />
-                                                                    <p style={{
+                                                                    <div style={{
                                                                         wordBreak: 'normal',
-                                                                        overflowWrap: 'break-word',
-                                                                        whiteSpace: 'normal'
+                                                                        overflowWrap: 'normal',
+                                                                        whiteSpace: 'normal',
+                                                                        display: 'block'
                                                                     }}>
-                                                                        {processContent(job.description)}
-                                                                    </p>
+                                                                        <div dangerouslySetInnerHTML={{ __html: processContent(job.description) }} />
+                                                                    </div>
                                                                 </div>
                                                             )}
                                                         </div>
@@ -879,7 +881,7 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                                                                         <img src="/images/socilapoint.svg" alt="" />
                                                                         <p style={{
                                                                             wordBreak: 'normal',
-                                                                            overflowWrap: 'break-word',
+                                                                            overflowWrap: 'normal',
                                                                             whiteSpace: 'normal'
                                                                         }}>
                                                                             {processContent(qual)}
@@ -891,7 +893,7 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                                                                     <img src="/images/socilapoint.svg" alt="" />
                                                                     <p style={{
                                                                         wordBreak: 'normal',
-                                                                        overflowWrap: 'break-word',
+                                                                        overflowWrap: 'normal',
                                                                         whiteSpace: 'normal'
                                                                     }}>
                                                                         {processContent(job.requirements)}
@@ -922,7 +924,7 @@ export default function JobDetailClient({ jobId, initialJob }: JobDetailClientPr
                                                                 />
                                                                 <p style={{
                                                                     wordBreak: 'normal',
-                                                                    overflowWrap: 'break-word',
+                                                                    overflowWrap: 'normal',
                                                                     whiteSpace: 'normal'
                                                                 }}>
                                                                     {processContent(job.location)}

@@ -1,12 +1,35 @@
 "use client";
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import CommomLayout from '../Components/CommomLayout'
 import { useTranslation } from "../hooks/useTranslation";
 
-const page = () => {
+const Page = () => {
   const { t, language } = useTranslation();
-    return (
+
+  useEffect(() => {
+    // Trigger Google Ads Conversion Tracking
+    if (typeof window !== 'undefined') {
+        // Call the global conversion function if defined
+        if (typeof (window as any).gtag_report_conversion === 'function') {
+            (window as any).gtag_report_conversion();
+        }
+
+        // Call the other global conversion function if defined
+        if (typeof (window as any).goog_report_conversion === 'function') {
+            (window as any).goog_report_conversion();
+        }
+
+        // Standard gtag conversion event (as a fallback/redundancy)
+        if (typeof (window as any).gtag === 'function') {
+            (window as any).gtag('event', 'conversion', {
+                'send_to': 'AW-795585511/1tsTCLe_6ZYBEOfXrvsC'
+            });
+        }
+    }
+  }, []);
+
+  return (
         <CommomLayout>
             <>
                 {/* Header Start */}
@@ -162,4 +185,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
