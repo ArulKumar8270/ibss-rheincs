@@ -19,7 +19,7 @@ export default function EpicorKinetic() {
         <div className="col-sm-6">
           <div className="section-title">
           <h2 className="text-anime-style-21" data-cursor="-opaque">
-              {t("Next-gen ERP to automate workflows, improve supply chain visibility, and optimize production")}
+              {t("Epicor Kinetic: Next-Gen ERP for Workflow Automation and Process Optimization")}
             </h2>
             <p>
               {t("Epicor Kinetic is a modern, cloud-enabled ERP designed to streamline operations, reduce manual processes, and provide real-time insights across your business.")} {t("It empowers organizations to scale efficiently while staying compliant and competitive in today’s fast-paced industries.")}
@@ -471,23 +471,23 @@ export default function EpicorKinetic() {
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
-              <img src="/images/Automate.svg" alt="" />
+              <img src="/images/Automate.svg" alt="Epicor kinetic Workflow Automation icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Automate end-to-end workflows across finance, manufacturing, and supply chain.")}
+                  {t("Automate end-to-end workflows across finance, manufacturing, projects and supply chain with a modern cloud ERP solution.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/Enhance.svg" alt="" />
+              <img src="/images/Enhance.svg" alt="Epicor kinetic Supply Visibility icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Enhance supply chain visibility for better planning and forecasting.")}
+                  {t("Enhance supply chain visibility and demand planning for better forecasting and inventory management.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/Optimize.svg" alt="" />
+              <img src="/images/Optimize.svg" alt="Epicor kinetic Production Analytics icon" />
               <div className="pill-cont">
                 <p>
                   {t("Optimize production with real-time tracking and analytics.")}
@@ -495,15 +495,15 @@ export default function EpicorKinetic() {
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/Enable.svg" alt="" />
+              <img src="/images/Enable.svg" alt="Epicor kinetic Cloud Access icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Enable mobile and cloud access for global, distributed teams.")}
+                  {t("Enable mobile ERP and cloud-based access for global, distributed teams and remote workforce management.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/Embed.svg" alt="" />
+              <img src="/images/Embed.svg" alt="Epicor kinetic BI Dashboards icon" />
               <div className="pill-cont">
                 <p>
                   {t("Embed analytics and dashboards for faster, data-driven decision-making.")}
@@ -511,10 +511,10 @@ export default function EpicorKinetic() {
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/Integrate.svg" alt="" />
+              <img src="/images/Integrate.svg" alt="Epicor kinetic smart sensors icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Integrate smart sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.")}
+                  {t("Integrate IoT-enabled smart sensors with ERP systems for real-time monitoring, predictive maintenance, and process optimization.")}
                 </p>
               </div>
             </div>
@@ -538,23 +538,23 @@ export default function EpicorKinetic() {
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss1.svg" alt="" />
+              <img src="/images/ss1.svg" alt="Epicor kinetic Workflow Automation icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Automate end-to-end workflows across finance, manufacturing, and supply chain.")}
+                  {t("Automate end-to-end workflows across finance, manufacturing, projects and supply chain with a modern cloud ERP solution.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss2.svg" alt="" />
+              <img src="/images/ss2.svg" alt="Epicor kinetic Supply Visibility icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Enhance supply chain visibility for better planning and forecasting.")}
+                  {t("Enhance supply chain visibility and demand planning for better forecasting and inventory management.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss3.svg" alt="" />
+              <img src="/images/ss3.svg" alt="Epicor kinetic Production Analytics icon" />
               <div className="pill-cont">
                 <p>
                   {t("Optimize production with real-time tracking and analytics.")}
@@ -562,15 +562,15 @@ export default function EpicorKinetic() {
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss7.svg" alt="" />
+              <img src="/images/ss7.svg" alt="Epicor kinetic Cloud Access icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Enable mobile and cloud access for global, distributed teams.")}
+                  {t("Enable mobile ERP and cloud-based access for global, distributed teams and remote workforce management.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss8.svg" alt="" />
+              <img src="/images/ss8.svg" alt="Epicor kinetic BI Dashboards icon" />
               <div className="pill-cont">
                 <p>
                   {t("Embed analytics and dashboards for faster, data-driven decision-making.")}
@@ -578,10 +578,10 @@ export default function EpicorKinetic() {
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss9.svg" alt="" />
+              <img src="/images/ss9.svg" alt="Epicor kinetic smart sensors icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Integrate smart sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.")}
+                  {t("Integrate IoT-enabled smart sensors with ERP systems for real-time monitoring, predictive maintenance, and process optimization.")}
                 </p>
               </div>
             </div>
@@ -608,7 +608,7 @@ export default function EpicorKinetic() {
               <div className="service-item-body1  w80">
                 {/* <h3>Seamless Integration</h3> */}
                 <h3>
-                  {t("Proven enterprise ERP solution trusted across industries.")}
+                  {t("Proven enterprise ERP solution trusted across manufacturing, distribution, projects and service industries.")}
                 </h3>
                 <div className="text-center">
                   <img src="/images/advant1.svg" alt="" />
@@ -619,7 +619,7 @@ export default function EpicorKinetic() {
               <div className="service-item-body1 epicright1  w80">
                 {/* <h3>Configurable</h3> */}
                 <h3>
-                  {t("Seamless integration with companion products and third-party applications.")}
+                  {t("Seamless ERP integration with third-party applications and enterprise systems for unified operations.")}
                 </h3>
                 <img src="/images/advant2.svg" alt="" />
               </div>
@@ -627,7 +627,7 @@ export default function EpicorKinetic() {
             <div className="col-lg-4 col-md-4 col-12">
               <div className="service-item-body1 epicright">
                 {/* <h3>Reporting and Analytics</h3> */}
-                <h3>{t("Scalable deployment to grow with your business.")} </h3>
+                <h3>{t("Scalable cloud ERP deployment to grow with your business.")} </h3>
                 <img src="/images/advant3.svg" alt="" />
               </div>
             </div>
@@ -635,7 +635,7 @@ export default function EpicorKinetic() {
               <div className="service-item-body1 epicright">
                 {/* <h3>Mobile Accessibility</h3> */}
                 <h3>
-                  {t("End-to-end support from design to implementation and optimization.")}
+                  {t("End-to-end ERP support from design to implementation, consulting, and optimization services.")}
                 </h3>
                 <div className="text-center">
                   <img src="/images/advant4.svg" alt="" />
@@ -796,6 +796,37 @@ export default function EpicorKinetic() {
                           <div className="accordion-body">
                             <p>
                               {t("Moving to Epicor Kinetic delivers powerful competitive advantages. Benefits include a superior user experience (UX), Cloud scalability for rapid growth, real-time insights for data-driven decisions, enhanced system security, and compliance capabilities. This ultimately translates into lower Total Cost of Ownership (TCO) and faster ROI.")} 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.6s"
+                      >
+                        <h2 className="accordion-header" id="heading5">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse5"
+                            aria-expanded="false"
+                            aria-controls="collapse5"
+                          >
+                           {t("What are the advantages of migrating to the Cloud?")}   
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse5"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading5"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("Migrating to the Cloud enables scalable growth without heavy upfront infrastructure costs, while improving system performance and accessibility. It provides real-time data access, stronger security with continuous updates, and built-in compliance capabilities. Automatic upgrades and reduced maintenance lower Total Cost of Ownership (TCO) and accelerate ROI.")} 
                             </p>
                           </div>
                         </div>

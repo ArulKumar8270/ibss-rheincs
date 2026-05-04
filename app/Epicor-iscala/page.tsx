@@ -19,10 +19,10 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-21" data-cursor="-opaque">
-              {t("Flexible ERP for mid-sized companies in regulated industries like pharma, hospitality, and global trade")}
+              {t("Epicor iScala ERP | Flexible ERP for Mid-Market, Compliance-driven Industries")}
             </h2>
             <p>
-              {t("Epicor iScala helps mid-sized businesses manage complex operations with a flexible, configurable ERP platform. It ensures compliance, simplifies financial and operational management, and supports growth across multiple geographies.")}{" "}
+              {t("Flexible ERP for mid-sized pharma, hospitality, and global trade firms. Epicor iScala streamlines finance, operations, and compliance across multi-country businesses. Manage complex operations with premium Epicor iScala partner.")}{" "}
             </p>
           </div>
         </div>
@@ -470,23 +470,23 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
-              <img src="/images/Streamline.svg" alt="" />
+              <img src="/images/Streamline.svg" alt="Epicor iScala ERP platform icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Streamline financials, supply chain, and production management.")}
+                  {t("Streamline financials, supply chain, and production management with an integrated ERP platform.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/Ensure.svg" alt="" />
+              <img src="/images/Ensure.svg" alt="Epicor iScala compliance icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Ensure regulatory and compliance adherence in highly regulated industries.")}
+                  {t("Ensure regulatory compliance and audit readiness across highly regulated industries.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/Support.svg" alt="" />
+              <img src="/images/Support.svg" alt="Epicor iScala multi-operation support icon" />
               <div className="pill-cont">
                 <p>
                   {t("Support multi-currency, multi-language, and multi-entity operations.")}
@@ -494,26 +494,26 @@ export default function EnterpriseSolutions() {
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/Enable1.svg" alt="" />
+              <img src="/images/Enable1.svg" alt="Epicor iScala reporting and analytics icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Enable real-time reporting and business intelligence insights.")}
+                  {t("Enable real-time insights, with reporting, analytics and business intelligence.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/cloud.svg" alt="" />
+              <img src="/images/cloud.svg" alt="Epicor iScala deployment icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Flexible deployment options for cloud or on-premise environments.")}
+                  {t("Flexible ERP deployment options: cloud, on-premise, or hybrid environments.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/Manage.svg" alt="" />
+              <img src="/images/Manage.svg" alt="Epicor iScala inventory management icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Manage in-house repair and maintenance processes, ensuring correct stock valuation.")}&nbsp;
+                  {t("Manage in-house repair and maintenance workflows with accurate inventory control and stock valuation.")}&nbsp;
                 </p>
               </div>
             </div>
@@ -537,23 +537,23 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss1.svg" alt="" />
+              <img src="/images/ss1.svg" alt="Epicor iScala ERP platform icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Streamline financials, supply chain, and production management.")}
+                  {t("Streamline financials, supply chain, and production management with an integrated ERP platform.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss2.svg" alt="" />
+              <img src="/images/ss2.svg" alt="Epicor iScala compliance icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Ensure regulatory and compliance adherence in highly regulated industries.")}
+                  {t("Ensure regulatory compliance and audit readiness across highly regulated industries.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss3.svg" alt="" />
+              <img src="/images/ss3.svg" alt="Epicor iScala multi-operation support icon" />
               <div className="pill-cont">
                 <p>
                   {t("Support multi-currency, multi-language, and multi-entity operations.")}
@@ -561,26 +561,26 @@ export default function EnterpriseSolutions() {
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss7.svg" alt="" />
+              <img src="/images/ss7.svg" alt="Epicor iScala reporting and analytics icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Enable real-time reporting and business intelligence insights.")}
+                  {t("Enable real-time insights, with reporting, analytics and business intelligence.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss8.svg" alt="" />
+              <img src="/images/ss8.svg" alt="Epicor iScala deployment icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Flexible deployment options for cloud or on-premise environments.")}
+                  {t("Flexible ERP deployment options: cloud, on-premise, or hybrid environments.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss9.svg" alt="" />
+              <img src="/images/ss9.svg" alt="Epicor iScala inventory management icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Manage in-house repair and maintenance processes, ensuring correct stock valuation.")}&nbsp;
+                  {t("Manage in-house repair and maintenance workflows with accurate inventory control and stock valuation.")}&nbsp;
                 </p>
               </div>
             </div>
@@ -606,7 +606,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1  w80">
                 {/* <h3>Seamless Integration</h3> */}
                 <h3>
-              {t("Industry-specific ERP for mid-sized organizations.")}</h3>
+              {t("Industry-specific ERP platform for mid-sized organizations in regulated sectors.")}</h3>
                 <div className="text-center">
                   <img src="/images/advant1.svg" alt="" />
                 </div>
@@ -615,7 +615,7 @@ export default function EnterpriseSolutions() {
             <div className="col-lg-6 col-md-6 col-12">
               <div className="service-item-body1 epicright1  w80">
                 {/* <h3>Configurable</h3> */}
-              <h3>{t("Scalable and adaptable to evolving business needs.")} </h3>
+              <h3>{t("Scalable, configurable ERP solution adaptable to evolving business and operational needs.")} </h3>
                 <img src="/images/advant2.svg" alt="" />
               </div>
             </div>
@@ -623,7 +623,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicright">
                 {/* <h3>Reporting and Analytics</h3> */}
                 <h3>
-                  {t("Integrated analytics and reporting for smarter decisions.")}
+                  {t("Integrated ERP analytics and real-time reporting for smarter and faster decisions.")}
                 </h3>
                 <img src="/images/advant3.svg" alt="" />
               </div>
@@ -632,7 +632,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicright">
                 {/* <h3>Mobile Accessibility</h3> */}
                 <h3>
-                  {t("End-to-end support from consulting and implementation to training.")}
+                  {t("End-to-end ERP services: consulting, implementation, integration, and support.")}
                 </h3>
                 <div className="text-center">
                   <img src="/images/advant4.svg" alt="" />
@@ -643,7 +643,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicleft">
                 {/* <h3>Effective Data Management</h3> */}
                 <h3>
-                  {t("Focused on operational efficiency, growth, and compliance assurance.")}
+                  {t("Designed to enhance operational efficiency, support growth, and ensure compliance.")}
                 </h3>
                 <img src="/images/advant5.svg" alt="" />
               </div>

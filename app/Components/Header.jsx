@@ -12,6 +12,7 @@ export default function Header() {
     const router = useRouter();
     const [activeTab, setActiveTab] = useState(' ');
     const [epicorCollapsed, setEpicorCollapsed] = useState(false);
+    const [sapCollapsed, setSapCollapsed] = useState(false);
     const [digitalSolutionsCollapsed, setDigitalSolutionsCollapsed] = useState(false);
     const [digitalServicesCollapsed, setDigitalServicesCollapsed] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
@@ -1056,9 +1057,9 @@ export default function Header() {
                                                                                                 <button
                                                                                                     type="button"
                                                                                                     onClick={(e) => {
-                                                                                                        e.preventDefault();
-                                                                                                        setEpicorCollapsed(!epicorCollapsed);
-                                                                                                    }}
+                                                                                                         e.preventDefault();
+                                                                                                         setEpicorCollapsed(!epicorCollapsed);
+                                                                                                     }}
                                                                                                     className="arrow-toggle animated-svg-link"
                                                                                                     style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
                                                                                                 >
@@ -1099,7 +1100,7 @@ export default function Header() {
                                                                                                     type="button"
                                                                                                     onClick={(e) => {
                                                                                                         e.preventDefault();
-                                                                                                        setEpicorCollapsed(!epicorCollapsed);
+                                                                                                        setSapCollapsed(!sapCollapsed);
                                                                                                     }}
                                                                                                     className="arrow-toggle animated-svg-link"
                                                                                                     style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
@@ -1108,10 +1109,10 @@ export default function Header() {
                                                                                                 </button>
                                                                                             </div>
                                                                                             <div
-                                                                                                id="demo3"
-                                                                                                className={`${epicorCollapsed ? 'show' : 'collapse'} content-box`}
-                                                                                                style={{ display: epicorCollapsed ? 'block' : 'none' }}
-                                                                                            >
+                                                                                                 id="demo3"
+                                                                                                 className={`${sapCollapsed ? 'show' : 'collapse'} content-box`}
+                                                                                                 style={{ display: sapCollapsed ? 'block' : 'none' }}
+                                                                                             >
                                                                                                 <Link href="/Epicor-kinetic">
                                                                                                     {" "}
                                                                                                     {t("SAP S/4HANA Transformation")}
@@ -3043,6 +3044,9 @@ export default function Header() {
                                 </li>
                                 <li>
                                     <Link href="/interior-design">{t("Interior Design")}</Link>
+                                </li>
+                                <li>
+                                    <Link href="/aerospace-defence-manufacturing">{t("Aerospace Defence Manufacturing")}</Link>
                                 </li>
                             </ul>
                         </li>

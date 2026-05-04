@@ -3346,6 +3346,17 @@ body:has(.offcanvas) {
 	}.agency-item-content {
     width: 100% !important;
 }
+.sap-advantage-main-waber .challenge-point-waber {
+    width: 100% !important;
+    display: flex;
+    margin-bottom: 10px;
+}.pe-help-content p {
+    text-align: left !important;
+}.tangcontent {
+    height: auto !important;
+}.benifet-content-2 .text-center img {
+    height: auto !important;
+}
 .cuccess-story-waber .flex1 {
     width: 100% !important;
 }.cuccess-story-waber .flex2 {
@@ -10649,14 +10660,17 @@ body:has(.offcanvas) {
 		display: block !important;
 	}
 
-	.parentban img {
+	/* .parentban img {
 		position: absolute;
 		bottom: 1%;
 		left: 5%;
 		height: 200px !important;
 		width: auto;
-	}
-
+	} */
+    .parentban img {
+        height: auto !important;
+        width: auto;
+    }
 	.brouchure p {
 		font-size: 16px;
 		font-weight: 300;
@@ -20846,10 +20860,10 @@ body.popup-open .main-header {
 		height: 300px !important;
 	}
 
-	.parentban img {
+	/* .parentban img {
 		height: 210px !important;
 		width: auto;
-	}
+	} */
 
 	.swiper-slide-active .icns {
 		stroke: #ffffff !important;
