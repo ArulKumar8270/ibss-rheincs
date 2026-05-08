@@ -100,7 +100,7 @@ export default function Corushr() {
 	                createdMessageField = true;
 	            }
 
-	            saveLead();
+	            await Promise.resolve(saveLead());
 	
 	            if (createdMessageField && messageField) {
 	                messageField.remove();

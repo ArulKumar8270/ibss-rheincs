@@ -72,7 +72,7 @@ export default function digitalsolution() {
     }
 
     try {
-      saveLead();
+      await Promise.resolve(saveLead());
       await sleep(400);
     } catch (error) {
       console.warn("LeadSquared capture failed", error);

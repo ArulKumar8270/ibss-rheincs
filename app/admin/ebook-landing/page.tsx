@@ -23,6 +23,7 @@ interface EbookLandingPage {
   author_avatar_url: string | null
   author_avatar_svg: string | null
   footer_color: string | null
+  pdf_url: string | null
   created_at: string
   updated_at: string
 }
@@ -52,6 +53,7 @@ export default function AdminEbookLandingPage() {
     author_avatar_url: '',
     author_avatar_svg: '',
     footer_color: '#3aaee0',
+    pdf_url: '',
   })
   const [newBenefit, setNewBenefit] = useState('')
   const supabase = createClient()
@@ -86,13 +88,19 @@ export default function AdminEbookLandingPage() {
     const file = e.target.files?.[0]
     if (!file) return
 
-    if (!file.type.startsWith('image/')) {
+    const isPdf = fieldName === 'pdf_url'
+    if (isPdf) {
+      if (file.type !== 'application/pdf') {
+        alert('Please select a PDF file')
+        return
+      }
+    } else if (!file.type.startsWith('image/')) {
       alert('Please select an image file')
       return
     }
 
-    if (file.size > 2 * 1024 * 1024) {
-      alert('Image size should be less than 2MB')
+    if (file.size > 5 * 1024 * 1024) { // Increased limit to 5MB for PDF
+      alert('File size should be less than 5MB')
       return
     }
 
@@ -177,9 +185,14 @@ export default function AdminEbookLandingPage() {
       fetchPages()
     } catch (error: any) {
       console.error('Error saving page:', error)
-      const msg = error.message === 'Failed to fetch' 
-        ? 'Network Error: Failed to fetch. Please ensure you have run the database migration in Supabase SQL Editor.'
-        : error.message
+      let msg = error.message
+      
+      if (error.code === '23505') {
+        msg = `The slug "${formData.slug}" is already in use. Please use a unique slug or edit the existing page.`
+      } else if (error.message === 'Failed to fetch') {
+        msg = 'Network Error: Failed to fetch. Please ensure you have run the database migration in Supabase SQL Editor.'
+      }
+      
       alert('Error saving page: ' + msg)
     } finally {
       setLoading(false)
@@ -207,6 +220,7 @@ export default function AdminEbookLandingPage() {
       author_avatar_url: page.author_avatar_url || '',
       author_avatar_svg: page.author_avatar_svg || '',
       footer_color: page.footer_color || '',
+      pdf_url: page.pdf_url || '',
     })
     setShowForm(true)
   }
@@ -649,7 +663,7 @@ export default function AdminEbookLandingPage() {
           onClick={() => {
             setEditingPage(null)
             setFormData({
-              slug: 'default',
+              slug: '',
               title: '',
               headline: '',
               subheadline: '',
@@ -667,6 +681,7 @@ export default function AdminEbookLandingPage() {
               author_avatar_url: '',
               author_avatar_svg: '',
               footer_color: '#3aaee0',
+              pdf_url: '',
             })
             setShowForm(true)
           }}
@@ -679,6 +694,11 @@ export default function AdminEbookLandingPage() {
       {showForm && (
         <div className="admin-ebook-form-card">
           <h2 className="admin-ebook-form-title">{editingPage ? 'Edit Page' : 'Create New Page'}</h2>
+          {!editingPage && (
+            <p style={{ color: '#666', fontSize: '13px', marginBottom: '15px', background: '#fff9c4', padding: '10px', borderRadius: '6px', border: '1px solid #fbc02d' }}>
+              <strong>Note:</strong> To update the existing default page, please click the <strong>Edit</strong> button in the table below instead of "Add New Page".
+            </p>
+          )}
           <form onSubmit={handleSubmit}>
             <div className="admin-ebook-grid">
               <div className="admin-ebook-field">
@@ -766,6 +786,27 @@ export default function AdminEbookLandingPage() {
                   accept="image/*"
                 />
                 {formData.book_image_url && <p className="text-xs text-green-600 mt-1">Uploaded: {formData.book_image_url.split('/').pop()}</p>}
+              </div>
+              <div className="admin-ebook-field">
+                <label className="admin-ebook-label">E-Book PDF URL</label>
+                <input
+                  type="text"
+                  name="pdf_url"
+                  value={formData.pdf_url}
+                  onChange={handleInputChange}
+                  className="admin-ebook-input"
+                  placeholder="https://.../ebook.pdf"
+                />
+              </div>
+              <div className="admin-ebook-field">
+                <label className="admin-ebook-label">Upload E-Book PDF</label>
+                <input
+                  type="file"
+                  onChange={(e) => handleFileUpload(e, 'pdf_url')}
+                  className="admin-ebook-input"
+                  accept=".pdf"
+                />
+                {formData.pdf_url && <p className="text-xs text-green-600 mt-1">Uploaded: {formData.pdf_url.split('/').pop()}</p>}
               </div>
               <div className="admin-ebook-field">
                 <label className="admin-ebook-label">Learning Title</label>

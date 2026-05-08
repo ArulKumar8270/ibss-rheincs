@@ -22,11 +22,11 @@ export default function EnterpriseSolutions() {
               {t("Epic Pay – Epicor Payroll MEA")}
             </h2>
             <p>
-              {t("Comprehensive payroll solution tailored for businesses across the Middle East and Africa.")}
+              {t("Epic Pay – The Epicor Payroll MEA Solution for Seamless Compliance & Automation")}
 
             </p>
             <p>
-            {t("Epic Pay (Epicor Payroll MEA) helps organizations streamline payroll processing with seamless integration to Epicor ERP. It ensures compliance with regional labour laws, simplifies HR and payroll operations, and empowers employees with self-service access.")}
+            {t("Comprehensive payroll solution tailored for businesses across the Middle East and Africa. Epic Pay (Epicor Payroll MEA) helps organizations streamline payroll processing with seamless integration to Epicor ERP. It ensures compliance with regional labour laws, simplifies HR and payroll operations, and empowers employees with self-service access.")}
 
             </p>
           </div>
@@ -475,55 +475,55 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
-              <img src="/images/Automatepayrollprocessing.svg" alt="" />
+              <img src="/images/Automatepayrollprocessing.svg" alt="Epicor Epic-pay payroll icon" />
               <div className="pill-cont">
         <p>
-                  {t("Automate payroll processing and salary calculations.")}
+                  {t("Automate end-to-end payroll processing and salary calculations with accuracy and efficiency.")}
                 </p>
 
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/compliance.svg" alt="" />
+              <img src="/images/compliance.svg" alt="Epicor Epic pay compliance icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Ensure compliance with MEA labour laws, tax rules, and statutory reporting.")}
+                  {t("Ensure full MEA labour law compliance, tax regulations adherence, and statutory reporting across multiple jurisdictions.")}
 
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/Integratetime,attendance,leave.svg" alt="" />
+              <img src="/images/Integratetime,attendance,leave.svg" alt="Epicor Epic pay employee management icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Integrate time, attendance, leave, and loan management directly into payroll.")}
+                  {t("Integrate time and attendance, leave management, and employee loan tracking directly into payroll workflows via Epicor ERP integration.")}
 
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/self-serviceportals.svg" alt="" />
+              <img src="/images/self-serviceportals.svg" alt="Epicor Epic pay employee services" />
               <div className="pill-cont">
                 <p>
-                  {t("Provide employee and manager self-service portals for anytime, anywhere access.")}
+                  {t("Provide secure employee and manager self-service portals for anytime, anywhere access to payroll, payslips, and HR data.")}
 
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/real-timeanalytics.svg" alt="" />
+              <img src="/images/real-timeanalytics.svg" alt="Epicor Epic-pay payroll analytics icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Deliver real-time analytics and reporting on payroll costs, overtime, and compliance.")}
+                  {t("Deliver real-time payroll analytics and workforce reporting, including payroll costs, overtime tracking, and compliance.")}
 
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/mobileaccessibility.svg" alt="" />
+              <img src="/images/mobileaccessibility.svg" alt="Epicor Epic pay mobile application icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Enable mobile accessibility for a connected workforce.")}
+                  {t("Enable mobile-first accessibility for a connected workforce.")}
                 </p>
 
               </div>
@@ -548,52 +548,52 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss1.svg" alt="" />
+              <img src="/images/ss1.svg" alt="Epicor Epic-pay payroll icon" />
               <div className="pill-cont">
   <p>
-  {t("Automate payroll processing and salary calculations.")}</p>
+  {t("Automate end-to-end payroll processing and salary calculations with accuracy and efficiency.")}</p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss2.svg" alt="" />
+              <img src="/images/ss2.svg" alt="Epicor Epic pay compliance icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Ensure compliance with MEA labour laws, tax rules, and statutory reporting.")}
+                  {t("Ensure full MEA labour law compliance, tax regulations adherence, and statutory reporting across multiple jurisdictions.")}
 
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss3.svg" alt="" />
+              <img src="/images/ss3.svg" alt="Epicor Epic pay employee management icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Integrate time, attendance, leave, and loan management directly into payroll.")}
+                  {t("Integrate time and attendance, leave management, and employee loan tracking directly into payroll workflows via Epicor ERP integration.")}
 
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss7.svg" alt="" />
+              <img src="/images/ss7.svg" alt="Epicor Epic pay employee services" />
               <div className="pill-cont">
                 <p>
-                  {t("Provide employee and manager self-service portals for anytime, anywhere access.")}
+                  {t("Provide secure employee and manager self-service portals for anytime, anywhere access to payroll, payslips, and HR data.")}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss8.svg" alt="" />
+              <img src="/images/ss8.svg" alt="Epicor Epic-pay payroll analytics icon" />
               <div className="pill-cont">
                 <p>
-                  {t("Deliver real-time analytics and reporting on payroll costs, overtime, and compliance.")}
+                  {t("Deliver real-time payroll analytics and workforce reporting, including payroll costs, overtime tracking, and compliance.")}
 
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/ss9.svg" alt="" />
+              <img src="/images/ss9.svg" alt="Epicor Epic pay mobile application icon" />
               <div className="pill-cont">
   <p>
-    {t("Enable mobile accessibility for a connected workforce.")}
+    {t("Enable mobile-first accessibility for a connected workforce.")}
 </p>
               </div>
             </div>
@@ -619,7 +619,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1  w80">
                 {/* <h3>Seamless Integration</h3> */}
                 <h3>
-                  {t("Designed specifically for organizations in the MEA region.")}
+                  {t("Purpose-built for MEA payroll compliance and regional workforce management, designed for Middle East and Africa.")}
                 </h3>
                 <div className="text-center">
                   <img src="/images/advant1.svg" alt="" />
@@ -640,7 +640,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicright">
                 {/* <h3>Reporting and Analytics</h3> */}
                 <h3>
-                  {t("Scalable and customizable to suit single-site or multi-site operations.")}
+                  {t("Scalable and configurable payroll solution for both single-site and multi-site enterprise operations.")}
 
                 </h3>
                 <img src="/images/advant3.svg" alt="" />
@@ -650,7 +650,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicright">
                 {/* <h3>Mobile Accessibility</h3> */}
                 <h3>
-                  {t("Enhances employee engagement with intuitive self-service access.")}
+                  {t("Enhances employee engagement with intuitive self-service access to payslips, leave, and payroll data.")}
 
                 </h3>
                 <div className="text-center">
@@ -662,7 +662,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicleft">
                 {/* <h3>Effective Data Management</h3> */}
                 <h3>
-                  {t("Trusted with over half a million payrolls processed across industries.")}
+                  {t("Trusted with over half a million payrolls processed across industries, delivering reliability.")}
 
                 </h3>
                 <img src="/images/advant5.svg" alt="" />
@@ -813,6 +813,37 @@ export default function EnterpriseSolutions() {
                           <div className="accordion-body">
                             <p>
                               {t("No, EpicPay is designed to work only with Epicor ERP.")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.6s"
+                      >
+                        <h2 className="accordion-header" id="heading5">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse5"
+                            aria-expanded="false"
+                            aria-controls="collapse5"
+                          >
+                           {t("What is the best payroll software for MEA businesses?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse5"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading5"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("Epic Pay is a leading payroll software for MEA businesses, offering full compliance with regional labour laws, seamless Epicor ERP integration, and automation of payroll, attendance, and reporting in a single platform.")}
                             </p>
                           </div>
                         </div>

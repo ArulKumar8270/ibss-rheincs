@@ -137,10 +137,10 @@ export default function SapAms() {
     </div>
   </div>
   {/* Hero Section End*/}
-  <div className="aboutretail retail-baner1 retail-baner-11 kineticsec approachh systemview pd60">
+  <div className="aboutretail retail-baner1 retail-baner-11 kineticsecams approachh systemview pd60">
     <div className="container">
       <div className="row section-row1 align-items-center builtsec">
-        <div className="col-sm-12">
+        <div className="col-sm-5">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
               {t("Our Capabilities")}
@@ -523,7 +523,7 @@ export default function SapAms() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("RheinBrücke AMS services improve performance through proactive system health monitoring, regular performance tuning of SAP applications and the HANA database, root-cause analysis of recurring issues, background job optimisation and continuous improvement initiatives. Rather than responding reactively to problems, our AMS model is designed to prevent issues from arising in the first place.")} 
+                              {t("RheinBrücke AMS services improve performance through proactive system health monitoring, regular performance tuning of SAP applications and the HANA database, root-cause analysis of recurring issues, background job optimisation, and continuous improvement initiatives. Rather than responding reactively to problems, our AMS model is designed to prevent issues from arising in the first place.")} 
                             </p>
                           </div>
                         </div>

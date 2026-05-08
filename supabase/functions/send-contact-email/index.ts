@@ -3,7 +3,7 @@
 // Sends email via Microsoft Graph with certificate auth (same flow as Node MSAL:
 //   ConfidentialClientApplication with clientCertificate -> acquireTokenByClientCredential -> users/{sender}/sendMail).
 // Set secrets in Supabase: CLIENT_ID, TENANT_ID, CERT_THUMBPRINT, PRIVATE_KEY (PEM),
-//   FROM_USER, FROM_NAME, ADMIN_EMAIL, COLLATERALS_ADMIN_EMAIL, JOB_APPLICATION_ADMIN_EMAIL
+//   FROM_USER, FROM_NAME, ADMIN_EMAIL, COLLATERALS_ADMIN_EMAIL, JOB_APPLICATION_ADMIN_EMAIL, DEFTECH_ADMIN_EMAIL, IMPRESS_ADMIN_EMAIL
 
 /// <reference types="deno" />
 
@@ -60,6 +60,8 @@ p70PboPLwKDG15TgYJeQnDPyuw==`
   const adminEmail = Deno.env.get('ADMIN_EMAIL') ?? 'marketing@rheincs.com'
   const collateralsAdmin = Deno.env.get('COLLATERALS_ADMIN_EMAIL') ?? adminEmail
   const jobAdmin = Deno.env.get('JOB_APPLICATION_ADMIN_EMAIL') ?? 'careers@rheincs.com'
+  const deftechAdmin = Deno.env.get('DEFTECH_ADMIN_EMAIL') ?? 'padma@impressbss.com'
+  const impressAdminEmail = 'padma@impressbss.com' // Hardcoded to ensure Padma always receives notifications
   return {
     clientId,
     tenantId,
@@ -71,7 +73,22 @@ p70PboPLwKDG15TgYJeQnDPyuw==`
     adminEmail,
     collateralsAdmin,
     jobAdmin,
+    deftechAdmin,
+    impressAdminEmail,
   }
+}
+
+function uniqueEmails(emails: Array<string | undefined | null>): string[] {
+  const seen = new Set<string>()
+  const out: string[] = []
+  for (const raw of emails) {
+    const email = String(raw ?? '').trim().toLowerCase()
+    if (!email) continue
+    if (seen.has(email)) continue
+    seen.add(email)
+    out.push(email)
+  }
+  return out
 }
 
 /** Hex thumbprint to base64url (for JWT x5t header, matches MSAL clientCertificate.thumbprint). */
@@ -141,8 +158,7 @@ async function getGraphToken(config: ReturnType<typeof getConfig>): Promise<stri
 async function sendGraphMail(
   token: string,
   fromUser: string,
-  to: string,
-  toName: string | undefined,
+  toList: Array<{ email: string; name?: string }>,
   subject: string,
   htmlBody: string
 ): Promise<{ ok: boolean; error?: string }> {
@@ -151,7 +167,7 @@ async function sendGraphMail(
     message: {
       subject,
       body: { contentType: 'HTML' as const, content: htmlBody },
-      toRecipients: [{ emailAddress: { address: to, name: toName ?? undefined } }],
+      toRecipients: toList.map((t) => ({ emailAddress: { address: t.email, name: t.name ?? undefined } })),
     },
     saveToSentItems: true,
   }
@@ -184,12 +200,27 @@ async function sendOneEmailViaGraph(
     content: Array<{ type: string; value: string }>
   }
 ): Promise<{ ok: boolean; error?: string }> {
-  const to = payload.personalizations?.[0]?.to?.[0]
-  if (!to?.email) return { ok: false, error: 'Missing recipient' }
+  const toList = payload.personalizations?.[0]?.to ?? []
+  if (!toList.length || !toList.some((t) => t?.email)) return { ok: false, error: 'Missing recipient' }
+  
   const subject = payload.personalizations[0].subject ?? ''
   const htmlPart = payload.content?.find((c) => c.type === 'text/html')
   const htmlBody = htmlPart?.value ?? payload.content?.[0]?.value ?? ''
-  return sendGraphMail(token, fromUser, to.email, to.name, subject, htmlBody)
+
+  // To be safe, send individually to each recipient to avoid one failure blocking others
+  // and to ensure individual delivery success.
+  const results = await Promise.all(
+    toList
+      .filter((t) => !!t?.email)
+      .map((t) => sendGraphMail(token, fromUser, [t], subject, htmlBody))
+  )
+
+  const failed = results.filter((r) => !r.ok)
+  if (failed.length === results.length && results.length > 0) {
+    return { ok: false, error: failed[0].error }
+  }
+
+  return { ok: true }
 }
 
 // ——— Contact ———
@@ -234,11 +265,69 @@ function buildContactAdminPayload(body: Record<string, unknown>, config: ReturnT
   const safeMessage = message ? escapeHtml(message).replace(/\n/g, '<br>') : ''
   const submittedAt = new Date().toLocaleString('en-US', { timeZone: 'UTC' })
 
+  // Allow overriding the recipient email via the request body
+  const recipientEmail = String(body.adminEmail ?? config.adminEmail)
+  const toEmails = uniqueEmails([recipientEmail, config.impressAdminEmail])
+
   return {
-    personalizations: [{ to: [{ email: config.adminEmail, name: 'RheinBrücke Team' }], subject: `New Contact Form Submission from ${safeFullName}` }],
+    personalizations: [{ to: toEmails.map((e) => ({ email: e, name: 'RheinBrücke Team' })), subject: `New Contact Form Submission from ${safeFullName}` }],
     content: [
       { type: 'text/plain', value: `New Contact Form Submission\n\nContact Details:\nName: ${safeFullName}\nEmail: ${email}\nPhone: ${fullPhone}\nCompany: ${safeCompanyName}\n${selection ? `Interest: ${safeSelection}\n` : ''}${message ? `Message: ${message}\n` : ''}\nAction Required: Please respond within 24-48 hours.\nSubmitted on: ${submittedAt} UTC` },
       { type: 'text/html', value: `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;"><div style="background: linear-gradient(135deg, #667eea 0%, #5568d3 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;"><h1 style="color: #fff; margin: 0; font-size: 28px;">New Contact Form Submission</h1></div><div style="background: #f9fafb; padding: 30px; border-radius: 0 0 8px 8px;"><p>You have received a new contact form submission:</p><div style="background: #fff; padding: 20px; border-radius: 6px; margin: 20px 0; border-left: 4px solid #667eea;"><h3 style="margin-top: 0;">Contact Details:</h3><p><strong>Name:</strong> ${safeFullName}</p><p><strong>Email:</strong> <a href="mailto:${email}">${safeEmail}</a></p><p><strong>Phone:</strong> <a href="tel:${fullPhone.replace(/\s/g, '')}">${safePhone}</a></p><p><strong>Company:</strong> ${safeCompanyName}</p>${safeSelection ? `<p><strong>Interest:</strong> ${safeSelection}</p>` : ''}${safeMessage ? `<p><strong>Message:</strong><br><div style="background: #f3f4f6; padding: 15px; border-radius: 4px;">${safeMessage}</div></p>` : ''}</div><p style="font-size: 14px; color: #0369a1;"><strong>Action Required:</strong> Please respond within 24-48 hours.</p></div><div style="text-align: center; margin-top: 20px; padding: 20px; color: #6b7280; font-size: 12px;"><p>Submitted on: ${submittedAt} UTC</p></div></body></html>` },
+    ],
+    from: { email: config.fromEmail, name: config.fromName },
+    reply_to: { email, name: fullName },
+  }
+}
+
+// ——— DefTech Bharat 2026 ———
+function buildDeftechUserPayload(body: Record<string, unknown>, config: ReturnType<typeof getConfig>) {
+  const fullName = String(body.fullName ?? '')
+  const email = String(body.email ?? '').trim()
+  const companyName = String(body.companyName ?? '')
+  const selection = body.selection ? String(body.selection) : 'DefTech Bharat 2026 - Book a Meeting'
+  const pageUrl = body.pageUrl ? String(body.pageUrl) : (body.Page_URL ? String(body.Page_URL) : '')
+  const safeFullName = escapeHtml(fullName)
+  const safeEmail = escapeHtml(email)
+  const safeCompanyName = escapeHtml(companyName)
+  const safeSelection = escapeHtml(selection)
+  const safePageUrl = escapeHtml(pageUrl)
+  const year = new Date().getFullYear()
+
+  return {
+    personalizations: [{ to: [{ email, name: fullName }], subject: `Thanks for booking a meeting at DefTech Bharat 2026` }],
+    content: [
+      { type: 'text/plain', value: `Hi ${safeFullName},\n\nThanks for your interest in meeting RheinBrücke at DefTech Bharat 2026.\n\nDetails received:\nName: ${safeFullName}\nEmail: ${safeEmail}\nCompany: ${safeCompanyName}\nInterest: ${safeSelection}\n${safePageUrl ? `Page URL: ${safePageUrl}\n` : ''}\n\nWe will get back to you shortly.\n\nRegards,\nRheinBrücke` },
+      { type: 'text/html', value: `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;"><div style="background: #0f3c3f; padding: 24px; text-align: center; border-radius: 8px 8px 0 0;"><h1 style="color: #fff; margin: 0; font-size: 22px;">DefTech Bharat 2026</h1></div><div style="background: #f9fafb; padding: 24px; border-radius: 0 0 8px 8px;"><p>Hi <strong>${safeFullName}</strong>,</p><p>Thanks for your interest in meeting RheinBrücke at <strong>DefTech Bharat 2026</strong>. We have received your request and will get back to you shortly.</p><div style="background: #fff; padding: 16px; border-radius: 6px; margin: 16px 0; border-left: 4px solid #0f3c3f;"><p style="margin: 0 0 8px;"><strong>Company:</strong> ${safeCompanyName}</p><p style="margin: 0 0 8px;"><strong>Interest:</strong> ${safeSelection}</p>${safePageUrl ? `<p style="margin: 0;"><strong>Page URL:</strong> <a href="${safePageUrl}">${safePageUrl}</a></p>` : ''}</div><p>Regards,<br><strong>The RheinBrücke Team</strong></p><div style="text-align: center; margin-top: 16px; color: #6b7280; font-size: 12px;">&copy; ${year} RheinBrücke. All rights reserved.</div></div></body></html>` },
+    ],
+    from: { email: config.fromEmail, name: config.fromName },
+    reply_to: { email: config.deftechAdmin, name: config.fromName },
+  }
+}
+
+function buildDeftechAdminPayload(body: Record<string, unknown>, config: ReturnType<typeof getConfig>) {
+  const fullName = String(body.fullName ?? '')
+  const email = String(body.email ?? '').trim()
+  const companyName = String(body.companyName ?? '')
+  const selection = body.selection ? String(body.selection) : 'DefTech Bharat 2026 - Book a Meeting'
+  const pageUrl = body.pageUrl ? String(body.pageUrl) : (body.Page_URL ? String(body.Page_URL) : '')
+  const submittedAt = new Date().toLocaleString('en-US', { timeZone: 'UTC' })
+
+  const safeFullName = escapeHtml(fullName)
+  const safeEmail = escapeHtml(email)
+  const safeCompanyName = escapeHtml(companyName)
+  const safeSelection = escapeHtml(selection)
+  const safePageUrl = escapeHtml(pageUrl)
+
+  // Allow overriding the recipient email via the request body
+  const recipientEmail = String(body.adminEmail ?? config.deftechAdmin)
+  const toEmails = uniqueEmails([recipientEmail, config.impressAdminEmail])
+
+  return {
+    personalizations: [{ to: toEmails.map((e) => ({ email: e, name: 'DefTech Team' })), subject: `DefTech Bharat 2026: Meeting request from ${safeFullName}` }],
+    content: [
+      { type: 'text/plain', value: `DefTech Bharat 2026 - Meeting Request\n\nName: ${safeFullName}\nEmail: ${email}\nCompany: ${safeCompanyName}\nInterest: ${safeSelection}\n${safePageUrl ? `Page URL: ${safePageUrl}\n` : ''}\nSubmitted on: ${submittedAt} UTC` },
+      { type: 'text/html', value: `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;"><div style="background: #0f3c3f; padding: 24px; text-align: center; border-radius: 8px 8px 0 0;"><h1 style="color: #fff; margin: 0; font-size: 20px;">DefTech Bharat 2026 - Meeting Request</h1></div><div style="background: #f9fafb; padding: 24px; border-radius: 0 0 8px 8px;"><div style="background: #fff; padding: 16px; border-radius: 6px; border-left: 4px solid #0f3c3f;"><p style="margin: 0 0 8px;"><strong>Name:</strong> ${safeFullName}</p><p style="margin: 0 0 8px;"><strong>Email:</strong> <a href="mailto:${email}">${safeEmail}</a></p><p style="margin: 0 0 8px;"><strong>Company:</strong> ${safeCompanyName}</p><p style="margin: 0 0 8px;"><strong>Interest:</strong> ${safeSelection}</p>${safePageUrl ? `<p style="margin: 0;"><strong>Page URL:</strong> <a href="${safePageUrl}">${safePageUrl}</a></p>` : ''}</div><div style="text-align: center; margin-top: 16px; color: #6b7280; font-size: 12px;">Submitted on: ${escapeHtml(submittedAt)} UTC</div></div></body></html>` },
     ],
     from: { email: config.fromEmail, name: config.fromName },
     reply_to: { email, name: fullName },
@@ -286,9 +375,10 @@ function buildCollateralsAdminPayload(body: Record<string, unknown>, config: Ret
   const safeSelection = selection ? escapeHtml(selection) : ''
   const safeMessage = message ? escapeHtml(message).replace(/\n/g, '<br>') : ''
   const submittedAt = new Date().toLocaleString('en-US', { timeZone: 'UTC' })
+  const toEmails = uniqueEmails([config.collateralsAdmin, config.impressAdminEmail])
 
   return {
-    personalizations: [{ to: [{ email: config.collateralsAdmin, name: 'RheinBrücke Marketing Team' }], subject: `New Collaterals Request from ${safeFullName}` }],
+    personalizations: [{ to: toEmails.map((e) => ({ email: e, name: 'RheinBrücke Marketing Team' })), subject: `New Collaterals Request from ${safeFullName}` }],
     content: [
       { type: 'text/plain', value: `New Collaterals Request\n\nContact Details:\nName: ${safeFullName}\nEmail: ${email}\nPhone: ${fullPhone}\nCompany: ${safeCompanyName}\n${selection ? `Interest: ${safeSelection}\n` : ''}${message ? `Message: ${message}\n` : ''}\nAction Required: Please respond within 24-48 hours.\nSubmitted on: ${submittedAt} UTC` },
       { type: 'text/html', value: `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;"><div style="background: linear-gradient(135deg, #667eea 0%, #5568d3 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;"><h1 style="color: #fff; margin: 0; font-size: 28px;">New Collaterals Request</h1></div><div style="background: #f9fafb; padding: 30px; border-radius: 0 0 8px 8px;"><p>You have received a new collaterals request:</p><div style="background: #fff; padding: 20px; border-radius: 6px; margin: 20px 0; border-left: 4px solid #667eea;"><h3 style="margin-top: 0;">Contact Details:</h3><p><strong>Name:</strong> ${safeFullName}</p><p><strong>Email:</strong> <a href="mailto:${email}">${safeEmail}</a></p><p><strong>Phone:</strong> <a href="tel:${fullPhone.replace(/\s/g, '')}">${safePhone}</a></p><p><strong>Company:</strong> ${safeCompanyName}</p>${safeSelection ? `<p><strong>Interest:</strong> ${safeSelection}</p>` : ''}${safeMessage ? `<p><strong>Message:</strong><br><div style="background: #f3f4f6; padding: 15px; border-radius: 4px;">${safeMessage}</div></p>` : ''}</div><p style="font-size: 14px; color: #0369a1;"><strong>Action Required:</strong> Please respond within 24-48 hours.</p></div><div style="text-align: center; margin-top: 20px; padding: 20px; color: #6b7280; font-size: 12px;"><p>Submitted on: ${submittedAt} UTC</p></div></body></html>` },
@@ -337,9 +427,10 @@ function buildJobAdminPayload(body: Record<string, unknown>, config: ReturnType<
   const safeCoveringLetter = coveringLetter ? escapeHtml(coveringLetter).replace(/\n/g, '<br>') : ''
   const submittedAt = new Date().toLocaleString('en-US', { timeZone: 'UTC' })
   const resumeLink = resumeUrl ? `<a href="${resumeUrl}" target="_blank" style="color: #667eea; text-decoration: underline;">Download Resume</a>` : ''
+  const toEmails = uniqueEmails([config.jobAdmin, config.impressAdminEmail])
 
   return {
-    personalizations: [{ to: [{ email: config.jobAdmin, name: 'RheinBrücke Recruitment Team' }], subject: `New Job Application: ${safeJobTitle} - ${safeFullName}` }],
+    personalizations: [{ to: toEmails.map((e) => ({ email: e, name: 'RheinBrücke Recruitment Team' })), subject: `New Job Application: ${safeJobTitle} - ${safeFullName}` }],
     content: [
       { type: 'text/plain', value: `New Job Application Received\n\nApplication Details:\nName: ${safeFullName}\nEmail: ${email}\nPhone: ${fullPhone}\nPosition: ${safeJobTitle}\n${coveringLetter ? `Covering Letter: ${coveringLetter}\n` : ''}${resumeUrl ? `Resume: ${resumeUrl}\n` : ''}\nAction Required: Please review and respond within 5-7 business days.\nSubmitted on: ${submittedAt} UTC` },
       { type: 'text/html', value: `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;"><div style="background: linear-gradient(135deg, #667eea 0%, #5568d3 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;"><h1 style="color: #fff; margin: 0; font-size: 28px;">New Job Application</h1></div><div style="background: #f9fafb; padding: 30px; border-radius: 0 0 8px 8px;"><p>You have received a new job application:</p><div style="background: #fff; padding: 20px; border-radius: 6px; margin: 20px 0; border-left: 4px solid #667eea;"><h3 style="margin-top: 0;">Application Details:</h3><p><strong>Name:</strong> ${safeFullName}</p><p><strong>Email:</strong> <a href="mailto:${email}">${safeEmail}</a></p><p><strong>Phone:</strong> <a href="tel:${fullPhone.replace(/\s/g, '')}">${safePhone}</a></p><p><strong>Position:</strong> ${safeJobTitle}</p>${safeCoveringLetter ? `<p><strong>Covering Letter:</strong><br><div style="background: #f3f4f6; padding: 15px; border-radius: 4px;">${safeCoveringLetter}</div></p>` : ''}${resumeUrl ? `<p><strong>Resume:</strong> ${resumeLink}</p>` : ''}</div><p style="font-size: 14px; color: #0369a1;"><strong>Action Required:</strong> Please review and respond within 5-7 business days.</p></div><div style="text-align: center; margin-top: 20px; padding: 20px; color: #6b7280; font-size: 12px;"><p>Submitted on: ${submittedAt} UTC</p></div></body></html>` },
@@ -397,7 +488,7 @@ Deno.serve(async (req) => {
 
     const channel = body.channel as string
     if (!channel) {
-      return jsonResponse({ success: false, error: 'Missing channel: contact | collaterals | job-application | test' }, 400, cors)
+      return jsonResponse({ success: false, error: 'Missing channel: contact | collaterals | deftech-bharat-2026 | job-application | test' }, 400, cors)
     }
 
     if (channel === 'test') {
@@ -429,6 +520,39 @@ Deno.serve(async (req) => {
       const token = await getGraphToken(config)
       const userPayload = channel === 'contact' ? buildContactUserPayload(body, config) : buildCollateralsUserPayload(body, config)
       const adminPayload = channel === 'contact' ? buildContactAdminPayload(body, config) : buildCollateralsAdminPayload(body, config)
+
+      const [userResult, adminResult] = await Promise.all([
+        sendOneEmailViaGraph(token, config.fromUser, userPayload),
+        sendOneEmailViaGraph(token, config.fromUser, adminPayload),
+      ])
+
+      const userEmailSent = userResult.ok
+      const adminEmailSent = adminResult.ok
+      const success = userEmailSent || adminEmailSent
+      return jsonResponse({
+        success: true,
+        message: success ? 'Emails sent successfully' : 'Form submitted but email notification failed',
+        emailSent: userEmailSent && adminEmailSent,
+        userEmailSent,
+        adminEmailSent,
+        error: !success ? (userResult.error ?? adminResult.error) : undefined,
+      }, 200, cors)
+    }
+
+    if (channel === 'deftech-bharat-2026') {
+      const fullName = body.fullName as string
+      const email = (body.email as string)?.trim()
+      const companyName = body.companyName as string
+      if (!fullName || !email || !companyName) {
+        return jsonResponse({ success: false, error: 'Missing required fields: fullName, email, companyName' }, 400, cors)
+      }
+      if (!emailRegex.test(email)) {
+        return jsonResponse({ success: false, error: 'Invalid email format' }, 400, cors)
+      }
+
+      const token = await getGraphToken(config)
+      const userPayload = buildDeftechUserPayload(body, config)
+      const adminPayload = buildDeftechAdminPayload(body, config)
 
       const [userResult, adminResult] = await Promise.all([
         sendOneEmailViaGraph(token, config.fromUser, userPayload),

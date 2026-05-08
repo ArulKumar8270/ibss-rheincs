@@ -1113,23 +1113,23 @@ export default function Header() {
                                                                                                  className={`${sapCollapsed ? 'show' : 'collapse'} content-box`}
                                                                                                  style={{ display: sapCollapsed ? 'block' : 'none' }}
                                                                                              >
-                                                                                                <Link href="/Epicor-kinetic">
+                                                                                                <Link href="/solutions/erp-enterprise-solutions-and-services/sap/sap-transformation">
                                                                                                     {" "}
                                                                                                     {t("SAP S/4HANA Transformation")}
                                                                                                 </Link>
-                                                                                                <Link href="/Epicor-iscala">
+                                                                                                <Link href="/solutions/erp-enterprise-solutions-and-services/sap/sap-cloud-applications">
                                                                                                     {" "}
                                                                                                     {t("SAP Cloud Applications")}
                                                                                                 </Link>
-                                                                                                <Link href="/Epicor-companion">
+                                                                                                <Link href="/solutions/erp-enterprise-solutions-and-services/sap/sap-btp">
                                                                                                     {" "}
                                                                                                     {t("SAP BTP")}
                                                                                                 </Link>
-                                                                                                <Link href="/Epicor-epicpay">
+                                                                                                <Link href="/solutions/erp-enterprise-solutions-and-services/sap/sap-analytics">
                                                                                                     {" "}
                                                                                                     {t("SAP Analytics")}
                                                                                                 </Link>
-                                                                                                <Link href="/Epicor-epicpay">
+                                                                                                <Link href="/solutions/erp-enterprise-solutions-and-services/sap/sap-ams">
                                                                                                     {" "}
                                                                                                     {t("SAP Application Management Services (AMS)")}
                                                                                                 </Link>

@@ -138,10 +138,10 @@ export default function SapAms() {
     </div>
   </div>
   {/* Hero Section End*/}
-  <div className="aboutretail retail-baner1 retail-baner-11 kineticsec approachh systemview pd60">
+  <div className="aboutretail retail-baner1 retail-baner-11 kineticsecana approachh systemview pd60">
     <div className="container">
       <div className="row section-row1 align-items-center builtsec">
-        <div className="col-sm-12">
+        <div className="col-sm-5">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
               {t("Our Capabilities")}

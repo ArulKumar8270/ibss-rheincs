@@ -68,7 +68,7 @@ export default function AerospaceDefenceManufacturing() {
     }
 
     try {
-      saveLead();
+      await Promise.resolve(saveLead());
       await sleep(400);
     } catch (error) {
       console.warn("LeadSquared capture failed", error);
@@ -150,7 +150,7 @@ export default function AerospaceDefenceManufacturing() {
         {/*?php include "navbar.php" ?*/}
         {/* Header End */}
 
-        <div className="hero brainsec enter retailsection corushrbanner1 systemview pdb0">
+        <div className="hero brainsec enter retailsection corushrbanner1 systemview pdb01">
           {/* <div class="parent2 retailparent2">
     <video src="/videos/equity.mp4" autoplay muted loop playsinline class="bg-image1"></video>
       </div> */}
@@ -433,7 +433,7 @@ export default function AerospaceDefenceManufacturing() {
 
         <div className="hero brainsec enter  retailsection1 sm-img  erpexcel ">
           <div className="parent2 retailparent2 rechange-baner  mobilevideo">
-            <img src="/images/aerohelp1.jpg" alt="" />
+            <img src="/images/aerohelp3.jpg" alt="" />
             {/* <video src="/videos/achitect.mp4" autoplay muted loop playsinline class="bg-image1"></video> */}
           </div>
           <div className="container">

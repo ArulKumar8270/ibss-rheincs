@@ -22,7 +22,7 @@ export default function SapTransformation() {
               {t("SAP S/4HANA Implementation, Migration and Cloud Transformation")}
             </h2>
             <p>
-              {t("Modernise your ERP landscape with SAP S/4HANA. As an experienced SAP implementation partner, RheinBrücke supports enterprises across Europe and the Middle East in planning and executing SAP S/4HANA implementation, migrationand RISE with SAP cloud transformation initiatives, maintaining operational continuity throughout.")}
+              {t("Modernise your ERP landscape with SAP S/4HANA. As an experienced SAP implementation partner, RheinBrücke supports enterprises across Europe and the Middle East in planning and executing SAP S/4HANA implementation, migration, and RISE with SAP cloud transformation initiatives, maintaining operational continuity throughout.")}
             </p>
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function SapTransformation() {
               <img src="/images/Automate.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("System Conversion (Brownfield) - retain data and config while upgrading to S/4HANA")}
+                  {t("System Conversion (Brownfield) – retain data and config while upgrading to S/4HANA")}
                 </p>
               </div>
             </div>
@@ -155,7 +155,7 @@ export default function SapTransformation() {
               <img src="/images/Enhance.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("New Implementation (Greenfield) - deploy S/4HANA using SAP best-practice frameworks")}
+                  {t("New Implementation (Greenfield) – deploy S/4HANA using SAP best-practice frameworks")}
                 </p>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function SapTransformation() {
               <img src="/images/Optimize.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("Landscape Transformation - consolidate multiple SAP systems during migration")}
+                  {t("Landscape Transformation – consolidate multiple SAP systems during migration")}
                 </p>
               </div>
             </div>
@@ -171,7 +171,7 @@ export default function SapTransformation() {
               <img src="/images/Enable.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("RISE with SAP (Private Cloud) - migrate ERP to managed cloud with SAP's unified programme")}
+                  {t("RISE with SAP (Private Cloud) – migrate ERP to managed cloud with SAP's unified programme")}
                 </p>
               </div>
             </div>
@@ -179,7 +179,7 @@ export default function SapTransformation() {
               <img src="/images/Embed.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("GROW with SAP (Public Cloud) - rapid public cloud ERP adoption for standardised environments")}
+                  {t("GROW with SAP (Public Cloud) – rapid public cloud ERP adoption for standardised environments")}
                 </p>
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function SapTransformation() {
               <img src="/images/Integrate.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("Post-implementation optimisation, data migration and go-live support")}
+                  {t("Post-implementation optimisation, data migration, and go-live support")}
                 </p>
               </div>
             </div>
@@ -214,7 +214,7 @@ export default function SapTransformation() {
               <img src="/images/ss1.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("System Conversion (Brownfield) - retain data and config while upgrading to S/4HANA")}
+                  {t("System Conversion (Brownfield) – retain data and config while upgrading to S/4HANA")}
                 </p>
               </div>
             </div>
@@ -222,7 +222,7 @@ export default function SapTransformation() {
               <img src="/images/ss2.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("New Implementation (Greenfield) - deploy S/4HANA using SAP best-practice frameworks")}
+                  {t("New Implementation (Greenfield) – deploy S/4HANA using SAP best-practice frameworks")}
                 </p>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function SapTransformation() {
               <img src="/images/ss3.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("Landscape Transformation - consolidate multiple SAP systems during migration")}
+                  {t("Landscape Transformation – consolidate multiple SAP systems during migration")}
                 </p>
               </div>
             </div>
@@ -238,7 +238,7 @@ export default function SapTransformation() {
               <img src="/images/ss7.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("RISE with SAP (Private Cloud) - migrate ERP to managed cloud with SAP's unified programme")}
+                  {t("RISE with SAP (Private Cloud) – migrate ERP to managed cloud with SAP's unified programme")}
                 </p>
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function SapTransformation() {
               <img src="/images/ss8.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("GROW with SAP (Public Cloud) - rapid public cloud ERP adoption for standardised environments")}
+                  {t("GROW with SAP (Public Cloud) – rapid public cloud ERP adoption for standardised environments")}
                 </p>
               </div>
             </div>
@@ -254,7 +254,7 @@ export default function SapTransformation() {
               <img src="/images/ss9.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("Post-implementation optimisation, data migration and go-live support")}
+                  {t("Post-implementation optimisation, data migration, and go-live support")}
                 </p>
               </div>
             </div>
@@ -300,7 +300,7 @@ export default function SapTransformation() {
             <div className="col-lg-4 col-md-4 col-12">
               <div className="service-item-body1 epicright sap3">
                 {/* <h3>Reporting and Analytics</h3> */}
-                <h3>{t("Scalable deployment to grow with your business.")} </h3>
+                <h3>{t("Scalable cloud-based SAP environments via RISE and GROW pathways")} </h3>
                 <img src="/images/sap3.svg" alt="" />
               </div>
             </div>
@@ -406,7 +406,7 @@ export default function SapTransformation() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("RISE with SAP combines SAP S/4HANA Cloud, infrastructure services and migration tools to help organisations migrate legacy SAP environments to cloud-based ERP platforms.")}  
+                              {t("RISE with SAP combines SAP S/4HANA Cloud, infrastructure services, and migration tools to help organisations migrate legacy SAP environments to cloud-based ERP platforms.")}  
                             </p>
                           </div>
                         </div>
@@ -654,7 +654,7 @@ export default function SapTransformation() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("With SAP ending mainstream maintenance for SAP ECC in 2027, organisations are accelerating their move to S/4HANA. Migration becomes urgent when legacy ECC systems limit scalability, reporting speed and innovation adoption. Moving to SAP S/4HANA enables real-time analytics, simplified data models and improved operational visibility before the deadline.")} 
+                              {t("With SAP ending mainstream maintenance for SAP ECC in 2027, organisations are accelerating their move to S/4HANA. Migration becomes urgent when legacy ECC systems limit scalability, reporting speed, and innovation adoption. Moving to SAP S/4HANA enables real-time analytics, simplified data models, and improved operational visibility before the deadline.")} 
                             </p>
                           </div>
                         </div>

@@ -18408,7 +18408,20 @@ body.no-scroll {
 	background-repeat: no-repeat;
 	background-position: right top;
 }
-
+.kineticsecana::before {
+	background-attachment: fixed !important;
+	background: url(../images/sapanalytics.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.kineticsecams::before {
+	/* background-attachment: fixed !important; */
+	background: url(../images/sapams.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 150% 100%;
+}
 .sapcloud::before {
 	background-attachment: fixed !important;
 	background: url(../images/sap-cloud.jpg);

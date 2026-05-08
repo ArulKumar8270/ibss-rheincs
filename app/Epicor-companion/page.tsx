@@ -19,10 +19,10 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-21" data-cursor="-opaque">
-              {t("Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more")}
+              {t("Epicor Companion ERP Extensions for End-to-End Business Control")}
             </h2>
             <p>
-              {t("Epicor Companion Products enhance your core ERP system, enabling end-to-end operational control and insights. They are designed to integrate seamlessly with Epicor ERP for complete business management.")}
+              {t("Reimagine ERP with integrated solutions including EpicPay, MES, ECM, FP&A, IP&O, WMS, and data analytics and more. Epicor add-on products seamlessly enhance your core ERP system, enabling unified operations and real-time insights.")}
 
             </p>
           </div>
@@ -487,13 +487,13 @@ export default function EnterpriseSolutions() {
                         {/* Your current service content */}
                         <div className="service-item-header ">
                           <div className="service-card">
-                            <img src="/images/epicpay.svg" alt="" />
+                            <img src="/images/epicpay.svg" alt="Epicpay Payroll automation icon" />
                           </div>
                         </div>
                         <div className="service-item-body  oa-para-waber">
                           <h3>{t("EpicPay")}</h3>
                           <p className="oa-para">
-                            {t("Simplify payroll management and compliance.")}
+                            {t("Simplify payroll management and ensure compliance with enhanced payroll processing.")}
                           </p>
                         </div>
                       </div>
@@ -512,7 +512,7 @@ export default function EnterpriseSolutions() {
                           <div className="service-card">
                             <img
                               src="/images/manufacturingexecution.svg"
-                              alt=""
+                              alt="MES Factory production monitoring icon"
                             />
                           </div>
                         </div>
@@ -520,7 +520,7 @@ export default function EnterpriseSolutions() {
                           <h3>{t("MES (Manufacturing Execution)")}</h3>
 
                           <p className="oa-para">
-                            {t("Optimize shop-floor operations and production tracking.")}
+                            {t("Optimize shop-floor operations and production tracking and manufacturing visibility.")}
 
                           </p>
                         </div>
@@ -538,14 +538,14 @@ export default function EnterpriseSolutions() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="service-card">
-                            <img src="/images/contentmanagement.svg" alt="" />
+                            <img src="/images/contentmanagement.svg" alt="ECM Document management icon" />
                           </div>
                         </div>
                         <div className="service-item-body oa-para-waber">
                           <h3>{t("ECM (Enterprise Content Management)")}</h3>
 
                           <p className="oa-para">
-                            {t("Centralize documents and workflows.")}
+                            {t("Centralize documents, approvals and workflows.")}
                           </p>
                         </div>
                       </div>
@@ -564,7 +564,7 @@ export default function EnterpriseSolutions() {
                           <div className="service-card">
                             <img
                               src="/images/financeplanninganalysis.svg"
-                              alt=""
+                              alt="FP&A Financial analytics chart icon"
                             />
                           </div>
                         </div>
@@ -589,7 +589,7 @@ export default function EnterpriseSolutions() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="service-card">
-                            <img src="/images/inventoryplanning.svg" alt="" />
+                            <img src="/images/inventoryplanning.svg" alt="Inventory optimization icon" />
                           </div>
                         </div>
                         <div className="service-item-body oa-para-waber">
@@ -598,7 +598,7 @@ export default function EnterpriseSolutions() {
 
                           </h3>
                           <p className="oa-para">
-                            {t("Maximize inventory efficiency and reduce costs.")}
+                            {t("Maximize inventory efficiency, demand planning, and cost reduction.")}
                           </p>
                         </div>
                       </div>
@@ -615,13 +615,13 @@ export default function EnterpriseSolutions() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="service-card">
-                            <img src="/images/warehousemanagement.svg" alt="" />
+                            <img src="/images/warehousemanagement.svg" alt="WMS Warehouse logistics icon" />
                           </div>
                         </div>
                         <div className="service-item-body oa-para-waber">
                           <h3>{t("WMS (Warehouse Management System)")}</h3>
                           <p className="oa-para">
-                            {t("Streamline warehouse operations and logistics.")}
+                            {t("Streamline warehouse operations and logistics flow.")}
                           </p>
                         </div>
                       </div>
@@ -638,7 +638,7 @@ export default function EnterpriseSolutions() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="service-card">
-                            <img src="/images/dataanalytics.svg" alt="" />
+                            <img src="/images/dataanalytics.svg" alt="Data analytics dashboard icon" />
                           </div>
                         </div>
                         <div className="service-item-body oa-para-waber">
@@ -661,7 +661,7 @@ export default function EnterpriseSolutions() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="service-card">
-                            <img src="/images/ecommerce.svg" alt="" />
+                            <img src="/images/ecommerce.svg" alt="Epicor eCommerce icon" />
                           </div>
                         </div>
                         <div className="service-item-body oa-para-waber">
@@ -685,7 +685,7 @@ export default function EnterpriseSolutions() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="service-card">
-                            <img src="/images/epicorgrow.svg" alt="" />
+                            <img src="/images/epicorgrow.svg" alt="Epicor Grow icon" />
                           </div>
                         </div>
                         <div className="service-item-body oa-para-waber">
@@ -709,14 +709,14 @@ export default function EnterpriseSolutions() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="service-card">
-                            <img src="/images/datadiscovery.svg" alt="" />
+                            <img src="/images/datadiscovery.svg" alt="Epicor Data Discover icon" />
                           </div>
                         </div>
                         <div className="service-item-body oa-para-waber">
                           <h3>{t("Epicor Data Discovery")}</h3>
 
                           <p className="oa-para">
-                            {t("Visualize and interact with ERP data through intuitive dashboards and charts.")}
+                            {t("Transform ERP data into interactive and intuitive dashboards with intelligent visual insights.")}
 
                           </p>
                         </div>
@@ -734,14 +734,14 @@ export default function EnterpriseSolutions() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="service-card">
-                            <img src="/images/spreadsheetserver.svg" alt="" />
+                            <img src="/images/spreadsheetserver.svg" alt="Epicor Spreadsheet server icon" />
                           </div>
                         </div>
                         <div className="service-item-body oa-para-waber">
                           <h3>{t("Epicor Spreadsheet Server")}</h3>
 
                           <p className="oa-para">
-                            {t("Connect ERP data directly to Excel for real-time reporting, drill-down analysis, and planning.")}
+                            {t("Connect ERP data directly to Excel for real-time reporting, drill-down analysis, planning and analysis.")}
                           </p>
                         </div>
                       </div>
@@ -758,7 +758,7 @@ export default function EnterpriseSolutions() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="service-card">
-                            <img src="/images/kineticwarehouse.svg" alt="" />
+                            <img src="/images/kineticwarehouse.svg" alt="Epicor Kinetic Warehouse icon" />
                           </div>
                         </div>
                         <div className="service-item-body oa-para-waber">
@@ -783,7 +783,7 @@ export default function EnterpriseSolutions() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="service-card">
-                            <img src="/images/automationstudio.svg" alt="" />
+                            <img src="/images/automationstudio.svg" alt="Epicor Automation Studio icon" />
                           </div>
                         </div>
                         <div className="service-item-body oa-para-waber">
@@ -808,7 +808,7 @@ export default function EnterpriseSolutions() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="service-card">
-                            <img src="/images/serviceconnect.svg" alt="" />
+                            <img src="/images/serviceconnect.svg" alt="Epicor service connect icon" />
                           </div>
                         </div>
                         <div className="service-item-body oa-para-waber">
@@ -833,14 +833,14 @@ export default function EnterpriseSolutions() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="service-card">
-                            <img src="/images/quickship.svg" alt="" />
+                            <img src="/images/quickship.svg" alt="Epicor QuickShip icon" />
                           </div>
                         </div>
                         <div className="service-item-body oa-para-waber">
                           <h3>{t("QuickShip")}</h3>
 
                           <p className="oa-para">
-                            {t("Optimize shipping operations with real-time carrier integration and tracking.")}
+                            {t("Optimize shipping operations with real-time carrier integration, tracking and automation.")}
                           </p>
                         </div>
                       </div>
@@ -857,7 +857,7 @@ export default function EnterpriseSolutions() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="service-card">
-                            <img src="/images/bartender.svg" alt="" />
+                            <img src="/images/bartender.svg" alt="Epicor BarTender Icon" />
                           </div>
                         </div>
                         <div className="service-item-body oa-para-waber">
@@ -880,13 +880,13 @@ export default function EnterpriseSolutions() {
                         {/* Your current service content */}
                         <div className="service-item-header">
                           <div className="service-card">
-                            <img src="/images/smartsensor.svg" alt="" />
+                            <img src="/images/smartsensor.svg" alt="Epicor Sensors with ERP icon" />
                           </div>
                         </div>
                         <div className="service-item-body oa-para-waber">
                           <h3>{t("Sensors with ERP")}</h3>
                           <p className="oa-para">
-                            {t("Integrate smart sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.")}
+                            {t("Integrate smart IoT sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.")}
                           </p>
                         </div>
                       </div>
@@ -1130,7 +1130,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1  w80">
                 {/* <h3>Seamless Integration</h3> */}
                 <h3>
-                  {t("Seamless integration with Epicor ERP for a unified platform.")}
+                  {t("Seamless integration with Epicor ERP for a unified, connected enterprise platform.")}
 
                 </h3>
                 <div className="text-center">
@@ -1142,7 +1142,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicright1  w80">
                 {/* <h3>Configurable</h3> */}
                 <h3>
-                  {t("Enhance operational efficiency and visibility across all business functions.")}
+                  {t("Improve operational efficiency and cross-functional visibility across finance, supply chain, and manufacturing.")}
 
                 </h3>
                 <img src="/images/advant2.svg" alt="" />
@@ -1152,7 +1152,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicright">
                 {/* <h3>Reporting and Analytics</h3> */}
                 <h3>
-                  {t("Scalable solutions to grow with your business needs.")}
+                  {t("Scalable ERP extensions to grow with your business needs.")}
                 </h3>
 
                 <img src="/images/advant3.svg" alt="" />
@@ -1162,7 +1162,7 @@ export default function EnterpriseSolutions() {
               <div className="service-item-body1 epicright">
                 {/* <h3>Mobile Accessibility</h3> */}
                 <h3>
-                  {t("End-to-end support, including deployment, training, and optimization.")}
+                  {t("End-to-end lifecycle support covering deployment, configuration, training, and continuous optimization.")}
 
                 </h3>
                 <div className="text-center">
@@ -1325,6 +1325,40 @@ export default function EnterpriseSolutions() {
                           <div className="accordion-body">
                             <p>
                               {t("Yes. RheinBrücke supports in-depth customization and configuration of Companion Products. Our certified Epicor experts tailor the solutions to align precisely with your unique organizational process requirements, especially those specific to global regulatory needs or complex multi-company structures.")} 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.6s"
+                      >
+                        <h2 className="accordion-header" id="heading5">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse5"
+                            aria-expanded="false"
+                            aria-controls="collapse5"
+                          >
+                          {t("Is Epicor Companion part of Epicor ERP or a separate solution?")} 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse5"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading5"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("Epicor Companion products are a set of add-on solutions designed to extend Epicor core ERP functionality. It is not part of the ERP system but integrates and works seamlessly with it.")} 
+                            </p>
+                            <p>
+                              {t("It adds modular capabilities such as payroll, manufacturing execution, financial planning, inventory optimization, warehouse management, analytics and more. This allows businesses to enhance their existing Epicor ERP environment without replacing it, enabling a more connected and scalable operational framework.")} 
                             </p>
                           </div>
                         </div>

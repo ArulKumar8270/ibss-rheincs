@@ -25,7 +25,7 @@ export default function SapAms() {
               {t("SAP Cloud Applications Implementation and Integration")}
             </p>
             <p>
-              {t("Transform HR, procurement and expense management with SAP SuccessFactors, Ariba and Concur. RheinBrücke helps enterprises across Europe and the Middle East build integrated, scalable cloud-enabled business operations connected to core SAP ERP environments.")}
+              {t("Transform HR, procurement, and expense management with SAP SuccessFactors, Ariba, and Concur. RheinBrücke helps enterprises across Europe and the Middle East build integrated, scalable cloud-enabled business operations connected to core SAP ERP environments.")}
             </p>
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function SapAms() {
   <div className="aboutretail retail-baner1 retail-baner-11 sapcloud approachh systemview pd60">
     <div className="container">
       <div className="row section-row1 align-items-center builtsec">
-        <div className="col-sm-12">
+        <div className="col-sm-5">
           <div className="section-title">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
               {t("Our Capabilities")}
@@ -150,7 +150,7 @@ export default function SapAms() {
               <img src="/images/Automate.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("SAP SuccessFactors - Core HR, Talent, Learning and Performance implementation")}
+                  {t("SAP SuccessFactors – Core HR, Talent, Learning, and Performance implementation")}
                 </p>
               </div>
             </div>
@@ -158,7 +158,7 @@ export default function SapAms() {
               <img src="/images/Enhance.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("SAP Ariba - Procurement automation, sourcing and supplier collaboration")}
+                  {t("SAP Ariba – Procurement automation, sourcing, and supplier collaboration")}
                 </p>
               </div>
             </div>
@@ -166,7 +166,7 @@ export default function SapAms() {
               <img src="/images/Optimize.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("SAP Concur - Travel, expense capture, approval workflows and compliance")}
+                  {t("SAP Concur – Travel, expense capture, approval workflows, and compliance")}
                 </p>
               </div>
             </div>
@@ -182,7 +182,7 @@ export default function SapAms() {
               <img src="/images/Embed.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("Data migration, process transformation and change management")}
+                  {t("Data migration, process transformation, and change management")}
                 </p>
               </div>
             </div>
@@ -214,7 +214,7 @@ export default function SapAms() {
               <img src="/images/ss1.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("SAP SuccessFactors - Core HR, Talent, Learning and Performance implementation")}
+                  {t("SAP SuccessFactors – Core HR, Talent, Learning, and Performance implementation")}
                 </p>
               </div>
             </div>
@@ -222,7 +222,7 @@ export default function SapAms() {
               <img src="/images/ss2.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("SAP Ariba - Procurement automation, sourcing and supplier collaboration")}
+                  {t("SAP Ariba – Procurement automation, sourcing, and supplier collaboration")}
                 </p>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function SapAms() {
               <img src="/images/ss3.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("SAP Concur - Travel, expense capture, approval workflows and compliance")}
+                  {t("SAP Concur – Travel, expense capture, approval workflows, and compliance")}
                 </p>
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function SapAms() {
               <img src="/images/ss8.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("Data migration, process transformation and change management")}
+                  {t("Data migration, process transformation, and change management")}
                 </p>
               </div>
             </div>
@@ -287,7 +287,7 @@ export default function SapAms() {
             <div className="col-lg-6 col-md-6 col-12">
               <div className="service-item-body1 epicright1  w80">
                 <h3>
-                  {t("Improved procurement visibility, spend control and supplier collaboration")}
+                  {t("Improved procurement visibility, spend control, and supplier collaboration")}
                 </h3>
                 <img src="/images/sap2.svg" alt="" />
               </div>
@@ -301,7 +301,7 @@ export default function SapAms() {
             <div className="col-lg-4 col-md-6 col-12">
               <div className="service-item-body1 epicright w80">
                 <h3>
-                  {t("Seamless integration with SAP S/4HANA, ECC and third-party systems")}
+                  {t("Seamless integration with SAP S/4HANA, ECC, and third-party systems")}
                 </h3>
                 <div className="text-center">
                   <img src="/images/advant4.svg" alt="" />
@@ -311,7 +311,7 @@ export default function SapAms() {
             <div className="col-lg-4 col-md-6 col-12">
               <div className="service-item-body1 epicleft w80">
                 <h3>
-                  {t("Single implementation partner across SuccessFactors, Ariba and Concur")}
+                  {t("Single implementation partner across SuccessFactors, Ariba, and Concur")}
                 </h3>
                 <img src="/images/advant5.svg" alt="" />
               </div>
@@ -367,7 +367,7 @@ export default function SapAms() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("SAP Cloud Applications are cloud-based enterprise solutions supporting HR, procurement and travel and expense management, integrated with core SAP ERP environments.")}
+                              {t("SAP Cloud Applications are cloud-based enterprise solutions supporting HR, procurement, and travel and expense management, integrated with core SAP ERP environments.")}
                             </p>
                           </div>
                         </div>
@@ -398,7 +398,7 @@ export default function SapAms() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("SAP SuccessFactors manages the full employee lifecycle, recruitment, onboarding, talent management, workforce planning and employee development.")}
+                              {t("SAP SuccessFactors manages the full employee lifecycle, recruitment, onboarding, talent management, workforce planning, and employee development.")}
                             </p>
                           </div>
                         </div>
@@ -429,7 +429,7 @@ export default function SapAms() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("RheinBrücke implements SAP SuccessFactors across Core HR and Employee Central, Talent Management (Performance and Goals, Succession and Development), Recruitment and Onboarding, Learning Management and Workforce Analytics and Planning. Implementation scope is determined based on the organisation's HR transformation priorities.")}
+                              {t("RheinBrücke implements SAP SuccessFactors across Core HR and Employee Central, Talent Management (Performance and Goals, Succession and Development), Recruitment and Onboarding, Learning Management, and Workforce Analytics and Planning. Implementation scope is determined based on the organisation's HR transformation priorities.")}
                             </p>
                           </div>
                         </div>

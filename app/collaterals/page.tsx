@@ -454,7 +454,7 @@ export default function Collaterals() {
 	                createdMessageField = true;
 	            }
 
-	            saveLead();
+	            await Promise.resolve(saveLead());
 	
 	            if (createdMessageField && messageField) {
 	                messageField.remove();

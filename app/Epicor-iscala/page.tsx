@@ -799,6 +799,45 @@ export default function EnterpriseSolutions() {
                         </div>
                       </div>
                       {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.8s"
+                      >
+                        <h2 className="accordion-header" id="heading5">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse5"
+                            aria-expanded="false"
+                            aria-controls="collapse5"
+                          >
+                            {t("How should I choose the right Epicor iScala implementation partner?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse5"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading5"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("Choosing the right Epicor iScala implementation partner ensures a faster, lower-risk ERP deployment aligned with your business processes.")}
+                            </p>
+                            <ul>
+                                <li>{t("RheinBrücke is an Epicor Premium partner with more than a decade of iScala experience")}</li>
+                                <li>{t("Deep expertise in Epicor iScala ERP configuration, customization, and integration")}</li>
+                                <li>{t("Reduced implementation cost and effort through proven delivery frameworks")}</li>
+                                <li>{t("Faster deployment with standardized best-practice methodologies")}</li>
+                                <li>{t("Strong understanding of manufacturing, distribution, and multi-entity operations")}</li>
+                                <li>{t("Ongoing support, training, and optimization for long-term ERP value realization")}</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
                     </div>
                     {/* FAQ Accordion End */}
                   </div>

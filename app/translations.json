@@ -4563,27 +4563,27 @@
 
 
     "Epicor Companion Products": "Epicor ERP-Erweiterungen",
-    "Extend ERP with integrated solutions for payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics, and more": "Erweitern Sie Ihr ERP mit integrierten Business-Lösungen für Payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics und mehr",
-    "Epicor Companion Products enhance your core ERP system, enabling end-to-end operational control and insights. They are designed to integrate seamlessly with Epicor ERP for complete business management.": "Die Epicor Companion Products erweitern Ihr Kern-ERP um durchgängige Steuerungs-, Automatisierungs- und Analysefunktionen und lassen sich nahtlos in Epicor ERP integrieren.",
+    "Epicor Companion ERP Extensions for End-to-End Business Control": "Erweitern Sie Ihr ERP mit integrierten Business-Lösungen für Payroll (EpicPay), MES, ECM, FP&A, IP&O, WMS, Data Analytics und mehr",
+    "Reimagine ERP with integrated solutions including EpicPay, MES, ECM, FP&A, IP&O, WMS, and data analytics and more. Epicor add-on products seamlessly enhance your core ERP system, enabling unified operations and real-time insights.": "Die Epicor Companion Products erweitern Ihr Kern-ERP um durchgängige Steuerungs-, Automatisierungs- und Analysefunktionen und lassen sich nahtlos in Epicor ERP integrieren.",
 
     "Our Companion Products Capabilities": "Unsere ERP-Erweiterungen im Überblick",
     "EpicPay": "EpicPay",
-    "Simplify payroll management and compliance.": "Vereinfachte Lohn- und Gehaltsabrechnung mit automatisierter Compliance.",
+    "Simplify payroll management and ensure compliance with enhanced payroll processing.": "Vereinfachte Lohn- und Gehaltsabrechnung mit automatisierter Compliance.",
 
     "MES (Manufacturing Execution)": "MES (Manufacturing Execution System)",
-    "Optimize shop-floor operations and production tracking.": "Optimieren Sie Fertigungsprozesse und Produktionsnachverfolgung.",
+    "Optimize shop-floor operations and production tracking and manufacturing visibility.": "Optimieren Sie Fertigungsprozesse und Produktionsnachverfolgung.",
 
     "ECM (Enterprise Content Management)": "ECM (Enterprise Content Management)",
-    "Centralize documents and workflows.": "Zentrale Verwaltung von Dokumenten, Inhalten und Workflows.",
+    "Centralize documents, approvals and workflows.": "Zentrale Verwaltung von Dokumenten, Inhalten und Workflows.",
 
     "FP&A (Financial Planning & Analysis)": "FP&A (Financial Planning & Analysis)",
     "Improve budgeting, forecasting, and reporting.": "Verbesserte Budgetierung, Prognosen und Finanzberichterstattung.",
 
     "IP&O (Inventory Planning & Optimization)": "IP&O (Inventory Planning & Optimization)",
-    "Maximize inventory efficiency and reduce costs.": "Effiziente Bestandsplanung zur Kostenreduktion.",
+    "Maximize inventory efficiency, demand planning, and cost reduction.": "Effiziente Bestandsplanung zur Kostenreduktion.",
 
     "WMS (Warehouse Management System)": "WMS (Warehouse Management System)",
-    "Streamline warehouse operations and logistics.": "Schlankere Lagerlogistik und optimierte Materialflüsse.",
+    "Streamline warehouse operations and logistics flow.": "Schlankere Lagerlogistik und optimierte Materialflüsse.",
 
     "Epicor Data Analytics (Phocas)": "Epicor Data Analytics (Phocas)",
     "Drive data-driven decisions with advanced analytics and visualizations.": "Fundierte Entscheidungen durch leistungsstarke Analysen und Visualisierungen.",
@@ -4595,13 +4595,13 @@
     "Cloud-based business intelligence solution to harness data for better decision-making and operational efficiency.": "Cloudbasierte Business-Intelligence-Lösung für datengestützte Entscheidungen.",
 
     "Epicor Data Discovery": "Epicor Data Discovery",
-    "Visualize and interact with ERP data through intuitive dashboards and charts.": "Interaktive Dashboards und Visualisierung von ERP-Daten.",
+    "Transform ERP data into interactive and intuitive dashboards with intelligent visual insights.": "Interaktive Dashboards und Visualisierung von ERP-Daten.",
 
     "Epicor Spreadsheet Server": "Epicor Spreadsheet Server",
-    "Connect ERP data directly to Excel for real-time reporting, drill-down analysis, and planning.": "Direkte ERP-Datenintegration in Excel für Echtzeitberichte und Analysen.",
+    "Connect ERP data directly to Excel for real-time reporting, drill-down analysis, planning and analysis.": "Direkte ERP-Datenintegration in Excel für Echtzeitberichte und Analysen.",
 
     "Epicor Kinetic Warehouse": "Epicor Kinetic Warehouse",
-    "Mobile-first scanning solution to optimize warehouse and shop-floor transactions.": "Mobile-First-Lösung für effiziente Scan- und Lagerprozesse.",
+    "Enable mobile-first scanning solution to optimize warehouse and shop-floor transactions.": "Mobile-First-Lösung für effiziente Scan- und Lagerprozesse.",
 
     "Automation Studio": "Automation Studio",
     "Connect applications and automate workflows with low-code/no-code integration.": "Anwendungen verbinden und Workflows mit Low-Code/No-Code automatisieren.",
@@ -4610,19 +4610,19 @@
     "Simplify system integrations and process automation across Epicor solutions.": "Vereinfachte Systemintegration und Prozessautomatisierung.",
 
     "QuickShip": "QuickShip",
-    "Optimize shipping operations with real-time carrier integration and tracking.": "Versandoptimierung mit Echtzeit-Carrier-Integration und Tracking.",
+    "Optimize shipping operations with real-time carrier integration, tracking and automation.": "Versandoptimierung mit Echtzeit-Carrier-Integration und Tracking.",
 
     "Epicor BarTender": "Epicor BarTender",
     "Barcode labeling solution to create, manage, and print labels across warehouses and manufacturing operations.": "Intelligente Barcode-Lösung für Etikettierung in Lager und Produktion.",
 
-    "Integrate smart sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.": "IoT-Integration – Smarte Sensoren für Echtzeitdaten, vorausschauende Wartung und Prozessoptimierung.",
+    "Integrate smart IoT sensors with ERP for real-time data on monitoring, pre-emptive maintenance, and process optimization.": "IoT-Integration – Smarte Sensoren für Echtzeitdaten, vorausschauende Wartung und Prozessoptimierung.",
   
 
     "Why Choose Epicor Companion Products?": "Ihre Vorteile mit den Epicor ERP-Erweiterungen",
-    "Seamless integration with Epicor ERP for a unified platform.": "Nahtlose Integration – Perfekt abgestimmt auf Epicor ERP.",
-    "Enhance operational efficiency and visibility across all business functions.": "Mehr Effizienz & Transparenz in allen Geschäftsbereichen.",
-    "Scalable solutions to grow with your business needs.": "Skalierbare und flexible Lösungen.",
-    "End-to-end support, including deployment, training, and optimization.": "Rundum-Support von Implementierung bis Optimierung.",
+    "Seamless integration with Epicor ERP for a unified, connected enterprise platform.": "Nahtlose Integration – Perfekt abgestimmt auf Epicor ERP.",
+    "Improve operational efficiency and cross-functional visibility across finance, supply chain, and manufacturing.": "Mehr Effizienz & Transparenz in allen Geschäftsbereichen.",
+    "Scalable ERP extensions to grow with your business needs.": "Skalierbare und flexible Lösungen.",
+    "End-to-end lifecycle support covering deployment, configuration, training, and continuous optimization.": "Rundum-Support von Implementierung bis Optimierung.",
     "Deliver measurable business impact with smarter operations and insights.": "Messbarer Mehrwert durch smarte Abläufe und klare Einblicke.",
     "Ready to extend your ERP with Epicor Companion Products?": "Sind Sie bereit, Ihr ERP-System mit Epicor-Ergänzungsprodukten zu erweitern",
 
@@ -4631,23 +4631,23 @@
 
 
     "Epic Pay – Epicor Payroll MEA": "Epic Pay – Epicor Payroll MEA",
-    "Comprehensive payroll solution tailored for businesses across the Middle East and Africa.": "Umfassende Payroll-Lösung für Unternehmen im Nahen Osten und Afrika.",
-    "Epic Pay (Epicor Payroll MEA) helps organizations streamline payroll processing with seamless integration to Epicor ERP. It ensures compliance with regional labour laws, simplifies HR and payroll operations, and empowers employees with self-service access.": "Epic Pay (Epicor Payroll MEA) unterstützt Unternehmen dabei, die Lohn- und Gehaltsabrechnung zu optimieren – mit nahtloser Integration in Epicor ERP. Die Lösung gewährleistet die Einhaltung regionaler Arbeitsgesetze, vereinfacht HR- und Payroll-Prozesse und bietet Mitarbeitenden Self-Service-Zugang.",
+    "Epic Pay – The Epicor Payroll MEA Solution for Seamless Compliance & Automation": "Umfassende Payroll-Lösung für Unternehmen im Nahen Osten und Afrika.",
+    "Comprehensive payroll solution tailored for businesses across the Middle East and Africa. Epic Pay (Epicor Payroll MEA) helps organizations streamline payroll processing with seamless integration to Epicor ERP. It ensures compliance with regional labour laws, simplifies HR and payroll operations, and empowers employees with self-service access.": "Epic Pay (Epicor Payroll MEA) unterstützt Unternehmen dabei, die Lohn- und Gehaltsabrechnung zu optimieren – mit nahtloser Integration in Epicor ERP. Die Lösung gewährleistet die Einhaltung regionaler Arbeitsgesetze, vereinfacht HR- und Payroll-Prozesse und bietet Mitarbeitenden Self-Service-Zugang.",
 
     "Our Epic Pay Capabilities": "Unsere Epic Pay Funktionen",
-    "Automate payroll processing and salary calculations.": "Automatisierung von Gehaltsabrechnungen und Lohnberechnungen.",
-    "Ensure compliance with MEA labour laws, tax rules, and statutory reporting.": "Einhaltung regionaler Arbeitsgesetze, Steuervorschriften und gesetzlicher Berichtspflichten.",
-    "Integrate time, attendance, leave, and loan management directly into payroll.": "Integration von Zeit-, Anwesenheits-, Urlaubs- und Darlehensmanagement direkt in die Payroll.",
-    "Provide employee and manager self-service portals for anytime, anywhere access.": "Self-Service-Portale für Mitarbeitende und Führungskräfte – jederzeit und überall verfügbar.",
-    "Deliver real-time analytics and reporting on payroll costs, overtime, and compliance.": "Echtzeit-Analysen und Reports zu Gehaltskosten, Überstunden und Compliance.",
-    "Enable mobile accessibility for a connected workforce.": "Mobile Zugänglichkeit für eine vernetzte Belegschaft.",
+    "Automate end-to-end payroll processing and salary calculations with accuracy and efficiency.": "Automatisierung von Gehaltsabrechnungen und Lohnberechnungen.",
+    "Ensure full MEA labour law compliance, tax regulations adherence, and statutory reporting across multiple jurisdictions.": "Einhaltung regionaler Arbeitsgesetze, Steuervorschriften und gesetzlicher Berichtspflichten.",
+    "Integrate time and attendance, leave management, and employee loan tracking directly into payroll workflows via Epicor ERP integration.": "Integration von Zeit-, Anwesenheits-, Urlaubs- und Darlehensmanagement direkt in die Payroll.",
+    "Provide secure employee and manager self-service portals for anytime, anywhere access to payroll, payslips, and HR data.": "Self-Service-Portale für Mitarbeitende und Führungskräfte – jederzeit und überall verfügbar.",
+    "Deliver real-time payroll analytics and workforce reporting, including payroll costs, overtime tracking, and compliance.": "Echtzeit-Analysen und Reports zu Gehaltskosten, Überstunden und Compliance.",
+    "Enable mobile-first accessibility for a connected workforce.": "Mobile Zugänglichkeit für eine vernetzte Belegschaft.",
 
     "Why Choose Epic Pay?": "Warum Epic Pay wählen?",
-    "Designed specifically for organizations in the MEA region.": "Speziell entwickelt für Unternehmen in der MEA-Region.",
+    "Purpose-built for MEA payroll compliance and regional workforce management, designed for Middle East and Africa.": "Speziell entwickelt für Unternehmen in der MEA-Region.",
     "Seamless integration with Epicor ERP for end-to-end efficiency.": "Nahtlose Integration mit Epicor ERP für durchgängige Effizienz.",
-    "Scalable and customizable to suit single-site or multi-site operations.": "Skalierbar und anpassbar für Einzelstandorte oder Multi-Site-Betriebe.",
-    "Enhances employee engagement with intuitive self-service access.": "Fördert Mitarbeitereinbindung durch intuitive Self-Service-Funktionen.",
-    "Trusted with over half a million payrolls processed across industries.": "Vertrauenswürdig: Über eine halbe Million Payrolls in verschiedenen Branchen verarbeitet.",
+    "Scalable and configurable payroll solution for both single-site and multi-site enterprise operations.": "Skalierbar und anpassbar für Einzelstandorte oder Multi-Site-Betriebe.",
+    "Enhances employee engagement with intuitive self-service access to payslips, leave, and payroll data.": "Fördert Mitarbeitereinbindung durch intuitive Self-Service-Funktionen.",
+    "Trusted with over half a million payrolls processed across industries, delivering reliability.": "Vertrauenswürdig: Über eine halbe Million Payrolls in verschiedenen Branchen verarbeitet.",
 
     "Ready to simplify payroll and stay compliant with Epic Pay? Talk to our Epicor Experts today.": "Payroll vereinfachen und Compliance sichern – sprechen Sie noch heute mit unseren Epicor-Experten.",
 
@@ -7989,11 +7989,238 @@
 "Future-proof your cable manufacturing business with connected infrastructure, automated production workflows, and real-time operational insights that support smarter planning, improved quality control, and sustainable profitability.":"Machen Sie Ihr Kabelherstellungsunternehmen zukunftssicher – mit vernetzter Infrastruktur, automatisierten Produktionsabläufen und betrieblichen Einblicken in Echtzeit, die eine intelligentere Planung, eine verbesserte Qualitätskontrolle und nachhaltige Profitabilität ermöglichen.",
 
 "What are the advantages of migrating to the Cloud?":"",
-"Migrating to the Cloud enables scalable growth without heavy upfront infrastructure costs, while improving system performance and accessibility. It provides real-time data access, stronger security with continuous updates, and built-in compliance capabilities. Automatic upgrades and reduced maintenance lower Total Cost of Ownership (TCO) and accelerate ROI.":""
+"Migrating to the Cloud enables scalable growth without heavy upfront infrastructure costs, while improving system performance and accessibility. It provides real-time data access, stronger security with continuous updates, and built-in compliance capabilities. Automatic upgrades and reduced maintenance lower Total Cost of Ownership (TCO) and accelerate ROI.":"",
 
-    
+
+ "SAP S/4HANA Transformation": "SAP S/4HANA-Transformation",
+    "SAP S/4HANA Implementation, Migration and Cloud Transformation": "SAP S/4HANA Implementierung, Migration und Cloud-Transformation",
+    "Modernise your ERP landscape with SAP S/4HANA. As an experienced SAP implementation partner, RheinBrücke supports enterprises across Europe and the Middle East in planning and executing SAP S/4HANA implementation, migration, and RISE with SAP cloud transformation initiatives, maintaining operational continuity throughout.": "Modernisieren Sie Ihre ERP-Landschaft mit SAP S/4HANA. Als erfahrener SAP-Implementierungspartner unterstützt RheinBrücke Unternehmen in ganz Europa und im Nahen Osten bei der Planung und Durchführung von SAP S/4HANA-Implementierungen, -Migrationen und RISE with SAP-Cloud-Transformationsinitiativen und sorgt dabei durchgehend für Geschäftskontinuität.",
+
+    "Our Capabilities": "Unsere Kompetenzen",
+    "System Conversion (Brownfield) – retain data and config while upgrading to S/4HANA": "Systemkonvertierung (Brownfield) – Beibehaltung von Daten und Konfigurationen bei der Umstellung auf S/4HANA",
+    "New Implementation (Greenfield) – deploy S/4HANA using SAP best-practice frameworks": "Neuimplementierung (Greenfield) – Implementierung von S/4HANA auf Basis von SAP Best-Practice-Frameworks",
+    "Landscape Transformation – consolidate multiple SAP systems during migration": "Landschaftstransformation – Konsolidierung mehrerer SAP-Systeme während der Migration",
+    "RISE with SAP (Private Cloud) – migrate ERP to managed cloud with SAP's unified programme": "RISE with SAP (Private Cloud) – Migration des ERP-Systems in eine Managed Cloud mit dem einheitlichen Programm von SAP",
+    "GROW with SAP (Public Cloud) – rapid public cloud ERP adoption for standardised environments": "GROW with SAP (Public Cloud) – schnelle Einführung von ERP in der Public Cloud für standardisierte Umgebungen",
+    "Post-implementation optimisation, data migration, and go-live support": "Optimierung nach der Implementierung, Datenmigration und Go-Live-Unterstützung",
+
+    "Why Choose RheinBrücke": "Warum Sie sich für RheinBrücke entscheiden sollten",
+    "Real-time financial visibility and faster close cycles through embedded analytics": "Finanzielle Transparenz in Echtzeit und schnellere Abschlusszyklen durch integrierte Analysen",
+    "Improved supply chain planning with simplified S/4HANA data models": "Verbesserte Lieferkettenplanung dank vereinfachter S/4HANA-Datenmodelle",
+    "Scalable cloud-based SAP environments via RISE and GROW pathways": "Skalierbare, cloudbasierte SAP-Landschaften über die RISE- und GROW-Modelle",
+    "Certified SAP partner with proven migration frameworks and accelerators across Europe and the Middle East": "Zertifizierter SAP-Partner mit bewährten Migrationskonzepten und Beschleunigern in ganz Europa und im Nahen Osten",
+    "End-to-end support from readiness assessment through to stabilisation": "Umfassende Unterstützung von der Reifegradanalyse bis zur Stabilisierung",
+
+    "What is SAP S/4HANA?": "Was ist SAP S/4HANA?",
+    "SAP S/4HANA is SAP's next-generation ERP platform designed to support real-time enterprise operations using in-memory database technology.": "SAP S/4HANA ist die ERP-Plattform der nächsten Generation von SAP, die mithilfe von In-Memory-Datenbanktechnologie den Geschäftsbetrieb in Echtzeit unterstützt.",
+
+    "What is RISE with SAP?": "Was ist RISE with SAP?",
+    "RISE with SAP combines SAP S/4HANA Cloud, infrastructure services, and migration tools to help organisations migrate legacy SAP environments to cloud-based ERP platforms.": "RISE with SAP kombiniert SAP S/4HANA Cloud, Infrastrukturdienste und Migrationstools, um Unternehmen bei der Migration von bestehenden SAP-Landschaften auf cloudbasierte ERP-Plattformen zu unterstützen.",
+
+    "How long does an SAP S/4HANA migration take?": "Wie lange dauert eine SAP S/4HANA-Migration?",
+    "Most projects range from 6 to 18 months, depending on whether organisations adopt a brownfield conversion, greenfield implementation, or landscape transformation.": "Die meisten Projekte dauern zwischen 6 und 18 Monaten, je nachdem, ob Unternehmen eine Brownfield-Umstellung, eine Greenfield-Implementierung oder eine Landschaftstransformation durchführen.",
+
+    "Does RheinBrücke support SAP ECC to SAP S/4HANA migration?": "Unterstützt RheinBrücke die Migration von SAP ECC zu SAP S/4HANA?",
+    "Yes. RheinBrücke supports enterprises across the full SAP transformation lifecycle, including readiness assessments, migration planning, implementation, and cloud transformation through RISE with SAP. We work with organisations in manufacturing, life sciences, and distribution across Europe and the Middle East.": "Ja. RheinBrücke unterstützt Unternehmen über den gesamten SAP-Transformationszyklus hinweg, einschließlich Reifegradanalysen, Migrationsplanung, Implementierung und Cloud-Transformation durch RISE with SAP. Wir arbeiten mit Unternehmen aus den Bereichen Fertigung, Life Sciences und Vertrieb in ganz Europa und dem Nahen Osten zusammen."
   
+  
+,
+    "What is the difference between Brownfield and Greenfield migration?": "Was ist der Unterschied zwischen einer Brownfield- und einer Greenfield-Migration?",
+    "A brownfield conversion migrates your existing SAP ECC system directly to S/4HANA, retaining historical data and configuration. A greenfield implementation builds a new S/4HANA system from SAP best practices. Brownfield is faster but carries forward existing processes and customisations. Greenfield takes longer but delivers a cleaner, more standardised system.": "Bei einer Brownfield-Migration wird Ihr bestehendes SAP-ECC-System direkt auf S/4HANA migriert, wobei historische Daten und Konfigurationen beibehalten werden. Bei einer Greenfield-Implementierung wird ein neues S/4HANA-System auf Basis der SAP-Best-Practices aufgebaut. Brownfield ist schneller, übernimmt jedoch bestehende Prozesse und Anpassungen. Greenfield dauert länger, liefert aber ein klareres, stärker standardisiertes System.",
+    "What happens to existing customisations in a brownfield conversion?": "Was passiert mit bestehenden Anpassungen bei einer Brownfield-Migration?",
+    "All custom ABAP code and enhancements must be reviewed for S/4HANA compatibility. Some classic customisations are no longer needed because S/4HANA handles the same requirements natively. Others require adaptation or replacement with SAP BTP side-by-side extensions to preserve clean-core principles. RheinBrücke performs a full custom code assessment during the readiness phase to catalogue, prioritise and resolve each item.": "Der gesamte kundenspezifische ABAP-Code und alle Erweiterungen müssen auf S/4HANA-Kompatibilität überprüft werden. Einige klassische Anpassungen sind nicht mehr erforderlich, da S/4HANA die entsprechenden Anforderungen nativ abdeckt. Andere müssen angepasst oder durch SAP-BTP-Side-by-Side-Erweiterungen ersetzt werden, um die Clean-Core-Prinzipien zu wahren. RheinBrücke führt während der Vorbereitungsphase eine umfassende Analyse des kundenspezifischen Codes durch, um jeden Punkt zu katalogisieren, zu priorisieren und zu bereinigen.",
+    "What is a landscape transformation and when is it needed?": "Was ist eine Landschaftstransformation und wann ist sie erforderlich?",
+    "A landscape transformation restructures multiple SAP systems during migration, for example consolidating three regional SAP ECC instances into a single S/4HANA environment. It is typically used in merger and acquisition scenarios, global template rollout programmes, or where an organisation wants to reduce the number of SAP systems it operates.": "Eine Landschaftstransformation restrukturiert mehrere SAP-Systeme während der Migration, beispielsweise durch die Konsolidierung von drei regionalen SAP-ECC-Instanzen in einer einzigen S/4HANA-Umgebung. Sie wird typischerweise in Fusions- und Übernahmeszenarien, bei globalen Template-Rollout-Programmen oder dort eingesetzt, wo ein Unternehmen die Anzahl der von ihm betriebenen SAP-Systeme reduzieren möchte.",
+
+    "What is the difference between SAP S/4HANA and RISE with SAP?": "Was ist der Unterschied zwischen SAP S/4HANA und RISE mit SAP?",
+    "SAP S/4HANA is the ERP platform that modernises enterprise systems, while RISE with SAP is the cloud transformation framework that enables organisations to migrate and operate SAP S/4HANA in cloud environments.": "SAP S/4HANA ist die ERP-Plattform zur Modernisierung von Unternehmenssystemen, während RISE mit SAP das Cloud-Transformations-Framework ist, das es Unternehmen ermöglicht, SAP S/4HANA in Cloud-Umgebungen zu migrieren und zu betreiben.",
+    "What is GROW with SAP and how is it different from RISE with SAP?": "Was ist GROW with SAP und wie unterscheidet es sich von RISE mit SAP?",
+    "GROW with SAP is designed for organisations adopting a standardised public cloud ERP environment, combining SAP S/4HANA Public Cloud with best-practice business processes and rapid implementation frameworks. RISE with SAP is the private cloud pathway, suited to organisations migrating existing SAP environments with greater configuration control. See the GROW with SAP sub-page for full detail.": "GROW with SAP richtet sich an Unternehmen, die eine standardisierte Public-Cloud-ERP-Umgebung einführen, und kombiniert SAP S/4HANA Public Cloud mit Best-Practice-Geschäftsprozessen und Frameworks für eine schnelle Implementierung. RISE mit SAP ist der Private-Cloud-Weg, der sich für Unternehmen eignet, die bestehende SAP-Landschaften mit größerer Konfigurationskontrolle migrieren. Ausführliche Informationen finden Sie auf der Unterseite zu GROW mit SAP.",
+    "When should organisations move from SAP ECC to SAP S/4HANA?": "Wann sollten Unternehmen von SAP ECC auf SAP S/4HANA umsteigen?",
+    "With SAP ending mainstream maintenance for SAP ECC in 2027, organisations are accelerating their move to S/4HANA. Migration becomes urgent when legacy ECC systems limit scalability, reporting speed, and innovation adoption. Moving to SAP S/4HANA enables real-time analytics, simplified data models, and improved operational visibility before the deadline.": "Da SAP den Mainstream-Support für SAP ECC im Jahr 2027 einstellt, beschleunigen Unternehmen ihre Umstellung auf S/4HANA. Eine Migration wird zunehmend dringend, wenn veraltete ECC-Systeme die Skalierbarkeit, die Reporting-Geschwindigkeit und die Einführung von Innovationen einschränken. Der Umstieg auf SAP S/4HANA ermöglicht Echtzeitanalysen, vereinfachte Datenmodelle und eine verbesserte betriebliche Transparenz noch vor Ablauf der Frist.",
+
+    "What are the benefits of RISE with SAP cloud transformation?": "Welche Vorteile bietet die Cloud-Transformation mit RISE mit SAP?",
+    "RISE with SAP helps organisations:": "RISE with SAP unterstützt Unternehmen dabei:",
+    "Simplify ERP infrastructure management": "die Verwaltung der ERP-Infrastruktur zu vereinfachen",
+    "Reduce on-premise data centre costs": "die Kosten für lokale Rechenzentren zu senken",
+    "Improve scalability and resilience of SAP environments": "die Skalierbarkeit und Ausfallsicherheit von SAP-Landschaften zu verbessern",
+    "Accelerate adoption of SAP innovations and cloud services": "die Einführung von SAP-Innovationen und Cloud-Services zu beschleunigen",
+
+    "Ready to Modernise with SAP S/4HANA?": "Bereit für Ihre SAP S/4HANA Transformation?",
+    "Talk to our SAP experts to plan your transformation journey.": "Sprechen Sie mit unseren SAP-Experten, um Ihre Transformation zu planen.",
+
+
+   "SAP Cloud Applications": "SAP-Cloud-Anwendungen",
+  "SAP Cloud Applications Implementation and Integration": "Implementierung und Integration von SAP-Cloud-Anwendungen",
+  "Transform HR, procurement, and expense management with SAP SuccessFactors, Ariba, and Concur. RheinBrücke helps enterprises across Europe and the Middle East build integrated, scalable cloud-enabled business operations connected to core SAP ERP environments.": "Transformieren Sie Personalwesen, Beschaffung und Reisekostenmanagement mit SAP SuccessFactors, Ariba und Concur. RheinBrücke unterstützt Unternehmen in ganz Europa und im Nahen Osten beim Aufbau integrierter, skalierbarer und cloudbasierter Geschäftsprozesse, die mit zentralen SAP-ERP-Umgebungen verbunden sind.",
+  "Our Capabilities": "Unsere Kompetenzen",
+  "SAP SuccessFactors – Core HR, Talent, Learning, and Performance implementation": "SAP SuccessFactors – Implementierung der Kernmodule Personalwesen, Talentmanagement, Weiterbildung und Leistungsmanagement",
+  "SAP Ariba – Procurement automation, sourcing, and supplier collaboration": "SAP Ariba – Automatisierung der Beschaffung, Sourcing und Zusammenarbeit mit Lieferanten",
+  "SAP Concur – Travel, expense capture, approval workflows, and compliance": "SAP Concur – Reisemanagement, Erfassung von Reisekosten, Genehmigungsworkflows und Compliance",
+  "Integration of cloud applications with SAP S/4HANA and SAP ECC": "Integration von Cloud-Anwendungen mit SAP S/4HANA und SAP ECC",
+  "Data migration, process transformation, and change management": "Datenmigration, Prozessumgestaltung und Change Management",
+  "Cloud application optimisation and ongoing support": "Optimierung von Cloud-Anwendungen und kontinuierlicher Support",
+  "Why Choose RheinBrücke": "Warum Sie sich für RheinBrücke entscheiden sollten",
+  "Modernised HR and workforce management on a globally scalable platform": "Modernisiertes Personal- und Workforce-Management auf einer weltweit skalierbaren Plattform",
+  "Improved procurement visibility, spend control, and supplier collaboration": "Verbesserte Transparenz im Beschaffungswesen, Ausgabenkontrolle und Zusammenarbeit mit Lieferanten",
+  "Simplified travel and expense management with full financial transparency": "Vereinfachtes Reise- und Spesenmanagement mit vollständiger finanzieller Transparenz",
+  "Seamless integration with SAP S/4HANA, ECC, and third-party systems": "Nahtlose Integration mit SAP S/4HANA, ECC und Systemen von Drittanbietern",
+  "Single implementation partner across SuccessFactors, Ariba, and Concur": "Ein einziger Implementierungspartner für SuccessFactors, Ariba und Concur",
+  "Frequently Asked Questions": "Häufig gestellte Fragen",
+  "What are SAP Cloud Applications?": "Was sind SAP-Cloud-Anwendungen?",
+  "SAP Cloud Applications are cloud-based enterprise solutions supporting HR, procurement, and travel and expense management, integrated with core SAP ERP environments.": "SAP-Cloud-Anwendungen sind cloudbasierte Unternehmenslösungen für die Bereiche Personalwesen, Beschaffung sowie Reise- und Spesenmanagement, die in zentrale SAP-ERP-Umgebungen integriert sind.",
+  "What is SAP SuccessFactors used for?": "Wozu dient SAP SuccessFactors?",
+  "SAP SuccessFactors manages the full employee lifecycle, recruitment, onboarding, talent management, workforce planning, and employee development.": "SAP SuccessFactors verwaltet den gesamten Mitarbeiterlebenszyklus, einschließlich Rekrutierung, Onboarding, Talentmanagement, Personalplanung und Mitarbeiterentwicklung.",
+  "What modules does RheinBrücke implement within SAP SuccessFactors?": "Welche Module implementiert RheinBrücke innerhalb von SAP SuccessFactors?",
+  "RheinBrücke implements SAP SuccessFactors across Core HR and Employee Central, Talent Management (Performance and Goals, Succession and Development), Recruitment and Onboarding, Learning Management, and Workforce Analytics and Planning. Implementation scope is determined based on the organisation's HR transformation priorities.": "RheinBrücke implementiert SAP SuccessFactors in den Bereichen Core HR und Employee Central, Talentmanagement (Leistung und Ziele, Nachfolge und Entwicklung), Rekrutierung und Onboarding, Lernmanagement sowie Personalanalyse und -planung. Der Umfang der Implementierung richtet sich nach den Prioritäten der Organisation bei der HR-Transformation.",
+  "Does RheinBrücke support multi-country SAP SuccessFactors deployments?": "Unterstützt RheinBrücke SAP-SuccessFactors-Implementierungen in mehreren Ländern?",
+  "Yes. RheinBrücke has delivered SAP SuccessFactors implementations across multiple geographies, managing localisation requirements, country-specific compliance and regional data privacy rules. Our global HR standardisation approach establishes a consistent core process model while accommodating local variations.": "Ja. RheinBrücke hat SAP-SuccessFactors-Implementierungen in verschiedenen Regionen durchgeführt und dabei Lokalisierungsanforderungen, länderspezifische Compliance-Vorgaben sowie regionale Datenschutzbestimmungen berücksichtigt. Unser Ansatz zur globalen HR-Standardisierung schafft ein einheitliches Kernprozessmodell und berücksichtigt gleichzeitig lokale Besonderheiten.",
+  "How do SAP Cloud Applications integrate with SAP S/4HANA?": "Wie lassen sich SAP-Cloud-Anwendungen in SAP S/4HANA integrieren?",
+  "SuccessFactors, Ariba and Concur integrate with SAP S/4HANA and SAP ECC, enabling organisations to connect cloud applications with core ERP and maintain consistent enterprise processes.": "SuccessFactors, Ariba und Concur lassen sich in SAP S/4HANA und SAP ECC integrieren, sodass Unternehmen Cloud-Anwendungen mit dem zentralen ERP-System verbinden und konsistente Unternehmensprozesse aufrechterhalten können.",
+  "What is SAP Ariba?": "Was ist SAP Ariba?",
+  "SAP Ariba is a procurement and supplier collaboration platform that enables organisations to manage sourcing, purchasing and supplier relationships.": "SAP Ariba ist eine Plattform für Beschaffung und Lieferantenzusammenarbeit, mit der Unternehmen Sourcing, Einkauf und Lieferantenbeziehungen verwalten können.",
+  "What SAP Ariba modules does RheinBrücke implement?": "Welche SAP-Ariba-Module implementiert RheinBrücke?",
+  "RheinBrücke implements SAP Ariba Buying and Invoicing for purchase-to-pay automation, Ariba Sourcing for strategic sourcing and RFx management, Ariba Contracts for contract management and compliance and Ariba Supplier Lifecycle and Performance for supplier qualification and monitoring. Implementation scope is scoped based on the organisation's procurement transformation priorities.": "RheinBrücke implementiert SAP Ariba Buying und Invoicing für die Purchase-to-Pay-Automatisierung, Ariba Sourcing für strategisches Sourcing und RFx-Management, Ariba Contracts für Vertragsmanagement und Compliance sowie Ariba Supplier Lifecycle und Performance für die Lieferantenqualifizierung und -überwachung. Der Umfang der Implementierung richtet sich nach den Prioritäten der Organisation bei der Transformation des Beschaffungswesens.",
+  "What is SAP Concur?": "Was ist SAP Concur?",
+  "SAP Concur provides cloud-based travel and expense management solutions that automate expense reporting, travel booking and financial compliance processes.": "SAP Concur bietet cloudbasierte Lösungen für das Reise- und Spesenmanagement, die Prozesse zur Spesenabrechnung, Reisebuchung und Einhaltung finanzieller Vorschriften automatisieren.",
+  "What does RheinBrücke implement within SAP Concur?": "Was implementiert RheinBrücke im Rahmen von SAP Concur?",
+  "RheinBrücke implements SAP Concur Travel for corporate booking management and policy enforcement, Concur Expense for automated expense capture, approval and reimbursement and Concur Invoice for accounts payable automation where required. Implementation scope is defined based on the organisation's travel and expense management priorities.": "RheinBrücke implementiert SAP Concur Travel für das Buchungsmanagement und die Durchsetzung von Richtlinien im Unternehmen, Concur Expense für die automatisierte Erfassung, Genehmigung und Erstattung von Spesen sowie Concur Invoice für die Automatisierung der Kreditorenbuchhaltung, sofern erforderlich. Der Implementierungsumfang richtet sich nach den Prioritäten des Unternehmens im Bereich Reise- und Spesenmanagement.",
+  "Does RheinBrücke implement all three SAP Cloud Applications?": "Implementiert RheinBrücke alle drei SAP-Cloud-Anwendungen?",
+  "Yes. RheinBrücke supports SAP SuccessFactors implementation, SAP Ariba implementation and SAP Concur implementation along with enterprise integration and optimisation services.": "Ja. RheinBrücke unterstützt die Implementierung von SAP SuccessFactors, SAP Ariba und SAP Concur sowie Dienstleistungen zur Unternehmensintegration und -optimierung.",
+  "Ready to Transform Your Cloud Business Processes?": "Sind Sie bereit, Ihre Cloud-Geschäftsprozesse zu transformieren?",
+  "Speak to our SAP cloud applications team today.": "Sprechen Sie noch heute mit unserem SAP-Cloud-Anwendungsteam.",
+
+
+  "SAP Analytics Cloud": "SAP Analytics Cloud",
+    "SAP Analytics Cloud Implementation and Data Intelligence": "Implementierung von SAP Analytics Cloud und Data Intelligence",
+    "Turn enterprise data into real-time, actionable insights. RheinBrücke supports organisations in implementing SAP Analytics Cloud and enterprise analytics architecture, enabling data-driven decision-making across finance, supply chain and operations in both SAP and non-SAP environments.": "Verwandeln Sie Unternehmensdaten in umsetzbare Erkenntnisse in Echtzeit. RheinBrücke unterstützt Unternehmen bei der Implementierung von SAP Analytics Cloud und der Unternehmensanalysearchitektur und ermöglicht so eine datengestützte Entscheidungsfindung in den Bereichen Finanzen, Lieferkette und Betrieb – sowohl in SAP- als auch in Nicht-SAP-Landschaften.",
+
+    "Our Capabilities": "Unsere Kompetenzen",
+    "SAP Analytics Cloud (SAC) - dashboards, planning and predictive analytics": "SAP Analytics Cloud (SAC) – Dashboards, Planung und Predictive Analytics",
+    "SAP Business Warehouse (BW) and BI architecture design and optimisation": "Entwurf und Optimierung von SAP Business Warehouse (BW) und BI-Architektur",
+    "Financial analytics, profitability reporting and faster close cycles": "Finanzanalysen, Rentabilitätsberichte und schnellere Abschlussprozesse",
+    "Supply chain performance monitoring and operational demand analysis": "Überwachung der Lieferkettenleistung und operative Bedarfsanalyse",
+    "Migration from legacy reporting environments to SAP Analytics Cloud": "Migration von älteren Berichtsumgebungen zu SAP Analytics Cloud",
+    "Integration of SAP analytics with non-SAP and third-party data sources": "Integration von SAP-Analysen mit Nicht-SAP- und Drittanbieter-Datenquellen",
+
+    "Why Choose RheinBrücke": "Warum Sie sich für RheinBrücke entscheiden sollten",
+    "Consolidated enterprise data replacing fragmented spreadsheet-based reporting": "Konsolidierte Unternehmensdaten als Ersatz für fragmentierte, auf Tabellenkalkulationen basierende Berichterstattung",
+    "Real-time visibility across finance, operations, supply chain and procurement": "Echtzeit-Transparenz über Finanzen, Betrieb, Lieferkette und Beschaffung hinweg",
+    "Predictive analytics and forecasting to support faster business decisions": "Prädiktive Analysen und Prognosen zur Unterstützung schnellerer Geschäftsentscheidungen",
+    "Scalable analytics architecture designed for SAP and hybrid landscapes": "Skalierbare Analysearchitektur, die für SAP- und Hybrid-Landschaften konzipiert ist",
+    "End-to-end service from architecture design through dashboard delivery": "End-to-End-Service vom Architekturentwurf bis zur Bereitstellung von Dashboards",
+
+    "Frequently Asked Questions": "Häufig gestellte Fragen",
+    "What is SAP Analytics Cloud?": "Was ist SAP Analytics Cloud?",
+    "SAP Analytics Cloud (SAC) is SAP's cloud analytics platform combining business intelligence, planning and predictive analytics to support enterprise reporting and decision-making.": "SAP Analytics Cloud (SAC) ist die Cloud-Analytics-Plattform von SAP, die Business Intelligence, Planung und Predictive Analytics kombiniert, um das unternehmensweite Reporting und die Entscheidungsfindung zu unterstützen.",
+
+    "What is the difference between SAP Analytics Cloud and SAP BW?": "Was ist der Unterschied zwischen SAP Analytics Cloud und SAP BW?",
+    "SAP BW provides enterprise data warehousing and structured reporting, while SAP Analytics Cloud focuses on cloud-based analytics, visualisation and planning.": "SAP BW bietet Data Warehousing und strukturiertes Reporting für Unternehmen, während SAP Analytics Cloud den Schwerpunkt auf cloudbasierte Analysen, Visualisierung und Planung legt.",
+
+    "What are the benefits of SAP Analytics Cloud?": "Was sind die Vorteile von SAP Analytics Cloud?",
+    "SAP Analytics Cloud enables organisations to consolidate enterprise data, build interactive dashboards, perform predictive analysis and support integrated planning across business functions": "SAP Analytics Cloud ermöglicht es Unternehmen, Unternehmensdaten zu konsolidieren, interaktive Dashboards zu erstellen, prädiktive Analysen durchzuführen und eine integrierte Planung über alle Geschäftsfunktionen hinweg zu unterstützen.",
+
+    "Can SAP Analytics integrate with non-SAP systems?": "Lässt sich SAP Analytics in Nicht-SAP-Systeme integrieren?",
+    "Yes. SAP analytics platforms integrate data from both SAP and non-SAP systems, enabling organisations to build comprehensive unified analytics environments.": "Ja. SAP-Analytics-Plattformen integrieren Daten sowohl aus SAP- als auch aus Nicht-SAP-Systemen und ermöglichen es Unternehmen so, umfassende, einheitliche Analytics-Umgebungen aufzubauen.",
+
+    "Does RheinBrücke implement SAP Analytics Cloud?": "Implementiert RheinBrücke SAP Analytics Cloud?",
+    "Yes. RheinBrücke supports SAP Analytics Cloud implementation, dashboard development and analytics architecture across finance, supply chain and operations.": "Ja. RheinBrücke unterstützt die Implementierung von SAP Analytics Cloud, die Entwicklung von Dashboards und die Analysearchitektur in den Bereichen Finanzen, Lieferkette und Betrieb.",
+
+    "Ready to Build a Data-Driven Enterprise?": "Sind Sie bereit, ein datengesteuertes Unternehmen aufzubauen?",
+    "Talk to our SAP analytics team about your reporting environment.": "Sprechen Sie mit unserem SAP-Analytics-Team über Ihre Berichtsumgebung.",
+
+    "SAP Business Technology Platform (BTP)": "SAP Business Technology Platform (BTP)",
+    "SAP BTP Integration and Extension Services": "SAP BTP-Integrations- und Erweiterungsdienstleistungen",
+    "Extend and connect your SAP landscape without touching the ERP core. RheinBrücke delivers SAP BTP integration, application development and extension services that enable workflow automation, advanced analytics and enterprise application innovation while maintaining clean core compliance.": "Erweitern und vernetzen Sie Ihre SAP-Landschaft, ohne den ERP-Kern zu verändern. RheinBrücke bietet SAP BTP-Integrations-, Anwendungsentwicklungs- und Erweiterungsdienstleistungen, die Workflow-Automatisierung, fortschrittliche Analysen und Innovationen bei Unternehmensanwendungen ermöglichen, während die Konformität des Kernsystems gewahrt bleibt.",
+
+    "Our Capabilities": "Unsere Kompetenzen",
+    "SAP BTP integration and API architecture across SAP and non-SAP systems": "SAP-BTP-Integration und API-Architektur über SAP- und Nicht-SAP-Systeme hinweg",
+    "Application development and side-by-side extensions using SAP BTP": "Anwendungsentwicklung und Side-by-Side-Erweiterungen mit SAP BTP",
+    "Workflow automation and business process orchestration": "Workflow-Automatisierung und Orchestrierung von Geschäftsprozessen",
+    "Data integration and analytics enablement across enterprise platforms": "Datenintegration und Analyseunterstützung über Unternehmensplattformen hinweg",
+    "SAP BTP governance, platform optimisation and clean-core compliance": "SAP-BTP-Governance, Plattformoptimierung und Clean-Core-Compliance",
+    "AI and machine learning service enablement via SAP BTP": "Bereitstellung von KI- und Machine-Learning-Diensten über SAP BTP",
+
+    "Why Choose RheinBrücke": "Warum Sie sich für RheinBrücke entscheiden sollten",
+    "Extend SAP capabilities without modifying the ERP core, clean core maintained": "Erweiterung der SAP-Funktionalitäten ohne Änderung des ERP-Kerns – der Kern bleibt unverändert",
+    "Faster automation and digital innovation across enterprise workflows": "Schnellere Automatisierung und digitale Innovation in allen Unternehmensabläufen",
+    "Unified integration architecture connecting SAP and third-party systems": "Einheitliche Integrationsarchitektur, die SAP- und Drittanbietersysteme miteinander verbindet",
+    "Scalable platform designed to support long-term ERP transformation strategies": "Skalierbare Plattform zur Unterstützung langfristiger ERP-Transformationsstrategien",
+    "Delivered by consultants with deep SAP S/4HANA and BTP expertise": "Umsetzung durch Berater mit fundierter Expertise in SAP S/4HANA und BTP",
+
+    "Frequently Asked Questions": "Häufig gestellte Fragen",
+    "What is SAP Business Technology Platform (SAP BTP)?": "Was ist die SAP Business Technology Platform (SAP BTP)?",
+    "SAP BTP is SAP's platform for integration, application development, data management and analytics. It enables organisations to extend SAP applications and integrate enterprise systems without modifying core ERP.": "SAP BTP ist die Plattform von SAP für Integration, Anwendungsentwicklung, Datenmanagement und Analytik. Sie ermöglicht es Unternehmen, SAP-Anwendungen zu erweitern und Unternehmenssysteme zu integrieren, ohne das Kern-ERP zu verändern.",
+
+    "How does SAP BTP work with SAP S/4HANA?": "Wie funktioniert SAP BTP mit SAP S/4HANA?",
+    "SAP BTP works alongside SAP S/4HANA by enabling integrations, application extensions and analytics without impacting the core ERP environment, preserving clean core architecture.": "SAP BTP arbeitet mit SAP S/4HANA zusammen, indem es Integrationen, Anwendungserweiterungen und Analysen ermöglicht, ohne die Kern-ERP-Umgebung zu beeinträchtigen, und so eine saubere Kernarchitektur bewahrt.",
+
+    "What are the main capabilities of SAP BTP?": "Was sind die wichtigsten Funktionen von SAP BTP?",
+    "SAP BTP supports several core capabilities, including:":"SAP BTP unterstützt mehrere Kernfunktionen, darunter:",
+    "Application development and extensions": "Anwendungsentwicklung und -erweiterungen",
+    "Integration between SAP and third-party systems": "Integration zwischen SAP- und Drittanbietersystemen",
+    "Data management and analytics": "Datenmanagement und Analytik",
+    "Artificial intelligence and machine learning services": "Dienste für künstliche Intelligenz und maschinelles Lernen",
+    "These capabilities allow organisations to build modern digital solutions on top of SAP environments.": "Diese Funktionen ermöglichen es Unternehmen, moderne digitale Lösungen auf Basis von SAP-Landschaften zu entwickeln.",
+
+    "Can SAP BTP integrate with non-SAP systems?": "Lässt sich SAP BTP in Nicht-SAP-Systeme integrieren?",
+    "Yes. SAP BTP provides integration capabilities connecting SAP applications with non-SAP systems, cloud platforms and enterprise data sources to build unified enterprise architectures.": "Ja. SAP BTP bietet Integrationsfunktionen, die SAP-Anwendungen mit Nicht-SAP-Systemen, Cloud-Plattformen und Unternehmensdatenquellen verbinden, um einheitliche Unternehmensarchitekturen aufzubauen.",
+
+    "Why do organisations use SAP BTP?": "Warum setzen Unternehmen SAP BTP ein?",
+    "Organisations use SAP BTP to extend and integrate enterprise applications while maintaining stable ERP systems. SAP BTP enables organisations to accelerate innovation, automate business processes and build scalable digital solutions across enterprise environments.": "Unternehmen nutzen SAP BTP, um Unternehmensanwendungen zu erweitern und zu integrieren und gleichzeitig stabile ERP-Systeme beizubehalten. SAP BTP ermöglicht es Unternehmen, Innovationen zu beschleunigen, Geschäftsprozesse zu automatisieren und skalierbare digitale Lösungen über Unternehmensumgebungen hinweg zu entwickeln.",
+
+    "Does RheinBrücke provide SAP BTP implementation services?": "Bietet RheinBrücke SAP-BTP-Implementierungsdienstleistungen an?",
+    "Yes. RheinBrücke supports SAP BTP implementation, application development, system integration and enterprise platform architecture across SAP environments.": "Ja. RheinBrücke unterstützt die SAP-BTP-Implementierung, Anwendungsentwicklung, Systemintegration und Unternehmensplattformarchitektur in allen SAP-Landschaften.",
+
+    "Ready to Extend Your SAP Core with BTP?": "Sind Sie bereit, Ihren SAP-Kern mit BTP zu erweitern?",
+    "Speak to our SAP BTP integration specialists today.": "Sprechen Sie noch heute mit unseren SAP-BTP-Integrationsspezialisten.",
+
+
+
+ "SAP Application Management Services (AMS)": "SAP Application Management Services (AMS)",
+    "SAP AMS - Managed Support for SAP ECC and S/4HANA": "SAP AMS – Managed Support für SAP ECC und S/4HANA",
+    "Keep your SAP landscape stable, secure and continuously optimised. RheinBrücke delivers SAP managed services and AMS covering functional support, technical administration, change management and ongoing optimisation across SAP ECC and SAP S/4HANA environments.": "Sorgen Sie dafür, dass Ihre SAP-Landschaft stabil, sicher und kontinuierlich optimiert bleibt. RheinBrücke bietet SAP Managed Services und AMS an, die funktionalen Support, technische Administration, Änderungsmanagement und kontinuierliche Optimierung in SAP-ECC- und SAP-S/4HANA-Umgebungen umfassen.",
+
+    "Our Capabilities": "Unsere Kompetenzen",
+    "Functional support across FI/CO, MM, SD, PP, EWM, QM, PM and PS": "Funktionaler Support für FI/CO, MM, SD, PP, EWM, QM, PM und PS",
+    "SAP Basis administration, monitoring and transport management": "SAP-Basis-Administration, Überwachung und Transportmanagement",
+    "Change and enhancement management with controlled release cycles": "Änderungs- und Erweiterungsmanagement mit kontrollierten Release-Zyklen",
+    "Performance monitoring, tuning and proactive issue resolution": "Leistungsüberwachung, Tuning und proaktive Problemlösung",
+    "Security administration - roles, authorisations and compliance readiness": "Sicherheitsadministration – Rollen, Berechtigungen und Compliance-Fähigkeit",
+    "Post-implementation support, global rollout stabilisation and migration support": "Support nach der Implementierung, Stabilisierung globaler Rollouts und Migrationsunterstützung",
+
+    "Why Choose RheinBrücke": "Warum Sie sich für RheinBrücke entscheiden sollten",
+    "Stable, resilient SAP operations with faster incident resolution": "Stabiler, widerstandsfähiger SAP-Betrieb mit schnellerer Behebung von Störungen",
+    "Proactive monitoring that prevents issues before they impact the business": "Proaktive Überwachung, die Probleme verhindert, bevor sie sich auf das Geschäft auswirken",
+    "Controlled system evolution, enhancements delivered safely and efficiently": "Kontrollierte Systemweiterentwicklung – sichere und effiziente Umsetzung von Erweiterungen",
+    "Full lifecycle support from implementation through to continuous optimisation": "Umfassende Unterstützung über den gesamten Lebenszyklus hinweg, von der Implementierung bis zur kontinuierlichen Optimierung",
+    "Coverage across SAP S/4HANA, SAP ECC, SAP BTP and cloud environments": "Abdeckung von SAP S/4HANA, SAP ECC, SAP BTP und Cloud-Umgebungen",
+
+    "Frequently Asked Questions": "Häufig gestellte Fragen",
+
+    "What SAP modules does RheinBrücke support under AMS?": "Welche SAP-Module unterstützt RheinBrücke im Rahmen des AMS?",
+    "RheinBrücke provides AMS support across SAP Finance (FI/CO), Materials Management (MM), Sales and Distribution (SD), Production Planning (PP), Extended Warehouse Management (EWM), Quality Management (QM), Plant Maintenance (PM), Project Systems (PS) and SAP Basis administration. We also support SAP Business Technology Platform (BTP), SAP integration and interface management and SAP analytics and reporting environments across both SAP ECC and SAP S/4HANA.": "RheinBrücke bietet AMS-Support für die Bereiche SAP-Finanzwesen (FI/CO), Materialwirtschaft (MM), Vertrieb (SD), Produktionsplanung (PP), Erweiterte Lagerverwaltung (EWM), Qualitätsmanagement (QM), Instandhaltung (PM), Projektsystem (PS) sowie die SAP-Basis-Administration. Darüber hinaus unterstützen wir die SAP Business Technology Platform (BTP), das SAP-Integrations- und Schnittstellenmanagement sowie SAP-Analytik- und Berichtsumgebungen sowohl für SAP ECC als auch für SAP S/4HANA.",
+
+    "Do RheinBrücke SAP AMS services support both SAP ECC and SAP S/4HANA?": "Unterstützen die SAP-AMS-Services von RheinBrücke sowohl SAP ECC als auch SAP S/4HANA?",
+    "Yes. RheinBrücke supports both SAP ECC and SAP S/4HANA environments, including post-implementation support, migration support and global rollout support. With SAP ECC mainstream maintenance ending in 2027, many organisations are running ECC in parallel with S/4HANA during a phased migration. Our AMS teams maintain operational stability across both platforms while supporting organisations preparing for or executing S/4HANA transformation programmes.": "Ja. RheinBrücke unterstützt sowohl SAP-ECC- als auch SAP-S/4HANA-Umgebungen, einschließlich Support nach der Implementierung, Migrationsunterstützung und Unterstützung bei der globalen Einführung. Da der Mainstream-Support für SAP ECC im Jahr 2027 ausläuft, betreiben viele Unternehmen ECC während einer schrittweisen Migration parallel zu S/4HANA. Unsere AMS-Teams sorgen für die operative Stabilität auf beiden Plattformen und unterstützen Unternehmen bei der Vorbereitung oder Durchführung von S/4HANA-Transformationsprogrammen.",
+
+    "What is included in SAP Application Management Services?": "Was ist in den SAP Application Management Services enthalten?",
+    "RheinBrücke SAP AMS covers functional support across core SAP modules, technical support including Basis administration and system monitoring, incident and problem management, change and enhancement management, performance monitoring and optimisation and security administration including role management and access control. The scope of each AMS engagement is defined based on the organisation's landscape, support volumes and business priorities.": "RheinBrücke SAP AMS umfasst den funktionalen Support für alle zentralen SAP-Module, technischen Support einschließlich Basis-Administration und Systemüberwachung, Incident- und Problem-Management, Change- und Enhancement-Management, Leistungsüberwachung und -optimierung sowie Sicherheitsadministration einschließlich Rollenmanagement und Zugriffskontrolle. Der Umfang jedes AMS-Auftrags wird auf der Grundlage der Landschaft des Unternehmens, des Supportvolumens und der geschäftlichen Prioritäten definiert.",
+
+    "How does RheinBrücke structure SAP AMS engagements?": "Wie strukturiert RheinBrücke SAP-AMS-Projekte?",
+    "RheinBrücke AMS engagements are structured around defined service levels, clear escalation paths and regular governance reviews. Support is delivered by a dedicated team with knowledge of the client's SAP landscape, rather than a generic shared service pool. This ensures continuity, faster resolution and a support model that evolves with the client's system and business needs.": "Die AMS-Projekte von RheinBrücke basieren auf festgelegten Service-Levels, klaren Eskalationswegen und regelmäßigen Governance-Überprüfungen. Der Support wird von einem engagierten Team mit fundierten Kenntnissen der SAP-Landschaft des Kunden erbracht und nicht von einem generischen Shared-Service-Pool. Dies gewährleistet Kontinuität, eine schnellere Problemlösung und ein Supportmodell, das sich gemeinsam mit den System- und Geschäftsanforderungen des Kunden weiterentwickelt.",
+
+    "Can SAP AMS services support organisations going through an S/4HANA migration?": "Können SAP-AMS-Services Unternehmen bei einer S/4HANA-Migration unterstützen?",
+    "Yes. RheinBrücke AMS teams regularly support organisations through S/4HANA migration programmes, maintaining stability on the existing SAP ECC landscape during the transformation period while also contributing to migration preparation activities such as custom code review, data cleansing and process documentation. This continuity reduces the risk of disruption during a period of significant change.": "Ja. Die AMS-Teams von RheinBrücke unterstützen Unternehmen regelmäßig bei S/4HANA-Migrationsprogrammen, indem sie während der Transformationsphase die Stabilität der bestehenden SAP-ECC-Landschaft aufrechterhalten und gleichzeitig zu Migrationsvorbereitungsmaßnahmen wie der Überprüfung von kundeneigenem Code, der Datenbereinigung und der Prozessdokumentation beitragen. Diese Kontinuität verringert das Risiko von Betriebsunterbrechungen in einer Phase bedeutender Veränderungen.",
+
+    "How do SAP AMS services improve system performance?": "Wie verbessern SAP-AMS-Services die Systemleistung?",
+    "RheinBrücke AMS services improve performance through proactive system health monitoring, regular performance tuning of SAP applications and the HANA database, root-cause analysis of recurring issues, background job optimisation, and continuous improvement initiatives. Rather than responding reactively to problems, our AMS model is designed to prevent issues from arising in the first place.": "Die AMS-Services von RheinBrücke verbessern die Leistung durch proaktive Überwachung des Systemzustands, regelmäßige Leistungsoptimierung von SAP-Anwendungen und der HANA-Datenbank, Ursachenanalyse wiederkehrender Probleme, Optimierung von Hintergrundjobs sowie Initiativen zur kontinuierlichen Verbesserung. Anstatt reaktiv auf Probleme zu reagieren, ist unser AMS-Modell darauf ausgelegt, Probleme von vornherein zu verhindern.",
+
+    "Need Reliable SAP Application Support?": "Benötigen Sie zuverlässigen SAP-Anwendungssupport?",
+    "Talk to our SAP AMS team about keeping your systems optimised.": "Sprechen Sie mit unserem SAP-AMS-Team darüber, wie Sie Ihre Systeme optimal betreiben können."
+
+
   }
-}
+  }
 
 

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter } from "next/font/google";
 import SwiperInit from "./Components/SwiperInit";
 import OwlCarouselInit from "./Components/OwlCarouselInit";
 import CounterInit from "./Components/CounterInit";
@@ -13,11 +12,10 @@ import VideoPopupInit from "./Components/VideoPopupInit";
 import PopoverInit from "./Components/PopoverInit";
 import LoadingWrapper from "./Components/LoadingWrapper";
 import RouteTracker from "./Components/RouteTracker";
+import LeadSquaredInit from "./Components/LeadSquaredInit";
 import React, { Suspense } from "react";
 
 import translations from "./translations.json";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Enterprise Digital Transformation & ERP Solutions | RheinBrücke",
@@ -136,58 +134,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
 
 
-
-<Script id="lsq-custom" strategy="afterInteractive">
-{`
-  (function () {
-    function saveleadlan() {
-      var form = document.getElementById("form1");
-      if (!form) {
-        console.warn("LeadSquared: form1 not found");
-        return;
-      }
-
-      var fieldMapping = {
-        MXHOrgCode: "17537",
-        MXHLandingPageId: "7efef2b9-19bc-11e7-a02b-22000b10e324",
-        FirstName: "fullName",
-        EmailAddress: "email",
-        Mobile: "phone",
-        Company: "companyName",
-        JobTitle: "selection",
-        // Used by LeadSquared activity templates to show the landing page/form name
-        Page_Name: "pageName",
-        // Lead details "Notes" (what you want visible in the lead/activity panel)
-        Notes: "lsqNotes"
-      };
-
-      var onSuccess = function (data) {
-        console.log("LeadSquared Success", data);
-      };
-
-      var onError = function (data) {
-        console.log("LeadSquared Error", data);
-      };
-
-      if (typeof LSQForm !== "undefined") {
-        try {
-          new LSQForm().captureLead(fieldMapping, "form1", {
-            onSuccess: onSuccess,
-            onError: onError
-          });
-        } catch (e) {
-          console.warn("LeadSquared: captureLead failed", e);
-        }
-      } else {
-        console.warn("LeadSquared: LSQForm not loaded");
-      }
-    }
-
-    window.saveleadlan = saveleadlan;
-  })();
-`}
-</Script>
-
         {/* Schema.org JSON-LD */}
         <script
           type="application/ld+json"
@@ -302,20 +248,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           src="https://code.jquery.com/jquery-3.6.0.min.js"
           strategy="beforeInteractive"
         />
-
-        {/* ✅ LeadSquared (tracking + form capture) */}
-        <Script
-          src="https://web.mxradon.com/t/Tracker.js"
-          strategy="beforeInteractive"
-        />
-        <Script
-          src="https://web.mxradon.com/t/FormTracker.js"
-          strategy="beforeInteractive"
-        />
       
         
       </head>
-      <body className={inter.className}>
+      <body>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -330,6 +266,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <RouteTracker />
         </Suspense>
         <LoadingWrapper>{children}</LoadingWrapper>
+        <LeadSquaredInit />
         <SwiperInit />
         <OwlCarouselInit />
         <CounterInit />
