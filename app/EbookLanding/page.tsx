@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase-browser";
+import CommomLayout from "../Components/CommomLayout";
 
 interface EbookLandingData {
   id: string;
@@ -196,7 +197,8 @@ export default function EbookLandingPage() {
   }
 
   return (
-    <div id="ebook-landing-root">
+    <CommomLayout>
+      <div id="ebook-landing-root">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
@@ -687,6 +689,7 @@ color:#000;
 
       {/* ── FOOTER BAR ── */}
       <div className="footer-bar" />
-    </div>
+      </div>
+    </CommomLayout>
   );
 }

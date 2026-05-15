@@ -130,8 +130,6 @@ export default function SapAms() {
 </clipPath>
 </defs>
 </svg>
-
-
           </div>
         </div>
       </div>

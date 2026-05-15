@@ -4,7 +4,7 @@ import React from "react";
 import CommomLayout from "../../../../Components/CommomLayout";
 import Link from "next/link";
 import {useTranslation} from "../../../../hooks/useTranslation";
-export default function SapAms() {
+export default function SapTransformation() {
   const { t, language } = useTranslation();
     return (
         <CommomLayout>
@@ -19,24 +19,21 @@ export default function SapAms() {
         <div className="col-sm-6">
           <div className="section-title">
           <h2 className="text-anime-style-21" data-cursor="-opaque">
-              {t("SAP Cloud Applications")}
+              {t("SAP S/4HANA Implementation, Migration and Cloud Transformation")}
             </h2>
             <p>
-              {t("SAP Cloud Applications Implementation and Integration")}
-            </p>
-            <p>
-              {t("Transform HR, procurement and expense management with SAP SuccessFactors, Ariba and Concur. RheinBrücke helps enterprises across Europe and the Middle East build integrated, scalable cloud-enabled business operations connected to core SAP ERP environments.")}
+              {t("Modernise your ERP landscape with SAP S/4HANA. As an experienced SAP implementation partner, RheinBrücke supports enterprises across Europe and the Middle East in planning and executing SAP S/4HANA implementation, migration and RISE with SAP cloud transformation initiatives, maintaining operational continuity throughout.")}
             </p>
           </div>
         </div>
         <div className="col-sm-6">
           <div className="digiban text-center">
             {/*<img src="/images/digitalban.png" alt="">*/}
-   <svg width="300" height="597" viewBox="0 0 300 597" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_68_2)">
-<circle cx="150" cy="477.191" r="150" fill="url(#paint0_linear_68_2)"/>
+            <svg width="300" height="597" viewBox="0 0 300 597" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_63_2)">
+<circle cx="150" cy="477.191" r="150" fill="url(#paint0_linear_63_2)"/>
 <path d="M71.3243 471.847H82.4164C86.0059 471.847 87.3089 474.36 87.3089 476.672C87.3089 478.984 86.2557 480.507 84.2983 481.141V481.192C85.8782 481.422 86.8075 482.919 86.9082 485.052C87.0592 488.43 87.1599 489.269 87.762 489.98H84.9508C84.5229 489.472 84.5229 488.71 84.399 486.526C84.2228 483.275 83.1444 482.284 80.9352 482.284H73.9846V489.978H71.3243V471.845V471.847ZM81.4135 479.948C84.0234 479.948 84.6507 478.35 84.6507 477.078C84.6507 475.352 83.6226 474.182 81.489 474.182H73.9846V479.946H81.4135V479.948Z" fill="white"/>
-<path d="M89.8711 471.696H92.3803V478.679H92.4306C93.6097 476.825 95.693 476.216 97.5749 476.216C100.737 476.216 103.097 477.587 103.097 480.914V489.98H100.588V481.422C100.588 479.466 99.3833 478.349 96.6979 478.349C94.4152 478.349 92.3822 479.696 92.3822 482.311V489.98H89.873V471.696H89.8711Z" fill="white"/>
+<path d="M89.8711 471.696H92.3803V478.679H92.4306C93.6097 476.825 95.693 476.216 97.5749 476.216C100.737 476.216 103.097 477.587 103.097 480.914V489.98H100.588V481.422C100.588 479.466 99.3832 478.349 96.6979 478.349C94.4152 478.349 92.3822 479.696 92.3822 482.311V489.98H89.873V471.696H89.8711Z" fill="white"/>
 <path d="M108.242 484.088C108.444 486.831 110.852 488.305 113.084 488.305C114.515 488.305 116.473 487.823 117.327 485.944H119.987C118.732 489.143 115.795 490.438 113.21 490.438C108.091 490.438 105.582 487.162 105.582 483.328C105.582 479.494 108.091 476.218 113.21 476.218C116.674 476.218 120.337 478.25 120.337 483.761V484.092H108.24L108.242 484.088ZM117.677 482.107C117.301 479.695 115.443 478.349 113.084 478.349C110.726 478.349 108.693 479.721 108.316 482.107H117.677Z" fill="white"/>
 <path d="M122.899 471.696H125.408V474.49H122.899V471.696ZM122.899 476.672H125.408V489.98H122.899V476.672Z" fill="white"/>
 <path d="M128.469 476.672H130.978V478.679H131.028C132.207 476.825 134.291 476.216 136.173 476.216C139.334 476.216 141.694 477.587 141.694 480.914V489.98H139.185V481.422C139.185 479.466 137.981 478.349 135.296 478.349C133.013 478.349 130.98 479.695 130.98 482.311V489.98H128.471V476.672H128.469Z" fill="white"/>
@@ -54,8 +51,8 @@ export default function SapAms() {
 <path d="M151.494 453.88C151.494 456.988 149.006 459.505 145.936 459.505C142.865 459.505 140.379 456.988 140.379 453.88C140.379 450.773 142.867 448.257 145.936 448.257C149.004 448.257 151.494 450.775 151.494 453.88Z" fill="white"/>
 <path d="M173.727 453.88C173.727 456.988 171.239 459.505 168.168 459.505C165.097 459.505 162.609 456.988 162.609 453.88C162.609 450.773 165.099 448.257 168.168 448.257C171.237 448.257 173.727 450.775 173.727 453.88Z" fill="white"/>
 </g>
-<path d="M149.998 0.191406V342.191" stroke="url(#paint1_linear_68_2)" stroke-width="1.5"/>
-<path d="M89.5079 0.191406L90.6678 4.5852C98.3928 33.8483 102.304 63.9869 102.304 94.2525V342.191" stroke="url(#paint2_linear_68_2)" stroke-width="1.5"/>
+<path d="M149.998 0.191406V342.191" stroke="url(#paint1_linear_63_2)" stroke-width="1.5"/>
+<path d="M89.5079 0.191406L90.6678 4.5852C98.3928 33.8483 102.304 63.9869 102.304 94.2525V342.191" stroke="url(#paint2_linear_63_2)" stroke-width="1.5"/>
 <circle opacity="0.8" cx="96.4867" cy="28.1097" r="2.32653" fill="#28B67E"/>
 <circle cx="116.262" cy="61.8445" r="2.32653" fill="#28B67E"/>
 <circle cx="149.998" cy="38.5792" r="2.32653" fill="#28B67E"/>
@@ -63,69 +60,69 @@ export default function SapAms() {
 <circle opacity="0.5" cx="190.711" cy="21.1302" r="2.32653" fill="#28B67E"/>
 <circle cx="197.692" cy="254.947" r="2.32653" fill="#28B67E"/>
 <circle cx="132.549" cy="254.947" r="2.32653" fill="#28B67E"/>
-<path d="M210.486 0.191406L209.326 4.5852C201.601 33.8483 197.69 63.9869 197.69 94.2525V342.191" stroke="url(#paint3_linear_68_2)" stroke-width="1.5"/>
-<path d="M104.631 0.191406L105.791 4.58521C113.516 33.8483 117.427 63.9869 117.427 94.2525V342.191" stroke="url(#paint4_linear_68_2)" stroke-width="1.5"/>
-<path d="M195.365 0.191406L194.205 4.5852C186.48 33.8483 182.569 63.9869 182.569 94.2525V342.191" stroke="url(#paint5_linear_68_2)" stroke-width="1.5"/>
-<path d="M119.752 0.191406L120.912 4.5852C128.637 33.8483 132.548 63.9869 132.548 94.2525V342.191" stroke="url(#paint6_linear_68_2)" stroke-width="1.5"/>
-<path d="M180.242 0.191406L179.082 4.5852C171.357 33.8483 167.446 63.9869 167.446 94.2525V342.191" stroke="url(#paint7_linear_68_2)" stroke-width="1.5"/>
-<g filter="url(#filter0_d_68_2)">
+<path d="M210.486 0.191406L209.326 4.5852C201.601 33.8483 197.69 63.9869 197.69 94.2525V342.191" stroke="url(#paint3_linear_63_2)" stroke-width="1.5"/>
+<path d="M104.631 0.191406L105.791 4.58521C113.516 33.8483 117.427 63.9869 117.427 94.2525V342.191" stroke="url(#paint4_linear_63_2)" stroke-width="1.5"/>
+<path d="M195.365 0.191406L194.205 4.5852C186.48 33.8483 182.569 63.9869 182.569 94.2525V342.191" stroke="url(#paint5_linear_63_2)" stroke-width="1.5"/>
+<path d="M119.752 0.191406L120.912 4.5852C128.637 33.8483 132.548 63.9869 132.548 94.2525V342.191" stroke="url(#paint6_linear_63_2)" stroke-width="1.5"/>
+<path d="M180.242 0.191406L179.082 4.5852C171.357 33.8483 167.446 63.9869 167.446 94.2525V342.191" stroke="url(#paint7_linear_63_2)" stroke-width="1.5"/>
+<g filter="url(#filter0_d_63_2)">
 <circle cx="150" cy="167.191" r="75" fill="white"/>
 <circle cx="150" cy="167.191" r="74.0625" stroke="#499A9A" stroke-width="1.875"/>
 </g>
-<path d="M129.142 171.429C127.397 171.429 125.833 171.146 124.45 170.579C123.068 170.013 121.957 169.174 121.118 168.063C120.302 166.953 119.872 165.615 119.826 164.051H126.014C126.105 164.935 126.411 165.615 126.932 166.091C127.454 166.545 128.134 166.771 128.972 166.771C129.834 166.771 130.514 166.579 131.012 166.193C131.511 165.785 131.76 165.23 131.76 164.527C131.76 163.938 131.556 163.451 131.148 163.065C130.763 162.68 130.276 162.363 129.686 162.113C129.12 161.864 128.304 161.581 127.238 161.263C125.697 160.787 124.439 160.311 123.464 159.835C122.49 159.359 121.651 158.657 120.948 157.727C120.246 156.798 119.894 155.585 119.894 154.089C119.894 151.868 120.699 150.134 122.308 148.887C123.918 147.618 126.014 146.983 128.598 146.983C131.228 146.983 133.347 147.618 134.956 148.887C136.566 150.134 137.427 151.879 137.54 154.123H131.25C131.205 153.353 130.922 152.752 130.4 152.321C129.879 151.868 129.21 151.641 128.394 151.641C127.692 151.641 127.125 151.834 126.694 152.219C126.264 152.582 126.048 153.115 126.048 153.817C126.048 154.588 126.411 155.189 127.136 155.619C127.862 156.05 128.995 156.515 130.536 157.013C132.078 157.535 133.324 158.033 134.276 158.509C135.251 158.985 136.09 159.677 136.792 160.583C137.495 161.49 137.846 162.657 137.846 164.085C137.846 165.445 137.495 166.681 136.792 167.791C136.112 168.902 135.115 169.786 133.8 170.443C132.486 171.101 130.933 171.429 129.142 171.429ZM156.282 166.975H147.374L145.946 171.191H139.86L148.496 147.323H155.228L163.864 171.191H157.71L156.282 166.975ZM154.786 162.487L151.828 153.749L148.904 162.487H154.786ZM184.683 155.007C184.683 156.39 184.365 157.659 183.731 158.815C183.096 159.949 182.121 160.867 180.807 161.569C179.492 162.272 177.86 162.623 175.911 162.623H172.307V171.191H166.493V147.323H175.911C177.815 147.323 179.424 147.652 180.739 148.309C182.053 148.967 183.039 149.873 183.697 151.029C184.354 152.185 184.683 153.511 184.683 155.007ZM175.469 157.999C176.579 157.999 177.407 157.739 177.951 157.217C178.495 156.696 178.767 155.959 178.767 155.007C178.767 154.055 178.495 153.319 177.951 152.797C177.407 152.276 176.579 152.015 175.469 152.015H172.307V157.999H175.469Z" fill="#025064"/>
-<path d="M122.88 188.559C122.88 187.45 123.12 186.463 123.6 185.599C124.08 184.725 124.746 184.047 125.6 183.567C126.464 183.077 127.44 182.831 128.528 182.831C129.861 182.831 131.002 183.183 131.952 183.887C132.901 184.591 133.536 185.551 133.856 186.767H130.848C130.624 186.298 130.304 185.941 129.888 185.695C129.482 185.45 129.018 185.327 128.496 185.327C127.653 185.327 126.97 185.621 126.448 186.207C125.925 186.794 125.664 187.578 125.664 188.559C125.664 189.541 125.925 190.325 126.448 190.911C126.97 191.498 127.653 191.791 128.496 191.791C129.018 191.791 129.482 191.669 129.888 191.423C130.304 191.178 130.624 190.821 130.848 190.351H133.856C133.536 191.567 132.901 192.527 131.952 193.231C131.002 193.925 129.861 194.271 128.528 194.271C127.44 194.271 126.464 194.031 125.6 193.551C124.746 193.061 124.08 192.383 123.6 191.519C123.12 190.655 122.88 189.669 122.88 188.559ZM138.267 192.079H141.851V194.191H135.531V182.959H138.267V192.079ZM148.468 194.303C147.412 194.303 146.441 194.058 145.556 193.567C144.681 193.077 143.983 192.394 143.46 191.519C142.948 190.634 142.692 189.642 142.692 188.543C142.692 187.445 142.948 186.458 143.46 185.583C143.983 184.709 144.681 184.026 145.556 183.535C146.441 183.045 147.412 182.799 148.468 182.799C149.524 182.799 150.489 183.045 151.364 183.535C152.249 184.026 152.943 184.709 153.444 185.583C153.956 186.458 154.212 187.445 154.212 188.543C154.212 189.642 153.956 190.634 153.444 191.519C152.932 192.394 152.239 193.077 151.364 193.567C150.489 194.058 149.524 194.303 148.468 194.303ZM148.468 191.807C149.364 191.807 150.079 191.509 150.612 190.911C151.156 190.314 151.428 189.525 151.428 188.543C151.428 187.551 151.156 186.762 150.612 186.175C150.079 185.578 149.364 185.279 148.468 185.279C147.561 185.279 146.836 185.573 146.292 186.159C145.759 186.746 145.492 187.541 145.492 188.543C145.492 189.535 145.759 190.33 146.292 190.927C146.836 191.514 147.561 191.807 148.468 191.807ZM158.422 182.959V189.679C158.422 190.351 158.588 190.869 158.918 191.231C159.249 191.594 159.734 191.775 160.374 191.775C161.014 191.775 161.505 191.594 161.846 191.231C162.188 190.869 162.358 190.351 162.358 189.679V182.959H165.094V189.663C165.094 190.666 164.881 191.514 164.454 192.207C164.028 192.901 163.452 193.423 162.726 193.775C162.012 194.127 161.212 194.303 160.326 194.303C159.441 194.303 158.646 194.133 157.942 193.791C157.249 193.439 156.7 192.917 156.294 192.223C155.889 191.519 155.686 190.666 155.686 189.663V182.959H158.422ZM171.223 182.959C172.407 182.959 173.442 183.194 174.327 183.663C175.213 184.133 175.895 184.794 176.375 185.647C176.866 186.49 177.111 187.466 177.111 188.575C177.111 189.674 176.866 190.65 176.375 191.503C175.895 192.357 175.207 193.018 174.311 193.487C173.426 193.957 172.397 194.191 171.223 194.191H167.015V182.959H171.223ZM171.047 191.823C172.082 191.823 172.887 191.541 173.463 190.975C174.039 190.41 174.327 189.61 174.327 188.575C174.327 187.541 174.039 186.735 173.463 186.159C172.887 185.583 172.082 185.295 171.047 185.295H169.751V191.823H171.047Z" fill="#025064"/>
+<path d="M94.7285 167.314C93.8302 167.314 93.0252 167.168 92.3135 166.876C91.6018 166.585 91.0302 166.153 90.5985 165.581C90.1785 165.01 89.9568 164.321 89.9335 163.516H93.1185C93.1652 163.971 93.3227 164.321 93.591 164.566C93.8593 164.8 94.2093 164.916 94.641 164.916C95.0843 164.916 95.4343 164.817 95.691 164.619C95.9477 164.409 96.076 164.123 96.076 163.761C96.076 163.458 95.971 163.207 95.761 163.009C95.5627 162.811 95.3118 162.647 95.0085 162.519C94.7168 162.391 94.2968 162.245 93.7485 162.081C92.9552 161.836 92.3077 161.591 91.806 161.346C91.3043 161.101 90.8727 160.74 90.511 160.261C90.1493 159.783 89.9685 159.159 89.9685 158.389C89.9685 157.246 90.3827 156.353 91.211 155.711C92.0393 155.058 93.1185 154.731 94.4485 154.731C95.8018 154.731 96.8927 155.058 97.721 155.711C98.5493 156.353 98.9927 157.251 99.051 158.406H95.8135C95.7902 158.01 95.6443 157.701 95.376 157.479C95.1077 157.246 94.7635 157.129 94.3435 157.129C93.9818 157.129 93.6902 157.228 93.4685 157.426C93.2468 157.613 93.136 157.887 93.136 158.249C93.136 158.646 93.3227 158.955 93.696 159.176C94.0693 159.398 94.6527 159.637 95.446 159.894C96.2393 160.162 96.881 160.419 97.371 160.664C97.8727 160.909 98.3043 161.265 98.666 161.731C99.0277 162.198 99.2085 162.799 99.2085 163.534C99.2085 164.234 99.0277 164.87 98.666 165.441C98.316 166.013 97.8027 166.468 97.126 166.806C96.4493 167.145 95.6502 167.314 94.7285 167.314ZM108.698 165.021H104.113L103.378 167.191H100.245L104.69 154.906H108.155L112.6 167.191H109.433L108.698 165.021ZM107.928 162.711L106.405 158.214L104.9 162.711H107.928ZM123.315 158.861C123.315 159.573 123.152 160.226 122.825 160.821C122.499 161.405 121.997 161.877 121.32 162.239C120.644 162.601 119.804 162.781 118.8 162.781H116.945V167.191H113.953V154.906H118.8C119.78 154.906 120.609 155.076 121.285 155.414C121.962 155.752 122.47 156.219 122.808 156.814C123.146 157.409 123.315 158.091 123.315 158.861ZM118.573 160.401C119.145 160.401 119.57 160.267 119.85 159.999C120.13 159.731 120.27 159.351 120.27 158.861C120.27 158.371 120.13 157.992 119.85 157.724C119.57 157.456 119.145 157.321 118.573 157.321H116.945V160.401H118.573ZM133.027 167.314C132.128 167.314 131.323 167.168 130.612 166.876C129.9 166.585 129.328 166.153 128.897 165.581C128.477 165.01 128.255 164.321 128.232 163.516H131.417C131.463 163.971 131.621 164.321 131.889 164.566C132.158 164.8 132.508 164.916 132.939 164.916C133.383 164.916 133.733 164.817 133.989 164.619C134.246 164.409 134.374 164.123 134.374 163.761C134.374 163.458 134.269 163.207 134.059 163.009C133.861 162.811 133.61 162.647 133.307 162.519C133.015 162.391 132.595 162.245 132.047 162.081C131.253 161.836 130.606 161.591 130.104 161.346C129.603 161.101 129.171 160.74 128.809 160.261C128.448 159.783 128.267 159.159 128.267 158.389C128.267 157.246 128.681 156.353 129.509 155.711C130.338 155.058 131.417 154.731 132.747 154.731C134.1 154.731 135.191 155.058 136.019 155.711C136.848 156.353 137.291 157.251 137.349 158.406H134.112C134.088 158.01 133.943 157.701 133.674 157.479C133.406 157.246 133.062 157.129 132.642 157.129C132.28 157.129 131.988 157.228 131.767 157.426C131.545 157.613 131.434 157.887 131.434 158.249C131.434 158.646 131.621 158.955 131.994 159.176C132.368 159.398 132.951 159.637 133.744 159.894C134.538 160.162 135.179 160.419 135.669 160.664C136.171 160.909 136.603 161.265 136.964 161.731C137.326 162.198 137.507 162.799 137.507 163.534C137.507 164.234 137.326 164.87 136.964 165.441C136.614 166.013 136.101 166.468 135.424 166.806C134.748 167.145 133.948 167.314 133.027 167.314ZM146.016 150.566L141.326 170.464H138.438L143.128 150.566H146.016ZM147.051 164.916V162.501L152.581 154.591H155.923V162.326H157.358V164.916H155.923V167.191H152.931V164.916H147.051ZM153.141 157.881L150.201 162.326H153.141V157.881ZM169.761 154.906V167.191H166.769V162.134H162.114V167.191H159.121V154.906H162.114V159.719H166.769V154.906H169.761ZM179.569 165.021H174.984L174.249 167.191H171.117L175.562 154.906H179.027L183.472 167.191H180.304L179.569 165.021ZM178.799 162.711L177.277 158.214L175.772 162.711H178.799ZM195.815 167.191H192.822L187.817 159.614V167.191H184.825V154.906H187.817L192.822 162.519V154.906H195.815V167.191ZM205.631 165.021H201.046L200.311 167.191H197.179L201.624 154.906H205.089L209.534 167.191H206.366L205.631 165.021ZM204.861 162.711L203.339 158.214L201.834 162.711H204.861Z" fill="#025064"/>
+<path d="M96.6923 176.065V177.846H94.2743V185.191H92.0513V177.846H89.6333V176.065H96.6923ZM102.462 185.191L100.564 181.746H100.031V185.191H97.808V176.065H101.539C102.258 176.065 102.869 176.191 103.372 176.442C103.883 176.694 104.265 177.04 104.516 177.482C104.767 177.916 104.893 178.401 104.893 178.938C104.893 179.545 104.72 180.087 104.373 180.563C104.035 181.04 103.532 181.378 102.865 181.577L104.971 185.191H102.462ZM100.031 180.173H101.409C101.816 180.173 102.12 180.074 102.319 179.874C102.527 179.675 102.631 179.393 102.631 179.029C102.631 178.683 102.527 178.41 102.319 178.21C102.12 178.011 101.816 177.911 101.409 177.911H100.031V180.173ZM111.969 183.579H108.563L108.017 185.191H105.69L108.992 176.065H111.566L114.868 185.191H112.515L111.969 183.579ZM111.397 181.863L110.266 178.522L109.148 181.863H111.397ZM124.037 185.191H121.814L118.096 179.562V185.191H115.873V176.065H118.096L121.814 181.72V176.065H124.037V185.191ZM128.951 185.282C128.283 185.282 127.685 185.174 127.157 184.957C126.628 184.741 126.203 184.42 125.883 183.995C125.571 183.571 125.406 183.059 125.389 182.461H127.755C127.789 182.799 127.906 183.059 128.106 183.241C128.305 183.415 128.565 183.501 128.886 183.501C129.215 183.501 129.475 183.428 129.666 183.28C129.856 183.124 129.952 182.912 129.952 182.643C129.952 182.418 129.874 182.232 129.718 182.084C129.57 181.937 129.384 181.816 129.159 181.72C128.942 181.625 128.63 181.517 128.223 181.395C127.633 181.213 127.152 181.031 126.78 180.849C126.407 180.667 126.086 180.399 125.818 180.043C125.549 179.688 125.415 179.224 125.415 178.652C125.415 177.803 125.722 177.14 126.338 176.663C126.953 176.178 127.755 175.935 128.743 175.935C129.748 175.935 130.558 176.178 131.174 176.663C131.789 177.14 132.118 177.807 132.162 178.665H129.757C129.739 178.371 129.631 178.141 129.432 177.976C129.232 177.803 128.977 177.716 128.665 177.716C128.396 177.716 128.179 177.79 128.015 177.937C127.85 178.076 127.768 178.28 127.768 178.548C127.768 178.843 127.906 179.073 128.184 179.237C128.461 179.402 128.894 179.58 129.484 179.77C130.073 179.97 130.55 180.16 130.914 180.342C131.286 180.524 131.607 180.789 131.876 181.135C132.144 181.482 132.279 181.928 132.279 182.474C132.279 182.994 132.144 183.467 131.876 183.891C131.616 184.316 131.234 184.654 130.732 184.905C130.229 185.157 129.635 185.282 128.951 185.282ZM139.588 176.065V177.846H135.87V179.77H138.652V181.499H135.87V185.191H133.647V176.065H139.588ZM145.072 185.282C144.214 185.282 143.426 185.083 142.706 184.684C141.996 184.286 141.428 183.731 141.003 183.02C140.587 182.301 140.379 181.495 140.379 180.602C140.379 179.71 140.587 178.908 141.003 178.197C141.428 177.487 141.996 176.932 142.706 176.533C143.426 176.135 144.214 175.935 145.072 175.935C145.93 175.935 146.715 176.135 147.425 176.533C148.145 176.932 148.708 177.487 149.115 178.197C149.531 178.908 149.739 179.71 149.739 180.602C149.739 181.495 149.531 182.301 149.115 183.02C148.699 183.731 148.136 184.286 147.425 184.684C146.715 185.083 145.93 185.282 145.072 185.282ZM145.072 183.254C145.8 183.254 146.381 183.012 146.814 182.526C147.256 182.041 147.477 181.4 147.477 180.602C147.477 179.796 147.256 179.155 146.814 178.678C146.381 178.193 145.8 177.95 145.072 177.95C144.336 177.95 143.746 178.189 143.304 178.665C142.871 179.142 142.654 179.788 142.654 180.602C142.654 181.408 142.871 182.054 143.304 182.539C143.746 183.016 144.336 183.254 145.072 183.254ZM155.63 185.191L153.732 181.746H153.199V185.191H150.976V176.065H154.707C155.426 176.065 156.037 176.191 156.54 176.442C157.051 176.694 157.433 177.04 157.684 177.482C157.935 177.916 158.061 178.401 158.061 178.938C158.061 179.545 157.888 180.087 157.541 180.563C157.203 181.04 156.7 181.378 156.033 181.577L158.139 185.191H155.63ZM153.199 180.173H154.577C154.984 180.173 155.288 180.074 155.487 179.874C155.695 179.675 155.799 179.393 155.799 179.029C155.799 178.683 155.695 178.41 155.487 178.21C155.288 178.011 154.984 177.911 154.577 177.911H153.199V180.173ZM169.791 176.065V185.191H167.568V179.718L165.527 185.191H163.733L161.679 179.705V185.191H159.456V176.065H162.082L164.643 182.383L167.178 176.065H169.791ZM177.071 183.579H173.665L173.119 185.191H170.792L174.094 176.065H176.668L179.97 185.191H177.617L177.071 183.579ZM176.499 181.863L175.368 178.522L174.25 181.863H176.499ZM187.54 176.065V177.846H185.122V185.191H182.899V177.846H180.481V176.065H187.54ZM190.879 176.065V185.191H188.656V176.065H190.879ZM196.806 185.282C195.948 185.282 195.159 185.083 194.44 184.684C193.729 184.286 193.161 183.731 192.737 183.02C192.321 182.301 192.113 181.495 192.113 180.602C192.113 179.71 192.321 178.908 192.737 178.197C193.161 177.487 193.729 176.932 194.44 176.533C195.159 176.135 195.948 175.935 196.806 175.935C197.664 175.935 198.448 176.135 199.159 176.533C199.878 176.932 200.441 177.487 200.849 178.197C201.265 178.908 201.473 179.71 201.473 180.602C201.473 181.495 201.265 182.301 200.849 183.02C200.433 183.731 199.869 184.286 199.159 184.684C198.448 185.083 197.664 185.282 196.806 185.282ZM196.806 183.254C197.534 183.254 198.114 183.012 198.548 182.526C198.99 182.041 199.211 181.4 199.211 180.602C199.211 179.796 198.99 179.155 198.548 178.678C198.114 178.193 197.534 177.95 196.806 177.95C196.069 177.95 195.48 178.189 195.038 178.665C194.604 179.142 194.388 179.788 194.388 180.602C194.388 181.408 194.604 182.054 195.038 182.539C195.48 183.016 196.069 183.254 196.806 183.254ZM210.873 185.191H208.65L204.932 179.562V185.191H202.709V176.065H204.932L208.65 181.72V176.065H210.873V185.191Z" fill="#025064"/>
 <defs>
-<filter id="filter0_d_68_2" x="20.625" y="37.8164" width="258.75" height="258.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_63_2" x="20.625" y="37.8164" width="258.75" height="258.75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feMorphology radius="9.375" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_68_2"/>
+<feMorphology radius="9.375" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_63_2"/>
 <feOffset/>
 <feGaussianBlur stdDeviation="22.5"/>
 <feComposite in2="hardAlpha" operator="out"/>
 <feColorMatrix type="matrix" values="0 0 0 0 0.286275 0 0 0 0 0.603922 0 0 0 0 0.603922 0 0 0 0.78 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_68_2"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_68_2" result="shape"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_63_2"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_63_2" result="shape"/>
 </filter>
-<linearGradient id="paint0_linear_68_2" x1="150" y1="327.191" x2="150" y2="627.191" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_63_2" x1="150" y1="327.191" x2="150" y2="627.191" gradientUnits="userSpaceOnUse">
 <stop stop-color="#008080"/>
 <stop offset="0.67478" stop-color="#082326" stop-opacity="0"/>
 </linearGradient>
-<linearGradient id="paint1_linear_68_2" x1="150.498" y1="0.191406" x2="150.498" y2="342.191" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint1_linear_63_2" x1="150.498" y1="0.191406" x2="150.498" y2="342.191" gradientUnits="userSpaceOnUse">
 <stop stop-color="#499A9A" stop-opacity="0"/>
 <stop offset="0.5" stop-color="#499A9A"/>
 <stop offset="1" stop-color="#499A9A" stop-opacity="0"/>
 </linearGradient>
-<linearGradient id="paint2_linear_68_2" x1="95.9059" y1="0.191406" x2="95.9059" y2="342.191" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint2_linear_63_2" x1="95.9059" y1="0.191406" x2="95.9059" y2="342.191" gradientUnits="userSpaceOnUse">
 <stop stop-color="#499A9A" stop-opacity="0"/>
 <stop offset="0.5" stop-color="#499A9A"/>
 <stop offset="1" stop-color="#499A9A" stop-opacity="0"/>
 </linearGradient>
-<linearGradient id="paint3_linear_68_2" x1="204.088" y1="0.191406" x2="204.088" y2="342.191" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint3_linear_63_2" x1="204.088" y1="0.191406" x2="204.088" y2="342.191" gradientUnits="userSpaceOnUse">
 <stop stop-color="#499A9A" stop-opacity="0"/>
 <stop offset="0.5" stop-color="#499A9A"/>
 <stop offset="1" stop-color="#499A9A" stop-opacity="0"/>
 </linearGradient>
-<linearGradient id="paint4_linear_68_2" x1="111.029" y1="0.191406" x2="111.029" y2="342.191" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint4_linear_63_2" x1="111.029" y1="0.191406" x2="111.029" y2="342.191" gradientUnits="userSpaceOnUse">
 <stop stop-color="#499A9A" stop-opacity="0"/>
 <stop offset="0.5" stop-color="#499A9A"/>
 <stop offset="1" stop-color="#499A9A" stop-opacity="0"/>
 </linearGradient>
-<linearGradient id="paint5_linear_68_2" x1="188.967" y1="0.191406" x2="188.967" y2="342.191" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint5_linear_63_2" x1="188.967" y1="0.191406" x2="188.967" y2="342.191" gradientUnits="userSpaceOnUse">
 <stop stop-color="#499A9A" stop-opacity="0"/>
 <stop offset="0.5" stop-color="#499A9A"/>
 <stop offset="1" stop-color="#499A9A" stop-opacity="0"/>
 </linearGradient>
-<linearGradient id="paint6_linear_68_2" x1="126.15" y1="0.191406" x2="126.15" y2="342.191" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint6_linear_63_2" x1="126.15" y1="0.191406" x2="126.15" y2="342.191" gradientUnits="userSpaceOnUse">
 <stop stop-color="#499A9A" stop-opacity="0"/>
 <stop offset="0.5" stop-color="#499A9A"/>
 <stop offset="1" stop-color="#499A9A" stop-opacity="0"/>
 </linearGradient>
-<linearGradient id="paint7_linear_68_2" x1="173.844" y1="0.191406" x2="173.844" y2="342.191" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint7_linear_63_2" x1="173.844" y1="0.191406" x2="173.844" y2="342.191" gradientUnits="userSpaceOnUse">
 <stop stop-color="#499A9A" stop-opacity="0"/>
 <stop offset="0.5" stop-color="#499A9A"/>
 <stop offset="1" stop-color="#499A9A" stop-opacity="0"/>
 </linearGradient>
-<clipPath id="clip0_68_2">
+<clipPath id="clip0_63_2">
 <rect width="300" height="269" fill="white" transform="translate(0 327.191)"/>
 </clipPath>
 </defs>
@@ -136,7 +133,7 @@ export default function SapAms() {
     </div>
   </div>
   {/* Hero Section End*/}
-  <div className="aboutretail retail-baner1 retail-baner-11 sapcloud approachh systemview pd60">
+  <div className="aboutretail retail-baner1 retail-baner-11 kineticsectrans approachh systemview pd60">
     <div className="container">
       <div className="row section-row1 align-items-center builtsec">
         <div className="col-sm-5">
@@ -150,7 +147,7 @@ export default function SapAms() {
               <img src="/images/Automate.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("SAP SuccessFactors - Core HR, Talent, Learning and Performance implementation")}
+                  {t("System Conversion (Brownfield) - retain data and config while upgrading to S/4HANA")}
                 </p>
               </div>
             </div>
@@ -158,7 +155,7 @@ export default function SapAms() {
               <img src="/images/Enhance.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("SAP Ariba - Procurement automation, sourcing and supplier collaboration")}
+                  {t("New Implementation (Greenfield) - deploy S/4HANA using SAP best-practice frameworks")}
                 </p>
               </div>
             </div>
@@ -166,7 +163,7 @@ export default function SapAms() {
               <img src="/images/Optimize.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("SAP Concur - Travel, expense capture, approval workflows and compliance")}
+                  {t("Landscape Transformation - consolidate multiple SAP systems during migration")}
                 </p>
               </div>
             </div>
@@ -174,7 +171,7 @@ export default function SapAms() {
               <img src="/images/Enable.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("Integration of cloud applications with SAP S/4HANA and SAP ECC")}
+                  {t("RISE with SAP (Private Cloud) - migrate ERP to managed cloud with SAP's unified programme")}
                 </p>
               </div>
             </div>
@@ -182,7 +179,7 @@ export default function SapAms() {
               <img src="/images/Embed.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("Data migration, process transformation and change management")}
+                  {t("GROW with SAP (Public Cloud) - rapid public cloud ERP adoption for standardised environments")}
                 </p>
               </div>
             </div>
@@ -190,11 +187,14 @@ export default function SapAms() {
               <img src="/images/Integrate.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("Cloud application optimisation and ongoing support")}
+                  {t("Post-implementation optimisation, data migration and go-live support")}
                 </p>
               </div>
             </div>
           </div>
+        </div>
+        <div className="col-sm-6">
+          {/* <img src="/new/retail-baner.jpg" alt=""> */}
         </div>
       </div>
     </div>
@@ -214,7 +214,7 @@ export default function SapAms() {
               <img src="/images/ss1.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("SAP SuccessFactors - Core HR, Talent, Learning and Performance implementation")}
+                  {t("System Conversion (Brownfield) - retain data and config while upgrading to S/4HANA")}
                 </p>
               </div>
             </div>
@@ -222,7 +222,7 @@ export default function SapAms() {
               <img src="/images/ss2.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("SAP Ariba - Procurement automation, sourcing and supplier collaboration")}
+                  {t("New Implementation (Greenfield) - deploy S/4HANA using SAP best-practice frameworks")}
                 </p>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function SapAms() {
               <img src="/images/ss3.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("SAP Concur - Travel, expense capture, approval workflows and compliance")}
+                  {t("Landscape Transformation - consolidate multiple SAP systems during migration")}
                 </p>
               </div>
             </div>
@@ -238,7 +238,7 @@ export default function SapAms() {
               <img src="/images/ss7.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("Integration of cloud applications with SAP S/4HANA and SAP ECC")}
+                  {t("RISE with SAP (Private Cloud) - migrate ERP to managed cloud with SAP's unified programme")}
                 </p>
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function SapAms() {
               <img src="/images/ss8.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("Data migration, process transformation and change management")}
+                  {t("GROW with SAP (Public Cloud) - rapid public cloud ERP adoption for standardised environments")}
                 </p>
               </div>
             </div>
@@ -254,11 +254,14 @@ export default function SapAms() {
               <img src="/images/ss9.svg" alt="" />
               <div className="pill-cont">
                 <p>
-                  {t("Cloud application optimisation and ongoing support")}
+                  {t("Post-implementation optimisation, data migration and go-live support")}
                 </p>
               </div>
             </div>
           </div>
+        </div>
+        <div className="col-sm-12 mobileapproach">
+          <img src="/images/approach.jpg" alt="" />
         </div>
       </div>
     </div>
@@ -270,14 +273,15 @@ export default function SapAms() {
         <div className="col-sm-12">
           <div className="section-title text-center text-black">
             <h2 className="text-anime-style-2" data-cursor="-opaque">
-              {t("Why Choose RheinBrücke")}
+              {t("Why Choose RheinBrücke?")}
             </h2>
           </div>
-          <div className="row mt-5 justify-content-center">
+          <div className="row mt-5">
             <div className="col-lg-6 col-md-6 col-12">
               <div className="service-item-body1 firstmobilebox sapsub1 w80">
+                {/* <h3>Seamless Integration</h3> */}
                 <h3>
-                  {t("Modernised HR and workforce management on a globally scalable platform")}
+                  {t("Real-time financial visibility and faster close cycles through embedded analytics")}
                 </h3>
                 <div className="text-center">
                   <img src="/images/sap1.svg" alt="" />
@@ -286,32 +290,36 @@ export default function SapAms() {
             </div>
             <div className="col-lg-6 col-md-6 col-12">
               <div className="service-item-body1 epicright1  w80">
+                {/* <h3>Configurable</h3> */}
                 <h3>
-                  {t("Improved procurement visibility, spend control and supplier collaboration")}
+                  {t("Improved supply chain planning with simplified S/4HANA data models")}
                 </h3>
                 <img src="/images/sap2.svg" alt="" />
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-12">
-              <div className="service-item-body1 epicright sap3 w80">
-                <h3>{t("Simplified travel and expense management with full financial transparency")} </h3>
+            <div className="col-lg-4 col-md-4 col-12">
+              <div className="service-item-body1 epicright sap3">
+                {/* <h3>Reporting and Analytics</h3> */}
+                <h3>{t("Scalable cloud-based SAP environments via RISE and GROW pathways")} </h3>
                 <img src="/images/sap3.svg" alt="" />
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-12">
-              <div className="service-item-body1 epicright w80">
+            <div className="col-lg-4 col-md-4 col-12">
+              <div className="service-item-body1 epicright">
+                {/* <h3>Mobile Accessibility</h3> */}
                 <h3>
-                  {t("Seamless integration with SAP S/4HANA, ECC and third-party systems")}
+                  {t("Certified SAP partner with proven migration frameworks and accelerators across Europe and the Middle East")}
                 </h3>
                 <div className="text-center">
                   <img src="/images/advant4.svg" alt="" />
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-12">
-              <div className="service-item-body1 epicleft w80">
+            <div className="col-lg-4 col-md-4 col-12">
+              <div className="service-item-body1 epicleft">
+                {/* <h3>Effective Data Management</h3> */}
                 <h3>
-                  {t("Single implementation partner across SuccessFactors, Ariba and Concur")}
+                  {t("End-to-end support from readiness assessment through to stabilisation")}
                 </h3>
                 <img src="/images/advant5.svg" alt="" />
               </div>
@@ -356,7 +364,7 @@ export default function SapAms() {
                             aria-expanded="true"
                             aria-controls="collapse1"
                           >
-                            {t("What are SAP Cloud Applications?")}
+                            {t("What is SAP S/4HANA?")}  
                           </button>
                         </h2>
                         <div
@@ -367,7 +375,7 @@ export default function SapAms() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("SAP Cloud Applications are cloud-based enterprise solutions supporting HR, procurement and travel and expense management, integrated with core SAP ERP environments.")}
+                              {t("SAP S/4HANA is SAP's next-generation ERP platform designed to support real-time enterprise operations using in-memory database technology.")}   
                             </p>
                           </div>
                         </div>
@@ -387,7 +395,7 @@ export default function SapAms() {
                             aria-expanded="false"
                             aria-controls="collapse2"
                           >
-                            {t("What is SAP SuccessFactors used for?")}
+                            {t("What is RISE with SAP?")} 
                           </button>
                         </h2>
                         <div
@@ -398,38 +406,7 @@ export default function SapAms() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("SAP SuccessFactors manages the full employee lifecycle, recruitment, onboarding, talent management, workforce planning and employee development.")}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      {/* FAQ Item End */}
-                      {/* FAQ Item Start */}
-                      <div
-                        className="accordion-item wow fadeInUp"
-                        data-wow-delay="0.3s"
-                      >
-                        <h2 className="accordion-header" id="heading3">
-                          <button
-                            className="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapse3"
-                            aria-expanded="false"
-                            aria-controls="collapse3"
-                          >
-                            {t("What modules does RheinBrücke implement within SAP SuccessFactors?")}
-                          </button>
-                        </h2>
-                        <div
-                          id="collapse3"
-                          className="accordion-collapse collapse"
-                          aria-labelledby="heading3"
-                          data-bs-parent="#accordion"
-                        >
-                          <div className="accordion-body">
-                            <p>
-                              {t("RheinBrücke implements SAP SuccessFactors across Core HR and Employee Central, Talent Management (Performance and Goals, Succession and Development), Recruitment and Onboarding, Learning Management and Workforce Analytics and Planning. Implementation scope is determined based on the organisation's HR transformation priorities.")}
+                              {t("RISE with SAP combines SAP S/4HANA Cloud, infrastructure services and migration tools to help organisations migrate legacy SAP environments to cloud-based ERP platforms.")}  
                             </p>
                           </div>
                         </div>
@@ -440,58 +417,27 @@ export default function SapAms() {
                         className="accordion-item wow fadeInUp"
                         data-wow-delay="0.4s"
                       >
-                        <h2 className="accordion-header" id="heading4">
+                        <h2 className="accordion-header" id="heading3">
                           <button
                             className="accordion-button collapsed"
                             type="button"
                             data-bs-toggle="collapse"
-                            data-bs-target="#collapse4"
+                            data-bs-target="#collapse3"
                             aria-expanded="false"
-                            aria-controls="collapse4"
+                            aria-controls="collapse3"
                           >
-                            {t("Does RheinBrücke support multi-country SAP SuccessFactors deployments?")}
+                           {t("How long does an SAP S/4HANA migration take?")}  
                           </button>
                         </h2>
                         <div
-                          id="collapse4"
+                          id="collapse3"
                           className="accordion-collapse collapse"
-                          aria-labelledby="heading4"
+                          aria-labelledby="heading3"
                           data-bs-parent="#accordion"
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("Yes. RheinBrücke has delivered SAP SuccessFactors implementations across multiple geographies, managing localisation requirements, country-specific compliance and regional data privacy rules. Our global HR standardisation approach establishes a consistent core process model while accommodating local variations.")}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      {/* FAQ Item End */}
-                      {/* FAQ Item Start */}
-                      <div
-                        className="accordion-item wow fadeInUp"
-                        data-wow-delay="0.5s"
-                      >
-                        <h2 className="accordion-header" id="heading5">
-                          <button
-                            className="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapse5"
-                            aria-expanded="false"
-                            aria-controls="collapse5"
-                          >
-                            {t("How do SAP Cloud Applications integrate with SAP S/4HANA?")}
-                          </button>
-                        </h2>
-                        <div
-                          id="collapse5"
-                          className="accordion-collapse collapse"
-                          aria-labelledby="heading5"
-                          data-bs-parent="#accordion"
-                        >
-                          <div className="accordion-body">
-                            <p>
-                              {t("SuccessFactors, Ariba and Concur integrate with SAP S/4HANA and SAP ECC, enabling organisations to connect cloud applications with core ERP and maintain consistent enterprise processes.")}
+                              {t("Most projects range from 6 to 18 months, depending on whether organisations adopt a brownfield conversion, greenfield implementation, or landscape transformation.")}  
                             </p>
                           </div>
                         </div>
@@ -502,27 +448,58 @@ export default function SapAms() {
                         className="accordion-item wow fadeInUp"
                         data-wow-delay="0.6s"
                       >
-                        <h2 className="accordion-header" id="heading6">
+                        <h2 className="accordion-header" id="heading4">
                           <button
                             className="accordion-button collapsed"
                             type="button"
                             data-bs-toggle="collapse"
-                            data-bs-target="#collapse6"
+                            data-bs-target="#collapse4"
                             aria-expanded="false"
-                            aria-controls="collapse6"
+                            aria-controls="collapse4"
                           >
-                            {t("What is SAP Ariba?")}
+                           {t("Does RheinBrücke support SAP ECC to SAP S/4HANA migration?")}   
                           </button>
                         </h2>
                         <div
-                          id="collapse6"
+                          id="collapse4"
                           className="accordion-collapse collapse"
-                          aria-labelledby="heading6"
+                          aria-labelledby="heading4"
                           data-bs-parent="#accordion"
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("SAP Ariba is a procurement and supplier collaboration platform that enables organisations to manage sourcing, purchasing and supplier relationships.")}
+                              {t("Yes. RheinBrücke supports enterprises across the full SAP transformation lifecycle, including readiness assessments, migration planning, implementation and cloud transformation through RISE with SAP. We work with organisations in manufacturing, life sciences and distribution across Europe and the Middle East.")} 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.6s"
+                      >
+                        <h2 className="accordion-header" id="heading5">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse5"
+                            aria-expanded="false"
+                            aria-controls="collapse5"
+                          >
+                           {t("What is the difference between Brownfield and Greenfield migration?")}   
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse5"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading5"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("A brownfield conversion migrates your existing SAP ECC system directly to S/4HANA, retaining historical data and configuration. A greenfield implementation builds a new S/4HANA system from SAP best practices. Brownfield is faster but carries forward existing processes and customisations. Greenfield takes longer but delivers a cleaner, more standardised system.")} 
                             </p>
                           </div>
                         </div>
@@ -533,27 +510,27 @@ export default function SapAms() {
                         className="accordion-item wow fadeInUp"
                         data-wow-delay="0.7s"
                       >
-                        <h2 className="accordion-header" id="heading7">
+                        <h2 className="accordion-header" id="heading6">
                           <button
                             className="accordion-button collapsed"
                             type="button"
                             data-bs-toggle="collapse"
-                            data-bs-target="#collapse7"
+                            data-bs-target="#collapse6"
                             aria-expanded="false"
-                            aria-controls="collapse7"
+                            aria-controls="collapse6"
                           >
-                            {t("What SAP Ariba modules does RheinBrücke implement?")}
+                           {t("What happens to existing customisations in a brownfield conversion?")}   
                           </button>
                         </h2>
                         <div
-                          id="collapse7"
+                          id="collapse6"
                           className="accordion-collapse collapse"
-                          aria-labelledby="heading7"
+                          aria-labelledby="heading6"
                           data-bs-parent="#accordion"
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("RheinBrücke implements SAP Ariba Buying and Invoicing for purchase-to-pay automation, Ariba Sourcing for strategic sourcing and RFx management, Ariba Contracts for contract management and compliance and Ariba Supplier Lifecycle and Performance for supplier qualification and monitoring. Implementation scope is scoped based on the organisation's procurement transformation priorities.")}
+                              {t("All custom ABAP code and enhancements must be reviewed for S/4HANA compatibility. Some classic customisations are no longer needed because S/4HANA handles the same requirements natively. Others require adaptation or replacement with SAP BTP side-by-side extensions to preserve clean-core principles. RheinBrücke performs a full custom code assessment during the readiness phase to catalogue, prioritise and resolve each item.")} 
                             </p>
                           </div>
                         </div>
@@ -564,27 +541,27 @@ export default function SapAms() {
                         className="accordion-item wow fadeInUp"
                         data-wow-delay="0.8s"
                       >
-                        <h2 className="accordion-header" id="heading8">
+                        <h2 className="accordion-header" id="heading7">
                           <button
                             className="accordion-button collapsed"
                             type="button"
                             data-bs-toggle="collapse"
-                            data-bs-target="#collapse8"
+                            data-bs-target="#collapse7"
                             aria-expanded="false"
-                            aria-controls="collapse8"
+                            aria-controls="collapse7"
                           >
-                            {t("What is SAP Concur?")}
+                           {t("What is a landscape transformation and when is it needed?")}   
                           </button>
                         </h2>
                         <div
-                          id="collapse8"
+                          id="collapse7"
                           className="accordion-collapse collapse"
-                          aria-labelledby="heading8"
+                          aria-labelledby="heading7"
                           data-bs-parent="#accordion"
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("SAP Concur provides cloud-based travel and expense management solutions that automate expense reporting, travel booking and financial compliance processes.")}
+                              {t("A landscape transformation restructures multiple SAP systems during migration, for example consolidating three regional SAP ECC instances into a single S/4HANA environment. It is typically used in merger and acquisition scenarios, global template rollout programmes, or where an organisation wants to reduce the number of SAP systems it operates.")} 
                             </p>
                           </div>
                         </div>
@@ -595,27 +572,27 @@ export default function SapAms() {
                         className="accordion-item wow fadeInUp"
                         data-wow-delay="0.9s"
                       >
-                        <h2 className="accordion-header" id="heading9">
+                        <h2 className="accordion-header" id="heading8">
                           <button
                             className="accordion-button collapsed"
                             type="button"
                             data-bs-toggle="collapse"
-                            data-bs-target="#collapse9"
+                            data-bs-target="#collapse8"
                             aria-expanded="false"
-                            aria-controls="collapse9"
+                            aria-controls="collapse8"
                           >
-                            {t("What does RheinBrücke implement within SAP Concur?")}
+                           {t("What is the difference between SAP S/4HANA and RISE with SAP?")}   
                           </button>
                         </h2>
                         <div
-                          id="collapse9"
+                          id="collapse8"
                           className="accordion-collapse collapse"
-                          aria-labelledby="heading9"
+                          aria-labelledby="heading8"
                           data-bs-parent="#accordion"
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("RheinBrücke implements SAP Concur Travel for corporate booking management and policy enforcement, Concur Expense for automated expense capture, approval and reimbursement and Concur Invoice for accounts payable automation where required. Implementation scope is defined based on the organisation's travel and expense management priorities.")}
+                              {t("SAP S/4HANA is the ERP platform that modernises enterprise systems, while RISE with SAP is the cloud transformation framework that enables organisations to migrate and operate SAP S/4HANA in cloud environments.")} 
                             </p>
                           </div>
                         </div>
@@ -626,6 +603,37 @@ export default function SapAms() {
                         className="accordion-item wow fadeInUp"
                         data-wow-delay="1.0s"
                       >
+                        <h2 className="accordion-header" id="heading9">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse9"
+                            aria-expanded="false"
+                            aria-controls="collapse9"
+                          >
+                           {t("What is GROW with SAP and how is it different from RISE with SAP?")}   
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse9"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading9"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("GROW with SAP is designed for organisations adopting a standardised public cloud ERP environment, combining SAP S/4HANA Public Cloud with best-practice business processes and rapid implementation frameworks. RISE with SAP is the private cloud pathway, suited to organisations migrating existing SAP environments with greater configuration control. See the GROW with SAP sub-page for full detail.")} 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="1.1s"
+                      >
                         <h2 className="accordion-header" id="heading10">
                           <button
                             className="accordion-button collapsed"
@@ -635,7 +643,7 @@ export default function SapAms() {
                             aria-expanded="false"
                             aria-controls="collapse10"
                           >
-                            {t("Does RheinBrücke implement all three SAP Cloud Applications?")}
+                           {t("When should organisations move from SAP ECC to SAP S/4HANA?")}   
                           </button>
                         </h2>
                         <div
@@ -646,8 +654,45 @@ export default function SapAms() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("Yes. RheinBrücke supports SAP SuccessFactors implementation, SAP Ariba implementation and SAP Concur implementation along with enterprise integration and optimisation services.")}
+                              {t("With SAP ending mainstream maintenance for SAP ECC in 2027, organisations are accelerating their move to S/4HANA. Migration becomes urgent when legacy ECC systems limit scalability, reporting speed and innovation adoption. Moving to SAP S/4HANA enables real-time analytics, simplified data models and improved operational visibility before the deadline.")} 
                             </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="1.2s"
+                      >
+                        <h2 className="accordion-header" id="heading11">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse11"
+                            aria-expanded="false"
+                            aria-controls="collapse11"
+                          >
+                           {t("What are the benefits of RISE with SAP cloud transformation?")}   
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse11"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading11"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("RISE with SAP helps organisations:")} 
+                            </p>
+                            <ul>
+                              <li>{t("Simplify ERP infrastructure management")}</li>
+                              <li>{t("Reduce on-premise data centre costs")}</li>
+                              <li>{t("Improve scalability and resilience of SAP environments")}</li>
+                              <li>{t("Accelerate adoption of SAP innovations and cloud services")}</li>
+                            </ul>
                           </div>
                         </div>
                       </div>
@@ -672,9 +717,9 @@ export default function SapAms() {
         <div className="firstrow">
           <div className="row">
             <div className="col-sm-8">
-              <h2>{t("Ready to Transform Your Cloud Business Processes?")}</h2>
+              <h2>{t("Ready to Modernise with SAP S/4HANA?")}</h2>
 
-              <p>{t("Speak to our SAP cloud applications team today.")}</p>
+              <p>{t("Talk to our SAP experts to plan your transformation journey.")}</p>
             </div>
             <div className="col-sm-4">
               <div className="ser-btn text-right">

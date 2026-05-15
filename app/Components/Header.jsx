@@ -261,6 +261,11 @@ export default function Header() {
         { url: '/Epicor-companion', title: 'Epicor Companion', keywords: 'epicor companion mobile' },
         { url: '/Epicor-epicpay', title: 'Epicor EpicPay', keywords: 'epicor epicpay payment' },
         { url: '/solutions/erp-enterprise-solutions-and-services/sap', title: 'SAP', keywords: 'sap erp enterprise' },
+        { url: '/solutions/erp-enterprise-solutions-and-services/sap/sap-analytics', title: 'SAP Analytics', keywords: 'sap analytics reporting bi dashboards' },
+        { url: '/solutions/erp-enterprise-solutions-and-services/sap/sap-application-management-services', title: 'SAP Application Management Services', keywords: 'sap ams application management support' },
+        { url: '/solutions/erp-enterprise-solutions-and-services/sap/sap-btp', title: 'SAP BTP', keywords: 'sap btp business technology platform integration' },
+        { url: '/solutions/erp-enterprise-solutions-and-services/sap/sap-cloud-applications', title: 'SAP Cloud Applications', keywords: 'sap cloud applications successfactors ariba' },
+        { url: '/solutions/erp-enterprise-solutions-and-services/sap/sap-s4hana-transformation', title: 'SAP S/4HANA Transformation', keywords: 'sap s4hana transformation migration upgrade' },
         { url: '/solutions/erp-enterprise-solutions-and-services/ms-dynamics', title: 'Microsoft Dynamics Solutions', keywords: 'microsoft dynamics erp crm' },
         { url: '/solutions/erp-enterprise-solutions-and-services/sugar-crm', title: 'Sugar CRM', keywords: 'sugar crm customer relationship management' },
         { url: '/ERP-customer-excellence', title: 'ERP Customer Excellence', keywords: 'erp customer excellence service' },
@@ -1096,7 +1101,7 @@ export default function Header() {
                                                                                                 >
                                                                                                     {t("SAP")}
                                                                                                 </Link>
-                                                                                                <button
+                                                                                                {/* <button
                                                                                                     type="button"
                                                                                                     onClick={(e) => {
                                                                                                         e.preventDefault();
@@ -1106,14 +1111,14 @@ export default function Header() {
                                                                                                     style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
                                                                                                 >
                                                                                                     <NavArrowRight />
-                                                                                                </button>
+                                                                                                </button> */}
                                                                                             </div>
-                                                                                            <div
+                                                                                            {/* <div
                                                                                                  id="demo3"
                                                                                                  className={`${sapCollapsed ? 'show' : 'collapse'} content-box`}
                                                                                                  style={{ display: sapCollapsed ? 'block' : 'none' }}
                                                                                              >
-                                                                                                <Link href="/solutions/erp-enterprise-solutions-and-services/sap/sap-transformation">
+                                                                                                <Link href="/solutions/erp-enterprise-solutions-and-services/sap/sap-s4hana-transformation">
                                                                                                     {" "}
                                                                                                     {t("SAP S/4HANA Transformation")}
                                                                                                 </Link>
@@ -1129,12 +1134,12 @@ export default function Header() {
                                                                                                     {" "}
                                                                                                     {t("SAP Analytics")}
                                                                                                 </Link>
-                                                                                                <Link href="/solutions/erp-enterprise-solutions-and-services/sap/sap-ams">
+                                                                                                <Link href="/solutions/erp-enterprise-solutions-and-services/sap/sap-application-management-services">
                                                                                                     {" "}
                                                                                                     {t("SAP Application Management Services (AMS)")}
                                                                                                 </Link>
 
-                                                                                            </div>
+                                                                                            </div> */}
                                                                                         </li>
                                                                                         {/* <li className="ser-btn">
                                                                                             <Link href="/solutions/erp-enterprise-solutions-and-services/sap" className="">

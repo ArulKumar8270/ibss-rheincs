@@ -18408,33 +18408,41 @@ body.no-scroll {
 	background-repeat: no-repeat;
 	background-position: right top;
 }
+
+.kineticsectrans::before {
+	/* background-attachment: scroll !important; */
+	background: url(../images/Kinetic.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: right top;
+}
 .kineticsecana::before {
-	background-attachment: fixed !important;
+	/* background-attachment: fixed !important; */
 	background: url(../images/sapanalytics.jpg);
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: right top;
 }
 .kineticsecams::before {
-	/* background-attachment: fixed !important; */
+	background-attachment: scroll !important;
 	background: url(../images/sapams.jpg);
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: 150% 100%;
+	background-position: right top;
 }
 .sapcloud::before {
-	background-attachment: fixed !important;
+	/* background-attachment: fixed !important; */
 	background: url(../images/sap-cloud.jpg);
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: right top;
 }
 .sapbtp::before {
-	background-attachment: fixed !important;
+	/* background-attachment: fixed !important; */
 	background: url(../images/sap-btp.jpg);
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: right top;
+	background-position: 30% 100%;
 }
 .iscalasec::before {
 	background-attachment: fixed !important;

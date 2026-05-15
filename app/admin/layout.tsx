@@ -83,6 +83,7 @@ export default function AdminLayout({
   const menuItems = [
     { href: '/admin', label: 'Dashboard', icon: '📊' },
     { href: '/admin/contacts', label: 'Contact Enquiries', icon: '📬' },
+    { href: '/admin/deftech-bharat-2026', label: 'DefTech Enquiries', icon: '🛩️' },
     { href: '/admin/blogs', label: 'Blogs', icon: '📝' },
     { href: '/admin/news-events', label: 'News & Events', icon: '📰' },
     { href: '/admin/case-studies', label: 'Case Studies', icon: '📄' },
