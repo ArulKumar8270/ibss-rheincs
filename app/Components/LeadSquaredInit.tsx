@@ -3,12 +3,27 @@
 import Script from "next/script";
 
 export default function LeadSquaredInit() {
+  const orgCode = process.env.NEXT_PUBLIC_LSQ_ORG_CODE || "17537";
+  const defaultLandingPageId =
+    process.env.NEXT_PUBLIC_LSQ_LANDING_PAGE_ID ||
+    "7efef2b9-19bc-11e7-a02b-22000b10e324";
+
   return (
     <>
       <Script
         id="leadsquared-tracker"
         src="https://web.mxradon.com/t/Tracker.js"
         strategy="afterInteractive"
+        onLoad={() => {
+          try {
+            (window as any).MXHOrgCode = orgCode;
+            if (typeof (window as any).pidTracker === "function") {
+              (window as any).pidTracker(orgCode);
+            }
+          } catch {
+            // ignore
+          }
+        }}
       />
       <Script
         id="leadsquared-formtracker"
@@ -16,60 +31,34 @@ export default function LeadSquaredInit() {
         strategy="afterInteractive"
       />
 
-      <Script id="leadsquared-saveleadlan" strategy="afterInteractive">
+      <Script id="lsq-custom" strategy="afterInteractive">
         {`
 (function () {
-  if (typeof window === "undefined") return;
-  if (window.__lsqSaveLeadLanInstalled) return;
-  window.__lsqSaveLeadLanInstalled = true;
+  var ORG_CODE = ${JSON.stringify(orgCode)};
+  var DEFAULT_LANDING_PAGE_ID = ${JSON.stringify(defaultLandingPageId)};
 
-  function loadScriptOnce(src, flagKey) {
-    if (window[flagKey]) return window[flagKey];
-    window[flagKey] = new Promise(function (resolve) {
-      try {
-        var s = document.createElement("script");
-        s.src = src;
-        s.async = true;
-        s.onload = function () { resolve(true); };
-        s.onerror = function () { resolve(false); };
-        document.head.appendChild(s);
-      } catch (e) {
-        resolve(false);
-      }
-    });
-    return window[flagKey];
-  }
-
-  async function saveleadlan() {
+  function saveleadlan() {
     var form = document.getElementById("form1");
     if (!form) {
       console.warn("LeadSquared: form1 not found");
       return;
     }
 
-    var fieldMapping = {
-      // Mandatory (per LeadSquared JS API)
-      MXHOrgCode: "17537",
+    var landingPageId = DEFAULT_LANDING_PAGE_ID;
+    try {
+      var lpEl = form.querySelector('[name="MXHLandingPageId"]');
+      if (lpEl && lpEl.value && String(lpEl.value).trim()) {
+        landingPageId = String(lpEl.value).trim();
+      }
+    } catch (e) {}
 
-      // Lead fields (values are your form field names)
+    var fieldMapping = {
+      MXHOrgCode: ORG_CODE,
+      MXHLandingPageId: landingPageId,
       FirstName: "fullName",
       EmailAddress: "email",
       Mobile: "phone",
-      Company: "companyName",
-      JobTitle: "selection",
-
-      // Custom fields used across multiple forms/pages
-      // Some LeadSquared accounts use different schema names for this field;
-      // we map a few common variants to ensure "Page Name" shows the actual page/form.
-      Page_Name: "pageName",
-      PageName: "pageName",
-      mx_Page_Name: "pageName",
-
-      // Persist the exact page URL for activity context / reporting.
-      Page_URL: "Page_URL",
-      PageUrl: "Page_URL",
-      mx_Page_URL: "Page_URL",
-      Notes: "lsqNotes",
+      Company: "companyName"
     };
 
     var onSuccess = function (data) {
@@ -80,27 +69,17 @@ export default function LeadSquaredInit() {
       console.log("LeadSquared Error", data);
     };
 
-    function tryCapture() {
-      if (typeof window.LSQForm === "undefined") return false;
+    if (typeof LSQForm !== "undefined") {
       try {
-        new window.LSQForm().captureLead(fieldMapping, "form1", {
+        new LSQForm().captureLead(fieldMapping, "form1", {
           onSuccess: onSuccess,
-          onError: onError,
+          onError: onError
         });
-        return true;
       } catch (e) {
         console.warn("LeadSquared: captureLead failed", e);
-        return false;
       }
-    }
-
-    if (tryCapture()) return;
-
-    // If scripts were blocked/delayed, try loading FormTracker again and retry once.
-    console.warn("LeadSquared: LSQForm not loaded; attempting to load FormTracker.js");
-    await loadScriptOnce("https://web.mxradon.com/t/FormTracker.js", "__lsqFormTrackerLoadPromise");
-    if (!tryCapture()) {
-      console.warn("LeadSquared: LSQForm still not loaded after retry");
+    } else {
+      console.warn("LeadSquared: LSQForm not loaded");
     }
   }
 

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useTranslation } from "../../hooks/useTranslation";
 import { createClient } from "@/lib/supabase-browser";
 import { useRouter } from "next/navigation";
+import LeadSquaredInit from "../../Components/LeadSquaredInit";
 
 export default function digitalsolution() {
   const { t, language } = useTranslation();
@@ -136,6 +137,7 @@ export default function digitalsolution() {
     return (
         <CommomLayout>
           <>
+            <LeadSquaredInit />
   {/*?php include "navbar.php" ?*/}
   {/* Hero Section Start*/}
   <div className="hero brainsec bluebg digi1 digitalsolsec pdb0">
@@ -11030,10 +11032,7 @@ export default function digitalsolution() {
 
                   <form onSubmit={handleSubmit} id="form1">
                     {/* Hidden Fields for LeadSquared Tracking */}
-                    {/* <input type="hidden" name="Search" value={leadSquaredPageName} />
-  	                                        <input type="hidden" name="lsqNotes" value="Selection: Digital Solutions Brochure Request | Message: Requested Digital Solutions Brochure download" />
-  	                                        <input type="hidden" name="message" value="Requested Digital Solutions Brochure download" /> */}
-
+                    <input type="hidden" name="MXHOrgCode" value="17537" />
                     <input
                       type="hidden"
                       name="pageName"
@@ -11041,18 +11040,25 @@ export default function digitalsolution() {
                     />
                     <input
                       type="hidden"
+                      name="selection"
+                      value="Digital Solutions Brochure Request"
+                    />
+                    <input
+                      type="hidden"
+                      name="lsqNotes"
+                      value="Selection: Digital Solutions Brochure Request | Message: Requested Digital Solutions Brochure download"
+                    />
+                    <input
+                      type="hidden"
                       name="Page_URL"
-                      value={
-                        isMounted
-                          ? window.location.href
-                          : ""
-                      }
+                      value={isMounted ? window.location.href : ""}
                     />
                     <div className="w100">
                       <input
                         type="text"
                         className="form-control custom-form-control"
                         name="fullName"
+                        id="fullName"
                         placeholder={t("Enter your full name")}
                         value={formData.fullName}
                         onChange={handleInputChange}
@@ -11069,6 +11075,7 @@ export default function digitalsolution() {
                           <select
                             className="form-select"
                             name="countryCode"
+                            id="countryCode"
                             value={formData.countryCode}
                             onChange={handleInputChange}
                             onFocus={() => setIsCountryCodeFocused(true)}
@@ -11341,6 +11348,7 @@ export default function digitalsolution() {
                         <input
                           type="tel"
                           name="phone"
+                          id="phone"
                           placeholder={t("Enter your phone number")}
                           value={formData.phone}
                           onChange={handleInputChange}
@@ -11366,6 +11374,7 @@ export default function digitalsolution() {
                         type="email"
                         className="form-control custom-form-control"
                         name="email"
+                        id="email"
                         placeholder={t("Enter your email address")}
                         value={formData.email}
                         onChange={handleInputChange}
@@ -11378,6 +11387,7 @@ export default function digitalsolution() {
                         type="text"
                         className="form-control custom-form-control"
                         name="companyName"
+                        id="companyName"
                         placeholder={t("Enter your company name")}
                         value={formData.companyName}
                         onChange={handleInputChange}

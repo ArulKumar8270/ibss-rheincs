@@ -2,8 +2,66 @@
   background: #f5f7f8;
 }
 
+.defTopHeader {
+  background: #0f3c3f;
+  padding: 20px 0 10px;
+  height: 80px !important;
+}
+
+.defTopRow {
+  --bs-gutter-x: 12px;
+}
+
+.defLogoLink {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.defLogoImg {
+  width: auto;
+  height: 58px;
+  display: block;
+}
+
+.defMailWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+.defMailIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.defMailLink {
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "helvetica-neue-lt-pro",
+    Helvetica;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.defMailLink:hover {
+  text-decoration: underline;
+}
+
 .heroWrap {
   background: #ffffff;
+}
+
+@media (max-width: 576px) {
+  .defLogoImg {
+    height: 46px;
+  }
+  .defMailLink {
+    font-size: 13px;
+  }
 }
 
 .heroImg {
@@ -141,4 +199,28 @@
   font-size: 13px;
   color: #3f3f3f;
   text-align: center;
+}
+.defhead {
+    background: #082326 !important;
+    padding: 10px 0px;
+    display: flex;
+    border-bottom: 1px solid #0e3033;
+    height: 100px !important;
+    align-items: center;
+}
+.defhead img{
+  height: 70px !important;
+}
+.defhead .logo{
+  text-align: left !important;
+}
+.mt0{
+  margin-top: 0px !important;
+}
+.mb20{
+  margin-bottom: 20px !important;
+}
+
+.pd0{
+  padding: 0px 0px !important;
 }

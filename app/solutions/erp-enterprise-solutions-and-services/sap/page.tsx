@@ -7,6 +7,7 @@ import { useTranslation } from "../../../hooks/useTranslation";
 import { createClient } from "@/lib/supabase-browser";
 import { useRouter } from "next/navigation";
 import { NavArrowLeft } from "@/app/icons";
+import LeadSquaredInit from "../../../Components/LeadSquaredInit";
 
 const page = () => {
   const { t, language } = useTranslation();
@@ -170,6 +171,7 @@ const page = () => {
   return (
     <CommomLayout>
       <>
+        <LeadSquaredInit />
         {/* Header Start */}
         {/*?php include "navbar.php" ?*/}
         {/* Header End */}
@@ -1920,7 +1922,7 @@ const page = () => {
                   </p>
                   <div className="ser-btn serbtn1">
                     <Link
-                      href="/solutions/erp-enterprise-solutions-and-services/sap/sap-ams/"
+                      href="/solutions/erp-enterprise-solutions-and-services/sap/sap-application-management-services/"
                       className="animated-svg-link1 animated-svg-link12"
                     >
                       {t("Read More")}
@@ -3067,14 +3069,21 @@ const page = () => {
 
                   <form onSubmit={handleSubmit} id="form1">
                     {/* Hidden Fields for LeadSquared Tracking */}
-                    {/* <input type="hidden" name="Search" value={leadSquaredPageName} />
-  	                                        <input type="hidden" name="lsqNotes" value="Selection: SAP Brochure Request | Message: Requested SAP Brochure download" />
-  	                                        <input type="hidden" name="message" value="Requested SAP Brochure download" /> */}
-
+                    <input type="hidden" name="MXHOrgCode" value="17537" />
                     <input
                       type="hidden"
                       name="pageName"
                       value="SAP Brochure Request"
+                    />
+                    <input
+                      type="hidden"
+                      name="selection"
+                      value="SAP Brochure Request"
+                    />
+                    <input
+                      type="hidden"
+                      name="lsqNotes"
+                      value="Selection: SAP Brochure Request | Message: Requested SAP Brochure download"
                     />
                     <input
                       type="hidden"
@@ -3090,6 +3099,7 @@ const page = () => {
                         type="text"
                         className="form-control custom-form-control"
                         name="fullName"
+                        id="fullName"
                         placeholder={t("Enter your full name")}
                         value={formData.fullName}
                         onChange={handleInputChange}
@@ -3106,6 +3116,7 @@ const page = () => {
                           <select
                             className="form-select"
                             name="countryCode"
+                            id="countryCode"
                             value={formData.countryCode}
                             onChange={handleInputChange}
                             onFocus={() => setIsCountryCodeFocused(true)}
@@ -3378,6 +3389,7 @@ const page = () => {
                         <input
                           type="tel"
                           name="phone"
+                          id="phone"
                           placeholder={t("Enter your phone number")}
                           value={formData.phone}
                           onChange={handleInputChange}
@@ -3403,6 +3415,7 @@ const page = () => {
                         type="email"
                         className="form-control custom-form-control"
                         name="email"
+                        id="email"
                         placeholder={t("Enter your email address")}
                         value={formData.email}
                         onChange={handleInputChange}
@@ -3415,6 +3428,7 @@ const page = () => {
                         type="text"
                         className="form-control custom-form-control"
                         name="companyName"
+                        id="companyName"
                         placeholder={t("Enter your company name")}
                         value={formData.companyName}
                         onChange={handleInputChange}

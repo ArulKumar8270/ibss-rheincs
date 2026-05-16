@@ -1904,10 +1904,10 @@ export default function Collaterals() {
 
 	                                                <form onSubmit={handleSubmit} id="form1" className="row g-3 pp-0">
                                                     {/* Hidden Fields for LeadSquared Tracking */}
-                                                    {/* <input type="hidden" name="Search" value={leadSquaredPageName} /> */}
+                                                    <input type="hidden" name="MXHOrgCode" value="17537" />
                                                     <input type="hidden" name="pageName" value={selectedCollateral?.title ? `Selection: Collateral: ${selectedCollateral.title}` : "Selection: Collaterals Request"} />
-
-                                                     {/* <input type="hidden" name="pageName" value="Collateral Request" /> */}
+                                                    <input type="hidden" name="selection" value={selectedCollateral?.title ? `Selection: Collateral: ${selectedCollateral.title}` : "Selection: Collaterals Request"} />
+                                                    <input type="hidden" name="lsqNotes" value={selectedCollateral?.title ? `Selection: Collateral: ${selectedCollateral.title} | Message: Requested Collateral download` : "Selection: Collaterals Request | Message: Requested Collateral download"} />
 <input
   type="hidden"
   name="Page_URL"
@@ -1920,6 +1920,7 @@ export default function Collaterals() {
                                                             type="text"
                                                             className={`form-control custom-form-control ${touched.fullName && errors.fullName ? 'is-invalid' : ''}`}
                                                             name="fullName"
+                                                            id="fullName"
                                                             placeholder="Enter Your Full Name*"
                                                             value={formData.fullName}
                                                             onChange={handleInputChange}
@@ -1940,6 +1941,7 @@ export default function Collaterals() {
                                                                 <select
                                                                     className="form-select country-code-select"
                                                                     name="countryCode"
+                                                                    id="countryCode"
                                                                     value={formData.countryCode}
                                                                     onChange={handleInputChange}
                                                                     onFocus={() => setIsCountryCodeFocused(true)}
@@ -2202,6 +2204,7 @@ export default function Collaterals() {
                                                                 type="tel"
                                                                 className={`form-control ${touched.phone && errors.phone ? 'is-invalid' : ''}`}
                                                                 name="phone"
+                                                                id="phone"
                                                                 placeholder="Enter Your Phone No*"
                                                                 value={formData.phone}
                                                                 onChange={handleInputChange}
@@ -2229,6 +2232,7 @@ export default function Collaterals() {
                                                             type="email"
                                                             className={`form-control custom-form-control ${touched.email && errors.email ? 'is-invalid' : ''}`}
                                                             name="email"
+                                                            id="email"
                                                             placeholder="Enter Your Email Address*"
                                                             value={formData.email}
                                                             onChange={handleInputChange}
@@ -2248,6 +2252,7 @@ export default function Collaterals() {
                                                             type="text"
                                                             className={`form-control custom-form-control ${touched.companyName && errors.companyName ? 'is-invalid' : ''}`}
                                                             name="companyName"
+                                                            id="companyName"
                                                             placeholder="Enter Your Company Name*"
                                                             value={formData.companyName}
                                                             onChange={handleInputChange}

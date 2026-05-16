@@ -247,23 +247,6 @@ export default function Contact() {
   const [isCountryCodeFocused, setIsCountryCodeFocused] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
-  const [leadSquaredPageName, setLeadSquaredPageName] = useState(
-    "",
-  );
-
-  const titleize = (value: string) =>
-    value
-      .trim()
-      .replace(/\s+/g, " ")
-      .split(" ")
-      .filter(Boolean)
-      .map((word) =>
-        word.length <= 3 && /^[a-z]+$/i.test(word)
-          ? word.toUpperCase()
-          : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(),
-      )
-      .join(" ");
-
 
   // Auto-detect country code based on user's location
   useEffect(() => {
@@ -483,12 +466,12 @@ export default function Contact() {
     if (typeof window === "undefined") return;
 
     await waitFor(() => typeof (window as any).saveleadlan === "function", {
-      timeoutMs: 5000,
+      timeoutMs: 1000,
       intervalMs: 50,
     });
 
     await waitFor(() => typeof (window as any).LSQForm !== "undefined", {
-      timeoutMs: 6000,
+      timeoutMs: 1200,
       intervalMs: 100,
     });
 
@@ -499,7 +482,7 @@ export default function Contact() {
     }
 
     try {
-      await Promise.resolve(saveLead());
+      saveLead();
       await sleep(400);
     } catch (error) {
       console.warn("LeadSquared: capture failed", error);
@@ -790,18 +773,7 @@ export default function Contact() {
                     </div>
                   )}
 
-                  <form
-                    onSubmit={handleSubmit}
-                    id="form1"
-                    className="row g-3 pp-0"
-                  >
-                    {/* Hidden Field for LeadSquared Form Identification */}
-        <input type="hidden" name="pageName" value="Contact Us" />
-<input
-  type="hidden"
-  name="Page_URL"
-  value={typeof window !== "undefined" ? window.location.href : ""}
-/>
+                  <form onSubmit={handleSubmit} id="form1" className="row g-3 pp-0">
                     {/* Full Name */}
                     <div className="col-12">
                       <input
@@ -1432,18 +1404,18 @@ export default function Contact() {
           <div className="container">
             <div className="section-title">
               <h2
-                className="text-anime-style-21 text-center text-dark "
+                className="text-anime-style-2 text-center text-dark "
                 data-cursor="-opaque"
               >
                 {t("Talk to Our Experts")}
               </h2>
               <ul className="contres-15">
-                <li>{t("Netherlands")}</li>
-                <li>{t("Germany")}</li>
-                <li>{t("USA")}</li>
-                <li>{t("India")}</li>
-                <li>{t("UAE")}</li>
-                <li>{t("KSA")}</li>
+                <li> Netherlands</li>
+                <li>Germany</li>
+                <li>USA</li>
+                <li>India</li>
+                <li>UAE</li>
+                <li>KSA</li>
               </ul>
             </div>
             <div className="map-img-waber">

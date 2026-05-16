@@ -8,6 +8,7 @@ import Awards from "../../Components/Awards";
 import { createClient } from "@/lib/supabase-browser";
 import { useRouter } from "next/navigation";
 import {useTranslation} from "../../hooks/useTranslation";
+import LeadSquaredInit from "../../Components/LeadSquaredInit";
 
 export default function Corushr() {
   const { t, language } = useTranslation();
@@ -216,6 +217,7 @@ export default function Corushr() {
     return (
         <CommomLayout>
             <>
+                <LeadSquaredInit />
                 {/* Header Start */}
                 {/*?php include "navbar.php" ?*/}
                 {/* Header End */}
@@ -1604,9 +1606,10 @@ export default function Corushr() {
 
 	                                    <form onSubmit={handleSubmit} id="form1">
   	                                        {/* Hidden Fields for LeadSquared Tracking */}
-  	                                        {/* <input type="hidden" name="Search" value={leadSquaredPageName} />
-  	                                        <input type="hidden" name="lsqNotes" value="Selection: CorusHR Brochure Request" /> */}
+                                            <input type="hidden" name="MXHOrgCode" value="17537" />
                                             <input type="hidden" name="pageName" value="CorusHR Brochure Request" />
+                                            <input type="hidden" name="selection" value="CorusHR Brochure Request" />
+                                            <input type="hidden" name="lsqNotes" value="Selection: CorusHR Brochure Request | Message: Requested CorusHR Brochure download" />
 <input
   type="hidden"
   name="Page_URL"

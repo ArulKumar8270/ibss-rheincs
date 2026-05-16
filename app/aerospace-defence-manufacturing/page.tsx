@@ -7,6 +7,7 @@ import { useTranslation } from "../hooks/useTranslation";
 import { createClient } from "@/lib/supabase-browser";
 import { useRouter } from "next/navigation";
 import TestimonialandAward from "../Components/TestimonialandAward";
+import LeadSquaredInit from "../Components/LeadSquaredInit";
 
 export default function AerospaceDefenceManufacturing() {
   const { t, language } = useTranslation();
@@ -146,6 +147,7 @@ export default function AerospaceDefenceManufacturing() {
   return (
     <CommomLayout>
       <>
+        <LeadSquaredInit />
         {/* Header Start */}
         {/*?php include "navbar.php" ?*/}
         {/* Header End */}
@@ -692,14 +694,21 @@ export default function AerospaceDefenceManufacturing() {
 
                   <form onSubmit={handleSubmit} id="form1">
                     {/* Hidden Fields for LeadSquared Tracking */}
-                    {/* <input type="hidden" name="Search" value={leadSquaredPageName} />
-  	                                        <input type="hidden" name="lsqNotes" value="Selection: Aerospace Brochure Request | Message: Requested Aerospace Brochure download" />
-  	                                        <input type="hidden" name="message" value="Requested Aerospace Brochure download" /> */}
-
+                    <input type="hidden" name="MXHOrgCode" value="17537" />
                     <input
                       type="hidden"
                       name="pageName"
                       value="Aerospace Brochure Request"
+                    />
+                    <input
+                      type="hidden"
+                      name="selection"
+                      value="Aerospace Brochure Request"
+                    />
+                    <input
+                      type="hidden"
+                      name="lsqNotes"
+                      value="Selection: Aerospace Brochure Request | Message: Requested Aerospace Brochure download"
                     />
                     <input
                       type="hidden"
@@ -715,6 +724,7 @@ export default function AerospaceDefenceManufacturing() {
                         type="text"
                         className="form-control custom-form-control"
                         name="fullName"
+                        id="fullName"
                         placeholder={t("Enter your full name")}
                         value={formData.fullName}
                         onChange={handleInputChange}
@@ -731,6 +741,7 @@ export default function AerospaceDefenceManufacturing() {
                           <select
                             className="form-select"
                             name="countryCode"
+                            id="countryCode"
                             value={formData.countryCode}
                             onChange={handleInputChange}
                             onFocus={() => setIsCountryCodeFocused(true)}
@@ -1003,6 +1014,7 @@ export default function AerospaceDefenceManufacturing() {
                         <input
                           type="tel"
                           name="phone"
+                          id="phone"
                           placeholder={t("Enter your phone number")}
                           value={formData.phone}
                           onChange={handleInputChange}
@@ -1028,6 +1040,7 @@ export default function AerospaceDefenceManufacturing() {
                         type="email"
                         className="form-control custom-form-control"
                         name="email"
+                        id="email"
                         placeholder={t("Enter your email address")}
                         value={formData.email}
                         onChange={handleInputChange}
@@ -1040,6 +1053,7 @@ export default function AerospaceDefenceManufacturing() {
                         type="text"
                         className="form-control custom-form-control"
                         name="companyName"
+                        id="companyName"
                         placeholder={t("Enter your company name")}
                         value={formData.companyName}
                         onChange={handleInputChange}

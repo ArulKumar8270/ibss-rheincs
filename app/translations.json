@@ -3967,6 +3967,7 @@
     "The Path to Enterprise Transformation": "Der Weg zur Transformation",
     "Every successful ERP transformation starts with clarity and ends with measurable impact. Our approach takes you from insights to execution, unlocking real value at every stage of your digital journey.": "Erfolgreiche Transformation beginnt mit Klarheit und endet mit messbaren Ergebnissen. Unser Ansatz ist darauf ausgerichtet, diesen Prozess zu begleiten: von der Identifikation bis zur Umsetzung. So generiert Ihr Unternehmen in jeder Phase echten Mehrwert. ",
     "Know More": "Mehr erfahren",
+    "Know How": "Mehr erfahren",
     "We start by understanding your business, its core your operating model, value drivers, and constraints. Using data-led diagnostics and performance benchmarking, we identify the real levers for impact whether it's efficiency, margin growth, agility, or customer experience.": "Wir beginnen mit einer Bestandsaufnahme des Kerngeschäfts – Ihr Betriebsmodell, Ihre Werttreiber und Ihre Einschränkungen. Mithilfe datengestützter Diagnosen und Leistungsbenchmarks identifizieren wir die tatsächlichen Hebel für Veränderungen – sei es Effizienz, Margenwachstum, Agilität oder Kundenerfahrung.",
     "Next, we bring together the systems, tools, and workflows that drive your operations. We align technology with your strategic goals – implementing and integrating ERP software and digital platforms including Epicor, Microsoft Dynamics, SAP, and others, tailored to your unique needs. Our focus: speed, reliability, and scalability": "Als Nächstes führen wir Systeme, Tools und Arbeitsabläufe zusammen, die Ihre Betriebsabläufe steuern. Wir stimmen die Technologie auf Ihre strategischen Ziele und individuellen Bedürfnisse ab. Es folgt die Implementierung und Integration von ERP-Systemen oder anderen digitalen Lösungen (Epicor, Microsoft Dynamics, SAP u.a.) Unser Fokus: Geschwindigkeit, Qualität und Skalierbarkeit.",
     "Digital transformation becomes reality. From digitised supply chains to intelligent forecasting and AI-enabled ERP solutions, we deploy systems that unlock new revenue, simplify complexity, and accelerate time-to-value.": "Die Veränderung wird zur Realität. Von digitalisierten Lieferketten bis hin zu intelligenten Prognosen – wir implementieren Lösungen, die etwas bewegen. Sie erschließen neue Einnahmequellen, vereinfachen komplexe Prozesse und beschleunigen die Amortisationszeit.",
@@ -4348,30 +4349,31 @@
 
 
     "Microsoft Dynamics Solutions": "Microsoft Dynamics-Lösungen",
-    "Empower your enterprise with intelligent, scalable ERP and CRM solutions from Microsoft Dynamics.": "Stärken Sie Ihr Unternehmen mit intelligenten, skalierbaren ERP- und CRM-Lösungen von Microsoft Dynamics.",
-    "At RheinBrücke, we help organisations streamline operations, integrate business functions, and unlock real-time insights using Microsoft Solutions all tailored to your industry and growth goals.": "Bei RheinBrücke helfen wir Unternehmen dabei, ihre Abläufe zu optimieren, Geschäftsfunktionen zu integrieren und Echtzeit-Einblicke zu gewinnen – mit Microsoft-Lösungen, die ganz auf Ihre Branche und Ihre Wachstumsziele zugeschnitten sind.",
+    "Microsoft Dynamics ERP & CRM Solutions for Scalable, Intelligent Enterprises": "Microsoft Dynamics-Lösungen",
+    "Empower your business with Microsoft Dynamics to unify operations, integrate critical functions, and unlock real-time insights.": "Stärken Sie Ihr Unternehmen mit intelligenten, skalierbaren ERP- und CRM-Lösungen von Microsoft Dynamics.",
+    "At RheinBrücke, we help organisations modernise systems, automate workflows, and drive data-led decisions with solutions tailored to your industry, scale, and growth ambitions.": "Bei RheinBrücke helfen wir Unternehmen dabei, ihre Abläufe zu optimieren, Geschäftsfunktionen zu integrieren und Echtzeit-Einblicke zu gewinnen – mit Microsoft-Lösungen, die ganz auf Ihre Branche und Ihre Wachstumsziele zugeschnitten sind.",
 
     "The Microsoft Dynamics Advantage": "Die Vorteile von Microsoft Dynamics",
     "Modern businesses face increasing complexity, competitive pressures, and evolving customer expectations. Common challenges include:": "Moderne Unternehmen sehen sich mit zunehmender Komplexität, Wettbewerbsdruck und sich wandelnden Kundenerwartungen konfrontiert. Zu den häufigsten Herausforderungen zählen:",
     "Disconnected legacy systems limiting agility and scalability": "Unzusammenhängende Altsysteme, die Agilität und Skalierbarkeit einschränken",
-    "Siloed data and inconsistent reporting": "Siloartige Daten und inkonsistente Berichterstellung",
-    "Manual, time-consuming workflows": "Manuelle, zeitaufwändige Arbeitsabläufe",
-    "Rising operational costs and inefficiencies": "Steigende Betriebskosten und Ineffizienzen",
-    "Limited real-time visibility for decision-making": "Eingeschränkte Echtzeit-Transparenz für die Entscheidungsfindung",
-    "Difficulty integrating ERP, CRM, and productivity tools": "Schwierigkeiten bei der Integration von ERP-, CRM- und Produktivitäts-Tools",
+    "Siloed business data causing poor visibility and inconsistent reporting": "Siloartige Daten und inkonsistente Berichterstellung",
+    "Manual, time-intensive workflows reducing operational efficiency and productivity": "Manuelle, zeitaufwändige Arbeitsabläufe",
+    "Increasing operational costs due to inefficient processes and system fragmentation": "Steigende Betriebskosten und Ineffizienzen",
+    "Lack of real-time analytics and insights for faster, data-driven decision-making": "Eingeschränkte Echtzeit-Transparenz für die Entscheidungsfindung",
+    "Complex integration between ERP, CRM, and productivity platforms like Microsoft 365": "Schwierigkeiten bei der Integration von ERP-, CRM- und Produktivitäts-Tools",
     "Microsoft Dynamics addresses these with unified, cloud-based ERP and CRM capabilities, enabling you to digitise core operations, optimise processes, and drive growth.": "Microsoft Dynamics begegnet diesen Herausforderungen mit einheitlichen, cloudbasierten ERP- und CRM-Funktionen, mit denen Sie Ihre Kerngeschäftsprozesse digitalisieren, Prozesse optimieren und das Wachstum vorantreiben können.",
 
       "Our Microsoft Dynamics Solutions": "Unsere Microsoft Dynamics-Lösungen",
     "Dynamics 365 ERP & CRM Solutions": "Dynamics 365 ERP- und CRM-Lösungen",
-"Finance, Operations, Sales, Marketing, Customer Service, Field Service, HR": "– Finanzen, Betrieb, Vertrieb, Marketing, Kundenservice, Außendienst, Personalwesen",
+"Finance, Operations, Sales, Marketing, Customer Service, Field Service, and Human Resources.": "– Finanzen, Betrieb, Vertrieb, Marketing, Kundenservice, Außendienst, Personalwesen",
     "Business Central Migration & Implementation": "Business Central-Migration und -Implementierung",
-"Cloud-based ERP for SMBs covering finance, supply chain, sales, service, and projects": "Cloudbasiertes ERP für KMUs, das Finanzen, Lieferkette, Vertrieb, Service und Projekte abdeckt",
+"Cloud-based ERP for SMBs covering finance, supply chain, sales, customer service, and project management.": "Cloudbasiertes ERP für KMUs, das Finanzen, Lieferkette, Vertrieb, Service und Projekte abdeckt",
     "Navision Support, Migration & Upgrades": "Navision-Support, Migration und Upgrades",
-"Maintain and modernise NAV with a clear path to Business Central": "Wartung und Modernisierung von NAV mit einem klaren Weg zu Business Central",
+"Maintain and modernise Dynamics NAV with a structured transition to Dynamics 365 Business Central.": "Wartung und Modernisierung von NAV mit einem klaren Weg zu Business Central",
     "AX (Axapta) Support, Migration and Upgrades": "AX (Axapta)-Support, Migration und Upgrades",
-"Move to Dynamics 365 Finance & Operations for scalability and advanced capabilities": "Umstieg auf Dynamics 365 Finance & Operations für Skalierbarkeit und erweiterte Funktionen",
+"Transition from legacy Dynamics AX to Dynamics 365 Finance & Operations for scalability and advanced analytics.": "Umstieg auf Dynamics 365 Finance & Operations für Skalierbarkeit und erweiterte Funktionen",
     "Integration with Microsoft 365, Power Platform, Azure, and Power BI": "Integration mit Microsoft 365, Power Platform, Azure und Power BI",
-"Boost collaboration, analytics, and automation": "Verbesserung der Zusammenarbeit, Analyse und Automatisierung",
+"Seamless integration, analytics, workflow automation, and enhanced collaboration.": "Verbesserung der Zusammenarbeit, Analyse und Automatisierung",
 
     "Our Approach": "Unser Ansatz",
     "We align Microsoft Dynamics capabilities with your strategic objectives using our Analyse–Integrate–Transform (AIT) methodology:": "Wir passen die Funktionen von Microsoft Dynamics mithilfe unserer AIT-Methodik (Analyse–Integration–Transformation) an Ihre strategischen Ziele an:",
@@ -4383,11 +4385,11 @@
     "Ensure scalability and security for future growth": "Gewährleistung von Skalierbarkeit und Sicherheit für zukünftiges Wachstum",
 
     "The RheinBrücke Advantage": "Die Vorteile von RheinBrücke",
-    "Microsoft AI Cloud and ISV Partner with deep ERP expertise": "Microsoft AI Cloud und ISV-Partner mit fundierter ERP-Expertise",
-    "Proven global rollouts with localisation capabilities": "Bewährte globale Rollouts mit Lokalisierungsfunktionen",
-    "End-to-end services from strategy to support": "Komplettlösungen von der Strategie bis zum Support",
-    "Smooth migrations from legacy systems (NAV, AX)": "Reibungslose Migrationen von Altsystemen (NAV, AX)",
-    "Outcome-focused delivery ensuring operational resilience and business value": "Ergebnisorientierte Umsetzung, die operative Ausfallsicherheit und geschäftlichen Mehrwert gewährleistet",
+    "Certified Microsoft AI Cloud and ISV Partner with extensive experience in ERP and Dynamics 365 solutions.": "Microsoft AI Cloud und ISV-Partner mit fundierter ERP-Expertise",
+    "Proven global rollouts with multi-country localisation, compliance, and regulatory alignment.": "Bewährte globale Rollouts mit Lokalisierungsfunktionen",
+    "Certified Microsoft AI Cloud and ISV Partner with extensive experience in ERP and Dynamics 365 solutions.": "Komplettlösungen von der Strategie bis zum Support",
+    "Smooth migration from Dynamics NAV and AX to Dynamics 365 with minimal disruption, ensuring data integrity.": "Reibungslose Migrationen von Altsystemen (NAV, AX)",
+    "Value-driven delivery focused on operational efficiency, scalability, and measurable business outcomes.": "Ergebnisorientierte Umsetzung, die operative Ausfallsicherheit und geschäftlichen Mehrwert gewährleistet",
 
     "Industries We Serve": "Branchen, die wir bedienen",
     "Manufacturing": "Fertigung",
@@ -4400,8 +4402,8 @@
     "Digital Solutions & Services": "Digitale Lösungen und Services",
     "Microsoft Technologies": "Microsoft-Technologien",
 
-    "Let us Transform Your Enterprise": "Lassen Sie uns Ihr Unternehmen transformieren",
-    "Discover how RheinBrücke can help you optimise operations, automate workflows, and grow with Microsoft Dynamics.": "Entdecken Sie, wie RheinBrücke Ihnen dabei helfen kann, Ihre Abläufe zu optimieren, Workflows zu automatisieren und mit Microsoft Dynamics zu wachsen.",
+    "Transform Your Enterprise with Microsoft Dynamics": "Lassen Sie uns Ihr Unternehmen transformieren",
+    "Discover how Microsoft Dynamics enables you to optimise operations, automate workflows, and scale your business with intelligent ERP capabilities.": "Entdecken Sie, wie RheinBrücke Ihnen dabei helfen kann, Ihre Abläufe zu optimieren, Workflows zu automatisieren und mit Microsoft Dynamics zu wachsen.",
     "Talk to our Microsoft Dynamics experts today.": "Sprechen Sie noch heute mit unseren Microsoft Dynamics-Experten.",
 
 
@@ -6562,25 +6564,25 @@
     "Our Approach": "Unser Ansatz",
 
     "Embed AI for predictive insights and smarter actions": "KI für vorausschauende Entscheidungen",
-    "Leverage AI within Dynamics to forecast trends, automate decisions, and enhance productivity.": "Integration von KI in Microsoft Dynamics zur Vorhersage von Trends, Automatisierung von Entscheidungen und Steigerung der Produktivität.",
+    "Leverage built-in AI capabilities to forecast trends, automate decisions, and improve operational productivity.": "Integration von KI in Microsoft Dynamics zur Vorhersage von Trends, Automatisierung von Entscheidungen und Steigerung der Produktivität.",
 
     "Assess business challenges and system gaps": "Analyse von Geschäftsprozessen und Systemlücken",
-    "Identify process inefficiencies and system gaps to build a clear Dynamics roadmap.": "Identifikation von Ineffizienzen und Systemlücken zur Erstellung einer klaren Dynamics-Roadmap.",
+    "Identify process inefficiencies and system gaps to build a clear Dynamics implementation roadmap.": "Identifikation von Ineffizienzen und Systemlücken zur Erstellung einer klaren Dynamics-Roadmap.",
 
     "Configure Dynamics to industry-specific requirements": "Branchenspezifische Konfiguration",
-    "Tailor Microsoft Dynamics to your industry workflows and compliance needs.": "Anpassung von Microsoft Dynamics an branchenspezifische Workflows und Compliance-Anforderungen.",
+    "Tailor Microsoft Dynamics to industry workflows, regulatory compliance.": "Anpassung von Microsoft Dynamics an branchenspezifische Workflows und Compliance-Anforderungen.",
 
     "Integrate with existing applications for seamless workflows": "Nahtlose Integration",
-    "Connect Dynamics with your apps for smooth, end-to-end workflows.": "Verbindung von Dynamics mit bestehenden Anwendungen für durchgängige, reibungslose Workflows.",
+    "Connect Dynamics with existing business apps to enable unified, end-to-end workflows.": "Verbindung von Dynamics mit bestehenden Anwendungen für durchgängige, reibungslose Workflows.",
 
     "Automate manual processes for efficiency": "Automatisierung manueller Prozesse",
-    "Streamline repetitive tasks and approvals through Dynamics automation.": "Effizienzsteigerung durch Automatisierung wiederkehrender Aufgaben und Freigaben.",
+    "Streamline repetitive tasks, approvals, and business processes with Dynamics workflow automation.": "Effizienzsteigerung durch Automatisierung wiederkehrender Aufgaben und Freigaben.",
 
     "Deliver real-time data insights for smarter decisions": "Echtzeit-Daten für fundierte Entscheidungen",
     "Gain actionable insights and dashboards for informed business decisions.": "Bereitstellung von Dashboards und Actionable Insights für schnelle, datenbasierte Entscheidungen.",
 
     "Ensure scalability and security for future growth": "Skalierbarkeit und Sicherheit",
-    "Scale Dynamics securely to support growth and long-term resilience.": "Sichere Skalierung von Dynamics zur Unterstützung von Wachstum und langfristiger Resilienz.",
+    "Scale Microsoft Dynamics securely to support growth, compliance and long-term resilience.": "Sichere Skalierung von Dynamics zur Unterstützung von Wachstum und langfristiger Resilienz.",
 
 
     "Streamline operations and accelerate performance with a modern, flexible Epicor ERP built for manufacturers. Unlock real-time visibility, automation, and scalable growth.": "Optimieren Sie Ihre Fertigungsprozesse mit einem modernen, flexiblen Epicor ERP-System. Echtzeit-Transparenz, Automatisierung und skalierbares Wachstum – alles aus einer Hand.",
@@ -7876,7 +7878,7 @@
   "Digitising core business functions with cloud-based ERP systems, across finance":"Digitalisierung zentraler Geschäftsprozesse in den Bereichen Finanzen, Betrieb, HR, Lieferkette und Kundeninteraktion.",
   "Related Blog Posts":"Verwandte Blogbeiträge",
   
-    "Unlock actionable insights and visualise your business data in real time with Power BI.": "Entsperren Sie einsetzbare Erkenntnisse und visualisieren Sie Ihre Geschäftsdaten in Echtzeit mit Power BI.",
+    "Unlock actionable insights and visualise your business data in real time with Microsoft Power BI.": "Entsperren Sie einsetzbare Erkenntnisse und visualisieren Sie Ihre Geschäftsdaten in Echtzeit mit Power BI.",
 
     "Leverage our expertise as a Microsoft Solutions Partner to deliver integrated, enterprise-grade solutions.": "Nutzen Sie unsere Expertise als Microsoft Solutions Partner, um integrierte, unternehmensgerechte Lösungen bereitzustellen.",
 

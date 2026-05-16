@@ -23,10 +23,10 @@ export default function EnterpriseSolutions() {
                     {t("Microsoft Dynamics Solutions")}
                   </h2>
                   <p>
-                    {t("Empower your enterprise with intelligent, scalable ERP and CRM solutions from Microsoft Dynamics.")}
+                    {t("Empower your business with Microsoft Dynamics to unify operations, integrate critical functions, and unlock real-time insights.")}
                   </p>
                   <p>
-                    {t("At RheinBrücke, we help organisations streamline operations, integrate business functions, and unlock real-time insights using Microsoft Solutions all tailored to your industry and growth goals.")}
+                    {t("At RheinBrücke, we help organisations modernise systems, automate workflows, and drive data-led decisions with solutions tailored to your industry, scale, and growth ambitions.")}
                   </p>
                   <div className="ser-btn mt-5">
                     <Link href="/contact-us" className="animated-svg-link">
@@ -715,38 +715,38 @@ export default function EnterpriseSolutions() {
             <div className="row justify-content-center">
               <div className="col-sm-3 col-6">
                 <div className="dynamics-advantage-waber">
-                  <img src="/new/g501.svg" alt="" />
+                  <img src="/new/g501.svg" alt="ERP Legacy systems icon" />
                   <p>{t("Disconnected legacy systems limiting agility and scalability")}</p>
                 </div>
               </div>
               <div className="col-sm-3 col-6">
                 <div className="dynamics-advantage-waber">
-                  <img src="/new/ad2.svg" alt="" />
-                  <p>{t("Siloed data and inconsistent reporting")}</p>
+                  <img src="/new/ad2.svg" alt="ERP data icon" />
+                  <p>{t("Siloed business data causing poor visibility and inconsistent reporting")}</p>
                 </div>
               </div>
               <div className="col-sm-3 col-6">
                 <div className="dynamics-advantage-waber">
-                  <img src="/new/ad3.svg" alt="" />
-                  <p>{t("Manual, time-consuming workflows")}</p>
+                  <img src="/new/ad3.svg" alt="ERP manual work icon" />
+                  <p>{t("Manual, time-intensive workflows reducing operational efficiency and productivity")}</p>
                 </div>
               </div>
               <div className="col-sm-3 col-6">
                 <div className="dynamics-advantage-waber">
-                  <img src="/new/ad4.svg" alt="" />
-                  <p>{t("Rising operational costs and inefficiencies")}</p>
+                  <img src="/new/ad4.svg" alt="ERP pricing costs icon" />
+                  <p>{t("Increasing operational costs due to inefficient processes and system fragmentation")}</p>
                 </div>
               </div>
               <div className="col-sm-3 col-6">
                 <div className="dynamics-advantage-waber">
-                  <img src="/new/ad5.svg" alt="" />
-                  <p>{t("Limited real-time visibility for decision-making")}</p>
+                  <img src="/new/ad5.svg" alt="ERP faster decision-making icon" />
+                  <p>{t("Lack of real-time analytics and insights for faster, data-driven decision-making")}</p>
                 </div>
               </div>
               <div className="col-sm-3 col-6">
                 <div className="dynamics-advantage-waber">
-                  <img src="/new/ad6.svg" alt="" />
-                  <p>{t("Difficulty integrating ERP, CRM, and productivity tools")}</p>
+                  <img src="/new/ad6.svg" alt="ERP, CRM productivity tools icon" />
+                  <p>{t("Complex integration between ERP, CRM, and productivity platforms like Microsoft 365")}</p>
                 </div>
               </div>
               <div className="col-sm-7 col-12">
@@ -781,10 +781,10 @@ export default function EnterpriseSolutions() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="mds-waber">
-                      <img src="/new/ds1.svg" alt="" />
+                      <img src="/new/ds1.svg" alt="Dynamics 365 ERP & CRM Solutions icon" />
                       <h6> {t("Dynamics 365 ERP & CRM Solutions")}</h6>
                       <p>
-                        {t("Finance, Operations, Sales, Marketing, Customer Service, Field Service, HR")}
+                        {t("Finance, Operations, Sales, Marketing, Customer Service, Field Service, and Human Resources.")}
 
                       </p>
                     </div>
@@ -793,10 +793,10 @@ export default function EnterpriseSolutions() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="mds-waber">
-                      <img src="/new/ds2.svg" alt="" />
+                      <img src="/new/ds2.svg" alt="MS dynamics Business Central Migration & Implementation icon" />
                       <h6> {t("Business Central Migration & Implementation")}</h6>
 <p>
-                        {t("Cloud-based ERP for SMBs covering finance, supply chain, sales, service, and projects")}
+                        {t("Cloud-based ERP for SMBs covering finance, supply chain, sales, customer service, and project management.")}
                       </p>
                     </div>
                   </div>
@@ -804,10 +804,10 @@ export default function EnterpriseSolutions() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="mds-waber">
-                      <img src="/new/ds3.svg" alt="" />
+                      <img src="/new/ds3.svg" alt="MS dynamics Navision Support, Migration & Upgrades icon" />
                       <h6> {t("Navision Support, Migration & Upgrades")}</h6>
                       <p>
-                        {t("Maintain and modernise NAV with a clear path to Business Central")}
+                        {t("Maintain and modernise Dynamics NAV with a structured transition to Dynamics 365 Business Central.")}
                       </p>
                     </div>
                   </div>
@@ -815,11 +815,11 @@ export default function EnterpriseSolutions() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="mds-waber">
-                      <img src="/new/ds4.svg" alt="" />
+                      <img src="/new/ds4.svg" alt="AX (Axapta) Support, Migration and Upgrades icon" />
                       <h6> {t("AX (Axapta) Support, Migration and Upgrades")}</h6>
 
                       <p>
-                        {t("Move to Dynamics 365 Finance & Operations for scalability and advanced capabilities")}
+                        {t("Transition from legacy Dynamics AX to Dynamics 365 Finance & Operations for scalability and advanced analytics.")}
                       </p>
                     </div>
                   </div>
@@ -827,13 +827,13 @@ export default function EnterpriseSolutions() {
                   {/* Testimonial Slide Start */}
                   <div className="swiper-slide">
                     <div className="mds-waber">
-                      <img src="/new/ds5.svg" alt="" />
+                      <img src="/new/ds5.svg" alt="Microsoft 365 Power Platform, Azure, and Power BI integration icon" />
                       <h6>
                         {" "}
                         {t("Integration with Microsoft 365, Power Platform, Azure, and Power BI")}
                       </h6>
                       <p>
-                        {t("Boost collaboration, analytics, and automation")}
+                        {t("Seamless integration, analytics, workflow automation, and enhanced collaboration.")}
                       </p>
 
                     </div>
@@ -1095,6 +1095,8 @@ export default function EnterpriseSolutions() {
                                       height={121}
                                       viewBox="0 0 252 121"
                                       fill="none"
+                                      role="img" 
+  aria-label="MS Dynamics AI insights icon"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <defs>
@@ -1185,7 +1187,7 @@ export default function EnterpriseSolutions() {
 
                                 </h3>
                                 <p className="oa-para">
-                                  {t("Leverage AI within Dynamics to forecast trends, automate decisions, and enhance productivity.")}
+                                  {t("Leverage built-in AI capabilities to forecast trends, automate decisions, and improve operational productivity.")}
 
                                 </p>
                               </div>
@@ -1209,6 +1211,8 @@ export default function EnterpriseSolutions() {
                                       height={121}
                                       viewBox="0 0 252 121"
                                       fill="none"
+                                      role="img" 
+  aria-label="Ms Dynamics implementation roadmap"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <defs>
@@ -1288,7 +1292,7 @@ export default function EnterpriseSolutions() {
                                 </h3>
 
                                 <p className="oa-para">
-                                  {t("Identify process inefficiencies and system gaps to build a clear Dynamics roadmap.")}
+                                  {t("Identify process inefficiencies and system gaps to build a clear Dynamics implementation roadmap.")}
                                 </p>
                               </div>
                             </div>
@@ -1311,6 +1315,8 @@ export default function EnterpriseSolutions() {
                                       height={121}
                                       viewBox="0 0 252 121"
                                       fill="none"
+                                      role="img" 
+  aria-label="MS Dynamics industry specifics icon"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <defs>
@@ -1390,7 +1396,7 @@ export default function EnterpriseSolutions() {
 
                                 </h3>
                                 <p className="oa-para">
-                                  {t("Tailor Microsoft Dynamics to your industry workflows and compliance needs.")}
+                                  {t("Tailor Microsoft Dynamics to industry workflows, regulatory compliance.")}
                                 </p>
                               </div>
                             </div>
@@ -1413,6 +1419,8 @@ export default function EnterpriseSolutions() {
                                       height={121}
                                       viewBox="0 0 252 121"
                                       fill="none"
+                                      role="img" 
+  aria-label="MS Dynamics workflow integration icon"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <defs>
@@ -1615,7 +1623,7 @@ export default function EnterpriseSolutions() {
                                   {t("Integrate with existing applications for seamless workflows")}
                                 </h3>
                                 <p className="oa-para">
-                                  {t("Connect Dynamics with your apps for smooth, end-to-end workflows.")}
+                                  {t("Connect Dynamics with existing business apps to enable unified, end-to-end workflows.")}
                                 </p>
                               </div>
                             </div>
@@ -1638,6 +1646,8 @@ export default function EnterpriseSolutions() {
                                       height={121}
                                       viewBox="0 0 252 121"
                                       fill="none"
+                                      role="img" 
+  aria-label="MS Dynamics process efficiency icon"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <defs>
@@ -1741,7 +1751,7 @@ export default function EnterpriseSolutions() {
                                 </h3>
 
                                 <p className="oa-para">
-                                  {t("Streamline repetitive tasks and approvals through Dynamics automation.")}
+                                  {t("Streamline repetitive tasks, approvals, and business processes with Dynamics workflow automation.")}
                                 </p>
                               </div>
                             </div>
@@ -1764,6 +1774,8 @@ export default function EnterpriseSolutions() {
                                       height={121}
                                       viewBox="0 0 252 121"
                                       fill="none"
+                                      role="img" 
+  aria-label="MS dynamics data analytics icon"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <defs>
@@ -1874,6 +1886,8 @@ export default function EnterpriseSolutions() {
                                       height={121}
                                       viewBox="0 0 252 121"
                                       fill="none"
+                                      role="img" 
+  aria-label="Microsoft dynamics scaling and security icon"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <defs>
@@ -2154,7 +2168,7 @@ export default function EnterpriseSolutions() {
 
                                 </h3>
                                 <p className="oa-para">
-                                  {t("Scale Dynamics securely to support growth and long-term resilience.")}
+                                  {t("Scale Microsoft Dynamics securely to support growth, compliance and long-term resilience.")}
                                 </p>
                               </div>
                             </div>
@@ -2397,7 +2411,7 @@ export default function EnterpriseSolutions() {
                   <div className="col-lg-6 col-md-6 col-12">
                     <div className="service-item-body1 imgpos w80">
                       <h3>
-                        {t("Microsoft AI Cloud and ISV Partner with deep ERP expertise")}
+                        {t("Certified Microsoft AI Cloud and ISV Partner with extensive experience in ERP and Dynamics 365 solutions.")}
                       </h3>
                       <img src="/new/adv1.svg" alt="" />
                     </div>
@@ -2405,7 +2419,7 @@ export default function EnterpriseSolutions() {
                   <div className="col-lg-6 col-md-6 col-12 w80">
                     <div className="service-item-body1 imgpos">
                       <h3>
-                        {t("End-to-end services from strategy to support")}
+                        {t("Certified Microsoft AI Cloud and ISV Partner with extensive experience in ERP and Dynamics 365 solutions.")}
                       </h3>
                      <img src="/new/gt.svg" alt="" />
                     </div>
@@ -2413,7 +2427,7 @@ export default function EnterpriseSolutions() {
                   <div className="col-lg-4 col-md-4 col-12">
                     <div className="service-item-body1 imgpos1">
                       <h3>
-                        {t("Proven global rollouts with localisation capabilities")}
+                        {t("Proven global rollouts with multi-country localisation, compliance, and regulatory alignment.")}
                       </h3>
 
                       <img src="/new/adv3.svg" alt="" />
@@ -2422,7 +2436,7 @@ export default function EnterpriseSolutions() {
                   <div className="col-lg-4 col-md-4 col-12">
                     <div className="service-item-body1 imgpos2">
                       <h3>
-                        {t("Smooth migrations from legacy systems (NAV, AX)")}
+                        {t("Smooth migration from Dynamics NAV and AX to Dynamics 365 with minimal disruption, ensuring data integrity.")}
                       </h3>
 
                       <img src="/new/adv4.svg" alt="" />
@@ -2431,7 +2445,7 @@ export default function EnterpriseSolutions() {
                   <div className="col-lg-4 col-md-4 col-12">
                     <div className="service-item-body1 imgpos3">
                       <h3>
-                        {t("Outcome-focused delivery ensuring operational resilience and business value")}
+                        {t("Value-driven delivery focused on operational efficiency, scalability, and measurable business outcomes.")}
                       </h3>
                       <img src="/images/advant5.svg" alt="" />
                     </div>
@@ -2970,13 +2984,13 @@ export default function EnterpriseSolutions() {
                       <div className="plat-in">
                         <img src="/new/msc1.svg" alt="" />
                         <p>
-                          {t("Unlock actionable insights and visualise your business data in real time with Power BI.")}
+                          {t("Unlock actionable insights and visualise your business data in real time with Microsoft Power BI.")}
                         </p>
                         <div className="ser-btn1">
                           <Link href="/business-intelligence"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            {t("Know More")}
+                            {t("Know How")}
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -3092,7 +3106,7 @@ export default function EnterpriseSolutions() {
                           <Link href="/rheinbrucke-a-microsoft-partner"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            {t("Know More")}
+                            {t("Know How")}
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -3208,7 +3222,7 @@ export default function EnterpriseSolutions() {
                           <Link href="/ms-technology"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            {t("Know More")}
+                            {t("Know How")}
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -3455,11 +3469,11 @@ export default function EnterpriseSolutions() {
                             <div className="plat-in">
                               <img src="/images/plat1.png" alt="" />
                               <p>
-                                {t("Unlock actionable insights and visualise your business data in real time with Power BI.")}
+                                {t("Unlock actionable insights and visualise your business data in real time with Microsoft Power BI.")}
                               </p>
                               <div className="ser-btn1">
                                 <Link href="" className="animated-svg-link1 btn-style-3">
-                                  {t("Know More")}
+                                  {t("Know How")}
                                   <span className="svg-container ">
                                     <span className=" left">
                                       <svg
@@ -3572,7 +3586,7 @@ export default function EnterpriseSolutions() {
                               </p>
                               <div className="ser-btn1">
                                 <Link href="" className="animated-svg-link1 btn-style-3">
-                                {t("Know More")}
+                                {t("Know How")}
 
                                   <span className="svg-container ">
                                     <span className=" left">
@@ -3686,7 +3700,7 @@ export default function EnterpriseSolutions() {
                               </p>
                               <div className="ser-btn1">
                                 <Link href="" className="animated-svg-link1 btn-style-3">
-                                  {t("Know More")}
+                                  {t("Know How")}
                                   <span className="svg-container ">
                                     <span className=" left">
                                       <svg
@@ -4532,6 +4546,37 @@ export default function EnterpriseSolutions() {
                         </div>
                       </div>
                       {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.6s"
+                      >
+                        <h2 className="accordion-header" id="heading5">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse5"
+                            aria-expanded="false"
+                            aria-controls="collapse5"
+                          >
+                           {t("How long does a Microsoft Dynamics implementation take?")} 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse5"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading5"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("Implementation timelines vary based on business size and complexity. Small to mid-sized deployments may take a few months, while large enterprise ERP rollouts can take longer depending on customisation, integrations, and data migration requirements.")} 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
                     </div>
                     {/* FAQ Accordion End */}
                   </div>
@@ -4552,9 +4597,9 @@ export default function EnterpriseSolutions() {
               <div className="firstrow">
                 <div className="row">
                   <div className="col-sm-8">
-                    <h2>{t("Let us Transform Your Enterprise")}</h2>
+                    <h2>{t("Transform Your Enterprise with Microsoft Dynamics")}</h2>
                     <p>
-                      {t("Discover how RheinBrücke can help you optimise operations, automate workflows, and grow with Microsoft Dynamics.")}
+                      {t("Discover how Microsoft Dynamics enables you to optimise operations, automate workflows, and scale your business with intelligent ERP capabilities.")}
                     </p>
                     <p>{t("Talk to our Microsoft Dynamics experts today.")}</p>
                   </div>

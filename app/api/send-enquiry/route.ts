@@ -54,7 +54,12 @@ export async function POST(req: Request) {
     const pass = requiredEnv("SMTP_PASS");
     const secure = String(process.env.SMTP_SECURE ?? "false").toLowerCase() === "true";
     const from = process.env.SMTP_FROM ?? user;
-    const to = process.env.ENQUIRY_TO ?? "padma@impressbss.com";
+    const toRaw =
+      process.env.ENQUIRY_TO ?? "padma@impressbss.com,marketing@rheincs.com";
+    const to = toRaw
+      .split(/[;,]/)
+      .map((s) => s.trim())
+      .filter(Boolean);
 
     console.log("Attempting to send email via SMTP:", {
       host,
@@ -103,7 +108,14 @@ export async function POST(req: Request) {
       </div>
     `;
 
-    await transporter.sendMail({ from, to, subject, text, html, replyTo: email });
+    await transporter.sendMail({
+      from,
+      to,
+      subject,
+      text,
+      html,
+      replyTo: email,
+    });
 
     return NextResponse.json({ ok: true });
   } catch (err) {
@@ -120,4 +132,3 @@ function escapeHtml(text: string): string {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 }
-
