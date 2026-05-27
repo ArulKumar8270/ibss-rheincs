@@ -832,7 +832,7 @@ export default function EnterpriseSolutions() {
                                 <li>{t("Reduced implementation cost and effort through proven delivery frameworks")}</li>
                                 <li>{t("Faster deployment with standardized best-practice methodologies")}</li>
                                 <li>{t("Strong understanding of manufacturing, distribution, and multi-entity operations")}</li>
-                                <li>{t("Ongoing support, training, and optimization for long-term ERP value realization")}</li>
+                                <li>{t("Ongoing support, training, and optimization for long-term ERP value realization.")}</li>
                             </ul>
                           </div>
                         </div>

@@ -1101,7 +1101,7 @@ export default function Header() {
                                                                                                 >
                                                                                                     {t("SAP")}
                                                                                                 </Link>
-                                                                                                {/* <button
+                                                                                                <button
                                                                                                     type="button"
                                                                                                     onClick={(e) => {
                                                                                                         e.preventDefault();
@@ -1111,9 +1111,9 @@ export default function Header() {
                                                                                                     style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
                                                                                                 >
                                                                                                     <NavArrowRight />
-                                                                                                </button> */}
+                                                                                                </button>
                                                                                             </div>
-                                                                                            {/* <div
+                                                                                            <div
                                                                                                  id="demo3"
                                                                                                  className={`${sapCollapsed ? 'show' : 'collapse'} content-box`}
                                                                                                  style={{ display: sapCollapsed ? 'block' : 'none' }}
@@ -1139,7 +1139,7 @@ export default function Header() {
                                                                                                     {t("SAP Application Management Services (AMS)")}
                                                                                                 </Link>
 
-                                                                                            </div> */}
+                                                                                            </div>
                                                                                         </li>
                                                                                         {/* <li className="ser-btn">
                                                                                             <Link href="/solutions/erp-enterprise-solutions-and-services/sap" className="">

@@ -15,7 +15,7 @@ interface Contact {
   created_at: string
 }
 
-export default function AdminDeftechBharat2026Page() {
+export default function AdminEbookEnquiriesPage() {
   const supabase = useMemo(() => createClient(), [])
   const [rows, setRows] = useState<Contact[]>([])
   const [loading, setLoading] = useState(true)
@@ -33,14 +33,14 @@ export default function AdminDeftechBharat2026Page() {
       const { data, error } = await supabase
         .from('contacts')
         .select('*')
-        .ilike('selection', '%DefTech Bharat 2026%')
+        .ilike('selection', '%E-Book Download%')
         .order('created_at', { ascending: false })
 
       if (error) throw error
       setRows(data || [])
       setError('')
     } catch (err: any) {
-      setError('Failed to load DefTech enquiries: ' + err.message)
+      setError('Failed to load E-Book enquiries: ' + err.message)
     } finally {
       setLoading(false)
     }
@@ -81,7 +81,7 @@ export default function AdminDeftechBharat2026Page() {
   return (
     <div style={{ padding: 24 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
-        <h2 style={{ margin: 0 }}>🛩️ DefTech Bharat 2026 Enquiries</h2>
+        <h2 style={{ margin: 0 }}>📖 E-Book Enquiries</h2>
         <button
           onClick={fetchRows}
           style={{
@@ -147,7 +147,7 @@ export default function AdminDeftechBharat2026Page() {
               {filtered.length === 0 ? (
                 <tr>
                   <td colSpan={7} style={{ padding: 16, color: '#666' }}>
-                    No DefTech Bharat 2026 enquiries found.
+                    No E-Book enquiries found.
                   </td>
                 </tr>
               ) : (

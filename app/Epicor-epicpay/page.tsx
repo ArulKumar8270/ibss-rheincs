@@ -19,12 +19,8 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-6">
           <div className="section-title">
             <h2 className="text-anime-style-21" data-cursor="-opaque">
-              {t("Epic Pay – Epicor Payroll MEA")}
-            </h2>
-            <p>
               {t("Epic Pay – The Epicor Payroll MEA Solution for Seamless Compliance & Automation")}
-
-            </p>
+            </h2>
             <p>
             {t("Comprehensive payroll solution tailored for businesses across the Middle East and Africa. Epic Pay (Epicor Payroll MEA) helps organizations streamline payroll processing with seamless integration to Epicor ERP. It ensures compliance with regional labour laws, simplifies HR and payroll operations, and empowers employees with self-service access.")}
 

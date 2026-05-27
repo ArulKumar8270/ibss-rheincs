@@ -2,6 +2,17 @@
 
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
+import Link from 'next/link'
+import { color } from 'framer-motion'
+
+interface FormField {
+  id: string
+  type: 'text' | 'email' | 'tel' | 'number' | 'textarea' | 'select'
+  label?: string
+  placeholder?: string
+  required?: boolean
+  options?: string[]
+}
 
 interface EbookLandingPage {
   id: string
@@ -9,6 +20,7 @@ interface EbookLandingPage {
   title: string
   headline: string | null
   subheadline: string | null
+  additional_paragraph: string | null
   logo_text: string | null
   logo_image_url: string | null
   book_image_url: string | null
@@ -16,6 +28,7 @@ interface EbookLandingPage {
   learning_description: string | null
   benefits: string[]
   form_title: string | null
+  form_fields: FormField[]
   author_heading: string | null
   author_name: string | null
   author_role: string | null
@@ -39,6 +52,7 @@ export default function AdminEbookLandingPage() {
     title: '',
     headline: '',
     subheadline: '',
+    additional_paragraph: '',
     logo_text: 'Logo',
     logo_image_url: '',
     book_image_url: '',
@@ -46,6 +60,7 @@ export default function AdminEbookLandingPage() {
     learning_description: '',
     benefits: [] as string[],
     form_title: '',
+    form_fields: [] as FormField[],
     author_heading: '',
     author_name: '',
     author_role: '',
@@ -56,6 +71,14 @@ export default function AdminEbookLandingPage() {
     pdf_url: '',
   })
   const [newBenefit, setNewBenefit] = useState('')
+  const [newFormField, setNewFormField] = useState<FormField>({
+    id: '',
+    type: 'text',
+    label: '',
+    placeholder: '',
+    required: true,
+    options: [],
+  })
   const supabase = createClient()
 
   useEffect(() => {
@@ -65,11 +88,13 @@ export default function AdminEbookLandingPage() {
   const fetchPages = async () => {
     try {
       setLoading(true)
+      console.log("Admin: fetchPages() called!")
       const { data, error } = await supabase
         .from('ebook_landing_pages')
         .select('*')
         .order('created_at', { ascending: false })
 
+      console.log("Admin: fetched pages data:", data)
       if (error) throw error
       setPages(data || [])
     } catch (error: any) {
@@ -81,7 +106,19 @@ export default function AdminEbookLandingPage() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
+    const updatedData = { [name]: value }
+    
+    // Auto-generate slug from title when title changes and not editing
+    if (name === 'title' && !editingPage) {
+      const slug = value
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .trim()
+      updatedData.slug = slug
+    }
+    
+    setFormData(prev => ({ ...prev, ...updatedData }))
   }
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, fieldName: string) => {
@@ -151,33 +188,118 @@ export default function AdminEbookLandingPage() {
     }))
   }
 
+  const handleAddFormField = () => {
+    if (newFormField.id.trim()) {
+      setFormData(prev => ({
+        ...prev,
+        form_fields: [...prev.form_fields, { ...newFormField }]
+      }))
+      setNewFormField({
+        id: '',
+        type: 'text',
+        label: '',
+        placeholder: '',
+        required: true,
+        options: [],
+      })
+    }
+  }
+
+  const handleRemoveFormField = (index: number) => {
+    setFormData(prev => ({
+      ...prev,
+      form_fields: prev.form_fields.filter((_, i) => i !== index)
+    }))
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
       setLoading(true)
       
-      // Clean data: remove undefined/null values that might cause issues
-      const payload = Object.fromEntries(
-        Object.entries(formData).map(([key, value]) => [key, value === '' ? null : value])
-      )
+      // Clean data: only include fields that might already exist in database
+      // Start with core fields that definitely exist
+      const payload: any = {
+        slug: formData.slug,
+        title: formData.title,
+        headline: formData.headline || null,
+        subheadline: formData.subheadline || null,
+        logo_text: formData.logo_text || null,
+        logo_image_url: formData.logo_image_url || null,
+        book_image_url: formData.book_image_url || null,
+        learning_title: formData.learning_title || null,
+        learning_description: formData.learning_description || null,
+        benefits: formData.benefits,
+        form_title: formData.form_title || null,
+        author_heading: formData.author_heading || null,
+        author_name: formData.author_name || null,
+        author_role: formData.author_role || null,
+        author_bio: formData.author_bio || null,
+        author_avatar_url: formData.author_avatar_url || null,
+        author_avatar_svg: formData.author_avatar_svg || null,
+        footer_color: formData.footer_color || null,
+        pdf_url: formData.pdf_url || null,
+        updated_at: new Date().toISOString(),
+      }
+
+      // Try to add new columns, but they might not exist yet
+      try {
+        payload.additional_paragraph = formData.additional_paragraph || null
+        payload.form_fields = formData.form_fields
+      } catch (err) {
+        // Ignore if these fields don't exist yet
+      }
+
+      console.log("Admin handleSubmit - payload being sent:", payload);
 
       if (editingPage) {
-        const { error } = await supabase
-          .from('ebook_landing_pages')
-          .update({
-            ...payload,
-            updated_at: new Date().toISOString()
-          })
-          .eq('id', editingPage.id)
+        try {
+          const { error } = await supabase
+            .from('ebook_landing_pages')
+            .update(payload)
+            .eq('id', editingPage.id)
 
-        if (error) throw error
+          if (error) throw error
+        } catch (updateErr: any) {
+          // If update failed because of new columns, try without them
+          if (updateErr.message && (updateErr.message.includes('additional_paragraph') || updateErr.message.includes('form_fields'))) {
+            console.warn('Retrying update without new columns...')
+            const fallbackPayload = { ...payload }
+            delete fallbackPayload.additional_paragraph
+            delete fallbackPayload.form_fields
+            const { error } = await supabase
+              .from('ebook_landing_pages')
+              .update(fallbackPayload)
+              .eq('id', editingPage.id)
+            if (error) throw error
+          } else {
+            throw updateErr
+          }
+        }
         alert('Page updated successfully!')
       } else {
-        const { error } = await supabase
-          .from('ebook_landing_pages')
-          .insert([payload])
+        // For insert, we might need to be more careful
+        try {
+          const { error } = await supabase
+            .from('ebook_landing_pages')
+            .insert([payload])
 
-        if (error) throw error
+          if (error) throw error
+        } catch (insertErr: any) {
+          // If insert failed because of new columns, try without them
+          if (insertErr.message && (insertErr.message.includes('additional_paragraph') || insertErr.message.includes('form_fields'))) {
+            console.warn('Retrying insert without new columns...')
+            const fallbackPayload = { ...payload }
+            delete fallbackPayload.additional_paragraph
+            delete fallbackPayload.form_fields
+            const { error } = await supabase
+              .from('ebook_landing_pages')
+              .insert([fallbackPayload])
+            if (error) throw error
+          } else {
+            throw insertErr
+          }
+        }
         alert('Page created successfully!')
       }
       setShowForm(false)
@@ -206,6 +328,7 @@ export default function AdminEbookLandingPage() {
       title: page.title,
       headline: page.headline || '',
       subheadline: page.subheadline || '',
+      additional_paragraph: page.additional_paragraph || '',
       logo_text: page.logo_text || '',
       logo_image_url: page.logo_image_url || '',
       book_image_url: page.book_image_url || '',
@@ -213,6 +336,12 @@ export default function AdminEbookLandingPage() {
       learning_description: page.learning_description || '',
       benefits: page.benefits || [],
       form_title: page.form_title || '',
+      form_fields: page.form_fields || [
+        { id: 'fullName', type: 'text', placeholder: 'Name *', required: true },
+        { id: 'email', type: 'email', placeholder: 'Email *', required: true },
+        { id: 'phone', type: 'tel', placeholder: 'Phone No*', required: true },
+        { id: 'companyName', type: 'text', placeholder: 'Company Name*', required: true },
+      ],
       author_heading: page.author_heading || '',
       author_name: page.author_name || '',
       author_role: page.author_role || '',
@@ -253,7 +382,7 @@ export default function AdminEbookLandingPage() {
       <style>{`
         .admin-ebook-root {
           padding: 30px;
-          max-width: 1200px;
+          max-width: 1400px;
           margin: 0 auto;
           background: #f5f5f5;
           min-height: 100vh;
@@ -293,6 +422,7 @@ export default function AdminEbookLandingPage() {
           cursor: pointer;
           transition: all 0.3s ease;
           box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+          text-decoration: none;
         }
 
         .admin-ebook-btn:hover {
@@ -307,6 +437,10 @@ export default function AdminEbookLandingPage() {
           margin-bottom: 30px;
           box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
           border: 1px solid #e8e8e8;
+        }
+
+        .admin-ebook-form-card p {
+          color: #000;
         }
 
         .admin-ebook-form-title {
@@ -576,6 +710,15 @@ export default function AdminEbookLandingPage() {
           font-weight: 500;
         }
 
+        .admin-ebook-title-cell a {
+          color: #667eea;
+          text-decoration: none;
+        }
+
+        .admin-ebook-title-cell a:hover {
+          text-decoration: underline;
+        }
+
         .admin-ebook-author-cell {
           color: #666;
         }
@@ -618,6 +761,22 @@ export default function AdminEbookLandingPage() {
           background: #fdd;
         }
 
+        .admin-ebook-btn-preview {
+          padding: 8px 16px;
+          background: #3aaee0;
+          color: #fff;
+          border: none;
+          border-radius: 6px;
+          font-size: 13px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .admin-ebook-btn-preview:hover {
+          background: #2d8fbf;
+        }
+
         .admin-ebook-empty {
           text-align: center;
           padding: 60px 20px;
@@ -634,6 +793,38 @@ export default function AdminEbookLandingPage() {
           vertical-align: middle;
           margin-left: 8px;
           border: 1px solid #ddd;
+        }
+
+        .admin-ebook-form-fields-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .admin-ebook-form-field-item {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          padding: 16px;
+          background: #fff;
+          border: 1px solid #e0e0e0;
+          border-radius: 12px;
+          margin-bottom: 12px;
+        }
+
+        .admin-ebook-form-field-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
+
+        .admin-ebook-form-field-type {
+          font-size: 12px;
+          font-weight: 600;
+          background: #f0f0f0;
+          padding: 2px 8px;
+          border-radius: 6px;
+          color: #555;
         }
 
         @media (max-width: 768px) {
@@ -658,15 +849,19 @@ export default function AdminEbookLandingPage() {
       `}</style>
 
       <div className="admin-ebook-header">
-        <h1 className="admin-ebook-title">E-Book Landing Pages</h1>
-        <button
-          onClick={() => {
+        <h1 className="admin-ebook-title">📖 E-Book Landing Pages</h1>
+        <div style={{ display: 'flex', gap: '12px' }}>
+          <Link href="/admin/ebook-enquiries" className="admin-ebook-btn" style={{ background: '#48bb78', boxShadow: '0 4px 15px rgba(72, 187, 120, 0.4)' }}>
+            📊 View Enquiries
+          </Link>
+          <button className="admin-ebook-btn" onClick={() => {
             setEditingPage(null)
             setFormData({
               slug: '',
               title: '',
               headline: '',
               subheadline: '',
+              additional_paragraph: '',
               logo_text: 'Logo',
               logo_image_url: '',
               book_image_url: '',
@@ -674,6 +869,12 @@ export default function AdminEbookLandingPage() {
               learning_description: '',
               benefits: [],
               form_title: '',
+              form_fields: [
+                { id: 'fullName', type: 'text', placeholder: 'Name *', required: true },
+                { id: 'email', type: 'email', placeholder: 'Email *', required: true },
+                { id: 'phone', type: 'tel', placeholder: 'Phone No*', required: true },
+                { id: 'companyName', type: 'text', placeholder: 'Company Name*', required: true },
+              ],
               author_heading: '',
               author_name: '',
               author_role: '',
@@ -684,11 +885,10 @@ export default function AdminEbookLandingPage() {
               pdf_url: '',
             })
             setShowForm(true)
-          }}
-          className="admin-ebook-btn"
-        >
-          + Add New Page
-        </button>
+          }}>
+            ➕ Create New Page
+          </button>
+        </div>
       </div>
 
       {showForm && (
@@ -743,6 +943,17 @@ export default function AdminEbookLandingPage() {
                   onChange={handleInputChange}
                   className="admin-ebook-input"
                   placeholder="Supporting text below headline"
+                />
+              </div>
+              <div className="admin-ebook-field admin-ebook-grid-full">
+                <label className="admin-ebook-label">Additional Paragraph (Optional)</label>
+                <textarea
+                  name="additional_paragraph"
+                  value={formData.additional_paragraph}
+                  onChange={handleInputChange}
+                  className="admin-ebook-textarea"
+                  placeholder="Extra paragraph to display below sub-headline"
+                  rows={2}
                 />
               </div>
               <div className="admin-ebook-field">
@@ -900,6 +1111,68 @@ export default function AdminEbookLandingPage() {
               </div>
             </div>
 
+            <h3 className="admin-ebook-section-title">Form Fields (Dynamic)</h3>
+            <div className="admin-ebook-benefits-box">
+              <div className="admin-ebook-benefits-header">
+                <input
+                  type="text"
+                  value={newFormField.id}
+                  onChange={(e) => setNewFormField(prev => ({ ...prev, id: e.target.value }))}
+                  className="admin-ebook-benefits-input"
+                  placeholder="Field ID (e.g., 'jobTitle')"
+                  style={{ flex: '0.5' }}
+                />
+                <select
+                  value={newFormField.type}
+                  onChange={(e) => setNewFormField(prev => ({
+                    ...prev,
+                    type: e.target.value as any
+                  }))}
+                  className="admin-ebook-input"
+                  style={{ flex: '0.3' }}
+                >
+                  <option value="text">Text</option>
+                  <option value="email">Email</option>
+                  <option value="tel">Phone</option>
+                  <option value="number">Number</option>
+                  <option value="textarea">Textarea</option>
+                  <option value="select">Dropdown</option>
+                </select>
+                <button
+                  type="button"
+                  onClick={handleAddFormField}
+                  className="admin-ebook-btn-add"
+                >
+                  Add
+                </button>
+              </div>
+              <ul className="admin-ebook-form-fields-list">
+                {formData.form_fields.map((field, index) => (
+                  <li key={index} className="admin-ebook-form-field-item">
+                    <div className="admin-ebook-form-field-header">
+                      <div>
+                        <span style={{ color: '#666' }}> {field.id} </span>
+                        <span className="admin-ebook-form-field-type"> {field.type}</span>
+                        {field.required && <span style={{ color: '#dc2626', fontSize: '12px', marginLeft: '8px' }}>* Required</span>}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveFormField(index)}
+                        className="admin-ebook-btn-remove"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                    {field.label && <div><span style={{ color: '#6666' }}>Label:</span> {field.label}</div>}
+                    {field.placeholder && <div><span style={{ color: '#666' }}>Placeholder : </span> <span style={{ color: '#666' }}>{field.placeholder}</span></div>}
+                    {field.options && field.options.length > 0 && (
+                      <div><span style={{ color: '#666' }}>Options:</span> {field.options.join(', ')}</div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <h3 className="admin-ebook-section-title">Author Information</h3>
             <div className="admin-ebook-grid">
               <div className="admin-ebook-field">
@@ -1018,10 +1291,22 @@ export default function AdminEbookLandingPage() {
             {pages.map((page) => (
               <tr key={page.id}>
                 <td className="admin-ebook-slug">{page.slug}</td>
-                <td className="admin-ebook-title-cell">{page.title}</td>
+                <td className="admin-ebook-title-cell">
+                  <Link href={`/EbookLanding/${page.slug}`} target="_blank">
+                    {page.title}
+                  </Link>
+                </td>
                 <td className="admin-ebook-author-cell">{page.author_name}</td>
                 <td>
                   <div className="admin-ebook-actions">
+                    <Link
+                      href={`/EbookLanding/${page.slug}`}
+                      target="_blank"
+                      className="admin-ebook-btn-preview"
+                      style={{ textDecoration: 'none' }}
+                    >
+                      Preview
+                    </Link>
                     <button
                       onClick={() => handleEdit(page)}
                       className="admin-ebook-btn-edit"
