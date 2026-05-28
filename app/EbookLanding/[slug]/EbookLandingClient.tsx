@@ -281,7 +281,7 @@ export default function EbookLandingClient({ initialData }: { initialData?: Eboo
 
       <div id="ebook-landing-root">
         <section style={{ textAlign: "center", padding: "50px 20px", background: "#f2f2f2" }}>
-          <div style={{ width: "80px", height: "80px", margin: "0 auto 20px", borderRadius: "50%", overflow: "hidden", background: accentColor, display: "flex", justifyContent: "center", alignItems: "center", color: "#fff", fontWeight: "bold" }}>
+          <div style={{ width: "90px", height: "90px", margin: "0 auto 20px", borderRadius: "50%", overflow: "hidden", background: "transparent", display: "flex", justifyContent: "center", alignItems: "center", color: "#fff", fontWeight: "bold" }}>
             {data.logo_image_url ? (
               <img src={data.logo_image_url} alt="Logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
             ) : data.logo_text}
@@ -311,9 +311,12 @@ export default function EbookLandingClient({ initialData }: { initialData?: Eboo
               <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required style={inputStyle} />
               <input type="text" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} required style={inputStyle} />
               <input type="text" placeholder="Company Name" value={companyName} onChange={(e) => setCompanyName(e.target.value)} required style={inputStyle} />
-              <button type="submit" disabled={isSubmitting} style={{ marginTop: "15px", padding: "12px 30px", background: "#f5a623", border: "none", color: "#fff", cursor: "pointer", borderRadius: "5px" }}>
+              <div className="text-center">
+
+              <button type="submit" disabled={isSubmitting} style={{ margin: "15px auto", padding: "12px 30px", background: "#082326", border: "none", color: "#fff", cursor: "pointer", borderRadius: "5px" }}>
                 {isSubmitting ? "Submitting..." : "Download Now"}
               </button>
+              </div>
             </form>
           </div>
         </section>
