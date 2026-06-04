@@ -20,10 +20,10 @@ export default function AlMl() {
                             <div className="col-sm-5">
                                 <div className="section-title wow fadeInUp">
                                     <h2 className="text-anime-style-21" data-cursor="-opaque">
-                                        {t("Transforming Enterprises With Innovative Digital Services")}
+                                        {t("Modern Data & Analytics for Intelligent Enterprises")}
                                     </h2>
                                     <p>
-                                        {t("At RheinBrücke, we help enterprises reimagine their digital future by combining technology, strategy, and industry expertise. With scalable solutions and a business-first approach, we ensure your transformation drives measurable results and long-term growth.")}
+                                        {t("At RheinBrücke, we help enterprises build AI ready data and analytics ecosystems that connect strategy, operations, and technology into a single source of enterprise intelligence.By combining deep domain expertise with modern platforms such as Microsoft Fabric, Databricks, Snowflake, Tableau, Qlik, SAP BusinessObjects, and Epicor Grow, we enable organizations to transform fragmented data into scalable, actionable insights from data architecture and engineering to enterprise BI, visualization, governance, and advanced analytics, empowering businesses to make faster decisions, improve operational visibility, and drive measurable transformation outcomes across the enterprise.")}
                                     </p>
                                     <div className="ser-btn ">
                                         <Link href="/contact-us" className="animated-svg-link">
@@ -1048,13 +1048,13 @@ export default function AlMl() {
                                     <div className="section-title">
                                         <div className="hero-video-content wow fadeInUp mt-4">
                                             <h2 className="text-anime-style-2" data-cursor="-opaque">
-                                                {t("Benefits and Challenges of BI Implementation")}
+                                                {t("How does Business Intelligence implementation help with your challenges?")}
                                             </h2>
                                             <p>
-                                                {t("Business Intelligence acts as a data manager, guiding enterprises through the complexities of their data landscape. It transcends basic data collection, providing a comprehensive view that helps decode intricate patterns and trends. Businesses can identify hidden connections and uncover previously unseen opportunities by leveraging BI. This holistic approach allows companies to transition from reactive to proactive, making informed predictions about market shifts and customer behavior.")}
+                                                {t("Business Intelligence acts as a data navigator, enabling executives, managers, and employees to effectively manage and interpret complex data landscapes. At RheinBrücke, we go beyond dashboards and reporting by helping organizations build connected data ecosystems that unify ERP, supply chain, operations, finance, and customer data into meaningful, real-time intelligence. Our approach combines data tools like BI reporting, Querying, BI dashboards, Data visualization, Data preparation and Data warehouse.")}
                                             </p>
                                             <p>
-                                                {t("The success of BI implementation centres around effective planning, stakeholder engagement, and skill development that maximize the benefits of BI for informed decision-making and business performance.")}
+                                                {t("Successful BI transformation requires strategic planning, strong governance, user adoption, and a clear roadmap to turn enterprise data into long term value, operational agility, and competitive advantage.")}
                                             </p>
                                         </div>
                                     </div>
@@ -1128,26 +1128,26 @@ export default function AlMl() {
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                         {t("Data aggregation from databases, APIs and Cloud services, integrating with data lakes for scalable storage.")}
+                                                         {t("Data aggregation from databases, APIs, and Cloud services, with integration into modern data lakes and cloud data platforms for scalable storage and analytics.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                         {t("Data preparation - cleansing viz. correcting errors and removing duplicates, transforming by standardizing formats & aggregating, and enriching data by adding contextual details.")}
+                                                         {t("Data preparation – Enable cleansing by correcting errors and removing duplicates, transforming by standardizing formats & aggregating, and enriching data by adding contextual details.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                         {t("Tools such as Power BI Dataflows and Power Query automate processes, enhancing efficiency.")}
+                                                         {t("Tools such as Microsoft Power BI Dataflows, Power Query automate processes, enhancing efficiency.")}
                                                     </p>
                                                 </div>
                                             </div>
                                             <div className="card-right">
                                                 <img
                                                     src="/images/Data Collection and Preparation.png"
-                                                    alt=""
+                                                    alt="BI Data collection and preparation image"
                                                 />
                                             </div>
                                         </div>
@@ -1166,32 +1166,32 @@ export default function AlMl() {
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                         {t("Data Sources like SQL Server, Oracle, and MySQL database, Cloud services such as Azure Data Lake, Amazon S3, and Google BigQuery, APIs, Flat Files")}
+                                                         {t("Enhance your business with Data Sources like SQL Server, Oracle, and MySQL database, Cloud services such as Azure Data Lake, Amazon S3, and Google BigQuery, APIs, Flat Files")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                         {t("CRM Systems Salesforce, Dynamics 365, or HubSpot and ERP Systems like SAP, Oracle, Epicor or Microsoft Dynamics 365.")}
+                                                         {t("Elevate your efficiency with CRM Systems Salesforce, Dynamics 365, or HubSpot and ERP Systems like SAP, Oracle, Epicor or Microsoft Dynamics 365.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                         {t("Integration with Data Lakes, BI Tools, Collaboration tools like Teams, Slack and more.")}
+                                                         {t("Integration with Data Lakes, BI Tools, Collaboration tools like Teams, Slack and complementary tools.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                         {t("Integration using Microsoft Power Automate or Zapier Workflow and Automation Tools.")}
+                                                         {t("Workflow automation and system integration using Microsoft Power Automate, Zapier, and enterprise automation tools.")}
                                                     </p>
                                                 </div>
                                             </div>
                                             <div className="card-right">
                                                 <img
                                                     src="/images/Integration with Existing Systems.png"
-                                                    alt=""
+                                                    alt="BI integration image"
                                                 />
                                             </div>
                                         </div>
@@ -1233,7 +1233,7 @@ export default function AlMl() {
                                                 </div>
                                             </div>
                                             <div className="card-right">
-                                                <img src="/images/Data Warehousing.png" alt="" />
+                                                <img src="/images/Data Warehousing.png" alt="BI Data Warehousing image" />
                                             </div>
                                         </div>
                                     </div>
@@ -1251,30 +1251,30 @@ export default function AlMl() {
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        {t("Data definition and management policies are set for handling, retention and retrieving.")}
+                                                        {t("Data management policies are established for secure handling, retention, accessibility, and retrieval of business-critical information.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        {t("Implementation of measures to protect sensitive information and personally identifiable information, adherence to regulatory standards such as GDPR.")}
+                                                        {t("Implementation of security measures to protect sensitive data and personally identifiable information (PII), while ensuring compliance with regulatory standards such as GDPR.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        {t("Data governance frameworks and security protocols to ensure integrity, confidentiality, and compliance.")}
+                                                        {t("Data governance frameworks and security protocols to ensure data integrity, confidentiality, compliance, and risk management.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        {t("Data accuracy and consistency through cleansing and profiling.")}
+                                                        {t("Improving data accuracy and consistency through data cleansing, validation, and profiling processes.")}
                                                     </p>
                                                 </div>
                                             </div>
                                             <div className="card-right">
-                                                <img src="/images/Data Governance and Security.png" alt="" />
+                                                <img src="/images/Data Governance and Security.png" alt="BI Data governance and security image" />
                                             </div>
                                         </div>
                                     </div>
@@ -1287,12 +1287,12 @@ export default function AlMl() {
                                             <div className="card-left">
                                                 <h5>{t("Data Mining and Analytics")}</h5>
                                                 <p>
-                                                    {t("Analyse large datasets using ML, statistical analysis & pattern recognition.")}
+                                                    {t("Analyse large datasets using Machine Learning (ML), statistical analysis, predictive modelling, and pattern recognition.")}
                                                 </p>
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        {t("Prescriptive Analytics: Achieve desired outcomes using both quantitative and qualitative insights.")}
+                                                        {t("Prescriptive Analytics: Achieve desired business outcomes using quantitative and qualitative insights.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
@@ -1304,7 +1304,7 @@ export default function AlMl() {
                                                 <div className="li-content">
                                                     <img src="/images/tick.svg" alt="" />
                                                     <p>
-                                                        {t("Clustering Analytics: Uncover patterns, segment data for targeted strategies, detect anomalies, simplify data analysis.")}
+                                                        {t("Clustering Analytics: Discover hidden patterns, segment audiences for targeted strategies, detect anomalies, and simplify complex data analysis.")}
                                                     </p>
                                                 </div>
                                                 <div className="li-content">
@@ -1321,7 +1321,7 @@ export default function AlMl() {
                                                 </div>
                                             </div>
                                             <div className="card-right">
-                                                <img src="/images/Data Mining and Analytics.png" alt="" />
+                                                <img src="/images/Data Mining and Analytics.png" alt="BI Data mining and Analytics image" />
                                             </div>
                                         </div>
                                     </div>
@@ -1352,7 +1352,7 @@ export default function AlMl() {
                                                 </div>
                                             </div>
                                             <div className="card-right">
-                                                <img src="/images/Reports and Dashboards.png" alt="" />
+                                                <img src="/images/Reports and Dashboards.png" alt="BI Reports and dashboards image" />
                                             </div>
                                         </div>
                                     </div>
@@ -1372,7 +1372,7 @@ export default function AlMl() {
                                         {t("Technologies")}
                                     </h2>
                                     <p className="mt-5">
-                                        {t("BI technologies enable organizations to derive meaningful insights from their data, improve decision-making processes, and gain a competitive edge by understanding trends, patterns, and opportunities within their operations and market landscapes. It encompasses tools such as Azure Data Factory for ETL processes, Power BI for intuitive visualization, and Azure Analysis Services for advanced analytics, enabling organizations to extract actionable insights from data for informed decision-making and strategic planning.")}
+                                        {t("Modern Business Intelligence and analytics technologies enable organizations to transform enterprise data into actionable intelligence, improve decision making, and build AI ready digital ecosystems by combining cloud native data platforms, modern analytics tools, and scalable architectures for deeper operational visibility, improved agility, and new growth opportunities. RheinBrücke leverages leading technologies such as Microsoft Fabric, Databricks, Snowflake, Power BI, Tableau, Qlik, and SAP BusinessObjects to unify data engineering, analytics, visualization, governance, and AI driven insights within a connected enterprise ecosystem.")}
                                     </p>
                                 </div>
                                 <div className="corimg mt-5">
@@ -1495,13 +1495,13 @@ export default function AlMl() {
                                                         <div className="micfabric">
                                                             <h2>{t("Other Technologies")}</h2>
                                                             <p>
-                                                                {t("Our technology stack supports a diverse array of data visualization, business intelligence, and enterprise resource planning solutions, enabling comprehensive insights across business functions.")} {t("Tableau provides a powerful, user-friendly platform for creating interactive dashboards and data visualizations, making complex data easily accessible for business users, while Qlik Sense offers similarly intuitive analytics capabilities.")} {t("SAP Business Objects addresses enterprise-level reporting and analytics needs.")}
+                                                                {t("Our technology stack supports a diverse array of data visualization, business intelligence, and enterprise resource planning solutions, enabling comprehensive insights across business functions.")}{t("Tableau provides a powerful, user-friendly platform for creating interactive dashboards and data visualizations, making complex data easily accessible for business users, while Qlik Sense offers similarly intuitive analytics capabilities.")}{t("SAP Business Objects addresses enterprise-level reporting and analytics needs.")}
                                                             </p>
                                                             <p>
-                                                                {t("Anvizent streamlines data integration from multiple sources for real-time insights, and Google Data Studio provides an intuitive, cloud-based platform for customizable reporting.")} {t("To support advanced analytics, we leverage Databricks for data processing and machine learning, and Snowflake for scalable data warehousing and seamless data management.")}
+                                                                {t("Anvizent streamlines data integration from multiple sources for real-time insights, and Google Data Studio provides an intuitive, cloud-based platform for customizable reporting.")}{t("To support advanced analytics, we leverage Databricks for data processing and machine learning, and Snowflake for scalable data warehousing and seamless data management.")}
                                                             </p>
                                                             <p id="more" className="more-text hidden">
-                                                                {t("Complementing these, Epicor ERP delivers deep operational insights and integrates with BI tools for unified performance monitoring.")} {t("Its suite includes Epicor Data Analytics (EDA) for consolidating sales and operational data into customizable dashboards, Epicor Financial Planning and Analysis (FP&A) for real-time financial insights, budgeting, and forecasting, and the Business Activity Query (BAQ) tool for flexible T-SQL querying, enabling dynamic dashboards and custom reporting.")} {t("Epicor Grow enhances these capabilities with AI-driven, self-service analytics, enabling users to explore live ERP data and build visualizations using natural language.")}
+                                                                {t("Complementing these, Epicor ERP delivers deep operational insights and integrates with BI tools for unified performance monitoring.")}{t("Its suite includes Epicor Data Analytics (EDA) for consolidating sales and operational data into customizable dashboards, Epicor Financial Planning and Analysis (FP&A) for real-time financial insights, budgeting, and forecasting, and the Business Activity Query (BAQ) tool for flexible T-SQL querying, enabling dynamic dashboards and custom reporting.")}{t("Epicor Grow enhances these capabilities with AI-driven, self-service analytics, enabling users to explore live ERP data and build visualizations using natural language.")}
                                                             </p>
                                                             <div className="ser-btn1 readmore">
                                                                 <span
@@ -1613,7 +1613,7 @@ export default function AlMl() {
                                         {t("Revolutionizing Tech Solutions: Microsoft Dynamics 365 and Microsoft Technologies Lead the Way.")}
                                     </p>
                                     <p>
-                                        {t("We integrate Power BI with Dynamics 365, enabling a cohesive and finely tuned data environment.")} {t("Combining BI's analytical capabilities with Dynamics 365's ERP and CRM functionalities offers several benefits such as")}
+                                        {t("We integrate Power BI with Dynamics 365, enabling a cohesive and finely tuned enterprise data environment.")}{t("Combining BI's analytical capabilities with Dynamics 365's ERP and CRM functionalities offers several benefits such as")}
                                     </p>
                                 </div>
                                 <div className="row mt-5">
@@ -1632,7 +1632,7 @@ export default function AlMl() {
                                         {t("The RheinBrücke Advantage")}
                                     </h2>
                                     <p>
-                                        {t("We are passionate about empowering your organization to make informed decisions with confidence.")}  {t("Our team of highly skilled professionals possesses unmatched expertise in diverse data models and cutting-edge analytics tools.")}  {t("As a Microsoft Gold Competency Partner, we work closely with you to unlock the full potential of your data.")}
+                                        {t("At RheinBrücke, we empower enterprises to transform data into intelligent business outcomes with confidence. Our team of experienced consultants, data architects, and analytics specialists brings deep expertise across modern data platforms, enterprise BI, AI-driven analytics, and cloud-based data ecosystems. As a Microsoft Cloud and AI Partner, we help organizations build unified, scalable, and AI-ready enterprise data environments by combining modern technologies, ERP intelligence, and advanced analytics capabilities.")}
                                     </p>
                                 </div>
                                 <div className="row mt-5 advant">
@@ -1640,7 +1640,7 @@ export default function AlMl() {
                                         <div className="service-item-body1 imgadd w80">
                                             <h3>{t("Exceptional Performance")}</h3>
                                             <p>
-                                                {t("Experience unparalleled speed and efficiency with our state-of-the-art technology and design capabilities.")}
+                                                {t("Experience unparalleled speed, scalability, and efficiency with our state-of-the-art data analytics architecture, cloud technologies, and optimized system design capabilities.")}
                                             </p>
                                             <img src="/images/adv1.svg" alt="" />
                                         </div>
@@ -1649,7 +1649,7 @@ export default function AlMl() {
                                         <div className="service-item-body1 imgadd w80">
                                             <h3>{t("Customized Solutions")}</h3>
                                             <p>
-                                                {t("Implement bespoke data models and solutions tailored precisely to your unique business requirements.")}
+                                                {t("Implement bespoke data models, BI dashboards, and enterprise analytics solutions tailored precisely to your unique business requirements.")}
                                             </p>
                                             <img src="/images/adv2.svg" alt="" />
                                         </div>
@@ -1667,7 +1667,7 @@ export default function AlMl() {
                                         <div className="service-item-body1 imgadd">
                                             <h3>{t("Industry Expertise")}</h3>
                                             <p>
-                                                {t("Utilize our deep knowledge and experience in your sector to address and overcome your specific challenges.")}
+                                                {t("Utilize our deep domain knowledge and experience across multiple sectors to address and overcome your specific challenges using advanced analytics, ERP integration, and Microsoft-powered solutions.")}
                                             </p>
                                             <div className="text-center">
                                                 <img src="/images/adv41.svg" alt="" />
@@ -1698,16 +1698,16 @@ export default function AlMl() {
                                         {t("Case Study")}
                                     </h2>
                                     <p>
-                                        {t("RheinBrücke IT Consulting GmbH's Power Plant Analytics (PPA) tool was a transformative solution tailored specifically to the unique demands of the power plant industry.")}{t("Unlike traditional ERP suites, PPA excelled in critical areas such as billing, revenue calculations, power generation scheduling, and management of power purchase agreements.")}{t("With advanced features providing real-time access to comprehensive operational, financial, and market data, PPA empowered decision-makers to gain deep insights into plant operations and market profitability.")}{t("The tool's analytical dashboards and self-service reporting capabilities enabled users to foresee opportunities, detect risks, and make informed decisions swiftly.")}
+                                        {t("RheinBrücke IT Consulting Power Plant Analytics (PPA) tool was a transformative solution tailored specifically to the unique demands of the power plant industry.")}{t("Unlike traditional ERP suites, PPA excelled in critical areas such as billing, revenue calculations, power generation scheduling, and management of power purchase agreements.")}{t("With advanced features providing real-time access to comprehensive operational, financial, and market data, PPA empowered decision-makers to gain deep insights into plant operations and market profitability.")}{t("The tool's analytical dashboards and self-service reporting capabilities enabled users to foresee opportunities, detect risks, and make informed decisions swiftly.")}
                                     </p>
                                     <p />
-                                    {t("PPA enhanced decision-making through historical trend analysis and What-If scenario evaluations, assessing the impacts of operational metrics and potential disruptions.")} {t("Field officers benefited from real-time data access via smartphones for proactive maintenance, while standard BI reports and dashboards facilitated comprehensive analysis.")} {t("The seamless interface for MIS reporting minimized manual intervention, enhancing reporting accuracy and efficiency.")}
+                                    {t("PPA enhanced decision-making through historical trend analysis and What-If scenario evaluations, assessing the impacts of operational metrics and potential disruptions.")}{t("Field officers benefited from real-time data access via smartphones for proactive maintenance, while standard BI reports and dashboards facilitated comprehensive analysis.")}{t("The seamless interface for MIS reporting minimized manual intervention, enhancing reporting accuracy and efficiency.")}
                                     <p />
                                     <p>
                                         {t("PPA's modular design included functionalities for billing, scheduling, revenue management, and budget forecasting, ensuring streamlined operations and efficient resource management.")}
                                     </p>
                                     <p>
-                                        {t("PPA's user-friendly design ensured ease of use with minimal training for business users.")}  {t("RheinBrücke successfully delivered a robust solution that enhanced operational and financial efficiency in the power plant industry, solidifying its commitment to innovative and impactful industry solutions.")}
+                                        {t("PPA's user-friendly design ensured ease of use with minimal training for business users.")}{t("RheinBrücke successfully delivered a robust solution that enhanced operational and financial efficiency in the power plant industry, solidifying its commitment to innovative and impactful industry solutions.")}
                                     </p>
                                 </div>
                             </div>
@@ -1728,6 +1728,132 @@ export default function AlMl() {
                 </div>
                 <TestimonialandAward />
                 <Awards />
+
+
+
+
+                
+        {/* Page Faqs Start */}
+        <div className="page-faqs bggray pd60">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-2" />
+              <div className="col-lg-8">
+                {/* Page FAQs Category Start */}
+                <div className="page-faqs-catagery">
+                  {/* FAQs section start */}
+                  <div
+                    className="our-faq-section page-faq-accordion"
+                    id="general_information"
+                  >
+                    <div className="section-title text-center">
+                      <h2 className="text-anime-style-2" data-cursor="-opaque">
+                        {t("Wondering Why? We’re Here to Answer")}
+                      </h2>
+                    </div>
+                    {/* FAQ Accordion Start */}
+                    <div className="faq-accordion" id="accordion">
+                      {/* FAQ Item Start */}
+                      <div className="accordion-item wow fadeInUp">
+                        <h2 className="accordion-header" id="heading1">
+                          <button
+                            className="accordion-button collapsein"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse1"
+                            aria-expanded="true"
+                            aria-controls="collapse1"
+                          >
+                            {t("How does Power BI integrate with Microsoft Dynamics 365? (can integrate with multiple ERPs)")} 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse1"
+                          className="accordion-collapse collapse show"
+                          aria-labelledby="heading1"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("Power BI connects with major ERP platforms including Microsoft Dynamics 365, SAP S/4HANA, Oracle ERP Cloud, and Infor CloudSuite through native connectors, APIs, and OData feeds. The integration centralizes financial, operational, and supply chain data into interactive dashboards, enabling real-time reporting across business functions.")}  
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.2s"
+                      >
+                        <h2 className="accordion-header" id="heading2">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse2"
+                            aria-expanded="false"
+                            aria-controls="collapse2"
+                          >
+                             {t("What is Microsoft Fabric and why is it important?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse2"
+                          className="accordion-collapse collapse "
+                          aria-labelledby="heading2"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>{t("Microsoft Fabric is a unified cloud-based data analytics platform that combines data engineering, data warehousing, AI, and real-time analytics. It simplifies the entire data lifecycle from ingestion to visualization. Organizations can manage structured and unstructured data efficiently within one ecosystem. It is essential for building modern, scalable enterprise data platforms.")}</p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.4s"
+                      >
+                        <h2 className="accordion-header" id="heading3">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse3"
+                            aria-expanded="false"
+                            aria-controls="collapse3"
+                          >
+                            {t("How does BI help enterprises improve decision-making?")} 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse3"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading3"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("BI helps organizations transform complex datasets into clear dashboards, reports, and KPIs for better visibility. It enables businesses to identify trends, forecast outcomes, and detect risks early. With real-time analytics and data visualization, decision-making becomes faster and more accurate. This leads to improved efficiency, profitability, and strategic growth.")} 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                    </div>
+                    {/* FAQ Accordion End */}
+                  </div>
+                  {/* FAQs section End */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Page Faq End */}
+
+
+        
                 {/* Footer Start */}
                 <footer className="main-footer pd0">
                     {/* Footer Main Start */}
@@ -1736,7 +1862,7 @@ export default function AlMl() {
                             <div className="firstrow">
                                 <div className="row">
                                     <div className="col-sm-8">
-                                        <h2>{t("Ready to accelerate value creation across your portfolio?")}</h2>
+                                        <h2>{t("Ready to accelerate value creation across your enterprise portfolio?")}</h2>
                                         <p>
                                             {t("Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.")}
                                         </p>
