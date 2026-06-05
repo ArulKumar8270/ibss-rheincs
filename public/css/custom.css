@@ -23241,3 +23241,10 @@ position: relative;
 .defhead1{
 height: 75px !important;
 }
+.more-text h5{
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 14px;
+	line-height: 1.3;
+}

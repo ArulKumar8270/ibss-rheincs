@@ -1396,6 +1396,26 @@ export default function AlMl() {
                                                                 <p>
                                                                     {t("Power BI offers robust data visualization and reporting tools, turning complex data into interactive dashboards and reports.")}  {t("Microsoft Fabric integrates these components to create a seamless data ecosystem, facilitating effective data ingestion, storage, analysis, and visualization.")}
                                                                 </p>
+                                                                <h5>{t("Databricks")}</h5>
+                                                                <p>
+                                                                    {t("Databricks unifies data engineering, analytics, and AI on a scalable lakehouse platform. It enables big data processing, machine learning, predictive analytics, and cloud-scale integration.")}
+                                                                </p>
+                                                                <h5>{t("Snowflake")}</h5>
+                                                                <p>
+                                                                    {t("Snowflake is a cloud-native platform for data warehousing, enterprise analytics, and secure data sharing. It supports centralized governance, high-performance querying, and seamless BI and AI integration.")}
+                                                                </p>
+                                                                <h5>{t("Tableau & Qlik")}</h5>
+                                                                <p>
+                                                                    {t("Tableau and Qlik transform enterprise data into interactive dashboards and visual analytics. They enable real-time KPI monitoring, self-service analytics, and enterprise reporting.")}
+                                                                </p>
+                                                                <h5>{t("SAP BusinessObjects")}</h5>
+                                                                <p>
+                                                                    {t("SAP BusinessObjects delivers enterprise reporting and operational analytics across SAP and non-SAP environments. It supports governed reporting, centralized data access, and analytics modernization.")}
+                                                                </p>
+                                                                <h5>{t("Epicor ERP Analytics, Reporting & Performance Management")}</h5>
+                                                                <p>
+                                                                    {t("Complementing these capabilities, Epicor ERP provides powerful analytics through Epicor Data Analytics (EDA), Epicor Grow, and Epicor Financial Planning & Analysis (FP&A), enabling dashboarding, self-service analytics, budgeting, forecasting, and performance management. The Business Activity Query (BAQ) tool supports custom reporting and dynamic dashboards, helping organizations derive greater value from their ERP data.")}
+                                                                </p>
                                                             </div>
                                                             <div className="ser-btn1 readmore">
                                                                 <span
@@ -1488,7 +1508,7 @@ export default function AlMl() {
                                                 </div>
                                             </div>
                                         </li>
-                                        <li className="card bluebg" id="card-2">
+                                        {/* <li className="card bluebg" id="card-2">
                                             <div className="card-content col-sm-12">
                                                 <div className="row">
                                                     <div className="col-sm-7">
@@ -1593,7 +1613,7 @@ export default function AlMl() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
+                                        </li> */}
                                     </ul>
                                 </div>
                             </div>
