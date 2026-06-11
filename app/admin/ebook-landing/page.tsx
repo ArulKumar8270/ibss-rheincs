@@ -1307,7 +1307,7 @@ export default function AdminEbookLandingPage() {
               <tr key={page.id}>
                 <td className="admin-ebook-slug">{page.slug}</td>
                 <td className="admin-ebook-title-cell">
-                  <Link href={`/EbookLanding/${page.slug}`} target="_blank">
+                  <Link href={`/${page.slug}`} target="_blank">
                     {page.title}
                   </Link>
                 </td>
@@ -1315,7 +1315,7 @@ export default function AdminEbookLandingPage() {
                 <td>
                   <div className="admin-ebook-actions">
                     <Link
-                      href={`/EbookLanding/${page.slug}`}
+                      href={`/${page.slug}`}
                       target="_blank"
                       className="admin-ebook-btn-preview"
                       style={{ textDecoration: 'none' }}
