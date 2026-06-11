@@ -18,20 +18,23 @@ function createStaticClient() {
 }
 
 export async function generateStaticParams() {
-  const supabase = createStaticClient();
-  const { data: pages, error } = await supabase
-    .from("ebook_landing_pages")
-    .select("slug");
+  try {
+    const supabase = createStaticClient();
+    const { data: pages, error } = await supabase
+      .from("ebook_landing_pages")
+      .select("slug");
 
-  if (error) {
-    console.error("generateStaticParams error:", error.message);
-    return [{ slug: "default" }];
+    if (error) {
+      console.error("generateStaticParams error:", error.message);
+      return [{ slug: "default" }];
+    }
+
+    if (pages && pages.length > 0) {
+      return pages.map((page) => ({ slug: page.slug }));
+    }
+  } catch (e) {
+    console.error("generateStaticParams exception:", e);
   }
-
-  if (pages && pages.length > 0) {
-    return pages.map((page) => ({ slug: page.slug }));
-  }
-
   return [{ slug: "default" }];
 }
 
@@ -40,22 +43,26 @@ export default async function EbookLandingPage({
 }: {
   params: { slug: string };
 }) {
-  const supabase = createStaticClient();
-  const { data: pageData, error } = await supabase
-    .from("ebook_landing_pages")
-    .select("*")
-    .eq("slug", params.slug)
-    .single();
-
   let resolvedData = null;
-  if (pageData) {
-    resolvedData = {
-      ...pageData,
-      logo_image_url: resolveImageUrl(pageData.logo_image_url),
-      book_image_url: resolveImageUrl(pageData.book_image_url),
-      author_avatar_url: resolveImageUrl(pageData.author_avatar_url),
-      pdf_url: resolveImageUrl(pageData.pdf_url),
-    };
+  try {
+    const supabase = createStaticClient();
+    const { data: pages, error } = await supabase
+      .from("ebook_landing_pages")
+      .select("*")
+      .eq("slug", params.slug);
+
+    if (!error && pages && pages.length > 0) {
+      const pageData = pages[0];
+      resolvedData = {
+        ...pageData,
+        logo_image_url: resolveImageUrl(pageData.logo_image_url),
+        book_image_url: resolveImageUrl(pageData.book_image_url),
+        author_avatar_url: resolveImageUrl(pageData.author_avatar_url),
+        pdf_url: resolveImageUrl(pageData.pdf_url),
+      };
+    }
+  } catch (e) {
+    console.error("EbookLandingPage fetch error:", e);
   }
 
   return <EbookLandingClient initialData={resolvedData} />;

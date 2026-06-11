@@ -26,6 +26,7 @@ interface EbookLandingPage {
   book_image_url: string | null
   learning_title: string | null
   learning_description: string | null
+  benefits_heading: string | null
   benefits: string[]
   form_title: string | null
   form_fields: FormField[]
@@ -58,6 +59,7 @@ export default function AdminEbookLandingPage() {
     book_image_url: '',
     learning_title: '',
     learning_description: '',
+    benefits_heading: '',
     benefits: [] as string[],
     form_title: '',
     form_fields: [] as FormField[],
@@ -229,6 +231,7 @@ export default function AdminEbookLandingPage() {
         book_image_url: formData.book_image_url || null,
         learning_title: formData.learning_title || null,
         learning_description: formData.learning_description || null,
+        benefits_heading: formData.benefits_heading || null,
         benefits: formData.benefits,
         form_title: formData.form_title || null,
         author_heading: formData.author_heading || null,
@@ -334,6 +337,7 @@ export default function AdminEbookLandingPage() {
       book_image_url: page.book_image_url || '',
       learning_title: page.learning_title || '',
       learning_description: page.learning_description || '',
+      benefits_heading: page.benefits_heading || '',
       benefits: page.benefits || [],
       form_title: page.form_title || '',
       form_fields: page.form_fields || [
@@ -701,8 +705,7 @@ export default function AdminEbookLandingPage() {
         }
 
         .admin-ebook-slug {
-          font-weight: 600;
-          color: #667eea;
+          color: #000;
         }
 
         .admin-ebook-title-cell {
@@ -820,7 +823,7 @@ export default function AdminEbookLandingPage() {
 
         .admin-ebook-form-field-type {
           font-size: 12px;
-          font-weight: 600;
+          font-weight: 400;
           background: #f0f0f0;
           padding: 2px 8px;
           border-radius: 6px;
@@ -867,6 +870,7 @@ export default function AdminEbookLandingPage() {
               book_image_url: '',
               learning_title: '',
               learning_description: '',
+              benefits_heading: '',
               benefits: [],
               form_title: '',
               form_fields: [
@@ -1039,6 +1043,17 @@ export default function AdminEbookLandingPage() {
                   className="admin-ebook-textarea"
                   rows={3}
                   placeholder="Description text for the learning section"
+                />
+              </div>
+              <div className="admin-ebook-field">
+                <label className="admin-ebook-label">Benefits Heading</label>
+                <input
+                  type="text"
+                  name="benefits_heading"
+                  value={formData.benefits_heading}
+                  onChange={handleInputChange}
+                  className="admin-ebook-input"
+                  placeholder="Heading for the benefits list"
                 />
               </div>
             </div>
@@ -1249,7 +1264,7 @@ export default function AdminEbookLandingPage() {
                   className="admin-ebook-textarea"
                   rows={4}
                   placeholder="<svg>...</svg>"
-                  style={{ fontFamily: 'monospace', fontSize: '12px' }}
+                  style={{ fontFamily: 'helvetica-neue-lt-pro', fontSize: '12px' }}
                 />
               </div>
             </div>

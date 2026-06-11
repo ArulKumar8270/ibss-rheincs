@@ -22,6 +22,7 @@ interface EbookLandingData {
   book_image_url: string | null;
   learning_title: string | null;
   learning_description: string | null;
+  benefits_heading: string | null;
   benefits: string[];
   form_title: string | null;
   author_heading: string | null;
@@ -45,30 +46,30 @@ function resolveImageUrl(value: string | null | undefined): string | null {
 
 const downloadPdf = async (rawPdfValue: string | null, title: string) => {
   if (!rawPdfValue) return;
-  
+
   const safeTitle = String(title || "ebook")
     .trim()
     .replace(/[/\\?%*:|"<>]/g, "-")
     .replace(/\s+/g, " ")
     .trim();
   const filename = `${safeTitle || "ebook"}.pdf`;
-  
+
   const pdfPublicUrl = resolveImageUrl(rawPdfValue);
   if (!pdfPublicUrl) return;
-  
+
   try {
     const response = await fetch(pdfPublicUrl);
     if (!response.ok) throw new Error("Failed to fetch PDF");
     const blob = await response.blob();
     const blobUrl = URL.createObjectURL(blob);
-    
+
     const link = document.createElement("a");
     link.href = blobUrl;
     link.setAttribute("download", filename);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    
+
     setTimeout(() => URL.revokeObjectURL(blobUrl), 5000);
   } catch (err) {
     console.error("Failed to download via blob, opening directly:", err);
@@ -136,28 +137,36 @@ export default function EbookLandingPage() {
         },
       ]);
       if (dbError) throw dbError;
-      
-      try {
-        await fetch("/api/send-enquiry", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
+
+      const { data: emailResult, error: emailError } =
+        await supabase.functions.invoke("send-contact-email", {
+          body: {
+            channel: "sap", // same as SAP page
             fullName: name,
-            email: email,
-            phone: phone,
-            companyName: companyName,
+            email,
+            phone,
+            companyName,
             selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
             message: "Requested E-book download from landing page",
-          }),
+          },
         });
-      } catch (emailErr) {
-        console.warn("Email failed but DB saved:", emailErr);
+      if (emailError) {
+        console.error("Email Error:", emailError);
+        throw new Error(
+          emailError.message || "Unable to send email notification.",
+        );
       }
-      
+
+      if (emailResult && emailResult.success === false) {
+        throw new Error(
+          emailResult.error || "Unable to send email notification.",
+        );
+      }
+
       if (pageData?.pdf_url) {
         await downloadPdf(pageData.pdf_url, pageData.title);
       }
-      
+
       setName("");
       setEmail("");
       setPhone("");
@@ -183,12 +192,13 @@ export default function EbookLandingPage() {
     book_image_url: "/images/book.png",
     learning_title: "What will you learn from this E-Book?",
     learning_description: "Learning description goes here",
+    benefits_heading: "What you'll get",
     benefits: ["Benefit One", "Benefit Two", "Benefit Three"],
     form_title: "Download the E-Book Now",
-    author_heading: "About the Author",
-    author_name: "Author Name",
-    author_role: "Designation",
-    author_bio: "Author bio goes here",
+    author_heading: null,
+    author_name: null,
+    author_role: null,
+    author_bio: null,
     author_avatar_url: null,
     author_avatar_svg: null,
     footer_color: "#fff",
@@ -200,7 +210,15 @@ export default function EbookLandingPage() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: "100vh", display: "flex", justifyContent: "center", alignItems: "center", background: "#f2f2f2" }}>
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          background: "#f2f2f2",
+        }}
+      >
         <p>Loading...</p>
       </div>
     );
@@ -209,24 +227,22 @@ export default function EbookLandingPage() {
   return (
     <>
       <LeadSquaredInit />
-      
+
       <div className="topheader defhead">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-auto">
               <Link href="/">
-                <img
-                  src="/images/rlogo.png"
-                  alt="RheinBrücke"
-                  height={52}
-                />
+                <img src="/images/rlogo.png" alt="RheinBrücke" height={52} />
               </Link>
             </div>
 
             <div className="col" />
 
             <div className="col-auto">
-              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "10px" }}
+              >
                 <span aria-hidden="true" style={{ color: "white" }}>
                   <svg
                     width="24"
@@ -253,7 +269,10 @@ export default function EbookLandingPage() {
                     />
                   </svg>
                 </span>
-                <Link href="mailto:info@rheincs.com" style={{ color: "white", textDecoration: "none" }}>
+                <Link
+                  href="mailto:info@rheincs.com"
+                  style={{ color: "white", textDecoration: "none" }}
+                >
                   info@rheincs.com
                 </Link>
               </div>
@@ -263,53 +282,180 @@ export default function EbookLandingPage() {
       </div>
 
       <div id="ebook-landing-root">
-        <section style={{ textAlign: "center", padding: "50px 20px", background: "#f2f2f2" }}>
-          <div style={{ width: "80px", height: "80px", margin: "0 auto 20px", borderRadius: "0%", overflow: "hidden", background: "transparent", display: "flex", justifyContent: "center", alignItems: "center", color: "#fff", fontWeight: "bold" }}>
+        <section
+          style={{
+            textAlign: "center",
+            padding: "50px 20px",
+            background: "#f2f2f2",
+          }}
+        >
+          <div
+            style={{
+              width: "200px",
+              height: "auto",
+              margin: "0 auto 20px",
+              borderRadius: "0%",
+              overflow: "hidden",
+              background: "transparent",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              color: "#fff",
+              fontWeight: "bold",
+            }}
+          >
             {data.logo_image_url ? (
-              <img src={data.logo_image_url} alt="Logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
-            ) : data.logo_text}
+              <img
+                src={data.logo_image_url}
+                alt="Logo"
+                style={{ width: "100%", height: "100%", objectFit: "contain" }}
+              />
+            ) : (
+              data.logo_text
+            )}
           </div>
           <h1>{data.headline}</h1>
           <p>{data.subheadline}</p>
           {data.additional_paragraph && (
-            <p style={{ marginTop: '15px', fontSize: '14px', color: '#777' }}>{data.additional_paragraph}</p>
+            <p style={{ marginTop: "15px", fontSize: "14px", color: "#777" }}>
+              {data.additional_paragraph}
+            </p>
           )}
         </section>
 
-        <section style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", padding: "40px 20px" }}>
+        <section
+          style={{
+            maxWidth: "1100px",
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "40px",
+            padding: "40px 20px",
+            borderBottom: "1px solid #082326",
+          }}
+        >
           <div>
-            <img src={data.book_image_url || "/images/book.png"} alt="Book" style={{ width: "100%", maxWidth: "400px" }} />
+            <img
+              src={data.book_image_url || "/images/book.png"}
+              alt="Book"
+              style={{ width: "100%", maxWidth: "400px" }}
+            />
           </div>
           <div>
             <h2>{data.learning_title}</h2>
             <p style={{ marginTop: "15px" }}>{data.learning_description}</p>
+            {data.benefits_heading && (
+              <h3 style={{ marginTop: "20px" }}>{data.benefits_heading}</h3>
+            )}
             <ul style={{ marginTop: "20px" }}>
               {data.benefits?.map((benefit, index) => (
-                <li key={index} style={{ marginBottom: "10px" }}>{benefit}</li>
+                <li key={index} style={{ marginBottom: "10px" }}>
+                  {benefit}
+                </li>
               ))}
             </ul>
             <form onSubmit={handleSubmit} style={{ marginTop: "30px" }}>
               <h3>{data.form_title}</h3>
-              <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required style={inputStyle} />
-              <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required style={inputStyle} />
-              <input type="text" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} required style={inputStyle} />
-              <input type="text" placeholder="Company Name" value={companyName} onChange={(e) => setCompanyName(e.target.value)} required style={inputStyle} />
-              <button type="submit" disabled={isSubmitting} style={{ marginTop: "15px", padding: "12px 30px", background: "#082326", border: "none", color: "#fff", cursor: "pointer", borderRadius: "5px" }}>
+              <input
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                style={inputStyle}
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                style={inputStyle}
+              />
+              <input
+                type="text"
+                placeholder="Phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+                style={inputStyle}
+              />
+              <input
+                type="text"
+                placeholder="Company Name"
+                value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)}
+                required
+                style={inputStyle}
+              />
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                style={{
+                  marginTop: "15px",
+                  padding: "12px 30px",
+                  background: "#082326",
+                  border: "none",
+                  color: "#fff",
+                  cursor: "pointer",
+                  borderRadius: "5px",
+                }}
+              >
                 {isSubmitting ? "Submitting..." : "Download Now"}
               </button>
             </form>
           </div>
         </section>
 
-        <section style={{ background: "#2d3e50", color: "#fff", padding: "60px 20px", textAlign: "center" }}>
-          <h2>{data.author_heading}</h2>
-          {data.author_avatar_url && <img src={data.author_avatar_url} alt="Author" style={{ width: "100px", height: "100px", borderRadius: "50%", marginTop: "20px", objectFit: "cover" }} />}
-          <h3 style={{ marginTop: "20px" }}>{data.author_name}</h3>
-          <p>{data.author_role}</p>
-          <p style={{ maxWidth: "700px", margin: "20px auto 0" }}>{data.author_bio}</p>
-        </section>
+        {(() => {
+          const hasAuthorInfo =
+            data.author_heading ||
+            data.author_name ||
+            data.author_role ||
+            data.author_bio ||
+            data.author_avatar_url ||
+            data.author_avatar_svg;
 
-        <div style={{ height: "10px", background: accentColor }} />
+          if (hasAuthorInfo) {
+            return (
+              <section
+                style={{
+                  background: "#2d3e50",
+                  color: "#fff",
+                  padding: "60px 20px",
+                  textAlign: "center",
+                }}
+              >
+                {data.author_heading && <h2>{data.author_heading}</h2>}
+                {data.author_avatar_url && (
+                  <img
+                    src={data.author_avatar_url}
+                    alt="Author"
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      borderRadius: "50%",
+                      marginTop: "20px",
+                      objectFit: "cover",
+                    }}
+                  />
+                )}
+                {data.author_name && (
+                  <h3 style={{ marginTop: "20px" }}>{data.author_name}</h3>
+                )}
+                {data.author_role && <p>{data.author_role}</p>}
+                {data.author_bio && (
+                  <p style={{ maxWidth: "700px", margin: "20px auto 0" }}>
+                    {data.author_bio}
+                  </p>
+                )}
+              </section>
+            );
+          }
+          return null;
+        })()}
+
+        <div style={{ height: "2px", background: "#082326" }} />
       </div>
 
       <TestimonialandAward />

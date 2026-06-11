@@ -328,17 +328,43 @@ export default function Contact() {
         if (!emailRegex.test(value)) {
           return "Please enter a valid email address";
         }
+        // Reject free email providers (gmail, yahoo, hotmail, outlook, etc.)
+        const blockedDomains = [
+          "gmail.com",
+          "googlemail.com",
+          "yahoo.com",
+          "yahoo.co.in",
+          "hotmail.com",
+          "outlook.com",
+          "live.com",
+          "msn.com",
+          "aol.com",
+          "icloud.com",
+          "me.com",
+          "mail.com",
+          "gmx.com",
+          "protonmail.com",
+          "yandex.com",
+          "zoho.com",
+          "rediffmail.com",
+        ];
+
+        const emailDomain = value.trim().split("@")[1]?.toLowerCase();
+
+        if (!emailDomain || blockedDomains.includes(emailDomain)) {
+          return "Please enter your company email address.";
+        }
         return "";
       case "phone":
-        if (!value.trim()) {
-          return "Phone number is required";
-        }
-        const phoneDigits = value.replace(/\D/g, "");
-        if (phoneDigits.length < 7) {
-          return "Phone number must be at least 7 digits";
-        }
-        if (phoneDigits.length > 15) {
-          return "Phone number is too long";
+        // Phone is optional, but if provided, validate it
+        if (value.trim()) {
+          const phoneDigits = value.replace(/\D/g, "");
+          if (phoneDigits.length < 7) {
+            return "Phone number must be at least 7 digits";
+          }
+          if (phoneDigits.length > 15) {
+            return "Phone number is too long";
+          }
         }
         return "";
       case "companyName":
@@ -488,22 +514,27 @@ export default function Contact() {
       console.warn("LeadSquared: capture failed", error);
     }
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const allTouched = {
       fullName: true,
       email: true,
-      phone: true,
       companyName: true,
     };
+
     setTouched(allTouched);
 
     const validationErrors: Record<string, string> = {};
+
     validationErrors.fullName = validateField("fullName", formData.fullName);
+
     validationErrors.email = validateField("email", formData.email);
-    validationErrors.phone = validateField("phone", formData.phone);
+
+    if (formData.phone) {
+      validationErrors.phone = validateField("phone", formData.phone);
+    }
+
     validationErrors.companyName = validateField(
       "companyName",
       formData.companyName,
@@ -539,38 +570,38 @@ export default function Contact() {
         message,
       } = formData;
 
-      if (!fullName || !phone || !email || !companyName) {
+      if (!fullName || !email || !companyName) {
         setStatus("error");
         setStatusMessage("Please fill in all required fields.");
         return;
       }
 
       const supabase = createClient();
-      const { error } = await supabase
-        .from("contacts")
-        .insert([
-          {
-            full_name: fullName,
-            country_code: countryCode || "+91",
-            phone: phone,
-            email: email,
-            company_name: companyName,
-            selection: selection || null,
-            message: message || null,
-          },
-        ])
-        .select();
 
-      if (error) {
-        console.error("Supabase error:", error);
+      // Save to database
+      const { error: insertError } = await supabase.from("contacts").insert([
+        {
+          full_name: fullName,
+          country_code: countryCode || "+91",
+          phone,
+          email,
+          company_name: companyName,
+          selection: selection || null,
+          message: message || null,
+        },
+      ]);
+
+      if (insertError) {
+        console.error("Supabase error:", insertError);
+
         let errorMessage = "Failed to submit form. Please try again.";
 
-        if (error.code === "42P01") {
+        if (insertError.code === "42P01") {
           errorMessage = "Database table not found. Please contact support.";
-        } else if (error.code === "42501") {
+        } else if (insertError.code === "42501") {
           errorMessage = "Permission denied. Please contact support.";
-        } else if (error.message) {
-          errorMessage = `Error: ${error.message}`;
+        } else if (insertError.message) {
+          errorMessage = insertError.message;
         }
 
         setStatus("error");
@@ -578,42 +609,57 @@ export default function Contact() {
         return;
       }
 
-      // 📧 Send Email
-      try {
-        const supabase = createClient();
-        const { data: emailResult, error: emailError } =
-          await supabase.functions.invoke("send-contact-email", {
-            body: {
-              channel: "contact",
-              fullName,
-              email,
-              phone,
-              countryCode: countryCode || "+91",
-              companyName,
-              selection: selection || null,
-              message: message || null,
-            },
-          });
+      const trimmedPhone = String(phone ?? "").trim();
+      const phoneForEmail = trimmedPhone ? trimmedPhone : "N/A";
+      const countryCodeForEmail = trimmedPhone ? countryCode || "+91" : "";
 
-        if (emailError) {
-          console.warn("Email sending failed:", emailError.message);
-        } else if (emailResult && !emailResult.success) {
-          console.warn("Email sending failed:", emailResult.error);
-        }
-      } catch (emailError: any) {
-        console.error("Email sending error:", emailError);
+      // Send Email (same behaviour as SAP page)
+      const { data: emailResult, error: emailError } =
+        await supabase.functions.invoke("send-contact-email", {
+          body: {
+            channel: "contact",
+            fullName,
+            email,
+            phone: phoneForEmail,
+            countryCode: countryCodeForEmail,
+            companyName,
+            selection: selection || null,
+            message: message || null,
+          },
+        });
+
+      if (emailError) {
+        console.error("Email Error:", emailError);
+
+        setStatus("error");
+        setStatusMessage(
+          emailError.message?.includes("Edge Function returned a non-2xx status code")
+            ? "Email service failed. Please try again in a few minutes."
+            : emailError.message || JSON.stringify(emailError),
+        );
+
+        return;
       }
 
-      // ✅ SUCCESS MESSAGE
+      if (emailResult && emailResult.success === false) {
+        console.error("Email Result:", emailResult);
+
+        setStatus("error");
+        setStatusMessage(emailResult.error || "Email sending failed");
+
+        return;
+      }
+
+      // LeadSquared
+      await captureLeadSquared();
+
+      // Success
       setStatus("success");
       setStatusMessage(
         "Thank you! Your enquiry has been submitted successfully. We will contact you shortly.",
       );
 
-      // ✅ LeadSquared (best-effort, before reset/redirect)
-      await captureLeadSquared();
-
-      // ✅ RESET FORM
+      // Reset form
       setFormData({
         fullName: "",
         countryCode: "+91",
@@ -627,7 +673,7 @@ export default function Contact() {
       setErrors({});
       setTouched({});
 
-      // ✅ REDIRECT
+      // Redirect
       router.push("/thanks");
 
       setTimeout(() => {
@@ -636,8 +682,11 @@ export default function Contact() {
       }, 5000);
     } catch (error: any) {
       console.error("Contact form error:", error);
+
       setStatus("error");
-      setStatusMessage(error.message || "An error occurred. Please try again.");
+      setStatusMessage(
+        error?.message || "An error occurred. Please try again.",
+      );
     }
   };
 
@@ -647,7 +696,6 @@ export default function Contact() {
         {/* Header Start */}
         {/*?php include "navbar.php" ?*/}
         {/* Header End */}
-
 
         <div className="contect-waber">
           <div className="container">
@@ -663,7 +711,7 @@ export default function Contact() {
                   <p className="">
                     {" "}
                     {t(
-                      "Thank you for your interest in RheinBrücke. Please contact us by either visiting our office at the locations provided or write to us for more information on how RheinBrücke can help you stay ahead of competition. For additional information on our IT consulting services, solutions or industry expertise, please visit the relevant pages on our website.",
+                      "Connect with RheinBrücke's experts to discuss your business challenges and explore tailored technology solutions across ERP, Cloud, AI, and Digital Transformation. For more information about our IT consulting services and industry expertise, please explore the relevant sections of our website.",
                     )}
                   </p>
                 </div>
@@ -773,7 +821,11 @@ export default function Contact() {
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmit} id="form1" className="row g-3 pp-0">
+                  <form
+                    onSubmit={handleSubmit}
+                    id="form1"
+                    className="row g-3 pp-0"
+                  >
                     {/* Full Name */}
                     <div className="col-12">
                       <input
@@ -1118,7 +1170,7 @@ export default function Contact() {
                           id="manufacturing-mobile"
                           className={`form-control ${touched.phone && errors.phone ? "is-invalid" : ""}`}
                           name="phone"
-                          placeholder={t("Enter your phone number")}
+                          placeholder={t("Phone no (optional)")}
                           value={formData.phone}
                           onChange={handleInputChange}
                           onBlur={handleBlur}
@@ -1134,7 +1186,6 @@ export default function Contact() {
                             }
                           }}
                           min="0"
-                          required={true}
                           disabled={status === "loading"}
                         />
                       </div>
@@ -1221,21 +1272,25 @@ export default function Contact() {
                         <option value="" disabled>
                           {t("Select Any One")}
                         </option>
-                        <option value="SAP Solutions">
-                          {t("SAP Solution")}
+                        <option value="ERP Solutions">
+                          {t("ERP Solutions")}
+                        </option>
+                        <option value="Managed Services & Support">
+                          {t("Managed Services & Support")}
                         </option>
                         <option value="Digital Transformation">
-                          {t("Digital transformation")}
+                          {t("Digital Transformation")}
                         </option>
+                        {/* <option value="AI & ML">{t("AI / ML")}</option> */}
                         <option value="Cloud Services">
-                          {t("Cloud services")}
+                          {t("Cloud Services")}
                         </option>
-                        <option value="AI & ML">{t("AI / ML")}</option>
-                        <option value="Enterprise Solutions">
-                          {t("Enterprise solution")}
+                        <option value="AI, Data & Analytics">
+                          {t("AI, Data & Analytics")}
                         </option>
-                        <option value="Consulting">{t("Consulting")}</option>
-                        <option value="Other">{t("Other")}</option>
+                        <option value="Other Inquiry">
+                          {t("Other Inquiry")}
+                        </option>
                       </select>
                     </div>
                     {/* Message */}

@@ -5520,7 +5520,7 @@
 
 
     "Talk to Our Experts": "Kontaktieren Sie unsere Experten",
-    "Thank you for your interest in RheinBrücke. Please contact us by either visiting our office at the locations provided or write to us for more information on how RheinBrücke can help you stay ahead of competition. For additional information on our IT consulting services, solutions or industry expertise, please visit the relevant pages on our website.":
+    "Connect with RheinBrücke's experts to discuss your business challenges and explore tailored technology solutions across ERP, Cloud, AI, and Digital Transformation. For more information about our IT consulting services and industry expertise, please explore the relevant sections of our website.":
     "Vielen Dank für Ihr Interesse an RheinBrücke. Nehmen Sie Kontakt mit uns auf oder besuchen Sie einen unserer Standorte, um zu erfahren, wie wir Sie nachhaltig im Wettbewerb unterstützen. Weitere Informationen zu unseren IT-Services, Lösungen und Branchenexpertise finden Sie auf unserer Website.",
     
     "Let’s Connect With Us": "Kontakt aufnehmen",
@@ -5529,6 +5529,7 @@
 
     "Enter your full name": "Vollständiger Name",
     "Enter your phone number": "Telefonnummer",
+    "Phone no (optional)": "Telefonnummer(optional)",
     "Enter your company name": "Unternehmen",
     "Enter your email address": "Geben Sie Ihre E-Mail-Adresse ein",
     "Message": "Nachricht",
@@ -6284,7 +6285,8 @@
     "Contact Our ERP Experts": "Jetzt Kontakt aufnehmen",
 
     "Modern Data & Analytics for Intelligent Enterprises": "Unternehmen durch innovative digitale Services transformieren",
-    "At RheinBrücke, we help enterprises build AI ready data and analytics ecosystems that connect strategy, operations, and technology into a single source of enterprise intelligence.By combining deep domain expertise with modern platforms such as Microsoft Fabric, Databricks, Snowflake, Tableau, Qlik, SAP BusinessObjects, and Epicor Grow, we enable organizations to transform fragmented data into scalable, actionable insights from data architecture and engineering to enterprise BI, visualization, governance, and advanced analytics, empowering businesses to make faster decisions, improve operational visibility, and drive measurable transformation outcomes across the enterprise.": "Bei RheinBrücke helfen wir Unternehmen, ihre digitale Zukunft neu zu gestalten – durch die Kombination von Technologie, Strategie und Branchenexpertise. Mit skalierbaren Lösungen und einem geschäftsorientierten Ansatz sorgen wir dafür, dass Ihre Transformation messbare Ergebnisse liefert und langfristiges Wachstum sichert.",
+    "By combining deep domain expertise with modern platforms such as Microsoft Fabric, Databricks, Snowflake, Tableau, Qlik, SAP BusinessObjects, and Epicor Grow, we enable organizations to transform fragmented data into scalable, actionable insights from data architecture and engineering to enterprise BI, visualization, governance, and advanced analytics, empowering businesses to make faster decisions, improve operational visibility, and drive measurable transformation outcomes across the enterprise.": "Mit skalierbaren Lösungen und einem geschäftsorientierten Ansatz sorgen wir dafür, dass Ihre Transformation messbare Ergebnisse liefert und langfristiges Wachstum sichert.",
+    "At RheinBrücke, we help enterprises build AI ready data and analytics ecosystems that connect strategy, operations, and technology into a single source of enterprise intelligence.": "Bei RheinBrücke helfen wir Unternehmen, ihre digitale Zukunft neu zu gestalten – durch die Kombination von Technologie, Strategie und Branchenexpertise.",
 
     "Ready to accelerate value creation across your enterprise portfolio?": "Bereit, den Wert Ihres Portfolios zu steigern?",
     "Contact us today to learn how we can help modernise operations, de-risk integrations, and improve commercial outcomes.": "Kontaktieren Sie uns noch heute und erfahren Sie, wie wir Ihre Prozesse modernisieren, Integrationen absichern und Ihre geschäftlichen Ergebnisse verbessern können.",

@@ -9,11 +9,9 @@ export default function LandingHeader() {
         <div className="row align-items-center">
           <div className="col-auto">
             <Link href="/" className="ebook-landing-header__logo">
-              <img
-                src="/images/rlogo.png"
+              <img src="/images/rlogo.png"
                 alt="RheinBrücke"
-                className="ebook-landing-header__img"
-              />
+                className="ebook-landing-header__img" loading="lazy" />
             </Link>
           </div>
 

@@ -62,7 +62,7 @@ export default function Footer() {
                                 <div className="about-footer">
                                     <div className="footer-logo">
                                         <Link href="/">
-                                        <img src="/images/rlogo.png" alt="" />
+                                        <img src="/images/rlogo.png" alt="" loading="lazy" />
                                         </Link>
                                     </div>
                                     <div className="header-social-links">
@@ -113,7 +113,7 @@ export default function Footer() {
                                     </ul>
                                     <div className="phone">
                                         <Link href="">
-                                            <img src="/images/phone.svg" alt="" />
+                                            <img src="/images/phone.svg" alt="" loading="lazy" />
                                             &nbsp; +49 231 292 95619
                                         </Link>
                                     </div>
@@ -202,7 +202,7 @@ export default function Footer() {
                                 <div className="work-together-box">
                                     {/* Work Together Content Start */}
                                     <div className="work-together-content">
-                                        <img src="/images/Rheinbrucke_.svg" alt="" />
+                                        <img src="/images/Rheinbrucke_.svg" alt="" loading="lazy" />
                                     </div>
                                 </div>
                             </div>
@@ -212,7 +212,7 @@ export default function Footer() {
                 {/* Let's Work Together end */}
             </footer>
             <div className="footimg">
-                <img src="/images/footimg.png" alt="" />
+                <img src="/images/footimg.png" alt="" loading="lazy" />
             </div>
             {showCookieBanner && (
                 <div

@@ -1,0 +1,105 @@
+/* Font Awesome with font-display: swap */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/fa-regular-400.woff2') format('woff2'),
+       url('/fonts/fa-regular-400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/fa-solid-900.woff2') format('woff2'),
+       url('/fonts/fa-solid-900.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/fa-brands-400.woff2') format('woff2'),
+       url('/fonts/fa-brands-400.ttf') format('truetype');
+}
+
+/* Helvetica with font-display: swap */
+@font-face {
+  font-family: 'Helvetica';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Helvetica.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url('/fonts/HelveticaNeue-Thin.woff') format('woff'),
+       url('/fonts/HelveticaNeue-Thin.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/HelveticaNeue-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/HelveticaNeue-Roman.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/HelveticaNeue-Bold.woff2') format('woff2'),
+       url('/fonts/HelveticaNeue-Bold.woff') format('woff'),
+       url('/fonts/HelveticaNeue-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/HelveticaNeue-Black.woff') format('woff'),
+       url('/fonts/HelveticaNeue-Heavy.woff') format('woff');
+}
+
+/* Source Sans Pro with font-display: swap */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/SourceSansPro-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/SourceSansPro-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/SourceSansPro-Black.ttf') format('truetype');
+}

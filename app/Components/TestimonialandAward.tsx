@@ -13,7 +13,7 @@ const TestimonialandAward = () => {
           <div className="row section-row align-items-center">
             <div className="col-lg-12">
               <div className="section-title text-center headingss">
-                <h2 className="text-anime-style-2" data-cursor="-opaque">
+                <h2 className="text-anime-style-2 text-black" data-cursor="-opaque">
                   {t("Trusted by Enterprise Worldwide")}
                 </h2>
                 <div className="ser-btn2 mt-4">
@@ -142,13 +142,11 @@ const TestimonialandAward = () => {
                             {/* Your current service content */}
                             <div className="service-item-header ">
                               <div className="icon-box">
-                                <img src="/images/doublequote.svg" alt="" />
+                                <img src="/images/doublequote.svg" alt="" loading="lazy" />
                               </div>
                               <div className="icon-box1">
-                                <img
-                                  src="/images/ts/Cold-Chain-Logo-full.png"
-                                  alt=""
-                                />
+                                <img src="/images/ts/Cold-Chain-Logo-full.png"
+                                  alt="" loading="lazy" />
                               </div>
                             </div>
                             <div className="service-item-body">
@@ -171,10 +169,8 @@ const TestimonialandAward = () => {
                               <div className="testimonial-body">
                                 <div className="author-image">
                                   <figure className="image-anime">
-                                    <img
-                                      src="/images/testimonials/Cold-Chain-Logo.png"
-                                      alt=""
-                                    />
+                                    <img src="/images/testimonials/Cold-Chain-Logo.png"
+                                      alt="" loading="lazy" />
                                   </figure>
                                 </div>
                                 <div className="author-content">
@@ -200,10 +196,10 @@ const TestimonialandAward = () => {
                             {/* Your current service content */}
                             <div className="service-item-header">
                               <div className="icon-box">
-                                <img src="/images/doublequote.svg" alt="" />
+                                <img src="/images/doublequote.svg" alt="" loading="lazy" />
                               </div>
                               <div className="icon-box1">
-                                <img src="/images/ts/a-map.png" alt="" />
+                                <img src="/images/ts/a-map.png" alt="" loading="lazy" />
                               </div>
                             </div>
                             <div className="service-item-body">
@@ -229,10 +225,8 @@ const TestimonialandAward = () => {
                               <div className="testimonial-body">
                                 <div className="author-image">
                                   <figure className="image-anime">
-                                    <img
-                                      src="/images/testimonials/Ramamurthy Rao.png"
-                                      alt=""
-                                    />
+                                    <img src="/images/testimonials/Ramamurthy Rao.png"
+                                      alt="" loading="lazy" />
                                   </figure>
                                 </div>
                                 <div className="author-content">
@@ -258,13 +252,11 @@ const TestimonialandAward = () => {
                             {/* Your current service content */}
                             <div className="service-item-header  ">
                               <div className="icon-box">
-                                <img src="/images/doublequote.svg" alt="" />
+                                <img src="/images/doublequote.svg" alt="" loading="lazy" />
                               </div>
                               <div className="icon-box1">
-                                <img
-                                  src="/images/ts/Federal-Mogul.png"
-                                  alt=""
-                                />
+                                <img src="/images/ts/Federal-Mogul.png"
+                                  alt="" loading="lazy" />
                               </div>
                             </div>
                             <div className="service-item-body">
@@ -287,10 +279,8 @@ const TestimonialandAward = () => {
                               <div className="testimonial-body">
                                 <div className="author-image">
                                   <figure className="image-anime">
-                                    <img
-                                      src="/images/testimonials/Massimiliano A. Milani.png"
-                                      alt=""
-                                    />
+                                    <img src="/images/testimonials/Massimiliano A. Milani.png"
+                                      alt="" loading="lazy" />
                                   </figure>
                                 </div>
                                 <div className="author-content">
@@ -316,10 +306,10 @@ const TestimonialandAward = () => {
                             {/* Your current service content */}
                             <div className="service-item-header ">
                               <div className="icon-box">
-                                <img src="/images/doublequote.svg" alt="" />
+                                <img src="/images/doublequote.svg" alt="" loading="lazy" />
                               </div>
                               <div className="icon-box1">
-                                <img src="/images/ts/Epicor.png" alt="" />
+                                <img src="/images/ts/Epicor.png" alt="" loading="lazy" />
                               </div>
                             </div>
                             <div className="service-item-body">
@@ -336,10 +326,8 @@ const TestimonialandAward = () => {
                               <div className="testimonial-body">
                                 <div className="author-image">
                                   <figure className="image-anime">
-                                    <img
-                                      src="/images/testimonials/Craig Stephens.png"
-                                      alt=""
-                                    />
+                                    <img src="/images/testimonials/Craig Stephens.png"
+                                      alt="" loading="lazy" />
                                   </figure>
                                 </div>
                                 <div className="author-content">
@@ -365,13 +353,11 @@ const TestimonialandAward = () => {
                             {/* Your current service content */}
                             <div className="service-item-header  ">
                               <div className="icon-box">
-                                <img src="/images/doublequote.svg" alt="" />
+                                <img src="/images/doublequote.svg" alt="" loading="lazy" />
                               </div>
                               <div className="icon-box1">
-                                <img
-                                  src="/images/ts/SAUDI AMERICAN GLASS.png"
-                                  alt=""
-                                />
+                                <img src="/images/ts/SAUDI AMERICAN GLASS.png"
+                                  alt="" loading="lazy" />
                               </div>
                             </div>
                             <div className="service-item-body">
@@ -394,10 +380,8 @@ const TestimonialandAward = () => {
                               <div className="testimonial-body">
                                 <div className="author-image">
                                   <figure className="image-anime">
-                                    <img
-                                      src="/images/testimonials/Rizwanulla Khan.png"
-                                      alt=""
-                                    />
+                                    <img src="/images/testimonials/Rizwanulla Khan.png"
+                                      alt="" loading="lazy" />
                                   </figure>
                                 </div>
                                 <div className="author-content">
@@ -423,10 +407,10 @@ const TestimonialandAward = () => {
                             {/* Your current service content */}
                             <div className="service-item-header  ">
                               <div className="icon-box">
-                                <img src="/images/doublequote.svg" alt="" />
+                                <img src="/images/doublequote.svg" alt="" loading="lazy" />
                               </div>
                               <div className="icon-box1">
-                                <img src="/images/ts/SAG.png" alt="" />
+                                <img src="/images/ts/SAG.png" alt="" loading="lazy" />
                               </div>
                             </div>
                             <div className="service-item-body">
@@ -443,10 +427,8 @@ const TestimonialandAward = () => {
                               <div className="testimonial-body">
                                 <div className="author-image">
                                   <figure className="image-anime">
-                                    <img
-                                      src="/images/testimonials/Syed Waseem Wajid.png"
-                                      alt=""
-                                    />
+                                    <img src="/images/testimonials/Syed Waseem Wajid.png"
+                                      alt="" loading="lazy" />
                                   </figure>
                                 </div>
                                 <div className="author-content">
@@ -472,10 +454,10 @@ const TestimonialandAward = () => {
                             {/* Your current service content */}
                             <div className="service-item-header  ">
                               <div className="icon-box">
-                                <img src="/images/doublequote.svg" alt="" />
+                                <img src="/images/doublequote.svg" alt="" loading="lazy" />
                               </div>
                               <div className="icon-box1">
-                                <img src="/images/ts/RAY.png" alt="" />
+                                <img src="/images/ts/RAY.png" alt="" loading="lazy" />
                               </div>
                             </div>
                             <div className="service-item-body">
@@ -500,10 +482,8 @@ const TestimonialandAward = () => {
                               <div className="testimonial-body">
                                 <div className="author-image">
                                   <figure className="image-anime">
-                                    <img
-                                      src="/images/testimonials/Vinit Agarwal.png"
-                                      alt=""
-                                    />
+                                    <img src="/images/testimonials/Vinit Agarwal.png"
+                                      alt="" loading="lazy" />
                                   </figure>
                                 </div>
                                 <div className="author-content">
@@ -527,10 +507,10 @@ const TestimonialandAward = () => {
                             {/* Your current service content */}
                             <div className="service-item-header  ">
                               <div className="icon-box">
-                                <img src="/images/doublequote.svg" alt="" />
+                                <img src="/images/doublequote.svg" alt="" loading="lazy" />
                               </div>
                               <div className="icon-box1">
-                                <img src="/images/OFO.png" alt="" />
+                                <img src="/images/OFO.png" alt="" loading="lazy" />
                               </div>
                             </div>
                             <div className="service-item-body">
@@ -541,7 +521,7 @@ const TestimonialandAward = () => {
                               <div className="testimonial-body">
                                 <div className="author-image">
                                   <figure className="image-anime">
-                                    <img src="/images/OFO.png" alt="" />
+                                    <img src="/images/OFO.png" alt="" loading="lazy" />
                                   </figure>
                                 </div>
                                 <div className="author-content">
@@ -564,10 +544,10 @@ const TestimonialandAward = () => {
                             {/* Your current service content */}
                             <div className="service-item-header  ">
                               <div className="icon-box">
-                                <img src="/images/doublequote.svg" alt="" />
+                                <img src="/images/doublequote.svg" alt="" loading="lazy" />
                               </div>
                               <div className="icon-box1">
-                                <img src="/images/ts/NGC.png" alt="" />
+                                <img src="/images/ts/NGC.png" alt="" loading="lazy" />
                               </div>
                             </div>
                             <div className="service-item-body">
@@ -591,10 +571,8 @@ const TestimonialandAward = () => {
                               <div className="testimonial-body">
                                 <div className="author-image">
                                   <figure className="image-anime">
-                                    <img
-                                      src="/images/testimonials/Kiranjit Kaur.png"
-                                      alt=""
-                                    />
+                                    <img src="/images/testimonials/Kiranjit Kaur.png"
+                                      alt="" loading="lazy" />
                                   </figure>
                                 </div>
                                 <div className="author-content">
@@ -619,10 +597,10 @@ const TestimonialandAward = () => {
                             {/* Your current service content */}
                             <div className="service-item-header  ">
                               <div className="icon-box">
-                                <img src="/images/doublequote.svg" alt="" />
+                                <img src="/images/doublequote.svg" alt="" loading="lazy" />
                               </div>
                               <div className="icon-box1">
-                                <img src="/images/1-Americanbw.png" alt="" />
+                                <img src="/images/1-Americanbw.png" alt="" loading="lazy" />
                               </div>
                             </div>
                             <div className="service-item-body">
@@ -639,7 +617,7 @@ const TestimonialandAward = () => {
                               <div className="testimonial-body">
                                 <div className="author-image">
                                   <figure className="image-anime">
-                                    <img src="/images/simon.png" alt="" />
+                                    <img src="/images/simon.png" alt="" loading="lazy" />
                                   </figure>
                                 </div>
                                 <div className="author-content">

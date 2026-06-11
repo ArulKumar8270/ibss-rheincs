@@ -14,6 +14,7 @@ import LoadingWrapper from "./Components/LoadingWrapper";
 import RouteTracker from "./Components/RouteTracker";
 import LeadSquaredInit from "./Components/LeadSquaredInit";
 import React, { Suspense } from "react";
+import "./globals.css";
 
 import translations from "./translations.json";
 
@@ -39,15 +40,28 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
         <link
           href="https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Radio+Canada:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Parkinsans:wght@300..800&display=swap"
           rel="stylesheet"
         />
-        <link href="https://use.typekit.net/guc8vih.css" rel="stylesheet" />
-        <link
-          href="https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro"
-          rel="stylesheet"
+        
+        {/* Non-render-blocking styles (raw HTML so onload works) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          <link href="https://use.typekit.net/guc8vih.css" rel="stylesheet" media="print" onload="this.media='all'" />
+          <link href="https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro" rel="stylesheet" media="print" onload="this.media='all'" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.css" media="print" onload="this.media='all'" />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css" media="print" onload="this.media='all'" />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" media="print" onload="this.media='all'" />
+        `,
+          }}
         />
+        
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/css/slicknav.min.css" />
         <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
@@ -57,29 +71,38 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/mousecursor.css" />
         <link rel="stylesheet" href="/css/owl.carousel.css" />
         <link rel="stylesheet" href="/css/custom.css" />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-        />
-        <link rel="stylesheet" href="https://use.typekit.net/guc8vih.css" />
+        
         {/* <link rel="stylesheet" href="./css/enterprise.css" /> */}
         <link rel="stylesheet" href="/style2.css" />
+
+        {/* Fallback for non-render-blocking styles if JS is disabled */}
+        <noscript>
+          <link href="https://use.typekit.net/guc8vih.css" rel="stylesheet" />
+          <link
+            href="https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro"
+            rel="stylesheet"
+          />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+          />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.css"
+          />
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"
+          />
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+          />
+        </noscript>
 
         {/* Global translations for vanilla JS */}
         <script
@@ -376,7 +399,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             __html: `var onloadCallback = function () { grecaptcha.render('g_captcha', { 'sitekey': '6LchLhApAAAAAKh9skbfRiq9ZLwCfCrLZrfcvyCn' }); };`,
           }}
         />
-        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js" defer></script>
 
         {/* Google Conversion Functions */}
         <script

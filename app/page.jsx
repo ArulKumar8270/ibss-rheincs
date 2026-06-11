@@ -237,7 +237,7 @@ export default function Home() {
                         </div>
                         {/* Video Popup */}
                         <div className="video-popup" id="videoPopup">
-                          <iframe id="youtubeVideo" src="https://www.youtube.com/embed/molnWIax5DU" title="Rheinbrücke IT Consulting   Corporate Video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                          <iframe id="youtubeVideo" src="https://www.youtube.com/embed/molnWIax5DU" title="Rheinbrücke IT Consulting   Corporate Video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" loading="lazy" allowFullScreen></iframe>
                           <button className="close-popup" id="closePopup">
                             ✕
                           </button>

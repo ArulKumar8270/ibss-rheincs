@@ -22,6 +22,7 @@ interface EbookLandingData {
   book_image_url: string | null;
   learning_title: string | null;
   learning_description: string | null;
+  benefits_heading: string | null;
   benefits: string[];
   form_title: string | null;
   author_heading: string | null;
@@ -130,54 +131,70 @@ export default function EbookLandingClient({ initialData }: { initialData?: Eboo
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const { error: dbError } = await supabase.from("contacts").insert([
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const { error: dbError } = await supabase
+      .from("contacts")
+      .insert([
         {
           full_name: name,
-          email: email,
-          phone: phone,
+          email,
+          phone,
           company_name: companyName,
+          country_code: "+91",
           selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
           message: "Requested E-book download from landing page",
         },
       ]);
-      if (dbError) throw dbError;
-      
-      try {
-        await fetch("/api/send-enquiry", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            fullName: name,
-            email: email,
-            phone: phone,
-            companyName: companyName,
-            selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
-            message: "Requested E-book download from landing page",
-          }),
-        });
-      } catch (emailErr) {
-        console.warn("Email failed but DB saved:", emailErr);
-      }
-      
-      if (pageData?.pdf_url) {
-        await downloadPdf(pageData.pdf_url, pageData.title);
-      }
-      
-      setName("");
-      setEmail("");
-      setPhone("");
-      setCompanyName("");
-      router.push("/thanks");
-    } catch (err: any) {
-      console.error("Submit Error:", err);
-      alert(err.message);
-    } finally {
-      setIsSubmitting(false);
+
+    if (dbError) throw dbError;
+
+    // Send Email
+    try {
+  const { data: emailData, error: emailError } =
+    await supabase.functions.invoke("send-contact-email", {
+      body: {
+        channel: "contact",
+        fullName: name,
+        email,
+        phone,
+        countryCode: "+91",
+        companyName,
+        selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
+        message: "Requested E-book download from landing page",
+      },
+    });
+
+  console.log("Email Response:", emailData);
+
+  if (emailError) {
+    console.error("Email Error:", emailError);
+  }
+} catch (emailErr) {
+  console.error("Email Exception:", emailErr);
+}
+
+    // Download PDF
+    if (pageData?.pdf_url) {
+      await downloadPdf(pageData.pdf_url, pageData.title);
     }
-  };
+
+    // Reset form
+    setName("");
+    setEmail("");
+    setPhone("");
+    setCompanyName("");
+
+    router.push("/thanks");
+  } catch (err: any) {
+    console.error("Submit Error:", err);
+    alert(err.message);
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const defaults: EbookLandingData = {
     id: "",
@@ -191,12 +208,13 @@ export default function EbookLandingClient({ initialData }: { initialData?: Eboo
     book_image_url: "/images/book.png",
     learning_title: "What will you learn from this E-Book?",
     learning_description: "Learning description goes here",
+    benefits_heading: "What you'll get",
     benefits: ["Benefit One", "Benefit Two", "Benefit Three"],
     form_title: "Download the E-Book Now",
-    author_heading: "About the Author",
-    author_name: "Author Name",
-    author_role: "Designation",
-    author_bio: "Author bio goes here",
+    author_heading: null,
+    author_name: null,
+    author_role: null,
+    author_bio: null,
     author_avatar_url: null,
     author_avatar_svg: null,
     footer_color: "#3aaee0",
@@ -280,14 +298,14 @@ export default function EbookLandingClient({ initialData }: { initialData?: Eboo
       </div>
 
       <div id="ebook-landing-root">
-        <section style={{ textAlign: "center", padding: "50px 20px", background: "#f2f2f2" }}>
-          <div style={{ width: "90px", height: "90px", margin: "0 auto 20px", borderRadius: "50%", overflow: "hidden", background: "transparent", display: "flex", justifyContent: "center", alignItems: "center", color: "#fff", fontWeight: "bold" }}>
+        <section className="topheadsize" style={{ textAlign: "center", padding: "50px 20px", background: "#fff" }}>
+          <div style={{ width: "200px", height: "auto", margin: "0 auto 20px", borderRadius: "0%", overflow: "hidden", background: "transparent", display: "flex", justifyContent: "center", alignItems: "center", color: "#fff", fontWeight: "bold" }}>
             {data.logo_image_url ? (
               <img src={data.logo_image_url} alt="Logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
             ) : data.logo_text}
           </div>
           <h1>{data.headline}</h1>
-          <p>{data.subheadline}</p>
+          <h5>{data.subheadline}</h5>
           {data.additional_paragraph && (
             <p style={{ marginTop: '15px', fontSize: '14px', color: '#777' }}>{data.additional_paragraph}</p>
           )}
@@ -295,11 +313,14 @@ export default function EbookLandingClient({ initialData }: { initialData?: Eboo
 
         <section style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", padding: "40px 20px" }}>
           <div>
-            <img src={data.book_image_url || "/images/book.png"} alt="Book" style={{ width: "100%", maxWidth: "400px" }} />
+            <img src={data.book_image_url || "/images/book.png"} alt="Book" style={{ width: "100%", maxWidth: "auto" }} />
           </div>
           <div>
             <h2>{data.learning_title}</h2>
             <p style={{ marginTop: "15px" }}>{data.learning_description}</p>
+            {data.benefits_heading && (
+              <h3 style={{ marginTop: "20px" }}>{data.benefits_heading}</h3>
+            )}
             <ul style={{ marginTop: "20px" }}>
               {data.benefits?.map((benefit, index) => (
                 <li key={index} style={{ marginBottom: "10px" }}>{benefit}</li>
@@ -321,13 +342,28 @@ export default function EbookLandingClient({ initialData }: { initialData?: Eboo
           </div>
         </section>
 
-        <section style={{ background: "#2d3e50", color: "#fff", padding: "60px 20px", textAlign: "center" }}>
-          <h2>{data.author_heading}</h2>
-          {data.author_avatar_url && <img src={data.author_avatar_url} alt="Author" style={{ width: "100px", height: "100px", borderRadius: "50%", marginTop: "20px", objectFit: "cover" }} />}
-          <h3 style={{ marginTop: "20px" }}>{data.author_name}</h3>
-          <p>{data.author_role}</p>
-          <p style={{ maxWidth: "700px", margin: "20px auto 0" }}>{data.author_bio}</p>
-        </section>
+        {(() => {
+          const hasAuthorInfo = 
+            data.author_heading || 
+            data.author_name || 
+            data.author_role || 
+            data.author_bio || 
+            data.author_avatar_url || 
+            data.author_avatar_svg;
+          
+          if (hasAuthorInfo) {
+            return (
+              <section style={{ background: "#2d3e50", color: "#fff", padding: "50px 20px", textAlign: "center" }}>
+                {data.author_heading && <h2>{data.author_heading}</h2>}
+                {data.author_avatar_url && <img src={data.author_avatar_url} alt="Author" style={{ width: "100px", height: "100px", borderRadius: "50%", marginTop: "20px", objectFit: "cover" }} />}
+                {data.author_name && <h3 style={{ marginTop: "20px" }}>{data.author_name}</h3>}
+                {data.author_role && <p>{data.author_role}</p>}
+                {data.author_bio && <p style={{ maxWidth: "700px", margin: "20px auto 0" }}>{data.author_bio}</p>}
+              </section>
+            );
+          }
+          return null;
+        })()}
 
         <div style={{ height: "10px", background: accentColor }} />
       </div>

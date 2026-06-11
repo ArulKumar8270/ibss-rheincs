@@ -611,7 +611,7 @@ export default function Header() {
                             <div className="container">
                                 {/* Logo Start */}
                                 <Link className="navbar-brand" href="/">
-                                    <img src="/images/rlogo.png" alt="Logo" />
+                                    <img src="/images/rlogo.png" alt="Logo" loading="lazy" />
                                 </Link>
                                 {/* Logo End */}
                                 {/* Main Menu Start */}
@@ -2030,7 +2030,7 @@ export default function Header() {
                 <header className="mobile-header">
                     <div className="container">
                         <Link className="mobile-logo" href="/">
-                            <img src="/images/rlogo.png" alt="Logo" />
+                            <img src="/images/rlogo.png" alt="Logo" loading="lazy" />
                         </Link>
                         <div>
                             <div className="search-box" id="mobileSearchBox">
@@ -2197,7 +2197,7 @@ export default function Header() {
                 <nav id="mobileNavPanel" className="mobile-nav-panel">
                     <div className="tag-logo">
                         <Link className="" href="/">
-                            <img src="/images/rlogo.png" alt="Logo" />
+                            <img src="/images/rlogo.png" alt="Logo" loading="lazy" />
                         </Link>
                     </div>
                     <button id="close-btn" className="close-btn" aria-label="Close Menu">

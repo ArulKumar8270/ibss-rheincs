@@ -361,6 +361,60 @@ function buildCollateralsUserPayload(body: Record<string, unknown>, config: Retu
   }
 }
 
+// ——— Ebook ———
+function buildEbookUserPayload(body: Record<string, unknown>, config: ReturnType<typeof getConfig>) {
+  const fullName = String(body.fullName ?? '')
+  const email = String(body.email ?? '').trim()
+  const fullPhone = body.countryCode ? `${body.countryCode} ${body.phone}` : String(body.phone ?? '')
+  const companyName = String(body.companyName ?? '')
+  const selection = body.selection ? String(body.selection) : ''
+  const message = body.message ? String(body.message) : ''
+  const safeFullName = escapeHtml(fullName)
+  const safeEmail = escapeHtml(email)
+  const safePhone = escapeHtml(fullPhone)
+  const safeCompanyName = escapeHtml(companyName)
+  const safeSelection = selection ? escapeHtml(selection) : ''
+  const safeMessage = message ? escapeHtml(message).replace(/\n/g, '<br>') : ''
+  const year = new Date().getFullYear()
+
+  return {
+    personalizations: [{ to: [{ email, name: fullName }], subject: 'Thank you for downloading our E-Book' }],
+    content: [
+      { type: 'text/plain', value: `Thank you for downloading our E-Book!\n\nDear ${safeFullName},\n\nThank you for downloading our E-Book. We have received your request and our team will get back to you shortly.\n\nYour Request Details:\nName: ${safeFullName}\nEmail: ${safeEmail}\nPhone: ${safePhone}\nCompany: ${safeCompanyName}\n${safeSelection ? `E-Book: ${safeSelection}\n` : ''}\nWe typically respond within 24-48 hours.\n\nBest regards,\nThe RheinBrücke Marketing Team\n© ${year} RheinBrücke. All rights reserved.` },
+      { type: 'text/html', value: `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;"><div style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;"><h1 style="color: #fff; margin: 0; font-size: 28px;">Thank You for Downloading!</h1></div><div style="background: #f9fafb; padding: 30px; border-radius: 0 0 8px 8px;"><p>Dear ${safeFullName},</p><p>Thank you for downloading our E-Book. We have received your request and our team will get back to you shortly.</p><div style="background: #fff; padding: 20px; border-radius: 6px; margin: 20px 0; border-left: 4px solid #48bb78;"><h3 style="margin-top: 0;">Your Request Details:</h3><p><strong>Name:</strong> ${safeFullName}</p><p><strong>Email:</strong> ${safeEmail}</p><p><strong>Phone:</strong> ${safePhone}</p><p><strong>Company:</strong> ${safeCompanyName}</p>${safeSelection ? `<p><strong>E-Book:</strong> ${safeSelection}</p>` : ''}</div><p>We typically respond within 24-48 hours.</p><p>Best regards,<br><strong>The RheinBrücke Marketing Team</strong></p></div><div style="text-align: center; margin-top: 20px; padding: 20px; color: #6b7280; font-size: 12px;"><p>&copy; ${year} RheinBrücke. All rights reserved.</p></div></body></html>` },
+    ],
+    from: { email: config.fromEmail, name: config.fromName },
+    reply_to: { email: config.collateralsAdmin, name: config.fromName },
+  }
+}
+
+function buildEbookAdminPayload(body: Record<string, unknown>, config: ReturnType<typeof getConfig>) {
+  const fullName = String(body.fullName ?? '')
+  const email = String(body.email ?? '').trim()
+  const fullPhone = body.countryCode ? `${body.countryCode} ${body.phone}` : String(body.phone ?? '')
+  const companyName = String(body.companyName ?? '')
+  const selection = body.selection ? String(body.selection) : ''
+  const message = body.message ? String(body.message) : ''
+  const safeFullName = escapeHtml(fullName)
+  const safeEmail = escapeHtml(email)
+  const safePhone = escapeHtml(fullPhone)
+  const safeCompanyName = escapeHtml(companyName)
+  const safeSelection = selection ? escapeHtml(selection) : ''
+  const safeMessage = message ? escapeHtml(message).replace(/\n/g, '<br>') : ''
+  const submittedAt = new Date().toLocaleString('en-US', { timeZone: 'UTC' })
+  const toEmails = uniqueEmails([config.collateralsAdmin, config.impressAdminEmail])
+
+  return {
+    personalizations: [{ to: toEmails.map((e) => ({ email: e, name: 'RheinBrücke Marketing Team' })), subject: `New E-Book Download from ${safeFullName}` }],
+    content: [
+      { type: 'text/plain', value: `New E-Book Download Request\n\nContact Details:\nName: ${safeFullName}\nEmail: ${email}\nPhone: ${fullPhone}\nCompany: ${safeCompanyName}\n${safeSelection ? `E-Book: ${safeSelection}\n` : ''}${message ? `Message: ${message}\n` : ''}\nAction Required: Please respond within 24-48 hours.\nSubmitted on: ${submittedAt} UTC` },
+      { type: 'text/html', value: `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;"><div style="background: linear-gradient(135deg, #667eea 0%, #5568d3 100%); padding: 30px; text-align: center; border-radius: 8px 8px 0 0;"><h1 style="color: #fff; margin: 0; font-size: 28px;">New E-Book Download</h1></div><div style="background: #f9fafb; padding: 30px; border-radius: 0 0 8px 8px;"><p>You have received a new E-Book download request:</p><div style="background: #fff; padding: 20px; border-radius: 6px; margin: 20px 0; border-left: 4px solid #667eea;"><h3 style="margin-top: 0;">Contact Details:</h3><p><strong>Name:</strong> ${safeFullName}</p><p><strong>Email:</strong> <a href="mailto:${email}">${safeEmail}</a></p><p><strong>Phone:</strong> <a href="tel:${fullPhone.replace(/\s/g, '')}">${safePhone}</a></p><p><strong>Company:</strong> ${safeCompanyName}</p>${safeSelection ? `<p><strong>E-Book:</strong> ${safeSelection}</p>` : ''}${safeMessage ? `<p><strong>Message:</strong><br><div style="background: #f3f4f6; padding: 15px; border-radius: 4px;">${safeMessage}</div></p>` : ''}</div><p style="font-size: 14px; color: #0369a1;"><strong>Action Required:</strong> Please respond within 24-48 hours.</p></div><div style="text-align: center; margin-top: 20px; padding: 20px; color: #6b7280; font-size: 12px;"><p>Submitted on: ${submittedAt} UTC</p></div></body></html>` },
+    ],
+    from: { email: config.fromEmail, name: config.fromName },
+    reply_to: { email, name: fullName },
+  }
+}
+
 function buildCollateralsAdminPayload(body: Record<string, unknown>, config: ReturnType<typeof getConfig>) {
   const fullName = String(body.fullName ?? '')
   const email = String(body.email ?? '').trim()
@@ -488,7 +542,7 @@ Deno.serve(async (req) => {
 
     const channel = body.channel as string
     if (!channel) {
-      return jsonResponse({ success: false, error: 'Missing channel: contact | collaterals | deftech-bharat-2026 | job-application | test' }, 400, cors)
+      return jsonResponse({ success: false, error: 'Missing channel: contact | collaterals | ebook | deftech-bharat-2026 | job-application | test' }, 400, cors)
     }
 
     if (channel === 'test') {
@@ -510,8 +564,12 @@ Deno.serve(async (req) => {
       const email = (body.email as string)?.trim()
       const phone = body.phone
       const companyName = body.companyName as string
-      if (!fullName || !email || !phone || !companyName) {
-        return jsonResponse({ success: false, error: 'Missing required fields: fullName, email, phone, companyName' }, 400, cors)
+      // For contact channel, phone is optional; for collaterals, phone is still required
+      if (!fullName || !email || !companyName) {
+        return jsonResponse({ success: false, error: 'Missing required fields: fullName, email, companyName' }, 400, cors)
+      }
+      if (channel === 'collaterals' && !phone) {
+        return jsonResponse({ success: false, error: 'Missing required field: phone' }, 400, cors)
       }
       if (!emailRegex.test(email)) {
         return jsonResponse({ success: false, error: 'Invalid email format' }, 400, cors)

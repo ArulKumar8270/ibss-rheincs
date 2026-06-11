@@ -22,8 +22,9 @@ export default function AlMl() {
                                     <h2 className="text-anime-style-21" data-cursor="-opaque">
                                         {t("Modern Data & Analytics for Intelligent Enterprises")}
                                     </h2>
+                                    <p>{t("At RheinBrücke, we help enterprises build AI ready data and analytics ecosystems that connect strategy, operations, and technology into a single source of enterprise intelligence.")}</p>
                                     <p>
-                                        {t("At RheinBrücke, we help enterprises build AI ready data and analytics ecosystems that connect strategy, operations, and technology into a single source of enterprise intelligence.By combining deep domain expertise with modern platforms such as Microsoft Fabric, Databricks, Snowflake, Tableau, Qlik, SAP BusinessObjects, and Epicor Grow, we enable organizations to transform fragmented data into scalable, actionable insights from data architecture and engineering to enterprise BI, visualization, governance, and advanced analytics, empowering businesses to make faster decisions, improve operational visibility, and drive measurable transformation outcomes across the enterprise.")}
+                                        {t("By combining deep domain expertise with modern platforms such as Microsoft Fabric, Databricks, Snowflake, Tableau, Qlik, SAP BusinessObjects, and Epicor Grow, we enable organizations to transform fragmented data into scalable, actionable insights from data architecture and engineering to enterprise BI, visualization, governance, and advanced analytics, empowering businesses to make faster decisions, improve operational visibility, and drive measurable transformation outcomes across the enterprise.")}
                                     </p>
                                     <div className="ser-btn ">
                                         <Link href="/contact-us" className="animated-svg-link">
@@ -1394,7 +1395,7 @@ export default function AlMl() {
                                                                     {t("For Real-Time Analytics, Azure Stream Analytics and Azure Synapse Analytics provide capabilities for immediate data processing and unified analytics.")} {t("Data Warehousing needs are addressed by Azure Synapse Analytics, which manages large volumes of structured data. ")}{t("Databases are handled by Azure SQL Database and Azure Cosmos DB, supporting both relational and multi-model data.")}
                                                                 </p>
                                                                 <p>
-                                                                    {t("Power BI offers robust data visualization and reporting tools, turning complex data into interactive dashboards and reports.")}  {t("Microsoft Fabric integrates these components to create a seamless data ecosystem, facilitating effective data ingestion, storage, analysis, and visualization.")}
+                                                                    {t("Power BI offers robust data visualization and reporting tools, turning complex data into interactive dashboards and reports.")} {t("Microsoft Fabric integrates these components to create a seamless data ecosystem, facilitating effective data ingestion, storage, analysis, and visualization.")}
                                                                 </p>
                                                                 <h5>{t("Databricks")}</h5>
                                                                 <p>
@@ -1633,7 +1634,7 @@ export default function AlMl() {
                                         {t("Revolutionizing Tech Solutions: Microsoft Dynamics 365 and Microsoft Technologies Lead the Way.")}
                                     </p>
                                     <p>
-                                        {t("We integrate Power BI with Dynamics 365, enabling a cohesive and finely tuned enterprise data environment.")}{t("Combining BI's analytical capabilities with Dynamics 365's ERP and CRM functionalities offers several benefits such as")}
+                                        {t("We integrate Power BI with Dynamics 365, enabling a cohesive and finely tuned enterprise data environment.")} {t("Combining BI's analytical capabilities with Dynamics 365's ERP and CRM functionalities offers several benefits such as")}
                                     </p>
                                 </div>
                                 <div className="row mt-5">
@@ -1718,16 +1719,16 @@ export default function AlMl() {
                                         {t("Case Study")}
                                     </h2>
                                     <p>
-                                        {t("RheinBrücke IT Consulting Power Plant Analytics (PPA) tool was a transformative solution tailored specifically to the unique demands of the power plant industry.")}{t("Unlike traditional ERP suites, PPA excelled in critical areas such as billing, revenue calculations, power generation scheduling, and management of power purchase agreements.")}{t("With advanced features providing real-time access to comprehensive operational, financial, and market data, PPA empowered decision-makers to gain deep insights into plant operations and market profitability.")}{t("The tool's analytical dashboards and self-service reporting capabilities enabled users to foresee opportunities, detect risks, and make informed decisions swiftly.")}
+                                        {t("RheinBrücke IT Consulting Power Plant Analytics (PPA) tool was a transformative solution tailored specifically to the unique demands of the power plant industry.")} {t("Unlike traditional ERP suites, PPA excelled in critical areas such as billing, revenue calculations, power generation scheduling, and management of power purchase agreements.")} {t("With advanced features providing real-time access to comprehensive operational, financial, and market data, PPA empowered decision-makers to gain deep insights into plant operations and market profitability.")} {t("The tool's analytical dashboards and self-service reporting capabilities enabled users to foresee opportunities, detect risks, and make informed decisions swiftly.")}
                                     </p>
                                     <p />
-                                    {t("PPA enhanced decision-making through historical trend analysis and What-If scenario evaluations, assessing the impacts of operational metrics and potential disruptions.")}{t("Field officers benefited from real-time data access via smartphones for proactive maintenance, while standard BI reports and dashboards facilitated comprehensive analysis.")}{t("The seamless interface for MIS reporting minimized manual intervention, enhancing reporting accuracy and efficiency.")}
+                                    {t("PPA enhanced decision-making through historical trend analysis and What-If scenario evaluations, assessing the impacts of operational metrics and potential disruptions.")} {t("Field officers benefited from real-time data access via smartphones for proactive maintenance, while standard BI reports and dashboards facilitated comprehensive analysis.")} {t("The seamless interface for MIS reporting minimized manual intervention, enhancing reporting accuracy and efficiency.")}
                                     <p />
                                     <p>
                                         {t("PPA's modular design included functionalities for billing, scheduling, revenue management, and budget forecasting, ensuring streamlined operations and efficient resource management.")}
                                     </p>
                                     <p>
-                                        {t("PPA's user-friendly design ensured ease of use with minimal training for business users.")}{t("RheinBrücke successfully delivered a robust solution that enhanced operational and financial efficiency in the power plant industry, solidifying its commitment to innovative and impactful industry solutions.")}
+                                        {t("PPA's user-friendly design ensured ease of use with minimal training for business users.")} {t("RheinBrücke successfully delivered a robust solution that enhanced operational and financial efficiency in the power plant industry, solidifying its commitment to innovative and impactful industry solutions.")}
                                     </p>
                                 </div>
                             </div>
@@ -1784,7 +1785,7 @@ export default function AlMl() {
                             aria-expanded="true"
                             aria-controls="collapse1"
                           >
-                            {t("How does Power BI integrate with Microsoft Dynamics 365? (can integrate with multiple ERPs)")} 
+                            {t("How does Power BI integrate with Microsoft Dynamics 365? (can integrate with multiple ERPs)")}.
                           </button>
                         </h2>
                         <div

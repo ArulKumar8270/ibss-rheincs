@@ -27,7 +27,7 @@ const Awards = () => {
                                 {/* Testimonial Slide Start */}
                                 <div className="swiper-slide">
                                     <div className="awards-waber">
-                                        <img src="/new/aw-1.svg" alt="" />
+                                        <img src="/new/aw-1.svg" alt="" loading="lazy" />
                                         <div className="aw-text-waber">
                                             <p>
                                                 Bestes Neues Produkt Oder Dienstleistung- Software - Alle
@@ -40,7 +40,7 @@ const Awards = () => {
                                 {/* Testimonial Slide Start */}
                                 <div className="swiper-slide">
                                     <div className="awards-waber">
-                                        <img src="/new/aw-2.jpg" alt="" />
+                                        <img src="/new/aw-2.jpg" alt="" loading="lazy" />
                                         <div className="aw-text-waber">
                                             <p>Stevie - Epicor EpicPay for the EMEA Market 2017</p>
                                         </div>
@@ -50,7 +50,7 @@ const Awards = () => {
                                 {/* Testimonial Slide Start */}
                                 <div className="swiper-slide">
                                     <div className="awards-waber">
-                                        <img src="/new/aw-3.png" alt="" />
+                                        <img src="/new/aw-3.png" alt="" loading="lazy" />
                                         <div className="aw-text-waber">
                                             <p>Epicor Partner of the Year 2016 &amp; 2018</p>
                                         </div>
@@ -60,7 +60,7 @@ const Awards = () => {
                                 {/* Testimonial Slide Start */}
                                 <div className="swiper-slide">
                                     <div className="awards-waber">
-                                        <img src="/new/aw-4.png" alt="" />
+                                        <img src="/new/aw-4.png" alt="" loading="lazy" />
                                         <div className="aw-text-waber">
                                             <p>Stevie - L1 Epicor Support Team of the Year 2016</p>
                                         </div>
@@ -70,7 +70,7 @@ const Awards = () => {
                                 {/* Testimonial Slide Start */}
                                 <div className="swiper-slide">
                                     <div className="awards-waber">
-                                        <img src="/new/aw-5.png" alt="" />
+                                        <img src="/new/aw-5.png" alt="" loading="lazy" />
                                         <div className="aw-text-waber">
                                             <p>Stevie Company of the Year 2015 &amp; 2017</p>
                                         </div>
@@ -80,7 +80,7 @@ const Awards = () => {
                                 {/* Testimonial Slide Start */}
                                 <div className="swiper-slide">
                                     <div className="awards-waber">
-                                        <img src="/new/aw-6.png" alt="" />
+                                        <img src="/new/aw-6.png" alt="" loading="lazy" />
                                         <div className="aw-text-waber">
                                             <p>Stevie People Choice Of the Year 2015 &amp; 2016</p>
                                         </div>
@@ -90,7 +90,7 @@ const Awards = () => {
                                 {/* Testimonial Slide Start */}
                                 <div className="swiper-slide">
                                     <div className="awards-waber">
-                                        <img src="/new/aw-7.png" alt="" />
+                                        <img src="/new/aw-7.png" alt="" loading="lazy" />
                                         <div className="aw-text-waber">
                                             <p>Top IT Berater 2014-2015</p>
                                         </div>
@@ -100,7 +100,7 @@ const Awards = () => {
                                 {/* Testimonial Slide Start */}
                                 <div className="swiper-slide">
                                     <div className="awards-waber">
-                                        <img src="/new/aw-8.png" alt="" />
+                                        <img src="/new/aw-8.png" alt="" loading="lazy" />
                                         <div className="aw-text-waber">
                                             <p>Beste Berater Brand enis 2018</p>
                                         </div>
@@ -110,7 +110,7 @@ const Awards = () => {
                                 {/* Testimonial Slide Start */}
                                 <div className="swiper-slide">
                                     <div className="awards-waber">
-                                        <img src="/new/aw-9.png" alt="" />
+                                        <img src="/new/aw-9.png" alt="" loading="lazy" />
                                         <div className="aw-text-waber">
                                             <p>
                                                 Stevie - Fastest Growing Company in Europe 2015 &amp; 2016
@@ -121,7 +121,7 @@ const Awards = () => {
                                 {/* Testimonial Slide Start */}
                                 {/* <div className="swiper-slide">
                                     <div className="awards-waber">
-                                        <img src="/new/aw-5.png" alt="" />
+                                        <img src="/new/aw-5.png" alt="" loading="lazy" />
                                         <div className="aw-text-waber">
                                             <p>Stevie Company of the Year 2015 &amp; 2017</p>
                                         </div>
