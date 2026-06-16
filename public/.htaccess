@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Explicitly handle /LP/* and /EbookLanding/* to use 404.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^LP/.*$ /404.html [L,R=200]
+  RewriteRule ^EbookLanding/.*$ /404.html [L,R=200]
+
+  # Fallback to index.html for SPA
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Set 404 error document
+ErrorDocument 404 /404.html
