@@ -358,13 +358,12 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
               </button>
               </div>
             </form>
+          </div>
+        </section>
 
-            
         {data.extra_content && (
           <div className="contentbox" style={{ color: "#000" }} dangerouslySetInnerHTML={{ __html: data.extra_content }} />
         )}
-          </div>
-        </section>
 
 
 
