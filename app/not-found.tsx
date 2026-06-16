@@ -6,6 +6,7 @@ import BlogDetailsClient from "./Blogs/[slug]/BlogDetailsClient";
 import CaseStudyDetailsClient from "./Casestudy/[id]/CaseStudyDetailsClient";
 import NewsEventDetailsClient from "./news-events/[slug]/NewsEventDetailsClient";
 import JobDetailClient from "./openings/[id]/JobDetailClient";
+import EbookLandingClient from "./LP/[slug]/EbookLandingClient";
 
 export default function NotFound() {
   const pathname = usePathname();
@@ -28,6 +29,7 @@ export default function NotFound() {
   const caseStudyMatch = actualPath?.match(/^\/(?:Case-study-details|Casestudy)\/(.+)\/?$/i);
   const newsEventMatch = actualPath?.match(/^\/news-events\/(.+)\/?$/);
   const jobMatch = actualPath?.match(/^\/openings\/(.+)\/?$/);
+  const ebookLandingMatch = actualPath?.match(/^\/(?:LP|EbookLanding)\/(.+)\/?$/i);
 
   // Decode slug/id (URL may have %20, %2B, etc.)
   const decode = (s: string) => {
@@ -73,6 +75,16 @@ export default function NotFound() {
       <JobDetailClient
         jobId={id}
         initialJob={null}
+      />
+    );
+  }
+
+  if (ebookLandingMatch && ebookLandingMatch[1]) {
+    const slug = decode(ebookLandingMatch[1]);
+    return (
+      <EbookLandingClient
+        initialData={null}
+        slug={slug}
       />
     );
   }

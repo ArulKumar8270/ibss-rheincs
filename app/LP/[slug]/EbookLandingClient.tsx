@@ -7,8 +7,17 @@ import LeadSquaredInit from "../../Components/LeadSquaredInit";
 import ScriptReinit from "../../Components/ScriptReinit";
 import Footer1 from "../../Components/Footer1";
 import TestimonialandAward from "../../Components/TestimonialandAward";
-import Awards from "../../Components/Awards";
+import Awards from "../../Components/Awards"; 
 import Link from "next/link";
+
+interface FormField {
+  id: string;
+  type: 'text' | 'email' | 'tel' | 'number' | 'textarea' | 'select';
+  label?: string;
+  placeholder?: string;
+  required?: boolean;
+  options?: string[];
+}
 
 interface EbookLandingData {
   id: string;
@@ -17,6 +26,7 @@ interface EbookLandingData {
   headline: string | null;
   subheadline: string | null;
   additional_paragraph: string | null;
+  extra_content: string | null;
   logo_text: string | null;
   logo_image_url: string | null;
   book_image_url: string | null;
@@ -25,6 +35,7 @@ interface EbookLandingData {
   benefits_heading: string | null;
   benefits: string[];
   form_title: string | null;
+  form_fields: FormField[];
   author_heading: string | null;
   author_name: string | null;
   author_role: string | null;
@@ -46,30 +57,30 @@ function resolveImageUrl(value: string | null | undefined): string | null {
 
 const downloadPdf = async (rawPdfValue: string | null, title: string) => {
   if (!rawPdfValue) return;
-  
+
   const safeTitle = String(title || "ebook")
     .trim()
     .replace(/[/\\?%*:|"<>]/g, "-")
     .replace(/\s+/g, " ")
     .trim();
   const filename = `${safeTitle || "ebook"}.pdf`;
-  
+
   const pdfPublicUrl = resolveImageUrl(rawPdfValue);
   if (!pdfPublicUrl) return;
-  
+
   try {
     const response = await fetch(pdfPublicUrl);
     if (!response.ok) throw new Error("Failed to fetch PDF");
     const blob = await response.blob();
     const blobUrl = URL.createObjectURL(blob);
-    
+
     const link = document.createElement("a");
     link.href = blobUrl;
     link.setAttribute("download", filename);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    
+
     setTimeout(() => URL.revokeObjectURL(blobUrl), 5000);
   } catch (err) {
     console.error("Failed to download via blob, opening directly:", err);
@@ -77,23 +88,58 @@ const downloadPdf = async (rawPdfValue: string | null, title: string) => {
   }
 };
 
-export default function EbookLandingClient({ initialData }: { initialData?: EbookLandingData | null }) {
+export default function EbookLandingClient({ initialData, slug: propSlug }: { initialData?: EbookLandingData | null; slug?: string }) {
   const router = useRouter();
   const params = useParams();
-  const slug = params?.slug as string;
+  const slug = propSlug || (params?.slug as string);
   const supabase = createClient();
 
+  // Keep original fixed form fields for backward compatibility (and email)
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [companyName, setCompanyName] = useState("");
+
+  const [formData, setFormData] = useState<Record<string, string>>({});
   const [pageData, setPageData] = useState<EbookLandingData | null>(initialData || null);
-  const [loading, setLoading] = useState(!initialData);
+  const [loading, setLoading] = useState(!initialData || slug === "placeholder");
   const [fetchError, setFetchError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const defaults: EbookLandingData = {
+    id: "",
+    slug: "default",
+    title: "E-Book",
+    headline: "Headline of your E-Book goes here",
+    subheadline: "The supporting subheadline goes here",
+    additional_paragraph: null,
+    extra_content: null,
+    logo_text: "Logo",
+    logo_image_url: null,
+    book_image_url: "/images/book.png",
+    learning_title: "What will you learn from this E-Book?",
+    learning_description: "Learning description goes here",
+    benefits_heading: "What you'll get",
+    benefits: ["Benefit One", "Benefit Two", "Benefit Three"],
+    form_title: "Download the E-Book Now",
+    form_fields: [],
+    author_heading: null,
+    author_name: null,
+    author_role: null,
+    author_bio: null,
+    author_avatar_url: null,
+    author_avatar_svg: null,
+    footer_color: "#3aaee0",
+    pdf_url: null,
+  };
+
+  const data = pageData || defaults;
+  const accentColor = data.footer_color || "#3aaee0";
+
   useEffect(() => {
-    if (slug && !initialData) {
+    if (slug === "placeholder") {
+      // Do nothing - the redirects will handle it, or just wait for client-side fetch
+    } else if (slug && (!initialData || slug !== initialData?.slug)) {
       fetchPageData();
     }
   }, [slug, initialData]);
@@ -107,18 +153,19 @@ export default function EbookLandingClient({ initialData }: { initialData?: Eboo
         .select("*")
         .eq("slug", slug)
         .single();
-      
+
       if (error) {
         setFetchError(error.message);
         return;
       }
-      
+
       if (data) {
         const resolvedData: EbookLandingData = {
           ...data,
           logo_image_url: resolveImageUrl(data.logo_image_url),
           book_image_url: resolveImageUrl(data.book_image_url),
           author_avatar_url: resolveImageUrl(data.author_avatar_url),
+          form_fields: data.form_fields || [],
         };
         setPageData(resolvedData);
       }
@@ -131,98 +178,70 @@ export default function EbookLandingClient({ initialData }: { initialData?: Eboo
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  try {
-    const { error: dbError } = await supabase
-      .from("contacts")
-      .insert([
-        {
-          full_name: name,
-          email,
-          phone,
-          company_name: companyName,
-          country_code: "+91",
-          selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
-          message: "Requested E-book download from landing page",
-        },
-      ]);
-
-    if (dbError) throw dbError;
-
-    // Send Email
     try {
-  const { data: emailData, error: emailError } =
-    await supabase.functions.invoke("send-contact-email", {
-      body: {
-        channel: "contact",
-        fullName: name,
-        email,
-        phone,
-        countryCode: "+91",
-        companyName,
-        selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
-        message: "Requested E-book download from landing page",
-      },
-    });
+      const { error: dbError } = await supabase
+        .from("contacts")
+        .insert([
+          {
+            full_name: name,
+            email,
+            phone,
+            company_name: companyName,
+            country_code: "+91",
+            selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
+            message: "Requested E-book download from landing page",
+          },
+        ]);
 
-  console.log("Email Response:", emailData);
+      if (dbError) throw dbError;
 
-  if (emailError) {
-    console.error("Email Error:", emailError);
-  }
-} catch (emailErr) {
-  console.error("Email Exception:", emailErr);
-}
+      // Send Email - original working version
+      try {
+        const { data: emailData, error: emailError } =
+          await supabase.functions.invoke("send-contact-email", {
+            body: {
+              channel: "contact",
+              fullName: name,
+              email,
+              phone,
+              countryCode: "+91",
+              companyName,
+              selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
+              message: "Requested E-book download from landing page",
+            },
+          });
 
-    // Download PDF
-    if (pageData?.pdf_url) {
-      await downloadPdf(pageData.pdf_url, pageData.title);
+        console.log("Email Response:", emailData);
+
+        if (emailError) {
+          console.error("Email Error:", emailError);
+        }
+      } catch (emailErr) {
+        console.error("Email Exception:", emailErr);
+      }
+
+      // Download PDF
+      if (pageData?.pdf_url) {
+        await downloadPdf(pageData.pdf_url, pageData.title);
+      }
+
+      // Reset form
+      setName("");
+      setEmail("");
+      setPhone("");
+      setCompanyName("");
+
+      router.push("/thanks");
+    } catch (err: any) {
+      console.error("Submit Error:", err);
+      alert(err.message);
+    } finally {
+      setIsSubmitting(false);
     }
-
-    // Reset form
-    setName("");
-    setEmail("");
-    setPhone("");
-    setCompanyName("");
-
-    router.push("/thanks");
-  } catch (err: any) {
-    console.error("Submit Error:", err);
-    alert(err.message);
-  } finally {
-    setIsSubmitting(false);
-  }
-};
-
-  const defaults: EbookLandingData = {
-    id: "",
-    slug: "default",
-    title: "E-Book",
-    headline: "Headline of your E-Book goes here",
-    subheadline: "The supporting subheadline goes here",
-    additional_paragraph: null,
-    logo_text: "Logo",
-    logo_image_url: null,
-    book_image_url: "/images/book.png",
-    learning_title: "What will you learn from this E-Book?",
-    learning_description: "Learning description goes here",
-    benefits_heading: "What you'll get",
-    benefits: ["Benefit One", "Benefit Two", "Benefit Three"],
-    form_title: "Download the E-Book Now",
-    author_heading: null,
-    author_name: null,
-    author_role: null,
-    author_bio: null,
-    author_avatar_url: null,
-    author_avatar_svg: null,
-    footer_color: "#3aaee0",
-    pdf_url: null,
   };
-  
-  const data = pageData || defaults;
-  const accentColor = data.footer_color || "#3aaee0";
 
   if (loading) {
     return (
@@ -244,7 +263,7 @@ export default function EbookLandingClient({ initialData }: { initialData?: Eboo
   return (
     <>
       <LeadSquaredInit />
-      
+
       <div className="topheader defhead1">
         <div className="container">
           <div className="row align-items-center">
@@ -307,7 +326,7 @@ export default function EbookLandingClient({ initialData }: { initialData?: Eboo
           <h1>{data.headline}</h1>
           <h5>{data.subheadline}</h5>
           {data.additional_paragraph && (
-            <p style={{ marginTop: '15px', fontSize: '14px', color: '#777' }}>{data.additional_paragraph}</p>
+            <p style={{ marginTop: '15px', fontSize: '14px', color: '#000', textAlign: 'left' }}>{data.additional_paragraph}</p>
           )}
         </section>
 
@@ -339,18 +358,26 @@ export default function EbookLandingClient({ initialData }: { initialData?: Eboo
               </button>
               </div>
             </form>
+
+            
+        {data.extra_content && (
+          <div className="contentbox" style={{ color: "#000" }} dangerouslySetInnerHTML={{ __html: data.extra_content }} />
+        )}
           </div>
         </section>
 
+
+
+
         {(() => {
-          const hasAuthorInfo = 
-            data.author_heading || 
-            data.author_name || 
-            data.author_role || 
-            data.author_bio || 
-            data.author_avatar_url || 
+          const hasAuthorInfo =
+            data.author_heading ||
+            data.author_name ||
+            data.author_role ||
+            data.author_bio ||
+            data.author_avatar_url ||
             data.author_avatar_svg;
-          
+
           if (hasAuthorInfo) {
             return (
               <section style={{ background: "#2d3e50", color: "#fff", padding: "50px 20px", textAlign: "center" }}>

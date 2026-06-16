@@ -21,6 +21,7 @@ interface EbookLandingPage {
   headline: string | null
   subheadline: string | null
   additional_paragraph: string | null
+  extra_content: string | null
   logo_text: string | null
   logo_image_url: string | null
   book_image_url: string | null
@@ -54,6 +55,7 @@ export default function AdminEbookLandingPage() {
     headline: '',
     subheadline: '',
     additional_paragraph: '',
+    extra_content: '',
     logo_text: 'Logo',
     logo_image_url: '',
     book_image_url: '',
@@ -248,6 +250,7 @@ export default function AdminEbookLandingPage() {
       // Try to add new columns, but they might not exist yet
       try {
         payload.additional_paragraph = formData.additional_paragraph || null
+        payload.extra_content = formData.extra_content || null
         payload.form_fields = formData.form_fields
       } catch (err) {
         // Ignore if these fields don't exist yet
@@ -265,10 +268,11 @@ export default function AdminEbookLandingPage() {
           if (error) throw error
         } catch (updateErr: any) {
           // If update failed because of new columns, try without them
-          if (updateErr.message && (updateErr.message.includes('additional_paragraph') || updateErr.message.includes('form_fields'))) {
+          if (updateErr.message && (updateErr.message.includes('additional_paragraph') || updateErr.message.includes('form_fields') || updateErr.message.includes('extra_content'))) {
             console.warn('Retrying update without new columns...')
             const fallbackPayload = { ...payload }
             delete fallbackPayload.additional_paragraph
+            delete fallbackPayload.extra_content
             delete fallbackPayload.form_fields
             const { error } = await supabase
               .from('ebook_landing_pages')
@@ -290,10 +294,11 @@ export default function AdminEbookLandingPage() {
           if (error) throw error
         } catch (insertErr: any) {
           // If insert failed because of new columns, try without them
-          if (insertErr.message && (insertErr.message.includes('additional_paragraph') || insertErr.message.includes('form_fields'))) {
+          if (insertErr.message && (insertErr.message.includes('additional_paragraph') || insertErr.message.includes('form_fields') || insertErr.message.includes('extra_content'))) {
             console.warn('Retrying insert without new columns...')
             const fallbackPayload = { ...payload }
             delete fallbackPayload.additional_paragraph
+            delete fallbackPayload.extra_content
             delete fallbackPayload.form_fields
             const { error } = await supabase
               .from('ebook_landing_pages')
@@ -332,6 +337,7 @@ export default function AdminEbookLandingPage() {
       headline: page.headline || '',
       subheadline: page.subheadline || '',
       additional_paragraph: page.additional_paragraph || '',
+      extra_content: page.extra_content || '',
       logo_text: page.logo_text || '',
       logo_image_url: page.logo_image_url || '',
       book_image_url: page.book_image_url || '',
@@ -340,12 +346,7 @@ export default function AdminEbookLandingPage() {
       benefits_heading: page.benefits_heading || '',
       benefits: page.benefits || [],
       form_title: page.form_title || '',
-      form_fields: page.form_fields || [
-        { id: 'fullName', type: 'text', placeholder: 'Name *', required: true },
-        { id: 'email', type: 'email', placeholder: 'Email *', required: true },
-        { id: 'phone', type: 'tel', placeholder: 'Phone No*', required: true },
-        { id: 'companyName', type: 'text', placeholder: 'Company Name*', required: true },
-      ],
+      form_fields: page.form_fields || [],
       author_heading: page.author_heading || '',
       author_name: page.author_name || '',
       author_role: page.author_role || '',
@@ -865,6 +866,7 @@ export default function AdminEbookLandingPage() {
               headline: '',
               subheadline: '',
               additional_paragraph: '',
+              extra_content: '',
               logo_text: 'Logo',
               logo_image_url: '',
               book_image_url: '',
@@ -873,12 +875,7 @@ export default function AdminEbookLandingPage() {
               benefits_heading: '',
               benefits: [],
               form_title: '',
-              form_fields: [
-                { id: 'fullName', type: 'text', placeholder: 'Name *', required: true },
-                { id: 'email', type: 'email', placeholder: 'Email *', required: true },
-                { id: 'phone', type: 'tel', placeholder: 'Phone No*', required: true },
-                { id: 'companyName', type: 'text', placeholder: 'Company Name*', required: true },
-              ],
+              form_fields: [],
               author_heading: '',
               author_name: '',
               author_role: '',
@@ -1188,6 +1185,20 @@ export default function AdminEbookLandingPage() {
               </ul>
             </div>
 
+
+            
+              <div className="admin-ebook-field admin-ebook-grid-full">
+                <label className="admin-ebook-label">Extra Content (Optional)</label>
+                <textarea
+                  name="extra_content"
+                  value={formData.extra_content}
+                  onChange={handleInputChange}
+                  className="admin-ebook-textarea"
+                  placeholder="Extra HTML or text content to display in a content box"
+                  rows={5}
+                />
+              </div>
+
             <h3 className="admin-ebook-section-title">Author Information</h3>
             <div className="admin-ebook-grid">
               <div className="admin-ebook-field">
@@ -1307,7 +1318,7 @@ export default function AdminEbookLandingPage() {
               <tr key={page.id}>
                 <td className="admin-ebook-slug">{page.slug}</td>
                 <td className="admin-ebook-title-cell">
-                  <Link href={`/EbookLanding/${page.slug}`} target="_blank">
+                  <Link href={`/LP/${page.slug}`} target="_blank">
                     {page.title}
                   </Link>
                 </td>
@@ -1315,7 +1326,7 @@ export default function AdminEbookLandingPage() {
                 <td>
                   <div className="admin-ebook-actions">
                     <Link
-                      href={`/EbookLanding/${page.slug}`}
+                      href={`/LP/${page.slug}`}
                       target="_blank"
                       className="admin-ebook-btn-preview"
                       style={{ textDecoration: 'none' }}
