@@ -1,4 +1,6 @@
 # Netlify redirects - SPA fallback
 # The custom 404 page will handle dynamic detail routes
-/*  /index.html  200
+/LP/*    /404.html   200
+/EbookLanding/*    /404.html   200
+/*    /index.html   200
 
