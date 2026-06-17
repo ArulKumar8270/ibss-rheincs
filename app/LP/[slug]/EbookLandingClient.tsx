@@ -190,16 +190,17 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
     if (data.form_fields && data.form_fields.length > 0) {
       data.form_fields.forEach(field => {
         const fieldIdLower = field.id.toLowerCase();
-        if (fieldIdLower === 'name' || fieldIdLower === 'fullname' || fieldIdLower.includes('name')) {
+        // EXACT MATCH ONLY for name/email/phone/companyName!
+        if (fieldIdLower === 'name' || fieldIdLower === 'fullname') {
           submitName = formData[field.id] || "";
         }
-        if (fieldIdLower === 'email' || fieldIdLower.includes('email')) {
+        if (fieldIdLower === 'email') {
           submitEmail = formData[field.id] || "";
         }
-        if (fieldIdLower === 'phone' || fieldIdLower.includes('phone')) {
+        if (fieldIdLower === 'phone') {
           submitPhone = formData[field.id] || "";
         }
-        if (fieldIdLower === 'company' || fieldIdLower === 'companyname' || fieldIdLower.includes('company')) {
+        if (fieldIdLower === 'company' || fieldIdLower === 'companyname') {
           submitCompanyName = formData[field.id] || "";
         }
       });
@@ -502,7 +503,7 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
 const inputStyle: React.CSSProperties = {
   width: "100%",
   padding: "12px",
-  marginTop: "12px",
+  marginTop: "0px",
   border: "1px solid #ccc",
   borderRadius: "4px",
 };
