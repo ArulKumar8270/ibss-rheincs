@@ -222,8 +222,11 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
 
       if (dbError) throw dbError;
 
-      // Send Email - original working version with RELIABLE values!
-      console.log("Sending email with: name=" + submitName + ", email=" + submitEmail + ", phone=" + submitPhone + ", companyName=" + submitCompanyName);
+      // Send Email - EXACTLY like contact-us page!
+      const trimmedPhone = String(submitPhone ?? "").trim();
+      const phoneForEmail = trimmedPhone ? trimmedPhone : "N/A";
+      const countryCodeForEmail = trimmedPhone ? "+91" : "";
+      console.log("Sending email with: name=" + submitName + ", email=" + submitEmail + ", phone=" + phoneForEmail + ", countryCode=" + countryCodeForEmail + ", companyName=" + submitCompanyName);
       try {
         const { data: emailData, error: emailError } =
           await supabase.functions.invoke("send-contact-email", {
@@ -231,8 +234,8 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
               channel: "contact",
               fullName: submitName,
               email: submitEmail,
-              phone: submitPhone,
-              countryCode: "+91",
+              phone: phoneForEmail,
+              countryCode: countryCodeForEmail,
               companyName: submitCompanyName,
               selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
               message: "Requested E-book download from landing page",
