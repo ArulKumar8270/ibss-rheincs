@@ -199,6 +199,7 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
       if (dbError) throw dbError;
 
       // Send Email - original working version
+      console.log("Sending email with: name=" + name + ", email=" + email + ", phone=" + phone + ", companyName=" + companyName);
       try {
         const { data: emailData, error: emailError } =
           await supabase.functions.invoke("send-contact-email", {
@@ -357,10 +358,20 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
                     setFormData(prev => ({ ...prev, [field.id]: value }));
                     
                     // Update original state variables for email submission
-                    if (field.id.toLowerCase().includes('name')) setName(value);
-                    if (field.id.toLowerCase().includes('email')) setEmail(value);
-                    if (field.id.toLowerCase().includes('phone')) setPhone(value);
-                    if (field.id.toLowerCase().includes('company')) setCompanyName(value);
+                    if (field.id.toLowerCase() === 'name' || field.id.toLowerCase() === 'fullname' || field.id.toLowerCase().includes('name')) {
+                      setName(value);
+                    }
+                    if (field.id.toLowerCase() === 'email' || field.id.toLowerCase().includes('email')) {
+                      setEmail(value);
+                    }
+                    if (field.id.toLowerCase() === 'phone' || field.id.toLowerCase().includes('phone')) {
+                      setPhone(value);
+                    }
+                    if (field.id.toLowerCase() === 'company' || field.id.toLowerCase() === 'companyname' || field.id.toLowerCase().includes('company')) {
+                      setCompanyName(value);
+                    }
+                    
+                    console.log("Field change: id=" + field.id + ", value=" + value + ", name=" + name + ", email=" + email);
                   };
                   
                   return (
