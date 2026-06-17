@@ -347,15 +347,73 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
             </ul>
             <form onSubmit={handleSubmit} style={{ marginTop: "30px" }}>
               <h3>{data.form_title}</h3>
-              <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required style={inputStyle} />
-              <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required style={inputStyle} />
-              <input type="text" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} required style={inputStyle} />
-              <input type="text" placeholder="Company Name" value={companyName} onChange={(e) => setCompanyName(e.target.value)} required style={inputStyle} />
+              
+              {data.form_fields && data.form_fields.length > 0 ? (
+                data.form_fields.map((field) => {
+                  const defaultPlaceholder = field.id.charAt(0).toUpperCase() + field.id.slice(1);
+                  
+                  const handleChange = (e: any) => {
+                    const value = e.target.value;
+                    setFormData(prev => ({ ...prev, [field.id]: value }));
+                    
+                    // Update original state variables for email submission
+                    if (field.id.toLowerCase().includes('name')) setName(value);
+                    if (field.id.toLowerCase().includes('email')) setEmail(value);
+                    if (field.id.toLowerCase().includes('phone')) setPhone(value);
+                    if (field.id.toLowerCase().includes('company')) setCompanyName(value);
+                  };
+                  
+                  return (
+                    <div key={field.id} style={{ marginBottom: "12px" }}>
+                      {field.label && <label style={{ display: "block", marginBottom: "4px", fontWeight: 500 }}>{field.label}</label>}
+                      
+                      {field.type === 'textarea' ? (
+                        <textarea
+                          placeholder={field.placeholder || defaultPlaceholder}
+                          value={formData[field.id] || ""}
+                          onChange={handleChange}
+                          required={field.required}
+                          style={{ ...inputStyle, minHeight: "80px" }}
+                        />
+                      ) : field.type === 'select' ? (
+                        <select
+                          value={formData[field.id] || ""}
+                          onChange={handleChange}
+                          required={field.required}
+                          style={inputStyle}
+                        >
+                          <option value="">{defaultPlaceholder}...</option>
+                          {(field.options || []).map((option, idx) => (
+                            <option key={idx} value={option}>{option}</option>
+                          ))}
+                        </select>
+                      ) : (
+                        <input
+                          type={field.type}
+                          placeholder={field.placeholder || defaultPlaceholder}
+                          value={formData[field.id] || ""}
+                          onChange={handleChange}
+                          required={field.required}
+                          style={inputStyle}
+                        />
+                      )}
+                    </div>
+                  );
+                })
+              ) : (
+                // Fallback to original fields if no fields added
+                <>
+                  <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required style={inputStyle} />
+                  <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required style={inputStyle} />
+                  <input type="text" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} required style={inputStyle} />
+                  <input type="text" placeholder="Company Name" value={companyName} onChange={(e) => setCompanyName(e.target.value)} required style={inputStyle} />
+                </>
+              )}
+              
               <div className="text-center">
-
-              <button type="submit" disabled={isSubmitting} style={{ margin: "15px auto", padding: "12px 30px", background: "#082326", border: "none", color: "#fff", cursor: "pointer", borderRadius: "5px" }}>
-                {isSubmitting ? "Submitting..." : "Download Now"}
-              </button>
+                <button type="submit" disabled={isSubmitting} style={{ margin: "15px auto", padding: "12px 30px", background: "#082326", border: "none", color: "#fff", cursor: "pointer", borderRadius: "5px" }}>
+                  {isSubmitting ? "Submitting..." : "Download Now"}
+                </button>
               </div>
             </form>
 
