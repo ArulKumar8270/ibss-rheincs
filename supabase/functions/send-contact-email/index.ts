@@ -559,12 +559,12 @@ Deno.serve(async (req) => {
       return jsonResponse({ success: true, message: 'Test email sent successfully!', emailSent: true }, 200, cors)
     }
 
-    if (channel === 'contact' || channel === 'collaterals' || channel === 'ebook') {
+    if (channel === 'contact' || channel === 'collaterals') {
       const fullName = body.fullName as string
       const email = (body.email as string)?.trim()
       const phone = body.phone
       const companyName = body.companyName as string
-      // For contact and ebook channels, phone is optional; for collaterals, phone is still required
+      // For contact channel, phone is optional; for collaterals, phone is still required
       if (!fullName || !email || !companyName) {
         return jsonResponse({ success: false, error: 'Missing required fields: fullName, email, companyName' }, 400, cors)
       }
@@ -576,19 +576,8 @@ Deno.serve(async (req) => {
       }
 
       const token = await getGraphToken(config)
-      let userPayload
-      let adminPayload
-      
-      if (channel === 'contact') {
-        userPayload = buildContactUserPayload(body, config)
-        adminPayload = buildContactAdminPayload(body, config)
-      } else if (channel === 'collaterals') {
-        userPayload = buildCollateralsUserPayload(body, config)
-        adminPayload = buildCollateralsAdminPayload(body, config)
-      } else { // ebook
-        userPayload = buildEbookUserPayload(body, config)
-        adminPayload = buildEbookAdminPayload(body, config)
-      }
+      const userPayload = channel === 'contact' ? buildContactUserPayload(body, config) : buildCollateralsUserPayload(body, config)
+      const adminPayload = channel === 'contact' ? buildContactAdminPayload(body, config) : buildCollateralsAdminPayload(body, config)
 
       const [userResult, adminResult] = await Promise.all([
         sendOneEmailViaGraph(token, config.fromUser, userPayload),
