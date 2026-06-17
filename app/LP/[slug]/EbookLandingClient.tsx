@@ -181,15 +181,39 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
     e.preventDefault();
     setIsSubmitting(true);
 
+    // EXTRACT VALUES FROM formData FIRST for 100% reliability!
+    let submitName = name;
+    let submitEmail = email;
+    let submitPhone = phone;
+    let submitCompanyName = companyName;
+
+    if (data.form_fields && data.form_fields.length > 0) {
+      data.form_fields.forEach(field => {
+        const fieldIdLower = field.id.toLowerCase();
+        if (fieldIdLower === 'name' || fieldIdLower === 'fullname' || fieldIdLower.includes('name')) {
+          submitName = formData[field.id] || "";
+        }
+        if (fieldIdLower === 'email' || fieldIdLower.includes('email')) {
+          submitEmail = formData[field.id] || "";
+        }
+        if (fieldIdLower === 'phone' || fieldIdLower.includes('phone')) {
+          submitPhone = formData[field.id] || "";
+        }
+        if (fieldIdLower === 'company' || fieldIdLower === 'companyname' || fieldIdLower.includes('company')) {
+          submitCompanyName = formData[field.id] || "";
+        }
+      });
+    }
+
     try {
       const { error: dbError } = await supabase
         .from("contacts")
         .insert([
           {
-            full_name: name,
-            email,
-            phone,
-            company_name: companyName,
+            full_name: submitName,
+            email: submitEmail,
+            phone: submitPhone,
+            company_name: submitCompanyName,
             country_code: "+91",
             selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
             message: "Requested E-book download from landing page",
@@ -198,18 +222,18 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
 
       if (dbError) throw dbError;
 
-      // Send Email - original working version
-      console.log("Sending email with: name=" + name + ", email=" + email + ", phone=" + phone + ", companyName=" + companyName);
+      // Send Email - original working version with RELIABLE values!
+      console.log("Sending email with: name=" + submitName + ", email=" + submitEmail + ", phone=" + submitPhone + ", companyName=" + submitCompanyName);
       try {
         const { data: emailData, error: emailError } =
           await supabase.functions.invoke("send-contact-email", {
             body: {
               channel: "contact",
-              fullName: name,
-              email,
-              phone,
+              fullName: submitName,
+              email: submitEmail,
+              phone: submitPhone,
               countryCode: "+91",
-              companyName,
+              companyName: submitCompanyName,
               selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
               message: "Requested E-book download from landing page",
             },
