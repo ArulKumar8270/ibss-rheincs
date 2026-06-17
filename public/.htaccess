@@ -1,11 +1,11 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Explicitly handle /LP/* and /EbookLanding/* to use 404.html
+  # Explicitly handle /LP/* and /EbookLanding/* to use 404.html (internal rewrite, no redirect)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^LP/.*$ /404.html [L,R=200]
-  RewriteRule ^EbookLanding/.*$ /404.html [L,R=200]
+  RewriteRule ^LP/.*$ /404.html [L]
+  RewriteRule ^EbookLanding/.*$ /404.html [L]
 
   # Fallback to index.html for SPA
   RewriteCond %{REQUEST_FILENAME} !-f

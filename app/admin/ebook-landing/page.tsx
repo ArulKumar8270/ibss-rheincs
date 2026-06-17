@@ -875,7 +875,9 @@ export default function AdminEbookLandingPage() {
               benefits_heading: '',
               benefits: [],
               form_title: '',
-              form_fields: [],
+              form_fields: [
+                { id: 'name', type: 'text', label: '', placeholder: 'Name', required: true }
+              ],
               author_heading: '',
               author_name: '',
               author_role: '',
@@ -1131,7 +1133,7 @@ export default function AdminEbookLandingPage() {
                   value={newFormField.id}
                   onChange={(e) => setNewFormField(prev => ({ ...prev, id: e.target.value }))}
                   className="admin-ebook-benefits-input"
-                  placeholder="Field ID (e.g., 'jobTitle')"
+                  placeholder="Field ID (e.g., 'name')"
                   style={{ flex: '0.5' }}
                 />
                 <select

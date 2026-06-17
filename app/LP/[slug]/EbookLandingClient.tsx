@@ -181,15 +181,21 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Get values from formData (dynamic) or default state variables
+    const submitName = formData.fullName || formData.name || name;
+    const submitEmail = formData.email || email;
+    const submitPhone = formData.phone || phone;
+    const submitCompanyName = formData.companyName || formData.company_name || companyName;
+
     try {
       const { error: dbError } = await supabase
         .from("contacts")
         .insert([
           {
-            full_name: name,
-            email,
-            phone,
-            company_name: companyName,
+            full_name: submitName,
+            email: submitEmail,
+            phone: submitPhone,
+            company_name: submitCompanyName,
             country_code: "+91",
             selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
             message: "Requested E-book download from landing page",
@@ -198,29 +204,33 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
 
       if (dbError) throw dbError;
 
-      // Send Email - original working version
-      try {
-        const { data: emailData, error: emailError } =
-          await supabase.functions.invoke("send-contact-email", {
-            body: {
-              channel: "contact",
-              fullName: name,
-              email,
-              phone,
-              countryCode: "+91",
-              companyName,
-              selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
-              message: "Requested E-book download from landing page",
-            },
-          });
+      // Handle phone number for email same as contact-us page
+      const trimmedPhone = String(submitPhone ?? "").trim();
+      const phoneForEmail = trimmedPhone ? trimmedPhone : "N/A";
+      const countryCodeForEmail = trimmedPhone ? "+91" : "";
 
-        console.log("Email Response:", emailData);
+      // Send Email - EXACTLY like contact-us page
+      const { data: emailResult, error: emailError } =
+        await supabase.functions.invoke("send-contact-email", {
+          body: {
+            channel: "contact",
+            fullName: submitName,
+            email: submitEmail,
+            phone: phoneForEmail,
+            countryCode: countryCodeForEmail,
+            companyName: submitCompanyName,
+            selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
+            message: "Requested E-book download from landing page",
+          },
+        });
 
-        if (emailError) {
-          console.error("Email Error:", emailError);
-        }
-      } catch (emailErr) {
-        console.error("Email Exception:", emailErr);
+      if (emailError) {
+        console.error("Email Error:", emailError);
+        // Don't fail the whole form if email fails - just log it like we had before
+      }
+
+      if (emailResult && emailResult.success === false) {
+        console.error("Email Result:", emailResult);
       }
 
       // Download PDF
@@ -233,6 +243,7 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
       setEmail("");
       setPhone("");
       setCompanyName("");
+      setFormData({});
 
       router.push("/thanks");
     } catch (err: any) {
@@ -345,25 +356,79 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
                 <li key={index} style={{ marginBottom: "10px" }}>{benefit}</li>
               ))}
             </ul>
-            <form onSubmit={handleSubmit} style={{ marginTop: "30px" }}>
-              <h3>{data.form_title}</h3>
-              <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required style={inputStyle} />
-              <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required style={inputStyle} />
-              <input type="text" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} required style={inputStyle} />
-              <input type="text" placeholder="Company Name" value={companyName} onChange={(e) => setCompanyName(e.target.value)} required style={inputStyle} />
-              <div className="text-center">
-
-              <button type="submit" disabled={isSubmitting} style={{ margin: "15px auto", padding: "12px 30px", background: "#082326", border: "none", color: "#fff", cursor: "pointer", borderRadius: "5px" }}>
-                {isSubmitting ? "Submitting..." : "Download Now"}
-              </button>
-              </div>
-            </form>
-          </div>
-        </section>
-
+            {/* Only show form if there are form fields */}
+            {(data.form_fields && data.form_fields.length > 0) ? (
+              <form onSubmit={handleSubmit} style={{ marginTop: "30px" }}>
+                {data.form_title && <h3>{data.form_title}</h3>}
+                
+                {data.form_fields.map((field) => {
+                  // Generate default placeholder from field ID (capitalize first letter)
+                  const defaultPlaceholder = field.id.charAt(0).toUpperCase() + field.id.slice(1);
+                  return (
+                    <div key={field.id} style={{ marginBottom: "12px" }}>
+                      {field.label && <label style={{ display: "block", marginBottom: "4px", fontWeight: 500 }}>{field.label}</label>}
+                      
+                      {field.type === 'textarea' ? (
+                        <textarea
+                          placeholder={field.placeholder || defaultPlaceholder}
+                          value={formData[field.id] || ''}
+                          onChange={(e) => setFormData({ ...formData, [field.id]: e.target.value })}
+                          required={field.required}
+                          style={{ ...inputStyle, minHeight: '80px' }}
+                        />
+                      ) : field.type === 'select' ? (
+                        <select
+                          value={formData[field.id] || ''}
+                          onChange={(e) => setFormData({ ...formData, [field.id]: e.target.value })}
+                          required={field.required}
+                          style={{ ...inputStyle }}
+                        >
+                          <option value="">{defaultPlaceholder}...</option>
+                          {(field.options || []).map((option, idx) => (
+                            <option key={idx} value={option}>{option}</option>
+                          ))}
+                        </select>
+                      ) : (
+                        <input
+                          type={field.type}
+                          placeholder={field.placeholder || defaultPlaceholder}
+                          value={formData[field.id] || ''}
+                          onChange={(e) => setFormData({ ...formData, [field.id]: e.target.value })}
+                          required={field.required}
+                          style={inputStyle}
+                        />
+                      )}
+                    </div>
+                  );
+                })}
+                
+                <div className="text-center">
+                  <button type="submit" disabled={isSubmitting} style={{ margin: "15px auto", padding: "12px 30px", background: "#082326", border: "none", color: "#fff", cursor: "pointer", borderRadius: "5px" }}>
+                    {isSubmitting ? "Submitting..." : "Download Now"}
+                  </button>
+                </div>
+              </form>
+            ) : (
+              data.pdf_url && (
+                <div style={{ textAlign: "center", marginTop: "30px" }}>
+                  <button 
+                    onClick={async () => {
+                      await downloadPdf(data.pdf_url, data.title);
+                      router.push("/thanks");
+                    }} 
+                    style={{ padding: "12px 30px", background: "#082326", border: "none", color: "#fff", cursor: "pointer", borderRadius: "5px" }}
+                  >
+                    Download Now
+                  </button>
+                </div>
+              )
+            )}
         {data.extra_content && (
           <div className="contentbox" style={{ color: "#000" }} dangerouslySetInnerHTML={{ __html: data.extra_content }} />
         )}
+          </div>
+        </section>
+
 
 
 
