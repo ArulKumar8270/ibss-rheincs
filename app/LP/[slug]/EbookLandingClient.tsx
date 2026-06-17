@@ -188,20 +188,25 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
     let submitCompanyName = companyName;
 
     if (data.form_fields && data.form_fields.length > 0) {
+      console.log("ALL formData:", formData);
       data.form_fields.forEach(field => {
         const fieldIdLower = field.id.toLowerCase();
         // EXACT MATCH ONLY for name/email/phone/companyName!
         if (fieldIdLower === 'name' || fieldIdLower === 'fullname') {
           submitName = formData[field.id] || "";
+          console.log("Set NAME to:", submitName);
         }
         if (fieldIdLower === 'email') {
           submitEmail = formData[field.id] || "";
+          console.log("Set EMAIL to:", submitEmail);
         }
         if (fieldIdLower === 'phone') {
           submitPhone = formData[field.id] || "";
+          console.log("Set PHONE to:", submitPhone);
         }
         if (fieldIdLower === 'company' || fieldIdLower === 'companyname') {
           submitCompanyName = formData[field.id] || "";
+          console.log("Set COMPANY to:", submitCompanyName);
         }
       });
     }
