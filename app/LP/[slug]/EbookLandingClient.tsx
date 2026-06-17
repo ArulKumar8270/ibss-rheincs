@@ -209,20 +209,20 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
       const phoneForEmail = trimmedPhone ? trimmedPhone : "N/A";
       const countryCodeForEmail = trimmedPhone ? "+91" : "";
 
-      // Send Email - EXACTLY like contact-us page
-      const { data: emailResult, error: emailError } =
-        await supabase.functions.invoke("send-contact-email", {
-          body: {
-            channel: "contact",
-            fullName: submitName,
-            email: submitEmail,
-            phone: phoneForEmail,
-            countryCode: countryCodeForEmail,
-            companyName: submitCompanyName,
-            selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
-            message: "Requested E-book download from landing page",
-          },
-        });
+      // Send Email - USE DEDICATED EBOOK CHANNEL
+  const { data: emailResult, error: emailError } =
+    await supabase.functions.invoke("send-contact-email", {
+      body: {
+        channel: "ebook",
+        fullName: submitName,
+        email: submitEmail,
+        phone: phoneForEmail,
+        countryCode: countryCodeForEmail,
+        companyName: submitCompanyName,
+        selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
+        message: "Requested E-book download from landing page",
+      },
+    });
 
       if (emailError) {
         console.error("Email Error:", emailError);
