@@ -973,15 +973,50 @@ export default function AdminEbookLandingPage() {
               <div className="admin-ebook-field">
                 <label className="admin-ebook-label">Logo Image (Optional - overrides text)</label>
                 <input
-                  type="file"
-                  onChange={(e) => handleFileUpload(e, 'logo_image_url')}
+                  type="text"
+                  name="logo_image_url"
+                  value={formData.logo_image_url}
+                  onChange={handleInputChange}
                   className="admin-ebook-input"
-                  accept="image/*"
+                  placeholder="https://.../logo.png"
                 />
-                {formData.logo_image_url && <p className="text-xs text-green-600 mt-1">Uploaded: {formData.logo_image_url.split('/').pop()}</p>}
+                {formData.logo_image_url && (
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px', gap: '8px' }}>
+                    <p className="text-xs text-green-600">Current: {formData.logo_image_url.split('/').pop()}</p>
+                    <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                     
+                      <button
+                        type="button"
+                        style={{
+                          padding: '4px 8px',
+                          background: '#fee',
+                          color: '#dc2626',
+                          border: 'none',
+                          borderRadius: '4px',
+                          fontSize: '12px',
+                          fontWeight: '600',
+                          cursor: 'pointer'
+                        }}
+                        onClick={() => setFormData(prev => ({ ...prev, logo_image_url: '' }))}
+                      >
+                        X
+                      </button>
+                    </div>
+                  </div>
+                )}
+                {!formData.logo_image_url && (
+                  <div style={{ marginTop: '8px' }}>
+                    <input
+                      type="file"
+                      onChange={(e) => handleFileUpload(e, 'logo_image_url')}
+                      className="admin-ebook-input"
+                      accept="image/*"
+                    />
+                  </div>
+                )}
               </div>
               <div className="admin-ebook-field">
-                <label className="admin-ebook-label">Book Image URL</label>
+                <label className="admin-ebook-label">Book Image</label>
                 <input
                   type="text"
                   name="book_image_url"
@@ -990,19 +1025,62 @@ export default function AdminEbookLandingPage() {
                   className="admin-ebook-input"
                   placeholder="/images/book.png"
                 />
+                {formData.book_image_url && (
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px', gap: '8px' }}>
+                    <p className="text-xs text-green-600">Current: {formData.book_image_url.split('/').pop()}</p>
+                    <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                      {/* <label
+                        style={{
+                          padding: '4px 8px',
+                          background: '#e0f2fe',
+                          color: '#0369a1',
+                          border: 'none',
+                          borderRadius: '4px',
+                          fontSize: '12px',
+                          fontWeight: '600',
+                          cursor: 'pointer'
+                        }}
+                      >
+                        Upload New
+                        <input
+                          type="file"
+                          style={{ display: 'none' }}
+                          onChange={(e) => handleFileUpload(e, 'book_image_url')}
+                          accept="image/*"
+                        />
+                      </label> */}
+                      <button
+                        type="button"
+                        style={{
+                          padding: '4px 8px',
+                          background: '#fee',
+                          color: '#dc2626',
+                          border: 'none',
+                          borderRadius: '4px',
+                          fontSize: '12px',
+                          fontWeight: '600',
+                          cursor: 'pointer'
+                        }}
+                        onClick={() => setFormData(prev => ({ ...prev, book_image_url: '' }))}
+                      >
+                        X
+                      </button>
+                    </div>
+                  </div>
+                )}
+                {!formData.book_image_url && (
+                  <div style={{ marginTop: '8px' }}>
+                    <input
+                      type="file"
+                      onChange={(e) => handleFileUpload(e, 'book_image_url')}
+                      className="admin-ebook-input"
+                      accept="image/*"
+                    />
+                  </div>
+                )}
               </div>
               <div className="admin-ebook-field">
-                <label className="admin-ebook-label">Upload Book Cover</label>
-                <input
-                  type="file"
-                  onChange={(e) => handleFileUpload(e, 'book_image_url')}
-                  className="admin-ebook-input"
-                  accept="image/*"
-                />
-                {formData.book_image_url && <p className="text-xs text-green-600 mt-1">Uploaded: {formData.book_image_url.split('/').pop()}</p>}
-              </div>
-              <div className="admin-ebook-field">
-                <label className="admin-ebook-label">E-Book PDF URL</label>
+                <label className="admin-ebook-label">E-Book PDF</label>
                 <input
                   type="text"
                   name="pdf_url"
@@ -1011,16 +1089,59 @@ export default function AdminEbookLandingPage() {
                   className="admin-ebook-input"
                   placeholder="https://.../ebook.pdf"
                 />
-              </div>
-              <div className="admin-ebook-field">
-                <label className="admin-ebook-label">Upload E-Book PDF</label>
-                <input
-                  type="file"
-                  onChange={(e) => handleFileUpload(e, 'pdf_url')}
-                  className="admin-ebook-input"
-                  accept=".pdf"
-                />
-                {formData.pdf_url && <p className="text-xs text-green-600 mt-1">Uploaded: {formData.pdf_url.split('/').pop()}</p>}
+                {formData.pdf_url && (
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px', gap: '8px' }}>
+                    <p className="text-xs text-green-600">Current: {formData.pdf_url.split('/').pop()}</p>
+                    <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                      {/* <label
+                        style={{
+                          padding: '4px 8px',
+                          background: '#e0f2fe',
+                          color: '#0369a1',
+                          border: 'none',
+                          borderRadius: '4px',
+                          fontSize: '12px',
+                          fontWeight: '600',
+                          cursor: 'pointer'
+                        }}
+                      >
+                        Upload New
+                        <input
+                          type="file"
+                          style={{ display: 'none' }}
+                          onChange={(e) => handleFileUpload(e, 'pdf_url')}
+                          accept=".pdf"
+                        />
+                      </label> */}
+                      <button
+                        type="button"
+                        style={{
+                          padding: '4px 8px',
+                          background: '#fee',
+                          color: '#dc2626',
+                          border: 'none',
+                          borderRadius: '4px',
+                          fontSize: '12px',
+                          fontWeight: '600',
+                          cursor: 'pointer'
+                        }}
+                        onClick={() => setFormData(prev => ({ ...prev, pdf_url: '' }))}
+                      >
+                        X
+                      </button>
+                    </div>
+                  </div>
+                )}
+                {!formData.pdf_url && (
+                  <div style={{ marginTop: '8px' }}>
+                    <input
+                      type="file"
+                      onChange={(e) => handleFileUpload(e, 'pdf_url')}
+                      className="admin-ebook-input"
+                      accept=".pdf"
+                    />
+                  </div>
+                )}
               </div>
               <div className="admin-ebook-field">
                 <label className="admin-ebook-label">Learning Title</label>

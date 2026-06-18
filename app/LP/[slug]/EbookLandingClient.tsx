@@ -187,6 +187,26 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
     let submitPhone = phone;
     let submitCompanyName = companyName;
 
+//     let submitName = '';
+// let submitEmail = '';
+// let submitCompanyName = '';
+
+Object.keys(formData).forEach(key => {
+  const label = key.toLowerCase().trim();
+
+  if (label === 'full name') {
+    submitName = formData[key];
+  }
+
+  if (label === 'email') {
+    submitEmail = formData[key];
+  }
+
+  if (label === 'company name') {
+    submitCompanyName = formData[key];
+  }
+});
+
     if (data.form_fields && data.form_fields.length > 0) {
       console.log("ALL formData:", formData);
       data.form_fields.forEach(field => {
@@ -221,8 +241,8 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
             phone: submitPhone,
             company_name: submitCompanyName,
             country_code: "+91",
-            selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
-            message: "Requested E-book download from landing page",
+            selection: `Download: ${pageData?.title || "E-Book"}`,
+            // message: "Requested E-book download from landing page",
           },
         ]);
 
@@ -243,8 +263,8 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
               phone: phoneForEmail,
               countryCode: countryCodeForEmail,
               companyName: submitCompanyName,
-              selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
-              message: "Requested E-book download from landing page",
+              selection: `Download: ${pageData?.title || "E-Book"}`,
+              // message: "Requested E-book download from landing page",
             },
           });
 
@@ -351,7 +371,7 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
       </div>
 
       <div id="ebook-landing-root">
-        <section className="topheadsize" style={{ textAlign: "center", padding: "50px 20px", background: "#fff" }}>
+        <section className="topheadsize" style={{ textAlign: "center", padding: "30px 20px 0px", background: "#fff" }}>
           <div style={{ width: "200px", height: "auto", margin: "0 auto 20px", borderRadius: "0%", overflow: "hidden", background: "transparent", display: "flex", justifyContent: "center", alignItems: "center", color: "#fff", fontWeight: "bold" }}>
             {data.logo_image_url ? (
               <img src={data.logo_image_url} alt="Logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
@@ -380,14 +400,14 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
               ))}
             </ul>
             <form onSubmit={handleSubmit} style={{ marginTop: "30px" }}>
-              <h3>{data.form_title}</h3>
-              
+              <h3>{data.form_title}</h3>             
               {data.form_fields && data.form_fields.length > 0 ? (
                 data.form_fields.map((field) => {
                   const defaultPlaceholder = field.id.charAt(0).toUpperCase() + field.id.slice(1);
                   
                   const handleChange = (e: any) => {
                     const value = e.target.value;
+
                     setFormData(prev => ({ ...prev, [field.id]: value }));
                     
                     // Update original state variables for email submission

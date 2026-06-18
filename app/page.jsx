@@ -2820,9 +2820,9 @@ export default function Home() {
                       loop={true}
                       id="myVideo"
                       height={700}
-                      width="100%"
+                      width="100%" loading="lazy"
                     >
-                      <source src="/videos/way.mp4" type="video/mp4" />
+                      <source src="/videos/way.mp4" type="video/mp4"  />
                     </video>
                   </div>
                 </div>
@@ -3099,7 +3099,7 @@ export default function Home() {
               <div className="row section-row align-items-center">
                 <div className="col-lg-12">
                   <div className="section-title text-center">
-                    <h2 className="text-anime-style-2" data-cursor="-opaque">
+                    <h2 className="text-anime-style-2 text-black" data-cursor="-opaque">
                       {t("Partnering with Business Worldwide")}
                     </h2>
                     <p>{t("We partner with businesses in over 40 countries to deliver high-impact transformation across key sectors including brand owners and vertical retailers, the retail industry, distribution and supply chain, discrete and process manufacturing, the automotive industry, engineering, procurement and construction as well as the private equity and funding backed ventures.")}</p>
