@@ -33,6 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index,follow" />
         <link rel="icon" href="/images/fav.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -284,6 +285,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDCNRK4"
+height="0" width="0" style={{display: "none", visibility: "hidden"}}></iframe></noscript>
+
 
         <Suspense fallback={null}>
           <RouteTracker />

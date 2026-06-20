@@ -19,8 +19,8 @@ export default function CounterInit() {
       }
 
       // Animation function for each counter
-      const animateCounter = (element) => {
-        const htmlElement = element;
+      const animateCounter = (element: Element) => {
+        const htmlElement = element as HTMLElement;
         
         // Skip if already animated or currently animating
         if (htmlElement.hasAttribute('data-counted') || htmlElement.hasAttribute('data-animating')) {
@@ -161,7 +161,7 @@ export default function CounterInit() {
           rootMargin: '100px' // Start animation 100px before element enters viewport
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               animateCounter(entry.target);
@@ -171,8 +171,8 @@ export default function CounterInit() {
         }, observerOptions);
 
         // Observe all counter elements
-        counters.forEach((counter) => {
-          const htmlCounter = counter;
+        counters.forEach((counter: Element) => {
+          const htmlCounter = counter as HTMLElement;
           
           // CRITICAL: Store original value IMMEDIATELY before any modifications
           // This must happen first to preserve the original value
