@@ -1,14 +1,88 @@
-# Apache .htaccess for handling 404 errors with Next.js static export
-# This ensures unmatched routes serve the 404.html file which contains client-side routing
-
-# Enable rewrite engine
 RewriteEngine On
 
-# Serve 404.html for all unmatched routes
-# This allows the custom 404 page to handle dynamic routes client-side
+# Force WWW URL
+RewriteCond %{HTTP_HOST} ^rheincs\.com$ [NC]
+RewriteRule ^(.*)$ https://www.rheincs.com/$1 [R=301,L]
+
+# -------------------------------
+# CUSTOM 404 PAGE
+# -------------------------------
 ErrorDocument 404 /404.html
 
-# Optional: Force HTTPS (uncomment if needed)
+# -------------------------------
+# FORCE HTTPS (Uncomment if needed)
+# -------------------------------
 # RewriteCond %{HTTPS} off
 # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# -------------------------------
+# BLOG
+# -------------------------------
+RewriteRule ^blogs/?$ https://www.rheincs.com/Blog/ [R=301,L]
+
+# -------------------------------
+# ENTERPRISE SOLUTIONS
+# -------------------------------
+RewriteRule ^enterprise-solutions/?$ https://www.rheincs.com/solutions/erp-enterprise-solutions-and-services/erp/ [R=301,L]
+
+# -------------------------------
+# MS DYNAMICS
+# -------------------------------
+RewriteRule ^ms-dynamics/?$ https://www.rheincs.com/solutions/erp-enterprise-solutions-and-services/ms-dynamics/ [R=301,L]
+
+# -------------------------------
+# CORUS HR
+# -------------------------------
+RewriteRule ^CorusHR/?$ https://www.rheincs.com/solutions/CorusHR/ [R=301,L]
+
+# -------------------------------
+# DIGITAL SOLUTIONS
+# -------------------------------
+RewriteRule ^digital-solution-service/?$ https://www.rheincs.com/digital-solutions/ [R=301,L]
+RewriteRule ^digital-solutions-services/?$ https://www.rheincs.com/digital-services/ [R=301,L]
+
+# -------------------------------
+# CUSTOMER SPEAK
+# -------------------------------
+RewriteRule ^customer-speak/?$ https://www.rheincs.com/about-us/customer-speak/ [R=301,L]
+
+# -------------------------------
+# CONTACT
+# -------------------------------
+RewriteRule ^contact/?$ https://www.rheincs.com/contact-us/ [R=301,L]
+
+# -------------------------------
+# LEADERSHIP
+# -------------------------------
+RewriteRule ^leadership/?$ https://www.rheincs.com/about-us/leadership/ [R=301,L]
+
+# -------------------------------
+# EPICOR
+# -------------------------------
+RewriteRule ^epicor/?$ https://www.rheincs.com/solutions/erp-enterprise-solutions-and-services/epicor/ [R=301,L]
+
+# -------------------------------
+# EPC
+# -------------------------------
+RewriteRule ^Epc/?$ https://www.rheincs.com/Engineering-Procurement-Construction-(EPC)/ [R=301,L]
+
+# -------------------------------
+# SITEMAP - Block subpaths, allow exact /sitemap only
+# -------------------------------
+RewriteRule ^sitemap/.*\.php$ - [G,L]
+RewriteRule ^sitemap(/.+|/)$ - [G,L]
+RewriteRule ^sitemap$ sitemap.php [L]
+
+# -------------------------------
+# DEFAULT NEXT.JS / HOSTINGER RULE
+# -------------------------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^LP/.*$ /404.html [L]
+  RewriteRule ^EbookLanding/.*$ /404.html [L]
 

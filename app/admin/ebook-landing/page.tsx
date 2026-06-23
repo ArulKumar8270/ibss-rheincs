@@ -3,7 +3,36 @@
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase-browser'
 import Link from 'next/link'
-import { color } from 'framer-motion'
+import dynamic from 'next/dynamic'
+import 'quill/dist/quill.snow.css'
+
+// Dynamically import ReactQuill to avoid SSR issues
+const ReactQuill = dynamic(() => import('react-quill-new'), { ssr: false })
+
+// Quill modules configuration (exact like blog page)
+const modules = {
+  toolbar: [
+    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+    // [{ 'font': [] }],
+    [{ 'size': ['normal', 'small', 'large', 'huge'] }],
+    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+    [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'indent': '-1'}, { 'indent': '+1' }],
+    [{ 'color': [] }, { 'background': [] }],
+    [{ 'align': [] }],
+    ['link', 'image', 'video'],
+    ['clean']
+  ]
+}
+
+// Quill formats (exact like blog page)
+const formats = [
+  'header', 'font', 'size',
+  'bold', 'italic', 'underline', 'strike', 'blockquote',
+  'list', 'indent',
+  'color', 'background',
+  'align',
+  'link', 'image', 'video'
+]
 
 interface FormField {
   id: string
@@ -30,6 +59,7 @@ interface EbookLandingPage {
   benefits_heading: string | null
   benefits: string[]
   form_title: string | null
+  form_button_text: string | null
   form_fields: FormField[]
   author_heading: string | null
   author_name: string | null
@@ -44,6 +74,7 @@ interface EbookLandingPage {
 }
 
 export default function AdminEbookLandingPage() {
+  const [isClient, setIsClient] = useState(false);
   const [pages, setPages] = useState<EbookLandingPage[]>([])
   const [loading, setLoading] = useState(true)
   const [uploading, setUploading] = useState(false)
@@ -64,6 +95,7 @@ export default function AdminEbookLandingPage() {
     benefits_heading: '',
     benefits: [] as string[],
     form_title: '',
+    form_button_text: '',
     form_fields: [] as FormField[],
     author_heading: '',
     author_name: '',
@@ -84,6 +116,30 @@ export default function AdminEbookLandingPage() {
     options: [],
   })
   const supabase = createClient()
+
+  // Set isClient and register custom Quill sizes
+  useEffect(() => {
+    setIsClient(true);
+    
+    // Register custom pixel sizes with Quill
+    const registerQuillSizes = async () => {
+      try {
+        const Quill = (await import('quill')).default;
+        const SizeAttributor = Quill.import('attributors/style/size');
+        
+        // // Set our custom size whitelist
+        // SizeAttributor.whitelist = sizeOptions;
+        
+        // // Register the updated size attributor
+        // Quill.register(SizeAttributor, true);
+        console.log('Custom Quill sizes registered!');
+      } catch (err) {
+        console.error('Error registering Quill sizes:', err);
+      }
+    };
+    
+    registerQuillSizes();
+  }, []);
 
   useEffect(() => {
     fetchPages()
@@ -108,18 +164,27 @@ export default function AdminEbookLandingPage() {
     }
   }
 
+  const extractPlainTextFromHtml = (html: string): string => {
+    const tempDiv = document.createElement('div')
+    tempDiv.innerHTML = html
+    return tempDiv.textContent || tempDiv.innerText || ''
+  }
+
+  const generateSlugFromText = (text: string): string => {
+    return text
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .trim()
+  }
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     const updatedData = { [name]: value }
     
     // Auto-generate slug from title when title changes and not editing
     if (name === 'title' && !editingPage) {
-      const slug = value
-        .toLowerCase()
-        .replace(/[^\w\s-]/g, '')
-        .replace(/\s+/g, '-')
-        .trim()
-      updatedData.slug = slug
+      updatedData.slug = generateSlugFromText(value)
     }
     
     setFormData(prev => ({ ...prev, ...updatedData }))
@@ -236,6 +301,7 @@ export default function AdminEbookLandingPage() {
         benefits_heading: formData.benefits_heading || null,
         benefits: formData.benefits,
         form_title: formData.form_title || null,
+        form_button_text: formData.form_button_text || null,
         author_heading: formData.author_heading || null,
         author_name: formData.author_name || null,
         author_role: formData.author_role || null,
@@ -252,6 +318,7 @@ export default function AdminEbookLandingPage() {
         payload.additional_paragraph = formData.additional_paragraph || null
         payload.extra_content = formData.extra_content || null
         payload.form_fields = formData.form_fields
+        payload.form_button_text = formData.form_button_text || null
       } catch (err) {
         // Ignore if these fields don't exist yet
       }
@@ -268,12 +335,13 @@ export default function AdminEbookLandingPage() {
           if (error) throw error
         } catch (updateErr: any) {
           // If update failed because of new columns, try without them
-          if (updateErr.message && (updateErr.message.includes('additional_paragraph') || updateErr.message.includes('form_fields') || updateErr.message.includes('extra_content'))) {
+          if (updateErr.message && (updateErr.message.includes('additional_paragraph') || updateErr.message.includes('form_fields') || updateErr.message.includes('extra_content') || updateErr.message.includes('form_button_text') || updateErr.message.includes('pdf_url'))) {
             console.warn('Retrying update without new columns...')
             const fallbackPayload = { ...payload }
             delete fallbackPayload.additional_paragraph
             delete fallbackPayload.extra_content
             delete fallbackPayload.form_fields
+            delete fallbackPayload.form_button_text
             const { error } = await supabase
               .from('ebook_landing_pages')
               .update(fallbackPayload)
@@ -294,12 +362,13 @@ export default function AdminEbookLandingPage() {
           if (error) throw error
         } catch (insertErr: any) {
           // If insert failed because of new columns, try without them
-          if (insertErr.message && (insertErr.message.includes('additional_paragraph') || insertErr.message.includes('form_fields') || insertErr.message.includes('extra_content'))) {
+          if (insertErr.message && (insertErr.message.includes('additional_paragraph') || insertErr.message.includes('form_fields') || insertErr.message.includes('extra_content') || insertErr.message.includes('form_button_text') || insertErr.message.includes('pdf_url'))) {
             console.warn('Retrying insert without new columns...')
             const fallbackPayload = { ...payload }
             delete fallbackPayload.additional_paragraph
             delete fallbackPayload.extra_content
             delete fallbackPayload.form_fields
+            delete fallbackPayload.form_button_text
             const { error } = await supabase
               .from('ebook_landing_pages')
               .insert([fallbackPayload])
@@ -346,6 +415,7 @@ export default function AdminEbookLandingPage() {
       benefits_heading: page.benefits_heading || '',
       benefits: page.benefits || [],
       form_title: page.form_title || '',
+      form_button_text: page.form_button_text || '',
       form_fields: page.form_fields || [],
       author_heading: page.author_heading || '',
       author_name: page.author_name || '',
@@ -385,6 +455,56 @@ export default function AdminEbookLandingPage() {
   return (
     <div className="admin-ebook-root">
       <style>{`
+        /* Custom Quill font styles */
+        .ql-editor { 
+          font-family: 'helvetica-neue-lt-pro', sans-serif !important;
+        }
+        .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='helvetica-neue-lt-pro']::before,
+        .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='helvetica-neue-lt-pro']::before {
+          content: 'Helvetica Neue LT Pro';
+        }
+        .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='sans-serif']::before,
+        .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='sans-serif']::before {
+          content: 'Sans Serif';
+        }
+
+        .ql-editor .ql-font-helvetica-neue-lt-pro { font-family: 'helvetica-neue-lt-pro', sans-serif !important; }
+        .ql-editor .ql-font-sans-serif { font-family: sans-serif !important; }
+
+        /* Custom size picker labels */
+        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value='10px']::before,
+        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value='10px']::before { content: '10px'; }
+        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value='12px']::before,
+        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value='12px']::before { content: '12px'; }
+        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value='14px']::before,
+        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value='14px']::before { content: '14px'; }
+        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value='16px']::before,
+        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value='16px']::before { content: '16px'; }
+        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value='18px']::before,
+        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value='18px']::before { content: '18px'; }
+        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value='20px']::before,
+        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value='20px']::before { content: '20px'; }
+        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value='24px']::before,
+        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value='24px']::before { content: '24px'; }
+        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value='28px']::before,
+        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value='28px']::before { content: '28px'; }
+        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value='32px']::before,
+        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value='32px']::before { content: '32px'; }
+        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value='36px']::before,
+        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value='36px']::before { content: '36px'; }
+        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value='40px']::before,
+        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value='40px']::before { content: '40px'; }
+        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value='48px']::before,
+        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value='48px']::before { content: '48px'; }
+        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value='56px']::before,
+        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value='56px']::before { content: '56px'; }
+        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value='64px']::before,
+        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value='64px']::before { content: '64px'; }
+        .ql-snow .ql-picker.ql-size .ql-picker-label[data-value='72px']::before,
+        .ql-snow .ql-picker.ql-size .ql-picker-item[data-value='72px']::before { content: '72px'; }
+
+
+
         .admin-ebook-root {
           padding: 30px;
           max-width: 1400px;
@@ -875,6 +995,7 @@ export default function AdminEbookLandingPage() {
               benefits_heading: '',
               benefits: [],
               form_title: '',
+              form_button_text: '',
               form_fields: [
                 { id: 'name', type: 'text', label: '', placeholder: 'Name', required: true }
               ],
@@ -920,44 +1041,61 @@ export default function AdminEbookLandingPage() {
                 <input
                   type="text"
                   name="title"
-                  value={formData.title}
-                  onChange={handleInputChange}
+                  value={extractPlainTextFromHtml(formData.title)}
+                  onChange={(e) => {
+                    const updatedData: any = { title: e.target.value }
+                    // Auto-generate slug from title when title changes and not editing
+                    if (!editingPage) {
+                      updatedData.slug = generateSlugFromText(e.target.value)
+                    }
+                    setFormData(prev => ({ ...prev, ...updatedData }))
+                  }}
                   className="admin-ebook-input"
+                  placeholder="Page title"
                   required
                 />
               </div>
               <div className="admin-ebook-field admin-ebook-grid-full">
                 <label className="admin-ebook-label">Headline</label>
-                <input
-                  type="text"
-                  name="headline"
-                  value={formData.headline}
-                  onChange={handleInputChange}
-                  className="admin-ebook-input"
-                  placeholder="Main headline for the hero section"
-                />
+                {isClient && (
+                  <ReactQuill
+                    key={`headline-${editingPage?.id || 'new'}`}
+                    theme="snow"
+                    value={formData.headline}
+                    onChange={(content) => setFormData(prev => ({ ...prev, headline: content }))}
+                    modules={modules}
+                    formats={formats}
+                    placeholder="Main headline for the hero section"
+                  />
+                )}
               </div>
               <div className="admin-ebook-field admin-ebook-grid-full">
                 <label className="admin-ebook-label">Sub-headline</label>
-                <input
-                  type="text"
-                  name="subheadline"
-                  value={formData.subheadline}
-                  onChange={handleInputChange}
-                  className="admin-ebook-input"
-                  placeholder="Supporting text below headline"
-                />
+                {isClient && (
+                  <ReactQuill
+                    key={`subheadline-${editingPage?.id || 'new'}`}
+                    theme="snow"
+                    value={formData.subheadline}
+                    onChange={(content) => setFormData(prev => ({ ...prev, subheadline: content }))}
+                    modules={modules}
+                    formats={formats}
+                    placeholder="Supporting text below headline"
+                  />
+                )}
               </div>
               <div className="admin-ebook-field admin-ebook-grid-full">
                 <label className="admin-ebook-label">Additional Paragraph (Optional)</label>
-                <textarea
-                  name="additional_paragraph"
-                  value={formData.additional_paragraph}
-                  onChange={handleInputChange}
-                  className="admin-ebook-textarea"
-                  placeholder="Extra paragraph to display below sub-headline"
-                  rows={2}
-                />
+                {isClient && (
+                  <ReactQuill
+                    key={`additional-${editingPage?.id || 'new'}`}
+                    theme="snow"
+                    value={formData.additional_paragraph}
+                    onChange={(content) => setFormData(prev => ({ ...prev, additional_paragraph: content }))}
+                    modules={modules}
+                    formats={formats}
+                    placeholder="Extra paragraph to display below sub-headline"
+                  />
+                )}
               </div>
               <div className="admin-ebook-field">
                 <label className="admin-ebook-label">Logo Text</label>
@@ -1143,38 +1281,47 @@ export default function AdminEbookLandingPage() {
                   </div>
                 )}
               </div>
-              <div className="admin-ebook-field">
+              <div className="admin-ebook-field admin-ebook-grid-full">
                 <label className="admin-ebook-label">Learning Title</label>
-                <input
-                  type="text"
-                  name="learning_title"
-                  value={formData.learning_title}
-                  onChange={handleInputChange}
-                  className="admin-ebook-input"
-                  placeholder="Title for what they'll learn section"
-                />
+                {isClient && (
+                  <ReactQuill
+                    key={`learning-title-${editingPage?.id || 'new'}`}
+                    theme="snow"
+                    value={formData.learning_title}
+                    onChange={(content) => setFormData(prev => ({ ...prev, learning_title: content }))}
+                    modules={modules}
+                    formats={formats}
+                    placeholder="Title for what they'll learn section"
+                  />
+                )}
               </div>
               <div className="admin-ebook-field admin-ebook-grid-full">
                 <label className="admin-ebook-label">Learning Description</label>
-                <textarea
-                  name="learning_description"
-                  value={formData.learning_description}
-                  onChange={handleInputChange}
-                  className="admin-ebook-textarea"
-                  rows={3}
-                  placeholder="Description text for the learning section"
-                />
+                {isClient && (
+                  <ReactQuill
+                    key={`learning-desc-${editingPage?.id || 'new'}`}
+                    theme="snow"
+                    value={formData.learning_description}
+                    onChange={(content) => setFormData(prev => ({ ...prev, learning_description: content }))}
+                    modules={modules}
+                    formats={formats}
+                    placeholder="Description text for the learning section"
+                  />
+                )}
               </div>
-              <div className="admin-ebook-field">
+              <div className="admin-ebook-field admin-ebook-grid-full">
                 <label className="admin-ebook-label">Benefits Heading</label>
-                <input
-                  type="text"
-                  name="benefits_heading"
-                  value={formData.benefits_heading}
-                  onChange={handleInputChange}
-                  className="admin-ebook-input"
-                  placeholder="Heading for the benefits list"
-                />
+                {isClient && (
+                  <ReactQuill
+                    key={`benefits-heading-${editingPage?.id || 'new'}`}
+                    theme="snow"
+                    value={formData.benefits_heading}
+                    onChange={(content) => setFormData(prev => ({ ...prev, benefits_heading: content }))}
+                    modules={modules}
+                    formats={formats}
+                    placeholder="Heading for the benefits list"
+                  />
+                )}
               </div>
             </div>
 
@@ -1219,18 +1366,32 @@ export default function AdminEbookLandingPage() {
             </div>
 
             <div className="admin-ebook-grid">
-              <div className="admin-ebook-field">
+              <div className="admin-ebook-field admin-ebook-grid-full">
                 <label className="admin-ebook-label">Form Title</label>
-                <input
-                  type="text"
-                  name="form_title"
-                  value={formData.form_title}
-                  onChange={handleInputChange}
-                  className="admin-ebook-input"
-                  placeholder="Title above the download form"
-                />
+                {isClient && (
+                  <ReactQuill
+                    key={`form-title-${editingPage?.id || 'new'}`}
+                    theme="snow"
+                    value={formData.form_title}
+                    onChange={(content) => setFormData(prev => ({ ...prev, form_title: content }))}
+                    modules={modules}
+                    formats={formats}
+                    placeholder="Title above the download form"
+                  />
+                )}
               </div>
               <div className="admin-ebook-field">
+                <label className="admin-ebook-label">Form Button Text</label>
+                <input
+                  type="text"
+                  name="form_button_text"
+                  value={formData.form_button_text}
+                  onChange={handleInputChange}
+                  className="admin-ebook-input"
+                  placeholder="Download Now"
+                />
+              </div>
+              {/* <div className="admin-ebook-field">
                 <label className="admin-ebook-label">
                   Footer Color (Hex)
                   <span className="admin-ebook-color-preview" style={{ backgroundColor: formData.footer_color }}></span>
@@ -1243,7 +1404,7 @@ export default function AdminEbookLandingPage() {
                   className="admin-ebook-input"
                   placeholder="#3aaee0"
                 />
-              </div>
+              </div> */}
             </div>
 
             <h3 className="admin-ebook-section-title">Form Fields (Dynamic)</h3>
@@ -1309,31 +1470,36 @@ export default function AdminEbookLandingPage() {
             </div>
 
 
-            
               <div className="admin-ebook-field admin-ebook-grid-full">
                 <label className="admin-ebook-label">Extra Content (Optional)</label>
-                <textarea
-                  name="extra_content"
-                  value={formData.extra_content}
-                  onChange={handleInputChange}
-                  className="admin-ebook-textarea"
-                  placeholder="Extra HTML or text content to display in a content box"
-                  rows={5}
-                />
+                {isClient && (
+                  <ReactQuill
+                    key={`extra-content-${editingPage?.id || 'new'}`}
+                    theme="snow"
+                    value={formData.extra_content}
+                    onChange={(content) => setFormData(prev => ({ ...prev, extra_content: content }))}
+                    modules={modules}
+                    formats={formats}
+                    placeholder="Extra rich content to display on the page"
+                  />
+                )}
               </div>
-
+              
             <h3 className="admin-ebook-section-title">Author Information</h3>
             <div className="admin-ebook-grid">
-              <div className="admin-ebook-field">
+              <div className="admin-ebook-field admin-ebook-grid-full">
                 <label className="admin-ebook-label">Author Heading</label>
-                <input
-                  type="text"
-                  name="author_heading"
-                  value={formData.author_heading}
-                  onChange={handleInputChange}
-                  className="admin-ebook-input"
-                  placeholder="e.g., About the Author"
-                />
+                {isClient && (
+                  <ReactQuill
+                    key={`author-heading-${editingPage?.id || 'new'}`}
+                    theme="snow"
+                    value={formData.author_heading}
+                    onChange={(content) => setFormData(prev => ({ ...prev, author_heading: content }))}
+                    modules={modules}
+                    formats={formats}
+                    placeholder="e.g., About the Author"
+                  />
+                )}
               </div>
               <div className="admin-ebook-field">
                 <label className="admin-ebook-label">Author Name</label>
@@ -1380,14 +1546,17 @@ export default function AdminEbookLandingPage() {
               </div>
               <div className="admin-ebook-field admin-ebook-grid-full">
                 <label className="admin-ebook-label">Author Bio</label>
-                <textarea
-                  name="author_bio"
-                  value={formData.author_bio}
-                  onChange={handleInputChange}
-                  className="admin-ebook-textarea"
-                  rows={3}
-                  placeholder="Short biography of the author"
-                />
+                {isClient && (
+                  <ReactQuill
+                    key={`author-bio-${editingPage?.id || 'new'}`}
+                    theme="snow"
+                    value={formData.author_bio}
+                    onChange={(content) => setFormData(prev => ({ ...prev, author_bio: content }))}
+                    modules={modules}
+                    formats={formats}
+                    placeholder="Short biography of the author"
+                  />
+                )}
               </div>
               <div className="admin-ebook-field admin-ebook-grid-full">
                 <label className="admin-ebook-label">Author Avatar SVG (Optional - overrides URL)</label>
@@ -1442,7 +1611,7 @@ export default function AdminEbookLandingPage() {
                 <td className="admin-ebook-slug">{page.slug}</td>
                 <td className="admin-ebook-title-cell">
                   <Link href={`/LP/${page.slug}`} target="_blank">
-                    {page.title}
+                    {extractPlainTextFromHtml(page.title)}
                   </Link>
                 </td>
                 <td className="admin-ebook-author-cell">{page.author_name}</td>

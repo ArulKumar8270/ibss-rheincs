@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { NavArrowLeft, NavArrowRight } from "../icons";
 import {useTranslation} from "../hooks/useTranslation";
@@ -611,7 +612,7 @@ export default function Header() {
                             <div className="container">
                                 {/* Logo Start */}
                                 <Link className="navbar-brand" href="/">
-                                    <img src="/images/rlogo.png" alt="Logo" loading="lazy" />
+                                    <Image src="/images/rlogo.png" alt="Logo" loading="lazy" width={150} height={50} />
                                 </Link>
                                 {/* Logo End */}
                                 {/* Main Menu Start */}
@@ -2030,7 +2031,7 @@ export default function Header() {
                 <header className="mobile-header">
                     <div className="container">
                         <Link className="mobile-logo" href="/">
-                            <img src="/images/rlogo.png" alt="Logo" loading="lazy" />
+                            <Image src="/images/rlogo.png" alt="Logo" loading="lazy" fill style={{objectFit: "contain"}} />
                         </Link>
                         <div>
                             <div className="search-box" id="mobileSearchBox">
@@ -2197,7 +2198,7 @@ export default function Header() {
                 <nav id="mobileNavPanel" className="mobile-nav-panel">
                     <div className="tag-logo">
                         <Link className="" href="/">
-                            <img src="/images/rlogo.png" alt="Logo" loading="lazy" />
+                            <Image src="/images/rlogo.png" alt="Logo" loading="lazy" fill style={{objectFit: "contain"}} />
                         </Link>
                     </div>
                     <button id="close-btn" className="close-btn" aria-label="Close Menu">

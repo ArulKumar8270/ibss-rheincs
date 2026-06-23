@@ -35,6 +35,8 @@ interface BlogDetailsClientProps {
   slug: string;
 }
 
+
+
 export default function BlogDetailsClient({
   initialBlog,
   initialRelatedBlogs,
@@ -95,7 +97,16 @@ export default function BlogDetailsClient({
       "content",
       blog.meta_description ? blog.meta_description : defaultDescription,
     );
-  }, [blog]);
+
+    // Canonical link
+    let canonical = document.querySelector("link[rel='canonical']");
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", `https://www.rheincs.com/Blogs/${slug}/`);
+  }, [blog, slug]);
 
   const checkAdminStatus = async () => {
     try {

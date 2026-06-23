@@ -7,134 +7,70 @@ export default function VideoPopupInit() {
   const pathname = usePathname()
 
   useEffect(() => {
-    const initVideoPopup = () => {
+    let openPopup: ((e: Event) => void) | null = null
+    let closePopup: (() => void) | null = null
+    let handleEscape: ((e: KeyboardEvent) => void) | null = null
+
+    const init = () => {
       const playBtn = document.getElementById('playVideo')
       const popup = document.getElementById('videoPopup')
       const closeBtn = document.getElementById('closePopup')
-      const video = document.getElementById('youtubeVideo')
+      const video = document.getElementById('youtubeVideo') as HTMLIFrameElement | null
 
       if (!playBtn || !popup || !closeBtn || !video) {
-        // Elements don't exist yet, try again after a delay
-        setTimeout(() => {
-          initVideoPopup()
-        }, 500)
+        setTimeout(init, 500)
         return
       }
 
-      // Clean up existing event listeners by cloning elements
-      const newPlayBtn = playBtn.cloneNode(true)
-      const newCloseBtn = closeBtn.cloneNode(true)
-      const newPopup = popup.cloneNode(true)
-      
-      if (playBtn.parentNode) {
-        playBtn.parentNode.replaceChild(newPlayBtn, playBtn)
-      }
-      if (closeBtn.parentNode) {
-        closeBtn.parentNode.replaceChild(newCloseBtn, closeBtn)
-      }
-      if (popup.parentNode) {
-        popup.parentNode.replaceChild(newPopup, popup)
-      }
+      // Hide popup initially
+      popup.style.display = 'none'
 
-      // Get fresh references after cloning
-      const updatedPlayBtn = document.getElementById('playVideo')
-      const updatedPopup = document.getElementById('videoPopup')
-      const updatedCloseBtn = document.getElementById('closePopup')
-      const updatedVideo = document.getElementById('youtubeVideo')
-
-      if (!updatedPlayBtn || !updatedPopup || !updatedCloseBtn || !updatedVideo) {
-        console.error('❌ [VideoPopup] Elements not found after cloning')
-        return
-      }
-
-      // Convert YouTube watch URL to embed URL
-      const getEmbedUrl = (url) => {
-        // If already an embed URL, return as is
-        if (url.includes('/embed/')) {
-          return url
-        }
-        
-        // Extract video ID from watch URL
-        const watchMatch = url.match(/[?&]v=([^&]+)/)
-        if (watchMatch) {
-          return `https://www.youtube.com/embed/${watchMatch[1]}?autoplay=1`
-        }
-        
-        // Extract video ID from short URL
-        const shortMatch = url.match(/youtu\.be\/([^?]+)/)
-        if (shortMatch) {
-          return `https://www.youtube.com/embed/${shortMatch[1]}?autoplay=1`
-        }
-        
-        // Default fallback
-        return 'https://www.youtube.com/embed/molnWIax5DU?autoplay=1'
-      }
-
-      const openPopup = (e) => {
+      openPopup = (e: Event) => {
         e.preventDefault()
         e.stopPropagation()
-        
         document.body.classList.add('popup-open')
-        updatedPopup.style.display = 'flex'
-        
-        // Set video source with autoplay
-        const videoUrl = 'https://www.youtube.com/watch?v=molnWIax5DU'
-        updatedVideo.src = getEmbedUrl(videoUrl)
-        
+        popup.style.display = 'flex'
+        video.src = 'https://www.youtube.com/embed/molnWIax5DU'
       }
 
-      const closePopup = () => {
-        updatedPopup.style.display = 'none'
-        // Stop video by clearing src
-        updatedVideo.src = ''
+      closePopup = () => {
+        popup.style.display = 'none'
+        video.src = ''
         document.body.classList.remove('popup-open')
-        
       }
 
-      // Attach event listeners
-      updatedPlayBtn.addEventListener('click', openPopup)
-      updatedCloseBtn.addEventListener('click', closePopup)
-      
-      // Close when clicking on popup background
-      updatedPopup.addEventListener('click', (e) => {
-        if (e.target === updatedPopup) {
-          closePopup()
-        }
-      })
-
-      // Close on Escape key
-      const handleEscape = (e) => {
-        if (e.key === 'Escape' && updatedPopup.style.display === 'flex') {
-          closePopup()
+      handleEscape = (e: KeyboardEvent) => {
+        if (e.key === 'Escape' && popup.style.display === 'flex') {
+          closePopup?.()
         }
       }
+
+      playBtn.addEventListener('click', openPopup)
+      closeBtn.addEventListener('click', closePopup)
       document.addEventListener('keydown', handleEscape)
 
-
-      // Return cleanup function
-      return () => {
-        updatedPlayBtn.removeEventListener('click', openPopup)
-        updatedCloseBtn.removeEventListener('click', closePopup)
-        document.removeEventListener('keydown', handleEscape)
-      }
+      popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+          closePopup?.()
+        }
+      })
     }
 
-    // Initial initialization
-    const cleanup = initVideoPopup()
-
-    // Re-initialize on route changes
-    const timeout1 = setTimeout(() => {
-      initVideoPopup()
-    }, 300)
-
-    const timeout2 = setTimeout(() => {
-      initVideoPopup()
-    }, 800)
+    init()
 
     return () => {
-      cleanup?.()
-      clearTimeout(timeout1)
-      clearTimeout(timeout2)
+      const playBtn = document.getElementById('playVideo')
+      const closeBtn = document.getElementById('closePopup')
+      
+      if (playBtn && openPopup) {
+        playBtn.removeEventListener('click', openPopup)
+      }
+      if (closeBtn && closePopup) {
+        closeBtn.removeEventListener('click', closePopup)
+      }
+      if (handleEscape) {
+        document.removeEventListener('keydown', handleEscape)
+      }
     }
   }, [pathname])
 

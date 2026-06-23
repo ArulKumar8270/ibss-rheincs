@@ -1,22 +1,34 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import SwiperInit from "./Components/SwiperInit";
-import OwlCarouselInit from "./Components/OwlCarouselInit";
-import CounterInit from "./Components/CounterInit";
-import ScriptReinit from "./Components/ScriptReinit";
-import MobileMenuInit from "./Components/MobileMenuInit";
-import MobileSearchInit from "./Components/MobileSearchInit";
-import SearchBoxInit from "./Components/SearchBoxInit";
-import LottieInit from "./Components/LottieInit";
-import VideoPopupInit from "./Components/VideoPopupInit";
-import PopoverInit from "./Components/PopoverInit";
+import InitializerComponents from "./Components/InitializerComponents";
 import LoadingWrapper from "./Components/LoadingWrapper";
 import RouteTracker from "./Components/RouteTracker";
 import LeadSquaredInit from "./Components/LeadSquaredInit";
 import React, { Suspense } from "react";
 import "./globals.css";
+import { Raleway } from 'next/font/google';
+import localFont from 'next/font/local';
 
 import translations from "./translations.json";
+
+const raleway = Raleway({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+});
+
+const helvetica = localFont({ 
+  src: [ 
+    { 
+      path: './fonts/Helvetica.ttf', 
+      weight: '400', 
+      style: 'normal', 
+    }, 
+  ], 
+  display: 'swap',   
+  variable: '--font-helvetica', 
+}) 
 
 export const metadata: Metadata = {
   title: "Enterprise Digital Transformation & ERP Solutions | RheinBrücke",
@@ -30,7 +42,7 @@ export default function RootLayout({
 }) {
   
   return (
-    <html lang="en">
+    <html lang="en" className={` ${raleway.className} ${helvetica.variable} `}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="index,follow" />
@@ -43,10 +55,6 @@ export default function RootLayout({
         />
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
         <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Radio+Canada:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Parkinsans:wght@300..800&display=swap"
-          rel="stylesheet"
-        />
         
         {/* Non-render-blocking styles (raw HTML so onload works) */}
         <script
@@ -64,14 +72,13 @@ export default function RootLayout({
         />
         
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/custom.css" />
+        <link rel="stylesheet" href="/css/owl.carousel.css" />
+        <link rel="stylesheet" href="/css/all.css" />
         <link rel="stylesheet" href="/css/slicknav.min.css" />
         <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
-        <link rel="stylesheet" href="/css/all.css" />
-        <link rel="stylesheet" href="/css/animate.css" />
         <link rel="stylesheet" href="/css/magnific-popup.css" />
         <link rel="stylesheet" href="/css/mousecursor.css" />
-        <link rel="stylesheet" href="/css/owl.carousel.css" />
-        <link rel="stylesheet" href="/css/custom.css" />
         
         {/* <link rel="stylesheet" href="./css/enterprise.css" /> */}
         <link rel="stylesheet" href="/style2.css" />
@@ -148,7 +155,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
 
         {/* Freshmarketer */}
-        <script src="//cdn.freshmarketer.com/195245/632861.js" defer></script>
+        <script src="//cdn.freshmarketer.com/195245/632861.js" async defer></script>
 
         {/* Factors.ai */}
         <script
@@ -295,16 +302,7 @@ height="0" width="0" style={{display: "none", visibility: "hidden"}}></iframe></
         </Suspense>
         <LoadingWrapper>{children}</LoadingWrapper>
         <LeadSquaredInit />
-        <SwiperInit />
-        <OwlCarouselInit />
-        <CounterInit />
-        <MobileMenuInit />
-        <MobileSearchInit />
-        <SearchBoxInit />
-        <LottieInit />
-        <VideoPopupInit />
-        <PopoverInit />
-        <ScriptReinit />
+        <InitializerComponents />
 
         {/* Google Conversion Tracking */}
         <script
@@ -320,6 +318,7 @@ height="0" width="0" style={{display: "none", visibility: "hidden"}}></iframe></
         <script
           type="text/javascript"
           src="//www.googleadservices.com/pagead/conversion.js"
+          async
           defer
         ></script>
 
@@ -404,7 +403,7 @@ height="0" width="0" style={{display: "none", visibility: "hidden"}}></iframe></
             __html: `var onloadCallback = function () { grecaptcha.render('g_captcha', { 'sitekey': '6LchLhApAAAAAKh9skbfRiq9ZLwCfCrLZrfcvyCn' }); };`,
           }}
         />
-        <script src="https://www.google.com/recaptcha/api.js" defer></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
         {/* Google Conversion Functions */}
         <script
@@ -429,6 +428,8 @@ height="0" width="0" style={{display: "none", visibility: "hidden"}}></iframe></
         <script
           type="text/javascript"
           src="//www.googleadservices.com/pagead/conversion_async.js"
+          async
+          defer
         ></script>
 
       <script

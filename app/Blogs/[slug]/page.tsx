@@ -15,6 +15,15 @@ interface Blog {
   updated_at: string;
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  return {
+    alternates: {
+      canonical: `https://www.rheincs.com/Blogs/${slug}/`,
+    },
+  }
+}
+
 // Note: With static export, we cannot use dynamicParams = true
 // All routes must be pre-generated at build time via generateStaticParams
 // For new content created after build, the page will still render the client component

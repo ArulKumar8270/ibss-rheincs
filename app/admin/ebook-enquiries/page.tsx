@@ -78,6 +78,42 @@ export default function AdminEbookEnquiriesPage() {
     setRows((prev) => prev.filter((r) => r.id !== id))
   }
 
+  const exportToCSV = () => {
+    // Define CSV headers
+    const headers = ['Date', 'Name', 'Email', 'Phone', 'Company', 'Selection', 'Message']
+    
+    // Create CSV rows from filtered data
+    const csvRows = filtered.map((row) => [
+      formatDate(row.created_at),
+      row.full_name,
+      row.email,
+      `${row.country_code || ''} ${row.phone || ''}`.trim(),
+      row.company_name,
+      row.selection || '',
+      (row.message || '').replace(/"/g, '""') // Escape double quotes
+    ])
+    
+    // Combine headers and rows
+    const csvContent = [
+      headers.join(','),
+      ...csvRows.map(row => row.map(cell => `"${cell}"`).join(','))
+    ].join('\n')
+    
+    // Create a Blob with the CSV content
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
+    
+    // Create a download link
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    const date = new Date().toISOString().split('T')[0]
+    link.setAttribute('href', url)
+    link.setAttribute('download', `ebook-enquiries-${date}.csv`)
+    link.style.visibility = 'hidden'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <div style={{ padding: 24 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
@@ -93,6 +129,20 @@ export default function AdminEbookEnquiriesPage() {
           }}
         >
           Refresh
+        </button>
+        <button
+          onClick={exportToCSV}
+          style={{
+            padding: '8px 16px',
+            borderRadius: 8,
+            border: '1px solid #3aaee0',
+            background: '#3aaee0',
+            color: '#fff',
+            cursor: 'pointer',
+            fontWeight: 600,
+          }}
+        >
+          Export to CSV
         </button>
         <div style={{ marginLeft: 'auto' }}>
           <input

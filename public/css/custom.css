@@ -35,3 +35,94 @@
 .epictechnology .section-title h2{
     color:#000;
 }
+
+.ql-editor [style*="font-size: 10px"] {
+  font-size: 10px !important;
+}
+
+.ql-editor [style*="font-size: 12px"] {
+  font-size: 12px !important;
+}
+
+.ql-editor [style*="font-size: 16px"] {
+  font-size: 16px !important;
+}
+.ql-editor [style*="font-size: 18px"] {
+  font-size: 18px !important;
+}
+.ql-editor [style*="font-size: 20px"] {
+  font-size: 20px !important;
+}
+.ql-editor [style*="font-size: 22px"] {
+  font-size: 22px !important;
+}
+.ql-editor [style*="font-size: 24px"] {
+  font-size: 24px !important;
+}
+.ql-editor [style*="font-size: 28px"] {
+  font-size: 28px !important;
+}
+.ql-editor [style*="font-size: 30px"] {
+  font-size: 30px !important;
+}
+.ql-editor [style*="font-size: 32px"] {
+  font-size: 32px !important;
+}
+.ql-editor [style*="font-size: 34px"] {
+  font-size: 34px !important;
+}
+.ql-editor [style*="font-size: 36px"] {
+  font-size: 36px !important;
+}
+.ql-editor [style*="font-size: 38px"] {
+  font-size: 38px !important;
+}
+.ql-editor [style*="font-size: 40px"] {
+  font-size: 40px !important;
+}
+.ql-editor [style*="font-size: 42px"] {
+  font-size: 42px !important;
+}
+.ql-editor [style*="font-size: 44px"] {
+  font-size: 44px !important;
+}
+.ql-editor [style*="font-size: 46px"] {
+  font-size: 46px !important;
+}
+.ql-editor [style*="font-size: 48px"] {
+  font-size: 48px !important;
+}
+.ql-editor [style*="font-size: 50px"] {
+  font-size: 50px !important;
+}
+.ql-editor [style*="font-size: 54px"] {
+  font-size: 54px !important;
+}
+.ql-editor [style*="font-size: 56px"] {
+  font-size: 56px !important;
+}
+.ql-editor [style*="font-size: 58px"] {
+  font-size: 58px !important;
+}
+.ql-editor [style*="font-size: 60px"] {
+  font-size: 60px !important;
+}
+
+.ql-editor [style*="font-size: 64px"] {
+  font-size: 64px !important;
+}
+.ql-editor [style*="font-size: 72px"] {
+  font-size: 72px !important;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label::before {
+  content: attr(data-value) !important;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label:not([data-value])::before {
+  content: "Size";
+}
+.events .section-title h2{
+    color:#000;
+    margin-bottom: 15px !important;
+}

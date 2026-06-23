@@ -35,6 +35,7 @@ interface EbookLandingData {
   benefits_heading: string | null;
   benefits: string[];
   form_title: string | null;
+  form_button_text: string | null;
   form_fields: FormField[];
   author_heading: string | null;
   author_name: string | null;
@@ -122,6 +123,7 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
     benefits_heading: "What you'll get",
     benefits: ["Benefit One", "Benefit Two", "Benefit Three"],
     form_title: "Download the E-Book Now",
+    form_button_text: "Download Now",
     form_fields: [],
     author_heading: null,
     author_name: null,
@@ -241,7 +243,7 @@ Object.keys(formData).forEach(key => {
             phone: submitPhone,
             company_name: submitCompanyName,
             country_code: "+91",
-            selection: `Download: ${pageData?.title || "E-Book"}`,
+            selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
             // message: "Requested E-book download from landing page",
           },
         ]);
@@ -263,7 +265,7 @@ Object.keys(formData).forEach(key => {
               phone: phoneForEmail,
               countryCode: countryCodeForEmail,
               companyName: submitCompanyName,
-              selection: `Download: ${pageData?.title || "E-Book"}`,
+              selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
               // message: "Requested E-book download from landing page",
             },
           });
@@ -316,6 +318,25 @@ Object.keys(formData).forEach(key => {
 
   return (
     <>
+      <style>{`
+        /* Default font for rich content */
+        #ebook-landing-root [class*="ql-size-"], 
+        #ebook-landing-root [class*="ql-font-"],
+        #ebook-landing-root p,
+        #ebook-landing-root div {
+          font-family: 'helvetica-neue-lt-pro', sans-serif !important;
+        }
+        
+        /* Custom Quill font styles */
+        .ql-font-helvetica-neue-lt-pro { font-family: 'helvetica-neue-lt-pro', sans-serif !important; }
+        .ql-font-sans-serif { font-family: sans-serif !important; }
+        
+        /* Quill alignment styles */
+        .ql-align-left { text-align: left !important; }
+        .ql-align-center { text-align: center !important; }
+        .ql-align-right { text-align: right !important; }
+        .ql-align-justify { text-align: justify !important; }
+      `}</style>
       <LeadSquaredInit />
 
       <div className="topheader defhead1">
@@ -377,10 +398,11 @@ Object.keys(formData).forEach(key => {
               <img src={data.logo_image_url} alt="Logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
             ) : data.logo_text}
           </div>
-          <h1>{data.headline}</h1>
-          <h5>{data.subheadline}</h5>
+          {/* {data.title && <div dangerouslySetInnerHTML={{ __html: data.title }} />} */}
+          {data.headline && <h1 dangerouslySetInnerHTML={{ __html: data.headline }} />}
+          {data.subheadline && <h5 dangerouslySetInnerHTML={{ __html: data.subheadline }} />}
           {data.additional_paragraph && (
-            <p style={{ marginTop: '15px', fontSize: '14px', color: '#000', textAlign: 'left' }}>{data.additional_paragraph}</p>
+            <div style={{ marginTop: '15px', fontSize: '14px', color: '#000', textAlign: 'left' }} dangerouslySetInnerHTML={{ __html: data.additional_paragraph }} />
           )}
         </section>
 
@@ -389,10 +411,12 @@ Object.keys(formData).forEach(key => {
             <img src={data.book_image_url || "/images/book.png"} alt="Book" style={{ width: "100%", maxWidth: "auto" }} />
           </div>
           <div>
-            <h2>{data.learning_title}</h2>
-            <p style={{ marginTop: "15px" }}>{data.learning_description}</p>
+            {data.learning_title && <h2 dangerouslySetInnerHTML={{ __html: data.learning_title }} />}
+            {data.learning_description && (
+              <div style={{ marginTop: "15px" }} dangerouslySetInnerHTML={{ __html: data.learning_description }} />
+            )}
             {data.benefits_heading && (
-              <h3 style={{ marginTop: "20px" }}>{data.benefits_heading}</h3>
+              <h3 style={{ marginTop: "20px" }} dangerouslySetInnerHTML={{ __html: data.benefits_heading }} />
             )}
             <ul style={{ marginTop: "20px" }}>
               {data.benefits?.map((benefit, index) => (
@@ -400,7 +424,7 @@ Object.keys(formData).forEach(key => {
               ))}
             </ul>
             <form onSubmit={handleSubmit} style={{ marginTop: "30px" }}>
-              <h3>{data.form_title}</h3>             
+              {data.form_title && <h3 dangerouslySetInnerHTML={{ __html: data.form_title }} />}             
               {data.form_fields && data.form_fields.length > 0 ? (
                 data.form_fields.map((field) => {
                   const defaultPlaceholder = field.id.charAt(0).toUpperCase() + field.id.slice(1);
@@ -476,7 +500,7 @@ Object.keys(formData).forEach(key => {
               
               <div className="text-center">
                 <button type="submit" disabled={isSubmitting} style={{ margin: "15px auto", padding: "12px 30px", background: "#082326", border: "none", color: "#fff", cursor: "pointer", borderRadius: "5px" }}>
-                  {isSubmitting ? "Submitting..." : "Download Now"}
+                  {isSubmitting ? "Submitting..." : data.form_button_text || "Download Now"}
                 </button>
               </div>
             </form>
@@ -501,13 +525,13 @@ Object.keys(formData).forEach(key => {
             data.author_avatar_svg;
 
           if (hasAuthorInfo) {
-            return (
-              <section style={{ background: "#2d3e50", color: "#fff", padding: "50px 20px", textAlign: "center" }}>
-                {data.author_heading && <h2>{data.author_heading}</h2>}
+                return (
+                  <section style={{ background: "#2d3e50", color: "#fff", padding: "50px 20px", textAlign: "center" }}>
+                    {data.author_heading && <h2 dangerouslySetInnerHTML={{ __html: data.author_heading }} />}
                 {data.author_avatar_url && <img src={data.author_avatar_url} alt="Author" style={{ width: "100px", height: "100px", borderRadius: "50%", marginTop: "20px", objectFit: "cover" }} />}
                 {data.author_name && <h3 style={{ marginTop: "20px" }}>{data.author_name}</h3>}
                 {data.author_role && <p>{data.author_role}</p>}
-                {data.author_bio && <p style={{ maxWidth: "700px", margin: "20px auto 0" }}>{data.author_bio}</p>}
+                {data.author_bio && <div style={{ maxWidth: "700px", margin: "20px auto 0" }} dangerouslySetInnerHTML={{ __html: data.author_bio }} />}
               </section>
             );
           }
@@ -521,6 +545,175 @@ Object.keys(formData).forEach(key => {
       <Awards />
       <Footer1 />
       <ScriptReinit />
+
+      <style jsx global>{`
+        /* Apply Quill sizes in preview */
+        .contentbox span.ql-size-10px,
+        .contentbox p.ql-size-10px,
+        .contentbox div.ql-size-10px,
+        .contentbox .ql-size-10px,
+        span.ql-size-10px,
+        p.ql-size-10px,
+        div.ql-size-10px,
+        .ql-size-10px {
+          font-size: 10px !important;
+          line-height: 1.4 !important;
+        }
+        .contentbox span.ql-size-12px,
+        .contentbox p.ql-size-12px,
+        .contentbox div.ql-size-12px,
+        .contentbox .ql-size-12px,
+        span.ql-size-12px,
+        p.ql-size-12px,
+        div.ql-size-12px,
+        .ql-size-12px {
+          font-size: 12px !important;
+          line-height: 1.4 !important;
+        }
+        .contentbox span.ql-size-14px,
+        .contentbox p.ql-size-14px,
+        .contentbox div.ql-size-14px,
+        .contentbox .ql-size-14px,
+        span.ql-size-14px,
+        p.ql-size-14px,
+        div.ql-size-14px,
+        .ql-size-14px {
+          font-size: 14px !important;
+          line-height: 1.4 !important;
+        }
+        .contentbox span.ql-size-16px,
+        .contentbox p.ql-size-16px,
+        .contentbox div.ql-size-16px,
+        .contentbox .ql-size-16px,
+        span.ql-size-16px,
+        p.ql-size-16px,
+        div.ql-size-16px,
+        .ql-size-16px {
+          font-size: 16px !important;
+          line-height: 1.4 !important;
+        }
+        .contentbox span.ql-size-18px,
+        .contentbox p.ql-size-18px,
+        .contentbox div.ql-size-18px,
+        .contentbox .ql-size-18px,
+        span.ql-size-18px,
+        p.ql-size-18px,
+        div.ql-size-18px,
+        .ql-size-18px {
+          font-size: 18px !important;
+          line-height: 1.4 !important;
+        }
+        .contentbox span.ql-size-20px,
+        .contentbox p.ql-size-20px,
+        .contentbox div.ql-size-20px,
+        .contentbox .ql-size-20px,
+        span.ql-size-20px,
+        p.ql-size-20px,
+        div.ql-size-20px,
+        .ql-size-20px {
+          font-size: 20px !important;
+          line-height: 1.4 !important;
+        }
+        .contentbox span.ql-size-24px,
+        .contentbox p.ql-size-24px,
+        .contentbox div.ql-size-24px,
+        .contentbox .ql-size-24px,
+        span.ql-size-24px,
+        p.ql-size-24px,
+        div.ql-size-24px,
+        .ql-size-24px {
+          font-size: 24px !important;
+          line-height: 1.4 !important;
+        }
+        .contentbox span.ql-size-28px,
+        .contentbox p.ql-size-28px,
+        .contentbox div.ql-size-28px,
+        .contentbox .ql-size-28px,
+        span.ql-size-28px,
+        p.ql-size-28px,
+        div.ql-size-28px,
+        .ql-size-28px {
+          font-size: 28px !important;
+          line-height: 1.4 !important;
+        }
+        .contentbox span.ql-size-32px,
+        .contentbox p.ql-size-32px,
+        .contentbox div.ql-size-32px,
+        .contentbox .ql-size-32px,
+        span.ql-size-32px,
+        p.ql-size-32px,
+        div.ql-size-32px,
+        .ql-size-32px {
+          font-size: 32px !important;
+          line-height: 1.4 !important;
+        }
+        .contentbox span.ql-size-36px,
+        .contentbox p.ql-size-36px,
+        .contentbox div.ql-size-36px,
+        .contentbox .ql-size-36px,
+        span.ql-size-36px,
+        p.ql-size-36px,
+        div.ql-size-36px,
+        .ql-size-36px {
+          font-size: 36px !important;
+          line-height: 1.4 !important;
+        }
+        .contentbox span.ql-size-40px,
+        .contentbox p.ql-size-40px,
+        .contentbox div.ql-size-40px,
+        .contentbox .ql-size-40px,
+        span.ql-size-40px,
+        p.ql-size-40px,
+        div.ql-size-40px,
+        .ql-size-40px {
+          font-size: 40px !important;
+          line-height: 1.4 !important;
+        }
+        .contentbox span.ql-size-48px,
+        .contentbox p.ql-size-48px,
+        .contentbox div.ql-size-48px,
+        .contentbox .ql-size-48px,
+        span.ql-size-48px,
+        p.ql-size-48px,
+        div.ql-size-48px,
+        .ql-size-48px {
+          font-size: 48px !important;
+          line-height: 1.4 !important;
+        }
+        .contentbox span.ql-size-56px,
+        .contentbox p.ql-size-56px,
+        .contentbox div.ql-size-56px,
+        .contentbox .ql-size-56px,
+        span.ql-size-56px,
+        p.ql-size-56px,
+        div.ql-size-56px,
+        .ql-size-56px {
+          font-size: 56px !important;
+          line-height: 1.4 !important;
+        }
+        .contentbox span.ql-size-64px,
+        .contentbox p.ql-size-64px,
+        .contentbox div.ql-size-64px,
+        .contentbox .ql-size-64px,
+        span.ql-size-64px,
+        p.ql-size-64px,
+        div.ql-size-64px,
+        .ql-size-64px {
+          font-size: 64px !important;
+          line-height: 1.4 !important;
+        }
+        .contentbox span.ql-size-72px,
+        .contentbox p.ql-size-72px,
+        .contentbox div.ql-size-72px,
+        .contentbox .ql-size-72px,
+        span.ql-size-72px,
+        p.ql-size-72px,
+        div.ql-size-72px,
+        .ql-size-72px {
+          font-size: 72px !important;
+          line-height: 1.4 !important;
+        }
+      `}</style>
     </>
   );
 }
