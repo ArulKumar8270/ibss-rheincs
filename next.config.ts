@@ -2,9 +2,6 @@
 let nextConfig = {
   // Static export enabled - using client-side Supabase calls instead of API routes
   output: 'export',
-  experimental: {
-    optimizeCss: true,  // Auto inlines critical CSS
-  },
   images: {
     unoptimized: true, // Keep for static export, but optimize images manually (webp, proper size)
     formats: ['image/avif', 'image/webp'],
@@ -29,6 +26,7 @@ let nextConfig = {
     },
   },
 };
+
 
 // Only add bundle analyzer if it's installed and ANALYZE is true
 if (process.env.ANALYZE === 'true') {

@@ -389,7 +389,7 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
           gap: '20px'
         }}>
           <h2 style={{ color: '#333' }}>Blog not found</h2>
-          <Link href="/Blog" style={{ color: '#667eea', textDecoration: 'none' }}>
+          <Link href="/blogs" style={{ color: '#667eea', textDecoration: 'none' }}>
             ← Back to Blogs
           </Link>
         </div>
@@ -547,7 +547,7 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
                   relatedBlogs.map((relatedBlog) => (
                     <div key={relatedBlog.id} className="case-one-waber" style={{ marginBottom: '30px' }}>
                       <div>
-                        <Link href={`/blog-details/${relatedBlog.slug}`} className="case-bage">
+                        <Link href={`/blogs/${relatedBlog.slug}`} className="case-bage">
                           Blog
                         </Link>
                       </div>
@@ -555,7 +555,7 @@ export default function BlogDetailsClient({ initialBlog, initialRelatedBlogs, sl
                         {relatedBlog.title}
                       </h6>
                       <div className="ser-btn m-0">
-                        <Link href={`/blog-details/${relatedBlog.slug}`} className="animated-svg-link p-0">
+                        <Link href={`/blogs/${relatedBlog.slug}`} className="animated-svg-link p-0">
                           Read More
                           <span className="svg-container ">
                             <span className=" right">

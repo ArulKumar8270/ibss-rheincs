@@ -19,6 +19,7 @@ export default function Header() {
     const [isSticky, setIsSticky] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [isNavigating, setIsNavigating] = useState(false);
@@ -298,7 +299,7 @@ export default function Header() {
         { url: '/interior-design', title: 'Interior Design', keywords: 'interior design furniture' },
 
         // Resources
-        { url: '/Blog', title: 'Blog', keywords: 'blog articles news updates' },
+        { url: '/blogs', title: 'Blog', keywords: 'blog articles news updates' },
         { url: '/Case-study', title: 'Case Studies', keywords: 'case studies examples success' },
         { url: '/webinars', title: 'Webinars', keywords: 'webinars online events training' },
         { url: '/collaterals', title: 'Collaterals', keywords: 'collaterals documents resources' },
@@ -460,6 +461,17 @@ export default function Header() {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [dropdownRef]);
+
+    // Handle Escape key to close mobile menu
+    useEffect(() => {
+        function handleEscKey(event) {
+            if (event.key === 'Escape' && isMobileMenuOpen) {
+                setIsMobileMenuOpen(false);
+            }
+        }
+        document.addEventListener('keydown', handleEscKey);
+        return () => document.removeEventListener('keydown', handleEscKey);
+    }, [isMobileMenuOpen]);
 
     return (
         <>
@@ -792,7 +804,7 @@ export default function Header() {
                                                                                                 {t("How to Build a Future-Ready Digital Strategy")}
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="/Blogs/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                <Link href="/blogs/how-to-build-a-future-ready-digital-strategy/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     {t("Read More")}
@@ -1025,7 +1037,7 @@ export default function Header() {
                                                                                                     {t("How to Build a Future-Ready Digital Strategy")}
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                    <Link href="/Blogs/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                    <Link href="/blogs/how-to-build-a-future-ready-digital-strategy/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         {t("Read More")}
@@ -1200,7 +1212,7 @@ export default function Header() {
                                                                                                     {t("How to Build a Future-Ready Digital Strategy")}
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                    <Link href="/Blogs/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                    <Link href="/blogs/how-to-build-a-future-ready-digital-strategy/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         {t("Read More")}
@@ -1341,7 +1353,7 @@ export default function Header() {
                                                                                                     {t("How to Build a Future-Ready Digital Strategy")}
                                                                                                 </p>
                                                                                                 <div className="ser-btn1">
-                                                                                                    <Link href="/Blogs/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                    <Link href="/blogs/how-to-build-a-future-ready-digital-strategy/"
                                                                                                         className="animated-svg-link1 btn-style-3"
                                                                                                     >
                                                                                                         {t("Read More")}
@@ -1567,7 +1579,7 @@ export default function Header() {
                                                                                                 {t("How to Build a Future-Ready Digital Strategy")}
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="/Blogs/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                <Link href="/blogs/how-to-build-a-future-ready-digital-strategy/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     {t("Read More")}
@@ -1675,7 +1687,7 @@ export default function Header() {
                                                                                 <h1>{t("Resources")}</h1>
                                                                                 <ul>
                                                                                     <li className="ser-btn">
-                                                                                        <Link href="/Blog"
+                                                                                        <Link href="/blogs"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             {t("Blog")}
@@ -1772,7 +1784,7 @@ export default function Header() {
                                                                                                 {t("How to Build a Future-Ready Digital Strategy")}
                                                                                             </p>
                                                                                             <div className="ser-btn1">
-                                                                                                <Link href="/Blogs/how-to-build-a-future-ready-digital-strategy/"
+                                                                                                <Link href="/blogs/how-to-build-a-future-ready-digital-strategy/"
                                                                                                     className="animated-svg-link1 btn-style-3"
                                                                                                 >
                                                                                                     {t("Read More")}
@@ -2031,7 +2043,8 @@ export default function Header() {
                 <header className="mobile-header">
                     <div className="container">
                         <Link className="mobile-logo" href="/">
-                            <Image src="/images/rlogo.png" alt="Logo" loading="lazy" fill style={{objectFit: "contain"}} />
+                            <Image src="/images/rlogo.png" alt="Logo" loading="lazy" 
+                             width={100} height={50} />
                         </Link>
                         <div>
                             <div className="search-box" id="mobileSearchBox">
@@ -2174,6 +2187,7 @@ export default function Header() {
                                 id="hamburger-btn"
                                 className="hamburger-btn"
                                 aria-label="Open Menu"
+                                onClick={() => setIsMobileMenuOpen(true)}
                             >
                                 <svg
                                     width={26}
@@ -2195,13 +2209,14 @@ export default function Header() {
                     </div>
                 </header>
                 {/* The slide-in (off-canvas) navigation panel */}
-                <nav id="mobileNavPanel" className="mobile-nav-panel">
+                <nav id="mobileNavPanel" className={`mobile-nav-panel ${isMobileMenuOpen ? 'active' : ''}`}>
                     <div className="tag-logo">
                         <Link className="" href="/">
-                            <Image src="/images/rlogo.png" alt="Logo" loading="lazy" fill style={{objectFit: "contain"}} />
+                            <Image src="/images/rlogo.png" alt="Logo" loading="lazy" 
+                             width={100} height={50} />
                         </Link>
                     </div>
-                    <button id="close-btn" className="close-btn" aria-label="Close Menu">
+                    <button id="close-btn" className="close-btn" aria-label="Close Menu" onClick={() => setIsMobileMenuOpen(false)}>
                         ×
                     </button>
                     <ul>
@@ -3135,7 +3150,7 @@ export default function Header() {
                             </div>
                             <ul className="submenu">
                                 <li>
-                                    <Link href="/Blog">{t("Blog")}</Link>
+                                    <Link href="/blogs">{t("Blog")}</Link>
                                 </li>
                                 <li>
                                     <Link href="/Case-study">{t("Case Studies")}</Link>
@@ -3163,7 +3178,7 @@ export default function Header() {
                     </ul>
                 </nav>
                 {/* Dark overlay for when the menu is open */}
-                <div id="menuOverlay" className="menu-overlay" />
+                <div id="menuOverlay" className={`menu-overlay ${isMobileMenuOpen ? 'active' : ''}`} onClick={() => setIsMobileMenuOpen(false)} />
             </div>
 
         </>

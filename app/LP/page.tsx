@@ -122,6 +122,27 @@ export default function EbookLandingPage() {
     }
   };
 
+  const getLatestDownloadData = async () => {
+    try {
+      const { data, error } = await supabase
+        .from("ebook_landing_pages")
+        .select("title, pdf_url")
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .single();
+
+      if (error) {
+        console.error("Latest PDF fetch error:", error);
+        return null;
+      }
+
+      return data;
+    } catch (err) {
+      console.error("Latest PDF fetch exception:", err);
+      return null;
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -163,8 +184,24 @@ export default function EbookLandingPage() {
         );
       }
 
-      if (pageData?.pdf_url) {
-        await downloadPdf(pageData.pdf_url, pageData.title);
+      const latestDownloadData = await getLatestDownloadData();
+      const pdfUrlToDownload = latestDownloadData?.pdf_url || pageData?.pdf_url || null;
+      const pdfTitle = latestDownloadData?.title || pageData?.title || "E-Book";
+
+      if (latestDownloadData) {
+        setPageData((prev) =>
+          prev
+            ? {
+                ...prev,
+                title: latestDownloadData.title ?? prev.title,
+                pdf_url: latestDownloadData.pdf_url ?? prev.pdf_url,
+              }
+            : prev,
+        );
+      }
+
+      if (pdfUrlToDownload) {
+        await downloadPdf(pdfUrlToDownload, pdfTitle);
       }
 
       setName("");

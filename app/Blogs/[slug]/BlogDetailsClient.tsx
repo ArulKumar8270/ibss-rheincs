@@ -105,7 +105,7 @@ export default function BlogDetailsClient({
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute("href", `https://www.rheincs.com/Blogs/${slug}/`);
+    canonical.setAttribute("href", `https://www.rheincs.com/blogs/${slug}/`);
   }, [blog, slug]);
 
   const checkAdminStatus = async () => {
@@ -643,7 +643,7 @@ export default function BlogDetailsClient({
         >
           <h2 style={{ color: "#333" }}>Blog not found</h2>
           <Link
-            href="/Blog"
+            href="/blogs"
             style={{ color: "#667eea", textDecoration: "none" }}
           >
             ← Back to Blogs
@@ -842,7 +842,7 @@ export default function BlogDetailsClient({
                     >
                       <div>
                         <Link
-                          href={`/Blogs/${relatedBlog.slug}`}
+                          href={`/blogs/${relatedBlog.slug}`}
                           className="case-bage"
                         >
                           Blog
@@ -853,7 +853,7 @@ export default function BlogDetailsClient({
                       </h6>
                       <div className="ser-btn m-0">
                         <Link
-                          href={`/Blogs/${relatedBlog.slug}`}
+                          href={`/blogs/${relatedBlog.slug}`}
                           className="animated-svg-link p-0"
                         >
                           Read More

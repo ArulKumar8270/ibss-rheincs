@@ -231,7 +231,7 @@ export default function AdminEbookLandingPage() {
         .getPublicUrl(filePath)
 
       setFormData(prev => ({ ...prev, [fieldName]: publicUrl }))
-      alert('Image uploaded successfully!')
+      alert(isPdf ? 'PDF uploaded successfully!' : 'Image uploaded successfully!')
     } catch (error: any) {
       console.error('Upload error:', error)
       alert('Error uploading image: ' + error.message)
@@ -285,6 +285,7 @@ export default function AdminEbookLandingPage() {
     e.preventDefault()
     try {
       setLoading(true)
+      const expectedPdfUrl = formData.pdf_url || null
       
       // Clean data: only include fields that might already exist in database
       // Start with core fields that definitely exist
@@ -351,6 +352,22 @@ export default function AdminEbookLandingPage() {
             throw updateErr
           }
         }
+        if (expectedPdfUrl !== (editingPage.pdf_url || null)) {
+          const { data: savedPage, error: verifyError } = await supabase
+            .from('ebook_landing_pages')
+            .select('pdf_url')
+            .eq('id', editingPage.id)
+            .single()
+
+          if (verifyError) {
+            throw verifyError
+          }
+
+          if ((savedPage?.pdf_url || null) !== expectedPdfUrl) {
+            throw new Error('PDF update did not save in database. Please run the latest ebook_landing_pages migration on live.')
+          }
+        }
+
         alert('Page updated successfully!')
       } else {
         // For insert, we might need to be more careful
@@ -377,6 +394,22 @@ export default function AdminEbookLandingPage() {
             throw insertErr
           }
         }
+        if (expectedPdfUrl) {
+          const { data: savedPage, error: verifyError } = await supabase
+            .from('ebook_landing_pages')
+            .select('pdf_url')
+            .eq('slug', formData.slug)
+            .single()
+
+          if (verifyError) {
+            throw verifyError
+          }
+
+          if ((savedPage?.pdf_url || null) !== expectedPdfUrl) {
+            throw new Error('PDF save did not persist in database. Please run the latest ebook_landing_pages migration on live.')
+          }
+        }
+
         alert('Page created successfully!')
       }
       setShowForm(false)

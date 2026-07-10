@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title:
-    "SAP, Epicor & Microsoft Dynamics 365 ERP Partner | Enterprise Modernization | RheinBrücke",
+    "ERP Consulting & Digital Transformation Services | RheinBrücke",
   description:
-    "Modern Cloud ERP Solutions, Digital transformation, Enterprise integration & Business Process Automation for Manufacturing, EPC, Automotive, Distribution, Oil & Gas, Interior design & Retail",
+    "Upgrade legacy ERP to cloud-native systems on SAP, Epicor, and Microsoft Dynamics 365. RheinBrücke helps enterprises unify operations and scale faster.",
 };
 export default function EpicorLayout({
   children,

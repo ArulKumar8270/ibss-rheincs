@@ -68,13 +68,13 @@ function staticFallbackTiles(t) {
     },
     {
       kind: "blog",
-      href: "/Blogs/how-external-forces-are-reshaping-erp-strategy-in-2026/",
+      href: "/blogs/how-external-forces-are-reshaping-erp-strategy-in-2026/",
       label: t("Blog"),
       text: t("How External Forces Are Reshaping ERP Strategy in 2026"),
     },
     {
       kind: "blog",
-      href: "/Blogs/10-must-have-features-in-a-modern-erp-system/",
+      href: "/blogs/10-must-have-features-in-a-modern-erp-system/",
       label: t("Blog"),
       text: t("10 Must-Have Features in a Modern ERP System"),
     },
@@ -121,7 +121,7 @@ async function fetchTopBlogs(supabase, germanUi) {
 function rowToTile(row, kind) {
   const excerpt = stripHtml(row.excerpt);
   const text = excerpt || row.title || "";
-  const href = kind === "case_study" ? `/Casestudy/${row.slug}/` : `/Blogs/${row.slug}/`;
+  const href = kind === "case_study" ? `/Casestudy/${row.slug}/` : `/blogs/${row.slug}/`;
   return { kind, href, slug: row.slug, text };
 }
 

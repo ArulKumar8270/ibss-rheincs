@@ -229,7 +229,7 @@ const page = () => {
               <div className="col-md-9">
                 <ul className="level-1">
                   <li>
-                    <a href="/Blog">Blog</a>
+                    <a href="/blogs">Blog</a>
                   </li>
                   <li>
                     <a href="/Case-study">Case Studies</a>

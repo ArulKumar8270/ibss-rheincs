@@ -22,13 +22,13 @@ export default function AlMl() {
         <div className="col-sm-5">
           <div className="section-title">
             <h2 className="text-anime-style-21" data-cursor="-opaque">
-              {t("Data Engineering & Warehousing")}
+              {t("Data Engineering & Data Warehousing Services")}
             </h2>
             <p>
-              {t("Unlock the full potential of your data by consolidating siloed sources into scalable warehouses and lakes.")}
+              {t("Build Scalable Data Warehouses & Real-Time Pipelines")}
             </p>
             <p>
-              {t("We design real-time and batch pipelines that ensure seamless data flow, fuel advanced analytics, and enable AI/ML at scale.")}
+              {t("Consolidate siloed sources into scalable warehouses and data lakes. We design real-time and batch pipelines that ensure seamless data flow, fueling advanced analytics and AI/ML at scale.")}
             </p>
             <div className="ser-btn mt-5">
               <Link href="/contact-us" className="animated-svg-link">
@@ -164,16 +164,16 @@ export default function AlMl() {
             {/* Testimonial Slide Start */}
             <div className="swiper-slide">
               <div className="mds-waber2">
-                <img src="/new/cr-1.svg" alt="" />
+                <img src="/new/cr-1.svg" alt="Data Engineering and Data Warehousing Batch Pipelines icon" />
                 <h6> {t("Real-Time & Batch Pipelines")} </h6>
-                <p>{t("Built for high-volume, high-velocity data.")}</p>
+                <p>{t("Built for high-volume, high-velocity ETL data.")}</p>
               </div>
             </div>
             {/* Testimonial Slide End */}
             {/* Testimonial Slide Start */}
             <div className="swiper-slide">
               <div className="mds-waber2">
-                <img src="/new/cr-2.svg" alt="" />
+                <img src="/new/cr-2.svg" alt="Data Consolidation icon" />
                 <h6> {t("Data Consolidation")} </h6>
                 <p>{t("Unifying ERP, CRM, IoT, and third-party sources.")}</p>
               </div>
@@ -182,27 +182,27 @@ export default function AlMl() {
             {/* Testimonial Slide Start */}
             <div className="swiper-slide">
               <div className="mds-waber2">
-                <img src="/new/cr-3.svg" alt="" />
+                <img src="/new/cr-3.svg" alt="Warehouse and microsoft onelake icon" />
                 <h6> {t("Scalable Warehouses & Lakes")} </h6>
-                <p>{t("Including Microsoft Fabric OneLake.")}</p>
+                <p>{t("Optimized for Microsoft Fabric OneLake.")}</p>
               </div>
             </div>
             {/* Testimonial Slide End */}
             {/* Testimonial Slide Start */}
             <div className="swiper-slide">
               <div className="mds-waber2">
-                <img src="/new/cr-4.svg" alt="" />
+                <img src="/new/cr-4.svg" alt="Analytics & AI/M icon" />
                 <h6> {t("Analytics & AI/ML Enablement")} </h6>
-                <p>{t("Powering predictive and real-time insights.")}</p>
+                <p>{t("Powering predictive models and BI insights.")}</p>
               </div>
             </div>
             {/* Testimonial Slide End */}
             {/* Testimonial Slide Start */}
             <div className="swiper-slide">
               <div className="mds-waber2">
-                <img src="/new/cr-5.svg" alt="" />
+                <img src="/new/cr-5.svg" alt="Cloud-Native Platforms icon" />
                 <h6> {t("Cloud-Native Platforms")} </h6>
-                <p>{t("Architected on Azure and other leading technologies.")}</p>
+                <p>{t("Engineered on Azure and modern data stacks.")}</p>
               </div>
             </div>
             {/* Testimonial Slide End */}
@@ -430,7 +430,7 @@ export default function AlMl() {
       <div className="platdesc">
         <div className="section-title">
           <h2 className="text-anime-style-2" data-cursor="-opaque">
-            {t("Why Choose Us?")}
+            {t("Why Choose Data Engineering & Warehousing?")}
           </h2>
         </div>
         <div className="row">
@@ -446,7 +446,7 @@ export default function AlMl() {
             <div className="wcu-waber-1">
               <img src="/new/wcu-12.svg" alt="" />
               <p>
-                {t("Success with complex, enterprise-scale data challenges.")}
+                {t("Success solving complex, enterprise-scale data engineering challenges.")}
               </p>
             </div>
           </div>
@@ -456,7 +456,7 @@ export default function AlMl() {
             <div className="wcu-waber-1">
               <img src="/new/wcu-13.svg" alt="" />
               <p>
-                {t("Seamless integration with AI/ML frameworks for operational intelligence.")}
+                {t("Seamless integration with AI/ML frameworks for operational intelligence and analytics.")}
               </p>
             </div>
           </div>
@@ -464,7 +464,7 @@ export default function AlMl() {
             <div className="wcu-waber-1">
               <img src="/new/wcu-11.svg" alt="" />
               <p>
-                {t("End-to-end services: design, build, migrate, and optimise.")}
+                {t("End-to-end data engineering services: design, build, migrate, and optimise.")}
               </p>
             </div>
           </div>
@@ -499,10 +499,10 @@ export default function AlMl() {
           </div>
         </div>
       </div>
-      <div className={`dew-arrow-animet ${language === 'German' ? 'warehousegerman' : ''}`}>
+      <div className={`dew-arrow-animet ${language === 'German' ? 'warehousegerman' : ''}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
         <svg
-          width={1221}
-          height={392}
+          width={1050}
+          height={340}
           viewBox="0 0 1221 392"
           fill="none"
           xmlns="http://www.w.w3.org/2000/svg"
@@ -586,7 +586,7 @@ export default function AlMl() {
             strokeWidth="1.50709"
           />
           <text
-            x={490}
+            x={520}
             y={254}
             fontFamily="Arial, sans-serif"
             fontSize={16}
@@ -611,7 +611,7 @@ export default function AlMl() {
             fontSize={16}
             fill="#333"
           >
-            {t("seamless MIS reporting")}
+            {t("Seamless MIS reporting")}
           </text>
           <rect
             x="492.754"
@@ -841,6 +841,204 @@ export default function AlMl() {
     </div>
   </div>
   <TestimonialandAward />
+
+  
+ {/* Page Faqs Start */}
+        <div className="page-faqs bggray pd60">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-2" />
+              <div className="col-lg-8">
+                {/* Page FAQs Category Start */}
+                <div className="page-faqs-catagery">
+                  {/* FAQs section start */}
+                  <div
+                    className="our-faq-section page-faq-accordion"
+                    id="general_information"
+                  >
+                    <div className="section-title text-center">
+                      <h2 className="text-anime-style-2" data-cursor="-opaque">
+                        {t("Wondering Why? We’re Here to Answer")}
+                      </h2>
+                    </div>
+                    {/* FAQ Accordion Start */}
+                    <div className="faq-accordion" id="accordion">
+                      {/* FAQ Item 1 Start */}
+                      <div className="accordion-item wow fadeInUp">
+                        <h2 className="accordion-header" id="heading1">
+                          <button
+                            className="accordion-button collapsein"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse1"
+                            aria-expanded="true"
+                            aria-controls="collapse1"
+                          >
+                            {t("What core services does RheinBrücke offer within Data Engineering and Warehousing?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse1"
+                          className="accordion-collapse collapse show"
+                          aria-labelledby="heading1"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("We specialize in transforming raw data chaos into actionable intelligence. Our core services include:")}
+                              <br />
+                              {t("• Designing and building robust data pipelines (ingestion, processing, and storage).")}
+                              <br />
+                              {t("• Developing and automating ETL/ELT processes for maximum efficiency.")}
+                              <br />
+                              {t("• Implementing modern Cloud Data Warehouses and Data Lakes.")}
+                              <br />
+                              {t("• Establishing comprehensive Data Governance frameworks and quality assurance solutions.")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item 1 End */}
+                      {/* FAQ Item 2 Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.2s"
+                      >
+                        <h2 className="accordion-header" id="heading2">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse2"
+                            aria-expanded="false"
+                            aria-controls="collapse2"
+                          >
+                            {t("What leading data platforms and technologies are utilized for these services?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse2"
+                          className="accordion-collapse collapse "
+                          aria-labelledby="heading2"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("We leverage best-in-class cloud and on-premises technologies to build highly scalable data architectures. We commonly work with:")}
+                              <br />
+                              {t("• Cloud Platforms: Azure Data Factory for orchestration and Snowflake, AWS Redshift, or Google BigQuery for high-performance warehousing.")}
+                              <br />
+                              {t("• On-Premises: Modernizing and optimizing existing SQL-based data platforms and relational databases.")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item 2 End */}
+                      {/* FAQ Item 3 Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.4s"
+                      >
+                        <h2 className="accordion-header" id="heading3">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse3"
+                            aria-expanded="false"
+                            aria-controls="collapse3"
+                          >
+                            {t("How is data engineering used to integrate core business systems like ERP, CRM, or BI tools?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse3"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading3"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("Data engineering is the crucial bridge that unites disparate systems. We design unified data models that efficiently integrate all key organizational data—from ERP and CRM systems to IoT and operational logs. This centralization ensures that your Business Intelligence (BI) and analytical reporting tools operate on a single, consistent, and trustworthy source of truth.")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item 3 End */}
+                      {/* FAQ Item 4 Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.6s"
+                      >
+                        <h2 className="accordion-header" id="heading4">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse4"
+                            aria-expanded="false"
+                            aria-controls="collapse4"
+                          >
+                            {t("Does RheinBrücke provide Data Quality Management (DQM) and compliance services?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse4"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading4"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("Yes, because \"garbage in, garbage out\" is not a strategy! Data Quality Management is integral to every solution we deliver. We implement rigorous DQM processes to ensure data accuracy, consistency, completeness, and timeliness. Furthermore, we help ensure your data practices comply with relevant regulatory standards, safeguarding your data integrity across all systems.")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item 4 End */}
+                      {/* FAQ Item 5 Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.8s"
+                      >
+                        <h2 className="accordion-header" id="heading5">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse5"
+                            aria-expanded="false"
+                            aria-controls="collapse5"
+                          >
+                            {t("What is an ETL pipeline in data engineering?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse5"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading5"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("An ETL pipeline is a data engineering process that extracts data from multiple siloed sources, transforms it into a clean, standardized format, and loads it into a centralized data warehouse or lakehouse for analytics.")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item 5 End */}
+                    </div>
+                    {/* FAQ Accordion End */}
+                  </div>
+                  {/* FAQs section End */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Page Faq End */}
+
+        
   {/* Footer Start */}
   <footer className="main-footer pd0">
     {/* Footer Main Start */}

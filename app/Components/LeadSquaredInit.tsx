@@ -13,7 +13,7 @@ export default function LeadSquaredInit() {
       <Script
         id="leadsquared-tracker"
         src="https://web.mxradon.com/t/Tracker.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         onLoad={() => {
           try {
             (window as any).MXHOrgCode = orgCode;
@@ -28,10 +28,10 @@ export default function LeadSquaredInit() {
       <Script
         id="leadsquared-formtracker"
         src="https://web.mxradon.com/t/FormTracker.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
 
-      <Script id="lsq-custom" strategy="afterInteractive">
+      <Script id="lsq-custom" strategy="lazyOnload">
         {`
 (function () {
   var ORG_CODE = ${JSON.stringify(orgCode)};

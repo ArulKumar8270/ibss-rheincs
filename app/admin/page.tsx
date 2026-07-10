@@ -54,7 +54,7 @@ export default function AdminDashboard() {
       count: stats.blogs,
       icon: '📝',
       color: '#48bb78',
-      href: '/admin/blogs'
+      href: '/admin/blog'
     },
     {
       title: 'News & Events',
@@ -175,7 +175,7 @@ export default function AdminDashboard() {
           gap: '15px'
         }}>
           <Link
-            href="/admin/blogs?action=create"
+            href="/admin/blog?action=create"
             style={{
               padding: '15px',
               background: '#f0f4ff',

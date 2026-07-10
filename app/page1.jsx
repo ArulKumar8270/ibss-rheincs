@@ -4165,7 +4165,7 @@ export default function Home() {
                               ERP
                             </p>
                             <div className="ser-btn1">
-                              <Link href="/Blog" className="animated-svg-link1">
+                              <Link href="/blogs" className="animated-svg-link1">
                                 {t("Read More")}
                                 <svg
                                   width={24}
@@ -4274,7 +4274,7 @@ export default function Home() {
                             </h3>
                             <p>10 Must-Have Features in a Modern ERP System</p>
                             <div className="ser-btn1">
-                              <Link href="/Blog" className="animated-svg-link1">
+                              <Link href="/blogs" className="animated-svg-link1">
                                 {t("Read More")}
                                 <svg
                                   width={24}

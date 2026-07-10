@@ -138,10 +138,27 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
   const data = pageData || defaults;
   const accentColor = data.footer_color || "#3aaee0";
 
+  // Helper to check if a field has actual content (not just empty HTML)
+  const hasContent = (value: any) => {
+    if (typeof value === 'string') {
+      const stripped = value.replace(/<[^>]*>/g, '').trim();
+      return stripped !== '';
+    }
+    return !!value;
+  };
+
+  const normalizeHeadingHtml = (value: string | null | undefined) => {
+    if (!value) return "";
+    return value.replace(/&nbsp;/g, " ").replace(/\u00A0/g, " ");
+  };
+
   useEffect(() => {
     if (slug === "placeholder") {
       // Do nothing - the redirects will handle it, or just wait for client-side fetch
-    } else if (slug && (!initialData || slug !== initialData?.slug)) {
+      return;
+    }
+
+    if (slug) {
       fetchPageData();
     }
   }, [slug, initialData]);
@@ -162,11 +179,28 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
       }
 
       if (data) {
+        // Helper to convert empty strings (and empty HTML) to null
+        const emptyToNull = (value: any) => {
+          if (typeof value === 'string') {
+            // Strip HTML tags first
+            const stripped = value.replace(/<[^>]*>/g, '').trim();
+            if (stripped === '') {
+              return null;
+            }
+          }
+          return value;
+        };
+        
         const resolvedData: EbookLandingData = {
           ...data,
           logo_image_url: resolveImageUrl(data.logo_image_url),
           book_image_url: resolveImageUrl(data.book_image_url),
+          author_heading: emptyToNull(data.author_heading),
+          author_name: emptyToNull(data.author_name),
+          author_role: emptyToNull(data.author_role),
+          author_bio: emptyToNull(data.author_bio),
           author_avatar_url: resolveImageUrl(data.author_avatar_url),
+          author_avatar_svg: emptyToNull(data.author_avatar_svg),
           form_fields: data.form_fields || [],
         };
         setPageData(resolvedData);
@@ -176,6 +210,30 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
       setFetchError(err.message || "Something went wrong");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const getLatestDownloadData = async () => {
+    if (!slug || slug === "placeholder") {
+      return null;
+    }
+
+    try {
+      const { data, error } = await supabase
+        .from("ebook_landing_pages")
+        .select("title, pdf_url")
+        .eq("slug", slug)
+        .single();
+
+      if (error) {
+        console.error("Latest PDF fetch error:", error);
+        return null;
+      }
+
+      return data;
+    } catch (err) {
+      console.error("Latest PDF fetch exception:", err);
+      return null;
     }
   };
 
@@ -279,9 +337,25 @@ Object.keys(formData).forEach(key => {
         console.error("Email Exception:", emailErr);
       }
 
-      // Download PDF
-      if (pageData?.pdf_url) {
-        await downloadPdf(pageData.pdf_url, pageData.title);
+      // Always fetch the latest PDF URL before download so admin updates reflect immediately.
+      const latestDownloadData = await getLatestDownloadData();
+      const pdfUrlToDownload = latestDownloadData?.pdf_url || pageData?.pdf_url || null;
+      const pdfTitle = latestDownloadData?.title || pageData?.title || "E-Book";
+
+      if (latestDownloadData) {
+        setPageData((prev) =>
+          prev
+            ? {
+                ...prev,
+                title: latestDownloadData.title ?? prev.title,
+                pdf_url: latestDownloadData.pdf_url ?? prev.pdf_url,
+              }
+            : prev,
+        );
+      }
+
+      if (pdfUrlToDownload) {
+        await downloadPdf(pdfUrlToDownload, pdfTitle);
       }
 
       // Reset form
@@ -318,30 +392,11 @@ Object.keys(formData).forEach(key => {
 
   return (
     <>
-      <style>{`
-        /* Default font for rich content */
-        #ebook-landing-root [class*="ql-size-"], 
-        #ebook-landing-root [class*="ql-font-"],
-        #ebook-landing-root p,
-        #ebook-landing-root div {
-          font-family: 'helvetica-neue-lt-pro', sans-serif !important;
-        }
-        
-        /* Custom Quill font styles */
-        .ql-font-helvetica-neue-lt-pro { font-family: 'helvetica-neue-lt-pro', sans-serif !important; }
-        .ql-font-sans-serif { font-family: sans-serif !important; }
-        
-        /* Quill alignment styles */
-        .ql-align-left { text-align: left !important; }
-        .ql-align-center { text-align: center !important; }
-        .ql-align-right { text-align: right !important; }
-        .ql-align-justify { text-align: justify !important; }
-      `}</style>
       <LeadSquaredInit />
 
-      <div className="topheader defhead1">
+      <div className="topheader defhead1 lp-mobile-safe">
         <div className="container">
-          <div className="row align-items-center">
+          <div className="row align-items-center lp-header-row">
             <div className="col-auto">
               <Link href="/">
                 <img
@@ -355,7 +410,7 @@ Object.keys(formData).forEach(key => {
             <div className="col" />
 
             <div className="col-auto">
-              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <div className="lp-header-contact">
                 <span aria-hidden="true" style={{ color: "white" }}>
                   <svg
                     width="24"
@@ -382,7 +437,7 @@ Object.keys(formData).forEach(key => {
                     />
                   </svg>
                 </span>
-                <Link href="mailto:info@rheincs.com" style={{ color: "white", textDecoration: "none" }}>
+                <Link href="mailto:info@rheincs.com">
                   info@rheincs.com
                 </Link>
               </div>
@@ -391,29 +446,39 @@ Object.keys(formData).forEach(key => {
         </div>
       </div>
 
-      <div id="ebook-landing-root">
-        <section className="topheadsize" style={{ textAlign: "center", padding: "30px 20px 0px", background: "#fff" }}>
-          <div style={{ width: "200px", height: "auto", margin: "0 auto 20px", borderRadius: "0%", overflow: "hidden", background: "transparent", display: "flex", justifyContent: "center", alignItems: "center", color: "#fff", fontWeight: "bold" }}>
+      <div id="ebook-landing-root" className="lp-mobile-safe">
+        <section className="topheadsize lp-top-section" style={{ textAlign: "center", padding: "30px 20px 0px", background: "#fff" }}>
+          <div className="lp-logo-wrap" style={{ width: "200px", height: "auto", margin: "0 auto 20px", borderRadius: "0%", overflow: "hidden", background: "transparent", display: "flex", justifyContent: "center", alignItems: "center", color: "#fff", fontWeight: "bold", maxWidth: "100%" }}>
             {data.logo_image_url ? (
               <img src={data.logo_image_url} alt="Logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
             ) : data.logo_text}
           </div>
           {/* {data.title && <div dangerouslySetInnerHTML={{ __html: data.title }} />} */}
-          {data.headline && <h1 dangerouslySetInnerHTML={{ __html: data.headline }} />}
-          {data.subheadline && <h5 dangerouslySetInnerHTML={{ __html: data.subheadline }} />}
+          {data.headline && (
+            <h1
+              style={{ width: "80%", margin: "0 auto 10px", whiteSpace: "normal", wordBreak: "normal", overflowWrap: "normal" }}
+              dangerouslySetInnerHTML={{ __html: normalizeHeadingHtml(data.headline) }}
+            />
+          )}
+          {data.subheadline && (
+            <h5
+              style={{ width: "80%", margin: "0 auto", whiteSpace: "normal", wordBreak: "normal", overflowWrap: "normal" }}
+              dangerouslySetInnerHTML={{ __html: normalizeHeadingHtml(data.subheadline) }}
+            />
+          )}
           {data.additional_paragraph && (
-            <div style={{ marginTop: '15px', fontSize: '14px', color: '#000', textAlign: 'left' }} dangerouslySetInnerHTML={{ __html: data.additional_paragraph }} />
+            <div className="lp-rich-text" style={{ marginTop: '15px', fontSize: '14px', color: '#000', textAlign: 'left' }} dangerouslySetInnerHTML={{ __html: data.additional_paragraph }} />
           )}
         </section>
 
-        <section style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", padding: "40px 20px" }}>
+        <section className="lp-main-grid" style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", padding: "40px 20px", width: "100%" }}>
           <div>
-            <img src={data.book_image_url || "/images/book.png"} alt="Book" style={{ width: "100%", maxWidth: "auto" }} />
+            <img src={data.book_image_url || "/images/book.png"} alt="Book" style={{ width: "100%", maxWidth: "100%", height: "auto" }} />
           </div>
           <div>
             {data.learning_title && <h2 dangerouslySetInnerHTML={{ __html: data.learning_title }} />}
             {data.learning_description && (
-              <div style={{ marginTop: "15px" }} dangerouslySetInnerHTML={{ __html: data.learning_description }} />
+              <div className="lp-rich-text" style={{ marginTop: "15px" }} dangerouslySetInnerHTML={{ __html: data.learning_description }} />
             )}
             {data.benefits_heading && (
               <h3 style={{ marginTop: "20px" }} dangerouslySetInnerHTML={{ __html: data.benefits_heading }} />
@@ -499,7 +564,7 @@ Object.keys(formData).forEach(key => {
               )}
               
               <div className="text-center">
-                <button type="submit" disabled={isSubmitting} style={{ margin: "15px auto", padding: "12px 30px", background: "#082326", border: "none", color: "#fff", cursor: "pointer", borderRadius: "5px" }}>
+                <button className="lp-submit-btn" type="submit" disabled={isSubmitting} style={{ margin: "15px auto", padding: "12px 30px", background: "#082326", border: "none", color: "#fff", cursor: "pointer", borderRadius: "5px", maxWidth: "100%" }}>
                   {isSubmitting ? "Submitting..." : data.form_button_text || "Download Now"}
                 </button>
               </div>
@@ -507,7 +572,7 @@ Object.keys(formData).forEach(key => {
 
             
         {data.extra_content && (
-          <div className="contentbox" style={{ color: "#000" }} dangerouslySetInnerHTML={{ __html: data.extra_content }} />
+          <div className="contentbox lp-rich-text" style={{ color: "#000" }} dangerouslySetInnerHTML={{ __html: data.extra_content }} />
         )}
           </div>
         </section>
@@ -516,23 +581,66 @@ Object.keys(formData).forEach(key => {
 
 
         {(() => {
+          // Debug: log author fields
+          console.log("Author fields debug (client):", {
+            author_heading: data.author_heading,
+            author_name: data.author_name,
+            author_role: data.author_role,
+            author_bio: data.author_bio,
+            author_avatar_url: data.author_avatar_url,
+            author_avatar_svg: data.author_avatar_svg,
+            pageData: pageData,
+            initialData: initialData
+          });
+
+          // Check if any author field has actual content (not just empty HTML)
           const hasAuthorInfo =
-            data.author_heading ||
-            data.author_name ||
-            data.author_role ||
-            data.author_bio ||
-            data.author_avatar_url ||
-            data.author_avatar_svg;
+            hasContent(data.author_heading) ||
+            hasContent(data.author_name) ||
+            hasContent(data.author_role) ||
+            hasContent(data.author_bio) ||
+            hasContent(data.author_avatar_url) ||
+            hasContent(data.author_avatar_svg);
+
+          console.log("hasAuthorInfo (client):", hasAuthorInfo);
 
           if (hasAuthorInfo) {
                 return (
                   <section style={{ background: "#2d3e50", color: "#fff", padding: "50px 20px", textAlign: "center" }}>
-                    {data.author_heading && <h2 dangerouslySetInnerHTML={{ __html: data.author_heading }} />}
-                {data.author_avatar_url && <img src={data.author_avatar_url} alt="Author" style={{ width: "100px", height: "100px", borderRadius: "50%", marginTop: "20px", objectFit: "cover" }} />}
-                {data.author_name && <h3 style={{ marginTop: "20px" }}>{data.author_name}</h3>}
-                {data.author_role && <p>{data.author_role}</p>}
-                {data.author_bio && <div style={{ maxWidth: "700px", margin: "20px auto 0" }} dangerouslySetInnerHTML={{ __html: data.author_bio }} />}
-              </section>
+                    {hasContent(data.author_heading) && (
+                      <h2
+                        dangerouslySetInnerHTML={{
+                          __html: String(data.author_heading ?? ""),
+                        }}
+                      />
+                    )}
+                    {hasContent(data.author_avatar_url) && (
+                      <img
+                        src={typeof data.author_avatar_url === "string" ? data.author_avatar_url : undefined}
+                        alt="Author"
+                        style={{
+                          width: "100px",
+                          height: "100px",
+                          borderRadius: "50%",
+                          marginTop: "20px",
+                          objectFit: "cover",
+                        }}
+                      />
+                    )}
+                    {hasContent(data.author_name) && (
+                      <h3 style={{ marginTop: "20px" }}>{data.author_name}</h3>
+                    )}
+                    {hasContent(data.author_role) && <p>{data.author_role}</p>}
+                    {hasContent(data.author_bio) && (
+                      <div
+                        className="lp-rich-text"
+                        style={{ maxWidth: "700px", margin: "20px auto 0" }}
+                        dangerouslySetInnerHTML={{
+                          __html: String(data.author_bio ?? ""),
+                        }}
+                      />
+                    )}
+                  </section>
             );
           }
           return null;
@@ -547,6 +655,25 @@ Object.keys(formData).forEach(key => {
       <ScriptReinit />
 
       <style jsx global>{`
+        .lp-top-section h1,
+        .lp-top-section h5,
+        .lp-top-section h1 p,
+        .lp-top-section h5 p,
+        .lp-top-section h1 span,
+        .lp-top-section h5 span {
+          word-break: normal !important;
+          overflow-wrap: normal !important;
+          white-space: normal !important;
+          hyphens: none !important;
+        }
+
+        @media (max-width: 768px) {
+          .lp-top-section h1,
+          .lp-top-section h5 {
+            width: 100% !important;
+          }
+        }
+
         /* Apply Quill sizes in preview */
         .contentbox span.ql-size-10px,
         .contentbox p.ql-size-10px,
@@ -724,4 +851,5 @@ const inputStyle: React.CSSProperties = {
   marginTop: "0px",
   border: "1px solid #ccc",
   borderRadius: "4px",
+  boxSizing: "border-box",
 };

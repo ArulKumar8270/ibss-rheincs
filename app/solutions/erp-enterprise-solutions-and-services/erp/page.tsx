@@ -19,10 +19,10 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-6">
                 <div className="section-title">
                   <h2 className="text-anime-style-21" data-cursor="-opaque">
-                    {t("Powering Enterprise Agility with Intelligent ERP Solutions and Digital Transformation")}
+                    {t("Enterprise ERP Solutions and Digital Transformation Services")}
                   </h2>
                   <p>
-                    {t("From ERP systems and enterprise integration to scalable ERP services, we design adaptive solutions that grow with your business.")}
+                    {t("Enable greater operational agility, enterprise-wide visibility, and sustainable growth with integrated ERP solutions and digital transformation services. From ERP implementation and enterprise integration to business process automation and cloud modernisation, we help organisations build connected, data-driven enterprises that are ready for change.")}
                   </p>
                   <div className="ser-btn ">
                       <Link href="/contact-us" className="animated-svg-link">
@@ -704,10 +704,10 @@ export default function EnterpriseSolutions() {
                   <div className="section-title">
                     <div className="hero-video-content wow fadeInUp mt-4">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        {t("Build resilient, connected, and future-ready enterprises with intelligent ERP platforms and digital transformation.")}
+                        {t("Build resilient, connected, and future-ready enterprises with intelligent ERP solutions and digital transformation services.")}
                       </h2>
                       <p>
-                        {t("At RheinBrücke, we help organisations modernise operations, unify business processes, and improve decision-making through enterprise-grade solutions. From ERP and CRM to cloud-native platforms and business process automation, we deliver scalable, integrated systems that drive operational agility and business growth.")}
+                        {t(" At RheinBrücke, we help organisations modernise operations and simplify complexity across finance, supply chain, procurement, manufacturing, customer engagement, and workforce management. Our ERP solutions and digital transformation services enable real-time visibility, stronger governance, trusted data, and confident decision-making at scale.")}
                       </p>
                     </div>
                   </div>
@@ -724,10 +724,10 @@ export default function EnterpriseSolutions() {
               <div className="section-title">
                 <div className="hero-video-content wow fadeInUp mt-4">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    {t("ERP Implementation Challenges: Why Legacy Systems Hold You Back")}
+                    {t("ERP Implementation Challenges and Digital Transformation Barriers")}
                   </h2>
                   <p>
-                    {t("Modern enterprises need flexible, agile ERP systems to stay competitive, accelerate digital transformation, and make real-time data-driven decisions. Many organisations struggle with:")}
+                    {t("Many organisations still rely on legacy ERP environments, fragmented applications, and manual workflows that create inefficiencies, limit visibility, and slow digital transformation. The most common ERP challenges are:")}
                   </p>
                 </div>
               </div>
@@ -743,7 +743,7 @@ export default function EnterpriseSolutions() {
                   viewBox="0 0 80 80"
                   fill="none"
   role="img" 
-  aria-label="Legacy systems bottleneck icon"
+  aria-label="Legacy ERP systems challenges icon"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <g clipPath="url(#clip0_6580_4559)">
@@ -848,7 +848,7 @@ export default function EnterpriseSolutions() {
                     </clipPath>
                   </defs>
                 </svg>
-                <p>{t("Legacy ERP systems and disconnected applications limiting operational agility")}</p>
+                <p>{t("Legacy ERP systems that lack the flexibility, scalability, and interoperability modern enterprises need")}</p>
               </div>
             </div>
             <div className="item">
@@ -860,7 +860,7 @@ export default function EnterpriseSolutions() {
                   viewBox="0 0 80 80"
                   fill="none"
   role="img" 
-  aria-label="Siloed data processes icon"
+  aria-label="ERP Implementation Challenges icon"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -969,7 +969,7 @@ export default function EnterpriseSolutions() {
                   />
                 </svg>
                 <p>
-                  {t("Siloed data and business processes restricting enterprise-wide visibility")}
+                  {t("Siloed data and fragmented business processes limiting enterprise-wide visibility and collaboration")}
                 </p>
               </div>
             </div>
@@ -982,7 +982,7 @@ export default function EnterpriseSolutions() {
                   viewBox="0 0 80 80"
                   fill="none"
   role="img" 
-  aria-label="High operational costs icon"
+  aria-label="ERP rising operational costs icon"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -1142,7 +1142,7 @@ export default function EnterpriseSolutions() {
                   viewBox="0 0 80 80"
                   fill="none"
   role="img" 
-  aria-label="No real-time insights icon"
+  aria-label="ERP data and analytics icon"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -1286,7 +1286,7 @@ export default function EnterpriseSolutions() {
                   viewBox="0 0 79 80"
                   fill="none"
   role="img" 
-  aria-label="Fragmented enterprise systems icon"
+  aria-label="ERP data governance icon"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <mask
@@ -1382,7 +1382,7 @@ export default function EnterpriseSolutions() {
                     />
                   </g>
                 </svg>
-                <p>{t("Complex, fragmented ERP landscape and poor data governance")}</p>
+                <p>{t("Complex application landscapes, scattered ERP systems, and poor data governance")}</p>
               </div>
             </div>
             <div className="item">
@@ -1394,7 +1394,7 @@ export default function EnterpriseSolutions() {
                   viewBox="0 0 67 79"
                   fill="none"
   role="img" 
-  aria-label="Manual process inefficiency icon"
+  aria-label="Enterprise business process icon"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -1430,7 +1430,7 @@ export default function EnterpriseSolutions() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <p>{t("Manual, repetitive business processes slowing down innovation and delaying product time-to-market")}</p>
+                <p>{t("Manual workarounds and repetitive tasks that drain productivity and delay innovation and delaying product time-to-market")}</p>
               </div>
             </div>
             {/* Duplicate for seamless marquee */}
@@ -1443,7 +1443,7 @@ export default function EnterpriseSolutions() {
                   viewBox="0 0 80 80"
                   fill="none"
   role="img" 
-  aria-label="Legacy systems bottleneck icon"
+  aria-label="Legacy ERP systems challenges icon"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <g clipPath="url(#clip0_6580_4559)">
@@ -1548,7 +1548,7 @@ export default function EnterpriseSolutions() {
                     </clipPath>
                   </defs>
                 </svg>
-                <p>{t("Legacy ERP systems and disconnected applications limiting operational agility")}</p>
+                <p>{t("Legacy ERP systems that lack the flexibility, scalability, and interoperability modern enterprises need")}</p>
               </div>
             </div>
             <div className="item">
@@ -1560,7 +1560,7 @@ export default function EnterpriseSolutions() {
                   viewBox="0 0 80 80"
                   fill="none"
   role="img" 
-  aria-label="Siloed data processes icon"
+  aria-label="ERP Implementation Challenges icon"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -1669,7 +1669,7 @@ export default function EnterpriseSolutions() {
                   />
                 </svg>
                 <p>
-                  {t("Siloed data and business processes restricting enterprise-wide visibility")}
+                  {t("Siloed data and fragmented business processes limiting enterprise-wide visibility and collaboration")}
                 </p>
               </div>
             </div>
@@ -1682,7 +1682,7 @@ export default function EnterpriseSolutions() {
                   viewBox="0 0 80 80"
                   fill="none"
   role="img" 
-  aria-label="High operational costs icon"
+  aria-label="ERP rising operational costs icon"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -1764,7 +1764,7 @@ export default function EnterpriseSolutions() {
                   viewBox="0 0 80 80"
                   fill="none"
   role="img" 
-  aria-label="Limited business agility icon"
+  aria-label="ERP delays in market demand icon"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -1829,7 +1829,7 @@ export default function EnterpriseSolutions() {
                   />
                 </svg>
                 <p>
-                  {t("Slow time-to-market & delayed reactions to market demands, customer expectations & compliance needs")}
+                  {t("Slow response to market changes, demands customer expectations, and evolving compliance regulatory requirements")}
                 </p>
               </div>
             </div>
@@ -1842,7 +1842,7 @@ export default function EnterpriseSolutions() {
                   viewBox="0 0 80 80"
                   fill="none"
   role="img" 
-  aria-label="No real-time insights icon"
+  aria-label="ERP data and analytics icon"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -1986,7 +1986,7 @@ export default function EnterpriseSolutions() {
                   viewBox="0 0 79 80"
                   fill="none"
   role="img" 
-  aria-label="Fragmented enterprise systems icon"
+  aria-label="ERP data governance icon"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <mask
@@ -2082,7 +2082,7 @@ export default function EnterpriseSolutions() {
                     />
                   </g>
                 </svg>
-                <p>{t("Complex, fragmented ERP landscape and poor data governance")}</p>
+                <p>{t("Complex application landscapes, scattered ERP systems, and poor data governance")}</p>
               </div>
             </div>
             <div className="item">
@@ -2094,7 +2094,7 @@ export default function EnterpriseSolutions() {
                   viewBox="0 0 67 79"
                   fill="none"
   role="img" 
-  aria-label="Manual process inefficiency icon"
+  aria-label="Enterprise business process icon"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -2130,7 +2130,7 @@ export default function EnterpriseSolutions() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <p>{t("Manual, repetitive business processes slowing down innovation and delaying product time-to-market")}</p>
+                <p>{t("Manual workarounds and repetitive tasks that drain productivity and delay innovation and delaying product time-to-market")}</p>
               </div>
             </div>
           </div>
@@ -2139,10 +2139,10 @@ export default function EnterpriseSolutions() {
               <div className="section-title ">
                 <div className="hero-video-content1 wow fadeInUp mt-4">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    {t("Solution")}
+                    {t("Our ERP Integration and Digital Transformation Solutions")}
                   </h2>
                   <p>
-                    {t("Our comprehensive ERP solutions and enterprise software suite address these challenges by modernising core systems, automating processes, integrating enterprise applications, and enabling data-driven operational excellence.")}
+                    {t("Our enterprise ERP solutions and digital transformation services help organisations modernise legacy systems, integrate critical business applications, automate workflows, and establish a connected digital foundation. By improving data visibility, process efficiency, and enterprise-wide collaboration, we enable operational excellence, business resilience, and sustainable growth.")}
                   </p>
                 </div>
               </div>
@@ -2156,10 +2156,10 @@ export default function EnterpriseSolutions() {
               <div className="section-title">
                 <div className="hero-video-content wow fadeInUp mt-4">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    {t("ERP Implementation Challenges: Why Legacy Systems Hold You Back")}
+                    {t("ERP Implementation Challenges and Digital Transformation Barriers")}
                   </h2>
                   <p>
-                    {t("Modern enterprises need flexible, agile ERP systems to stay competitive, accelerate digital transformation, and make real-time data-driven decisions. Many organisations struggle with:")}
+                    {t("Many organisations still rely on legacy ERP environments, fragmented applications, and manual workflows that create inefficiencies, limit visibility, and slow digital transformation. The most common ERP challenges are:")}
                   </p>
                 </div>
               </div>
@@ -2180,7 +2180,7 @@ export default function EnterpriseSolutions() {
                           viewBox="0 0 80 80"
                           fill="none"
   role="img" 
-  aria-label="Legacy systems bottleneck icon"
+  aria-label="Legacy ERP systems challenges icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <g clipPath="url(#clip0_6580_4559)">
@@ -2285,7 +2285,7 @@ export default function EnterpriseSolutions() {
                             </clipPath>
                           </defs>
                         </svg>
-                <p>{t("Legacy ERP systems and disconnected applications limiting operational agility")}</p>
+                <p>{t("Legacy ERP systems that lack the flexibility, scalability, and interoperability modern enterprises need")}</p>
                       </div>
                     </div>
                   </div>
@@ -2301,7 +2301,7 @@ export default function EnterpriseSolutions() {
                           viewBox="0 0 80 80"
                           fill="none"
   role="img" 
-  aria-label="Siloed data processes icon"
+  aria-label="ERP Implementation Challenges icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -2410,7 +2410,7 @@ export default function EnterpriseSolutions() {
                           />
                         </svg>
                         <p>
-                  {t("Siloed data and business processes restricting enterprise-wide visibility")}
+                  {t("Siloed data and fragmented business processes limiting enterprise-wide visibility and collaboration")}
                         </p>
                       </div>
                     </div>
@@ -2426,7 +2426,7 @@ export default function EnterpriseSolutions() {
                           viewBox="0 0 80 80"
                           fill="none"
   role="img" 
-  aria-label="High operational costs icon"
+  aria-label="ERP rising operational costs icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -2512,7 +2512,7 @@ export default function EnterpriseSolutions() {
                           viewBox="0 0 80 80"
                           fill="none"
   role="img" 
-  aria-label="Limited business agility icon"
+  aria-label="ERP delays in market demand icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -2577,7 +2577,7 @@ export default function EnterpriseSolutions() {
                           />
                         </svg>
                         <p>
-                  {t("Slow time-to-market & delayed reactions to market demands, customer expectations & compliance needs")}
+                  {t("Slow response to market changes, demands customer expectations, and evolving compliance regulatory requirements")}
                         </p>
                       </div>
                     </div>
@@ -2594,7 +2594,7 @@ export default function EnterpriseSolutions() {
                           viewBox="0 0 80 80"
                           fill="none"
   role="img" 
-  aria-label="No real-time insights icon"
+  aria-label="ERP data and analytics icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -2742,7 +2742,7 @@ export default function EnterpriseSolutions() {
                           viewBox="0 0 79 80"
                           fill="none"
   role="img" 
-  aria-label="Fragmented enterprise systems icon"
+  aria-label="ERP data governance icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <mask
@@ -2838,7 +2838,7 @@ export default function EnterpriseSolutions() {
                             />
                           </g>
                         </svg>
-                <p>{t("Complex, fragmented ERP landscape and poor data governance")}</p>
+                <p>{t("Complex application landscapes, scattered ERP systems, and poor data governance")}</p>
 
                       </div>
                     </div>
@@ -2855,7 +2855,7 @@ export default function EnterpriseSolutions() {
                           viewBox="0 0 67 79"
                           fill="none"
   role="img" 
-  aria-label="Manual process inefficiency icon"
+  aria-label="Enterprise business process icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -2891,7 +2891,7 @@ export default function EnterpriseSolutions() {
                             strokeLinejoin="round"
                           />
                         </svg>
-                <p>{t("Manual, repetitive business processes slowing down innovation and delaying product time-to-market")}</p>
+                <p>{t("Manual workarounds and repetitive tasks that drain productivity and delay innovation and delaying product time-to-market")}</p>
                       </div>
                     </div>
                   </div>
@@ -3116,10 +3116,10 @@ export default function EnterpriseSolutions() {
               <div className="section-title ">
                 <div className="hero-video-content1 wow fadeInUp mt-4">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    {t("Solution")}
+                    {t("Our ERP Integration and Digital Transformation Solutions")}
                   </h2>
                   <p>
-                    {t("Our comprehensive ERP solutions and enterprise software suite address these challenges by modernising core systems, automating processes, integrating enterprise applications, and enabling data-driven operational excellence.")}
+                    {t("Our enterprise ERP solutions and digital transformation services help organisations modernise legacy systems, integrate critical business applications, automate workflows, and establish a connected digital foundation. By improving data visibility, process efficiency, and enterprise-wide collaboration, we enable operational excellence, business resilience, and sustainable growth.")}
                   </p>
                 </div>
               </div>
@@ -3132,11 +3132,11 @@ export default function EnterpriseSolutions() {
             <div className="row section-row align-items-center">
               <div className="col-lg-6">
                 <div className="section-title">
-                  <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    {t("Complete ERP Implementation & Enterprise Digital Transformation Services")}
+                  <h2 className="text-anime-style-2 text-black" data-cursor="-opaque">
+                    {t("Complete ERP Consulting, Support Services and digital transformation services")}
                   </h2>
                   <p>
-                    {t("We offer a comprehensive portfolio of enterprise solutions and services built on leading platforms like SAP, Epicor and Microsoft Dynamics 365, delivering operational excellence and business transformation.")}
+                    {t("We deliver enterprise ERP solutions, ERP consulting services, ERP integration services, and digital transformation solutions built on leading platforms including SAP, Epicor, and Microsoft Dynamics 365, delivering operational excellence and business transformation.")}
                   </p>
                   <div className="ser-btn2 mt-4">
                     <Link href="/contact-us" className="animated-svg-link1 btn-style-3">
@@ -3251,7 +3251,7 @@ export default function EnterpriseSolutions() {
             <div className="row align-items-center">
               <div className="col-lg-12">
                 {/* Testimonial Slider Start */}
-                <div className="testimonial-slider enterslide">
+                <div className="testimonial-slider enterslide enterprisesec">
                   <div className="swiper">
                     <div className="swiper-wrapper">
                       {/* Testimonial Slide Start */}
@@ -3271,7 +3271,7 @@ export default function EnterpriseSolutions() {
                                       viewBox="0 0 252 121"
                                       fill="none"
   role="img" 
-  aria-label="ERP system modernisation icon"
+  aria-label="ERP Modernisation and support icon"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <line
@@ -3370,7 +3370,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("ERP Modernisation & Upgrades")}</h3>
                                 <p>
-                                  {t("Upgrade legacy ERP systems to cloud-native platforms with zero downtime. Our ERP modernisation services reduce costs, eliminate technical debt, and enable future-ready technology.")}
+                                  {t("Modernise legacy ERP environments to improve performance, reduce complexity, and support evolving business needs. Organisations transition to modern platforms while minimising disruption and preserving continuity.")}
                                 </p>
                               </div>
                             </div>
@@ -3395,7 +3395,7 @@ export default function EnterpriseSolutions() {
                                       viewBox="0 0 252 121"
                                       fill="none"
   role="img" 
-  aria-label="Customer engagement platform icon"
+  aria-label="CRM sales, services and marketing for teams icon"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <line
@@ -3545,7 +3545,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("CRM and Customer Engagement Platforms")}</h3>
                                 <p>
-                                 {t("Deploy intelligent, 360-degree customer visibility CRM solutions that unify customer data, automate sales processes, and deliver personalised customer experiences.")}
+                                 {t("Create a 360° view of your customers across sales, service, and marketing. Improve customer engagement, strengthen relationships, and empower teams with accurate, connected data.")}
                                 </p>
                               </div>
                             </div>
@@ -3570,7 +3570,7 @@ export default function EnterpriseSolutions() {
                                       viewBox="0 0 252 121"
                                       fill="none"
   role="img" 
-  aria-label="Strategic sourcing solutions icon"
+  aria-label="Strategic solution software icon"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <line
@@ -3720,7 +3720,7 @@ export default function EnterpriseSolutions() {
                                   {t("Procurement & Strategic Sourcing Solutions")}
                                 </h3>
                                 <p>
-                                {t("Optimise procurement operations, streamline supplier management and collaboration, and reduce procurement costs through strategic sourcing automation.")}
+                                {t("Strengthen procurement performance through better supplier collaboration, improved spend visibility, and optimized sourcing processes to support cost control and operational efficiency.")}
 
                                 </p>
                               </div>
@@ -3746,7 +3746,7 @@ export default function EnterpriseSolutions() {
                                       viewBox="0 0 252 121"
                                       fill="none"
   role="img" 
-  aria-label="Enterprise digital transformation icon"
+  aria-label="Digital Transformation Solutions and services icon"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <line
@@ -3982,7 +3982,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("Digital Transformation Solutions")}</h3>
                                 <p>
-                                {t("Leverage digital technologies to transform processes, improve efficiency, and drive innovation across your enterprise.")}
+                                {t("Reimagine how work gets done by connecting systems, digitising processes, and enabling data-driven decision-making.")}
                                 </p>
                               </div>
                             </div>
@@ -4007,7 +4007,7 @@ export default function EnterpriseSolutions() {
                                       viewBox="0 0 252 121"
                                       fill="none"
   role="img" 
-  aria-label="HCM payroll management icon"
+  aria-label="HCM and payroll for workforce icon"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <line
@@ -4073,7 +4073,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("HCM and Payroll Solutions")}</h3>
                                 <p>
-                                  {t("Streamline human capital management (HCM), payroll processing, and employee engagement with cloud-based HCM solutions.")}
+                                  {t("Simplify workforce management with integrated solutions for HR, payroll, talent that support engaged workforce.")}
                                 </p>
                               </div>
                             </div>
@@ -4098,7 +4098,7 @@ export default function EnterpriseSolutions() {
                                       viewBox="0 0 252 121"
                                       fill="none"
   role="img" 
-  aria-label="Cloud migration services icon"
+  aria-label="Cloud native applications and migrations icon"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <line
@@ -4248,7 +4248,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("Cloud Migrations & Managed Services")}</h3>
                                 <p>
-                                  {t("Execute secure, risk-free cloud ERP migrations with our managed cloud services and ongoing technical support and 24/7 monitoring.")}
+                                  {t("Move critical business applications to the cloud with confidence. Our managed services help ensure performance, security, and ongoing operational support.")}
                                 </p>
                               </div>
                             </div>
@@ -4273,7 +4273,7 @@ export default function EnterpriseSolutions() {
                                       viewBox="0 0 252 121"
                                       fill="none"
   role="img" 
-  aria-label="Regulatory compliance management icon"
+  aria-label="Regulatory Compliance Solutions icon"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <line
@@ -4421,7 +4421,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("Regulatory Compliance Solutions")}</h3>
                                 <p>
-                                  {t("Stay ahead of regulations with solutions that ensure compliance, mitigate risk, and support governance frameworks.")}
+                                  {t("Establish stronger governance, manage risk proactively, and adapt to changing regulatory requirements.")}
                                 </p>
                               </div>
                             </div>
@@ -4446,7 +4446,7 @@ export default function EnterpriseSolutions() {
                                       viewBox="0 0 252 121"
                                       fill="none"
   role="img" 
-  aria-label="ERP implementation and support icon"
+  aria-label="ERP Implementation & Support Services icon"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <line
@@ -4688,7 +4688,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("ERP Implementation & Support Services")}</h3>
                                 <p>
-                                  {t("Deploy mission-critical ERP systems confidently with end-to-end implementation and ongoing support for sustainable success.")}
+                                  {t("Deliver ERP programmes successfully with structured implementation, expert guidance and user adoption support.")}
                                 </p>
                               </div>
                             </div>
@@ -4713,7 +4713,7 @@ export default function EnterpriseSolutions() {
                                       viewBox="0 0 252 121"
                                       fill="none"
   role="img" 
-  aria-label="Industry-specific ERP solutions icon"
+  aria-label="Industry-Specific ERP Solutions icon"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <line
@@ -4926,7 +4926,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("Industry-Specific ERP Solutions")}</h3>
                                 <p>
-                                  {t("Benefit from ERP solutions designed for Manufacturing, Automotive, Retail, Distribution, EPC, Interior Design and Oil & Gas industries.")}
+                                  {t("Address industry-specific challenges with ERP solutions for manufacturing, automotive, retail, distribution, EPC, interior design, and oil & gas industries.")}
                                 </p>
                               </div>
                             </div>
@@ -5172,10 +5172,10 @@ export default function EnterpriseSolutions() {
               <div className="col-sm-6">
                 <div className="section-title ">
                   <h2 className="text-anime-style-2" data-cursor="-opaque">
-                    {t("Our Approach to Building Future-Ready Enterprises")}
+                    {t("How We Build Future-Ready Enterprises")}
                   </h2>
                   <p>
-                    {t("We help organisations modernise operations, unify systems, and unlock the power of real-time data. By streamlining business processes, integrating critical functions, and enhancing operational resilience, we enable enterprises to stay agile, connected, and future ready.")}
+                    {t("Successful transformation starts with understanding how people, processes, and technology work together. We take a structured approach to identifying operational gaps, simplifying complexity, and creating a foundation for sustainable growth.")}
                   </p>
                 </div>
                 <div className="row mt-5">
@@ -5189,7 +5189,7 @@ export default function EnterpriseSolutions() {
                           viewBox="0 0 80 80"
                           fill="none"
   role="img" 
-  aria-label="RheinBrücke AIT transformation approach icon"
+  aria-label="Rheinbrucke methology icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -5221,7 +5221,7 @@ export default function EnterpriseSolutions() {
                           viewBox="0 0 80 80"
                           fill="none"
   role="img" 
-  aria-label="Business process automation icon"
+  aria-label="Digital business automation icon "
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -5292,7 +5292,7 @@ export default function EnterpriseSolutions() {
                       </div>
                       <div className="benefits-steps-content">
                         <p>
-                          {t("Automating business processes and eliminating inefficiencies")}
+                          {t("Connecting systems, data, and business functions")}
                         </p>
                       </div>
                     </div>
@@ -5310,7 +5310,7 @@ export default function EnterpriseSolutions() {
                           viewBox="0 0 80 80"
                           fill="none"
   role="img" 
-  aria-label="Core process digitisation icon"
+  aria-label="ERP system digitization icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <g clipPath="url(#clip0_2627_10189)">
@@ -5524,7 +5524,7 @@ export default function EnterpriseSolutions() {
                       </div>
                       <div className="benefits-steps-content">
                         <p>
-                          {t("Digitising core business functions with cloud-based ERP systems, across finance")}
+                          {t("Automating repetitive processes to increase efficiency and reduce operational overhead")}
                         </p>
                       </div>
                     </div>
@@ -5542,7 +5542,7 @@ export default function EnterpriseSolutions() {
                           viewBox="0 0 80 80"
                           fill="none"
   role="img" 
-  aria-label="Real-time data insights icon"
+  aria-label="ERP data visibility icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <g clipPath="url(#clip0_2627_10097)">
@@ -5742,7 +5742,7 @@ export default function EnterpriseSolutions() {
                           viewBox="0 0 80 80"
                           fill="none"
   role="img" 
-  aria-label="Scalable secure architecture icon"
+  aria-label="ERP scalable architecture icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <g clipPath="url(#clip0_2627_10244)">
@@ -5815,7 +5815,7 @@ export default function EnterpriseSolutions() {
                           viewBox="0 0 80 80"
                           fill="none"
   role="img" 
-  aria-label="Future-ready business platforms icon"
+  aria-label="Digital modular plaforms icon"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <g clipPath="url(#clip0_2627_10152)">
@@ -5918,7 +5918,7 @@ export default function EnterpriseSolutions() {
                       </div>
                       <div className="benefits-steps-content">
                         <p>
-                          {t("Building future-ready modular digital platforms designed to evolve with your business")}
+                          {t("Building future-ready modular digital platforms through adaptable capabilties, designed to evolve with your business")}
                         </p>
                       </div>
                     </div>
@@ -5932,8 +5932,8 @@ export default function EnterpriseSolutions() {
           <div className="container">
             <div className="row section-row1 align-items-center">
               <div className="col-sm-12">
-                <div className="section-title text-center text-black">
-                  <h2 className="text-anime-style-2" data-cursor="-opaque">
+                <div className="section-title text-center">
+                  <h2 className="text-anime-style-2 text-black" data-cursor="-opaque">
                     {t("The RheinBrücke Advantage")}
                   </h2>
                 </div>
@@ -5941,10 +5941,12 @@ export default function EnterpriseSolutions() {
                   <div className="col-lg-6 col-md-6 col-12">
                     <div className="service-item-body1 imgpos">
                       <h3>
-                        {t("SAP, Epicor Premium, Microsoft AI Cloud and Microsoft ISV partner")}
+                        {t("Trusted Partnerships with SAP, Epicor Premium, Microsoft AI Cloud and Microsoft ISV partner")}
                       </h3>
                       {/*<img src="/images/ad1.png" alt="">*/}
-                   <svg width="500" height="300" viewBox="0 0 523 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <svg width="500" height="300" viewBox="0 0 523 300" fill="none" 
+  role="img" 
+  aria-label="SAP, Epicor premium, microsoft AI cloud partners icon" xmlns="http://www.w3.org/2000/svg">
 <circle cx="204.5" cy="202" r="38" fill="url(#paint0_linear_7_124)"/>
 <g clip-path="url(#clip0_7_124)">
 <path d="M173.86 191.628L189.612 197.175V204.796C189.612 205.41 188.997 205.84 188.411 205.634L185.112 204.471V200.159C185.112 199.234 184.53 198.407 183.655 198.082L182.12 197.515C181.827 197.407 181.513 197.62 181.513 197.93V203.207L173.86 200.512V191.628Z" fill="url(#paint1_linear_7_124)"/>
@@ -6081,7 +6083,7 @@ export default function EnterpriseSolutions() {
                       <h3>
                         {t("End-to-end platform services from strategy to support")}
                       </h3>
-                      <img src="/images/ad2.png" alt="" />
+                      <img src="/images/ad2.png" alt="ERP support and strategy icon" />
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-12">
@@ -6089,7 +6091,7 @@ export default function EnterpriseSolutions() {
                       <h3>
                         {t("Proven global rollout and localisation capabilities")}
                       </h3>
-                      <img src="/images/ad3.png" alt="" />
+                      <img src="/images/ad3.png" alt="Global outreach icon" />
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-12">
@@ -6097,7 +6099,7 @@ export default function EnterpriseSolutions() {
                       <h3>
                         {t("Accelerated cloud-native development and integrations")}
                         </h3>
-                      <img src="/images/ad4.png" alt="" />
+                      <img src="/images/ad4.png" alt="Cloud-native development and integration icon " />
                     </div>
                   </div>
                   <div className="col-lg-4 col-md-4 col-12">
@@ -6106,7 +6108,7 @@ export default function EnterpriseSolutions() {
                         {t("Outcome-driven delivery with a focus on operational resilience and sustained business value")}
 
                       </h3>
-                      <img src="/images/advant5.svg" alt="" />
+                      <img src="/images/advant5.svg" alt="ERP implementation for business efficiency icon" />
                     </div>
                   </div>
                 </div>
@@ -6395,7 +6397,7 @@ export default function EnterpriseSolutions() {
                           <Link href="/solutions/erp-enterprise-solutions-and-services/epicor"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            {t("Know More")}
+                            {t("Know How")}
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -6510,7 +6512,7 @@ export default function EnterpriseSolutions() {
                           <Link        href="/solutions/erp-enterprise-solutions-and-services/ms-dynamics"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            {t("Know More")}
+                            {t("Know How")}
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -6625,7 +6627,7 @@ export default function EnterpriseSolutions() {
                           <Link href="/solutions/erp-enterprise-solutions-and-services/sap"
                             className="animated-svg-link1 btn-style-3"
                           >
-                            {t("Know More")}
+                            {t("Know How")}
                             <span className="svg-container ">
                               <span className=" left">
                                 <svg
@@ -6733,10 +6735,10 @@ export default function EnterpriseSolutions() {
                   </div>
                   <div className="section-title mt150 plath2">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      {t("Digital Solutions and Services")}
+                      {t("Data, AI & ERP Solutions for Manufacturing")}
                     </h2>
                     <p>
-                      {t("RheinBrücke helps enterprises modernise legacy systems, automate complex business processes through digital transformation and harness real-time business intelligence and predictive analytics to drive innovation, improve margins, and achieve measurable business outcomes. Our digital solutions portfolio includes advanced analytics, AI/ML automation, modern eCommerce platforms, and cloud data engineering.")}
+                      {t("RheinBrücke helps enterprises modernise legacy systems, simplify operations, and build connected technology environments that support growth. Our capabilities span business intelligence, data engineering, AI enabled automation, and modern ERP platforms that improve visibility, strengthen performance, and support better decisions. From advanced analytics and predictive insights to eCommerce platforms we help you get the result.")}
                     </p>
                     <div className="ser-btn">
                       <Link    href="/solutions/digital-services-and-solutions"
@@ -6875,7 +6877,7 @@ export default function EnterpriseSolutions() {
                               </p>
                               <div className="ser-btn1">
                                 <Link href="" className="animated-svg-link1 btn-style-3">
-                                  {t("Know More")}
+                                  {t("Know How")}
                                   <span className="svg-container ">
                                     <span className=" left">
                                       <svg
@@ -6988,7 +6990,7 @@ export default function EnterpriseSolutions() {
                               </p>
                               <div className="ser-btn1">
                                 <Link href="" className="animated-svg-link1 btn-style-3">
-                                  {t("Know More")}
+                                  {t("Know How")}
                                   <span className="svg-container ">
                                     <span className=" left">
                                       <svg
@@ -7101,7 +7103,7 @@ export default function EnterpriseSolutions() {
                               </p>
                               <div className="ser-btn1">
                                 <Link href="" className="animated-svg-link1 btn-style-3">
-                                  {t("Know More")}
+                                  {t("Know How")}
                                   <span className="svg-container ">
                                     <span className=" left">
                                       <svg
@@ -7684,10 +7686,10 @@ export default function EnterpriseSolutions() {
                   </div>
                   <div className="section-title plath2">
                     <h2 className="text-anime-style-2" data-cursor="-opaque">
-                      {t("Digital Solutions and Services")}
+                      {t("Data, AI & ERP Solutions for Manufacturing")}
                     </h2>
                     <p>
-                      {t("RheinBrücke helps enterprises modernise legacy systems, automate complex business processes through digital transformation and harness real-time business intelligence and predictive analytics to drive innovation, improve margins, and achieve measurable business outcomes. Our digital solutions portfolio includes advanced analytics, AI/ML automation, modern eCommerce platforms, and cloud data engineering.")}
+                      {t("RheinBrücke helps enterprises modernise legacy systems, simplify operations, and build connected technology environments that support growth. Our capabilities span business intelligence, data engineering, AI enabled automation, and modern ERP platforms that improve visibility, strengthen performance, and support better decisions. From advanced analytics and predictive insights to eCommerce platforms we help you get the result.")}
                     </p>
                     <div className="ser-btn">
                       <Link href="#" className="animated-svg-link">
@@ -7806,7 +7808,7 @@ export default function EnterpriseSolutions() {
             <div className="row section-row align-items-center">
               <div className="col-lg-12">
                 <div className="section-title text-center headingss">
-                  <h2 className="text-anime-style-2" data-cursor="-opaque">
+                  <h2 className="text-anime-style-2 text-black" data-cursor="-opaque">
                     {t("Industries We Serve")}
                   </h2>
                 </div>
@@ -8279,6 +8281,37 @@ export default function EnterpriseSolutions() {
                           <div className="accordion-body">
                             <p>
                               {t("Manufacturing companies can expect a structured process that includes requirement analysis, system design, configuration, testing, and deployment. The involvement of an experienced SAP partner ensures minimal disruption to operations.")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.6s"
+                      >
+                        <h2 className="accordion-header" id="heading6">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse6"
+                            aria-expanded="false"
+                            aria-controls="collapse6"
+                          >
+                           {t("Why should manufacturers work with an ERP consulting services partner?")} 
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse6"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading6"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("ERP consulting services help manufacturers choose the right platform, plan implementation, and avoid costly delays. As an Epicor Premium Partner, RheinBrücke brings this expertise specifically to EMEA manufacturing enterprises.")}
                             </p>
                           </div>
                         </div>

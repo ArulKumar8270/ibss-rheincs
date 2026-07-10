@@ -84,7 +84,7 @@ export default function AdminLayout({
     { href: '/admin', label: 'Dashboard', icon: '📊' },
     { href: '/admin/contacts', label: 'Contact Enquiries', icon: '📬' },
     { href: '/admin/deftech-bharat-2026', label: 'DefTech Enquiries', icon: '🛩️' },
-    { href: '/admin/blogs', label: 'Blogs', icon: '📝' },
+    { href: '/admin/blog', label: 'Blogs', icon: '📝' },
     { href: '/admin/news-events', label: 'News & Events', icon: '📰' },
     { href: '/admin/case-studies', label: 'Case Studies', icon: '📄' },
     { href: '/admin/careers', label: 'Careers', icon: '💼' },

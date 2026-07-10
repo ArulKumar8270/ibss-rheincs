@@ -5,6 +5,7 @@ import {useTranslation} from "../hooks/useTranslation";
 export default function Footer() {
     const { t } = useTranslation();
     const [showCookieBanner, setShowCookieBanner] = useState(false);
+    const [showCookieSettings, setShowCookieSettings] = useState(false);
     const getCookie = (name) => {
         const nameEQ = name + "=";
         const ca = document.cookie.split(";");
@@ -37,10 +38,9 @@ export default function Footer() {
         setShowCookieBanner(false);
     };
     const manageCookies = () => {
-        
-        // Open cookie preferences or scroll to privacy policy
-        // You can customize this behavior
-        window.location.href = "/privacy#cookies";
+        // Show cookie settings modal first, then optionally navigate
+        setShowCookieBanner(false);
+        setShowCookieSettings(true);
     };
     useEffect(() => {
         let stored = null;
@@ -150,6 +150,21 @@ export default function Footer() {
                                                 {" "}
                                                 <Link href="/terms">{t("Terms")}</Link>
                                             </li>
+                                            <li>|</li>
+                                            <li>
+                                                <button
+                                                    onClick={() => setShowCookieSettings(true)}
+                                                    style={{
+                                                        background: "transparent",
+                                                        border: 0,
+                                                        color: "inherit",
+                                                        cursor: "pointer",
+                                                        font: "inherit",
+                                                    }}
+                                                >
+                                                    {t("Manage Cookies")}
+                                                </button>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -161,7 +176,7 @@ export default function Footer() {
                                     <div className="places rights text-right">
                                         <ul>
                                             <li>
-                                                <Link href="/sitemap">{t("Sitemap")}</Link>
+                                                <Link href="/sitemap-page">{t("Sitemap")}</Link>
                                             </li>
                                             <li>|</li>
                                             <li>
@@ -175,6 +190,21 @@ export default function Footer() {
                                             <li>
                                                 {" "}
                                                 <Link href="/terms">{t("Terms")}</Link>
+                                            </li>
+                                            <li>|</li>
+                                            <li>
+                                                <button
+                                                    onClick={() => setShowCookieSettings(true)}
+                                                    style={{
+                                                        background: "transparent",
+                                                        border: 0,
+                                                        color: "inherit",
+                                                        cursor: "pointer",
+                                                        font: "inherit",
+                                                    }}
+                                                >
+                                                    {t("Manage Cookies")}
+                                                </button>
                                             </li>
                                         </ul>
                                     </div>
@@ -214,6 +244,181 @@ export default function Footer() {
             <div className="footimg">
                 <img src="/images/footimg.png" alt="" loading="lazy" />
             </div>
+
+            {/* Cookie Settings Modal */}
+            {showCookieSettings && (
+                <div
+                    style={{
+                        position: "fixed",
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        top: 0,
+                        zIndex: 2147483647,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        backgroundColor: "rgba(0, 0, 0, 0.5)",
+                        backdropFilter: "blur(4px)",
+                    }}
+                    onClick={(e) => {
+                        if (e.target === e.currentTarget) setShowCookieSettings(false);
+                    }}
+                >
+                    <div
+                        style={{
+                            maxWidth: 600,
+                            width: "90%",
+                            margin: "0 auto",
+                            background: "#fff",
+                            color: "#333",
+                            borderRadius: 12,
+                            padding: "24px 28px",
+                            boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+                            position: "relative",
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button
+                            onClick={() => setShowCookieSettings(false)}
+                            style={{
+                                position: "absolute",
+                                top: "12px",
+                                right: "12px",
+                                background: "transparent",
+                                border: 0,
+                                fontSize: "24px",
+                                cursor: "pointer",
+                                color: "#666",
+                            }}
+                        >
+                            ×
+                        </button>
+                        <h3
+                            style={{
+                                fontSize: "20px",
+                                fontWeight: 700,
+                                color: "#1a1a1a",
+                                marginBottom: "16px",
+                                lineHeight: "1.4",
+                            }}
+                        >
+                            {t("Cookie Settings")}
+                        </h3>
+                        <p
+                            style={{
+                                fontSize: "14px",
+                                color: "#4a4a4a",
+                                lineHeight: "1.6",
+                                marginBottom: "20px",
+                            }}
+                        >
+                            {t("Here you can manage your cookie preferences.")}
+                        </p>
+                        <div style={{ marginBottom: "24px" }}>
+                            <label
+                                style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "10px",
+                                    marginBottom: "12px",
+                                    cursor: "pointer",
+                                }}
+                            >
+                                <input type="checkbox" checked disabled style={{ cursor: "not-allowed" }} />
+                                <span style={{ fontSize: "14px" }}>{t("Strictly Necessary Cookies (Always Active)")}</span>
+                            </label>
+                            <label
+                                style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "10px",
+                                    marginBottom: "12px",
+                                    cursor: "pointer",
+                                }}
+                            >
+                                <input type="checkbox" defaultChecked />
+                                <span style={{ fontSize: "14px" }}>{t("Performance & Analytics Cookies")}</span>
+                            </label>
+                            <label
+                                style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "10px",
+                                    cursor: "pointer",
+                                }}
+                            >
+                                <input type="checkbox" defaultChecked />
+                                <span style={{ fontSize: "14px" }}>{t("Marketing & Personalization Cookies")}</span>
+                            </label>
+                        </div>
+                        <div
+                            style={{
+                                display: "flex",
+                                gap: "12px",
+                                flexWrap: "wrap",
+                                justifyContent: "flex-end",
+                            }}
+                        >
+                            <Link
+                                href="/privacy"
+                                style={{
+                                    textDecoration: "none",
+                                    color: "#082326",
+                                    fontWeight: 600,
+                                    padding: "8px 14px",
+                                }}
+                                onClick={() => setShowCookieSettings(false)}
+                            >
+                                {t("Privacy Policy")}
+                            </Link>
+                            <button
+                                onClick={() => {
+                                    setShowCookieSettings(false);
+                                    setShowCookieBanner(true);
+                                }}
+                                style={{
+                                    background: "#f0f0f0",
+                                    color: "#333",
+                                    border: 0,
+                                    borderRadius: 6,
+                                    padding: "8px 14px",
+                                    fontWeight: 600,
+                                    cursor: "pointer",
+                                }}
+                            >
+                                {t("Back")}
+                            </button>
+                            <button
+                                onClick={() => {
+                                    acceptCookies();
+                                    setShowCookieSettings(false);
+                                }}
+                                style={{
+                                    background: "#082326",
+                                    color: "#fff",
+                                    border: 0,
+                                    borderRadius: 6,
+                                    padding: "8px 14px",
+                                    fontWeight: 600,
+                                    cursor: "pointer",
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.background = "#061a1c";
+                                    e.currentTarget.style.transform = "translateY(-1px)";
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.background = "#082326";
+                                    e.currentTarget.style.transform = "translateY(0)";
+                                }}
+                            >
+                                {t("Save Preferences")}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             {showCookieBanner && (
                 <div
                     style={{

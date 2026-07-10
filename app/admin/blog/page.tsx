@@ -1551,7 +1551,7 @@ export default function AdminBlogsPage() {
                     </td>
                     <td style={{ padding: '18px 20px' }}>
                       <Link 
-                        href={`/blog-details/${blog.slug}`}
+                        href={`/blogs/${blog.slug}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{ 

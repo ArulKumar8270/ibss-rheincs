@@ -5,30 +5,32 @@ import LoadingWrapper from "./Components/LoadingWrapper";
 import RouteTracker from "./Components/RouteTracker";
 import LeadSquaredInit from "./Components/LeadSquaredInit";
 import React, { Suspense } from "react";
-import "./globals.css";
-import { Raleway } from 'next/font/google';
-import localFont from 'next/font/local';
+// import "./globals.css";
+import "./styles/fa-override.css";
+import { Raleway } from "next/font/google";
+import localFont from "next/font/local";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import translations from "./translations.json";
 
 const raleway = Raleway({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
-const helvetica = localFont({ 
-  src: [ 
-    { 
-      path: './fonts/Helvetica.ttf', 
-      weight: '400', 
-      style: 'normal', 
-    }, 
-  ], 
-  display: 'swap',   
-  variable: '--font-helvetica', 
-}) 
+const helvetica = localFont({
+  src: [
+    {
+      path: "./fonts/Helvetica.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+  variable: "--font-helvetica",
+});
 
 export const metadata: Metadata = {
   title: "Enterprise Digital Transformation & ERP Solutions | RheinBrücke",
@@ -40,28 +42,48 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  
   return (
     <html lang="en" className={` ${raleway.className} ${helvetica.variable} `}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="index,follow" />
         <link rel="icon" href="/images/fav.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        {/* Preload critical fonts */}
+        <link
+          rel="preload"
+          href="/webfonts/fa-solid-900.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/webfonts/fa-brands-400.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/webfonts/Helvetica.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
-        />
+        /> */}
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
         <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-        
+
         {/* Non-render-blocking styles (raw HTML so onload works) */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
           <link href="https://use.typekit.net/guc8vih.css" rel="stylesheet" media="print" onload="this.media='all'" />
-          <link href="https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro" rel="stylesheet" media="print" onload="this.media='all'" />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'" />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.css" media="print" onload="this.media='all'" />
@@ -70,16 +92,16 @@ export default function RootLayout({
         `,
           }}
         />
-        
-        <link rel="stylesheet" href="/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="/css/custom.css" />
+
+        {/* <link rel="stylesheet" href="/css/bootstrap.min.css" /> */}
+        <link rel="stylesheet" href="/css/custom.used.css" />
         <link rel="stylesheet" href="/css/owl.carousel.css" />
         <link rel="stylesheet" href="/css/all.css" />
         <link rel="stylesheet" href="/css/slicknav.min.css" />
         <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
         <link rel="stylesheet" href="/css/magnific-popup.css" />
         <link rel="stylesheet" href="/css/mousecursor.css" />
-        
+
         {/* <link rel="stylesheet" href="./css/enterprise.css" /> */}
         <link rel="stylesheet" href="/style2.css" />
 
@@ -130,6 +152,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
 
+        {/* Google Tag Manager - GTM-TDCNRK4 */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TDCNRK4');`,
+          }}
+        />
+
         {/* Google tag (gtag.js) - AW-795585511 */}
         <script
           async
@@ -155,7 +188,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
 
         {/* Freshmarketer */}
-        <script src="//cdn.freshmarketer.com/195245/632861.js" async defer></script>
+        <script
+          src="//cdn.freshmarketer.com/195245/632861.js"
+          async
+          defer
+        ></script>
 
         {/* Factors.ai */}
         <script
@@ -163,7 +200,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             __html: `window.factors = window.factors || function () { this.q = []; var i = new CustomEvent("FACTORS_QUEUED_EVENT"), n = function (t, e) { this.q.push({ k: t, a: e }), window.dispatchEvent(i) }; return this.track = function (t, e, i) { n("track", arguments) }, this.init = function (t, e, i) { this.TOKEN = t, this.INIT_PARAMS = e, this.INIT_CALLBACK = i, window.dispatchEvent(new CustomEvent("FACTORS_INIT_EVENT")) }, this.reset = function () { n("reset", arguments) }, this.page = function (t, e) { n("page", arguments) }, this.updateEventProperties = function (t, e) { n("updateEventProperties", arguments) }, this.identify = function (t, e) { n("identify", arguments) }, this.addUserProperties = function (t) { n("addUserProperties", arguments) }, this.getUserId = function () { n("getUserId", arguments) }, this.call = function () { var t = { k: "", a: [] }; if (arguments && 1 <= arguments.length) { for (var e = 1; e < arguments.length; e++) t.a.push(arguments[e]); t.k = arguments[0] } this.q.push(t), window.dispatchEvent(i) }, this.init("yyq3qwq23c7r4rq7o5refttcg39ju39m"), this }(), function () { var t = document.createElement("script"); t.type = "text/javascript", t.src = "https://app.factors.ai/assets/v1/factors.js", t.async = !0, d = document.getElementsByTagName("script")[0], d.parentNode.insertBefore(t, d) }();`,
           }}
         />
-
 
         {/* Schema.org JSON-LD */}
         <script
@@ -274,13 +310,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
 
-        {/* ✅ jQuery FIRST */}
-        <Script
-          src="https://code.jquery.com/jquery-3.6.0.min.js"
-          strategy="beforeInteractive"
-        />
-      
-        
       </head>
       <body>
         {/* Google Tag Manager (noscript) */}
@@ -292,10 +321,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TDCNRK4"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
 
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDCNRK4"
-height="0" width="0" style={{display: "none", visibility: "hidden"}}></iframe></noscript>
-
+        {/* Google Tag Manager (noscript) - GTM-TDCNRK4 */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TDCNRK4"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
 
         <Suspense fallback={null}>
           <RouteTracker />
@@ -351,7 +394,7 @@ height="0" width="0" style={{display: "none", visibility: "hidden"}}></iframe></
         </noscript>
 
         {/* LiveChat Widget (loads only after cookie consent) */}
-        <Script id="livechat-init" strategy="afterInteractive">
+        <Script id="livechat-init" strategy="lazyOnload">
           {`
             (function () {
               function isAccepted() {
@@ -403,7 +446,11 @@ height="0" width="0" style={{display: "none", visibility: "hidden"}}></iframe></
             __html: `var onloadCallback = function () { grecaptcha.render('g_captcha', { 'sitekey': '6LchLhApAAAAAKh9skbfRiq9ZLwCfCrLZrfcvyCn' }); };`,
           }}
         />
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script
+          src="https://www.google.com/recaptcha/api.js"
+          async
+          defer
+        ></script>
 
         {/* Google Conversion Functions */}
         <script
@@ -431,13 +478,16 @@ height="0" width="0" style={{display: "none", visibility: "hidden"}}></iframe></
           async
           defer
         ></script>
+        <Script
+ src="https://code.jquery.com/jquery-3.7.1.min.js"
+ strategy="afterInteractive"
+/>
 
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
           (function() {
             var scripts = [
-              '/js/jquery-3.7.1.min.js',
               'https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js',
               '/js/bootstrap.min.js',
               '/js/validator.min.js',
@@ -519,9 +569,9 @@ height="0" width="0" style={{display: "none", visibility: "hidden"}}></iframe></
           });
 
         `,
-        }}
-      />
-    </body>
-  </html>
-);
+          }}
+        />
+      </body>
+    </html>
+  );
 }

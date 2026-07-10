@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import BlogDetailsClient from "./Blogs/[slug]/BlogDetailsClient";
+import BlogDetailsClient from "./blogs/[slug]/BlogDetailsClient";
 import CaseStudyDetailsClient from "./Casestudy/[id]/CaseStudyDetailsClient";
 import NewsEventDetailsClient from "./news-events/[slug]/NewsEventDetailsClient";
 import JobDetailClient from "./openings/[id]/JobDetailClient";
@@ -25,7 +25,7 @@ export default function NotFound() {
   const actualPath = currentPath || pathname || (typeof window !== 'undefined' ? window.location.pathname : '') || '';
 
   // Extract slug/id from pathname for different detail pages (greedy capture for full segment)
-  const blogMatch = actualPath?.match(/^\/(?:blog-details|Blogs)\/(.+)\/?$/i);
+  const blogMatch = actualPath?.match(/^\/(?:blog-details|Blogs|blogs)\/(.+)\/?$/i);
   const caseStudyMatch = actualPath?.match(/^\/(?:Case-study-details|Casestudy)\/(.+)\/?$/i);
   const newsEventMatch = actualPath?.match(/^\/news-events\/(.+)\/?$/);
   const jobMatch = actualPath?.match(/^\/openings\/(.+)\/?$/);
@@ -89,7 +89,7 @@ export default function NotFound() {
     );
   }
 
-  // On client, wait for effect to set currentPath so /Blogs/new-slug etc. resolve correctly (avoid wrong 404 flash)
+  // On client, wait for effect to set currentPath so /blogss/new-slug etc. resolve correctly (avoid wrong 404 flash)
   if (typeof window !== 'undefined' && currentPath === '') {
     return (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh' }}>

@@ -86,3 +86,12 @@ RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^LP/.*$ /404.html [L]
   RewriteRule ^EbookLanding/.*$ /404.html [L]
 
+
+# -------------------------------
+# BLOG
+# -------------------------------
+RewriteRule ^blogs/?$ https://www.rheincs.com/Blog/ [R=301,L]
+
+# Capital "Blogs/slug" -> lowercase "blogs/slug"
+RewriteCond %{REQUEST_URI} ^/Blogs/(.+)$ [NC]
+RewriteRule ^Blogs/(.+)$ https://www.rheincs.com/blogs/$1 [R=301,L,NC]

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   return {
     alternates: {
-      canonical: `https://www.rheincs.com/Blogs/${slug}/`,
+      canonical: `https://www.rheincs.com/blogs/${slug}/`,
     },
   }
 }
