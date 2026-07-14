@@ -63,9 +63,11 @@
 }
 
 .rechange-baner img {
-    height: 100%;
-    width: 60%;
+      height: 100%;
+    /* width: 50%; */
     object-fit: cover;
+    /* position: relative; */
+    object-position: left;
 }
 
 .text-left2 {

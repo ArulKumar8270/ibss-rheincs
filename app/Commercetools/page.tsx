@@ -28,7 +28,7 @@ export default function AlMl() {
               {t("Deliver agile, composable commerce and headless commerce solutions with commercetools.")}
             </p>
             <p>
-              {t("At RheinBrücke, we help enterprises build future-proof digital commerce platforms using MACH-based, cloud-native technology. Using commercetools services, we build scalable commerce solutions, accelerate enterprise eCommerce transformation, and deliver consistent omnichannel customer experiences across web, mobile, marketplaces and every customer touchpoint.")}
+              {t("At RheinBrücke, we help enterprises build future-proof digital commerce platforms using MACH-based, cloud-native technology. Using commercetools services, we build scalable commerce solutions, accelerate enterprise eCommerce transformation and deliver consistent omnichannel customer experiences across web, mobile, marketplaces and every customer touchpoint.")}
             </p>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function AlMl() {
                   <div className="matters-content-waber">
                     <img src="/images/support-multi-store-currency.svg" alt="" />
                     <p>
-                      {t("Full support for multi-store, multi-currency, multilingual, and omnichannel commerce")}
+                      {t("Full support for multi-store, multi-currency, multilingual and omnichannel commerce")}
                     </p>
                   </div>
                 </div>
@@ -116,7 +116,7 @@ export default function AlMl() {
                   <div className="matters-content-waber">
                     <img src="/images/enterprise-grade-security.svg" alt="" />
                     <p>
-                      {t("Enterprise-grade security, high availability, and cloud-native resilience")}
+                      {t("Enterprise-grade security, high availability and cloud-native resilience")}
                     </p>
                   </div>
                 </div>
@@ -380,7 +380,7 @@ export default function AlMl() {
       <div className="item">
         <div className="inner">
           <img src="/images/g4.png" alt="commercetools Product and Pricing icon" />
-          <p>{t("Product, Pricing, and Order API Integration")}</p>
+          <p>{t("Product, Pricing and Order API Integration")}</p>
         </div>
       </div>
       <div className="item">
@@ -459,7 +459,7 @@ export default function AlMl() {
               <div className="MeRLIN-service">
                 <div className="inner">
                   <img src="/images/g4.png" alt="commercetools Product and Pricing icon" />
-                  <p>{t("Product, Pricing, and Order API Integration")}</p>
+                  <p>{t("Product, Pricing and Order API Integration")}</p>
                 </div>
               </div>
             </div>
@@ -824,7 +824,7 @@ export default function AlMl() {
                               <br />
                               {t("· Headless: Decoupling the front-end experience from the back-end commerce logic.")}
                               <br />
-                              {t("It allows organizations to create highly flexible, customized, and future-proof digital stores without vendor lock-in.")}
+                              {t("It allows organizations to create highly flexible, customized and future-proof digital stores without vendor lock-in.")}
                             </p>
                           </div>
                         </div>
@@ -886,7 +886,7 @@ export default function AlMl() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("Yes, integration with core ERP platforms is crucial and is our specialty. Using the platform's robust API-first approach, we build custom, high-performance connectors (or leverage pre-built middleware solutions) to synchronize essential data. This enables real-time data flow for product information management (PIM), dynamic pricing, inventory levels, and order synchronization between commercetools and systems like Epicor or SAP S/4HANA.")}
+                              {t("Yes, integration with core ERP platforms is crucial and is our specialty. Using the platform's robust API-first approach, we build custom, high-performance connectors (or leverage pre-built middleware solutions) to synchronize essential data. This enables real-time data flow for product information management (PIM), dynamic pricing, inventory levels and order synchronization between commercetools and systems like Epicor or SAP S/4HANA.")}
                             </p>
                           </div>
                         </div>
@@ -921,7 +921,7 @@ export default function AlMl() {
                               <br />
                               {t("· Brand Owners & Manufacturers (D2C/DTC): Seeking to control the end-to-end customer experience and bypass traditional retailers.")}
                               <br />
-                              {t("· B2B & Enterprise Retailers: Needing complex catalogues, bespoke pricing, and multi-region/multi-brand capabilities.")}
+                              {t("· B2B & Enterprise Retailers: Needing complex catalogues, bespoke pricing and multi-region/multi-brand capabilities.")}
                               <br />
                               {t("· Any organization adopting an omnichannel commerce strategy who needs to deploy commerce functionalities across non-traditional touchpoints (e.g., mobile apps, IoT devices, or in-store kiosks).")}
                             </p>

@@ -152,6 +152,11 @@ export default function EbookLandingClient({ initialData, slug: propSlug }: { in
     return value.replace(/&nbsp;/g, " ").replace(/\u00A0/g, " ");
   };
 
+  const normalizeRichHtml = (value: string | null | undefined) => {
+    if (!value) return "";
+    return value.replace(/&nbsp;/g, " ").replace(/\u00A0/g, " ");
+  };
+
   useEffect(() => {
     if (slug === "placeholder") {
       // Do nothing - the redirects will handle it, or just wait for client-side fetch
@@ -467,7 +472,7 @@ Object.keys(formData).forEach(key => {
             />
           )}
           {data.additional_paragraph && (
-            <div className="lp-rich-text" style={{ marginTop: '15px', fontSize: '14px', color: '#000', textAlign: 'left' }} dangerouslySetInnerHTML={{ __html: data.additional_paragraph }} />
+            <div className="lp-rich-text" style={{ marginTop: '15px', fontSize: '14px', color: '#000', textAlign: 'left' }} dangerouslySetInnerHTML={{ __html: normalizeRichHtml(data.additional_paragraph) }} />
           )}
         </section>
 
@@ -476,12 +481,21 @@ Object.keys(formData).forEach(key => {
             <img src={data.book_image_url || "/images/book.png"} alt="Book" style={{ width: "100%", maxWidth: "100%", height: "auto" }} />
           </div>
           <div>
-            {data.learning_title && <h2 dangerouslySetInnerHTML={{ __html: data.learning_title }} />}
+            {data.learning_title && (
+              <h2
+                className="lp-side-heading"
+                dangerouslySetInnerHTML={{ __html: normalizeRichHtml(data.learning_title) }}
+              />
+            )}
             {data.learning_description && (
-              <div className="lp-rich-text" style={{ marginTop: "15px" }} dangerouslySetInnerHTML={{ __html: data.learning_description }} />
+              <div className="lp-rich-text" style={{ marginTop: "15px" }} dangerouslySetInnerHTML={{ __html: normalizeRichHtml(data.learning_description) }} />
             )}
             {data.benefits_heading && (
-              <h3 style={{ marginTop: "20px" }} dangerouslySetInnerHTML={{ __html: data.benefits_heading }} />
+              <h3
+                className="lp-side-heading"
+                style={{ marginTop: "20px" }}
+                dangerouslySetInnerHTML={{ __html: normalizeRichHtml(data.benefits_heading) }}
+              />
             )}
             <ul style={{ marginTop: "20px" }}>
               {data.benefits?.map((benefit, index) => (
@@ -489,7 +503,12 @@ Object.keys(formData).forEach(key => {
               ))}
             </ul>
             <form onSubmit={handleSubmit} style={{ marginTop: "30px" }}>
-              {data.form_title && <h3 dangerouslySetInnerHTML={{ __html: data.form_title }} />}             
+              {data.form_title && (
+                <h3
+                  className="lp-form-heading"
+                  dangerouslySetInnerHTML={{ __html: normalizeRichHtml(data.form_title) }}
+                />
+              )}             
               {data.form_fields && data.form_fields.length > 0 ? (
                 data.form_fields.map((field) => {
                   const defaultPlaceholder = field.id.charAt(0).toUpperCase() + field.id.slice(1);
@@ -571,12 +590,16 @@ Object.keys(formData).forEach(key => {
             </form>
 
             
-        {data.extra_content && (
-          <div className="contentbox lp-rich-text" style={{ color: "#000" }} dangerouslySetInnerHTML={{ __html: data.extra_content }} />
-        )}
           </div>
-        </section>
+        {data.extra_content && (
+          <div
+            className="contentbox lp-rich-text col-12"
+            style={{ color: "#000", gridColumn: "1 / -1", width: "100%" }}
+            dangerouslySetInnerHTML={{ __html: normalizeRichHtml(data.extra_content) }}
+          />
+        )}
 
+        </section>
 
 
 
@@ -636,7 +659,7 @@ Object.keys(formData).forEach(key => {
                         className="lp-rich-text"
                         style={{ maxWidth: "700px", margin: "20px auto 0" }}
                         dangerouslySetInnerHTML={{
-                          __html: String(data.author_bio ?? ""),
+                          __html: normalizeRichHtml(data.author_bio),
                         }}
                       />
                     )}
@@ -655,6 +678,17 @@ Object.keys(formData).forEach(key => {
       <ScriptReinit />
 
       <style jsx global>{`
+        .lp-rich-text,
+        .lp-rich-text p,
+        .lp-rich-text span,
+        .lp-rich-text li,
+        .lp-rich-text div {
+          word-break: normal !important;
+          overflow-wrap: break-word !important;
+          white-space: normal !important;
+          hyphens: none !important;
+        }
+
         .lp-top-section h1,
         .lp-top-section h5,
         .lp-top-section h1 p,
@@ -667,10 +701,33 @@ Object.keys(formData).forEach(key => {
           hyphens: none !important;
         }
 
+        .lp-side-heading,
+        .lp-side-heading p,
+        .lp-side-heading span,
+        .lp-form-heading,
+        .lp-form-heading p,
+        .lp-form-heading span {
+          max-width: 100%;
+          word-break: normal !important;
+          overflow-wrap: break-word !important;
+          white-space: normal !important;
+          hyphens: none !important;
+        }
+
         @media (max-width: 768px) {
           .lp-top-section h1,
           .lp-top-section h5 {
             width: 100% !important;
+          }
+
+          .lp-side-heading,
+          .lp-side-heading p,
+          .lp-side-heading span,
+          .lp-form-heading,
+          .lp-form-heading p,
+          .lp-form-heading span {
+            font-size: 24px !important;
+            line-height: 1.3 !important;
           }
         }
 

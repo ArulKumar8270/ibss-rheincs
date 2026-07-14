@@ -24,10 +24,10 @@ const page = () => {
               {t("UI/UX as a Service for Digital Products and Enterprise Platforms")}
             </h2>
             <p>
-              {t("Successful digital solutions depend on experiences that are simple, intuitive, and aligned with user needs.")}
+              {t("Successful digital solutions depend on experiences that are simple, intuitive and aligned with user needs.")}
             </p>
             <p>
-              {t("We design responsive and accessible interfaces that support better user engagement across web, mobile, and enterprise applications. From UX strategy and user research to UX/UI design and experience optimization, we create human-centric solutions that connect users with technology.")}
+              {t("We design responsive and accessible interfaces that support better user engagement across web, mobile and enterprise applications. From UX strategy and user research to UX/UI design and experience optimization, we create human-centric solutions that connect users with technology.")}
             </p>
           </div>
         </div>
@@ -66,7 +66,7 @@ const page = () => {
           <div className="dynamics-advantage-waber">
             <img src="/new/g501.svg" alt="Human centred UX design icon" />
             <p>
-              {t("Human-centred design focused on usability, clarity, and meaningful interactions.")}
+              {t("Human-centred design focused on usability, clarity and meaningful interactions.")}
             </p>
           </div>
         </div>
@@ -82,7 +82,7 @@ const page = () => {
           <div className="dynamics-advantage-waber">
             <img src="/new/ad3.svg" alt="Creative UI/UX design icon" />
             <p>
-              {t("Strategic design that connects technology, creativity, and business goals.")}
+              {t("Strategic design that connects technology, creativity and business goals.")}
             </p>
           </div>
         </div>
@@ -90,7 +90,7 @@ const page = () => {
           <div className="dynamics-advantage-waber">
             <img src="/new/ad4.svg" alt="" />
             <p>
-              {t("A track record for responsive, accessible, and engaging UI interfaces.")}
+              {t("A track record for responsive, accessible and engaging UI interfaces.")}
             </p>
           </div>
         </div>
@@ -127,7 +127,7 @@ const page = () => {
                 <div className="challenge-point-waber self-service">
                   <img src="/images/ss1.svg" alt="UI/UX design tools icon" />
                   <p>
-                    <b>{t("UX/UI Design")}</b> – {t("Built with Figma, Webflow, Anima, and Adobe XD for enterprise needs.")}
+                    <b>{t("UX/UI Design")}</b> – {t("Built with Figma, Webflow, Anima and Adobe XD for enterprise needs.")}
                   </p>
                 </div>
                 <div className="challenge-point-waber self-service">
@@ -151,7 +151,7 @@ const page = () => {
                 <div className="challenge-point-waber self-service">
                   <img src="/images/ss5.svg" alt="UI/UX testing and feedback icon" />
                   <p>
-                    <b>{t("Usability Testing & Optimisation")}</b> – {t("refining experiences through feedback, analysis, and UX audits.")}
+                    <b>{t("Usability Testing & Optimisation")}</b> – {t("refining experiences through feedback, analysis and UX audits.")}
                   </p>
                 </div>
               </div>
@@ -293,7 +293,7 @@ const page = () => {
                               <br />
                               {t("• Iterative Design: Using Design Thinking principles to refine solutions based on data.")}
                               <br />
-                              {t("• KPI Alignment: Ensuring design decisions directly contribute to key metrics like conversion rates, task completion time, and user adoption rates.")}
+                              {t("• KPI Alignment: Ensuring design decisions directly contribute to key metrics like conversion rates, task completion time and user adoption rates.")}
                             </p>
                           </div>
                         </div>
@@ -326,9 +326,9 @@ const page = () => {
                             <p>
                               {t("We utilize the leading tools in both the design and development phases to ensure efficiency and quality:")}
                               <br />
-                              {t("• Design & Prototyping: Figma and Adobe XD for collaborative design, wireframing, and interactive prototypes.")}
+                              {t("• Design & Prototyping: Figma and Adobe XD for collaborative design, wireframing and interactive prototypes.")}
                               <br />
-                              {t("• Front-End Development: Modern, high-performance frameworks like React, Angular, or Vue.js to build fast and scalable user interfaces. Tools include Figma, Adobe XD, and front-end frameworks such as React and Angular.")}
+                              {t("• Front-End Development: Modern, high-performance frameworks like React, Angular, or Vue.js to build fast and scalable user interfaces. Tools include Figma, Adobe XD and front-end frameworks such as React and Angular.")}
                             </p>
                           </div>
                         </div>
@@ -359,7 +359,7 @@ const page = () => {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("Yes. RheinBrücke provides UI/UX services in India for organisations looking to improve digital products, enterprise applications, and customer experiences through research-driven design and technology expertise. Our User Experience Design services cover UX strategy, UX research, user journey mapping, interaction design, usability evaluation, and experience optimisation to improve how users interact with digital platforms.")}
+                              {t("Yes. RheinBrücke provides UI/UX services in India for organisations looking to improve digital products, enterprise applications and customer experiences through research-driven design and technology expertise. Our User Experience Design services cover UX strategy, UX research, user journey mapping, interaction design, usability evaluation and experience optimisation to improve how users interact with digital platforms.")}
                             </p>
                           </div>
                         </div>

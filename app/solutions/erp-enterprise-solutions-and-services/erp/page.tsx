@@ -22,7 +22,7 @@ export default function EnterpriseSolutions() {
                     {t("Enterprise ERP Solutions and Digital Transformation Services")}
                   </h2>
                   <p>
-                    {t("Enable greater operational agility, enterprise-wide visibility, and sustainable growth with integrated ERP solutions and digital transformation services. From ERP implementation and enterprise integration to business process automation and cloud modernisation, we help organisations build connected, data-driven enterprises that are ready for change.")}
+                    {t("Enable greater operational agility, enterprise-wide visibility and sustainable growth with integrated ERP solutions and digital transformation services. From ERP implementation and enterprise integration to business process automation and cloud modernisation, we help organisations build connected, data-driven enterprises that are ready for change.")}
                   </p>
                   <div className="ser-btn ">
                       <Link href="/contact-us" className="animated-svg-link">
@@ -704,10 +704,10 @@ export default function EnterpriseSolutions() {
                   <div className="section-title">
                     <div className="hero-video-content wow fadeInUp mt-4">
                       <h2 className="text-anime-style-2" data-cursor="-opaque">
-                        {t("Build resilient, connected, and future-ready enterprises with intelligent ERP solutions and digital transformation services.")}
+                        {t("Build resilient, connected and future-ready enterprises with intelligent ERP solutions and digital transformation services.")}
                       </h2>
                       <p>
-                        {t(" At RheinBrücke, we help organisations modernise operations and simplify complexity across finance, supply chain, procurement, manufacturing, customer engagement, and workforce management. Our ERP solutions and digital transformation services enable real-time visibility, stronger governance, trusted data, and confident decision-making at scale.")}
+                        {t(" At RheinBrücke, we help organisations modernise operations and simplify complexity across finance, supply chain, procurement, manufacturing, customer engagement and workforce management. Our ERP solutions and digital transformation services enable real-time visibility, stronger governance, trusted data and confident decision-making at scale.")}
                       </p>
                     </div>
                   </div>
@@ -727,7 +727,7 @@ export default function EnterpriseSolutions() {
                     {t("ERP Implementation Challenges and Digital Transformation Barriers")}
                   </h2>
                   <p>
-                    {t("Many organisations still rely on legacy ERP environments, fragmented applications, and manual workflows that create inefficiencies, limit visibility, and slow digital transformation. The most common ERP challenges are:")}
+                    {t("Many organisations still rely on legacy ERP environments, fragmented applications and manual workflows that create inefficiencies, limit visibility and slow digital transformation. The most common ERP challenges are:")}
                   </p>
                 </div>
               </div>
@@ -848,7 +848,7 @@ export default function EnterpriseSolutions() {
                     </clipPath>
                   </defs>
                 </svg>
-                <p>{t("Legacy ERP systems that lack the flexibility, scalability, and interoperability modern enterprises need")}</p>
+                <p>{t("Legacy ERP systems that lack the flexibility, scalability and interoperability modern enterprises need")}</p>
               </div>
             </div>
             <div className="item">
@@ -1051,7 +1051,7 @@ export default function EnterpriseSolutions() {
                   />
                 </svg>
                 <p>
-                  {t("Rising operational costs and inefficiencies in finance, HR, procurement, and inventory management")}
+                  {t("Rising operational costs and inefficiencies in finance, HR, procurement and inventory management")}
                 </p>
               </div>
             </div>
@@ -1382,7 +1382,7 @@ export default function EnterpriseSolutions() {
                     />
                   </g>
                 </svg>
-                <p>{t("Complex application landscapes, scattered ERP systems, and poor data governance")}</p>
+                <p>{t("Complex application landscapes, scattered ERP systems and poor data governance")}</p>
               </div>
             </div>
             <div className="item">
@@ -1548,7 +1548,7 @@ export default function EnterpriseSolutions() {
                     </clipPath>
                   </defs>
                 </svg>
-                <p>{t("Legacy ERP systems that lack the flexibility, scalability, and interoperability modern enterprises need")}</p>
+                <p>{t("Legacy ERP systems that lack the flexibility, scalability and interoperability modern enterprises need")}</p>
               </div>
             </div>
             <div className="item">
@@ -1751,7 +1751,7 @@ export default function EnterpriseSolutions() {
                   />
                 </svg>
                 <p>
-                  {t("Rising operational costs and inefficiencies in finance, HR, procurement, and inventory management")}
+                  {t("Rising operational costs and inefficiencies in finance, HR, procurement and inventory management")}
                 </p>
               </div>
             </div>
@@ -1829,7 +1829,7 @@ export default function EnterpriseSolutions() {
                   />
                 </svg>
                 <p>
-                  {t("Slow response to market changes, demands customer expectations, and evolving compliance regulatory requirements")}
+                  {t("Slow response to market changes, demands customer expectations and evolving compliance regulatory requirements")}
                 </p>
               </div>
             </div>
@@ -2082,7 +2082,7 @@ export default function EnterpriseSolutions() {
                     />
                   </g>
                 </svg>
-                <p>{t("Complex application landscapes, scattered ERP systems, and poor data governance")}</p>
+                <p>{t("Complex application landscapes, scattered ERP systems and poor data governance")}</p>
               </div>
             </div>
             <div className="item">
@@ -2142,7 +2142,7 @@ export default function EnterpriseSolutions() {
                     {t("Our ERP Integration and Digital Transformation Solutions")}
                   </h2>
                   <p>
-                    {t("Our enterprise ERP solutions and digital transformation services help organisations modernise legacy systems, integrate critical business applications, automate workflows, and establish a connected digital foundation. By improving data visibility, process efficiency, and enterprise-wide collaboration, we enable operational excellence, business resilience, and sustainable growth.")}
+                    {t("Our enterprise ERP solutions and digital transformation services help organisations modernise legacy systems, integrate critical business applications, automate workflows and establish a connected digital foundation. By improving data visibility, process efficiency and enterprise-wide collaboration, we enable operational excellence, business resilience and sustainable growth.")}
                   </p>
                 </div>
               </div>
@@ -2159,7 +2159,7 @@ export default function EnterpriseSolutions() {
                     {t("ERP Implementation Challenges and Digital Transformation Barriers")}
                   </h2>
                   <p>
-                    {t("Many organisations still rely on legacy ERP environments, fragmented applications, and manual workflows that create inefficiencies, limit visibility, and slow digital transformation. The most common ERP challenges are:")}
+                    {t("Many organisations still rely on legacy ERP environments, fragmented applications and manual workflows that create inefficiencies, limit visibility and slow digital transformation. The most common ERP challenges are:")}
                   </p>
                 </div>
               </div>
@@ -2285,7 +2285,7 @@ export default function EnterpriseSolutions() {
                             </clipPath>
                           </defs>
                         </svg>
-                <p>{t("Legacy ERP systems that lack the flexibility, scalability, and interoperability modern enterprises need")}</p>
+                <p>{t("Legacy ERP systems that lack the flexibility, scalability and interoperability modern enterprises need")}</p>
                       </div>
                     </div>
                   </div>
@@ -2495,7 +2495,7 @@ export default function EnterpriseSolutions() {
                           />
                         </svg>
                         <p>
-                  {t("Rising operational costs and inefficiencies in finance, HR, procurement, and inventory management")}
+                  {t("Rising operational costs and inefficiencies in finance, HR, procurement and inventory management")}
                         </p>
                       </div>
                     </div>
@@ -2577,7 +2577,7 @@ export default function EnterpriseSolutions() {
                           />
                         </svg>
                         <p>
-                  {t("Slow response to market changes, demands customer expectations, and evolving compliance regulatory requirements")}
+                  {t("Slow response to market changes, demands customer expectations and evolving compliance regulatory requirements")}
                         </p>
                       </div>
                     </div>
@@ -2838,7 +2838,7 @@ export default function EnterpriseSolutions() {
                             />
                           </g>
                         </svg>
-                <p>{t("Complex application landscapes, scattered ERP systems, and poor data governance")}</p>
+                <p>{t("Complex application landscapes, scattered ERP systems and poor data governance")}</p>
 
                       </div>
                     </div>
@@ -3119,7 +3119,7 @@ export default function EnterpriseSolutions() {
                     {t("Our ERP Integration and Digital Transformation Solutions")}
                   </h2>
                   <p>
-                    {t("Our enterprise ERP solutions and digital transformation services help organisations modernise legacy systems, integrate critical business applications, automate workflows, and establish a connected digital foundation. By improving data visibility, process efficiency, and enterprise-wide collaboration, we enable operational excellence, business resilience, and sustainable growth.")}
+                    {t("Our enterprise ERP solutions and digital transformation services help organisations modernise legacy systems, integrate critical business applications, automate workflows and establish a connected digital foundation. By improving data visibility, process efficiency and enterprise-wide collaboration, we enable operational excellence, business resilience and sustainable growth.")}
                   </p>
                 </div>
               </div>
@@ -3136,7 +3136,7 @@ export default function EnterpriseSolutions() {
                     {t("Complete ERP Consulting, Support Services and digital transformation services")}
                   </h2>
                   <p>
-                    {t("We deliver enterprise ERP solutions, ERP consulting services, ERP integration services, and digital transformation solutions built on leading platforms including SAP, Epicor, and Microsoft Dynamics 365, delivering operational excellence and business transformation.")}
+                    {t("We deliver enterprise ERP solutions, ERP consulting services, ERP integration services and digital transformation solutions built on leading platforms including SAP, Epicor and Microsoft Dynamics 365, delivering operational excellence and business transformation.")}
                   </p>
                   <div className="ser-btn2 mt-4">
                     <Link href="/contact-us" className="animated-svg-link1 btn-style-3">
@@ -3370,7 +3370,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("ERP Modernisation & Upgrades")}</h3>
                                 <p>
-                                  {t("Modernise legacy ERP environments to improve performance, reduce complexity, and support evolving business needs. Organisations transition to modern platforms while minimising disruption and preserving continuity.")}
+                                  {t("Modernise legacy ERP environments to improve performance, reduce complexity and support evolving business needs. Organisations transition to modern platforms while minimising disruption and preserving continuity.")}
                                 </p>
                               </div>
                             </div>
@@ -3545,7 +3545,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("CRM and Customer Engagement Platforms")}</h3>
                                 <p>
-                                 {t("Create a 360° view of your customers across sales, service, and marketing. Improve customer engagement, strengthen relationships, and empower teams with accurate, connected data.")}
+                                 {t("Create a 360° view of your customers across sales, service and marketing. Improve customer engagement, strengthen relationships and empower teams with accurate, connected data.")}
                                 </p>
                               </div>
                             </div>
@@ -3720,7 +3720,7 @@ export default function EnterpriseSolutions() {
                                   {t("Procurement & Strategic Sourcing Solutions")}
                                 </h3>
                                 <p>
-                                {t("Strengthen procurement performance through better supplier collaboration, improved spend visibility, and optimized sourcing processes to support cost control and operational efficiency.")}
+                                {t("Strengthen procurement performance through better supplier collaboration, improved spend visibility and optimized sourcing processes to support cost control and operational efficiency.")}
 
                                 </p>
                               </div>
@@ -3982,7 +3982,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("Digital Transformation Solutions")}</h3>
                                 <p>
-                                {t("Reimagine how work gets done by connecting systems, digitising processes, and enabling data-driven decision-making.")}
+                                {t("Reimagine how work gets done by connecting systems, digitising processes and enabling data-driven decision-making.")}
                                 </p>
                               </div>
                             </div>
@@ -4248,7 +4248,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("Cloud Migrations & Managed Services")}</h3>
                                 <p>
-                                  {t("Move critical business applications to the cloud with confidence. Our managed services help ensure performance, security, and ongoing operational support.")}
+                                  {t("Move critical business applications to the cloud with confidence. Our managed services help ensure performance, security and ongoing operational support.")}
                                 </p>
                               </div>
                             </div>
@@ -4421,7 +4421,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("Regulatory Compliance Solutions")}</h3>
                                 <p>
-                                  {t("Establish stronger governance, manage risk proactively, and adapt to changing regulatory requirements.")}
+                                  {t("Establish stronger governance, manage risk proactively and adapt to changing regulatory requirements.")}
                                 </p>
                               </div>
                             </div>
@@ -4926,7 +4926,7 @@ export default function EnterpriseSolutions() {
                               <div className="service-item-body">
                                 <h3>{t("Industry-Specific ERP Solutions")}</h3>
                                 <p>
-                                  {t("Address industry-specific challenges with ERP solutions for manufacturing, automotive, retail, distribution, EPC, interior design, and oil & gas industries.")}
+                                  {t("Address industry-specific challenges with ERP solutions for manufacturing, automotive, retail, distribution, EPC, interior design and oil & gas industries.")}
                                 </p>
                               </div>
                             </div>
@@ -5175,7 +5175,7 @@ export default function EnterpriseSolutions() {
                     {t("How We Build Future-Ready Enterprises")}
                   </h2>
                   <p>
-                    {t("Successful transformation starts with understanding how people, processes, and technology work together. We take a structured approach to identifying operational gaps, simplifying complexity, and creating a foundation for sustainable growth.")}
+                    {t("Successful transformation starts with understanding how people, processes and technology work together. We take a structured approach to identifying operational gaps, simplifying complexity and creating a foundation for sustainable growth.")}
                   </p>
                 </div>
                 <div className="row mt-5">
@@ -5202,7 +5202,7 @@ export default function EnterpriseSolutions() {
                       </div>
                       <div className="benefits-steps-content">
                         <p>
-                          {t("Applying our Analyse–Integrate–Transform (AIT) methodology to identify gaps, unify systems, and enable business transformation")}
+                          {t("Applying our Analyse–Integrate–Transform (AIT) methodology to identify gaps, unify systems and enable business transformation")}
 
                         </p>
                       </div>
@@ -5292,7 +5292,7 @@ export default function EnterpriseSolutions() {
                       </div>
                       <div className="benefits-steps-content">
                         <p>
-                          {t("Connecting systems, data, and business functions")}
+                          {t("Connecting systems, data and business functions")}
                         </p>
                       </div>
                     </div>
@@ -6391,7 +6391,7 @@ export default function EnterpriseSolutions() {
                       <div className="plat-in">
                         <img src="/images/plat1.png" alt="" />
                         <p>
-                          {t("Streamline operations and accelerate performance with a modern, flexible Epicor ERP built for manufacturers. Unlock real-time visibility, automation, and scalable growth.")}
+                          {t("Streamline operations and accelerate performance with a modern, flexible Epicor ERP built for manufacturers. Unlock real-time visibility, automation and scalable growth.")}
                         </p>
                         <div className="ser-btn1">
                           <Link href="/solutions/erp-enterprise-solutions-and-services/epicor"
@@ -6506,7 +6506,7 @@ export default function EnterpriseSolutions() {
                       <div className="plat-in">
                         <img src="/images/plat2.png" alt="" />
                         <p>
-                          {t("Unify finance, sales, operations, and service on an intelligent Microsoft Dynamics 365 platform. Drive agility, efficiency, and connected decision-making.")}
+                          {t("Unify finance, sales, operations and service on an intelligent Microsoft Dynamics 365 platform. Drive agility, efficiency and connected decision-making.")}
                         </p>
                         <div className="ser-btn1">
                           <Link        href="/solutions/erp-enterprise-solutions-and-services/ms-dynamics"
@@ -6738,7 +6738,7 @@ export default function EnterpriseSolutions() {
                       {t("Data, AI & ERP Solutions for Manufacturing")}
                     </h2>
                     <p>
-                      {t("RheinBrücke helps enterprises modernise legacy systems, simplify operations, and build connected technology environments that support growth. Our capabilities span business intelligence, data engineering, AI enabled automation, and modern ERP platforms that improve visibility, strengthen performance, and support better decisions. From advanced analytics and predictive insights to eCommerce platforms we help you get the result.")}
+                      {t("RheinBrücke helps enterprises modernise legacy systems, simplify operations and build connected technology environments that support growth. Our capabilities span business intelligence, data engineering, AI enabled automation and modern ERP platforms that improve visibility, strengthen performance and support better decisions. From advanced analytics and predictive insights to eCommerce platforms we help you get the result.")}
                     </p>
                     <div className="ser-btn">
                       <Link    href="/solutions/digital-services-and-solutions"
@@ -6873,7 +6873,7 @@ export default function EnterpriseSolutions() {
                             <div className="plat-in">
                               <img src="/images/plat1.png" alt="" />
                               <p>
-                                {t("Streamline operations and accelerate performance with a modern, flexible Epicor ERP built for manufacturers. Unlock real-time visibility, automation, and scalable growth.")}
+                                {t("Streamline operations and accelerate performance with a modern, flexible Epicor ERP built for manufacturers. Unlock real-time visibility, automation and scalable growth.")}
                               </p>
                               <div className="ser-btn1">
                                 <Link href="" className="animated-svg-link1 btn-style-3">
@@ -6986,7 +6986,7 @@ export default function EnterpriseSolutions() {
                             <div className="plat-in">
                               <img src="/images/plat2.png" alt="" />
                               <p>
-                               {t("Unify finance, sales, operations, and service on an intelligent Microsoft Dynamics 365 platform. Drive agility, efficiency, and connected decision-making.")}
+                               {t("Unify finance, sales, operations and service on an intelligent Microsoft Dynamics 365 platform. Drive agility, efficiency and connected decision-making.")}
                               </p>
                               <div className="ser-btn1">
                                 <Link href="" className="animated-svg-link1 btn-style-3">
@@ -7689,7 +7689,7 @@ export default function EnterpriseSolutions() {
                       {t("Data, AI & ERP Solutions for Manufacturing")}
                     </h2>
                     <p>
-                      {t("RheinBrücke helps enterprises modernise legacy systems, simplify operations, and build connected technology environments that support growth. Our capabilities span business intelligence, data engineering, AI enabled automation, and modern ERP platforms that improve visibility, strengthen performance, and support better decisions. From advanced analytics and predictive insights to eCommerce platforms we help you get the result.")}
+                      {t("RheinBrücke helps enterprises modernise legacy systems, simplify operations and build connected technology environments that support growth. Our capabilities span business intelligence, data engineering, AI enabled automation and modern ERP platforms that improve visibility, strengthen performance and support better decisions. From advanced analytics and predictive insights to eCommerce platforms we help you get the result.")}
                     </p>
                     <div className="ser-btn">
                       <Link href="#" className="animated-svg-link">
@@ -8156,7 +8156,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("RheinBrücke’s enterprise offerings encompass ERP, CRM, HCM, Procurement, SCM and digital transformation services for leading Cloud platforms such as Epicor Kinetic, Microsoft Dynamics 365, and SAP.")}  
+                              {t("RheinBrücke’s enterprise offerings encompass ERP, CRM, HCM, Procurement, SCM and digital transformation services for leading Cloud platforms such as Epicor Kinetic, Microsoft Dynamics 365 and SAP.")}  
                             </p>
                           </div>
                         </div>
@@ -8187,7 +8187,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("Yes. RheinBrücke provides comprehensive end-to-end lifecycle support. Our service includes initial strategic blueprinting and consulting, full implementation and data migration, custom development and integration, and continuous post-go-live Managed Services and system optimization. We ensure sustained ROI long after the go-live date.")}   
+                              {t("Yes. RheinBrücke provides comprehensive end-to-end lifecycle support. Our service includes initial strategic blueprinting and consulting, full implementation and data migration, custom development and integration and continuous post-go-live Managed Services and system optimization. We ensure sustained ROI long after the go-live date.")}   
                             </p>
                           </div>
                         </div>
@@ -8218,7 +8218,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("RheinBrücke has deep expertise across discrete and process manufacturing ((e.g. Metal Fabrication, Automotive), retail, wholesale distribution, Logistics, construction/Engineering-to-order (ETO), and professional services. We tailor our Epicor and Dynamics 365 solutions to meet the unique challenges of each sector.")} 
+                              {t("RheinBrücke has deep expertise across discrete and process manufacturing ((e.g. Metal Fabrication, Automotive), retail, wholesale distribution, Logistics, construction/Engineering-to-order (ETO) and professional services. We tailor our Epicor and Dynamics 365 solutions to meet the unique challenges of each sector.")} 
                             </p>
                           </div>
                         </div>
@@ -8249,7 +8249,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("SAP provides a flexible and scalable platform that allows manufacturing companies to expand operations, add new facilities, and integrate additional processes without replacing their core system.")}
+                              {t("SAP provides a flexible and scalable platform that allows manufacturing companies to expand operations, add new facilities and integrate additional processes without replacing their core system.")}
                             </p>
                           </div>
                         </div>
@@ -8280,7 +8280,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("Manufacturing companies can expect a structured process that includes requirement analysis, system design, configuration, testing, and deployment. The involvement of an experienced SAP partner ensures minimal disruption to operations.")}
+                              {t("Manufacturing companies can expect a structured process that includes requirement analysis, system design, configuration, testing and deployment. The involvement of an experienced SAP partner ensures minimal disruption to operations.")}
                             </p>
                           </div>
                         </div>
@@ -8311,7 +8311,7 @@ export default function EnterpriseSolutions() {
                         >
                           <div className="accordion-body">
                             <p>
-                              {t("ERP consulting services help manufacturers choose the right platform, plan implementation, and avoid costly delays. As an Epicor Premium Partner, RheinBrücke brings this expertise specifically to EMEA manufacturing enterprises.")}
+                              {t("ERP consulting services help manufacturers choose the right platform, plan implementation and avoid costly delays. As an Epicor Premium Partner, RheinBrücke brings this expertise specifically to EMEA manufacturing enterprises.")}
                             </p>
                           </div>
                         </div>
@@ -8341,7 +8341,7 @@ export default function EnterpriseSolutions() {
                     <h2>{t("Let us Modernise Your Enterprise")}</h2>
 
                     <p>
-                      {t("Discover how RheinBrücke can help you optimise core systems, automate processes, and build future-ready platforms.")}
+                      {t("Discover how RheinBrücke can help you optimise core systems, automate processes and build future-ready platforms.")}
                     </p>
                     <p>{t("Talk to our enterprise solutions experts today.")}</p>
                   </div>
