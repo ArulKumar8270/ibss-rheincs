@@ -18,10 +18,11 @@ const page = () => {
         <div className="col-lg-5">
           <div className="pe-main-hadding-waber">
             <h2 className="main-hadding-1 text-white" data-cursor="-opaque">
-              {t("Distribution & Supply Chain")}
+              {t("ERP & Supply Chain Solutions for Distribution Businesses")}
             </h2>
+            <p>{t("Improve inventory visibility, demand forecasting and deploy warehouse management solutions")}</p>
             <p>
-              {t("Distribution businesses operate at the frontline of supply chain complexity. Balancing supply reliability, service level commitments, and operational costs in increasingly volatile markets requires agility, visibility, and intelligent decision-making. Fragmented systems, unpredictable demand, and rising logistics costs put further pressure on margins, making operational efficiency and digital integration essential for survival.")}
+              {t("Distribution businesses face constant pressure from fragmented systems, unpredictable demand and rising costs. Supply chain visibility and the right ERP foundation are what keep margins intact. RheinBrücke helps distributors modernise inventory management, warehouse operations and order fulfilment through integrated ERP solutions built for distribution.")}
             </p>
             <div className="ser-btn m-0">
               <Link href="/contact-us" className="animated-svg-link">
@@ -150,7 +151,7 @@ const page = () => {
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Unpredictable demand patterns and supply disruptions affecting inventory and delivery performance")}
+                {t("Unpredictable demand, supply chain disruptions, and market volatility affecting inventory, delivery and customer service.")}
               </p>
             </div>
             <div className="challenge-point-waber">
@@ -162,31 +163,31 @@ const page = () => {
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Stock imbalances and fulfilment delays impacting customer service and increasing working capital lock-up")}
+                {t("Inventory imbalances, stockouts, and excess inventory increase carrying costs and working capital lock-up")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Inefficient partner and customer collaboration workflows causing delays and service issues")}
+                {t("Inefficient supplier, logistics partner, and customer collaboration leads to communication gaps and delayed shipments")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Fragmented systems and siloed data across warehousing, transport, order management, and ERP platforms")}
+                {t("Disconnected ERP, warehouse management (WMS), transportation management (TMS), and order management systems create data slower decision-making")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Rising logistics and transport costs squeezing already-thin margins")}
+                {t("Rising transportation and last-mile logistics costs continue to pressure margins")}
               </p>
             </div>
             <div className="challenge-point-waber">
               <img src="/new/qs-2.svg" alt="" />
               <p>
-                {t("Limited real-time visibility into stock, order status, delivery schedules, and supplier performance")}
+                {t("Limited supply chain visibility across orders, shipments, suppliers, stock, status and warehouses")}
               </p>
             </div>
           </div>
@@ -240,39 +241,39 @@ const page = () => {
       </h2>
       <div className="pe-help-content-waber">
         <div className="pe-help-content">
-          <img src="/new/Headset.svg" alt="" />
+          <img src="/new/Headset.svg" alt="Inventory management for distribution business icon" />
           <p>
-            {t("Optimise inventory management using predictive analytics, demand forecasting, and automated replenishment")}
+            {t("Optimise inventory management with AI-driven demand forecasting, predictive analytics, automated replenishment")}
           </p>
         </div>
         <div className="pe-help-content">
-          <img src="/new/Headset.svg" alt="" />
+          <img src="/new/Headset.svg" alt="Stock delivery and tracking icon" />
           <p>
             {t("Deploy real-time stock, order, and delivery tracking solutions to improve fulfilment performance and SLA adherence")}
           </p>
         </div>
         <div className="pe-help-content">
-          <img src="/new/Headset.svg" alt="" />
+          <img src="/new/Headset.svg" alt="ERP integration for warehouse and order management icon" />
           <p>
             {t("Integrate ERP, warehouse, transport, and order management systems for seamless, real-time operational visibility")}
           </p>
         </div>
         <div className="pe-help-content">
-          <img src="/new/Headset.svg" alt="" />
+          <img src="/new/Headset.svg" alt="Customer collaboration for supply chain and distribution ERP icon" />
           <p>
-            {t("Enable automated workflows for order management, dispatch, and logistics coordination")}
+            {t("Improve supplier, partner, and customer collaboration, reduce manual dependencies")}
           </p>
         </div>
         <div className="pe-help-content">
-          <img src="/new/Headset.svg" alt="" />
+          <img src="/new/Headset.svg" alt="Automated workflow for logistics icon" />
           <p>
-            {t("Implement centralised inventory and order tracking dashboards for improved control and customer communication")}
+            {t("Automate business processes with intelligent workflow for order management, dispatch, and logistics coordination and seamless barcode and QR code integration.")}
           </p>
         </div>
         <div className="pe-help-content">
-          <img src="/new/Headset.svg" alt="" />
+          <img src="/new/Headset.svg" alt="Inventory order management dashboard" />
           <p>
-            {t("Improve supplier, partner, and customer collaboration through shared data access and alerts")}
+            {t("Gain end-to-end supply chain visibility with centralised dashboards for inventory, orders, warehouse operations, shipments, and supplier performance.")}
           </p>
         </div>
       </div>
@@ -298,13 +299,13 @@ const page = () => {
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {t("Enhanced service levels and customer satisfaction through real-time fulfilment visibility")}
+                    {t("Deliver better customer experiences with greater order visibility, faster fulfilment, and more reliable deliveries.")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {t("Reduced carrying costs, inventory wastage, and stockouts via data-led demand planning")}
+                    {t("Lower carrying costs, less wastage, and fewer stockouts through smarter, data-led demand planning")}
                   </p>
                 </div>
                 <div className="bf-content">
@@ -335,13 +336,13 @@ const page = () => {
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {t("Proven transformation expertise across distribution, supply chain, logistics, and fulfilment operations")}
+                    {t("Proven, digital transformation expertise across distribution, supply chain, logistics, and fulfilment operations")}
                   </p>
                 </div>
                 <div className="bf-content">
                   <img src="/new/lp.svg" alt="" />
                   <p>
-                    {t("Practical focus on delivering operational outcomes, measurable savings, and service improvements")}
+                    {t("Proven capability in integrating enterprise platforms, data, and business processes to enable connected, intelligent operations.")}
                   </p>
                 </div>
                 <div className="bf-content">
@@ -355,7 +356,7 @@ const page = () => {
                   <img src="/new/lp.svg" alt="" />
                   <p>
                     {" "}
-                    {t("Offshore delivery model ensuring high-quality, scalable, and cost-efficient project execution")}
+                    {t("Global delivery model combining domain expertise, scalable execution, and cost-efficient implementation without compromising quality.")}
                   </p>
                 </div>
               </div>
@@ -370,6 +371,205 @@ const page = () => {
   </div>
 
   <TestimonialandAward />
+
+ {/* Page Faqs Start */}
+        <div className="page-faqs bggray pd60">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-2" />
+              <div className="col-lg-8">
+                {/* Page FAQs Category Start */}
+                <div className="page-faqs-catagery">
+                  {/* FAQs section start */}
+                  <div
+                    className="our-faq-section page-faq-accordion"
+                    id="general_information"
+                  >
+                    <div className="section-title text-center">
+                      <h2 className="text-anime-style-2" data-cursor="-opaque">
+                        {t("Wondering Why? We’re Here to Answer")} 
+                      </h2>
+                    </div>
+                    {/* FAQ Accordion Start */}
+                    <div className="faq-accordion" id="accordion">
+                      {/* FAQ Item Start */}
+                      <div className="accordion-item wow fadeInUp">
+                        <h2 className="accordion-header" id="heading1">
+                          <button
+                            className="accordion-button collapsein"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse1"
+                            aria-expanded="true"
+                            aria-controls="collapse1"
+                          >
+                            {t("How does RheinBrücke empower distributors and optimize the supply chain?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse1"
+                          className="accordion-collapse collapse show"
+                          aria-labelledby="heading1"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("We implement end-to-end ERP and digital solutions to create a single, unified system for modern, agile distribution. Our focus areas are:")}
+                            </p>
+                            <ul>
+                              <li>{t("Demand-Driven Planning: Leveraging predictive analytics for highly accurate demand forecasting to align supply and sales.")}</li>
+                              <li>{t("Inventory Optimization: Implementing real-time controls to maintain optimal stock levels, drastically reducing both stock-outs and carrying costs.")}</li>
+                              <li>{t("Logistics & Fulfilment Orchestration: Streamlining warehouse operations and improving delivery accuracy and speed.")}</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.2s"
+                      >
+                        <h2 className="accordion-header" id="heading2">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse2"
+                            aria-expanded="false"
+                            aria-controls="collapse2"
+                          >
+                            {t("Which key technology platforms are deployed to support complex distribution processes?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse2"
+                          className="accordion-collapse collapse "
+                          aria-labelledby="heading2"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("We utilize a best-in-class, integrated technology stack anchored by leading enterprise systems:")}
+                            </p>
+                            <ul>
+                              <li>{t("Core ERP: Epicor ERP, SAP, and Microsoft Dynamics 365 provide the financial, procurement, and inventory backbone.")}</li>
+                              <li>{t("Digital Commerce & Order Management: Solutions like Fluent Commerce for flexible, omnichannel order fulfilment and logistics orchestration.")}</li>
+                              <li>{t("Intelligence Layer: Advanced analytics dashboards and Business Intelligence (BI) platforms for real-time operational insights.")}</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.4s"
+                      >
+                        <h2 className="accordion-header" id="heading3">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse3"
+                            aria-expanded="false"
+                            aria-controls="collapse3"
+                          >
+                            {t("What specific Supply Chain Analytics and intelligence capabilities are offered?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse3"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading3"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("We provide a strategic intelligence layer for proactive decision-making and risk mitigation:")}
+                            </p>
+                            <ul>
+                              <li>{t("Predictive Forecasting: AI and BI-powered tools for high-accuracy sales and demand forecasting that adapts to market volatility.")}</li>
+                              <li>{t("Vendor Performance Management: Automated evaluation of supplier quality, lead times, and compliance to inform strategic sourcing.")}</li>
+                              <li>{t("Risk and Resiliency Management: Tools to identify potential disruptions (e.g., transport delays, capacity issues) and model \"what-if\" scenarios before they impact the bottom line.")}</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.6s"
+                      >
+                        <h2 className="accordion-header" id="heading4">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse4"
+                            aria-expanded="false"
+                            aria-controls="collapse4"
+                          >
+                            {t("What measurable outcomes can distributors expect?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse4"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading4"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("Delivery accuracy improves, costs are reduced, and real-time supply chain visibility is achieved.")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                      {/* FAQ Item Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.8s"
+                      >
+                        <h2 className="accordion-header" id="heading5">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse5"
+                            aria-expanded="false"
+                            aria-controls="collapse5"
+                          >
+                            {t("How does ERP improve supply chain visibility for distributors?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse5"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading5"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("ERP consolidates data from warehousing, transport, and order management systems into a single platform, so distributors can track inventory, orders, and shipments in real time instead of relying on disconnected spreadsheets and siloed tools.")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item End */}
+                    </div>
+                    {/* FAQ Accordion End */}
+                  </div>
+                  {/* FAQs section End */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Page Faq End */}
+  
   {/* Footer Start */}
   <footer className="main-footer pd0">
     {/* Footer Main Start */}
@@ -379,7 +579,7 @@ const page = () => {
           <div className="row">
             <div className="col-sm-8">
               <h2 data-cursor="-opaque">
-                {t("Ready to modernise your distribution operations and supply chain performance?")}
+                {t("Turn Supply Chain Complexity Into Your Competitive Edge")}
               </h2>
               <p>
                 {t("Contact us today to discover how we can help optimise your warehousing, inventory, and order management for a more resilient, agile business.")}  
@@ -506,4 +706,3 @@ const page = () => {
 }
 
 export default page
-

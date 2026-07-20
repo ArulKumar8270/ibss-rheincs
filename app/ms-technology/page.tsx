@@ -22,13 +22,13 @@ export default function EnterpriseSolutions() {
         <div className="col-sm-5">
           <div className="section-title">
             <h2 className="text-anime-style-21" data-cursor="-opaque">
-              {t("Microsoft Technologies")}
+              {t("Microsoft Technology Services for Cloud, AI & Application Modernisation")}
             </h2>
             <p>
-              {t("Empower agile, scalable, and intelligent solutions with Microsoft’s technology ecosystem.")}
+              {t("Accelerate digital transformation with Microsoft technology services from RheinBrücke.")}
             </p>
             <p>
-              {t("At RheinBrücke, we help organisations modernise applications, migrate to the cloud, integrate platforms, and operationalise AI with secure, scalable solutions tailored to your business goals.")}
+              {t("We help organisations modernise applications, migrate to Azure cloud, integrate enterprise platforms and operationalise AI with secure, scalable solutions tailored to your business goals.")}
             </p>
           </div>
         </div>
@@ -51,6 +51,7 @@ export default function EnterpriseSolutions() {
             <h2 className="text-anime-style-2" data-cursor="-opaque">
               {t("The Microsoft Technologies Advantage")}
             </h2>
+            <p>{t("Why Choose Microsoft Technologies for Enterprise Transformation?")}</p>
             <p>
               {t("Modern enterprises face challenges such as:")}
             </p>  
@@ -65,9 +66,9 @@ export default function EnterpriseSolutions() {
               <div className="swiper-slide">
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
-                    <img src="/images/ss1.svg" alt="" />
+                    <img src="/images/ss1.svg" alt="MS technology upgrade and scalability icon" />
                     <p>
-                      {t("Complex integrations with disconnected legacy systems that limit agility and scalability")}
+                      {t("Disconnected legacy systems that limit agility and scalability")}
                     </p>
                   </div>
                 </div>
@@ -75,9 +76,9 @@ export default function EnterpriseSolutions() {
               <div className="swiper-slide">
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
-                    <img src="/images/ss2.svg" alt="" />
+                    <img src="/images/ss2.svg" alt="MS technology UI/UX application icon" />
                     <p>
-                      {t("Inconsistent UI/UX across applications")}
+                      {t("Inconsistent user experiences across enterprise applications")}
                     </p>
                   </div>
                 </div>
@@ -85,9 +86,9 @@ export default function EnterpriseSolutions() {
               <div className="swiper-slide">
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
-                    <img src="/images/ss3.svg" alt="" />
+                    <img src="/images/ss3.svg" alt="MS technology poor communication icon " />
                     <p>
-                      {t("Applications not communicating effectively with each other")}
+                      {t("Poor interoperability between business applications and platforms")}
                     </p>
                   </div>
                 </div>
@@ -95,7 +96,7 @@ export default function EnterpriseSolutions() {
               <div className="swiper-slide">
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
-                    <img src="/images/ss4.svg" alt="" />
+                    <img src="/images/ss4.svg" alt="MS technology data and reporting icon" />
                     <p>
                       {t("Siloed data and inconsistent reporting")}
                     </p>
@@ -105,9 +106,9 @@ export default function EnterpriseSolutions() {
               <div className="swiper-slide">
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
-                    <img src="/images/ss5.svg" alt="" />
+                    <img src="/images/ss5.svg" alt="MS technology workflows icon" />
                     <p>
-                      {t("Manual, time-consuming workflows")}
+                      {t("Manual, repetitive workflows that reduce productivity and increase errors")}
                     </p>
                   </div>
                 </div>
@@ -115,9 +116,9 @@ export default function EnterpriseSolutions() {
               <div className="swiper-slide">
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
-                    <img src="/images/ss6.svg" alt="" />
+                    <img src="/images/ss6.svg" alt="MS technology cost reduction icon" />
                     <p>
-                      {t("Rising operational costs and inefficiencies")}
+                      {t("Rising operational costs caused by legacy systems and manual processes")}
                     </p>
                   </div>
                 </div>
@@ -125,9 +126,9 @@ export default function EnterpriseSolutions() {
               <div className="swiper-slide">
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
-                    <img src="/images/ss7.svg" alt="" />
+                    <img src="/images/ss7.svg" alt="MS technology real time visibility icon" />
                     <p>
-                      {t("Limited real-time visibility for decision-making")}
+                      {t("Limited real-time visibility into business performance and operations")}
                     </p>
                   </div>
                 </div>
@@ -135,7 +136,7 @@ export default function EnterpriseSolutions() {
               <div className="swiper-slide">
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
-                    <img src="/images/ss8.svg" alt="" />
+                    <img src="/images/ss8.svg" alt="MS technology secure integration icon" />
                     <p>
                       {t("Difficulty integrating applications, analytics, and AI securely")}
                     </p>
@@ -151,6 +152,9 @@ export default function EnterpriseSolutions() {
         <p>
           {t("Microsoft Technologies address these challenges with enterprise-ready platforms that provide:")}
         </p>
+        <p>
+          {t("How Microsoft Technologies Drive Business Transformation")}
+        </p>
       </div>
       <div className={`digital-features-item agency-supports mstechadv ${language === 'German' ? 'germstechadv' : ''}`}>
         <div className="agency-supports-slider2">
@@ -159,9 +163,9 @@ export default function EnterpriseSolutions() {
               <div className="swiper-slide">
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
-                    <img src="/images/ss1.svg" alt="" />
+                    <img src="/images/ss1.svg" alt="MS technology application development and integration icon" />
                     <p>
-                      {t("Unified development, cloud, and integration tools")}
+                      {t("Unified application development, cloud migration and enterprise integration")}
                     </p>
                   </div>
                 </div>
@@ -169,9 +173,9 @@ export default function EnterpriseSolutions() {
               <div className="swiper-slide">
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
-                    <img src="/images/ss2.svg" alt="" />
+                    <img src="/images/ss2.svg" alt="Microsoft azure cloud services icon" />
                     <p>
-                      {t("Secure, scalable cloud services with Azure")}
+                      {t("Secure, scalable cloud services built on Microsoft Azure")}
                     </p>
                   </div>
                 </div>
@@ -179,9 +183,9 @@ export default function EnterpriseSolutions() {
               <div className="swiper-slide">
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
-                    <img src="/images/ss3.svg" alt="" />
+                    <img src="/images/ss3.svg" alt="Advanced AI and ML with microsoft Copilot icon" />
                     <p>
-                      {t("AI & ML capabilities for smarter decision-making, predictive insights and automation (including Microsoft Copilot)")}
+                      {t("Advanced AI & Machine Learning (ML) powered by Microsoft Copilot that deliver predictive insights, intelligent automation")}
                     </p>
                   </div>
                 </div>
@@ -189,9 +193,9 @@ export default function EnterpriseSolutions() {
               <div className="swiper-slide">
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
-                    <img src="/images/ss4.svg" alt="" />
+                    <img src="/images/ss4.svg" alt="Low code MS technology icons" />
                     <p>
-                      {t("Low-code platforms for faster business-led innovation through Power Platform")}
+                      {t("Agile low-code development with Power Platform to accelerate innovation driven by the business")}
                     </p>
                   </div>
                 </div>
@@ -199,9 +203,9 @@ export default function EnterpriseSolutions() {
               <div className="swiper-slide">
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
-                    <img src="/images/ss5.svg" alt="" />
+                    <img src="/images/ss5.svg" alt="Enterprise-grade security and governance in MS technology icon" />
                     <p>
-                      {t("Enterprise-grade security, governance, and compliance tools")}
+                      {t("Enterprise-grade cloud security, IT governance, identity management and compliance tools")}
                     </p>
                   </div>
                 </div>
@@ -209,9 +213,9 @@ export default function EnterpriseSolutions() {
               <div className="swiper-slide">
                 <div className="agency-supports-logo">
                   <div className="dynamics-advantage-waber">
-                    <img src="/images/ss6.svg" alt="" />
+                    <img src="/images/ss6.svg" alt="Microsoft Power Platform and Copilot driving business automation icon" />
                     <p>
-                      {t("Intelligent, cloud-based business applications with Microsoft Power Platform, enhanced by Copilot, enabling faster automation, integration, and innovation")}
+                      {t("Intelligent cloud-based business applications powered by Microsoft Power Platform and Microsoft Copilot for faster automation & integration")}
                     </p>
                   </div>
                 </div>
@@ -247,10 +251,10 @@ export default function EnterpriseSolutions() {
             {/* Testimonial Slide Start */}
             <div className="swiper-slide">
               <div className="valueslide">
-                <img src="/images/access-technology-challenges.svg" alt="" />
+                <img src="/images/access-technology-challenges.svg" alt="Business and technology assessment process icon" />
                 {/* <h6> Dynamics 365 ERP & CRM Solutions</h6> */}
                 <p>
-                  {t("Assess technology challenges and system gaps")}
+                  {t("Assess technology challenges, business requirements and system gaps")}
                 </p>
               </div>
             </div>
@@ -258,7 +262,7 @@ export default function EnterpriseSolutions() {
             {/* Testimonial Slide Start */}
             <div className="swiper-slide">
               <div className="valueslide">
-                <img src="/images/configure-microsoft-solution.svg" alt="" />
+                <img src="/images/configure-microsoft-solution.svg" alt="Industry-specific Microsoft solution icon" />
                 <p>
                   {t("Configure Microsoft solutions to industry-specific requirements")}
                 </p>
@@ -270,7 +274,7 @@ export default function EnterpriseSolutions() {
               <div className="valueslide">
                 <img
                   src="/images/integrate-with-existing-application.svg"
-                  alt=""
+                  alt="Microsoft platform integration icon"
                 />
                 <p>
                   {t("Integrate with existing applications for seamless workflows")}
@@ -281,9 +285,9 @@ export default function EnterpriseSolutions() {
             {/* Testimonial Slide Start */}
             <div className="swiper-slide">
               <div className="valueslide">
-                <img src="/images/auto-manual-process.svg" alt="" />
+                <img src="/images/auto-manual-process.svg" alt="Automate manual processes using Microsoft Power platform icon" />
                 <p>
-                  {t("Automate manual processes for efficiency")}
+                  {t("Automate manual processes to improve efficiency and productivity")}
                 </p>
               </div>
             </div>
@@ -291,9 +295,9 @@ export default function EnterpriseSolutions() {
             {/* Testimonial Slide Start */}
             <div className="swiper-slide">
               <div className="valueslide">
-                <img src="/images/real-time-data-insights.svg" alt="" />
+                <img src="/images/real-time-data-insights.svg" alt="Real-time data insights icon" />
                 <p>
-                  {t("Deliver real-time data insights for smarter decisions")}
+                  {t("Enable real-time data insights for faster, smarter decision-making")}
                 </p>
               </div>
             </div>
@@ -301,9 +305,9 @@ export default function EnterpriseSolutions() {
             {/* Testimonial Slide Start */}
             <div className="swiper-slide">
               <div className="valueslide">
-                <img src="/images/scalability-security.svg" alt="" />
+                <img src="/images/scalability-security.svg" alt="Agile delivery and automation icon" />
                 <p>
-                  {t("Ensure scalability, security, and governance for future growth")}
+                  {t("Accelerated Time-to-Value through Agile delivery and automation")}
                 </p>
               </div>
             </div>
@@ -865,31 +869,31 @@ export default function EnterpriseSolutions() {
           </div>
           <div className="pill-points appro">
             <div className="challenge-point-waber self-service">
-              <img src="/images/app1.svg" alt="" />
+              <img src="/images/app1.svg" alt="Microsoft ISV Partner and AI Cloud Partner icon" />
               <div className="pill-cont">
                 {/* <h5>Solution Architecture</h5> */}
                 <p>
                   {" "}
                   {t(
-                    "Microsoft ISV Partner and AI Cloud Partner with proven expertise"
+                    "Microsoft ISV Partner and AI Cloud Partner with proven expertise in delivering enterprise technology solutions"
                   )}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/app2.svg" alt="" />
+              <img src="/images/app2.svg" alt="End-to-end MS technology project delivery icon" />
               <div className="pill-cont">
                 {/* <h5>Project Management</h5> */}
                 <p>
                   {" "}
                   {t(
-                    "End-to-end project delivery from strategy to support"
+                    "End-to-end IT project delivery from initial digital strategy to long-term technical support"
                   )}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/app3.svg" alt="" />
+              <img src="/images/app3.svg" alt="application development with DevOps practices icon" />
               <div className="pill-cont">
                 {/* <h5>Consulting</h5> */}
                 <p>
@@ -901,19 +905,19 @@ export default function EnterpriseSolutions() {
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/fe3.svg" alt="" />
+              <img src="/images/fe3.svg" alt="Faster innovation with MS technology icon" />
               <div className="pill-cont">
                 {/* <h5>Consulting</h5> */}
                 <p>
                   {" "}
                   {t(
-                    "Continuous security, governance, and platform management"
+                    "Faster Innovation Without Business Disruption"
                   )}
                 </p>
               </div>
             </div>
             <div className="challenge-point-waber self-service">
-              <img src="/images/fe5.svg" alt="" />
+              <img src="/images/fe5.svg" alt="Outcome-focused delivery icon" />
               <div className="pill-cont">
                 {/* <h5>Consulting</h5> */}
                 <p>
@@ -1318,6 +1322,238 @@ export default function EnterpriseSolutions() {
     </div>
   </div>
   {/* Hero Section End*/}
+
+ {/* Page Faqs Start */}
+        <div className="page-faqs bggray pd60">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-2" />
+              <div className="col-lg-8">
+                {/* Page FAQs Category Start */}
+                <div className="page-faqs-catagery">
+                  {/* FAQs section start */}
+                  <div
+                    className="our-faq-section page-faq-accordion"
+                    id="general_information"
+                  >
+                    <div className="section-title text-center">
+                      <h2 className="text-anime-style-2" data-cursor="-opaque">
+                        {t("Wondering Why? We’re Here to Answer")}
+                      </h2>
+                    </div>
+                    {/* FAQ Accordion Start */}
+                    <div className="faq-accordion" id="accordion">
+                      {/* FAQ Item 1 Start */}
+                      <div className="accordion-item wow fadeInUp">
+                        <h2 className="accordion-header" id="heading1">
+                          <button
+                            className="accordion-button collapsein"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse1"
+                            aria-expanded="true"
+                            aria-controls="collapse1"
+                          >
+                            {t("Which core Microsoft Cloud technologies does RheinBrücke specialize in?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse1"
+                          className="accordion-collapse collapse show"
+                          aria-labelledby="heading1"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("We specialize in the foundational pillars of the Microsoft Cloud ecosystem, delivering comprehensive implementation, integration and managed services for the entire Microsoft Business Applications stack. This focus includes:")}
+                            </p>
+                            <ul>
+                              <li>{t("Dynamics 365: The unified suite of Cloud ERP (Finance, SCM) and CRM (Sales, Service) solutions.")}</li>
+                              <li>{t("Power Platform: The low-code/no-code platform comprising Power BI (Business Intelligence), Power Apps and Power Automate.")}</li>
+                              <li>{t("Azure Cloud: The scalable, secure and resilient cloud infrastructure services.")}</li>
+                              <li>{t("Microsoft 365: Productivity and collaboration solutions (Teams, Exchange Online, SharePoint).")}</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item 1 End */}
+                      {/* FAQ Item 2 Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.2s"
+                      >
+                        <h2 className="accordion-header" id="heading2">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse2"
+                            aria-expanded="false"
+                            aria-controls="collapse2"
+                          >
+                            {t("How do these integrated Microsoft technologies drive measurable digital transformation?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse2"
+                          className="accordion-collapse collapse "
+                          aria-labelledby="heading2"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("They create a unified, intelligent and secure digital core for your enterprise. By connecting real-time data from every department—finance, sales, operations and service—they enable:")}
+                            </p>
+                            <ul>
+                              <li>{t("Data-Driven Decisions: Power BI transforms siloed information into actionable, real-time insights.")}</li>
+                              <li>{t("Process Automation: Dynamics 365 and Power Automate streamline critical workflows.")}</li>
+                              <li>{t("Enhanced Security: Azure Cloud provides world-class compliance and data protection. This integrated approach moves your business from disconnected applications to connected, intelligent operations.")}</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item 2 End */}
+                      {/* FAQ Item 3 Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.4s"
+                      >
+                        <h2 className="accordion-header" id="heading3">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse3"
+                            aria-expanded="false"
+                            aria-controls="collapse3"
+                          >
+                            {t("Are Microsoft solutions easily integrated with existing Enterprise Resource Planning (ERP) platforms?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse3"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading3"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("Yes, integration is a core strength. We ensure seamless, two-way data flow between the Microsoft stack and other critical enterprise systems. Specifically, we specialize in integrating Dynamics 365 and Azure with major third-party platforms like Epicor and SAP, providing a consolidated view of business processes and a single source of truth for all data.")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item 3 End */}
+                      {/* FAQ Item 4 Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.6s"
+                      >
+                        <h2 className="accordion-header" id="heading4">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse4"
+                            aria-expanded="false"
+                            aria-controls="collapse4"
+                          >
+                            {t("Beyond implementation, what modernization and managed services are available?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse4"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading4"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("Our partnership extends far beyond initial go-live. We provide a full range of lifecycle services to ensure continuous performance and value:")}
+                            </p>
+                            <ul>
+                              <li>{t("Cloud Migration & Modernization: Strategic movement of legacy on-premises systems to the secure, scalable Azure Cloud.")}</li>
+                              <li>{t("Managed Services: Proactive, ongoing support, maintenance and optimization for all Dynamics 365, Power Platform and Azure environments.")}</li>
+                              <li>{t("Application Enhancement: Custom development and scaling using the Power Platform for long-term functional improvement.")}</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item 4 End */}
+                      {/* FAQ Item 5 Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="0.8s"
+                      >
+                        <h2 className="accordion-header" id="heading5">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse5"
+                            aria-expanded="false"
+                            aria-controls="collapse5"
+                          >
+                            {t("How does Microsoft Copilot improve business productivity?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse5"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading5"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("Microsoft Copilot uses AI capabilities to automate repetitive tasks, generate insights, assist decision-making and improve productivity across business applications and workflows.")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item 5 End */}
+                      {/* FAQ Item 6 Start */}
+                      <div
+                        className="accordion-item wow fadeInUp"
+                        data-wow-delay="1.0s"
+                      >
+                        <h2 className="accordion-header" id="heading6">
+                          <button
+                            className="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse6"
+                            aria-expanded="false"
+                            aria-controls="collapse6"
+                          >
+                            {t("What is Azure DevOps and how does RheinBrücke use it for MVP development?")}
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse6"
+                          className="accordion-collapse collapse"
+                          aria-labelledby="heading6"
+                          data-bs-parent="#accordion"
+                        >
+                          <div className="accordion-body">
+                            <p>
+                              {t("Azure DevOps is Microsoft's platform for planning, building and releasing software. RheinBrücke uses it to move client MVPs and prototypes from concept to a working, testable build quickly, with source control, automated builds and release pipelines managed in one environment rather than stitched together across disconnected tools.")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* FAQ Item 6 End */}
+                    </div>
+                    {/* FAQ Accordion End */}
+                  </div>
+                  {/* FAQs section End */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Page Faq End */}
+
+
   {/* Footer Start */}
   <footer className="main-footer pd0">
     {/* Footer Main Start */}
@@ -1329,11 +1565,14 @@ export default function EnterpriseSolutions() {
               <h2>
                 {" "}
                 {t(
-                  "Let us build your future-ready systems with Microsoft technologies."
+                  "Build Future-Ready Solutions with Microsoft Technologies"
                 )}{" "}
               </h2>
               <p>{" "}
-                {t("Talk to our experts today.")}{" "}
+                {t("Let RheinBrücke help you modernise applications, accelerate cloud adoption, integrate enterprise systems and unlock AI-driven innovation with Microsoft technologies.")}{" "}
+              </p>
+              <p>{" "}
+                {t("Talk to our Microsoft experts today.")}{" "}
               </p>
             </div>
             <div className="col-sm-4">

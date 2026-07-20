@@ -1,17 +1,17 @@
 import { MetadataRoute } from "next";
 import { createClient } from "@supabase/supabase-js";
 
-// For static export, we need to set dynamic to force-static or revalidate
 export const dynamic = "force-static";
 
 const BASE_URL = "https://www.rheincs.com";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const sitemap: MetadataRoute.Sitemap = [];
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
-  // Static Pages
-  const staticPages = [
-     "",
+const staticPages = [
+  "",
   "about-us",
   "about-us/overview",
   "about-us/leadership",
@@ -80,74 +80,60 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   "business-intelligence",
   "data-engineering-warehousing",
   "deftech-bharat-2026",
-  ];
+];
 
-  staticPages.forEach((page) => {
-    sitemap.push({
-      url: `${BASE_URL}/${page}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: page === "" ? 1 : 0.8,
-    });
-  });
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const staticUrls: MetadataRoute.Sitemap = staticPages.map((page) => ({
+    url: `${BASE_URL}/${page}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: page === "" ? 1 : 0.8,
+  }));
 
   try {
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
+    const [blogsResult, caseStudiesResult, ebooksResult] = await Promise.all([
+      supabase
+        .from("blogs")
+        .select("slug, updated_at, created_at")
+        .eq("published", true),
 
-    // Blogs
-    const { data: blogs } = await supabase
-      .from("blogs")
-      .select("slug, updated_at")
-      .eq("published", true);
+      supabase
+        .from("case_studies")
+        .select("slug, updated_at, created_at")
+        .eq("published", true),
 
-    blogs?.forEach((blog) => {
-      sitemap.push({
+      supabase
+        .from("ebook_landing_pages")
+        .select("slug, updated_at, created_at"),
+    ]);
+
+    const blogUrls =
+      blogsResult.data?.map((blog) => ({
         url: `${BASE_URL}/blogs/${blog.slug}`,
-        lastModified: blog.updated_at
-          ? new Date(blog.updated_at)
-          : new Date(),
-        changeFrequency: "weekly",
+        lastModified: new Date(blog.updated_at || blog.created_at),
+        changeFrequency: "weekly" as const,
         priority: 0.7,
-      });
-    });
+      })) ?? [];
 
-    // Case Studies
-    const { data: caseStudies } = await supabase
-      .from("case_studies")
-      .select("slug, updated_at")
-      .eq("published", true);
-
-    caseStudies?.forEach((item) => {
-      sitemap.push({
-        url: `${BASE_URL}/Casestudy/${item.slug}`,
-        lastModified: item.updated_at
-          ? new Date(item.updated_at)
-          : new Date(),
-        changeFrequency: "monthly",
+    const caseStudyUrls =
+      caseStudiesResult.data?.map((item) => ({
+        url: `${BASE_URL}/Case-study/${item.slug}`,
+        lastModified: new Date(item.updated_at || item.created_at),
+        changeFrequency: "monthly" as const,
         priority: 0.7,
-      });
-    });
+      })) ?? [];
 
-    // Landing Pages
-    const { data: ebooks } = await supabase
-      .from("ebook_landing_pages")
-      .select("slug, updated_at");
-
-    ebooks?.forEach((item) => {
-      sitemap.push({
+    const ebookUrls =
+      ebooksResult.data?.map((item) => ({
         url: `${BASE_URL}/LP/${item.slug}`,
-        lastModified: item.updated_at
-          ? new Date(item.updated_at)
-          : new Date(),
-        changeFrequency: "monthly",
+        lastModified: new Date(item.updated_at || item.created_at),
+        changeFrequency: "monthly" as const,
         priority: 0.7,
-      });
-    });
+      })) ?? [];
+
+    return [...staticUrls, ...blogUrls, ...caseStudyUrls, ...ebookUrls];
   } catch (error) {
     console.error("Sitemap Error:", error);
+    return staticUrls;
   }
-  return sitemap;
 }

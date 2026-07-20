@@ -306,7 +306,7 @@ Object.keys(formData).forEach(key => {
             phone: submitPhone,
             company_name: submitCompanyName,
             country_code: "+91",
-            selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
+            selection: `${pageData?.title || "E-Book"}`,
             // message: "Requested E-book download from landing page",
           },
         ]);
@@ -328,7 +328,7 @@ Object.keys(formData).forEach(key => {
               phone: phoneForEmail,
               countryCode: countryCodeForEmail,
               companyName: submitCompanyName,
-              selection: `E-Book Download: ${pageData?.title || "E-Book"}`,
+              selection: `${pageData?.title || "E-Book"}`,
               // message: "Requested E-book download from landing page",
             },
           });

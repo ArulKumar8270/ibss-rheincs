@@ -238,6 +238,25 @@ const page = () => {
                 </div>
                 {/* image gallery end */}
               </div>
+              <div className="col-lg-4 col-md-6">
+                {/* image gallery start */}
+                <div
+                  className="video-gallery-image"
+                  data-wow-delay="1.4s"
+                >
+                  <Link href="https://youtu.be/tJtNrnOiAEk"
+                    className="popup-video"
+                    data-cursor-text="Play"
+                  >
+                    <figure>
+                      <img src="/images/erp.jpeg" alt="" />
+                    </figure>
+                  </Link>
+                  <h4>{t("How RheinBrücke Helped Cold Chain Technologies Go Live in 150 Days | ERP Story")}</h4>
+                </div>
+                {/* image gallery end */}
+              </div>
+              
             </div>
           </div>
         </div>
