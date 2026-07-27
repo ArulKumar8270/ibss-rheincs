@@ -91,7 +91,7 @@ export default function EnterpriseSolutions() {
           <div className="dynamics-advantage-waber">
             <img src="/new/ad4.svg" alt="Integration with ecommerce, ERP, WMS and CRM tools icon" />
             <p>
-              {t("Seamless API-first integration with eCommerce, ERP, WMS, CRM")}
+              {t("Reliable API-first integration with eCommerce, ERP, WMS, and CRM platforms")}
             </p>
           </div>
         </div>
@@ -432,7 +432,7 @@ export default function EnterpriseSolutions() {
                   className="text-anime-style-2 text-dark"
                   data-cursor="-opaque"
                 >
-                  {t("Why RheinBrücke")}
+                  {t("Why RheinBrücke for Fluent Commerce")}
                 </h2>
               </div>
             </div>

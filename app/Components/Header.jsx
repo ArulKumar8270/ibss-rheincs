@@ -300,7 +300,7 @@ export default function Header() {
 
         // Resources
         { url: '/blogs', title: 'Blog', keywords: 'blog articles news updates' },
-        { url: '/Case-study', title: 'Case Studies', keywords: 'case studies examples success' },
+        { url: '/Casestudy', title: 'Case Studies', keywords: 'case studies examples success' },
         { url: '/webinars', title: 'Webinars', keywords: 'webinars online events training' },
         { url: '/collaterals', title: 'Collaterals', keywords: 'collaterals documents resources' },
         { url: '/corporate-videos', title: 'Corporate Videos', keywords: 'videos corporate media' },
@@ -1478,7 +1478,7 @@ export default function Header() {
                                                                                                 </Link>
                                                                                             </li>
                                                                                             <li className="ser-btn">
-                                                                                                <Link href="/Distribution-and-supply-chain"
+                                                                                                <Link href="/supply-chain"
                                                                                                     className="animated-svg-link"
                                                                                                 >
                                                                                                     {t("Distribution and Supply Chain")}
@@ -1694,7 +1694,7 @@ export default function Header() {
                                                                                         </Link>
                                                                                     </li>
                                                                                     <li className="ser-btn">
-                                                                                        <Link href="/Case-study"
+                                                                                        <Link href="/Casestudy"
                                                                                             className="animated-svg-link"
                                                                                         >
                                                                                             {t("Case Studies")}
@@ -3041,7 +3041,7 @@ export default function Header() {
                                     <Link href="/industries-retail">{t("Retail Industry")}</Link>
                                 </li>
                                 <li>
-                                    <Link href="/Distribution-and-supply-chain">{t("Distribution and Supply Chain")}</Link>
+                                    <Link href="/supply-chain">{t("Distribution and Supply Chain")}</Link>
                                 </li>
                                 <li>
                                     <Link href="/discrete-manufacturing">{t("Discrete Manufacturing")}</Link>
@@ -3153,7 +3153,7 @@ export default function Header() {
                                     <Link href="/blogs">{t("Blog")}</Link>
                                 </li>
                                 <li>
-                                    <Link href="/Case-study">{t("Case Studies")}</Link>
+                                    <Link href="/Casestudy">{t("Case Studies")}</Link>
                                 </li>
                                 <li>
                                     <Link href="/webinars">{t("Webinars")}</Link>

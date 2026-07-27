@@ -254,7 +254,7 @@ export default function Footer() {
                                             <Link href="/industries-retail">{t("Retail Industry")}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/Distribution-and-supply-chain">{t("Distribution and Supply Chain")}</Link>
+                                            <Link href="/supply-chain">{t("Distribution and Supply Chain")}</Link>
                                         </li>
                                         <li>
                                             <Link href="/discrete-manufacturing">{t("Discrete Manufacturing")}</Link>
@@ -290,7 +290,7 @@ export default function Footer() {
                                                 <Link href="/blogs">{t("Blog")}</Link>
                                             </li>
                                             <li>
-                                                <Link href="/Case-study">{t("Case Studies")}</Link>
+                                                <Link href="/Casestudy">{t("Case Studies")}</Link>
                                             </li>
                                             <li>
                                                 <Link href="/webinars">{t("Webinars")}</Link>

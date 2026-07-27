@@ -1563,16 +1563,15 @@ export default function EnterpriseSolutions() {
           <div className="row">
             <div className="col-sm-8">
               <h2>
-                {" "}
                 {t(
                   "Build Future-Ready Solutions with Microsoft Technologies"
-                )}{" "}
+                )}
               </h2>
-              <p>{" "}
-                {t("Let RheinBrücke help you modernise applications, accelerate cloud adoption, integrate enterprise systems and unlock AI-driven innovation with Microsoft technologies.")}{" "}
+              <p>
+                {t("Let RheinBrücke help you modernise applications, accelerate cloud adoption, integrate enterprise systems and unlock AI-driven innovation with Microsoft technologies.")}
               </p>
-              <p>{" "}
-                {t("Talk to our Microsoft experts today.")}{" "}
+              <p>
+                {t("Talk to our Microsoft experts today.")}
               </p>
             </div>
             <div className="col-sm-4">
